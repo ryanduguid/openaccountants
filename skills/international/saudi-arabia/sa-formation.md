@@ -4,7 +4,7 @@ description: "ALWAYS read this skill whenever asked about forming, incorporating
 jurisdiction: SA
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 version: 1.1
 reviewed_by: Mehran Habib
 review_status: pending_review
@@ -471,7 +471,7 @@ The Zakat, Tax and Customs Authority (ZATCA) — formed in 2021 by the merger of
 | **VAT — zero-rated** | 0% | Exports of goods/services to GCC outside the implementation zone; international transport; certain medicines and medical equipment |
 | **VAT — exempt** | n/a | Most financial services (with exceptions); residential rental |
 | **Real Estate Transaction Tax (RETT)** | **5%** | Real-estate transfers (replaced VAT on real estate from October 2020) |
-| **Excise tax** | 50% (soft drinks) / 100% (tobacco, energy drinks, sweetened beverages, e-smoking devices) | Specified goods |
+| **Excise tax** | 100% (tobacco, energy drinks, e-smoking devices and liquids). Sweetened drinks, including sweetened carbonated drinks: SAR 0 / 0 / 0.79 / 1.09 per litre by sugar tier for releases from 1 January 2026; 50% for releases to 31 December 2025. Carbonated drinks: 50% to 31 December 2025 (see `sa-excise-tax`) | Specified goods |
 | **Customs duties** | 5%–25% standard; higher for protected sectors | Imports (Saudi applies GCC Common Customs Tariff) |
 
 ### Filing calendar
@@ -486,7 +486,7 @@ The Zakat, Tax and Customs Authority (ZATCA) — formed in 2021 by the merger of
 | **VAT return — quarterly filer** (turnover ≤ SAR 40M) | Quarterly | End of month following the quarter |
 | **WHT return** | Monthly | First 10 days of the following month |
 | **Annual WHT reconciliation** | Annual | 120 days after FY end |
-| **Excise tax return** | Bi-monthly | 15 days after the period |
+| **Excise tax return** | 2-month tax periods | End of the month after the period, from 1 January 2026 (15 days after the period before that) |
 | **Transfer pricing — Local File / Master File / CbCR** | Annual | With CIT return for LF/MF; CbCR per OECD timing |
 
 ## Section 8 — GOSI Registration + Mudad Payroll Setup
@@ -688,7 +688,7 @@ When operating under uncertainty:
 - **Companies Law** — Royal Decree No. M/3 of 28/1/1437H (28 January 2015), as amended by Royal Decree No. M/132 of 1/12/1443H (28 June 2022) — major modernisation; Implementing Regulations issued by MoC.  _(Royal Decree No. M/3 of 28/1/1437H; Royal Decree No. M/132 of 1/12/1443H)_
 - **New Investment Law** — Royal Decree No. M/19 of 4/2/1446H (August 2024); Implementing Regulations effective 2025.  _(Royal Decree No. M/19 of 4/2/1446H)_
 - **Income Tax Law** — Royal Decree No. M/1 of 15/1/1425H (2004); Implementing Regulations 2004 as amended.  _(Royal Decree No. M/1 of 15/1/1425H)_
-- **Zakat Implementing Regulations** — Issued by Ministerial Decision No. 2082 of 1/6/1438H (2017) as amended.  _(Ministerial Decision No. 2082 of 1/6/1438H)_
+- **Zakat Implementing Regulations**: Zakat years starting on or after 1 January 2024: Ministerial Resolution No. 1007 of 19/8/1445H, replacing Resolution No. 2216 of 7/7/1440H.  _(Ministerial Resolution No. 1007 of 19/8/1445H; ZATCA Zakat General Guideline 1445AH s 3.1)_
 - **VAT Law** — Royal Decree No. M/113 of 2/11/1438H (2017); VAT Implementing Regulations 2017 as amended; standard rate raised from 5% to 15% effective 1 July 2020.  _(Royal Decree No. M/113 of 2/11/1438H)_
 - **Real Estate Transaction Tax (RETT) Implementing Regulations** — Effective October 2020.  _(RETT Implementing Regulations, effective October 2020)_
 - **Excise Tax Law and Implementing Regulations** — 2017 with subsequent expansions of covered goods.  _(Excise Tax Law and Implementing Regulations, 2017)_

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Canadian self-employment busine
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Edgar Lautsyus
 review_status: pending_review
 depends_on:
@@ -80,7 +80,7 @@ Provincial tax is additional. Each province has its own brackets. This skill cov
 | Maximum CPP contribution | $8,068.20 |
 | Maximum CPP2 contribution | $792.00 |
 
-Half of CPP self-employed contributions is deductible on Line 22200.
+Half of the 9.9% base contribution is a credit on Line 31000. The other half of the base, the 2% first additional contribution and all CPP2 are deductible on Line 22200.  _(Schedule 8 (T1-2025), Part 4, lines 10 to 17; ITA s. 60(e))_
 
 ### Key T2125 Thresholds [T1]
 
@@ -173,7 +173,7 @@ Ideal -- complete bookkeeping records, CCA schedule from prior year, motor vehic
 | PARKING (business) | Motor vehicle or travel | T1 | Fully deductible if business purpose |
 | CRA INCOME TAX, TAX INSTALMENT | EXCLUDE | Not deductible | Income tax is not a business expense |
 | CRA GST PAYMENT, GST REMITTANCE | EXCLUDE from T2125 | T1 | GST is separate system. Net of GST on T2125 if registered. |
-| CPP CONTRIBUTION | EXCLUDE from T2125 | T1 | CPP is not a T2125 expense. Half deductible on Line 22200. |
+| CPP CONTRIBUTION | EXCLUDE from T2125 | T1 | CPP is not a T2125 expense. Claim on Line 22200 and Line 31000 per Schedule 8. |
 | PERSONAL, GROCERY, AMAZON (personal) | EXCLUDE | Not deductible | Personal expenses |
 | COMPUTER, LAPTOP, EQUIPMENT (over $500) | CCA (not current expense) | T1 | Capital -- claim CCA. See Section 5.4. |
 | MEMBERSHIP, DUES, PROFESSIONAL BODY | Line 8760 (Management fees) or 9270 | T1 | Fully deductible if business-related |
@@ -214,8 +214,8 @@ Computation:
 - Expenses: 2,400 + 1,500 + 8,000 + 3,000 + 600 + 2,175 = CAD 17,675
 - Net business income: CAD 77,325
 - CPP (base): capped at the YMPE, so (71,300 - 3,500) x 11.9% = CAD 8,068.20 — the 2025 maximum. Net income of 77,325 exceeds the 71,300 YMPE, so the base contribution is capped; do not apply 11.9% to the full 77,325.
-- CPP2: (77,325 - 71,300) x 8% = CAD 482.00 on earnings between the YMPE (71,300) and the YAMPE (81,200). Flag for reviewer — this example does not carry CPP2 through to the deduction below.
-- Half base CPP deductible: CAD 4,034.10 (base CPP only)
+- CPP2: (77,325 - 71,300) x 8% = CAD 482.00 on earnings between the YMPE (71,300) and the YAMPE (81,200).
+- Line 22200 deduction (2025 Schedule 8): half of base 3,356.10 + first additional 1,356.00 + CPP2 482.00 = CAD 5,194.10. Line 31000 credit base: CAD 3,356.10
 
 ### Example 2 -- Vehicle (Km-Based Apportionment)
 
@@ -454,7 +454,7 @@ ONBOARDING QUESTIONS -- CANADA T2125
 - NEVER claim vehicle expenses without a km log
 - NEVER exceed the passenger vehicle cost limit for CCA
 - NEVER include income tax payments as business expenses
-- NEVER include CPP contributions as T2125 expenses (half goes to Line 22200)
+- NEVER include CPP contributions as T2125 expenses (they go to Line 22200 and Line 31000 per Schedule 8)
 - NEVER report GST/HST-inclusive amounts on T2125 if the business is a registrant
 - NEVER present tax calculations as definitive -- always label as estimated
 

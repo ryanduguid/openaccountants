@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese income tax for self-em
 version: 2.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -291,10 +291,16 @@ Restaurant meal JPY 48,000. If this was a client entertainment dinner (接待交
 | Total Income (合計所得金額) | Basic Deduction (2025) |
 | --- | --- |
 | Up to JPY 1,320,000 | JPY 950,000 |
-| JPY 1,320,001 -- 2,695,000 | JPY 880,000 |
-| JPY 2,695,001 -- 6,550,000 | JPY 680,000 |
+| JPY 1,320,001 -- 3,360,000 | JPY 880,000 |
+| JPY 3,360,001 -- 4,890,000 | JPY 680,000 |
+| JPY 4,890,001 -- 6,550,000 | JPY 630,000 |
 | JPY 6,550,001 -- 23,500,000 | JPY 580,000 |
+| JPY 23,500,001 -- 24,000,000 | JPY 480,000 |
+| JPY 24,000,001 -- 24,500,000 | JPY 320,000 |
+| JPY 24,500,001 -- 25,000,000 | JPY 160,000 |
 | Above JPY 25,000,000 | JPY 0 |
+
+Source: NTA Tax Answer No. 1199 基礎控除: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm. These are the 2025 (令和7年分) amounts for residents. For 2026 and 2027 the same page gives JPY 1,040,000 up to JPY 4,890,000, JPY 670,000 to JPY 6,550,000 and JPY 620,000 to JPY 23,500,000, with the same taper above that; the 2026 rule takes effect on 1 December 2026 (see the page's notes). From 2028: JPY 990,000 up to JPY 1,320,000 and JPY 620,000 to JPY 23,500,000.
 
 ### 5.6 Advance Tax / Estimated Tax (予定納税)
 

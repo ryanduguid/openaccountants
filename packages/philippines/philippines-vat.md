@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: PH
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 reviewed_by: Jonathan I. Ruiz, CPA
 review_status: pending_review
 depends_on:
@@ -70,7 +70,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown export/zero-rate qualification | 12% until evidence confirmed |
 | Unknown business-use % (vehicle, phone) | 0% input VAT |
 | Unknown whether Official Receipt compliant | No input credit |
-| Unknown B2B vs B2C for digital services | 12% domestic |
+| Unknown B2B vs B2C for digital services bought from a nonresident | Client engaged in business: reverse charge at 12% (Section 3.6) |
 | Unknown PEZA status | Not zero-rated until certificate confirmed |
 
 ### Red flag thresholds
@@ -103,7 +103,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-PH-2 — PEZA/BOI zero-rating complex structures** — PEZA-registered enterprises have specific zero-rating rules for sales within the ecozone. If the client sells to a PEZA entity and claims zero-rating, verify the PEZA certificate — if complex, escalate to a Philippine CPA.
 - **R-PH-3 — Partial exemption with mixed supplies** — If the business makes both taxable and exempt supplies and cannot directly attribute input VAT, an allocation is required. Out of scope without the annual ratio — escalate.
 - **R-PH-4 — Withholding VAT (Final Withholding VAT)** — Certain transactions (e.g., payments by government, non-residents) are subject to final withholding VAT. If significant government contracts exist, track separately — escalate to a CPA.
-- **R-PH-5 — Digital service providers (non-residents)** — Non-resident digital service providers with Philippine consumption must register for VAT under the Digital Economy Taxation Act. Out of scope for domestic filers.
+- **R-PH-5 — Digital service providers (non-residents)** — Nonresident digital service providers (DSPs) must register for VAT under RA 12023 and RR 3-2025 s.5. Their own registration and Form 2550-DS are out of scope. A Philippine business buying from them is in scope: it withholds and remits the VAT by reverse charge (Section 3.6), including a buyer that is not VAT-registered.
 
 ## Section 3 — Supplier pattern library
 
@@ -197,22 +197,35 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 | JOLLIBEE (eat-in) | Input 12% | 12% | Restaurant — 12% (food not exempt when eaten in) |
 | MCDONALD'S PHILIPPINES | Input 12% | 12% | Restaurant — 12% |
 
-### 3.6 SaaS — international suppliers (note: PH now has digital VAT)
+### 3.6 SaaS — international suppliers (reverse charge since 2 June 2025)
 
-Under the Digital Economy Taxation Act (R.A. 11976, signed 2024), non-resident digital service providers must register for Philippine VAT. For B2B PKP buyers: input credit claimable if the foreign supplier charges and remits 12% VAT.
+RA 12023 (VAT on Digital Services) applies 12% VAT to digital services consumed in the Philippines. Nonresident DSPs are subject to it from 2 June 2025 (RMC 47-2025, A4 and A17). RA 11976 is the separate Ease of Paying Taxes Act.
+
+Who accounts for the VAT when the seller is a nonresident DSP:
+
+- **Buyer engaged in business, or a government body (B2B):** the buyer withholds 12% and remits it on BIR Form 1600-VT within 10 days after the end of the month of withholding. This applies whether or not the DSP is registered, and whether or not the buyer is VAT-registered. Do not wait for VAT to appear on the invoice. (RR 3-2025 ss.6(B)(1) and 6(C); RMC 47-2025, A13 and A18)
+- **Scope difference:** Tax Code s.114(D), as added by RA 12023, names a 'VAT-registered taxpayer'. RR 3-2025 and RMC 47-2025 extend the buyer's duty to all persons engaged in business and government bodies. This guide follows the regulation. (RA 12023: https://lawphil.net/statutes/repacts/ra2024/ra_12023_2024.html)
+- **Input VAT:** only a VAT-registered buyer claims it, using the filed Form 1600-VT as proof. A non-VAT-registered buyer treats the withheld VAT as part of cost. (RR 3-2025 ss.6(B)(1) and 7(C): https://bir-cdn.bir.gov.ph/BIR/pdf/RR%20No.%203-2025.pdf; RMC 47-2025, A28: https://bir-cdn.bir.gov.ph/BIR/pdf/RMC%20No.%2047-2025.pdf)
+- **Invoice:** the DSP states the VAT on the invoice or, if it cannot, annotates that the buyer must remit the 12%. RMC 47-2025 illustrates both: a USD 112 VAT-inclusive contract price where the buyer pays USD 100 and remits USD 12, and a USD 100 invoice with the annotation. (RMC 47-2025, A13 and A16)
+- **Buyer not engaged in business (B2C):** the DSP pays the VAT. If the DSP cannot establish the buyer's status after reasonable efforts, it presumes B2C and pays; give the DSP the client's TIN so that the correct treatment applies. (RR 3-2025 s.6(B)(2); RMC 47-2025, A14 and A27)
+- **Full-year contract prepaid without VAT before 2 June 2025:** the DSP, not the buyer, is liable for VAT on services from 2 June 2025. (RMC 47-2025, A29)
+- **Resident DSP (Philippine seller):** normal VAT invoice and normal input VAT, not reverse charge. (RR 3-2025 ss.6(A) and 7(C))
+- **No 12% VAT:** the digital services in RR 3-2025 s.10, and services directly attributable to the registered activity of a qualifying registered business enterprise or to the export activity of an export-oriented enterprise. (RMC 47-2025, A26)
+
+Unconfirmed: RR 14-2025, which amends the RR 3-2025 transitional dates, could not be opened (HTTP 403). The dates above come from RMC 47-2025, issued after it. This guide does not confirm which contracting entity each supplier below uses in the Philippines; check the invoice.
 
 **SaaS — international suppliers**
 
-| Pattern | Status | Treatment | Notes |
-| --- | --- | --- | --- |
-| GOOGLE (Workspace, Ads, Cloud) | Should be registered | Input 12% if charged | Check if Google charges PH VAT on invoice |
-| MICROSOFT (365, Azure) | Should be registered | Input 12% if charged | Same |
-| META, FACEBOOK ADS | Should be registered | Input 12% if charged | Same |
-| NETFLIX | Registered | 12% on subscription | Consumer-facing |
-| ZOOM | Check | Input 12% if charged | Verify registration |
-| SLACK | Check | Input 12% if charged | Verify |
-| NOTION, OPENAI, ANTHROPIC | Check | Flag for verification | Verify PH registration status |
-| AWS | Check | Input 12% if charged | Verify |
+| Pattern | Treatment if the invoice is from a nonresident | Notes |
+| --- | --- | --- |
+| GOOGLE (Workspace, Ads, Cloud) | Reverse charge 12% on Form 1600-VT | Online advertising and cloud are named digital services |
+| MICROSOFT (365, Azure) | Reverse charge 12% on Form 1600-VT | Same |
+| META, FACEBOOK ADS | Reverse charge 12% on Form 1600-VT | Same |
+| NETFLIX | Reverse charge 12% on Form 1600-VT for a business subscriber | A subscriber not in business pays VAT in the price |
+| ZOOM | Reverse charge 12% on Form 1600-VT | Same as Google |
+| SLACK | Reverse charge 12% on Form 1600-VT | Same as Google |
+| NOTION, OPENAI, ANTHROPIC | Reverse charge 12% on Form 1600-VT | Same as Google |
+| AWS | Reverse charge 12% on Form 1600-VT | Same as Google |
 
 ### 3.7 Payment processors (exempt fees)
 
@@ -375,7 +388,7 @@ Client lunch at Jollibee. In the Philippines, there is no absolute block on ente
 
 ### 6.4 Digital services — foreign provider VAT status
 
-- **Digital services — foreign provider VAT status** — **What it shows:** Payment to a foreign tech/SaaS company. **What's missing:** Whether the foreign provider has registered for Philippine VAT (post-Digital Economy Act 2024) and whether they are charging 12% VAT on invoices. **Conservative default:** No input credit until confirmed. **Question to ask:** "Does the invoice from this foreign provider show Philippine VAT (12%) charged? If not, no input credit is available."
+- **Digital services — foreign provider VAT status** — **What it shows:** Payment to a foreign tech/SaaS company. **What's missing:** Whether the seller is a nonresident DSP and whether Form 1600-VT was filed within 10 days after the month of withholding. Registration status and VAT on the invoice do not decide the buyer's duty (RR 3-2025 s.6(B)(1) and (C)). **Conservative default:** Treat as reverse charge at 12%, and claim input VAT only once the VAT-registered client holds the filed Form 1600-VT (RR 3-2025 s.7(C)). **Question to ask:** "Who is the contracting seller on this invoice? Did you withhold 12% and file Form 1600-VT for that month?"
 
 ### 6.5 Motor vehicle expenses
 
@@ -411,7 +424,7 @@ REVIEWER FLAGS:
   [ ] BIR-registered ORs/invoices confirmed for all input credits?
   [ ] Inward remittance documentation for zero-rated services?
   [ ] PEZA certificates confirmed for zero-rated sales to ecozone?
-  [ ] Digital service provider VAT registration confirmed?
+  [ ] Form 1600-VT filed for every nonresident digital service purchase?
   [ ] Motor vehicle input VAT blocked where applicable?
   [ ] Entertainment ceiling calculated?
 ```
@@ -482,7 +495,7 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 | Input VAT | NIRC Section 110 |
 | Official Receipts | NIRC Section 237 |
 | Registration threshold | NIRC Section 109(BB) (PHP 3M) |
-| VAT on digital services | R.A. 12023 (VAT on Digital Services Law, signed 2 Oct 2024) |
+| VAT on digital services | R.A. 12023 (VAT on Digital Services Law, signed 2 Oct 2024); RR 3-2025; RMC 47-2025 |
 | Penalties | NIRC Sections 248–249 |
 
 ### Known gaps
@@ -491,14 +504,14 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 - Final withholding VAT on government transactions — track separately
 - Percentage tax (non-VAT registered) — separate Form 2551Q; different skill
 - Import VAT (Bureau of Customs process) — coordinate with customs broker
-- Digital Economy VAT implementation — verify BIR RMC for latest guidance
+- RR 14-2025 not read (Section 3.6)
 
 ### Self-check before filing
 
 - [ ] BIR-registered ORs/invoices held for all input VAT claimed
 - [ ] Inward remittance documentation for all zero-rated services
 - [ ] PEZA certificates on file for any PEZA zero-rated sales
-- [ ] Digital service VAT registration confirmed for foreign suppliers
+- [ ] Reverse charge on nonresident digital services remitted on Form 1600-VT, and input VAT supported by the filed form
 - [ ] Prior period excess credit correctly applied
 - [ ] Entertainment input VAT within the BIR ceiling
 
@@ -510,6 +523,7 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 | --- | --- | --- |
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, Digital Economy Act note, no inline tier tags |
+| 2.0 | 31 October 2026 | Corrected the digital services citation to RA 12023 and rewrote Section 3.6 and related rules around the reverse charge |
 
 ## Prohibitions
 

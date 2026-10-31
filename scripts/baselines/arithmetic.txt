@@ -4,7 +4,6 @@
 # it with: python3 scripts/check-arithmetic.py --update-baseline
 skills/federal/us-foreign-earned-income-2555.md::204,000 + $60,000 − $15,750 = $248,250 = $56,503
 skills/federal/us-form-941-940-payroll.md::100,000 × 0.9% = $900 = $5,250
-skills/federal/us-r-and-d-section-174-and-41.md::1/5 × 1/2 = $521,000
 skills/federal/us-schedule-c-and-se-computation.md::12.5% x 2.564% = $977
 skills/international/andorra/ad-income-tax.md::50,780.72 ( 10,780.72) × 10% = 1,078.07
 skills/international/australia/au-payroll-tax.md::($1,200,000 / 7) = $1,128,571
@@ -28,7 +27,7 @@ skills/international/montenegro/montenegro-social-contributions.md::0.5% × 700 
 skills/international/netherlands/netherlands-crypto-tax.md::9,094 ÷ €170,000 = 5.3494%
 skills/international/paraguay/paraguay-social-contributions.md::450.000 + 825.000 = 1.275.000
 skills/international/portugal/portugal-crypto-tax.md::(5 × €4.000) − (5 × €1.500) − €100 = €12.400
-skills/international/portugal/pt-corporate-tax.md::6.000 × 10% = €600
+skills/international/portugal/pt-corporate-tax.md::6.000 × 8% = €480
 skills/international/slovenia/slovenia-social-contributions.md::(27,089.00-9,210.26) x 26% = 6,122.11
 skills/international/slovenia/slovenia-social-contributions.md::(54,178.00-27,089.00) x 33% = 15,061.48
 skills/international/slovenia/slovenia-social-contributions.md::(78,016.32-54,178.00) x 39% = 24,358.42

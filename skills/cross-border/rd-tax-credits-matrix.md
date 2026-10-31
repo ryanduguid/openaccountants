@@ -1,10 +1,10 @@
 ---
 name: rd-tax-credits-matrix
-description: "Use this skill whenever a company asks about claiming a research and development tax credit, super-deduction, refundable cash incentive, or grant tied to R&D. Trigger on phrases like \"R&D credit\", \"R&D tax credit\", \"R&D super-deduction\", \"RDEC\", \"merged RDEC\", \"ERIS\", \"enhanced R&D intensive support\", \"SR&ED\", \"CIR\", \"Crédit d'Impôt Recherche\", \"Forschungszulage\", \"WBSO\", \"SLIM (Spain)\", \"credito ricerca\", \"patent box vs R&D\", \"R&D in OBBBA\", \"§174 capitalization\", \"§41 R&D credit\", \"JEI / JEU\", \"China R&D super-deduction\", \"India R&D §35\", \"Australia R&DTI\", \"USDA SBIR\", \"OECD frascati definition\", \"qualifying R&D\", or any request to compute eligibility, qualifying expenditure, and benefit value of an R&D incentive. Covers 25+ regimes including the post-2024 UK merged RDEC, US §174 capitalisation rules, France CIR, Germany Forschungszulage, Netherlands WBSO and Innovation Box interaction, China 175% super-deduction, India §35, Australia R&DTI, Canada SR&ED. Does NOT cover: patent box (see ip-patent-box-matrix), depreciation of capitalised R&D, grant accounting beyond reference, customs duty on R&D imports. ALWAYS read this skill before assessing R&D credit eligibility or computing a claim."
+description: "Use this skill whenever a company asks about claiming a research and development tax credit, super-deduction, refundable cash incentive, or grant tied to R&D. Trigger on phrases like \"R&D credit\", \"R&D tax credit\", \"R&D super-deduction\", \"RDEC\", \"merged RDEC\", \"ERIS\", \"enhanced R&D intensive support\", \"SR&ED\", \"CIR\", \"Crédit d'Impôt Recherche\", \"Forschungszulage\", \"WBSO\", \"SLIM (Spain)\", \"credito ricerca\", \"patent box vs R&D\", \"R&D in OBBBA\", \"§174 capitalization\", \"§41 R&D credit\", \"JEI / JEU\", \"China R&D super-deduction\", \"India R&D §35\", \"Australia R&DTI\", \"USDA SBIR\", \"OECD frascati definition\", \"qualifying R&D\", or any request to compute eligibility, qualifying expenditure, and benefit value of an R&D incentive. Covers 25+ regimes including the post-2024 UK merged RDEC, US §174A deduction and §174 foreign amortisation rules, France CIR, Germany Forschungszulage, Netherlands WBSO and Innovation Box interaction, China 175% super-deduction, India §35, Australia R&DTI, Canada SR&ED. Does NOT cover: patent box (see ip-patent-box-matrix), depreciation of capitalised R&D, grant accounting beyond reference, customs duty on R&D imports. ALWAYS read this skill before assessing R&D credit eligibility or computing a claim."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - cross-border-workflow-base
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 **Tax year coverage.** Current for **fiscal year 2025**, reflecting:
 - **UK merged RDEC scheme** (FA 2024) for accounting periods beginning on or after 1 April 2024, replacing the small/mid-size R&D scheme with a single 20% above-the-line credit (~15% post-tax)
 - **UK ERIS (Enhanced R&D Intensive Support)** for R&D-intensive loss-making SMEs (40%+ qualifying expenditure ratio) — 86% uplift + 14.5% credit on surrendered loss
-- **US §174 R&D capitalisation** still in force per TCJA 2017 amendments (5-year domestic / 15-year foreign amortisation), with continued legislative pressure to restore immediate expensing
+- **US §174A and §174**: under OBBBA (P.L. 119-21, 4 July 2025), domestic R&D paid or incurred in tax years beginning after 31 December 2024 is deductible currently under §174A unless amortisation is elected; foreign R&D stays on 15-year amortisation under §174; TCJA 5-year / 15-year capitalisation is limited to tax years beginning in 2022-2024, with transition elections for remaining domestic balances ([Rev. Proc. 2025-28](https://www.irs.gov/pub/irs-drop/rp-25-28.pdf))
 - **Germany Forschungszulage** raised to **35%** of eligible costs for SMEs (otherwise 25%) under the Wachstumschancengesetz (March 2024); annual cap of EUR 10 million per claimant
 - **France CIR** unchanged at 30% (up to EUR 100m of expenditure; 5% above)
 - **Netherlands WBSO** rates and ceilings updated annually
@@ -94,7 +94,7 @@ This skill does NOT cover:
 
 | Country | Mechanism | Headline rate | Notable |
 | --- | --- | --- | --- |
-| **United States — §41 R&D Credit (Federal)** | Non-refundable credit | **20%** regular method (over base period); **14%** ASC simplified | Plus 6% payroll tax offset for QSBs. §174 capitalisation 5/15 years amortisation continues in 2025. |
+| **United States — §41 R&D Credit (Federal)** | Non-refundable credit | **20%** regular method (over base period); **14%** ASC simplified | Qualified small businesses may elect to apply up to $500,000 of the credit against employer payroll tax, for tax years beginning after 31 December 2022 ([§41(h); Instructions for Form 8974](https://www.irs.gov/instructions/i8974)). Post-2024 domestic R&D deductible currently under §174A unless amortisation elected; foreign R&D 15-year amortisation under §174 ([Rev. Proc. 2025-28](https://www.irs.gov/pub/irs-drop/rp-25-28.pdf)). |
 | **United States — State R&D Credits** | Various | 1.5% (NY)-15% (CA additional) | Stackable with federal |
 | **Canada — SR&ED** | Refundable / non-refundable credit | **35% refundable** for CCPCs on first CAD 3m; **15% non-refundable** above and for non-CCPCs | Provincial top-ups in ON, QC, BC, MB, NS, SK |
 | **Mexico — R&D Tax Credit** | Credit | **30%** of incremental R&D expenditure | Limited budget; advance allocation required |
@@ -170,11 +170,11 @@ For a UK accounting period beginning on or after 1 April 2024:
 
 - **France CIR usage rules** — Offset against CIT due. Carry forward 3 years. Refund at end of year 4 if unused. Immediate refund for SMEs, JEI, young innovative companies, and loss-making companies in conciliation/safeguard. Pre-financing schemes (BPI France) advance the credit.  _(unsure)_
 
-## Section 6 — US §174 capitalisation interaction
+## Section 6 — US §174A and §174 interaction
 
-- **US §174 capitalisation rules** — TCJA 2017 amended IRC §174 effective for tax years beginning after 31 December 2021. Key effects: Domestic R&D expenditure must be capitalised and amortised over 5 years (mid-year convention). Foreign R&D expenditure must be capitalised and amortised over 15 years. Affects all R&D expenditure regardless of credit eligibility. §41 R&D credit base is independent of §174 capitalisation. Pending legislation has not restored immediate expensing as of mid-2025; bipartisan support exists but not enacted.  _([T1])_
+- **US §174A and §174 rules** — Post-2024 domestic: OBBBA (P.L. 119-21, enacted 4 July 2025) added §174A. Domestic research or experimental expenditure paid or incurred in tax years beginning after 31 December 2024 is deductible currently, unless the taxpayer elects under §174A(c) to capitalise it and amortise it over not less than 60 months from the month benefits are first realised. Post-2024 foreign: §174 now applies only to foreign research, capitalised and amortised over 15 years from the midpoint of the tax year. Tax years beginning after 31 December 2021 and before 1 January 2025: TCJA §174 required capitalisation over 5 years (domestic) or 15 years (foreign), from the midpoint of the tax year. Legacy domestic balances: the remaining unamortised amount may be recovered, by election, in full in the first tax year beginning after 31 December 2024 or ratably over 2 tax years from that year. §41 interaction: the §41 base is computed separately, but §280C(c)(1) reduces the post-2024 domestic amount deducted or capitalised by the credit unless the §280C(c)(2) reduced-credit election is made.  _([T1] [OBBBA P.L. 119-21 §70302; IRC §174; IRC §174A; Rev. Proc. 2025-28, sections 2.02 to 2.06](https://www.irs.gov/pub/irs-drop/rp-25-28.pdf))_
 
-[T2] Cash-flow timing of US R&D expenditure changed materially. R&D-intensive companies face significant Year 1 tax liabilities they did not have pre-TCJA. The §41 credit partially offsets but does not eliminate the cash impact.
+[T2] Cash-flow timing depends on the year and place of the research. For post-2024 domestic R&D the §174A deduction removes the Year 1 liability that TCJA capitalisation caused. Foreign R&D keeps that cost, and 2022-2024 domestic balances keep it unless recovered by election. The §41 credit partially offsets but does not eliminate the cash impact.
 
 ## Section 7 — Pillar Two interaction
 
@@ -233,7 +233,7 @@ The reviewer brief must include:
 2. **Qualifying expenditure schedule** by category and project
 3. **Credit/super-deduction computation** per regime claimed
 4. **Refundable vs non-refundable analysis** and Pillar Two GloBE Income classification
-5. **§174 amortisation schedule** (US claimants)
+5. **§174A deduction, §174 foreign amortisation and legacy 2022-2024 domestic recovery schedule** (US claimants)
 6. **Filing deadline calendar** per regime
 7. **Grant / state-aid offset** schedule
 8. **Patent box interaction** — confirm no double-counting; route IP income separately
@@ -245,7 +245,7 @@ The reviewer brief must include:
 - [ ] Frascati criteria applied per project — novelty, creativity, uncertainty, systematic, transferable
 - [ ] Qualifying expenditure categories per regime, not assumed by analogy
 - [ ] Subcontractor restrictions applied (UK 2024+ overseas restriction)
-- [ ] §174 capitalisation modelled separately from §41 credit (US claimants)
+- [ ] §174A deduction, §174 foreign amortisation and legacy 2022-2024 domestic recovery modelled separately from §41 credit (US claimants)
 - [ ] Refundability tested for Pillar Two QRTC classification
 - [ ] Grant / state-aid offset applied to credit base
 - [ ] Patent box income excluded from R&D credit base where claimed under patent box
@@ -255,7 +255,7 @@ The reviewer brief must include:
 
 ## Section 11 — Prohibitions
 
-- **Prohibitions list** — - Do not claim R&D credits for routine quality control, market research, social science research, or aesthetic/cosmetic activities — these fail the Frascati novelty test - Do not include grants in the qualifying expenditure base when the regime requires offset - Do not advise overseas subcontracting in the UK without confirming the limited 2024 exception applies - Do not stack R&D credit and patent box on the same IP income — Modified Nexus Approach requires separation - Do not treat the §41 US credit as solving the §174 capitalisation cash-flow timing problem — they are distinct - Do not ignore the OECD Pillar Two refundability classification — non-qualified credits push down the jurisdictional ETR  _(unsure)_
+- **Prohibitions list** — - Do not claim R&D credits for routine quality control, market research, social science research, or aesthetic/cosmetic activities — these fail the Frascati novelty test - Do not include grants in the qualifying expenditure base when the regime requires offset - Do not advise overseas subcontracting in the UK without confirming the limited 2024 exception applies - Do not stack R&D credit and patent box on the same IP income — Modified Nexus Approach requires separation - Do not treat the §41 US credit as solving the cash-flow timing of foreign or legacy §174 amortisation — they are distinct - Do not ignore the OECD Pillar Two refundability classification — non-qualified credits push down the jurisdictional ETR  _(unsure)_
 
 ## Section 12 — Disclaimer
 

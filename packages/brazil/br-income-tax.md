@@ -5,9 +5,9 @@ version: 2.0
 jurisdiction: BR
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Ariane Marrocos
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -37,9 +37,24 @@ A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui 
 | Acima de 55.976,16 | 27,5% | 10.853,78 |
 
 - **Fórmula (anual)** — Imposto = (renda tributável × alíquota) − dedução
-- **Ano-calendário 2026 (DIRPF 2027)** — A tabela progressiva mantém-se, mas a Lei nº 15.270/2025 (art. 11-A da Lei nº 9.250/1995) reduz o imposto anual de modo a zerá-lo para rendimentos tributáveis até R$ 60.000,00 e, entre R$ 60.000,01 e R$ 88.200,00, em R$ 8.429,73 − (0,095575 × rendimentos tributáveis sujeitos ao ajuste anual), decrescente até zero; institui ainda a tributação mínima das altas rendas. Não aplicar estas reduções ao ano-calendário 2025.
+- **Ano-calendário 2026 (DIRPF 2027)** — A tabela progressiva mantém-se, mas a Lei nº 15.270/2025 (art. 11-A da Lei nº 9.250/1995) reduz o imposto anual de modo a zerá-lo para rendimentos tributáveis até R$ 60.000,00 e, entre R$ 60.000,01 e R$ 88.200,00, em R$ 8.429,73 − (0,095575 × rendimentos tributáveis sujeitos ao ajuste anual), decrescente até zero; institui ainda a tributação mínima das altas rendas (ver 'Lucros e dividendos a partir de janeiro de 2026'). Não aplicar estas reduções ao ano-calendário 2025.
 
 **Faixas mensais do Carnê-Leão** (dividir os limites anuais por 12; tabela mensal específica é publicada pela Receita Federal a cada ano — sempre confirmar a tabela mensal vigente do Carnê-Leão).
+
+### Lucros e dividendos a partir de janeiro de 2026
+
+Seção acrescentada em 2026-10-31, com base no texto da lei, na Receita Federal e no STF; ainda não coberta pela revisão registrada no cabeçalho desta skill.
+
+- **Retenção, pessoa física residente:** desde janeiro de 2026, lucros e dividendos pagos, creditados, empregados ou entregues por uma mesma PJ a uma mesma PF residente em montante superior a R$ 50.000,00 no mês sofrem IRRF de 10% sobre o total do valor, não apenas sobre o excedente, sem deduções. Havendo mais de um pagamento no mês, a retenção é recalculada sobre o total do mês. Até R$ 50.000,00 no mês não há retenção.  _(Lei 9.250/1995, art. 6º-A, caput e §§ 1º e 2º, incluído pela Lei 15.270/2025)_
+- **Recolhimento, residente:** DARF código 1841-01, até o último dia útil do 2º decêndio do mês subsequente ao fato gerador.  _(Lei 11.196/2005, art. 70, I, "e"; Receita Federal, orientação sobre o recolhimento do IRRF)_
+- **Capitalização e Simples Nacional:** para a Receita, a capitalização de lucros é "emprego" e está sujeita à regra (P&R 12), e a retenção alcança as empresas do Simples Nacional (P&R 10). A cautelar pedida na ADI 7.917 foi indeferida por ora. O mérito das ações segue pendente.  _(Receita Federal, Perguntas e Respostas, versão de 19/12/2025; STF, ADI 7.912 MC)_
+- **Ajuste anual:** a isenção do art. 10 da Lei 9.249/1995 continua aplicável no cálculo do imposto do art. 12 da Lei 9.250/1995. Quem não se sujeita à tributação mínima pode ter o IRRF restituído na declaração.  _(Receita Federal, P&R 4 e 12)_
+- **Tributação mínima (ano-calendário 2026, exercício 2027):** aplica-se à PF cuja soma de todos os rendimentos do ano supere R$ 600.000,00. Os dividendos entram na base, ainda que sem retenção, salvo os da transição abaixo. Alíquota de 10% para rendimentos a partir de R$ 1.200.000,00; entre os dois valores, alíquota % = (REND/60.000) - 10. O IRRF do art. 6º-A é deduzido, e o art. 16-B prevê um redutor.  _(Lei 9.250/1995, arts. 16-A e 16-B; Receita Federal, P&R 3 e 12)_
+- **Transição:** ficam fora da retenção os lucros (I) de resultados apurados até o ano-calendário de 2025; (II) com distribuição aprovada até 31/12/2025; e (III) exigíveis nos termos da legislação civil ou empresarial, pagos nos termos originalmente previstos no ato de aprovação. Para excluí-los da tributação mínima, a lei exige ainda pagamento, crédito, emprego ou entrega em 2026, 2027 e 2028. Os arts. 6º-A, § 3º, e 10, § 5º, I, não fixam esse ano-limite no próprio texto, mas a Receita o aplica também à retenção (P&R 7 e 19). A proposta da administração não supre a aprovação pelo órgão competente (P&R 8).  _(Lei 9.250/1995, arts. 6º-A, § 3º, e 16-A, § 1º, XII; Lei 9.249/1995, art. 10, § 5º, I)_
+- **AUDIT FLASH POINT** **Prazo de aprovação da transição:** em 26/12/2025, medida cautelar nas ADIs 7.912 e 7.914, ad referendum do Plenário, prorrogou até 31/01/2026 o prazo do item II acima (arts. 6º-A, § 3º, II, e 16-A, § 1º, XII, "b", da Lei 9.250/1995; art. 10, § 5º, I, "a", da Lei 9.249/1995). Na sessão virtual de 13 a 24/02/2026, houve 2 votos pelo referendo e destaque do Min. Edson Fachin. O andamento da ADI 7.912 consultado em 31/10/2026 não registra decisão do Plenário nem de mérito. O P&R da Receita, anterior à cautelar, ainda indica 31/12/2025. Distribuição aprovada entre 01/01/2026 e 31/01/2026 depende dessa cautelar: sinalizar para revisão e confirmar o andamento antes de concluir. Não confirmado na fonte: efeito de eventual não referendo sobre aprovações já feitas nesse período.  _(STF, ADI 7.912 MC, decisão de 26/12/2025; STF, andamento da ADI 7.912)_
+- **Não residentes:** desde janeiro de 2026, lucros e dividendos pagos, creditados, entregues, empregados ou remetidos ao exterior sofrem IRRF de 10%, em qualquer valor, sem o limite de R$ 50.000,00, inclusive para país que não tribute a renda ou a tribute a menos de 17%. DARF código 1841-02, com vencimento no dia do fato gerador. Não há incidência para (a) governos estrangeiros, com reciprocidade; (b) fundos soberanos do art. 3º, § 5º, da Lei 11.312/2006; e (c) entidades no exterior cuja principal atividade seja administrar benefícios previdenciários, conforme regulamento; nesses casos, qualquer que seja o ano de apuração do lucro. A transição acima também se aplica. O art. 10-A prevê crédito, por opção do beneficiário, quando a carga conjunta superar as alíquotas nominais.  _(Lei 9.249/1995, arts. 10, §§ 4º e 5º, e 10-A; Lei 11.196/2005, art. 70, I, "a"; Receita Federal, P&R 16, 17, 18, 19, 21 e 22)_
+
+Fontes abertas em 2026-10-31: Lei 15.270/2025, publicação original (Senado): https://legis.senado.leg.br/norma/41758136/publicacao/41762089 ; Receita Federal: https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/receita-federal-orienta-sobre-os-procedimentos-para-o-recolhimento-do-imposto-de-renda-retido-na-fonte-sobre-lucros-e-dividendos ; Perguntas e Respostas: https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/perguntas-e-respostas/dirf/manual_padrao_rfb_per_tributacao_cotin_v-19-12-2025.pdf ; STF: https://noticias.stf.jus.br/postsnoticias/stf-prorroga-prazo-para-aprovacao-de-lucros-e-dividendos-ate-janeiro-de-2026/ ; andamento: https://portal.stf.jus.br/processos/detalhe.asp?incidente=7466925
 
 ### IRPJ — alíquotas e regimes
 
@@ -144,7 +159,7 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 | I-09 | `NOTA FISCAL [número]` / `NF SERVIÇOS` | Receita bruta — retenção de PJ | Se de PJ, IRRF e INSS podem ter sido retidos; conferir com o Comprovante |
 | I-10 | `RESTITUIÇÃO IRPF RECEITA` | NÃO é receita — restituição de IRPF | Restituição não é renda tributável |
 | I-11 | `RENDIMENTO POUPANÇA` / `JUROS CDB` | Rendimentos isentos (até certos limites) ou tributados | Juros bancários: LCA/LCI podem ser isentos; CDB sujeito a IOF/IR — sinalizar |
-| I-12 | `DIVIDENDOS` (de empresa) | Isentos (se PJ distribuindo dividendos pelas regras atuais) | Dividendos atualmente isentos de IRPF no Brasil (em discussão na reforma — verificar) |
+| I-12 | `DIVIDENDOS` (de empresa) | Isentos no cálculo do art. 12; desde janeiro de 2026, IRRF de 10% sobre o total se a mesma PJ pagar à mesma PF mais de R$ 50.000,00 no mês | Lei 9.250/1995, art. 6º-A. Confirmar transição e tributação mínima (Seção 1, 'Lucros e dividendos a partir de janeiro de 2026') |
 
 ### Padrões de despesa
 
@@ -342,7 +357,7 @@ IRPF: BRL 57.600 × 27,5% − BRL 10.740,98 = BRL 15.840 − BRL 10.740,98 = **B
 | T2-BR-3 | Renda de aluguel | Tratamento tributário separado; Carnê-Leão com deduções diferentes | Sinalizar — renda de aluguel em Ficha separada; deduções específicas (IPTU, manutenção) |
 | T2-BR-4 | Ganho de capital | Programa GCAP separado; alíquotas 15%/17,5%/20%/22,5% | Sinalizar — não incluir na Ficha de Rendimentos Tributáveis |
 | T2-BR-5 | Renda em cripto / ativos digitais | IN RFB 1888/2019 e normativos posteriores; reporte complexo | Sinalizar — ganhos em cripto tributados como ganho de capital; apuração mensal se ganhos > BRL 35.000/mês |
-| T2-BR-6 | Dividendos da própria empresa | Atualmente isentos (em revisão na reforma) | Sinalizar — verificar status atual de isenção de dividendos antes de declarar |
+| T2-BR-6 | Dividendos da própria empresa | Desde janeiro de 2026: IRRF de 10% acima de R$ 50.000,00 no mês por PJ; tributação mínima acima de R$ 600.000,00 no ano | Sinalizar: conferir ato de aprovação e transição (prazo sob a cautelar das ADIs 7.912 e 7.914) e somar os dividendos aos rendimentos do ano (Seção 1) |
 
 ## Seção 7 — Modelo de papel de trabalho em Excel
 
@@ -456,7 +471,7 @@ SEÇÃO F — ALERTAS PARA O REVISOR
 
 ### Legislação principal
 
-- **Lista de legislação** — RIR/2018 (Regulamento do Imposto de Renda) — Decreto 9.580/2018; Lei 7.713/1988 — rendimentos isentos de IRPF; Lei 9.250/1995 — alterações da legislação do IRPF; Lei 9.249/1995 — alíquotas de IRPJ e CSLL; Lei 9.430/1996 — apuração trimestral de IRPJ e demais ajustes; IN RFB 1.700/2017 — determinação e apuração do IRPJ e CSLL; IN RFB 2.178/2024 — regras do Carnê-Leão e DIRPF para o ano-calendário 2024; Instrução Normativa RFB 1.888/2019 — reporte de criptoativos; EC 132/2023, LC 214/2025, LC 227/2026 — reforma tributária (consumo); IR não é afetado estruturalmente
+- **Lista de legislação** — RIR/2018 (Regulamento do Imposto de Renda) — Decreto 9.580/2018; Lei 7.713/1988 — rendimentos isentos de IRPF; Lei 9.250/1995 — alterações da legislação do IRPF; Lei 9.249/1995 — alíquotas de IRPJ e CSLL; Lei 15.270/2025 (lucros e dividendos, tributação mínima das altas rendas); Lei 9.430/1996 — apuração trimestral de IRPJ e demais ajustes; IN RFB 1.700/2017 — determinação e apuração do IRPJ e CSLL; IN RFB 2.178/2024 — regras do Carnê-Leão e DIRPF para o ano-calendário 2024; Instrução Normativa RFB 1.888/2019 — reporte de criptoativos; EC 132/2023, LC 214/2025, LC 227/2026 — reforma tributária (consumo); IR não é afetado estruturalmente
 
 ### Calendário de entrega e pagamento 2025 (ano-base 2024)
 

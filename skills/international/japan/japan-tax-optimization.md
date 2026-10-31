@@ -4,7 +4,7 @@ description: Use this skill when advising on LEGAL tax minimization strategies f
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -154,8 +154,8 @@ Add residence tax (~10%) and reconstruction surtax (2.1% of income tax, through 
 | Topic | Detail |
 | --- | --- |
 | Exemption threshold | Taxable sales ≤¥10 million in base period (2 years prior) → exempt (免税事業者). But qualified invoice issuer registration waives exemption |
-| Qualified Invoice System (インボイス制度) | From 1 Oct 2023. Registered businesses issue qualified invoices; buyers need these for input tax credits. Non-registered sellers lose B2B competitiveness |
-| Special 20% accommodation | Small businesses newly registered as invoice issuers: may use actual sales tax × 20% as payable amount (effectively 80% relief). Valid through September 2026 |
+| Qualified Invoice System (インボイス制度) | From 1 Oct 2023. Registered businesses issue qualified invoices; buyers generally need these for full input tax credits, apart from book-only cases in NTA Tax Answer No. 6496, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6496.htm (a declining transitional credit applies to purchases from non-registered suppliers until 30 Sep 2031). Non-registered sellers lose B2B competitiveness |
+| Special 20% accommodation | Small businesses newly registered as invoice issuers: may use actual sales tax × 20% as payable amount (effectively 80% relief). Covers taxable periods that include any day from 1 October 2023 to 30 September 2026, subject to status conditions such as base-period and specified-period sales of ¥10m or less (NTA Tax Answer No. 6498, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA Invoice Q&A 問115, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf) |
 | Simplified tax system (簡易課税) | Businesses with base-period sales ≤¥50m can elect simplified method: deemed purchase ratio by industry (40%–90%) applied to sales tax. Reduces compliance and often reduces tax for service businesses |
 | Input tax credit | Standard method: claim consumption tax on business purchases. Requires qualified invoices from suppliers |
 | Timing of registration | Voluntary registration creates consumption tax obligations. If primarily B2C (consumers), staying exempt avoids 10% burden on sales |
@@ -246,9 +246,9 @@ Add residence tax (~10%) and reconstruction surtax (2.1% of income tax, through 
 
 Income: ¥8,000,000 business income. No other income.
 
-White return: Taxable income = ¥8,000,000 – basic deduction ¥480,000 = ¥7,520,000. National tax: ~¥1,097,100. Residence tax: ~¥752,000. Total: ~¥1,849,100.
+White return (2025 figures): Taxable income = ¥8,000,000 – basic deduction ¥580,000 = ¥7,420,000. Income tax ¥1,070,600 + 2.1% reconstruction surtax ¥22,482 = ¥1,093,082. Residence tax income levy: (¥8,000,000 – ¥430,000) × 10% = ¥757,000. Total: ~¥1,850,082.
 
-Blue return: Taxable income = ¥8,000,000 – ¥650,000 (blue deduction) – ¥480,000 (basic) = ¥6,870,000. National tax: ~¥946,500. Residence tax: ~¥687,000. Total: ~¥1,633,500. Saving: ~¥215,600 per year.
+Blue return (2025 figures): Taxable income = ¥8,000,000 – ¥650,000 (blue deduction) – ¥580,000 (basic) = ¥6,770,000. Income tax ¥926,500 + 2.1% reconstruction surtax ¥19,456 = ¥945,956. Residence tax income levy: (¥8,000,000 – ¥650,000 – ¥430,000) × 10% = ¥692,000. Total: ~¥1,637,956. Saving: ~¥212,126 per year. Excludes social insurance and other deductions, the residence tax per capita levy and rounding of taxable income. Sources: NTA Tax Answer No. 1199, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm; No. 2260, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm; 総務省 個人住民税, https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html; residence tax basic deduction of ¥430,000 up to ¥24m of income: Chuo City, https://www.city.chuo.lg.jp/a0009/kurashi/zeikin/juuminzei/shotokukoujo/zintekikozyo.html.
 
 ### Example 2 — Layered Deduction Strategy
 
@@ -259,7 +259,7 @@ Sole proprietor, ¥12,000,000 income.
 - Social insurance (NHI + pension): ~¥1,200,000
 - Furusato Nozei: ~¥250,000 (net cost ¥2,000)
 - Total deductions: ~¥3,756,000
-- Taxable income: ~¥7,764,000 (after basic deduction)
+- Taxable income: ~¥7,664,000 (after 2025 basic deduction of ¥580,000)
 - Tax saving vs no planning: ~¥1,300,000 annually (at ~33%+10% marginal)
 
 ### Example 3 — Incorporation at ¥10m Profit

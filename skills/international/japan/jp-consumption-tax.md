@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese Consumption Tax (消�
 jurisdiction: JP
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -137,17 +137,21 @@ Before computing any consumption tax figure, you MUST know:
 | Effect | Once registered, MUST remain taxable even if sales fall below JPY 10M |
 | Cancellation | Must submit cancellation notice; effective from following fiscal year |
 
-### Transitional Measures for Purchasers (2023-2029) [T1]
+### Transitional Measures for Purchasers (2023-2031) [T1]
 
-**Transitional Measures for Purchasers (2023-2029)**
+**Transitional Measures for Purchasers (2023-2031)**
 
 | Period | Input Tax Credit from Non-Registered Suppliers |
 | --- | --- |
 | Oct 2023 -- Sep 2026 | 80% of input tax creditable |
-| Oct 2026 -- Sep 2029 | 50% of input tax creditable |
-| Oct 2029 onward | 0% -- no credit without qualified invoice |
+| Oct 2026 -- Sep 2028 | 70% of input tax creditable |
+| Oct 2028 -- Sep 2030 | 50% of input tax creditable |
+| Oct 2030 -- Sep 2031 | 30% of input tax creditable |
+| Oct 2031 onward | 0% -- no credit without qualified invoice |
 
-Source: NTA Tax Answer No. 6498 適格請求書等保存方式（インボイス制度） — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA invoice-system portal — https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice.htm.
+**Annual cap per supplier:** the measure covers tax-inclusive purchases from one exempt or other non-registered supplier of up to JPY 1 billion a year for taxable periods starting on or after 1 October 2024, and up to JPY 100 million a year for taxable periods starting on or after 1 October 2026. The excess gets no transitional credit. The credit needs a book entry stating that the measure applies and a retained invoice with the 区分記載請求書等 particulars (NTA Invoice Q&A 問113: https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/113.pdf).
+
+Source: NTA leaflet インボイス制度に関するお知らせ (September 2026): https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0026004-066_02.pdf; NTA Tax Answer No. 6498 適格請求書等保存方式（インボイス制度） — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA invoice-system portal — https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice.htm.
 
 ### Small Business Special Measure (2割特例) [T1]
 
@@ -155,10 +159,14 @@ Source: NTA Tax Answer No. 6498 適格請求書等保存方式（インボイス
 
 | Detail | Value |
 | --- | --- |
-| Eligibility | Businesses that became taxable solely due to invoice registration |
+| Eligibility | Exempt businesses that became invoice issuers, including by filing 課税選択届出書 (not for a period that includes days up to 30 September 2023 when already taxable by that election) |
 | Tax calculation | Tax payable = Output tax x 20% (i.e., deemed input tax = 80%) |
-| Duration | Available through returns for periods ending by September 30, 2026 |
+| Duration | Taxable periods that include any day from 1 October 2023 to 30 September 2026 |
+| Status conditions | Being in such a period is not enough. It is unavailable for a period where base-period taxable sales exceed JPY 10M; the specified-period test removes the exemption (Art. 9-2); the exemption is removed by inheritance, merger or split rules, by new-corporation rules or by purchases of adjustment-target fixed assets, high-value specified assets or gold and platinum; the taxable period has been shortened; or the business is a foreign business without a permanent establishment (periods starting on or after 1 October 2024) |
+| Calendar 2026 example | A sole proprietor's 2026 period (return due 31 March 2027) includes 30 September 2026, so it meets the period test; NTA's return guide shows the available period running to the end of 令和8年 for sole proprietors and December-year corporations (https://www.nta.go.jp/publication/pamph/pdf/0023008-043.pdf, November 2025 edition, page 1). It qualifies only if the status conditions are also met, including 2024 taxable sales and January to June 2025 taxable sales (or wages) of JPY 10M or less, tested for that period |
 | Election | No prior filing needed; elect on the return |
+
+Source: NTA Tax Answer No. 6498: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA Invoice Q&A 問115: https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf; NTA 2割特例 flowchart (September 2024): https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0024003-131.pdf. NTA Tax Answer No. 6498 also describes a separate 3割特例 for sole proprietors for the 2027 and 2028 taxable periods; its conditions are not covered here.
 
 ## Step 4: Computation -- General Method (本則課税) [T1]
 
@@ -249,7 +257,7 @@ Sources: NTA Tax Answer No. 6505 簡易課税制度 — https://www.nta.go.jp/ta
 ### EC1 -- Freelancer newly registered for qualified invoice [T1]
 
 **Situation:** Freelancer with JPY 5M sales registers as qualified invoice issuer starting October 2023. Previously tax-exempt.
-**Resolution:** Becomes taxable from registration date. May use the 2割特例 (20% special measure) through periods ending September 2026, paying only 20% of output tax as consumption tax. No need to track actual input tax.
+**Resolution:** Becomes taxable from registration date. May use the 2割特例 (20% special measure) for taxable periods that include any day up to 30 September 2026, if the status conditions above are met for each period, paying only 20% of output tax as consumption tax. No need to track actual input tax.
 
 ### EC2 -- Mixed standard and reduced rate supplies [T1]
 
@@ -317,7 +325,7 @@ Sources: NTA Tax Answer No. 6505 簡易課税制度 — https://www.nta.go.jp/ta
 
 ## PROHIBITIONS
 
-- NEVER allow input tax credit without a qualified invoice (from October 2023 onward, subject to transitional measures)
+- NEVER allow input tax credit without a qualified invoice (from October 2023 onward, subject to transitional measures and the book-only cases in NTA Tax Answer No. 6496 (such as public transport fares under JPY 30,000, and purchases under JPY 10,000 made by 30 Sep 2029 by businesses with base-period taxable sales of JPY 100M or less or specified-period taxable sales of JPY 50M or less): https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6496.htm)
 - NEVER apply the reduced 8% rate to dine-in meals or alcoholic beverages
 - NEVER use simplified taxation without a prior-period election form submission
 - NEVER apply simplified taxation if base period sales exceed JPY 50,000,000

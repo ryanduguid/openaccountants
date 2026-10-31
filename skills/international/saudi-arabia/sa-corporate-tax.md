@@ -4,7 +4,7 @@ description: "ALWAYS read this skill before touching any Saudi Arabian corporate
 jurisdiction: SA
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 version: 1.1
 reviewed_by: Mehran Habib
 review_status: pending_review
@@ -51,7 +51,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | **Zakat, Tax and Customs Authority (ZATCA)** |
 | Filing portal | ZATCA portal at zatca.gov.sa |
 | Record retention | Minimum **10 years** (verify against current ZATCA guidance and Implementing Regulations) |
-| **Penalties** | **5% per month** late payment (capped at **25%**); separate failure-to-file fines |
+| **Penalties** | **Delay fine: 1% of unpaid tax per 30 days**. **Late filing: the higher of** 1% of total revenue (maximum SAR 20,000) **or** 5%, 10%, 20% or 25% of unpaid tax by length of delay (see §6.4) |
 | Validated by | Pending — sign-off by a SOCPA member or ZATCA-recognised tax adviser |
 | Skill version | 1.1 |
 
@@ -71,7 +71,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pillar Two / DMTT | Mark **TBC**; do not commit to a number until enactment confirmed |
 | Filing deadline | **120 days** from FYE — never assume an extension |
 | Group consolidation | Treat companies as standalone unless a specific share-deal structure is documented |
-| Penalty figures | Apply 5%/month capped at 25% as headline; defer specific cases to reviewer |
+| Penalty figures | Apply the delay fine of 1% per 30 days and the late filing test in §6.4; defer specific cases to reviewer |
 
 ## Section 2 — Required Inputs and Refusal Catalogue
 
@@ -130,7 +130,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.4 Mixed-Entity Computation Mechanics
 
-- **Mixed-entity computation** — Foreign-share portion = Total Adjusted Taxable Income × (Non-Saudi/GCC ownership %) CIT                  = 20% × Foreign-share portion Saudi/GCC-share portion = Total tax base for Zakat purposes × (Saudi/GCC ownership %) Zakat                  = 2.5% × Saudi/GCC Zakat base (see sa-zakat)
+- **Mixed-entity computation** — Foreign-share portion = Total Adjusted Taxable Income × (Non-Saudi/GCC ownership %) CIT                  = 20% × Foreign-share portion Saudi/GCC-share portion = Total tax base for Zakat purposes × (Saudi/GCC ownership %) Zakat                  = Zakat rate × Saudi/GCC Zakat base (2.5% for a Hijri year; 2.5777% for a 365-day year; see sa-zakat)
 - **Ownership percentage timing** — The ownership percentages are taken from the Commercial Registration (CR) as of the last day of the fiscal year (or per the Implementing Regulations where a change occurred mid-year — verify).
 - **Conservative default** — Use the CR snapshot at year-end; flag any mid-year ownership changes for reviewer to apportion correctly under the Implementing Regulations.
 
@@ -274,18 +274,20 @@ CIT @ 20%             = 20% × 10,000,000 = SAR  2,000,000
 
 #### 5.2.2 Saudi/GCC-share Zakat (reference — see sa-zakat).
 
+PROVISIONAL: this guide's working assumption, not a confirmed ZATCA method (see `sa-zakat` §4.1). ZATCA's Zakat General Guideline 1445AH subjects only the Saudi share to Zakat, but neither it nor ZATCA's 2023 FAQ guideline sets out or works this multiplication of a whole-entity, limit-tested base; the FAQ's one mixed-company answer covers the financing-activity rules only. Do not file on SAR 463,986 until ZATCA or a Saudi Zakat adviser confirms the apportionment.
+
 ```
 Saudi/GCC-share Zakat base = 60% × 30,000,000 = SAR 18,000,000
-Zakat @ 2.5%               = 2.5% × 18,000,000 = SAR    450,000
+Zakat @ 2.5777%            = 2.5777% × 18,000,000 = SAR    463,986
 ```
 
-#### 5.2.3 Total ZATCA liability.
+#### 5.2.3 Total ZATCA liability (provisional, because 5.2.2 is).
 
 ```
 CIT                          SAR 2,000,000
-Zakat (cross-reference)      SAR   450,000
+Zakat (cross-reference)      SAR   463,986
                              ─────────────
-Total                        SAR 2,450,000
+Total                        SAR 2,463,986
 ```
 
 **Filing:** Single annual return via ZATCA portal within **120 days** of 31 Dec 2025 → by **30 April 2026**. CIT and Zakat reported on the integrated return (see Section 6).
@@ -362,14 +364,15 @@ PE CIT = 20% × 7,000,000 = SAR 1,400,000
 
 | Infraction | Sanction |
 | --- | --- |
-| Late payment of tax | **5% per month** of the unpaid tax, **capped at 25%** of the unpaid amount |
-| Failure to file the annual return on time | Tiered fine per ZATCA schedule (verify current amounts) |
+| Late payment of tax, including withheld tax and advance payments | **1% of the unpaid tax for each 30 days of delay**, from the due date to the date of payment |
+| Failure to file the annual return on time | **The higher of** (a) 1% of total revenue, maximum SAR 20,000, or (b) of the unpaid tax: 5% if the delay is 30 days or less; 10% over 30 days; 20% over 90 days; 25% over 365 days |
 | Failure to maintain records | Per ZATCA schedule |
 | Tax evasion (intentional) | Up to **25% of the evaded tax** plus criminal exposure under the ITL penal provisions |
 | Failure to file CbCR / MF / LF where required | Per TP Bylaws penalty schedule |
-| Late or short advance instalment | Default surcharge per the Implementing Regulations |
+| Late or short advance instalment | Delay fine of 1% of the unpaid amount for each 30 days |
 
-- **Conservative default** — Apply 5%/month capped at 25% for late-payment scenarios and flag any other penalty interaction for reviewer to confirm against the current ZATCA penalty schedule.
+- **Sources for the fines above**: Late filing and delay fines: [ZATCA Simplified Guideline for Income Tax](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Simplified-Guideline-for-Income-Tax.pdf), ss 7.2 and 7.3. Delay fine: Income Tax Law Art. 77(a), as cited in the [ZATCA General Guideline for Withholding Tax](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/General-Guideline-for-Withholding-Tax-In-accordance-with-the-provisions-of-the-Income-Tax-Law-and-its-Implementing-Regulations.pdf).
+- **Conservative default** — Apply the delay fine and late filing test above, and flag any other penalty interaction for reviewer to confirm against the current ZATCA penalty schedule.
 
 ### 6.5 Audit, Assessment, and Statute of Limitations
 
@@ -396,7 +399,7 @@ PE CIT = 20% × 7,000,000 = SAR 1,400,000
 | Advance instalments | Pay on prior-year basis unless formal ZATCA-approved reduction |
 | Filing deadline | **120 days from FYE — never assume extension** |
 | Group consolidation | Standalone unless documented share-deal structure |
-| Penalty headline | 5%/month, capped at 25% |
+| Penalty headline | Delay fine 1% per 30 days; late filing the higher of 1% of revenue (maximum SAR 20,000) or 5% to 25% of unpaid tax |
 | Record retention | 10 years from FYE (verify) |
 | Treaty positions / PE | Escalate; do not apply treaty relief without reviewer sign-off |
 | FA / Royal-Decree change uncertain | Mark **TBC** and flag for reviewer |
@@ -449,7 +452,7 @@ PE CIT = 20% × 7,000,000 = SAR 1,400,000
 - NEVER assume a tax treaty modifies the PE or WHT outcome without reviewer sign-off (R-SA-CT-10).
 - NEVER compute Pillar Two / DMTT amounts until the gazetted KSA instrument is verified — mark **TBC** in all interim outputs.
 - NEVER apply CbCR / MF / LF thresholds inconsistently — the SAR 750M consolidated-revenue threshold is the trigger.
-- NEVER advise late filing — the **120-day** deadline is strict and the penalty is **5% per month capped at 25%**.
+- NEVER advise late filing — the **120-day** deadline is strict and the fine is the higher of **1% of revenue (maximum SAR 20,000)** or **5% to 25% of unpaid tax**, with a separate **1% per 30 days** delay fine on unpaid tax.
 - NEVER advise skipping or reducing advance instalments without formal ZATCA approval — default surcharge applies.
 - NEVER conflate the **CIT taxable income** and the **Zakat base** in a mixed entity — they are computed under different rules.
 - NEVER ignore the Commercial Registration nationality breakdown — it drives the CIT/Zakat split in a mixed entity.

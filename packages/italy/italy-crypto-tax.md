@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Italy cryptocurrency or digital
 version: 1.0
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - it-income-tax
@@ -159,7 +159,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Activity | Tax Treatment | Timing | Notes |
 | --- | --- | --- | --- |
 | Mining (private, occasional) | Income at FMV when received (redditi diversi) | At receipt | If habitual → business income (reddito d'impresa) |
-| Mining (business/commercial) | Business income (partita IVA required) | At receipt | Subject to IRPEF + IRAP + social contributions |
+| Mining (business/commercial) | Business income (partita IVA required) | At receipt | Subject to IRPEF + social contributions; IRAP not due from an individual since 2022 (L. 234/2021 art. 1, c. 8) |
 | Staking rewards | Income at FMV when received | At receipt | Cost basis of received tokens = FMV at receipt |
 | DeFi lending interest | Income at FMV when received | At receipt | Treated as redditi diversi |
 | Liquidity provision | Adding to pool = potential disposal; LP tokens = new acquisition | At each event | Impermanent loss: no specific guidance; conservative = non-deductible |

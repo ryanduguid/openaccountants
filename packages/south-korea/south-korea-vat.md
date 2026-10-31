@@ -5,9 +5,9 @@ version: 2.0
 jurisdiction: KR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 reviewed_by: Yeong Min Lee
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | https://hometax.go.kr (HomeTax / 홈택스) |
 | Authority | National Tax Service (국세청, NTS) |
 | Currency | KRW (Korean Won) |
-| Filing frequency | Semi-annual with quarterly preliminary returns (general taxpayer); semi-annual (simplified taxpayer) |
+| Filing frequency | Semi-annual with quarterly preliminary returns (general taxpayer); annual, with a July 25 exception (simplified taxpayer) |
 | E-invoice requirement | 전자세금계산서 (e-tax invoice) mandatory for all corporations and individual taxpayers with revenue >= KRW 80M |
 | Primary legislation | VAT Act (부가가치세법, as amended); VAT Act Enforcement Decree (시행령); Framework Act on National Taxes (국세기본법) |
 | Contributor | Open Accounting Skills Registry |
@@ -65,7 +65,7 @@ Read this whole section before classifying anything.
 | 20 | Tax payable / refundable (납부/환급세액) |
 
 - **E-tax invoice (전자세금계산서) requirements** — All corporations must issue e-tax invoices. Individual general taxpayers with revenue >= KRW 80M must issue e-tax invoices (mandatory since July 2024; threshold was KRW 100M before July 2023). E-tax invoices must contain: business registration numbers (사업자등록번호) of supplier and recipient, supplier name, supply date, description and quantity, supply value (공급가액) and VAT amount (세액). Must be transmitted to NTS within one day of issuance. Penalties: 2% of supply value for failure to issue; 1% for late issuance; 0.5% for failure to transmit to NTS.
-- **Simplified taxpayer (간이과세자) threshold** — Annual revenue below KRW 104,000,000 (KRW 104M, raised from KRW 80M effective July 2024). Simplified taxpayers calculate tax using industry value-added ratios (업종별 부가가치율), cannot issue tax invoices (receipts only), and file semi-annually. If revenue below KRW 48M, exempt from VAT payment entirely.
+- **Simplified taxpayer (간이과세자) threshold** — Prior-year consideration (공급대가, VAT-inclusive) below KRW 104,000,000 (raised from KRW 80M for taxable periods starting on or after 1 January 2024); below KRW 48M for property letting and taxable entertainment venues; part-year new operators annualised to 12 months; excluded industries, sizes and locations are not eligible. Simplified taxpayers calculate tax using industry value-added ratios (업종별 부가가치율) and have a 1 January to 31 December taxable period, filed by January 25 of the following year; the July 25 exception is in the deadlines table below. Tax invoices depend on prior-year consideration (공급대가, VAT-inclusive): a simplified taxpayer at KRW 48M or more must issue them (supplies from 1 July 2021; each obligation runs from 1 July of the following year to 30 June of the year after), except a receipt-issuing business supplying mainly non-business customers (retail, restaurants, accommodation, beauty and similar), which must still issue one on a business buyer's request in the cases in Enforcement Decree Art. 73(3)-(5). New operators and those below KRW 48M issue receipts instead, and the buyer-request rule does not apply to them during that receipt period (Enforcement Decree Art. 73(10)). An obliged taxpayer that issues a cash receipt or card slip at the time of supply has no invoice duty for that supply. Penalty on an obliged taxpayer: 2% of supply value if not issued by the final return deadline for the period of supply; 1% if issued late by that deadline. _(VAT Act Art. 36(1), Art. 36(3), Art. 36-2(1), Art. 61(1)-(2), Art. 69; [Enforcement Decree Art. 73](https://www.law.go.kr/법령/부가가치세법시행령/제73조); [NTS Q&A](https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1329&ctgId=CTG11937); [NTS 간이과세자 guidance](https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7693&mi=2272))_  If 공급대가 for the taxable period is below KRW 48M (annualised for part-year cases), exempt from VAT payment.
 
 **Filing deadlines -- general taxpayer**
 
@@ -80,8 +80,10 @@ Read this whole section before classifying anything.
 
 | Period | Type | Covers | Deadline |
 | --- | --- | --- | --- |
-| Period 1 | Semi-annual | Jan 1 - Jun 30 | July 25 |
-| Period 2 | Semi-annual | Jul 1 - Dec 31 | January 25 (following year) |
+| Annual | Final return | Jan 1 - Dec 31 | January 25 (following year) |
+| Exception | Issued tax invoices in Jan 1 - Jun 30, or converted to general taxpayer on Jul 1 | Jan 1 - Jun 30 | July 25 |
+
+Source: NTS guidance: https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7693&mi=2272.
 
 **Conservative defaults -- Korea-specific**
 
@@ -111,7 +113,7 @@ Read this whole section before classifying anything.
 
 ### Required inputs
 
-**Minimum viable** -- bank statement (거래내역) for the period in CSV, PDF, Excel, or pasted text. Must cover the full semi-annual or quarterly period. Acceptable from any Korean bank: KB Kookmin, Shinhan, Woori, Hana, NH Nonghyup, IBK, Kakao Bank, Toss Bank, K Bank, or any other.
+**Minimum viable** -- bank statement (거래내역) for the period in CSV, PDF, Excel, or pasted text. Must cover the full semi-annual, quarterly or (simplified taxpayer) annual period. Acceptable from any Korean bank: KB Kookmin, Shinhan, Woori, Hana, NH Nonghyup, IBK, Kakao Bank, Toss Bank, K Bank, or any other.
 
 **Recommended** -- e-tax invoice listing from HomeTax (전자세금계산서 합계표) for both issued and received invoices, credit card usage statement (신용카드매출전표), prior period return showing carried-forward credit.
 
@@ -424,7 +426,7 @@ Office supplies purchased with corporate credit card. No e-tax invoice obtained.
 
 ### 5.8 Simplified taxpayer regime (Articles 61-68)
 
-- **Simplified taxpayer regime details** — Revenue below KRW 104M: eligible as simplified taxpayer. Tax = supply value x industry value-added ratio x 10%. Industry ratios: retail 15%, manufacturing 20%, agriculture 10%, food/beverage 40%, accommodation 30%, transportation 40%, construction 30%, other services 30%, real estate rental 40%, professional services 40%. Input deduction = purchases x 0.5%. Cannot issue tax invoices. Revenue below KRW 48M: exempt from VAT payment.  _(Articles 61-68)_
+- **Simplified taxpayer regime details** — Prior-year consideration (공급대가, VAT-inclusive) below KRW 104M: eligible as simplified taxpayer (below KRW 48M for property letting and taxable entertainment venues; part-year new operators annualised to 12 months; operators with another non-simplified place of business and excluded industries, sizes and locations are not eligible). Tax = 공급대가 x industry value-added ratio x 10%. Industry ratios from 1 July 2021: retail, recycled materials and restaurants 15%; manufacturing, agriculture, forestry, fishing and small-parcel transport 20%; accommodation 25%; construction, transport and warehousing (other than small-parcel transport) and information and communications 30%; finance and insurance services, professional, scientific and technical services (other than portrait and event video), facilities management, business support and rental services, real estate services and real estate rental 40%; other services 30%. Input deduction = 공급대가 on purchases evidenced by tax invoices, card slips or cash receipts and reported on the required statement x 0.5%. _([NTS guidance](https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7693&mi=2272); VAT Act Art. 63(3); [Enforcement Decree Art. 111(3)](https://www.law.go.kr/법령/부가가치세법시행령/제111조))_ Tax invoices: required at prior-year 공급대가 of KRW 48M or more (receipt-issuing businesses excepted; 2% or 1% penalty); new operators and those below KRW 48M issue receipts only (Article 36; see Section 1). 공급대가 for the taxable period below KRW 48M (annualised for new, closing, suspended or converted operators): exempt from VAT payment.  _(Articles 61-68; [Art. 69](https://www.law.go.kr/법령/부가가치세법/제69조))_
 
 ### 5.9 Capital assets (fixed assets, 고정자산)
 
@@ -551,11 +553,11 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 
 ### 9.2 Business type
 
-- **Business type inference** — *Inference rule:* if client asks for a VAT return with e-tax invoices, they are 일반과세자. If revenue seems low and they mention simplified filing, likely 간이과세자. *Fallback question:* "Are you a 일반과세자 (general taxpayer), 간이과세자 (simplified taxpayer), or 면세사업자 (exempt operator)?"
+- **Business type inference** — *Inference rule:* if client asks for a VAT return with e-tax invoices, they are 일반과세자 or a 간이과세자 with prior-year 공급대가 of KRW 48M or more; confirm which. If revenue seems low and they mention simplified filing, likely 간이과세자. *Fallback question:* "Are you a 일반과세자 (general taxpayer), 간이과세자 (simplified taxpayer), or 면세사업자 (exempt operator)?"
 
 ### 9.3 Filing period
 
-- **Filing period inference** — *Inference rule:* first and last transaction dates on the statement. Semi-annual periods: Jan-Jun (Period 1) or Jul-Dec (Period 2). *Fallback question:* "Which period -- Period 1 (Jan-Jun) or Period 2 (Jul-Dec)? Is this a preliminary (quarterly) or final (semi-annual) return?"
+- **Filing period inference** — *Inference rule:* first and last transaction dates on the statement. Semi-annual periods: Jan-Jun (Period 1) or Jul-Dec (Period 2). Simplified taxpayers: Jan-Dec, unless the July 25 exception applies. *Fallback question:* "Which period -- Period 1 (Jan-Jun) or Period 2 (Jul-Dec)? Is this a preliminary (quarterly) or final (semi-annual) return?"
 
 ### 9.4 Industry and sector
 
@@ -567,7 +569,7 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 
 ### 9.6 Annual revenue
 
-- **Annual revenue inference** — *Inference rule:* extrapolate from period income. *Fallback question:* "What is your approximate annual revenue? (Determines simplified taxpayer eligibility at KRW 104M threshold.)"
+- **Annual revenue inference** — *Inference rule:* extrapolate from period income. *Fallback question:* "What is your approximate annual revenue? (Determines simplified taxpayer eligibility at the KRW 104M threshold, tested on VAT-inclusive 공급대가.)"
 
 ### 9.7 E-tax invoice usage
 

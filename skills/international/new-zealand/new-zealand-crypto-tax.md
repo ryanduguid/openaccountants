@@ -4,7 +4,7 @@ description: Use this skill whenever asked about New Zealand cryptocurrency or c
 version: 1.0
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - nz-income-tax-ir3
@@ -121,17 +121,20 @@ Even if s CB 4 does not apply (no purpose of disposal), crypto profits may still
 
 ### 3.2 Prior Year Rates (2024/25 Tax Year — 1 April 2024 to 31 March 2025)
 
-**Prior Year Rates 2024/25**
+**Prior Year Rates 2024/25**  _([Inland Revenue, Tax rates for individuals](https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals))_
 
 | Taxable Income (NZD) | Marginal Rate |
 | --- | --- |
-| $0 – $15,600 | 10.5% |
-| $15,601 – $53,500 | 17.5% |
-| $53,501 – $78,100 | 30% |
+| $0 – $14,000 | 10.5% |
+| $14,001 – $15,600 | 12.82% |
+| $15,601 – $48,000 | 17.5% |
+| $48,001 – $53,500 | 21.64% |
+| $53,501 – $70,000 | 30% |
+| $70,001 – $78,100 | 30.99% |
 | $78,101 – $180,000 | 33% |
 | $180,001 and over | 39% |
 
-Note: The 2024/25 year had transitional composite rates due to mid-year threshold changes (effective 31 July 2024). For simplicity, use the full-year 2025/26 rates for the current year.
+Note: These are the composite rates for 2024/25, the year of the mid-year threshold changes (effective 31 July 2024). Use the 2025/26 rates in section 3.1 from 1 April 2025.
 
 ### 3.3 Company Tax Rate
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Malaysia income tax for self-em
 version: 1.0
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: pending_review
 depends_on:
@@ -148,7 +148,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 4 -- Personal Reliefs (YA 2025)
 
-**Personal Reliefs (YA 2025)**
+**Personal Reliefs (YA 2025)**  _(Child rows: LHDN, tax reliefs for YA 2025, items 16a to 16c: https://www.hasil.gov.my/en/individu/pelepasan-cukai/)_
 
 | Relief | Amount (RM) |
 | --- | --- |
@@ -157,8 +157,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Spouse (no income or electing joint assessment) | 4,000 |
 | Disabled spouse (additional) | 6,000 |
 | Child (unmarried, under 18) | 2,000 per child |
-| Child (18+, full-time education in Malaysia) | 2,000 per child |
-| Child (18+, full-time education overseas at degree level) | 8,000 per child |
+| Child (unmarried, 18+, full-time A-Level, certificate, matriculation or preparatory course) | 2,000 per child |
+| Child (unmarried, 18+, in Malaysia for a diploma or higher, excluding matriculation and preparatory courses; or outside Malaysia for a degree or its equivalent, including Master's or Doctorate; course and institution approved by the relevant government authority) | 8,000 per child |
 | Disabled child (additional) | 8,000 per child |
 | Medical expenses (self, spouse, child -- serious illness) | max 10,000 |
 | Medical expenses (parents) | max 8,000 |

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Italian income tax for self-emp
 version: 2.0
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -44,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Over 50,000 | 43% | on excess | 14,140 + 43% |
 
 - **Tax formula** — Tax = cumulative tax for lower bracket + (income - lower bracket threshold) x marginal rate  _(IRPEF Brackets 2025 (Regime Ordinario) [T1])_
-- **No-tax area** — Detrazioni per lavoro autonomo reduce effective IRPEF to zero up to roughly EUR 4,800 net income (result of detrazioni calculation, not a true zero-tax band).  _(IRPEF Brackets 2025 (Regime Ordinario) [T1])_
+- **No-tax area** — Detrazioni per lavoro autonomo reduce effective IRPEF to zero up to EUR 5,500 reddito complessivo (EUR 1,265 / 23%; result of detrazioni calculation, not a true zero-tax band).  _(TUIR art. 13, c. 5; IRPEF Brackets 2025 (Regime Ordinario) [T1])_
 
 ### Addizionali (Regional + Municipal Surtaxes) [T1]
 
@@ -64,7 +64,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Net Income (EUR) | Detrazione |
 | --- | --- |
 | <= 5,500 | EUR 1,265 |
-| 5,501 -- 28,000 | EUR 500 + [1,200 x (28,000 - income) / 22,500] |
+| 5,501 -- 28,000 | EUR 500 + [765 x (28,000 - income) / 22,500] (TUIR art. 13, c. 5, lett. b) |
 | 28,001 -- 50,000 | EUR 500 x (50,000 - income) / 22,000 |
 | > 50,000 | 0 |
 
@@ -89,11 +89,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Threshold | Rule |
 | --- | --- |
-| IRPEF due < EUR 51.65 | No acconto required |
-| IRPEF due EUR 51.65-257.52 | One payment: 100% by 30 November |
-| IRPEF due > EUR 257.52 | 40% by 30 June (with saldo); 60% by 30 November |
+| IRPEF due up to EUR 51.65 | No acconto required |
+| IRPEF due above EUR 51.65 and up to EUR 206 (ISA taxpayer) or below EUR 257.52 (other taxpayer) | One payment: 100% by 30 November |
+| IRPEF due above EUR 206, ISA taxpayer | 50% with the saldo; 50% by 30 November |
+| IRPEF due EUR 257.52 or more, other taxpayer | 40% by 30 June (with saldo); 60% by 30 November |
 
 - **Acconto rate** — Acconto rate: 100% of prior-year IRPEF (or 100% of current-year estimate if lower).  _(Acconti IRPEF (Advance Payments) [T1])_
+- **ISA taxpayer** -- A taxpayer carrying on, as a business or self-employment, an activity with an approved ISA, whether or not the ISA is applied, and declaring revenue or fees within that ISA's limit. Confirm this for each client. See `it-estimated-tax` for the full test and the single-instalment boundary.  _(D.L. 124/2019 art. 58; D.L. 34/2019 art. 12-quinquies, c. 3-4; Redditi PF 2026, Fascicolo 1, rigo RN62)_
+- **2026 payment date for ISA taxpayers** -- Saldo and first acconto were payable by 20 July 2026 without surcharge, or by 20 August 2026 with 0.80%. This moves the date only: the first instalment is still 50%. Confirmed for 2026 only.  _(D.L. 89/2026 art. 6, as cited in the Agenzia delle Entrate calendar)_
 
 ### Conservative Defaults [T1]
 
@@ -300,8 +303,8 @@ Roberto is an architect enrolled in Inarcassa. Gestione Separata does NOT apply.
 | --- | --- |
 | Modello Redditi PF (online) | **31 October** of the following year (2 November 2026, because 31 October 2026 is a Saturday) |
 | Modello 730 (Agenzia telematic, sostituto, CAF or professional) | **30 September** of the following year |
-| IRPEF saldo + 1st acconto (40%) | 30 June |
-| 2nd acconto IRPEF (60%) | 30 November |
+| IRPEF saldo + 1st acconto (40%; ISA taxpayers 50%) | 30 June (ISA taxpayers 2026: 20 July, see Section 1) |
+| 2nd acconto IRPEF (60%; ISA taxpayers 50%) | 30 November |
 
 **30 June is a payment date.** The balance and first instalment fall due then;
 it is not when the return goes in, and this guide previously carried it in the
@@ -325,7 +328,7 @@ submit a Redditi PF form")_
 | Late filing (within 90 days) | EUR 250 reduced sanction |
 | Late filing (> 90 days) | 120%-240% of tax due |
 | Under-reporting (infedele dichiarazione) | 90%-180% of additional tax |
-| Late payment | 30% of unpaid amount (reduced if paid within 30 days: 15%) |
+| Late payment | 25% of unpaid amount for violations from 1 September 2024 (12.5% if paid within 90 days, lower within 15 days) _(D.Lgs. 471/1997 art. 13(1))_ |
 | Failure to issue invoice | 90%-180% of IVA evaded |
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
@@ -493,6 +496,8 @@ ONBOARDING QUESTIONS -- ITALY INCOME TAX (IRPEF REGIME ORDINARIO)
 ## Section 10 -- Reference Material
 
 ### Key Legislation
+
+Official texts: [TUIR art. 13](https://www.normattiva.it/uri-res/N2Ls?urn:nir:presidente.repubblica:decreto:1986-12-22;917~art13!vig=); [Agenzia delle Entrate, acconti](https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposte-sui-redditi/cosa-imposte-sui-redditi).
 
 **Key Legislation**
 

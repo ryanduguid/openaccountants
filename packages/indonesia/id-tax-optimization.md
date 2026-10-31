@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Indonesian tax planning, regim
 jurisdiction: ID
 category: tax-optimization
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: RILIA PUTRI
 review_status: pending_review
 tier: 2
@@ -316,8 +316,8 @@ Indonesian social security comes in two branches:
 
 | Programme | Employer | Employee | Wage cap |
 | --- | --- | --- | --- |
-| JKK (work accident) | 0.10% -- 1.60% by risk grade (PP 49/2023 Art. 16A; grade 2, e.g. retail and hospitality, 0.40%) | 0 | None |
-| JKM (death) | 0.20% (PP 49/2023 Art. 18A) | 0 | None |
+| JKK (work accident) | 0.24% -- 1.74% by risk grade (PP 7/2025 Art. 4(1); BPJS Ketenagakerjaan, 17 December 2025; grade 2, e.g. retail and hospitality, 0.54%, of which 0.14% funds JKP under PP 6/2025) | 0 | None |
+| JKM (death) | 0.30% (BPJS Ketenagakerjaan, 17 December 2025; PP 6/2025 funds JKP without JKM, but PP 49/2023 Art. 18A has no repeal found and no BPJS bill was sighted, so confirm on the employer's statement) | 0 | None |
 | JHT (old age) | 3.7% | 2% | None |
 | JP (pension) | 2% | 1% | **IDR ~10,547,400/month** (2025; adjusted annually -- TBC against latest Permenaker) |
 
@@ -433,6 +433,8 @@ UMKM Final dominates because (1) high actual margin (~83%), (2) revenue under ID
 
 ### Primary statutes
 
+- **PP 7/2025** -- [JKK rates and relief](https://jdih.kemenkeu.go.id/api/download/cdb7e0ef-fa1a-43f4-953e-792cecb57321/2025PP007.pdf), Art. 4(1).
+- **PP 6/2025** -- [JKP funding](https://jdih.kemenkeu.go.id/api/download/909a0028-c6d2-476b-8692-97a800fafe56/2025PP006.pdf), Art. 11.
 - **UU 36/2008** -- UU Pajak Penghasilan ("UU PPh"), as amended by UU 7/2021 (HPP).
 - **UU 7/2021** -- UU Harmonisasi Peraturan Perpajakan ("UU HPP"). Amends PTKP, brackets, top rate, dividend reinvestment.
 - **UU 28/2007** -- UU KUP (general administration). Pasal 28 bookkeeping; Pasal 28A substance.

@@ -4,9 +4,9 @@ description: Use this skill whenever asked about Canada Pension Plan (CPP) or Em
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Edgar Lautsyus
-review_status: current
+review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
 category: international
@@ -176,10 +176,11 @@ This is the deterministic pre-classifier for bank statement entries related to C
 
 ### 4.5 Tax treatment of self-employed CPP (Tier 1)
 
-- **CPP1 split** — Employer-equivalent half (50%) is a deduction from net income (line 22200). Employee-equivalent half (50%) is a non-refundable tax credit (line 30800, 15% federal credit).  _(Income Tax Act, s. 60(e), s. 118.7)_
-- **CPP2 split** — Employer-equivalent half (50%) is a deduction from net income (line 22215). Employee-equivalent half (50%) is a non-refundable tax credit (line 30800, 15% federal credit).  _(Income Tax Act, s. 60(e), s. 118.7)_
+- **CPP1 split** — Schedule 8 divides the 11.90% into a 9.90% base and a 2.00% first additional contribution. Half of the base (4.95% of contributory earnings, maximum $3,356.10 for 2025) is a non-refundable tax credit on line 31000 (14.5% federal credit for 2025). The other half of the base plus all of the first additional contribution is a deduction from net income on line 22200.  _(Schedule 8 (T1-2025), Part 4, lines 10, 11, 13, 15, 16 and 17; Income Tax Act, s. 60(e), s. 118.7)_
+- **CPP2 split** — All second additional (CPP2) contributions are a deduction from net income on line 22200. No part of CPP2 earns a credit.  _(Schedule 8 (T1-2025), Part 4, lines 12, 13, 16 and 17; Income Tax Act, s. 60(e)(ii))_
+- **Employment lines** Line 30800 (base contributions) and line 22215 (enhanced contributions) are for contributions through employment. A client with both employment and self-employment income completes Schedule 8 Part 5, which can use lines 30800, 22215, 31000 and 22200.  _(Schedule 8 (T1-2025), Parts 3 and 5)_
 
-The deduction is more valuable at higher marginal rates. The credit is worth a flat 15% regardless of income.
+The deduction is more valuable at higher marginal rates. The credit is 14.5% of the credit base for 2025 at any income level, but it is non-refundable: it reduces federal tax only down to zero (T1 line 33800; basic federal tax, line 42900, if negative, enter 0).
 
 ### 4.6 EI for self-employed (Tier 1)
 
@@ -294,12 +295,12 @@ Action Required: Do not advise. Refer to licensed Canadian CPA. Document gap.
 ### Test 1 -- Standard self-employed, mid-range income
 
 Input: Born 1985, Ontario resident, net self-employment income $50,000, no T4 income, no EI opt-in.
-Expected output: CPP1 = ($50,000 - $3,500) x 11.90% = $5,533.50. CPP2 = $0 (below YMPE). EI = $0 (not opted in). Line 22200 deduction = $2,766.75. Line 30800 credit base = $2,766.75.
+Expected output: CPP1 = ($50,000 - $3,500) x 11.90% = $5,533.50. CPP2 = $0 (below YMPE). EI = $0 (not opted in). Base = $46,500 x 9.90% = $4,603.50; first additional = $46,500 x 2.00% = $930.00. Line 22200 deduction = $2,301.75 + $930.00 = $3,231.75. Line 31000 credit base = $2,301.75.
 
 ### Test 2 -- High-income, both ceilings hit
 
 Input: Born 1978, Alberta resident, net self-employment income $120,000, no T4 income.
-Expected output: CPP1 = $8,068.20 (capped). CPP2 = $792.00 (capped). Total CPP = $8,860.20. Line 22200 deduction = $4,430.10. Line 30800 credit base = $4,430.10.
+Expected output: CPP1 = $8,068.20 (capped). CPP2 = $792.00 (capped). Total CPP = $8,860.20. Line 22200 deduction = $3,356.10 + $1,356.00 + $792.00 = $5,504.10. Line 31000 credit base = $3,356.10.
 
 ### Test 3 -- Income between YMPE and YAMPE
 
@@ -333,7 +334,7 @@ Expected output: CPP = $0.00. No minimum contribution. No Schedule 8 obligation.
 
 ### Prohibitions
 
-- **Prohibitions list** — - NEVER compute CPP for Quebec residents -- QPP applies, not CPP - NEVER tell a self-employed client they must pay EI -- it is voluntary - NEVER forget to split CPP into deduction (line 22200) and credit (line 30800) -- both halves must be claimed - NEVER apply CPP to a client aged 70 or over at the start of the year - NEVER ignore T4 CPP already deducted when computing self-employed CPP on Schedule 8 - NEVER present CPP2 as optional -- it is mandatory for earnings above YMPE - NEVER combine CPP and EI into a single figure without showing the breakdown - NEVER advise on QPP rates using CPP figures -- they are different - NEVER state that self-employed EI covers regular (unemployment) benefits -- it covers special benefits only - NEVER compute figures without confirming the tax year -- rates change annually
+- **Prohibitions list** — - NEVER compute CPP for Quebec residents -- QPP applies, not CPP - NEVER tell a self-employed client they must pay EI -- it is voluntary - NEVER forget to split CPP into deduction (line 22200) and base credit (line 31000) as Schedule 8 directs -- both must be claimed - NEVER apply CPP to a client aged 70 or over at the start of the year - NEVER ignore T4 CPP already deducted when computing self-employed CPP on Schedule 8 - NEVER present CPP2 as optional -- it is mandatory for earnings above YMPE - NEVER combine CPP and EI into a single figure without showing the breakdown - NEVER advise on QPP rates using CPP figures -- they are different - NEVER state that self-employed EI covers regular (unemployment) benefits -- it covers special benefits only - NEVER compute figures without confirming the tax year -- rates change annually
 
 ### Disclaimer
 
