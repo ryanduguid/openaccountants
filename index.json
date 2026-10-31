@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-31T09:31:26+00:00",
+ "generated_at": "2026-10-31T19:45:01+00:00",
  "counts": {
-  "guides": 2008,
-  "jurisdictions": 289,
+  "guides": 2011,
+  "jurisdictions": 292,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -6949,6 +6949,19 @@
    "last_updated": "2026-07-25"
   },
   {
+   "slug": "km-consumption-tax-reference",
+   "path": "skills/international/comoros/km-consumption-tax-reference.md",
+   "name": "km-consumption-tax-reference",
+   "jurisdiction": "KM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
+  },
+  {
    "slug": "ck-company-registry-reporting",
    "path": "skills/international/cook-islands/ck-company-registry-reporting.md",
    "name": "ck-company-registry-reporting",
@@ -10457,6 +10470,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "ht-salary-withholding-reference",
+   "path": "skills/international/haiti/ht-salary-withholding-reference.md",
+   "name": "ht-salary-withholding-reference",
+   "jurisdiction": "HT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "hm-tax-scope-reference",
@@ -19323,6 +19349,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "sint-maarten-turnover-tax-reference",
+   "path": "skills/international/sint-maarten/sint-maarten-turnover-tax-reference.md",
+   "name": "sint-maarten-turnover-tax-reference",
+   "jurisdiction": "SX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "slovakia-references",
