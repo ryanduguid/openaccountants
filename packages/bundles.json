@@ -2969,6 +2969,7 @@
    "name": "Italy",
    "files": [
     "intake.md",
+    "it-corporate-income-tax.md",
     "it-estimated-tax.md",
     "it-impatriati.md",
     "it-income-tax.md",
@@ -2989,6 +2990,7 @@
    "shared": [
     "bookkeeping-workflow-base.md",
     "company-formation-workflow-base.md",
+    "corporate-income-tax-workflow-base.md",
     "crypto-tax-workflow-base.md",
     "einvoice-workflow-base.md",
     "eu-vat-directive.md",
@@ -4401,6 +4403,7 @@
    "files": [
     "intake.md",
     "pl-capital-gains.md",
+    "pl-corporate-income-tax.md",
     "pl-income-tax.md",
     "pl-zus-contributions.md",
     "poland-einvoice.md",
@@ -4409,9 +4412,11 @@
     "README.md"
    ],
    "shared": [
+    "corporate-income-tax-workflow-base.md",
     "einvoice-workflow-base.md",
     "eu-vat-directive.md",
-    "foundation.md"
+    "foundation.md",
+    "workflow-base.md"
    ]
   },
   "portugal": {

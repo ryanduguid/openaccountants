@@ -7,19 +7,22 @@
 
 1. `intake.md`
 2. `pl-capital-gains.md`
-3. `pl-income-tax.md`
-4. `pl-zus-contributions.md`
-5. `poland-einvoice.md`
-6. `poland-vat-return.md`
-7. `references.md`
+3. `pl-corporate-income-tax.md`
+4. `pl-income-tax.md`
+5. `pl-zus-contributions.md`
+6. `poland-einvoice.md`
+7. `poland-vat-return.md`
+8. `references.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
 - [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
 - [`foundation.md`](../_shared/foundation.md)
+- [`workflow-base.md`](../_shared/workflow-base.md)
 
 
 ## Also known as
