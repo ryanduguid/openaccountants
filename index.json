@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-31T05:49:21+00:00",
+ "generated_at": "2026-10-31T07:41:12+00:00",
  "counts": {
-  "guides": 2004,
+  "guides": 2006,
   "jurisdictions": 288,
   "accountant_reviewed": 164
  },
@@ -11707,6 +11707,19 @@
    "last_updated": "2026-09-28"
   },
   {
+   "slug": "it-corporate-income-tax",
+   "path": "skills/international/italy/it-corporate-income-tax.md",
+   "name": "it-corporate-income-tax",
+   "jurisdiction": "IT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
+  },
+  {
    "slug": "it-estimated-tax",
    "path": "skills/international/italy/it-estimated-tax.md",
    "name": "it-estimated-tax",
@@ -17581,6 +17594,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "pl-corporate-income-tax",
+   "path": "skills/international/poland/pl-corporate-income-tax.md",
+   "name": "pl-corporate-income-tax",
+   "jurisdiction": "PL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "pl-income-tax",
