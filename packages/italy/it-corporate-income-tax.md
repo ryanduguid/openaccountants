@@ -88,7 +88,7 @@ Load this on top of `corporate-income-tax-workflow-base`. Its runbook, 26-field 
 
 ## [ADJUSTMENTS]
 
-Start from the accounting result, with the variations in the TUIR (art 83). Income and costs follow accrual, and must be certain and determinable (art 109(1)). Costs must be charged to profit and loss, except costs deferred under earlier rules and costs deductible by law (art 109(4)(a), (b)) and relate to activities or assets yielding income that is taxable or excluded. Costs shared with exempt income are deductible in proportion, leaving art 87 gains out of the ratio (art 109(5)).
+Start from the accounting result, with the variations in the TUIR (art 83). Income and costs follow accrual, and must be certain and determinable (art 109(1)). Costs must be charged to profit and loss, except costs deferred under earlier rules and costs deductible by law (art 109(4)(a), (b)) and relate to activities or assets yielding income that is taxable or excluded. Costs shared with exempt income are deductible in proportion, leaving art 87 gains out of the ratio. This link test does not apply to interest or to fiscal, contribution and social-utility charges (art 109(5)).
 
 **Limits read. This list is not exhaustive; there is no single statutory list (inference):**
 
@@ -97,7 +97,7 @@ Start from the accounting result, with the variations in the TUIR (art 83). Inco
 | Income taxes | Not deductible; other taxes deductible when paid | 99(1) |
 | IRAP | Not deductible in principle (D.Lgs. 446/1997 art 1(2)). Labour-share deduction under D.L. 201/2011 art 2(1). A 10% deduction rests on Agenzia instructions citing D.L. 185/2008 art 6, not read | 99 |
 | Entertainment | 1.5% of revenue to EUR 10m, 0.6% to EUR 50m and 0.4% above; gifts up to EUR 50 in full; traceable payment | 108(2) |
-| Hotel and meal costs | 75%, other than art 95(3) travel, before the entertainment limit where both apply: reviewer settles the interaction | 109(5) |
+| Hotel and meal costs | 75%, other than art 95(3) travel, before the entertainment limit where both apply: reviewer settles the interaction. Food, lodging and non-scheduled public transport costs in Italy, and itemised reimbursements of them, are deductible only if paid by bank or post or another art 23 D.Lgs. 241/1997 system | 109(5), (5-bis); 95(3-bis) |
 | Social costs and donations | 5 per mille of staff cost; 2% of business income for listed donations | 100(1), (2)(a) |
 | Directors' pay | Deductible in the period paid | 95(5) |
 | Vehicles | 20% in general, ignoring car purchase cost above lire 35m, the matching share of lease fees and rental cost above lire 7m (the caps print in lire: reviewer converts them); 70% for vehicles given to employees in mixed use for most of the period; 100% if exclusively instrumental; fuel only if paid by electronic card | 164(1)(a), (b), (b-bis), (1-bis) |
@@ -188,7 +188,7 @@ D.Lgs. 209/2023: EUR 750m in 2 of the previous 4 years (art 10(1)). Income inclu
 
 Largo Forniture S.r.l.; calendar 2026; one region, assumed at 3.90%; all staff on permanent contracts; no change of ownership.
 
-Value of production (A) is EUR 3,000,000 and costs of production (B) EUR 2,710,000. Below B there are only a dividend of EUR 50,000, received in 2026 from an Italian company with no withholding, and net interest of EUR 40,000. Accounting profit before IRES and IRAP is therefore EUR 300,000.
+Value of production (A) is EUR 3,000,000 and costs of production (B) EUR 2,710,000. Below B there are only a dividend of EUR 50,000, received in 2026 from an Italian company with no withholding, and net interest expense of EUR 40,000. Accounting profit before IRES and IRAP is therefore EUR 300,000.
 
 B includes staff EUR 900,000 (B9); depreciation EUR 110,000 at tax rates (B10(a), (b)); a bad debt provision EUR 20,000 within the art 106 limit (B10(d)); vehicle costs EUR 10,000, within the art 164 caps with fuel paid by card; and directors' pay EUR 12,000, accrued in 2026, unpaid at year end and booked in B7, treated as pay assimilated to employment (a professional services contract goes to the reviewer). Every other cost is fully deductible, and there are no leases.
 
