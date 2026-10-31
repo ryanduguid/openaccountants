@@ -2423,6 +2423,7 @@
    "files": [
     "intake.md",
     "de-capital-gains.md",
+    "de-corporate-income-tax.md",
     "de-crypto-tax.md",
     "de-einkommensteuer-freelancer.md",
     "de-estimated-tax.md",
@@ -2449,6 +2450,7 @@
    "shared": [
     "bookkeeping-workflow-base.md",
     "company-formation-workflow-base.md",
+    "corporate-income-tax-workflow-base.md",
     "crypto-tax-workflow-base.md",
     "einvoice-workflow-base.md",
     "eu-vat-directive.md",

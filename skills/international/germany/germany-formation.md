@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Company registrar | Handelsregister (via local Amtsgericht / district court) |
 | Key legislation | GmbH-Gesetz (GmbHG) — https://www.gesetze-im-internet.de/gmbhg/; Handelsgesetzbuch (HGB) — https://www.gesetze-im-internet.de/hgb/; Aktiengesetz (AktG) — https://www.gesetze-im-internet.de/aktg/ |
 | Typical formation time | 3--6 weeks (notary to Handelsregister entry) |
-| Corporate tax rate | ~30% effective (15% Körperschaftsteuer + 5.5% Solidaritätszuschlag + ~14% Gewerbesteuer) |
+| Corporate tax rate | ~30% effective in VZ 2026 (15% Körperschaftsteuer + 5.5% Solidaritätszuschlag on it, 0.825 points, + ~14% Gewerbesteuer); Körperschaftsteuer steps down from 14% in 2028 to 10% from 2032 (KStG s 23(1)) |
 | Skill version | 1.0 |
 
 ## Section 2 -- Entity Types Comparison
