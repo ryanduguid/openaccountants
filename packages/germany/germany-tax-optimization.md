@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Germany, tax pl
 version: 1.0
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -62,7 +62,7 @@ Source: § 32a Abs. 1 EStG (the 2026 tariff) — https://www.gesetze-im-internet
 
 | Factor | Einzelunternehmen (sole trader) | GmbH |
 | --- | --- | --- |
-| Top marginal rate | 45% + Soli + KiSt | 15% KSt + 5.5% Soli + ~14% GewSt = ~30% |
+| Top marginal rate | 45% + Soli + KiSt | 15% KSt + 5.5% Soli + ~14% GewSt = ~30% in VZ 2026; KSt steps down from 14% in 2028 to 10% from 2032 (KStG s 23(1)) |
 | When to incorporate | When profits consistently exceed ~EUR 60,000 and can be retained. Extraction via salary (deductible) or dividends (25% Abgeltungsteuer + Soli). | EStG §20 Abs. 1 Nr. 1; KStG §1 |
 
 ### Employing Family Members (Ehegatten-Arbeitsverhältnis)
@@ -125,7 +125,7 @@ Source: § 32a Abs. 1 EStG (the 2026 tariff) — https://www.gesetze-im-internet
 | Relief | Detail | Limit |
 | --- | --- | --- |
 | Verlustrücktrag (carry-back) | Losses can be carried back to the immediately preceding year | EUR 10,000,000 (single) / EUR 20,000,000 (joint) -- permanently raised |
-| Verlustvortrag (carry-forward) | Losses carried forward indefinitely | Full offset up to EUR 1,000,000; 60% of remaining income (Mindestbesteuerung) |
+| Verlustvortrag (carry-forward) | Losses carried forward indefinitely | Full offset up to EUR 1,000,000; of the excess, 70% for corporate income tax in VZ 2026 (EStG s 10d(2)) and 60% for trade tax (GewStG s 10a) (Mindestbesteuerung) |
 | Intra-year offset (Verlustausgleich) | Losses from one income category offset gains in other categories within the same year | No limit for horizontal offset; vertical offset generally unrestricted |
 | IAB as virtual loss | IAB under §7g reduces profit and can create or increase a loss that triggers carry-back/forward | Subject to IAB limits |
 

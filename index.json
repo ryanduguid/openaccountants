@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-30T18:32:09+00:00",
+ "generated_at": "2026-10-31T05:20:15+00:00",
  "counts": {
-  "guides": 2003,
+  "guides": 2004,
   "jurisdictions": 288,
   "accountant_reviewed": 164
  },
@@ -9549,6 +9549,19 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "de-corporate-income-tax",
+   "path": "skills/international/germany/de-corporate-income-tax.md",
+   "name": "de-corporate-income-tax",
+   "jurisdiction": "DE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
+  },
+  {
    "slug": "de-crypto-tax",
    "path": "skills/international/germany/de-crypto-tax.md",
    "name": "de-crypto-tax",
@@ -9715,7 +9728,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "germany-payroll",
@@ -9741,7 +9754,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "germany-to-switzerland-cross-border-tax",

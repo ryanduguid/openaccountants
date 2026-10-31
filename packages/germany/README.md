@@ -7,27 +7,28 @@
 
 1. `intake.md`
 2. `de-capital-gains.md`
-3. `de-crypto-tax.md`
-4. `de-einkommensteuer-freelancer.md`
-5. `de-estimated-tax.md`
-6. `de-income-tax.md`
-7. `de-payroll.md`
-8. `de-rental-income.md`
-9. `de-social-contributions.md`
-10. `de-trade-tax.md`
-11. `de-ustva-vat-return.md`
-12. `germany-bookkeeping.md`
-13. `germany-einvoice.md`
-14. `germany-financial-statements.md`
-15. `germany-formation.md`
-16. `germany-payroll.md`
-17. `germany-tax-optimization.md`
-18. `germany-to-switzerland-cross-border-tax.md`
-19. `germany-transfer-pricing.md`
-20. `germany-vat-return.md`
-21. `references.md`
-22. `germany-guided-intake.md`
-23. `germany-return-assembly.md`
+3. `de-corporate-income-tax.md`
+4. `de-crypto-tax.md`
+5. `de-einkommensteuer-freelancer.md`
+6. `de-estimated-tax.md`
+7. `de-income-tax.md`
+8. `de-payroll.md`
+9. `de-rental-income.md`
+10. `de-social-contributions.md`
+11. `de-trade-tax.md`
+12. `de-ustva-vat-return.md`
+13. `germany-bookkeeping.md`
+14. `germany-einvoice.md`
+15. `germany-financial-statements.md`
+16. `germany-formation.md`
+17. `germany-payroll.md`
+18. `germany-tax-optimization.md`
+19. `germany-to-switzerland-cross-border-tax.md`
+20. `germany-transfer-pricing.md`
+21. `germany-vat-return.md`
+22. `references.md`
+23. `germany-guided-intake.md`
+24. `germany-return-assembly.md`
 
 ## Shared files this package needs
 
@@ -35,6 +36,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
 - [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
 - [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
