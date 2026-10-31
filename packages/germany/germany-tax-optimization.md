@@ -62,7 +62,7 @@ Source: § 32a Abs. 1 EStG (the 2026 tariff) — https://www.gesetze-im-internet
 
 | Factor | Einzelunternehmen (sole trader) | GmbH |
 | --- | --- | --- |
-| Top marginal rate | 45% + Soli + KiSt | 15% KSt + 5.5% Soli + ~14% GewSt = ~30% in VZ 2026; KSt steps down from 14% in 2028 to 10% from 2032 (KStG s 23(1)) |
+| Top marginal rate | 45% + Soli + KiSt | 15% KSt + 5.5% Soli on the KSt (0.825 points) + ~14% GewSt = ~30% in VZ 2026; KSt steps down from 14% in 2028 to 10% from 2032 (KStG s 23(1)) |
 | When to incorporate | When profits consistently exceed ~EUR 60,000 and can be retained. Extraction via salary (deductible) or dividends (25% Abgeltungsteuer + Soli). | EStG §20 Abs. 1 Nr. 1; KStG §1 |
 
 ### Employing Family Members (Ehegatten-Arbeitsverhältnis)

@@ -101,7 +101,7 @@ Start from the tax profit under the EStG (KStG s 8(1)); all income of a GmbH or 
 
 **Not deductible for KSt and, through the profit base, for GewSt:**
 
-- Hidden distributions; hidden contributions do not increase income (KStG s 8(3)).
+- Hidden distributions do not reduce income. Hidden contributions do not increase income, unless they reduced the shareholder's income or rest on a related person's hidden distribution that was not taken into account in the shareholder's taxation; a reviewer tests these exceptions (KStG s 8(3) sentences 2 to 5).
 - KSt, SolZ and other income taxes and their ancillary amounts; criminal fines; half of supervisory board pay; costs of purposes set by the articles (KStG s 10).
 - Trade tax and its ancillary amounts (EStG s 4(5b)).
 - Gifts to a non-employee, in full, where the year's total to that recipient exceeds EUR 50; 30% of business meals, with the required records; fines and related costs (EStG s 4(5) nos 1, 2, 8).
@@ -112,14 +112,14 @@ Start from the tax profit under the EStG (KStG s 8(1)); all income of a GmbH or 
 **Exempt income:**
 
 - Dividends are exempt only so far as they did not reduce the payer's income (KStG s 8b(1) sentence 2). Share gains are exempt, unless earlier tax-effective write-downs have not been reversed, or tax-effective s 6b or similar deductions were taken (s 8b(2) sentences 4 and 5). 5% is deemed non-deductible (s 8b(3), (5)).
-- Dividends are taxable if the direct holding was under 10% at the start of the calendar year; acquiring at least 10% during the year is treated as made at its start. Those taxable dividends carry no 5% adjustment (s 8b(4) sentences 1, 6, 7). Share gains have no such test.
-- Reductions in profit connected with shares, including share losses, are not deductible at any holding (s 8b(3) sentence 3). Reductions on loans or security from a shareholder holding over 25%, or a related person, are also caught, unless the arm's length test in sentence 7 is met (s 8b(3) sentences 4 to 7).
+- Dividends are taxable if the direct holding was under 10% at the start of the calendar year; acquiring at least 10% during the year is treated as made at its start. A holding through a partnership is attributed pro rata and treated as direct. Those taxable dividends carry no 5% adjustment (s 8b(4) sentences 1, 4 to 7). Share gains have no such test.
+- Reductions in profit connected with shares, including share losses, are not deductible at any holding (s 8b(3) sentence 3). Reductions on loans or security from a shareholder holding over 25%, or a related person, are also caught, unless the arm's length test in sentence 7 is met; exchange-rate losses are not treated as such reductions (s 8b(3) sentences 4 to 7).
 
 **Trade tax additions and reductions:**
 
 | Item | Rule |
 |---|---|
-| Financing add-back (s 8 no 1) | Sum of all interest, annuities and silent partner shares, plus one fifth of rents for movable fixed assets owned by another (one half of that fraction for certain electric vehicles and bikes under contracts made after 31 December 2019, to EZ 2030; s 36(4)), plus half of rents for immovable fixed assets owned by another, plus a quarter of time-limited rights (not licences that only permit sublicensing). Only rents that meet the fixed-asset test count; a reviewer tests this. One quarter of the sum above EUR 200,000 is added |
+| Financing add-back (s 8 no 1) | Sum of all interest, annuities and silent partner shares, plus one fifth of rents for movable fixed assets owned by another (one half of that fraction for certain electric vehicles and bikes under contracts made after 31 December 2019, to EZ 2030; s 36(4)), plus half of rents for immovable fixed assets owned by another, plus a quarter of time-limited rights (not licences that only permit sublicensing, nor amounts in the artists' social levy base; s 8 no 1 f sentence 2). Only rents that meet the fixed-asset test count; a reviewer tests this. One quarter of the sum above EUR 200,000 is added |
 | Dividends (s 8 no 5; s 9 nos 2a, 7) | The dividend stays out only if the holding was at least 15% at the start of the EZ. Below 15%, the s 8b(1) exempt dividend is added back net of directly connected expenses, so the deemed 5% is not counted twice |
 | Land tax (s 9 no 1) | Reduction for land tax expensed in the EZ on land in business assets, in the version applying from EZ 2025 (s 36(4b)) |
 | Foreign permanent establishment (s 9 no 3) | That share of trade income is removed; the KSt position is a treaty question, so escalate |
@@ -203,7 +203,7 @@ The Mindeststeuergesetz applies from the EUR 750m threshold in s 1. An in-scope 
 
 Madrigal Elektromotoren GmbH, a fictional company; calendar year; VZ and EZ 2026; one municipality with a fictional 400% multiplier; rents all premises; no change of ownership; revenue far below the Pillar Two threshold.
 
-Accounting profit before KSt, SolZ and GewSt is EUR 480,000, after these items: dividend received EUR 40,000 from a 20% holding in a German GmbH held throughout, which did not reduce the payer's income (EUR 10,000 capital gains tax and EUR 550 surcharge withheld, certificates held); fine EUR 3,000; business meals EUR 10,000, properly recorded; supervisory board pay EUR 8,000; eligible donation EUR 5,000; interest EUR 120,000 (all net expense); rents for movable fixed assets EUR 50,000 (no electric vehicle relief); rents for immovable fixed assets EUR 200,000; time-limited licences EUR 40,000, none only for sublicensing. Losses brought forward: KSt EUR 300,000; GewSt EUR 250,000. Prepaid: KSt EUR 8,000, SolZ EUR 440, GewSt EUR 20,000.
+Accounting profit before KSt, SolZ and GewSt is EUR 480,000, after these items: dividend received EUR 40,000 from a 20% holding in a German GmbH held throughout, which did not reduce the payer's income (EUR 10,000 capital gains tax and EUR 550 surcharge withheld, certificates held); fine EUR 3,000; business meals EUR 10,000, properly recorded; supervisory board pay EUR 8,000; eligible donation EUR 5,000; interest EUR 120,000 (all net expense); rents for movable fixed assets EUR 50,000 (no electric vehicle relief); rents for immovable fixed assets EUR 200,000; time-limited licences EUR 40,000, none only for sublicensing or in the artists' social levy base. Losses brought forward: KSt EUR 300,000; GewSt EUR 250,000. Prepaid: KSt EUR 8,000, SolZ EUR 440, GewSt EUR 20,000.
 
 | KSt step | EUR |
 |---|---|
