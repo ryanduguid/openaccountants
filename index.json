@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-31T07:41:12+00:00",
+ "generated_at": "2026-10-31T09:31:26+00:00",
  "counts": {
-  "guides": 2006,
-  "jurisdictions": 288,
+  "guides": 2008,
+  "jurisdictions": 289,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -7623,6 +7623,32 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "dm-social-security-contributions-reference",
+   "path": "skills/international/dominica/dm-social-security-contributions-reference.md",
+   "name": "dm-social-security-contributions-reference",
+   "jurisdiction": "DM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
+  },
+  {
+   "slug": "dm-vat-reference",
+   "path": "skills/international/dominica/dm-vat-reference.md",
+   "name": "dm-vat-reference",
+   "jurisdiction": "DM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "do-asset-tax",
