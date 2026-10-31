@@ -3,12 +3,12 @@ name: australia-references
 jurisdiction: AU
 category: international
 tier: 2
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 version: 1.3
-description: Primary source references and related open-source projects for this jurisdiction.
+description: Primary source references and related open-source and source-available projects for this jurisdiction.
 ---
 
-# Australia — Related Open-Source Projects
+# Australia — Related Open-Source and Source-Available Projects
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -41,36 +41,36 @@ Before incorporating material, check its exact licence, the proposed use and the
 ## AU Tax Legislation Corpus
 
 - Repository: [ryanduguid/au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus)
-- License: MIT
+- License: Functional Source License 1.1, ALv2 Future License (FSL-1.1-ALv2); excludes a Competing Use
 - Language: English
 - Scope: Builds a provenance-rich corpus of in-force Commonwealth tax legislation (ITAA 1936/1997, GST Act, TAA 1953, FBTAA and related Acts) from the Federal Register of Legislation, with exact compilation identifiers attached to every extract.
 - Why it matters: Guides in this pack cite sections of the ITAA 1997/1936 and TAA 1953. This corpus lets a retrieval system verify each citation against the in-force compilation text rather than trusting secondary summaries.
 - Integration approach:
-  - Check the MIT terms for the relevant software and any separate rights in source data or reproduced content before reuse.
+  - Check the FSL-1.1-ALv2 terms, including the Competing Use exclusion, for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Use as the primary-source verification layer when reviewing or updating any Australian guide's legislative citations.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
 
 ## Payday Super Checker
 
 - Repository: [ryanduguid/australian-accounting: payday-super-checker](https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker)
-- License: MIT
+- License: Functional Source License 1.1, ALv2 Future License (FSL-1.1-ALv2); excludes a Competing Use
 - Language: English
 - Scope: Checks Australian super contributions against the payday-super deadlines (7 business days from payday, from 1 July 2026) and estimates SG charge exposure on late contributions.
 - Why it matters: Direct validation companion to `au-super-guarantee`. The payday-super regime change is the highest-stakes AU payroll change of 2026, and deadline arithmetic (business days, fund-receipt basis) is easy to get wrong.
 - Integration approach:
-  - Check the MIT terms for the relevant software and any separate rights in source data or reproduced content before reuse.
+  - Check the FSL-1.1-ALv2 terms, including the Competing Use exclusion, for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Use to sanity-check worked examples in `au-super-guarantee` and `australia-payroll`.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
 
 ## ATO Benchmark Compare
 
 - Repository: [ryanduguid/australian-accounting: ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare)
-- License: MIT
+- License: Functional Source License 1.1, ALv2 Future License (FSL-1.1-ALv2); excludes a Competing Use
 - Language: English
 - Scope: Compares profit and loss figures against the ATO small business benchmarks locally, with the working shown.
 - Why it matters: The ATO uses industry benchmarks to select small businesses for review; comparing a sole trader's expense ratios before lodgment is a practical risk screen that complements `au-sole-trader-schedule`.
 - Integration approach:
-  - Check the MIT terms for the relevant software and any separate rights in source data or reproduced content before reuse.
+  - Check the FSL-1.1-ALv2 terms, including the Competing Use exclusion, for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Reference for adding a benchmark-screen step to sole trader workflows.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
 

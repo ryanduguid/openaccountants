@@ -13,7 +13,7 @@ version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context (three live fronts, verified 11 October 2026).** (1) The enacted individual rate cut (16% -> 15% from 1 July 2026, -> 14% from 1 July 2027) flows into date-of-death returns and the first-3-years concessional estate rates for 2026-27; the ATO's published year-4+ compressed bands are current only to 2025-26 -- see Rule 5. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount is replaced by cost base indexation plus a 30% minimum rate on capital gains, and pre-CGT (pre-20 September 1985) status ends after 30 June 2027 -- this is LAW and interacts with Div 128 legatee cost bases (Rule 14). (3) The proposed 30% minimum tax on discretionary trusts from 1 July 2028 (exposure draft released 3 September 2026) CARVES OUT deceased estates and, subject to conditions, testamentary trusts -- NOT LAW (Rule 13). Verify all three before relying.
+> **Law-change context (three live fronts, verified 11 October 2026; the Bills in item 3 checked 31 October 2026).** (1) The enacted individual rate cut (16% -> 15% from 1 July 2026, -> 14% from 1 July 2027) flows into date-of-death returns and the first-3-years concessional estate rates for 2026-27; the ATO's published year-4+ compressed bands are current only to 2025-26 -- see Rule 5. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount is replaced by cost base indexation plus a 30% minimum rate on capital gains, and pre-CGT (pre-20 September 1985) status ends after 30 June 2027 -- this is LAW and interacts with Div 128 legatee cost bases (Rule 14). (3) The proposed 30% minimum tax on discretionary trusts from 1 July 2028 CARVES OUT deceased estates and, subject to conditions, testamentary trusts -- NOT LAW. Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026 (Rule 13). Verify all three before relying.
 
 ## Section 1 -- Quick reference
 
@@ -85,7 +85,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **R-AU-DE-5 -- Insolvent estates.** *Trigger:* estate liabilities exceed assets, Part XI Bankruptcy Act administration, creditor priority questions. *Message:* "Insolvent estate administration has its own priority and personal-liability regime for the LPR. Out of scope. Escalate to an insolvency practitioner and estates lawyer."
 
-**R-AU-DE-6 -- Testamentary trust drafting and structuring.** *Trigger:* requests to design, draft or amend testamentary trust terms, or to plan will structures around the announced minimum tax. *Message:* "Testamentary trust drafting is legal work, and structuring around announced-not-law measures is premature. This skill covers only the tax treatment of an EXISTING testamentary trust. Escalate."
+**R-AU-DE-6 -- Testamentary trust drafting and structuring.** *Trigger:* requests to design, draft or amend testamentary trust terms, or to plan will structures around the proposed minimum tax. *Message:* "Testamentary trust drafting is legal work, and structuring around Bills that are not law is premature. This skill covers only the tax treatment of an EXISTING testamentary trust. Escalate."
 
 ## Section 3 -- Administration timeline and estate-year decision tables
 
@@ -156,7 +156,7 @@ Iris (Australian resident) dies holding ASX shares: market value at death $300,0
 Ken dies with $500,000 super: tax-free component nil, taxable component all taxed element. Sole beneficiary is his financially independent adult daughter (SIS dependant as his child, but NOT a tax dependant).
 
 - **Paid directly by the fund:** 15% + 2% Medicare levy on the taxed element = 17% x 500,000 = **$85,000**.
-- **Paid to the LPR and distributed under the will:** the fund withholds NIL (Schedule 12). The trustee is assessed (s 101A(3) ITAA 1936 with s 302-10 ITAA 1997) on the amount to the extent a NON-dependant benefits or may be expected to benefit, at the same component caps but with **no Medicare levy** (trustee assessments never carry it): 15% x 500,000 = **$75,000**. Saving **$10,000**.
+- **Paid to the LPR and distributed under the will:** the fund withholds NIL (Schedule 12). The trustee is assessed (s 101A(3) ITAA 1936 with s 302-10 ITAA 1997) on the amount to the extent a NON-dependant benefits or may be expected to benefit, at the same component caps but with **no Medicare levy** (s 251S(1)(c) excludes a s 99 or s 99A assessment of a deceased person's trust estate): 15% x 500,000 = **$75,000**. Saving **$10,000**.
 - Had the recipient been his spouse (tax dependant), the lump sum would be tax-free either way. A death benefit received by the estate is statutorily income to which NO beneficiary is presently entitled -- it never flows out pre-tax. Routing choices (BDBN to the LPR vs direct) sit in super-fund law and estate planning: a BDBN is a direction to the FUND trustee, not will property -- flag, and send disputes to R-AU-DE-3.
 
 ---
@@ -173,7 +173,7 @@ Lodgment is required if the deceased had tax withheld, taxable income above the 
 
 ### Rule 3 -- Access, authority and the data package
 
-Death severs all pre-death agent authorisations. Sequence: notify the ATO -> obtain the grant -> be recorded as authorised LPR -> (optionally) appoint an agent with a declaration -> request/receive the deceased estate data package (3 years of returns, income and investment extracts, NOAs, account statement, ATO debts, super accounts, current-year payroll). Without a grant the ATO discloses only what its risk settings allow -- an executor without probate is NOT an authorised LPR. If nobody administers an intestate estate within 6 months, the ATO can raise assessments and recover itself.
+Death severs all pre-death agent authorisations. Sequence: notify the ATO -> obtain the grant -> be recorded as authorised LPR -> (optionally) appoint an agent with a declaration -> request/receive the deceased estate data package (3 years of returns, income and investment extracts, NOAs, account statement, ATO debts, super accounts, current-year payroll). Without a grant the ATO discloses only what its risk settings allow -- an executor without probate is NOT an authorised LPR. If neither probate nor letters of administration are granted within 6 months of death, with or without a will, the Commissioner may determine the person's outstanding tax-related liabilities and recover them from the estate ([TAA 1953 Sch 1 s 260-145](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/Sch1-260-145)). The ATO's final return page describes this for intestate estates.
 
 ### Rule 4 -- Present entitlement through the stages (IT 2622)
 
@@ -201,7 +201,7 @@ K3 happens when a CGT asset of the deceased passes to a beneficiary who, when it
 
 ### Rule 9 -- Super death benefits: dependant status and the estate route
 
-Superannuation is NOT will property: it is paid under the fund's rules and SIS law, by trustee discretion or a binding death benefit nomination (a BDBN binds the FUND trustee and can be lapsing -- validity disputes go to R-AU-DE-3). Tax dependant (s 302-195: spouse/former spouse, child under 18, interdependency, actual financial dependant) -> lump sum entirely tax-free. Non-dependant (typically an independent adult child) -> lump sum only: tax-free component NANE; taxable component taxed element at max 15%, untaxed element at max 30%, PLUS 2% Medicare levy when paid directly. Paid to the LPR instead: the fund withholds nothing (Schedule 12), the benefit is statutorily income with no present entitlement, and the trustee is assessed under s 101A(3)/s 302-10 as if paid to those who benefit or may be expected to benefit -- tax-dependant shares tax-free, non-dependant shares at the 15%/30% caps WITHOUT Medicare levy (Example 6). Keep death benefits out of the s 99 rate analysis: Div 302 rates apply to them specifically.
+Superannuation is NOT will property: it is paid under the fund's rules and SIS law, by trustee discretion or a binding death benefit nomination (a BDBN binds the FUND trustee and can be lapsing -- validity disputes go to R-AU-DE-3). Tax dependant (s 302-195: spouse/former spouse, child under 18, interdependency, actual financial dependant) -> lump sum entirely tax-free. Non-dependant (typically an independent adult child) -> lump sum only: tax-free component NANE; taxable component taxed element at max 15%, untaxed element at max 30%, PLUS 2% Medicare levy when paid directly. Paid to the LPR instead: the fund withholds nothing (Schedule 12), the benefit is statutorily income with no present entitlement, and the trustee is assessed under s 101A(3)/s 302-10 as if paid to those who benefit or may be expected to benefit -- tax-dependant shares tax-free, non-dependant shares at the 15%/30% caps WITHOUT Medicare levy ([s 251S(1)(c) ITAA 1936](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/251S); Example 6). Some commentary adds the 2% levy for a non-dependant taking through an estate, so confirm the point before relying on the difference. Commentary also describes the trustee withholding the tax from the beneficiary's payment and remitting it to the ATO: hold back the tax before distributing. Keep death benefits out of the s 99 rate analysis: Div 302 rates apply to them specifically.
 
 ### Rule 10 -- Unfinished business: s 101A, franking refunds, dying losses
 
@@ -217,9 +217,9 @@ Income of a trust that resulted from a will, codicil, intestacy or court order (
 
 Before interim or final distributions: quantify final-return tax, estate tax by year, K3 exposure, super benefit tax at trustee level, and any pre-death ATO debts from the data package. The authorised LPR is liable for the deceased's tax up to the value of estate assets, and personally exposed where assets are distributed leaving tax unprovided for -- PCG 2018/4 describes when the ATO treats an LPR as having notice. Interim distributions also flip present entitlement on the amounts paid (Rule 4), changing who is assessed -- document stage, date and amount for every payment out.
 
-### Rule 13 -- Announced 30% trustee minimum tax: the testamentary carve-out
+### Rule 13 -- Proposed 30% trustee minimum tax: the testamentary carve-out
 
-The 2026-27 Budget measure (30% minimum tax on the net income of discretionary trusts from 1 July 2028, payable by the trustee) carves out deceased estates and, subject to conditions about the trust's assets and beneficiaries, testamentary trusts. Treasury released exposure draft legislation on 3 September 2026 (consultation 3 to 18 September 2026); the ATO page updated that day states the measure is not yet law. NOT LAW: never model it, never restructure around it, and treat carve-out design as unstable (R-AU-DE-6 for planning requests). See au-trust-distributions Rule 14 for the full landscape table.
+The 30% minimum tax on the net income of discretionary trusts from 1 July 2028, payable by the trustee, carves out deceased estates and, subject to conditions about the trust's assets and beneficiaries, testamentary trusts. Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf), paras 1.18, 1.22, 1.36-1.39. Schedule 4 of the same Bill would also exempt gains in deceased estates and genuine testamentary trusts from the 30% minimum rate on capital gains, subject to integrity rules (paras 4.137-4.157). NOT LAW: never model it, never restructure around it, and treat carve-out design as unstable (R-AU-DE-6 for planning requests). See au-trust-distributions Rule 14 for the full landscape table.
 
 ### Rule 14 -- 1 July 2027 CGT reform interaction (LAW)
 
@@ -308,7 +308,7 @@ REVIEWER FLAGS
 4. Count estate years honestly: the part-year to the first 30 June is year 1; year 4 pricing is a cliff (Example 3).
 5. Screen every asset for K3 at day one -- beneficiary residency at PASSING is what counts, and the charge lands in the final return.
 6. Never let the 2-year dwelling window expire silently: diarise it at engagement, and document PCG 2019/5 conditions contemporaneously.
-7. Label reform items correctly: 15% rate flow-through (LAW, 2026-27), 1 July 2027 CGT changes (LAW), 30% trustee minimum tax with testamentary carve-out (EXPOSURE DRAFT, NOT LAW).
+7. Label reform items correctly: 15% rate flow-through (LAW, 2026-27), 1 July 2027 CGT changes (LAW), 30% trustee minimum tax with testamentary carve-out (BILLS, NOT LAW).
 
 ---
 
@@ -339,21 +339,21 @@ If engaged mid-administration with a shoebox:
 | K3 measurement | MV at death − cost base, in the deceased's final return; pre-CGT disregarded; DGR gifts excepted (s 118-60) |
 | Losses at death | Revenue and capital carry-forwards lapse -- usable only in/for the final return |
 
-### Primary sources (verified 20 August 2026 against ato.gov.au; estate rates, TD 2026/D1 and minimum-tax status rechecked 11 October 2026)
+### Primary sources (verified 20 August 2026 against ato.gov.au; estate rates and TD 2026/D1 rechecked 11 October 2026; minimum-tax status rechecked 31 October 2026)
 
 | Topic | Source |
 |---|---|
 | Final return, DECEASED annotation, refunds to LPR | ato.gov.au -- Doing a final tax return for the deceased person (QC 40481, updated 4 June 2026) |
-| Notification, authority, data package | ato.gov.au -- Accessing a deceased person's tax and super information (QC 56976); Checklist: what to do when someone dies; PCG 2018/4 (LPR liability) |
+| Notification, authority, data package | ato.gov.au -- Accessing a deceased person's tax and super information (QC 56976); Checklist: what to do when someone dies; PCG 2018/4 (LPR liability); TAA 1953 Sch 1 s 260-145 (unadministered estate) |
 | Estate trust returns and stages | ato.gov.au -- Doing trust tax returns for the deceased estate (QC 67527); Who pays tax on deceased estate income (QC 49907) |
 | Present entitlement during administration | IT 2622 (6 December 1990); *FCT v Whiting* (1943) 68 CLR 199; ITAA 1936 ss 95-99A, 101A |
 | Estate tax rates | ato.gov.au -- Tax rates – deceased estate (QC 49909, updated 4 June 2026); Income Tax Rates Act 1986 |
 | Death CGT rollover and cost bases | ITAA 1997 Div 128 (ss 128-10, 128-15, 128-20, 128-50); s 115-30(1) item 4; ato.gov.au -- Cost base of inherited assets (QC 66053); Inherited property and CGT (QC 66054) |
 | Main residence on death | ITAA 1997 ss 118-195, 118-200; ato.gov.au -- Extensions to the 2-year ownership period (QC 66057); PCG 2019/5; [draft TD 2026/D1](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001) (right to occupy under the will) |
 | CGT event K3 | ITAA 1997 s 104-215; s 118-60 |
-| Super death benefits | ITAA 1997 Div 302 (ss 302-10, 302-60, 302-140/145, 302-195); ITAA 1936 s 101A(3); ato.gov.au -- Superannuation death benefits (QC 44997); Paying superannuation death benefits (QC 45254); Schedule 12 withholding table |
+| Super death benefits | ITAA 1997 Div 302 (ss 302-10, 302-60, 302-140/145, 302-195); ITAA 1936 ss 101A(3), 251S(1)(c); ato.gov.au -- Superannuation death benefits (QC 44997); Paying superannuation death benefits (QC 45254); Schedule 12 withholding table |
 | Testamentary trusts | ITAA 1936 Div 6AA, s 102AG(2)(a)(i), s 102AG(2AA) (Treasury Laws Amendment (2019 Measures No. 3) Act 2020, from 1 July 2019) |
-| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); 2026-27 Budget (12 May 2026), Treasury consultation 8 July 2026 and exposure draft 3 September 2026 (30% minimum tax, testamentary carve-out -- NOT LAW; [ATO status page](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-introducing-a-minimum-tax-on-discretionary-trusts)) |
+| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); Tax Reform No. 3 Bill (30% minimum tax, testamentary carve-out -- BILLS, NOT LAW: [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf)) |
 
 ### Test suite
 
@@ -371,9 +371,9 @@ If engaged mid-administration with a shoebox:
 
 **Test 7:** Post-CGT shares (MV $300k, CB $120k) pass to foreign-resident daughter. -> K3: $180k gain just before death, in the FINAL return; resident son instead -> rollover at $120k.
 
-**Test 8:** Pre-CGT beach house passes to foreign-resident nephew. -> K3 gain disregarded (s 104-215(5)); nephew's cost base = MV at DOD.
+**Test 8:** Australian-resident deceased's pre-CGT overseas beach house (not taxable Australian property) passes to foreign-resident nephew. -> K3 gain disregarded (s 104-215(5)); nephew's cost base = MV at DOD. An Australian beach house would be taxable Australian property, so K3 would not happen (Rule 8); the cost base result is the same.
 
-**Test 9:** $500k taxed-element super to adult child: direct $85,000 (17%); via LPR $75,000 (15%, no ML).
+**Test 9:** $500k taxed-element super to adult child: direct $85,000 (17%); via LPR $75,000 (15%, no ML: s 251S(1)(c)).
 
 **Test 10:** Deceased's $40k carried-forward capital loss; estate sells shares at a $40k gain in year 2. -> Loss CANNOT offset -- it died with the deceased; estate pays s 99 tax on the gain.
 
@@ -392,7 +392,7 @@ If engaged mid-administration with a shoebox:
 - NEVER assume a missed 2-year window is fatal (PCG 2019/5) or that an extension is available without evidencing the conditions
 - NEVER treat super as will property, or apply Div 302 rates without the fund's component breakdown
 - NEVER apply adult rates to testamentary trust income for minors without tracing s 102AG(2AA) asset provenance
-- NEVER present the announced 30% trustee minimum tax (or its testamentary carve-out design) as law
+- NEVER present the proposed 30% trustee minimum tax (or its testamentary carve-out design) as law
 - NEVER present figures as definitive
 
 ---

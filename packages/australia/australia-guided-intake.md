@@ -6,7 +6,7 @@ jurisdiction: AU
 category: orchestrator
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -94,19 +94,19 @@ Q3: "Do you have an ABN?"
 
 ```
 Q4: "GST registered?"
-    Options: ["Yes (turnover above $75K or voluntarily registered)", "No (turnover under $75K)", "Not sure"]
+    Options: ["Yes (GST turnover $75K or more, taxi or ride-sourcing, or voluntarily registered)", "No", "Not sure"]
 
 Q5: "Marital / dependant status?"
     Options: ["Single no dependants", "Single with dependants", "Married / de facto no dependants", "Married / de facto with dependants"]
 
 Q6: "Industry?"
-    Options: ["Software / tech / IT services", "Professional services (accounting, legal, consulting)", "Trades (construction, electrical, plumbing)", "Creative (design, media, photography)", "Other"]
+    Options: ["Software / tech / IT services", "Professional services (accounting, legal, consulting)", "Trades (construction, electrical, plumbing)", "Creative (design, media, photography)", "Taxi, limousine or ride-sourcing driver", "Other"]
 ```
 
-- **GST registration turnover threshold** — 75000 AUD (turnover above which GST registration required or voluntary registration applies)
-- **Q4 evaluation** — Yes -> continue. Standard quarterly BAS lodgement. No -> continue. No BAS required unless turnover crosses $75K threshold. Will check after inference. Not sure -> ask one follow-up: "Do you charge GST on your invoices (i.e., your prices include a 10% GST component)? If yes, you're registered. If your invoices say 'no GST' or you've never dealt with BAS, you're likely not registered. Check your ABN registration at abr.gov.au."
+- **GST registration turnover threshold** — 75000 AUD. Registration is required at GST turnover of $75,000 or more, current (this month and the previous 11) or projected (this month and the next 11); below that it is voluntary. Taxi, limousine and ride-sourcing suppliers must register regardless of turnover.  _([ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst))_
+- **Q4 evaluation** — Yes -> continue. Standard quarterly BAS lodgement. No -> continue. After inference, test current and projected GST turnover against $75,000 and Q6 against the taxi and ride-sourcing rule. If either requires registration, add it to `open_flags`; otherwise no BAS is required for GST. Not sure -> ask one follow-up: "Do you charge GST on your invoices (i.e., your prices include a 10% GST component)? If yes, you're registered. If your invoices say 'no GST' or you've never dealt with BAS, you're likely not registered. Check your ABN registration at abr.gov.au."
 - **Q5 evaluation** — All options -> note for Medicare levy surcharge and tax offset calculations. Continue.
-- **Q6 evaluation** — All options -> note for expense classification context. Continue.
+- **Q6 evaluation** — All options -> note for expense classification context. Continue. Taxi, limousine or ride-sourcing driver with Q4 = No -> also add 'GST registration required regardless of turnover, not held' to `open_flags`.
 
 Total time: ~45 seconds if the user taps through.
 
@@ -518,7 +518,7 @@ When a refusal fires:
 
 **Check IN11 -- Total user-facing turn count is low.** Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
 
-**Check IN12 -- GST registration status was established.** GST registered vs unregistered was confirmed before inference, as it changes how every transaction is classified.
+**Check IN12 -- GST registration status was established.** GST registered vs unregistered was confirmed before inference, as it changes how every transaction is classified. An unregistered status was tested against current and projected GST turnover and the taxi and ride-sourcing rule, and any failure is in `open_flags`.
 
 ## Section 11 -- Performance targets
 

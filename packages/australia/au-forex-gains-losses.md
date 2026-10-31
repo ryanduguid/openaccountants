@@ -5,7 +5,7 @@ description: How Division 775 of the ITAA 1997 brings realised foreign currency 
 jurisdiction: AU
 category: international
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +19,7 @@ Division 775 of the *Income Tax Assessment Act 1997* (ITAA 1997) contains rules 
 
 This Guide is for taxpayers who make gains or losses attributable to fluctuations in a currency exchange rate, or to an agreed exchange rate differing from an actual exchange rate, where one of the forex realisation events listed in the table below happens. The ATO notes that the forex measures are contained in Division 775 and Subdivisions 960-C and 960-D of the ITAA 1997, and that common forex transactions include those made through foreign currency denominated accounts, shares and hedging transactions.
 
-It is not for financial arrangements subject to Division 230: the ATO states that "Division 775 does not apply to financial arrangements that are subject to Division 230 of the ITAA 1997". It is also not a guide to the functional currency rules in Subdivision 960-D. For crypto assets, see the stablecoins section below — the ATO's published position on bitcoin is that it is not foreign currency for Division 775 purposes.
+It is not for financial arrangements subject to Division 230: the ATO states that "Division 775 does not apply to financial arrangements that are subject to Division 230 of the ITAA 1997". It is also not a guide to the functional currency rules in Subdivision 960-D. For crypto assets, see the stablecoins section below — section 995-1 excludes digital currency, which the ATO says includes bitcoin, from foreign currency, with effect for income years starting 1 July 2021.
 
 ## Rates, thresholds and deadlines
 
@@ -68,7 +68,7 @@ It is not for financial arrangements subject to Division 230: the ATO states tha
 
 ## The method, step by step
 
-- **Step 1 — Confirm the amount is foreign currency** — Confirm the amount is "foreign currency". Section 995-1 provides that "foreign currency means a currency other than Australian currency", and the terms "currency" and "Australian currency" are not defined in the Assessment Acts, so they take their ordinary meaning: see TD 2014/25.  _([https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001](https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001))_
+- **Step 1 — Confirm the amount is foreign currency** — Confirm the amount is "foreign currency". Section 995-1(1) provides that foreign currency means a currency other than Australian currency, digital currency or anything prescribed by the regulations for that paragraph, and that digital currency has the same meaning as in the GST Act. The terms "currency" and "Australian currency" are not defined in the Assessment Acts, so they take their ordinary meaning: see the reasoning in TD 2014/25, which itself applies only to income years before 1 July 2021.  _([s 995-1](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1); [https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001](https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001))_
 - **Step 2 — Check Division 775 applies at all** — Check Division 775 applies at all — it does not apply to financial arrangements subject to Division 230 (TOFA): Foreign exchange gains and losses.  _([https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses))_
 - **Step 3 — Identify which forex realisation event happened** — Identify which forex realisation event happened, from the list in the first table above, and confirm the gain or loss is attributable to a currency exchange rate fluctuation or to an agreed rate differing from an actual rate: Foreign exchange gains and losses. A mere fluctuation between currencies without a forex realisation event does not generate an assessable gain or a deductible loss.  _([https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses))_
 - **Step 4 — Apply the counting rules where several events happen** — Where several events happen at once, apply the counting rules: generally only one of the five main forex realisation events is counted, using the specific rules in subsections 775-65(1), (2) and (3) for options and forward contracts, and otherwise the residual rule in subsection 775-65(4): Forex realisation events.  _([https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/forex-realisation-events](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/forex-realisation-events))_
@@ -87,9 +87,11 @@ It is not for financial arrangements subject to Division 230: the ATO states tha
 
 ## Stablecoins and other crypto assets
 
-The ATO's published determination on this point is TD 2014/25, which concludes that bitcoin is not a "foreign currency" for the purposes of Division 775 of the ITAA 1997, reasoning that bitcoin is not a monetary unit recognised and adopted by the laws of any other sovereign State as the means for discharging monetary obligations. The ATO's crypto asset guidance lists TD 2014/25 alongside TD 2014/26 (bitcoin is a CGT asset) and TD 2014/27 (bitcoin as trading stock), and states that the most common use of crypto is as an investment, in which case the crypto asset is a capital gains tax asset.
+Section 995-1(1) of the ITAA 1997 now excludes digital currency from foreign currency, and gives digital currency its GST Act meaning. Schedule 2 to the Treasury Laws Amendment (2022 Measures No. 4) Act 2023 made that change, with effect for income years starting 1 July 2021. TD 2014/25 concluded that bitcoin is not a "foreign currency" for the purposes of Division 775, reasoning that bitcoin is not a monetary unit recognised and adopted by the laws of any other sovereign State as the means for discharging monetary obligations. Paragraph 2 of the determination now records the amendment and says it applies for income years before 1 July 2021. The ATO's crypto asset guidance lists TD 2014/25 alongside TD 2014/26 (bitcoin is a CGT asset) and TD 2014/27 (bitcoin as trading stock), and states that the most common use of crypto is as an investment, in which case the crypto asset is a capital gains tax asset.
 
-The official pages read for this Guide do not address stablecoins by name for Division 775 purposes, and they do not state a Division 775 outcome for any crypto asset other than bitcoin. The ATO's GST and digital currency page sets out criteria for digital currency — including that it is "denominated in a currency that is not issued by, or under the authority of, an Australian or foreign government" and does not have a value derived from or dependent on anything else — but those criteria are stated for GST purposes, not for Division 775. Do not carry them across to income tax without checking the current law and any later ATO guidance on the same host.
+Because section 995-1 adopts the GST Act meaning, the GST criteria are the statutory test for Division 775 as well. Under section 195-1 of the GST Act, digital currency means digital units of value that are designed to be fungible; can be provided as consideration for a supply; are generally available to the public without substantial restrictions on their use as consideration; are not denominated in any country's currency, or are denominated in a currency not issued by or under the authority of an Australian or foreign government agency; do not have a value that depends on, or is derived from, the value of anything else; and do not give an entitlement to receive, or direct the supply of, a particular thing unless the entitlement is incidental to holding or using the units. The definition also has an exclusion for certain financial supplies, so read the [full text](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/195-1). A crypto asset that meets the definition is not foreign currency.
+
+The official pages read for this Guide do not address stablecoins by name for Division 775 purposes. Inference, not an ATO statement: a stablecoin pegged to a fiat currency may fail the value limb, so the digital currency exclusion would not settle it, and whether it is a "currency" in the ordinary sense would still need separate analysis.
 
 For a crypto asset or stablecoin, establish the asset's legal character first and apply the crypto guidance; a price linked to a foreign currency does not by itself settle the Division 775 analysis. A published private ruling binds only its applicant and stated arrangement, so it can identify issues but cannot establish another taxpayer's entitlement.
 
@@ -106,7 +108,7 @@ For a crypto asset or stablecoin, establish the asset's legal character first an
 
 - Financial arrangements subject to Division 230 (TOFA) — the ATO states Division 775 does not apply to them.
 - Functional currency elections under Subdivision 960-D, and the currency translation rules in Subdivision 960-C, which this Guide does not work through.
-- Stablecoins and other crypto assets other than bitcoin: the pages relied on here do not state a Division 775 outcome for them.
+- Stablecoins and other crypto assets that may fall outside the GST Act definition of digital currency: the digital currency exclusion does not settle them, and the pages relied on here do not state a Division 775 outcome for them.
 - Forex on shares, hedging transactions, options and forward contracts beyond the counting rules in section 775-65 — these need the worked treatment on the ATO's common forex transactions page and, usually, specialist review.
 - Reliance on the edited private rulings cited above for a different taxpayer: they bind only their applicant and their facts.
 - GST treatment of foreign currency or digital currency transactions.
@@ -123,6 +125,8 @@ For a crypto asset or stablecoin, establish the asset's legal character first an
 - https://www.ato.gov.au/law/view/document?docid=PAC/19970038/775-165 (section 775-165, pre-commencement exceptions)
 - https://www.ato.gov.au/law/view/print?DocID=EV/1051822836045&PiT=99991231235958
 - https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001
+- https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1 (section 995-1, foreign currency and digital currency)
+- https://www.ato.gov.au/law/view/document?docid=PAC/19990055/195-1 (GST Act section 195-1, digital currency)
 - https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/what-are-crypto-assets
 - https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/gst-and-crypto-assets/gst-and-digital-currency
 - https://www.legislation.gov.au/Series/C2004A05138

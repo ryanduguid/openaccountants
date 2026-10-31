@@ -14,7 +14,7 @@ description: >
 version: 1.1
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -42,9 +42,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Financial year covered | 2026-27 (1 July 2026 to 30 June 2027) |
 | What is taxed | Taxable wages paid by an employer or group above the jurisdiction's threshold, self-assessed |
 | Who administers it | Each state and territory revenue office; the ATO has no role |
-| Harmonised areas | Return timing, motor vehicle and accommodation allowances, fringe benefits, work performed outside a jurisdiction, employee share schemes, super for non-working directors and grouping; WA aligned its provisions from 1 July 2012 |
+| Harmonised areas | Return timing (with the local exceptions in Section 9), motor vehicle and accommodation allowances, fringe benefits, work performed outside a jurisdiction, employee share schemes, super for non-working directors and grouping; WA aligned its provisions from 1 July 2012 |
 | Registration trigger | Australia-wide taxable wages exceed the jurisdiction's monthly threshold |
-| Monthly return | Due on the 7th of the following month |
+| Monthly return | Generally due on the 7th of the following month. The NT allows 21 days, NSW and ACT December returns are due 14 January, and several jurisdictions take June in the annual return (Section 9) |
 | Annual return | Due 21 July, or 28 July in the ACT, NSW and SA |
 | Annual thresholds 2026-27 | $1.0m in VIC and WA, $1.2m NSW, $1.25m TAS, $1.3m QLD, $1.5m SA, $1.75m ACT, $2.5m NT |
 | Records | Keep for at least five years, in English, available on request |
@@ -76,7 +76,7 @@ employers in the ACT and the NT all turn on Australia-wide wages. See Section 3.
 
 **Step 6. Register, lodge and pay.**
 Register in every jurisdiction where wages are paid once Australia-wide wages exceed its
-threshold, lodge monthly by the 7th and reconcile annually by 21 July or 28 July. See Section 9.
+threshold, lodge monthly by the due date (generally the 7th) and reconcile annually by 21 July or 28 July. See Section 9.
 
 ## Section 3 - Rates and thresholds for 2026-27
 
@@ -86,7 +86,7 @@ threshold, lodge monthly by the 7th and reconcile annually by 21 July or 28 July
 | --- | --- | --- | --- | --- |
 | ACT | $1,750,000 (monthly $145,833.33) | 6.75% where Australia-wide wages are $20m or less, 6.85% to $50m, 7.35% to $100m, 7.85% to $150m and 8.75% above $150m | Apportioned by days employed and by the ACT share of Australia-wide wages; a group member that is not the DGE gets none | None; eligible ACT universities are capped at 6.85% |
 | NSW | $1,200,000 | 5.45% | Apportioned by days employed and by the NSW share of Australian wages | None |
-| NT | $2,500,000 (monthly $208,333) | 5.5%, or 6.5% for employers and group members with Australia-wide wages of $100m or more | Apportioned; confirm the current deduction rules with the Territory Revenue Office | None |
+| NT | $2,500,000 (monthly $208,333) | 5.5%, or 6.5% for employers and group members with Australia-wide wages of $100m or more | The deduction falls by $1 for every $2 of Australia-wide wages above $2.5m and reaches nil at $7.5m; also apportioned by days employed and by the NT share of Australia-wide wages | None |
 | QLD | $1,300,000 (monthly $108,333) | 4.75% where Australian wages are $6.5m or less, 4.95% above; regional employers get a 1% discount until 30 June 2030 | The deduction falls by $1 for every $7 of Australian wages above $1.3m and reaches nil at $10.4m | Mental health levy of 0.25% on Queensland wages where Australian wages exceed $10m, plus a further 0.5% above $100m |
 | SA | $1,500,000 (monthly $125,000) | Variable from 0% to 4.95% where Australian wages exceed $1.5m but not $1.7m, then 4.95% | Maximum deduction $600,000 | None |
 | TAS | $1,250,000 | 4% on the band from $1,250,001 to $2,000,000 and 6.1% on wages above $2,000,000 | Monthly threshold is the days in the month over the days in the year, multiplied by the annual amount | None |
@@ -96,6 +96,7 @@ threshold, lodge monthly by the 7th and reconcile annually by 21 July or 28 July
 - **Where the figures come from** — The Payroll Tax Australia site lists every jurisdiction's current rate, threshold and deduction with a link to the revenue office page, and was last updated on 2 September 2026. Check it before relying on any figure above.  _(Payroll Tax Australia, Rates and thresholds — https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds)_
 - **ACT tiers from 1 July 2026** — The rate depends on the group's Australia-wide wages, and the tax-free threshold is apportioned by the days wages were paid and by the ACT share of Australia-wide wages.  _(ACT Revenue Office, Calculating payroll tax — https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/calculating-payroll-tax)_
 - **Northern Territory** — The threshold rose to $2.5m from 1 July 2025, and from 1 July 2026 a 6.5% rate applies to employers and group members with Australia-wide wages of $100m or more.  _(Territory Revenue Office, Payroll tax rates and thresholds — https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds)_
+- **Northern Territory deduction** — The annual deduction is the threshold amount less half of the Australia-wide wages above it: AD = ETA - (TW + IW - ETA) / 2, where ETA is $2,500,000 x days employed / days in the year, TW is NT taxable wages and IW is interstate wages. Tax is (TW - AD x TW / (TW + IW)) x the rate, and the annual return adjusts the monthly deductions to this result. Over a full year the deduction is nil at $7.5m. An NT-only employer with $4,000,000 of wages for a full year gets $2,500,000 - ($1,500,000 / 2) = $1,750,000 and pays 5.5% of $2,250,000 = $123,750. Groups use the same formula on group wages. The Territory Revenue Office says the deduction settings did not change on 1 July 2026.  _(Payroll Tax Act 2009 (NT) Sch 1 cl 3, 5 and 7, as in force at 1 July 2026 — https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078; Territory Revenue Office, Payroll changes from 1 July 2026 — https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-changes-from-1-july-2026)_
 - **Queensland deduction and levy** — The $1.3m deduction reduces by $1 for every $7 of Australian taxable wages above the threshold and is exhausted at $10.4m; only the designated group employer claims it, and it can nominate a member to receive any excess. The mental health levy applies proportionately to Queensland wages once the group's Australian wages pass $10m.  _(QRO, Payroll tax deductions — https://qro.qld.gov.au/payroll-tax/calculate/deductions/)_
 - **Victorian phase-out** — An employer with Australian wages between $3m and $5m loses 50 cents of threshold for every dollar of wages above $3m (after apportionment), so a metropolitan employer paying $4.2m only in Victoria for a full year gets $400,000. Above $5m there is no threshold.  _(SRO Victoria, Threshold and phase-out rate — https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/thresholds-and-grouping/threshold-and-phase-out-rate)_
 - **Victorian surcharges** — The two surcharges are calculated on the same basis and only on the Victorian share of wages above the $10m and $100m thresholds; the COVID-19 debt surcharge runs to 30 June 2033.  _(SRO Victoria, Payroll tax current rates — https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates)_
@@ -116,7 +117,7 @@ threshold, lodge monthly by the 7th and reconcile annually by 21 July or 28 July
 
 - **Part-year employment** — Multiply the annual threshold by the days wages were paid divided by the days in the financial year. In NSW an employer paying wages for 184 days of 2025-26 received $604,931.51.  _(Revenue NSW, Thresholds and rates — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates)_
 - **Interstate wages** — Multiply the threshold by the jurisdiction's wages divided by total Australian wages. NSW wages of $900,000 out of $3,000,000 Australian wages give a NSW threshold of $360,000. Interstate wages must be declared in every return even where they fall below the other jurisdiction's threshold.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
-- **Both adjustments** — Where an employer both employs for part of the year and pays interstate wages, multiply the threshold by both fractions; Victoria's worked example gives $210,030 for 335 days and a 1.5m of 3.5m Victorian share, after its phase-out step.  _(SRO Victoria, Threshold and phase-out rate — https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/thresholds-and-grouping/threshold-and-phase-out-rate)_
+- **Both adjustments** — Where an employer both employs for part of the year and pays interstate wages, multiply the threshold by both fractions; Victoria's worked example gives $210,030 for 335 days and a 1.5m of 3.5m Victorian share, after its phase-out step, but it uses the 2024-25 settings ($900,000 threshold, 45% phase-out). The same facts at the current $1,000,000 threshold and 50% phase-out give $393,346 - (($1,500,000 - $1,180,039) x 50%) = $233,366.  _(SRO Victoria, Threshold and phase-out rate — https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/thresholds-and-grouping/threshold-and-phase-out-rate)_
 - **Groups** — One threshold per group, claimed by the designated group employer. Other members pay the flat rate on all their wages. In some jurisdictions an unused deduction can be allocated to another member at the annual return.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging)_
 - **Registration in several jurisdictions** — Liability is tested on Australia-wide wages, so an employer whose total wages exceed a state's threshold must register there even if the wages paid in that state alone are below it.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
 
@@ -148,7 +149,7 @@ threshold, lodge monthly by the 7th and reconcile annually by 21 July or 28 July
 ## Section 9 - Registration, lodgment and compliance
 
 - **Register before the first return** — Payroll tax is self-assessed. Register with each revenue office where wages are paid once Australia-wide taxable wages, or group wages, exceed the threshold, and cancel the registration when the business stops employing there, drops below the threshold or moves to a new ABN.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
-- **Monthly returns** — Due on the 7th of the following month, or the next business day where the 7th falls on a weekend or public holiday. Some jurisdictions offer other periods.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging)_
+- **Monthly returns** — Due on the 7th of the following month, or the next business day where the 7th falls on a weekend or public holiday, with these exceptions. NT: within 21 days after the end of the month. December return: 14 January in the ACT and NSW (14 January 2027 for December 2026). June: no separate monthly return in NSW, Victoria, Tasmania, the ACT or the NT, because June goes in the annual return. The December and June treatment in Queensland, WA and SA was not confirmed on their pages, so check with those offices. Some jurisdictions offer other periods.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging; Payroll Tax Act 2009 (NT) s 87 — https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078; Revenue NSW, Key dates — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/key-dates; ACT Revenue Office, About payroll tax — https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax; SRO Tasmania, Lodge your return — https://www.sro.tas.gov.au/payroll-tax/lodge-your-return; SRO Victoria, Lodge your annual reconciliation — https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/managing-your-payroll-tax/lodge-your-annual-reconciliation)_
 - **Annual return** — Every registered employer lodges an annual reconciliation (in some jurisdictions an annual adjustment return) by 21 July, or by 28 July in the ACT, NSW and SA, even where the result is nil.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging)_
 - **Final returns** — Ceasing to employ, a change of grouping status or the appointment of an administrator or receiver can require a final return in each jurisdiction.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
 - **Penalties and disclosure** — Interest applies to any underpayment and penalty tax can follow; a voluntary disclosure attracts a lower rate of penalty tax than an underpayment found by data matching with the ATO and other agencies.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
@@ -169,7 +170,7 @@ threshold, lodge monthly by the 7th and reconcile annually by 21 July or 28 July
 **Facts.** All figures are synthetic.
 
 **Step 1, registration.** Monthly Australian wages of about $208,333 exceed the NSW and Victorian
-monthly thresholds, so the company is registered in both and lodges monthly returns by the 7th.
+monthly thresholds, so the company is registered in both and lodges monthly returns by the 7th (NSW December return: 14 January; no separate June return in either).
 
 **Step 2, NSW.**
 
@@ -206,7 +207,7 @@ the Victorian annual reconciliation by 21 July 2027.
 | ACT | $1,750,000 | $750,000 at 6.75% | $50,625 |
 | NT | $2,500,000 | Nil | Nil |
 
-**Why the spread matters.** The same payroll costs nothing in the NT and $95,192 in WA. Interstate
+**Why the spread matters.** The same payroll costs nothing in the NT and $95,192 in WA. The NT nil result holds only up to $2.5m of Australia-wide wages: at $4,000,000 of NT-only wages the deduction tapers to $1,750,000 and tax is $123,750 (Section 3). Interstate
 employers should model the group's Australian wages in each jurisdiction before assuming a single
 national rate.
 
@@ -218,9 +219,9 @@ national rate.
 - Treating a worker with an ABN or a company as outside the contractor provisions without testing the exemptions.
 - Missing the employment agency provisions, which switch off the contractor exemptions.
 - Lodging as non-grouped when a common director, shareholder or shared employee creates a group.
-- Applying the Victorian phase-out or the Queensland deduction taper to the jurisdiction's wages rather than Australian wages.
+- Applying the Victorian phase-out or the Queensland or NT deduction taper to the jurisdiction's wages rather than Australian wages.
 - Forgetting that the ACT rate, the NT 6.5% rate, the Queensland levy and the Victorian surcharges are set by group Australia-wide wages.
-- Missing the 7th of the month, or the 21 July and 28 July annual due dates.
+- Missing the monthly due date (generally the 7th; Section 9), or the 21 July and 28 July annual due dates.
 - Failing to declare portable long service leave and redundancy scheme payments in WA and the ACT.
 
 ## Section 12 - Self-checks
@@ -259,8 +260,14 @@ national rate.
 - SRO Tasmania, Rates and thresholds, https://www.sro.tas.gov.au/payroll-tax/rates-thresholds
 - ACT Revenue Office, Calculating payroll tax, https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/calculating-payroll-tax
 - Territory Revenue Office, Payroll tax rates and thresholds, https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds
+- Territory Revenue Office, Payroll changes from 1 July 2026, https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-changes-from-1-july-2026
+- Payroll Tax Act 2009 (NT), as in force at 1 July 2026, https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078
+- Revenue NSW, Key dates for payroll tax, https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/key-dates
+- ACT Revenue Office, About payroll tax, https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax
+- SRO Tasmania, Lodge your return, https://www.sro.tas.gov.au/payroll-tax/lodge-your-return
+- SRO Victoria, Lodge your annual reconciliation, https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/managing-your-payroll-tax/lodge-your-annual-reconciliation
 
-Sources were checked on 27 September 2026.
+Sources were checked on 27 September 2026. The NT deduction, the monthly return exceptions and the Victorian example were checked on 31 October 2026.
 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before registering, lodging or amending a payroll tax return. Thresholds, deduction formulas and levies change with each state budget, and grouping and contractor positions turn on the facts.
 >

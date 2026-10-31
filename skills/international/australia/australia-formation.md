@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.4
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -132,7 +132,7 @@ ASIC fees are indexed each 1 July; the amounts above apply from 1 July 2026 ([AS
 | Accountant / tax agent fees | $1,500--$5,000/year |
 | Business name renewal (if applicable) | $47/year |
 | Registered office service (if using) | $200--$600/year |
-| ASIC late fees | $102 (≤1 month) / $428 (>1 month) |
+| ASIC late fees | $102 (≤1 month) / $428 (>1 month), running from the review fee's due date, 2 months after the review date |
 
 ## Section 6 -- Post-Formation Compliance
 
@@ -140,7 +140,7 @@ ASIC fees are indexed each 1 July; the amounts above apply from 1 July 2026 ([AS
 
 | Obligation | Deadline | Authority |
 | --- | --- | --- |
-| ASIC annual review | Annual (on registration anniversary) | ASIC |
+| ASIC annual review | Annual (on registration anniversary); review fee due within 2 months after the review date | ASIC |
 | Company tax return | Due date varies (usually by 15 May via tax agent for 30 June year-end) | ATO |
 | BAS (Business Activity Statement) | Quarterly or monthly (GST, PAYG, instalment) | ATO |
 | PAYG summaries / STP finalisation | 14 July following the financial year | ATO |
@@ -184,9 +184,9 @@ Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier
 ## Section 9 -- Common Mistakes and Refusals
 
 - **R-AU-F1 -- No Australian-resident director** — Every Pty Ltd must have at least one director who ordinarily resides in Australia. A company cannot be registered without this. Advise the client to appoint a local director or use a resident director service (with proper governance).  _(R-AU-F1)_
-- **R-AU-F2 -- Failing to pay ASIC annual review fee** — ASIC charges $342/year for a proprietary company from 1 July 2026. If the annual review fee stays unpaid, ASIC can start deregistering the company. Late fees apply: $102 within 1 month, $428 after 1 month.  _(R-AU-F2)_
+- **R-AU-F2 -- Failing to pay ASIC annual review fee** — ASIC charges $342/year for a proprietary company from 1 July 2026. If the annual review fee stays unpaid, ASIC can start deregistering the company. The fee is due within 2 months after the review date; late fees then apply: $102 within 1 month of that due date, $428 after 1 month.  _(R-AU-F2)_
 - **R-AU-F3 -- GST threshold ignorance** — If annual turnover reaches $75,000, GST registration is mandatory. Failing to register when required results in penalties and backdated GST assessments.  _(R-AU-F3)_
-- **R-AU-F4 -- Superannuation non-compliance** — The SG rate is 12% (11.5% for 2024-25). From 1 July 2026, Payday Super applies it to each payment of qualifying earnings, and the contribution must reach the employee's fund within seven business days of payday; on $100,000 of qualifying earnings the minimum is $12,000. Late or short payment results in the Superannuation Guarantee Charge (SGC), which is not tax-deductible. See `au-super-guarantee.md`.  _(R-AU-F4)_
+- **R-AU-F4 -- Superannuation non-compliance** — The SG rate is 12% (11.5% for 2024-25). From 1 July 2026, Payday Super applies it to each payment of qualifying earnings, and the contribution must reach the employee's fund within seven business days of payday; on $100,000 of qualifying earnings the minimum is $12,000. Late or short payment results in the Superannuation Guarantee Charge (SGC). SGC for periods from 1 July 2026 is tax-deductible; penalties and interest after the ATO assesses it, and SGC under the former quarterly regime, are not. See `au-super-guarantee.md`.  _(R-AU-F4; [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super))_
 - **R-AU-F5 -- Shell company without substance** — This skill will not assist in forming a company with no genuine business activity in Australia. ASIC and the ATO actively pursue sham structures.  _(R-AU-F5)_
 
 ## Section 10 -- Timeline

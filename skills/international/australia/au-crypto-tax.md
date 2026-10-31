@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian cryptocurrency taxat
 version: "1.5"
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: crypto
 tier: 2
@@ -48,7 +48,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 135,001 -- 190,000 | 37% |
 | 190,001+ | 45% |
 
-- **Rate scale by year** — The second resident bracket is 15 cents from 1 July 2026 and was 16 cents in 2024-25 and 2025-26; add the 2% Medicare levy. Non-residents have no tax-free threshold and no discount. From 1 July 2027 the 50% discount gives way to cost base indexation with a 30% minimum rate on gains accruing after that date (see 2.3).  _(ATO, Tax rates: Australian resident (https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents))_
+- **Rate scale by year** — The second resident bracket is 15 cents from 1 July 2026 and was 16 cents in 2024-25 and 2025-26; add the 2% Medicare levy. Non-residents have no tax-free threshold, and any discount is apportioned for resident periods (see 2.3). A foreign resident, or a temporary resident, pays CGT on crypto only if it is taxable Australian property, for example after a s 104-165 choice on ceasing residency. From 1 July 2027 the 50% discount gives way to cost base indexation with a 30% minimum rate on gains accruing after that date (see 2.3).  _(ATO, Tax rates: Australian resident (https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents); ATO, Crypto asset transactions and tax residency (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/crypto-asset-transactions-and-tax-residency))_
 
 ### Key Thresholds
 
@@ -301,7 +301,7 @@ The ATO requires the following records for each transaction:
 | Exchange rate used (AUD conversion) | Yes |
 | Agent/exchange fees | Yes |
 
-- **Retention period** — Retention period: 5 years from the date of lodgement of the return in which the gain/loss is reported. For assets still held: records must be kept until 5 years after eventual disposal.
+- **Retention period** — Keep records for 5 years from the later of when they are prepared or obtained, when the transactions or acts are complete, and the year the CGT event happens, and long enough to cover the amendment period (usually 2 or 4 years) for an assessment that uses them.
 - **Reconcile before calculating** — Collect exchange exports, wallet addresses, transaction identifiers, timestamps, token quantities, fees and Australian dollar valuations. Match transfers between the taxpayer's own wallets so they are not recorded as sales, and check that beneficial ownership really stayed unchanged for exchange, lending and custody arrangements. Reconcile opening holdings plus receipts less disposals and fees to closing holdings, and investigate any gap.  _(ATO, Keeping crypto records (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records))_
 
 ## Section 6 -- Edge Cases

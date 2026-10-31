@@ -3,8 +3,8 @@ name: australia-financial-statements
 description: Use this skill when preparing, reviewing, or advising on annual financial statements for an Australian company. Trigger on phrases like "ASIC financial report", "AASB", "Australian Accounting Standards", "general purpose financial statements", "special purpose financial statements", "large proprietary company", "small proprietary company", "directors' report Australia", "audit Australia", "Form 388", "Corporations Act 2001 reporting", or any question about preparing and filing statutory accounts under the Corporations Act 2001. Covers AASB frameworks, size thresholds (large/small proprietary), required statements, formats, notes, lodgement deadlines, and audit requirements.
 version: 1.4
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-10-11
+tax_year: 2026
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - financial-statements-workflow-base
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Corporations Regulations 2001; ASIC Regulatory Guides |
 | Accounting standards | Australian Accounting Standards (AASB) — substantially IFRS-equivalent |
 | Financial year | Usually 1 July – 30 June; any 12-month period permitted |
-| Lodgement deadline | 4 months after year-end (general); 3 months (disclosing entities) |
+| Lodgement deadline | 4 months after year-end (general); 3 months (disclosing entities, registered schemes and registrable superannuation entities) |
 | Late lodgement | Late fee of AUD 102 (within 1 month) or AUD 428 (more than 1 month) from 1 July 2026, on top of the directors' exposure for breaching s 319 |
 | Digital filing | Form 388 through the ASIC company officeholder, registered agent or auditor portal |
 
@@ -69,6 +69,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Employees (year-end) | ≥ 100 |
 
 - **Small company fallback** — If fewer than 2 criteria are met → small proprietary company.  _(s.45A Corporations Act)_
+- **Proposed threshold increase (not law)** — Draft regulations released on 19 October 2026 would raise the revenue limb to $100 million and the assets limb to $50 million for financial years starting on or after 1 July 2027. Consultation is open until 2 November 2026, so recheck after it closes. ASIC says the existing thresholds apply until any change is made, and that the change could remove some expected Group 3 sustainability reporters (Section 9).  _([Treasurer, 19 October 2026](https://ministers.treasury.gov.au/ministers/jim-chalmers-2022/media-releases/raising-reporting-thresholds-proprietary-companies); [ASIC, Company financial reports](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports))_
 - **Measure on the statutory basis** — Apply the consolidated thresholds at the statutory measurement dates with the controlled-entity rules, and record the company type, ownership and control, reporting period, fundraising history and any regulator or member direction, because each can create a reporting duty independently of size.  _([ASIC, Company financial reports](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports))_
 
 ### Reporting obligations by entity type
@@ -114,7 +115,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 4 | Impairment | AASB 136; compare carrying amount to recoverable amount |
 | 5 | Expected credit losses | AASB 9; simplified approach for trade receivables (lifetime ECL) |
 | 6 | Inventory | AASB 102; lower of cost (FIFO/weighted average) and NRV; no LIFO |
-| 7 | Deferred tax | AASB 112; temporary differences; company rate 25% (base rate entity) or 30% |
+| 7 | Deferred tax | AASB 112; temporary differences; company rate 25% (base rate entity: aggregated turnover under $50m and base rate entity passive income no more than 80% of assessable income; see `au-company-tax`) or 30% |
 | 8 | Lease accounting | AASB 16; right-of-use asset + lease liability (exemptions for short-term/low-value) |
 | 9 | Revenue recognition | AASB 15; five-step model; performance obligations |
 | 10 | Financial instruments | AASB 9; classification and measurement; hedge accounting |
@@ -242,10 +243,10 @@ Total equity
 | Item | Detail |
 | --- | --- |
 | Filing authority | ASIC |
-| Filing form | Form 388 (Copy of Financial Statements and Reports) |
+| Filing form | Form 388 (Copy of Financial Statements and Reports); a sustainability report goes on Form 398 (see below) |
 | Lodgement method | Company officeholder, registered agent or auditor portal (ordinary Form 388) |
-| Deadline — disclosing entities | 3 months after financial year-end |
-| Deadline — all others | 4 months after financial year-end |
+| Deadline — disclosing entities, registered schemes and registrable superannuation entities | 3 months after financial year-end (s 319) |
+| Deadline — all others | 4 months after financial year-end (s 319) |
 | Documents lodged | Financial report + directors' report + auditor's report where required |
 | Fee | No filing fee for Form 388 |
 | Late lodgement | Late fee AUD 102 within 1 month or AUD 428 after 1 month (from 1 July 2026; [ASIC INFO 30](https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents)); failing to lodge also breaches s 319 |
@@ -260,8 +261,25 @@ ASIC's [Form 388 instructions](https://www.asic.gov.au/for-business-and-companie
 - **ASIC direction:** follow the actual s 294 direction. It can specify preparation, audit, distribution and lodgement; check which requirements it imposes.
 - **Shareholder direction:** a valid s 293 direction from holders of at least 5% of votes can require preparation, distribution and, if requested, audit. For an ordinary small company without foreign control or disclosing status, this does not itself require ASIC lodgement. CSF shareholders during the year or another separate obligation can still require lodgement.
 - **CSF shareholders:** one or more during the year requires preparation and lodgement under s 292(2)(c). Audit is a separate test below. See [ASIC small proprietary companies](https://www.asic.gov.au/regulatory-resources/financial-reporting-and-audit/preparers-of-financial-reports/small-proprietary-companies).
-- **Half-year and sustainability reports** — Disclosing entities also lodge half-year reports, generally within 75 days of the half-year end. Screen separately for mandatory climate-related sustainability reporting under Chapter 2M, which commences in phases and is a separate statutory report.  _([ASIC, Users of financial reports](https://www.asic.gov.au/regulatory-resources/financial-reporting-and-audit/users-of-financial-reports); [ASIC Regulatory Guide 280](https://download.asic.gov.au/media/j4rhwyiz/rg280-published-31-march-2025.pdf))_
+- **Half-year reports** — Disclosing entities also lodge half-year reports, generally within 75 days of the half-year end.  _([ASIC, Users of financial reports](https://www.asic.gov.au/regulatory-resources/financial-reporting-and-audit/users-of-financial-reports))_
 - **Companies limited by guarantee and charities** — Public companies limited by guarantee and ACNC-registered charities follow their own reporting rules, and foreign-controlled company relief has conditions and procedural requirements. Retain the legal basis and evidence for any exemption relied on.  _([ASIC, Company financial reports](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports))_
+
+### Sustainability reports
+
+A sustainability report is a separate statutory report under Chapter 2M, covering climate statements. An entity needs one only if it must prepare an annual financial report under Chapter 2M and meets a threshold in s 292A. Small proprietary companies with no Chapter 2M reporting obligation, foreign companies registered under Div 2 of Pt 5B.2, entities incorporated in a foreign jurisdiction, registered charities not required to prepare a Chapter 2M report and entities with ASIC relief from preparing the annual financial report are outside the regime.  _([ASIC, Who must prepare a sustainability report](https://www.asic.gov.au/regulatory-resources/sustainability-reporting/for-preparers-of-sustainability-reports/who-must-prepare-a-sustainability-report/))_
+
+**Commencement and thresholds**  _(s 292A; s 1707B; [ASIC RG 280, edition issued 31 March 2025, Table 2](https://download.asic.gov.au/media/j4rhwyiz/rg280-published-31-march-2025.pdf))_
+
+| Group | Annual reporting periods starting | Size test: at least 2 of consolidated revenue, consolidated gross assets at year-end and employees at year-end | Other triggers |
+| --- | --- | --- | --- |
+| 1 | 1 January 2025 to 30 June 2026 | $500 million; $1 billion; 500. Excludes registered schemes, registrable superannuation entities (RSEs) and retail corporate collective investment vehicles (CCIVs) | A registered corporation under the NGER Act, or an entity required to apply under s 12(1) of that Act, that is a member of a group meeting the s 13(1)(a) threshold (same exclusions) |
+| 2 | 1 July 2026 to 30 June 2027 | $200 million; $500 million; 250 | A registered corporation under the NGER Act or an entity required to apply under s 12(1). A registered scheme, RSE or retail CCIV with assets of $5 billion or more at year-end |
+| 3 | On or after 1 July 2027 | $50 million; $25 million; 100. Includes registered schemes, RSEs and retail CCIVs | None |
+
+- **Which year applies** — A Group 2 entity with a 30 June balance date is already in its first reporting year, ending 30 June 2027. The thresholds crystallise at the end of the financial year, so an entity below them at the start can still be caught (RG 280.34). The Group 3 size figures match the current s 45A test in Section 3, so a large proprietary company is at least a Group 3 reporter unless the proposed change is made.
+- **Group 3 nil statement** — A Group 3 entity that determines it has no material financial risks or opportunities relating to climate may state that and explain how it reached that view, instead of AASB S2 climate statements (s 296B; RG 280.73 to RG 280.74).
+- **Lodgement** — Lodge the sustainability report and its auditor's report on Form 398 and the financial report on Form 388, separately and at the same time, even where both sit in one annual report. The deadline is 3 months after year-end for disclosing entities, registered schemes and RSEs and 4 months for others (s 319(3)).  _([ASIC, When and how to lodge](https://www.asic.gov.au/regulatory-resources/sustainability-reporting/for-preparers-of-sustainability-reports/when-and-how-to-lodge-your-sustainability-report/))_
+- **Edition relied on** — This table rests on the RG 280 edition issued 31 March 2025. [ASIC's RG 280 page](https://www.asic.gov.au/regulatory-resources/find-a-document/regulatory-guides/rg-280-sustainability-reporting) still showed that issue date on 31 October 2026 and no later edition was found, but that does not prove none exists. Recheck before relying on it.
 
 ## Section 10 -- Audit Requirements
 

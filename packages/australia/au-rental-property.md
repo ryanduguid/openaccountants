@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian rental property inco
 version: "1.7"
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -78,8 +78,8 @@ income year, except where a section says otherwise.
 | --- | --- |
 | Unknown apportionment (private vs rental) | 0% deductible |
 | Unknown whether repair or improvement | Treat as improvement (capitalise) |
-| Unknown construction cost for Div 43 | Do not claim -- obtain quantity surveyor report |
-| Unknown settlement date for CGT | Do not compute -- obtain contract |
+| Unknown construction cost for Div 43 | Do not claim -- obtain quantity surveyor report. An available deduction left unclaimed still reduces the cost base unless PS LA 2006/1 (GA) applies (Section 2.8) |
+| Unknown contract date for CGT | Do not compute -- obtain contract |
 | Unknown cost base | Do not compute CGT -- escalate |
 
 ## Section 2 -- Classification Rules
@@ -101,9 +101,10 @@ income year, except where a section says otherwise.
 ### 2.2 Negative Gearing
 
 - **Negative gearing** — Where total deductions exceed gross rental income, the net rental loss reduces other assessable income (salary, business income). This remains the position for income years up to and including 2026-27.
-- **Enacted limit from 2027-28 (ITAA 1997 s 26-55)** — From the 2027-28 income year, where deductions for using or holding residential dwellings as residential accommodation exceed the assessable income from them, the excess is not deductible that year. It becomes a quarantined amount that first reduces residential capital gains in the net capital gain calculation (s 102-5, steps 3 and 4) and is otherwise carried forward to the next year as a residential dwelling expense. Disregard income and deductions for a dwelling interest last acquired before 7:30 pm (ACT time) on 12 May 2026, counting from the contract date (s 26-55(3)); a dwelling that is a new residential dwelling for the taxpayer under the Minister's determination; and dwellings used for an activity the Minister has determined. A net gain from those excepted dwellings, and gains on residential dwellings held as revenue assets, reduce the excess (s 26-55(6)). The rule does not apply to widely held unit trusts or complying superannuation entities, a beneficiary's share of trust net income referable to residential dwellings counts as residential income (s 26-55(7)), and expenditure denied by the section does not enter the cost base (s 110-38(8A)). Hotels, motels, boarding houses, student accommodation, caravans and boats are not residential dwellings (s 26-60).  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026, Sch 2](https://www.legislation.gov.au/C2026A00049/asmade/text); [ATO, Reforming negative gearing and capital gains tax](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals/tax-reform-boosting-home-ownership-reforming-negative-gearing-and-capital-gains-tax))_
-- **Extensions for death and relationship breakdown** — Schedule 4 to the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 also applies from 2027-28. A surviving spouse who acquires a deceased spouse's interest, a co-owner who acquires a deceased co-owner's interest, and a person who acquires an interest under a family law order, agreement or award inherits the pre-12 May 2026 acquisition status and the new residential dwelling status of the transferor (ss 26-56 to 26-58), and the extended new-dwelling status also applies for the CGT discount (s 26-59). For these tests the main residence rule in s 118-192(2) is disregarded.  _([Treasury Laws Amendment (Tax Reform No. 2) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00071/asmade/text))_
-- **Example (2028-29)** — An established dwelling acquired in July 2028 earns $50,000 rent and has $65,000 of deductions. $50,000 is deductible and $15,000 is carried forward; in a later year with net rental income, the carried-forward amount is deducted against it (the statutory example in s 26-55(1)).
+- **Enacted limit from 2027-28 (ITAA 1997 s 26-155)** — From the 2027-28 income year, where deductions for using or holding residential dwellings as residential accommodation exceed the assessable income from them, the excess is not deductible that year. It becomes a quarantined amount that first reduces residential capital gains in the net capital gain calculation (s 102-5, steps 3 and 4) and is otherwise carried forward to the next year as a residential dwelling expense. Disregard income and deductions for a dwelling interest last acquired before 7:30 pm (ACT time) on 12 May 2026, counting from the contract date (s 26-155(3)); a dwelling that is a new residential dwelling for the taxpayer under the Minister's determination; and dwellings used for an activity the Minister has determined. A net gain from those excepted dwellings, and gains on residential dwellings held as revenue assets, reduce the excess (s 26-155(6)). The rule does not apply to widely held unit trusts or complying superannuation entities, a beneficiary's share of trust net income referable to residential dwellings counts as residential income (s 26-155(7)), and expenditure denied by the section does not enter the cost base (s 110-38(8A)). Hotels, motels, boarding houses, student accommodation, caravans and boats are not residential dwellings (s 26-160(1)).  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026, Sch 2](https://www.legislation.gov.au/C2026A00049/asmade/text); [ATO, Reforming negative gearing and capital gains tax](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals/tax-reform-boosting-home-ownership-reforming-negative-gearing-and-capital-gains-tax))_
+- **Extensions for death and relationship breakdown** — Schedule 4 to the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 also applies from 2027-28. A surviving spouse who acquires a deceased spouse's interest, a co-owner who acquires a deceased co-owner's interest, and a person who acquires an interest under a family law order, agreement or award inherits the pre-12 May 2026 acquisition status and the new residential dwelling status of the transferor (ss 26-156 to 26-158), and the extended new-dwelling status also applies for the CGT discount (s 26-159). For these tests the main residence rule in s 118-192(2) is disregarded.  _([Treasury Laws Amendment (Tax Reform No. 2) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00071/asmade/text))_
+- **Example (2028-29)** — An established dwelling acquired in July 2028 earns $50,000 rent and has $65,000 of deductions. $50,000 is deductible and $15,000 is carried forward; in a later year with net rental income, the carried-forward amount is deducted against it (the statutory example in s 26-155(1)).
+- **Bill, not law: Schedule 5 (noted 31 October 2026)** — For the 2027-28 and later income years, Schedule 5 to the Tax Reform No. 3 Bill would move the residential dwelling definition to new s 960-580, widening the hotel, motel, inn, hostel or boarding house exclusion with 'or other similar dwelling'. New s 960-590 would replace the Minister's determination with 4 cases for a new residential dwelling: built on land acquired without a dwelling, an added dwelling on occupied land, a converted non-residential building, and a purchase within 24 months of the first certificate of occupancy from an entity for which it was new. Each case needs a certificate of occupancy first issued at or after 7:30 pm on 12 May 2026 (with a transitional rule for unsold stock) and a separately acquirable legal interest, and s 960-590(5) excludes a dwelling resulting from a scheme with a tax benefit purpose. New exceptions to quarantining would cover specialist disability accommodation, affordable housing, public housing and active build to rent developments (s 26-155(2)(d), (3A)), plus residential care homes and retirement villages (for operators, not passive investors). Status: Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. _([APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory Memorandum, ch 5](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf))_
 
 ### 2.3 Deductible Expenses (Immediate)
 
@@ -167,7 +168,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 - **Diminishing value rate** — 200% ÷ effective life
 - **Prime cost rate** — 100% ÷ effective life
 - **Limitation (from 1 Jul 2017)** — For residential rental properties, only the first owner (or entity that had the asset newly installed) can claim Div 40 deductions. Subsequent owners cannot claim plant & equipment depreciation on existing assets -- they inherit zero depreciable value for previously used items (unless an exception applies, e.g., refurbishment by new owner).
-- **Exceptions to the second-hand asset limit** — The limit has commencement and transitional rules and exceptions, including qualifying new residential premises, substantially renovated premises and specified entities or businesses. A new appliance bought by the owner is not denied because the building is old; the test is whether the asset was previously used.  _([ATO, Second-hand depreciating assets](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/depreciating-assets-in-rental-properties/second-hand-depreciating-assets))_
+- **Exceptions to the second-hand asset limit** — The limit has commencement and transitional rules and exceptions, including qualifying new residential premises, substantially renovated premises and specified entities or businesses. It does not apply to a business of letting rental properties, a corporate tax entity, a superannuation plan other than a self-managed fund, a public unit trust or a managed investment trust, or to an asset bought before 7:30 pm (AEST) on 9 May 2017 (a used asset bought before then must also have been installed in the rental property before 1 July 2017). A new appliance bought by the owner is not denied because the building is old; the test is whether the asset was previously used.  _([ATO, Second-hand depreciating assets](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/depreciating-assets-in-rental-properties/second-hand-depreciating-assets))_
 
 ### 2.6 Division 43 -- Capital Works Deduction
 
@@ -180,6 +181,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 | Ordinary residential works begun after 15 September 1987 | 2.5% | Subject to qualifying use and remaining expenditure |
 | Qualifying traveller-accommodation works begun before 27 February 1992 | 4% if begun after 21 August 1984 and before 16 September 1987; otherwise 2.5% | Apply the eligible-work and current-use conditions. A 1990 start does not receive 4% merely for traveller use |
 | Qualifying works begun after 26 February 1992 | Basic 2.5%; 4% for qualifying uses under s 43-145 | Traveller accommodation must satisfy the relevant use conditions |
+| Eligible new build to rent developments begun after 7:30 pm on 9 May 2023 | 4% | Over 25 years rather than 40. From 1 January 2025 the owner chooses the incentive on the approved form; unlikely for an individual landlord. [ATO, What's new in the rental properties guide](https://www.ato.gov.au/forms-and-instructions/rental-properties-2026/whats-new-in-the-rental-properties-guide) |
 
 - **Base** — Original construction cost (obtain from quantity surveyor report or builder records). NOT the purchase price of the property.
 - **Undeducted construction cost:** A new owner continues the annual deduction using the original eligible construction expenditure and remaining deduction period, subject to qualifying use and the remaining expenditure cap. For $400,000 of eligible 2.5% construction after ten full years, $300,000 remains and the full-year deduction continues at $10,000 for the remaining 30 years. (ITAA 1997 Div 43, ss 43-15 and 43-70.)
@@ -208,13 +210,14 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 | Element | Treatment |
 | --- | --- |
-| Cost base | Purchase price + stamp duty + legal fees on purchase and sale + agent commission on sale + capital improvements - Div 43 deductions claimed |
+| Cost base | Purchase price + stamp duty + legal fees on purchase and sale + agent commission on sale + capital improvements - Div 43 amounts the owner has deducted or can deduct, for property acquired after 7:30 pm on 13 May 1997, and for fourth element expenditure incurred after 30 June 1999 on older property ([s 110-45(1A), (2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-45)). An available deduction left unclaimed still reduces the cost base, unless [PS LA 2006/1 (GA)](https://www.ato.gov.au/law/view/document?docid=PSR/GA20061/NAT/ATO/00001) applies: the owner lacks sufficient information to determine the construction expenditure and has not sought any deduction for it |
 | Capital proceeds | Sale price under the contract; selling costs belong in the cost base, not here |
 | Capital gain | Capital proceeds - cost base; capital losses and the discount then apply to reach the net capital gain (see `au-capital-gains.md`) |
 | 50% CGT discount | Available if held 12+ months (individuals/trusts only) |
 | Main residence exemption (partial) | Available if property was main residence for part of ownership period |
 | 6-year absence rule | Treat as main residence for up to 6 years of absence if no other main residence claimed |
 | Non-residents | Work out preserved discount entitlement for qualifying resident periods and any pre-8 May 2012 rules; see au-nonresident-cgt |
+| Second-hand depreciating assets denied under s 40-27 | A balancing adjustment event, including on sale of the property, generally triggers CGT event K7 ([s 104-235(1)(b)(ii)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/104-235)). It usually gives a capital loss, because cost normally exceeds termination value, scaled by the share of decline in value denied. Allocate purchase and sale prices between these assets and the property so the loss is not missed |
 
 ### 2.9 Foreign Resident Landlords and Vendors
 
@@ -223,7 +226,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 | Rule | Detail |
 | --- | --- |
 | Rental income | No general withholding applies to rent paid to a foreign resident landlord. The landlord lodges an Australian return and pays tax at foreign resident rates, with no tax-free threshold; the ATO can direct a tenant or agent to pay amounts to it under a garnishee notice |
-| FRCGW (foreign resident CGT withholding) | For contracts signed from 1 January 2025, 15% of the sale price on all Australian real property, with no value threshold. For contracts from 1 July 2017 to 31 December 2024, 12.5% where the value was $750,000 or more. [ATO, FRCGW](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding) |
+| FRCGW (foreign resident CGT withholding) | For contracts signed from 1 January 2025, 15% of the market value (normally the sale price; see `au-nonresident-cgt.md` for non-arm's length sales) on all Australian real property, with no value threshold. For contracts from 1 July 2017 to 31 December 2024, 12.5% where the value was $750,000 or more. [ATO, FRCGW](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding) |
 | Clearance certificate | An Australian resident vendor obtains one and gives it to the purchaser before settlement to avoid FRCGW. Apply for it early; processing is not immediate |
 | Variation | A foreign resident vendor can apply for a variation where 15% exceeds the expected Australian tax on the sale |
 
@@ -265,7 +268,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 | KITCHEN RENOVATION, BATHROOM RENO | Capital improvement | Add to cost base; Div 43 if structural |
 | NEW HOT WATER SYSTEM (replacement-upgrade) | Div 40 asset | Depreciate over 12 years |
 | NEW AIR CONDITIONER (split system install) | Div 40 asset | Depreciate over 10 years |
-| NEW CARPET (full replacement, better quality) | Capital improvement | Div 40 for first owner; cost base for subsequent |
+| NEW CARPET (full replacement, better quality) | Div 40 asset | Depreciate over 8 years where the owner acquired it new; carpet already in the property when bought is denied under s 40-27 |
 
 ### 3.4 Loan / Interest Patterns
 
@@ -308,7 +311,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 ### Step 5: Report on Tax Return
 
-- **Reporting outcome** — Positive: included in assessable income and taxed at marginal rates. Negative: offsets other assessable income (salary, business) dollar-for-dollar up to and including 2026-27; from 2027-28 apply the s 26-55 quarantining test in Section 2.2 first.
+- **Reporting outcome** — Positive: included in assessable income and taxed at marginal rates. Negative: offsets other assessable income (salary, business) dollar-for-dollar up to and including 2026-27; from 2027-28 apply the s 26-155 quarantining test in Section 2.2 first.
 
 ## Section 5 -- Filing Requirements
 
@@ -349,7 +352,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 ## Section 7 -- Prohibitions
 
-- **Prohibitions** — NEVER claim travel to a residential rental property as a deduction (removed from 1 July 2017 for non-business landlords); NEVER claim Div 40 plant depreciation for a subsequent owner of residential property (post-2017 rule) unless the asset was newly installed by that owner; NEVER claim Div 43 without evidence of construction cost (quantity surveyor report or original builder records); NEVER deduct loan principal repayments; NEVER deduct expenses relating to periods of genuine private use without apportionment; Calculate a foreign resident's retained CGT discount entitlement from residency and acquisition history; NEVER omit prior Div 43 deductions from the cost base on disposal (reduces cost base); NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions** — NEVER claim travel to a residential rental property as a deduction (removed from 1 July 2017 for non-business landlords); NEVER claim Div 40 plant depreciation for a subsequent owner of residential property (post-2017 rule) unless the asset was newly installed by that owner, is grandfathered, or falls outside s 40-27(2) (Section 2.5); NEVER claim Div 43 without evidence of construction cost (quantity surveyor report or original builder records); NEVER deduct loan principal repayments; NEVER deduct expenses relating to periods of genuine private use without apportionment; Calculate a foreign resident's retained CGT discount entitlement from residency and acquisition history; NEVER omit Div 43 amounts deducted or deductible when reducing the cost base on disposal, subject to the acquisition date limit and PS LA 2006/1 (GA) (Section 2.8); NEVER present tax calculations as definitive -- always label as estimated
 
 ## Section 8 -- Which tax applies, and where its rules live
 
@@ -363,7 +366,7 @@ calculating anything, because the answer to one changes the inputs to another.
 | Event | Income tax | GST | CGT | State or territory |
 | --- | --- | --- | --- | --- |
 | Buying a residential investment property | Borrowing costs, and holding costs once available for rent | Generally input taxed on an existing residential premises, so no credit on the purchase. New residential premises may be taxable and may trigger GST at settlement | Establishes the cost base | Transfer duty, and possibly foreign purchaser surcharge duty |
-| Holding and renting it out | Rental income assessable, deductions under Section 2, Div 40 and Div 43 | Residential rent is input taxed, so no GST on rent and no credits on expenses | Deductions claimed under Div 43 reduce the cost base | Land tax, and possibly a foreign owner or vacancy surcharge |
+| Holding and renting it out | Rental income assessable, deductions under Section 2, Div 40 and Div 43 | Residential rent is input taxed, so no GST on rent and no credits on expenses | Div 43 amounts deducted or deductible generally reduce the cost base (Section 2.8) | Land tax, and possibly a foreign owner or vacancy surcharge |
 | Renovating | Repair deductible, improvement capital | Credits depend on whether the premises remain input taxed | Capital work enters the cost base or Div 43 | Nil, unless it changes the land tax position |
 | Short-stay or holiday letting | Apportionment for private use and periods not genuinely available | Commercial residential premises can be taxable rather than input taxed. Test this, do not assume | Main residence exemption can be lost or reduced | Some jurisdictions apply short-stay levies |
 | Buying or holding a commercial property | Rent assessable, deductions available | Generally taxable, so GST on rent and credits on expenses, subject to registration. A going concern or margin scheme may apply on sale | Cost base as normal | Transfer duty and land tax |

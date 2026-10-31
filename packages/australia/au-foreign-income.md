@@ -6,7 +6,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Temporary residents (Subdiv 768-R) | Most foreign-source income NANE; overseas employment/services income may still be assessable; CGT limited to taxable Australian property; CGT discount apportioned for post-8 May 2012 assets |
 | Individual return labels | Question 20 -- foreign source income. The 2026 supplementary return (for 2025-26) uses 20T other net foreign employment income, 20U employment shown on foreign-employment payment summaries or income statements, 20N exempt foreign employment income, 20L and 20D foreign pensions without and with a UPP, 20R net foreign rent, 20M other net foreign income, 20E total, 20O FITO and 20P overseas assets >= $50,000; check the 2027 form for 2026-27. Foreign capital gains go at question 18, not 20 |
 | Medicare levy / MLS | Foreign income counts -- levy is 2% of taxable income (which includes worldwide income); FITO can reduce levy and MLS after tax payable is nil |
-| HELP overseas debtors | Worldwide income reporting from 2016-17; overseas travel notification within 7 days if overseas 183+ days in 12 months; report by 31 October; 2026-27 minimum repayment threshold $69,528 (marginal system) |
+| HELP overseas debtors | Worldwide income reporting from 2016-17; overseas travel notification within 7 days if overseas 183+ days in 12 months; report by 31 October (a registered tax agent may have a later date); 2026-27 minimum repayment threshold $69,528 (marginal system) |
 | Currency conversion | RBA rates from 1 Jan 2020; transaction-date rate or average rate per the translation rules (s 960-50); functional currency rules (s 960-70) generally not for individuals |
 | Contributor | Open Accountants |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
@@ -197,7 +197,7 @@ An Australian resident's assessable income includes ordinary and statutory incom
 
 ### Rule 2 -- Foreign income tax offset (Div 770): entitlement
 
-A taxpayer is entitled to a FITO for an income year for foreign income tax PAID (or deemed paid) on an amount included in assessable income (or in NANE income under s 23AI/23AK ITAA 1936). "Paid" means actually paid -- withheld or assessed and settled. The offset is claimed in the year the foreign income is included in Australian income; if the foreign tax is paid later (different foreign tax year), amend the earlier Australian assessment -- special amendment rules allow this outside the normal s 170 windows, but ONLY for changes in foreign tax paid.
+A taxpayer is entitled to a FITO for an income year for foreign income tax PAID (or deemed paid) on an amount included in assessable income (or in NANE income under s 23AI/23AK ITAA 1936). Foreign tax counts only to the extent it was paid on an amount included in assessable income (s 770-10(1)), so tax on a gain larger abroad than here counts proportionately. "Paid" means actually paid -- withheld or assessed and settled. The offset is claimed in the year the foreign income is included in Australian income; if the foreign tax is paid later (different foreign tax year), amend the earlier Australian assessment -- s 770-190 allows this outside the normal s 170 windows, within 4 years after the amendment event, but ONLY for payment of, or an increase or reduction in, foreign tax that counts towards the offset.
 
 ### Rule 3 -- The offset limit (s 770-75): floor, cap and usable credit
 
@@ -239,7 +239,7 @@ Foreign rent: gross rent assessable; deductions computed under AUSTRALIAN rules 
 
 ### Rule 6 -- Foreign capital gains, forex and the $250k election
 
-Residents are subject to CGT on worldwide assets. Foreign-source gains/losses go at question 18 (NOT question 20), but foreign tax paid on the gain counts towards the FITO at 20O. Assets held when residency starts are deemed acquired at market value at that time (s 855-45). Div 775 brings realised forex gains to account as assessable income (losses deductible) on foreign-currency accounts and transactions; the s 775-230 $250,000 balance election lets taxpayers disregard forex gains/losses on qualifying transaction/credit-card accounts under the limit -- a written election kept with records. Functional currency rules (s 960-70) are for certain entities, not individuals -- flag, do not apply. From 1 July 2027 the Tax Reform No. 1 Act 2026 CGT reforms change the CGT landscape (verified today) -- re-check any multi-year position that spans that date.
+Residents are subject to CGT on worldwide assets. Foreign-source gains/losses go at question 18 (NOT question 20), but foreign tax paid on the gain counts towards the FITO at 20O, to the extent it relates to an amount included in assessable income (Rule 2). Treatment of a discounted gain is not settled here: escalate. Assets held when residency starts are deemed acquired at market value at that time (s 855-45). Div 775 brings realised forex gains to account as assessable income (losses deductible) on foreign-currency accounts and transactions; the s 775-230 $250,000 balance election lets taxpayers disregard forex gains/losses on qualifying transaction/credit-card accounts under the limit -- a written election kept with records. Functional currency rules (s 960-70) are for certain entities, not individuals -- flag, do not apply. From 1 July 2027 the Tax Reform No. 1 Act 2026 CGT reforms change the CGT landscape (verified today) -- re-check any multi-year position that spans that date.
 
 ### Rule 7 -- CFC and transferor trust (attribution) -- escalation only
 
@@ -286,7 +286,7 @@ Temporary residents (temporary visa + not Social Security Act Australian residen
 
 ### Rule 13 -- HELP and overseas debtors
 
-From 2016-17, HELP/VSL/AASL debtors who are (or become) foreign residents must: notify within 7 days via an overseas travel notification if overseas 183+ days in any 12 months; and report WORLDWIDE income (repayment income + non-resident foreign-sourced income) when it exceeds 25% of the minimum repayment threshold. For 2026-27 that reporting threshold is $17,382; $69,528 is the separate repayment threshold. At or below $17,382, check whether an Australian return or another report is required before using non-lodgement advice. Report by 31 October through ATO online services or a registered tax agent. Foreign-sourced income is computed by the overseas assessed method (most recent foreign tax authority assessment covering 12 months overlapping the Australian year), the comprehensive tax-based assessment method, or the default rules in the Overseas Debtors Repayment Guidelines 2017. The ATO then assesses an overseas levy on the same marginal thresholds as domestic compulsory repayments (2026-27: nil to $69,528; 15c/$1 over $69,528 to $129,717; $9,028 + 17c/$1 over $129,717 to $186,050; 10% of total repayment income at $186,051+). The Higher Education Support Act 2003 governs HELP repayments and the Student Loans (Overseas Debtors Repayment Levy) Act 2015 imposes the overseas levy; deferral/amendment of the levy is possible on hardship-style grounds (R-AU-FI-7 for disputes).
+From 2016-17, HELP/VSL/AASL debtors who are (or become) foreign residents must: notify within 7 days via an overseas travel notification if overseas 183+ days in any 12 months; and report WORLDWIDE income (repayment income + non-resident foreign-sourced income) when it exceeds 25% of the minimum repayment threshold. For 2026-27 that reporting threshold is $17,382; $69,528 is the separate repayment threshold. At or below $17,382, check whether an Australian return or another report is required before using non-lodgement advice. Report by 31 October through ATO online services or a registered tax agent, who may have a later date. The ATO lists 3 methods for foreign-sourced income: simple self-assessment (gross income, with an occupation-based standard deduction), the overseas assessed method (most recent foreign tax authority assessment covering 12 months overlapping the Australian year; unavailable without such an assessment), and the comprehensive tax-based assessment method ([ATO, Overseas obligations](https://www.ato.gov.au/individuals-and-families/study-and-training-support-loans/overseas-repayments)). The Overseas Debtors Repayment Guidelines 2017 also contain default rules, not reviewed here. The ATO then assesses an overseas levy on the same marginal thresholds as domestic compulsory repayments (2026-27: nil to $69,528; 15c/$1 over $69,528 to $129,717; $9,028 + 17c/$1 over $129,717 to $186,050; 10% of total repayment income at $186,051+). The Higher Education Support Act 2003 governs HELP repayments and the Student Loans (Overseas Debtors Repayment Levy) Act 2015 imposes the overseas levy; deferral/amendment of the levy is possible on hardship-style grounds (R-AU-FI-7 for disputes).
 
 ---
 
@@ -294,7 +294,7 @@ From 2016-17, HELP/VSL/AASL debtors who are (or become) foreign residents must: 
 
 ### T2-1 -- Foreign tax year mismatch
 
-**Trigger:** foreign tax assessed on a different income year (e.g. UK 6 April year, US calendar year). **Action:** claim FITO in the Australian year the income is assessed, then amend when the foreign tax is actually paid (special amendment rules); diarise.
+**Trigger:** foreign tax assessed on a different income year (e.g. UK 6 April year, US calendar year). **Action:** claim FITO in the Australian year the income is assessed, then amend when the foreign tax is actually paid (s 770-190: within 4 years after the amendment event); diarise.
 
 ### T2-2 -- Deferred non-commercial foreign business loss
 
@@ -311,6 +311,10 @@ From 2016-17, HELP/VSL/AASL debtors who are (or become) foreign residents must: 
 ### T2-5 -- 2027 CGT reform horizon
 
 **Trigger:** any position spanning 1 July 2027 (asset disposals, deemed acquisitions, discount computations). **Issue:** Tax Reform No. 1 Act 2026 reforms CGT from 1 July 2027 (verified 20 August 2026). **Action:** flag on every foreign-asset CGT computation that crosses the date; re-verify rules before lodgment of 2027-28 returns.
+
+### T2-5A -- Foreign residential rent and the 2027-28 deduction limit
+
+**Trigger:** deductions exceeding rent on a foreign residential dwelling last acquired at or after 7.30 pm (ACT legal time) on 12 May 2026, for 2027-28 or later. **Issue:** ss 26-155 and 26-160 (Tax Reform No. 1 Act 2026, Sch 2) limit such deductions, with exceptions including new residential dwellings, and the definition of residential dwelling has no express Australian limit. Whether the limit reaches foreign dwellings is an inference from that wording; no ATO statement was found and not every operative condition was read. **Action:** flag and escalate before applying a deduction or a quarantine.
 
 ### T2-6 -- Concealment/data-matching risk
 
@@ -419,7 +423,7 @@ require their own source and period checks before engagement use.
 | Topic | Source |
 |---|---|
 | Worldwide assessable income | ITAA 1997 ss 6-5(2), 6-10(4); ato.gov.au -- Australian resident foreign and worldwide income (QC72091, updated 15 June 2026) |
-| FITO entitlement and limit | ITAA 1997 Div 770, including ss 770-75 and 770-80; [ATO 2026 limit guidance](https://www.ato.gov.au/forms-and-instructions/foreign-income-tax-offset-rules-guide-2026/calculate-your-fito-or-offset-limit), updated 30 May 2026 (QC107174); selected limit, record and translation correction checked 18 October 2026 |
+| FITO entitlement and limit | ITAA 1997 Div 770, including [s 770-10](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/770-10), ss 770-75 and 770-80 and [s 770-190](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/770-190); [ATO 2026 limit guidance](https://www.ato.gov.au/forms-and-instructions/foreign-income-tax-offset-rules-guide-2026/calculate-your-fito-or-offset-limit), updated 30 May 2026 (QC107174); selected limit, record and translation correction checked 18 October 2026 |
 | s 23AG scope | ITAA 1936 s 23AG; ato.gov.au -- Exempt income from foreign service / Exemption under 23AG (8 June 2026); TR 2013/7 |
 | Return labels | [Individual supplementary tax return instructions 2026, question 20](https://www.ato.gov.au/forms-and-instructions/individual-supplementary-tax-return-2026-instructions/income-questions-13-24-supplementary-tax-return-2026/20-foreign-source-income-and-foreign-assets-or-property-2026) (checked 11 October 2026) and D11 UPP |
 | Foreign pensions / UPP | ato.gov.au -- UPP of a foreign pension or annuity; myTax 2026 foreign pensions and annuities |
@@ -429,7 +433,7 @@ require their own source and period checks before engagement use.
 | HELP overseas | Higher Education Support Act 2003; Student Loans (Overseas Debtors Repayment Levy) Act 2015; ato.gov.au -- Overseas obligations when repaying loans (QC47358, 30 June 2026); repayment thresholds (QC16176, 30 June 2026); Overseas Debtors Repayment Guidelines 2017 |
 | Rates | ato.gov.au -- Tax rates Australian resident (QC73320, 13 August 2026); new tax cuts measure page (13 May 2026) |
 | Treaties | ato.gov.au -- Income tax treaties (DTA list); Treasury treaty texts |
-| CGT horizon | Tax Reform No. 1 Act 2026 (CGT reform from 1 July 2027); FRCGW rate 15% (au-nonresident-cgt) |
+| CGT horizon | Tax Reform No. 1 Act 2026 (CGT reform from 1 July 2027; Sch 2 ss 26-155 and 26-160, [Act text](https://www.legislation.gov.au/C2026A00049/asmade/2026-06-26/text/original/epub/OEBPS/document_1/document_1.html)); FRCGW rate 15% (au-nonresident-cgt) |
 
 ### Test suite
 
@@ -447,7 +451,7 @@ require their own source and period checks before engagement use.
 
 **Test 7:** Foreign pension GBP 17,500 at 0.50 avg, UPP deductible A$2,000. -> Question 20 pension amounts A$35,000 before UPP; D11 deducts A$2,000 once, leaving A$33,000 in taxable income. Verify the applicable return-year labels.
 
-**Test 8:** Foreign capital gain taxed overseas. -> Gain at question 18; foreign tax counts toward FITO at 20O.
+**Test 8:** Foreign capital gain taxed overseas. -> Gain at question 18; foreign tax counts toward FITO at 20O to the extent it relates to an amount included in assessable income.
 
 **Test 9:** HELP debtor overseas 200 days, worldwide income A$91,111. -> Overseas levy ($91,111 - $69,528) x 15% = $3,237.45.
 

@@ -3,8 +3,8 @@ name: leaving-australia-tax-residency-cgt
 description: "Use for planning departure from Australia: tax residency, CGT event I1 and its individual choice, main-residence CGT, part-year income tax, HELP and superannuation obligations."
 jurisdiction: AU
 category: international
-tax_year: 2025
-last_updated: 2026-10-11
+tax_year: 2026
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +24,7 @@ capital-gains questions from Australia going unanswered more than almost anywher
 Guide is the answer's backbone.
 
 **Who it's for.** Australian residents (citizens and long-term residents) moving abroad, and
-their accountants. Rules stated for the 2025-26 income year; the residency-law modernisation
+their accountants. Rules stated for the 2026-27 income year; the residency-law modernisation
 announced years ago (the 45-day bright-line proposal) **remains unlegislated** — the old
 tests still govern, but watch this space before relying on edge cases.
 
@@ -89,9 +89,10 @@ within a 6-year window) rarely helps a planned move.
   *resident again* when you eventually sell. Get a **valuation at first rental** (the
   home-first-used-to-produce-income rule resets the cost base) and hold the evidence.
 - Any sale as a non-resident also meets **foreign-resident capital gains withholding** —
-  the purchaser withholds **15%** of the price (threshold removed from 2025 — it applies to
-  effectively all Australian property sales by foreign residents) — recovered, if excessive,
-  only through the return.
+  the purchaser withholds **15%** of the market value, normally the price (threshold removed
+  from 2025 — it applies to effectively all Australian property sales by foreign residents).
+  A variation notice obtained before settlement can reduce the rate, down to nil; after
+  settlement, any excess is recovered through the return.
 
 ---
 
@@ -113,7 +114,7 @@ within a 6-year window) rarely helps a planned move.
   rates with an adjusted tax-free threshold apply in a part-year departure year, and
   foreign-resident rates in a full non-resident year; a net rental loss reduces other
   Australian assessable income and any excess carries forward as a tax loss, and from 2027-28
-  check the s 26-55 residential loss quarantine in `au-rental-property.md`), **fully franked dividends**
+  check the s 26-155 residential loss quarantine in `au-rental-property.md`), **fully franked dividends**
   (no further Australian tax for non-residents — franking does the job; unfranked: 30%
   withholding, treaty-reduced), **interest** (10% final withholding). Bank and broker
   paperwork: update tax-residency declarations so the right withholding applies at source.
@@ -127,15 +128,18 @@ within a 6-year window) rarely helps a planned move.
 
 Australia has treaties with the major destinations (UK, US, Singapore; **none with the
 UAE** — double-non-taxation is the point there, but also no treaty tie-breaker if statuses
-collide). Two destination-specific notes our corridor data keeps surfacing:
+collide). Three destination-specific notes our corridor data keeps surfacing:
 - **AU→UK**: the UK taxes arrivals under its own SRT from day one; the old remittance basis
   is gone (FIG regime now — 4 years of foreign-income relief for genuinely new arrivals).
   Australian franked dividends lose their magic in UK hands; super interacts with UK pension
   rules unglamorously. Sequencing bonuses and I1 decisions around the UK arrival year is
   standard.
-- **AU→UAE/Singapore**: no local tax on the salary; the whole game is the Australian exit
+- **AU→UAE**: no local tax on the salary; the whole game is the Australian exit
   done cleanly (Parts 1–4) — and evidence, because a "permanent place of abode" in Dubai is
   exactly what the domicile test wants to see documented.
+- **AU→Singapore**: Singapore taxes income earned in or derived from Singapore, including
+  employment exercised there, so expect local tax on the salary. [IRAS, What is taxable, what is not](https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not/employment-income)
+  The Australian exit and the same evidence points still apply.
 
 ---
 
@@ -202,11 +206,23 @@ sources on 8 September 2026, are the ones that most often change the number.
   restriction, treaty effects and foreign tax relief. [ITAA 1997 (Cth) s 104-165](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/104-165)
 - **Events from 1 July 2027.** Apply the enacted CGT changes and their transitional rules before
   extending any comparison past that date. [Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text)
+  Someone who makes the s 104-165 choice, or is otherwise foreign or temporary resident at any
+  time in the ownership period after 8 May 2012, gets no deemed sale at 30 June 2027
+  (s 112-155(1)(d)). **Inferred from the statutory text, with no ATO guidance found at 31 October 2026: have it reviewed before relying on it.**
+  On the text of ss 115-100(c) and 115-115, that person appears to keep a resident-days discount
+  on the whole gain from a later event (Section 9 of `au-capital-gains.md`).
+- **Bill, not law: Schedule 4 (noted 31 October 2026).** For the income year that includes 1 July 2027
+  and later years, Schedule 4 to the Tax Reform No. 3 Bill would extend the deemed sale to anyone
+  Australian resident at any time in the ownership period, give 0% to the later gain and pro-rate
+  indexation by resident days. Status: Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. [APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory Memorandum, ch 4](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf)
 - **The home, precisely.** The life-events exception needs a continuous foreign-resident period
   of six years or less plus a specified terminal illness, death or relationship breakdown; the
   ordinary six-year absence rule does not overcome the foreign-resident restriction. If the home
   is rented, keep occupation and rental dates and establish whether the first-income-use market
   value rule applies; not every conversion to rental resets the cost base. [ITAA 1997 (Cth) s 118-110](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-110)
+  If the owner dies a foreign resident, the same rules reach the legal personal representatives,
+  trustees and beneficiaries of the estate, surviving joint tenants and special disability trusts.
+  [ATO, Main residence exemption for foreign residents](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/main-residence-exemption-for-foreign-residents)
 - **Withholding is a credit.** For contracts from 1 January 2025 the purchaser withholds 15%
   with no value threshold; the amount is credited in the return, and a variation is applied
   for before settlement. [ATO, FRCGW overview](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-resident-capital-gains-withholding-overview)
@@ -247,7 +263,7 @@ ITAA 1997 s.104-160 (CGT event I1) and the TAP definition (s.855); ATO guidance 
 (TR 2023/1, incorporating Harding); main-residence exemption denial for foreign residents
 (2019 amendments + life-events test); 50% discount apportionment for foreign residents
 (post-8 May 2012); foreign-resident capital gains withholding (15%, threshold removed from
-1 Jan 2025); non-resident tax rates 2025-26; HECS/HELP overseas obligations (ATO overseas
+1 Jan 2025); non-resident tax rates 2025-26 and 2026-27; HECS/HELP overseas obligations (ATO overseas
 levy); DASP rules (temporary residents only); SMSF residency conditions; franking/withholding
 treatment of non-resident investors; Australia's treaty network (and the absence of an
 AU–UAE income-tax treaty); UK FIG regime for the AU→UK leg.

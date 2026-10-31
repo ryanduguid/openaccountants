@@ -6,7 +6,7 @@ version: 3.5
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Regime change at 1 July 2026 (Payday Super).** SG timing is determined by WHEN earnings are PAID, not when the work was done. Earnings paid from 1 July 2026: payday super rules (SG received by the fund within 7 business days of each payday). Earnings paid up to 30 June 2026: old quarterly rules (final quarterly deadline was 28 July 2026 for the June 2026 quarter). Both regimes appear in 2026 bank statements -- classify by payment date.
+> **Regime change at 1 July 2026 (Payday Super).** SG timing is determined by WHEN earnings are PAID, not when the work was done. Earnings paid from 1 July 2026: payday super rules (SG received by the fund within 7 business days of each payday). Earnings paid up to 30 June 2026: old quarterly rules (final quarterly deadline was 28 July 2026 for the June 2026 quarter). June-quarter contributions received in July 2026 count toward the 2026-27 concessional cap under current law; a Bill would give relief (Rule 6). Both regimes appear in 2026 bank statements -- classify by payment date.
 
 ## Select the income year before calculating
 
@@ -41,14 +41,14 @@ The remaining payday calculations and indexed figures below concern 2026–27. [
 | Currency | AUD only |
 | SG rate (2026-27) | 12% (terminal rate; first applied 1 July 2025) |
 | SG deadline (payday super) | Contribution RECEIVED by employee's fund within 7 business days after payday |
-| Maximum contribution base (2026-27) | **ANNUAL**: $270,830 of qualifying earnings (max SG $32,499.60/year). The quarterly MCB is abolished for earnings paid from 1 July 2026 |
+| Maximum contribution base (2026-27) | **ANNUAL**: $270,830 of qualifying earnings, tested per employer for each employee (max SG $32,499.60/year from one employer). The quarterly MCB is abolished for earnings paid from 1 July 2026 |
 | Concessional cap (2026-27) | $32,500 |
 | Non-concessional cap (2026-27) | $130,000 ($390,000 bring-forward) |
 | General transfer balance cap (2026-27) | $2,100,000 |
 | Division 293 threshold | $250,000 (frozen) |
 | ATO Small Business Super Clearing House | **CLOSED PERMANENTLY 1 July 2026** |
 | Sole trader SG to self | NO obligation -- voluntary only |
-| First-year compliance | PCG 2026/1: supportive ATO approach through 2026-27 for employers paying each payday and fixing errors quickly |
+| First-year compliance | PCG 2026/1: for QE days from 1 July 2026 to 30 June 2027 the ATO directs compliance resources by low, medium and high risk zones. It does not remove liability: the ATO must still apply the law where it has definitive information of a shortfall, even in the low-risk zone |
 | Contributor | Open Accountants |
 | Validated by | Pending |
 | Validation date | Pending |
@@ -234,7 +234,9 @@ remaining_base = max(0, $270,830 - YTD_qualifying_earnings_before_this_payday)
 SG per payday  = 12% x min(Qualifying_earnings_paid_this_payday, remaining_base)
 ```
 
-SG applies only to the first $270,830 of qualifying earnings paid in the financial year -- the payday that crosses the base attracts SG only on the portion beneath it, and later paydays attract none. Annual maximum SG per employee: exactly $32,499.60.
+SG applies only to the first $270,830 of qualifying earnings an employer pays an employee in the financial year -- the payday that crosses the base attracts SG only on the portion beneath it, and later paydays attract none. The base is tested per employer, so an employee with 2 employers has a separate base with each (T2-2). Annual maximum SG per employee from one employer: exactly $32,499.60.
+
+**Qualifying earnings (QE)** (SGAA s 10A) are ordinary time earnings, plus amounts of those earnings sacrificed to super under a salary sacrifice arrangement, plus amounts expressly within the former salary or wages rules for workers under the extended definition of employee in s 12. Use pre-sacrifice pay as the base: an amount sacrificed to super stays in QE if it would have been QE when paid as wages. Amounts sacrificed that would not have been QE (such as overtime) and amounts sacrificed to other benefits (such as a novated lease) are outside QE. A sacrificed contribution is not an eligible contribution (s 18A), so it cannot count toward the 12%. For fortnightly earnings of $2,500 with $500 sacrificed to super, QE is $2,500 and the employer owes 12% x $2,500 = $300 in addition to the $500. Using post-sacrifice pay, or counting the sacrificed amount toward SG, creates a shortfall and SGC exposure. [ATO, What payments are qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super).
 
 ### Rule 2 -- SG rate
 
@@ -242,11 +244,11 @@ SG applies only to the first $270,830 of qualifying earnings paid in the financi
 
 ### Rule 3 -- Payment deadline (earnings paid from 1 July 2026)
 
-- **Payment deadline (earnings paid from 1 July 2026)** — A contribution is on time only if it is **received by the employee's super fund**, with the information needed to allocate it to the member account, **within 7 business days after payday** (the "QE day"). - **Business day** = any day except Saturday, Sunday, or a public holiday applying to the WHOLE of any Australian state or territory. A territory-wide holiday anywhere in Australia extends the deadline for ALL employers; part-of-state holidays do not. - **New employee (or new fund):** first contribution due within 20 business days of the relevant QE day; later paydays revert to 7. If the extended date overlaps the next payday's deadline, the later contribution inherits the extended date. - **Out-of-cycle payments** (e.g. bonuses, per LI 2026/20): SG rides with the next regular payday's 7-business-day deadline. - **Exceptional circumstances** (ATO class determination, e.g. natural disasters): later of 20 business days after the QE day or 20 business days after the determination. - Funds must allocate or return contributions within 3 business days (down from 20). **Legacy:** earnings paid up to 30 June 2026 keep the quarterly deadlines (28 Oct / 28 Jan / 28 Apr / 28 Jul); the final quarterly deadline was 28 July 2026.
+- **Payment deadline (earnings paid from 1 July 2026)** — A contribution is on time only if it is **received by the employee's super fund**, with the information needed to allocate it to the member account, **within 7 business days after payday** (the "QE day"). - **Business day** = any day except Saturday, Sunday, or a public holiday applying to the WHOLE of any Australian state or territory. A territory-wide holiday anywhere in Australia extends the deadline for ALL employers; part-of-state holidays do not. - **New employee, new fund, or a worker rehired or recommenced under a new arrangement:** first contribution due within 20 business days of the relevant QE day; later paydays revert to 7. If the extended date overlaps the next payday's deadline, the later contribution inherits the extended date. - **Out-of-cycle payments** (bonuses, commissions, allowances, back payments and payments in advance, per LI 2026/20): only where the employee has an established pay timing, pattern or schedule and the payment falls outside it. SG then rides with the next regular payday's 7-business-day deadline. If no later regular QE day follows (for example a final payment when employment ends), the extension does not apply and the usual 7 business days govern. Payments to workers with intermittent or irregular paydays, such as a contractor paid on invoice, are not out of cycle ([ATO, Payment deadlines](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super)). - **Exceptional circumstances** (ATO class determination, e.g. natural disasters): later of 20 business days after the QE day or 20 business days after the determination. - Funds must allocate or return contributions within 3 business days (down from 20); SMSFs instead have 28 calendar days after the end of the month of receipt, unchanged by Payday Super ([ATO, How Payday Super affects SMSFs](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs)). **Legacy:** earnings paid up to 30 June 2026 keep the quarterly deadlines (28 Oct / 28 Jan / 28 Apr / 28 Jul); the final quarterly deadline was 28 July 2026.
 
 ### Rule 4 -- Maximum contribution base is ANNUAL from 2026-27
 
-- **Maximum contribution base is ANNUAL from 2026-27** — $270,830 of qualifying earnings for 2026-27 (formula: concessional cap x 100 / 12, rounded down to nearest $10 = $32,500 x 100 / 12). Applied on a year-to-date basis per the Rule 1 formula: SG is payable on qualifying earnings up to the base, the crossing payday is prorated, and nothing is payable on earnings beyond it. Maximum SG per employee per year: $32,499.60. (Last quarterly MCB: $62,500/quarter in 2025-26.)
+- **Maximum contribution base is ANNUAL from 2026-27** — $270,830 of qualifying earnings for 2026-27 (formula: concessional cap x 100 / 12, rounded down to nearest $10 = $32,500 x 100 / 12). Applied per employer on a year-to-date basis per the Rule 1 formula: SG is payable on qualifying earnings up to the base, the crossing payday is prorated, and nothing is payable on earnings beyond it. Maximum SG per employee from one employer per year: $32,499.60. (Last quarterly MCB: $62,500/quarter in 2025-26.)
 
 ### Rule 5 -- Sole traders have NO SG obligation to themselves
 
@@ -255,6 +257,8 @@ SG applies only to the first $270,830 of qualifying earnings paid in the financi
 ### Rule 6 -- Concessional contributions cap
 
 $32,500 (2026-27; indexed up from $30,000 on 1 July 2026). Includes employer SG + salary sacrifice + personal deductible contributions (with s 290-170 notice). Excess included in assessable income at marginal rate (with 15% offset).
+
+**Bill, not law.** Schedule 6 to the Treasury Laws Amendment (Tax Reform No. 3) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. It would disregard certain non-sacrificed employer contributions for the June 2026 quarter made in July 2026 (June quarter SG contributions and certain industrial instrument contributions) when working out 2026-27 concessional contributions, up to the amount that would otherwise exceed the basic cap. Until it is enacted they count in 2026-27 under ITAA 1997 s 291-25. For an employee near the cap, flag the Bill and do not treat an excess from these contributions as settled. [APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory memorandum, Chapter 6](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf).
 
 ### Rule 7 -- Carry-forward unused concessional cap
 
@@ -289,7 +293,7 @@ Sources: [ATO: Division 293](https://www.ato.gov.au/individuals-and-families/sup
 
 - **What it is** — An additional tax, assessed on the individual, on a proportion of superannuation earnings where the total superannuation balance (TSB) exceeds the large superannuation balance threshold: an extra 15% on the earnings proportion attributable to the TSB above $3 million, plus a further amount on the proportion above the very large balance threshold of $10 million, giving the extra 15% / 25% headline rates. Enacted by the Treasury Laws Amendment (Building a Stronger and Fairer Super System) Act 2026 (No. 8, assent 13 March 2026) and its Imposition Act; ITAA 1997 Division 296. The first year is 2026-27.
 - **Design points** — Both thresholds are indexed from 2027-28 (in $150,000 and $500,000 increments). Earnings follow realised concepts rather than the 2023 unrealised-gains proposal. The test uses the greater of the TSB just before the start of the year and at its end; for 2026-27 only the TSB at 30 June 2027 counts, and a member who dies on or before 30 June 2027 is not liable for 2026-27. Child recipients of super income streams and people with structured settlement contributions are excluded (ss 296-20, 296-25).
-- **Who to flag** — any client whose 30 June TSB approaches $3 million: contribution strategy, asset location and pension-phase decisions all interact with Division 296. **This skill does not compute Division 296**; escalate, because the amount depends on ATO-calculated earnings from fund reporting.
+- **Who to flag** — any client whose 30 June TSB approaches $3 million: contribution strategy, asset location and pension-phase decisions all interact with Division 296. **This skill does not compute Division 296**; escalate, because the ATO assesses the member from the relevant super earnings that each fund calculates, attributes to the member and reports. SMSF trustees carry that reporting duty from the 2026-27 return (see `au-smsf` Section 5.3).
 - **Do not confuse** Division 293 (contributions tax for incomes over $250,000, unchanged) with Division 296 (large-balance earnings tax from 2026-27).
 
 [Act No. 8 of 2026](https://www.legislation.gov.au/C2026A00008/asmade/text); [ATO, Key super rates: Division 296 tax thresholds](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds)
@@ -308,9 +312,9 @@ Sources: [ATO: Division 293](https://www.ato.gov.au/individuals-and-families/sup
 
 ### T2-2 -- Multiple employers exceeding concessional cap
 
-**Trigger:** Individual has two employers both paying SG. Combined may exceed $32,500.
+**Trigger:** Individual has two employers both paying SG. The $270,830 base applies to each employer separately, so combined SG may exceed $32,500.
 **Issue:** Neither employer at fault. Individual bears excess contributions tax.
-**Action:** Flag for reviewer to assess salary sacrifice adjustment.
+**Action:** Flag for reviewer to assess salary sacrifice adjustment and an employer shortfall exemption certificate. The employee applies to the ATO at least 30 days before the period starts, one financial year at a time. At least one other employer must keep paying SG, and an exempted employer can still choose to contribute. [ATO, Super guarantee opt out](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/super-from-your-employer/super-guarantee-opt-out-for-high-income-earners-with-multiple-employers).
 
 ### T2-3 -- Over-75 contributions
 
@@ -366,10 +370,10 @@ EMPLOYER SG (PER EMPLOYEE PER PAYDAY)
   Employee name:                  [____]
   SG eligibility / age / weekly hours: [____]  (Rule 1)
   Payday (QE day):                [____]
-  Qualifying earnings this payday: AUD [____]
+  Qualifying earnings this payday: AUD [____]  (include sacrificed amounts per Rule 1)
   YTD qualifying earnings:        AUD [____]  (SG only on QE up to $270,830 YTD; prorate the crossing payday per Rule 1)
   SG rate:                        12%
-  SG contribution:                AUD [____]
+  SG contribution:                AUD [____]  (exclude sacrificed contributions)
   Fund receipt deadline (QE day + 7 business days): [____]
   Fund receipt confirmed:         [YES/NO -- clearing house receipt does NOT count]
 
@@ -449,7 +453,7 @@ If the client provides only a bank statement:
 | --- | --- | --- |
 | SG rate | 12% | unchanged (terminal since 1 Jul 2025) |
 | Maximum contribution base | $270,830 (ANNUAL) | replaced quarterly $62,500 |
-| Maximum SG per employee per year | $32,499.60 | new basis |
+| Maximum SG per employee from one employer per year | $32,499.60 | new basis |
 | Concessional cap | $32,500 | up from $30,000 |
 | Non-concessional cap | $130,000 | up from $120,000 |
 | Bring-forward (3 years, TSB < $1.84m) | $390,000 | up from $360,000 |
@@ -485,7 +489,12 @@ If the client provides only a bank statement:
 | Co-contribution thresholds | ato.gov.au -- Government contributions (Table 25) |
 | SBSCH closure | ato.gov.au -- The SBSCH has closed permanently (QC 107658) |
 | Legislation | Treasury Laws Amendment (Payday Superannuation) Act 2025 (No. 57/2025); Superannuation Guarantee Charge Amendment Act 2025 (No. 58/2025); F2026L00133 |
-| First-year compliance | PCG 2026/1 |
+| First-year compliance | [PCG 2026/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20261/NAT/ATO/00001) (paragraphs 11 to 13 and 19 checked 31 October 2026) |
+| Qualifying earnings and salary sacrifice | ato.gov.au -- [What payments are qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super) (checked 31 October 2026) |
+| Out-of-cycle limits, recommenced workers | ato.gov.au -- [Payment deadlines for Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super) (checked 31 October 2026) |
+| SMSF allocation period | ato.gov.au -- [How Payday Super affects SMSFs](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs) (checked 31 October 2026) |
+| Shortfall exemption certificate | ato.gov.au -- [Super guarantee opt out](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/super-from-your-employer/super-guarantee-opt-out-for-high-income-earners-with-multiple-employers) (checked 31 October 2026) |
+| Schedule 6 Bill note | [APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) (checked 31 October 2026) |
 
 ### Test suite
 
@@ -512,6 +521,10 @@ If the client provides only a bank statement:
 **Test 11:** Employee aged 17 works exactly 30 hours in one week and 31 in the next. -> The first week fails the SG hours test; the second meets it. Check separate award or agreement obligations and the qualifying earnings attributable to each week.
 
 **Test 12:** Only the bank debit in Example 1 is available. -> Candidate super contribution; actual payday, qualifying earnings, fund receipt, timeliness and deduction remain unverified.
+
+**Test 13:** Fortnightly earnings $2,500, of which $500 is sacrificed to super. -> QE $2,500. SG = 12% x $2,500 = $300, in addition to the $500; the $500 does not count toward the $300.
+
+**Test 14:** Weekly-paid employee receives a final bonus on Monday 7 Dec 2026, and no regular payday follows. -> No out-of-cycle extension. Fund receipt by Wednesday 16 Dec 2026 (7 business days).
 
 ### Prohibitions
 

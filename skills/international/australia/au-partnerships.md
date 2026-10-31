@@ -6,7 +6,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026) is LAW: from 1 July 2027 the 50% CGT discount for individuals, trusts and partnerships is replaced by cost base indexation plus a 30% minimum rate on capital gains accruing after that date -- partners' fractional-interest gains (Rule 7) are computed under current rules for 2025-26 and 2026-27 only. The permanent $20,000 instant asset write-off was enacted on 26 August 2026. Schedule 2 commences on 1 October 2026 and applies to eligible assets first used or installed ready for taxable use on or after 1 July 2026. Eligible small business entities must use simplified depreciation and the asset must cost less than $20,000. See [Tax Reform No. 2 Act 2026, section 2 and schedules 1-2](https://www.legislation.gov.au/C2026A00071/asmade/text).
+> **Law-change context.** Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026) is LAW: from 1 July 2027 the 50% CGT discount for individuals, trusts and partnerships is replaced by cost base indexation plus a 30% minimum rate on capital gains accruing after that date -- for partners' fractional-interest gains (Rule 7) the split follows when the gain accrues, not the disposal year. For an asset held across the date and sold later, the 50% discount applies to the difference between the cost base and the value immediately before 1 July 2027, and the new rules to later gains; a choice to keep the current arrangements exists for new residential dwellings and affordable housing ([ATO, Capital gains tax reform](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/capital-gains-tax-reform)). The permanent $20,000 instant asset write-off was enacted on 26 August 2026. Schedule 2 commences on 1 October 2026 and applies to eligible assets first used or installed ready for taxable use on or after 1 July 2026. Eligible small business entities must use simplified depreciation and the asset must cost less than $20,000. See [Tax Reform No. 2 Act 2026, section 2 and schedules 1-2](https://www.legislation.gov.au/C2026A00071/asmade/text).
 
 ## Section 1 -- Quick reference
 
@@ -91,6 +91,7 @@ Partnership work starts with the P&L and the capital accounts, not the profit sp
 | Superannuation expense for partners | Partners' personal contributions are NOT partnership deductions | Add back; each partner claims their own s 290-150 deduction personally |
 | "Interest on capital" credited to partners | Appropriation of profit, not an expense | Add back to net income; it forms part of the recipient's profit share |
 | Interest on genuine external borrowings | Deductible if funding the business -- including refinancing partner capital previously invested (*Roberts & Smith*; TR 95/25) | Verify the borrowing's use; refinancing of capital in excess of contributed amounts escalates |
+| Interest on a genuine loan by a partner to the firm | Deductible to the firm where the money is used to gain assessable income; not an appropriation of profit | Keep the deduction; the interest is the lender's ordinary income (s 6-5), outside the s 92 share. Test that it is a loan, not capital |
 | One partner's drawings persistently fund private assets | Disguised unequal distribution; family-splitting / s 94 optics | Reconcile drawings to profit shares; check the agreement actually supports the split |
 | Loan account: partnership lends to a partner | Not Div 7A (no private company lender) -- but check corporate partners | If a corporate PARTNER's money flows to shareholders/associates, run au-div7a on the company |
 | Round-sum monthly "management fee" to a related entity | Profit extraction bypassing s 92 shares | Test substance; PCG 2021/4 / Part IVA optics for professional firms |
@@ -169,7 +170,7 @@ Farid is an equity partner (IPP) in an engineering partnership. His total profit
 
 ### Rule 5 -- Interest on partner capital, drawings, and borrowings
 
-- **Interest on partner capital, drawings, and borrowings** — Interest credited to a partner on capital contributed is, like salary, an appropriation of profit -- not deductible to the partnership; it forms part of the recipient's profit share. Drawings are returns of capital/anticipated profit: never assessable as such, never deductible, and irrelevant to s 92 (partners are taxed on shares, not cash). Distinguish genuine borrowings: interest on external debt used in the business is deductible in computing s 90 net income, INCLUDING borrowings that refinance partner capital previously invested in the business up to the amount contributed (*FCT v Roberts; FCT v Smith* 92 ATC 4380; TR 95/25 refinancing principle -- refinancing beyond contributed capital, or of "internally generated goodwill" revaluations, fails). A partner who borrows personally to fund their capital contribution or acquire their interest deducts that interest in their OWN return against partnership income.  _(*FCT v Roberts; FCT v Smith* 92 ATC 4380; TR 95/25)_
+- **Interest on partner capital, drawings, and borrowings** — Interest credited to a partner on capital contributed is, like salary, an appropriation of profit -- not deductible to the partnership; it forms part of the recipient's profit share. Drawings are returns of capital/anticipated profit: never assessable as such, never deductible, and irrelevant to s 92 (partners are taxed on shares, not cash). Distinguish genuine borrowings: interest on external debt used in the business is deductible in computing s 90 net income, INCLUDING borrowings that refinance partner capital previously invested in the business up to the amount contributed (*FCT v Roberts; FCT v Smith* 92 ATC 4380; TR 95/25 refinancing principle -- refinancing beyond contributed capital, or of "internally generated goodwill" revaluations, fails). Interest on a genuine loan by a partner to the firm is also deductible where the money is used to gain assessable income (s 8-1), and is ordinary income of the lender partner (s 6-5), outside the s 92 share. A partner who borrows personally to fund their capital contribution or acquire their interest deducts that interest in their OWN return against partnership income.  _(*FCT v Roberts; FCT v Smith* 92 ATC 4380; TR 95/25)_
 
 ### Rule 6 -- Losses flow through immediately -- then Div 35 gates individuals
 
@@ -190,7 +191,7 @@ Company and trust partners are outside Div 35 -- their shares follow their own l
 
 ### Rule 7 -- CGT: partners hold fractional interests in each asset (s 106-5)
 
-- **CGT: partners hold fractional interests in each asset** — There is no partnership-level CGT. Any capital gain or loss from a CGT event involving a partnership asset is made by the PARTNERS individually: each partner has a separate cost base and reduced cost base for their fractional interest in EACH partnership CGT asset, in their capital-sharing proportions. Consequences: - Each partner applies their own method: individuals get the 50% discount on interests held > 12 months (through 30 June 2027 -- see law-change banner), companies get none, and each partner's own capital losses offset their share. - Income-sharing and capital-sharing ratios can differ under the agreement -- s 92 follows income interests; CGT follows asset fractions. Document both (T2-1). - A partner can hold different percentages in different assets, and different acquisition dates per interest (e.g. original stake 2019, increased stake 2024). - Small business CGT concessions are tested at partner level on their interests (see au-small-business-cgt).  _(s 106-5 ITAA 1997)_
+- **CGT: partners hold fractional interests in each asset** — There is no partnership-level CGT. Any capital gain or loss from a CGT event involving a partnership asset is made by the PARTNERS individually: each partner has a separate cost base and reduced cost base for their fractional interest in EACH partnership CGT asset, in their capital-sharing proportions. Consequences: - Each partner applies their own method: individuals get the 50% discount on interests held > 12 months (for gains accruing before 1 July 2027, even if the disposal is later -- see law-change banner), companies get none, and each partner's own capital losses offset their share. - Income-sharing and capital-sharing ratios can differ under the agreement -- s 92 follows income interests; CGT follows asset fractions. Document both (T2-1). - A partner can hold different percentages in different assets, and different acquisition dates per interest (e.g. original stake 2019, increased stake 2024). - Small business CGT concessions are tested at partner level on their interests (see au-small-business-cgt).  _(s 106-5 ITAA 1997)_
 
 ### Rule 8 -- Joining and leaving: disposal/acquisition; dissolution vs reconstitution
 
@@ -323,13 +324,13 @@ If the client provides only financial statements:
 | Partnership returns and flow-through | ato.gov.au -- Income tax return: partnerships and partners; Business, partnership and trust income |
 | Partner salaries | TR 2005/7 (consolidated 5 November 2014, incl. CLP addendum); *FCT v Galland* (1986) 162 CLR 408 |
 | Partnership existence; co-owners | TR 94/8; TR 93/32; *FCT v McDonald* (1987) 15 FCR 172 |
-| Interest deductibility / refinancing | TR 95/25; *FCT v Roberts; FCT v Smith* 92 ATC 4380 |
+| Interest deductibility / refinancing | s 8-1, s 6-5 ITAA 1997; TR 95/25; *FCT v Roberts; FCT v Smith* 92 ATC 4380 |
 | Non-commercial losses | Div 35 ITAA 1997; TR 2003/3; ato.gov.au QC 45040 (partnerships, updated 7 April 2025), QC 55240 (income requirement) |
 | CGT fractional interests | s 106-5 ITAA 1997; ATO ID 2006/200 |
 | Reconstitution / composition changes | ato.gov.au -- Changing the makeup of a partnership (QC 40493, updated 12 July 2023); GSTR 2003/13 |
 | Professional firm profits | PCG 2021/4; ato.gov.au QC 42218 (assessing the risk, updated 26 September 2024) |
 | Everett assignments | *FCT v Everett* (1980) 143 CLR 440; ato.gov.au QC 46120 (updated 26 September 2024); Treasury Laws Amendment (Tax Integrity and Other Measures) Act 2019 (8 May 2018 SBCGT limits) |
-| CGT reform from 1 July 2027 | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026) |
+| CGT reform from 1 July 2027 | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026); [ATO, Capital gains tax reform](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/capital-gains-tax-reform) (published 13 October 2026) |
 
 ### Test suite
 

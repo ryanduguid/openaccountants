@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T07:41:12+00:00",
+ "generated_at": "2026-10-31T09:33:39+00:00",
  "counts": {
   "guides": 2006,
   "jurisdictions": 288,
@@ -2513,7 +2513,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-18"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-bas-preparation",
@@ -2526,7 +2526,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-capital-gains",
@@ -2539,7 +2539,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-company-tax",
@@ -2552,7 +2552,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-crypto-tax",
@@ -2565,7 +2565,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-deceased-estates",
@@ -2578,7 +2578,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-deductions-offsets",
@@ -2591,7 +2591,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-div7a",
@@ -2604,7 +2604,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-employment-termination-payments",
@@ -2617,7 +2617,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-fbt-year",
@@ -2643,7 +2643,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-foreign-income",
@@ -2656,7 +2656,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-forex-gains-losses",
@@ -2669,7 +2669,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-gst-bas",
@@ -2681,8 +2681,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-gst-property",
@@ -2695,7 +2695,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-individual-return",
@@ -2708,7 +2708,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-land-tax",
@@ -2721,7 +2721,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-lodgment-deadlines-penalties",
@@ -2747,7 +2747,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-nonresident-cgt",
@@ -2759,8 +2759,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-not-for-profit",
@@ -2773,7 +2773,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-partnerships",
@@ -2786,7 +2786,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-payg-instalments",
@@ -2799,7 +2799,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-payroll-tax",
@@ -2812,7 +2812,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-psi",
@@ -2825,7 +2825,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-rates-2026-27",
@@ -2838,7 +2838,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-rd-incentive",
@@ -2851,7 +2851,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-rental-property",
@@ -2864,7 +2864,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-small-business-cgt",
@@ -2877,7 +2877,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-smsf",
@@ -2890,7 +2890,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-sole-trader-schedule",
@@ -2903,7 +2903,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-stamp-duty",
@@ -2916,7 +2916,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-14"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-super-guarantee",
@@ -2929,7 +2929,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-tax-residency",
@@ -2942,7 +2942,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-tpar",
@@ -2955,7 +2955,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-trust-distributions",
@@ -2968,7 +2968,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-working-holiday-makers",
@@ -2981,7 +2981,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-bookkeeping",
@@ -2994,7 +2994,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-financial-statements",
@@ -3006,8 +3006,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-formation",
@@ -3020,7 +3020,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-gst",
@@ -3032,8 +3032,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-payroll",
@@ -3046,7 +3046,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-tax-optimization",
@@ -3058,8 +3058,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-transfer-pricing",
@@ -3072,7 +3072,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-20"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "leaving-australia-tax-residency-cgt",
@@ -3084,8 +3084,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "australia-references",
@@ -3098,7 +3098,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "at-company-formation",
@@ -22884,7 +22884,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "au-return-assembly",
@@ -22897,7 +22897,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-15"
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "bd-freelance-intake",

@@ -1,11 +1,11 @@
 ---
 name: au-individual-return
-description: Use this skill whenever asked about Australian individual income tax for sole traders. Trigger on phrases like "how much tax do I pay in Australia", "Australian tax return", "sole trader tax", "ABN tax", "Medicare levy", "LITO", "PAYG", "tax brackets Australia", "BAS", "instant asset write-off", "home office deduction", "HELP repayment", "HECS debt", "small business income tax offset", "motor vehicle deduction", or any question about filing or computing income tax for an Australian sole trader. Covers 2025-26 resident tax rates, Medicare levy and surcharge, LITO, business income computation, allowable deductions, depreciation, instant asset write-off, small business income tax offset, HELP/HECS repayments, and final tax computation. ALWAYS read this skill before touching any Australian income tax work.
+description: Use this skill whenever asked about Australian individual income tax for sole traders. Trigger on phrases like "how much tax do I pay in Australia", "Australian tax return", "sole trader tax", "ABN tax", "Medicare levy", "LITO", "PAYG", "tax brackets Australia", "BAS", "instant asset write-off", "home office deduction", "HELP repayment", "HECS debt", "small business income tax offset", "motor vehicle deduction", or any question about filing or computing income tax for an Australian sole trader. Covers 2025-26 resident tax rates, Medicare levy and surcharge, LITO, business income computation, allowable deductions, depreciation, instant asset write-off, small business income tax offset, HELP/HECS repayments, and final tax computation. ALWAYS read this skill before Australian individual income tax work on a 2025-26 return. For 2026-27 work, read its year coverage section first, then use au-rates-2026-27 and au-deductions-offsets.
 version: 2.4
 jurisdiction: AU
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,6 +15,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # AU Individual Return
+
+## Year coverage
+
+The figures in this guide are for 2025-26 returns. The current income year is 2026-27 (1 July 2026 to 30 June 2027). For 2026-27 work, do not use the 2025-26 rows below: take figures from `au-rates-2026-27` and the standard deduction from `au-deductions-offsets`. The main differences are:
+
+| Item | 2025-26 (this guide) | 2026-27 | Source |
+| --- | --- | --- | --- |
+| Resident rate, $18,201 to $45,000 | 16% (maximum $4,288) | 15% (maximum $4,020), so the 16% table overstates 2026-27 tax by $268 at taxable income of $45,000 or more | [ATO, Tax rates: Australian residents](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents) |
+| Cents per km | 88c | 91c, same 5,000 km cap | [LI 2026/19, s 6](https://www.ato.gov.au/law/view/view.htm?docid=OPS%2FLI202619%2F00001) |
+| Standard deduction for work-related expenses | None | Up to $1,000 for eligible taxpayers with assessable labour income; the $300 and $150 substantiation exceptions end | [ATO, Standard deduction](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/standard-deduction-for-work-related-expenses) |
+| MLS base tier | $101,000 single, $202,000 family | $105,000 single, $210,000 family | [ATO, MLS thresholds](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates) |
+| HELP bands | Section 5.5 table | Section 5.5, 2026-27 bullet | [ATO, Repayment thresholds](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds) |
 
 ## Asset-threshold currency
 
@@ -29,9 +41,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Australia |
 | Tax | Income tax + Medicare levy + HELP repayments (if applicable) |
 | Currency | AUD only |
-| Tax year | 1 July 2025 -- 30 June 2026 |
+| Tax year | 1 July 2025 -- 30 June 2026 (for 2026-27, see Year coverage) |
 | Primary legislation | Income Tax Assessment Act 1997 (ITAA 1997); Income Tax Assessment Act 1936 (ITAA 1936) |
-| Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
+| Supporting legislation | Taxation Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
 | Filing deadline | Self-lodged: 31 October following the 30 June year-end. Tax-agent dates depend on the client: 15 May is the general date for eligible clients not required earlier, and engagement before 31 October does not guarantee it. For 2025-26, self-lodgment is due Monday 2 November 2026 because 31 October 2026 falls on a Saturday; confirm agent dates in the ATO lodgment program |
@@ -79,9 +91,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Value |
 | --- | --- |
-| Rate | 16% of income tax on business income |
+| Rate | 16% x (total net small business income / taxable income) x basic income tax liability. Total net small business income is limited to taxable income ([ITAA 1997 s 328-360](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/328-360)) |
 | Cap | $1,000 |
 | Eligibility | Eligible individual with net small business income from their sole-trader business or a qualifying partnership/trust share; business aggregated turnover under $5 million. A trustee is not an additional eligible claimant |
+| Net small business income | Assessable income from carrying on the business less deductions attributable to it. Excludes net capital gains, personal services income unless from a personal services business, and salary and wages. Not reduced by tax-related expenses, gifts or personal super contributions. This matters for mixed wage and business income below the cap ([ATO, SBITO](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/concessions-offsets-and-rebates/small-business-income-tax-offset)) |
 
 
 ### Key Deduction Rate Lookups
@@ -90,8 +103,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Rate/threshold | Claim handling |
 | --- | --- | --- |
-| Home office -- fixed rate method | 70 cents per work hour for 2024-25 and 2025-26 (PCG 2023/1; the ATO had not published a 2026-27 rate when its page was last updated on 8 June 2026) | T2 -- method choice, hours, and records/substantiation required |
-| Motor vehicle -- cents per km method | 88 cents per km (max 5,000 km) | T2 -- method choice and business-km support required |
+| Home office -- fixed rate method | 70 cents per work hour for 2025-26. [PCG 2023/1 para 26A](https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001) reads 70c from 1 July 2024 with no end date; the [ATO page](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method), updated 8 June 2026, names years only to 2025-26. Confirm for 2026-27, when a claim also reduces any standard deduction | T2 -- method choice, hours, and records/substantiation required |
+| Motor vehicle -- cents per km method | 88 cents per km for 2025-26; 91 cents for 2026-27 (max 5,000 km) | T2 -- method choice and business-km support required |
 | Instant asset write-off (small business) | $20,000 threshold (assets under $20,000 immediately deductible) | T1 if small-business eligibility and asset cost are clear; otherwise escalate |
 | Superannuation (deductible personal contribution) | Up to concessional cap ($30,000 in 2025-26; $32,500 in 2026-27) | T1 rate-cap lookup; notice of intent must be lodged before claiming |
 
@@ -116,7 +129,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Recommended** -- all tax invoices issued, purchase receipts, PAYG payment summaries or income statements (via myGov), prior year tax return, BAS lodgments.
 
-**Receipts and substantiation (critical)** -- for deduction claims, keep written evidence (receipt or tax invoice) showing supplier name, cost, date, and nature of expense, plus records of business-use apportionment. A bank or credit-card statement alone is generally not sufficient evidence. Keep records for at least 5 years from lodgment.
+**Receipts and substantiation (critical)** -- for deduction claims, keep written evidence (receipt or tax invoice) showing supplier name, cost, date, and nature of expense, plus records of business-use apportionment. A bank or credit-card statement alone is generally not sufficient evidence. Keep most business records for 5 years, generally from when the record was prepared or obtained or the transaction was completed, whichever is later; some records have a different start or a longer period ([ATO, Record-keeping for business](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business)).
 
 **Ideal** -- complete bookkeeping records, depreciation schedule, motor vehicle logbook, home office hours log, private health insurance statement, HELP debt balance.
 
@@ -144,7 +157,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | DIVIDEND, DISTRIBUTION | Dividend income (Item 11) | NOT business income | Report separately. Include franking credits. |
 | FRANKING CREDIT | Gross-up dividend | Add to assessable income | Franking credit is both income and tax offset |
 | ATO REFUND, TAX REFUND | EXCLUDE | Not income | Prior year tax refund |
-| CENTRELINK, JOBSEEKER, YOUTH ALLOWANCE | Government payment (Item 6) | May be taxable | Check specific payment type |
+| JOBSEEKER, YOUTH ALLOWANCE, AUSTUDY | Australian Government allowances and payments (Item 5) | May be taxable | [ATO, Question 5, 2026](https://www.ato.gov.au/forms-and-instructions/individual-tax-return-2026-instructions/income-questions-1-12-individual-tax-return-2026/5-australian-government-allowances-and-payments-2026) names these payments |
+| CENTRELINK (other or unnamed payment) | Item 5 (allowances and payments) or Item 6 (pensions and allowances) | May be taxable | Check specific payment type against both questions |
 | SUPERANNUATION (lump sum or pension) | Item 7 or 8 | Check | Depends on age and components |
 | OWN TRANSFER, SAVINGS | EXCLUDE | Internal | Between own accounts |
 | RENTAL INCOME | Rental income (Item 21) | NOT business income | Separate rental schedule |
@@ -153,15 +167,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **3.2 Expense Patterns (Debits on Bank Statement)**
 
+A sole trader's business costs go at the P8 expense labels on the business and professional items schedule and flow to net business income (see `au-sole-trader-schedule`; [ATO, Expenses P8](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026/business-income-and-expenses-p8/expenses-p8)). D labels are for employment and other non-business deductions. Putting business costs at D labels overstates net small business income, so it can overstate SBITO and distort the Division 35 and PSI working.
+
 | Pattern | Deduction Category | Tier | Treatment |
 | --- | --- | --- | --- |
 | RENT, OFFICE RENT, SERVICED OFFICE | Business expense -- occupancy | T1 | Fully deductible if dedicated business premises |
-| HOME OFFICE, WORK FROM HOME | Home office deduction (D5) | T2 | Fixed rate for the verified return year (70c/hr for 2025-26) OR actual cost method. See Tier 2. |
-| PETROL, FUEL, CALTEX, BP, SHELL, AMPOL | Motor vehicle (D1) | T2 | Cents/km (88c, max 5,000 km) OR logbook method |
-| CAR INSURANCE, REGO, SERVICE | Motor vehicle | T2 | Only under logbook method (not cents/km) |
-| TOLL, CITYLINK, LINKT | Motor vehicle or travel | T1 | Business travel tolls: deductible under either method |
-| FLIGHT, QANTAS, VIRGIN, JETSTAR | Travel (D2) | T1 | Fully deductible if business travel |
-| ACCOMMODATION, HOTEL | Travel | T1 | Deductible if business travel with overnight stay |
+| HOME OFFICE, WORK FROM HOME | Business: P8 P, all other expenses. Employee: D5 | T2 | Fixed rate for the verified return year (70c/hr for 2025-26) OR actual cost method. See Tier 2. |
+| PETROL, FUEL, CALTEX, BP, SHELL, AMPOL | Business: P8 N, motor vehicle. Employee: D1 | T2 | Cents/km (88c for 2025-26, max 5,000 km) OR logbook method |
+| CAR INSURANCE, REGO, SERVICE | Business: P8 N. Employee: D1 | T2 | Only under logbook method (not cents/km) |
+| TOLL, CITYLINK, LINKT | Business: P8 N or P8 P. Employee: D1 or D2 | T1 | Business travel tolls: deductible under either method |
+| FLIGHT, QANTAS, VIRGIN, JETSTAR | Business: P8 P. Employee: D2 | T1 | Fully deductible if business travel |
+| ACCOMMODATION, HOTEL | Business: P8 P. Employee: D2 | T1 | Deductible if business travel with overnight stay |
 | MEALS (business travel, overnight) | Travel | T1 | Reasonable amount while travelling overnight |
 | MEALS (client entertainment) | NOT deductible | T1 | Entertainment: NOT deductible for sole traders |
 | INSURANCE, PROFESSIONAL INDEMNITY | Business expense -- insurance | T1 | Fully deductible |
@@ -172,9 +188,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GOOGLE ADS, META ADS, FACEBOOK ADS | Business expense -- advertising | T1 | Fully deductible |
 | PHONE, TELSTRA, OPTUS, VODAFONE | Business expense -- telecom | T2 | Business portion only |
 | INTERNET, NBN | Business expense -- telecom | T2 | Business portion only (or included in home office fixed-rate method) |
-| TRAINING, COURSE, SELF-EDUCATION | Self-education (D4) | T1 | Deductible if directly related to current income-producing activity. NOT deductible if for new career. |
-| COMPUTER, LAPTOP, EQUIPMENT (under $20,000) | Instant asset write-off | T1 | Immediately deductible if small business entity and cost < $20,000 |
-| COMPUTER, LAPTOP, EQUIPMENT (over $20,000) | Depreciation (D2 business) | T1 | Depreciate over effective life per ATO table |
+| TRAINING, COURSE, SELF-EDUCATION | Business: P8 P. Employee: D4 | T1 | Deductible if directly related to current income-producing activity. NOT deductible if for new career. |
+| COMPUTER, LAPTOP, EQUIPMENT (under $20,000) | Instant asset write-off (P8 M and P10) | T1 | Immediately deductible if small business entity and cost < $20,000 |
+| COMPUTER, LAPTOP, EQUIPMENT ($20,000 or more), simplified depreciation user | Small business pool (P8 M and P10) | T1 | 15% in the first year, then 30% ([ATO, Simpler depreciation](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business)) |
+| COMPUTER, LAPTOP, EQUIPMENT, not using simplified depreciation | Decline in value (P8 M) | T1 | Depreciate over effective life per ATO table |
 | SUPER CONTRIBUTION, SUNSUPER, AUSTRALIAN SUPER | Deduction (Item D12) | T1 | Personal deductible super contribution up to the concessional cap ($30,000 in 2025-26; $32,500 in 2026-27). Must lodge notice of intent. |
 | ATO TAX, INCOME TAX, PAYG INSTALMENT | EXCLUDE | Not deductible | Tax payments are not deductions |
 | GST PAYMENT, BAS PAYMENT | EXCLUDE from income tax | T1 | GST is separate. Report net of GST if registered. |
@@ -288,7 +305,7 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 
 - **2026-27 HELP repayment bands** — 2026-27: nil to $69,528; 15c over $69,528 to $129,717; $9,028 + 17c over $129,717 to $186,050; 10% of total repayment income from $186,051.  _([ATO, Study and training loan repayment thresholds and rates](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds))_
 - **Marginal basis (from 2025-26)** — From 2025-26 compulsory repayments are calculated on a marginal basis (only the income above the minimum repayment threshold), substituted by the Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025.  _(Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025)_
-- **Repayment income** — Repayment income = taxable income + reportable fringe benefits + net investment losses + reportable super contributions + exempt foreign employment income. HELP repayments are NOT deductible.  _(Higher Education Support Act 2003)_
+- **Repayment income** — Repayment income = taxable income (excluding assessable First Home Super Saver released amounts) + reportable fringe benefits + net investment losses + reportable super contributions + exempt foreign employment income. HELP repayments are NOT deductible.  _(Higher Education Support Act 2003; [ATO, Repayment thresholds](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds))_
 
 ### 5.6 Filing and Penalties [T1]
 
@@ -314,7 +331,7 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 | Fixed rate (verify the return year; 70c/hr for 2025-26) | Electricity, gas, phone, internet, stationery, computer consumables | Eligible furniture and equipment depreciation, repairs to those assets and cleaning; occupancy costs only if the separate place-of-business conditions are met |
 | Actual cost | Each expense claimed individually at actual business % | No fixed rate component |
 
-- **Home office record keeping and occupancy expenses** — Under either method: must have records of hours worked from home. Fixed rate: can use any reasonable record. Actual: need receipts and usage records. Occupancy expenses (rent, mortgage interest, rates, home insurance, land tax) are ONLY deductible if you have a dedicated area set aside exclusively as a place of business. These are separate from running expenses. Confirm method, hours, and whether occupancy expenses apply.
+- **Home office record keeping and occupancy expenses** — Under either method: must have records of hours worked from home. Fixed rate, 2023-24 and later: keep a record of the actual hours worked from home for the entire income year, such as a timesheet, roster or diary kept at the time, plus at least one record for each running expense the rate covers. An estimate is not accepted, whether for the whole year or from a sample period, and estimated hours cannot be included in the claim ([ATO, Fixed rate method](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method); [PCG 2023/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001), para 58). Actual: need receipts and usage records. Occupancy expenses (rent, mortgage interest, rates, home insurance, land tax) are ONLY deductible if you have a dedicated area set aside exclusively as a place of business. These are separate from running expenses. Confirm method, hours, and whether occupancy expenses apply.
 
 ### 6.2 Motor Vehicle [T2]
 
@@ -322,7 +339,7 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 
 | Method | How It Works | Records |
 | --- | --- | --- |
-| Cents per km (88c) | Max 5,000 business km. No receipts needed. | Reasonable estimate of business km |
+| Cents per km (88c for 2025-26; 91c for 2026-27) | Max 5,000 business km. No receipts needed. | Reasonable estimate of business km |
 | Logbook | Business % of actual costs including depreciation | 12-week continuous logbook, valid for 5 years |
 
 - **Cannot claim both methods** — Cannot claim both. Eligible business parking and tolls can be separate deductions. Roadside assistance is a car operating expense covered by the cents-per-kilometre rate; do not claim it again under that method. Confirm method and km/logbook records.
@@ -349,7 +366,7 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 
 ```
 AUSTRALIAN INDIVIDUAL TAX RETURN -- Working Paper
-Tax Year: 2025-26
+Tax Year: 2025-26 (for 2026-27, use au-rates-2026-27 figures)
 
 A. INCOME
   A1. Business income (ABN income)                 ___________
@@ -363,7 +380,7 @@ A. INCOME
 B. DEDUCTIONS
   B1. Business expenses (direct)                   ___________
   B2. Home office (verified rate or actual)               ___________
-  B3. Motor vehicle (88c/km or logbook)            ___________
+  B3. Motor vehicle (rate for year or logbook)      ___________
   B4. Travel (flights, accommodation)              ___________
   B5. Self-education                               ___________
   B6. Depreciation / instant asset write-off       ___________
@@ -378,12 +395,12 @@ C. TAXABLE INCOME (A7 - B12)                       ___________
 
 D. TAX COMPUTATION
   D1. Tax on taxable income (2025-26 rates)        ___________
-  D2. Medicare levy (2%)                           ___________
-  D3. Medicare levy surcharge (if applicable)      ___________
-  D4. HELP/HECS repayment (if applicable)          ___________
-  D5. Gross tax                                    ___________
-  D6. Less: LITO                                   ___________
-  D7. Less: SBITO (16%, max $1,000)                ___________
+  D2. Less: LITO (reduces income tax only)         ___________
+  D3. Less: SBITO (16%, max $1,000; income tax only) _________
+  D4. Income tax after D2 and D3 (not below nil)   ___________
+  D5. Medicare levy (2%)                           ___________
+  D6. Medicare levy surcharge (if applicable)      ___________
+  D7. HELP/HECS repayment (if applicable)          ___________
   D8. Less: Franking credits offset                ___________
   D9. Less: PHI rebate offset                      ___________
   D10. Less: PAYG instalments paid                 ___________
@@ -466,8 +483,8 @@ ONBOARDING QUESTIONS -- AUSTRALIA INDIVIDUAL RETURN
 | Superannuation deduction | ITAA 1997 Div 290 |
 | Medicare levy | Medicare Levy Act 1986 |
 | HELP repayments | Higher Education Support Act 2003 |
-| LITO | ITAA 1997 s61-1 |
-| SBITO | ITAA 1997 s328-375 |
+| LITO | ITAA 1997 Subdiv 61-D, s 61-110 |
+| SBITO | ITAA 1997 Subdiv 328-F, ss 328-355 to 328-375 |
 
 ### Interaction with GST [T1]
 
@@ -478,6 +495,7 @@ ONBOARDING QUESTIONS -- AUSTRALIA INDIVIDUAL RETURN
 | GST collected on sales (registered) | NOT income. Report net of GST. |
 | GST credits (ITC) recovered | NOT an expense. Report net of GST. |
 | Not registered for GST | GST paid on purchases IS part of the cost. Report gross. |
+| Must the business register? | Yes at GST turnover of $75,000 or more, current or projected, and for taxi, limousine or ride-sourcing travel regardless of turnover. Check this before treating the business as outside GST ([ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst)). |
 | GST on private portion | Non-claimable GST is part of cost. |
 
 ## PROHIBITIONS

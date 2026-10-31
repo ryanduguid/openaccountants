@@ -15,7 +15,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026 land tax year (1 Jan 2026 or 30 Jun 2025 ownership date per state)"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -39,13 +39,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | State Land Tax Acts (e.g. Land Tax Act 1956 (NSW), Land Tax Act 2005 (VIC)) |
 | Tax authorities | Revenue NSW; SRO Victoria; QRO Queensland; RevenueSA; RevenueWA; SRO Tasmania; ACT Revenue Office |
 | Valuation authority | Valuer-General of each state/territory |
-| Assessment basis | Unimproved value (NSW, WA) or site value (VIC, SA, TAS) or average unimproved value (ACT) of taxable land, including leasehold interests treated as ownership under local law |
+| Assessment basis | 3-year average of unimproved value (NSW); unimproved value (WA); site value (VIC, SA); assessed land value (TAS); lesser of statutory land value and averaged value (QLD); or average unimproved value (ACT) of taxable land, including leasehold interests treated as ownership under local law |
 | Filing portal | State revenue office online portals |
 | Skill version | 1.3 |
 
 ### Land Tax Thresholds & Base Rates (Summary)
 
-Each row uses the latest year Section 4 sets out for that jurisdiction (NSW and VIC: 2026 land tax year; QLD, WA and TAS: 2025-26; SA and ACT: 2026-27). Check the year before applying a figure.
+Each row uses the latest year Section 4 sets out for that jurisdiction (NSW and VIC: 2026 land tax year; QLD, WA and TAS: 2025-26; SA and ACT: 2026-27). At 31 October 2026 the QLD, WA and TAS revenue pages show the same scales but do not state a 2026-27 year, so those scales are not confirmed for 2026-27 assessments. Check the year before applying a figure.
 
 **Land Tax Thresholds & Base Rates (Summary)**
 
@@ -60,7 +60,7 @@ Each row uses the latest year Section 4 sets out for that jurisdiction (NSW and 
 | ACT | Quarterly (1 Jul, 1 Oct, 1 Jan, 1 Apr) | No threshold (residential only) | Fixed charge + AUV rating factor | 0.75% (foreign ownership surcharge) |
 | NT | -- | No land tax | -- | -- |
 
-**AUDIT FLASH POINT** -- The NSW foreign owner surcharge is 5% of unimproved value, charged in addition to general land tax. It applies to residential land owned by foreign persons. Verify foreign status via the Surcharge Assist Tool before advising.
+**AUDIT FLASH POINT** -- The NSW foreign owner surcharge is 5% of unimproved value (3-year average), charged in addition to general land tax. It applies to residential land owned by foreign persons. Verify foreign status via the Surcharge Assist Tool before advising.
 
 ## Section 2 -- The Nature of Land Tax
 
@@ -87,12 +87,13 @@ Each row uses the latest year Section 4 sets out for that jurisdiction (NSW and 
 ### 2.3 How Land Value Is Determined
 
 - **Valuer-General** — Each state/territory Valuer-General determines the unimproved value or site value of land. The valuation is conducted on a rolling cycle (annual in most states).
-- **Unimproved value vs site value** — Unimproved value (NSW, WA) is the value of the land assuming no improvements. Site value (VIC, SA, TAS) is similar but may include some site works. ACT uses Average Unimproved Value (AUV) over up to 5 years.
+- **Unimproved value vs site value** — Unimproved value (NSW, WA) is the value of the land assuming no improvements. Site value (VIC, SA) is similar but may include some site works. Tasmania taxes the assessed land value shown on the assessment notice, determined by the Office of the Valuer-General. ACT uses Average Unimproved Value (AUV) over up to 5 years.
+- **Averaging in NSW and Queensland** — NSW uses a 3-year average of land values for land tax and surcharge land tax (Section 4.1). Queensland's taxable value is the lesser of the statutory land value and the averaged value (Section 4.3). Do not apply the latest valuation directly in either state.
 - **Land component only** — Land tax is assessed on the land component only. The building, fixtures, and chattels are excluded from the valuation base.
 
 ## Section 3 -- Assessment Cycle & Payment Plans
 
-The cycle: Valuer-General determines land value (annual); revenue office issues assessment notice (NSW Jan--Apr, VIC Jan--May, QLD Aug--Oct, SA Sep--Nov, WA Sep--Jan, TAS Oct--Dec, ACT quarterly); payment due 30--90 days from issue; 60-day objection window from notice issue in most states.
+The cycle: Valuer-General determines land value (annual); revenue office issues assessment notice (NSW Jan--Apr, VIC Jan--May, QLD Aug--Oct, SA Sep--Nov, WA Sep--Jan, TAS Oct--Dec, ACT quarterly); payment due 30--90 days from issue. Objection clocks differ by jurisdiction and by whether the land value or the assessment is disputed (Section 8).
 
 - **Payment plans** — All state revenue offices offer payment plans for land tax. Interest and penalty tax may apply to late payments. Contact the relevant revenue office before the due date to arrange.
 
@@ -102,13 +103,14 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 **NSW Land Tax Rates (2026 land tax year -- assessed 31 Dec 2025; thresholds frozen from 2024, checked 11 October 2026)**
 
-| Land Value | Rate |
+| Combined 3-Year Average Land Value | Rate |
 | --- | --- |
 | Up to $1,075,000 | Nil |
 | $1,075,001 to $6,571,000 | $100 + 1.6% of value above $1,075,000 |
 | Above $6,571,000 | $88,036 + 2.0% of value above $6,571,000 |
 
-- **Foreign owner surcharge** — 5% of unimproved value for foreign persons owning residential land. Charged in addition to general land tax.
+- **3-year average**: Revenue NSW compares the 3-year average of the land value with the threshold, and uses the same average for surcharge land tax. For a parcel created less than 3 years ago, it counts only the years since creation. On Revenue NSW's figures of $1,050,000, $1,100,000 and $1,150,000, the average is $1,100,000 and tax is $100 + 1.6% x $25,000 = **$500**. The latest value alone would wrongly give $1,300. An average below the threshold means no general land tax even where the latest value is above it. See [Revenue NSW, thresholds and rates](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/thresholds-and-rates) (updated 16 March 2026) and [how land tax is calculated](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/how-land-tax-is-calculated).
+- **Foreign owner surcharge** — 5% of unimproved value (3-year average) for foreign persons owning residential land. Charged in addition to general land tax.
 - **Trusts**: Qualifying fixed trusts and complying superannuation trusts receive the general threshold. Special trusts, including ordinary discretionary trusts, do not. Threshold eligibility is separate from any principal place of residence exemption. Confirm the trust classification using [Revenue NSW trust rules](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/types-of-landowners/trusts).
 
 ### 4.2 Victoria (VIC)
@@ -133,7 +135,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.3 Queensland (QLD)
 
-**QLD Land Tax Rates -- Individuals (2025-26 land tax year -- assessed 30 Jun 2025)**
+**QLD Land Tax Rates -- Individuals (2025-26 land tax year -- assessed 30 Jun 2025; QRO's page shows this scale at 31 October 2026 without stating a year, so 2026-27 is not confirmed)**
 
 | Total Taxable Value | Rate |
 | --- | --- |
@@ -145,7 +147,9 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 **QLD Companies & Trusts** -- $350,000 threshold; $1,450 + 1.7c per $1 above $350,000 to $2,249,999; then tiered up to $187,500 + 2.75c per $1 above $10,000,000.
 
-- **Absentee/foreign surcharge** — **3%** applied as (taxable value − $350,000) × 3%, in addition to land tax, for absentee individuals (foreign individuals without a permanent visa who do not usually live in Australia), foreign companies and trustees of foreign trusts. Applies from $350,000 of taxable value. Absentees are also assessed on a separate rate scale ($1,450 + 1.7c per $1 above $350,000, rising to 2.5c above $10m) and cannot claim the home or primary production exemptions.  _(QRO Land tax rates for absentees)_
+- **Taxable value**: For each parcel, the lesser of the statutory land value on 30 June and the averaged value. The averaged value is the average of the statutory land value for the current and previous 2 financial years or, where the previous 2 values are not available, the current value times the year's averaging factor (0.91 for 30 June 2026). The parcel values are then combined. See [QRO, Taxable value of land](https://qro.qld.gov.au/land-tax/about/taxable-value/) (updated 17 August 2026).
+
+- **Absentee/foreign surcharge** — **3%** applied as (taxable value − $350,000) × 3%, in addition to land tax, for absentee individuals (foreign individuals without a permanent visa who do not usually live in Australia), foreign companies and trustees of foreign trusts. Applies from $350,000 of taxable value. Absentees are also assessed on a separate rate scale ($1,450 + 1.7c per $1 above $350,000, rising to 2.5c above $10m) and cannot claim the home or primary production exemptions.  _(QRO Land tax rates for absentees)_ For liabilities arising on or after 30 June 2026, QRO says an exemption from the surcharge component may apply to foreign entities that are significant contributors or large residential developers, subject to further conditions and approval; a passive landlord or property investor is generally not a significant contributor. See [QRO, foreign surcharge exemption](https://qro.qld.gov.au/land-tax/foreign-surcharge/exemption/).
 - **Trusts** — Trustees have a $350,000 threshold (same as companies). Special disability trusts use individual threshold ($600,000).
 
 ### 4.4 South Australia (SA)
@@ -177,7 +181,7 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.5 Western Australia (WA)
 
-**WA Land Tax Rates (2025-26 land tax year -- assessed 30 Jun 2025)**
+**WA Land Tax Rates (2025-26 land tax year -- assessed 30 Jun 2025; the WA page shows this scale at 31 October 2026 without stating a year, so 2026-27 is not confirmed)**
 
 | Aggregated Taxable Value | Rate |
 | --- | --- |
@@ -195,7 +199,7 @@ These rates exclude any separately applicable Metropolitan Region Improvement Ta
 
 ### 4.6 Tasmania (TAS)
 
-**TAS Land Tax Rates (2025-26 land tax year -- assessed 1 Jul 2025)**
+**TAS Land Tax Rates (2025-26 land tax year -- assessed 1 Jul 2025; SRO Tasmania's latest heading at 31 October 2026 is 'Rates from 1 July 2025', so 2026-27 is not confirmed)**
 
 | Total Land Value | Rate |
 | --- | --- |
@@ -250,14 +254,27 @@ These rates exclude any separately applicable Metropolitan Region Improvement Ta
 
 ### 7.3 Other Exemptions
 
-Other exemptions include: residential tenancy/build-to-rent concessions (VIC, QLD, NSW); charitable and religious institutions (all states); retirement villages (most states); caravan parks (some states); Crown leasehold (ACT).
+Other exemptions include: residential tenancy/build-to-rent concessions (VIC, QLD, NSW); charitable and religious institutions (all states); retirement villages (most states); caravan parks (some states). For the ACT's limited exemptions, see [ACT Revenue, land tax exemptions](https://www.revenue.act.gov.au/rates-and-property-charges/land-tax/land-tax-exemptions); leasehold tenure alone is not an exemption.
 
 ## Section 8 -- Objection Rights and Time Limits
 
-- **Objection window** — 60 days from the issue date of the assessment notice in most states (NSW, VIC, QLD, SA, WA, TAS). ACT has its own objection process.
-- **Grounds for objection** — Incorrect land value (object to Valuer-General), incorrect ownership details, incorrect exemption application, or incorrect aggregation.
-- **Valuation objections** — Objections to the land value itself must be lodged with the Valuer-General, not the revenue office. The revenue office processes objections to the assessment calculation.
-- **Late objections** — Late objections may be accepted with reasons, but discretion is limited. Lodge within the 60-day window.
+There is no single national route. Decide first whether the land value or the assessment is disputed, then use the jurisdiction's row. Sources were opened on 31 October 2026, except where a row says otherwise.
+
+**Objection routes by jurisdiction**
+
+| Jurisdiction | Land value: decided by, lodged through | Land value: time limit | Land value: late objection | Assessment objection |
+| --- | --- | --- | --- | --- |
+| NSW | NSW Valuer General, using its online form | 60 days: the date on the notice of valuation, or 60 days from the issue date on the land tax assessment notice | Only in very limited circumstances | Revenue NSW, within 60 days of the assessment's issue date; give reasons if late. [Revenue NSW](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/your-assessment-notice/land-tax-objections); [Valuer General](https://www.nsw.gov.au/housing-and-construction/land-values-nsw/resource-library/valuer-generals-review-process/objecting-to-your-land-value) |
+| VIC | Valuer-General Victoria decides; lodge through SRO's Land Valuation Objection Portal | 2 months. SRO's objection page runs this from the assessment's issue date; its assessment page says date of service. Use the earlier date | Not accepted: the Commissioner has no discretion | SRO, within 60 days of service; after that and within 5 years, reasons are required. [SRO, valuations](https://sro.vic.gov.au/owning-property/land-tax/managing-your-land-tax/objections-and-refunds/object-site-or-capital-improved-valuation-your-land); [SRO, assessments](https://www.sro.vic.gov.au/owning-property/amendments-and-objections-your-land-tax-assessment) |
+| QLD | Valuer-General, against the valuation notice | 60 days from the valuation notice's issue date, not from the land tax notice | Accepted in some circumstances, within 1 year of the notice's issue date | QRO, within 60 days of receiving the notice; late position not read. [Queensland Government](https://www.qld.gov.au/environment/land/title/valuation/objections/lodge-objections/process); [QRO](https://qro.qld.gov.au/land-tax/assessment/object/) |
+| SA | Office of the Valuer-General, not RevenueSA | 60 days after the first Land Tax Assessment notice is served, unless already objected on another notice | Not stated on the page opened | Written objection to the Treasurer within 60 days of the assessment's date; the Treasurer may permit one up to 12 months after it, with reasons. [RevenueSA 2025-26 guide](https://www.revenuesa.sa.gov.au/resources/publications/guides-to-legislation/guide-to-legislation-land-tax2/2025-26-guide-to-legislation-land-tax/other-information/objections) |
+| WA | Valuer-General at Landgate | 60 days from the issue date on the land tax notice | Needs the Valuer-General's approval | RevenueWA, within 60 days after the assessment issues; apply in writing for an extension within 12 months after that date. [Landgate](https://www.landgate.wa.gov.au/valuations/valuations-for-rates-and-taxes/lodging-an-objection/); [RevenueWA](https://www.wa.gov.au/organisation/department-of-treasury-and-finance/revenuewa-objection-and-review-process) |
+| TAS | Office of the Valuer-General, which cannot hear land tax complaints | 60 days from receipt of the Notice of Valuation | May be reviewed as correspondence, without statutory rights of appeal to the Land Valuation Court | **Unverified:** SRO Tasmania's route and time limit were not found on 31 October 2026. Check with SRO Tasmania. [Valuer-General form](https://nre.tas.gov.au/Documents/Objection-to-Valuation.pdf); [Valuer-General](https://nre.tas.gov.au/land-tasmania/office-of-the-valuer-general/objecting-to-a-statutory-valuation) |
+| ACT | Lodge with the ACT Revenue Office through 'Your property valuation', or in writing to the Commissioner | 60 days from receiving the valuation notice, not the land tax assessment. Commercial or rural owners who request further information within 28 days: 60 days from receiving it | Not accepted after the limit | ACT Revenue Office, within 60 days of receiving the notice; explain any delay. [ACT Revenue](https://www.revenue.act.gov.au/help-and-resources/object-to-an-assessment-or-decision) |
+| NT | No land tax | -- | -- | -- |
+
+- **Grounds for objection** — Incorrect land value (use the land value route above), incorrect ownership details, incorrect exemption application, or incorrect aggregation.
+- **Payment during an objection** — Revenue NSW, SRO Victoria, QRO and Landgate each say payment remains due by the due date while an objection is considered. Check the position elsewhere.
 
 ## Section 9 -- Land Tax as a Deductible Expense
 
@@ -285,9 +302,9 @@ Other exemptions include: residential tenancy/build-to-rent concessions (VIC, QL
 
 ### Example 1 -- Aggregated Portfolio Crossing the NSW Threshold
 
-**Facts:** Individual owns two investment properties in NSW. Property A land value $800,000. Property B land value $600,000. Total $1,400,000.
+**Facts:** Individual owns two investment properties in NSW. Property A 3-year average land value $800,000. Property B 3-year average land value $600,000. Total $1,400,000.
 
-Total aggregated land value $1,400,000; threshold $1,075,000; amount above threshold $325,000. Land tax = $100 + (1.6% x $325,000) = **$5,300**. Without aggregation, each property alone would be below the threshold.
+Total aggregated average land value $1,400,000; threshold $1,075,000; amount above threshold $325,000. Land tax = $100 + (1.6% x $325,000) = **$5,300**. Without aggregation, each property alone would be below the threshold.
 
 ### Example 2 -- PPR Exemption Saving (VIC)
 
@@ -297,7 +314,7 @@ Without PPR exemption: $2,250 + (0.6% x $200,000) = $2,250 + $1,200 = $3,450. Wi
 
 ### Example 3 -- Foreign Owner Surcharge (NSW)
 
-**Facts:** Foreign person owns a residential investment property in NSW with unimproved value $1,200,000.
+**Facts:** Foreign person owns a residential investment property in NSW with 3-year average unimproved value $1,200,000.
 
 General land tax: $100 + (1.6% x $125,000) = $2,100. Foreign surcharge (5%): 5% x $1,200,000 = $60,000. **Total: $62,100**. The foreign surcharge dwarfs the general land tax. Foreign owners must also check FIRB approval and surcharge duty on acquisition.
 
@@ -330,7 +347,7 @@ For the assessment periods in section 4, before exemptions and separate surcharg
 
 | Code | Scenario | Refusal / Referral |
 | --- | --- | --- |
-| R-AU-LT-01 | Objections to land valuations | Refer to Valuer-General of the relevant state. Do not advise on valuation disputes. |
+| R-AU-LT-01 | Objections to land valuations | Give the route and time limit in Section 8 and refer to the body named there. Do not advise on valuation disputes. |
 | R-AU-LT-02 | Trust deed land tax clauses | Legal advice required. Do not interpret trust deeds for land tax purposes. |
 | R-AU-LT-03 | Cross-border land holdings | Complex multi-state aggregation rules apply. Refer to specialist. |
 | R-AU-LT-04 | Primary production concessions requiring farming evidence | Requires ABN, income records, stocking rates, and business plans. Refer to specialist. |
@@ -359,6 +376,11 @@ For the assessment periods in section 4, before exemptions and separate surcharg
 | Land Tax Act 2000 (TAS) | legislation.tas.gov.au |
 | SRO Tasmania -- Rates of land tax | sro.tas.gov.au/land-tax/rates-of-land-tax |
 | Rates Act 2004 (ACT) | legislation.act.gov.au |
+| Land Tax Act 2004 (ACT), R34 | legislation.act.gov.au/DownloadFile/a/2004-4/current/PDF/2004-4.PDF |
+| ACT Revenue Office -- Land tax exemptions | revenue.act.gov.au/rates-and-property-charges/land-tax/land-tax-exemptions |
+| Revenue NSW -- How land tax is calculated | revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/how-land-tax-is-calculated |
+| QRO -- Taxable value of land | qro.qld.gov.au/land-tax/about/taxable-value |
+| Objection routes, opened 31 October 2026 | See the links in the Section 8 table |
 | ACT Revenue Office -- How land tax is calculated | revenue.act.gov.au/rates-and-property-charges/land-tax/how-land-tax-is-calculated |
 | NT Government -- Property taxes | nt.gov.au/property/land/buying-and-selling-land/land-taxes |
 

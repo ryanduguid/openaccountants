@@ -16,7 +16,7 @@ jurisdiction: AU
 version: 1.3
 category: international
 tax_year: 2026
-last_updated: 2026-10-18
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -89,7 +89,7 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 | What | Value | Note |
 | --- | --- | --- |
 | Source | all figures below | https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments and https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170 |
-| Sole traders, 2024-25 and later income years | 4 years | Taxpayer-requested amendment under item 3A of subsection 170(1) ITAA 1936: an application in the approved form within four years, after the ordinary two-year period has ended; applies to assessments issued after 1 January 2025 for income years starting on or after 1 July 2024. Item 3A also expresses a power to amend within four years; do not assume a timely request automatically permits processing after that deadline. It is not an unrestricted four-year ATO review period |
+| Sole traders that are a small business entity or medium business entity for the year, 2024-25 and later income years | 4 years | Taxpayer-requested amendment under item 3A of subsection 170(1) ITAA 1936: the entity condition in item 3A(a), and an application in the approved form within four years, after the ordinary two-year period has ended; applies to assessments issued after 1 January 2025 for income years starting on or after 1 July 2024. Item 3A also expresses a power to amend within four years; do not assume a timely request automatically permits processing after that deadline. It is not an unrestricted four-year ATO review period |
 | Sole traders, 2023-24 and earlier income years | Ordinarily 2 years where item 1 applies | Check all qualifications, prescribed exclusions and special powers; sole-trader status alone does not establish the period. |
 | Trigger for the period | The relevant statutory notice-giving event | The statute measures the period after that event; verify the actual notice and time-computation/day-adjustment rules. Do not substitute income-year end or automatically reset to a later notice. |
 | Further amendments after an amended assessment | Restricted | Subsections 170(2) to (4) limit later amendments and allow particular matters to be revisited only in specified circumstances; business, partnership, trust and avoidance circumstances can take an individual outside the two-year category |

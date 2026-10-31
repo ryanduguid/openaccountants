@@ -1,10 +1,10 @@
 ---
 name: au-sole-trader-schedule
-description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 70c/hour or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
+description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 70c/hour or actual), motor vehicle (logbook or cents per km at 88c/km for 2025-26 and 91c/km for 2026-27), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
 version: 1.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This file covers the Business and Professional Items (BPI) schedule that sole traders attach to their individual income tax return. The BPI schedule feeds into the individual return at "Business income or loss" items.
 
-**Tax year coverage:** This skill targets the 2025–26 income year (1 July 2025 to 30 June 2026). Match the intake and assembly year before calculating.
+**Tax year coverage:** This skill targets the 2025–26 income year (1 July 2025 to 30 June 2026). Match the intake and assembly year before calculating. For 2026-27 work, take resident rates and other annual figures from `au-rates-2026-27`; this guide labels the 2026-27 rates it carries, and its schedule labels are for 2025-26.
 
 **The reviewer is the customer of this output.** This skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
 
@@ -35,7 +35,7 @@ This skill covers:
 
 - **Forms:** Business and Professional Items Schedule for Individuals (NAT 2816)
 - **Entity types:** Sole proprietors operating a business or profession in their individual capacity
-- All items P1 through P20 on the schedule
+- The 2026 schedule items through P21, the trading stock election ([ATO's instruction index](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026) has no P7, P11 or P12 entry)
 
 This skill does NOT cover:
 
@@ -48,7 +48,7 @@ This skill does NOT cover:
 
 ### 2.1 Who must lodge
 
-- **Who must lodge** — Any individual who carried on a business as a sole trader during the income year. Even if the business made a loss, the schedule must be lodged.  _(ITAA 1997 s 4-15, ATO instructions for BPI schedule)_
+- **Who must lodge** — Any individual who carried on a business as a sole trader during the income year. Even if the business made a loss, the schedule must be lodged.  _(ATO instructions for BPI schedule)_
 
 ### 2.2 Due dates
 
@@ -61,7 +61,7 @@ This skill does NOT cover:
 
 ### 2.3 ABN requirement
 
-- **ABN requirement** — Check ABN entitlement, GST registration and withholding consequences separately. An ABN is not compulsory for every business activity. A tax invoice must meet GST requirements, and eligible payments without an ABN can attract 47% withholding subject to exceptions.  _([ABR](https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement))_
+- **ABN requirement** — Check ABN entitlement, GST registration and withholding consequences separately. An ABN is not compulsory for every business activity. A tax invoice must meet GST requirements, and eligible payments without an ABN can attract 47% withholding subject to exceptions. GST registration is required at GST turnover of $75,000 or more, current or projected, and for taxi, limousine or ride-sourcing travel regardless of turnover.  _([ABR](https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement); [ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst))_
 
 ## Section 3 — Rates and thresholds
 
@@ -73,7 +73,7 @@ This skill does NOT cover:
 | Small business entity threshold | Aggregated turnover < $10M | ITAA 1997 s 328-110 |
 | Cents per km rate (motor vehicle) | 88 cents per km (2024-25 and 2025-26); 91 cents (2026-27) | ATO cents per kilometre method |
 | Cents per km cap | 5,000 business km per car per year | ITAA 1997 s 28-25 |
-| Home office fixed rate | 70 cents per work hour for 2024-25 and 2025-26 (67c applied 2022-23 and 2023-24); confirm the 2026-27 rate when the ATO publishes it | ATO PCG 2023/1 |
+| Home office fixed rate | 70 cents per work hour for 2024-25 and 2025-26 (67c applied 2022-23 and 2023-24). PCG 2023/1 para 26A reads 70c from 1 July 2024 with no end date, but the ATO page names years only to 2025-26, so confirm for 2026-27 | [PCG 2023/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001); [ATO, Fixed rate method](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method) |
 | Trading stock threshold (change in value) | $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake | ITAA 1997 s 328-285 |
 | Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1936 ss 82KZL and 82KZM |
 
@@ -85,7 +85,7 @@ This skill does NOT cover:
 
 ### 4.2 Cost of sales / Cost of goods sold
 
-- **Cost of goods sold** — Step 1. Opening stock + Purchases - Closing stock = Cost of goods sold. Step 2. Trading stock can be valued at cost, market selling value, or replacement value (ITAA 1997 s 70-45). The method can differ item by item. Step 3. An eligible business can choose to use opening stock as its closing tax value where a reasonable estimate of the change is $5,000 or less, including exactly $5,000 in either direction. Keep the estimate and the choice. (ITAA 1997 Subdiv 328-E.)  _(ITAA 1997 s 70-45)_
+- **Cost of goods sold** — Step 1. Opening stock + Purchases - Closing stock = Cost of goods sold. Step 2. Trading stock can be valued at cost, market selling value, or replacement value (ITAA 1997 s 70-45). The method can differ item by item. Step 3. An eligible business can choose to use opening stock as its closing tax value where a reasonable estimate of the change is $5,000 or less, including exactly $5,000 in either direction. Keep the estimate and the choice, and report it at P21. (ITAA 1997 Subdiv 328-E.)  _(ITAA 1997 s 70-45)_
 
 ### 4.3 Allowable deductions
 
@@ -130,7 +130,7 @@ Two methods available for sole traders:
 
 #### Fixed rate method (70c per work hour for 2024-25 and 2025-26) — PCG 2023/1
 
-- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home, made during the year (e.g., timesheets, diary, roster); an estimate is not accepted. Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate. Decline in value of depreciating assets used for work is claimed separately.  _(ATO PCG 2023/1)_
+- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home for the entire income year, made at the time (e.g., timesheets, diary, roster); an estimate is not accepted. Must also keep at least one record for each running expense the rate covers. Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate. Decline in value of depreciating assets used for work is claimed separately.  _([ATO PCG 2023/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001); [ATO, Fixed rate method](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method))_
 
 #### Actual cost method
 
@@ -175,7 +175,7 @@ Before delivering output, verify:
 - [ ] Non-commercial loss rules checked if a loss is reported
 - [ ] PSI risk flagged if applicable
 - [ ] Trading stock valuation method is documented
-- [ ] Rates and thresholds match the 2025–26 income year
+- [ ] Rates and thresholds match the income year being prepared (this guide targets 2025–26; see `au-rates-2026-27` for 2026-27)
 - [ ] Output format matches the base skill spec
 
 ## Section 7 — Disclaimer

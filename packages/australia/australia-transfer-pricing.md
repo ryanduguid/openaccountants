@@ -15,8 +15,8 @@ description: >
 version: 1.5
 jurisdiction: AU
 tax_year: 2026
-tax_year_notes: "Selected law checked on 20 October 2026; IDS 2026 concerns 2025-26; actual income years, substituted periods and operative amendments require separate selection"
-last_updated: 2026-10-20
+tax_year_notes: "Selected law checked on 20 October 2026; Pillar Two, Public CBC and section 815-140 checked on 31 October 2026; IDS 2026 concerns 2025-26; actual income years, substituted periods and operative amendments require separate selection"
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -73,11 +73,23 @@ Do not automatically use the later OECD functionally separate entity
 approach. Subdivision 815-D modifies application to trusts' net income and
 partnership net income or loss. [ITAA9, 815-205 to 815-310][ITAA9]
 
-Section 815-140's thin-capitalisation interaction is conditional. Do not
-infer that TP establishes deductibility under Division 820 or that a debt
-limit proves an arm's length price. CFC attribution, Part IVA, diverted
-profits tax, debt deduction creation, withholding and actual treaties
-require their own current sources and facts. A consequential adjustment
+Section 815-140's thin-capitalisation modification applies only if
+Division 820 applies, the entity is not a general class investor, it has
+made no choice under section 820-85(2C) or 820-185(2C), and the arm's
+length conditions affect debt deductions. It then applies the arm's length
+rate to the debt actually issued. For a general class investor that
+rate-only limit falls away: debt quantum is also exposed to Subdivision
+815-B, and Division 820 may reduce or further reduce debt deductions. The
+default test for a general class investor limits net debt deductions to
+**30%** of tax EBITDA, with disallowed amounts carried forward for up to
+**15** years; the group ratio and third-party debt tests are alternatives
+by choice. Hold and escalate any Division 820 computation.
+[ITAA 1997, 815-140][S815-140]; [ATO, private groups][TC-PG]; [ATO, fixed ratio test][TC-FRT]
+Do not infer that TP establishes deductibility under Division 820 or that
+a debt limit proves an arm's length price. CFC attribution, Part IVA,
+diverted profits tax, global and domestic minimum tax, debt deduction
+creation, withholding and actual treaties require their own current
+sources and facts. A consequential adjustment
 under section 815-145 is a separate fair-and-reasonable decision with
 request, notice and objection rules. Sections 815-150 and 815-240 have
 special **7-year** amendment provisions measured from the assessment
@@ -94,6 +106,8 @@ Keep these obligations separate:
 | Special penalty documentation | TAA Schedule 1 sections 284-250 and 284-255 do not themselves compel preparation or retention. To rely on RAP treatment, records must exist **before actual return lodgement**, be in English or readily accessible and convertible into English, explain 815-B/C application or non-application and guidance consistency, and make the required methods, conditions and consequences readily ascertainable. Records are necessary but not sufficient for RAP. [TAA2] |
 | CBC statements | Test sections 815-355 to 815-380 for each statement; foreign parent reporting alone does not clear the local entity. [ITAA9] |
 | IDS | Use the actual entity's **2026** return triggers and instructions. It is a disclosure schedule, not the substantive TP law or a universal TP exemption. [IDS-GET] |
+| Global and domestic minimum tax (Pillar Two) | A separate regime. An MNE group is in scope if the ultimate parent's consolidated statements show annual revenue of **EUR 750 million** or more in at least 2 of the 4 fiscal years preceding the test year; excluded-entity rules apply. The income inclusion rule and domestic minimum tax apply to fiscal years starting on or after **1 January 2024**, and the undertaxed profits rule on or after **1 January 2025**. First GloBE Information Returns and Combined global and domestic minimum tax returns were due **30 June 2026**, with a 30-day automatic deferral for domestic returns due that day. The January 2026 side-by-side package is not Australian law; the ATO says adoption is a matter for government. The AUD 1 billion CBC test is a different test, so passing or failing one does not settle the other. This reference does not compute the tax: escalate. [PILLAR2-SCOPE]; [PILLAR2]; [PILLAR2-DUE] |
+| Public CBC report | A separate regime for reporting periods starting on or after **1 July 2024**. The duty sits with the Public CBC reporting parent, which needs annual global income of **AUD 1 billion** or more, **AUD 10 million** or more of Australian-sourced aggregated turnover and the other criteria. An Australian subsidiary of a foreign entity generally has no obligation of its own (one exception: the foreign entity does not consolidate it and it qualifies in its own right), so the local-entity logic of the CBC statements row does not carry across. Due within **12 months** after the period end: first reports for 30 June 2025 period ends were due 30 June 2026, and calendar 2025 periods due 31 December 2026 have an automatic deferral to **29 January 2027**. A material error must be corrected within **28 days** after becoming aware of it. [PCBC-PARENT]; [PCBC-PUB]; [PCBC-ERR] |
 
 A CBC reporting parent is not an individual, meets the control condition
 and has annual global income of at least **AUD 1 billion**. Test the
@@ -130,8 +144,8 @@ turnover** tests also require a small business entity that is not an SGE.
 Neither is an unconditional schedule exemption or PCG 2017/2's different
 small-taxpayer test. Use the actual return deadline and all applicable
 sections. The 2026 instructions remove specified 2024-25 transitional
-reporting concessions; do not copy the old edition. Actual IDS fields,
-RTP schedules and public CBC reporting remain separate source gates.
+reporting concessions; do not copy the old edition. Actual IDS fields and
+RTP schedules remain separate source gates.
 [IDS-A, questions 1-2][IDS-A]; [IDS-NEW]
 
 ## Benchmarking and currency
@@ -341,6 +355,9 @@ OECD 2022 paragraphs; FX overview; APA programme and the selected revised
 practice statement paragraphs. These are selected reads, not full-volume,
 full-PDF, all-PCG-option or all-IDS-field verification. Recheck operative
 amendments, regulations and source conditions for the requested period.
+Sources checked on **31 October 2026**: section 815-140, the ATO fixed ratio
+test and private groups pages, and the ATO Pillar Two and Public CBC pages
+linked below, for the rows and paragraph they support only.
 
 [ITAA9]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_9/document_9.html
 [ITAA10]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html
@@ -354,6 +371,15 @@ amendments, regulations and source conditions for the requested period.
 [FX]: https://www.ato.gov.au/tax-rates-and-codes/foreign-exchange-rates-overview
 [APA-PS]: https://www.ato.gov.au/law/view/document?DocID=PSR/PS20154/NAT/ATO/00001&PiT=99991231235958
 [APA]: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/pricing/advance-pricing-arrangements/advance-pricing-arrangement-apa-program
+[S815-140]: https://www.ato.gov.au/law/view/document?docid=PAC/19970038/815-140
+[TC-PG]: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/private-wealth-international-program/new-international-tax-measures-affecting-private-groups
+[TC-FRT]: https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/thin-capitalisation/understanding-thin-capitalisation/how-the-rules-work/fixed-ratio-test
+[PILLAR2]: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/multinationals/global-and-domestic-minimum-tax
+[PILLAR2-SCOPE]: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/multinationals/global-and-domestic-minimum-tax/when-and-how-the-pillar-two-rules-apply
+[PILLAR2-DUE]: https://www.ato.gov.au/businesses-and-organisations/business-bulletins-newsroom/reminder-first-pillar-two-lodgments-due-30-june
+[PCBC-PARENT]: https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/public-cbc-reporting-parent
+[PCBC-PUB]: https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/publishing-your-public-cbc-report
+[PCBC-ERR]: https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/correcting-errors-in-public-cbc-reporting
 
 ## Disclaimer
 
