@@ -1960,6 +1960,22 @@
     "workflow-base.md"
    ]
   },
+  "dominica": {
+   "jurisdiction": "DM",
+   "name": "Dominica",
+   "files": [
+    "intake.md",
+    "dm-social-security-contributions-reference.md",
+    "dm-vat-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "vat-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "dominican-republic": {
    "jurisdiction": "DO",
    "name": "Dominican Republic",
