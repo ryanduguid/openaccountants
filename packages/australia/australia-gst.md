@@ -5,7 +5,7 @@ version: 2.6
 jurisdiction: AU
 category: international
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -837,7 +837,7 @@ action. Do not describe an incomplete workpaper as ready to lodge.
 11. Input taxed vs GST-free distinction explicit: yes (Section 5.2 and 5.3).
 12. Reverse charge Australian exception (fully creditable = no reverse charge) explicit: yes (Section 5.5 + Example 1).
 13. Bank fees as financial supply (input taxed, exclude) explicit: yes (Section 3.1 + Example 4).
-14. Payment processor fees as financial supply explicit: yes (Section 3.8 + Example 6).
+14. Payment processor fees classified from the invoice and the actual service, neither assumed to be financial supplies nor assumed taxable: yes (Section 3.8 + Example 6).
 15. Supermarket split (GST-free food vs taxable items) explicit: yes (Section 3.6 + Example 3).
 
 ## End of Australia GST Return Preparation Skill v2.6

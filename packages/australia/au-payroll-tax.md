@@ -14,7 +14,7 @@ description: >
 version: 1.1
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -150,7 +150,7 @@ threshold, lodge monthly by the due date (generally the 7th) and reconcile annua
 
 - **Register before the first return** — Payroll tax is self-assessed. Register with each revenue office where wages are paid once Australia-wide taxable wages, or group wages, exceed the threshold, and cancel the registration when the business stops employing there, drops below the threshold or moves to a new ABN.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
 - **Monthly returns** — Due on the 7th of the following month, or the next business day where the 7th falls on a weekend or public holiday, with these exceptions. NT: within 21 days after the end of the month. December return: 14 January in the ACT and NSW (14 January 2027 for December 2026). June: no separate monthly return in NSW, Victoria, Tasmania, the ACT or the NT, because June goes in the annual return. The December and June treatment in Queensland, WA and SA was not confirmed on their pages, so check with those offices. Some jurisdictions offer other periods.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging; Payroll Tax Act 2009 (NT) s 87 — https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078; Revenue NSW, Key dates — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/key-dates; ACT Revenue Office, About payroll tax — https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax; SRO Tasmania, Lodge your return — https://www.sro.tas.gov.au/payroll-tax/lodge-your-return; SRO Victoria, Lodge your annual reconciliation — https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/managing-your-payroll-tax/lodge-your-annual-reconciliation)_
-- **Annual return** — Every registered employer lodges an annual reconciliation (in some jurisdictions an annual adjustment return) by 21 July, or by 28 July in the ACT, NSW and SA, even where the result is nil.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging)_
+- **Annual return** — Every registered employer lodges an annual reconciliation (in some jurisdictions an annual adjustment return) by 21 July, or by 28 July in the ACT, NSW and SA, even where the result is nil. RevenueSA states that the SA annual reconciliation is due on 28 July and that it accepts lodgement on the next business day where 28 July falls on a weekend or public holiday.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging; RevenueSA, Returns and Annual Reconciliation — https://www.revenuesa.sa.gov.au/payrolltax/returns-and-annual-reconciliation)_
 - **Final returns** — Ceasing to employ, a change of grouping status or the appointment of an administrator or receiver can require a final return in each jurisdiction.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
 - **Penalties and disclosure** — Interest applies to any underpayment and penalty tax can follow; a voluntary disclosure attracts a lower rate of penalty tax than an underpayment found by data matching with the ATO and other agencies.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
 - **Records** — Keep records showing how each jurisdiction's wages were calculated for at least five years, in English or a form easily translated, and available for audit.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
@@ -257,6 +257,7 @@ national rate.
 - Queensland Revenue Office, Mental health levy, https://qro.qld.gov.au/payroll-tax/mental-health-levy/
 - WA Department of Treasury and Finance, Calculation: Payroll Tax Employer Guide, https://www.wa.gov.au/government/multi-step-guides/payroll-tax-employer-guide/calculation-payroll-tax-employer-guide
 - RevenueSA, Rates and thresholds, https://www.revenuesa.sa.gov.au/payrolltax/rates-and-thresholds
+- RevenueSA, Returns and Annual Reconciliation, https://www.revenuesa.sa.gov.au/payrolltax/returns-and-annual-reconciliation
 - SRO Tasmania, Rates and thresholds, https://www.sro.tas.gov.au/payroll-tax/rates-thresholds
 - ACT Revenue Office, Calculating payroll tax, https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/calculating-payroll-tax
 - Territory Revenue Office, Payroll tax rates and thresholds, https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds

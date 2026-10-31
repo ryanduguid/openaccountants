@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian rental property inco
 version: "1.7"
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -322,7 +322,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 | Form | Individual Tax Return (ITR) -- Rental Property Schedule (Item 21) |
 | Reporting | Per-property basis (complete separate schedule for each property) |
 | Joint ownership | Each co-owner reports their share (typically 50/50 for joint tenants) |
-| Records retention | 5 years from date of lodgement (longer if CGT applies -- keep until 5 years after disposal) |
+| Records retention | 5 years from lodging the return; depreciating-asset records 5 years from the last decline-in-value claim; acquisition and cost-base records until 5 years after it becomes certain no CGT event (or no further CGT event) to which they could reasonably be relevant can happen ([ITAA 1997 (Cth) s 121-25](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/121-25)); 5 years from resolving any dispute with the ATO. Keep records behind a tax loss or net capital loss until the amendment period ends for the year the loss is fully used. [ATO, Records for rental properties and holiday homes](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/records-for-rental-properties-and-holiday-homes) |
 | Quantity surveyor report | Recommended for all post-1985 properties to substantiate Div 43 and Div 40 claims |
 
 ## Section 6 -- Edge Cases

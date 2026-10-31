@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T12:00:25+00:00",
+ "generated_at": "2026-10-31T20:06:46+00:00",
  "counts": {
   "guides": 2008,
   "jurisdictions": 289,
@@ -2630,7 +2630,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "au-fbt",
@@ -2812,7 +2812,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "au-psi",
@@ -2864,7 +2864,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "au-small-business-cgt",
@@ -3033,7 +3033,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "australia-payroll",
