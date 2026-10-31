@@ -217,7 +217,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | EDEKA | Default BLOCK | Same |
 | DM, ROSSMANN, MUELLER DROGERIE | Default BLOCK | Personal care, default not business |
 | PENNY, NETTO, KAUFLAND, REAL | Default BLOCK | Same |
-| RESTAURANT, GASTSTÄTTE, IMBISS (any named) | Domestic from 1 Jan 2026: food 7%, drinks 19%, split per receipt (19% on the whole bill in 2025); RECOVERABLE only if Bewirtungsbeleg complete | See Section 5 rule 5.3 for Bewirtung documentation requirements |
+| RESTAURANT, GASTSTÄTTE, IMBISS (any named) | Domestic from 1 Jan 2026: food 7%, drinks 19%, split per receipt. In 2025: restaurant service 19% on the whole bill, but prepared food supplied as goods with no supporting service (typically takeaway) could take 7% under ss12(2) Nr.1 (UStAE 3.6(1)), so check which applied; RECOVERABLE only if Bewirtungsbeleg complete | See Section 5 rule 5.3 for Bewirtung documentation requirements |
 
 ### 3.7 German rent
 
@@ -464,7 +464,7 @@ Each rule states the legal source and the Kennzahl mapping. Apply silently if th
 
 ### 5.2 Reduced rate 7% (ss12(2) UStG)
 
-- **Reduced rate scope** — Applies to: food (excluding alcohol, luxury food), restaurant and catering services except drinks for supplies from 1 January 2026 (Nr.15; 19% in 2025, and drinks stay at 19%; for set-price packages of food and drink such as buffets or all-inclusive offers, the tax authority does not object to treating 30% of the package price as drinks), books (including e-books since 2020), newspapers, water supply, cut flowers and plants, accommodation (short-term; parking and Wi-Fi that do not directly serve the letting are 19% under Nr.11; breakfast is also outside Nr.11, and whether it now takes 7% under Nr.15 is not confirmed in this guide, so flag it for review), local public transport (Nahverkehr <= 50 km), cultural admissions (theatre, concert, museum, zoo), passenger transport (Fernverkehr, permanent 7%). Sales: Kz 86 (net; tax auto-calculated). Purchases: Kz 66 (enter tax amount at 7%).  _(ss12(2) UStG; Steueränderungsgesetz 2025 art 4 no 2 and art 12(2), BGBl. 2025 I Nr. 363; BMF letter of 22 December 2025, III C 2 - S 7220/00023/014/027)_
+- **Reduced rate scope** — Applies to: food (excluding alcohol, luxury food), restaurant and catering services except drinks for supplies from 1 January 2026 (Nr.15; in 2025 these services were 19%, whilst prepared food supplied as goods, typically takeaway with no supporting service, could take 7% under Nr.1 (UStAE 3.6(1), status 31 December 2025); drinks stay at 19%; for set-price packages of food and drink such as buffets or all-inclusive offers, the tax authority does not object to treating 30% of the package price as drinks), books (including e-books since 2020), newspapers, water supply, cut flowers and plants, accommodation (short-term; parking and Wi-Fi that do not directly serve the letting are 19% under Nr.11; breakfast is also outside Nr.11, and whether it now takes 7% under Nr.15 is not confirmed in this guide, so flag it for review), local public transport (Nahverkehr <= 50 km), cultural admissions (theatre, concert, museum, zoo), passenger transport (Fernverkehr, permanent 7%). Sales: Kz 86 (net; tax auto-calculated). Purchases: Kz 66 (enter tax amount at 7%).  _(ss12(2) UStG; Steueränderungsgesetz 2025 art 4 no 2 and art 12(2), BGBl. 2025 I Nr. 363; BMF letter of 22 December 2025, III C 2 - S 7220/00023/014/027)_
 
 ### 5.3 Bewirtung (business entertainment) -- VAT fully recoverable
 

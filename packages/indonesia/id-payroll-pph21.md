@@ -174,11 +174,11 @@ Source: PP 7/2025 Arts. 4(1) and 6(1) state these rates as the JKK the company p
 
 | Component | Rate | Paid by |
 | --- | --- | --- |
-| Employer contribution | 0.30% of gross monthly salary | Employer |
+| Employer contribution | 0.30% of gross monthly salary (BPJS published rate; see source note) | Employer |
 | Employee contribution | — | — |
 | **Total** | **0.30%** |  |
 
-Source: BPJS Ketenagakerjaan, article of 17 December 2025 (0.3%, wholly the employer's liability). PP 49/2023 Art. 18A(1) took 0.10% of this for JKP, leaving 0.20%, but PP 6/2025 (in force 7 February 2025) funds JKP from JKK and the Central Government only, and BPJS states JKP is no longer reallocated from JKM. No text repealing Art. 18A was found.
+Source: BPJS Ketenagakerjaan, article of 17 December 2025 (0.3%, wholly the employer's liability). PP 49/2023 Art. 18A(1) took 0.10% of this for JKP, leaving 0.20%, but PP 6/2025 (in force 7 February 2025) funds JKP from JKK and the Central Government only, and BPJS states JKP is no longer reallocated from JKM. Art. 18A is not settled: no repealing text was found, and the BPK database lists PP 49/2023 as in force with no amending instrument. Treat 0.30% as unconfirmed until checked on the employer's BPJS statement; a consolidated text and an actual bill were not obtained. If the statement shows another rate, rework the totals in sections 7 and 10.
 
 ### 6e — JKP (Jaminan Kehilangan Pekerjaan / Job Loss Insurance)
 
@@ -200,13 +200,13 @@ Source: BPJS Ketenagakerjaan, article of 17 December 2025 (0.3%, wholly the empl
 | JHT | 3.70% | 2.00% | 5.70% |
 | JP (capped at IDR 10,547,400) | 2.00% | 1.00% | 3.00% |
 | JKK (varies by risk grade) | 0.24%–1.74% | — | 0.24%–1.74% |
-| JKM | 0.30% | — | 0.30% |
+| JKM (see section 6d) | 0.30% | — | 0.30% |
 | **Total (using JKK grade 2)** | **10.54%** | **4.00%** | **14.54%** |
 
 ## Section 8 — TER (Tarif Efektif Rata-rata / Average Effective Rate)
 
 - **TER scheme applicability** — Since 1 January 2024, monthly PPh 21 withholding for permanent employees uses the TER scheme (PP 58/2023, PMK 168/2023) instead of the old cumulative method.  _(PP 58/2023, PMK 168/2023)_
-- **How TER works** — 1. Months January–November: PPh 21 = Gross Monthly Income × TER rate. Gross includes employer-paid JKK, JKM and BPJS Kesehatan premiums (PMK 168/2023 Art. 5(3)(d) and (e)) and excludes employer-paid JHT and JP (Art. 7(c)). PMK 168/2023 does not treat the 0.14% JKK share separately, so this guide counts the full JKK paid 2. December (or final month of employment): recalculate full-year liability using progressive brackets (Section 2), then subtract all TER withheld in months 1–11
+- **How TER works** — 1. Months January–November: PPh 21 = Gross Monthly Income × TER rate. Gross includes employer-paid JKK, JKM and BPJS Kesehatan premiums (PMK 168/2023 Art. 5(3)(d) and (e)) and excludes employer-paid JHT and JP (Art. 7(c)). Assumption: PMK 168/2023 does not treat the 0.14% JKK share separately and no DJP guidance on it was found, so this guide counts the full JKK paid; confirm with DJP 2. December (or final month of employment): recalculate full-year liability using progressive brackets (Section 2), then subtract all TER withheld in months 1–11
 
 ### TER category assignment
 
@@ -372,7 +372,7 @@ Scenario: Permanent employee (pegawai tetap), single with no dependents (TK/0), 
 
 ### D — Monthly PPh 21 withholding (TER method, Jan–Nov)
 
-- **PPh 21 monthly (TER)** — Status TK/0 → TER Category A. Monthly gross for TER = salary 10,000,000 + employer-paid BPJS Kesehatan 400,000 + JKK 54,000 + JKM 30,000 = IDR 10,484,000. From TER Category A table: IDR 10,350,001 – 10,700,000 → rate = 2.50%. PPh 21 monthly (TER) = 10,484,000 × 2.50% = IDR 262,100
+- **PPh 21 monthly (TER)** — Status TK/0 → TER Category A. Monthly gross for TER = salary 10,000,000 + employer-paid BPJS Kesehatan 400,000 + JKK 54,000 + JKM 30,000 = IDR 10,484,000. From TER Category A table: IDR 10,350,001 – 10,700,000 → rate = 2.50%. PPh 21 monthly (TER) = 10,484,000 × 2.50% = IDR 262,100. This and the December figure rest on two unconfirmed inputs: JKM at 0.30% (section 6d) and the full JKK in gross (section 8)
 
 ### E — Take-home pay
 

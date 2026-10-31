@@ -83,7 +83,7 @@ This is a Tier 2 content skill for preparing the Argentine IVA (Impuesto al Valo
 
 | Item | Amount | Source |
 | --- | --- | --- |
-| Monotributo graduation threshold (services and goods, values from 1 August 2026) | ARS 126,610,838.75/year (Category K; updated semi-annually) | Ley 24.977 annex, Art. 20(a), as replaced by Ley 27.743, Art. 89; ARCA, Montos y categorías vigentes |
+| Monotributo graduation threshold (services and goods): Category K annual revenue, using the table in force for the period tested | 1 Aug 2024 to 31 Jan 2025: ARS 68,000,000.00; 1 Feb to 31 Jul 2025: ARS 82,370,281.28; 1 Aug 2025 to 31 Jan 2026: ARS 94,805,682.90; 1 Feb to 31 Jul 2026: ARS 108,357,084.05; from 1 Aug 2026: ARS 126,610,838.75 | Ley 24.977 annex, Art. 20(a), as replaced by Ley 27.743, Art. 89; ARCA, Montos y categorías vigentes and Montos y categorías anteriores |
 | Credito fiscal carry-forward | Unlimited (no expiry) | Ley 23.349, Art. 24 |
 
 ## Section 4 -- Computation rules (Step format)

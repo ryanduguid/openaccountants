@@ -63,7 +63,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Município desconhecido | Aplicar **1,5%** de derrama municipal (taxa máxima) até confirmação |
 | Madeira IBC sem licença confirmada | Aplicar 19% standard; flag para verificação da licença CINM |
 | Tributação autónoma — viatura sem valor de aquisição claro | Assumir escalão mais alto (32% em 2025 e 2026; art.º 88.º n.º 3 al. c) CIRC) |
-| Exercício de prejuízo fiscal | Adicionar **+10 p.p.** a todas as TA (art.º 88.º n.º 14), salvo se comprovada uma exceção da Secção 5 (n.º 15; regime transitório de 2025 e 2026) |
+| Exercício de prejuízo fiscal | Adicionar **+10 p.p.** a todas as TA (art.º 88.º n.º 14), salvo início de atividade e período seguinte (n.º 15). Regime transitório de 2025 e 2026: manter o agravamento até o revisor confirmar a exceção (Secção 5) |
 | SIFIDE — incremental vs base | Confirmar média dos 2 anos anteriores; se incerto, aplicar só 32,5% (sem componente incremental) |
 | RFAI — região elegível | Confirmar NUTS II; se cliente em Lisboa/Algarve aplicar taxa reduzida ou recusar |
 | Reporte prejuízos pré-2014 | Aplicar regras transitórias específicas; sinalizar para revisor |
@@ -188,7 +188,7 @@ O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos ante
 ## Secção 5 — Tributação Autónoma (art.º 88.º CIRC)
 
 - **Natureza da TA** — A Tributação Autónoma (TA) é um imposto adicional sobre certas despesas, independentemente de se apurar matéria coletável positiva. Incide sobre o sujeito passivo (não sobre o beneficiário) e acresce ao IRC.  _(art.º 88.º CIRC)_
-- **Agravamento por prejuízo fiscal** — Se o sujeito passivo apresentar prejuízo fiscal no período, as taxas de TA são agravadas em 10 p.p. (n.º 14). O agravamento não se aplica no período de início de atividade e no seguinte (n.º 15). Em 2025 e 2026, também não se aplica quando: (a) tenha havido lucro tributável em um dos três períodos anteriores e as obrigações dos art.ºs 120.º e 121.º dos dois períodos anteriores tenham sido cumpridas; (b) seja o período de início de atividade ou um dos dois seguintes. O texto não indica conetor entre (a) e (b): este guia lê-as como alternativas, a confirmar pelo revisor.  _([art.º 88.º n.ºs 14 e 15 CIRC e notas; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
+- **Agravamento por prejuízo fiscal** — Se o sujeito passivo apresentar prejuízo fiscal no período, as taxas de TA são agravadas em 10 p.p. (n.º 14). O agravamento não se aplica no período de início de atividade e no seguinte (n.º 15). Em 2025 e 2026, também não se aplica quando: (a) tenha havido lucro tributável em um dos três períodos anteriores e as obrigações dos art.ºs 120.º e 121.º dos dois períodos anteriores tenham sido cumpridas; (b) seja o período de início de atividade ou um dos dois seguintes. O texto publicado não tem conetor entre (a) e (b) ([art.º 95.º n.º 5 da Lei n.º 73-A/2025, Diário da República](https://files.diariodarepublica.pt/1s/2025/12/25002/0000200271.pdf)). A OCC apresenta-as como alternativas ([Essencial IRC 2026, p. 6](https://www.occ.pt/sites/default/files/public/2026-03/Essencial_IRC2026_DIGc.pdf)), o que é corroboração e não fonte primária; esta revisão não localizou orientação da AT nem jurisprudência sobre o ponto. **Gate do revisor:** manter o agravamento até o revisor confirmar a aplicação do regime transitório.  _([art.º 88.º n.ºs 14 e 15 CIRC e notas; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 ### 5.1 Viaturas ligeiras de passageiros e mistas
 
@@ -456,11 +456,11 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 ## Secção 18 — Casos práticos
 
-### 18.1 Lda restauração em Lisboa — não PME
+### 18.1 Lda restauração em Lisboa — PME (pequena empresa)
 
 **Factos:** Restaurante das Janelas, Lda. Período coincide com ano civil. Exercício 2026.
 - Volume de negócios: €1.500.000.
-- 25 trabalhadores. Critério PME cumprido (micro/pequena).
+- 25 trabalhadores. Critério PME cumprido: pequena empresa (menos de 50 pessoas e volume de negócios até €10 milhões; balanço e empresas parceiras ou associadas não indicados, a confirmar).  _([anexo ao DL 372/2007, art.º 2.º n.º 2](https://www.iapmei.pt/media/984f2190/20260811-224520_Certificacao-PME-legislacao-consolidada.pdf))_
 - Resultado líquido contabilístico: €120.000.
 - Acréscimos fiscais (TA de viaturas extra, multas, donativos não enquadráveis): +€15.000.
 - Deduções (provisões fiscalmente aceites revertidas): −€5.000.
@@ -571,7 +571,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 | Estatuto PME | Não PME (21%) até confirmação da Recomendação UE 2003/361/CE em base consolidada |
 | Sede / Município | DM 1,5% (taxa máxima) até confirmação |
 | Madeira IBC | Não aplicável (21% standard) até prova de licença CINM válida |
-| TA em exercício de prejuízo | Adicionar +10 p.p. (art.º 88.º n.º 14), salvo exceção comprovada da Secção 5 |
+| TA em exercício de prejuízo | Adicionar +10 p.p. (art.º 88.º n.º 14), salvo n.º 15; regime transitório só após confirmação do revisor (Secção 5) |
 | Viaturas — escalão | Quando dúvida, escalão mais alto (32% em 2025 e 2026) |
 | Prejuízos reportáveis | Aplicar limite 65% MC; respeitar ordem cronológica; verificar alterações de controlo |
 | SIFIDE | Não aplicar sem declaração ANI emitida; sem componente incremental se média 2 anos anteriores incerta |
@@ -615,7 +615,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 - **Não aplicar taxa Madeira IBC sem licença CINM** — NUNCA aplicar a taxa Madeira IBC de 5% sem licença CINM válida emitida pela SDM e sem verificação do cumprimento dos requisitos de emprego/investimento e dos plafonds de matéria coletável.
 - **Não omitir Derrama Estadual** — NUNCA omitir a Derrama Estadual quando o lucro tributável excede €1.500.000.
 - **Não presumir DM a 0%** — NUNCA presumir Derrama Municipal a 0% sem confirmar a deliberação da Assembleia Municipal para o exercício — usar 1,5% como default conservador.
-- **Agravamento TA em exercício de prejuízo** — NUNCA esquecer o agravamento de +10 p.p. sobre todas as Tributações Autónomas em exercício de prejuízo fiscal (art.º 88.º n.º 14), salvo exceção comprovada da Secção 5 (n.º 15; regime transitório de 2025 e 2026).  _(art.º 88.º n.ºs 14 e 15; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025)_
+- **Agravamento TA em exercício de prejuízo** — NUNCA esquecer o agravamento de +10 p.p. sobre todas as Tributações Autónomas em exercício de prejuízo fiscal (art.º 88.º n.º 14), salvo n.º 15; o regime transitório de 2025 e 2026 só se aplica após confirmação do revisor (Secção 5).  _(art.º 88.º n.ºs 14 e 15; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025)_
 - **Limite dedução prejuízos fiscais 65%** — NUNCA deduzir prejuízos fiscais acima de 65% da matéria coletável do exercício (art.º 52.º n.º 2).  _(art.º 52.º n.º 2)_
 - **Limite temporal dedução prejuízos** — NUNCA deduzir prejuízos fiscais com mais de 12 períodos de tributação de antiguidade (ou as regras transitórias para exercícios pré-2023, conforme caso).
 - **SIFIDE requer declaração ANI** — NUNCA aplicar o crédito SIFIDE sem a declaração emitida pela ANI; a candidatura submetida não basta.

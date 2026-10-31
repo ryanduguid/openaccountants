@@ -317,7 +317,7 @@ Indonesian social security comes in two branches:
 | Programme | Employer | Employee | Wage cap |
 | --- | --- | --- | --- |
 | JKK (work accident) | 0.24% -- 1.74% by risk grade (PP 7/2025 Art. 4(1); BPJS Ketenagakerjaan, 17 December 2025; grade 2, e.g. retail and hospitality, 0.54%, of which 0.14% funds JKP under PP 6/2025) | 0 | None |
-| JKM (death) | 0.30% (BPJS Ketenagakerjaan, 17 December 2025; PP 6/2025 ended the JKM reallocation to JKP) | 0 | None |
+| JKM (death) | 0.30% (BPJS Ketenagakerjaan, 17 December 2025; PP 6/2025 funds JKP without JKM, but PP 49/2023 Art. 18A has no repeal found and no BPJS bill was sighted, so confirm on the employer's statement) | 0 | None |
 | JHT (old age) | 3.7% | 2% | None |
 | JP (pension) | 2% | 1% | **IDR ~10,547,400/month** (2025; adjusted annually -- TBC against latest Permenaker) |
 

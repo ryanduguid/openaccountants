@@ -56,7 +56,7 @@ The output is a reviewer-ready package: line-by-line ZATCA working paper, cross-
 | Mixed-entity return | Zakat portion + CIT portion on the same combined annual return |
 | VAT return | **Monthly** (mandatory if turnover > SAR 40 million) or **quarterly** (smaller taxpayers); due by 28th of month following the period |
 | WHT return | **Monthly**; due within 10 days of month-end |
-| Excise return | **Bi-monthly**; due within 15 days of period-end |
+| Excise return | **Bi-monthly**; end of the month after the period (from 1 January 2026; 15 days before that) |
 | RETT (Real Estate Transaction Tax) | Transaction-by-transaction at notarisation; 5% on real estate disposals |
 | Confirmation receipt | ZATCA portal acknowledgement with submission reference and timestamp |
 | Payment channel | ZATCA portal generates **SADAD bill** (with billing ID) → pay via any Saudi bank, internet banking, mobile app, or SADAD-enabled ATM |
@@ -333,7 +333,7 @@ All Saudi tax payments flow through the ZATCA portal → SADAD billing mechanism
 | Mixed Zakat + CIT | Annual combined | Annual (120 days from FYE) | Mixed-ownership entities |
 | VAT | Monthly or quarterly | 28th of following month | All VAT-registered |
 | Withholding Tax | Monthly | Within 10 days of month-end | All WHT agents |
-| Excise Tax | Bi-monthly | Within 15 days of period-end | Excise-able goods |
+| Excise Tax | Bi-monthly | End of the month after the period (from 1 January 2026; 15 days before that) | Excise-able goods |
 | RETT | Transaction-by-transaction | At notarisation | Real estate disposers |
 
 ### 6.3 Payment timing relative to filing
@@ -346,7 +346,7 @@ All Saudi tax payments flow through the ZATCA portal → SADAD billing mechanism
 | Monthly VAT (turnover > SAR 40M) | 28th of following month | VAT return |
 | Quarterly VAT (turnover ≤ SAR 40M) | 28th of month following quarter | VAT return |
 | Monthly WHT | Within 10 days of month-end | WHT return |
-| Bi-monthly Excise | Within 15 days of period-end | Excise return |
+| Bi-monthly Excise | End of the month after the period (from 1 January 2026; 15 days before that) | Excise return |
 | RETT | At notarisation | Transactional |
 
 - **Payment settlement rule** — The SADAD billing payment must be settled by the deadline. The annual return submission and the payment can be done in the same session via the portal.
@@ -557,7 +557,7 @@ I confirm the return is ready for ZATCA submission and that the taxpayer / autho
 | VAT (quarterly filer) | VAT return | 28th of month following quarter |
 | GOSI monthly contribution | GOSI portal | Around the 15th — verify |
 | WPS file via Mudad | Mudad platform | After each salary disbursement (typically 3 days) |
-| Excise bi-monthly | Excise return | Within 15 days of period-end |
+| Excise bi-monthly | Excise return | End of the month after the period (from 1 January 2026; 15 days before that) |
 | RETT | Per transaction | At notarisation |
 
 ### Record retention
@@ -667,7 +667,7 @@ If execution runs out of context mid-build, complete the computation work first 
 | Income Tax Law (ITL) | Royal Decree No. M/1 of 1425 AH (15 January 2004) and successive amendments; articles referenced throughout (Arts. 1–5, 12, 13, 27, 30, 68, 71, 72) |
 | ITL Implementing Regulations | Issued by Ministerial Resolution; defines tax adjustments, depreciation, interest deduction limit, loss carry-forward, WHT mechanism |
 | Zakat — Royal Decree | Royal Decree No. M/40 of 1405 AH and successor regulations |
-| Zakat Collection Implementing Regulations | Issued by ZATCA; equity-method base, Zakat-on-profit method, working capital adjustments |
+| Zakat Collection Implementing Regulations | Ministerial Resolution 1007 of 19/8/1445H, for years starting on or after 1 January 2024; additions less deductions, with minimum and maximum limits |
 | VAT Law | Royal Decree No. M/113 of 1438 AH (4 November 2017); VAT Implementing Regulations issued by ZATCA |
 | Excise Tax Law | Royal Decree No. M/86 of 1438 AH (29 May 2017); Excise Implementing Regulations |
 | Real Estate Transaction Tax (RETT) | Royal Decree No. M/84 of 14/02/1442 AH (effective 4 October 2020); RETT Implementing Regulations |

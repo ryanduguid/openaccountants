@@ -180,7 +180,7 @@ This is the deterministic pre-classifier for bank statement entries related to C
 - **CPP2 split** — All second additional (CPP2) contributions are a deduction from net income on line 22200. No part of CPP2 earns a credit.  _(Schedule 8 (T1-2025), Part 4, lines 12, 13, 16 and 17; Income Tax Act, s. 60(e)(ii))_
 - **Employment lines** Line 30800 (base contributions) and line 22215 (enhanced contributions) are for contributions through employment. A client with both employment and self-employment income completes Schedule 8 Part 5, which can use lines 30800, 22215, 31000 and 22200.  _(Schedule 8 (T1-2025), Parts 3 and 5)_
 
-The deduction is more valuable at higher marginal rates. The credit is worth a flat 14.5% for 2025 regardless of income.
+The deduction is more valuable at higher marginal rates. The credit is 14.5% of the credit base for 2025 at any income level, but it is non-refundable: it reduces federal tax only down to zero (T1 line 33800; basic federal tax, line 42900, if negative, enter 0).
 
 ### 4.6 EI for self-employed (Tier 1)
 

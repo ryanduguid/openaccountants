@@ -98,7 +98,7 @@ Supplies at 8% are also listed on Form 01, Annex III of Decree 174/2025/ND-CP, f
 - **Minimum viable inputs** — Bank statement for the period in CSV, PDF, or pasted text. Confirmation of VAT calculation method (deduction phương pháp khấu trừ or direct phương pháp trực tiếp) and MST (Mã số thuế — 10-digit tax code).
 - **Recommended inputs** — Hóa đơn GTGT (VAT invoices) for all purchases, electronic invoices (hóa đơn điện tử) for sales, prior period return and excess credit carried forward.
 - **Ideal inputs** — Complete ledger, export customs declarations (tờ khai hải quan), asset register, full invoice register.
-- **Refusal if minimum missing** — SOFT WARN. No bank statement = hard stop. "Input VAT credits in Vietnam require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử. All credits are provisional pending invoice verification."
+- **Refusal if minimum missing** — SOFT WARN. No bank statement = hard stop. "Input VAT credits in Vietnam require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử or, for imports and VAT paid on behalf of a foreign supplier, the tax payment document. All credits are provisional pending invoice verification."
 
 ### Refusal catalogue
 
@@ -187,12 +187,12 @@ Rates in this section are for supplies from 1 July 2025 to 31 December 2026. Eli
 
 | Pattern | Treatment | Rate | Notes |
 | --- | --- | --- | --- |
-| WINMART, VINMART, WINCOMMERCE | Input 8% | 8% | Supermarket — 8% on eligible goods; check invoice lines |
-| BIG C VIỆT NAM (now GO!) | Input 8% | 8% | Hypermarket — 8% on eligible goods; check invoice lines |
-| AEON VIỆT NAM | Input 8% | 8% | Department store — 8% on eligible goods; check invoice lines |
-| BÁN LẺ (retail), NHÀ HÀNG (restaurant) | Input 8% | 8% | Reduced from 10% — taxable; alcohol, tobacco and sugary drinks stay at 10% |
-| CO.OPMART, SAIGON CO.OP | Input 8% | 8% | Supermarket — 8% on eligible goods; check invoice lines |
-| LOTTE MART VIỆT NAM | Input 8% | 8% | Hypermarket — 8% on eligible goods; check invoice lines |
+| WINMART, VINMART, WINCOMMERCE | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
+| BIG C VIỆT NAM (now GO!) | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
+| AEON VIỆT NAM | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
+| BÁN LẺ (retail), NHÀ HÀNG (restaurant) | Check invoice lines | By line | Use the rate on each invoice line; alcohol, tobacco and sugary drinks stay at 10% |
+| CO.OPMART, SAIGON CO.OP | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
+| LOTTE MART VIỆT NAM | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
 | PHÂN BÓN, THUỐC TRỪ SÂU (fertilizers/pesticides) | Input 5% | 5% | Agricultural inputs — reduced 5% |
 
 ### 3.6 SaaS — local Vietnamese suppliers (exempt, 8% or 10%)
@@ -536,7 +536,7 @@ VIETNAM GTGT ONBOARDING — CÂU HỎI TỐI THIỂU
 
 ## Prohibitions
 
-- NEVER claim input VAT credit without a compliant hóa đơn điện tử (e-invoice)
+- NEVER claim input VAT credit without a compliant hóa đơn điện tử (e-invoice) or, for imports and VAT paid on behalf of a foreign supplier, the tax payment document (VAT Law art. 14.2(a); Decree 181/2025/ND-CP, art. 25)
 - NEVER zero-rate a service without confirming foreign consumption + contract + non-cash payment
 - NEVER apply 8% to an excluded supply, or to any supply after 31 December 2026 without a confirmed extension
 - NEVER use the deduction method for a direct-method taxpayer

@@ -205,7 +205,7 @@ Sources: IRD Circular Letter on the Block Extension Scheme for 2025/26 (19 March
 | Qualifying annuity premiums and MPF voluntary contributions | HKD 60,000 combined | IRO s.26N, 26Q |
 | Domestic rent deduction | HKD 100,000 per year | IRO s.26R |
 
-- **Salaries Tax filing** — BIR60 (Individual Tax Return), due within 1 month of issue (typically by 2 May for standard cases, 2 June for e-filing).
+- **Salaries Tax filing** — BIR60 (Individual Tax Return), due within 1 month of issue. For 2025/26 (bulk issue 4 May 2026, no sole proprietorship business): 4 June 2026 if unrepresented, with an automatic further month if filed through the Internet; 4 July 2026 if represented (IRD Circular Letter of 19 March 2026, https://www.ird.gov.hk/eng/pdf/bel26e.pdf). Sole proprietorship cases: see Filing Deadlines above.
 
 ## Step 4: Property Tax [T1]
 

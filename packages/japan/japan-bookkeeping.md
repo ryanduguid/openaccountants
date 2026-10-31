@@ -503,7 +503,7 @@ The Japanese balance sheet traditionally uses the horizontal (account) format (�
 
 ### Invoice System (インボイス制度 — from October 2023)
 
-- **Invoice system rules** — Registered invoice issuers (適格請求書発行事業者) must issue qualified invoices with registration number; Buyers can only claim input tax credit with qualified invoices; Small business transitional measure (2割特例): eligible businesses can pay 20% of output tax as simplified calculation (taxable periods that include any day from 1 Oct 2023 to 30 Sep 2026, subject to status conditions; NTA Invoice Q&A 問115, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf); 簡易課税 (Simplified tax calculation): if base-period sales ≤ ¥50m, use deemed purchase ratio by industry (50%–90%)  _(インボイス制度 — from October 2023)_
+- **Invoice system rules** — Registered invoice issuers (適格請求書発行事業者) must issue qualified invoices with registration number; Buyers need qualified invoices for full input tax credit, with a transitional credit for purchases from non-registered suppliers (80%, then 70%, 50% and 30%, ending 30 Sep 2031, subject to documents and an annual cap; NTA Invoice Q&A 問113, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/113.pdf); Small business transitional measure (2割特例): eligible businesses can pay 20% of output tax as simplified calculation (taxable periods that include any day from 1 Oct 2023 to 30 Sep 2026, subject to status conditions; NTA Invoice Q&A 問115, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf); 簡易課税 (Simplified tax calculation): if base-period sales ≤ ¥50m, use deemed purchase ratio by industry (50%–90%)  _(インボイス制度 — from October 2023)_
 
 ### Social Insurance and Payroll
 

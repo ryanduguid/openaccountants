@@ -90,8 +90,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Threshold | Rule |
 | --- | --- |
 | IRPEF due < EUR 51.65 | No acconto required |
-| IRPEF due from EUR 51.65 to below EUR 257.52 | One payment: 100% by 30 November |
-| IRPEF due EUR 257.52 or more, ISA taxpayer | 50% with the saldo; 50% by 30 November |
+| IRPEF due from EUR 51.65 to EUR 206 (ISA taxpayer) or below EUR 257.52 (other taxpayer) | One payment: 100% by 30 November |
+| IRPEF due above EUR 206, ISA taxpayer | 50% with the saldo; 50% by 30 November |
 | IRPEF due EUR 257.52 or more, other taxpayer | 40% by 30 June (with saldo); 60% by 30 November |
 
 - **Acconto rate** — Acconto rate: 100% of prior-year IRPEF (or 100% of current-year estimate if lower).  _(Acconti IRPEF (Advance Payments) [T1])_
@@ -328,7 +328,7 @@ submit a Redditi PF form")_
 | Late filing (within 90 days) | EUR 250 reduced sanction |
 | Late filing (> 90 days) | 120%-240% of tax due |
 | Under-reporting (infedele dichiarazione) | 90%-180% of additional tax |
-| Late payment | 30% of unpaid amount (reduced if paid within 30 days: 15%) |
+| Late payment | 25% of unpaid amount for violations from 1 September 2024 (12.5% if paid within 90 days, lower within 15 days) _(D.Lgs. 471/1997 art. 13(1))_ |
 | Failure to issue invoice | 90%-180% of IVA evaded |
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)

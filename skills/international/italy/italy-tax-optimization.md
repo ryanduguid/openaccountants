@@ -160,7 +160,7 @@ In the start-up phase (first 3 years), maximize deductible expenses to create la
 | --- | --- |
 | Regime forfettario threshold management | If revenue is approaching EUR 85,000, defer invoicing to January to remain in the regime. If revenue exceeds EUR 100,000, exit is immediate (mid-year). |
 | Accelerate deductions (ordinario) | Prepay professional insurance, subscriptions, training before 31 December. Under contabilità semplificata (regime di cassa), expenses are deductible when paid. |
-| Acconti management | IRPEF advance payments (acconti) in June (40%) and November (60%), or 50% and 50% for ISA taxpayers (D.L. 124/2019 art. 58; D.L. 34/2019 art. 12-quinquies, c. 3-4), are based on prior-year liability. If current-year income is lower, use the metodo previsionale to reduce acconti. Risk: 10% penalty if underestimated by > 10%. |
+| Acconti management | IRPEF advance payments (acconti) in June (40%) and November (60%), or 50% and 50% for ISA taxpayers (D.L. 124/2019 art. 58; D.L. 34/2019 art. 12-quinquies, c. 3-4), are based on prior-year liability. If current-year income is lower, use the metodo previsionale to reduce acconti. Risk: 25% penalty on any acconto shortfall for violations from 1 September 2024, halved if paid within 90 days and reducible by ravvedimento (D.Lgs. 471/1997 art. 13(1); D.Lgs. 472/1997 art. 13). |
 | Fondo pensione contributions | Maximize EUR 5,300 deduction before 31 December. |
 | Building bonus timing | Start renovation works and make payments via bonifico parlante before year-end to claim the detrazione in the current year's return. |
 | Employment income threshold (forfettario) | If transitioning from employment, ensure employment income in the prior year was ≤ EUR 35,000 (or that the relationship ended). |

@@ -136,7 +136,7 @@ All amounts in these examples use the ARCA table in force from 1 August 2026. An
 
 ### Example 1 -- Standard Services Freelancer, Category D
 
-**Input:** Freelance consultant, annual revenue ARS 30,000,000, services only.
+**Input:** Freelance consultant, annual revenue ARS 30,000,000, services only. No commercial premises, so area, energy and rent do not apply.
 
 **Computation:**
 - Category D (revenue <= 30,628,651.43)
@@ -145,7 +145,7 @@ All amounts in these examples use the ARCA table in force from 1 August 2026. An
 
 ### Example 2 -- Low-Income Category A
 
-**Input:** Freelance tutor, annual revenue ARS 10,000,000.
+**Input:** Freelance tutor, annual revenue ARS 10,000,000. No commercial premises, so area, energy and rent do not apply.
 
 **Computation:**
 - Category A (revenue <= 12,009,410.45)
@@ -173,7 +173,7 @@ All amounts in these examples use the ARCA table in force from 1 August 2026. An
 
 ### Example 5 -- Recategorization Needed
 
-**Input:** Currently Category B. Trailing 12-month revenue = ARS 20,000,000.
+**Input:** Currently Category B. Trailing 12-month revenue = ARS 20,000,000. No commercial premises, so area, energy and rent do not apply.
 
 **Computation:**
 - Exceeds Category B (17,595,182.74) but within Category C (24,670,494.31)

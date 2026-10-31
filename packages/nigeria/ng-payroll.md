@@ -385,7 +385,7 @@ BHT = 250,000 + 100,000 + 50,000 = **400,000**
 
 | Recipient | Amount NGN | Deadline |
 | --- | --- | --- |
-| LIRS (PAYE) | 62,015.00 | 10 Jun 2026 (see Section 5) |
+| LIRS (PAYE) | 62,015.00 | 10 Jun 2026, provisional: confirm with LIRS (see Section 5) |
 | PFC → PFA (Pension total) | 72,000.00 | within 7 working days of pay date |
 | FMBN (NHF) | 6,250.00 | within 1 month |
 | NSITF | 5,000.00 | last day of following month |

@@ -329,11 +329,12 @@ Director:
     Next £37,200 remaining basic rate band: 8.75% on £36,998.54 = £3,237.37
 
 Total tax paid (company + personal): £8,795.96 + £1,135.50 + £3,237.37 = £13,168.83
-Total extracted: £12,570 + £37,498.54 = £50,068.54
+Total extracted (gross): £12,570 + £37,498.54 = £50,068.54
+Net extracted after dividend tax: £50,068.54 - £3,237.37 = £46,831.17
 Effective combined rate on the £60,000 company profit: 21.95%
-  (Tax + extraction sums to the £60,000 profit: the dividend tax is paid
-   out of the £37,498.54 already counted as extracted, so it must not be
-   added to the extraction figure when computing this rate.)
+  (Total tax £13,168.83 + net extraction £46,831.17 = £60,000. The dividend
+   tax is paid out of the £37,498.54 gross dividends, so total tax must not
+   be added to the gross extraction figure.)
 
 Sources: GOV.UK, Corporation Tax rates: https://www.gov.uk/corporation-tax-rates; National Insurance rates and allowances: https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions.
 

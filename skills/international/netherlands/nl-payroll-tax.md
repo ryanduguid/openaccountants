@@ -68,7 +68,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Premium | Rate 2025 | Rate 2026 | Max salary base (EUR) | Notes |
 | --- | --- | --- | --- | --- |
 | AWf (unemployment — general) | 2.74% (fixed) / 7.74% (flex) | 2.74% (fixed) / 7.74% (flex) | EUR 75,864 (2025); EUR 79,409 (2026) | Fixed contract = lower rate |
-| Whk (disability — differentiated) | Sector-dependent (avg ~1.5%) | Sector-dependent | EUR 75,864 (2025); EUR 79,409 (2026) | Based on sector and claims history; the employer's rate is in its mededeling or beschikking. The ~1.5% average is not stated in the annexes |
+| Whk (disability — differentiated) | Employer-specific | Employer-specific | EUR 75,864 (2025); EUR 79,409 (2026) | Based on sector and claims history; the employer's rate is in its mededeling or beschikking. The annexes give no average rate |
 | Aof (disability — basic) | 6.28% (low, small employer) / 7.64% (high, medium and large employers) | 6.27% (low, small employer) / 7.63% (high, medium and large employers) | EUR 75,864 (2025); EUR 79,409 (2026) | Small = premium wage bill up to 25× the average premium wage: EUR 990,000 for 2025 (2023 wage bill); EUR 1,082,500 for 2026 (2024 wage bill) |
 | **Zvw (health insurance)** | **6.51%** | **6.10%** | **EUR 75,864 (2025); EUR 79,409 (2026)** | Employer-paid (not withheld from employee) |
 
@@ -221,7 +221,7 @@ Step 1: Determine loonbelasting + premie volksverzekeringen
 Step 2: Employer premiums (2025):
   → AWf (permanent): EUR 5,000 × 2.74% = EUR 137
   → Aof: EUR 5,000 × 6.28% = EUR 314 (small employer)
-  → Whk: EUR 5,000 × 1.50% = EUR 75 (example sector rate)
+  → Whk: EUR 5,000 × 1.50% = EUR 75 (hypothetical rate for illustration; use the rate in the employer's notice)
   → Zvw: EUR 5,000 × 6.51% = EUR 325.50
 
 Step 3: Total employer cost above gross (items above; excludes the Wko surcharge of 0.50% and the Ufo premium of 0.68% in table 9):

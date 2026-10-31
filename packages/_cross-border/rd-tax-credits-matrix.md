@@ -94,7 +94,7 @@ This skill does NOT cover:
 
 | Country | Mechanism | Headline rate | Notable |
 | --- | --- | --- | --- |
-| **United States — §41 R&D Credit (Federal)** | Non-refundable credit | **20%** regular method (over base period); **14%** ASC simplified | Plus 6% payroll tax offset for QSBs. Post-2024 domestic R&D deductible currently under §174A unless amortisation elected; foreign R&D 15-year amortisation under §174 ([Rev. Proc. 2025-28](https://www.irs.gov/pub/irs-drop/rp-25-28.pdf)). |
+| **United States — §41 R&D Credit (Federal)** | Non-refundable credit | **20%** regular method (over base period); **14%** ASC simplified | Qualified small businesses may elect to apply up to $500,000 of the credit against employer payroll tax, for tax years beginning after 31 December 2022 ([§41(h); Instructions for Form 8974](https://www.irs.gov/instructions/i8974)). Post-2024 domestic R&D deductible currently under §174A unless amortisation elected; foreign R&D 15-year amortisation under §174 ([Rev. Proc. 2025-28](https://www.irs.gov/pub/irs-drop/rp-25-28.pdf)). |
 | **United States — State R&D Credits** | Various | 1.5% (NY)-15% (CA additional) | Stackable with federal |
 | **Canada — SR&ED** | Refundable / non-refundable credit | **35% refundable** for CCPCs on first CAD 3m; **15% non-refundable** above and for non-CCPCs | Provincial top-ups in ON, QC, BC, MB, NS, SK |
 | **Mexico — R&D Tax Credit** | Credit | **30%** of incremental R&D expenditure | Limited budget; advance allocation required |

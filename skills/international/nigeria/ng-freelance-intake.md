@@ -108,7 +108,7 @@ The "small company" definition has shifted twice. Use the rule in force for the 
 | --- | --- | --- | --- | --- | --- |
 | Pre-FA 2019 | n/a | 30% flat | 30% | 30% | CITA s.40 |
 | FA 2019 → FY 2025 | Turnover ≤ N25m | 0% | 20% (turnover N25m–N100m) | 30% (> N100m) | FA 2019 s.16 |
-| NTA 2025 (FY starting on/after 1 Jan 2026) | Turnover ≤ **N100m** AND fixed assets ≤ N250m (NTA s.201 "small company") | 0% | **no medium band — abolished** | 30% + 4% Development Levy on every company that is not small | NTA 2025 ss.56, 59, 201 |
+| NTA 2025 (FY starting on/after 1 Jan 2026) | Turnover ≤ **N100m** AND fixed assets ≤ N250m (NTA s.201 "small company") | 0% | **no medium band — abolished** | 30%; 4% Development Levy on companies other than small and non-resident companies (s.59(1)) | NTA 2025 ss.56, 59, 201 |
 
 - **Pre-FA 2019** — n/a  _(CITA s.40)_
 - **FA 2019 → FY 2025** — Turnover ≤ N25m  _(FA 2019 s.16)_
@@ -327,7 +327,7 @@ The Nigeria Tax Act 2025 is effective for financial years beginning on or after 
 | Medium co. band | N25m–N100m | N100m–N1bn |
 | Medium co. CIT | 20% | band abolished — 30% |
 | Large co. CIT | 30% | 30% (the proposed 25% was not enacted) |
-| Development Levy | n/a (Tertiary Education Tax / NITDA / NASENI / police levy as separate items) | 4% consolidated levy on every company that is not a small company |
+| Development Levy | n/a (Tertiary Education Tax / NITDA / NASENI / police levy as separate items) | 4% consolidated levy on companies other than small and non-resident companies (NTA s.59(1)) |
 | Minimum tax | 0.5% of turnover where applicable | NTA 2025 simplifies; reviewer to confirm |
 | WHT rates | WHT Regulations 1997 + FA amendments | NTA 2025 simplifies and exempts small companies |
 | VAT | VATA + FA 2019 (7.5%) | NTA 2025 carries 7.5% forward (subject to amendment) |
@@ -380,7 +380,7 @@ When uncertain, prefer the safer (higher-tax / stricter-compliance) outcome and 
 | Ambiguity | Conservative default |
 | --- | --- |
 | Period straddles 1 Jan 2026 cutover | Apply pre-NTA stack to pre-cutover portion, NTA 2025 to post-cutover; flag for `ng-return-assembly` |
-| Turnover near N25m (FA 2019) or N100m (NTA 2025) threshold | Assume above threshold → medium band (FA 2019) or 30% + 4% levy (NTA 2025), and VAT registration required |
+| Turnover near N25m (FA 2019) or N100m (NTA 2025) threshold | Assume above threshold → medium band (FA 2019) or 30% + 4% levy unless non-resident (NTA 2025 s.59(1)), and VAT registration required |
 | Entity unclear (sole vs BN vs RC) | Treat as sole trader for PIT default; flag `ng-formation` |
 | Residency borderline (~180 days) | Assume non-resident → REFUSE for individual returns |
 | WHT-agent status unclear (sole trader not clearly appointed) | Assume WHT obligation exists for any qualifying payment; flag |

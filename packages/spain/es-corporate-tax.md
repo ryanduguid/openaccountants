@@ -224,7 +224,7 @@ The IS computation follows this pipeline:
 | I+D inmovilizado afecto | +8% of dedicated assets | Included | Art. 35.1.b LIS |
 | IT (Innovación Tecnológica) | 12% of expenditure | 25% of cuota íntegra | Art. 35.2 LIS |
 | Donativos mecenazgo | 40% (sociedades) | 10% of base imponible | Art. 20 Ley 49/2002 |
-| Empleo discapacitados 33-65% | EUR 9,000/employee | No limit | Art. 38 LIS |
+| Empleo discapacitados 33-65% | EUR 9,000 per person/year of increase in average workforce with that disability | No limit | Art. 38 LIS |
 | Empleo discapacitados ≥65% | EUR 12,000/employee | No limit | Art. 38 LIS |
 | Producción cinematográfica española | 30%/25% (first EUR 1.5M/rest) | EUR 20M | Art. 36.1 LIS |
 | Producción cinematográfica extranjera | 30% | EUR 20M (EUR 40M CSI) | Art. 36.2 LIS |
@@ -299,7 +299,7 @@ The IS computation follows this pipeline:
 
 ## Section 8 -- Worked Example: Standard SL
 
-**Input:** SL Consultora Digital, Madrid. Calendar year 2025. INCN EUR 500,000. Resultado contable EUR 80,000. Gastos no deducibles EUR 3,000. Incremento fondos propios EUR 20,000. BINs pendientes EUR 15,000. No I+D. 1 employee with 33% disability.
+**Input:** SL Consultora Digital, Madrid. Calendar year 2025. INCN EUR 500,000. Resultado contable EUR 80,000. Gastos no deducibles EUR 3,000. Incremento fondos propios EUR 20,000. BINs pendientes EUR 15,000. No I+D. Average workforce with a disability of 33% to under 65% rose by 1.0 person/year on 2024.
 
 **Computation:**
 
@@ -323,6 +323,8 @@ The IS computation follows this pipeline:
 
 Tipo efectivo: 4,580 / 80,000 = 5.725%
 ```
+
+Step 7 depends on the workforce increase: LIS art. 38.1 grants EUR 9,000 per person/year of increase on the prior period, not per employee. Without an increase the deduction is EUR 0, and EUR 13,580 is payable (16.975%).
 
 ## Section 9 -- Filing Obligations
 

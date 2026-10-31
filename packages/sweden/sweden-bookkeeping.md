@@ -150,7 +150,7 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 | 5210 | Hyra av maskiner | Machine leases |
 | 5250 | Hyra av datorer | Computer leases |
 | 5300-5399 | Energikostnader | Energy costs (heating, fuel) |
-| 5400 | Förbrukningsinventarier | Consumable equipment (below half prisbasbelopp excl. VAT: SEK 29,400 for 2025; SEK 29,600 for 2026) |
+| 5400 | Förbrukningsinventarier | Consumable equipment (below half prisbasbelopp: see Capitalization Rules) |
 | 5410 | Förbruknings­material | Consumable materials |
 | 5420 | Programvaror (avskrivning/abonnemang) | Software (subscription/depreciation) |
 | 5500 | Reparation och underhåll | Repairs and maintenance |
@@ -287,7 +287,7 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 | Rule | Detail |
 | --- | --- |
-| Low-value asset threshold (tax) | Half prisbasbelopp excl. VAT: SEK 29,400 for income year 2025; SEK 29,600 for 2026 -- items below may be deducted in full in the year acquired (account 5400) _(Skatteverket, Avdrag för värdeminskning)_. Whether K2 sets the same limit for book purposes was not confirmed |
+| Low-value asset threshold (K2/tax) | Half prisbasbelopp excl. VAT: SEK 29,400 for income year 2025; SEK 29,600 for 2026 -- items below may be deducted in full in the year acquired (account 5400). K2 sets the same half prisbasbelopp limit for book purposes, plus any input VAT the company cannot recover _(BFNAR 2016:10 (K2), punkt 10.5, as consolidated to BFNAR 2025:2; Skatteverket, Avdrag för värdeminskning)_. K3 was not checked |
 | Grouping | Items forming a unit may be grouped and capitalised together even if individual cost < threshold |
 | K3 component approach | Required to separate significant components with different useful lives |
 | K2 simplified | No component approach; entire asset depreciated as one unit |

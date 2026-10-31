@@ -335,11 +335,11 @@ Apply these rules when a transaction is unambiguous. No flags required. For comp
 
 ### 5.6 QIS invoice requirement (適格請求書等保存方式)
 
-- **QIS invoice requirement** — From 1 October 2023, input tax credit requires a qualified invoice (適格請求書) from a QIS-registered supplier. Required fields: supplier name, QIS registration number (T + 13 digits), transaction date, description, taxable amount (10% and 8% separately), JCT amount, recipient name. Without a compliant invoice, NO input credit is allowed.
+- **QIS invoice requirement** — From 1 October 2023, input tax credit requires a qualified invoice (適格請求書) from a QIS-registered supplier. Required fields: supplier name, QIS registration number (T + 13 digits), transaction date, description, taxable amount (10% and 8% separately), JCT amount, recipient name. Without a compliant invoice, NO input credit is allowed, apart from the transitional credit in section 5.7.
 
 ### 5.7 Transitional credit for non-QIS suppliers (経過措置)
 
-- **Transitional credit** — Purchases from unregistered suppliers, by purchase date: 80% of otherwise allowable credit to 30 September 2026; 70% from 1 October 2026 to 30 September 2028; 50% from 1 October 2028 to 30 September 2030; 30% from 1 October 2030 to 30 September 2031; 0% from 1 October 2031. Annual cap per supplier on tax-inclusive purchases: JPY 1 billion for taxable periods starting on or after 1 October 2024; JPY 100 million for taxable periods starting on or after 1 October 2026; no transitional credit on the excess. Always flag when supplier QIS status is unconfirmed. _(NTA leaflet, September 2026, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0026004-066_02.pdf; NTA Tax Answer No. 6498, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm)_
+- **Transitional credit** — Purchases from unregistered suppliers, by purchase date: 80% of otherwise allowable credit to 30 September 2026; 70% from 1 October 2026 to 30 September 2028; 50% from 1 October 2028 to 30 September 2030; 30% from 1 October 2030 to 30 September 2031; 0% from 1 October 2031. Annual cap per supplier on tax-inclusive purchases: JPY 1 billion for taxable periods starting on or after 1 October 2024; JPY 100 million for taxable periods starting on or after 1 October 2026; no transitional credit on the excess. The credit needs a book entry stating that the measure applies (for example '80%控除対象') and a retained invoice with the 区分記載請求書等 particulars. Always flag when supplier QIS status is unconfirmed. _(NTA leaflet, September 2026, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0026004-066_02.pdf; NTA Tax Answer No. 6498, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA Invoice Q&A 問113, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/113.pdf)_
 
 ### 5.8 Filing deadlines
 
@@ -405,7 +405,7 @@ Tier 2 items are those where the correct classification cannot be determined fro
 
 ### 6.6 Supplier QIS registration status unconfirmed
 
-- **Supplier QIS status unconfirmed** — What it shows: Purchase from a domestic supplier with no QIS number on record. What's missing: Whether the supplier is QIS-registered. Conservative default: Apply the transitional credit rate for the purchase date in section 5.7 (70% from 1 Oct 2026 to 30 Sep 2028; 80% for purchases to 30 Sep 2026) — flag as requiring confirmation. Question to ask: "Can you provide the supplier's QIS registration number (T + 13 digits) from their invoice?"
+- **Supplier QIS status unconfirmed** — What it shows: Purchase from a domestic supplier with no QIS number on record. What's missing: Whether the supplier is QIS-registered. Conservative default: No input credit until the supplier's status and documents are verified. If the supplier is confirmed non-registered and the book entry and invoice required by section 5.7 are held, apply the rate for the purchase date, subject to the annual cap — flag as requiring confirmation. Question to ask: "Can you provide the supplier's QIS registration number (T + 13 digits) from their invoice?"
 
 ## Section 7 — Excel working paper template
 

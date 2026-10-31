@@ -246,7 +246,7 @@ Para sociedades — as tributações autónomas são adicionadas à coleta e cal
 | Indemnizações de cessação de funções de gestor | 35% | +10 pp |
 | Lucros distribuídos a entidades total ou parcialmente isentas | 23% | n/a |
 
-Taxas de viaturas para períodos de 2025 e 2026. O acréscimo de +10 pp não se aplica no período de início de atividade e no seguinte (n.º 15) nem, em 2025 e 2026, nos casos do regime transitório descritos em `pt-corporate-tax`, Secção 5.  _([art.º 88.º n.ºs 3, 14, 15, 18 e 20 CIRC; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
+Taxas de viaturas para períodos de 2025 e 2026. O acréscimo de +10 pp não se aplica no período de início de atividade e no seguinte (n.º 15) nem, em 2025 e 2026, nos casos do regime transitório descritos em `pt-corporate-tax`, Secção 5, só após confirmação do revisor.  _([art.º 88.º n.ºs 3, 14, 15, 18 e 20 CIRC; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 - **Confirmação TA** — A skill de montagem confirma que pt-corporate-tax calculou todas as TA aplicáveis e que a TA total foi adicionada à coleta no Quadro 10. Tolerância: €1.  _(unsure - no explicit legal citation provided)_
 

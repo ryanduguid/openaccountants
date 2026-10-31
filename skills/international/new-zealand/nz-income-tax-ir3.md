@@ -97,7 +97,7 @@ Source: Inland Revenue, Tax rates for individuals: https://www.ird.govt.nz/incom
 
 ### Independent Earner Tax Credit (IETC) [T1]
 
-**IETC table**
+**IETC table (FY 2026 onwards)**
 
 | Income | IETC Amount |
 | --- | --- |
@@ -105,6 +105,7 @@ Source: Inland Revenue, Tax rates for individuals: https://www.ird.govt.nz/incom
 | NZD 66,001 -- NZD 70,000 | Reduces by 13 cents for every dollar over NZD 66,000 |
 | Over NZD 70,000 | NZD 0 |
 
+- **IETC for FY 2025 only:** Composite calculation, not the table above: ((520 - old abatement) x 121/365 + (520 - new abatement) x 244/365) x eligible months/12. Old abatement (1 April to 30 July 2024) is 13 cents for each complete dollar over NZD 44,000, leaving nil above NZD 48,000; new abatement (31 July 2024 to 31 March 2025) is 13 cents for each complete dollar over NZD 66,000. FY 2025 examples for a full year of eligibility: NZD 45,000 gives NZD 476.90; NZD 60,000 gives NZD 347.62; NZD 67,000 gives NZD 260.71. Source: Income Tax Act 2007, ss LC 14 and LC 15, inserted by [Taxation (Budget Measures) Act 2024, s 4](https://www.legislation.govt.nz/act/public/2024/0019/latest/whole.html); [Inland Revenue, Bill commentary](https://www.taxpolicy.ird.govt.nz/-/media/project/ir/tp/publications/2024/taxation-budget-measures-bill/bill-commentary-taxation-budget-measures-bill.pdf).
 - **IETC conditions** — Conditions (from July 2024): NZ tax resident, income between NZD 24,000 and NZD 70,000; neither you nor your partner entitled to and receiving Working for Families; no income-tested benefit, NZ Super, Veteran's Pension or overseas equivalent. Worked out on whole months. Source: Inland Revenue, Independent earner tax credit: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/individual-tax-credits/independent-earner-tax-credit-ietc.
 
 ### Conservative Defaults [T1]
@@ -297,7 +298,7 @@ Windcave card payment settlement NZD 8,500. Rachel's annual gross revenue is NZD
 
 ### 5.8 Tax Computation Flow
 
-- **Tax Computation Flow** — Gross self-employment receipts (ex-GST if registered) Less: Allowable business expenses = Net taxable income Apply bracket rates Less: IETC (if income NZD 24,000-70,000; reduces by 13 cents per dollar over NZD 66,000) = Net income tax Plus: ACC earner levy (~1.33% of liable earnings) = Total tax Less: Schedular withholding credits Less: Provisional tax paid = Residual Income Tax (RIT) / refund
+- **Tax Computation Flow** — Gross self-employment receipts (ex-GST if registered) Less: Allowable business expenses = Net taxable income Apply bracket rates Less: IETC (if income NZD 24,000-70,000; reduces by 13 cents per dollar over NZD 66,000; FY 2025 uses the composite calculation) = Net income tax Plus: ACC earner levy (~1.33% of liable earnings) = Total tax Less: Schedular withholding credits Less: Provisional tax paid = Residual Income Tax (RIT) / refund
 
 ### 5.9 Filing Deadlines
 
@@ -393,7 +394,7 @@ Total income - Total expenses          ___________
 
 SECTION D -- INCOME TAX
 Tax at bracket rates (table for FY)    ___________
-Less: IETC (if income NZD 24k-70k)    (___________)
+Less: IETC (FY 2025: composite)       (___________)
 NET INCOME TAX                         ___________
 
 SECTION E -- ACC EARNER LEVY

@@ -230,7 +230,7 @@ Tax:
 Total PIT/month:                     2,169,300
 ```
 
-**Insurance caps used, from 1 July 2026:** BHXH and BHYT on salary up to VND 50,600,000 (20 × VND 2,530,000; base salary in Nghị định 161/2026/NĐ-CP: https://xaydungchinhsach.chinhphu.vn/tu-01-7-chinh-phu-tang-luong-co-so-119260517100243881.htm); BHTN on salary up to VND 106,200,000 (20 × the Region I minimum wage of VND 5,310,000 in Nghị định 293/2025/NĐ-CP: https://xaydungchinhsach.chinhphu.vn/tu-1-1-2026-muc-luong-toi-thieu-duoc-tang-bao-nhieu-119251111091442629.htm). The multiples are in `vn-payroll-social`. Unconfirmed: that the social insurance reference level still equals the base salary after 1 July 2026.
+**Insurance caps used, from 1 July 2026:** BHXH and BHYT on salary up to VND 50,600,000 (20 × the reference level, which equals the base salary until that salary is abolished: Luật số 41/2024/QH15, arts 31.1(đ) and 141.13: https://baohiemxahoidientu.vn/main/download/getdoc/?id=28F71EE0-A405-4659-917D-3F48F5FB3250; base salary VND 2,530,000 in Nghị định 161/2026/NĐ-CP, art. 3.2: https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/5/161-ndcp.signed.pdf; BHYT on the same salary base in Nghị định 188/2025/NĐ-CP, art. 6.1(a): https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/188-ndcp.signed.pdf); BHTN on salary up to VND 106,200,000 (20 × the Region I minimum wage of VND 5,310,000 in Nghị định 293/2025/NĐ-CP: https://xaydungchinhsach.chinhphu.vn/tu-1-1-2026-muc-luong-toi-thieu-duoc-tang-bao-nhieu-119251111091442629.htm). The multiples are in `vn-payroll-social`.
 
 ### Example 3 — High income earner
 

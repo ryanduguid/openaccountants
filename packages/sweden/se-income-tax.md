@@ -211,7 +211,7 @@ This is the deterministic pre-classifier for income tax purposes. When a transac
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
 | STAPLES, OFFICE DEPOT, CLAS OHLSON | Deductible expense | Office supplies |
-| IKEA (business furniture) | Deductible expense if below half prisbasbelopp excl. VAT (SEK 29,400 for 2025; SEK 29,600 for 2026); else capital | Add together items with a natural connection |
+| IKEA (business furniture) | Capital if at or above half prisbasbelopp excl. VAT (SEK 29,400 for 2025; SEK 29,600 for 2026) and life > 3 years; else deductible | Add together items with a natural connection |
 | ELGIGANTEN, MEDIAMARKT, KOMPLETT | Capital if at or above half prisbasbelopp excl. VAT (SEK 29,400 for 2025; SEK 29,600 for 2026) and life > 3 years; else deductible | Computer/electronics; a computer with its screen, printer, keyboard and mouse counts as one asset |
 | POSTNORD | Deductible expense | Postage and shipping |
 | WEBHALLEN, INET | Capital or expense depending on amount | IT equipment |
@@ -499,6 +499,9 @@ Expected: Expansionsfondsskatt = SEK 200,000 x 20.6% = SEK 41,200. Taxable busin
 
 Input: Client buys office furniture for SEK 20,000, deducts full amount.
 Expected: Below half prisbasbelopp (SEK 29,400 for 2025), assuming SEK 20,000 excl. VAT and no connected items. Full deduction stands. No inventarier pool and no depreciation.
+
+Input: Client buys office furniture for SEK 40,000 excl. VAT in 2025, with an expected economic life of 2 years, and deducts the full amount.
+Expected: Above half prisbasbelopp, but life is at most 3 years. Full deduction stands. No inventarier pool and no depreciation.
 
 Input: Momsregistrerad client reports SEK 1,250,000 gross receipts including 25% moms.
 Expected: NE R1 = SEK 1,000,000. Exclude SEK 250,000 moms.

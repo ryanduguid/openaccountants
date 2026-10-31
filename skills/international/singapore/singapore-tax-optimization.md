@@ -221,7 +221,7 @@ Singapore Citizens and Singapore Permanent Residents from the third year, monthl
 | Above 65–70 | 7.5% | 9% | 16.5% |
 | Above 70 | 5% | 7.5% | 12.5% |
 
-From 1 January 2027 CPF Board states above 55–60 at employee 19%, employer 16.5% and above 60–65 at 13% each. _([CPF Board](https://www.cpf.gov.sg/service/article/what-are-the-changes-to-the-cpf-contribution-rates-for-senior-workers-that-will-take-effect-from-1-january-2027))_
+From 1 January 2027 CPF Board's rate table gives above 55–60 at employee 19%, employer 16.5% (total 35.5%) and above 60–65 at 13% each (total 26%). _([CPF Board, Rate Table from 1 January 2027](https://www.cpf.gov.sg/content/dam/web/employer/employer-obligations/documents/jan2027cpfcontributionrates.pdf))_
 
 - **Ordinary Wage / Additional Wage ceilings** — Ordinary Wage ceiling: S$8,000/month (from 1 Jan 2026). Additional Wage ceiling for a calendar year, per employee and per employer: S$102,000 less total Ordinary Wages subject to CPF for the year. With S$8,000 of Ordinary Wages subject to CPF in all 12 months of 2026, that is S$102,000 - S$96,000 = S$6,000. _([CPF Board, What constitutes wages](https://www.cpf.gov.sg/employer/employer-obligations/what-constitutes-wages-for-cpf-contributions); [CPF changes in 2026](https://www.cpf.gov.sg/member/infohub/news/news-releases/cpf-related-changes-taking-place-in-2026-what-you-need-to-know))_
 - **Self-employed CPF contributions** — Self-employed: mandatory MediSave contributions only (based on net trade income). No mandatory OA/SA contributions — but voluntary contributions possible.

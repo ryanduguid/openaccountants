@@ -116,7 +116,7 @@ For an individual, this test matters only for a period before 2022, such as an o
 
 ### For Società Semplici and Professional Associations (art. 8)
 
-- **Valore della produzione netta (professional associations)** — valore_produzione_netta = compensi (fees/revenue) - costi inerenti (deductible costs) + costo del personale (employee costs added back)  _(D.Lgs. 446/1997, art. 5-5bis)_
+- **Valore della produzione netta (professional associations)** — valore_produzione_netta = compensi (fees/revenue) - costi inerenti (inherent costs, including amortisation) + costo del personale + interessi passivi. The last 2 are added back only if included in costi inerenti, because art. 8 excludes employee costs and passive interest from the deduction.  _(D.Lgs. 446/1997, art. 8)_
 
 ### Simplified Computation for Small Businesses (Art. 5-bis)
 
@@ -128,7 +128,7 @@ For an individual, this test matters only for a period before 2022, such as an o
 
 ### Step 4.2 -- Compute valore della produzione netta
 
-- **Compute VPN logic** — # For business partnership: vpn = revenue + inventory_changes + other_income - production_costs + labour_costs_addback + interest_addback # For professional association: vpn = fees - deductible_costs + employee_costs_addback
+- **Compute VPN logic** — # For business partnership: vpn = revenue + inventory_changes + other_income - production_costs + labour_costs_addback + interest_addback # For professional association: vpn = fees - deductible_costs + employee_costs_addback + interest_addback
 
 ### Step 4.3 -- Apply deductions
 
@@ -247,6 +247,11 @@ For an individual, this test matters only for a period before 2022, such as an o
 
 **Input:** Association of dentists with 2 employees, studio rental, EUR 200,000 fees, EUR 60,000 deductible costs, EUR 40,000 employee costs.
 **Expected output:** VPN = EUR 200,000 - EUR 60,000 + EUR 40,000 = EUR 180,000. Less employee deductions (assume EUR 15,000): EUR 165,000. IRAP = EUR 165,000 x 3.90% = EUR 6,435.
+
+### Test 2A -- Professional association with a loan
+
+**Input:** As Test 2, with EUR 5,000 of loan interest included in the EUR 60,000 deductible costs.
+**Expected output:** VPN = EUR 200,000 - EUR 60,000 + EUR 40,000 + EUR 5,000 = EUR 185,000. Less employee deductions (assume EUR 15,000): EUR 170,000. IRAP = EUR 170,000 x 3.90% = EUR 6,630.
 
 ### Test 3 -- Business partnership (s.n.c.), standard rate
 

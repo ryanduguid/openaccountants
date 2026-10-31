@@ -82,7 +82,7 @@ Some inferred from documents, the rest gap-filled. All mandatory before handoff.
 
 All thresholds 2025-effective. Reviewer to verify current ZATCA circulars and Royal Decrees.
 
-### 4.1 Residency gate — Income Tax Law (Royal Decree M/1, 1425H) art. 3; Zakat Implementing Regulations (Ministerial Resolution 2216, 1440H)
+### 4.1 Residency gate — Income Tax Law (Royal Decree M/1, 1425H) art. 3; Zakat Implementing Regulations (Ministerial Resolution 1007, 1445H, for years starting on or after 1 January 2024; 2216, 1440H, before that)
 
 - **KSA tax/Zakat resident definition** — KSA tax/Zakat resident = entity established under Saudi law with a CR, or a foreign entity with a permanent establishment (PE) in KSA. Natural persons: Saudi or GCC nationals resident in KSA (Zakat), or foreign individuals with PE / fixed base (CIT). Non-resident with no PE → out of scope here → REFUSE.  _(Income Tax Law (Royal Decree M/1, 1425H) art. 3; Zakat Implementing Regulations (Ministerial Resolution 2216, 1440H))_
 
@@ -415,7 +415,7 @@ Example (mixed-ownership multi-member LLC, 60% Saudi + 40% foreign, with MISA):
 
 Downstream skills (via sa-return-assembly):
 
-- `sa-zakat` — Zakat at 2.5% on the Zakat base for Saudi/GCC ownership share (Implementing Regulations, Ministerial Resolution 2216, 1440H).
+- `sa-zakat` — Zakat at 2.5% on the Zakat base for Saudi/GCC ownership share (Implementing Regulations, Ministerial Resolution 1007, 1445H).
 - `sa-corporate-tax` — CIT 20% on taxable income for foreign ownership share (Income Tax Law, Royal Decree M/1, 1425H).
 - `sa-withholding-tax` — WHT on payments to non-residents at 5%–20% per ITL art. 68; treaty rates applied with documentation.
 - `sa-rett` — 5% Real Estate Transaction Tax on disposals (Royal Order A/84, 2 October 2020).
@@ -432,7 +432,7 @@ Primary statutes, royal decrees, and ZATCA regulations cited (all 2025-effective
 
 - **Royal Decree M/1, 1425H** — Income Tax Law (ITL).
 - **Implementing Regulations of the Income Tax Law** — Ministerial Resolution 1535, 1425H, as amended.
-- **Ministerial Resolution 2216, 1440H** — Zakat Implementing Regulations.
+- **Ministerial Resolution 1007, 1445H**: Zakat Implementing Regulations for years starting on or after 1 January 2024, replacing Resolution 2216, 1440H.
 - **Royal Decree M/113, 1438H** — Value Added Tax Law.
 - **VAT Implementing Regulations** — ZATCA Board Resolution 3839, 1438H, as amended.
 - **Royal Order A/638, 2020** — increase of VAT standard rate to 15% from 1 July 2020.
