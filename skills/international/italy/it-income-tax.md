@@ -89,8 +89,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Threshold | Rule |
 | --- | --- |
-| IRPEF due < EUR 51.65 | No acconto required |
-| IRPEF due from EUR 51.65 to EUR 206 (ISA taxpayer) or below EUR 257.52 (other taxpayer) | One payment: 100% by 30 November |
+| IRPEF due up to EUR 51.65 | No acconto required |
+| IRPEF due above EUR 51.65 and up to EUR 206 (ISA taxpayer) or below EUR 257.52 (other taxpayer) | One payment: 100% by 30 November |
 | IRPEF due above EUR 206, ISA taxpayer | 50% with the saldo; 50% by 30 November |
 | IRPEF due EUR 257.52 or more, other taxpayer | 40% by 30 June (with saldo); 60% by 30 November |
 

@@ -325,7 +325,7 @@ Sources: NTA Tax Answer No. 6505 簡易課税制度 — https://www.nta.go.jp/ta
 
 ## PROHIBITIONS
 
-- NEVER allow input tax credit without a qualified invoice (from October 2023 onward, subject to transitional measures)
+- NEVER allow input tax credit without a qualified invoice (from October 2023 onward, subject to transitional measures and the book-only cases in NTA Tax Answer No. 6496 (such as public transport fares under JPY 30,000, and purchases under JPY 10,000 made by 30 Sep 2029 by businesses with base-period taxable sales of JPY 100M or less or specified-period taxable sales of JPY 50M or less): https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6496.htm)
 - NEVER apply the reduced 8% rate to dine-in meals or alcoholic beverages
 - NEVER use simplified taxation without a prior-period election form submission
 - NEVER apply simplified taxation if base period sales exceed JPY 50,000,000

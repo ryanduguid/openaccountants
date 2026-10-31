@@ -241,7 +241,7 @@ A **conforming Nigerian payslip** must show, at minimum:
 | **NHIS (if operated)** | NHIS / HMO | Per scheme rules — typically monthly | HMO direct |
 | **ITF (employer only)** | Industrial Training Fund | **Annual** — by 1 April of following year | ITF portal |
 
-- **PAYE due date from 2026 (unconfirmed)**: The 10th comes from the pre-2026 PAYE rules. NTAA s 107(1) applies its penalty when deducted tax is not remitted by the 21st day of the following month, and s 28 leaves monthly deduction returns to regulations. No regulation fixing a PAYE date from 2026 was confirmed, so keep remitting by the 10th until the relevant state IRS confirms the date.  _(NTAA 2025 ss 28 and 107(1))_
+- **PAYE due date from 2026**: LIRS's FAQ, which treats the NTA and NTAA 2025 as the governing law, says 'on or before the 10th day of the following month'; FCT-IRS's due date page says '10th of every month'. Both pages are undated. For any other state, confirm with its IRS. NTAA s 107(1) applies its penalty when deducted tax is not remitted by the 21st day of the following month, and s 28 leaves monthly deduction returns to regulations. No regulation was read, and the Joint Revenue Board's Personal Income Tax Guidelines 2026 could not be opened, so do not treat the 21st as a later due date.  _(https://lirs.gov.ng/faq; https://fctirs.gov.ng/due-date/; NTAA 2025 ss 28 and 107(1))_
 
 ### FIRS Tax Pro-Max payroll module (status note)
 
@@ -385,7 +385,7 @@ BHT = 250,000 + 100,000 + 50,000 = **400,000**
 
 | Recipient | Amount NGN | Deadline |
 | --- | --- | --- |
-| LIRS (PAYE) | 62,015.00 | 10 Jun 2026, provisional: confirm with LIRS (see Section 5) |
+| LIRS (PAYE) | 62,015.00 | 10 Jun 2026 (see Section 5) |
 | PFC → PFA (Pension total) | 72,000.00 | within 7 working days of pay date |
 | FMBN (NHF) | 6,250.00 | within 1 month |
 | NSITF | 5,000.00 | last day of following month |

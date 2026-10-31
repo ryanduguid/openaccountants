@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | EUR only |
 | Payment schedule | Two instalments if EUR 257.52 or more: 40% by 30 June + 60% by 30 November. ISA taxpayers: two instalments if above EUR 206: 50% + 50%. Otherwise single instalment by 30 Nov |
 | Computation basis | 100% of prior year IRPEF (rigo RN34) -- historical method |
-| Minimum threshold | EUR 51.65 triggers obligation; EUR 257.52 (ISA taxpayers: above EUR 206) determines single vs two instalments |
+| Minimum threshold | Above EUR 51.65 triggers obligation; EUR 257.52 (ISA taxpayers: above EUR 206) determines single vs two instalments |
 | F24 codes | 4033 (primo acconto IRPEF), 4034 (secondo acconto IRPEF), 1790/1791 (forfettario) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by Italian commercialista |
@@ -222,7 +222,7 @@ For violations from 1 September 2024. The 25% is halved for payment within 90 da
 | After annual return deadline | 3.57% (1/7 of 25%) |
 | After a schema d'atto [T2] | 4.17% (1/6 of 25%), only on the conditions in art. 13(1)(b-ter) |
 
-For violations from 1 September 2024. The percentages are computed from the base penalty in Section 6.1 and the fractions in D.Lgs. 472/1997 art. 13(1)(a) to (b-ter); the Agenzia's own table was not read. Ravvedimento is unavailable once the conditions in art. 13(1) are no longer met, such as after a formally notified audit.
+For violations from 1 September 2024. The percentages are computed from the base penalty in Section 6.1 and the fractions in D.Lgs. 472/1997 art. 13(1)(a) to (b-ter); the Agenzia's own table was not read. For taxes administered by the Agenzia delle Entrate, an audit alone does not bar ravvedimento. The bar is notification of a liquidation or assessment act, including communications under D.P.R. 600/1973 arts. 36-bis and 36-ter and D.P.R. 633/1972 art. 54-bis (art. 13(1-ter)). Regularising does not stop an audit starting or continuing (art. 13(1-quater)).
 
 - **Legal interest rate 2025** — 2.5% per annum for 2025, subject to MEF decree
 

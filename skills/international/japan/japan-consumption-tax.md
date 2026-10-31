@@ -335,7 +335,7 @@ Apply these rules when a transaction is unambiguous. No flags required. For comp
 
 ### 5.6 QIS invoice requirement (適格請求書等保存方式)
 
-- **QIS invoice requirement** — From 1 October 2023, input tax credit requires a qualified invoice (適格請求書) from a QIS-registered supplier. Required fields: supplier name, QIS registration number (T + 13 digits), transaction date, description, taxable amount (10% and 8% separately), JCT amount, recipient name. Without a compliant invoice, NO input credit is allowed, apart from the transitional credit in section 5.7.
+- **QIS invoice requirement** — From 1 October 2023, input tax credit requires a qualified invoice (適格請求書) from a QIS-registered supplier. Required fields: supplier name, QIS registration number (T + 13 digits), transaction date, description, taxable amount (10% and 8% separately), JCT amount, recipient name. Without a compliant invoice, NO input credit is allowed, apart from the transitional credit in section 5.7 and the book-only cases in NTA Tax Answer No. 6496 (such as public transport fares under JPY 30,000, and purchases under JPY 10,000 made by 30 Sep 2029 by businesses with base-period taxable sales of JPY 100M or less or specified-period taxable sales of JPY 50M or less): https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6496.htm.
 
 ### 5.7 Transitional credit for non-QIS suppliers (経過措置)
 

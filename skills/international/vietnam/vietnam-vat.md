@@ -71,7 +71,7 @@ Supplies at 8% are also listed on Form 01, Annex III of Decree 174/2025/ND-CP, f
 | Ambiguity | Default |
 | --- | --- |
 | Unknown rate on a sale | 10% until the supply is confirmed eligible for 8% |
-| Rate on a purchase | The rate and VAT shown on the e-invoice (Decree 174, art. 1.3(a)) |
+| Rate on a purchase | The rate and VAT shown on the e-invoice (Decree 174, art. 1.3(a)); if a supply eligible for 8% is invoiced at 10%, have the invoice corrected, then adjust input VAT (art. 1.5) |
 | Unknown whether 5% rate applies | 10% until confirmed |
 | Unknown counterparty country | Domestic Vietnam |
 | Unknown export qualification | Domestic 10% until evidence confirmed |
@@ -98,7 +98,7 @@ Supplies at 8% are also listed on Form 01, Annex III of Decree 174/2025/ND-CP, f
 - **Minimum viable inputs** — Bank statement for the period in CSV, PDF, or pasted text. Confirmation of VAT calculation method (deduction phương pháp khấu trừ or direct phương pháp trực tiếp) and MST (Mã số thuế — 10-digit tax code).
 - **Recommended inputs** — Hóa đơn GTGT (VAT invoices) for all purchases, electronic invoices (hóa đơn điện tử) for sales, prior period return and excess credit carried forward.
 - **Ideal inputs** — Complete ledger, export customs declarations (tờ khai hải quan), asset register, full invoice register.
-- **Refusal if minimum missing** — SOFT WARN. No bank statement = hard stop. "Input VAT credits in Vietnam require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử or, for imports and VAT paid on behalf of a foreign supplier, the tax payment document. All credits are provisional pending invoice verification."
+- **Refusal if minimum missing** — SOFT WARN. No bank statement = hard stop. "Input VAT credits in Vietnam require compliant hóa đơn GTGT (VAT invoices) or hóa đơn điện tử or, for imports and VAT paid on behalf of a foreign supplier, the tax payment document. All credits are provisional pending verification of the applicable invoice or tax payment document."
 
 ### Refusal catalogue
 
@@ -187,12 +187,12 @@ Rates in this section are for supplies from 1 July 2025 to 31 December 2026. Eli
 
 | Pattern | Treatment | Rate | Notes |
 | --- | --- | --- | --- |
-| WINMART, VINMART, WINCOMMERCE | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
-| BIG C VIỆT NAM (now GO!) | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
-| AEON VIỆT NAM | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
-| BÁN LẺ (retail), NHÀ HÀNG (restaurant) | Check invoice lines | By line | Use the rate on each invoice line; alcohol, tobacco and sugary drinks stay at 10% |
-| CO.OPMART, SAIGON CO.OP | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
-| LOTTE MART VIỆT NAM | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%; classify each invoice line at its stated rate (Decree 174, art. 1.4) |
+| WINMART, VINMART, WINCOMMERCE | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%. Check each line's stated rate against eligibility; if an eligible line shows 10%, have the invoice corrected, then adjust input VAT (Decree 174, arts 1.4 and 1.5) |
+| BIG C VIỆT NAM (now GO!) | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%. Check each line's stated rate against eligibility; if an eligible line shows 10%, have the invoice corrected, then adjust input VAT (Decree 174, arts 1.4 and 1.5) |
+| AEON VIỆT NAM | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%. Check each line's stated rate against eligibility; if an eligible line shows 10%, have the invoice corrected, then adjust input VAT (Decree 174, arts 1.4 and 1.5) |
+| BÁN LẺ (retail), NHÀ HÀNG (restaurant) | Check invoice lines | By line | Check each line's stated rate against eligibility. Alcohol and tobacco stay at 10%, as do, from 1 January 2026, soft drinks above 5g sugar per 100ml; lower-sugar soft drinks can qualify for 8% (Decree 174, Annex II) |
+| CO.OPMART, SAIGON CO.OP | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%. Check each line's stated rate against eligibility; if an eligible line shows 10%, have the invoice corrected, then adjust input VAT (Decree 174, arts 1.4 and 1.5) |
+| LOTTE MART VIỆT NAM | Check invoice lines | By line | Mixed basket: lines may be exempt, 5%, 8% or 10%. Check each line's stated rate against eligibility; if an eligible line shows 10%, have the invoice corrected, then adjust input VAT (Decree 174, arts 1.4 and 1.5) |
 | PHÂN BÓN, THUỐC TRỪ SÂU (fertilizers/pesticides) | Input 5% | 5% | Agricultural inputs — reduced 5% |
 
 ### 3.6 SaaS — local Vietnamese suppliers (exempt, 8% or 10%)

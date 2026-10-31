@@ -220,15 +220,15 @@ Pay via ZATCA portal. The late-payment rate is unconfirmed (see Section 1).
 
 **Step 1: Entity base**: as Example A, 8,200,000.
 
-**Step 2 — Saudi/GCC share (60%)** (apportionment needs advisor confirmation; see §4.1):
-- Saudi-share base = 8,200,000 × 60% = 4,920,000
-- Zakat at 2.5777% = **SAR 126,822.84**
+**Step 2 — Saudi/GCC share (60%)** (PROVISIONAL: this guide's working assumption, not a confirmed ZATCA method; see §4.1):
+- Provisional Saudi-share base = 8,200,000 × 60% = 4,920,000. ZATCA's Zakat General Guideline 1445AH subjects only the Saudi share to Zakat, but neither it nor ZATCA's 2023 FAQ guideline sets out or works this multiplication of a whole-entity, limit-tested base; the FAQ's one mixed-company answer covers the financing-activity rules only.
+- Provisional Zakat at 2.5777% = **SAR 126,822.84**. Do not file on this figure until ZATCA or a Saudi Zakat adviser confirms the apportionment.
 
 **Step 3 — Foreign share (40%) — CIT (see sa-corporate-tax)**:
 - Foreign-share taxable profit = 1,800,000 × 40% = 720,000 (with foreign-specific CIT adjustments: *not* the Zakat base method)
 - CIT at 20% = **SAR 144,000** (illustrative — see sa-corporate-tax for full adjustments)
 
-**Step 4 — Combined liability**: Zakat 126,822.84 + CIT 144,000 = **SAR 270,822.84 total**.
+**Step 4 — Combined liability (provisional, because Step 2 is)**: Zakat 126,822.84 + CIT 144,000 = **SAR 270,822.84 total**.
 
 Both filed via ZATCA portal within 120 days of FYE. Zakat declaration and CIT declaration are typically filed together as a unified Mixed Entity Declaration.
 

@@ -688,7 +688,7 @@ When operating under uncertainty:
 - **Companies Law** — Royal Decree No. M/3 of 28/1/1437H (28 January 2015), as amended by Royal Decree No. M/132 of 1/12/1443H (28 June 2022) — major modernisation; Implementing Regulations issued by MoC.  _(Royal Decree No. M/3 of 28/1/1437H; Royal Decree No. M/132 of 1/12/1443H)_
 - **New Investment Law** — Royal Decree No. M/19 of 4/2/1446H (August 2024); Implementing Regulations effective 2025.  _(Royal Decree No. M/19 of 4/2/1446H)_
 - **Income Tax Law** — Royal Decree No. M/1 of 15/1/1425H (2004); Implementing Regulations 2004 as amended.  _(Royal Decree No. M/1 of 15/1/1425H)_
-- **Zakat Implementing Regulations**: Zakat years starting on or after 1 January 2024: Ministerial Resolution No. 1007 of 19/8/1445H, replacing Resolution No. 2216 of 7/7/1440H.  _(Ministerial Decision No. 2082 of 1/6/1438H)_
+- **Zakat Implementing Regulations**: Zakat years starting on or after 1 January 2024: Ministerial Resolution No. 1007 of 19/8/1445H, replacing Resolution No. 2216 of 7/7/1440H.  _(Ministerial Resolution No. 1007 of 19/8/1445H; ZATCA Zakat General Guideline 1445AH s 3.1)_
 - **VAT Law** — Royal Decree No. M/113 of 2/11/1438H (2017); VAT Implementing Regulations 2017 as amended; standard rate raised from 5% to 15% effective 1 July 2020.  _(Royal Decree No. M/113 of 2/11/1438H)_
 - **Real Estate Transaction Tax (RETT) Implementing Regulations** — Effective October 2020.  _(RETT Implementing Regulations, effective October 2020)_
 - **Excise Tax Law and Implementing Regulations** — 2017 with subsequent expansions of covered goods.  _(Excise Tax Law and Implementing Regulations, 2017)_

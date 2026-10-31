@@ -274,12 +274,14 @@ CIT @ 20%             = 20% × 10,000,000 = SAR  2,000,000
 
 #### 5.2.2 Saudi/GCC-share Zakat (reference — see sa-zakat).
 
+PROVISIONAL: this guide's working assumption, not a confirmed ZATCA method (see `sa-zakat` §4.1). ZATCA's Zakat General Guideline 1445AH subjects only the Saudi share to Zakat, but neither it nor ZATCA's 2023 FAQ guideline sets out or works this multiplication of a whole-entity, limit-tested base; the FAQ's one mixed-company answer covers the financing-activity rules only. Do not file on SAR 463,986 until ZATCA or a Saudi Zakat adviser confirms the apportionment.
+
 ```
 Saudi/GCC-share Zakat base = 60% × 30,000,000 = SAR 18,000,000
 Zakat @ 2.5777%            = 2.5777% × 18,000,000 = SAR    463,986
 ```
 
-#### 5.2.3 Total ZATCA liability.
+#### 5.2.3 Total ZATCA liability (provisional, because 5.2.2 is).
 
 ```
 CIT                          SAR 2,000,000
