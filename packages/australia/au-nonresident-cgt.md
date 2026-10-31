@@ -3,8 +3,8 @@ name: au-nonresident-cgt
 description: "Use this skill for any non-resident selling Australian assets. Trigger on: \"non-resident CGT Australia\", \"TAP test Australia\", \"taxable Australian property\", \"FRCGW\", \"foreign resident capital gains withholding\", \"15% withholding Australia\", \"12.5% withholding Australia\", \"clearance certificate ATO\", \"sell Australian shares non-resident\", \"sell Australian property non-resident\", \"Australian CGT non-resident seller\", \"no CGT discount non-resident Australia\". Covers the TAP test, the foreign resident rate scale, FRCGW withholding (15%, no threshold, from 1 January 2025), clearance certificates. For Australian residents see au-capital-gains."
 version: 1.6
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-10-11
+tax_year: 2026
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 1 — Quick Reference
 
-**Section 1 Quick Reference table**  _(ITAA 1997 Div 855; TAA 1953 Sch 1 Subdiv 14-D; [ATO, Tax rates: foreign resident](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-foreign-residents))_
+**Section 1 Quick Reference table**  _(ITAA 1997 Div 855; TAA 1953 Sch 1 Subdiv 14-D; [ATO, Tax rates: foreign resident](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-foreign-residents), which stops at 2025-26; [Income Tax Rates Act 1986 Sch 7 Pt II](https://www.legislation.gov.au/C2026C00300) for 2026-27)_
 
 | Field | Value |
 | --- | --- |
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Applies to | Non-residents of Australia disposing of Australian assets |
 | CGT rate (non-resident individual) | The foreign resident rate scale applies to the net gain: 30c to $135,000, then 37c to $190,000, then 45c. No Medicare levy. Test any retained CGT discount under section 115-115 (see the discount row below). Confirm the scale for the income year at [ATO, Tax rates: foreign resident](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-foreign-residents) |
 | Key test | Taxable Australian Property (TAP) test |
-| Withholding | 15% of the sale price for contracts signed from 1 January 2025, with no value threshold. 12.5% and a $750,000 threshold applied to contracts from 1 July 2017 to 31 December 2024 |
+| Withholding | 15% of the market value (normally the sale price) for contracts signed from 1 January 2025, with no value threshold. 12.5% and a $750,000 threshold applied to contracts from 1 July 2017 to 31 December 2024 |
 | Primary legislation | ITAA 1997 Div 855; TAA 1953 Sch 1 Subdiv 14-D |
 | Tax authority | ATO (ato.gov.au) |
 | Verified by | Pending — Australian CPA/CA sign-off required |
@@ -72,25 +72,26 @@ events on or after 1 October 2026.
 
 | Item | Non-resident treatment |
 | --- | --- |
-| CGT rate (individual, 2025-26 and 2026-27) | Progressive foreign-resident rates: 30% to $135,000; $40,500 plus 37% over $135,000 to $190,000; $60,850 plus 45% over $190,000. Apply to total taxable income, including the net capital gain. No Medicare levy. [ATO foreign-resident rates](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-foreign-residents) |
+| CGT rate (individual, 2025-26 and 2026-27) | Progressive foreign-resident rates: 30% to $135,000; $40,500 plus 37% over $135,000 to $190,000; $60,850 plus 45% over $190,000. Apply to total taxable income, including the net capital gain. No Medicare levy. [ATO foreign-resident rates](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-foreign-residents) (2025-26); [Income Tax Rates Act 1986 Sch 7 Pt II](https://www.legislation.gov.au/C2026C00300) (2026-27) |
 | General CGT discount | Do not automatically set the discount to zero. For otherwise eligible gains, apply the acquisition-date, residency-period and 8 May 2012 market-value rules in [ITAA 1997 section 115-115](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/115-115). Eligible Australian-resident periods and pre-8 May 2012 gains can preserve a partial discount. |
 | SBCGT concessions | Available if all basic conditions met (including active asset test) |
 | Main residence exemption | Generally unavailable if a foreign resident at disposal. The life-events exception requires a continuous foreign-residence period of 6 years or less and a qualifying terminal illness, death or relationship breakdown, together with the other exemption conditions. Citizenship or permanent residence alone does not qualify. [ITAA 1997 section 118-110](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-110) |
 | Cost base calculation | Same as residents |
 
 - **Gains, losses and the order of steps** — Calculate each gain from capital proceeds and the adjusted cost base, and each loss from the reduced cost base, then apply capital losses and concessions in the statutory order. An asset that is not TAP produces a disregarded loss as well as a disregarded gain.  _([ITAA 1997 Div 855](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/855-15))_
-- **Changes from 1 July 2027** — The Treasury Laws Amendment (Tax Reform No. 1) Act 2026 changes CGT arrangements for events from 1 July 2027. This guide's discount and rate treatment covers events before that date; apply the enacted transitional rules to later transactions. See `au-capital-gains.md`.  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text))_
+- **Changes from 1 July 2027** — The Treasury Laws Amendment (Tax Reform No. 1) Act 2026 changes CGT arrangements for events from 1 July 2027. This guide's discount and rate treatment covers events before that date; apply the enacted transitional rules to later transactions. See `au-capital-gains.md`. An individual who was a foreign or temporary resident at any time in the ownership period after 8 May 2012 gets no deemed sale at 30 June 2027 (s 112-155(1)(d)). **Unresolved: no ATO guidance found at 31 October 2026. Do not apply a discount outcome without specialist review; escalate.** The discount percentage for that individual's later gain (ss 115-100(c), 115-115), its interaction with s 115-20 and the application of Division 119 are open points (Section 9 of `au-capital-gains.md`).  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text))_
+- **Bill, not law: Schedule 4 (noted 31 October 2026)** — For the income year that includes 1 July 2027 and later years, Schedule 4 to the Tax Reform No. 3 Bill would give a 0% s 115-115 percentage to events from 1 July 2027 (new dwellings and affordable housing aside), extend the deemed sale to anyone Australian resident at any time in the ownership period, and pro-rate indexation by resident days. Status: Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. _([APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory Memorandum, ch 4](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf))_
 
 ## Section 5 — Foreign Resident Capital Gains Withholding (FRCGW)
 
-- **FRCGW obligation** — For contracts signed from 1 January 2025, the purchaser must withhold 15% of the sale price on Australian real property, with no value threshold. Contracts from 1 July 2017 to 31 December 2024 attracted 12.5% where the value was $750,000 or more.   _([ATO, Foreign residents capital gains withholding variations](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-residents-capital-gains-withholding-variations))_
+- **FRCGW obligation** — For contracts signed from 1 January 2025, the purchaser must withhold 15% of the market value on Australian real property, with no value threshold. Market value is usually the sale price, but where the price was negotiated at non-arm's length, for example between related parties, the purchaser must get a separate valuation from a professional valuer ([ATO, FRCGW overview](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-resident-capital-gains-withholding-overview)). Contracts from 1 July 2017 to 31 December 2024 attracted 12.5% where the value was $750,000 or more.   _([ATO, Foreign residents capital gains withholding variations](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-residents-capital-gains-withholding-variations))_
 - **FRCGW nature** — This is a payment on account (not a final tax). Actual tax liability is computed in the non-resident's Australian tax return.
 
 **FRCGW threshold table**
 
 | FRCGW threshold | None, for contracts signed from 1 January 2025 |
 | --- | --- |
-| Withholding rate | 15% of the sale price |
+| Withholding rate | 15% of the market value (normally the sale price) |
 | Who withholds | The buyer (purchaser) |
 | Remittance deadline | Day of settlement |
 
@@ -121,6 +122,7 @@ Always check the saving clause and specific treaty wording.
 
 - ITAA 1997 Division 855 (non-resident CGT)
 - Tax Administration Act 1953, Schedule 1, Subdivision 14-D (FRCGW)
+- Income Tax Rates Act 1986, Schedule 7, Part II (compilation C2026C00300), https://www.legislation.gov.au/C2026C00300
 - Treasury Laws Amendment (Strengthening Accountability for Tax Adviser Misconduct and Other Measures) Act 2026 (No. 86), Schedules 2, 3 and 8
 - ATO: ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax
 - ATO: Foreign resident capital gains withholding (ato.gov.au/FRCGW)

@@ -3,8 +3,9 @@ name: australia-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Australian taxpayers — individuals, sole traders, and small business owners. Trigger on phrases like "reduce my tax", "tax planning Australia", "salary vs dividends", "negative gearing", "instant asset write-off", "superannuation strategy", "CGT discount", "trust distribution", "income splitting", "GAAR", "Part IVA", or any question about structuring affairs to legally minimize Australian tax. Covers entity selection, deduction optimization, capital allowances, loss utilization, timing strategies, GST planning, superannuation, and red lines. ALWAYS read this skill before giving Australian tax optimization advice.
 version: 1.4
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-10-11
+tax_year: 2026
+tax_year_notes: "2026-27 primary; 2025-26 kept only as labelled prior-year figures"
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -23,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Australia (Commonwealth of Australia) |
 | Currency | AUD |
-| Tax year | 1 July – 30 June (2025–26) |
+| Tax year | 1 July – 30 June (2026-27; 2025-26 shown only as labelled prior-year figures) |
 | Primary legislation | Income Tax Assessment Act 1997 (ITAA 1997); Income Tax Assessment Act 1936 (ITAA 1936) |
 | Anti-avoidance | Part IVA, ITAA 1936 (General Anti-Avoidance Rule) |
 | Tax authority | Australian Taxation Office (ATO) |
@@ -31,24 +32,24 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Individual top rate | 45% + 2% Medicare levy = 47% effective |
 | Company rate (base rate entity) | 25% (aggregated turnover < $50m, ≤80% passive income) |
 | Company rate (other) | 30% |
-| CGT discount (individuals) | 50% on assets held >12 months |
+| CGT discount (individuals) | 50% on assets held >12 months, for CGT events before 1 July 2027; an asset held through that date generally keeps it only on the gain to 30 June 2027. From that date a discount continues for qualifying new residential dwellings (50%) and affordable housing (up to 60%) (Section 9) |
 | GST rate | 10% |
-| Superannuation guarantee | 12% (2025–26) |
+| Superannuation guarantee | 12% (2026-27; also 2025-26) |
 
-### Individual Tax Brackets (2025–26)
+### Individual Tax Brackets (2026-27, with 2025-26 as prior year)
 
-**Individual Tax Brackets (2025–26)**
+**Individual Tax Brackets (2026-27, with 2025-26 as prior year)**  _([ATO, Tax rates: Australian residents](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents))_
 
-| Taxable Income (AUD) | Rate | Cumulative Tax |
-| --- | --- | --- |
-| 0 – 18,200 | 0% | $0 |
-| 18,201 – 45,000 | 16% | $4,288 |
-| 45,001 – 135,000 | 30% | $31,288 |
-| 135,001 – 190,000 | 37% | $51,638 |
-| 190,001+ | 45% | — |
+| Taxable Income (AUD) | 2026-27 Rate | 2026-27 Cumulative Tax | 2025-26 Rate (prior year) | 2025-26 Cumulative Tax (prior year) |
+| --- | --- | --- | --- | --- |
+| 0 – 18,200 | 0% | $0 | 0% | $0 |
+| 18,201 – 45,000 | 15% | $4,020 | 16% | $4,288 |
+| 45,001 – 135,000 | 30% | $31,020 | 30% | $31,288 |
+| 135,001 – 190,000 | 37% | $51,370 | 37% | $51,638 |
+| 190,001+ | 45% | — | 45% | — |
 
-- **Medicare levy and surcharge** — Plus 2% Medicare levy on total taxable income. Medicare levy surcharge (1%–1.5%) applies if no private hospital cover and income exceeds $101,000 (single).
-- **2026-27 rates and the standard deduction** — Do not carry 2025-26 rates into 2026-27; the resident scale changed for 2026-27, and the basic tax on $180,000 taxable income in 2025-26 was $47,938 before Medicare levy and offsets. From 2026-27, section 25-130 provides a standard deduction for qualifying assessable labour income: the lesser of $1,000 and that income, reduced by specified actual deductions, to a minimum of zero. It is not an extra $1,000 on top of work expenses; certain insurance premiums and trade, business or professional association memberships are excluded from the reduction.  _([ATO, Tax rates: Australian residents](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents); [ITAA 1997 (Cth) s 25-130](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/25-130))_
+- **Medicare levy and surcharge** — Plus 2% Medicare levy on total taxable income. Medicare levy surcharge (1%–1.5%) applies if no private hospital cover and income exceeds $105,000 (single) in 2026-27 ($101,000 in 2025-26).  _([ATO, MLS thresholds](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates))_
+- **2026-27 rates and the standard deduction** — Do not carry 2025-26 rates into 2026-27. The basic tax on $180,000 taxable income is $47,670 in 2026-27 and was $47,938 in 2025-26, before Medicare levy and offsets. From 2026-27, section 25-130 provides a standard deduction for qualifying assessable labour income: the lesser of $1,000 and that income, reduced by specified actual deductions, to a minimum of zero. It is not an extra $1,000 on top of work expenses; certain insurance premiums and trade, business or professional association memberships are excluded from the reduction.  _([ATO, Tax rates: Australian residents](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents); [ITAA 1997 (Cth) s 25-130](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/25-130))_
 
 ## Section 2 — Income Splitting & Structuring
 
@@ -56,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Sole trader taxation** — all profit taxed at individual marginal rates (up to 47%). Simple structure, ABN-based. Losses offset other personal income (subject to non-commercial loss rules, s 35-10 ITAA 1997). No separate return.  _(s 35-10 ITAA 1997)_
 - **Company (Pty Ltd) taxation** — profits taxed at 25% (base rate entity) or 30%. Profits retained in the company are not taxed again until distributed. Franking credits attached to dividends prevent double taxation. Division 7A (ITAA 1936, ss 109C–109T) treats loans and payments to shareholders/associates as unfranked dividends unless complying loan agreements are in place.  _(Division 7A, ITAA 1936, ss 109C–109T)_
-- **Rule of thumb — incorporation threshold** — incorporation typically benefits when taxable profit consistently exceeds ~$100,000, allowing retention at 25% vs 47% marginal. Below $45,000 profit, sole trader is usually superior (16% marginal vs 25% corporate + extraction costs).
+- **Rule of thumb — incorporation threshold** — incorporation typically benefits when taxable profit consistently exceeds ~$100,000, allowing retention at 25% vs a 32% marginal rate at that level (30% plus 2% Medicare levy; 47% starts above $190,000). Below $45,000 profit, sole trader is usually superior (15% marginal in 2026-27, 16% in 2025-26, vs 25% corporate + extraction costs).
 - **Model the whole position** — Do not recommend incorporation from profit alone: include company tax, personal tax on remuneration and distributions, superannuation, payroll obligations, administration and access to cash. Company money retained after tax is not the shareholder's after-tax spending money, base rate entity status must be checked for the year, and the personal services income rules can attribute an individual's income back to them regardless of the entity.  _([TR 2022/3](https://www.ato.gov.au/law/view/view.htm?docid=TXR%2FTR20223%2FNAT%2FATO%2F00001))_
 
 ### Salary vs Dividends (Company Directors)
@@ -70,10 +71,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Discretionary (family) trusts allow income distribution to adult family members in lower brackets. The trustee resolution must be made before 30 June. Key constraints:
 
-- **Section 100A reimbursement agreements** — trust distributions to low-income beneficiaries who redirect funds back to the primary earner are void.  _(Section 100A (ITAA 1936))_
 - **How section 100A operates** — Section 100A applies where a reimbursement agreement exists: it treats the beneficiary as not presently entitled for tax purposes and exposes the trustee to tax on that share. It does not make every distribution to a lower-income beneficiary void. Inspect the deed, beneficiary eligibility, valid resolutions made before 30 June and who receives the economic benefit; never backdate a resolution.  _([TR 2022/4](https://www.ato.gov.au/law/view/document?docid=TXR/TR20224/NAT/ATO/00001); section 100A)_
 - **Family trust election (FTE)**: Assess whether an election is needed for the intended treatment. It can help a discretionary trust meet the at-risk holding requirements for franking credits where no exception applies. Eligible beneficiaries may instead use the small-shareholder exception. Losses can be carried forward under the ordinary trust-loss rules; an FTE simplifies their use through a modified income-injection test. An election does not automatically establish entitlement to credits or deductions. Consider the lasting family-group distribution restrictions before electing. (ITAA 1936 Sch 2F ss 272-80 and 272-140; ITAA 1936 ss 160APHL and 160APHT, the qualified person and small shareholder rules.)
 - **Minor beneficiaries:** For a resident prescribed person under Division 6AA, eligible income up to $416 is tax-free; $417-$1,307 is taxed at 66% of the excess over $416; $1,308 or more is taxed at 45% of the whole eligible amount. Check excepted-person and excepted-income rules separately. (ITAA 1936 Division 6AA; Income Tax Rates Act 1986 Sch 11 Pt I.)
+- **Proposed trust minimum tax (Bill, not law)** — Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. As introduced, they propose a 30% minimum tax on the net income of certain discretionary trusts from 1 July 2028, payable by the trustee, with a non-refundable offset for eligible non-corporate beneficiaries, roll-over relief for restructures from 1 July 2027 to 30 June 2030, and an excluded election trust election in the 2028-29 income year. Flag this in any structuring decision running past 1 July 2028 and do not apply it as enacted; see `au-trust-distributions`.  _([APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Bills Digest No. 24, 2026-27](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2627/27bd024))_
 
 ### Superannuation as Income Splitting
 
@@ -86,7 +87,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 | Deduction | Legislation | Notes |
 | --- | --- | --- |
-| Home office running expenses | s 8-1 ITAA 1997 | Fixed rate 70c/hour for 2025-26 or actual cost. Must keep contemporaneous records (timesheets, diary) |
+| Home office running expenses | s 8-1 ITAA 1997 | Fixed rate 70c/hour for 2025-26 or actual cost. The [ATO page](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method) (updated 8 June 2026) lists no 2026-27 rate, so confirm the rate before using it for 2026-27. Must keep contemporaneous records (timesheets, diary) |
 | Self-education expenses | s 8-1 | Must have sufficient connection to current employment/business. The former $250 reduction was removed from 2022-23 |
 | Phone and internet | s 8-1 | Apportion business use %. ATO accepts a representative 4-week diary |
 | Income protection insurance | s 8-1 | Premiums for policies replacing lost income are deductible |
@@ -102,10 +103,10 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ## Section 4 — Capital Allowances Optimization
 
-### Instant Asset Write-Off (2025–26)
+### Instant Asset Write-Off
 
-- **Instant asset write-off eligibility** — Small businesses (aggregated turnover <$10m) can immediately deduct assets costing less than $20,000 (per asset) first used or installed ready for use by 30 June 2026.  _(Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025)_
-- **Simplified depreciation pool** — Assets ≥$20,000 enter the small business simplified depreciation pool: 15% first year, 30% declining balance thereafter. Pool balance <$20,000 at 30 June 2026 can be written off entirely.
+- **Instant asset write-off eligibility** — Small businesses (aggregated turnover <$10m) using simplified depreciation can immediately deduct assets costing less than $20,000 (per asset) first used or installed ready for use in 2026-27, under the ongoing threshold below. For 2025-26 (prior year), the same limit applied to assets first used or installed ready for use by 30 June 2026.  _(Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025)_
+- **Simplified depreciation pool** — Assets ≥$20,000 enter the small business simplified depreciation pool: 15% first year, 30% declining balance thereafter. A pool balance <$20,000 at the end of the income year can be written off entirely (s 328-210(1)).
 - **Ongoing $20,000 threshold from 1 July 2026** — The Treasury Laws Amendment (Tax Reform No. 2) Act 2026, assented to on 26 August 2026 with its schedules commenced on 1 October 2026, makes the $20,000 instant asset write-off threshold ongoing, with application provisions covering assets first used or installed from 1 July 2026. Simplified depreciation eligibility and the taxable-use rules still apply, and a deduction reduces taxable income without reimbursing the purchase price.  _([Treasury Laws Amendment (Tax Reform No. 2) Act 2026](https://www.legislation.gov.au/C2026A00071/asmade/text))_
 
 ### General Depreciation
@@ -121,8 +122,9 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ### Motor Vehicles
 
-- **Car cost limit for depreciation (2025–26)** — $69,674 AUD (Only the business-use portion of this amount can be depreciated)
-- **Business-use substantiation** — Business-use percentage must be substantiated via logbook (minimum continuous 12-week period, valid for 5 years) or cents-per-km method (88c/km for 2025-26, max 5,000 business km = $4,400; 91c/km from 2026-27).
+- **Car cost limit for depreciation** — $69,883 AUD for a car first used or leased in 2026-27; $69,674 in 2025-26 (prior year). (Only the business-use portion of this amount can be depreciated)  _([ATO, Car thresholds from 1 July](https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/car-thresholds-from-1-july))_
+- **Business-use substantiation** — Business-use percentage must be substantiated via logbook (minimum continuous 12-week period, valid for 5 years).
+- **Cents-per-km alternative** — Cents per km is a separate deduction method. It does not establish a business-use percentage, and its rate already covers running expenses and depreciation. For 2026-27: 91c/km, max 5,000 business km = $4,550. For 2025-26 (prior year): 88c/km, max $4,400.  _([ATO, Cents per kilometre method](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/deductions/deductions-for-motor-vehicle-expenses/cents-per-kilometre-method); [ATO, 2026 rate determination](https://softwaredevelopers.ato.gov.au/CentsperKilometreDeductionRateforCarExpenses))_
 
 ## Section 5 — Loss Utilization
 
@@ -137,9 +139,9 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ### Loss Carry-Back (Companies)
 
-- **2025-26**: The original temporary loss carry-back scheme does not cover losses made in this income year. Do not apply the former $5 billion threshold as a current entitlement.
+- **2025-26 (prior year)**: The original temporary loss carry-back scheme does not cover losses made in this income year. Do not apply the former $5 billion threshold as a current entitlement.
 - **Original temporary scheme**: Eligible corporate entities could use losses from 2019-20 to 2022-23, claiming in 2020-21 to 2022-23 returns against eligible earlier liabilities. The turnover test used a $5 billion small-business-entity threshold. Apply the original entity, loss, lodgement and franking-account conditions. See [ATO original scheme](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/how-loss-carry-back-tax-offsets-work) and [original eligibility rules](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/eligibility-for-the-tax-offset).
-- **Income years starting on or after 1 July 2026**: The new scheme allows eligible corporate tax entities with aggregated annual global turnover below $1 billion to carry revenue losses back to either or both of the preceding 2 income years. The refundable offset is limited by the franking-account balance. First claims are in 2026-27 returns. This is separate from the 2025-26 planning period. See [ATO 2026 reform](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-tax-loss-carry-back).
+- **Income years starting on or after 1 July 2026**: A corporate tax entity that is not a significant global entity for the loss year (s 160-5) can carry revenue losses back to either or both of the preceding 2 income years, where it has an income tax liability in that year and its returns for the current year and previous 5 years are lodged, not required or assessed. An entity is a significant global entity if it is, or is grouped under, a global parent with annual global income of $1 billion or more, or the Commissioner so determines (s 960-555). The refundable offset is limited by the franking-account balance, except for an entity that was a foreign resident (other than an NZ franking company) for more than half of each eligible carry back year it carries an amount back to (s 160-10(3)). First claims are in 2026-27 returns. It does not cover a loss made in 2025-26. See [Tax Reform No. 2 Act 2026, Sch 1](https://www.legislation.gov.au/C2026A00071/asmade/text), [s 960-555](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/960-555) and [ATO 2026 reform](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-tax-loss-carry-back).
 
 ## Section 6 — Timing Strategies
 
@@ -150,9 +152,9 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | Defer income to next FY | Delay invoicing until after 30 June if cash-basis taxpayer. For accrual-basis, delay delivery/completion |
 | Accelerate deductions before 30 June | Prepay up to 12 months of deductible expenses (rent, insurance, subscriptions) — s 82KZM ITAA 1936 |
 | Bring forward asset purchases | Use instant asset write-off before 30 June deadline. Asset must be first used or installed ready for use |
-| Concessional super contribution | Maximise contributions before 30 June — $30,000 cap (2025–26). Carry-forward unused cap available if total super balance <$500,000 |
+| Concessional super contribution | Maximise contributions before 30 June — $32,500 cap (2026-27; $30,000 in 2025-26). Carry-forward unused cap available if total super balance <$500,000 |
 | Capital gains harvest | Realise capital losses before 30 June to offset gains. Wash sale rules: ATO will scrutinise buybacks of substantially similar assets |
-| Defer capital gains | Hold assets >12 months to access 50% CGT discount (individuals and trusts) |
+| Defer capital gains | Hold assets >12 months to access 50% CGT discount (individuals and trusts) on CGT events before 1 July 2027. For an asset held through that date, generally only the gain to 30 June 2027 keeps the discount. Later growth generally moves to cost base indexation, with a conditional 30% minimum tax for resident individuals, unless the new residential dwelling or affordable housing rules apply, so deferring a sale past that date does not generally secure the discount on later growth; see Section 9 and `au-capital-gains` |
 | Small business CGT concessions | Div 152: 15-year exemption, 50% active asset reduction, retirement exemption ($500k lifetime cap), rollover. Maximum net asset value no more than $6 million immediately before the CGT event, or the qualifying turnover route below $2 million. Apply aggregation, exclusions, the active-asset test and all other concession conditions; see `au-small-business-cgt` |
 
 ## Section 7 — GST Optimization
@@ -161,7 +163,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 | Topic | Detail |
 | --- | --- |
-| Registration threshold | Mandatory if current or projected GST turnover ≥$75,000 ($150,000 for non-profits). Voluntary registration below threshold to claim input tax credits |
+| Registration threshold | Mandatory if GST turnover meets $75,000 ($150,000 for non-profits): projected GST turnover at or above it, or current GST turnover at or above it unless the Commissioner is satisfied projected GST turnover is below it ([GST Act s 188-10(1)](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/188-10)). Voluntary registration below threshold to claim input tax credits |
 | Cash vs accrual reporting | Cash basis available if aggregated turnover <$10m. Defers GST on income until payment received |
 | Input tax credits | Claim GST on business purchases. Apportionment required for mixed (business/private) use |
 | GST-free supplies | Exports, health, education, some food — no GST charged, but input credits still claimable. Valuable for exporters |
@@ -179,21 +181,31 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 | Strategy | Detail | Legislation |
 | --- | --- | --- |
-| Concessional contributions | Cap $30,000/year (2025–26). Tax-deductible for self-employed. Taxed at 15% in the fund | s 291-20 ITAA 1997 |
+| Concessional contributions | Cap $32,500/year (2026-27; $30,000 in 2025-26). Tax-deductible for self-employed. Taxed at 15% in the fund | s 291-20 ITAA 1997 |
 | Carry-forward unused cap | Unused concessional cap from up to 5 prior years if total super balance <$500,000 at prior 30 June | s 291-170 |
-| Non-concessional contributions | Cap $120,000/year (or $360,000 under bring-forward rule over 3 years). Not deductible, but earnings taxed at max 15% in super | s 292-85 |
+| Non-concessional contributions | Cap $130,000 for 2026-27 ($120,000 in 2025-26); bring-forward depends on total super balance (table below). Not deductible. Earnings are taxed at up to 15% in the fund for balances up to the Division 296 threshold | s 292-85 |
 | Salary sacrifice | Pre-tax super contributions reduce assessable income. Counted towards concessional cap |  |
 | Spouse contribution offset | Contribute to low-income spouse's super for tax offset up to $540 | s 290-230 |
-| Government co-contribution | For 2025-26, eligible undeducted personal contributions attract a 50% match, up to $500. Lower income threshold $47,488; a reduced amount may apply above it and below $62,488. Apply the eligibility checks below | *Superannuation (Government Co-contribution for Low Income Earners) Act 2003* (Cth) |
+| Government co-contribution | For 2026-27, eligible undeducted personal contributions attract a 50% match, up to $500. Lower income threshold $49,293; a reduced amount may apply above it and below $64,293 (2025-26, prior year: $47,488 and $62,488). Apply the eligibility checks below. [ATO, Government contributions](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/government-contributions) | *Superannuation (Government Co-contribution for Low Income Earners) Act 2003* (Cth) |
 | Division 293 tax | Additional 15% contributions tax on individuals with income + concessional contributions >$250,000 | Div 293 |
+| Division 296 tax | From 2026-27, tax on a share of earnings where total super balance exceeds $3 million (15%), plus a further 10% on the share above $10 million, so the headline rate on those shares reaches up to 30% and 40%. Thresholds are indexed from 2027-28. For 2026-27 only, liability is tested on the balance at 30 June 2027. Check this before any contribution or retention strategy at those balances; see `au-smsf` | ITAA 1997 Div 296 ([Act No. 8 of 2026](https://www.legislation.gov.au/C2026A00008/asmade/text)); rates: [Imposition Act, No. 9 of 2026, s 5](https://www.legislation.gov.au/C2026A00009/asmade/text) |
 
-**Co-contribution eligibility**: Check eligible personal contributions to the person's own complying fund or RSA, the 10% employment/business income test, tax-return lodgement, contribution-cap compliance, prior-30 June total super balance, age below 71 at year end and temporary-visa restrictions and exceptions. Use the co-contribution income measure, including its business-deduction adjustment; salary alone may not be the relevant amount. Deducted contributions and spouse contributions do not qualify. For an otherwise eligible person with $46,000 relevant income and $1,000 eligible undeducted contributions in 2025-26, the co-contribution is **$500**. (Superannuation (Government Co-contribution for Low Income Earners) Act 2003.)
+**Non-concessional bring-forward (2026-27)**: Tested on total super balance at 30 June 2026; the other s 292-85 conditions, including age, also apply. For 2025-26 (prior year) the maximum was $360,000 over 3 years, at a balance under $1.76 million at 30 June 2025.  _([ATO, Contributions caps](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps); [ITAA 1997 s 292-85](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/292-85))_
+
+| Total super balance at 30 June 2026 | Available amount |
+| --- | --- |
+| Under $1.84 million | $390,000 over 3 years |
+| $1.84 million to under $1.97 million | $260,000 over 2 years |
+| $1.97 million to under $2.1 million | $130,000, no bring-forward |
+| $2.1 million or more | Nil |
+
+**Co-contribution eligibility**: Check eligible personal contributions to the person's own complying fund or RSA, the 10% employment/business income test, tax-return lodgement, contribution-cap compliance, prior-30 June total super balance, age below 71 at year end and temporary-visa restrictions and exceptions. Use the co-contribution income measure, including its business-deduction adjustment; salary alone may not be the relevant amount. Deducted contributions and spouse contributions do not qualify. For an otherwise eligible person with $46,000 relevant income and $1,000 eligible undeducted contributions in 2026-27, the co-contribution is **$500**. (Superannuation (Government Co-contribution for Low Income Earners) Act 2003.)
 
 - **2026-27 concessional cap** — The general concessional cap is $32,500 for 2026-27, up from $30,000 in 2025-26. Count contributions across all funds, including employer and salary sacrifice amounts, and check fund receipt dates and the actual unused amounts before relying on the carry-forward. Before claiming a personal contribution deduction, lodge the notice of intent and obtain the fund's acknowledgement, and weigh contributions tax, Division 293 and preservation against the personal tax saving.  _([ATO, Concessional contributions cap](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/concessional-contributions-cap); [ATO, Personal super contributions](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/personal-super-contributions))_
 
 ### Medicare Levy Surcharge Avoidance
 
-- **MLS avoidance** — Private hospital cover avoids 1%–1.5% MLS if income >$101,000 (single) or >$202,000 (family). Cost of basic hospital cover is often less than the MLS.
+- **MLS avoidance** — Private hospital cover avoids 1%–1.5% MLS if income >$105,000 (single) or >$210,000 (family) in 2026-27 ($101,000 or $202,000 in 2025-26). The family threshold rises by $1,500 for each MLS dependent child after the first. Cost of basic hospital cover is often less than the MLS.
 
 ## Section 9 — Investment & Retirement
 
@@ -201,15 +213,15 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 | Strategy | Detail |
 | --- | --- |
-| CGT 50% discount | Individuals and trusts — hold assets >12 months for 50% discount on net capital gain |
-| Negative gearing | Investment property/share portfolio borrowing costs exceed income, so the net loss offsets other income. From 2027-28, excess deductions on residential dwellings acquired after 7:30 pm on 12 May 2026 (other than new residential dwellings) are quarantined under s 26-55; see `au-rental-property` |
+| CGT 50% discount | Individuals and trusts — hold assets >12 months for 50% discount on net capital gain, on CGT events before 1 July 2027. From that date, cost base indexation generally replaces it for resident individuals and trusts, and Division 119 can add tax for a resident individual. An individual who is not a foreign or temporary resident keeps 50% on a new residential dwelling (s 115-102), directly or through a trust or partnership. Affordable housing used on at least 1,095 days can reach up to 60% (s 115-125). Indexation may be chosen instead in some cases. See the note below and `au-capital-gains` |
+| Negative gearing | Investment property/share portfolio borrowing costs exceed income, so the net loss offsets other income. From 2027-28, excess deductions on residential dwellings acquired after 7:30 pm on 12 May 2026 (other than new residential dwellings) are quarantined under s 26-155; see `au-rental-property` |
 | Franking credits | Australian company dividends carry franking credits. Excess credits refundable for individuals and super funds |
-| Super in pension phase | The 2025-26 general transfer balance cap is $2 million. Establish the member's personal cap and previous retirement-phase use separately. The cap limits transfers into retirement phase, not later investment earnings. Earnings supporting qualifying retirement-phase income streams may be exempt, subject to the fund and pension conditions |
+| Super in pension phase | The general transfer balance cap is $2.1 million for 2026-27 ($2 million in 2025-26) ([ATO](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/transfer-balance-cap)). Establish the member's personal cap and previous retirement-phase use separately. The cap limits transfers into retirement phase, not later investment earnings. Earnings supporting qualifying retirement-phase income streams may be exempt, subject to the fund and pension conditions. Division 296 is tested on the member's total super balance across all interests |
 | Transition to retirement (TTR) | Access super as an income stream from preservation age while still working. A TTR income stream outside retirement phase generally has fund earnings taxed at 15%. It can enter retirement phase automatically at age 65, after a qualifying release condition is notified to the provider, or when paid to a reversionary beneficiary. The existing stream need not restart to qualify for the earnings exemption; check the conditions below |
 
 **TTR retirement-phase conditions**: A benefit must be currently payable. Before age 65, the notified release condition must be retirement, terminal medical condition or permanent incapacity with a nil cashing restriction. Reversionary beneficiaries have a separate entry route. Apply the transfer-balance rules and remaining pension/exempt-current-pension-income conditions; entering retirement phase does not waive them. The stream remains a TRIS. (ITAA 1997 ss 307-80 and 295-385; SIS Regulations 1994 Sch 1.)
 
-- **Model the transaction year** — The Tax Reform No. 1 Act changes CGT from 1 July 2027 and restricts excess residential rental deductions from 2027-28, with transitional rules and exceptions, and the working Australians tax offset also starts in 2027-28. Model capital gains and rental deductions for the actual year of the transaction and keep a dated comparison with assumptions, eligibility evidence, implementation deadlines and whole-year tax and cash effects.  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text))_
+- **Model the transaction year** — The Tax Reform No. 1 Act limits the general 50% discount to CGT events before 1 July 2027, with continuing discounts from that date for new residential dwellings (s 115-102) and affordable housing (s 115-125). Otherwise, for events from that date, resident individuals and trusts generally use cost base indexation, and an asset held through that date is generally deemed sold and reacquired so that only the gain to 30 June 2027 keeps the discount. Division 119 applies only to an individual who is an Australian resident at any time in the year and has a minimum tax gap amount: extra income tax brings the remaining residential and non-residential capital gains, less gift and conservation covenant deductions, to 30% before offsets. Gains under s 115-102 and s 115-125 are excluded, and s 119-15 exempts a person who receives a listed social support, veterans' or military compensation payment during the year (see `au-capital-gains`). The Act also restricts excess residential rental deductions from 2027-28, with transitional rules and exceptions, and the working Australians tax offset also starts in 2027-28. Model capital gains and rental deductions for the actual year of the transaction and keep a dated comparison with assumptions, eligibility evidence, implementation deadlines and whole-year tax and cash effects.  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text))_
 
 ## Section 10 — Red Lines (GAAR & Scrutiny Triggers)
 
@@ -223,14 +235,13 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 | Trigger | Risk |
 | --- | --- |
-| Trust distributions to low-income beneficiaries with reimbursement agreements | s 100A — voided, trustee taxed at top rate |
+| Trust distributions to low-income beneficiaries with reimbursement agreements | s 100A — beneficiary deemed not presently entitled, trustee taxed at top rate |
 | Division 7A non-complying loans | Deemed unfranked dividend |
 | Non-commercial losses claimed without the required income gate and a test, exception or discretion | Review Division 35 deferral and amend if necessary |
 | Large work-related deductions vs income | Risk of audit |
 | Wash sales around 30 June | CGT loss disallowed |
 | Artificial income splitting via interposed entities | Part IVA application |
 | Personal services income (PSI) through company or trust | PSI rules attribute income back to individual (Div 86–87) |
-| Excessive salary sacrifice to reduce Division 293 exposure | ATO scrutiny, potential SG shortfall |
 | Contractor vs employee misclassification | Super guarantee charge, penalties |
 | Cryptocurrency — unreported disposal events | ATO data-matching from exchanges |
 
@@ -261,13 +272,13 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ### Example 1 — Sole Trader Incorporates
 
-**Before:** Sole trader, $180,000 taxable income. Under the 2025-26 resident bands, tax before offsets is $4,288 + $90,000 x 30% + $45,000 x 37% = $47,938, plus $3,600 Medicare = $51,538.
+**Before:** Sole trader, $180,000 taxable income. Under the 2026-27 resident bands, tax before offsets is $4,020 + $90,000 x 30% + $45,000 x 37% = $47,670, plus $3,600 Medicare = $51,270.
 
-**After:** Assume the company qualifies for the 25% rate, deducts an $80,000 salary and $12,000 super contribution, and has $88,000 taxable profit. Company tax is $22,000. Personal tax before offsets on the salary is $14,788 plus $1,600 Medicare. Combined company and personal income tax is $38,388, a $13,150 difference before offsets, contributions tax, administration costs and any later tax on extracting retained profits. This is a retained-profit illustration; it does not establish a final saving from incorporation.
+**After:** Assume the company qualifies for the 25% rate, deducts an $80,000 salary and $12,000 super contribution, and has $88,000 taxable profit. Company tax is $22,000. Personal tax before offsets on the salary is $14,520 plus $1,600 Medicare. Combined company and personal income tax is $38,120, a $13,150 difference before offsets, any s 25-130 standard deduction, contributions tax, administration costs and any later tax on extracting retained profits. This is a retained-profit illustration; it does not establish a final saving from incorporation.
 
 ### Example 2 — Maximising Super Contributions
 
-Sole trader, $120,000 profit. Claims $30,000 concessional super contribution (deductible). Taxable income drops to $90,000. Tax saving at 30% marginal: $9,000 less 15% super tax ($4,500) = **net saving $4,500 + compounding in super environment.**
+Sole trader, 2026-27, $120,000 profit. Claims $32,500 concessional super contribution (deductible). Taxable income drops to $87,500. Income tax falls from $26,520 to $16,770 ($9,750), and the ordinary 2% Medicare levy from $2,400 to $1,750 ($650). Combined saving $10,400 less 15% super tax ($4,875) = **net saving $5,525 + compounding in super environment.** This assumes no Medicare levy reduction or surcharge.
 
 ### Example 3 — Instant Asset Write-Off
 

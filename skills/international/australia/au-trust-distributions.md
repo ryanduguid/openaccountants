@@ -6,7 +6,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context (three live fronts).** (1) *Commissioner of Taxation v Bendel* [2026] HCA 18 (10 June 2026): a UPE owed to a corporate beneficiary is not, of itself, a Div 7A loan; ATO decision impact statement 26 June 2026 accepts it -- see Rule 10 and the au-div7a skill. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount for individuals, trusts and partnerships is replaced by cost base indexation plus a 30% minimum rate on capital gains, with new trustee capital-gain categorisation/statement obligations -- LAW, see Rule 14. (3) A 30% minimum tax on discretionary trust distributions from 1 July 2028 (testamentary trusts carved out) was ANNOUNCED in the 2026-27 Budget and is NOT in that Act -- consultation closed 31 July 2026, not yet law. Verify all three before relying.
+> **Law-change context (three live fronts).** (1) *Commissioner of Taxation v Bendel* [2026] HCA 18 (10 June 2026): a UPE owed to a corporate beneficiary is not, of itself, a Div 7A loan; ATO decision impact statement 26 June 2026 accepts it -- see Rule 10 and the au-div7a skill. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount for individuals, trusts and partnerships is replaced by cost base indexation plus a 30% minimum rate on capital gains, with new trustee capital-gain categorisation/statement obligations -- LAW, see Rule 14. (3) A 30% minimum tax on the net income of discretionary trusts from 1 July 2028 (testamentary trusts carved out, subject to conditions) is NOT in that Act. It is in Bills, NOT LAW: Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026 -- see Rule 14. Verify all three before relying.
 
 ## Section 1 -- Quick reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Capital-gain specific entitlement recording | Within 2 months of year end (31 August) via appointment of trust capital |
 | Franked-distribution specific entitlement recording | By 30 June (in the trust's records, in its character) |
 | s 99A rate (no present entitlement) | 45% + 2% Medicare levy = 47% flat, no tax-free threshold |
-| Div 6AA minor's eligible income (resident) | $0-$416 nil; $417-$1,307 = 66% of excess over $416; over $1,307 = 45% of the WHOLE amount |
+| Div 6AA minor's eligible income (resident; ATO table published to 2025-26, verify for 2026-27) | $0-$416 nil; $417-$1,307 = 66% of excess over $416, or the top-slice amount if greater (Rule 5); over $1,307 = 45% of the WHOLE amount |
 | Family trust distribution tax (FTDT) | 47% of distributions outside the family group; due 21 days after the distribution; non-deductible |
 | TFN withholding (closely held trusts, no TFN quoted) | 47%; annual report 30 Sep; activity statement + payment 28 Oct; quarterly TFN report ABOLISHED from 1 July 2026 |
 | UPE to corporate beneficiary | NOT a Div 7A loan while passive (*Bendel* [2026] HCA 18); s 100A and Subdiv EA survive -- see au-div7a |
@@ -69,7 +69,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-AU-TR-1 -- Deceased estates and testamentary trusts** — *Trigger:* deceased estate in administration, testamentary trust, s 99 concessional-rate questions, excepted-income status of testamentary distributions to minors. *Message:* "Deceased estate and testamentary trust taxation (s 99 discretion, stages of administration, Div 6AA excepted income, and the announced minimum-tax carve-out) is out of scope. Escalate to a qualified practitioner."  _(s 99; Div 6AA)_
+- **R-AU-TR-1 -- Deceased estates and testamentary trusts** — *Trigger:* deceased estate in administration, testamentary trust, s 99 concessional-rate questions, excepted-income status of testamentary distributions to minors. *Message:* "Deceased estate and testamentary trust taxation (s 99 discretion, stages of administration, Div 6AA excepted income, and the proposed minimum-tax carve-out) is out of scope. Escalate to a qualified practitioner."  _(s 99; Div 6AA)_
 - **R-AU-TR-2 -- Special disability trusts** — *Trigger:* special disability trust or vulnerable-beneficiary trust. *Message:* "Special disability trusts have their own concessional rules and social-security interactions. Out of scope. Escalate."
 - **R-AU-TR-3 -- Non-resident beneficiaries or trustees** — *Trigger:* any non-resident beneficiary, foreign trust, or beneficiary who changed residency. *Message:* "Trustee assessment under s 98(2A)/(3)/(4), withholding, treaty issues and the *Greensill* line on capital gains are out of scope. Escalate before any resolution is signed."  _(s 98(2A)/(3)/(4); *Greensill*)_
 - **R-AU-TR-4 -- Circular trust distributions / TBNT** — *Trigger:* trust-to-trust distributions that loop back (directly or indirectly), or trustee beneficiary statement failures. *Message:* "Circular distributions attract trustee beneficiary non-disclosure tax at 47% (s 102UM) -- family trusts included. Computation and remediation are out of scope. Escalate."  _(s 102UM)_
@@ -130,7 +130,7 @@ Bamford proportionate approach: each beneficiary is assessed on their PERCENTAGE
 Resolutions give grandchild G1 (age 9) $416 and grandchild G2 (age 12) $1,200, both eligible (unearned) income; trustee assessed under s 98(1) as they are under a legal disability.
 
 - G1: $416 sits in the $0-$416 band -> **tax nil** (assuming no other income).
-- G2: 66% x ($1,200 - $416) = 66% x $784 = **$517.44** -- a 43% average rate on a $1,200 entitlement.
+- G2: 66% x ($1,200 - $416) = 66% x $784 = **$517.44** (no other income, so no top-slice adjustment) -- a 43% average rate on a $1,200 entitlement.
 - Had G2 received $5,000: over $1,307, so 45% x THE WHOLE $5,000 = **$2,250** (plus Medicare levy where applicable; LITO cannot reduce tax on minors' unearned income).
 
 Distributing eligible income beyond $416 per minor is almost always pointless. Excepted persons (e.g. minors in full-time work, certain disabled minors) and excepted income (employment, testamentary trust income, compensation, deceased estate income) escape Div 6AA -- testamentary questions escalate (R-AU-TR-1).
@@ -173,7 +173,7 @@ If s 100A applies (TR 2022/4 elements: connection, benefit-to-another, tax-reduc
 
 ### Rule 5 -- Division 6AA minors' rates
 
-Applies to "eligible taxable income" (unearned income, including discretionary trust distributions) of resident minors who are not excepted persons: $0-$416 nil; $417-$1,307 taxed at 66% of the excess over $416; over $1,307 the ENTIRE amount at 45% (cliff, not marginal).
+Applies to "eligible taxable income" (unearned income, including discretionary trust distributions) of resident minors who are not excepted persons: $0-$416 nil; $417-$1,307 taxed at 66% of the excess over $416; over $1,307 the ENTIRE amount at 45% (cliff, not marginal). For the middle band, use the greater of that amount and the tax if eligible taxable income were the top slice of total taxable income at general rates. The ATO table is published to 2025-26: verify it before a 2026-27 calculation ([ATO: tax rates for under-18s](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-if-you-re-under-18-years-old)).
 
 For non-resident minors, the verified 2024-25 and 2025-26 table is separate: $0 to $416, 30% of the entire amount; $417 to $713, $124.80 plus 66% of the excess over $416; over $713, 45% of the entire amount. For the middle band, use the greater of that amount and the tax if eligible taxable income were the top slice of total taxable income at general rates. At $500 with no top-slice adjustment, tax is $124.80 + ($500 - $416) x 66% = $180.24. Do not use the resident $1,307 boundary. Verify the applicable published table before a 2026-27 calculation. See [ATO: tax rates for under-18s](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-if-you-re-under-18-years-old).
 
@@ -189,7 +189,7 @@ The trustee pays under s 98(1) while the minor is under a legal disability; the 
 
 ### Rule 8 -- FTE, IEE and family trust distribution tax
 
-- **FTE, IEE and FTDT** — An FTE (s 272-80 Sch 2F) makes the trust a "family trust" for: trust-loss testing (only the modified income injection test), franking-credit flow-through (Rule 7), company loss tracing, and trustee-beneficiary reporting exclusions. The election names a test individual; the family group (s 272-90) is roughly the test individual, spouse, lineal ancestors/descendants, siblings, nieces/nephews, their spouses, family companies/trusts/partnerships with IEEs, and certain charities. An IEE (s 272-85) brings an entity into the group. THE PRICE: any conferral/distribution of income or capital outside the group triggers FTDT at 47% (Div 271), payable by the trustee -- directors jointly and severally -- due 21 days after the distribution, non-deductible, with the amount excluded from the recipient's assessable income. Elections are effectively permanent: revocation/variation windows are narrow (escalate, R-AU-TR-7). Review the group EVERY year before signing resolutions.  _(s 272-80, s 272-90, s 272-85 Sch 2F; Div 271)_
+- **FTE, IEE and FTDT** — An FTE (s 272-80 Sch 2F) makes the trust a "family trust" for: trust-loss testing (only the modified income injection test), franking-credit flow-through (Rule 7), company loss tracing, and trustee-beneficiary reporting exclusions. The election names a test individual; the family group (s 272-90) is roughly the test individual, spouse, lineal ancestors/descendants, siblings, nieces/nephews, their spouses, specified former family members such as a former spouse (s 272-90(2A)), family companies/trusts/partnerships with IEEs, and certain charities. An IEE (s 272-85) brings an entity into the group. THE PRICE: any conferral/distribution of income or capital outside the group triggers FTDT at 47% (Div 271), payable by the trustee -- directors of a corporate trustee jointly and severally (Sch 2F s 271-15(2)(b)) -- due 21 days after the distribution, non-deductible, with the amount excluded from the recipient's assessable income. Elections are effectively permanent: revocation/variation windows are narrow (escalate, R-AU-TR-7). Review the group EVERY year before signing resolutions.  _(s 272-80, s 272-90, s 272-85 Sch 2F; Div 271, s 271-15)_
 
 ### Rule 9 -- s 100A reimbursement agreements
 
@@ -197,7 +197,7 @@ The trustee pays under s 98(1) while the minor is under a legal disability; the 
 
 ### Rule 10 -- UPEs to corporate beneficiaries post-Bendel
 
-- **UPEs to corporate beneficiaries post-Bendel** — *Bendel* [2026] HCA 18: a UPE owed to a corporate beneficiary is not "financial accommodation" and so not a Div 7A loan while the company stays PASSIVE. ATO DIS 26 June 2026 accepts this. Still live: (1) s 100A on the arrangement creating the UPE; (2) Subdiv EA (trust pays/lends to the company's shareholders while the UPE is unpaid); (3) any ACTIVE step -- conversion to a loan, promissory note, call for payment -- can create a real s 109D loan from that point; (4) the announced UPE/Div 7A legislative response (2018-19 Budget measure, still unenacted) and the announced 30% minimum trustee tax (Rule 14). Full mechanics, guidance-status table and examples: **au-div7a skill, Rule 11** -- read it before touching any bucket-company structure.  _(*Bendel* [2026] HCA 18; ATO DIS 26 June 2026; Subdiv EA; s 109D)_
+- **UPEs to corporate beneficiaries post-Bendel** — *Bendel* [2026] HCA 18: a UPE owed to a corporate beneficiary is not "financial accommodation" and so not a Div 7A loan while the company stays PASSIVE. ATO DIS 26 June 2026 accepts this. Still live: (1) s 100A on the arrangement creating the UPE; (2) Subdiv EA (trust pays/lends to the company's shareholders while the UPE is unpaid); (3) any ACTIVE step -- conversion to a loan, promissory note, call for payment -- can create a real s 109D loan from that point; (4) the announced UPE/Div 7A legislative response (2018-19 Budget measure, still unenacted) and the 30% minimum trustee tax in Bills, not law (Rule 14). Full mechanics, guidance-status table and examples: **au-div7a skill, Rule 11** -- read it before touching any bucket-company structure.  _(*Bendel* [2026] HCA 18; ATO DIS 26 June 2026; Subdiv EA; s 109D)_
 
 ### Rule 11 -- TFN withholding (closely held trusts)
 
@@ -215,21 +215,23 @@ From 1 July 2026 the quarterly TFN report is ABOLISHED (final report for April-J
 
 - **Trust losses overview** — Carried-forward trust losses are deductible only if the trust passes the relevant tests: non-fixed trusts face the 50% stake test (where applicable), control test, pattern of distributions test, and income injection test; family trusts (FTE in force) face only a modified income injection test. This is the main practical reason FTEs exist. Do not compute recoupment from this skill -- escalate (R-AU-TR-6).  _(Schedule 2F ITAA 1936)_
 
-### Rule 14 -- 2026 reform landscape: what IS law vs what is ANNOUNCED
+### Rule 14 -- 2026 reform landscape: what IS law vs what is only a BILL
 
-Never present an announced measure as enacted, and never advise restructures around it -- note it, quantify nothing, escalate planning (T2-6).
+Never present a Bill or announced measure as enacted, and never advise restructures around it -- note it, quantify nothing, escalate planning (T2-6).
 
-**2026 reform landscape**  _(Treasury Laws Amendment (Tax Reform No. 1) Act 2026; 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026)_
+**2026 reform landscape**  _(Treasury Laws Amendment (Tax Reform No. 1) Act 2026; 2026-27 Budget (12 May 2026); Tax Reform No. 3 Bill: [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf))_
 
-| Measure | Status (verified 20 August 2026; Act provisions read 11 October 2026) |
+| Measure | Status (verified 20 August 2026; Act provisions read 11 October 2026; Bill rows checked 31 October 2026) |
 | --- | --- |
 | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 + Income Tax Rates Amendment (Tax Reform No. 1) Act 2026 | **LAW** -- Royal Assent 26 June 2026 |
 | 50% CGT discount for individuals, trusts, partnerships replaced by cost base indexation + 30% minimum rate on capital gains (direct or through trusts) | **LAW**, applies from 1 July 2027, and only to gains accruing after that date; discount retained for eligible new dwellings/affordable housing |
 | New trustee obligations to categorise capital gains and issue statements so beneficiaries can apply indexation and the 30% minimum rate | **LAW**, from 1 July 2027 -- detailed ATO forms/guidance still emerging; verify before building 2027-28 templates |
 | Pre-CGT (pre-20 Sep 1985) assets are deemed reacquired at market value on 1 July 2027 (s 112-175); capital losses must reduce deferred pre-July 2027 gains before later gains (s 102-5(1)); the $2m CGT small business entity limit is disregarded for the 50% active asset reduction, so small business entities under $10m qualify (s 152-205(2)) | **LAW** (same Act), from 2027-28 |
-| 30% minimum tax on TRUSTEE distributions of discretionary trusts from 1 July 2028 (trustee-level tax on s 95(1) net income; non-refundable offset for individual beneficiaries; corporate beneficiaries DENIED the offset; franking credits proposed to stop flowing through; directors jointly/severally liable) | **NOT LAW** -- 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026; exposure draft legislation released 3 September 2026 (consultation 3 to 18 September 2026); not yet introduced as a bill ([ATO status page](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-introducing-a-minimum-tax-on-discretionary-trusts), updated 3 September 2026) |
-| Carve-outs from the announced minimum tax: testamentary trusts (pre-1 July 2028 trusts excluded if genuinely testamentary and assets from the estate or injected before 12 May 2026; later ones only if beneficiaries limited to individuals/tax-exempts), fixed trusts, widely held trusts, complying super funds, special disability trusts, deceased estates, charities, primary production income, Div 6AA vulnerable-minor categories | **NOT LAW** -- exposure draft stage; design can change before enactment |
-| Restructure rollover relief (Subdiv 328-G-style, from 1 July 2027, ~3 years) out of discretionary trusts | **ANNOUNCED, NOT LAW** |
+| 30% minimum tax on discretionary trusts from 1 July 2028 (Schedule 1; proposed ss 101AA to 101AH ITAA 1936: payable by the trustee on the trust's net income; non-refundable offset for non-corporate beneficiaries; corporate beneficiaries DENIED the offset; the trustee uses franking credits against the tax, so they do not reach beneficiaries; collection and administration left to later legislation) | **BILLS, NOT LAW** -- Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf), paras 1.14-1.17, 1.63-1.69, 1.77-1.79 |
+| Carve-outs in the Bills. Not minimum tax trusts: fixed trusts under a new definition (including most widely held trusts), special disability trusts, deceased estates, complying super entities, securitisation trusts, employee share trusts, approved worker entitlement funds and trusts a ministerial instrument determines. Excluded income: testamentary trusts (if genuinely testamentary; income from unrelated property injected after 7.30 pm on 12 May 2026 is caught; a trust established on or after 1 July 2028 qualifies only if its beneficiaries are individuals, exempt entities or a special disability trust), primary production income, certain vulnerable-minor income, certain shares of charities, DGRs and exempt entities, and non-resident withholding amounts | **BILLS, NOT LAW** -- design can change before enactment. Explanatory memorandum paras 1.11-1.12, 1.18-1.27, 1.36-1.50 |
+| Restructure roll-over relief out of discretionary trusts for 3 years from 1 July 2027 (Schedule 2; proposed Subdiv 126-Z, Income Tax (Transitional Provisions) Act 1997) | **BILLS, NOT LAW** -- explanatory memorandum, Schedule 2 outline |
+| One-off excluded election trust (EET) election (Schedule 3; proposed Div 6F, ss 102UYA to 102UYJ ITAA 1936): for a trust existing on 1 July 2028, made in the first income year starting on or after that date (2028-29 for a standard year), with beneficiaries and shares nominated. The minimum tax does not apply while the conditions are met. A year departing from the nomination revokes the election: the trustee pays the top marginal rate plus Medicare levy on all net income that year, and the minimum tax applies afterwards. A trustee takes the Schedule 2 roll-over or the election, not both | **BILLS, NOT LAW** -- explanatory memorandum paras 3.5-3.10, 3.16; proposed s 102UYC(7) |
+| Further CGT adjustments to the Tax Reform No. 1 Act (Schedule 4), including exemptions from the 30% minimum rate on capital gains for genuine testamentary trusts, deceased estates, special disability trusts and certain minors | **BILLS, NOT LAW** -- the LAW rows above stand until amended. Explanatory memorandum paras 4.137-4.138 |
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -239,7 +241,7 @@ Never present an announced measure as enacted, and never advise restructures aro
 
 ### T2-2 -- Disclaimers, variations and late "fixes"
 
-**Trigger:** beneficiary wants to disclaim after year end, or trustee wants to "amend" a resolution. **Issue:** disclaimers can trigger s 99A and green-zone exclusions; amendments after 30 June cannot create present entitlement retrospectively. **Action:** escalate; document only.
+**Trigger:** beneficiary wants to disclaim after year end, or trustee wants to "amend" a resolution. **Issue:** a disclaimer after year end, even if effective at trust law, does not undo a present entitlement that existed at 30 June: the beneficiary, including a default beneficiary, stays assessed under s 97 and the income does not move to the trustee under s 99A (*FCT v Carter* [2022] HCA 10). A beneficiary who has already received the benefit cannot disclaim it at all. A disclaimer also takes the arrangement out of the PCG 2022/2 green zone (para 32(c)). Amendments after 30 June cannot create present entitlement retrospectively. **Action:** escalate; document only.
 
 ### T2-3 -- Bucket company with no cash movement
 
@@ -253,9 +255,9 @@ Never present an announced measure as enacted, and never advise restructures aro
 
 **Trigger:** individual-beneficiary entitlements retained by the trustee beyond 2 years, or undocumented retention terms. **Issue:** parts of the PCG 2022/2 green zone expressly exclude prolonged retention; documentation is a green-zone entry condition. **Action:** document lending/retention terms or escalate.
 
-### T2-6 -- Announced 30% minimum trustee tax horizon
+### T2-6 -- Proposed 30% minimum trustee tax horizon
 
-**Trigger:** structuring, FTE, or bucket-company decisions with effect past 1 July 2028. **Issue:** announced-not-law measure would tax trustees at 30% with corporate beneficiaries denied the offset (effective rates to ~60-70% on corporate chains per Treasury's consultation design). **Action:** note on all forward-looking advice; escalate planning; never model it as enacted.
+**Trigger:** structuring, FTE, or bucket-company decisions with effect past 1 July 2028. **Issue:** Bills, not law, would tax trustees at 30% with corporate beneficiaries denied the offset, and offer roll-over relief or a one-off election (Rule 14). **Action:** note on all forward-looking advice; escalate planning; never model it as enacted.
 
 ### T2-7 -- Vesting date and appointor checks
 
@@ -312,7 +314,7 @@ REVIEWER FLAGS
 4. Sweep beneficiary loan/UPE accounts: aged UPEs are the s 100A and Bendel intersection.
 5. Map the family group annually where an FTE exists -- FTDT has no de minimis.
 6. Minors: check the character of what they receive before assuming penalty rates (or assuming they don't apply).
-7. Label every 2026 reform item as LAW (Tax Reform No. 1 Act, from 1 July 2027) or ANNOUNCED (30% trustee minimum tax, from 1 July 2028) -- never blur them.
+7. Label every 2026 reform item as LAW (Tax Reform No. 1 Act, from 1 July 2027) or BILL, NOT LAW (30% trustee minimum tax, proposed from 1 July 2028) -- never blur them.
 
 ## Section 9 -- Onboarding fallback
 
@@ -333,14 +335,14 @@ If the client provides only financial statements and a trial balance:
 | Item | Value |
 | --- | --- |
 | s 99A / FTDT / TFN-withholding / TBNT rate | 47% (45% + 2% Medicare levy) |
-| Div 6AA minor bands (resident) | $416 nil / $417-$1,307 at 66% of excess over $416 / > $1,307 at 45% of whole |
+| Div 6AA minor bands (resident; ATO table to 2025-26, verify for 2026-27) | $416 nil / $417-$1,307 at 66% of excess over $416, or the top-slice amount if greater / > $1,307 at 45% of whole |
 | Streaming recording deadlines | Franked: 30 June. Capital gains via capital appointment: 31 August |
 | FTDT due date | 21 days after distribution (or after election if later) |
 | TFN withholding calendar | Report 30 Sep; payment summaries 14 Oct; pay 28 Oct; quarterly TFN report abolished 1 July 2026 |
 | TFN withholding threshold | Below $120 for a whole-year amount; for a part-year payment, below $120 x applicable days / 365 |
 | Franking-credit ceiling without FTE (non-fixed trust) | $5,000 per beneficiary |
 | CGT reform start (LAW) | 1 July 2027 (indexation + 30% minimum rate; trustee statements) |
-| Trustee minimum tax (exposure draft, not law) | 30% from 1 July 2028; testamentary and other carve-outs in the 3 September 2026 exposure draft |
+| Trustee minimum tax (Bills, not law) | 30% from 1 July 2028; carve-outs, roll-over relief and one-off election at Rule 14 |
 
 ### Primary sources (verified 20 August 2026)
 
@@ -354,10 +356,11 @@ If the client provides only financial statements and a trial balance:
 | Proportionate approach | *FCT v Bamford* [2010] HCA 10 |
 | s 100A | TR 2022/4; PCG 2022/2 (8 Dec 2022); *Guardian* [2023] FCAFC 3; *BBlood* [2022] FCA 1112, [2023] FCAFC 89; TA 2022/1 |
 | Bendel / UPEs | [2026] HCA 18 (10 June 2026); ATO decision impact statement 26 June 2026; au-div7a skill Rule 11 |
-| FTE / FTDT | ato.gov.au -- Family trusts (FTDT 47%, due 21 days, joint & several directors); Sch 2F ITAA 1936 |
+| FTE / FTDT | ato.gov.au -- Family trusts (FTDT 47%, due 21 days, joint & several directors); Sch 2F ITAA 1936 ([s 271-15](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-271-15), [s 272-90](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-272-90)) |
+| Disclaimers | *FCT v Carter* [2022] HCA 10; [PCG 2022/2](https://www.ato.gov.au/law/view/document?docid=COG/PCG20222/NAT/ATO/00001) para 32(c) |
 | TFN withholding | ato.gov.au -- TFN withholding for closely held trusts: What trustees need to do (QC 23140, updated 16 July 2026); Changes to beneficiary TFN reporting (QC 107776, 14 July 2026) |
 | Circular distributions | s 102UM ITAA 1936; Treasury Laws Amendment (2019 Tax Integrity and Other Measures No. 1) Act 2019 |
-| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); ATO -- Reforming negative gearing and CGT (QC 107304, updated 29 June 2026); 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026 |
+| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); ATO -- Reforming negative gearing and CGT (QC 107304, updated 29 June 2026); 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026; Tax Reform No. 3 Bill: [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) |
 
 ### Test suite
 
@@ -379,7 +382,9 @@ If the client provides only financial statements and a trial balance:
 
 **Test 9:** Trust A distributes to Trust B which distributes back to Trust A. -> s 102UM TBNT at 47% even with an FTE; refuse and escalate.
 
-**Test 10:** Client asks you to apply the 30% trustee minimum tax to 2026-27 distributions. -> Refuse: announced-not-law, proposed start 1 July 2028; the ENACTED changes start 1 July 2027 and concern CGT.
+**Test 10:** Client asks you to apply the 30% trustee minimum tax to 2026-27 distributions. -> Refuse: Bills, not law, proposed start 1 July 2028; the ENACTED changes start 1 July 2027 and concern CGT.
+
+**Test 11:** No resolution by 30 June; the default beneficiary disclaims in September. -> Still assessed under s 97 on the 30 June entitlement (*Carter*); no s 99A assessment arises from the disclaimer.
 
 ### Prohibitions
 
@@ -390,7 +395,7 @@ If the client provides only financial statements and a trial balance:
 - NEVER let an FTE trust distribute to an unmapped beneficiary without pricing FTDT at 47%
 - NEVER treat a passive UPE as a Div 7A loan post-Bendel -- and NEVER skip the s 100A / Subdiv EA screen
 - NEVER claim green-zone protection without documenting how the scenario conditions are met
-- NEVER present the announced 30% minimum trustee tax (or any consultation design detail) as law
+- NEVER present the proposed 30% minimum trustee tax (or any detail of the Bills) as law
 - NEVER compute trust loss recoupment, non-resident trustee assessments, or TBNT without escalating
 - NEVER present figures as definitive
 

@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Australian bookkeeping for sole
 version: 1.5
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-11
+tax_year_notes: "Mixed: 2025-26 and 2026-27 figures, each labelled by year where it differs"
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -311,10 +312,10 @@ Use the Income Tax Assessment (Effective Life of Depreciating Assets) Determinat
 | --- | --- | --- | --- |
 | Desktop computers | 4 years | 50% | 25% |
 | Laptops | 2 years | 100% | 50% |
-| Printers/Scanners | 5 years | 40% | 20% |
+| Multi-function machines (fax, copy, print and scan) | 5 years | 40% | 20% |
 | Freestanding office chairs and general tables | 10 years | 20% | 10% |
 | Freestanding office desks and workstations | 20 years | 10% | 5% |
-| Motor vehicles | 8 years | 25% | 12.5% |
+| Cars, generally (hire cars, rental cars and taxis have their own rows) | 8 years | 25% | 12.5% |
 | Air-conditioning room units and mini split systems up to 20 kW | 10 years | 20% | 10% |
 | Packaged air-conditioning units | 15 years | 13.33% (rounded) | 6.67% (rounded) |
 | Eligible capital works (Div 43, 2.5% category) | 40 years | Not applicable | 2.5% of eligible construction expenditure; separate from Div 40 |
@@ -507,6 +508,7 @@ Check the reporting obligation and the compilation applicable to the period; siz
 ### Large proprietary thresholds (reporting obligation, not tier selection)
 
 - **Large Proprietary Thresholds** — Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
+- **Proposed increase (not law)** — Draft regulations released on 19 October 2026 would raise these to revenue of $100m and assets of $50m for financial years starting on or after 1 July 2027. Consultation is open until 2 November 2026, so recheck after it closes; the existing thresholds apply until any change is made.  _([Treasurer, 19 October 2026](https://ministers.treasury.gov.au/ministers/jim-chalmers-2022/media-releases/raising-reporting-thresholds-proprietary-companies); [ASIC, Company financial reports](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports))_
 
 ## Section 10 -- Interaction with Tax Skills
 
@@ -514,9 +516,9 @@ Check the reporting obligation and the compilation applicable to the period; siz
 
 - Sole traders: business schedule in individual return (myTax or tax agent)
 - Companies: Company Tax Return (form with labels mapped to financial statements)
-- Tax rate: individuals at marginal rates; companies at 25% (base rate entity, turnover < $50m) or 30%
+- Tax rate: individuals at marginal rates; companies at 25% (base rate entity: aggregated turnover < $50m and base rate entity passive income no more than 80% of assessable income; see `au-company-tax`) or 30%
 - Franking: company tax paid generates franking credits for shareholder dividends
-- Losses: carried forward indefinitely, subject to continuity of ownership test (companies) or non-commercial loss rules (individuals)
+- Losses: carried forward indefinitely, subject to the continuity of ownership test or, failing that, the business continuity test (companies; ITAA 1997 ss 165-12 and 165-13; see `au-company-tax`) or non-commercial loss rules (individuals)
 
 ### BAS / GST Return
 
@@ -579,7 +581,7 @@ Every transaction needs four decisions, not one. Answer them in this order, beca
 | Adjustment to a sale or purchase | Adjustment note or credit note |
 | Bad debt written off | The board minute or file note recording the write-off and its date |
 
-Records are generally kept for five years from lodgment, and longer where a CGT asset or a carried-forward loss depends on them.
+Business records are generally kept for five years from when the record was prepared or obtained or the transaction was completed, whichever is later. Some records start differently (FBT records from lodging the FBT return; employee super contribution records from the contribution date), and some are kept longer, including where a CGT asset, a carried-forward loss or a review period depends on them. Companies also keep financial records for seven years under the Corporations Act, a separate rule from the tax one.  _([ATO, Overview of record-keeping rules for business](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business))_
 
 ### 11.3 Reconciliation as a control, not a chore
 

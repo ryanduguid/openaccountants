@@ -13,7 +13,7 @@ description: >
 version: 1.1
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - au-lodgment-deadlines-penalties
@@ -38,11 +38,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Australia |
-| Year covered | Payments made from 1 July 2026 to 30 June 2027, reported by 28 August 2027 |
+| Year covered | Payments made from 1 July 2026 to 30 June 2027, reported by 28 August 2027 (a Saturday, so Monday 30 August 2027 under the ATO's weekend rule) |
 | Who lodges | Businesses that pay contractors for building and construction, cleaning, courier, road freight, information technology, or security, investigation or surveillance services, and government entities that pay for services or make grants |
 | The test | 10% or more of business income from the relevant service (building and construction uses a 50% test instead) |
 | Basis | Cash: payments made on or before 30 June, including GST |
-| What to report per contractor | ABN, name, address, gross amount paid including GST, GST, and tax withheld where no ABN was quoted |
+| What to report per contractor | ABN, name, address, gross amount paid including GST, GST, and tax withheld where no ABN was quoted, in whole dollars with no cents |
 | How to lodge | SBR-enabled software, a TPAR data file, Online services for business, Online services for individuals and sole traders, or a registered agent; paper is no longer accepted |
 | Not required | Lodge a non-lodgment advice so the ATO does not chase the report |
 | Late lodgment | Failure to lodge on time penalty of one penalty unit ($364 from 1 July 2026) per 28 days or part, up to five units, multiplied for medium and large withholders |
@@ -120,7 +120,7 @@ See Section 6.
 
 ## Section 5 - Contractor details and records
 
-- **Details per contractor** — ABN (each ABN if it changed during the year), business or individual name, address, and the year's totals of gross amount paid including GST and any tax withheld, total GST paid and total tax withheld where no ABN was quoted. The ATO may ask for phone, email and bank details.  _(ATO, TPAR contractor details to report, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar/tpar-contractor-details-to-report)_
+- **Details per contractor** — ABN (each ABN if it changed during the year), business or individual name, address, and the year's totals of gross amount paid including GST and any tax withheld, total GST paid and total tax withheld where no ABN was quoted. Report all payment amounts in whole dollars, with no cents. The ATO may ask for phone, email and bank details.  _(ATO, Payments businesses need to report in their TPAR, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar/payments-businesses-need-to-report-in-their-tpar; ATO, TPAR contractor details to report, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar/tpar-contractor-details-to-report)_
 - **Check the ABN** — Match the ABN on each invoice to the contractor record and confirm the name and GST registration on ABN Lookup or the ATO app; create a new record when the ABN changes.  _(ATO, TPAR contractor details to report, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar/tpar-contractor-details-to-report)_
 - **Records** — Keep the contractor's name, address, ABN and the amounts paid including GST, and use the ATO's taxable payments reporting worksheet where the software cannot produce the report.  _(ATO, Lodge your TPAR, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar)_
 - **Payee statements** — Nothing has to be given to the contractor, but the ATO's payee information statement can be used to tell them what was reported, in whole dollars.  _(ATO, TPAR contractor details to report, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar/tpar-contractor-details-to-report)_
@@ -228,8 +228,9 @@ it on the TPRS list from an earlier year.
 - ATO, Withholding if ABN is not provided, https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/payments-you-need-to-withhold-from/withholding-from-suppliers/withholding-if-abn-not-provided
 - ATO, Failure to lodge on time penalty, https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty
 - ATO, Penalty units, https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units
+- ATO, Due dates for lodging and paying, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying
 
-Sources were checked on 27 September 2026.
+Sources were checked on 27 September 2026; the whole-dollar and weekend rules were checked on 31 October 2026.
 
 > **Working paper only, not a lodged report.** Have a qualified Australian CPA or CA review the service test and the contractor extract before lodging. The ATO matches TPAR data against contractors' returns, so an omitted or misclassified contractor is visible.
 >

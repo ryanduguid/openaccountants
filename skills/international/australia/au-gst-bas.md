@@ -3,8 +3,8 @@ name: au-gst-bas
 description: Australian Business Activity Statement (BAS) — non-GST sections. Covers PAYG withholding (labels W1-W5), PAYG income tax instalments (labels T1-T9), FBT instalments (label F1), and PAYG withholding reconciliation. Complements australia-gst.md which covers GST labels (1A-9).
 version: 1.5
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-10-11
+tax_year: 2026
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This file covers the non-GST sections of the Business Activity Statement. For GST labels (1A through 9), see `australia-gst.md` in this directory.
 
-**Tax year coverage.** This skill targets the **2025–26 income year** (1 July 2025 to 30 June 2026).
+**Tax year coverage.** This skill targets the **2026-27 income year** (1 July 2026 to 30 June 2027). Figures still needed for 2025-26 statements are labelled with their year.
 
 **The reviewer is the customer of this output.** This skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
 
@@ -53,14 +53,25 @@ This skill does NOT cover:
 
 ### 2.2 Lodgement frequency
 
-**Lodgement frequency**  _(TAA 1953 Sch 1 s 31-5)_
+**Lodgement frequency**  _(GST Act Div 27 and s 31-5; TAA 1953 Sch 1 Subdiv 16-B)_
 
 | Situation | BAS frequency | Source |
 | --- | --- | --- |
-| GST turnover < $20M, no monthly election | Quarterly | TAA 1953 Sch 1 s 31-5 |
-| GST turnover >= $20M | Monthly | TAA 1953 Sch 1 s 31-5 |
+| GST turnover < $20M, no monthly election | Quarterly | GST Act Div 27 and s 31-5 |
+| GST turnover >= $20M | Monthly | GST Act s 27-15 and s 31-5 |
 | Voluntary monthly reporter | Monthly | ATO election |
-| PAYG withholding-only (no GST) | Quarterly | TAA 1953 Sch 1 Div 16 |
+| PAYG withholding (with or without GST) | Set by the withholder class below, not by GST turnover | TAA 1953 Sch 1 ss 16-75, 16-95 to 16-105 |
+
+**PAYG withholder classes**  _([ATO, Paying and reporting PAYG withholding amounts for small and medium withholders](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/when-to-pay-and-report-on-activity-statements); [ATO, Changing a withholding cycle](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle))_
+
+| Class | Test for a particular month | Report and pay | Source |
+| --- | --- | --- | --- |
+| Small | Withheld at least one amount in the month and is neither large nor medium | Quarterly, by the date on the issued activity statement (a deferred BAS payer uses the dates in 2.3). Monthly statements can be arranged with the ATO | TAA 1953 Sch 1 ss 16-75(3), (4), 16-105 |
+| Medium | Not large, and withheld more than $25,000 in a financial year ending before that month, or so determined by the Commissioner | Monthly, by the 21st of the next month (a deferred BAS payer has the 28th, and 28 February for December amounts) | TAA 1953 Sch 1 ss 16-75(2), (2A), 16-100 |
+| Large | Withheld more than $1 million in a financial year ending at least 2 months before that month (for a company, alone or across its wholly-owned group at the end of that year), or so determined by the Commissioner | Pay electronically. Withheld on Saturday or Sunday: by the second Monday after. Monday or Tuesday: by the first Monday after. Wednesday: by the second Thursday after. Thursday or Friday: by the first Thursday after. See 4.1 for the labels | TAA 1953 Sch 1 ss 16-75(1), 16-95 |
+
+- **Class follows earlier financial years and determinations, not one statement** — The tests look back to completed financial years, not only the latest one. One quarter's withholding does not decide the class, and a fall in withholding does not lower it by itself: $40,000 withheld in 2024-25 and $20,000 in 2025-26 leaves an entity medium in 2026-27 unless the Commissioner determines otherwise. A downward determination needs written notice given before the month, and the entity may apply for one in writing (s 16-110). An upward determination can have regard to the amounts likely to be withheld in the following 12 months (s 16-115). The ATO describes the classes by annual amount ($25,000 or less; $25,001 to $1 million; more than $1 million), reviews withholding each financial year and writes when a cycle is to change; for 2026-27 it wrote in April for changes from 1 July 2026. An entity can ask to stay on a lower cycle if its estimated withholding for the coming year is within the threshold. Where a quarter's amount would exceed $25,000 if repeated across the year, check earlier years' amounts, any ATO notice and the issued statement.
+- **Large withholder dates** — The ATO summarises the schedule as 6 to 8 days, but the statutory table can give 9: an amount withheld on Saturday 3 October 2026 is due by Monday 12 October 2026.  _([ATO, Changing a withholding cycle](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle); [ATO, Changes to your PAYG withholding cycle](https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/changes-to-your-payg-withholding-cycle); TAA 1953 Sch 1 ss 16-75(1), 16-95 to 16-115)_
 
 ### 2.3 Due dates (quarterly)
 
@@ -97,24 +108,24 @@ This skill does NOT cover:
 | Automatic entry — individuals (including sole traders) | The ATO uses the latest tax return. Automatic entry requires all of: instalment income of $4,000 or more; tax payable on the latest notice of assessment of $1,000 or more; and estimated (notional) tax of $500 or more. | [ATO — Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments) |
 | Instalment rate | As notified by the ATO (varies per taxpayer) | ATO instalment rate notice |
 | GDP-adjusted amount | GDP adjustment is part of the notified instalment-amount calculation, not an automatic increase in T2 | [ATO PAYG variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments) |
-| GDP uplift factor | 4% for 2025-26 (5% for 2026-27; 6% for 2024-25) | [ATO — GDP adjustment for 2025-26 GST and PAYG instalments](https://softwaredevelopers.ato.gov.au/gdp-adjustment-2025-26-gst-and-payg-instalments); [2026-27](https://softwaredevelopers.ato.gov.au/GDPupliftfactor) |
+| GDP uplift factor | 5% for 2026-27; 4% for 2025-26, and for a substituted accounting period whose income year started on 1 January, 1 February or 1 March 2026; 6% for 2024-25 | [ATO — GDP adjustment for 2025-26 GST and PAYG instalments](https://softwaredevelopers.ato.gov.au/gdp-adjustment-2025-26-gst-and-payg-instalments); [2026-27](https://softwaredevelopers.ato.gov.au/GDPupliftfactor) |
 | Voluntary entry | A person new to business, or expecting business and investment income over the threshold, can request voluntary entry to PAYG instalments. | [ATO — Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments) |
 
 ### 3.3 FBT instalments
 
-**FBT instalment rates and thresholds**  _(TAA 1953 Sch 1 s 45-60)_
+**FBT instalment rates and thresholds**  _(FBTAA 1986 Pt VII Div 2)_
 
 | Item | Amount / Rate | Source |
 | --- | --- | --- |
-| FBT instalment threshold | Notional FBT amount >= $3,000 in prior FBT year | TAA 1953 Sch 1 s 45-60 |
-| FBT year | 1 April to 31 March | FBTAA 1986 s 149 |
-| Instalment rate | 25% of prior year FBT liability each quarter | TAA 1953 Sch 1 s 45-400 |
+| FBT instalment threshold | Notional FBT amount >= $3,000 in prior FBT year | FBTAA 1986 s 111(2), (3); [ATO, FBT instalment](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/fringe-benefits-tax-fbt-instalment) |
+| FBT year | 1 April to 31 March | FBTAA 1986 s 136(1) ('year of tax') |
+| Instalment rate | 25% of prior year FBT liability each quarter | FBTAA 1986 ss 110, 111; [ATO, FBT instalment](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/fringe-benefits-tax-fbt-instalment) |
 
 ## Section 4 — Computation rules
 
 ### 4.1 PAYG withholding (labels W1-W5)
 
-- **PAYG withholding computation steps** — **Step 1.** Identify the payments and withholding labels that apply during the period: - W1 — total salary, wages and other payments subject to withholding, where W1 must be completed; - W2 — amounts withheld from the payments shown at W1; - W3 — other amounts withheld; - W4 — amounts withheld where an ABN was not quoted; and - W5 — total amounts withheld: W2 + W3 + W4. **Step 2.** Reconcile the labels that the entity must report on its issued activity statement with payroll records, STP data and any ATO pre-fill. A small or medium withholder reporting through STP does not need to separately report W1; complete W2, W3, W4 and W5 where applicable. A large withholder that does not report through STP completes only W1; a large withholder reporting through STP does not report PAYG withholding on its activity statement. Large withholders do not complete W2, W3, W4, W5 or label 4 and must pay withheld amounts electronically on the applicable large-withholder schedule. **Step 3.** Where W2 applies, cross-check it against ATO PAYG withholding tax tables for each employee's earnings level. **Step 4.** If the entity makes payments to a supplier without an ABN, withhold 47% and account for that amount under the reporting and payment rules for the entity's withholding class. **Step 5.** Where W5 applies, report the W2 + W3 + W4 total and pay the amount due by the applicable due date.  _([ATO — PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO — PAYG withholding pre-fill for activity statements](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/stp-and-activity-statements/ato-payg-withholding-pre-fill-for-activity-statements); [ATO — changes to PAYG withholding cycles](https://www.ato.gov.au/api/public/content/0-a1d50fe2-efe7-4866-9d51-855fd171ac74))_
+- **PAYG withholding computation steps** — **Step 1.** Identify the payments and withholding labels that apply during the period: - W1 — total salary, wages and other payments subject to withholding, where W1 must be completed; - W2 — amounts withheld from the payments shown at W1; - W3 — other amounts withheld; - W4 — amounts withheld where an ABN was not quoted; and - W5 — total amounts withheld: W2 + W3 + W4. **Step 2.** Reconcile the labels that the entity must report on its issued activity statement with payroll records, STP data and any ATO pre-fill. The ATO uses STP amounts to pre-fill W1 and W2 on activity statements; verify them, and complete W3, W4 and W5 where applicable. Whether a small or medium withholder reporting through STP may leave W1 out is not confirmed: the ATO's labels page states that relief only for large withholders, so complete W1 where the issued statement asks for it and confirm with the ATO before omitting it. A large withholder that does not report through STP completes only W1; a large withholder reporting through STP does not report PAYG withholding on its activity statement. Large withholders do not complete W2, W3, W4, W5 or label 4 and must pay withheld amounts electronically on the applicable large-withholder schedule. **Step 3.** Where W2 applies, cross-check it against ATO PAYG withholding tax tables for each employee's earnings level. **Step 4.** If the entity makes payments to a supplier without an ABN, withhold 47% and account for that amount under the reporting and payment rules for the entity's withholding class. **Step 5.** Where W5 applies, report the W2 + W3 + W4 total and pay the amount due by the applicable due date.  _([ATO — PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO, Employees menu in Online services for business](https://www.ato.gov.au/online-services/businesses-and-organisations-online-services/employees-in-online-services-for-business); [ATO, Changing a withholding cycle](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle))_
 
 ### 4.2 PAYG income tax instalments (T labels, 5A and 5B)
 
@@ -131,7 +142,7 @@ Two methods are available:
 
 ### 4.3 FBT instalment (label F1)
 
-- **FBT instalment computation steps** — **Step 1.** If the taxpayer has an FBT instalment obligation, the ATO pre-fills label F1 with 25% of the prior year FBT liability. **Step 2.** The taxpayer may vary the instalment if FBT liability is expected to be lower. **Step 3.** Report at F1. The annual FBT return (due 21 May for non-tax-agent lodgement or 25 June for tax agents) reconciles the actual liability.  _(TAA 1953 Sch 1 s 45-400)_
+- **FBT instalment computation steps** — **Step 1.** If the taxpayer has an FBT instalment obligation, the ATO pre-fills label F1 with 25% of the prior year FBT liability. **Step 2.** The taxpayer may vary the instalment if F1 would produce more or less than the expected FBT liability for the year, using labels F2, F3 and F4 (mechanics in `au-fbt-year.md`). If the estimate used is less than 90% of the tax assessed for the year, GIC can apply (FBTAA 1986 s 112B); the ATO also warns that a penalty may apply where total instalments, or the estimates behind them, are less than 90% of actual liability. **Step 3.** Report at F1, or F3 if varied, and copy the amount to 6A. The annual FBT return (due 21 May for non-tax-agent lodgement or 25 June for tax agents) reconciles the actual liability.  _(FBTAA 1986 ss 103, 110 to 112B; [ATO, FBT instalment](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/fringe-benefits-tax-fbt-instalment))_
 
 ### 4.4 Net BAS payable / refundable
 
@@ -149,7 +160,7 @@ Two methods are available:
 
 ### 5.3 STP and BAS alignment
 
-- **STP and BAS labels** — Reporting through STP does not cancel activity-statement obligations arising from GST, PAYG instalments or other tax roles. An STP-reporting small or medium withholder does not need to separately report W1; complete the other PAYG-withholding labels required by the issued activity statement. Different reporting and payment rules apply to large withholders. ATO Online Services may pre-fill W1 and W2 from STP information for eligible electronic activity statements; use payroll records as the primary source, then verify and correct any pre-filled figures. For a small employer with 19 or fewer payees, in-scope payments to closely held payees may be reported through STP quarterly, but arm's-length payees must still be reported on or before payday. That timing concession does not itself remove BAS obligations.  _([ATO — PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO — PAYG withholding pre-fill for activity statements](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/stp-and-activity-statements/ato-payg-withholding-pre-fill-for-activity-statements); [ATO — changes to PAYG withholding cycles](https://www.ato.gov.au/api/public/content/0-a1d50fe2-efe7-4866-9d51-855fd171ac74); [ATO — STP reporting for closely held payees](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/concessional-reporting/closely-held-payees))_
+- **STP and BAS labels** — Reporting through STP does not cancel activity-statement obligations arising from GST, PAYG instalments or other tax roles. Complete the PAYG-withholding labels required by the issued activity statement; Section 4.1 records that W1 relief is unconfirmed for small and medium withholders. Different reporting and payment rules apply to large withholders. ATO Online Services may pre-fill W1 and W2 from STP information for eligible electronic activity statements; use payroll records as the primary source, then verify and correct any pre-filled figures. For a small employer with 19 or fewer payees, in-scope payments to closely held payees may be reported through STP quarterly, but arm's-length payees must still be reported on or before payday. That timing concession does not itself remove BAS obligations.  _([ATO — PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO, Employees menu in Online services for business](https://www.ato.gov.au/online-services/businesses-and-organisations-online-services/employees-in-online-services-for-business); [ATO, Changing a withholding cycle](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle); [ATO, STP concessional reporting](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/concessional-reporting))_
 
 ### 5.4 Ceasing PAYG instalments
 
@@ -170,7 +181,8 @@ Before delivering output, verify:
 - [ ] FBT instalment (F1) is 25% of prior year FBT liability or validly varied
 - [ ] Lodgement due date has been correctly identified (including any tax agent extensions)
 - [ ] GST section cross-references to australia-gst.md output
-- [ ] Rates and thresholds match the 2025–26 income year, including the 4% GDP adjustment factor
+- [ ] Rates and thresholds match the income year of the statement, including the GDP adjustment factor (5% for 2026-27; 4% for 2025-26 and the substituted accounting periods in Section 3.2)
+- [ ] Withholder class is checked against earlier financial years' withholding, any Commissioner determination and any ATO notice, not one quarter
 - [ ] Output format matches the base skill spec
 
 ## Section 7 — Disclaimer

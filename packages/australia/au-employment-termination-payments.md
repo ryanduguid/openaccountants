@@ -13,7 +13,7 @@ description: >
 version: 1.1
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -196,6 +196,8 @@ are reported as two ETPs. See Section 9.
 | Long service leave | Any other reason | After 17 August 1993 | Marginal rates | Salary and wages |
 
 - **Marginal rate method** — For post-17 August 1993 leave on a normal termination, Schedule 7 spreads the lump sum across the year: divide the payment by the number of normal pay periods in 12 months, add the result to a normal pay, work out the withholding on the combined amount, subtract the normal withholding and multiply the difference by the number of pay periods.  _([ATO, Schedule 7](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-7-tax-table-for-unused-leave-payments-on-termination-of-employment))_
+- **Small payments** — Where a post-17 August 1993 lump sum from normal termination is less than $300, withhold the lesser of the table amount and 32% of the payment.  _([ATO, Schedule 7](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-7-tax-table-for-unused-leave-payments-on-termination-of-employment))_
+- **No TFN** — If the employee has not provided a TFN before the payment, withhold 47%, or 45% for a foreign resident.  _([ATO, Schedule 7](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-7-tax-table-for-unused-leave-payments-on-termination-of-employment))_
 - **Leave is never an ETP** — Unused annual leave and long service leave sit outside the ETP caps, but a lump sum of leave counts as a taxable payment when the whole-of-income cap is reduced.  _([ATO, Accrued leave](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/accrued-leave))_
 - **No study loan withholding** — Do not withhold for study and training support loans from lump sum termination payments.  _([ATO, Weekly tax table](https://www.ato.gov.au/tax-rates-and-codes/tax-table-weekly))_
 - **Super guarantee** — Superannuation guarantee is payable on ordinary time earnings. A payment in lieu of notice is ordinary time earnings; unused annual leave and long service leave paid on termination, and ETPs, are not. See `au-super-guarantee.md`.  _([SGR 2009/2](https://www.ato.gov.au/law/view/document?DocID=SGR/SGR20092/NAT/ATO/00001))_

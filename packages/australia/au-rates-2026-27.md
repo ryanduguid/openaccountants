@@ -5,7 +5,7 @@ version: 1.5
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 primary; 2025-26 retained for lodgment-season work"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-Single-page lookup for the figures every other Australian guide relies on. Each row names its primary source. Verified against those sources on 20 August 2026. Deeper rules live in the topic guides named in each section; this card never overrides them.
+Single-page lookup for the figures every other Australian guide relies on. Each row names its primary source. Verified against those sources on 20 August 2026. Deeper rules live in the topic guides named in each section. Where this card and a guide give different figures for the same year, neither prevails by default: check the primary source and correct whichever is wrong. A guide stating only an earlier year's figure does not override this card for a later year.
 
 ## Enacted asset and loss relief
 
@@ -44,16 +44,16 @@ Single-page lookup for the figures every other Australian guide relies on. Each 
 | LITO | $700 to $37,500; taper 5c/$1 to $45,000; then 1.5c/$1 to nil at $66,667 | ATO Low income tax offset |
 | SBITO | 16% of tax on net small business income, cap $1,000, turnover < $5m | ITAA 1997 Subdiv 328-F |
 | $1,000 standard WRE deduction | From 2026-27 returns: min($1,000, assessable labour income) less actual work deductions; assessable labour income is PAYG-withheld salary, wages, director and office-holder payments, ETPs and parental leave pay, so sole-trader business income and PSI do not count | Tax Reform No. 1 Act 2026 Sch 4 (ITAA 1997 s 25-130) |
-| WFH fixed rate | 70c per work hour (2024-25 and 2025-26); the ATO page listed no 2026-27 rate when last updated on 8 June 2026 | PCG 2023/1 |
+| WFH fixed rate | 70c per work hour from 1 July 2024, with no end date in PCG 2023/1 para 26A. The ATO's fixed rate page names years only to 2025-26 (last updated 8 June 2026), so its application to 2026-27 is inferred, not confirmed by the ATO | PCG 2023/1 para 26A |
 | Cents per km | 88c (2025-26); **91c (2026-27)**, cap 5,000 business km | ATO cents-per-km rates |
 | Car limit (depreciation) | $69,674 (2025-26); **$69,883 (2026-27)** | ATO car thresholds |
 | Working Australians tax offset | Up to $250 a year from **2027-28** for residents whose net labour income exceeds the tax-free threshold; non-refundable | Tax Reform No. 1 Act 2026 Sch 3 (ITAA 1997 Subdiv 61-E) |
 
 ## HELP/study loans (2025-26 onwards: marginal system)
 
-- **Repayment income definition** — Repayment income = taxable income + reportable fringe benefits + reportable super + exempt foreign income + net investment losses.  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC 103927)_
+- **Repayment income definition** — Repayment income = taxable income (excluding any assessable First Home Super Saver released amounts) + reportable fringe benefits + reportable super + exempt foreign employment income + net investment losses.  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC16176)_
 
-**Marginal repayment rates**  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC 103927)_
+**Marginal repayment rates**  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC16176)_
 
 | Repayment income (2025-26) | Marginal repayment rate |
 | --- | --- |
@@ -69,7 +69,7 @@ Single-page lookup for the figures every other Australian guide relies on. Each 
 | $129,718 -- $186,050 | $9,028 + 17% of excess over $129,717 |
 | $186,051+ | 10% of repayment income (cap rule) |
 
-_(ATO QC 103927, study and training loan repayment thresholds, checked 4 October 2026)_
+_(ATO QC16176, study and training loan repayment thresholds, checked 31 October 2026)_
 
 - **One-off 20% reduction** — The one-off 20% reduction concerns eligible student-loan debts at 1 June 2025, with the associated 2025 indexation adjustment. It is not a new reduction at 1 June 2026. Use the current repayment-year thresholds separately.  _([Department of Education](https://www.education.gov.au/higher-education-provider-updates/higher-education-provider-updates-december-2025))_
 
@@ -92,6 +92,7 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | PHI rebate (base, under 65) | 24.288% to 31 Mar 2026; 24.118% from 1 Apr 2026, unchanged for 1 Jul 2026 to 31 Mar 2027 (tier 1 16.079%, tier 2 8.038%) with the 2026-27 income tiers above | spans both | PHI Circular 12/26; ATO PHI rebate thresholds |
 
 - **2026-27 indexation note** — 2026-27 Medicare low-income thresholds index with CPI; confirm at ATO QC 27031 when lodging 2026-27.  _(ATO QC 27031)_
+- **Proposed PHI rebate change (Bill, not law)** — The Private Health Insurance Amendment (Modernising the Private Health Insurance Rebate) Bill 2026 [No. 2] was introduced on 15 October 2026 and APH showed it as 'Before Reps' on 31 October 2026. The first Bill of that title is not proceeding. That Bill's digest describes ending the higher rebate for people aged 65 and over from 1 April 2027; the text of Bill [No. 2] has not been read here. The rates above are unaffected.  _([APH, Bill r7564](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7564); [Bills Digest No. 1, 2026-27](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2627/27bd001))_
 
 ## Superannuation
 
@@ -111,6 +112,8 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | Downsizer | $300,000 from age 55 | $300,000 | ATO downsizer |
 | SG maximum contribution base | $62,500/quarter | **$270,830/year (annual basis under payday super)** | ATO Super guarantee page |
 | LISTO threshold / maximum | $37,000 / $500 | $37,000 / $500; from 2027-28 the threshold follows the top of the second resident bracket ($45,000) and the maximum is threshold x SG rate x 15% ($810) | Building a Stronger and Fairer Super System Act 2026 Sch 4 |
+
+- **Proposed concessional cap change (Bill, not law)** — Schedule 6 of the Tax Reform No. 3 Bill would disregard certain employer contributions for the June 2026 quarter when working out 2026-27 concessional contributions. Treasury Laws Amendment (Tax Reform No. 3) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026.  _([APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf))_
 
 ## Companies
 
@@ -177,11 +180,11 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 
 ## Maintenance rule
 
-This card is the single place indexed figures live outside their topic guides. When any figure above changes: update the topic guide first, then this card in the same PR, and advance both `last_updated` fields. Rows sourced to a topic guide (au-fbt, au-company-tax) must never disagree with that guide; where they do, the topic guide wins and this card is the bug.
+This card is the single place indexed figures live outside their topic guides. When any figure above changes: update the topic guide first, then this card in the same PR, and advance both `last_updated` fields. Rows sourced to a topic guide (au-fbt, au-company-tax) must never disagree with that guide; where they do, check the guide's primary source and correct whichever is wrong. For any other row, the primary source named in the row decides.
 
 ## Provenance
 
-All figures verified 20 August 2026 directly against: ato.gov.au rate pages (QC 73320, 27031, 71196, 73746, 103578, 103927, contributions caps, key super rates, car thresholds, Div 7A rates, GDP adjustment), Department of Health PHI Circular 12/26, Revenue NSW / SRO Vic / QRO current-rates pages, FWC Annual Wage Review 2025-26 decision, ASIC fee indexation page (1 July 2026), and the amending Acts named inline. On 4 October 2026 the resident and non-resident rate scales, HELP thresholds, Medicare low-income thresholds, MLS tiers, PHI rebate rates, SG rate and maximum contribution base, contribution caps, transfer balance cap, CGT cap, Division 293 threshold, FBT rate and thresholds, Division 7A benchmark rate, GIC rates, PAYG GDP adjustment, instant asset write-off status, penalty unit, LITO, cents per kilometre and car limit, national minimum wage, parental leave weeks and the state payroll tax rates and thresholds were checked again against the ATO, state revenue office, Fair Work and Federal Register of Legislation pages; the ASIC fee rows were not re-checked. On 11 October 2026 the working-from-home rate, the Tax Reform No. 1 and No. 2 Acts, the Building a Stronger and Fairer Super System Act 2026 and Act No. 58 of 2026 (Medicare low-income thresholds) were read on the Federal Register of Legislation.
+All figures verified 20 August 2026 directly against: ato.gov.au rate pages (QC 73320, 27031, 71196, 73746, 103578, 16176, contributions caps, key super rates, car thresholds, Div 7A rates, GDP adjustment), Department of Health PHI Circular 12/26, Revenue NSW / SRO Vic / QRO current-rates pages, FWC Annual Wage Review 2025-26 decision, ASIC fee indexation page (1 July 2026), and the amending Acts named inline. On 4 October 2026 the resident and non-resident rate scales, HELP thresholds, Medicare low-income thresholds, MLS tiers, PHI rebate rates, SG rate and maximum contribution base, contribution caps, transfer balance cap, CGT cap, Division 293 threshold, FBT rate and thresholds, Division 7A benchmark rate, GIC rates, PAYG GDP adjustment, instant asset write-off status, penalty unit, LITO, cents per kilometre and car limit, national minimum wage, parental leave weeks and the state payroll tax rates and thresholds were checked again against the ATO, state revenue office, Fair Work and Federal Register of Legislation pages; the ASIC fee rows were not re-checked. On 11 October 2026 the working-from-home rate, the Tax Reform No. 1 and No. 2 Acts, the Building a Stronger and Fairer Super System Act 2026 and Act No. 58 of 2026 (Medicare low-income thresholds) were read on the Federal Register of Legislation. On 31 October 2026 the HELP repayment income definition was checked against ATO QC16176, the working-from-home row against PCG 2023/1 para 26A, and the Bill notes against the APH pages cited.
 
 > Contributed by Ryan Duguid.
 

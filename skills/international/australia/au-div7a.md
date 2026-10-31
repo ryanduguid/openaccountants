@@ -6,7 +6,7 @@ version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** The High Court decided *Commissioner of Taxation v Bendel* [2026] HCA 18 on 10 June 2026: a UPE owed to a corporate beneficiary is not, of itself, a Div 7A loan. The ATO's decision impact statement (26 June 2026) accepts the decision. Several ATO products are under review or awaiting withdrawal -- Rule 11 carries the status table, rechecked on 11 October 2026. Verify before relying.
+> **Law-change context.** The High Court decided *Commissioner of Taxation v Bendel* [2026] HCA 18 on 10 June 2026: a UPE owed to a corporate beneficiary is not, of itself, a Div 7A loan. The ATO's decision impact statement (26 June 2026) accepts the decision. Several ATO products are under review or awaiting withdrawal -- Rule 11 carries the status table, rechecked on 11 October 2026, with its sub-trust, objection and Bill rows checked on 31 October 2026. Verify before relying.
 
 ## Section 1 -- Quick reference
 
@@ -49,7 +49,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Debit balance in shareholder/director account | Treat as a Div 7A loan candidate until characterised |
 | Unknown distributable surplus | Compute exposure at full value; flag the s 109Y cap as unquantified |
 | UPE on trust balance sheet | Passive UPE = no Div 7A loan (post-Bendel), but flag s 100A / Subdiv EA screen (T2-1, T2-2) |
-| Company asset used privately | Assume s 109CA payment at arm's-length value; check minor (<$300) and licence-fee carve-outs |
+| Company asset used privately, capacity unknown | Assume neither regime yet: test capacity first (Rule 1) and flag both the s 109CA and FBT exposures until it is settled. In shareholder capacity, s 109CA payment at arm's-length value; check minor (<$300) and licence-fee carve-outs |
 | Repayment near year end followed by redraw | Assume s 109R disregard applies; flag |
 
 ## Section 2 -- Required inputs and refusal catalogue
@@ -79,10 +79,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GL pattern | Likely issue | Action |
 | --- | --- | --- |
 | Debit balance -- shareholder / director loan account | s 109D loan candidate | Loan register (Section 7); agreement status; MYR check |
-| Drawings account not cleared to salary/dividend | Payments (s 109C) or loan | Characterise before lodgment day -- fixable until then |
+| Drawings account not cleared to salary/dividend | Payments (s 109C) or loan | Characterise before lodgment day -- fixable until then: a payment converted to a loan before the end of lodgment day is treated as a loan (s 109D(4A)). A payment that discharges a genuine company debt to the recipient is excluded up to the arm's-length amount (s 109J) |
 | "Loan -- related trust" (asset side) | Actual loan back from company to trust | Div 7A loan -- Bendel does NOT help actual loans |
 | UPE / beneficiary entitlement owed TO the company (in the trust's books) | Post-Bendel: not a loan while passive | s 100A / Subdiv EA screen; do not convert without advice |
-| Motor vehicles, boats, property with private use by shareholders | s 109CA asset-use payment | Arm's-length value less consideration; minor/licence carve-outs |
+| Motor vehicles, boats, property with private use by shareholders | Capacity first: FBT if provided in an employee's capacity (s 109ZB(3)); otherwise s 109CA asset-use payment | Employee capacity: au-fbt. Otherwise arm's-length value less consideration; minor/licence carve-outs |
 | Journal writing off a related-party receivable | s 109F forgiveness | Deemed dividend at year end, subject to surplus |
 | Interest income at exactly the benchmark rate | Existing complying loan | Verify MYR actually paid, not just interest accrued |
 
@@ -111,17 +111,17 @@ MYR = P x I / (1 - (1/(1+I))^T)
 
 ### Example 3 -- Shortfall, capped by distributable surplus
 
-Same loan; the shareholder repays only $10,000 in 2026-27. Shortfall = $9,716 -> deemed dividend at 30 June 2027, but only up to the company's distributable surplus (s 109Y). If surplus is $4,000, the dividend is $4,000 (and the company must give written statements where multiple provisional dividends are reduced proportionally).
+Same loan; the shareholder repays only $10,000 in 2026-27. Shortfall = $9,716 -> deemed dividend at 30 June 2027, but only up to the company's distributable surplus (s 109Y). If surplus is $4,000, the dividend is $4,000 (and because s 109Y set the amount, the company must give the shareholder a written statement as soon as possible after year end, showing the distributable surplus and the total provisional dividends: s 109Y(4)-(5)).
 
 ### Example 4 -- UPE to a bucket company, post-Bendel
 
 Trust resolves a $150,000 distribution to its corporate beneficiary in June 2027; the entitlement remains unpaid, and the company does nothing to call for payment.
 
-**Not a Div 7A loan** (*Bendel* [2026] HCA 18; ATO DIS 26 June 2026 -- passive UPEs are not financial accommodation, sub-trust or not). Surviving risks to flag: s 100A reimbursement-agreement analysis (R-AU-D7A-1), Subdiv EA where the trust pays/lends to the company's shareholders, and any ACTIVE step (converting the UPE to a loan, satisfaction by promissory note) that creates a real s 109D(3) loan. Any call or demand for payment ends the passive characterisation this example relies on -- whether unenforced forbearance after a demand amounts to financial accommodation is unresolved, so escalate the moment the company does anything other than nothing. UPEs already converted to complying loans before Bendel stay loans.
+**Not a Div 7A loan** (*Bendel* [2026] HCA 18; ATO DIS 26 June 2026 -- passive UPEs are not financial accommodation, sub-trust or not). Surviving risks to flag: s 100A reimbursement-agreement analysis (R-AU-D7A-1), Subdiv EA where the trust pays/lends to the company's shareholders, and any ACTIVE step (converting the UPE to a loan, satisfaction by promissory note) that creates a real s 109D(3) loan. Any call or demand for payment ends the passive characterisation this example relies on -- whether unenforced forbearance after a demand amounts to financial accommodation is unresolved, so escalate the moment the company does anything other than nothing. UPEs already converted to complying loans before Bendel stay loans; UPEs held on PS LA 2010/4 sub-trusts are not loans (Rule 11).
 
 ### Example 5 -- Private use of a company asset
 
-Company-owned holiday house used by the shareholder's family for 2 weeks; market rent $800/week; nothing paid.
+Company-owned holiday house used by the shareholder's family for 2 weeks; market rent $800/week; nothing paid. Assume the use is in the shareholder capacity, not an employee's (Rule 1).
 
 s 109CA payment = arm's-length value less consideration = $1,600 -> deemed dividend at year end (subject to surplus). Carve-outs checked: not minor (>= $300 notional value), no licence fee paid (a market-rate licence fee would zero it), none of the dwelling exceptions apply. Continuing availability re-tests at the start of each income year.
 
@@ -133,7 +133,8 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 
 ### Rule 1 -- The three trigger events
 
-- **The three trigger events** — Payments (s 109C, including s 109CA asset use), loans (s 109D), and debt forgiveness (s 109F) by a private company to a shareholder or associate (current or former, on the reasonable-person test) are deemed unfranked dividends at the end of the company's income year -- each capped by distributable surplus (Rule 8). Franking exceptions: the s 109RB discretion can allow franking, and s 109RC family-breakdown dividends (marriage/relationship breakdown obligations) are frankable without any discretion.  _(s 109C, s 109CA, s 109D, s 109F; s 109RB; s 109RC)_
+- **Capacity gate (first question)** — Division 7A does not apply to a payment, including the provision of an asset (s 109CA), made to a shareholder or associate in their capacity as an employee (as defined in the FBT Act) or an associate of an employee ([s 109ZB(3)](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/109ZB)); test FBT instead (au-fbt). Loans and debt forgiveness stay in Division 7A whatever the capacity (s 109ZB(1)-(2)). A director who receives, or is entitled to, amounts subject to PAYG withholding can be an FBT employee (FBTAA s 136(1)), but whether a given director or shareholder received a particular benefit as an employee depends on the circumstances: establish what was provided, why and on what terms. A shareholder with no employment or directorship is outside this carve-out. Where capacity is unclear, flag both exposures and escalate.  _(s 109ZB; s 109CA; FBTAA s 136(1))_
+- **The three trigger events** — Subject to the capacity gate, payments (s 109C, including s 109CA asset use), loans (s 109D), and debt forgiveness (s 109F) by a private company to a shareholder or associate (current or former, on the reasonable-person test) are deemed unfranked dividends at the end of the company's income year -- each capped by distributable surplus (Rule 8). Franking exceptions: the s 109RB discretion can allow franking, and s 109RC family-breakdown dividends (marriage/relationship breakdown obligations) are frankable without any discretion.  _(s 109C, s 109CA, s 109D, s 109F; s 109RB; s 109RC)_
 - **Associate** — (s 318 ITAA 1936, summarised): relatives of the shareholder; partners and their spouses and children; trustees of trusts under which the shareholder or an associate benefits; and companies the shareholder or associates control. Directors are caught only as shareholders or associates of shareholders -- confirm status when a debit director account is not held by a shareholder.  _(s 318 ITAA 1936)_
 
 ### Rule 2 -- Loans and the lodgment-day escape
@@ -150,11 +151,11 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 
 ### Rule 5 -- Amalgamated loans and minimum yearly repayments (s 109E)
 
-- **Minimum yearly repayment (MYR)** — Constituent loans to one entity in a year, unrepaid at lodgment day, saved by s 109N, sharing a maximum term, amalgamate. From the income year AFTER the loan year, each year's MYR is: ``` MYR = P x I / (1 - (1/(1+I))^T) P = amount unrepaid at the end of the previous income year I = CURRENT year's benchmark rate T = remaining term = longest constituent term - years elapsed between the end of the loan year and the end of the prior income year; the resulting DIFFERENCE is rounded UP to the next whole number if not already whole (s 109E(7) rounds the remaining term itself, never the elapsed years) ``` Shortfall between amounts paid and the MYR = deemed dividend at year end (subject to surplus).  _(s 109E; s 109E(7))_
+- **Minimum yearly repayment (MYR)** — Constituent loans to one entity in a year, unrepaid at lodgment day, saved by s 109N, sharing a maximum term, amalgamate. From the income year AFTER the loan year, each year's MYR is: ``` MYR = P x I / (1 - (1/(1+I))^T) P = amount unrepaid at the end of the previous income year I = CURRENT year's benchmark rate T = remaining term = longest constituent term - years elapsed between the end of the loan year and the end of the prior income year; the resulting DIFFERENCE is rounded UP to the next whole number if not already whole (s 109E(6) rounds the remaining term itself, never the elapsed years) ``` Shortfall between amounts paid and the MYR = deemed dividend at year end (subject to surplus).  _(s 109E; s 109E(6))_
 
 ### Rule 6 -- Payments and asset use (ss 109C, 109CA)
 
-- **Payments and asset use** — Payment = amounts paid/credited/transferred to, on behalf of, or for the benefit of the entity; property transfers valued at arm's length less consideration. A loan is not a payment. Use of a company asset (including under lease/licence) is a payment: first use, then re-tested at the start of each later income year; value = arm's-length amount for the use less consideration given. Carve-outs: minor use (< $300 notional value, s 58P criteria), otherwise-deductible use, certain dwellings, and NIL where an arm's-length licence fee is paid.  _(ss 109C, 109CA; s 58P)_
+- **Payments and asset use** — Payment = amounts paid/credited/transferred to, on behalf of, or for the benefit of the entity; property transfers valued at arm's length less consideration. A loan is not a payment. Use of a company asset (including under lease/licence) is a payment: first use, then re-tested at the start of each later income year; value = arm's-length amount for the use less consideration given. Carve-outs: minor use (< $300 notional value, s 58P criteria), otherwise-deductible use, certain dwellings, and NIL where an arm's-length licence fee is paid. Apply the Rule 1 capacity gate before treating any payment or asset use as caught.  _(ss 109C, 109CA; s 58P; s 109ZB(3))_
 
 ### Rule 7 -- Debt forgiveness (ss 109F, 109G)
 
@@ -162,7 +163,7 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 
 ### Rule 8 -- Distributable surplus (s 109Y)
 
-- **Distributable surplus** — ``` Distributable surplus = Net assets + Division 7A amounts - Non-commercial loans - Paid-up share value - Repayments of non-commercial loans ``` Net assets per the accounting records (less present legal obligations and specified provisions; Commissioner may substitute values for significant under/overvaluation). "Division 7A amounts" = current-year s 109C and s 109F dividends only. Where total provisional dividends exceed the surplus, each is reduced proportionally and the company must give recipients written statements.  _(s 109Y)_
+- **Distributable surplus** — ``` Distributable surplus = Net assets + Division 7A amounts - Non-commercial loans - Paid-up share value - Repayments of non-commercial loans ``` Net assets per the accounting records (less present legal obligations and specified provisions; Commissioner may substitute values for significant under/overvaluation). "Division 7A amounts" = current-year s 109C and s 109F dividends only. Where total provisional dividends exceed the surplus, each is reduced proportionally. Whenever s 109Y sets a dividend's amount, including a single dividend, the company must give the recipient a written statement as soon as possible after year end, showing the distributable surplus and the total provisional dividends (s 109Y(4)-(5)).  _(s 109Y)_
 
 ### Rule 9 -- Anti-avoidance on repayments (s 109R)
 
@@ -170,7 +171,7 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 
 ### Rule 10 -- Exclusions and the discretion
 
-- **Exclusions and the discretion** — s 109K: payments/loans to other companies (not as trustee) excluded. s 109L: amounts otherwise assessable or made non-assessable elsewhere. s 109M: loans in the ordinary course of business on usual arm's-length terms. s 109RB: the Commissioner may disregard a deemed dividend (or allow franking) for honest mistakes/inadvertent omissions -- factors include corrective action and speed, prior history; escalate applications (R-AU-D7A-3).  _(ss 109K, 109L, 109M, 109RB)_
+- **Exclusions and the discretion** — s 109K: payments/loans to other companies (not as trustee) excluded. s 109L: amounts otherwise assessable or made non-assessable elsewhere. s 109M: loans in the ordinary course of business on usual arm's-length terms. [s 109J](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/109J): a payment is not a s 109C dividend to the extent it discharges the company's obligation to pay money to the entity, up to the arm's-length amount (for example, repaying a shareholder's genuine credit loan or paying arm's-length rent). [s 109D(4A)](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/109D): a payment converted to a loan before the end of lodgment day is treated as a loan made when the payment was made, so Rules 2 and 3 then govern it. s 109RB: the Commissioner may disregard a deemed dividend (or allow franking) for honest mistakes/inadvertent omissions -- factors include corrective action and speed, prior history; escalate applications (R-AU-D7A-3).  _(ss 109D(4A), 109J, 109K, 109L, 109M, 109RB)_
 
 ### Rule 11 -- UPEs after Bendel: guidance status (as at 11 October 2026)
 
@@ -185,9 +186,11 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 | TR 2022/4 + PCG 2022/2 (s 100A) | IN FORCE, under review -- s 100A remains the live ATO angle on UPEs |
 | PCG 2017/13, TR 2015/4, TD 2015/20, TD 2011/15 | Under review, none withdrawn |
 | Withdrawn-ruling protection | s 358-20(3) Sch 1 TAA: favourable withdrawn rulings keep applying to pre-withdrawal arrangements |
-| Legislative response | 2018-19 Budget UPE measure still unenacted (prospective from Royal Assent); 2026-27 Budget: 30% minimum tax on discretionary trusts from 1 July 2028 with corporate beneficiaries denied the offset -- consultation closed 31 July 2026, not yet law |
+| Sub-trusts and investment agreements (DIS paras 37-39; checked 31 October 2026) | UPEs set aside on separate sub-trusts under PS LA 2010/4 (now withdrawn) are not loans, unless the parties have taken steps that fall within s 109D(3). A variation of an investment agreement between a sub-trust and the main trust (for example, its interest rate or term) does not of itself create a loan or a Subdiv EA UPE, but this depends on the variation's nature and effect. Escalate maturing or varied sub-trusts |
+| Taxpayers assessed on the old view (DIS paras 40-42; checked 31 October 2026) | A taxpayer assessed on the basis that a UPE, without more, was a s 109D loan may seek amendment within the amendment period, or object outside it. The ATO considers an extension of time for a late objection on the taxpayer's circumstances, and tests each case against the High Court's reasoning. Assemble the facts; escalate |
+| Legislative response (checked 31 October 2026) | 2018-19 Budget UPE measure still unenacted (prospective from Royal Assent). 30% minimum tax on discretionary trusts from 1 July 2028 with corporate beneficiaries denied the offset, plus roll-over relief and a one-off election -- BILLS, NOT LAW. Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf); detail at au-trust-distributions Rule 14 |
 
-Practical position for 2026-27: a passive UPE creates no Div 7A consequence; actual loans company-to-trust remain Div 7A loans; converted UPEs stay loans; s 100A and Subdiv EA screens always run.
+Practical position for 2026-27: a passive UPE creates no Div 7A consequence; a UPE held on a PS LA 2010/4 sub-trust is not a loan; actual loans company-to-trust remain Div 7A loans; converted UPEs stay loans; those assessed on the old view have the amendment and objection route above; s 100A and Subdiv EA screens always run.
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -205,11 +208,11 @@ Practical position for 2026-27: a passive UPE creates no Div 7A consequence; act
 
 ### T2-4 -- Distributable surplus valuation
 
-- **Distributable surplus valuation** — **Trigger:** net assets in the accounts look under/overstated (e.g. assets at historical cost, unrecorded liabilities). **Issue:** Commissioner's substitution power. **Action:** flag; do not self-adjust values.
+- **Distributable surplus valuation** — **Trigger:** net assets in the accounts look under/overstated (e.g. assets at historical cost, unrecorded liabilities). **Issue:** Commissioner's substitution power. **Action:** flag; do not self-adjust values. Section 109Y(2) starts from the accounting records, although some commentary works the surplus at market value: compute on the records, and where values differ materially show market value as a flagged sensitivity for the reviewer.
 
-### T2-5 -- Trust minimum tax horizon (announced, not law)
+### T2-5 -- Trust minimum tax horizon (Bills, not law)
 
-- **Trust minimum tax horizon (announced, not law)** — **Trigger:** structuring decisions for bucket companies extending past 1 July 2028. **Issue:** 2026-27 Budget announced 30% minimum tax on discretionary trusts (corporate beneficiaries denied the offset) from 1 July 2028, with restructure rollover relief from 1 July 2027 -- exposure draft legislation released 3 September 2026, not enacted. **Action:** note on any advice touching 2028+; escalate planning.  _(2026-27 Budget)_
+- **Trust minimum tax horizon (Bills, not law)** — **Trigger:** structuring decisions for bucket companies extending past 1 July 2028. **Issue:** Bills propose a 30% minimum tax on discretionary trusts (corporate beneficiaries denied the offset) from 1 July 2028, with restructure roll-over relief from 1 July 2027 and a one-off election in the 2028-29 income year. Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. **Action:** note on any advice touching 2028+; escalate planning.  _(Rule 11; au-trust-distributions Rule 14)_
 
 ### T2-6 -- Loans that are really wages
 
@@ -234,6 +237,7 @@ PER COUNTERPARTY (shareholder / associate)
   MYR = P x I / (1 - (1/(1+I))^T): AUD [____]
   Repayments made (excl. s 109R-disregarded; incl. valid set-offs): AUD [____]
   Shortfall:                       AUD [____]
+  Capacity of each payment or asset use (shareholder / employee, s 109ZB(3)): [____]
   s 109CA asset-use payments:      AUD [____]
   Forgiveness events:              AUD [____]
 
@@ -299,7 +303,8 @@ If the client provides only financial statements:
 | MYR formula and steps | s 109E(6); ato.gov.au Division 7A loans (QC 17341, updated 2 July 2026) |
 | Bendel | [2026] HCA 18 (10 June 2026); ATO decision impact statement 26 June 2026 |
 | s 100A | TR 2022/4; PCG 2022/2 (both in force, under review) |
-| Budget trust measures | 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026 |
+| Capacity | ITAA 1936 [s 109ZB](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/109ZB); [FBTAA s 136(1)](https://www.ato.gov.au/law/view/document?docid=PAC/19860039/136(1)) (employee definitions) |
+| Budget trust measures | 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026; Tax Reform No. 3 Bill: [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) (Bills, not law) |
 
 ### Test suite
 
@@ -313,9 +318,9 @@ If the client provides only financial statements:
 
 **Test 5:** $20,000 repaid 25 June, $25,000 redrawn 15 July. -> Repayment disregarded (s 109R); MYR shortfall computed as if unpaid.
 
-**Test 6:** Passive UPE $150,000 to bucket company. -> No Div 7A loan (Bendel). Convert it to a complying loan by agreement -> it IS a loan from conversion; stays a loan.
+**Test 6:** Passive UPE $150,000 to bucket company. -> No Div 7A loan (Bendel). Convert it to a complying loan by agreement -> it IS a loan from conversion; stays a loan. Hold it on a PS LA 2010/4 sub-trust -> not a loan (DIS para 38); escalate a maturing or varied sub-trust.
 
-**Test 7:** Holiday house, market rent $800/week, 2 weeks' private use, nothing paid. -> s 109CA payment $1,600 (not minor; no licence fee).
+**Test 7:** Holiday house, market rent $800/week, 2 weeks' private use in the shareholder capacity, nothing paid. -> s 109CA payment $1,600 (not minor; no licence fee).
 
 **Test 8:** Provisional dividends $80,000; distributable surplus $30,000. -> Dividends reduced proportionally to $30,000 total; written statements required.
 
@@ -323,11 +328,16 @@ If the client provides only financial statements:
 
 **Test 10:** Shareholder dies; executor asks whether the loan is forgiven. -> No automatic forgiveness; estate cases escalate (Rule 7).
 
+**Test 11:** Company car provided to a shareholder in their capacity as an employee. -> Outside Div 7A (s 109ZB(3)); test FBT (au-fbt). An interest-free loan to the same person -> Div 7A applies whatever the capacity (s 109ZB(1)). Capacity unclear -> flag both; escalate.
+
+**Test 12:** Company repays a shareholder's genuine $30,000 credit loan to it. -> No s 109C dividend, to the extent it does not exceed the arm's-length amount (s 109J).
+
 ### Prohibitions
 
+- NEVER treat a payment or asset use as a deemed dividend before testing capacity (s 109ZB(3)), and NEVER assume a director always acts as an employee
 - NEVER use a benchmark rate from the wrong year (2026-27 = 8.77%)
 - NEVER compute the MYR from the current-year balance -- P is the PRIOR year-end unpaid amount
-- NEVER treat a passive UPE as a Div 7A loan post-Bendel -- and NEVER clear a UPE structure without the s 100A / Subdiv EA screen
+- NEVER treat a passive UPE, or a UPE held on a PS LA 2010/4 sub-trust, as a Div 7A loan post-Bendel -- and NEVER clear a UPE structure without the s 100A / Subdiv EA screen
 - NEVER count a repayment that was re-borrowed (except valid s 109R(3) set-offs of assessable amounts)
 - NEVER assert a deemed dividend above distributable surplus
 - NEVER treat a company-to-company loan as caught (s 109K) unless the recipient acts as trustee

@@ -13,7 +13,7 @@ version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027"
-last_updated: 2026-10-11
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Return due -- self-lodger, or agent lodging on paper | 21 May (lodge AND pay) |
 | Return due -- tax agent lodging electronically | 25 June (client on the agent's FBT client list by 21 May) |
 | Instalment trigger | Prior-year FBT payable $3,000 or more -> quarterly instalments next year via activity statements |
-| Instalment variation | Labels F2/F3/F4 on the BAS; penalty risk if total instalments/estimates < 90% of actual liability |
+| Instalment variation | Labels F2/F3/F4 on the BAS; general interest charge can apply if the estimate used is < 90% of the tax assessed (FBTAA s 112B; Section 4.3) |
 | RFBA trigger | Individual reportable fringe benefits taxable value > $2,000 in the FBT year |
 | RFBA factor | Always x 1.8868 (Type 2), whole dollars |
 | RFBA reported | Through STP, for the income year ending straight after the FBT year (FBT year ended 31 Mar 2027 -> income year ended 30 Jun 2027), finalised by 14 July |
@@ -126,9 +126,9 @@ Quarter ending 30 June 25% | 30 September 50% | 31 December 75% | 31 March 100%
 Positive result -> enter at F3 (and copy to 6A). Negative or zero -> enter '0' at F3; a negative result may support a credit at **6B** (no minus sign).
 - **F4** -- reason code: 22 current business structure not continuing; 30 change in fringe benefits for employees; 31 change in employees with fringe benefits; 32 fringe benefits rebate now claimed.
 
-### 4.3 The 90% penalty rule
+### 4.3 The 90% rule (general interest charge)
 
-If you vary and your total instalments for the year -- or the estimates you based them on -- are **less than 90% of your actual FBT liability**, you may incur a penalty. Practical control: only vary down when you have the computation to support the new estimate, keep that workpaper on file, and re-run the estimate before the March quarter (100% cumulative point) so the final quarter trues the year up.
+If you vary and the estimate of the year's FBT used to work out an instalment (label F2) is **less than 90% of the tax assessed for the year**, you are liable to the general interest charge once that assessed tax is due and payable (FBTAA s 112B(1)). The charge accrues for each day in the instalment's GIC period (defined in s 109) on the amount by which the varied amount worked out under s 111(1), which can be positive, negative or nil, is less than the s 112B(2) formula amount; that formula uses the minimum tax amount (the lesser of the unvaried notional tax amount and the tax assessed), previous instalments and previous s 112A credits for the year (s 112B(2) and (3)). A varied quarter that produced a credit can therefore still attract the charge. The charge is additional tax (s 112B(4)). It does not apply where the instalment used the Commissioner's substituted estimate under s 112(3). The ATO's BAS guidance describes this exposure as a possible penalty where total instalments, or the estimates behind them, are less than 90% of the actual liability. Practical control: only vary down when you have the computation to support the new estimate, keep that workpaper on file, and re-run the estimate before the March quarter (100% cumulative point) so the final quarter trues the year up.
 
 ### 4.4 Year-end set-off
 
@@ -250,7 +250,7 @@ F3 = ($28,000 x 75%) - ($20,000 - $0) = $21,000 - $20,000 = $1,000
 Enter $1,000 at F3 and 6A; F4 reason code 31 (change in employees with fringe benefits)
 ```
 
-(Per the ATO BAS FBT-instalment page example.) Keep the estimate workpaper: total instalments must not fall below 90% of the actual liability without penalty exposure.
+(Per the ATO BAS FBT-instalment page example.) Keep the estimate workpaper: an estimate below 90% of the tax assessed can attract the general interest charge under FBTAA s 112B on the conditions in Section 4.3.
 
 ### Example 3 -- The sequencing trap
 
@@ -298,7 +298,7 @@ Also still live from au-fbt: NFP capping regimes (R-AU-FBT-1), car parking valua
 | Return + payment, self/paper | 21 May 2027 |
 | Return + payment, agent electronic | 25 June 2027 (client listed by 21 May 2027) |
 | Instalment trigger | Prior-year FBT payable >= $3,000 |
-| Variation penalty threshold | Instalments/estimates < 90% of actual liability |
+| Variation GIC threshold | Estimate used < 90% of tax assessed (FBTAA s 112B; conditions in Section 4.3) |
 | Variation reason codes | 22 / 30 / 31 / 32 |
 | Return items | Whole dollars at 14A (x2.0802), 14B (x1.8868) and 15; 16 = 47% x 15; 20 instalments; 21 payment due or 22 credit |
 | RFBA trigger / factor | > $2,000 / x1.8868 whole dollars |
@@ -314,6 +314,7 @@ Also still live from au-fbt: NFP capping regimes (R-AU-FBT-1), car parking valua
 | Lodgment and payment dates, non-lodgment, instalment set-off, processing times | ato.gov.au -- Lodging your FBT return and paying (QC 71178, updated 1 April 2026) |
 | Agent lodgment program dates, FBT client list by 21 May | ato.gov.au -- Registered agent lodgment program: FBT return (QC 34541, updated 1 July 2026) |
 | BAS labels F1/F2/F3/F4, 6A/6B, 90% rule, reason codes, variation example | ato.gov.au -- Fringe benefits tax (FBT) instalment (QC 33675) |
+| General interest charge on a varied instalment shortfall, 90% test | Fringe Benefits Tax Assessment Act 1986 s 112B, Compilation No. 97 (1 July 2026), https://www.legislation.gov.au/C2004A03280/latest/text/2 (checked 1 November 2026) |
 | Return items 14--23, Type 1/2 assembly, zero-not-negative rule, item 20/21 | ato.gov.au -- FBT return 2026 instructions: calculation details for taxable employers (QC 106238) |
 | RFBA steps, exclusions, always-Type-2 factor, income-year allocation, April--June leaver rule | ato.gov.au -- Reportable fringe benefits (QC 71180); FBT guide for employers Ch 5 |
 | Voluntary in-year RFBA reporting via pay/update events; payment summary fallback | ato.gov.au -- STP Phase 2 employer reporting guidelines: other components (QC 66099, updated 2 May 2026) |
@@ -344,7 +345,7 @@ Also still live from au-fbt: NFP capping regimes (R-AU-FBT-1), car parking valua
 - NEVER use a July--June export for FBT work -- export 1 April to 31 March
 - NEVER promise a client the 25 June date before confirming they are on the agent's FBT client list by 21 May
 - NEVER lodge the FBT return while any activity statement for the FBT year (including the March quarter) is outstanding
-- NEVER vary instalments down without a documented estimate -- sub-90% exposes penalties
+- NEVER vary instalments down without a documented estimate -- an estimate below 90% of the tax assessed can attract the general interest charge (s 112B; Section 4.3)
 - NEVER use the Type 1 gross-up without confirmed GST creditability
 - NEVER report RFBA against the FBT year's own dates -- it belongs to the following income year's STP finalisation
 - NEVER include car parking, non-salary-packaged meal entertainment or pooled-car values in an RFBA base; NEVER omit exempt-EV notional values from it
