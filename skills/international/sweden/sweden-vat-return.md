@@ -5,7 +5,7 @@ version: 2.0
 jurisdiction: SE
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Sweden (Konungariket Sverige) |
 | Standard rate | 25% |
-| Reduced rates | 12% (food, restaurant/catering, hotel accommodation), 6% (books, newspapers, cultural events, passenger transport, sporting events) |
+| Reduced rates | 12% (restaurant/catering, hotel accommodation; food up to 31 March 2026), 6% (food and take-away from 1 April 2026 to 31 December 2027; books, newspapers, cultural events, passenger transport, sporting events). Eat-in or take-away test: Section 5.2 _(Skatteverket, Momssatser och undantag från moms; Livsmedelsmomsen sänks till 6 procent, 26 February 2026)_ |
 | Zero rate | 0% (exports, intra-EU B2B supplies of goods, prescribed medicines, certain medical aids) |
 | Return form | Skattedeklaration / Momsdeklaration (ruta 05–49) |
 | Filing portal | https://www.skatteverket.se (Mina sidor) |
@@ -388,11 +388,12 @@ Car lease payment. In Sweden, passenger cars used for mixed business/private pur
 
 ### 5.2 Reduced rate 12% (ML kap 9 §3)
 
-- **Reduced rate 12% rule** — Applies to: food and non-alcoholic beverages, restaurant and catering services (excl. alcohol), hotel accommodation (from 2024). Sales → ruta 07 (net), ruta 11 (output VAT). Purchases → ruta 48 (input VAT at 12%).  _(ML kap 9 §3)_
+- **Reduced rate 12% rule** — Applies to: restaurant and catering services (excl. alcohol), hotel accommodation (from 2024), and food and non-alcoholic beverages up to 31 March 2026. Sales → ruta 07 (net), ruta 11 (output VAT). Purchases → ruta 48 (input VAT at 12%).  _(ML kap 9 §3; Skatteverket, Momssatser och undantag från moms)_
+- **Food or restaurant service test (from 1 April 2026)** -- Assess the sale as a whole, from what the customer actually receives. Food without support services is 6%, including ready-made food collected from a restaurant or food truck. Food or drink sold with services that let the customer eat or drink straight away (serving, table setting, dishwashing, access to premises with tables and chairs, access to glasses, crockery and cutlery) is a restaurant service at 12%, or catering at 12% when supplied at the customer's premises. One sale can carry both: a loaf taken home is 6%, and coffee and a pastry eaten at the café's table are 12%. Spirits, wine, beer stronger than folköl and tap water stay at 25%. Delivery by a separate transport company is a separate service at 25%. A lunch voucher usable only for take-away is 6% when sold; a voucher usable for both takes its rate when redeemed.  _(Skatteverket, Momssatser och undantag från moms)_
 
 ### 5.3 Reduced rate 6% (ML kap 9 §4)
 
-- **Reduced rate 6% rule** — Applies to: books, newspapers, periodicals, cultural events (cinema, theatre, concerts), sporting events (spectator), domestic passenger transport (bus, rail, taxi, domestic flights). Sales → ruta 08 (net), ruta 12 (output VAT). Purchases → ruta 48 (input VAT at 6%).  _(ML kap 9 §4)_
+- **Reduced rate 6% rule** — Applies to: food and take-away from 1 April 2026 to 31 December 2027 (Section 5.2), books, newspapers, periodicals, cultural events (cinema, theatre, concerts), sporting events (spectator), domestic passenger transport (bus, rail, taxi, domestic flights). Sales → ruta 08 (net), ruta 12 (output VAT). Purchases → ruta 48 (input VAT at 6%).  _(ML kap 9 §4; Skatteverket, Livsmedelsmomsen sänks till 6 procent, 26 February 2026)_
 
 ### 5.4 Zero rate / exempt with credit
 

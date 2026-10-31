@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Vietnam personal income tax (th
 version: 1.0
 jurisdiction: VN
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Thuế Thu Nhập Cá Nhân (TNCN — Personal Income Tax / PIT) |
 | Currency | VND (Vietnamese Dong / đồng) |
 | Tax year | Calendar year (1 Jan – 31 Dec) |
-| Primary legislation | Luật Thuế Thu Nhập Cá Nhân No. 04/2007/QH12 (amended); Luật số 109/2025/QH15 (effective 01/01/2026) |
+| Primary legislation | Luật số 109/2025/QH15, amended by Luật số 09/2026/QH16 (in force 01/07/2026; residents' employment and business income from the 2026 tax period, art. 29); Luật Thuế Thu Nhập Cá Nhân No. 04/2007/QH12 (amended) for earlier periods |
 | Tax authority | Tổng cục Thuế (General Department of Taxation — GDT) |
 | Filing portal | etax.gdt.gov.vn / thuedientu.gdt.gov.vn |
 | Filing deadline | Annual finalisation: 31 March of following year |
@@ -37,43 +37,43 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 2 — Progressive Tax Brackets (Biểu Thuế Lũy Tiến Từng Phần) — 2026
 
-Effective 01/01/2026, Vietnam moved from a 7-bracket to a **5-bracket** progressive tax system under Luật số 109/2025/QH15.
+From the 2026 tax period, Vietnam moved from a 7-bracket to a **5-bracket** progressive tax system for residents' employment income under Luật số 109/2025/QH15, arts 8, 9 and 29. Business income does not use these brackets (Section 5).
 
 ### Monthly rates (applied to taxable income per month)
 
-**Monthly rates table**  _(Luật số 109/2025/QH15; googlesky/thue-2026 (MIT); thangtd-0050/pit)_
+**Monthly rates table**  _(Tax period 2026 onwards. Luật số 109/2025/QH15, art. 9.2: https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat109-2025.pdf)_
 
 | Bracket | Monthly Taxable Income (VND) | Rate |
 | --- | --- | --- |
 | 1 | ≤ 10,000,000 | 5% |
-| 2 | 10,000,001 – 30,000,000 | 15% |
-| 3 | 30,000,001 – 60,000,000 | 25% |
+| 2 | 10,000,001 – 30,000,000 | 10% |
+| 3 | 30,000,001 – 60,000,000 | 20% |
 | 4 | 60,000,001 – 100,000,000 | 30% |
 | 5 | > 100,000,000 | 35% |
 
 ### Annual rates (applied to taxable income per year)
 
-**Annual rates table**  _(Luật số 109/2025/QH15; googlesky/thue-2026 (MIT); thangtd-0050/pit)_
+**Annual rates table**  _(Tax period 2026 onwards. Luật số 109/2025/QH15, art. 9.2: https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat109-2025.pdf)_
 
 | Bracket | Annual Taxable Income (VND) | Rate |
 | --- | --- | --- |
 | 1 | ≤ 120,000,000 | 5% |
-| 2 | 120,000,001 – 360,000,000 | 15% |
-| 3 | 360,000,001 – 720,000,000 | 25% |
+| 2 | 120,000,001 – 360,000,000 | 10% |
+| 3 | 360,000,001 – 720,000,000 | 20% |
 | 4 | 720,000,001 – 1,200,000,000 | 30% |
 | 5 | > 1,200,000,000 | 35% |
 
 ### Quick tax computation table (monthly)
 
-**Quick tax computation table**
+**Quick tax computation table**  _(Tax period 2026 onwards; derived from Luật số 109/2025/QH15, art. 9.2)_
 
 | If taxable income/month (VND) | Tax = |
 | --- | --- |
 | ≤ 10,000,000 | Income × 5% |
-| 10,000,001 – 30,000,000 | 500,000 + (Income − 10,000,000) × 15% |
-| 30,000,001 – 60,000,000 | 3,500,000 + (Income − 30,000,000) × 25% |
-| 60,000,001 – 100,000,000 | 11,000,000 + (Income − 60,000,000) × 30% |
-| > 100,000,000 | 23,000,000 + (Income − 100,000,000) × 35% |
+| 10,000,001 – 30,000,000 | 500,000 + (Income − 10,000,000) × 10% |
+| 30,000,001 – 60,000,000 | 2,500,000 + (Income − 30,000,000) × 20% |
+| 60,000,001 – 100,000,000 | 8,500,000 + (Income − 60,000,000) × 30% |
+| > 100,000,000 | 20,500,000 + (Income − 100,000,000) × 35% |
 
 ## Section 3 — Deductions (Giảm Trừ Gia Cảnh) — 2026
 
@@ -120,7 +120,7 @@ Effective 01/01/2026, Vietnam moved from a 7-bracket to a **5-bracket** progress
 | Category | Rate | Notes |
 | --- | --- | --- |
 | Employment income (tiền lương, tiền công) | Progressive 5-bracket (Section 2) | Main category for salaried individuals |
-| Business income (kinh doanh) | Progressive 5-bracket OR deemed rates | Self-employed / sole proprietors |
+| Business income (kinh doanh) | Exempt, % of revenue above the threshold, or 15%, 17% or 20% of income; never the 5-bracket schedule | Self-employed / sole proprietors; see below |
 | Capital gains (chuyển nhượng vốn) | 20% on gains | Or 0.1% of transfer value for listed securities |
 | Securities transfer | 0.1% of sale proceeds | Regardless of gain/loss |
 | Real estate transfer (chuyển nhượng bất động sản) | 2% of transfer price | No deduction of cost basis |
@@ -128,18 +128,37 @@ Effective 01/01/2026, Vietnam moved from a 7-bracket to a **5-bracket** progress
 | Lottery / prizes (trúng thưởng) | 10% above VND 10,000,000 |  |
 | Inheritance / gifts | 10% above VND 10,000,000 |  |
 
-### Deemed tax rates for business income (self-employed individuals)
+### Business income of resident individuals and household businesses (tax period 2026 onwards)
 
-**Deemed tax rates table**
+Luật số 109/2025/QH15, art. 7 governs this income from the 2026 tax period (art. 29.2). The method depends on annual revenue:
 
-| Business activity | Revenue tax rate |
+**Business income methods table**  _(Tax period 2026. Luật số 109/2025/QH15, art. 7.2 and 7.3: https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat109-2025.pdf; threshold in art. 7.1 as amended by Luật số 09/2026/QH16, art. 1: https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/5/09-qh.signed.pdf; Nghị định 68/2026/NĐ-CP, arts 3 and 4: https://xdcs.cdnchinhphu.vn/446259493575335936/2026/3/6/68-2026-nd-cp-05032026-signed-17727673940151875228819.pdf, as amended by Nghị định 141/2026/NĐ-CP, art. 1.1, effective 01/01/2026: https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/141-ndcp.signed.pdf)_
+
+| Annual revenue (VND) | PIT |
 | --- | --- |
-| Distribution / supply of goods | 0.5% |
-| Services, construction (excl. materials) | 2% |
-| Manufacturing, transport, services with goods | 1.5% |
+| ≤ 1,000,000,000 | None. VAT is also not payable. Notify actual revenue to the tax authority by 31 January of the following year (Nghị định 68/2026/NĐ-CP, art. 8.1(a)) |
+| > 1,000,000,000 to 3,000,000,000 | Taxpayer's choice: the rate below × (revenue − 1,000,000,000), or 15% × (revenue − related costs) |
+| > 3,000,000,000 to 50,000,000,000 | 17% × (revenue − related costs) |
+| > 50,000,000,000 | 20% × (revenue − related costs) |
+
+**Rates on revenue above VND 1,000,000,000**  _(Tax period 2026. Luật số 109/2025/QH15, art. 7.3; activity lists in Nghị định 253/2026/NĐ-CP, art. 45.2 and Appendix: https://congbaocdn.chinhphu.vn/180507251028987904/2026/7/16/469959-1784171413_v1_1784174315_signed.pdf)_
+
+| Business activity | Rate |
+| --- | --- |
+| Distribution and supply of goods | 0.5% |
+| Services; construction excluding materials | 2% |
+| Asset leasing; insurance agency; lottery agency; multi-level sales agency | 5% |
+| Manufacturing; transport; services tied to goods; food and beverage services; construction including materials | 1.5% |
+| Digital content in entertainment, e-games, digital film, photos and music; digital advertising | 5% |
 | Other business activities | 1% |
 
-- **Small business PIT exemption** — Self-employed individuals with revenue < VND 100,000,000/year are exempt from PIT on business income.
+- **Real estate rental (other than accommodation)**: 5% × (rental revenue − 1,000,000,000), and the income method does not apply (Luật số 109/2025/QH15, arts 7.2 and 7.4; Nghị định 68/2026/NĐ-CP, art. 4.4 as amended).
+- **Several trades or premises**: the VND 1,000,000,000 is deducted once a year across all of them, against the trade or premises the taxpayer chooses (Nghị định 68/2026/NĐ-CP, art. 4.3 as amended).
+- **Keeping or changing method**: a taxpayer on the income method stays on it for 2 consecutive years. A taxpayer on the revenue method whose actual revenue exceeds VND 3,000,000,000 moves to the income method from the following year (Nghị định 68/2026/NĐ-CP, art. 4.5(d)).
+- **Deadlines**: quarterly returns by the last day of the first month of the next quarter; monthly returns by the 20th of the next month; annual PIT finalisation by 31 March of the following year (Nghị định 68/2026/NĐ-CP, art. 8.3). These were not rechecked against Luật số 108/2025/QH15 and Nghị định 252/2026/NĐ-CP, which govern tax administration from 01/07/2026; confirm before filing.
+- **VAT is separate**: above the threshold, VAT is charged on all revenue by the direct method, not only on the excess (Nghị định 68/2026/NĐ-CP, art. 3; VAT Law No. 48/2024/QH15, art. 12.2(c); see `vietnam-vat`).
+- **Conflicting source**: a Government portal answer of July 2026 (https://baochinhphu.vn/sang-tao-noi-dung-so-doanh-thu-bao-nhieu-phai-nop-thue-102260716165956679.htm) quotes 2% for platform content revenue from 2026. Art. 7.3(đ) and Appendix item 4 of Nghị định 253/2026/NĐ-CP state 5% for digital content in the listed categories, which this guide follows. Unconfirmed: which content falls outside those categories. Thông tư 18/2026/TT-BTC was not read.
+- **2025 and earlier**: a different regime applied, with a VND 100,000,000 threshold and tax on all revenue once it was exceeded (Thông tư 40/2021/TT-BTC, art. 4.2, as quoted in the same portal answer). This guide does not give the rates for those years.
 
 ## Section 6 — Filing and Payment
 
@@ -166,6 +185,8 @@ Effective 01/01/2026, Vietnam moved from a 7-bracket to a **5-bracket** progress
 
 ## Section 7 — Worked Examples
 
+All examples in this section use the 2026 tax period. Examples 1 to 3 use insurance caps from 1 July 2026 and Region I for the unemployment insurance cap.
+
 ### Example 1 — Single employee, no dependents
 
 **Facts:** Monthly gross salary VND 40,000,000. No dependents.
@@ -182,9 +203,9 @@ Taxable income:                     20,300,000
 
 Tax:
   First 10,000,000 × 5%  =            500,000
-  Next 10,300,000 × 15%  =          1,545,000
+  Next 10,300,000 × 10%  =          1,030,000
                                    -----------
-Total PIT/month:                     2,045,000
+Total PIT/month:                     1,530,000
 ```
 
 ### Example 2 — Employee with 2 dependents
@@ -194,20 +215,22 @@ Total PIT/month:                     2,045,000
 **Computation:**
 ```
 Gross salary:                       60,000,000
-Less: BHXH (8%):                    -4,800,000
-Less: BHYT (1.5%):                    -900,000
-Less: BHTN (1%):                      -600,000
+Less: BHXH (8%, capped at 50,600,000): -4,048,000
+Less: BHYT (1.5%, capped at 50,600,000): -759,000
+Less: BHTN (1%, under the cap):       -600,000
 Less: Personal deduction:          -15,500,000
 Less: Dependent deductions (2×):   -12,400,000
                                    -----------
-Taxable income:                     25,800,000
+Taxable income:                     26,693,000
 
 Tax:
   First 10,000,000 × 5%  =            500,000
-  Next 15,800,000 × 15%  =          2,370,000
+  Next 16,693,000 × 10%  =          1,669,300
                                    -----------
-Total PIT/month:                     2,870,000
+Total PIT/month:                     2,169,300
 ```
+
+**Insurance caps used, from 1 July 2026:** BHXH and BHYT on salary up to VND 50,600,000 (20 × VND 2,530,000; base salary in Nghị định 161/2026/NĐ-CP: https://xaydungchinhsach.chinhphu.vn/tu-01-7-chinh-phu-tang-luong-co-so-119260517100243881.htm); BHTN on salary up to VND 106,200,000 (20 × the Region I minimum wage of VND 5,310,000 in Nghị định 293/2025/NĐ-CP: https://xaydungchinhsach.chinhphu.vn/tu-1-1-2026-muc-luong-toi-thieu-duoc-tang-bao-nhieu-119251111091442629.htm). The multiples are in `vn-payroll-social`. Unconfirmed: that the social insurance reference level still equals the base salary after 1 July 2026.
 
 ### Example 3 — High income earner
 
@@ -216,23 +239,42 @@ Total PIT/month:                     2,870,000
 **Computation:**
 ```
 Gross salary:                      150,000,000
-Less: BHXH (8%, capped at 36×base): -2,984,000  (cap applies: 8% × 37,300,000)
-Less: BHYT (1.5%, capped):            -559,500
-Less: BHTN (1%, capped):              -373,000
+Less: BHXH (8%, capped at 50,600,000): -4,048,000
+Less: BHYT (1.5%, capped at 50,600,000): -759,000
+Less: BHTN (1%, capped at 106,200,000): -1,062,000
 Less: Personal deduction:          -15,500,000
 Less: Dependent deduction (1×):     -6,200,000
                                    -----------
-Taxable income (approx):          124,383,500
+Taxable income:                    122,431,000
 
 Tax:
   First 10,000,000 × 5%   =           500,000
-  Next 20,000,000 × 15%   =         3,000,000
-  Next 30,000,000 × 25%   =         7,500,000
+  Next 20,000,000 × 10%   =         2,000,000
+  Next 30,000,000 × 20%   =         6,000,000
   Next 40,000,000 × 30%   =        12,000,000
-  Remaining 24,383,500 × 35% =      8,534,225
+  Remaining 22,431,000 × 35% =      7,850,850
                                    -----------
-Total PIT/month:                    31,534,225
+Total PIT/month:                    28,350,850
 ```
+
+### Example 4 — Sole trader, services, 2026
+
+**Facts:** Consulting services. Annual revenue VND 2,000,000,000 and related costs VND 1,400,000,000 in 2026.
+
+**Computation:**
+```
+Revenue method:
+  Revenue above threshold:
+    2,000,000,000 − 1,000,000,000 = 1,000,000,000
+  PIT at 2%:                          20,000,000
+
+Income method:
+  Income:
+    2,000,000,000 − 1,400,000,000 =   600,000,000
+  PIT at 15%:                         90,000,000
+```
+
+The taxpayer may choose either method at this revenue level. Choosing the income method fixes it for 2 consecutive years. A taxpayer with revenue of VND 1,000,000,000 or less pays no PIT.
 
 ## Section 8 — Conservative Defaults
 
@@ -296,8 +338,9 @@ Total PIT/month:                    31,534,225
 | Topic | Reference |
 | --- | --- |
 | PIT Law | Luật Thuế TNCN No. 04/2007/QH12 (amended 2012, 2014) |
-| 2026 bracket reform | Luật số 109/2025/QH15 (effective 01/01/2026) |
-| Implementation decree | Nghị định 65/2013/NĐ-CP (as amended) |
+| 2026 bracket reform | Luật số 109/2025/QH15, arts 9 and 29: https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/luat109-2025.pdf |
+| Implementation decree | Nghị định 253/2026/NĐ-CP (in force 01/07/2026, replacing Nghị định 65/2013/NĐ-CP; residents' employment and business income from the 2026 tax period, art. 69): https://congbaocdn.chinhphu.vn/180507251028987904/2026/7/16/469959-1784171413_v1_1784174315_signed.pdf |
+| Business income | Luật số 109/2025/QH15, art. 7; Luật số 09/2026/QH16, art. 1; Nghị định 68/2026/NĐ-CP; Nghị định 141/2026/NĐ-CP |
 | Circular guidance | Thông tư 111/2013/TT-BTC (as amended) |
 | Deduction adjustment mechanism | Nghị quyết 954/2020/UBTVQH14 |
 | Tax administration | Luật Quản lý Thuế No. 38/2019/QH14 |
@@ -322,7 +365,8 @@ Total PIT/month:                    31,534,225
 
 ### Self-check before finalisation
 
-- [ ] Correct bracket schedule applied (2026 five-bracket system)?
+- [ ] Correct bracket schedule applied (2026 five-bracket system: 5%, 10%, 20%, 30%, 35%)?
+- [ ] Business income kept off the bracket schedule, with the VND 1,000,000,000 threshold and the right method applied?
 - [ ] Personal deduction at VND 15,500,000/month?
 - [ ] Each dependent deduction at VND 6,200,000/month with registration confirmed?
 - [ ] Compulsory insurance deducted before applying brackets?
@@ -338,10 +382,11 @@ Total PIT/month:                    31,534,225
 | Version | Date | Change |
 | --- | --- | --- |
 | 1.0 | May 2026 | Initial release with 2026 five-bracket system per Luật số 109/2025/QH15 |
+| 1.0 | 31 October 2026 | Corrected brackets 2 and 3 to 10% and 20%; replaced the business income section; recomputed the examples with current insurance caps |
 
 ## Prohibitions
 
-- **Prohibitions list** — NEVER apply the old 7-bracket schedule for tax year 2026 onwards; NEVER claim dependent deduction without confirmed registration; NEVER ignore compulsory insurance deductions when computing taxable income; NEVER apply resident rates to a confirmed non-resident; NEVER present calculations as definitive — direct to a licensed Vietnamese tax agent (đại lý thuế)
+- **Prohibitions list** — NEVER apply the old 7-bracket schedule for tax year 2026 onwards; NEVER apply the progressive brackets to business income; NEVER claim dependent deduction without confirmed registration; NEVER ignore compulsory insurance deductions when computing taxable income; NEVER apply resident rates to a confirmed non-resident; NEVER present calculations as definitive — direct to a licensed Vietnamese tax agent (đại lý thuế)
 
 ## Disclaimer
 

@@ -4,7 +4,7 @@ description: "ALWAYS read this skill whenever asked about forming, incorporating
 jurisdiction: SA
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 version: 1.1
 reviewed_by: Mehran Habib
 review_status: pending_review
@@ -471,7 +471,7 @@ The Zakat, Tax and Customs Authority (ZATCA) — formed in 2021 by the merger of
 | **VAT — zero-rated** | 0% | Exports of goods/services to GCC outside the implementation zone; international transport; certain medicines and medical equipment |
 | **VAT — exempt** | n/a | Most financial services (with exceptions); residential rental |
 | **Real Estate Transaction Tax (RETT)** | **5%** | Real-estate transfers (replaced VAT on real estate from October 2020) |
-| **Excise tax** | 50% (soft drinks) / 100% (tobacco, energy drinks, sweetened beverages, e-smoking devices) | Specified goods |
+| **Excise tax** | 100% (tobacco, energy drinks, e-smoking devices and liquids); sweetened drinks, including sweetened carbonated drinks, SAR 0 / 0 / 0.79 / 1.09 per litre by sugar tier from 1 January 2026 (see `sa-excise-tax`) | Specified goods |
 | **Customs duties** | 5%–25% standard; higher for protected sectors | Imports (Saudi applies GCC Common Customs Tariff) |
 
 ### Filing calendar

@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -339,7 +339,7 @@ Apply these rules when a transaction is unambiguous. No flags required. For comp
 
 ### 5.7 Transitional credit for non-QIS suppliers (経過措置)
 
-- **Transitional credit** — Purchases from unregistered suppliers: 80% of otherwise allowable credit available through 30 September 2026; 50% through 30 September 2029; 0% thereafter. Always flag when supplier QIS status is unconfirmed.
+- **Transitional credit** — Purchases from unregistered suppliers, by purchase date: 80% of otherwise allowable credit to 30 September 2026; 70% from 1 October 2026 to 30 September 2028; 50% from 1 October 2028 to 30 September 2030; 30% from 1 October 2030 to 30 September 2031; 0% from 1 October 2031. Annual cap per supplier on tax-inclusive purchases: JPY 1 billion for taxable periods starting on or after 1 October 2024; JPY 100 million for taxable periods starting on or after 1 October 2026; no transitional credit on the excess. Always flag when supplier QIS status is unconfirmed. _(NTA leaflet, September 2026, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0026004-066_02.pdf; NTA Tax Answer No. 6498, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm)_
 
 ### 5.8 Filing deadlines
 
@@ -405,7 +405,7 @@ Tier 2 items are those where the correct classification cannot be determined fro
 
 ### 6.6 Supplier QIS registration status unconfirmed
 
-- **Supplier QIS status unconfirmed** — What it shows: Purchase from a domestic supplier with no QIS number on record. What's missing: Whether the supplier is QIS-registered. Conservative default: Apply 80% transitional credit (through 30 Sep 2026) — flag as requiring confirmation. Question to ask: "Can you provide the supplier's QIS registration number (T + 13 digits) from their invoice?"
+- **Supplier QIS status unconfirmed** — What it shows: Purchase from a domestic supplier with no QIS number on record. What's missing: Whether the supplier is QIS-registered. Conservative default: Apply the transitional credit rate for the purchase date in section 5.7 (70% from 1 Oct 2026 to 30 Sep 2028; 80% for purchases to 30 Sep 2026) — flag as requiring confirmation. Question to ask: "Can you provide the supplier's QIS registration number (T + 13 digits) from their invoice?"
 
 ## Section 7 — Excel working paper template
 

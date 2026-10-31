@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -29,13 +29,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Reduced rate 9% | Agricultural products, utilities, transport, construction, real estate, postal |
 | Reduced rate 6% | Financial services, modern services (IT, consulting, R&D), telecom, consumer services |
 | Zero rate | Exports of goods and services (出口零税率) |
-| Small taxpayer rate | 3% (小规模纳税人 — currently partially reduced to 1% for some sectors) |
+| Small taxpayer rate | 3% (小规模纳税人); 1 January 2026 to 31 December 2027: reduced to 1% for all taxable transactions except selling or leasing immovable property and transferring land use rights (MOF and STA Announcement 2026 No. 10, Part 3(3) item 6) |
+| Small taxpayer exemption (起征点) | 1 January 2026 to 31 December 2027: sales below CNY 100,000 a month, CNY 300,000 a quarter or CNY 1,000 per transaction or day are exempt; once sales reach the threshold, VAT is due on all sales for the period (VAT Law Art. 23; Announcement 2026 No. 10, Part 1) |
 | Tax authority | 国家税务总局 State Taxation Administration (STA) |
 | Filing portal | 电子税务局 (Online Tax Bureau — local provincial portals) |
 | General taxpayer filing | Monthly or quarterly; due 15th of following month/quarter |
 | Small taxpayer filing | Quarterly; due 15th of month following quarter |
-| Registration threshold (general) | CNY 500,000/year (services); CNY 500,000/year (goods) for voluntary registration |
-| Mandatory general taxpayer | Taxable sales > CNY 500,000 for service / CNY 500,000 for goods (verify current threshold) |
+| General taxpayer registration (一般纳税人登记) | Entities and individual businesses must register once annual taxable sales exceed CNY 5,000,000, and use the general method from that period; below it, registration is voluntary with sound accounts; no return to small-scale status (VAT Law Art. 9; Implementing Regulations, State Council Decree 826, Art. 36). This test is for general taxpayer status, not ordinary tax registration (税务登记), which this guide does not cover |
+| Small-scale taxpayer test | Annual taxable sales not over CNY 5,000,000, in force 1 January 2026 (VAT Law Art. 9); natural persons are small-scale (Implementing Regulations Art. 7) |
 | e-Invoice | 电子发票 (全面推行 — fully rolled out; paper invoices being phased out) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a China-licensed 注册税务师 (CTA) or 注册会计师 (CPA) |
@@ -98,7 +99,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-CN-1** — Small taxpayer (小规模纳税人) claiming input credits. "Small taxpayers cannot recover input VAT. They apply a simplified 3% rate on gross sales (or 1% under temporary relief). No input credit mechanism applies. This skill can calculate the simplified rate return but cannot process input credits."  _(R-CN-1)_
+- **R-CN-1** — Small taxpayer (小规模纳税人) claiming input credits. "Small taxpayers cannot recover input VAT. They apply a simplified 3% rate on sales excluding VAT (1% from 1 January 2026 to 31 December 2027, apart from immovable property and land use rights). No input credit mechanism applies. This skill can calculate the simplified rate return but cannot process input credits."  _(R-CN-1)_
 - **R-CN-2** — VAT exemption schemes. "Certain industries have specific VAT exemption or reduction schemes (e.g., software enterprises, agriculture). These require specialist confirmation. Flag for review."  _(R-CN-2)_
 - **R-CN-3** — Real estate and construction (cross-period projects). "Long-term construction and real estate development projects have complex cross-period VAT rules. Out of scope — escalate to 注册税务师."  _(R-CN-3)_
 - **R-CN-4** — Cross-border services without clear PE analysis. "Services provided across the China border involving permanent establishment (PE) questions require specialist analysis. Out of scope."  _(R-CN-4)_
@@ -333,7 +334,7 @@ Payroll payment. Wages and salaries are outside VAT scope entirely — not a sup
 
 ### 5.7 Small taxpayer (小规模纳税人) simplified calculation
 
-- **Small taxpayer simplified calculation** — Rate: 3% on gross sales (currently reduced to 1% for some sectors — verify current policy). No input credit. No special invoices issued (only ordinary invoices unless authorised). Filing: quarterly. Gross sales × 3% (or 1%) = VAT payable.
+- **Small taxpayer simplified calculation** — Rate: 3% on sales excluding VAT (VAT Law Art. 17), reduced to 1% from 1 January 2026 to 31 December 2027 except on selling or leasing immovable property and transferring land use rights (MOF and STA Announcement 2026 No. 10, Part 3(3) item 6). Exempt if sales for the period are below the threshold: CNY 100,000 monthly, CNY 300,000 quarterly, or CNY 1,000 per transaction or day for those taxed per transaction; at or above it, VAT is due on all sales for the period (VAT Law Art. 23; Announcement 2026 No. 10, Part 1). Natural persons in the listed cases use the monthly threshold on all their sales that month and cannot use the quarterly one (STA Announcement 2026 No. 4, item 2, and its official interpretation). No input credit. Invoice at 1% when the 1% rate applies; a small-scale taxpayer may give up the exemption or the 1% rate on some or all transactions to issue special VAT invoices (STA Announcement 2026 No. 4, items 1 and 4). Filing: quarterly. Sales excluding VAT × 1% (or 3% where the reduction does not apply) = VAT payable. For periods to 31 December 2025, MOF and STA Announcement 2023 No. 19 applied: exempt at monthly sales up to and including CNY 100,000, and 3% reduced to 1%.
 
 ### 5.8 Filing deadlines
 
@@ -411,7 +412,8 @@ C. NET VAT PAYABLE
 REVIEWER FLAGS:
   [ ] All special invoices verified in Golden Tax System?
   [ ] Export qualification confirmed for zero-rated sales?
-  [ ] Small taxpayer threshold check (CNY 500,000)?
+  [ ] Small taxpayer status check (annual taxable sales over CNY 5,000,000 requires general taxpayer registration)?
+  [ ] Small taxpayer exemption check (sales below CNY 100,000 monthly or CNY 300,000 quarterly, 2026 to 2027)?
   [ ] Any blocked/international SaaS invoice type confirmed?
   [ ] Proration calculated for any exempt sales?
 ```
@@ -483,7 +485,7 @@ CHINA VAT ONBOARDING — MINIMUM QUESTIONS
 | Input credit rules | 增值税法 Article 14; 财税[2016]36号 附件1 |
 | Export zero-rating | 增值税法 Article 2(3); 财税[2012]196号 |
 | e-Invoice | 税总发[2020]124号; 全面推行 nationwide rollout circulars |
-| Small taxpayer | 增值税法 Article 17; 小规模纳税人免税政策 |
+| Small taxpayer | 增值税法 Articles 9 and 23; 增值税法实施条例 (State Council Decree 826) Articles 7 and 36; MOF and STA Announcement 2026 No. 10; STA Announcement 2026 No. 4 |
 | Penalties | 税收征管法 (Tax Collection Administration Law) |
 
 ### Known gaps
@@ -510,6 +512,7 @@ CHINA VAT ONBOARDING — MINIMUM QUESTIONS
 | --- | --- | --- |
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, no inline tier tags |
+| 2.0 | 31 October 2026 | Small-scale threshold, exemption and 1% rate corrected against the 2026 VAT instruments |
 
 ## Prohibitions
 

@@ -1,10 +1,10 @@
 ---
 name: sa-zakat
-description: "Use this skill whenever asked about Saudi Arabian Zakat — the religious-origin wealth levy administered by ZATCA (Zakat, Tax and Customs Authority) on Saudi/GCC-owned business activity in the Kingdom of Saudi Arabia. Trigger on phrases like \"Saudi Zakat\", \"ZATCA Zakat\", \"Zakatable base Saudi\", \"2.5% Zakat KSA\", \"Implementing Regulations Zakat\", \"Saudi GCC zakat\", \"mixed entity Saudi\", \"Zakat return KSA\", \"Saudi Hijri filing\", \"Zakat working capital base\", \"Zakat net adjusted profit\", \"mixed ownership Saudi Zakat CIT split\", or \"ZATCA 120 days return\". Covers the 2.5% Hijri rate (2.577% Gregorian-equivalent), Zakatable persons (Saudi/GCC nationals and Saudi/GCC-owned share of capital), the higher-of net adjusted profit vs working capital base computation under the Implementing Regulations issued under Ministerial Resolution 2082 of 1438H (2017) as amended, mixed-entity Saudi/GCC vs foreign proportional split (Zakat on Saudi/GCC share; CIT 20% on foreign share — see sa-corporate-tax), passive entities, financing/banking sector specials, accounting-basis adjustments, and ZATCA portal annual filing within 120 days of fiscal year-end. Out of scope: pure CIT on 100%-foreign-owned entities (see sa-corporate-tax), Withholding Tax (see sa-wht), VAT (see saudi-arabia-vat), e-invoicing (see saudi-einvoice), Excise Tax, Real Estate Transaction Tax (RETT), Customs, oil and hydrocarbon sector special regimes, natural gas investment tax, Saudi Aramco special rate, and individual personal Zakat on non-commercial wealth (mosque/charitable Zakat al-mal outside ZATCA scope). ALWAYS read this skill before touching any Saudi Zakat work."
+description: "Use this skill whenever asked about Saudi Arabian Zakat — the religious-origin wealth levy administered by ZATCA (Zakat, Tax and Customs Authority) on Saudi/GCC-owned business activity in the Kingdom of Saudi Arabia. Trigger on phrases like \"Saudi Zakat\", \"ZATCA Zakat\", \"Zakatable base Saudi\", \"2.5% Zakat KSA\", \"Implementing Regulations Zakat\", \"Saudi GCC zakat\", \"mixed entity Saudi\", \"Zakat return KSA\", \"Saudi Hijri filing\", \"Zakat working capital base\", \"Zakat net adjusted profit\", \"mixed ownership Saudi Zakat CIT split\", or \"ZATCA 120 days return\". Covers the 2.5% Hijri rate (2.5777% for a 365-day year), Zakatable persons (Saudi/GCC nationals and Saudi/GCC-owned share of capital), the higher-of net adjusted profit vs working capital base computation under the Implementing Regulations issued under Ministerial Resolution 2082 of 1438H (2017) as amended, mixed-entity Saudi/GCC vs foreign proportional split (Zakat on Saudi/GCC share; CIT 20% on foreign share — see sa-corporate-tax), passive entities, financing/banking sector specials, accounting-basis adjustments, and ZATCA portal annual filing within 120 days of fiscal year-end. Out of scope: pure CIT on 100%-foreign-owned entities (see sa-corporate-tax), Withholding Tax (see sa-wht), VAT (see saudi-arabia-vat), e-invoicing (see saudi-einvoice), Excise Tax, Real Estate Transaction Tax (RETT), Customs, oil and hydrocarbon sector special regimes, natural gas investment tax, Saudi Aramco special rate, and individual personal Zakat on non-commercial wealth (mosque/charitable Zakat al-mal outside ZATCA scope). ALWAYS read this skill before touching any Saudi Zakat work."
 jurisdiction: SA
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Mehran Habib
 review_status: pending_review
 tier: 2
@@ -34,15 +34,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | Royal Decree No. 17/2/28/8634 of 1370H (1950G) establishing the Zakat charge |
 | Implementing Regulations | Ministerial Resolution **No. 2082 of 1438H (2017G)** — Implementing Regulations for Collection of Zakat, as amended (notably amendments in 1442H/2020G, 1444H/2023G, and 1446H/2024-2025) |
 | Standard rate | **2.5%** of the Zakatable base (Hijri lunar year) |
-| Gregorian-equivalent rate | **2.5772%** for taxpayers filing on a Gregorian fiscal year (adjustment ≈ 354/365 inverted to reflect the ~11-day longer Gregorian year — *verify current ZATCA circular*) |
-| Zakatable base | **Higher of**: (a) Net adjusted profit, or (b) Working capital base (capital + reserves + provisions + long-term liabilities + adjusted profit − long-term assets − deferred expenses, with prescribed adjustments) |
+| Rate for other years | **2.5% ÷ days in the Hijri year × actual days in the Zakat year**: **2.5777%** for a 365-day year on ZATCA's 354-day Hijri year (Regulation Art. 15; [ZATCA Zakat General Guideline 1445AH](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Zakat-General-Guideline-Zakat-Collection-1445AH.pdf), s 3.4.8 and examples 19 and 20) |
+| Zakatable base (superseded method; see the note at §3.4) | **Higher of**: (a) Net adjusted profit, or (b) Working capital base (capital + reserves + provisions + long-term liabilities + adjusted profit − long-term assets − deferred expenses, with prescribed adjustments) |
 | Zakatable persons | (a) Saudi & GCC natural persons engaged in commercial activity; (b) companies wholly owned by Saudi/GCC nationals; (c) Saudi/GCC-owned share of capital in mixed-ownership companies |
 | Mixed entity | Saudi/GCC share → Zakat 2.5%; foreign share → CIT 20% (see sa-corporate-tax). Same accounting profit, split adjustments |
 | Annual return | Zakat Declaration via ZATCA portal |
 | Filing deadline | Within **120 days** of fiscal year-end |
 | Payment deadline | Same — within 120 days of FYE |
 | Advance instalments | Quarterly advance Zakat may apply for larger taxpayers (threshold per ZATCA notice) |
-| Late-payment penalty | **5% per month** of unpaid Zakat, capped at **25%** |
+| Late-payment penalty | Not confirmed. [ZATCA's Zakat General Guideline 1445AH](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Zakat-General-Guideline-Zakat-Collection-1445AH.pdf) states no late-payment rate; the 5% per month figure formerly here matched no source read. Check the Implementing Regulation before quoting a rate |
 | Failure-to-file penalty | Per ZATCA penalty schedule (variable; verify current circular) |
 | Calendar election | Taxpayer may elect Hijri or Gregorian fiscal year; most large taxpayers elect Gregorian (rate adjusted) |
 | Validated by | Pending — sign-off by SOCPA-licensed Zakat advisor |
@@ -56,7 +56,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Ownership mix unclear | Treat as mixed entity — apply Saudi/GCC vs foreign split |
 | GCC national status of shareholder unclear | Treat as non-GCC foreign (CIT 20% applies to that share) |
-| Hijri vs Gregorian year unclear | Assume Gregorian (use 2.5772% — most common large-taxpayer filing) |
+| Hijri vs Gregorian year unclear | Assume Gregorian (use 2.5777% for 365 days — most common large-taxpayer filing) |
 | Adjustment item categorisation unclear | Treat as **add-back to base** (conservative — increases Zakatable base) |
 | Long-term vs short-term liability classification unclear | Treat as short-term (excluded from working capital additions) |
 | Long-term vs short-term asset classification unclear | Treat as long-term (deducted from working capital base — but verify, this *reduces* base, so the conservative direction depends on which side of "higher of" you sit; default to **whichever yields the higher Zakatable base** as a conservative rule) |
@@ -96,7 +96,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### 3.2 The Rate
 
 - **Hijri rate** — 2.5% under the Hijri lunar calendar (one hawl = one lunar year ≈ 354.36 days).
-- **Gregorian rate** — 2.5772% (commonly rounded to 2.577% or 2.578%) for taxpayers electing a Gregorian fiscal year — the rate is grossed up to reflect the ~11-day longer Gregorian year so that the effective annualised charge matches the lunar-year obligation. The exact percentage published by ZATCA from time to time should be verified.
+- **Rate for a Gregorian year** — 2.5777% for a 365-day year: 2.5% ÷ 354 × 365. Other lengths use actual days; ZATCA's example for a 426-day first year gives 3.0085%.  _(Regulation Art. 15; ZATCA Zakat General Guideline 1445AH, s 3.4.8)_
 
 ### 3.3 Persons Subject to Zakat
 
@@ -118,6 +118,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.4 Zakatable Base — The "Higher Of" Rule
 
+> **Method not yet rewritten.** For Zakat years starting on or after 1 January 2024, Ministerial Resolution 1007 of 19/8/1445H applies. The base is additions less deductions, tested against 2 limits. It cannot exceed the maximum limit: equity and equivalents at year end plus the difference between adjusted net profit or loss and net book profit or loss (Art. 28). If it falls below adjusted net profit, it moves to the minimum limit: the lower of adjusted net profit and undeducted assets plus that difference (Art. 27). The 'higher of' method below and the examples in Section 5 predate that resolution, so do not file from them. [ZATCA Zakat General Guideline 1445AH](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Zakat-General-Guideline-Zakat-Collection-1445AH.pdf), example 16.
+
 - **Zakatable base — higher of** — The Zakatable base is the higher of: (a) Net Adjusted Profit — accounting net profit adjusted per the Implementing Regulations (add-backs for non-deductible items; deductions for already-Zakated items, dividend income from Zakat-paying subsidiaries, etc.). (b) Working Capital Base — a balance-sheet-derived computation: ``` Working Capital Base = Capital (paid-up) + Retained earnings (opening) + Reserves (general, statutory, other) + Provisions (per regulations — most added back) + Long-term liabilities (debt > 1 year, certain financing arrangements) + Adjusted net profit for the year − Net book value of long-term assets (fixed assets, intangibles, investments in long-term subsidiaries) − Deferred expenses / prepayments long-term − Investments in Zakat-paying subsidiaries (to avoid double-Zakat) ± Other adjustments per Implementing Regulations ``` The taxpayer pays Zakat on whichever of (a) or (b) is higher.
 
 Rationale: net adjusted profit captures the income dimension; working capital base captures the wealth dimension (consistent with the religious origin of Zakat as a wealth purification). The "higher of" rule prevents avoidance by either suppressing profit or by structuring capital out of the base.
@@ -128,13 +130,13 @@ Rationale: net adjusted profit captures the income dimension; working capital ba
 - **Filing due date** — Within 120 days of fiscal year-end (≈ 4 months). For a Gregorian calendar-year taxpayer with FYE 31 December, the deadline is 30 April of the following year.
 - **Payment same window** — Payment same window.
 - **Advance Zakat instalments** — Advance Zakat instalments (quarterly) may apply for larger taxpayers per ZATCA notice — verify thresholds.
-- **Late-payment penalty** — 5% per month, capped at 25%.
+- **Late-payment penalty** — Not confirmed. [ZATCA's Zakat General Guideline 1445AH](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Zakat-General-Guideline-Zakat-Collection-1445AH.pdf) states no late-payment rate; the 5% per month figure formerly here matched no source read. Check the Implementing Regulation before quoting a rate.
 
 ## Section 4 — Tier 2: Computation Details
 
 ### 4.1 Mixed Entities — Saudi/GCC vs Foreign Split
 
-- **The mechanics** — 1. Compute the entity's full accounting net profit and full working capital base as if it were a single taxpayer. 2. Identify the ownership percentages at FYE (and ideally weighted across the year if changes occurred — verify ZATCA position). 3. Compute the Saudi/GCC adjusted base and apply 2.5% (or 2.577% Gregorian) Zakat. 4. Compute the foreign adjusted base and apply 20% CIT (cross-reference sa-corporate-tax). 5. Adjustments specific to each regime may differ — for example, the working-capital-base "higher of" rule applies on the Zakat side; CIT applies a profit-only computation.
+- **The mechanics** — 1. Compute the entity's full accounting net profit and full working capital base as if it were a single taxpayer. 2. Identify the ownership percentages at FYE (and ideally weighted across the year if changes occurred — verify ZATCA position). 3. Compute the Saudi/GCC adjusted base and apply 2.5% (or 2.5777% for a 365-day year) Zakat. 4. Compute the foreign adjusted base and apply 20% CIT (cross-reference sa-corporate-tax). 5. Adjustments specific to each regime may differ — for example, the working-capital-base "higher of" rule applies on the Zakat side; CIT applies a profit-only computation.
 - **Where ownership changes mid-year** — The conservative default is time-apportionment of the base, but ZATCA practice on this point has evolved — verify current circular.
 - **Listed companies** — Saudi/GCC-owned float subject to Zakat; foreign-owned float subject to CIT. Practical apportionment usually based on year-end Tadawul shareholder registry, with weighted-average if material movement.
 
@@ -189,7 +191,7 @@ The skill flags any holding/passive structure as requiring specialist sign-off (
 | Net book value of fixed assets (long-term) | 6,500,000 |
 | Long-term prepayments | 300,000 |
 
-Riyadh-based Saudi LLC, 100% Saudi-owned, FYE 31 December 2025G (Gregorian — rate 2.577%).
+Riyadh-based Saudi LLC, 100% Saudi-owned, FYE 31 December 2025G (Gregorian — rate 2.5777%).
 
 - **Working capital base calculation** — = 5,000,000 + 3,200,000 + 500,000 + 200,000 + 4,000,000 + 1,800,000 − 6,500,000 − 300,000 = 7,900,000
 
@@ -197,9 +199,9 @@ Riyadh-based Saudi LLC, 100% Saudi-owned, FYE 31 December 2025G (Gregorian — r
 
 **Higher of**: 7,900,000
 
-**Zakat at 2.577%**: 7,900,000 × 2.577% = **SAR 203,583**
+**Zakat at 2.5777%**: 7,900,000 × 2.5777% = **SAR 203,638.30**
 
-Filing deadline: 30 April 2026G. Pay via ZATCA portal. Late-payment penalty 5%/month capped 25% if missed.
+Filing deadline: 30 April 2026G. Pay via ZATCA portal. The late-payment rate is unconfirmed (see Section 1).
 
 ### 5.2 Example B — 60/40 Saudi/Foreign Mixed Entity
 
@@ -211,13 +213,13 @@ Filing deadline: 30 April 2026G. Pay via ZATCA portal. Late-payment penalty 5%/m
 - Saudi-share working capital base = 7,900,000 × 60% = 4,740,000
 - Saudi-share net adjusted profit = 1,800,000 × 60% = 1,080,000
 - Higher of = 4,740,000
-- Zakat at 2.577% = **SAR 122,150**
+- Zakat at 2.5777% = **SAR 122,182.98**
 
 **Step 3 — Foreign share (40%) — CIT (see sa-corporate-tax)**:
 - Foreign-share taxable profit = 1,800,000 × 40% = 720,000 (with foreign-specific CIT adjustments — *not* the working-capital-base method, which is Zakat-only)
 - CIT at 20% = **SAR 144,000** (illustrative — see sa-corporate-tax for full adjustments)
 
-**Step 4 — Combined liability**: Zakat 122,150 + CIT 144,000 = **SAR 266,150 total**.
+**Step 4 — Combined liability**: Zakat 122,182.98 + CIT 144,000 = **SAR 266,182.98 total**.
 
 Both filed via ZATCA portal within 120 days of FYE. Zakat declaration and CIT declaration are typically filed together as a unified Mixed Entity Declaration.
 
@@ -226,7 +228,7 @@ Both filed via ZATCA portal within 120 days of FYE. Zakat declaration and CIT de
 **Facts**: Saudi individual operating a sole-trader trading business under a Commercial Registration. FYE 31 December 2025G. Net adjusted profit SAR 450,000; working capital base SAR 380,000.
 
 - Higher of: 450,000 (net adjusted profit wins).
-- Zakat at 2.577% = **SAR 11,597**.
+- Zakat at 2.5777% = **SAR 11,599.65**.
 - Personal non-commercial Zakat al-mal on the individual's personal savings/gold/etc. is **outside ZATCA scope** (R-SA-Z-6) — refer to a religious scholar.
 - Filing deadline: 30 April 2026G.
 
@@ -242,7 +244,7 @@ Both filed via ZATCA portal within 120 days of FYE. Zakat declaration and CIT de
 
 ### 6.3 Penalties
 
-- **Late payment** — 5% per month of unpaid Zakat, capped at 25%.
+- **Late payment** — Not confirmed. [ZATCA's Zakat General Guideline 1445AH](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Zakat-General-Guideline-Zakat-Collection-1445AH.pdf) states no late-payment rate; the 5% per month figure formerly here matched no source read. Check the Implementing Regulation before quoting a rate.
 - **Failure to file** — variable penalty per ZATCA schedule.
 - **Inaccurate return / under-declaration** — ZATCA assessment with penalty (verify current circular).
 - **Failure to register** — separate penalty.
@@ -256,7 +258,7 @@ Both filed via ZATCA portal within 120 days of FYE. Zakat declaration and CIT de
 When in doubt:
 
 1. **Treat as mixed entity** with foreign-share default — produces both a Zakat number and a CIT number; reviewer can collapse to pure Zakat if pure Saudi ownership is later confirmed.
-2. **Use Gregorian rate 2.577%** as the default — the most common large-taxpayer filing basis.
+2. **Use the 365-day rate of 2.5777%** as the default — the most common large-taxpayer filing basis.
 3. **For each adjustment**, ask: "Does this increase or decrease the Zakatable base?" Default to the direction that **increases the base** unless a clear regulation or ruling supports the reduction.
 4. **Always flag**: "Treatment of [item] requires verification against the latest ZATCA circular (2024-2025 amendments)."
 5. **Refuse to finalise** banking/insurance computations — preliminary only; route to a financial-services Zakat specialist.

@@ -4,9 +4,9 @@ description: Use this skill whenever asked about Indian payroll processing, empl
 version: 1.1
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 reviewed_by: Mayur Deokar
-review_status: current
+review_status: pending_review
 depends_on:
   - payroll-workflow-base
 category: payroll
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Payroll Skill v1.1
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Figures changed on 2026-10-31 for the EPF wage ceiling postdate that sign-off and await review.
 
 ## Section 1 -- Quick Reference
 
@@ -111,7 +111,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Parameter | Detail |
 | --- | --- |
 | Employee contribution | 12% of Basic wages + Dearness Allowance (DA) |
-| Wage ceiling for PF | INR 15,000/month (contributions mandatory up to this; voluntary above) |
+| Wage ceiling for PF | INR 25,000/month from 17 September 2026, INR 15,000 before (S.O. 5109(E), Gazette of India, 17 September 2026); contributions mandatory up to this; voluntary above. See `in-pf-esi-employer` for enrolment and the September 2026 split |
 | Minimum Basic + DA | Must be ≥ 50% of total remuneration (Labour Codes) |
 | Applies to | Establishments with 20+ employees (10+ in notified sectors) |
 
@@ -146,8 +146,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Component | Rate | On |
 | --- | --- | --- |
 | EPF (Provident Fund) | 3.67% | Basic + DA |
-| EPS (Pension Scheme) | 8.33% | Basic + DA (max INR 15,000) |
-| EDLI (Life Insurance) | 0.50% | Basic + DA (max INR 15,000) |
+| EPS (Pension Scheme) | 8.33% | Basic + DA (max INR 25,000 from 17 September 2026; INR 15,000 before) |
+| EDLI (Life Insurance) | 0.50% | Basic + DA (max INR 25,000 from 17 September 2026; INR 15,000 before) |
 | PF Admin charges | 0.50% | Basic + DA |
 | **Total employer PF burden** | **~13.00%** | On Basic + DA |
 
@@ -417,7 +417,7 @@ Tax calculation:
 - **New Labour Codes**: The four codes (Wages, Social Security, Industrial Relations, OSH) became effective November 2025. Key impact: Basic + DA must be ≥ 50% of total remuneration, increasing PF/gratuity costs.
 - **Dual tax regime**: Default is new regime (Section 115BAC). Employee must explicitly opt for old regime. Employer MUST compute TDS per new regime if no declaration received.
 - **State variations**: Minimum wages, Professional Tax rates, Shops & Establishments Act rules, and LWF contributions all vary by state. ALWAYS identify the employee's state of employment.
-- **PF wage ceiling**: Statutory ceiling is INR 15,000/month for mandatory PF. Many employers contribute on actual Basic (above ceiling) voluntarily or per company policy.
+- **PF wage ceiling**: Statutory ceiling is INR 25,000/month for mandatory PF from 17 September 2026 (S.O. 5109(E)); INR 15,000 before. Employees excluded until then with PF wages up to INR 25,000 must be enrolled from that date. Many employers contribute on actual Basic (above ceiling) voluntarily or per company policy.
 - **ESI expansion**: Under new Labour Codes, ESI coverage expanded to all geographic areas. Previously, only notified areas were covered.
 - **Income Tax Act 2025**: Takes effect from 1 April 2026 (FY 2026-27). Form 24Q → Form 138; Form 16 → Form 130. Same slab rates expected; procedural/section number changes.
 - **Arrears/bonus**: When arrears or bonuses are paid, TDS must be computed on total projected annual income including such payments. Relief under Section 89 may apply.

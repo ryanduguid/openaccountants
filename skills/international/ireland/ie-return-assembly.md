@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package an 
 jurisdiction: IE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-18
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -195,7 +195,7 @@ If the taxpayer (or company) operated PAYE for any employees, or is a proprietar
 | Item | Source | Rule |
 | --- | --- | --- |
 | Sum of monthly P30 returns under PMOD (PAYE Modernisation, effective 1 January 2019) | ie-payroll | Must equal annual Employment Detail Summary per employee |
-| Employer's PRSI contribution rate | ie-payroll | Class A: 8.9% / 11.15% (rising to 11.25% from 1 Oct 2025) depending on band; Class S: 4.1% (proprietary director's own income) |
+| Employer's PRSI contribution rate | ie-payroll | Class A: 8.9% / 11.15% to 30 Sep 2025, 9.0% / 11.25% from 1 Oct 2025, 9.15% / 11.40% from 1 Oct 2026, the lower rate applying up to EUR 527 a week in 2025 and EUR 552 from 1 Jan 2026 (Social Welfare (Miscellaneous Provisions) Act 2024 s 3; Social Welfare Act 2024 s 2; Advance Notice for 2026); Class S: 4.1% to 30 Sep 2025, 4.2% from 1 Oct 2025, 4.35% from 1 Oct 2026 (proprietary director's own income; SW14 January 2026) |
 | Income tax / USC / PRSI withheld | ie-payroll → ie-paye | Reconciles to employee P60 / EDS |
 
 - **Mismatch cause** — **If mismatch:** Likely cause is mid-month corrections via PMOD, BIK (benefit-in-kind) adjustments not in original payroll runs, or year-end true-ups.

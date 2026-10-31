@@ -4,7 +4,7 @@ description: "Source-cited draft: tax overview for Hong Kong (tax year 2025) —
 jurisdiction: HK
 category: international
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 version: 1.3
 review_status: pending_review
 tier: 2
@@ -27,7 +27,7 @@ Hong Kong operates a simple, low-rate, territorial (source-based) tax system adm
 - **Headline corporate profits tax** — Two-tiered: 8.25% on first HKD 2,000,000 of assessable profits, 16.5% above (corporations)  _([Inland Revenue Ordinance (Cap. 112), Schedule 8](https://www.ird.gov.hk/eng/faq/2tr.htm))_
 - **VAT / GST** — None — Hong Kong has no VAT, GST or sales tax  _(Inland Revenue Ordinance (Cap. 112), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Capital gains tax** — None — Hong Kong does not levy capital gains tax  _(Inland Revenue Department, A guide to Profits Tax (profits from the sale of capital assets are excluded from assessable profits) — https://www.ird.gov.hk/eng/tax/bus_pft.htm)_
-- **Profits tax return filing** — Returns issued in bulk on the first working day of April; due ~1 month from issue, with block extensions by accounting-date code (extended dates commonly Nov for 31 Dec year-ends, mid-Aug for 31 Mar year-ends) (approx — confirm)  _([Inland Revenue Ordinance (Cap. 112), section 51](https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/profitsrates.htm))_
+- **Profits tax return filing** — Due dates follow the accounting-date code, not the entity type. Returns are generally due within 1 month of issue (2025/26 bulk issue: 1 April 2026). Where a tax representative has duly applied under the Block Extension Scheme, 2025/26 dates are: N code (accounting date 1 April to 30 November) no paper extension, 4 May 2026 on paper and 4 June 2026 electronically; D code (December) 31 August 2026 on paper and 2 October 2026 electronically; M code (January to March) 30 November 2026 on paper and 30 December 2026 electronically; M code current year loss cases 1 February 2027, on application, if the return shows an allowable loss. Electronic dates need an application and e-filing, except Part 4AA Entities under mandatory e-filing. Without a tax representative, the compliance date on the return applies. These dates are specific to 2025/26  _(Inland Revenue Ordinance (Cap. 112), section 51; [GovHK, Profits Tax Return](https://www.gov.hk/en/residents/taxes/taxfiling/filing/types/profitstax.htm); IRD Block Extension circulars of [19 March 2026](https://www.ird.gov.hk/eng/pdf/bel26e.pdf), [14 July 2026](https://www.ird.gov.hk/eng/pdf/bel26ea.pdf) and [20 October 2026](https://www.ird.gov.hk/eng/pdf/bel26eb.pdf))_
 - **Individual tax return filing** — Individual tax return (BIR60) issued early May; due within 1 month of issue (3 months if filed for sole-proprietorship business), with a 1-month extension for e-filing (approx — confirm)  _(Inland Revenue Ordinance (Cap. 112), section 51)_
 
 <!-- openaccountants-cta-block -->

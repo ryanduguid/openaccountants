@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Italy, tax plan
 version: 1.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -160,7 +160,7 @@ In the start-up phase (first 3 years), maximize deductible expenses to create la
 | --- | --- |
 | Regime forfettario threshold management | If revenue is approaching EUR 85,000, defer invoicing to January to remain in the regime. If revenue exceeds EUR 100,000, exit is immediate (mid-year). |
 | Accelerate deductions (ordinario) | Prepay professional insurance, subscriptions, training before 31 December. Under contabilità semplificata (regime di cassa), expenses are deductible when paid. |
-| Acconti management | IRPEF advance payments (acconti) in June (40%) and November (60%) are based on prior-year liability. If current-year income is lower, use the metodo previsionale to reduce acconti. Risk: 10% penalty if underestimated by > 10%. |
+| Acconti management | IRPEF advance payments (acconti) in June (40%) and November (60%), or 50% and 50% for ISA taxpayers (D.L. 124/2019 art. 58; D.L. 34/2019 art. 12-quinquies, c. 3-4), are based on prior-year liability. If current-year income is lower, use the metodo previsionale to reduce acconti. Risk: 10% penalty if underestimated by > 10%. |
 | Fondo pensione contributions | Maximize EUR 5,300 deduction before 31 December. |
 | Building bonus timing | Start renovation works and make payments via bonifico parlante before year-end to claim the detrazione in the current year's return. |
 | Employment income threshold (forfettario) | If transitioning from employment, ensure employment income in the prior year was ≤ EUR 35,000 (or that the relationship ended). |
@@ -261,12 +261,12 @@ Various tax credits for capital investments (Industria 4.0, Transizione 5.0) may
 | March | Review fondo pensione contribution strategy. Calculate expected income for the year. |
 | April | File Modello 730 (if eligible) or begin Modello Redditi PF preparation. |
 | May | Compare forfettario vs ordinario for current year's situation. |
-| June | **30 June** -- saldo IRPEF prior year + 1st acconto (40%), deferrable to 30 July with a 0.40% surcharge. Pay IVA balance (if ordinario). This is a PAYMENT date, not a filing date. |
+| June | **30 June** -- saldo IRPEF prior year + 1st acconto (40%; ISA taxpayers 50%), deferrable to 30 July with a 0.40% surcharge (ISA taxpayers and forfettari 2026: 20 July without surcharge or 20 August with 0.80%, D.L. 89/2026 art. 6 as cited in the Agenzia delle Entrate calendar). Pay IVA balance (if ordinario). This is a PAYMENT date, not a filing date. |
 | July | Mid-year revenue review: track EUR 85,000 forfettario ceiling. |
 | August | Review capital expenditure needs. Plan asset purchases for H2. |
 | September | **30 September** -- 730 deadline (if via CAF/intermediario). Review building bonus opportunities. |
 | October | Assess fondo pensione headroom. Estimate full-year income for acconto calculation. |
-| November | **30 November** -- 2nd acconto IRPEF (60%). Use metodo previsionale if income is lower. Maximize fondo pensione contributions (EUR 5,300). Note the Redditi PF filing deadline has already passed on 31 October. |
+| November | **30 November** -- 2nd acconto IRPEF (60%; ISA taxpayers 50%). Use metodo previsionale if income is lower. Maximize fondo pensione contributions (EUR 5,300). Note the Redditi PF filing deadline has already passed on 31 October. |
 | December | Defer invoicing if approaching forfettario threshold. Make charitable donations. Pay medical expenses (traceable payments for detrazione). Prepay deductible expenses. |
 
 ### Example 1 -- Regime Forfettario vs Ordinario (IT Consultant, Revenue EUR 60,000)

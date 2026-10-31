@@ -1,10 +1,10 @@
 ---
 name: it-irap
-description: Use this skill whenever asked about Italian IRAP (Imposta Regionale sulle Attività Produttive) for self-employed professionals. Trigger on phrases like "IRAP", "imposta regionale", "IRAP professionista", "IRAP autonomo", "valore della produzione", "regional production tax Italy", or any question about IRAP obligations for a self-employed client in Italy. Covers the standard 3.9% rate, valore della produzione netta, regional variations, and the landmark exemption for autonomous professionals without autonomous organisation. ALWAYS read this skill before touching any Italy IRAP work.
+description: Use this skill whenever asked about Italian IRAP (Imposta Regionale sulle Attività Produttive), including whether a sole trader or self-employed professional owes it. Trigger on phrases like "IRAP", "imposta regionale", "IRAP professionista", "IRAP autonomo", "valore della produzione", "regional production tax Italy", or any question about IRAP obligations in Italy. IRAP is not due from individuals carrying on a business or profession since the 2022 tax period. Covers that scope rule, partnerships and professional associations, the standard 3.9% rate, valore della produzione netta and regional variations. ALWAYS read this skill before touching any Italy IRAP work.
 jurisdiction: IT
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 version: 1.1
 review_status: pending_review
 tier: 2
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Jurisdiction | Italy |
 | Jurisdiction Code | IT |
 | Primary Legislation | D.Lgs. 15 dicembre 1997, n. 446 (IRAP decree) |
-| Supporting Legislation | L. 190/2014 (Legge di Stabilità 2015); D.L. 73/2022 (IRAP reform); annual Legge di Bilancio |
+| Supporting Legislation | L. 234/2021 art. 1, c. 8 (individuals out of scope from 2022); L. 190/2014 (Legge di Stabilità 2015); D.L. 73/2022 (IRAP reform); annual Legge di Bilancio |
 | Tax Authority | Agenzia delle Entrate (national) + Regioni (regional) |
 | Contributor | Open Accountants |
 | Validated By | Pending -- requires validation by Italian commercialista |
@@ -39,18 +39,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Before computing, you MUST know:
 
-1. **Activity type** [T1] -- lavoratore autonomo (professional), impresa individuale (sole proprietor), or società?
-2. **Autonomous organisation (autonoma organizzazione)?** [T1] -- critical: professionals WITHOUT autonomous organisation may be EXEMPT
+1. **Taxpayer type** [T1] -- individual (lavoratore autonomo or impresa individuale), società di persone, associazione professionale, or società di capitali? Individuals owe no IRAP for 2022 onwards.
+2. **Tax period** [T1] -- 2022 onwards, or an earlier period under assessment or refund claim?
 3. **Region of activity** [T1] -- rates vary by region
-4. **Tax regime** [T1] -- regime forfettario? (exempt from IRAP)
-5. **Use of employees or significant capital goods?** [T1] -- determines autonomous organisation
-6. **Gross revenue and deductible IRAP costs** [T1]
+4. **ISA status** [T1] -- determines the acconto split (Step 5)
+5. **Gross revenue and deductible IRAP costs** [T1]
 
-**If activity type and autonomous organisation status are unknown, STOP. IRAP liability depends on these.**
+**If the taxpayer type is unknown, STOP. IRAP liability depends on it.**
 
 ## Step 1: Who Is Subject to IRAP? [T1]
 
-- **Legislation** — D.Lgs. 446/1997, art. 2-3  _(D.Lgs. 446/1997, art. 2-3)_
+- **Legislation** — D.Lgs. 446/1997, art. 2-3; L. 234/2021 art. 1, c. 8: from the tax period in progress at its entry into force, IRAP 'non è dovuta dalle persone fisiche esercenti attività commerciali ed esercenti arti e professioni'.  _(D.Lgs. 446/1997, art. 2-3; L. 234/2021 art. 1, c. 8)_
 
 ### Subject to IRAP
 
@@ -58,14 +57,18 @@ Before computing, you MUST know:
 
 | Category | IRAP Applies? |
 | --- | --- |
-| Imprese individuali (sole proprietors with a business) | YES -- always |
-| Società (partnerships, corporations) | YES -- always |
-| Lavoratori autonomi (professionals) WITH autonomous organisation | YES |
-| Lavoratori autonomi WITHOUT autonomous organisation | **NO -- EXEMPT** |
-| Regime forfettario taxpayers | **NO -- EXEMPT** |
-| Contribuenti minimi | **NO -- EXEMPT** |
+| Imprese individuali (sole proprietors with a business), 2022 onwards | **NO -- not due** |
+| Lavoratori autonomi (professionals), with or without employees or organisation, 2022 onwards | **NO -- not due** |
+| Regime forfettario taxpayers and contribuenti minimi | **NO -- not due** |
+| Società semplici, società in nome collettivo, società in accomandita semplice and equivalents | YES |
+| Associazioni tra professionisti (associations of individuals practising a profession together) | YES |
+| Società di capitali and enti | YES -- see `it-corporate-income-tax` for companies |
 
-### The "Autonomous Organisation" Test (Autonoma Organizzazione) [T1/T2]
+The partnership and association rows follow the IRAP 2026 instructions, section 2.2.1 (the copy read is marked 'BOZZA INTERNET'). **[T2]** An azienda coniugale run as a società is subject under the same section. Treatment of an impresa familiare was not confirmed from the sources read: flag for reviewer.
+
+### The "Autonomous Organisation" Test (Autonoma Organizzazione): tax periods before 2022 only [T2]
+
+For an individual, this test matters only for a period before 2022, such as an open assessment or refund claim. It decides nothing for 2022 onwards. The case below was not reopened in the 2026-10-31 revision.
 
 - **Landmark case** — Corte di Cassazione, Sezioni Unite, sent. 9451/2016 -- A professional (lavoratore autonomo) is subject to IRAP only if they have an "autonomous organisation" of production factors.  _(Corte di Cassazione, Sezioni Unite, sent. 9451/2016)_
 
@@ -106,14 +109,14 @@ Before computing, you MUST know:
 
 - **Legislation** — D.Lgs. 446/1997, art. 5-5bis  _(D.Lgs. 446/1997, art. 5-5bis)_
 
-### For Imprese Individuali (Sole Proprietors -- Business)
+### For Società di Persone Carrying On a Business (art. 5-bis)
 
-- **Valore della produzione netta (imprese individuali)** — valore_produzione_netta = ricavi (revenue) + variazioni rimanenze (inventory changes) + altri proventi (other operating income) - costi della produzione (production costs) + costo del lavoro (labour costs added back) + interessi passivi (interest added back) + compensi occasionali (occasional compensation added back)  _(D.Lgs. 446/1997, art. 5-5bis)_
+- **Valore della produzione netta (business partnerships)** — valore_produzione_netta = ricavi (revenue) + variazioni rimanenze (inventory changes) + altri proventi (other operating income) - costi della produzione (production costs) + costo del lavoro (labour costs added back) + interessi passivi (interest added back) + compensi occasionali (occasional compensation added back)  _(D.Lgs. 446/1997, art. 5-5bis)_
 - **Key difference from income tax base** — IRAP base is NOT the same as income tax base. Labour costs, interest, and some other items are added back.  _(D.Lgs. 446/1997, art. 5-5bis)_
 
-### For Lavoratori Autonomi (Professionals)
+### For Società Semplici and Professional Associations (art. 8)
 
-- **Valore della produzione netta (professionals)** — valore_produzione_netta = compensi (fees/revenue) - costi inerenti (deductible costs) + costo del personale (employee costs added back)  _(D.Lgs. 446/1997, art. 5-5bis)_
+- **Valore della produzione netta (professional associations)** — valore_produzione_netta = compensi (fees/revenue) - costi inerenti (deductible costs) + costo del personale (employee costs added back)  _(D.Lgs. 446/1997, art. 5-5bis)_
 
 ### Simplified Computation for Small Businesses (Art. 5-bis)
 
@@ -121,11 +124,11 @@ Before computing, you MUST know:
 
 ### Step 4.1 -- Verify IRAP liability
 
-- **Verify IRAP liability logic** — IF regime_forfettario OR contribuente_minimo: IRAP = 0 (EXEMPT) ELIF lavoratore_autonomo AND no_autonomous_organisation: IRAP = 0 (EXEMPT) ELSE: proceed to calculation
+- **Verify IRAP liability logic** — IF individual AND tax_period >= 2022: IRAP = 0 (not due, L. 234/2021 art. 1, c. 8) ELIF individual AND tax_period < 2022: flag for reviewer ELSE: proceed to calculation
 
 ### Step 4.2 -- Compute valore della produzione netta
 
-- **Compute VPN logic** — # For sole proprietor (impresa): vpn = revenue + inventory_changes + other_income - production_costs + labour_costs_addback + interest_addback # For professional (autonomo with organisation): vpn = fees - deductible_costs + employee_costs_addback
+- **Compute VPN logic** — # For business partnership: vpn = revenue + inventory_changes + other_income - production_costs + labour_costs_addback + interest_addback # For professional association: vpn = fees - deductible_costs + employee_costs_addback
 
 ### Step 4.3 -- Apply deductions
 
@@ -147,7 +150,7 @@ Before computing, you MUST know:
 
 | Payment | Deadline |
 | --- | --- |
-| Saldo (balance for prior year) + 1st acconto (advance for current year) | **30 June** (or 31 July with 0.40% surcharge) |
+| Saldo (balance for prior year) + 1st acconto (advance for current year) | **30 June** (or 30 July with 0.40% surcharge). ISA taxpayers 2026: 20 July without surcharge, or 20 August with 0.80% _(D.L. 89/2026 art. 6, as cited in the Agenzia delle Entrate calendar)_ |
 | 2nd acconto (second advance for current year) | **30 November** |
 
 ### Advance Payment (Acconti)
@@ -156,11 +159,11 @@ Before computing, you MUST know:
 
 | Method | Amount |
 | --- | --- |
-| Historical method (metodo storico) | 100% of prior-year IRAP, split 40% (1st) / 60% (2nd) |
+| Historical method (metodo storico) | 100% of prior-year IRAP, split 40% (1st) / 60% (2nd); ISA taxpayers 50% / 50% _(D.L. 124/2019 art. 58; D.L. 34/2019 art. 12-quinquies, c. 3-4; IRAP 2026 instructions, section 5.2)_ |
 | Forecast method (metodo previsionale) | Based on estimated current-year IRAP |
 
-- **Acconti calculation formula** — 1st_acconto = prior_year_IRAP × 40% (due 30 June) 2nd_acconto = prior_year_IRAP × 60% (due 30 November)
-- **Minimum IRAP threshold for advance payments** — EUR 51.65 (If prior-year IRAP <= EUR 51.65: no advance payments required.)
+- **Acconti calculation formula** — Not ISA: 1st_acconto = prior_year_IRAP × 40% (due 30 June) 2nd_acconto = prior_year_IRAP × 60% (due 30 November). ISA taxpayer: 1st_acconto = prior_year_IRAP × 50%, 2nd_acconto = prior_year_IRAP × 50%.
+- **Minimum IRAP threshold for advance payments** — Partnerships and associations: EUR 51.65 (If prior-year IRAP <= EUR 51.65: no advance payments required.) Other taxpayers: EUR 20.66.  _(IRAP 2026 instructions, section 5.2)_
 
 ## Step 6: IRAP Declaration [T1]
 
@@ -191,22 +194,22 @@ Before computing, you MUST know:
 ### EC1 -- Freelance professional, no employees, minimal equipment [T1]
 
 **Situation:** Avvocato (lawyer) working alone from home with a laptop and phone.
-**Resolution:** Likely NO autonomous organisation. IRAP exempt per Cassazione Sezioni Unite 9451/2016. Document the factual basis (no employees, no significant beni strumentali).
+**Resolution:** IRAP not due for 2022 onwards, because the client is an individual (L. 234/2021 art. 1, c. 8). No autonomous organisation analysis is needed.
 
-### EC2 -- Professional with one employee [T2]
+### EC2 -- Professional with one employee [T1]
 
-**Situation:** Architect with one part-time employee (segretaria).
-**Resolution:** Having even one employee generally constitutes autonomous organisation. IRAP likely applies. [T2] -- confirm with case law. Some case law allows an exception if the employee's role is merely administrative and marginal.
+**Situation:** Architect practising as an individual with one part-time employee (segretaria).
+**Resolution:** IRAP not due for 2022 onwards. Employees do not change this for an individual (L. 234/2021 art. 1, c. 8). An architect practising through an association or società is subject to IRAP.
 
 ### EC3 -- Regime forfettario [T1]
 
 **Situation:** Client is under regime forfettario (flat-rate tax regime).
-**Resolution:** IRAP exempt. No declaration, no payment. Forfettario exclusion is clear and absolute.
+**Resolution:** IRAP not due. No declaration, no payment.
 
 ### EC4 -- Sole proprietor with a shop [T1]
 
 **Situation:** Impresa individuale operating a retail shop with two employees.
-**Resolution:** IRAP applies. This is an impresa (business), not a profession. Autonomous organisation test is not relevant for imprese -- they are always subject.
+**Resolution:** IRAP not due for 2022 onwards, because the owner is an individual (L. 234/2021 art. 1, c. 8). The same shop run through an s.n.c. or s.a.s. is subject to IRAP.
 
 ### EC5 -- Multiple regions [T2]
 
@@ -220,34 +223,34 @@ Before computing, you MUST know:
 
 ### EC7 -- First year of activity [T1]
 
-**Situation:** New impresa individuale, started in April 2025.
+**Situation:** New s.n.c., started in April 2025.
 **Resolution:** IRAP applies from the first year of activity (no first-year exemption like CFE in France). Advance payments based on forecast method (no prior year). First payment with saldo by 30 June 2026.
 
 ### EC8 -- Cessation mid-year [T1]
 
-**Situation:** Client closes business in August 2025.
-**Resolution:** IRAP applies on valore della produzione for the period of activity (Jan-Aug). Final declaration due by 30 November 2026. No advance payments for the following year.
+**Situation:** Partnership closes its business in August 2025.
+**Resolution:** IRAP applies on valore della produzione for the period of activity (Jan-Aug). Final declaration follows the Step 6 deadline; [T2] -- confirm any liquidation rule. No advance payments for the following year.
 
-### EC9 -- Contribuente minimo switching to ordinary [T2]
+### EC9 -- Contribuente minimo switching to ordinary [T1]
 
-**Situation:** Client was contribuente minimo (exempt) and switches to ordinary regime.
-**Resolution:** IRAP applies from the year of regime change. The autonomous organisation test applies if the client is a professional. [T2] -- assess organisation status.
+**Situation:** Individual client was contribuente minimo and switches to ordinary regime in 2022 or later.
+**Resolution:** IRAP remains not due, because the client is still an individual.
 
 ## Step 9: Test Suite
 
-### Test 1 -- Professional exempt (no autonomous organisation)
+### Test 1 -- Individual professional, 2025
 
-**Input:** Freelance consultant, works alone, home office, EUR 80,000 fees, EUR 15,000 costs.
-**Expected output:** IRAP = EUR 0. Exempt -- no autonomous organisation.
+**Input:** Freelance consultant, individual, tax year 2025, EUR 80,000 fees, EUR 15,000 costs.
+**Expected output:** IRAP = EUR 0. Not due (L. 234/2021 art. 1, c. 8), and the result is the same with employees or a studio.
 
-### Test 2 -- Professional with organisation
+### Test 2 -- Professional association
 
-**Input:** Dentist with 2 employees, studio rental, EUR 200,000 fees, EUR 60,000 deductible costs, EUR 40,000 employee costs.
+**Input:** Association of dentists with 2 employees, studio rental, EUR 200,000 fees, EUR 60,000 deductible costs, EUR 40,000 employee costs.
 **Expected output:** VPN = EUR 200,000 - EUR 60,000 + EUR 40,000 = EUR 180,000. Less employee deductions (assume EUR 15,000): EUR 165,000. IRAP = EUR 165,000 x 3.90% = EUR 6,435.
 
-### Test 3 -- Sole proprietor (impresa), standard rate
+### Test 3 -- Business partnership (s.n.c.), standard rate
 
-**Input:** Retail business, revenue EUR 300,000, production costs EUR 200,000, labour EUR 50,000, interest EUR 5,000. Lombardia.
+**Input:** Retail s.n.c., revenue EUR 300,000, production costs EUR 200,000, labour EUR 50,000, interest EUR 5,000. Lombardia.
 **Expected output:** VPN = EUR 300,000 - EUR 200,000 + EUR 50,000 + EUR 5,000 = EUR 155,000. Less employee deductions (assume EUR 20,000): EUR 135,000. IRAP = EUR 135,000 x 3.90% = EUR 5,265.
 
 ### Test 4 -- Regime forfettario
@@ -257,13 +260,13 @@ Before computing, you MUST know:
 
 ### Test 5 -- High-rate region (Campania)
 
-**Input:** Professional with organisation in Campania, VPN EUR 100,000.
+**Input:** Professional association in Campania, VPN EUR 100,000.
 **Expected output:** IRAP = EUR 100,000 x 4.82% = EUR 4,820.
 
 ### Test 6 -- Advance payments
 
 **Input:** Prior-year IRAP = EUR 8,000.
-**Expected output:** 1st acconto (30 June) = EUR 8,000 x 40% = EUR 3,200. 2nd acconto (30 November) = EUR 8,000 x 60% = EUR 4,800.
+**Expected output:** Not ISA: 1st acconto (30 June) = EUR 8,000 x 40% = EUR 3,200. 2nd acconto (30 November) = EUR 8,000 x 60% = EUR 4,800. ISA taxpayer: EUR 4,000 and EUR 4,000.
 
 ### Test 7 -- Low IRAP, no advances
 
@@ -272,12 +275,13 @@ Before computing, you MUST know:
 
 ## PROHIBITIONS
 
-- NEVER apply IRAP to regime forfettario taxpayers -- they are exempt
-- NEVER assume all professionals owe IRAP -- the autonomous organisation test must be applied
+- NEVER apply IRAP to regime forfettario taxpayers
+- NEVER charge IRAP to an individual carrying on a business or profession for 2022 onwards, with or without employees (L. 234/2021 art. 1, c. 8)
+- NEVER apply the 40%/60% acconto split without confirming the taxpayer is outside the ISA rule
 - NEVER use the income tax base as the IRAP base -- they are different (labour costs and interest are added back for IRAP)
 - NEVER apply the standard 3.90% rate without checking the specific region -- rates vary
 - NEVER forget the 10% IRAP deduction from IRPEF -- it materially reduces income tax
-- NEVER determine autonomous organisation status without examining the factual circumstances (employees, beni strumentali)
+- NEVER use the autonomous organisation test for a period from 2022 onwards; for an earlier period, examine the factual circumstances (employees, beni strumentali)
 - NEVER present IRAP advance payments as optional -- they are mandatory if prior-year IRAP exceeds EUR 51.65
 - NEVER ignore the employee cost add-back -- it is a fundamental difference from income tax computation
 - NEVER advise on multi-region apportionment without flagging for reviewer

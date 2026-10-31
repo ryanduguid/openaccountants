@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Spanish corporate income tax (I
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -311,17 +311,17 @@ The IS computation follows this pipeline:
    = Base imponible previa:                    EUR 79,000
 5. - Compensación BINs (100%, free floor 1M):  EUR 15,000
    = Base imponible:                           EUR 64,000
-6. Tipo gravamen: Microempresa (INCN < 1M)
-   - First EUR 50,000 × 17% =                 EUR 8,500
-   - Remaining EUR 14,000 × 20% =             EUR 2,800
-   = Cuota íntegra:                            EUR 11,300
+6. Tipo gravamen: Microempresa (INCN < 1M), period starting in 2025 (LIS DT 44ª.1)
+   - First EUR 50,000 × 21% =                 EUR 10,500
+   - Remaining EUR 14,000 × 22% =             EUR 3,080
+   = Cuota íntegra:                            EUR 13,580
 7. - Deducción empleo discapacidad (1 × 9,000): EUR 9,000
-   = Cuota líquida:                            EUR 2,300
+   = Cuota líquida:                            EUR 4,580
 8. - Retenciones:                              EUR 0
    - Pagos fraccionados:                       EUR 0
-   = Resultado liquidación:                    EUR 2,300 (a ingresar)
+   = Resultado liquidación:                    EUR 4,580 (a ingresar)
 
-Tipo efectivo: 2,300 / 80,000 = 2.88%
+Tipo efectivo: 4,580 / 80,000 = 5.725%
 ```
 
 ## Section 9 -- Filing Obligations
@@ -364,7 +364,7 @@ Tipo efectivo: 2,300 / 80,000 = 2.88%
 - NEVER forget tributación mínima for entities with INCN ≥ EUR 20M or consolidated groups
 - NEVER apply ZEC 4% rate without verifying the employment ceiling
 - NEVER deduct multas, sanciones, or retribución de fondos propios
-- NEVER apply the Ley 7/2024 microempresa rates (17%/20%) to fiscal years before 2025
+- NEVER apply the microempresa rates of 17%/20% (LIS art. 29.1) to periods starting before 2027: periods starting in 2025 take 21%/22% and periods starting in 2026 take 19%/21% (LIS DT 44ª.1 and .2)
 - NEVER apply common territory IS rates to entities fiscally domiciled in foral territories
 - NEVER confuse IRPF (personal) with IS (corporate) -- completely different regimes
 

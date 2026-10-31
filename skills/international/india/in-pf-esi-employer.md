@@ -4,9 +4,9 @@ description: Use this skill whenever asked about Indian EPF (Employees' Providen
 version: "1.0"
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Mayur Deokar
-review_status: current
+review_status: pending_review
 category: international
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India EPF & ESI -- Employer Obligations Skill v1.0
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Figures changed on 2026-10-31 for the EPF wage ceiling postdate that sign-off and await review.
 
 ## Section 1 -- Quick Reference
 
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | India (Republic of India) |
 | Tax/Contribution | EPF (Provident Fund) + ESI (State Insurance) |
 | Currency | INR only |
-| Applicable period | FY 2025-26 (April 2025 -- March 2026) |
+| Applicable period | FY 2025-26 (April 2025 -- March 2026); EPF wage ceiling as revised from 17 September 2026 (FY 2026-27) |
 | EPF legislation | Employees' Provident Funds and Miscellaneous Provisions Act, 1952 |
 | ESI legislation | Employees' State Insurance Act, 1948 |
 | Administering bodies | EPFO (Employees' Provident Fund Organisation); ESIC (ESI Corporation) |
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Component | Employer (%) | Employee (%) | On |
 | --- | --- | --- | --- |
 | EPF (Provident Fund) | 3.67% | 12% | Basic + DA |
-| EPS (Employee Pension Scheme) | 8.33% | Nil | Basic + DA (capped at ₹15,000/month) |
+| EPS (Employee Pension Scheme) | 8.33% | Nil | Basic + DA (capped at ₹25,000/month from 17 September 2026; ₹15,000 before) |
 | **Total employer contribution** | **12%** | -- | Basic + DA |
 | **Total employee contribution** | -- | **12%** | Basic + DA |
 
@@ -53,7 +53,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Charge | Rate | On |
 | --- | --- | --- |
 | EPF Admin charges | 0.50% | Total EPF wages (minimum ₹500/month if >20 employees) |
-| EDLI (Employees' Deposit Linked Insurance) | 0.50% | Basic + DA (capped at ₹15,000/month) |
+| EDLI (Employees' Deposit Linked Insurance) | 0.50% | Basic + DA (capped at ₹25,000/month from 17 September 2026; ₹15,000 before) |
 | EDLI Admin charges | Nil (removed w.e.f. 01-04-2017) | -- |
 
 ### ESI Contribution Summary
@@ -110,7 +110,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 |  | Retrenchment compensation |
 |  | Gratuity |
 
-- **PF wage ceiling (voluntary cap)** — ₹15,000/month is the statutory wage ceiling for EPF. Employers may choose to contribute on actual Basic + DA even if above ₹15,000 (most large employers do this). EPS is always capped at ₹15,000/month.
+- **PF wage ceiling (voluntary cap)** — ₹25,000/month is the statutory wage ceiling from 17 September 2026; ₹15,000 applied before that date. Authority: S.O. 5109(E) of 17 September 2026, made under section 2(89) of the Code on Social Security, 2020 for its Chapter III, in force on Gazette publication (Gazette of India, Extraordinary, Part II, Section 3(ii), No. 4918, https://egazette.gov.in/WriteReadData/2026/276299.pdf). Contributions run on ₹25,000 or actual wages if lower (PIB release 2314111). Employers may choose to contribute on actual Basic + DA even if above ₹25,000 (most large employers do this). EPS is always capped at ₹25,000/month.
+- **Enrolment from 17 September 2026:** Employees excluded until now because their wages exceeded ₹15,000, and whose EPF wages do not exceed ₹25,000, must be made members of EPF, EPS and EDLI from 17 September 2026. Enrolling them is the employer's duty; no application is needed (EPFO FAQs Q29 to Q31; PIB release 2313790). An EPF member outside EPS with wages in that band joins EPS from the same date (FAQs Q9). EPF wages above ₹25,000 at joining or on 17 September 2026 fall outside mandatory coverage and EPS membership (FAQs Q13 note, Q26), so a voluntary member in that position has no EPS share and the full employer 12% goes to EPF.
+- **September 2026 wage month:** File one ECR, due 15 October 2026. Compute 1 to 16 September under the ₹15,000 ceiling and 17 to 30 September under ₹25,000, using 16/30 and 14/30 of the monthly wage (EPFO FAQs Q7 to Q9, Q46). Wage of ₹20,000, member previously capped at ₹15,000: EPF wage = ₹8,000.00 + ₹9,333.33 = ₹17,333.33; employee ₹2,080.00; employer EPF ₹636.13; EPS ₹1,443.87; EDLI ₹86.67; admin ₹86.67. Same wage, previously excluded employee: EPF wage = ₹9,333.33; employee ₹1,120.00; employer EPF ₹342.53; EPS ₹777.47; EDLI ₹46.67; admin ₹46.67.
+- **Status of these sources:** The Gazette text sets only the ceiling and its date. The enrolment duty and the September split rest on the EPFO FAQs, read from a copy on a third-party host (https://www.staffnews.in/wp-content/uploads/2026/10/EPFO_Wage_Ceiling_FAQs.pdf) because the EPFO site refused the request. PIB releases 2313790 and 2314111 support the ceiling, the 8.33% of ₹25,000 EPS maximum and enrolment, not the split. Confirm the split against an EPFO circular.
 
 ### 2.2 Employer 12% Breakup
 
@@ -119,14 +122,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Component | Rate | Cap |
 | --- | --- | --- |
 | EPF account (employee's individual PF) | 3.67% | On full PF wages |
-| EPS (Pension fund) | 8.33% | Capped at ₹15,000/month (max ₹1,250/month to EPS) |
-| If PF wages > ₹15,000 | Balance of 8.33% above cap goes to EPF | Full 12% effectively goes to EPF |
+| EPS (Pension fund) | 8.33% | Capped at ₹25,000/month from 17 September 2026 (max ₹2,083/month to EPS: 8.33% is ₹2,082.50, shown as ₹2,083 in EPFO FAQs Q13) |
+| If PF wages > ₹25,000 | Balance of 8.33% above cap goes to EPF | Employer's full 12% is still paid, split between EPF and EPS |
 
-**Example:** Employee with Basic + DA = ₹30,000/month:
+**Example (wage months from October 2026):** EPS member contributing on actual Basic + DA = ₹30,000/month:
 - Employer EPF = ₹30,000 × 3.67% = ₹1,101
-- Employer EPS = ₹15,000 × 8.33% = ₹1,250 (capped)
-- Remaining to EPF = (₹30,000 × 8.33%) − ₹1,250 = ₹2,499 − ₹1,250 = ₹1,249
-- Total employer to EPF account = ₹1,101 + ₹1,249 = ₹2,350
+- Employer EPS = ₹25,000 × 8.33% = ₹2,083 (capped)
+- Remaining to EPF = (₹30,000 × 8.33%) − ₹2,083 = ₹2,499 − ₹2,083 = ₹416
+- Total employer to EPF account = ₹1,101 + ₹416 = ₹1,517
 - Total employer contribution = ₹30,000 × 12% = ₹3,600 (split between EPF and EPS)
 
 ### 2.3 EDLI (Employees' Deposit Linked Insurance)
@@ -136,9 +139,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Item | Detail |
 | --- | --- |
 | Purpose | Life insurance for EPF members |
-| Employer contribution | 0.50% of Basic + DA (capped at ₹15,000/month) |
-| Maximum EDLI contribution | ₹75/month per employee |
-| Benefit on death | Up to ₹7,00,000 (₹7 lakh) |
+| Employer contribution | 0.50% of Basic + DA (capped at ₹25,000/month from 17 September 2026; ₹15,000 before) |
+| Maximum EDLI contribution | ₹125/month per employee from 17 September 2026 (₹75 before) |
+| Benefit on death | Up to ₹7,00,000 (₹7 lakh), unchanged by the higher ceiling (EPFO FAQs Q38) |
 | Employee contribution | Nil |
 
 ### 2.4 International Workers
@@ -244,7 +247,7 @@ Gross = ₹20,000/month (below ₹21,000 ESI threshold)
 | Component | Employer | Employee |
 | --- | --- | --- |
 | EPF (on Basic + DA = ₹15,000) | ₹15,000 × 3.67% = ₹550.50 | ₹15,000 × 12% = ₹1,800 |
-| EPS (capped at ₹15,000) | ₹15,000 × 8.33% = ₹1,249.50 | Nil |
+| EPS (₹15,000 is below the ₹25,000 ceiling) | ₹15,000 × 8.33% = ₹1,249.50 | Nil |
 | Total PF employer | ₹1,800 (12% of ₹15,000) | ₹1,800 |
 | EDLI | ₹15,000 × 0.50% = ₹75 | Nil |
 | PF Admin | ₹15,000 × 0.50% = ₹75 | Nil |
@@ -254,20 +257,20 @@ Gross = ₹20,000/month (below ₹21,000 ESI threshold)
 
 ### Example 2: Higher Salary (PF only, ESI not applicable)
 
-Employee: Basic + DA = ₹40,000/month, Gross = ₹65,000/month (above ₹21,000 ESI threshold)
+Employee: EPS member, wage months from October 2026, Basic + DA = ₹40,000/month, Gross = ₹65,000/month (above ₹21,000 ESI threshold)
 
 **Example 2 Calculation Table**
 
 | Component | Employer | Employee |
 | --- | --- | --- |
 | EPF (on ₹40,000, if contributing on actual) | ₹40,000 × 3.67% = ₹1,468 | ₹40,000 × 12% = ₹4,800 |
-| EPS (capped at ₹15,000) | ₹15,000 × 8.33% = ₹1,250 | Nil |
-| Remaining to EPF | ₹40,000 × 8.33% − ₹1,250 = ₹2,082 | Nil |
+| EPS (capped at ₹25,000) | ₹25,000 × 8.33% = ₹2,083 | Nil |
+| Remaining to EPF | ₹40,000 × 8.33% − ₹2,083 = ₹1,249 | Nil |
 | Total PF employer | ₹4,800 (12% of ₹40,000) | ₹4,800 |
-| EDLI | ₹15,000 × 0.50% = ₹75 | Nil |
+| EDLI | ₹25,000 × 0.50% = ₹125 | Nil |
 | PF Admin | ₹40,000 × 0.50% = ₹200 | Nil |
 | ESI | Not applicable (gross > ₹21,000) | Not applicable |
-| **Total employer cost** | **₹5,075** | -- |
+| **Total employer cost** | **₹5,125** | -- |
 
 ## Section 6 -- Edge Cases
 
@@ -298,7 +301,7 @@ Employee: Basic + DA = ₹40,000/month, Gross = ₹65,000/month (above ₹21,000
 ## Section 7 -- Prohibitions
 
 - NEVER compute PF on gross salary -- PF is on Basic + DA only
-- NEVER exceed the EPS ceiling (₹15,000/month) for pension calculation
+- NEVER exceed the EPS ceiling (₹25,000/month from 17 September 2026; ₹15,000 before) for pension calculation
 - NEVER apply ESI to employees earning above ₹21,000/month gross (unless mid-period crossing)
 - NEVER miss the 15th of the month deadline without accounting for interest/damages
 - NEVER assume all establishments are covered -- verify employee count threshold

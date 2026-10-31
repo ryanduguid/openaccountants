@@ -6,7 +6,7 @@ jurisdiction: ZA
 category: international
 tax_year: 2026
 tax_year_notes: "2026/27"
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Werner Britz
 review_status: pending_review
 tier: 1
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary rebate (2026/27) | R17,820 |
 | Secondary rebate (65+, additional) | R9,765 |
 | Tertiary rebate (75+, additional) | R3,249 |
-| Retirement fund deduction | 27.5% of the greater of remuneration or taxable income, capped at R430,000 for years of assessment commencing on or after 1 March 2026 (R350,000 before) |
+| Retirement fund deduction | Contributions, limited to the lesser of: R430,000 for years of assessment commencing on or after 1 March 2026 (R350,000 before); 27.5% of the greater of remuneration or taxable income; and taxable income before any taxable capital gain |
 | Turnover tax | Micro businesses other than personal service providers, taxable turnover up to R2,300,000 from 1 March 2026 |
 | Contributor | Open Accountants Community |
 | Validated by | Werner Britz CA(SA), Spurwing CFO |
@@ -189,7 +189,7 @@ The bands were re-set from 1 March 2026 (2025/26: 0% to R335,000; 1% to R500,000
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| ALLAN GRAY, CORONATION, 10X, SYGNIA, NINETY ONE | s11F deduction: 27.5% of taxable income, cap R430,000 | RA contributions |
+| ALLAN GRAY, CORONATION, 10X, SYGNIA, NINETY ONE | s11F deduction: contributions, limited to the lesser of 27.5% of the greater of remuneration or taxable income, R430,000 and taxable income before capital gains | RA contributions |
 | OLD MUTUAL RA, MOMENTUM RA, LIBERTY RA | Same | RA fund |
 
 ### 3.8 Transport and travel
@@ -239,7 +239,7 @@ The bands were re-set from 1 March 2026 (2025/26: 0% to R335,000; 1% to R500,000
 ### Example 1 -- Standard self-employed, mid-range
 
 **Input:** Age 35, revenue R600,000, expenses R180,000, RA R80,000, medical R3,500/mo (main + 1 dependant), provisional paid R40,000.
-**Computation (2026/27 rates):** Net profit R420,000. s11F = 27.5% x R420,000 = R115,500 (within the R430,000 cap). Taxable = R304,500. Tax = R44,118 + 26% x (R304,500 - R245,100 = R59,400) = R44,118 + R15,444 = R59,562. Less primary rebate R17,820 = R41,742. Less medical credit R9,024 (R376 x 2 x 12) = R32,718. Less provisional tax paid R40,000. Refund R7,282.
+**Computation (2026/27 rates):** Net profit R420,000. s11F limit = 27.5% x R420,000 = R115,500 (within the R430,000 cap), and the RA of R80,000 is below it, so s11F deduction = R80,000. Taxable = R340,000. Tax = R44,118 + 26% x (R340,000 - R245,100 = R94,900) = R44,118 + R24,674 = R68,792. Less primary rebate R17,820 = R50,972. Less medical credit R9,024 (R376 x 2 x 12) = R41,948. Less provisional tax paid R40,000. Payable R1,948.
 
 ### Example 2 -- Turnover tax
 
@@ -271,7 +271,7 @@ The bands were re-set from 1 March 2026 (2025/26: 0% to R335,000; 1% to R500,000
 
 ### 5.4 s11F retirement deduction
 
-- **s11F retirement deduction** — 27.5% of greater of remuneration or taxable income (before deduction). Cap R430,000. Excess carries forward or adds to tax-free retirement lump sum (R550,000).  _(s11F)_
+- **s11F retirement deduction** — Contributions are deductible up to the lesser of: R430,000; 27.5% of the greater of remuneration or taxable income (before this deduction); and taxable income before any taxable capital gain. A contribution below all 3 limits is deducted in full. Excess carries forward or adds to tax-free retirement lump sum (R550,000).  _(s11F; [SARS Guide for Employers iro Employees' Tax 2027](https://www.sars.gov.za/wp-content/uploads/Ops/Guides/PAYE-GEN-01-G21-Guide-for-Employers-iro-Employees-Tax-for-2027-External-Guide.pdf); [SARS FAQ](https://www.sars.gov.za/faq/faq-what-are-s11f-annual-allowable-deductions/))_
 
 ### 5.5 Medical tax credits (s6A)
 
@@ -493,7 +493,7 @@ The reviewer listed these as missing from the guide. Each is stated as a rule to
 
 ### Test suite
 
-**Test 1 -- Mid-range (2026/27 rates).** Age 35, R600K revenue, R180K expenses, R80K RA, medical R3,500/mo. Net tax R32,718.
+**Test 1 -- Mid-range (2026/27 rates).** Age 35, R600K revenue, R180K expenses, R80K RA, medical R3,500/mo. Net tax R41,948.
 **Test 2 -- Senior.** Age 68, R200K revenue, R50K expenses, R30K RA. Below threshold. R0 tax.
 **Test 3 -- Turnover tax.** R650K turnover. Tax R500.
 **Test 4 -- RA cap.** R2M taxable, R600K RA. Deduction R430,000. Excess carries forward.

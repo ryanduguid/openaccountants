@@ -4,9 +4,9 @@ description: Use this skill whenever asked about a Canadian federal T1 General i
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Edgar Lautsyus
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -78,7 +78,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Max CPP contribution | $8,068.20 |
 | Max CPP2 contribution | $792.00 |
 
-Half of CPP/CPP2 is deductible (line 22200); half is a non-refundable credit.
+Half of the 9.9% base contribution (maximum $3,356.10) is a non-refundable credit on line 31000. The other half of the base (maximum $3,356.10), the 2% first additional contribution (maximum $1,356.00) and all CPP2 (maximum $792.00) are deductible on line 22200 (maximum $5,504.10).  _(Schedule 8 (T1-2025), Part 4, lines 10 to 17; ITA s. 60(e))_
 
 ### Conservative Defaults
 
@@ -121,15 +121,15 @@ The T1 skill consumes outputs from the T2125 skill (net business income) and T-s
 **Computation:**
 - Total income: $85,000
 - CPP: max $8,068.20. CPP2: max $792.00. Total: $8,860.20
-- CPP employer-half deduction: $4,430.10
-- Net income: $85,000 - $10,000 - $4,430.10 = $70,569.90
-- Taxable income: $70,569.90
-- Federal tax: $57,375 x 14.5% + $13,194.90 x 20.5% = $8,319.38 + $2,704.95 = $11,024.33
+- CPP deduction (line 22200): $3,356.10 + $1,356.00 + $792.00 = $5,504.10
+- Net income: $85,000 - $10,000 - $5,504.10 = $69,495.90
+- Taxable income: $69,495.90
+- Federal tax: $57,375 x 14.5% + $12,120.90 x 20.5% = $8,319.38 + $2,484.78 = $10,804.16
 - BPA credit: $16,129 x 14.5% = $2,338.71
-- CPP employee-half credit: $4,430.10 x 14.5% = $642.36
-- Basic federal tax: $11,024.33 - $2,981.07 = $8,043.26
+- CPP base credit (line 31000): $3,356.10 x 14.5% = $486.63
+- Basic federal tax: $10,804.16 - $2,825.34 = $7,978.82
 - Plus CPP payable: $8,860.20
-- Total before provincial: $16,903.46
+- Total before provincial: $16,839.02
 
 ### Example 2 -- Low Income, Below BPA
 
@@ -137,8 +137,9 @@ The T1 skill consumes outputs from the T2125 skill (net business income) and T-s
 
 **Computation:**
 - CPP: ($14,000 - $3,500) x 11.9% = $1,249.50
-- Net income: $14,000 - $624.75 = $13,375.25
-- Federal tax: $13,375.25 x 14.5% = $1,939.41
+- CPP deduction (line 22200): $519.75 + $210.00 = $729.75; line 31000 credit base: $519.75
+- Net income: $14,000 - $729.75 = $13,270.25
+- Federal tax: $13,270.25 x 14.5% = $1,924.19
 - Credits exceed tax: federal tax = $0
 - CPP payable: $1,249.50
 
@@ -147,22 +148,22 @@ The T1 skill consumes outputs from the T2125 skill (net business income) and T-s
 **Input:** Net business income $300,000. RRSP $32,490 (max).
 
 **Computation:**
-- CPP + CPP2: $8,860.20. Employer-half: $4,430.10
-- Net income: $300,000 - $32,490 - $4,430.10 = $263,079.90
-- Federal tax through brackets: $61,588.75
+- CPP + CPP2: $8,860.20. CPP deduction (line 22200): $5,504.10
+- Net income: $300,000 - $32,490 - $5,504.10 = $262,005.90
+- Federal tax through brackets: $61,235.18
 - BPA: $14,538 (reduced for high income). Credit: $2,108.01
-- CPP credit: $642.36
-- Basic federal tax: $58,838.38
+- CPP base credit (line 31000): $3,356.10 x 14.5% = $486.63
+- Basic federal tax: $58,640.54
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 T1 Income Flow
 
-- **T1 Income Flow** — Total income (line 15000) -> Net income (line 23600, after deductions including CPP employer-half) -> Taxable income (line 26000) -> Federal tax (Schedule 1).
+- **T1 Income Flow** — Total income (line 15000) -> Net income (line 23600, after deductions including the line 22200 CPP deduction) -> Taxable income (line 26000) -> Federal tax (Schedule 1).
 
 ### 5.2 CPP Self-Employed Computation
 
-- **CPP Self-Employed Computation** — On Schedule 8. If earnings < $3,500: no CPP. If $3,500-$71,300: (earnings - $3,500) x 11.9%. If > $71,300: max $8,068.20. CPP2: earnings $71,300-$81,200 at 8.0%. Half deducted, half credited.
+- **CPP Self-Employed Computation** — On Schedule 8. If earnings < $3,500: no CPP. If $3,500-$71,300: (earnings - $3,500) x 11.9%. If > $71,300: max $8,068.20. CPP2: earnings $71,300-$81,200 at 8.0%. Half of the 9.9% base is credited on line 31000; the other half of the base, the 2% first additional contribution and all CPP2 are deducted on line 22200.
 
 ### 5.3 EI Self-Employed (Voluntary)
 
@@ -204,7 +205,7 @@ A. TOTAL INCOME
 
 B. NET INCOME
   B1. RRSP deduction                               ___________
-  B2. CPP employer-half (line 22200)               ___________
+  B2. CPP deduction (line 22200)                   ___________
   B3. Other deductions                             ___________
   B4. Net income (line 23600)                      ___________
 
@@ -272,7 +273,7 @@ ONBOARDING QUESTIONS -- CANADA T1
 ## PROHIBITIONS
 
 - NEVER apply tax brackets without first computing net income and taxable income
-- NEVER forget the CPP employer-half deduction from net income
+- NEVER forget the line 22200 CPP deduction from net income
 - NEVER apply the Canada employment amount to self-employment income
 - NEVER treat EI as mandatory for self-employed
 - NEVER compute provincial tax in this skill

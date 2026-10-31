@@ -4,7 +4,7 @@ description: "New Zealand capital gains: no general CGT, but bright-line test on
 version: 1.1
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Bright-Line Test (residential property)
 
-- **Bright-line test — taxable if sold within period** — The bright-line test treats gains from sale of residential property as taxable income if the property is sold within: 2 years for property purchased from 1 July 2024 onwards; 5 years for property purchased 27 March 2021 – 30 June 2024 (new builds: 5 years); 10 years for property purchased before 27 March 2021 (new builds: 5 years).
+- **Bright-line test — taxable if sold within period** — The period depends on the sale date. For residential property sold on or after 1 July 2024, whatever the purchase date, the gain is taxable income if the bright-line end date is within 2 years of the bright-line start date, unless an exclusion or rollover relief applies. Inland Revenue's example: a property with a start date of 5 January 2022 sold on 27 July 2024 is not taxable under the test. For sales before 1 July 2024 only, the acquisition date sets the period: acquired on or after 27 March 2021, 5 years for qualifying new builds and 10 years for other property; acquired from 29 March 2018 to 26 March 2021, 5 years. _(Inland Revenue, [IR1229 Bright-line property tax](https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1200---ir1299/ir1229/bright-line-property-tax.pdf); [Property sold before 1 July 2024](https://www.ird.govt.nz/property/buying-and-selling/when-you-need-to-pay/the-brightline-test/property-sold-before-1-july-2024))_
 - **Bright-line gain taxation rate** — up to 39% (taxed at seller's marginal income tax rate)
 - **Main home exemption** — The taxpayer's main residence is excluded from the bright-line test (with some restrictions if it was rented out or if multiple properties exist).
 
@@ -40,10 +40,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Sources
 
 - **Income Tax Act 2007 (NZ), subpart CB** — property income rules  _(Income Tax Act 2007 (NZ), subpart CB (property income rules))_
-- **Bright-line test source** — Bright-line test: IR.govt.nz/brightline  _(IR.govt.nz/brightline)_
+- **Bright-line test source** — Bright-line test: https://www.ird.govt.nz/bright-line  _(https://www.ird.govt.nz/bright-line)_
 - **FIF regime source** — FIF regime: Income Tax Act 2007, subpart EX  _(Income Tax Act 2007, subpart EX)_
 
-Working paper only. The FIF regime is complex and depends on the specific foreign investments held. The bright-line test periods have changed multiple times — confirm the applicable period based on the purchase date. Have a qualified NZ chartered accountant review.
+Working paper only. The FIF regime is complex and depends on the specific foreign investments held. The bright-line test periods have changed multiple times — confirm the applicable period from the sale date and, for sales before 1 July 2024, the acquisition date. Have a qualified NZ chartered accountant review.
 
 <!-- openaccountants-cta-block -->
 

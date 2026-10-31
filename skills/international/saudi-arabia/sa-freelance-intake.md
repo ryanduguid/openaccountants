@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help with Saudi tax/Zaka
 jurisdiction: SA
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 version: 1.1
 review_status: pending_review
 tier: 2
@@ -114,7 +114,7 @@ Two phases:
 
 ### 4.5 Excise tax gate — Excise Tax Law (Royal Decree M/86, 1438H)
 
-- **Excise tax rates and registration** — Excise tax applies to: tobacco products 100%; energy drinks 100%; soft drinks 50%; sweetened drinks 50%; electronic smoking devices and liquids 100%. Excise registration with ZATCA required before importing, producing, or holding excise goods. → Route `sa-excise-tax`.  _(Excise Tax Law (Royal Decree M/86, 1438H))_
+- **Excise tax rates and registration** — Excise tax applies to: tobacco products 100%; energy drinks 100%; electronic smoking devices and liquids 100%; sweetened drinks, including sweetened carbonated drinks, SAR 0 / 0 / 0.79 / 1.09 per litre by sugar tier from 1 January 2026 (50% before that, and 50% on carbonated drinks). Excise registration with ZATCA required before importing, producing, or holding excise goods. → Route `sa-excise-tax`.  _(Excise Tax Law (Royal Decree M/86, 1438H); Implementing Regulations as amended from 1 January 2026, Arts 2 and 3)_
 
 ### 4.6 RETT gate — Real Estate Transaction Tax Regulation (Royal Order A/84, 2 October 2020)
 

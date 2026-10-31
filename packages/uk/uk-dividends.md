@@ -4,9 +4,9 @@ description: Use this skill whenever asked about UK dividend income taxation. Tr
 version: 1.2
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: James Power
-review_status: current
+review_status: pending_review
 depends_on:
   - uk-income-tax-sa100
 category: international
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## UK Dividend Income Skill v1.2
 Changelog: v1.1 — standardised on 3-year structure (2024-25 prior, 2025-26 current, 2026-27 from 6 April 2026); promoted Autumn Budget 2025 dividend rate hike (10.75% / 35.75%) into full Quick Reference table, added combined comparison table and a 2026-27 worked example.
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. The Corporation Tax figures in Sections 3.2, 3.3 and 7 (Example 3) were corrected on 2026-10-31, after that sign-off, and await review.
 
 ## Section 1 -- Quick Reference
 
@@ -150,13 +150,13 @@ Sources: GOV.UK, Tax on dividends — https://www.gov.uk/tax-on-dividends (2026-
 
 | Component | Amount | Rationale |
 | --- | --- | --- |
-| Salary | £12,570 (PA level) | Tax-free; employer NIC: 15% × (£12,570 - £5,000) = £1,136; CT deduction saves 25% × £12,570 = £3,143 |
+| Salary | £12,570 (PA level) | Tax-free; employer NIC: 15% × (£12,570 - £5,000) = £1,136; CT deduction saves 19% × £12,570 = £2,388.30 at taxable profits of £50,000 or less, or 25% × £12,570 = £3,142.50 above £250,000 (Marginal Relief applies between) |
 | Dividends | Remainder of profits | 0% on first £500; 8.75% on remainder within basic rate band |
 | NIC threshold salary alternative | £5,000 (Secondary Threshold, 2025-26) | Zero employer NIC; larger sacrifice of personal allowance than under the old £9,100 threshold |
 
 Optimal for most single directors: Salary at £12,570, dividends for the rest up to the basic rate band limit. Beyond basic rate, the combined CT + dividend tax rate increases. The strategy above is calibrated to the 2025-26 tax year. Employer NIC did **not** carry over unchanged from 2024-25: from 6 April 2025 the secondary Class 1 rate rose from 13.8% to 15% and the Secondary Threshold fell from £9,100 to £5,000, so the employer NIC cost of a £12,570 salary rose from £479 to £1,136. Employment Allowance also rose from £5,000 to £10,500 and its £100,000 prior-year liability cap was removed, which covers this cost entirely for employers eligible to claim — single-director companies with no other employee on the payroll are not.
 
-2026-27 impact: The Autumn Budget 2025 dividend hike (basic 8.75% → 10.75%; higher 33.75% → 35.75%) narrows the dividend advantage over salary, particularly for higher-rate director-shareholders. The combined CT + higher-rate dividend cost rises from ~50.31% to ~51.81%, eroding most of the gap against the salary route. Single directors should still favour salary at the Primary Threshold plus dividends, but the savings vs. a pure-salary extraction will be materially smaller from 6 April 2026 — re-run the comparison annually.
+2026-27 impact: The Autumn Budget 2025 dividend hike (basic 8.75% → 10.75%; higher 33.75% → 35.75%) narrows the dividend advantage over salary, particularly for higher-rate director-shareholders. At the 25% main rate, the combined CT + higher-rate dividend cost rises from ~50.31% to ~51.81%, eroding most of the gap against the salary route. Single directors should still favour salary at the Primary Threshold plus dividends, but the savings vs. a pure-salary extraction will be materially smaller from 6 April 2026 — re-run the comparison annually.
 
 ### 3.3 Combined Effective Rates (2025-26)
 
@@ -168,6 +168,8 @@ Optimal for most single directors: Salary at £12,570, dividends for the rest up
 | Basic rate | 20% IT + 8% NIC + 15% ER NIC = ~37.39% (offset by CT deduction) | 25% CT + 8.75% on remainder = ~31.56% combined |
 | Higher rate | 40% IT + 2% NIC + 15% ER NIC = ~49.57% (offset by CT deduction) | 25% CT + 33.75% on remainder = ~50.31% combined |
 | Additional rate | 45% IT + 2% NIC + 15% ER NIC = ~53.91% (offset by CT deduction) | 25% CT + 39.35% on remainder = ~54.51% combined |
+
+The dividend column uses the 25% main rate, which applies to taxable profits above £250,000. At the 19% small profits rate (taxable profits of £50,000 or less) the combined rates are 26.09% basic (19% + 81% × 8.75%), 46.34% higher (19% + 81% × 33.75%) and 50.87% additional (19% + 81% × 39.35%). Marginal Relief applies between the limits, which reduce for short accounting periods and associated companies. Source: GOV.UK, Corporation Tax rates: https://www.gov.uk/corporation-tax-rates.
 
 ### 3.4 Important Caveats
 
@@ -306,32 +308,45 @@ Dividend tax:
 
 Total dividend tax: £2,763.76
 
-### Example 3 -- Director Salary + Dividends
+### Example 3 -- Director Salary + Dividends (2025-26)
 
-Input: Company profit before salary: £60,000. Director takes £12,570 salary, rest as dividends. Corporation Tax 25%.
+Input: Company profit before salary: £60,000. Director takes £12,570 salary, rest as dividends. 12-month accounting period, no associated companies. Corporation Tax 19% (small profits rate, taxable profit of £50,000 or less).
 
 Computation:
 Company:
   Profit: £60,000
   Salary: £12,570 (deductible)
-  Employer NIC: 15% × (£12,570 - £5,000) = £1,136 (deductible)
-  Taxable profit: £60,000 - £12,570 - £1,136 = £46,294
-  Corporation Tax: £46,294 × 25% = £11,574
-  Available for dividends: £46,294 - £11,574 = £34,720
+  Employer NIC: 15% × (£12,570 - £5,000) = £1,135.50 (deductible)
+  Taxable profit: £60,000 - £12,570 - £1,135.50 = £46,294.50
+  Corporation Tax: £46,294.50 × 19% = £8,795.96
+  Available for dividends: £46,294.50 - £8,795.96 = £37,498.54
 
 Director:
   Salary: £12,570 (covered by PA = £0 IT)
   Employee NIC: 8% × (£12,570 - £12,570) = £0
-  Dividends: £34,720
+  Dividends: £37,498.54
     First £500: 0%
-    Next £37,200 remaining basic rate band: 8.75% on £34,220 = £2,994.25
+    Next £37,200 remaining basic rate band: 8.75% on £36,998.54 = £3,237.37
 
-Total tax paid (company + personal): £11,574 + £1,136 + £2,994.25 = £15,704.25
-Total extracted: £12,570 + £34,720 = £47,290
-Effective combined rate on the £60,000 company profit: 26.2%
+Total tax paid (company + personal): £8,795.96 + £1,135.50 + £3,237.37 = £13,168.83
+Total extracted: £12,570 + £37,498.54 = £50,068.54
+Effective combined rate on the £60,000 company profit: 21.95%
   (Tax + extraction sums to the £60,000 profit: the dividend tax is paid
-   out of the £34,720 already counted as extracted, so it must not be
+   out of the £37,498.54 already counted as extracted, so it must not be
    added to the extraction figure when computing this rate.)
+
+Sources: GOV.UK, Corporation Tax rates: https://www.gov.uk/corporation-tax-rates; National Insurance rates and allowances: https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions.
+
+### Example 3a -- Corporation Tax With Marginal Relief (Financial Year 2026)
+
+Input: Taxable profit and augmented profits both £80,000. 12-month accounting period in the financial year 2026, no associated companies, UK resident, not a close investment-holding company, no ring fence profits.
+
+Computation:
+Main rate: £80,000 × 25% = £20,000
+Marginal Relief: 3/200 × (£250,000 - £80,000) = £2,550
+Corporation Tax: £20,000 - £2,550 = £17,450
+
+Sources: CTA 2010 s 18B: https://www.legislation.gov.uk/ukpga/2010/4/section/18B; HMRC Company Taxation Manual CTM03930 (worked calculation): https://www.gov.uk/hmrc-internal-manuals/company-taxation-manual/ctm03930; Finance Act 2025 s 14 (fraction 3/200ths for the financial year 2026): https://www.legislation.gov.uk/ukpga/2025/8/section/14; GOV.UK, Corporation Tax rates (limits and main rate): https://www.gov.uk/corporation-tax-rates.
 
 ### Example 4 -- Foreign Dividends with DTR
 

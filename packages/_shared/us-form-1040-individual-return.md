@@ -5,9 +5,9 @@ jurisdiction: US
 category: federal
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 reviewed_by: Christopher Aryee, CPA
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 depends_on:
@@ -41,7 +41,7 @@ This skill prepares **Form 1040** and its three core schedules (1, 2, 3) plus **
 | --- | --- |
 | Schedule C self-employment income | `us-sole-prop-bookkeeping` + `us-schedule-c-and-se-computation` + `us-federal-return-assembly` |
 | Single-member LLC disregarded for federal tax | `us-federal-return-assembly` (federal) and the state assembly skill |
-| §199A QBI deduction with positive QBI | `us-qbi-deduction` (this skill assumes Line 13 = 0 for pure W-2 / investment income) |
+| §199A QBI deduction with positive QBI | `us-qbi-deduction` (this skill assumes Line 13a = 0 for pure W-2 / investment income) |
 | Quarterly estimated tax planning for 2026 | `us-quarterly-estimated-tax` |
 | Foreign tax credit (Form 1116) | `us-foreign-tax-credit-1116` |
 | Education credits (Form 8863) AOTC/LLC | `us-education-credits-8863` |
@@ -186,7 +186,7 @@ This skill prepares **Form 1040** and its three core schedules (1, 2, 3) plus **
 
 ### 2.9 Other OBBBA changes
 
-- **§199A QBI** — made permanent at 20% (OBBBA §70105); the final OBBBA did not enact the proposed 23% rate. §70105 instead increased the phase-in threshold to $75,000 ($150,000 joint) and established a $400 minimum deduction for active qualified business income. Not applicable to pure W-2 / investment returns (Line 13 = 0) but flag if Schedule K-1 PTP income or REIT dividends are present — these qualify for QBI even without a trade or business.  _(§199A)_
+- **§199A QBI** — made permanent at 20% (OBBBA §70105); the final OBBBA did not enact the proposed 23% rate. §70105 instead increased the phase-in threshold to $75,000 ($150,000 joint) and established a $400 minimum deduction for active qualified business income. Not applicable to pure W-2 / investment returns (Line 13a = 0) but flag if Schedule K-1 PTP income or REIT dividends are present — these qualify for QBI even without a trade or business.  _(§199A)_
 - **§1(j) brackets permanence** — permanent (see §2.2).  _(§1(j))_
 - **Standard deduction increase** — increased for 2025 under OBBBA (see §2.1).  _(OBBBA)_
 - **Child Tax Credit** — $2,200 per qualifying child under 17 (§24(h)), refundable portion $1,700 in 2025 (Rev. Proc. 2024-40), made permanent by OBBBA §70104. Phaseout begins $400k MFJ / $200k other.  _(§24(h); OBBBA §70104; Rev. Proc. 2024-40)_
@@ -196,6 +196,7 @@ This skill prepares **Form 1040** and its three core schedules (1, 2, 3) plus **
 - **Tip income deduction** — NEW under OBBBA §70201 — up to $25,000 of qualified tip income deductible above-the-line for occupations on the IRS-published tip-receiving occupations list (Treasury list issued under OBBBA §70201). Phases out above $150k single / $300k MFJ. Reported on Schedule 1.  _(OBBBA §70201)_
 - **Overtime pay deduction** — NEW under OBBBA §70202 — up to $12,500 single / $25,000 MFJ of FLSA-mandated overtime premium pay deductible above-the-line. Same phaseout. Reported on Schedule 1.  _(OBBBA §70202)_
 - **Auto loan interest deduction** — NEW under OBBBA §70203 — up to $10,000 of interest on a loan for a US-assembled passenger vehicle deductible above-the-line. Phases out $100k single / $200k MFJ. Reported on Schedule 1.  _(OBBBA §70203)_
+- **Enhanced deduction for seniors**: NEW under OBBBA §70103, for tax years 2025 through 2028: $6,000 for each qualified individual, meaning the taxpayer and, on a joint return, the spouse, if age 65 by the end of the tax year (for 2025, born before January 2, 1961). Up to $12,000 on a joint return where both qualify. Each $6,000 is reduced by 6% of MAGI over $75,000 ($150,000 joint), so it reaches zero at MAGI of $175,000 ($250,000 joint). MAGI is Form 1040 line 11b plus excluded Puerto Rico income and Form 2555 and Form 4563 amounts. A married taxpayer must file jointly, and the return must include a valid SSN for each qualified individual. It is available to itemizers and non-itemizers and is in addition to the additional standard deduction in §2.1. Claimed in Schedule 1-A Part V; Schedule 1-A line 38 flows to Form 1040 line 13b.  _(§151(d)(5)(C); OBBBA §70103; Schedule 1-A (2025); IRS, Working Families Tax Cuts: Tax deductions for working Americans and seniors)_
 
 ## 3. Filing status and dependents
 
@@ -411,9 +412,10 @@ See §5.
 
 ## 7. Line 12-15 — Standard/itemized deduction, QBI, taxable income
 
-- **Line 12** — Greater of standard deduction (Line 2.1) or Schedule A Line 17.  _(Form 1040)_
-- **Line 13 — §199A QBI deduction** — For pure W-2 / investment taxpayers without a trade or business: Line 13 = 0. If the taxpayer has REIT dividends (1099-DIV Box 5) or PTP income (Schedule K-1) without an active trade or business, QBI may still apply — refer to `us-qbi-deduction`.  _(§199A)_
-- **Line 14** — Sum Line 12 + Line 13.  _(Form 1040)_
+- **Line 12e** — Greater of standard deduction (Line 2.1) or Schedule A Line 17.  _(Form 1040)_
+- **Line 13a — §199A QBI deduction** — For pure W-2 / investment taxpayers without a trade or business: Line 13a = 0. If the taxpayer has REIT dividends (1099-DIV Box 5) or PTP income (Schedule K-1) without an active trade or business, QBI may still apply — refer to `us-qbi-deduction`.  _(§199A)_
+- **Line 13b: additional deductions** Schedule 1-A line 38. Check every return for a taxpayer or spouse aged 65 or over: the enhanced deduction for seniors (§2.9) applies whether the taxpayer takes the standard deduction or itemizes.  _(Form 1040 (2025); Schedule 1-A (2025))_
+- **Line 14** — Sum Line 12e + Line 13a + Line 13b.  _(Form 1040)_
 - **Line 15 — Taxable income** — Taxable income = Line 11 (AGI) - Line 14. If negative, enter 0.  _(Form 1040)_
 
 ## 8. Line 16 — Tax computation
@@ -798,25 +800,27 @@ Federal withholding: $4,200 from pension; $2,800 from IRA
 
 - **Standard deduction (single, age 65+)** — Base $15,750 + age 65+ addition $2,000 = $17,750  _(Rev. Proc. 2024-40)_
 - **Itemize vs standard decision Example C** — Compare itemized: property tax $4,800 + charitable $1,200 = $6,000 — well below standard. Use standard.  _(§63)_
+- **Enhanced deduction for seniors Example C**: Walter is 73 and MAGI of $72,300 (AGI; no Schedule 1-A Part I additions) is below $75,000, so there is no phase-out. Schedule 1-A line 38 = $6,000, assuming a valid SSN on the return.  _(§151(d)(5)(C); Schedule 1-A (2025))_
 
 **Return (Example C, Part 2)**  _(Example C return table part 2)_
 
 | Line | Item | Amount |
 | --- | --- | --- |
-| 12 | Standard | $17,750 |
-| 15 | Taxable income | $54,550 |
+| 12e | Standard | $17,750 |
+| 13b | Schedule 1-A line 38 (enhanced deduction for seniors) | $6,000 |
+| 15 | Taxable income | $48,550 |
 
-- **Tax (Qualified Dividends and Capital Gain Worksheet)** — Ordinary portion: $54,550 - $9,000 LTCG - $3,200 QDIV = $42,350; Tax on $42,350 single: 10% × $11,925 = $1,192.50; 12% × ($42,350 - $11,925) = $3,651; Total = $4,844; Tax on $9,000 + $3,200 = $12,200 LTCG/QDIV: $42,350 ordinary + $12,200 = $54,550 total; $48,350 - $42,350 = $6,000 at 0%; $12,200 - $6,000 = $6,200 at 15% = $930; Line 16 tax: ~$5,774  _(§1(h))_
+- **Tax (Qualified Dividends and Capital Gain Worksheet)** — Ordinary portion: $48,550 - $9,000 LTCG - $3,200 QDIV = $36,350; Tax on $36,350 single: 10% × $11,925 = $1,192.50; 12% × ($36,350 - $11,925) = $2,931; Total = $4,123.50; Tax on $9,000 + $3,200 = $12,200 LTCG/QDIV: $48,350 - $36,350 = $12,000 at 0%; $12,200 - $12,000 = $200 at 15% = $30; Line 16 tax: ~$4,154  _(§1(h))_
 
 **Return (Example C, Part 3)**  _(Example C return table part 3)_
 
 | Line | Item | Amount |
 | --- | --- | --- |
-| 16 | Tax | $5,774 |
-| 24 | Total tax | $5,774 |
+| 16 | Tax | $4,154 |
+| 24 | Total tax | $4,154 |
 | 25b | 1099 withholding | $7,000 |
 | 33 | Total payments | $7,000 |
-| 34 | Overpayment | **$1,226 refund** |
+| 34 | Overpayment | **$2,846 refund** |
 
 - **NIIT and RMD checks Example C** — NIIT check: AGI $72,300 < $200k — none. RMD check: Walter is 73, RMD age (73 under SECURE 2.0 §107 for those born 1951-1959) — confirm full RMD was satisfied. The $10,000 QCD counts toward RMD (§408(d)(8)(B)).  _(SECURE 2.0 §107; §408(d)(8)(B))_
 
@@ -916,6 +920,7 @@ The reviewer must confirm:
 13. 1095-A reconciliation on Form 8962 if marketplace coverage.
 14. Direct deposit routing/account verified character by character.
 15. Preparer signature, PTIN, firm EIN, and §6695 due diligence checklist (Form 8867 for EITC, CTC, AOTC, HoH) complete.
+16. Enhanced deduction for seniors (Schedule 1-A Part V, Form 1040 line 13b) considered for every taxpayer or spouse aged 65 or over: joint return if married, valid SSN, phase-out above MAGI of $75,000 ($150,000 joint).
 
 ## End of skill note
 

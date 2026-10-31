@@ -5,7 +5,7 @@ version: 2.0
 jurisdiction: SE
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -211,8 +211,8 @@ This is the deterministic pre-classifier for income tax purposes. When a transac
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
 | STAPLES, OFFICE DEPOT, CLAS OHLSON | Deductible expense | Office supplies |
-| IKEA (business furniture) | Capital if > SEK 5,000; else deductible expense | Check half prisbasbelopp threshold |
-| ELGIGANTEN, MEDIAMARKT, KOMPLETT | Capital if > SEK 5,000 and life > 3 years; else deductible | Computer/electronics |
+| IKEA (business furniture) | Deductible expense if below half prisbasbelopp excl. VAT (SEK 29,400 for 2025; SEK 29,600 for 2026); else capital | Add together items with a natural connection |
+| ELGIGANTEN, MEDIAMARKT, KOMPLETT | Capital if at or above half prisbasbelopp excl. VAT (SEK 29,400 for 2025; SEK 29,600 for 2026) and life > 3 years; else deductible | Computer/electronics; a computer with its screen, printer, keyboard and mouse counts as one asset |
 | POSTNORD | Deductible expense | Postage and shipping |
 | WEBHALLEN, INET | Capital or expense depending on amount | IT equipment |
 
@@ -262,15 +262,15 @@ Google Ireland Ltd is an EU entity (Section 3.5). The consultant is momsregistre
 
 **Classification:** Deductible business expense, R3--R6 (software/IT). Amount: SEK 1,200.
 
-### Example 2 -- Capital equipment above threshold
+### Example 2 -- Equipment below the half prisbasbelopp threshold
 
 **Input line:**
 `2025-06-20 ; ELGIGANTEN ; DEBIT ; MacBook Pro 14" ; -22,990.00 SEK`
 
 **Reasoning:**
-SEK 22,990 exceeds half prisbasbelopp (approximately SEK 5,000 in 2025) and the asset has a useful life over 3 years. Must enter the inventarier pool as a capital asset. Not directly expensed. Depreciation year 1 = 30% of SEK 22,990 = SEK 6,897 (räkenskapsenlig avskrivning).
+SEK 22,990 is below half prisbasbelopp excl. VAT (SEK 29,400 for income year 2025), so the asset is an inventarium of lesser value and is deducted in full in the year acquired, whatever its useful life. A momsregistrerad client that recovers the input VAT deducts SEK 18,392 and excludes the SEK 4,598 moms. Confirm it is not part of a larger connected purchase, because connected items are tested on their combined value. _(Skatteverket, Avdrag för värdeminskning)_
 
-**Classification:** Capital asset (inventarier pool). R7 depreciation = SEK 6,897. Do NOT put SEK 22,990 in R3--R6.
+**Classification:** Immediate deduction in R3--R6: SEK 22,990, or SEK 18,392 for a momsregistrerad client. No inventarier pool and no R7 depreciation.
 
 ### Example 3 -- External restaurant meal (not deductible)
 
@@ -313,7 +313,7 @@ The client can choose either the standard deduction of SEK 2,000/year or actual 
 
 ### 5.5 Capital expenditure threshold
 
-- **Capital expenditure threshold** — Assets above half prisbasbelopp (approximately SEK 5,000) with useful life over 3 years: must enter inventarier pool and depreciate. Assets below or with life under 3 years: expense immediately (direktavdrag).  _(IL kap. 18)_
+- **Capital expenditure threshold** — Half prisbasbelopp excl. VAT is SEK 29,400 for income year 2025 and SEK 29,600 for 2026. Assets at or above it with useful life over 3 years: must enter inventarier pool and depreciate. Assets below it, or with useful life of at most 3 years: deduct immediately (omedelbart avdrag). Items with a natural connection, or bought as part of a larger acquisition, are tested on their combined value.  _(IL kap. 18; Skatteverket, Avdrag för värdeminskning)_
 
 ### 5.6 Depreciation rates
 
@@ -498,7 +498,7 @@ Input: Net business income SEK 500,000, client allocates SEK 200,000 to expansio
 Expected: Expansionsfondsskatt = SEK 200,000 x 20.6% = SEK 41,200. Taxable business income reduced to SEK 300,000.
 
 Input: Client buys office furniture for SEK 20,000, deducts full amount.
-Expected: Above threshold, life > 3 years. Inventarier pool. Depreciation = SEK 6,000 year 1. Correct: remove SEK 20,000 from expenses, add SEK 6,000 depreciation.
+Expected: Below half prisbasbelopp (SEK 29,400 for 2025), assuming SEK 20,000 excl. VAT and no connected items. Full deduction stands. No inventarier pool and no depreciation.
 
 Input: Momsregistrerad client reports SEK 1,250,000 gross receipts including 25% moms.
 Expected: NE R1 = SEK 1,000,000. Exclude SEK 250,000 moms.
@@ -510,7 +510,7 @@ Expected: Räntefördelningsbelopp = SEK 14,800 (500,000 x 2.96%). Reclassified 
 
 EC1 -- Statlig skatt below brytpunkt. Never apply 20% state tax on income below SEK 625,800.
 EC2 -- Egenavgifter not deducted. Always apply 25% schablonavdrag. Egenavgifter are deductible.
-EC3 -- Capital expenditure expensed directly. Assets above half prisbasbelopp with life > 3 years must be depreciated.
+EC3 -- Capital expenditure expensed directly. Assets at or above half prisbasbelopp (SEK 29,400 for 2025; SEK 29,600 for 2026, excl. VAT) with life > 3 years must be depreciated.
 EC4 -- Moms included in revenue. For momsregistrerade, R1 = net of moms.
 EC5 -- Expansionsfond reversed without taxation. Must be reversed and taxed on cessation.
 EC6 -- Jobbskatteavdrag on capital income. Only applies to earned income.
@@ -524,7 +524,7 @@ EC10 -- Negative räntefördelning ignored. Mandatory when thresholds exceeded.
 - NEVER apply statlig inkomstskatt below the brytpunkt
 - NEVER forget egenavgifter schablonavdrag deduction
 - NEVER include moms in NE-bilaga revenue for momsregistrerade clients
-- NEVER expense capital items above half prisbasbelopp with life > 3 years
+- NEVER expense capital items at or above half prisbasbelopp (SEK 29,400 for 2025; SEK 29,600 for 2026, excl. VAT) with life > 3 years
 - NEVER allow external representation food deductions
 - NEVER combine standard and actual home office deductions
 - NEVER ignore mandatory negative räntefördelning

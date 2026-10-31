@@ -5,9 +5,9 @@ version: 2.0
 jurisdiction: KR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 reviewed_by: Yeong Min Lee
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -65,7 +65,7 @@ Read this whole section before classifying anything.
 | 20 | Tax payable / refundable (납부/환급세액) |
 
 - **E-tax invoice (전자세금계산서) requirements** — All corporations must issue e-tax invoices. Individual general taxpayers with revenue >= KRW 80M must issue e-tax invoices (mandatory since July 2024; threshold was KRW 100M before July 2023). E-tax invoices must contain: business registration numbers (사업자등록번호) of supplier and recipient, supplier name, supply date, description and quantity, supply value (공급가액) and VAT amount (세액). Must be transmitted to NTS within one day of issuance. Penalties: 2% of supply value for failure to issue; 1% for late issuance; 0.5% for failure to transmit to NTS.
-- **Simplified taxpayer (간이과세자) threshold** — Annual revenue below KRW 104,000,000 (KRW 104M, raised from KRW 80M effective July 2024). Simplified taxpayers calculate tax using industry value-added ratios (업종별 부가가치율), cannot issue tax invoices (receipts only), and file semi-annually. If revenue below KRW 48M, exempt from VAT payment entirely.
+- **Simplified taxpayer (간이과세자) threshold** — Annual revenue below KRW 104,000,000 (KRW 104M, raised from KRW 80M effective July 2024). Simplified taxpayers calculate tax using industry value-added ratios (업종별 부가가치율) and file semi-annually. Tax invoices depend on prior-year supply value (공급대가): a simplified taxpayer at KRW 48M or more must issue them (supplies from 1 July 2021; each obligation runs from 1 July of the following year to 30 June of the year after), except a receipt-issuing business supplying mainly non-business customers (retail, restaurants, accommodation, beauty and similar). New operators and those below KRW 48M cannot issue them and issue receipts. An obliged taxpayer that issues a cash receipt or card slip at the time of supply has no invoice duty for that supply. Penalty on an obliged taxpayer: 2% of supply value if not issued by the final return deadline for the period of supply; 1% if issued late by that deadline. _(VAT Act Art. 36(1)2, Art. 36-2(1); [NTS Q&A](https://call.nts.go.kr/call/qna/selectQnaInfo.do?mi=1329&ctgId=CTG11937); [NTS 간이과세자 guidance](https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7693&mi=2272))_  If revenue below KRW 48M, exempt from VAT payment entirely.
 
 **Filing deadlines -- general taxpayer**
 
@@ -424,7 +424,7 @@ Office supplies purchased with corporate credit card. No e-tax invoice obtained.
 
 ### 5.8 Simplified taxpayer regime (Articles 61-68)
 
-- **Simplified taxpayer regime details** — Revenue below KRW 104M: eligible as simplified taxpayer. Tax = supply value x industry value-added ratio x 10%. Industry ratios: retail 15%, manufacturing 20%, agriculture 10%, food/beverage 40%, accommodation 30%, transportation 40%, construction 30%, other services 30%, real estate rental 40%, professional services 40%. Input deduction = purchases x 0.5%. Cannot issue tax invoices. Revenue below KRW 48M: exempt from VAT payment.  _(Articles 61-68)_
+- **Simplified taxpayer regime details** — Revenue below KRW 104M: eligible as simplified taxpayer. Tax = supply value x industry value-added ratio x 10%. Industry ratios: retail 15%, manufacturing 20%, agriculture 10%, food/beverage 40%, accommodation 30%, transportation 40%, construction 30%, other services 30%, real estate rental 40%, professional services 40%. Input deduction = purchases x 0.5%. Tax invoices: required at prior-year supply value of KRW 48M or more (receipt-issuing businesses excepted; 2% or 1% penalty); new operators and those below KRW 48M issue receipts only (Article 36; see Section 1). Revenue below KRW 48M: exempt from VAT payment.  _(Articles 61-68)_
 
 ### 5.9 Capital assets (fixed assets, 고정자산)
 
@@ -551,7 +551,7 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 
 ### 9.2 Business type
 
-- **Business type inference** — *Inference rule:* if client asks for a VAT return with e-tax invoices, they are 일반과세자. If revenue seems low and they mention simplified filing, likely 간이과세자. *Fallback question:* "Are you a 일반과세자 (general taxpayer), 간이과세자 (simplified taxpayer), or 면세사업자 (exempt operator)?"
+- **Business type inference** — *Inference rule:* if client asks for a VAT return with e-tax invoices, they are 일반과세자 or a 간이과세자 with prior-year supply value of KRW 48M or more; confirm which. If revenue seems low and they mention simplified filing, likely 간이과세자. *Fallback question:* "Are you a 일반과세자 (general taxpayer), 간이과세자 (simplified taxpayer), or 면세사업자 (exempt operator)?"
 
 ### 9.3 Filing period
 

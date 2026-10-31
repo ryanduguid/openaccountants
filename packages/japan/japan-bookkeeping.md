@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese bookkeeping for sole p
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -503,7 +503,7 @@ The Japanese balance sheet traditionally uses the horizontal (account) format (�
 
 ### Invoice System (インボイス制度 — from October 2023)
 
-- **Invoice system rules** — Registered invoice issuers (適格請求書発行事業者) must issue qualified invoices with registration number; Buyers can only claim input tax credit with qualified invoices; Small business transitional measure (2割特例): eligible businesses can pay 20% of output tax as simplified calculation (through Sep 2026); 簡易課税 (Simplified tax calculation): if base-period sales ≤ ¥50m, use deemed purchase ratio by industry (50%–90%)  _(インボイス制度 — from October 2023)_
+- **Invoice system rules** — Registered invoice issuers (適格請求書発行事業者) must issue qualified invoices with registration number; Buyers can only claim input tax credit with qualified invoices; Small business transitional measure (2割特例): eligible businesses can pay 20% of output tax as simplified calculation (taxable periods that include any day from 1 Oct 2023 to 30 Sep 2026, subject to status conditions; NTA Invoice Q&A 問115, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf); 簡易課税 (Simplified tax calculation): if base-period sales ≤ ¥50m, use deemed purchase ratio by industry (50%–90%)  _(インボイス制度 — from October 2023)_
 
 ### Social Insurance and Payroll
 

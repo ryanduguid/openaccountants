@@ -70,6 +70,8 @@ skills/international/honduras::ihss em
 skills/international/honduras::ihss ivm
 skills/international/hong-kong::remainder
 skills/international/ireland::above eur
+skills/international/ireland::jan sep
+skills/international/ireland::oct dec
 skills/international/israel::nis nis month
 skills/international/israel::up nis month
 skills/international/italy::standard

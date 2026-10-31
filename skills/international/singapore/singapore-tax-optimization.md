@@ -5,7 +5,7 @@ version: 1.1
 jurisdiction: SG
 tax_year: 2026
 tax_year_notes: "YA 2026"
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -209,17 +209,21 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 
 - **Employees mandatory contribution** — Mandatory CPF contributions by employer and employee.
 
-**CPF Contribution Rates by Age**
+**CPF Contribution Rates by Age (from 1 January 2026)**
+
+Singapore Citizens and Singapore Permanent Residents from the third year, monthly wages above S$750. _([CPF Board, How much CPF contributions to pay](https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay))_
 
 | Age | Employee Rate | Employer Rate | Total |
 | --- | --- | --- | --- |
-| ≤55 | 20% | 17% | 37% |
-| 55–60 | 15% | 14.5% | 29.5% |
-| 60–65 | 9.5% | 11% | 20.5% |
-| 65–70 | 7% | 8.5% | 15.5% |
-| 70+ | 5% | 7.5% | 12.5% |
+| 55 and below | 20% | 17% | 37% |
+| Above 55–60 | 18% | 16% | 34% |
+| Above 60–65 | 12.5% | 12.5% | 25% |
+| Above 65–70 | 7.5% | 9% | 16.5% |
+| Above 70 | 5% | 7.5% | 12.5% |
 
-- **Ordinary Wage / Additional Wage ceilings** — Ordinary Wage ceiling: S$7,400/month (from 1 Jan 2026). Additional Wage ceiling ensures total annual CPF does not exceed S$44,400 (employee share, based on OW + AW caps).
+From 1 January 2027 CPF Board states above 55–60 at employee 19%, employer 16.5% and above 60–65 at 13% each. _([CPF Board](https://www.cpf.gov.sg/service/article/what-are-the-changes-to-the-cpf-contribution-rates-for-senior-workers-that-will-take-effect-from-1-january-2027))_
+
+- **Ordinary Wage / Additional Wage ceilings** — Ordinary Wage ceiling: S$8,000/month (from 1 Jan 2026). Additional Wage ceiling for a calendar year, per employee and per employer: S$102,000 less total Ordinary Wages subject to CPF for the year. With S$8,000 of Ordinary Wages subject to CPF in all 12 months of 2026, that is S$102,000 - S$96,000 = S$6,000. _([CPF Board, What constitutes wages](https://www.cpf.gov.sg/employer/employer-obligations/what-constitutes-wages-for-cpf-contributions); [CPF changes in 2026](https://www.cpf.gov.sg/member/infohub/news/news-releases/cpf-related-changes-taking-place-in-2026-what-you-need-to-know))_
 - **Self-employed CPF contributions** — Self-employed: mandatory MediSave contributions only (based on net trade income). No mandatory OA/SA contributions — but voluntary contributions possible.
 
 ### CPF Cash Top-Up Relief

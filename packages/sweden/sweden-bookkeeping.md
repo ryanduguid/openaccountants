@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Swedish bookkeeping, chart of a
 version: 1.1
 jurisdiction: SE
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -150,7 +150,7 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 | 5210 | Hyra av maskiner | Machine leases |
 | 5250 | Hyra av datorer | Computer leases |
 | 5300-5399 | Energikostnader | Energy costs (heating, fuel) |
-| 5400 | Förbrukningsinventarier | Consumable equipment (< SEK 25,000) |
+| 5400 | Förbrukningsinventarier | Consumable equipment (below half prisbasbelopp excl. VAT: SEK 29,400 for 2025; SEK 29,600 for 2026) |
 | 5410 | Förbruknings­material | Consumable materials |
 | 5420 | Programvaror (avskrivning/abonnemang) | Software (subscription/depreciation) |
 | 5500 | Reparation och underhåll | Repairs and maintenance |
@@ -287,7 +287,7 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 | Rule | Detail |
 | --- | --- |
-| Low-value asset threshold (K2/tax) | SEK 25,000 (excl. VAT) -- items below may be expensed directly (account 5400) |
+| Low-value asset threshold (tax) | Half prisbasbelopp excl. VAT: SEK 29,400 for income year 2025; SEK 29,600 for 2026 -- items below may be deducted in full in the year acquired (account 5400) _(Skatteverket, Avdrag för värdeminskning)_. Whether K2 sets the same limit for book purposes was not confirmed |
 | Grouping | Items forming a unit may be grouped and capitalised together even if individual cost < threshold |
 | K3 component approach | Required to separate significant components with different useful lives |
 | K2 simplified | No component approach; entire asset depreciated as one unit |
@@ -311,7 +311,7 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 | --- | --- | --- |
 | Huvudregeln (30% rule) | 30% of net book value per year | Declining balance; never fully written off |
 | Kompletteringsregeln (20% rule) | 20% of acquisition cost per year | Straight-line; fully written off in 5 years |
-| Immediate write-off | 100% (if < SEK 25,000 excl. VAT) | Or if expected useful life ≤ 3 years |
+| Immediate write-off | 100% (if below half prisbasbelopp excl. VAT: SEK 29,400 for 2025; SEK 29,600 for 2026) _(Skatteverket, Avdrag för värdeminskning)_ | Or if expected useful life ≤ 3 years |
 
 ### Tax Depreciation -- Buildings
 
@@ -515,7 +515,7 @@ SUMMA EGET KAPITAL OCH SKULDER                                 xxx
 - **No accruals for small recurring items** — No accruals needed for recurring items < SEK 5,000
 - **Revenue at invoice date** — Revenue at invoice date
 - **Inventory simplified valuation** — Inventory: simplified valuation (latest purchase price × quantity)
-- **Fixed asset immediate write-off threshold** — SEK 25,000 SEK (Fixed assets: immediate write-off if < SEK 25,000 (half a prisbasbelopp))
+- **Fixed asset immediate write-off threshold** — Half a prisbasbelopp: the whole depreciation base may be deducted if it is at most SEK 29,400 for 2025 or SEK 29,600 for 2026. For financial years begun before 1 January 2025 the limit was SEK 5,000  _(Skatteverket, Avdrag för värdeminskning)_
 - **No formal balance sheet filing** — No formal balance sheet filing (only part of tax return NE)
 
 ### K2 Simplifications
@@ -543,7 +543,7 @@ SUMMA EGET KAPITAL OCH SKULDER                                 xxx
 ### VAT (Moms)
 
 - **VAT accounts** — VAT accounts: 2610-2650 in BAS
-- **Standard and reduced VAT rates** — 25% standard; 12% (food, hotels); 6% (books, newspapers, public transport) (Standard rate: 25%; Reduced: 12% (food, hotels); 6% (books, newspapers, public transport))
+- **Standard and reduced VAT rates** — 25% standard; 12% (restaurant and catering services, hotels; food up to 31 March 2026); 6% (food and take-away from 1 April 2026 to 31 December 2027; books, newspapers, public transport)  _(Skatteverket, Momssatser och undantag från moms)_
 - **VAT filing frequency** — Monthly filing if turnover > SEK 40M; quarterly if > SEK 1M; annual if ≤ SEK 1M
 - **Cross-reference** — Use the sweden-vat-return skill for filing details
 

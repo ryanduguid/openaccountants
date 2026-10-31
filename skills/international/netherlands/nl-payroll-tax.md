@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch payroll taxes (loonheffin
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -46,7 +46,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Loonbelasting (wage tax) | Employee (withheld by employer) | Progressive rates aligned with Box 1 IB |
 | Premie volksverzekeringen (AOW/Anw/Wlz) | Employee (withheld by employer) | Combined ~27.65% on first bracket |
 | Premie werknemersverzekeringen (WW/WIA/ZW) | Employer | Various rates; see table below |
-| Inkomensafhankelijke bijdrage Zvw | Employer | 6.57% (2025) |
+| Inkomensafhankelijke bijdrage Zvw | Employer | 6.51% (2025); 6.10% (2026) |
 
 ### Volksverzekeringen Rates 2025 [T1]
 
@@ -61,25 +61,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Withholding note** — These are withheld from the employee's gross salary (combined with wage tax in bracket 1 rate of 35.82%).
 
-### Werknemersverzekeringen (Employer Contributions) 2025 [T1]
+### Werknemersverzekeringen (Employer Contributions) 2025 and 2026 [T1]
 
-**Werknemersverzekeringen (Employer Contributions) 2025**
+**Werknemersverzekeringen (Employer Contributions) 2025 and 2026**
 
-| Premium | Rate | Max salary base (EUR) | Notes |
-| --- | --- | --- | --- |
-| AWf (unemployment — general) | 2.64% (fixed) / 7.64% (flex) | EUR 66,956 | Fixed contract = lower rate |
-| Whk (disability — differentiated) | Sector-dependent (avg ~1.5%) | EUR 66,956 | Based on sector and claims history |
-| Aof (disability — basic) | 6.18% (large) / 5.82% (small employer) | EUR 66,956 | Small = < 25× avg premium base |
-| **Zvw (health insurance)** | **6.57%** | **EUR 66,956** | Employer-paid (not withheld from employee) |
+| Premium | Rate 2025 | Rate 2026 | Max salary base (EUR) | Notes |
+| --- | --- | --- | --- | --- |
+| AWf (unemployment — general) | 2.74% (fixed) / 7.74% (flex) | 2.74% (fixed) / 7.74% (flex) | EUR 75,864 (2025); EUR 79,409 (2026) | Fixed contract = lower rate |
+| Whk (disability — differentiated) | Sector-dependent (avg ~1.5%) | Sector-dependent | EUR 75,864 (2025); EUR 79,409 (2026) | Based on sector and claims history; the employer's rate is in its mededeling or beschikking. The ~1.5% average is not stated in the annexes |
+| Aof (disability — basic) | 6.28% (low, small employer) / 7.64% (high, medium and large employers) | 6.27% (low, small employer) / 7.63% (high, medium and large employers) | EUR 75,864 (2025); EUR 79,409 (2026) | Small = premium wage bill up to 25× the average premium wage: EUR 990,000 for 2025 (2023 wage bill); EUR 1,082,500 for 2026 (2024 wage bill) |
+| **Zvw (health insurance)** | **6.51%** | **6.10%** | **EUR 75,864 (2025); EUR 79,409 (2026)** | Employer-paid (not withheld from employee) |
+
+Sources: Belastingdienst, Bijlage bij de Nieuwsbrief Loonheffingen 2025, tables 9, 11 and 12: https://download.belastingdienst.nl/belastingdienst/docs/bijlage-nieuwsbrief-loonheffingen-2025-lh2091b51fd.pdf; Bijlage bij de Nieuwsbrief Loonheffingen 2026, tables 9, 11 and 12: https://download.belastingdienst.nl/belastingdienst/docs/bijlage-nieuwsbrief-loonheffingen-2026-lh2091b63fd.pdf; Handboek Loonheffingen 2026, paragraph 7.5 (low rate for small employers, size test): https://download.belastingdienst.nl/belastingdienst/docs/handboek-loonheffingen-lh0221t61fd.pdf.
 
 ### AWf Premium — Contract Type Distinction [T1]
 
 **AWf Premium — Contract Type Distinction**
 
-| Contract type | AWf rate 2025 |
+| Contract type | AWf rate 2025 and 2026 |
 | --- | --- |
-| Permanent contract (vast contract, schriftelijk) | 2.64% |
-| Flexible contract (bepaalde tijd, oproep, uitzend) | 7.64% |
+| Permanent contract (vast contract, schriftelijk) | 2.74% |
+| Flexible contract (bepaalde tijd, oproep, uitzend) | 7.74% |
 
 - **Conditions for low rate** — Written permanent contract (schriftelijke arbeidsovereenkomst voor onbepaalde tijd); Not an on-call contract (geen oproepovereenkomst); Employee works ≥ contracted hours (no excessive overtime correction needed)
 
@@ -196,14 +198,14 @@ The loonbelasting/premie volksverzekeringen are computed using Belastingdienst-p
 ### Refusal Catalogue
 
 - **R-LH-1 — No payroll data available** — Cannot compute loonheffingen without payroll run data. Provide at minimum gross salary totals per period.  _(R-LH-1)_
-- **R-LH-2 — Contract types unclear** — Cannot determine AWf rate (2.64% vs 7.64%) without confirmed contract types. Flag all employees as flex rate (conservative) until confirmed.  _(R-LH-2)_
+- **R-LH-2 — Contract types unclear** — Cannot determine AWf rate (2.74% vs 7.74%) without confirmed contract types. Flag all employees as flex rate (conservative) until confirmed.  _(R-LH-2)_
 - **R-LH-3 — WKR allocation undocumented** — Cannot confirm vrije ruimte compliance without benefit-by-benefit administration. Flag for payroll advisor.  _(R-LH-3)_
 - **R-LH-4 — Anonymous employee (no BSN)** — Must apply 52% anonymous rate. Cannot file normally without BSN and ID copy.  _(R-LH-4)_
 - **R-LH-5 — 30% ruling status unclear** — Cannot apply extraterritorial exemption without confirmed Belastingdienst ruling. Apply standard treatment.  _(R-LH-5)_
 
 ## Section 5 — Computation Examples
 
-### Example: Monthly Payroll Tax Computation
+### Example: Monthly Payroll Tax Computation (2025 rates)
 
 ```
 Given:
@@ -216,14 +218,15 @@ Step 1: Determine loonbelasting + premie volksverzekeringen
   → Approximate: EUR 5,000 × 35.82% = EUR 1,791 (first bracket)
   → Actual amount per tax table (includes heffingskortingen)
 
-Step 2: Employer premiums:
-  → AWf (permanent): EUR 5,000 × 2.64% = EUR 132
-  → Aof: EUR 5,000 × 5.82% = EUR 291 (small employer)
+Step 2: Employer premiums (2025):
+  → AWf (permanent): EUR 5,000 × 2.74% = EUR 137
+  → Aof: EUR 5,000 × 6.28% = EUR 314 (small employer)
   → Whk: EUR 5,000 × 1.50% = EUR 75 (example sector rate)
-  → Zvw: EUR 5,000 × 6.57% = EUR 328.50
+  → Zvw: EUR 5,000 × 6.51% = EUR 325.50
 
-Step 3: Total employer cost above gross:
-  → EUR 132 + EUR 291 + EUR 75 + EUR 328.50 = EUR 826.50
+Step 3: Total employer cost above gross (items above; excludes the Wko surcharge of 0.50% and the Ufo premium of 0.68% in table 9):
+  → EUR 137 + EUR 314 + EUR 75 + EUR 325.50 = EUR 851.50
+  → Same salary at 2026 rates: EUR 137 + EUR 313.50 (Aof 6.27%) + EUR 75 + EUR 305 (Zvw 6.10%) = EUR 830.50
 
 Step 4: Employee net (approximate):
   → EUR 5,000 − EUR 1,791 + heffingskortingen (from table) = net salary

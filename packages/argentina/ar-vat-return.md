@@ -4,9 +4,9 @@ description: "Argentine VAT return (IVA -- Impuesto al Valor Agregado) for self-
 version: 1.0
 jurisdiction: AR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 reviewed_by: Maria Valeria Benvenuti
-review_status: current
+review_status: pending_review
 depends_on:
   - vat-workflow-base
 category: international
@@ -83,7 +83,7 @@ This is a Tier 2 content skill for preparing the Argentine IVA (Impuesto al Valo
 
 | Item | Amount | Source |
 | --- | --- | --- |
-| Monotributo graduation threshold (services, 2025) | ARS ~11,916,410/year (updated periodically) | Ley 24.977, Annex |
+| Monotributo graduation threshold (services and goods, values from 1 August 2026) | ARS 126,610,838.75/year (Category K; updated semi-annually) | Ley 24.977 annex, Art. 20(a), as replaced by Ley 27.743, Art. 89; ARCA, Montos y categorías vigentes |
 | Credito fiscal carry-forward | Unlimited (no expiry) | Ley 23.349, Art. 24 |
 
 ## Section 4 -- Computation rules (Step format)

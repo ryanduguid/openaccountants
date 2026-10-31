@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing a Nigeria
 jurisdiction: NG
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -46,7 +46,7 @@ Entity?
 
 Parallel routing (independent of regime):
 
-- Taxable turnover ≥ N25m trailing-12 → VAT registration mandatory (FA 2019 s.46; NTA 2025 carries this forward) → route `ng-vat`.
+- VAT, periods from 1 January 2026: a business must register, charge and file unless it is a "small business", meaning gross turnover ≤ N100m a year **and** total fixed assets ≤ N250m. A business providing professional services is never a small business, whatever its size (NTAA 2025 ss.22(4)–(7) and 147) → route `ng-vat`. Periods before 2026: taxable turnover ≥ N25m (FA 2019 s.46).
 - Employees on payroll → route `ng-paye` + `ng-statutory-deductions` + `ng-payroll`.
 - Pays Nigerian or foreign suppliers / contractors / rent / royalties → route `ng-wht`.
 - Disposed of chargeable assets in the year → route `ng-cgt`.
@@ -108,7 +108,7 @@ The "small company" definition has shifted twice. Use the rule in force for the 
 | --- | --- | --- | --- | --- | --- |
 | Pre-FA 2019 | n/a | 30% flat | 30% | 30% | CITA s.40 |
 | FA 2019 → FY 2025 | Turnover ≤ N25m | 0% | 20% (turnover N25m–N100m) | 30% (> N100m) | FA 2019 s.16 |
-| NTA 2025 (FY starting on/after 1 Jan 2026) | Turnover ≤ **N50m** AND fixed assets ≤ N250m (NTA s.202; professional services excluded) | 0% | **no medium band — abolished** | 30% + 4% Development Levy on every company that is not small | NTA 2025 ss.56, 59, 202 |
+| NTA 2025 (FY starting on/after 1 Jan 2026) | Turnover ≤ **N100m** AND fixed assets ≤ N250m (NTA s.201 "small company") | 0% | **no medium band — abolished** | 30% + 4% Development Levy on every company that is not small | NTA 2025 ss.56, 59, 201 |
 
 - **Pre-FA 2019** — n/a  _(CITA s.40)_
 - **FA 2019 → FY 2025** — Turnover ≤ N25m  _(FA 2019 s.16)_
@@ -123,11 +123,12 @@ The "small company" definition has shifted twice. Use the rule in force for the 
 - **Minimum tax (PIT)** — 1% of gross income where computed PIT after CRA and reliefs would be lower  _(PITA Sixth Schedule)_
 - **Routing** — Route `ng-personal-income-tax` for the computation; defer state-specific filing portal nuances to that skill.
 
-### 4.5 VAT gate — VATA as amended by FA 2019 / FA 2020 / FA 2023; NTA 2025 carry-forward
+### 4.5 VAT gate — NTAA 2025 from 1 January 2026; VATA as amended by FA 2019 / FA 2020 / FA 2023 before that
 
-- **VAT registration threshold** — N25m taxable turnover in the trailing-12 months. Below threshold = exempt from VAT registration and from VAT charging obligations, but still no input VAT recovery.  _(FA 2019 s.46)_
+- **VAT small-business test (from 1 January 2026)**: Monthly VAT returns do not apply to a small business: gross turnover ≤ N100m a year and total fixed assets ≤ N250m. A business providing professional services cannot be a small business, even below both amounts. Exclude capital-asset supplies and supplies made solely on selling the business or ceasing to trade from the turnover test. A small business may opt in by written notice.  _(NTAA 2025 ss.22(4)–(7) and 147)_
+- **VAT registration threshold (before 2026)** — N25m taxable turnover in the trailing-12 months. Below threshold = exempt from VAT registration and from VAT charging obligations, but still no input VAT recovery.  _(FA 2019 s.46)_
 - **VAT standard rate** — 7.5% standard. Exports zero-rated. Basic food, medical and educational items exempt.  _(FA 2019; VATA First Schedule)_
-- **Routing above threshold** — Above threshold or voluntarily registered → route `ng-vat` and ensure FIRS Tax Pro-Max VAT module is active.
+- **Routing above threshold** — Not exempt under the test for the period, or voluntarily registered → route `ng-vat` and ensure FIRS Tax Pro-Max VAT module is active.
 
 ### 4.6 PAYE / employer gate — PITA s.81; Operation of PAYE Regulations 2002
 
@@ -182,9 +183,8 @@ Use `ask_user_input_v0`. Batch where independent.
 | Q3 calendar 2025 / FY ending 2025 | pre-NTA stack: CITA + PITA + FA 2019–2023 |
 | Q3 FY starting on/after 1 Jan 2026 | NTA 2025 stack |
 | Q3 multiple periods | run each period through the appropriate stack |
-| Q4 ≤ N25m | small company (FA 2019) OR below VAT threshold for sole/BN |
-| Q4 N25m–N50m | pre-NTA: medium (CIT 20%); NTA 2025: small (CIT 0%) — period flag critical |
-| Q4 N50m–N100m | pre-NTA: medium (CIT 20%); NTA 2025: **not small** on NTA s.202 (CIT 30% + 4% levy) although small for VAT under NTAA s.147 — see the ₦50M/₦100M flash point in `ng-cit` |
+| Q4 ≤ N25m | pre-NTA: small company (FA 2019), below VAT threshold for sole/BN. NTA 2025: small company (CIT 0%) if fixed assets ≤ N250m; VAT small business unless professional services or fixed assets > N250m |
+| Q4 N25m–N100m | pre-NTA: medium (CIT 20%); NTA 2025: small (CIT 0%, no Development Levy) if fixed assets ≤ N250m; VAT small business on the same asset limit unless professional services — period flag critical |
 | Q4 > N100m | CIT 30% in both regimes; NTA 2025 adds the 4% Development Levy and drops the medium band |
 | Q4 not sure | defer to inference |
 | Q5 Lagos | PIT filings via LIRS eTax |
@@ -204,8 +204,8 @@ Use `ask_user_input_v0`. Batch where independent.
 | Answer | Action |
 | --- | --- |
 | Q6 registered | route `ng-vat` |
-| Q6 not registered but turnover > N25m | flag **VAT registration overdue**; route `ng-vat`; reviewer to register |
-| Q6 not sure | defer to inference; default conservatively to "registration required" if turnover > N25m |
+| Q6 not registered and not exempt (pre-2026: turnover > N25m; from 2026: not a small business under NTAA s.147, including any professional-services business) | flag **VAT registration overdue**; route `ng-vat`; reviewer to register |
+| Q6 not sure | defer to inference; default conservatively to "registration required" if the same test is met |
 | Q7 ≥ 1 employee | route `ng-paye` + `ng-statutory-deductions` + `ng-payroll` |
 | Q7 ≥ 5 employees | additionally flag ITF (1% of payroll) and NSITF (1%) obligations |
 | Q8 no TIN | route to `ng-formation` onboarding fallback (Section 8); cannot file without TIN |
@@ -246,7 +246,7 @@ REGIME: [PIT progressive | CIT 0% small | CIT 20% medium | CIT 30% large + 4% De
 
 DOWNSTREAM SKILLS:
   ng-personal-income-tax [if sole/BN/partnership],
-  ng-cit [if RC], ng-vat [if registered or > N25m],
+  ng-cit [if RC], ng-vat [if registered or not exempt for the period],
   ng-paye [if employees], ng-statutory-deductions [if employees],
   ng-payroll [if employees], ng-wht [if applicable],
   ng-cgt [if disposals], ng-formation [if entity unclear],
@@ -366,7 +366,7 @@ If Q8 returns "No registration yet" or no TIN is found in documents, stop the re
    - RC: TIN is now auto-issued by FIRS upon CAC incorporation (Joint Tax Board harmonisation, 2021 onward). Confirm via Tax Pro-Max lookup.
    - Sole / BN / individual: Apply for TIN via JTB / FIRS / state IRS. Individuals can use BVN-linked auto-issuance where supported. Lagos residents: LIRS issues Tax ID on first eTax registration.
 4. Tax Pro-Max / state portal onboarding: create account, link TIN, link bank account for direct debit.
-5. VAT registration (if turnover > N25m or voluntary): separate Tax Pro-Max workflow once TIN is active.
+5. VAT registration (pre-2026: turnover > N25m; from 2026: not a small business under NTAA s.147; or voluntary): separate Tax Pro-Max workflow once TIN is active.
 6. PAYE registration (if employees): register with the relevant state IRS as an employer; obtain Employer Tax ID.
 
 Until TIN is active, no return can be filed. Flag `onboarding_required` in `open_flags` and refer the user to a CITN-registered tax practitioner or ICAN/ANAN Chartered Accountant to walk through CAC + JTB / FIRS / state IRS registration.
@@ -380,7 +380,7 @@ When uncertain, prefer the safer (higher-tax / stricter-compliance) outcome and 
 | Ambiguity | Conservative default |
 | --- | --- |
 | Period straddles 1 Jan 2026 cutover | Apply pre-NTA stack to pre-cutover portion, NTA 2025 to post-cutover; flag for `ng-return-assembly` |
-| Turnover near N25m (FA 2019) or N100m (NTA 2025) threshold | Assume above threshold → medium band + VAT registration required |
+| Turnover near N25m (FA 2019) or N100m (NTA 2025) threshold | Assume above threshold → medium band (FA 2019) or 30% + 4% levy (NTA 2025), and VAT registration required |
 | Entity unclear (sole vs BN vs RC) | Treat as sole trader for PIT default; flag `ng-formation` |
 | Residency borderline (~180 days) | Assume non-resident → REFUSE for individual returns |
 | WHT-agent status unclear (sole trader not clearly appointed) | Assume WHT obligation exists for any qualifying payment; flag |
@@ -409,7 +409,7 @@ Run all 15 before invoking `ng-return-assembly`. Any failure → fix, do not han
 4. Regime stack chosen (pre-NTA vs NTA 2025) and recorded.
 5. Period turnover recorded in NGN with bucket band.
 6. Regime selected with reason traced to (a) entity, (b) turnover, (c) period.
-7. VAT status set; `registration_overdue_flag` set if turnover > N25m and not registered.
+7. VAT status set; `registration_overdue_flag` set if not exempt for the period (pre-2026: turnover > N25m; from 2026: not a small business) and not registered.
 8. Employee count set; `ng-paye` + `ng-statutory-deductions` + `ng-payroll` in downstream list if > 0.
 9. ITF / NSITF flags set if ≥ 5 employees or ≥ N50m payroll.
 10. WHT exposure checked; `ng-wht` in list if applicable.
@@ -456,7 +456,7 @@ Primary statutes and regulations cited (reviewer to verify the exact version in 
 - Companies Income Tax Act (CITA), Cap. C21 LFN 2004, as amended.
 - Value Added Tax Act (VATA), Cap. V1 LFN 2004, as amended by Finance Acts 2019, 2020, 2021, 2023.
 - Capital Gains Tax Act (CGTA), Cap. C1 LFN 2004, as amended; FA 2021 (digital assets; share-disposal threshold).
-- Finance Act 2019 — small company definition (turnover ≤ N25m); VAT rate to 7.5%; VAT registration threshold N25m.
+- Finance Act 2019 — small company definition (turnover ≤ N25m); VAT rate to 7.5%; VAT registration threshold N25m (periods before 2026; replaced by NTAA 2025 ss.22 and 147).
 - Finance Act 2020 / 2021 / 2023 — incremental amendments.
 - Nigeria Tax Act 2025 (NTA 2025) — consolidated framework effective for financial years beginning on or after 1 January 2026; new small / medium / large bands (N100m / N1bn); 4% Development Levy for large companies; WHT simplification.
 - Companies and Allied Matters Act (CAMA) 2020 — entity types; audit requirements (s.402); CAC procedures.
