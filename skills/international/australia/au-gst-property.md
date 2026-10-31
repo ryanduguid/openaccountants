@@ -54,7 +54,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Ambiguity | Default |
 |---|---|
 | Residential premises: new or existing? | Existing (input taxed) for ITC purposes; but flag RW screening as if new until contract sighted |
-| Whether the 5-year rule is satisfied | NOT satisfied until evidenced -- the 5 years must be continuous, used only for renting, and exclude any period held or marketed for sale |
+| Whether the 5-year rule is satisfied | NOT satisfied until evidenced -- the 5 years must be continuous and used only for renting; short gaps between tenancies while actively marketed for rent do not break it, but any period held or marketed for sale does not count |
 | Margin scheme agreement status | No valid written agreement until the signed contract clause is sighted |
 | Going concern conditions | NOT met until written agreement, the recipient's registration, all things necessary, and carry-on-to-settlement are all evidenced |
 | Purchaser's intended use after a going concern purchase | Input-taxed use possible -- quantify the Div 135 exposure at full supply price |
@@ -87,7 +87,7 @@ Residential premises are **new** if any limb applies, subject to limb (a) overri
 
 Subdividing or strata-titling existing (not-new) residential premises does **not** create new premises (s 40-75(2AA)). Intra-GST-group sales and certain associate "wholesale supply" arrangements are disregarded for the "previously sold" test (ss 40-75(2A), (2B)) -- grouping does not launder newness away; flag any group or development-agreement structure (R-AU-GP-3, R-AU-GP-6).
 
-**AUDIT FLASH POINT -- the 5-year rule (s 40-75(2)).** Premises cease to be new if, for a continuous period of at least 5 years since they first became residential premises / were last substantially renovated / were last built, they have **only** been used for making input-taxed supplies under para 40-35(1)(a) (residential rent). "Only" is strict: a developer who rents an apartment while simultaneously marketing it for sale is applying it to a dual purpose, so the 5-year clock never runs (ATO view in GSTR 2003/3 and GSTR 2009/4). Five years of rental with the property listed for sale in year 2 does NOT convert the premises. A later unbroken 5 years of rental alone, after marketing stops, does (GSTR 2009/4 paras 139-144). Conversion changes everything downstream: the eventual sale becomes input taxed, ITCs claw back through Div 129, and no RW applies.
+**AUDIT FLASH POINT -- the 5-year rule (s 40-75(2)).** Premises cease to be new if, for a continuous period of at least 5 years since they first became residential premises / were last substantially renovated / were last built, they have **only** been used for making input-taxed supplies under para 40-35(1)(a) (residential rent). "Only" is strict: a developer who rents an apartment while simultaneously marketing it for sale is applying it to a dual purpose, so the 5-year clock never runs (ATO view in GSTR 2003/3 and GSTR 2009/4). Five years of rental with the property listed for sale in year 2 does NOT convert the premises. A later unbroken 5 years of rental alone, after marketing stops, does (GSTR 2009/4 paras 142-144). Short periods between tenancies while the premises are actively marketed for rent do not break the 5 years; private use, vacancy with no attempt to lease, GST-free supplies and periods held or marketed for sale do not count (GSTR 2003/3 paras 91-92). Transitional exception: an entity that relied on the Commissioner's earlier Issues Register view for its Div 129 adjustments on an acquisition before GSTR 2009/4 issued can stay on that basis, and the premises are then accepted as only used for residential rent under s 40-75(2), subject to any other additional use (GSTR 2009/4 para 5, retained by the March 2026 addendum). Conversion changes everything downstream: the eventual sale becomes input taxed, ITCs claw back through Div 129, and no RW applies.
 
 ### 2.2 Input-taxed consequences and mixed developments
 
@@ -274,7 +274,7 @@ If the client provides only a settlement statement and a trial balance:
 
 - NEVER treat a sale as margin-scheme eligible without sighting the written agreement AND the supplier's acquisition history
 - NEVER let a purchaser claim an ITC on a margin scheme acquisition (s 75-20) -- there is no tax invoice with GST for a reason
-- NEVER assume the 5-year rule is met from rental duration alone -- it needs 5 continuous years used only for residential rent, and any period held or marketed for sale does not count
+- NEVER assume the 5-year rule is met from rental duration alone -- it needs 5 continuous years used only for residential rent; short gaps between tenancies while actively marketed for rent do not break it, and any period held or marketed for sale does not count
 - NEVER sign off a going concern position without all five s 38-325 conditions evidenced, and never without a Div 135 intended-use screen
 - NEVER net the RW amount against 1A -- report full GST; the credit arrives separately (s 18-60)
 - NEVER apply 5 adjustment periods to acquisitions of $500,000 or more -- s 129-20(3) gives them 10

@@ -208,9 +208,9 @@ sources on 8 September 2026, are the ones that most often change the number.
   extending any comparison past that date. [Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text)
   Someone who makes the s 104-165 choice, or is otherwise foreign or temporary resident at any
   time in the ownership period after 8 May 2012, gets no deemed sale at 30 June 2027
-  (s 112-155(1)(d)). **Inferred from the statutory text, with no ATO guidance found at 31 October 2026: have it reviewed before relying on it.**
-  On the text of ss 115-100(c) and 115-115, that person appears to keep a resident-days discount
-  on the whole gain from a later event (Section 9 of `au-capital-gains.md`).
+  (s 112-155(1)(d)). **Unresolved: no ATO guidance found at 31 October 2026. Do not apply a discount outcome without specialist review; escalate.**
+  The discount percentage for that person's later gain (ss 115-100(c), 115-115), its interaction
+  with s 115-20 and the application of Division 119 are open points (Section 9 of `au-capital-gains.md`).
 - **Bill, not law: Schedule 4 (noted 31 October 2026).** For the income year that includes 1 July 2027
   and later years, Schedule 4 to the Tax Reform No. 3 Bill would extend the deemed sale to anyone
   Australian resident at any time in the ownership period, give 0% to the later gain and pro-rate

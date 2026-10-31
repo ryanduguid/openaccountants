@@ -106,8 +106,11 @@ FBT work starts with a ledger sweep, not a form. These are the account patterns 
 | Morning tea, biscuits, sandwiches consumed on premises during work | Sustenance -- NOT entertainment, no FBT, deductible |
 | Meal with alcohol, restaurant, off-site | Entertainment -- FBT analysis required |
 | Coffee with a client (light, on business) | Likely sustenance/marginal -- flag, err to entertainment if elaborate |
-| Christmas party, staff drinks: on a working day, on business premises, consumed only by current employees | Food and drink exempt from FBT, even if entertainment, unless salary packaged ([s 41 FBTAA](https://www.ato.gov.au/law/view/document?docid=PAC/19860039/41)). No minor benefit test needed for those items |
-| Christmas party, staff drinks: off the premises, or including associates | Entertainment -- minor benefit test per head if < $300 and infrequent |
+| Christmas party, staff drinks: taxable employer, no Division 9A election, food and drink provided to and consumed by current employees on a working day on business premises | Exempt property benefit even if entertainment, unless salary packaged ([s 41 FBTAA](https://www.ato.gov.au/law/view/document?docid=PAC/19860039/41); [TR 97/17 para 44](https://www.ato.gov.au/law/view/document?docid=TXR/TR9717/NAT/ATO/00001); [FBT guide ch 14](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00015)). No minor benefit test needed for those items |
+| Same on-premises function: associates of employees | Not exempt under s 41. Apportion per head ([FBT guide ch 14](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00015); TR 97/17 para 45), then apply the minor benefit test to the associates' share |
+| Taxable employer, no Division 9A election: function off the premises | Entertainment -- minor benefit test per head if < $300 and infrequent |
+| Employer elected the 50/50 or 12-week register method (Rule 8) | Section 41 does not apply to meal entertainment: include all of it, on-premises functions and non-employees too, in total meal entertainment ([TR 97/17 paras 31-32, 44](https://www.ato.gov.au/law/view/document?docid=TXR/TR9717/NAT/ATO/00001)). No minor benefit exclusion |
+| Income-tax-exempt employer | A Christmas party is tax-exempt body entertainment, on or off the premises ([s 38 FBTAA](https://www.ato.gov.au/law/view/document?docid=PAC/19860039/38); [FBT guide ch 15](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00016)). Section 41 does not apply to it (TR 97/17 para 34), and the minor benefit exemption is limited. Flag for reviewer; these employers may also elect Division 9A |
 | Meal while travelling overnight for work | Not entertainment for the traveller -- travel expense |
 
 ## Section 4 -- Worked examples
@@ -344,7 +347,7 @@ If the client provides only a GL and payroll data:
 | Announced EV wind-back (not yet law) | ato.gov.au new legislation QC 107286 -- Electric car discount (announced 5 May 2026 as part of the 2026-27 Budget; Budget delivered 12 May 2026, budget.gov.au); exposure draft legislation released September 2026, consultation closed 28 September 2026: full exemption to 31 March 2027, then from 1 April 2027 a $75,000 price cap with a 25% concession above it, and a flat 25% concession from 1 April 2029 |
 | Car parking | ato.gov.au -- Car parking fringe benefits (threshold $11.48; small business exemption) |
 | Minor benefits | s 58P FBTAA; TR 2007/12 |
-| Meal entertainment | Division 9A FBTAA; s 51AEA ITAA36; s 41 FBTAA (exempt property benefits on business premises) |
+| Meal entertainment | Division 9A FBTAA; s 51AEA ITAA36; s 41 FBTAA (exempt property benefits on business premises); s 38 FBTAA; TR 97/17; FBT guide for employers chs 14 and 15 |
 | Alternative records (from 1 Apr 2024) | ato.gov.au QC 101342 + Commissioner's legislative instruments |
 | LAFHA | TD 2026/2 (25 March 2026); TR 2021/4; PCG 2021/3 |
 | Record-keeping exemption | ato.gov.au rates page Table 6 |

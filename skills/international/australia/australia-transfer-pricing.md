@@ -83,8 +83,12 @@ rate-only limit falls away: debt quantum is also exposed to Subdivision
 default test for a general class investor limits net debt deductions to
 **30%** of tax EBITDA, with disallowed amounts carried forward for up to
 **15** years; the group ratio and third-party debt tests are alternatives
-by choice. Hold and escalate any Division 820 computation.
-[ITAA 1997, 815-140][S815-140]; [ATO, private groups][TC-PG]; [ATO, fixed ratio test][TC-FRT]
+by choice. Division 820 does not disallow debt deductions where those of
+the entity and all its associate entities total **$2 million** or less
+(section 820-35), and the section 820-37 assets threshold and section
+820-39 special purpose entity exemptions have their own conditions. Hold
+and escalate any Division 820 computation.
+[ITAA 1997, 815-140][S815-140]; [820-35][S820-35]; [820-37][S820-37]; [820-39][S820-39]; [ATO, private groups][TC-PG]; [ATO, fixed ratio test][TC-FRT]
 Do not infer that TP establishes deductibility under Division 820 or that
 a debt limit proves an arm's length price. CFC attribution, Part IVA,
 diverted profits tax, global and domestic minimum tax, debt deduction
@@ -355,7 +359,8 @@ OECD 2022 paragraphs; FX overview; APA programme and the selected revised
 practice statement paragraphs. These are selected reads, not full-volume,
 full-PDF, all-PCG-option or all-IDS-field verification. Recheck operative
 amendments, regulations and source conditions for the requested period.
-Sources checked on **31 October 2026**: section 815-140, the ATO fixed ratio
+Sources checked on **31 October 2026**: sections 815-140, 820-35, 820-37 and
+820-39, the ATO fixed ratio
 test and private groups pages, and the ATO Pillar Two and Public CBC pages
 linked below, for the rows and paragraph they support only.
 
@@ -372,6 +377,9 @@ linked below, for the rows and paragraph they support only.
 [APA-PS]: https://www.ato.gov.au/law/view/document?DocID=PSR/PS20154/NAT/ATO/00001&PiT=99991231235958
 [APA]: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/pricing/advance-pricing-arrangements/advance-pricing-arrangement-apa-program
 [S815-140]: https://www.ato.gov.au/law/view/document?docid=PAC/19970038/815-140
+[S820-35]: https://www.ato.gov.au/law/view/document?docid=PAC/19970038/820-35
+[S820-37]: https://www.ato.gov.au/law/view/document?docid=PAC/19970038/820-37
+[S820-39]: https://www.ato.gov.au/law/view/document?docid=PAC/19970038/820-39
 [TC-PG]: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/private-wealth-international-program/new-international-tax-measures-affecting-private-groups
 [TC-FRT]: https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/thin-capitalisation/understanding-thin-capitalisation/how-the-rules-work/fixed-ratio-test
 [PILLAR2]: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/multinationals/global-and-domestic-minimum-tax

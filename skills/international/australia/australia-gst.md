@@ -540,7 +540,7 @@ for when a revision is required instead.
 | Change in the extent of creditable purpose | Div 129 | Compared over prescribed adjustment periods, with thresholds that can remove the need to adjust |
 | Goods applied solely to private or domestic use | Div 130 | Increasing adjustment |
 | Cancellation of registration, with assets on hand | Div 138 | Increasing adjustment |
-| Becoming registered, with stock on hand for sale, exchange or use as raw materials | Div 137 (s 137-5) | Decreasing adjustment; plant and equipment are not stock |
+| Becoming registered, with stock on hand for sale, exchange or use as raw materials | Div 137 (s 137-5) | May give a decreasing adjustment: the stock must have been acquired solely or partly for a creditable purpose (s 137-5(1)(c)), and none arises where a credit was available and no Div 138 increasing adjustment has related to the stock (s 137-5(2)). Plant and equipment are not stock |
 
 **Adjustment notes.** A decreasing adjustment arising from an adjustment event on a supply
 generally cannot be claimed until an adjustment note is held, subject to the minor adjustment

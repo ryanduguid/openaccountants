@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Core Principle
 
-- **ATO treatment of cryptocurrency** — The ATO treats cryptocurrency (including Bitcoin, Ethereum, stablecoins, NFTs, and DeFi tokens) as a **CGT asset**, not as foreign currency. Each disposal triggers a CGT event.  _(TD 2014/26 (Bitcoin as a CGT asset))_
+- **ATO treatment of cryptocurrency** — A crypto asset held as an investment is generally a **CGT asset**, and each disposal triggers a CGT event. Digital currency as defined in the GST Act is excluded from foreign currency (ITAA 1997 s 995-1), but a stablecoin or other token may fall outside that definition, and the bitcoin determinations do not settle its position. Refer its Division 775 status out; see `au-forex-gains-losses.md`.  _(TD 2014/26 (Bitcoin as a CGT asset); [s 995-1](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1))_
 
 ### Individual Marginal Tax Rates (2026-27)
 

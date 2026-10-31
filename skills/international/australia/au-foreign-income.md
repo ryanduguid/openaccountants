@@ -294,7 +294,7 @@ From 2016-17, HELP/VSL/AASL debtors who are (or become) foreign residents must: 
 
 ### T2-1 -- Foreign tax year mismatch
 
-**Trigger:** foreign tax assessed on a different income year (e.g. UK 6 April year, US calendar year). **Action:** claim FITO in the Australian year the income is assessed, then amend when the foreign tax is actually paid (s 770-190: within 4 years after the amendment event); diarise.
+**Trigger:** foreign tax assessed on a different income year (e.g. UK 6 April year, US calendar year). **Action:** include the income in the Australian year it is assessable, but claim FITO only once the foreign tax has been paid (s 770-10). If it is paid after lodgment, amend that year's assessment to claim the offset (s 770-190: within 4 years after the amendment event); diarise.
 
 ### T2-2 -- Deferred non-commercial foreign business loss
 

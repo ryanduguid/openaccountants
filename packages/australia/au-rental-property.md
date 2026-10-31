@@ -78,7 +78,7 @@ income year, except where a section says otherwise.
 | --- | --- |
 | Unknown apportionment (private vs rental) | 0% deductible |
 | Unknown whether repair or improvement | Treat as improvement (capitalise) |
-| Unknown construction cost for Div 43 | Do not claim -- obtain quantity surveyor report. An available deduction left unclaimed still reduces the cost base unless PS LA 2006/1 (GA) applies (Section 2.8) |
+| Unknown construction cost for Div 43 | Do not claim -- obtain quantity surveyor report. An unclaimed deduction can still reduce the cost base while it remains deductible by amendment (Section 2.8) |
 | Unknown contract date for CGT | Do not compute -- obtain contract |
 | Unknown cost base | Do not compute CGT -- escalate |
 
@@ -210,7 +210,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 | Element | Treatment |
 | --- | --- |
-| Cost base | Purchase price + stamp duty + legal fees on purchase and sale + agent commission on sale + capital improvements - Div 43 amounts the owner has deducted or can deduct, for property acquired after 7:30 pm on 13 May 1997, and for fourth element expenditure incurred after 30 June 1999 on older property ([s 110-45(1A), (2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-45)). An available deduction left unclaimed still reduces the cost base, unless [PS LA 2006/1 (GA)](https://www.ato.gov.au/law/view/document?docid=PSR/GA20061/NAT/ATO/00001) applies: the owner lacks sufficient information to determine the construction expenditure and has not sought any deduction for it |
+| Cost base | Purchase price + stamp duty + legal fees on purchase and sale + agent commission on sale + capital improvements - Div 43 amounts the owner has deducted or can deduct, for property acquired after 7:30 pm on 13 May 1997, and for fourth element expenditure incurred after 30 June 1999 on older property ([s 110-45(1A), (2), (4)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-45)). The reduced cost base is separate: [s 110-55(4)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-55) excludes an amount deducted or deductible, with no such acquisition date limit. Under [TD 2005/47](https://www.ato.gov.au/law/view/document?docid=TXD/TD200547/NAT/ATO/00001) an amount can be deducted at a particular time if the deduction provision's terms are satisfied and the s 170 ITAA 1936 amendment periods have not expired for that deduction. So an unclaimed amount still counts while it can be deducted by amendment, but not once it is out of time, provided the owner is within the amendment period for the CGT event. [PS LA 2006/1 (GA)](https://www.ato.gov.au/law/view/document?docid=PSR/GA20061/NAT/ATO/00001) separately relieves an owner who lacks sufficient information to determine the construction expenditure and has not sought any deduction for it |
 | Capital proceeds | Sale price under the contract; selling costs belong in the cost base, not here |
 | Capital gain | Capital proceeds - cost base; capital losses and the discount then apply to reach the net capital gain (see `au-capital-gains.md`) |
 | 50% CGT discount | Available if held 12+ months (individuals/trusts only) |
@@ -352,7 +352,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 ## Section 7 -- Prohibitions
 
-- **Prohibitions** — NEVER claim travel to a residential rental property as a deduction (removed from 1 July 2017 for non-business landlords); NEVER claim Div 40 plant depreciation for a subsequent owner of residential property (post-2017 rule) unless the asset was newly installed by that owner, is grandfathered, or falls outside s 40-27(2) (Section 2.5); NEVER claim Div 43 without evidence of construction cost (quantity surveyor report or original builder records); NEVER deduct loan principal repayments; NEVER deduct expenses relating to periods of genuine private use without apportionment; Calculate a foreign resident's retained CGT discount entitlement from residency and acquisition history; NEVER omit Div 43 amounts deducted or deductible when reducing the cost base on disposal, subject to the acquisition date limit and PS LA 2006/1 (GA) (Section 2.8); NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions** — NEVER claim travel to a residential rental property as a deduction (removed from 1 July 2017 for non-business landlords); NEVER claim Div 40 plant depreciation for a subsequent owner of residential property (post-2017 rule) unless the asset was newly installed by that owner, is grandfathered, or falls outside s 40-27(2) (Section 2.5); NEVER claim Div 43 without evidence of construction cost (quantity surveyor report or original builder records); NEVER deduct loan principal repayments; NEVER deduct expenses relating to periods of genuine private use without apportionment; Calculate a foreign resident's retained CGT discount entitlement from residency and acquisition history; NEVER omit Div 43 amounts deducted or deductible when reducing the cost base on disposal, subject to the acquisition date limit, TD 2005/47 and PS LA 2006/1 (GA) (Section 2.8); NEVER present tax calculations as definitive -- always label as estimated
 
 ## Section 8 -- Which tax applies, and where its rules live
 
