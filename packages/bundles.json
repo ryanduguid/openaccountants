@@ -3244,6 +3244,20 @@
     "workflow-base.md"
    ]
   },
+  "kiribati": {
+   "jurisdiction": "KI",
+   "name": "Kiribati",
+   "files": [
+    "intake.md",
+    "ki-vat-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "vat-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "kosovo": {
    "jurisdiction": "XK",
    "name": "Kosovo",
@@ -3765,6 +3779,22 @@
     "income-tax-workflow-base.md",
     "transfer-pricing-workflow-base.md",
     "vat-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "micronesia": {
+   "jurisdiction": "FM",
+   "name": "Micronesia",
+   "files": [
+    "intake.md",
+    "fm-national-tax-social-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
+    "social-contributions-workflow-base.md",
     "workflow-base.md"
    ]
   },

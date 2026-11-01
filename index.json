@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-31T19:45:01+00:00",
+ "generated_at": "2026-10-31T21:46:04+00:00",
  "counts": {
-  "guides": 2011,
-  "jurisdictions": 292,
+  "guides": 2013,
+  "jurisdictions": 294,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -12929,6 +12929,19 @@
    "last_updated": "2026-07-21"
   },
   {
+   "slug": "ki-vat-reference",
+   "path": "skills/international/kiribati/ki-vat-reference.md",
+   "name": "ki-vat-reference",
+   "jurisdiction": "KI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
+  },
+  {
    "slug": "kosovo-income-tax",
    "path": "skills/international/kosovo/kosovo-income-tax.md",
    "name": "kosovo-income-tax",
@@ -14890,6 +14903,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "fm-national-tax-social-reference",
+   "path": "skills/international/micronesia/fm-national-tax-social-reference.md",
+   "name": "fm-national-tax-social-reference",
+   "jurisdiction": "FM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "md-company-formation",
