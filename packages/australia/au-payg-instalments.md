@@ -1,10 +1,10 @@
 ---
 name: au-payg-instalments
-description: Use this skill whenever asked about Australian PAYG Instalments for sole traders. Trigger on phrases like "PAYG instalments", "BAS T1 T2 T7 T9", "instalment rate", "instalment amount", "ATO instalment", "GDP uplift", "GIC", "variation of instalments", or any question about income tax prepayments through the Business Activity Statement. Covers entry/exit thresholds, instalment rate method (T1/T2), instalment amount method (T7), GDP uplift factor, voluntary variation, GIC exposure on under-estimation, and quarterly/annual election. ALWAYS read this skill before touching any PAYG instalment work for Australia.
+description: Use this skill whenever asked about Australian PAYG Instalments for sole traders. Trigger on phrases like "PAYG instalments", "BAS T1 T2 T7 T9", "instalment rate", "instalment amount", "ATO instalment", "GDP uplift", "GIC", "variation of instalments", or any question about income tax prepayments through the Business Activity Statement. Covers entry/exit thresholds, instalment rate method (T1/T2), instalment amount method (T7), GDP uplift factor, voluntary variation, GIC exposure on under-estimation, and quarterly, two-instalment and annual payment. ALWAYS read this skill before touching any PAYG instalment work for Australia.
 version: 2.6
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -60,7 +60,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Instalment income components uncertain | Include all business + investment income; exclude salary, CGT, exempt |
 | Variation considered | Check 85% safe harbour before varying |
 | First year of business | Check ATO notification, including any voluntary entry; the first year is not an exemption |
-| Annual election eligibility | Notional tax under $8,000 and not required to be registered for GST, or voluntarily registered and remitting GST annually; confirm the choice by the 28th after the first quarter |
+| Annual election eligibility | Notional tax under $8,000, first instalment quarter not yet lodged, and not required to be registered for GST, or voluntarily registered and remitting GST annually; confirm the choice by the 28th after the first quarter |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -104,6 +104,8 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 | 20 July -- 10 August | Q4 (Apr-Jun) due 28 Jul | High |
 
 Note: BAS payments typically combine GST and PAYG amounts. Use the PAYG amount at 5A and any variation credit at 5B; T2 is a rate, not an amount.
+
+These windows also catch 2 other cycles (Section 7). A two-instalment payer's debits fall due on 28 April (75%) and 28 July (the remainder), and an annual payer using a tax agent pays by 21 October. Check the notice before treating a debit as a quarterly instalment.
 
 ### 3.3 Related but NOT PAYG instalments
 
@@ -204,17 +206,18 @@ For example, Q3 estimated annual tax of $12,000, earlier instalments of $8,000 a
 
 ### 6.2 Late BAS lodgement penalty
 
-- **Late BAS lodgement penalty:** For a small entity, the base is one penalty unit per 28 days or part, up to five units, subject to the statutory conditions, adjustments and remission. Date the applicable unit: $313 from 1 July 2023 to 6 November 2024, $330 from 7 November 2024 to 30 June 2026, and $364 from 1 July 2026. Five units are respectively $1,565, $1,650 and $1,820. Do not apply one rate across every period. (TAA 1953 Sch 1 s 286-80; Crimes Act 1914 s 4AA.) Medium withholders pay twice and large withholders five times the base amount.
+- **Late BAS lodgement penalty:** For a small entity, the base is one penalty unit per 28 days or part, up to five units, subject to the statutory conditions, adjustments and remission. Date the applicable unit: $313 from 1 July 2023 to 6 November 2024, $330 from 7 November 2024 to 30 June 2026, and $364 from 1 July 2026. Five units are respectively $1,565, $1,650 and $1,820. Do not apply one rate across every period. (TAA 1953 Sch 1 s 286-80; Crimes Act 1914 s 4AA.) A multiplier of 2, 5 or 500 can apply. The withholder, assessable income and GST turnover tests are alternatives, so a small withholder can still attract a higher multiplier: see the table in `au-lodgment-deadlines-penalties.md` Section 6.
 
 ### 6.3 Safe harbour
 
 - **Safe harbour rule** — If varied instalments total >= 85% of the benchmark instalment, no GIC.
 - **85% is a floor, not a target** — Where varied instalments fall below 85% of the tax payable on instalment income, general interest charge applies to the difference and penalties can follow. The figure is not licence to understate tax deliberately, and it does not remove other interest charges.  _([ATO, How to vary your PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments))_
 
-## Section 7 -- Annual instalment election
+## Section 7 -- Annual instalment election and two-instalment option
 
-- **Annual election eligibility:** The most recently notified notional tax must be below $8,000. The taxpayer must be neither registered nor required to register for GST, or be voluntarily registered and report and pay GST annually, and must not be a partner in a partnership that is registered or required to register. A company must also satisfy the GST joint-venture and instalment-group restrictions. Low turnover alone is insufficient: a voluntarily GST-registered sole trader who reports GST quarterly with $60,000 income and $5,000 notional tax fails the GST condition. Confirm the choice by the 28th day after the end of the first instalment quarter. _([ATO, Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments))_
-- **Election and timing:** Confirm the annual election on the ATO notice and retain its confirmation; eligibility alone does not make the election. Use the applicable notified due date. An annual instalment is generally due at the end of the first quarter of the following income year. Check first-entry and loss-of-eligibility timing separately. (Taxation Administration Act 1953 (Cth) sch 1 s 45-140.)
+- **Annual election eligibility:** The most recently notified notional tax must be below $8,000. The taxpayer must be neither registered nor required to register for GST, or be voluntarily registered and report and pay GST annually, and must not be a partner in a partnership that is registered or required to register. A company must also satisfy the GST joint-venture and instalment-group restrictions. Low turnover alone is insufficient: a voluntarily GST-registered sole trader who reports GST quarterly with $60,000 income and $5,000 notional tax fails the GST condition. The first instalment quarter must not yet have been lodged. Confirm the choice by the 28th day of the month after the end of the first instalment quarter (the next 28 February where December ends that quarter). _([ATO, When are PAYG instalments due](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due); [ATO, Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments))_
+- **Election and timing:** Confirm the annual election on the ATO notice and retain its confirmation; eligibility alone does not make the election. For an income year ending 30 June, the annual instalment is due by the next 21 October. A taxpayer using a tax agent pays by 21 October, and before the return is lodged where possible. A self-preparer need not pay the annual instalment or lodge the instalment notice, and instead lodges the tax return by 31 October, when the instalments are worked out. Check first-entry and loss-of-eligibility timing separately. (Taxation Administration Act 1953 (Cth) sch 1 ss 45-70(2), 45-140; [ATO, When are PAYG instalments due](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due).)
+- **Two-instalment option:** A quarterly payer on the instalment amount may be offered 2 instalments if an individual carrying on a primary production business or a special professional (such as an author, inventor, performing artist, production associate or sportsperson), where the latest return shows gross income from that source above the related deductions. Pay 75% of the year's instalments by 28 April and the remainder by 28 July, using the instalment amount. To return to quarterly instalments, lodge the activity statement by the first instalment's due date using the instalment rate. _([ATO, When are PAYG instalments due](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due))_
 
 ## Section 8 -- Edge cases
 

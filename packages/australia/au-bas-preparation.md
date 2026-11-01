@@ -14,7 +14,7 @@ description: >
 version: 0.4
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - australia-gst
@@ -86,16 +86,18 @@ This skill does NOT cover:
 | --- | --- |
 | Entity and ABN | Determines who lodges and which roles are registered |
 | GST registration status and date of effect | An unregistered period has no GST labels at all |
-| Reporting cycle: monthly, quarterly or annual | Sets the period and the due date |
+| Reporting cycle: monthly, quarterly, annual or quarterly GST instalments | Sets the period, the due date and the GST labels used |
 | Simpler BAS or full reporting | Simpler BAS reports only G1, 1A and 1B for GST |
 | Accounting basis: cash or non-cash (accruals) | Sets the period an amount is attributed to |
 | Whether G1 is reported GST-inclusive or GST-exclusive | The BAS requires the choice to be indicated |
-| PAYG withholding registration and withholder size | Determines the W labels and the payment cycle |
+| PAYG withholding registration and withholder class (small, medium or large) | Determines the W labels and the reporting and payment cycle |
 | PAYG instalment role, and option 1 or option 2 | Determines whether T7 or T1 and T2 are used |
 | FBT instalment role | Determines whether F1 applies |
 | Any prior period error not yet corrected | Determines whether a correction or a revision is needed |
 
 - **GST reporting cycle** — Quarterly applies where GST turnover is less than $20 million and the ATO has not directed monthly reporting. Monthly is compulsory at $20 million or more, and is available by choice below that. Annual reporting is available only to an entity that is voluntarily registered, that is, turnover under $75,000, or under $150,000 for a not-for-profit body.  _([ATO, Due dates for lodging and paying your BAS](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas))_
+- **GST instalments** — A quarterly GST instalment payer reports at 1A the instalment pre-filled at G21, or the varied amount at G23. It does not complete 1B on the quarterly statement, and it lodges an annual GST return.  _([ATO, Complete your BAS: Step 5 summary](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/complete-your-bas/step-5-summary))_
+- **PAYG withholding cycle** — Set by withholder class, not GST turnover. Large: more than $1 million withheld in a financial year ending at least 2 months before the month; pay electronically on the weekday schedule in s 16-75(1). Medium: more than $25,000 withheld in a financial year ending before the month; report and pay monthly. Otherwise small: report and pay quarterly. The tests are not limited to the latest year, and a Commissioner determination can override them. One quarter's withholding does not decide the class; see `au-gst-bas.md` Section 2.2.  _([ATO, Changing a withholding cycle](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle); TAA 1953 Sch 1 ss 16-75, 16-95 to 16-105)_
 - **Accounting basis** — On a cash basis, an amount is attributed to the period in which payment was received or made, and may be part of the sale price. On a non-cash (accruals) basis, an amount is attributed to the earlier of the period in which any payment is received or made and the period in which an invoice is issued or received.  _([ATO, Identify your accounting basis; GST Act ss 29-5, 29-10](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/identify-your-accounting-basis))_
 
 **Do not assume the basis from the accounting file.** A file set to accrual reporting for management accounts can still be registered to report GST on a cash basis, and the reverse is common after a change of adviser. Confirm the registered basis, not the software setting.
@@ -221,7 +223,7 @@ These are three different things. Treat them separately.
 ## Section 8 - Step 6: Calculate the result
 
 - **BAS summary calculation** — ``` 8A  Total amounts you owe the ATO   = 1A + 4 + 5A + 6A + 7 (+ other liability labels) 8B  Total the ATO owes you          = 1B + 5B + 6B (+ other credit labels) 9   Net amount                      = 8A - 8B ``` If 9 is positive it is payable. If negative it is refundable, subject to offsetting against other ATO debts.
-- **Nil BAS still required** — A BAS must be lodged for every period in which the entity is registered, even where the net amount is nil and no GST was payable on any supply.  _([GST Act s 31-5](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/31-5))_
+- **Nil BAS still required** — A registered entity must give a GST return for each tax period, even where the net amount is nil and no GST was payable on any supply. Quarterly instalment Forms R, S and T differ: they generally need only be lodged when varying the instalment amount.  _([GST Act s 31-5](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/31-5); [ATO, activity statements and nil lodgments](https://www.ato.gov.au/api/public/content/0-0b929c4e-ddac-4b4f-a627-7427575b94a2))_
 
 ## Section 9 - Step 7: Lodge and pay
 
@@ -242,7 +244,7 @@ These are three different things. Treat them separately.
 
 ## Section 10 - Worked example
 
-**Facts.** Coastline Joinery Pty Ltd, a quarterly GST lodger with GST turnover of $1.4 million, so it uses Simpler BAS. It accounts for GST on a non-cash (accruals) basis and reports G1 including GST. It has four employees and is registered for PAYG withholding as a small withholder. It pays PAYG instalments using option 1. The period is the quarter ended 30 September 2026. All figures are synthetic.
+**Facts.** Coastline Joinery Pty Ltd, a quarterly GST lodger with GST turnover of $1.4 million, so it uses Simpler BAS. It accounts for GST on a non-cash (accruals) basis and reports G1 including GST. It has two part-time employees and is registered for PAYG withholding as a small withholder: it has not withheld more than $25,000 in any earlier financial year, and no Commissioner determination applies. One quarter does not itself set the class (see `au-gst-bas.md` Section 2.2). It pays PAYG instalments using option 1. The period is the quarter ended 30 September 2026. All figures are synthetic.
 
 **Transactions for the quarter**
 
@@ -252,11 +254,11 @@ These are three different things. Treat them separately.
 | Export of a custom joinery unit | $22,000 | GST-free, in G1, no GST |
 | CNC router purchased and installed | $88,000 incl GST | Creditable acquisition |
 | Other taxable purchases and expenses | $209,000 incl GST | Creditable acquisitions |
-| Salaries and wages paid | $96,000 | No GST, excluded from GST labels |
+| Salaries and wages paid | $36,000 | No GST, excluded from GST labels |
 | Bank account fees | $1,200 | Input taxed supply to the entity, no credit |
 | Customer debt written off as bad | $5,500 incl GST | Decreasing adjustment |
 | Supplier credit note received for returned goods | $1,100 incl GST | Increasing adjustment, reduces credits |
-| Amounts withheld from wages | $18,400 | PAYG withholding |
+| Amounts withheld from wages | $5,400 | PAYG withholding |
 | ATO instalment amount at T7 | $6,200 | PAYG instalment |
 
 **Step 1, GST on sales.**
@@ -286,14 +288,14 @@ GST-free export                               =  22,000
 G1 Total sales (GST-inclusive basis indicated)= 473,000
 ```
 
-**Step 4, PAYG withholding.**
+**Step 4, PAYG withholding.** The example shows W1 because the issued statement asks for it.
 
 ```
-W1 Total salary, wages and other payments     =  96,000
-W2 Amounts withheld from W1                   =  18,400
+W1 Total salary, wages and other payments     =  36,000
+W2 Amounts withheld from W1                   =   5,400
 W3 and W4                                     =       0
-W5 Total amounts withheld                     =  18,400
-4  PAYG tax withheld                          =  18,400
+W5 Total amounts withheld                     =   5,400
+4  PAYG tax withheld                          =   5,400
 ```
 
 **Step 5, PAYG instalment.**
@@ -306,14 +308,14 @@ T7 ATO instalment amount                      =   6,200
 **Step 6, summary.**
 
 ```
-8A = 1A 40,500 + 4 18,400 + 5A 6,200          =  65,100
+8A = 1A 40,500 + 4 5,400 + 5A 6,200           =  52,100
 8B = 1B 26,900                                =  26,900
-9  = 8A - 8B                                  =  38,200 payable
+9  = 8A - 8B                                  =  25,200 payable
 ```
 
-**Step 7, lodgment.** The quarter ended 30 September 2026, so the standard due date is 28 October 2026. If the company lodges online it may be entitled to an extra two weeks, and its registered agent may have a different lodgment program date. The $38,200 must be paid by the applicable due date, whether or not the statement is lodged on time.
+**Step 7, lodgment.** The quarter ended 30 September 2026, so the standard due date is 28 October 2026. If the company lodges online it may be entitled to an extra two weeks, and its registered agent may have a different lodgment program date. The $25,200 must be paid by the applicable due date, whether or not the statement is lodged on time.
 
-**What the example shows.** Net GST of $13,600 is just over a third of the amount payable. The company must fund $18,400 of employees' withheld tax and $6,200 of its own income tax prepayment out of the same quarter's cash. A business that budgets for net GST alone will be short on the due date.
+**What the example shows.** Net GST of $13,600 is just over half of the amount payable. The company must fund $5,400 of employees' withheld tax and $6,200 of its own income tax prepayment out of the same quarter's cash. A business that budgets for net GST alone will be short on the due date.
 
 ## Section 11 - Common errors
 
@@ -346,7 +348,7 @@ Drawn from the ATO's published analysis of GST corrections and from recurring pr
 
 **Threshold and registration errors**
 
-- Not noticing that the $75,000 registration threshold has been passed. Registration is required within 21 days of exceeding it.
+- Not noticing that GST turnover has met the $75,000 registration threshold: current turnover at or above it, unless the Commissioner is satisfied projected turnover is below it, or projected turnover at or above it (GST Act ss 23-5, 188-10(1)). The application is due within 21 days after becoming required to be registered (s 25-1).
 - Changing from monthly to quarterly reporting in the first 12 months of operation without ATO approval.
 
 **PAYG errors**
@@ -386,8 +388,10 @@ Before lodging, confirm:
 - ATO, Types of GST errors, https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors
 - ATO, PAYG instalments: how to complete your activity statement, https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement
 - ATO, How to vary your PAYG instalments, https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments
+- ATO, Changing a withholding cycle, https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle
+- ATO, Complete your BAS: Step 5 summary, https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/complete-your-bas/step-5-summary
 
-Sources were checked on 16 September 2026; the GST error time and value limits were rechecked against the ATO page (updated 14 September 2026) on 11 October 2026. Rates, thresholds and administrative processes change; confirm each figure against the cited page for the period being reported.
+Sources were checked on 16 September 2026; the GST error time and value limits were rechecked against the ATO page (updated 14 September 2026) on 11 October 2026; withholder classes, GST instalments and the instalment-form lodgment rule were checked on 31 October 2026. Rates, thresholds and administrative processes change; confirm each figure against the cited page for the period being reported.
 
 ## Section 14 - Disclaimer
 

@@ -15,7 +15,7 @@ version: 2.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: payroll
 tier: 2
@@ -109,14 +109,14 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 
 - **SG under-18 hours test** — An under-18 employee must work more than 30 actual hours in the week to qualify for SG; exactly 30 does not qualify. Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
 
-- **Deadline exceptions** — new employee / new fund -- 20 business days for the first contribution; out-of-cycle payments (bonuses) ride with the next regular payday's deadline; ATO exceptional-circumstances determinations -- 20 business days.
+- **Deadline exceptions** — new employee / new fund / a worker rehired or recommenced under a new arrangement -- 20 business days for the first contribution; out-of-cycle payments (such as bonuses, where the employee has a regular pay schedule and the payment falls outside it) ride with the next regular payday's deadline, but with no later regular payday (for example a final payment when employment ends) the usual 7 business days apply, and payments to workers with irregular paydays (such as a contractor paid on invoice) are not out of cycle; ATO exceptional-circumstances determinations -- 20 business days.
 - **Legacy** — quarterly due dates (28 Oct/28 Jan/28 Apr/28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026. The ATO Small Business Super Clearing House closed permanently on 1 July 2026 -- small employers now use payroll-software super payments or commercial clearing houses.
 - **Final scheduled SG rate** — 12% is the final scheduled SG rate (reached 1 July 2025). No further increases are scheduled.
 
 ### Superannuation Guarantee Charge (SGC) -- redesigned from 1 July 2026
 
-- **SGC redesign components** — For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components: - The final SG shortfall (12% of qualifying earnings unpaid) - Notional earnings (GIC-rate interest, compounding daily from the day after the deadline) - An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record) - Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached  _(PCG 2026/1)_
-- **SGC deductibility and penalties** — The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment penalty are not). Old-regime SGC for quarters before 1 July 2026 remains non-deductible. Unpaid SGC 28 days after assessment triggers a Notice to Pay, then a 25% or 50% late payment penalty. First-year ATO approach: PCG 2026/1.  _(PCG 2026/1)_
+- **SGC redesign components** — For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components: - The final SG shortfall (12% of qualifying earnings unpaid) - Notional earnings (GIC-rate interest, compounding daily from the day after the deadline) - An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record) - Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached  _(SGAA ss 16B, 18D, 19A and 19B; SGAR regs 13A to 13D; [ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly))_
+- **SGC deductibility and penalties** — The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment penalty are not). Old-regime SGC for quarters before 1 July 2026 remains non-deductible. Unpaid SGC 28 days after assessment triggers a Notice to Pay, then a 25% or 50% late payment penalty. First-year ATO compliance approach, which does not remove liability: PCG 2026/1.  _([ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly); [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super); [PCG 2026/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20261/NAT/ATO/00001) for the first-year approach)_
 
 ## Section 5 -- Employer On-costs
 
@@ -138,13 +138,13 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 | TAS, 2026-27 | $1,250,000 | 4% for the $1.25m to $2m wage band; 6.1% above $2m. Use the state calculation for the applicable wage and deduction amounts |
 | ACT, 2025-26 | $2,000,000 | 6.85% base plus a 0.5% surcharge for Australian wages over $50m to $100m and 1% above $100m. From January 2026, wages over $150m instead use 8.75% with no additional surcharge |
 | ACT, 2026-27 | $1,750,000 | Australian wages: up to $20m, 6.75%; over $20m to $50m, 6.85%; over $50m to $100m, 7.35%; over $100m to $150m, 7.85%; over $150m, 8.75%. Eligible universities have a 6.85% cap |
-| NT, 2025-26 | $2,500,000 ($1,500,000 in 2024-25) | 5.5% |
-| NT, 2026-27 | $2,500,000 | 6.5% for employers or groups with Australia-wide wages of at least $100m; 5.5% otherwise |
+| NT, 2025-26 | $2,500,000 ($1,500,000 in 2024-25) | 5.5%; same deduction settings as 2026-27 |
+| NT, 2026-27 | $2,500,000 | 6.5% for employers or groups with Australia-wide wages of at least $100m; 5.5% otherwise; the deduction falls by $1 for every $2 of Australia-wide wages above $2.5m and is nil at $7.5m |
 
 - **Payroll tax nature:** Payroll tax is a state/territory tax on total Australian wages above the threshold. Check registration, grouping, wage nexus, deductions and period apportionment separately in each relevant jurisdiction. The schedules above were checked against [Revenue NSW](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates), [Victoria SRO](https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates), [Queensland Revenue Office](https://qro.qld.gov.au/payroll-tax/calculate/rates-thresholds/), [Tasmania SRO](https://www.sro.tas.gov.au/payroll-tax/rates-thresholds), [ACT Revenue](https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax), [NT Treasury](https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds), [WA Treasury](https://www.wa.gov.au/government/multi-step-guides/payroll-tax-employer-guide/calculation-payroll-tax-employer-guide) and [RevenueSA](https://www.revenuesa.sa.gov.au/payrolltax/rates-and-thresholds). For full-year NSW-only taxable wages of $2m with the full $1.2m deduction, payroll tax is $800,000 x 5.45% = $43,600.
 
 - **Interstate employers** — Interstate employers must register in each jurisdiction where they pay wages once Australia-wide wages exceed its threshold. Deduction formulas, grouping, contractor and nexus rules are in `au-payroll-tax.md`.
-- **Payroll tax figures** — The table carries the 2026-27 thresholds and rates published by Payroll Tax Australia on 2 September 2026 and by each revenue office. The ACT moved to a $1.75m threshold with tiered rates from 1 July 2026, and the NT threshold rose to $2.5m from 1 July 2025.  _([Payroll Tax Australia, Rates and thresholds](https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds))_
+- **Payroll tax figures** — The table carries the 2026-27 thresholds and rates published by Payroll Tax Australia on 2 September 2026 and by each revenue office. The ACT moved to a $1.75m threshold with tiered rates from 1 July 2026, and the NT threshold rose to $2.5m from 1 July 2025.  _([Payroll Tax Australia, Rates and thresholds](https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds); NT deduction: [Payroll Tax Act 2009 (NT) Sch 1 cl 3, 5 and 7](https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078) and [Territory Revenue Office, Payroll changes from 1 July 2026](https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-changes-from-1-july-2026))_
 
 ## Section 6 -- Fair Work Entitlements
 
@@ -227,7 +227,7 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 
 ## Section 7 -- Payslip Requirements
 
-- **Payslip issuance timing** — Payslips must be issued within 1 working day of payday (Fair Work Act s536, Fair Work Regulations r3.36).  _(Fair Work Act s536, Fair Work Regulations r3.36)_
+- **Payslip issuance timing** — Payslips must be issued within 1 working day of payday (Fair Work Act ss 536 and 539, Fair Work Regulations regs 3.45 to 3.48).  _([Fair Work Ombudsman, Pay slips](https://www.fairwork.gov.au/pay-and-wages/paying-wages/pay-slips))_
 
 ### Mandatory Payslip Contents
 
@@ -327,7 +327,7 @@ Base rate $28.50/hour under award. Casual loading 25% = $35.63/hour. Works 25 ho
 Annual salary $120,000. Sacrifices $10,000/year to super.
 
 1. Taxable salary: $110,000 (reduced PAYG base)
-2. Employer SG: $120,000 × 12% = $14,400 (calculated on pre-sacrifice OTE)
+2. Employer SG: $120,000 × 12% = $14,400 (calculated on pre-sacrifice qualifying earnings; the sacrificed $10,000 is not an eligible contribution, so it does not reduce this amount)
 3. Concessional super cap: $32,500 (2026-27) (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
 4. The $10,000 is taxed at 15% inside the super fund instead of the employee's marginal rate
 

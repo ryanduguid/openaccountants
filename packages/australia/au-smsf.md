@@ -6,7 +6,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context (2026-27).** Four regime changes hit SMSF files this year. (1) **Division 296** is law (Building a Stronger and Fairer Super System Act 2026): from 2026-27 an EXTRA 15% applies to the earnings proportion attributable to total super balance (TSB) between $3m and $10m, and an extra 25% above $10m -- realised-earnings basis, thresholds indexed, levied on the MEMBER personally, not the fund. (2) **Payday super**: employer contributions now arrive within 7 business days of each payday -- frequent small receipts are the new normal and the fund's ESA/bank details must work. (3) The **NALE rules** as amended by the Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024 cap general-expense NALI at TWICE the expense shortfall (applied from 2018-19). (4) **LRBAs over real property are limited to business real property** for borrowing arrangements entered into from 10 August 2026 (Treasury Laws Amendment (Tax Reform No. 1) Act 2026 Sch 5; SIS Act s 67A(2)(c)); refinancing an existing borrowing and acquisitions under arrangements entered into earlier are grandfathered. This skill covers SMSF accounting, tax and compliance only -- it is NOT financial product advice (see R-AU-SF-1).
+> **Law-change context (2026-27).** Four regime changes hit SMSF files this year. (1) **Division 296** is law (Building a Stronger and Fairer Super System Act 2026): from 2026-27 an EXTRA 15% applies to the earnings proportion attributable to total super balance (TSB) between $3m and $10m, and an extra 25% above $10m -- realised-earnings basis, thresholds indexed, levied on the MEMBER personally, not the fund, although the trustee must calculate and report each in-scope member's relevant super earnings (Section 5.3). (2) **Payday super**: employer contributions now arrive within 7 business days of each payday -- frequent small receipts are the new normal and the fund's ESA/bank details must work. (3) The **NALE rules** as amended by the Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024 cap general-expense NALI at TWICE the expense shortfall (applied from 2018-19). (4) **LRBAs over real property are limited to business real property** for borrowing arrangements entered into from 10 August 2026 (Treasury Laws Amendment (Tax Reform No. 1) Act 2026 Sch 5; SIS Act s 67A(2)(c)); refinancing an existing borrowing and acquisitions under arrangements entered into earlier are grandfathered. This skill covers SMSF accounting, tax and compliance only -- it is NOT financial product advice (see R-AU-SF-1).
 
 ## Section 1 -- Quick reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | NALI / non-complying fund | 45% |
 | No-TFN contributions | Extra 32% on qualifying no-TFN contributions income (complying fund); pre-1 July 2007 interest exception in Section 5.1 |
 | Supervisory levy | $259/year (unchanged since 2014-15), paid a year IN ADVANCE with the SAR; new fund's first SAR: $518 |
-| SAR due dates | Self-lodgers: new/overdue 31 Oct (pay 1 Dec), others 28 Feb. Tax agent: first year 28 Feb (31 Oct if ATO-reviewed at registration); ongoing per agent program (generally 15 May) |
+| SAR due dates | Self-lodgers: new/overdue 31 Oct (pay 1 Dec), others 28 Feb. Tax agent: first year 28 Feb (31 Oct if ATO-reviewed at registration); prior-year return outstanding at 30 June: 31 Oct (pay 1 Dec); ongoing per agent program (generally 15 May) |
 | Audit | ASIC-registered approved SMSF auditor, appointed >= 45 days before SAR due; audit finalised BEFORE lodgment |
 | Max members | 6 (since 1 July 2021) |
 | Concessional cap (2026-27) | $32,500 (carry-forward if TSB < $500,000 at prior 30 June) |
@@ -45,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | TBAR | Quarterly for ALL SMSFs since 1 July 2023; due 28 days after quarter end |
 | LRBA safe harbour rate (PCG 2016/5) | 2026-27: 9.35% real property (2025-26: 8.95%); 11.35% listed securities (property rate + 2%) |
 | New LRBAs over real property | Business real property only for arrangements entered into from 10 August 2026 (SIS Act s 67A(2)(c)); pre-existing borrowings, their refinancing, and acquisitions under earlier contracts are grandfathered |
-| Division 296 | First year 2026-27; extra 15% ($3m-$10m proportion) / 25% (>$10m); member-levied; FLAG, never compute. Small-fund cost-base reset choice due by the 2026-27 SAR due date (Section 5.3) |
+| Division 296 | First year 2026-27; extra 15% ($3m-$10m proportion) / 25% (>$10m); member-levied; FLAG, never compute the member's tax. Trustee calculates, attributes and reports the member's relevant super earnings in the SAR from 2026-27 (Section 5.3). Small-fund cost-base reset choice due by the 2026-27 SAR due date (Section 5.3) |
 | ASIC special purpose trustee company review fee | $70/year from 1 July 2026 |
 | Contributor | Open Accountants |
 | Validated by | Pending |
@@ -130,7 +130,7 @@ At the 2026-27 penalty unit of $364, a 60-penalty-unit breach (lending, borrowin
 
 | Income class | Rate | Notes |
 |---|---|---|
-| Assessable contributions (s 295-160) | 15% | Employer + salary-sacrifice + personal deductible (s 290-150 notice) |
+| Assessable contributions (s 295-160) | 15% | Employer + salary-sacrifice + personal deductible (s 290-170 notice) |
 | Ordinary earnings on accumulation assets | 15% | Interest, rent, dividends, trust distributions |
 | Discounted capital gains | 10% effective | 1/3 discount, asset held 12+ months (NEVER the individuals' 50%) |
 | ECPI (retirement-phase earnings) | 0% | Section 4.2 -- method and minimum-payment conditions apply |
@@ -180,16 +180,18 @@ For a complying fund, additional no-TFN tax is 32%. An amount is excluded where 
 
 **CGT cap:** small business 15-year/retirement exemption proceeds excluded from the NCC cap by election, lifetime limit $1,935,000 (2026-27).
 
+**Allocation timing:** an SMSF has 28 calendar days after the end of the month in which a contribution is received to allocate or reject it. The 3 business day rule for other funds does not apply, and Payday Super did not change this. ([ATO, How Payday Super affects SMSFs](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs).)
+
 ### 5.2 Caps (2026-27)
 
 **Rule 8 -- caps and bring-forward.** Concessional $32,500 (2025-26: $30,000); carry-forward of up to 5 prior years' unused cap only if TSB < $500,000 at 30 June 2026. Non-concessional $130,000 (4 x concessional). Bring-forward by TSB at 30 June 2026: < $1.84m -> $390,000 over 3 years; $1.84m to < $1.97m -> $260,000 over 2 years; $1.97m to < $2.1m -> $130,000 only; >= $2.1m -> nil.
 
-**Excess flows:** excess concessional -> included in the member's assessable income at marginal rates less a 15% offset; may elect to release up to 85%; unreleased excess counts to the NCC cap (no excess concessional charge since 2021-22). Excess non-concessional -> release + associated earnings taxed at marginal rates, or (if retained) 47% on the excess. The FUND's accounting never changes -- assessable contributions stay taxed at 15% in the fund; the excess consequences land on the member.
+**Excess flows:** excess concessional -> included in the member's assessable income at marginal rates less a 15% offset; may elect to release up to 85%; unreleased excess counts to the NCC cap (no excess concessional charge since 2021-22). Excess non-concessional -> release + associated earnings taxed at marginal rates, or (if retained) 47% on the excess. The FUND's accounting never changes -- assessable contributions stay taxed at 15% in the fund; the excess consequences land on the member. A Bill would disregard certain June 2026 quarter employer contributions made in July 2026 when working out 2026-27 concessional contributions; it is not law at 31 October 2026 (see `au-super-guarantee` Rule 6).
 
 ### 5.3 Member surcharges -- flag, never compute
 
 - **Division 293:** extra 15% on concessional contributions where income + contributions > $250,000 (frozen). ATO-assessed on the member.
-- **Division 296 (NEW, first year 2026-27):** extra 15% on the earnings proportion for TSB between $3m and $10m, extra 25% above $10m (thresholds indexed; realised-earnings basis; ATO-assessed on the MEMBER, payable personally or released from super). The SMSF's job is accurate 30 June member balances and market valuations -- the ATO computes from reported data. **Do not attempt the computation in bookkeeping workflows; flag any member with TSB near $3m.** For 2026-27 only the TSB at 30 June 2027 is tested.
+- **Division 296 (NEW, first year 2026-27):** extra 15% on the earnings proportion for TSB between $3m and $10m, extra 25% above $10m (thresholds indexed; realised-earnings basis; ATO-assessed on the MEMBER, payable personally or released from super). The ATO assesses the member, but the trustee must supply the input: from the 2026-27 SAR the SMSF calculates its Division 296 fund earnings (an adjusted amount of fund taxable income), attributes a share to each in-scope member as relevant super earnings and reports that share in the SAR. Subject to exceptions such as nil fund earnings, the ATO says an actuary will need to work out the attributed amount. If the SAR omits it, the ATO notifies the fund (through Online services for agents where there is a tax agent) and the SAR must be amended. Accurate 30 June member balances and market valuations remain essential. A member is in scope when TSB exceeds $3m. LRBA amounts are disregarded in the Division 296 TSB, and a member whose SMSF interest is under $3m can still be in scope through other super interests, so ask members about those. **Do not attempt the member's tax in bookkeeping workflows. Flag any member with TSB near $3m, and escalate the fund-level calculation and attribution:** the ATO said on 24 September 2026 that its draft guidance was still to come. For 2026-27 only the TSB at 30 June 2027 is tested. ([ATO, About Division 296 tax for SMSFs](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/about-division-296-tax-for-smsfs); [ATO, Division 296 tax the latest for SMSFs](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-newsroom/division-296-tax-the-latest-for-smsfs).)
 - **Division 296 cost-base reset choice (small funds):** the trustee of a small superannuation fund can choose, in the approved form, to treat each asset held at the end of 30 June 2026 as having a first-element cost base equal to its market value at that time, with other elements reset to nil and no indexation, for working out Division 296 fund earnings only. The choice covers all assets held at that date, is irrevocable, must be made by the due date for lodging the fund's 2026-27 return, and requires records of the choice and the adjusted cost bases kept for 5 years after they stop being relevant. It does not change the fund's ordinary income tax. Flag it before the 2026-27 SAR for any fund with a member near $3m. (Income Tax (Transitional Provisions) Act 1997 ss 296-50, 296-55, inserted by the Building a Stronger and Fairer Super System Act 2026.)
 
 ## Section 6 -- Pensions
@@ -236,13 +238,15 @@ All remaining conditions must also hold: ECPI would otherwise have continued; th
 | Date | Obligation |
 |---|---|
 | 28 July / 28 Oct / 28 Jan / 28 Apr | TBAR for the preceding quarter (all SMSFs with TB events) |
-| >= 45 days before SAR due | Appoint the ASIC-registered approved SMSF auditor (s 35C) |
+| >= 45 days before SAR due | Appoint the ASIC-registered approved SMSF auditor (s 35C); an earlier SAR due date, such as 31 Oct for an overdue-return fund, brings this date forward |
 | Before lodgment | Audit FINALISED; auditor report (IAR) issued within 28 days of receiving complete documents; actuarial certificate obtained if proportionate ECPI claimed |
-| 31 Oct 2026 | 2025-26 SAR: self-lodgers that are newly registered or have overdue prior SARs (pay 1 Dec); tax-agent-lodged new registrants ATO-reviewed at registration |
+| 31 Oct 2026 | 2025-26 SAR: self-lodgers that are newly registered or have overdue prior SARs (pay 1 Dec); tax-agent-lodged funds with a prior-year return outstanding at 30 June 2026 (pay 1 Dec); tax-agent-lodged new registrants ATO-reviewed at registration |
 | 28 Feb 2027 | 2025-26 SAR: other self-lodgers; NEW registrant SMSFs lodging via tax agent (payment due same day) |
-| 15 May 2027 | 2025-26 SAR: most continuing tax-agent-lodged SMSFs (agent lodgment program) |
+| 15 May 2027 | 2025-26 SAR: most continuing tax-agent-lodged SMSFs with no prior-year return outstanding (agent lodgment program) |
 | With every SAR | Supervisory levy $259 paid a year in advance (label L; new funds add $259 at label N = $518 first SAR; wind-ups deduct at label M -- final-year levy usually nil if paid previously) |
 | 30 June 2027 | Minimum pensions PAID OUT of the bank; market valuations; in-house asset 5% test; TSB snapshots for caps, DSFA and Div 296 |
+
+A SAR due date on a weekend or public holiday moves to the next business day ([ATO, Lodge SMSF annual returns](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/lodge-smsf-annual-returns)); 31 Oct 2026 and 15 May 2027 are Saturdays and 28 Feb 2027 is a Sunday.
 
 SAR more than 2 weeks overdue -> Super Fund Lookup status changes to "Regulation details removed": employers and APRA funds will refuse contributions and rollovers until lodgment catches up.
 
@@ -317,13 +321,13 @@ If relief is unavailable, the pension is treated as ceasing on 1 July 2026, ECPI
 |---|---|
 | Fund definition, trustee rules | SIS Act s 17A, s 17B, s 120 (disqualified persons), s 104A (trustee declaration) |
 | Sole purpose; lending; acquisitions; borrowing; in-house assets | SIS Act ss 62, 65, 66, 67, 67A-67B, Part 8 (ss 71, 82-85); penalties s 166 ($364/penalty unit from 1 July 2026, Crimes Act s 4AA) |
-| Audit and SAR | SIS Act ss 35C, 35D; ato.gov.au "Your SMSF auditor" (45-day appointment); "Lodge SMSF annual returns" (QC 23331) |
+| Audit and SAR | SIS Act ss 35C, 35D; ato.gov.au "Your SMSF auditor" (45-day appointment); "Lodge SMSF annual returns" (QC 23331); [Registered agent lodgment program, companies and super funds](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds) (2025-26 dates) |
 | Supervisory levy amount and advance mechanics | ato.gov.au "SMSF supervisory levy" (QC 35359); SAR 2026 instructions label L ($259) |
 | Fund tax, contributions, no-TFN, CGT discount | ITAA 1997 Div 295 (s 295-160 assessable contributions); ato.gov.au "How SMSFs are taxed" (QC 23341) |
 | ECPI methods, DSFA $1.6m trigger | ITAA 1997 ss 295-385, 295-387, 295-390; ato.gov.au "Exempt current pension income" (QC 21546); TD 2014/7 |
 | NALI/NALE 2x general-expense design | ITAA 1997 s 295-550 as amended by Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024; LCR 2021/2; PCG 2020/5 (transition ended 30 June 2023) |
-| Contribution acceptance, caps, downsizer | SIS Reg 7.04; ITAA 1997 Divs 290-293 (ss 290-150, 290-165), Subdivs 291/292, s 292-102; ato.gov.au contribution caps pages |
-| Division 296 | Building a Stronger and Fairer Super System Act 2026 (first year 2026-27) |
+| Contribution acceptance, caps, downsizer | SIS Reg 7.04; ITAA 1997 Divs 290-293 (ss 290-150, 290-165, 290-170), Subdivs 291/292, s 292-102; ato.gov.au contribution caps pages; [How Payday Super affects SMSFs](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs) (allocation period) |
+| Division 296 | Building a Stronger and Fairer Super System Act 2026 (first year 2026-27); [ATO, About Division 296 tax for SMSFs](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/about-division-296-tax-for-smsfs); [ATO, Division 296 tax the latest for SMSFs](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-newsroom/division-296-tax-the-latest-for-smsfs) |
 | Pension minimums and shortfall exception | SIS Reg 1.06(9A), Sch 7; ato.gov.au "Income stream (pension) rules and payments" + "Exception to minimum pension payment requirements" |
 | TBC / TBAR | ITAA 1997 Div 294; ato.gov.au "When to lodge a transfer balance account report for SMSFs" (quarterly, 28 days) |
 | LRBA safe harbour | PCG 2016/5 (2026-27: 9.35% property / 11.35% listed securities; ATO Other super rates and thresholds) |
@@ -331,12 +335,12 @@ If relief is unavailable, the pension is treated as ceasing on 1 July 2026, ECPI
 | Valuations; investment strategy; separation | SIS Regs 8.02B, 4.09, 4.09A; ato.gov.au "Guide to valuing SMSF assets" |
 | Deductions (audit, actuarial, levy) | TR 93/17 |
 
-All ATO figures verified against ato.gov.au on 20 August 2026. The LRBA rate, the Schedule 5 LRBA limit and the Division 296 small-fund choice were checked on 11 October 2026.
+All ATO figures verified against ato.gov.au on 20 August 2026. The LRBA rate, the Schedule 5 LRBA limit and the Division 296 small-fund choice were checked on 11 October 2026. The Division 296 reporting duty, the allocation period and the agent lodgment dates were checked on 31 October 2026.
 
 ### Prohibitions
 
 - NEVER give investment, product or contribution-strategy advice (R-AU-SF-1 -- AFSL boundary)
-- NEVER compute Division 296 or Division 293 liabilities -- flag and escalate
+- NEVER compute a member's Division 296 or Division 293 liability -- flag and escalate. The trustee's Division 296 calculation, attribution and SAR reporting still have to happen (Section 5.3)
 - NEVER claim ECPI without checking method eligibility, minimum payments, and (proportionate) the actuarial certificate
 - NEVER apply the individuals' 50% CGT discount to a fund (1/3 only)
 - NEVER treat NALI as 15% income, or net capital losses against segregated-asset gains
