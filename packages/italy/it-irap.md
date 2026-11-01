@@ -4,14 +4,16 @@ description: Use this skill whenever asked about Italian IRAP (Imposta Regionale
 jurisdiction: IT
 category: international
 tax_year: 2025
-last_updated: 2026-10-31
-version: 1.1
+last_updated: 2026-11-01
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # IT Irap
+
+**Review boundary (1 November 2026):** this revision corrects the income-tax treatment of IRAP deductions. It preserves the earlier individual-liability and payment corrections. Rates, entity-specific bases, the complete amendment chain and actual filing readiness remain pending professional review. Do not calculate a deduction until the payer, period, payment and eligible cost components have been verified.
 
 ## Skill Metadata
 
@@ -138,9 +140,9 @@ For an individual, this test matters only for a period before 2022, such as an o
 
 - **Apply regional rate logic** — IRAP = vpn_adjusted × regional_rate (typically 3.90%)
 
-### Step 4.5 -- Deductions from IRAP itself
+### Step 4.5 -- IRAP deductions from the income-tax base
 
-- **Deductions from IRAP itself** — A portion of IRAP attributable to labour costs is deductible from IRPEF/IRES: - 10% of IRAP paid is deductible from income tax base (as per D.L. 201/2011) - Additional deduction for IRAP on employee costs  _(D.L. 201/2011)_
+These deductions reduce the eligible income-tax base, not IRAP itself and not income tax euro for euro. The labour-related deduction and the 10% deduction have different statutory predicates. Apply Step 7 before using either; neither is a universal deduction for all IRAP payments.
 
 ## Step 5: Payment Schedule [T1]
 
@@ -177,17 +179,19 @@ For an individual, this test matters only for a period before 2022, such as an o
 | Deadline | Follows the filer's income-tax return, and the two rules differ. **Individuals and partnerships (Redditi PF/SP):** 31 October of the following year, so 2 November 2026 for FY2025 because 31 October is a Saturday. **Companies (Redditi SC):** the last day of the **10th month** after the tax period closes, which lands on the same 31 October only for a calendar-year company. A company with a non-calendar period counts ten months from its own close |
 | Filing | Telematic (via Entratel or Fisconline) |
 
-## Step 7: Tax Deductibility of IRAP [T1]
+## Step 7: Tax Deductibility of IRAP [T2]
 
-- **Legislation** — D.L. 201/2011, art. 6  _(D.L. 201/2011, art. 6)_
+[Article 6(1) of D.L. 185/2008](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2008-11-29;185~art6!vig=) and [Article 2 of D.L. 201/2011](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2011-12-06;201~art2!vig=) provide separate income-tax deductions for IRAP determined under the specified Articles 5, 5-bis, 6, 7 and 8 of D.Lgs. 446/1997.
 
-**Deductions from IRAP**  _(D.L. 201/2011, art. 6)_
-
-| Deduction | Amount |
+| Route | Statutory condition and limit |
 | --- | --- |
-| IRAP on labour costs (cuneo fiscale) | Fully deductible from IRPEF base |
-| IRAP on other components | 10% of total IRAP paid is deductible from IRPEF base |
-| Regional tax deduction | Applied in the Redditi PF declaration |
+| Labour-related IRAP | Article 2(1) of D.L. 201/2011 addresses IRAP attributable to the taxable component of employee and assimilated labour costs, net of the specified Article 11 deductions. It applies from the tax period in progress on 31 December 2012. It does not authorise an unconditional deduction of the entire wage bill or every IRAP payment. |
+| 10% IRAP deduction | Article 6(1) of D.L. 185/2008 concerns the portion notionally attributable to passive interest and similar charges, net of active interest and similar income. The statutory amount is 10% of IRAP under that provision, not a deduction of every 'other component' and not a flat labour-cost deduction. |
+| Payment and computation | The provisions refer to Article 99(1) TUIR, whose ordinary rule deducts eligible other taxes in the period of payment. The taxpayer's income category, amounts actually paid, statutory IRAP limits and interaction between deductions must be established before a numerical claim. |
+
+The complete Article 11 deduction calculation, apportionment, overlapping deductions, refunds, historical payments and return boxes are not qualified here. Do not add the 2 routes automatically or claim the same cost twice. Identify the entity paying IRAP and the income-tax return claiming relief. Individuals carrying on businesses or professions owe no IRAP for 2022 onwards under the scope rule above; that does not decide relief for an earlier payment.
+
+Source period: the cited deduction provisions were read in the versions displayed on 1 November 2026. [Article 99](https://www.normattiva.it/uri-res/N2Ls?urn:nir:presidente.repubblica:decreto:1986-12-22;917~art99!vig=2025-12-31) was also read as at 31 December 2025. This does not qualify the replacement-code chain for 2027.
 
 ## Step 8: Edge Case Registry
 
@@ -216,10 +220,10 @@ For an individual, this test matters only for a period before 2022, such as an o
 **Situation:** Client has business activity in both Lombardia and Campania.
 **Resolution:** IRAP must be apportioned between regions based on where value is produced (typically by employee/payroll location). Each region's rate applies to its portion. [T2] -- confirm apportionment methodology.
 
-### EC6 -- IRAP and IRPEF interaction [T1]
+### EC6 -- IRAP and income-tax interaction [T2]
 
-**Situation:** Client asks if IRAP reduces income tax.
-**Resolution:** 10% of IRAP paid is deductible from IRPEF taxable income. Additionally, the portion of IRAP on employee costs (cuneo fiscale deductions) is fully deductible from IRPEF base.
+**Situation:** A partnership or professional association asks whether an IRAP payment reduces income tax.
+**Resolution:** Identify the payer, period, payment and eligible net labour or interest components under Step 7. Do not apply 10% universally, deduct the full wage bill or add both deductions automatically. Stop the numerical claim until their interaction and the relevant income-tax return treatment are verified.
 
 ### EC7 -- First year of activity [T1]
 
@@ -285,7 +289,7 @@ For an individual, this test matters only for a period before 2022, such as an o
 - NEVER apply the 40%/60% acconto split without confirming the taxpayer is outside the ISA rule
 - NEVER use the income tax base as the IRAP base -- they are different (labour costs and interest are added back for IRAP)
 - NEVER apply the standard 3.90% rate without checking the specific region -- rates vary
-- NEVER forget the 10% IRAP deduction from IRPEF -- it materially reduces income tax
+- NEVER claim an IRAP deduction without identifying the applicable labour or net-interest route, the eligible amount and its income-tax treatment under Step 7
 - NEVER use the autonomous organisation test for a period from 2022 onwards; for an earlier period, examine the factual circumstances (employees, beni strumentali)
 - NEVER present IRAP advance payments as optional -- they are mandatory if prior-year IRAP exceeds EUR 51.65
 - NEVER ignore the employee cost add-back -- it is a fundamental difference from income tax computation

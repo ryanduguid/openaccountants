@@ -1,10 +1,10 @@
 ---
 name: italy-tax-optimization
 description: Use this skill whenever asked about reducing tax in Italy, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in Italy. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "risparmiare sulle tasse", "ottimizzazione fiscale", "pagare meno tasse", "detrazioni", "deduzioni". ALWAYS read this skill before advising on any Italian tax optimization strategy.
-version: 1.1
+version: 1.2
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,6 +14,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Italy Tax Optimization
 
+**Review boundary (1 November 2026):** this revision corrects loss-category routing, the conditions for start-up loss relief, excess forfettario contributions and the anti-abuse penalty claim. Other figures and planning strategies in this mixed 2025/2026 guide have not been revalidated by this revision. Actual relief, liability and filing readiness remain pending professional review.
+
 ## Section 1 -- Quick Reference
 
 **Quick Reference**
@@ -22,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Italy (Repubblica Italiana) |
 | Key optimization legislation | Testo Unico delle Imposte sui Redditi (TUIR, DPR 917/1986) -- Art. 10 (oneri deducibili), Art. 15 (detrazioni), Art. 16-ter (riordino detrazioni 2026), Art. 54 (redditi di lavoro autonomo), Art. 66 (contabilità semplificata), Art. 1 commi 54-89 L. 190/2014 + L. 145/2018 (regime forfettario); Legge di Bilancio 2026 (L. 199/2025) |
-| Tax authority attitude to planning | The Agenzia delle Entrate accepts legitimate planning. Italy has a general anti-avoidance rule under Art. 10-bis L. 212/2000 (Statuto del Contribuente): arrangements lacking economic substance whose principal purpose is to obtain undue tax advantages can be disregarded. Penalties: 100-200% of unpaid tax for abuse. Ruling requests (interpello) available for certainty. |
+| Tax authority attitude to planning | Article 10-bis L. 212/2000 addresses arrangements lacking economic substance that essentially obtain undue tax advantages. Substantial, non-marginal reasons other than tax and the freedom to choose lawful tax regimes matter. Paragraph 13 preserves administrative tax penalties without fixing a 100-200% range. Qualify the applicable violation, period and penalty provision before quoting an amount. An interpello follows the statutory procedure. |
 | Currency | EUR |
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
 | Filing deadline | 31 October (Modello Redditi PF; 2 November 2026 as 31 October is a Saturday); 30 September (Modello 730) |
@@ -136,21 +138,19 @@ For professionals, the deduction on cars is severely limited (20% of costs up to
 
 ## Section 5 -- Loss Utilization
 
-- **Loss utilization legislation** — Legislation: TUIR Art. 8, Art. 84  _(TUIR Art. 8, Art. 84)_
+Route the taxpayer and income category before calculating relief. [Article 8 TUIR](https://www.normattiva.it/uri-res/N2Ls?urn:nir:presidente.repubblica:decreto:1986-12-22;917~art8!vig=) distinguishes professional losses from commercial-business and partnership losses. [Article 84 TUIR, as at 31 December 2025](https://www.normattiva.it/uri-res/N2Ls?urn:nir:presidente.repubblica:decreto:1986-12-22;917~art84!vig=2025-12-31), supplies the start-up condition imported by Article 8(3).
 
-**Loss Utilization table**  _(TUIR Art. 8, Art. 84)_
-
-| Relief | Detail |
+| Route | Treatment and conditions |
 | --- | --- |
-| Horizontal offset (same year) | Losses from one category of income can offset gains in other categories within the same year (e.g., business loss offsets rental income). |
-| Carry-forward (impresa) | Business losses carry forward indefinitely but can only offset up to 80% of future business income (minimum taxation rule). |
-| First 3 years exception | Losses from the first 3 years of a new business can be carried forward without the 80% limitation -- full offset allowed. |
-| No carry-back | Italy does not allow loss carry-back. |
-| Forfettario losses | The regime forfettario does not generate deductible losses. If the coefficient-based income is lower than social contributions, the excess contributions carry forward. |
+| Professional losses | Article 8(1) deducts losses from arts and professions in determining aggregate income. Keep this route separate from commercial-business losses; do not apply the business carryforward rule to every professional loss. |
+| Commercial-business losses and SNC/SAS participation losses | Article 8(3) restricts relief to the relevant business-income category, with carryforward of the excess subject to the statutory 80% limit and available income. A business loss does not automatically offset rental income. Partnership allocation and the special rule for SAS losses exceeding capital must also be checked under Article 8(2). |
+| First 3 tax periods | Article 84(2) requires losses arising in the first 3 tax periods from constitution **and** relating to a **new productive activity**. Only qualifying losses receive the full-income limit instead of the ordinary 80% carryforward limit. New registration or incorporation alone is insufficient. Article 8(3) imports this paragraph; classify the taxpayer before applying it. |
+| Other restrictions | Article 84 also contains ownership/activity-change and other restrictions; Article 8(3)'s reference to paragraph 3 is expressly limited to SNC/SAS. Do not promise automatic relief or carryback from this summary. Company cases require `it-corporate-income-tax` and a separate eligibility check. |
+| Forfettario contributions | [L. 190/2014 Article 1(64), as at 31 December 2025](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2014-12-23;190~art1!vig=2025-12-31), deducts the specified compulsory social contributions from coefficient-based income and makes any excess deductible from aggregate income under Article 10 TUIR. It does not establish the previously claimed automatic contribution carryforward or a business loss under Article 84. Verify the contribution's eligibility and return treatment before claiming it. |
 
-### Strategy
+### Planning check
 
-In the start-up phase (first 3 years), maximize deductible expenses to create large losses. These carry forward with full offset (no 80% limit), providing significant future tax savings once profitability is achieved.
+Record the loss's origin, income category, tax period, amount and prior use. For start-up relief, document the new productive activity as well as the first 3 tax periods. Do not create spending solely on a promise of unrestricted future offsets. Deductibility, category limits, available income and anti-abuse rules still apply. The complete amendment chain, restructuring cases and the 2027 replacement code remain unqualified.
 
 ## Section 6 -- Timing Strategies
 
@@ -241,7 +241,7 @@ Various tax credits for capital investments (Industria 4.0, Transizione 5.0) may
 
 | Risk | Detail |
 | --- | --- |
-| Abuso del diritto (Art. 10-bis L. 212/2000) | Arrangements without economic substance whose principal purpose is an undue tax advantage. Penalty: 100-200% of avoided tax. |
+| Abuso del diritto (Art. 10-bis L. 212/2000) | The statutory test concerns lack of economic substance and essentially undue tax advantages, subject to the Article 10-bis exceptions and safeguards. Administrative tax penalties remain applicable; this article does not set a universal 100-200% amount. Paragraph 13 excludes punishment of abusive operations under criminal tax laws, which does not excuse separate false invoices, concealment or other independent violations. |
 | Esterovestizione | Italian-managed companies incorporated abroad to access lower foreign tax rates. Heavily scrutinized. |
 | Regime forfettario abuse | Setting up multiple partite IVA among family members to stay under the EUR 85,000 threshold. Interconnected activities may be aggregated. |
 | Fatture false (false invoices) | Criminal offense under Art. 2, D.Lgs. 74/2000. Penalties: 4-8 years imprisonment. |
@@ -249,6 +249,8 @@ Various tax credits for capital investments (Industria 4.0, Transizione 5.0) may
 | Impresa familiare formality | Must be established via notarial deed registered within the relevant tax year. Retroactive attribution is not possible. |
 | Motor vehicle deduction abuse | Claiming 100% business use on a personal vehicle without documentation will be disallowed. |
 | Detrazioni cap (Art. 16-ter) | For income > EUR 75,000, total detrazioni are capped. Exceeding the cap means lost tax benefits. Plan detrazioni-eligible expenditure accordingly. |
+
+[Article 10-bis L. 212/2000](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2000-07-27;212~art10bis!vig=) also contains procedural safeguards, burdens of proof and the requirement to use specific violation provisions before the residual abuse rule. This revision does not qualify a particular penalty amount, procedure or criminal charge.
 
 ## Section 11 -- Annual Tax Planning Calendar
 
