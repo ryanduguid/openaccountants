@@ -5,9 +5,9 @@ version: 2.0
 jurisdiction: IN
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 reviewed_by: Mayur Deokar
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India GST Return Skill (GSTR-3B / GSTR-1) v2.0
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Figures changed on 2026-10-31 for electricity bills postdate that sign-off and await review.
 
 ## Section 1 -- Quick reference
 
@@ -176,7 +176,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | AIRTEL, BHARTI AIRTEL | 18% input | 4(A) | Telecom service |
 | VI, VODAFONE IDEA | 18% input | 4(A) | Telecom service |
 | BSNL, MTNL | 18% input | 4(A) | Government telecom, still taxable |
-| TATA POWER, ADANI ELECTRICITY, BSES, BESCOM, MSEDCL | 18% input | 4(A) | Electricity distribution (post-GST 2.0: electricity brought under GST at 18% for commercial/industrial consumers) |
+| TATA POWER, ADANI ELECTRICITY, BSES, BESCOM, MSEDCL | EXCLUDE |  | Electricity bill: no GST to claim, so no ITC. Electrical energy (HSN 2716 00 00) is exempt at S.No. 111 of Notification 10/2025-CT(Rate), in force 22 Sep 2025, which superseded Notification 2/2017-CT(Rate) (entry 104). Transmission or distribution by a utility is Nil at entry 25 of Notification 12/2017-CT(Rate); metering rent, testing, connection, shifting and duplicate bills supplied by the utility to its consumers are Nil at entry 25A (inserted by Notification 8/2024-CT(Rate), from 10 Oct 2024). If a tax invoice nonetheless shows GST on a charge, flag that charge for review. A consolidated current text of Notification 12/2017 was not read. |
 | MAHANAGAR GAS, IGL, ADANI GAS | 5% input | 4(A) | Piped natural gas for domestic/CNG at 5% |
 | WATER SUPPLY, JALABOARD | EXCLUDE |  | Municipal water, exempt |
 
@@ -725,7 +725,7 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 three-t
 **Key notifications:**
 6. Notification 01/2017-CT(Rate) -- GST rate schedule for goods (as amended by GST 2.0)
 7. Notification 11/2017-CT(Rate) -- GST rate schedule for services (as amended)
-8. Notification 12/2017-CT(Rate) -- Exempt services list
+8. Notification 12/2017-CT(Rate) -- Exempt services list; Notification 10/2025-CT(Rate) -- Exempt goods list (replaced Notification 2/2017-CT(Rate) from 22 Sep 2025)
 9. Notification 13/2017-CT(Rate) -- Reverse charge on specified services
 10. Notification 13/2020-CT -- E-invoicing applicability
 11. Notification 84/2020-CT -- QRMP scheme

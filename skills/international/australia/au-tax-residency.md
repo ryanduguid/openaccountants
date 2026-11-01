@@ -4,7 +4,7 @@ description: "Use this skill for any question about Australian tax residency. Tr
 version: 1.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -53,7 +53,8 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 
 ## Section 3 — Ceasing Australian Tax Residency
 
-- **Ceasing residency** — There is no formal departure filing or "exit application" required. Residency ceases when the facts show you have left Australia and established residency elsewhere. The ATO looks at: You have left Australia; You have established a home (permanent place of abode) in another country; Your family ties, bank accounts, memberships, etc. have moved; You do not intend to return to live in Australia. Date of cessation: the day you departed Australia (if that departure is the clear break), or a later date if you maintained strong Australian ties after departure.
+- **Ceasing residency** — There is no formal departure filing or "exit application" required. Residency ceases when the facts show you no longer meet any of the four tests, including the resides test and the permanent place of abode limb of the domicile test. Factors include: having left Australia; having established a home in another country; where family ties, bank accounts and memberships sit; and how long you are committed to being away. Residency elsewhere and an intention never to return are not requirements: the ATO treats a family who moved overseas on a multi-year contract and rented out their home, intending to return one day, as foreign residents ([ATO, Your tax residency](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency), Bronwyn example). Date of cessation: the day you departed Australia (if that departure is the clear break), or a later date if you maintained strong Australian ties after departure.
+- **Study and training loans** — A debtor who intends to reside overseas for 183 days or more in any 12 months must notify the ATO within 7 days of leaving and may have to report worldwide income for the overseas levy. See `au-foreign-income`, Rule 13.  _([ATO, Overseas obligations](https://www.ato.gov.au/individuals-and-families/study-and-training-support-loans/overseas-repayments))_
 - **Arrival or departure during a year** — Identify when the facts changed. A person can remain resident after physically leaving, or become resident after arriving as a visitor, and a retained bank account or home is a fact to weigh rather than an automatic answer. Record travel dates and days in Australia for each income year, then the homes available in each country, family arrangements, employment terms, visas, belongings, social commitments and contemporaneous intentions, and explain any gap between stated intentions and actual conduct.  _([TR 2023/1](https://www.ato.gov.au/law/view/document?docid=TXR/TR20231/NAT/ATO/00001))_
 
 ## Section 4 — Exit CGT: The Departure Tax
@@ -61,6 +62,7 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 - **Exit CGT deemed disposal:** CGT event I1 occurs when you cease Australian tax residency, for assets you owned just before that time. Use market value at cessation and report the event in that income year. For example, cessation on 1 July 2026 falls in 2026-27, not 2025-26.
 - **Asset exceptions:** Taxable Australian property (TAP) is generally excluded from I1, but indirect Australian real property interests and options or rights to acquire those interests are not excluded by that exception. Australian real property and assets used in an Australian permanent establishment remain outside I1. Disregard gains or losses on assets acquired before 20 September 1985.
 - **Individual choice:** Under s 104-165, an individual may choose to disregard all gains and losses covered by I1. The choice applies to all covered assets, not selected assets. Treat them as TAP until the earlier of a subsequent CGT event or resuming Australian residency; later disposals can create Australian filing obligations.
+- **CGT discount effect of the choice:** The general CGT discount is not available for periods of foreign residency, so weigh this when choosing between I1 and the s 104-165 choice. Paying under I1 can suit a person who would lose the discount on later growth (Library, tax-examples, ¶2-480, reviewed 30 June 2026). The Tax Reform No. 1 Act 2026 also changes CGT from 1 July 2027 for assets later brought to tax. See `au-capital-gains`.
 
 ## Section 5 — Dual Residency
 
@@ -69,7 +71,7 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 
 ## Section 6 — Partial-Year Residency
 
-- **Partial-year residency treatment:** If you change from resident to foreign resident during an income year, resident rates apply to taxable income for that year, with a tax-free threshold adjusted for the resident months. A bonus paid after cessation does not automatically attract full-year foreign-resident rates. Determine when income is derived and its source. Foreign-source income after cessation is generally excluded, and Australian interest, dividends and royalties subject to final non-resident withholding are excluded from the return. Apply I1 and any choice as described above; later CGT treatment depends on whether the asset remains TAP.
+- **Partial-year residency treatment:** If you change from resident to foreign resident during an income year, resident rates apply to taxable income for that year, with a tax-free threshold of $13,464 + ($4,736 x months resident / 12), counting the month of arrival or departure. For example, residency from 17 April gives 3 months and a threshold of $14,648. An eligible pensioner is not pro-rated ([Income Tax Rates Act 1986 Part II Div 4, s 20](https://www.legislation.gov.au/C2004A03348/latest/text); [ATO, Tax-free threshold for newcomers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/tax-free-threshold-for-newcomers-to-australia)). A bonus paid after cessation does not automatically attract full-year foreign-resident rates. Determine when income is derived and its source. Foreign-source income after cessation is generally excluded, and Australian interest, dividends and royalties subject to final non-resident withholding are excluded from the return. Apply I1 and any choice as described above; later CGT treatment depends on whether the asset remains TAP.
 
 ## Section 7 — Sources
 
@@ -78,6 +80,9 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 - ATO Taxation Ruling TR 2023/1, Income tax: residency tests for individuals (TR 98/17 and IT 2650 are withdrawn), https://www.ato.gov.au/law/view/document?docid=TXR/TR20231/NAT/ATO/00001
 - ATO: Capital gains tax (CGT) and ceasing to be an Australian resident
 - Income Tax Assessment Act 1997 (Cth) ss 104-160, 104-165
+- Income Tax Rates Act 1986 (Cth) s 20, https://www.legislation.gov.au/C2004A03348/latest/text
+- ATO: Tax-free threshold for newcomers to Australia, https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/tax-free-threshold-for-newcomers-to-australia
+- ATO: Overseas obligations when repaying loans, https://www.ato.gov.au/individuals-and-families/study-and-training-support-loans/overseas-repayments
 - [ATO: residency, the superannuation test](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-superannuation-test)
 
 > **Working paper only.** Residency determination is highly fact-specific. Engage an Australian tax adviser for a formal residency opinion before making decisions that rely on non-resident status.
