@@ -6,7 +6,7 @@ version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -133,9 +133,9 @@ Basic conditions only -- no extra tests. The remaining gain (after losses and th
 
 ### Rule 11 -- Retirement exemption (Subdiv 152-D)
 
-Disregard a chosen "CGT exempt amount" up to a **$500,000 lifetime limit per individual** (per CGT concession stakeholder for company/trust claimants -- also $500,000 each, reduced by earlier use). No requirement to actually retire or stop working. Keep a written record of every amount chosen. **Individuals under 55 just before making the choice** (the choice is generally made when the return is lodged -- turning 55 before then removes the requirement) must contribute the exempt amount to a complying super fund or RSA by the later of making the choice and receiving the proceeds.
+Disregard a chosen "CGT exempt amount" up to a **$500,000 lifetime limit per individual** (per CGT concession stakeholder for company/trust claimants -- also $500,000 each, reduced by earlier use). No requirement to actually retire or stop working. Keep a written record of every amount chosen. **Individuals under 55 just before making the choice** (the choice is generally made when the return is lodged -- turning 55 before then removes the requirement) must contribute the exempt amount to a complying super fund or RSA by the later of making the choice and receiving the proceeds. For a gain from CGT event J2, J5 or J6 the contribution is made when the choice is made, and proceeds received in instalments, including under a look-through earnout right, are tested instalment by instalment up to the CGT exempt amount ([s 152-305(1)(c), (1A), (1B)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/152-305)).
 
-**Company/trust claimants** must record the exempt amount and, if there is more than one CGT concession stakeholder, each stakeholder's allocation percentage in writing under s 152-315(5). These percentages may include zero and must total 100%; they need not match participation percentages. Payments under s 152-325 follow those allocations, subject to each stakeholder's unused $500,000 lifetime limit and the remaining conditions. For eligible 20% and 80% stakeholders with sufficient unused limits, a $300,000 exempt amount can be allocated entirely to the 20% stakeholder. Keep this separate from Rule 9's participation-based 15-year-exemption payment limit. Pay within 7 days after the later of making the choice and receiving capital proceeds; if the stakeholder is under 55 just before the payment, the entity must pay it into super on their behalf. The payment is NANE income of the stakeholder, not a dividend. Gains from CGT events J5/J6 can use this exemption without re-meeting the basic conditions.
+**Company/trust claimants** must record the exempt amount and, if there is more than one CGT concession stakeholder, each stakeholder's allocation percentage in writing under s 152-315(5). These percentages may include zero and must total 100%; they need not match participation percentages. Payments under s 152-325 follow those allocations, subject to each stakeholder's unused $500,000 lifetime limit and the remaining conditions. For eligible 20% and 80% stakeholders with sufficient unused limits, a $300,000 exempt amount can be allocated entirely to the 20% stakeholder. Keep this separate from Rule 9's participation-based 15-year-exemption payment limit. Pay within 7 days after the later of making the choice and receiving capital proceeds, or within 7 days after the choice for a gain from CGT event J2, J5 or J6, with instalments tested in succession ([s 152-325(2), (4)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/152-325)); if the stakeholder is under 55 just before the payment, the entity must pay it into super on their behalf. The payment is NANE income of the stakeholder, not a dividend. Gains from CGT events J5/J6 can use this exemption without re-meeting the basic conditions.
 
 ### Rule 12 -- Replacement asset rollover (Subdiv 152-E; CGT events J2/J5/J6)
 
@@ -180,7 +180,7 @@ The CGT cap is a lifetime running total across both concessions. Contributions s
 
 ## Section 9 -- Interaction with the 1 July 2027 CGT reform
 
-### Rule 15 -- What is law and what is only announced (as at 20 August 2026)
+### Rule 15 -- What is law and what is only announced (as at 31 October 2026)
 
 | Item | Status |
 |---|---|
@@ -191,7 +191,9 @@ The CGT cap is a lifetime running total across both concessions. Contributions s
 | Capital losses must reduce gains in a fixed category order: deferred non-residential, deferred residential (both pre-1 July 2027 gains), then non-residential, then residential gains (s 102-5(1)); choice remains only within a category | **Law** -- from 2027-28 |
 | **Small business 50% active asset reduction gateway: aggregated turnover $2m -> $10m** | **Law** -- enacted in the Act (added by government amendments during passage): the $2m CGT small business entity limit is disregarded for the 50% reduction (ss 152-10(1AA) note 2, 152-200, 152-205(2)), for assessments for 2027-28 onward, and **ONLY for the 50% reduction**. The 15-year exemption, retirement exemption and rollover keep the $2m turnover / $6m MNAV gateways |
 | 50% discount for early-stage investors/founders (start-up carve-out) | **Announced only** -- Treasury consultation; not law |
-| 30% minimum tax on discretionary trusts from 1 July 2028 | **Not law** -- exposure draft legislation released 3 September 2026; not yet introduced as a bill |
+| 30% minimum tax on discretionary trusts, income years starting on or after 1 July 2028 (Tax Reform No. 3 Bill Sch 1) | **Bill, not law** -- Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. [APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554) |
+| Restructure roll-over for minimum tax trusts, transfers from 1 July 2027 to 30 June 2030 (Sch 2); one-off excluded election trust election in the 2028-29 income year, for a trust existing on 1 July 2028, as an alternative to the roll-over (Sch 3) | **Bill, not law** -- same status |
+| Deferred pre-July 2027 gains and the 15-year exemption: s 152-105 and s 152-110 would be deferral exemptions, with the conditions tested at the deferral realisation event (Sch 4, s 112-152(2)). Other CGT adjustments: see `au-capital-gains.md` Section 9 | **Bill, not law** -- same status. [Explanatory Memorandum, ch 4](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) |
 
 Practical consequences: CGT events **up to 30 June 2027** use everything in this skill unchanged. From 1 July 2027, Div 152 itself survives -- the AAR still halves the gain -- but the base it halves is an indexed gain, the 30% minimum rate applies underneath, and a $2m-$10m turnover business gains AAR access (but still needs the $6m MNAV or another gateway for the other three concessions). How the minimum rate, indexation, deemed re-acquisition and the Div 152 waterfall interleave in detail awaits ATO guidance -- **any disposal, rollover tail (J2/J5/J6) or contribution-timing question straddling 1 July 2027 escalates (R-AU-SBC-5)**. Never advise accelerating or deferring a sale around the date.
 

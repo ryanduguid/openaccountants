@@ -13,7 +13,7 @@ description: >
 version: 0.4
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - au-individual-return
@@ -154,7 +154,12 @@ Actual work deductions are the taxpayer's deductions, to the extent they relate 
 producing assessable labour income, under section 8-1, Division 28 (car expenses), section 25-100
 (travel between workplaces), section 25-10 (repairs to work assets), Subdivisions 40-B and 40-D
 (decline in value and balancing adjustments of work assets) and section 25-125 (COVID-19 tests).
-Those deductions are still claimed in full; the standard deduction tops the total up to $1,000.
+A taxpayer can claim those deductions, and the standard deduction then tops the total up to $1,000.
+Alternatively, the taxpayer can leave out covered expenses and take the standard deduction, and then
+needs no records for them. A claimed covered expense must be substantiated under the ordinary rules
+for the whole amount claimed, not just the part above the standard deduction. If a claimed expense
+is later disallowed, the ATO may increase the standard deduction ([LCR 2026/D5](https://www.ato.gov.au/law/view/view.htm?docid=%22COD%2FLCR2026D5%2FNAT%2FATO%2F00001%22), draft,
+paras 28 to 33; [ATO, Standard deduction](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/standard-deduction-for-work-related-expenses), Example 2).
 Work-related deductions of $780 therefore give a $220 standard deduction and $1,000 in total, and
 deductions of $1,000 or more give a standard deduction of nil.
 
@@ -171,8 +176,10 @@ as investment expenses, gifts to deductible gift recipients and the cost of mana
 - On a balancing adjustment event for a work asset, a taxpayer who has claimed the standard
   deduction in a year overlapping the asset's effective life may choose a fixed 50% reduction of
   the balancing adjustment amount instead of apportioning (s 40-291A).
-- The award transport payment and laundry substantiation exceptions in Subdivision 900-I are
-  repealed.
+- The $300 work expense and $150 laundry exceptions in ss 900-35 to 900-45, and the award transport
+  payment exception in Subdivision 900-I, are repealed for assessments for 2026-27 and later years
+  (Sch 4 items 11, 12 and 17). This applies to all taxpayers, whether or not they are eligible for
+  the standard deduction. See Section 6.
 - From FBT years starting on or after 1 April 2027, the otherwise deductible rule does not reduce a
   salary packaged expense payment benefit of a kind the standard deduction covers, and the work
   related item exemption (portable electronic devices, software, protective clothing, briefcases,
@@ -183,8 +190,8 @@ as investment expenses, gifts to deductible gift recipients and the cost of mana
 [ATO, New legislation: individuals](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals)
 
 **Practical effect.** A work-only taxpayer with substantiated work-related expenses under $1,000
-ends up with $1,000 of work deductions in total, while the substantiated items still have to meet
-the ordinary rules. Above $1,000 nothing changes. The standard deduction is reported in the
+ends up with $1,000 of work deductions in total, and any items claimed still have to meet the
+ordinary rules. Above $1,000 nothing changes. The standard deduction is reported in the
 2026-27 return; check the 2027 return instructions for the label when the ATO publishes them.
 
 ### 5.1 Working Australians tax offset, from 2027-28
@@ -207,15 +214,16 @@ rules for work expenses, car expenses, travel expenses and business travel expen
 | Requirement | Rule |
 | --- | --- |
 | General work expense evidence | Written evidence is required. The document must show the supplier, the amount, the nature of the goods or services, the date of the expense and the date of the document |
-| The $300 total work expense rule | Where total work expense claims for the year are $300 or less, the written evidence rule is relaxed, but the expense must still have been incurred and the claim must still be reasonable. This is not a free $300 |
+| The $300 total work expense rule, 2025-26 and earlier only | Where total work expense claims for the year are $300 or less, the written evidence rule is relaxed, but the expense must still have been incurred and the claim must still be reasonable. This is not a free $300. The exception does not apply from 2026-27 ([ATO, Standard deduction](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/standard-deduction-for-work-related-expenses)). Work expenses claimed from then need written evidence unless another substantiation rule applies, such as the cents per kilometre method below. A person who is not a resident at any time in the year, such as a foreign resident working holiday maker, cannot get the standard deduction and has no replacement (inferred from s 25-130(1)(b)) |
+| Laundry, from 2026-27 | The $150 exception ends. Under the compliance approach in [draft LCR 2026/D5](https://www.ato.gov.au/law/view/view.htm?docid=%22COD%2FLCR2026D5%2FNAT%2FATO%2F00001%22), Appendix 2, the ATO accepts $1 per load of work clothes only and 50c per load if other clothes are mixed in, for washing, drying or ironing but not dry cleaning. Keep records showing the calculation. A claimed amount reduces the standard deduction |
 | Car expenses, cents per kilometre method | Up to 5,000 business kilometres per car per year. No written evidence of the kilometres is required, but the basis of the estimate must be able to be shown, for example diary records |
 | Car expenses, logbook method | A logbook covering a continuous period of at least 12 weeks, valid for five years, plus odometer readings and expense records |
-| Working from home, fixed rate method | A record of the actual hours worked from home, kept during the year (an estimate is not accepted), plus evidence that the expenses were incurred. The rate is 70 cents per work hour for 2024-25 and 2025-26; the ATO had not published a 2026-27 rate when its page was last updated on 8 June 2026 |
+| Working from home, fixed rate method | A record of the actual hours worked from home for the entire income year, kept as the hours are worked (an estimate is not accepted), plus at least one record for each running expense the rate covers that the taxpayer incurred. The rate is 70 cents per work hour: [PCG 2023/1 para 26A](https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001) reads 70c from 1 July 2024 with no end date, whilst the ATO page, updated 8 June 2026, names years only to 2025-26, so confirm the rate for 2026-27. In 2026-27 a claimed amount also reduces the standard deduction |
 | Travel with an allowance | Reasonable amounts determined annually by the Commissioner can remove the need to keep receipts, but not the requirement to have incurred the expense |
 | Record retention | Generally five years from the date the return is lodged, and longer where a CGT asset or a carried-forward loss depends on the record |
 
-The cents per kilometre rate and the working from home fixed rate are set per income year. Look up
-the rate for the year being prepared rather than carrying last year's forward.
+The cents per kilometre rate and the working from home fixed rate can change between income years.
+Look up the rate for the year being prepared rather than carrying last year's forward.
 
 ## Section 7 - Capital allowances and write-offs
 
@@ -269,7 +277,7 @@ Concessions change the base or the rules rather than reducing tax directly.
 | Concession | Test | Guide |
 | --- | --- | --- |
 | Small business entity concessions | Aggregated turnover thresholds, which differ by concession | `australia-bookkeeping.md`, `au-individual-return.md` |
-| Small business CGT concessions | $6 million maximum net asset value test or small business entity status, plus the active asset test | `au-small-business-cgt.md` |
+| Small business CGT concessions | $6 million maximum net asset value test or CGT small business entity status (aggregated turnover under $2 million, ITAA 1997 s 152-10(1AA)), plus the active asset test | `au-small-business-cgt.md` |
 | CGT discount | 12 months of ownership, and entity and residency tests | `au-capital-gains.md` |
 | Main residence exemption | Dwelling used as the main residence, with partial and absence rules | `au-capital-gains.md`, `au-rental-property.md` |
 | Research and development tax incentive | Registered eligible R&D activities | `au-rd-incentive.md` |
@@ -359,10 +367,11 @@ Less PAYG withheld                              = 19,000.00
 Refund                                          =    211.20
 ```
 
-**Step 7, compare with the 2025-26 rules.** Without the standard deduction her deductions would
+**Step 7, compare without the standard deduction.** At the same 2026-27 rates, her deductions would
 be $3,440, giving taxable income of $88,560, tax of $17,088, a Medicare levy of $1,771.20 and a
 refund of $140.80. The $220 standard deduction is worth $70.40, being $220 at her 30% marginal
-rate plus the 2% Medicare levy.
+rate plus the 2% Medicare levy. This is not a 2025-26 result: that year's 16% rate on the same
+$88,560 gives tax of $17,356 and $127.20 payable.
 
 **What the example shows.** The value of a deduction is the deduction multiplied by the marginal
 rate and the levy, not the deduction itself. It also shows why the four extra items matter: none
@@ -375,8 +384,9 @@ of them reduces the standard deduction, so each still reduces tax in full.
 - Assuming a non-refundable offset produces a refund where there is no tax to reduce.
 - Applying the 2025-26 rules to a 2026-27 return, or the reverse, now that the standard deduction
   and the 15% second bracket apply from 1 July 2026.
-- Claiming $300 of work expenses with no expense actually incurred. The relaxation is of the
-  written evidence rule, not of the requirement to have spent the money.
+- Claiming $300 of work expenses with no expense actually incurred. For 2025-26 and earlier the
+  relaxation is of the written evidence rule, not of the requirement to have spent the money, and
+  from 2026-27 it does not apply.
 - Carrying forward last year's cents per kilometre rate or working from home rate.
 - Claiming a deduction for an expense the employer reimbursed, or that was salary packaged.
 - Claiming the GST-inclusive cost where a GST credit was also claimed.
@@ -410,6 +420,12 @@ of them reduces the standard deduction, so each still reduces tax in full.
   https://www.legislation.gov.au/C2026A00050/latest
 - ATO, New legislation: individuals,
   https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals
+- ATO, Standard deduction for work-related expenses (updated 14 September 2026),
+  https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/standard-deduction-for-work-related-expenses
+- Draft Law Companion Ruling LCR 2026/D5, The standard deduction for work-related expenses (draft),
+  https://www.ato.gov.au/law/view/view.htm?docid=%22COD%2FLCR2026D5%2FNAT%2FATO%2F00001%22
+- PCG 2023/1, working from home fixed rate, para 26A and para 58,
+  https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001
 - ATO, Claiming deductions,
   https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/claiming-deductions
 - ATO, About tax offsets,
@@ -428,7 +444,8 @@ of them reduces the standard deduction, so each still reduces tax in full.
 Sources were checked on 16 September 2026. On 11 October 2026 Schedules 3 and 4 of the Tax Reform
 No. 1 Act and Schedule 2 of the Tax Reform No. 2 Act were read on the Federal Register of
 Legislation, and the ATO working from home page (updated 8 June 2026) still listed 70 cents only
-for 2024-25 and 2025-26.
+for 2024-25 and 2025-26. On 31 October 2026 the same page was still updated 8 June 2026, and PCG
+2023/1 para 26A read 70c from 1 July 2024 with no end date.
 
 ## Section 15 - Disclaimer
 

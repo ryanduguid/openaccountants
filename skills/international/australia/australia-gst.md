@@ -4,8 +4,8 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.6
 jurisdiction: AU
 category: international
-tax_year: 2025
-last_updated: 2026-10-11
+tax_year: 2026
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GST-free (zero rate equivalent) | 0% -- input tax credits retained (Division 38) |
 | Input taxed (exempt equivalent) | No GST; related credits generally blocked, subject to financial-supply exceptions in section 5.3 (Division 40; s 11-15; Division 70) |
 | Return form | BAS (Business Activity Statement) -- Simpler BAS or Full BAS |
-| Filing portal | ATO Business Portal (https://bp.ato.gov.au) / myGov (https://my.gov.au) |
+| Filing portal | ATO Online services for business (https://www.ato.gov.au/OSB) / myGov (https://my.gov.au) |
 | Authority | Australian Taxation Office (ATO) |
 | Currency | AUD only |
 | Filing frequencies | Monthly (GST turnover >= $20M or another mandatory/elected monthly case); Quarterly (standard); Annual (voluntary, turnover < $75K) |
@@ -53,7 +53,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | G11 | Non-capital purchases (operational expenses, stock -- GST-inclusive) |
 | G12 | G10 + G11 (derived) |
 | G13 | Purchases for making input taxed sales (no credit) |
-| G14 | Purchases with no GST in the price (from unregistered, GST-free, wages) |
+| G14 | Purchases with no GST in the price (from unregistered suppliers, GST-free) |
 | G15 | Estimated purchases for private use (no credit) |
 | G16 | G13 + G14 + G15 (derived) |
 | G17 | G12 minus G16 (derived -- total creditable purchases) |
@@ -117,7 +117,7 @@ If any trigger fires, stop, output the refusal message verbatim, end the convers
 - **R-AU-1 -- Partial exemption complex** — Trigger: client makes both taxable/GST-free supplies AND input taxed supplies, and the input taxed proportion is not de minimis (financial acquisitions threshold exceeded). Message: "You make both taxable and input taxed supplies. Your input tax credits must be apportioned under Division 11 (s 11-30), which requires determining the extent of creditable purpose for each acquisition. This cannot be completed without a documented apportionment methodology confirmed by a registered tax agent. Please escalate."  _(Division 11, s 11-30)_
 - **R-AU-2 -- GST groups** — Trigger: client is part of a GST group under Division 48 or asks about group registration. Message: "GST groups under Division 48 require consolidation across the group with a representative member lodging a single BAS. Intra-group supplies are disregarded. This is out of scope for this skill. Please use a registered tax agent."  _(Division 48)_
 - **R-AU-3 -- Margin scheme** — Trigger: client sells property using the margin scheme under Division 75. Message: "Margin scheme transactions under Division 75 require computing GST on the margin (sale price minus acquisition cost) and confirming eligibility based on the original acquisition. This is too fact-sensitive for this skill. Please use a registered tax agent."  _(Division 75)_
-- **R-AU-4 -- Going concern** — Trigger: client sells or buys a business as a going concern under s 38-325. Message: "Going concern supplies under s 38-325 require verification that all three conditions are met (going concern, both parties registered, written agreement). Incorrect classification results in either 10% GST on the full sale price or a missed GST-free entitlement. Please use a registered tax agent to confirm eligibility before proceeding."  _(s 38-325)_
+- **R-AU-4 -- Going concern** — Trigger: client sells or buys a business as a going concern under s 38-325. Message: "Going concern supplies under s 38-325 require verification that all five conditions are met (consideration, recipient registered or required to be registered, written agreement, all things necessary supplied, enterprise carried on until the day of supply). Incorrect classification results in either 10% GST on the full sale price or a missed GST-free entitlement. Please use a registered tax agent to confirm eligibility before proceeding."  _(s 38-325)_
 - **R-AU-5 -- Financial supply complex (financial institution)** — Trigger: client is a financial institution (bank, insurer, super fund) whose primary supplies are input taxed financial supplies, or client asks about Reduced Input Tax Credits (RITC). Message: "Financial institutions making predominantly input taxed supplies require specialist apportionment, RITC calculations (75%/55%), and the financial acquisitions threshold test. This is out of scope. Please use a registered tax agent specialising in financial services GST."  _(RITC 75%/55%)_
 
 ## Section 3 -- Supplier pattern library (Australian vendors)
@@ -422,7 +422,7 @@ Each rule states the legal source and the BAS label mapping. Apply silently if t
 | Exports of services | 38-E | Services to a non-resident not in Australia when the thing is done, subject to s 38-190(3) and GSTR 2025/1. Report at G3, not G2. |
 | Religious services | 38-F | By religious institution as part of religious practice. |
 | Water, sewerage and drainage | 38-I | Supply of water and sewerage or drainage services (s 38-285 to 38-300). |
-| Going concern | 38-J | Sale of business as going concern (both registered, written agreement) -- but R-AU-4 fires. |
+| Going concern | 38-J | Sale of business as going concern (the five s 38-325 conditions, including recipient registered and written agreement) -- but R-AU-4 fires. |
 
 **GST-free food rules (Subdivision 38-A) table**  _(Subdivision 38-A)_
 
@@ -459,8 +459,8 @@ Each rule states the legal source and the BAS label mapping. Apply silently if t
 
 | Category | Section | Key items |
 | --- | --- | --- |
-| Financial supplies | 40-5 | Interest, loan fees, currency exchange margins, credit card fees (issuer), share dealings, guarantee fees, life insurance, super fund management |
-| Residential rent | 40-35 | Rental of existing residential premises. Commercial rent is taxable. |
+| Financial supplies | 40-5 | Interest, loan fees, currency exchange margins, credit card fees (issuer), share dealings, guarantee fees, life insurance, interests in a superannuation fund |
+| Residential rent | 40-35 | Rental of residential premises, new or existing, for any term short of a long-term lease (s 195-1: generally 50 years or more). Commercial rent is taxable. |
 | Sale of existing residential premises | 40-65 | Previously sold as residential, not new/substantially renovated |
 | Life insurance | 40-5 | General insurance is taxable |
 
@@ -468,7 +468,7 @@ Each rule states the legal source and the BAS label mapping. Apply silently if t
 
 | Supply | Treatment |
 | --- | --- |
-| Residential rent (existing premises) | Input taxed |
+| Residential rent (new or existing premises, any term short of a long-term lease) | Input taxed |
 | Sale of existing residential premises | Input taxed |
 | Sale of NEW residential premises | Taxable 10% (first sale after construction/substantial renovation) |
 | Commercial rent (office, retail, warehouse) | Taxable 10% |
@@ -501,16 +501,17 @@ Each rule states the legal source and the BAS label mapping. Apply silently if t
 
 ### 5.7 Tax invoices (Division 29)
 
-**Tax invoice requirements table**  _(Division 29)_
+**Tax invoice requirements table**  _(Division 29, s 29-70(1))_
 
 | Requirement | Supplies < $1,000 | Supplies >= $1,000 |
 | --- | --- | --- |
-| Marked "Tax Invoice" | Yes | Yes |
+| Clearly intended to be a tax invoice (the words "Tax Invoice" are the obvious way, not the only way) | Yes | Yes |
 | Supplier identity (name, ABN) | Yes | Yes |
 | Date of issue | Yes | Yes |
 | Brief description | Yes | Yes |
 | GST amount (or "price includes GST") | Yes | Yes |
-| Recipient identity (name, ABN) | No | Yes |
+| Extent to which each supply is taxable | Yes | Yes |
+| Recipient identity or ABN | No | Yes |
 
 - **No ABN withholding** — Where required, withhold 47% and report at W4, subject to the entity’s withholding reporting class. Apply exceptions, including payments of $75 or less excluding GST and valid supplier statements where relevant.  _([ATO PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding))_
 
@@ -539,7 +540,7 @@ for when a revision is required instead.
 | Change in the extent of creditable purpose | Div 129 | Compared over prescribed adjustment periods, with thresholds that can remove the need to adjust |
 | Goods applied solely to private or domestic use | Div 130 | Increasing adjustment |
 | Cancellation of registration, with assets on hand | Div 138 | Increasing adjustment |
-| Becoming registered, with assets on hand acquired earlier | Div 129 | Can give rise to a decreasing adjustment |
+| Becoming registered, with stock on hand for sale, exchange or use as raw materials | Div 137 (s 137-5) | May give a decreasing adjustment: the stock must have been acquired solely or partly for a creditable purpose (s 137-5(1)(c)), and none arises where a credit was available and no Div 138 increasing adjustment has related to the stock (s 137-5(2)). Plant and equipment are not stock |
 
 **Adjustment notes.** A decreasing adjustment arising from an adjustment event on a supply
 generally cannot be claimed until an adjustment note is held, subject to the minor adjustment
@@ -749,7 +750,7 @@ Infer the client profile from the data first. Only ask questions the data could 
 | Taxi/rideshare | Registration regardless of turnover | GST Act, s 144-5 |
 | Non-resident digital supplier (B2C) | $75,000 Australian turnover | s 9-25(5)(d), s 9-25(7) and Div 84 |
 
-- **GST turnover composition** — GST turnover includes taxable + GST-free supplies. Excludes input taxed, not connected with Australia, capital asset sales (unless regularly dealing).  _(GST turnover composition)_
+- **GST turnover composition** — GST turnover includes taxable + GST-free supplies. Excludes input taxed and not connected with Australia. Capital asset transfers, and supplies made solely because an enterprise is closing or being substantially and permanently reduced, are disregarded for projected GST turnover only (s 188-25). They still count in current GST turnover, so after a large one-off sale registration depends on the Commissioner being satisfied that projected turnover is below the threshold (s 188-10(1)(a)).  _(GST Act ss 188-10, 188-15, 188-25)_
 
 ### Cash vs accrual basis
 
@@ -759,7 +760,9 @@ Infer the client profile from the data first. Only ask questions the data could 
 | --- | --- | --- |
 | GST on sales reported | To the extent payment is received | Generally the earlier of any consideration or an invoice, subject to special rules |
 | Input credits claimed | To the extent payment is made, with required evidence | Generally the earlier of any consideration or an invoice, with required evidence and applicable attribution rules |
-| Who can use | Turnover < $2M (or $10M SBE) | Anyone |
+| Who can use | Small business entity (aggregated turnover under $10M); or no business carried on and GST turnover not above $2M; or income tax receipts method; or Commissioner determination or permission; or endorsed charity, certain gift-deductible entity or government school | Anyone |
+
+From 1 July 2026 the ATO is moving some businesses with GST turnover of $10 million or more to non-cash accounting and full BAS reporting. [GST Act ss 29-40, 29-45, 157-5](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/29-40); [ATO, Time to review your GST turnover](https://www.ato.gov.au/businesses-and-organisations/business-bulletins-newsroom/time-to-review-your-gst-turnover).
 
 ### Key thresholds summary
 
@@ -769,7 +772,7 @@ Infer the client profile from the data first. Only ask questions the data could 
 | --- | --- | --- |
 | GST registration | $75,000 | s 23-5 |
 | Simpler BAS eligibility | Turnover < $10M | TAA 1953 |
-| Cash basis eligibility | Turnover < $2M (or $10M SBE) | s 29-40 |
+| Cash basis eligibility | Small business entity (aggregated turnover under $10M), or no business and GST turnover not above $2M; other limbs in the cash vs accrual table | s 29-40 |
 | Car limit | $69,674 (2024-25 and 2025-26); $69,883 (2026-27) | s 69-10; ATO car thresholds |
 | LCT threshold (other vehicles) | $80,567 (2025-26); $80,809 (2026-27) | LCT Act; ATO car thresholds from 1 July 2026 |
 | LCT threshold (fuel-efficient vehicles) | $91,387 (2024-25 and 2025-26); $91,661 (2026-27) | LCT Act; ATO car thresholds from 1 July 2026 |
@@ -834,7 +837,7 @@ action. Do not describe an incomplete workpaper as ready to lodge.
 11. Input taxed vs GST-free distinction explicit: yes (Section 5.2 and 5.3).
 12. Reverse charge Australian exception (fully creditable = no reverse charge) explicit: yes (Section 5.5 + Example 1).
 13. Bank fees as financial supply (input taxed, exclude) explicit: yes (Section 3.1 + Example 4).
-14. Payment processor fees as financial supply explicit: yes (Section 3.8 + Example 6).
+14. Payment processor fees classified from the invoice and the actual service, neither assumed to be financial supplies nor assumed taxable: yes (Section 3.8 + Example 6).
 15. Supermarket split (GST-free food vs taxable items) explicit: yes (Section 3.6 + Example 3).
 
 ## End of Australia GST Return Preparation Skill v2.6
