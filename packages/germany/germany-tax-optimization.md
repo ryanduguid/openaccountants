@@ -1,10 +1,10 @@
 ---
 name: germany-tax-optimization
 description: Use this skill whenever asked about reducing tax in Germany, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in Germany. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "Steuern sparen", "Steueroptimierung", "Steuerlast senken". ALWAYS read this skill before advising on any German tax optimization strategy.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Germany Tax Optimization
 
-## Germany Tax Optimization -- Self-Employed Skill v1.0
+## Germany Tax Optimization -- Self-Employed Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -24,10 +24,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Germany (Bundesrepublik Deutschland) |
 | Key optimization legislation | Einkommensteuergesetz (EStG, https://www.gesetze-im-internet.de/estg/) -- particularly §4 (Betriebsausgaben), §7g (Investitionsabzugsbetrag), §6 Abs. 2/2a (GWG), §9 (Werbungskosten), §10 (Sonderausgaben), §10a (Riester), §10d (Verlustvortrag/-rücktrag), §35a (haushaltsnahe Dienstleistungen) |
-| Tax authority attitude to planning | The Finanzamt accepts legitimate tax planning (Steuergestaltung). Germany has no statutory GAAR, but §42 AO (Abgabenordnung) provides a general anti-abuse rule: tax arrangements that constitute an "abuse of design options" (Gestaltungsmissbrauch) can be disregarded. Courts apply substance-over-form principles. |
+| Statutory anti-abuse rule | Germany has a statutory general anti-abuse rule in [AO § 42](https://www.gesetze-im-internet.de/ao_1977/__42.html). Specific statutory anti-avoidance provisions take priority when their conditions are met. Apply the statutory test and qualification in Section 10. |
 | Currency | EUR |
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
-| Filing deadline | 31 July of the following year (tax advisor-assisted: end of February of the second following year) |
+| Filing deadline | For the relevant calendar-year return, normally 7 months after year-end. An eligible return prepared by an engaged authorised adviser normally runs to the last day of February in the second following calendar year, subject to an early call. Check the period, notice, statutory exceptions and weekend/public-holiday rules (AO §§ 149(2)–(4), 108(3)) |
 
 ### Income Tax Rates 2026
 
@@ -124,14 +124,14 @@ Source: § 32a Abs. 1 EStG (the 2026 tariff) — https://www.gesetze-im-internet
 
 | Relief | Detail | Limit |
 | --- | --- | --- |
-| Verlustrücktrag (carry-back) | Losses can be carried back to the immediately preceding year | EUR 10,000,000 (single) / EUR 20,000,000 (joint) -- permanently raised |
-| Verlustvortrag (carry-forward) | Losses carried forward indefinitely | Full offset up to EUR 1,000,000; of the excess, 70% for corporate income tax in VZ 2026 (EStG s 10d(2)) and 60% for trade tax (GewStG s 10a) (Mindestbesteuerung) |
+| Verlustrücktrag (carry-back) | Eligible unoffset negative income goes first to the immediately preceding assessment period, then, insofar as offset is unavailable, to the second preceding period | Standard EStG § 10d(1) limit: EUR 1,000,000; EUR 2,000,000 for spouses jointly assessed under §§ 26/26b. The joint-spouse limit is not a company limit. A taxpayer may apply to waive carryback for both years together |
+| Verlustvortrag (carry-forward) | Eligible losses not deducted through carryback remain available under EStG § 10d(2) | For VZ 2026, full offset up to EUR 1,000,000 (EUR 2,000,000 for the specified jointly assessed spouses), then 70% of the excess. Keep the separate trade-tax balance and its EUR 1,000,000/60% rule apart (GewStG § 10a) |
 | Intra-year offset (Verlustausgleich) | Losses from one income category offset gains in other categories within the same year | No limit for horizontal offset; vertical offset generally unrestricted |
 | IAB as virtual loss | IAB under §7g reduces profit and can create or increase a loss that triggers carry-back/forward | Subject to IAB limits |
 
 ### Strategy
 
-- **Loss utilization strategy** — Use the IAB to create a loss in a high-income year by claiming future investment deductions. Carry back excess losses to the prior year for an immediate refund (Verlustücktrag). The 2022-permanent increase to EUR 10 million carry-back makes this extremely powerful for larger businesses.
+- **Loss utilisation conditions:** EStG § 10d(1) gives carryback priority before personal deductions and requires the specified § 34a(3) adjustment to the income of each carryback year. Hold a result if those facts or the applicable loss restrictions are unresolved. Establish any IAB deduction separately; § 10d does not itself establish eligibility under § 7g. Apply the 2 carryback years in sequence before carryforward unless the taxpayer requests the complete carryback waiver. Sources: [EStG § 10d](https://www.gesetze-im-internet.de/estg/__10d.html) and the selected application references in [§ 52(18b)](https://www.gesetze-im-internet.de/estg/__52.html). Historical higher-limit legislation and its applicable periods require separate verification.
 
 ## Section 6 -- Timing Strategies
 
@@ -223,13 +223,15 @@ Legislation: Sozialgesetzbuch (SGB)
 
 | Risk | Detail |
 | --- | --- |
-| §42 AO (Gestaltungsmissbrauch) | Arrangements that serve no purpose other than tax reduction can be disregarded by the Finanzamt. |
+| §42 AO (Gestaltungsmissbrauch) | An inappropriate legal arrangement is abusive if, compared with an appropriate arrangement, it produces a tax advantage not provided for by law for the taxpayer or a third party. This does not apply if the taxpayer proves non-tax reasons significant in the overall circumstances. Apply AO § 42(1)’s priority and tax-consequence rules below. |
 | Scheinselbständigkeit | If effectively an employee of one client, reclassification triggers full social security contributions and back-payments. |
 | IAB without investment intent | If the investment is not made within 3 years, the IAB is reversed with interest (§§ 233a and 238 Abs. 1a AO: 0.15% a month, 1.8% a year, from 15 months after the tax year). |
 | Fictitious family employment | Spouse/family employment must be genuine: written contract, actual work, arm's-length salary, regular payment. BFH scrutinizes closely. |
 | Private expenses as business | The Finanzamt will disallow expenses that are not exclusively or predominantly business-related. Mixed-use items require documented apportionment. |
 | Liebhaberei (hobby) | If a business consistently makes losses with no realistic profit expectation, the Finanzamt may reclassify it as Liebhaberei and disallow all losses. |
 | Excessive Homeoffice claims | From 2026, the BFH requires comprehensive documentation: room sketches, usage logs, actual cost receipts. |
+
+Under [AO § 42(1)](https://www.gesetze-im-internet.de/ao_1977/__42.html), a specific statutory anti-avoidance provision determines the consequences when its conditions are met. Otherwise, where subsection (2)’s abuse test is met, the tax claim arises as it would under a legal arrangement appropriate to the economic transactions. [EGAO article 97 § 7](https://www.gesetze-im-internet.de/aoeg_1977/art_97__7.html) applies the 2007 version from 1 January 2008 for calendar years beginning after 31 December 2007; earlier years retain the applicable earlier text. Assess any actual arrangement against its facts and all applicable specific rules before recommending or implementing it.
 
 ## Section 11 -- Annual Tax Planning Calendar
 
@@ -243,7 +245,7 @@ Legislation: Sozialgesetzbuch (SGB)
 | April | Review Ehegattensplitting benefit with spouse. |
 | May | Mid-year profit estimate. Consider Rürup contribution. |
 | June | **10 June** -- Voranmeldung Q1 (if quarterly) + Vorauszahlung Q2. |
-| July | **31 July** -- filing deadline for prior year (without Steuerberater). Apply for Herabsetzung if income dropping. |
+| July | Check the ordinary 7-month filing period for the prior calendar year, including applicable exceptions, extensions and AO § 108(3) weekend/public-holiday treatment. A universal 31 July date is insufficient. Apply for Herabsetzung if income is dropping. |
 | August | Review GWG purchases and capital equipment needs for H2. |
 | September | **10 September** -- Vorauszahlung Q3. |
 | October | Plan year-end purchases: GWG under EUR 800 for immediate deduction. |

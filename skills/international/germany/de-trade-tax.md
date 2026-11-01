@@ -1,10 +1,10 @@
 ---
 name: de-trade-tax
 description: Use this skill whenever asked about German Trade Tax (Gewerbesteuer / GewSt) for self-employed Gewerbetreibende. Trigger on phrases like "Gewerbesteuer", "trade tax Germany", "GewSt", "Hebesatz", "Gewerbeertrag", "Steuermessbetrag", "Freibetrag 24500", "Gewerbesteuer Anrechnung", "§35 EStG", "trade tax credit", "Hinzurechnungen", "Kürzungen", "GewSt 1 A", or any question about German municipal trade tax obligations. Covers the Gewerbeertrag computation, EUR 24,500 Freibetrag, 3.5% Steuermesszahl, Hebesatz by municipality, Anrechnung on Einkommensteuer (4.0x credit under §35 EStG), Hinzurechnungen and Kürzungen, effective rate analysis, and Vorauszahlungen. ALWAYS read this skill before touching any Gewerbesteuer work.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Contributor** — Open Accountants Community
 - **Validated By** — Pending -- requires sign-off by a Steuerberater or Wirtschaftsprüfer
 - **Validation Date** — Pending
-- **Skill Version** — 1.0
+- **Skill Version** — 1.1
 - **Tax Year** — 2025
 - **Confidence Coverage** — Tier 1: Freibetrag, Steuermesszahl, Hebesatz application, Anrechnung formula, filing deadlines. Tier 2: Hinzurechnungen classification, Kürzungen computation, multi-municipality apportionment. Tier 3: Organschaft, international PE allocation, Zerlegung between multiple Gemeinden, partnership GewSt.
 
@@ -43,7 +43,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated By | Pending -- requires sign-off by a Steuerberater or Wirtschaftsprüfer |
 | Validation Date | Pending |
-| Skill Version | 1.0 |
+| Skill Version | 1.1 |
 | Tax Year | 2025 |
 | Confidence Coverage | Tier 1: Freibetrag, Steuermesszahl, Hebesatz application, Anrechnung formula, filing deadlines. Tier 2: Hinzurechnungen classification, Kürzungen computation, multi-municipality apportionment. Tier 3: Organschaft, international PE allocation, Zerlegung between multiple Gemeinden, partnership GewSt. |
 
@@ -64,6 +64,8 @@ Before computing any Gewerbesteuer figure, you MUST know:
 5. **Any Kürzungen (reductions)?** [T2] -- e.g., Grundbesitz (real property) owned
 6. **Legal form** [T1] -- Einzelunternehmen (sole proprietor) or Personengesellschaft (partnership). Determines Freibetrag eligibility.
 7. **Gewerbesteuer Vorauszahlungen already paid** [T1] -- advance GewSt payments made during the year
+
+This computation workflow is for its stated natural-person and partnership cases. For an ordinary resident GmbH/UG, load [de-corporate-income-tax](de-corporate-income-tax.md) and preserve its scope and delivery holds. Do not transplant the EUR 24,500 allowance or the personal income-tax credit into a company computation.
 
 **If the client is a Freiberufler, STOP. Gewerbesteuer does not apply. Confirm Freiberufler status with the Finanzamt classification letter (Fragebogen zur steuerlichen Erfassung).**
 
@@ -151,8 +153,10 @@ Certain financing and rental costs that were already deducted as Betriebsausgabe
 | Personengesellschaften | EUR 24,500 |
 | Kapitalgesellschaften (GmbH, AG) | EUR 0 (no Freibetrag) |
 
-- **Freibetrag formula** — gewerbeertrag_after_freibetrag = max(0, Gewerbeertrag - 24,500)  _(GewStG §11 Abs. 1)_
-- **Below Freibetrag rule** — If Gewerbeertrag <= EUR 24,500, GewSt = EUR 0. No trade tax is due.  _(GewStG §11 Abs. 1)_
+- **Rounding first:** Round Gewerbeertrag down to full EUR 100 before deducting the applicable allowance (GewStG § 11(1)).
+- **In-scope allowance formula:** For natural persons and partnerships entitled to EUR 24,500, gewerbeertrag_after_freibetrag = max(0, rounded_gewerbeertrag - 24,500). The allowance cannot exceed the rounded trade income (GewStG § 11(1) no 1).
+- **Below-allowance rule:** For those eligible cases only, rounded trade income not exceeding EUR 24,500 leaves no positive assessment base under this step. This is not an exemption from filing or a rule for ordinary GmbH/AG cases.
+- **Separate cases:** Ordinary GmbH/AG cases have no EUR 24,500 allowance. The EUR 5,000 categories in § 11(1) no 2 and the reduced assessment-rate cases in § 11(3) require separate classification and are held here; their cross-referenced conditions remain unqualified. Source: [complete GewStG § 11](https://www.gesetze-im-internet.de/gewstg/__11.html).
 
 ## Step 6: Steuermessbetrag [T1]
 

@@ -1,10 +1,10 @@
 ---
 name: germany-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Germany. Trigger on phrases like "set up a company in Germany", "GmbH formation", "UG gründen", "Handelsregister", "German company formation", "register a business Germany", "Gesellschaft mit beschränkter Haftung", "Unternehmergesellschaft", "German notary", "Gewerbeanmeldung", or any question about starting a business entity in Germany. Covers entity types (GmbH, UG, AG, GbR, KG), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on German company formation.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Germany Formation
 
-## Germany Company Formation Skill v1.0
+## Germany Company Formation Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | GmbH-Gesetz (GmbHG) — https://www.gesetze-im-internet.de/gmbhg/; Handelsgesetzbuch (HGB) — https://www.gesetze-im-internet.de/hgb/; Aktiengesetz (AktG) — https://www.gesetze-im-internet.de/aktg/ |
 | Typical formation time | 3--6 weeks (notary to Handelsregister entry) |
 | Corporate tax rate | ~30% effective in VZ 2026 (15% Körperschaftsteuer + 5.5% Solidaritätszuschlag on it, 0.825 points, + ~14% Gewerbesteuer); Körperschaftsteuer steps down from 14% in 2028 to 10% from 2032 (KStG s 23(1)) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Entity Types Comparison
 
@@ -107,7 +107,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Sources: GmbHG § 5 Abs. 1 (EUR 25,000) — https://www.gesetze-im-internet.de/gmbhg/__5.html; § 7 Abs. 2 (a quarter of each share, and in total at least half of the minimum capital, before registration) — https://www.gesetze-im-internet.de/gmbhg/__7.html; § 5a (UG: full payment, no contributions in kind) — https://www.gesetze-im-internet.de/gmbhg/__5a.html; AktG § 7 (EUR 50,000) — https://www.gesetze-im-internet.de/aktg/__7.html; § 36a (at least a quarter of the lowest issue price) — https://www.gesetze-im-internet.de/aktg/__36a.html.
 
-- **UG profit retention rule** — 25% of annual net profit must be retained as reserves until €25,000 is accumulated, at which point the UG may convert to GmbH (§5a Abs. 3 GmbHG).  _(§5a Abs. 3 GmbHG)_
+- **UG statutory reserve:** Under [GmbHG § 5a(3)](https://www.gesetze-im-internet.de/gmbhg/__5a.html), reserve one quarter of annual surplus after reducing it by the previous year's loss carryforward; reserve use is restricted by that subsection. Subsections (1)–(4) cease to apply when the company increases its share capital to at least the § 5(1) minimum (§ 5a(5)). Merely accumulating that amount in reserves does not supply the capital-increase trigger or establish an automatic conversion. The UG designation may be retained. The capital-increase procedure requires separate qualification.
 
 ## Section 5 -- Costs Breakdown
 
@@ -132,7 +132,7 @@ Sources: GmbHG § 5 Abs. 1 (EUR 25,000) — https://www.gesetze-im-internet.de/g
 | IHK membership | €150--€500/year (minimum assessment) |
 | Berufsgenossenschaft | From €100/year |
 | Steuerberater | €2,000--€10,000/year |
-| Bundesanzeiger (financial statement publication) | €50--€200 |
+| Annual accounts disclosure or deposit | Current register charges not qualified here; verify before budgeting |
 | Handelsregister changes | €90--€180 per entry |
 
 ## Section 6 -- Post-Formation Compliance
@@ -141,13 +141,21 @@ Sources: GmbHG § 5 Abs. 1 (EUR 25,000) — https://www.gesetze-im-internet.de/g
 
 | Obligation | Deadline | Authority |
 | --- | --- | --- |
-| Jahresabschluss (annual financial statements) | Within 6 months of year-end (11 months for small GmbH) | Bundesanzeiger (publication) |
-| Offenlegung (disclosure) | Within 12 months of year-end | Bundesanzeiger |
-| Körperschaftsteuererklärung (corporate tax return) | 31 July of following year (extended to Feb with Steuerberater) | Finanzamt |
-| Gewerbesteuererklärung (trade tax return) | 31 July of following year | Finanzamt / municipality |
+| Jahresabschluss (annual accounts preparation) | Normally the first 3 months of the following business year; eligible small companies may use the first 6 months only if consistent with orderly business (conditions below) | Legal representatives; HGB § 264(1) |
+| Offenlegung (disclosure) | Normally no later than 1 year after the reporting date; HGB § 264d companies have a maximum of 4 months | Electronic transmission to the Unternehmensregister operator; HGB § 325 |
+| Körperschaftsteuererklärung (corporate tax return) | Apply the calendar-period, adviser and early-call conditions below | Finanzamt |
+| Gewerbesteuererklärung (trade tax return) | Apply the calendar-period, adviser and early-call conditions below | Competent Finanzamt (tax-measurement return) |
 | Umsatzsteuervoranmeldung (VAT returns) | Monthly or quarterly | Finanzamt |
 | Gesellschafterliste (shareholder list) | Update and file with Handelsregister on any change | Handelsregister |
 | Transparenzregister | Update within 14 days of beneficial ownership changes | Transparenzregister |
+
+**Accounts preparation and disclosure:** [HGB § 264(1)](https://www.gesetze-im-internet.de/hgb/__264.html) sets the preparation periods above. Small companies need not prepare a management report, but the 6-month preparation period is conditional on orderly business. Small status under [HGB § 267](https://www.gesetze-im-internet.de/hgb/__267.html) requires at least 2 of 3 limits not to be exceeded: EUR 7.5 million balance sheet, EUR 15 million turnover over the preceding 12 months and 50 average employees. Apply the reporting-date rules, normal 2-consecutive-year requirement, new-formation/conversion exceptions and calculation rules in subsections (4)–(6). A company within [HGB § 264d](https://www.gesetze-im-internet.de/hgb/__264d.html) is always large; this definition includes an application for admission of securities to an organised market. The incorporated securities/market definitions and actual entity facts need separate verification. [EGHGB article 93](https://www.gesetze-im-internet.de/hgbeg/art_93.html) makes the specified 17 April 2024 threshold versions mandatory for financial years beginning after 31 December 2023 and permits the specified package as a whole for years beginning after 31 December 2022. Do not apply the newer thresholds to an earlier period without its applicable text.
+
+[HGB § 325](https://www.gesetze-im-internet.de/hgb/__325.html) concerns the established/adopted annual accounts and other documents insofar as required; changes also require disclosure. Transmission time determines timeliness. The exception for a late supervisory-board report or AktG § 161 declaration does not generally extend the annual-accounts deadline. [EGHGB article 88(2)](https://www.gesetze-im-internet.de/hgbeg/art_88.html) applies the specified 1 August 2022 versions to financial years beginning after 31 December 2021; the financial year’s start, rather than the submission date, controls that transition. Earlier periods require their applicable earlier text. [HGB § 8b](https://www.gesetze-im-internet.de/hgb/__8b.html) distinguishes accounting disclosures from corporate notices in the Bundesanzeiger. Check the conditional group exemption in § 264(3), small/micro/medium disclosure relief in [§ 326](https://www.gesetze-im-internet.de/hgb/__326.html) and [§ 327](https://www.gesetze-im-internet.de/hgb/__327.html), and the [§ 267a](https://www.gesetze-im-internet.de/hgb/__267a.html) micro-company criteria before choosing documents or permanent deposit. Preparation obligations and disclosure relief are separate. These notes do not establish the complete document package, audit obligation, register charges, filing interface or actual filing readiness.
+
+For the relevant ordinary calendar-year company returns, [AO § 149(2)–(4)](https://www.gesetze-im-internet.de/ao_1977/__149.html) normally gives 7 months after the calendar year. Eligible listed returns prepared by an engaged authorised adviser normally run to the last day of February in the second following calendar year. A valid early call sets 4 months after notification and cannot shorten the ordinary subsection (2) period. Apply statutory exceptions, actual notices and [AO § 108(3)](https://www.gesetze-im-internet.de/ao_1977/__108.html) to a period ending on a weekend or public holiday; authority-set appointments have a separate rule in [AO § 108(5)](https://www.gesetze-im-internet.de/ao_1977/__108.html). The qualified pandemic modifications in [EGAO article 97 § 36](https://www.gesetze-im-internet.de/aoeg_1977/art_97__36.html) do not establish an extension for VZ 2026. For the ordinary resident GmbH/UG VZ 2026 calendar-year profile, use the conditional dates and filing holds in [de-corporate-income-tax](de-corporate-income-tax.md). Other compliance rows require separate current-period verification before use; actual filing readiness remains held.
+
+The trade-tax return concerns assessment of the tax-measurement amount under [GewStG § 14a](https://www.gesetze-im-internet.de/gewstg/__14a.html); [AO § 22(1)](https://www.gesetze-im-internet.de/ao_1977/__22.html) identifies the competent Finanzamt, including a special rule for specified foreign-based construction businesses. [GewStG § 1](https://www.gesetze-im-internet.de/gewstg/__1.html) provides for municipal levy. Assessment of the measurement amount is distinct from levy and collection; AO § 22(2)–(3) addresses cases involving Finanzamt collection or Länder revenue. Case-specific competence, allocation, submission method and actual notices require separate verification.
 
 ## Section 7 -- Bank Account Opening
 

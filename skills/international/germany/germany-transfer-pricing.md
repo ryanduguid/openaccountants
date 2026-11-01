@@ -1,10 +1,10 @@
 ---
 name: germany-transfer-pricing
 description: Use this skill whenever asked about Germany transfer pricing rules, documentation requirements, or Verrechnungspreise compliance. Trigger on phrases like "transfer pricing Germany", "German TP documentation", "Verrechnungspreise", "master file Germany", "local file Germany", "CbCR Germany", "APA Germany", "§90 AO", "transaction matrix Germany", "BZSt", or any question about intercompany pricing for German entities.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Germany Transfer Pricing
 
-## Germany Transfer Pricing Skill v1.0
+## Germany Transfer Pricing Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Effective date (current regime) | Three-tier approach from FYs beginning after 31 Dec 2016; major reforms from 1 Jan 2025 |
 | Currency | EUR |
 | Documentation language | German (English accepted for Master File in practice) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Documentation Requirements
 
@@ -134,7 +134,9 @@ From 1 January 2025 (Fourth Bureaucracy Reduction Act -- BEG IV):
 | Local File submission | 30 days from separate request |
 | Extraordinary transactions | 30 days from audit order |
 | CbCR filing | 12 months after end of FY |
-| Corporate tax return | Generally 31 July of year following FY (with extensions) |
+| Corporate tax return | For the relevant calendar-year return, normally 7 months after the calendar year; eligible listed returns prepared by an engaged authorised adviser normally run to the last day of February in the second following calendar year, subject to early call and the statutory exceptions (AO § 149(2)–(4)) |
+
+Do not derive the corporate return date from an arbitrary financial year-end or treat it as the TP-documentation submission deadline. Apply the actual period and notice, [AO § 108](https://www.gesetze-im-internet.de/ao_1977/__108.html) and the applicable transition rules. The qualified [EGAO article 97 § 36](https://www.gesetze-im-internet.de/aoeg_1977/art_97__36.html) pandemic provisions supply no automatic VZ 2026 extension. [AO § 149](https://www.gesetze-im-internet.de/ao_1977/__149.html) requires the adviser and return conditions; its early-call period is 4 months after notification and cannot shorten subsection (2). The ordinary resident GmbH/UG calendar-year VZ 2026 profile and its filing holds are in [de-corporate-income-tax](de-corporate-income-tax.md).
 
 ## Section 6 -- Penalties
 
@@ -206,7 +208,7 @@ While Germany has no formal safe harbour, the documentation thresholds effective
 | Related skill | Interaction |
 | --- | --- |
 | germany-bookkeeping | TP documentation builds on general bookkeeping records; related-party disclosures |
-| germany-corporate-tax | TP adjustments directly affect corporate income tax (Körperschaftsteuer) and trade tax (Gewerbesteuer) |
+| de-corporate-income-tax | Ordinary resident GmbH/UG corporate income tax and trade-tax companion; its scope and operational holds apply |
 | germany-vat | TP adjustments may affect customs value and import VAT |
 | CbCR | Risk assessment tool used by BZSt to select audit targets |
 | Financial statements | HGB/IFRS related-party disclosures must be consistent with TP positions |
