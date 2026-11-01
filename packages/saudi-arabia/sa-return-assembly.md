@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package a S
 jurisdiction: SA
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-18
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -56,7 +56,7 @@ The output is a reviewer-ready package: line-by-line ZATCA working paper, cross-
 | Mixed-entity return | Zakat portion + CIT portion on the same combined annual return |
 | VAT return | **Monthly** (mandatory if turnover > SAR 40 million) or **quarterly** (smaller taxpayers); due by 28th of month following the period |
 | WHT return | **Monthly**; due within 10 days of month-end |
-| Excise return | **Bi-monthly**; due within 15 days of period-end |
+| Excise return | **Bi-monthly**; end of the month after the period (from 1 January 2026; 15 days before that) |
 | RETT (Real Estate Transaction Tax) | Transaction-by-transaction at notarisation; 5% on real estate disposals |
 | Confirmation receipt | ZATCA portal acknowledgement with submission reference and timestamp |
 | Payment channel | ZATCA portal generates **SADAD bill** (with billing ID) → pay via any Saudi bank, internet banking, mobile app, or SADAD-enabled ATM |
@@ -89,7 +89,7 @@ The assembly skill does not recompute anything. It expects structured outputs fr
 | Mixed (Saudi/GCC + foreign) | Combined Zakat + CIT return — proportional split by ownership | sa-zakat AND sa-corporate-tax, plus all others |
 | Listed on Tadawul with mixed shareholders | Combined Zakat + CIT — proportional by free float | sa-zakat AND sa-corporate-tax, plus others |
 | Real estate disposer in the year | + RETT computation | sa-rett |
-| Excise-taxable goods (tobacco, sugary drinks, energy drinks, soft drinks, sweetened beverages, e-cigarettes, electronic devices for vaping) | + Excise return | sa-excise-tax |
+| Excise-taxable goods (tobacco, energy drinks, sweetened beverages including sweetened carbonated drinks, e-cigarettes, electronic devices for vaping) | + Excise return | sa-excise-tax |
 
 ### 2.2 Zakat declaration — inputs
 
@@ -97,7 +97,7 @@ The assembly skill does not recompute anything. It expects structured outputs fr
 
 | Upstream skill | Output consumed | Where it lands on the Zakat declaration |
 | --- | --- | --- |
-| `sa-zakat` | Zakat base computation: equity-method base (capital + retained earnings + reserves + long-term liabilities − long-term assets − adjustments) OR Zakat-on-profit base where lower; 2.5% Zakat rate (or 2.577% Hijri-year conversion); working capital adjustments | Main Zakat base schedule; Zakat liability line |
+| `sa-zakat` | Zakat base computation: equity-method base (capital + retained earnings + reserves + long-term liabilities − long-term assets − adjustments) then the minimum and maximum limits (Regulation Arts 27 and 28); Zakat rate 2.5% for a Hijri year, 2.5777% for a 365-day year; working capital adjustments | Main Zakat base schedule; Zakat liability line |
 | `saudi-arabia-vat` | VAT-registered turnover; output VAT and input VAT positions (cross-check only) | Cross-check vs. revenue in financial statements |
 | `sa-withholding-tax` | WHT suffered (rare for Saudi/GCC entities other than payments from abroad) and WHT agent obligations on payments to non-residents (5%/15%/20% by category) | WHT credits schedule; agent compliance check |
 | `sa-gosi-saudization` | GOSI contributions (employer + employee), Saudization tier (Nitaqat: Platinum / High Green / Medium Green / Low Green / Yellow / Red), WPS file submissions via Mudad | Salary & wage schedule; compliance attestation |
@@ -130,7 +130,7 @@ The assembly skill does not recompute anything. It expects structured outputs fr
 | 1. Compute the Zakat base (equity method) | Per sa-zakat |
 | 2. Compute the CIT taxable income | Per sa-corporate-tax |
 | 3. Determine ownership split | From sa-formation (cap table at year-end) |
-| 4. Apply Zakat to Saudi/GCC share of Zakat base × 2.5% | Zakat portion |
+| 4. Apply Zakat to Saudi/GCC share of Zakat base × Zakat rate (2.5% Hijri year; 2.5777% for a 365-day year) | Zakat portion |
 | 5. Apply CIT to foreign share of CIT taxable income × 20% (or applicable rate) | CIT portion |
 | 6. Add WHT agent obligations | Same for both portions |
 | 7. Combined liability on a single return submitted via ZATCA portal | One submission |
@@ -170,7 +170,7 @@ The capstone runs in eight phases. Each phase reads upstream output, runs reconc
 
 ### 3.3 Phase 3 — Zakat base or CIT taxable income
 
-0. **Phase 3** — For Saudi/GCC-owned (Zakat only): Read Zakat base from sa-zakat (equity method or Zakat-on-profit, whichever lower under Implementing Regulations Art. 5); apply 2.5% rate (Gregorian) or 2.577% (Hijri-year filers). For foreign-owned (CIT only): Read CIT taxable income from sa-corporate-tax; apply 20% general rate (or specialised rates: 85% upstream petroleum; 30% natural gas); apply interest deduction limitation: 50% of EBITDA per ITL Art. 12 / Implementing Regulations; apply carry-forward loss rules: 25% annual cap per year against current-year income, no time limit on the loss. For mixed: compute both bases independently; apply proportional ownership split
+0. **Phase 3** — For Saudi/GCC-owned (Zakat only): Read Zakat base from sa-zakat. For Zakat years starting on or after 1 January 2024 (Ministerial Resolution 1007 of 19/8/1445H), the base cannot exceed the maximum limit: equity and equivalents at year end plus the difference between adjusted net profit or loss and net book profit or loss (Art. 28). If the base falls below adjusted net profit, use the minimum limit: the lower of adjusted net profit and undeducted assets plus that difference (Art. 27). Apply 2.5% for a Hijri Zakat year. For any other year apply 2.5% ÷ days in the Hijri year × actual days in the Zakat year (Art. 15): 2.5777% for 365 days, using ZATCA's 354-day Hijri year ([ZATCA Zakat General Guideline 1445AH](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Zakat-General-Guideline-Zakat-Collection-1445AH.pdf), s 3.4.8 and examples 16, 19 and 20). For foreign-owned (CIT only): Read CIT taxable income from sa-corporate-tax; apply 20% general rate (or specialised rates: 85% upstream petroleum; 30% natural gas); apply interest deduction limitation: 50% of EBITDA per ITL Art. 12 / Implementing Regulations; apply carry-forward loss rules: 25% annual cap per year against current-year income, no time limit on the loss. For mixed: compute both bases independently; apply proportional ownership split
 
 ### 3.4 Phase 4 — Withholding tax compliance
 
@@ -186,7 +186,7 @@ The capstone runs in eight phases. Each phase reads upstream output, runs reconc
 
 ### 3.7 Phase 7 — RETT and Excise (if applicable)
 
-0. **Phase 7** — RETT: per sa-rett — 5% of real estate disposal value, paid at notarisation; disclosure only on the annual return. Excise: per sa-excise-tax — bi-monthly returns; annual reconciliation. Tobacco: 100%; Soft drinks: 50%; Energy drinks: 100%; Sweetened beverages: 50%; Electronic smoking devices: 100%
+0. **Phase 7** — RETT: per sa-rett — 5% of real estate disposal value, paid at notarisation; disclosure only on the annual return. Excise: per sa-excise-tax — bi-monthly returns; annual reconciliation. Tobacco: 100%; Energy drinks: 100%; Electronic smoking devices: 100%; Sweetened beverages, including sweetened carbonated drinks: SAR 0 / 0 / 0.79 / 1.09 per litre by sugar tier from 1 January 2026 (50%, and 50% on carbonated drinks, for earlier releases)
 
 ### 3.8 Phase 8 — Final assembly
 
@@ -205,7 +205,7 @@ The reviewer is a **SOCPA member** (Saudi Organization for Chartered Public Acco
 | Cover | Entity name, CR number, TIN, VAT number, fiscal year, return type (Zakat / CIT / Mixed), reviewer name, sign-off block |
 | Identification | CR, TIN, VAT, MoC, GOSI employer ID, addresses, principal activity, NACE/ISIC equivalent |
 | Ownership Split | Cap table at FYE; Saudi/GCC% and foreign% |
-| Computation — Zakat | Equity-method base build; working capital adjustments; 2.5% application |
+| Computation — Zakat | Equity-method base build; working capital adjustments; minimum and maximum limits; rate of 2.5% (Hijri year) or 2.5777% (365-day year) |
 | Computation — CIT | Accounting profit → taxable income; tax adjustments; depreciation; interest deduction limit; loss carry-forward |
 | Mixed-Entity Apportionment | Saudi/GCC share × Zakat; foreign share × CIT |
 | WHT Schedule | All monthly WHT returns with SADAD billing IDs, payments to non-residents by category and rate |
@@ -273,7 +273,7 @@ The reviewer is a **SOCPA member** (Saudi Organization for Chartered Public Acco
 | --- | --- | --- |
 | Bi-monthly excise returns | Per sa-excise-tax | Anchor |
 | Annual excise tax collected + paid | Sum of bi-monthly returns | Reconcile |
-| Excise-able goods register | Per sa-excise-tax | Tobacco 100% / soft drinks 50% / energy drinks 100% / sweetened beverages 50% / e-cigarettes 100% |
+| Excise-able goods register | Per sa-excise-tax | Tobacco 100% / energy drinks 100% / e-cigarettes 100% / sweetened beverages per litre by sugar tier from 1 January 2026 (50%, and 50% on carbonated drinks, for earlier releases) |
 
 **Cross-check 7 — E-Invoicing (Fatoorah)**
 
@@ -300,7 +300,7 @@ The bottom line of the return appears in the reviewer brief executive summary.
 
 ### 5.1 Zakat declaration bottom line (Saudi/GCC-owned)
 
-- **Zakat declaration bottom line formula** — Equity (capital + retained earnings + reserves)              SAR X Plus: Long-term liabilities                                  SAR X Plus: Provisions added back                                  SAR X Less: Long-term assets                                       SAR X Less: Other deductible items per Implementing Regulations    SAR X = Zakat base                                                 SAR X Apply 2.5% (Gregorian year) or 2.577% (Hijri year)           SAR X = Zakat liability                                            SAR X Less: Any advance Zakat paid                                 SAR X = Net Zakat payable                                          SAR X
+- **Zakat declaration bottom line formula** — Equity (capital + retained earnings + reserves)              SAR X Plus: Long-term liabilities                                  SAR X Plus: Provisions added back                                  SAR X Less: Long-term assets                                       SAR X Less: Other deductible items per Implementing Regulations    SAR X = Zakat base before limits                                   SAR X Apply minimum and maximum limits (Regulation Arts 27, 28)    SAR X = Zakat base                                                 SAR X Apply 2.5% (Hijri year) or 2.5777% (365-day year)            SAR X = Zakat liability                                            SAR X Less: Any advance Zakat paid                                 SAR X = Net Zakat payable                                          SAR X
 
 ### 5.2 CIT return bottom line (foreign-owned)
 
@@ -308,7 +308,7 @@ The bottom line of the return appears in the reviewer brief executive summary.
 
 ### 5.3 Mixed-entity bottom line
 
-- **Mixed-entity bottom line formula** — Zakat base × Saudi/GCC% × 2.5%                               SAR X (Zakat portion) Taxable income × foreign% × 20% (or applicable)              SAR X (CIT portion) Combined liability on single return                          SAR X
+- **Mixed-entity bottom line formula** — Zakat base × Saudi/GCC% × Zakat rate                          SAR X (Zakat portion) Taxable income × foreign% × 20% (or applicable)              SAR X (CIT portion) Combined liability on single return                          SAR X
 
 ### 5.4 Refund treatment
 
@@ -333,7 +333,7 @@ All Saudi tax payments flow through the ZATCA portal → SADAD billing mechanism
 | Mixed Zakat + CIT | Annual combined | Annual (120 days from FYE) | Mixed-ownership entities |
 | VAT | Monthly or quarterly | 28th of following month | All VAT-registered |
 | Withholding Tax | Monthly | Within 10 days of month-end | All WHT agents |
-| Excise Tax | Bi-monthly | Within 15 days of period-end | Excise-able goods |
+| Excise Tax | Bi-monthly | End of the month after the period (from 1 January 2026; 15 days before that) | Excise-able goods |
 | RETT | Transaction-by-transaction | At notarisation | Real estate disposers |
 
 ### 6.3 Payment timing relative to filing
@@ -346,7 +346,7 @@ All Saudi tax payments flow through the ZATCA portal → SADAD billing mechanism
 | Monthly VAT (turnover > SAR 40M) | 28th of following month | VAT return |
 | Quarterly VAT (turnover ≤ SAR 40M) | 28th of month following quarter | VAT return |
 | Monthly WHT | Within 10 days of month-end | WHT return |
-| Bi-monthly Excise | Within 15 days of period-end | Excise return |
+| Bi-monthly Excise | End of the month after the period (from 1 January 2026; 15 days before that) | Excise return |
 | RETT | At notarisation | Transactional |
 
 - **Payment settlement rule** — The SADAD billing payment must be settled by the deadline. The annual return submission and the payment can be done in the same session via the portal.
@@ -557,7 +557,7 @@ I confirm the return is ready for ZATCA submission and that the taxpayer / autho
 | VAT (quarterly filer) | VAT return | 28th of month following quarter |
 | GOSI monthly contribution | GOSI portal | Around the 15th — verify |
 | WPS file via Mudad | Mudad platform | After each salary disbursement (typically 3 days) |
-| Excise bi-monthly | Excise return | Within 15 days of period-end |
+| Excise bi-monthly | Excise return | End of the month after the period (from 1 January 2026; 15 days before that) |
 | RETT | Per transaction | At notarisation |
 
 ### Record retention
@@ -623,7 +623,7 @@ Reviewer brief contains legislation citations (Royal Decree numbers, ITL article
 
 Credentialed reviewer (SOCPA / ICAEW / ACCA / US CPA) sign-off requirement is stated in the executive summary, attestation block, and action list.
 
-For mixed entities, Saudi/GCC% × Zakat base × 2.5% PLUS foreign% × taxable income × applicable CIT rate equals the combined liability on the return.
+For mixed entities, Saudi/GCC% × Zakat base × Zakat rate (2.5% Hijri year; 2.5777% for a 365-day year) PLUS foreign% × taxable income × applicable CIT rate equals the combined liability on the return.
 
 WHT rates applied per ITL Art. 68 (5% royalties / 15% management / 20% other / 5% dividends / 5% interest / 5% rent / 5% technical services — confirm against current upstream).
 
@@ -667,7 +667,7 @@ If execution runs out of context mid-build, complete the computation work first 
 | Income Tax Law (ITL) | Royal Decree No. M/1 of 1425 AH (15 January 2004) and successive amendments; articles referenced throughout (Arts. 1–5, 12, 13, 27, 30, 68, 71, 72) |
 | ITL Implementing Regulations | Issued by Ministerial Resolution; defines tax adjustments, depreciation, interest deduction limit, loss carry-forward, WHT mechanism |
 | Zakat — Royal Decree | Royal Decree No. M/40 of 1405 AH and successor regulations |
-| Zakat Collection Implementing Regulations | Issued by ZATCA; equity-method base, Zakat-on-profit method, working capital adjustments |
+| Zakat Collection Implementing Regulations | Ministerial Resolution 1007 of 19/8/1445H, for years starting on or after 1 January 2024; additions less deductions, with minimum and maximum limits |
 | VAT Law | Royal Decree No. M/113 of 1438 AH (4 November 2017); VAT Implementing Regulations issued by ZATCA |
 | Excise Tax Law | Royal Decree No. M/86 of 1438 AH (29 May 2017); Excise Implementing Regulations |
 | Real Estate Transaction Tax (RETT) | Royal Decree No. M/84 of 14/02/1442 AH (effective 4 October 2020); RETT Implementing Regulations |

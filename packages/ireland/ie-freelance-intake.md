@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing an Irish 
 jurisdiction: IE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 version: 1.1
 review_status: pending_review
 tier: 2
@@ -145,7 +145,7 @@ All thresholds 2025-effective (Finance Act 2024, Finance (No. 2) Act 2023, Finan
 
 ### 4.8 Employer gate — Section 985 TCA 1997; PAYE Modernisation (Real-Time Reporting) from 1 January 2019
 
-- **PAYE / employer PRSI rules** — Employees → operate PAYE / PRSI / USC in real time via ROS payroll software, file Payroll Submission Requests (PSRs) on or before each payday. Employer PRSI 8.9% Jan-Sep 2025; 9.0% from 1 Oct 2025 on weekly earnings ≤ EUR 496 / 11.05% above (Class A1 — 2025 rate increased from 11.05% to 11.15% Jan-Sep 2025; 11.25% from 1 Oct 2025 effective 1 October 2024, so full 2025 is 11.15% Jan-Sep 2025; 11.25% from 1 Oct 2025). Route `ie-paye` + `ie-payroll`.  _(Section 985 TCA 1997; PAYE Modernisation (from 1 January 2019))_
+- **PAYE / employer PRSI rules** — Employees → operate PAYE / PRSI / USC in real time via ROS payroll software, file Payroll Submission Requests (PSRs) on or before each payday. Employer PRSI Class A: on weekly earnings up to EUR 527 in 2025 and EUR 552 from 1 January 2026, 8.9% to 30 Sep 2025, 9.0% from 1 Oct 2025 and 9.15% from 1 Oct 2026; above the threshold, 11.15%, 11.25% and 11.40% from the same dates. Route `ie-paye` + `ie-payroll`.  _(Section 985 TCA 1997; PAYE Modernisation (from 1 January 2019); Social Welfare (Miscellaneous Provisions) Act 2024 s 3; Social Welfare Act 2024 s 2; Department of Social Protection Advance Notice for 2026)_
 
 ### 4.9 CGT gate — Section 28 TCA 1997 et seq.
 

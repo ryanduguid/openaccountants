@@ -4,7 +4,7 @@ description: "Utilizar esta skill sempre que for solicitada a montagem, finaliza
 jurisdiction: PT
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -235,16 +235,18 @@ Para sociedades — as tributações autónomas são adicionadas à coleta e cal
 | Encargo | Taxa base | Acréscimo se prejuízo |
 | --- | --- | --- |
 | Despesas não documentadas | 50% | +10 pp = 60% |
-| Despesas com viaturas ligeiras de passageiros < €27.500 (custo) | 10% | +10 pp |
-| Viaturas €27.500 a €35.000 | 27,5% | +10 pp |
-| Viaturas > €35.000 | 35% | +10 pp |
-| Viaturas híbridas plug-in (limites diferenciados) | Taxas reduzidas | +10 pp se prejuízo |
-| Viaturas elétricas puras (BEV) | 0% (com limites) | n/a |
+| Despesas com viaturas ligeiras de passageiros < €37.500 (custo) | 8% | +10 pp |
+| Viaturas ≥ €37.500 e < €45.000 | 25% | +10 pp |
+| Viaturas ≥ €45.000 | 32% | +10 pp |
+| Viaturas híbridas plug-in que cumpram o n.º 18 e viaturas a GNV | 2,5% / 7,5% / 15% | +10 pp se prejuízo |
+| Viaturas elétricas puras (BEV) | 0% até ao limite da portaria do art.º 34.º n.º 1 al. e); 10% acima (n.º 20) | +10 pp se tributada |
 | Despesas de representação | 10% | +10 pp |
 | Ajudas de custo / quilómetros não faturados a clientes | 5% | +10 pp |
 | Bónus a gestores que excedam 25% da remuneração total e € do valor mínimo | 35% | +10 pp |
 | Indemnizações de cessação de funções de gestor | 35% | +10 pp |
 | Lucros distribuídos a entidades total ou parcialmente isentas | 23% | n/a |
+
+Taxas de viaturas para períodos de 2025 e 2026. O acréscimo de +10 pp não se aplica no período de início de atividade e no seguinte (n.º 15) nem, em 2025 e 2026, nos casos do regime transitório descritos em `pt-corporate-tax`, Secção 5, só após confirmação do revisor.  _([art.º 88.º n.ºs 3, 14, 15, 18 e 20 CIRC; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 - **Confirmação TA** — A skill de montagem confirma que pt-corporate-tax calculou todas as TA aplicáveis e que a TA total foi adicionada à coleta no Quadro 10. Tolerância: €1.  _(unsure - no explicit legal citation provided)_
 
@@ -852,7 +854,7 @@ A capstone produz uma secção prospetiva para que o contribuinte chegue à pró
 | Escalões IRS | Atualização mínima esperada (~2-3%) | Atualização anual com inflação | Aplicar a partir de 1 jan 2026 |
 | Dedução específica Categoria A | €4.350,24 (4,1× IAS) | Atualização anual | Atualizar payroll |
 | IAS (Indexante dos Apoios Sociais) 2026 | **€537,13** (€522,50 em 2025) | Confirmado, +2,8% | Atualizar contribuições e benefícios |
-| Tributação autónoma — viaturas | Tabela 2025 | Possíveis revisões para incentivar viaturas elétricas | Verificar tabelas 2026 |
+| Tributação autónoma — viaturas | 8% / 25% / 32% (< €37.500; < €45.000; ≥ €45.000) | Mesmos escalões em 2026; n.º 18 alargado a Euro 6e-bis até 80 gCO2/km (Lei n.º 73-A/2025) | [Aplicar art.º 88.º](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx) |
 | Benefícios fiscais — RFAI / SIFIDE | Em vigor | Possível prorrogação / revisão das percentagens | Monitorizar |
 
 ### 9.2 Fim do regime RNH legacy e IFICI

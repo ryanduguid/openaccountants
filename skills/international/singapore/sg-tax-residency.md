@@ -4,7 +4,7 @@ description: "Use this skill for any question about Singapore tax residency. Tri
 version: 1.0
 jurisdiction: SG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -72,7 +72,11 @@ Singapore taxes on a **source** basis, not a worldwide basis. This means:
 | 200,001 – 240,000 | 19% |
 | 240,001 – 280,000 | 19.5% |
 | 280,001 – 320,000 | 20% |
-| Above 320,000 | **24%** |
+| 320,001 – 500,000 | 22% |
+| 500,001 – 1,000,000 | 23% |
+| Above 1,000,000 | **24%** |
+
+Source: IRAS, Individual income tax rates (from YA 2024): https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates. Example: gross tax on chargeable income of SGD 500,000 is SGD 84,150.
 
 - **Non-resident rates — employment income** — 15% or progressive resident rates, whichever is higher
 - **Non-resident rates — director fees** — 24%

@@ -4,7 +4,7 @@ description: "Utilize esta skill sempre que lhe forem colocadas questões sobre 
 version: 1.1
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -291,17 +291,17 @@ Para titulares do regime de Residente Não Habitual (RNH) ou do Incentivo Fiscal
 
 ### Tributação Autónoma
 
-**Tributação Autónoma**
+**Tributação Autónoma (viaturas: períodos de 2025 e 2026)**  _([art.º 88.º n.ºs 3 e 20 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 | Gasto | Taxa |
 | --- | --- |
 | Despesas de representação | 10% |
-| Encargos com viaturas (aquisição ≤ 27.500 EUR) | 10% |
-| Encargos com viaturas (27.500–35.000 EUR) | 27,5% |
-| Encargos com viaturas (> 35.000 EUR) | 35% |
+| Encargos com viaturas (aquisição < 37.500 EUR) | 8% |
+| Encargos com viaturas (37.500 a < 45.000 EUR) | 25% |
+| Encargos com viaturas (≥ 45.000 EUR) | 32% |
 | Despesas não documentadas | 50% (70% se entidade isenta) |
 | Ajudas de custo não facturadas | 5% |
-| Encargos com viaturas eléctricas (≤ 62.500 EUR) | 0% |
+| Encargos com viaturas eléctricas (até ao limite da portaria do art.º 34.º n.º 1 al. e) CIRC; acima desse limite: 10%) | 0% |
 
 ### Tributação Autónoma
 

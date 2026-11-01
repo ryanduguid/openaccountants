@@ -4,7 +4,7 @@ description: "Source-cited draft: corporate income tax for Hong Kong (tax year 2
 jurisdiction: HK
 category: international
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 version: 1.3
 review_status: pending_review
 tier: 2
@@ -28,7 +28,7 @@ Hong Kong levies profits tax on income arising in or derived from a trade, profe
 - **Withholding tax on interest** — 0% (no withholding tax on interest)  _(Inland Revenue Ordinance (Cap. 112), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Withholding tax on royalties to a non-resident (non-associate)** — Effective 4.95% (16.5% on deemed assessable profits of 30% of gross); 2.475% on first HKD 6,666,667 where two-tiered rate applies  _(Inland Revenue Ordinance (Cap. 112), section 15(1)(a)/(b) and 21A, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Withholding tax on royalties to an associated non-resident (IP previously HK-owned)** — Effective up to 16.5% (deemed assessable profits = 100% of royalties); 8.25% on first HKD 2,000,000 where two-tiered applies  _(Inland Revenue Ordinance (Cap. 112), section 21A, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Profits tax return filing** — Issued on first working day of April; due within 1 month, with block extensions by accounting-date code (e.g. 'D' code 31 Dec year-end ~mid-November; 'M' code 31 Mar year-end ~mid-August) (approx — confirm)  _([Inland Revenue Ordinance (Cap. 112), section 51](https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/profitsrates.htm))_
+- **Profits tax return filing** — Due dates follow the accounting-date code, not the entity type. Returns are generally due within 1 month of issue (2025/26 bulk issue: 1 April 2026). Where a tax representative has duly applied under the Block Extension Scheme, 2025/26 dates are: N code (accounting date 1 April to 30 November) no paper extension, 4 May 2026 on paper and 4 June 2026 electronically; D code (December) 31 August 2026 on paper and 2 October 2026 electronically; M code (January to March) 30 November 2026 on paper and 30 December 2026 electronically; M code current year loss cases 1 February 2027, on application, if the return shows an allowable loss. Electronic dates need an application and e-filing, except Part 4AA Entities under mandatory e-filing. Without a tax representative, the compliance date on the return applies. These dates are specific to 2025/26  _(Inland Revenue Ordinance (Cap. 112), section 51; [GovHK, Profits Tax Return](https://www.gov.hk/en/residents/taxes/taxfiling/filing/types/profitstax.htm); IRD Block Extension circulars of [19 March 2026](https://www.ird.gov.hk/eng/pdf/bel26e.pdf), [14 July 2026](https://www.ird.gov.hk/eng/pdf/bel26ea.pdf) and [20 October 2026](https://www.ird.gov.hk/eng/pdf/bel26eb.pdf))_
 - **Provisional profits tax** — Provisional profits tax for the following year is charged with the final assessment and is generally payable with the final tax in instalments (approx — confirm)  _(Inland Revenue Ordinance (Cap. 112), Part X)_
 
 <!-- openaccountants-cta-block -->
