@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Hong Kong taxation, whether VAT
 jurisdiction: HK
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -140,14 +140,22 @@ A GST proposal was considered in 2006 (Consultation Paper on Tax Reform) but was
 
 **Filing Deadlines**
 
-| Entity Type | Year of Assessment | Filing Deadline |
-| --- | --- | --- |
-| Corporations (D code) | 1 Apr - 31 Mar | Usually 15 November (1 month extension for e-filing) |
-| Sole proprietors (M code) | 1 Apr - 31 Mar | Usually 2 May (1 month extension for e-filing) |
-| Partnerships (M code) | 1 Apr - 31 Mar | Usually 2 May |
-| Corporations with non-standard year-end | Varies | Per IRD Code of Practice |
+Codes follow the accounting date, not the entity type. These are the 2025/26 dates under the Block Extension Scheme and change each year.
 
-- **Profits Tax Return forms** — BIR51 (corporations), BIR52 (sole proprietors/partnerships).
+| Accounting Date Code | Accounting Date | Paper Filing | Electronic Filing |
+| --- | --- | --- | --- |
+| N | 1 April to 30 November 2025 | 4 May 2026 (no extension) | 4 June 2026 |
+| D | 1 to 31 December 2025 | 31 August 2026 (moved from 17 August) | 2 October 2026 (moved from 17 September) |
+| M | 1 January to 31 March 2026 | 30 November 2026 (moved from 16 November) | 30 December 2026 (moved from 16 December) |
+| M, current year loss cases | 1 January to 31 March 2026 | 1 February 2027 | 1 February 2027 |
+
+- **Who gets these dates:** Only taxpayers whose tax representative has duly applied or notified the Department. Without a tax representative, the compliance date on page 1 of the return applies, generally 1 month from issue (2025/26 bulk issue: 1 April 2026 for active files, 2 April 2026 for inactive files). The scheme does not apply to a corporation in liquidation. Returns issued periodically need an application within 1 month of issue. A taxpayer receiving its first return has 3 months from issue, with no application needed.
+- **Electronic filing dates:** The further month needs an application received at least 7 working days before the return is otherwise due, on condition that the return is e-filed. Part 4AA Entities under mandatory e-filing get it without applying if they notified their status before March 2026.
+- **M code loss cases:** Apply by 2 November 2026 (individual cases exceptionally by 16 November 2026). The return must show an allowable loss. If assessable profits are reported, or a paper return follows an e-filing extension request, the further extension is void, and the Department would consider penalty action under section 80 or 82A where the request had no reasonable excuse.
+- **Profits Tax Return forms** — BIR51 (corporations), BIR52 (persons other than corporations, such as partnerships), BIR54 (non-resident persons).
+- **Sole proprietors:** Report business profits in the Tax Return - Individuals (BIR60), not a Profits Tax Return. For 2025/26 (bulk issue 4 May 2026, any accounting date): 4 August 2026 if unrepresented, with an automatic further month if filed through the Internet; 5 October 2026 if represented.
+
+Sources: IRD Circular Letter on the Block Extension Scheme for 2025/26 (19 March 2026): https://www.ird.gov.hk/eng/pdf/bel26e.pdf; further extensions of 14 July 2026 (D code): https://www.ird.gov.hk/eng/pdf/bel26ea.pdf and 20 October 2026 (M code): https://www.ird.gov.hk/eng/pdf/bel26eb.pdf; GovHK, Profits Tax Return: https://www.gov.hk/en/residents/taxes/taxfiling/filing/types/profitstax.htm.
 
 ## Step 3: Salaries Tax [T1]
 
@@ -197,7 +205,7 @@ A GST proposal was considered in 2006 (Consultation Paper on Tax Reform) but was
 | Qualifying annuity premiums and MPF voluntary contributions | HKD 60,000 combined | IRO s.26N, 26Q |
 | Domestic rent deduction | HKD 100,000 per year | IRO s.26R |
 
-- **Salaries Tax filing** — BIR60 (Individual Tax Return), due within 1 month of issue (typically by 2 May for standard cases, 2 June for e-filing).
+- **Salaries Tax filing** — BIR60 (Individual Tax Return), due within 1 month of issue. For 2025/26 (bulk issue 4 May 2026, no sole proprietorship business): 4 June 2026 if unrepresented, with an automatic further month if filed through the Internet; 4 July 2026 if represented (IRD Circular Letter of 19 March 2026, https://www.ird.gov.hk/eng/pdf/bel26e.pdf). Sole proprietorship cases: see Filing Deadlines above.
 
 ## Step 4: Property Tax [T1]
 

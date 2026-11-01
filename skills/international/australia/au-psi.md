@@ -13,7 +13,7 @@ version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -94,23 +94,24 @@ PSI work starts with the ledger and the debtor list, not the client's self-asses
 
 BitWorks Pty Ltd derives $220,000 (GST-exclusive) in 2026-27 from the programming services of Dev, its sole director. Contracts are hourly-rate, the client supplies the dev environment, and BitWorks bears no rectification liability: **results test fails** (0% of PSI meets the s 87-18 conditions -- needs >= 75%). One bank supplies 90% of the income: **80% rule fails**, so the unrelated clients / employment / business premises tests cannot be self-assessed and no PSBD is held. The PSI rules apply.
 
-BitWorks paid Dev $100,000 salary (Div 12 PAYG withheld) and incurred: laptop and software $4,000; professional indemnity insurance $1,500; bookkeeping and ASIC fees $800 (entity maintenance); rent to Dev's spouse for the home office $12,000 (**denied** s 86-60/s 85-15); spouse "admin salary" $20,000 for non-principal work (**denied** s 86-60/s 85-20).
+BitWorks paid Dev $100,000 salary (Div 12 PAYG withheld) and incurred: laptop and software $4,000; professional indemnity insurance $1,500; employer superannuation for Dev at the 2026-27 rate of 12% of salary, paid in the year, $12,000 (s 86-75; [ATO, super guarantee](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee)); ASIC and tax agent fees $800 (entity maintenance); rent to Dev's spouse for the home office $12,000 (**denied** s 86-60/s 85-15); spouse "admin salary" $20,000 for non-principal work (**denied** s 86-60/s 85-20).
 
 ```
 Attributed PSI (s 86-15, reduced per s 86-20)
   PSI received                          $220,000
   less salary promptly paid to Dev      (100,000)
   less deductible outgoings:
+    superannuation for Dev (s 86-75)     (12,000)
     equipment                             (4,000)
     professional indemnity                (1,500)
     entity maintenance (s 86-65)            (800)
   Denied amounts NOT subtracted: rent to associate $12,000,
     associate non-principal salary $20,000
-  = Net PSI attributed to Dev           $113,700
-Dev's assessable income = $100,000 salary + $113,700 attribution = $213,700
+  = Net PSI attributed to Dev           $101,700
+Dev's assessable income = $100,000 salary + $101,700 attribution = $201,700
 ```
 
-The attributed $113,700 is neither assessable nor exempt income of BitWorks (s 86-30). BitWorks must have remitted PAYG on the attributed income quarterly under TAA 1953 Sch 1 Div 13 and reports the attributed amount to Dev. Under ss 86-60 and 86-35(1), the spouse's $20,000 for non-principal work is not deductible to BitWorks and is neither assessable nor exempt income of the spouse. Keep the attribution arithmetic above unchanged. (ITAA 1997 ss 85-20, 86-35 and 86-60.)
+The attributed $101,700 is neither assessable nor exempt income of BitWorks (s 86-30). BitWorks must have remitted PAYG on the attributed income quarterly under TAA 1953 Sch 1 Div 13 and reports the attributed amount to Dev. Under ss 86-60 and 86-35(1), the spouse's $20,000 for non-principal work is not deductible to BitWorks and is neither assessable nor exempt income of the spouse. Keep the attribution arithmetic above unchanged. (ITAA 1997 ss 85-20, 86-35 and 86-60.)
 
 ### Example 2 -- Consultant passing the unrelated clients test
 
@@ -167,7 +168,7 @@ Both limbs, in the income year: (a) PSI from **2 or more clients** who are not a
 
 ### Rule 6 -- Employment test (s 87-25)
 
-For the market-value limb, s 87-25(2) requires **at least 20% (by market value) of the individual's principal work to be performed by entities the individual engages, excluding associates that are not individuals**: an employed spouse counts, an associated company or trust does not. Count principal work that generates the PSI, excluding administration and bookkeeping. A spouse employed to perform 25% of the principal work satisfies this limb. Apply the separate apprentice limb where one or more apprentices are engaged for at least half the year. Keep the results test, 80% rule and any PSB determination separate. (ITAA 1997 s 87-25; [ATO, Employment test](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/personal-services-income/working-out-if-the-psi-rules-apply/employment-test).)
+The market-value limb has 2 forms. **Individual (s 87-25(1)):** at least 20% (by market value) of the individual's principal work is performed by entities the individual engages, excluding associates that are not individuals. **Personal services entity (s 87-25(2)):** at least 20% (by market value) of the entity's principal work is performed by entities it engages, excluding (i) individuals whose PSI is included in the entity's income and (ii) associates of the entity that are not individuals. An employed spouse therefore counts unless the spouse's own PSI is included in the entity's income; an associated company or trust does not count; and 2 directors each producing PSI through one company cannot meet the test through each other's work. For a partnership, a partner's work counts as work the entity engages another to perform (s 87-25(2A)). Count principal work that generates the PSI, excluding administration and bookkeeping. A spouse employed to perform 25% of the principal work satisfies this limb. Apply the separate apprentice limb where one or more apprentices are engaged for at least half the year (s 87-25(3)). Keep the results test, 80% rule and any PSB determination separate. (ITAA 1997 s 87-25; [ATO, Employment test](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/personal-services-income/working-out-if-the-psi-rules-apply/employment-test).)
 
 ### Rule 7 -- Business premises test (s 87-30)
 
@@ -262,8 +263,8 @@ STEP 2 -- PSB TESTS (per test individual)
   Results test: % of PSI meeting result + tools + defect liability: [__%]  (need >= 75%)
   Client concentration: largest client + associates share: [__%]  (>= 80% blocks other tests)
   Unrelated clients: 2+ non-associated clients? [Y/N]  Offers to public evidenced? [Y/N]
-  Employment: engaged entities (any individual, or a non-associated entity) perform >= 20% of principal work by market value? [Y/N]
-  Associate status checked (associated companies and trusts excluded; individuals count)? [Y/N]
+  Employment: engaged entities perform >= 20% of principal work by market value (individual s 87-25(1); PSE s 87-25(2))? [Y/N]
+  Exclusions checked (associated companies and trusts; for a PSE, individuals whose PSI is in its income)? [Y/N]
   Business premises: mainly-PSI / exclusive / separate from home / separate from client,
     at ALL times? [Y/N x 4]
   PSBD in force? [Y/N -- years covered]
@@ -312,7 +313,7 @@ REVIEWER FLAGS
 | "Mainly" threshold (PSI definition) | More than 50% of the reward (s 84-5) |
 | Results test coverage | >= 75% of the individual's PSI, all 3 conditions (s 87-18) |
 | 80% rule | < 80% from one client + associates to self-assess the other tests (s 87-15(3)) |
-| Employment test | Market-value limb: engaged entities other than non-individual associates perform >= 20% of principal work; separate apprentice limb: apprentice(s) >= half the year (s 87-25) |
+| Employment test | Market-value limb: engaged entities perform >= 20% of principal work, excluding non-individual associates and, for a PSE, individuals whose PSI is in its income; separate apprentice limb: apprentice(s) >= half the year (s 87-25) |
 | Business premises test | All 4 conditions at all times in the year (s 87-30) |
 | Salary carve-out from attribution | Paid as salary within 14 days after the PAYG payment period (s 86-15(4)) |
 | Agents regime commission floor | >= 75% commission/results-based (s 87-40) |
@@ -323,7 +324,7 @@ REVIEWER FLAGS
 
 | Topic | Source |
 |---|---|
-| Statute | ITAA 1997 Part 2-42: Divs 84, 85, 86, 87 (ss 84-5, 85-10 to 85-35, 86-15, 86-20, 86-30, 86-60 to 86-70, 87-15, 87-18, 87-20, 87-25, 87-30, 87-40, 87-60, 87-65); ITAA 1936 Part IVA |
+| Statute | ITAA 1997 Part 2-42: Divs 84, 85, 86, 87 (ss 84-5, 85-10 to 85-35, 86-15, 86-20, 86-30, 86-60 to 86-75, 87-15, 87-18, 87-20, 87-25, 87-30, 87-40, 87-60, 87-65); ITAA 1936 Part IVA |
 | Core ruling | TR 2022/3 Income tax: personal services income and personal services businesses |
 | Part IVA guideline | PCG 2025/5 Personal services businesses and Part IVA (issued 28 Nov 2025; finalised PCG 2024/D2); PS LA 2005/24; IT 2121, IT 2330, IT 2503, IT 2639; TR 2003/6 |
 | PAYG on attributed PSI | TAA 1953 Sch 1 Divs 12 and 13 |
@@ -339,7 +340,7 @@ REVIEWER FLAGS
 
 **Test 3:** Four unrelated clients (largest 40%) all sourced from a recruiter's panel. -> 80% rule met but s 87-20(2) defeats the offers-to-public limb; unrelated clients test fails.
 
-**Test 4:** Contractor's spouse does 25% (market value) of the principal design work as an employee. An engaged individual counts even when an associate, so this passes the market-value employment limb (s 87-25(2)); only an associated company or trust is excluded. Self-assessment still requires less than 80% client concentration if the results test is not met.
+**Test 4:** Sole-trader contractor's spouse does 25% (market value) of the principal design work as an employee. An engaged individual counts even when an associate, so this passes the market-value employment limb (s 87-25(1)); only an associated company or trust is excluded. Self-assessment still requires less than 80% client concentration if the results test is not met. Two directors each producing PSI through one company, each doing 25% of the work -> neither's work counts (s 87-25(2)(a)(i)); limb not met through each other.
 
 **Test 5:** "Business premises" is a dedicated home-office wing. -> Fails s 87-30(c) physical separation; test not met.
 

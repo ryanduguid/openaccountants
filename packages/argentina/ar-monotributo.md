@@ -3,10 +3,10 @@ name: ar-monotributo
 description: Use this skill whenever asked about the Argentine Monotributo simplified tax regime. Trigger on phrases like "monotributo", "regimen simplificado", "AFIP", "DAS monotributo", "categorias monotributo", "impuesto integrado", "monotributista", or any question about the unified monthly payment, category thresholds, or obligations for small self-employed individuals in Argentina. Covers the unified monthly payment (impuesto integrado + aportes jubilatorios + obra social), revenue-based categories (A through K), and exclusion rules. ALWAYS read this skill before touching any Argentine Monotributo work.
 version: 2.0
 jurisdiction: AR
-tax_year: 2025
-last_updated: 2026-09-28
+tax_year: 2026
+last_updated: 2026-10-31
 reviewed_by: Maria Valeria Benvenuti
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -30,37 +30,34 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | RG AFIP; Decreto reglamentario |
 | Tax authority | Administracion Federal de Ingresos Publicos (AFIP) / ARCA |
 | Filing portal | Monotributo portal via AFIP web (afip.gob.ar) |
-| Filing deadline | Monthly DAS by the 20th; recategorization January 20 and July 20 |
+| Filing deadline | Monthly DAS by the 20th; recategorization by February 5 and August 5 (ARCA, Recategorización) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by an Argentine contador publico |
 | Skill version | 2.0 |
 
-### Services Categories (2025 approximate)
+### Categories and Monthly Amounts (values from 1 August 2026)
 
-**Services Categories (2025 approximate)**
+**Categories and Monthly Amounts (values from 1 August 2026)**  _(ARCA, Montos y categorías vigentes, https://www.afip.gob.ar/monotributo/categorias.asp, opened 31 October 2026)_
 
-| Cat. | Max Annual Revenue (ARS) | Impuesto Integrado (ARS/month) | Aportes Jubilatorios (ARS/month) | Obra Social (ARS/month) | Total Monthly (ARS) |
-| --- | --- | --- | --- | --- | --- |
-| A | ~2,108,288 | ~1,047 | ~5,540 | ~7,402 | ~13,989 |
-| B | ~3,133,941 | ~2,014 | ~6,094 | ~7,402 | ~15,510 |
-| C | ~4,387,518 | ~3,441 | ~6,703 | ~7,402 | ~17,546 |
-| D | ~5,449,094 | ~5,658 | ~7,374 | ~7,402 | ~20,434 |
-| E | ~6,416,528 | ~8,904 | ~8,186 | ~7,402 | ~24,492 |
-| F | ~8,020,660 | ~12,776 | ~8,837 | ~7,402 | ~29,015 |
-| G | ~9,624,792 | ~17,029 | ~9,520 | ~7,402 | ~33,951 |
-| H | ~11,916,410 | ~30,454 | ~10,510 | ~7,402 | ~48,366 |
+| Cat. | Max Annual Revenue (ARS) | Max Area | Max Annual Energy | Max Annual Rent (ARS) | Impuesto Integrado, Services (ARS/month) | Impuesto Integrado, Goods (ARS/month) | Aportes SIPA (ARS/month) | Obra Social (ARS/month) | Total, Services (ARS/month) | Total, Goods (ARS/month) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A | 12,009,410.45 | 30 m2 | 3,330 kW | 2,792,886.15 | 5,585.77 | 5,585.77 | 18,246.86 | 25,694.55 | 49,527.18 | 49,527.18 |
+| B | 17,595,182.74 | 45 m2 | 5,000 kW | 2,792,886.15 | 10,612.98 | 10,612.98 | 20,071.55 | 25,694.55 | 56,379.08 | 56,379.08 |
+| C | 24,670,494.31 | 60 m2 | 6,700 kW | 3,816,944.41 | 18,246.86 | 16,757.32 | 22,078.71 | 25,694.55 | 66,020.12 | 64,530.58 |
+| D | 30,628,651.43 | 85 m2 | 10,000 kW | 3,816,944.41 | 29,790.79 | 27,742.67 | 24,286.58 | 30,535.56 | 84,612.93 | 82,564.81 |
+| E | 36,028,231.33 | 110 m2 | 13,000 kW | 4,841,002.66 | 55,857.73 | 44,313.79 | 26,715.24 | 37,238.48 | 119,811.45 | 108,267.51 |
+| F | 45,151,659.41 | 150 m2 | 16,500 kW | 4,841,002.66 | 78,573.20 | 57,719.64 | 29,386.76 | 42,824.25 | 150,784.21 | 129,930.65 |
+| G | 53,995,798.87 | 200 m2 | 20,000 kW | 5,771,964.69 | 142,995.76 | 71,497.87 | 41,141.46 | 46,175.72 | 230,312.94 | 158,815.05 |
+| H | 81,924,660.37 | 200 m2 | 20,000 kW | 8,378,658.45 | 409,623.31 | 204,811.64 | 57,598.04 | 55,485.33 | 522,706.68 | 317,895.01 |
+| I | 91,699,761.90 | 200 m2 | 20,000 kW | 8,378,658.45 | 814,591.79 | 325,836.71 | 80,637.26 | 68,518.81 | 963,747.86 | 474,992.78 |
+| J | 105,012,519.20 | 200 m2 | 20,000 kW | 8,378,658.45 | 977,510.14 | 391,004.07 | 112,892.16 | 76,897.46 | 1,167,299.76 | 580,793.69 |
+| K | 126,610,838.75 | 200 m2 | 20,000 kW | 8,378,658.45 | 1,368,514.20 | 456,171.40 | 158,049.02 | 87,882.82 | 1,614,446.04 | 702,103.24 |
 
-### Goods Categories (higher thresholds, additional physical parameters)
+Services and goods share these categories. Ley 27.743 replaced Arts. 8, 11 and 20 of the Ley 24.977 annex: all activities now run from A to K, and exclusion for revenue applies above Category K, not above Category H for services.  _(Ley 27.743, Arts. 87-89, https://servicios.infoleg.gob.ar/infolegInternet/anexos/400000-404999/401268/norma.htm)_
 
-**Goods Categories (higher thresholds, additional physical parameters)**
+Maximum unit price for sales of goods: ARS 716,840.77 in every category. The obra social amount is per affiliate; each adherent adds the same amount.  _(ARCA, Montos y categorías vigentes)_
 
-| Cat. | Max Annual Revenue (ARS) |
-| --- | --- |
-| I | ~13,337,213 |
-| J | ~15,285,088 |
-| K | ~16,957,968 |
-
-All amounts are approximate. AFIP updates these semi-annually. Verify at afip.gob.ar.
+The statute adjusts these amounts semi-annually, and recategorization falls in February and August. These are the values ARCA showed on 31 October 2026, in force from 1 August 2026: confirm the current table before relying on any figure.  _(Ley 27.743; ARCA, Recategorización)_
 
 ### Conservative Defaults
 
@@ -68,7 +65,7 @@ All amounts are approximate. AFIP updates these semi-annually. Verify at afip.go
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown activity type | Services (lower revenue ceilings -- most conservative) |
+| Unknown activity type | Services (same revenue ceilings; equal or higher monthly payment than goods in every category) |
 | Unknown category | Highest category that fits revenue (highest payment) |
 | Unknown obra social election | Enrolled |
 | Unknown unit price limit | Assume limit applies |
@@ -135,51 +132,53 @@ Monotributo does NOT require expense tracking (no deductions). However, these pa
 
 ## Section 4 -- Worked Examples
 
+All amounts in these examples use the ARCA table in force from 1 August 2026. Annual costs assume those values hold for 12 months; they are illustrative because ARCA revises the table.
+
 ### Example 1 -- Standard Services Freelancer, Category D
 
-**Input:** Freelance consultant, annual revenue ARS 5,000,000, services only.
+**Input:** Freelance consultant, annual revenue ARS 30,000,000, services only. No commercial premises, so area, energy and rent do not apply.
 
 **Computation:**
-- Category D (revenue <= ~5,449,094)
-- Monthly payment: ~ARS 20,434 (impuesto integrado ~5,658 + aportes ~7,374 + obra social ~7,402)
-- Annual cost: ~ARS 245,208
+- Category D (revenue <= 30,628,651.43)
+- Monthly payment: ARS 84,612.93 (impuesto integrado 29,790.79 + aportes 24,286.58 + obra social 30,535.56)
+- Annual cost: ARS 1,015,355.16
 
 ### Example 2 -- Low-Income Category A
 
-**Input:** Freelance tutor, annual revenue ARS 1,500,000.
+**Input:** Freelance tutor, annual revenue ARS 10,000,000. No commercial premises, so area, energy and rent do not apply.
 
 **Computation:**
-- Category A (revenue <= ~2,108,288)
-- Monthly payment: ~ARS 13,989
-- Annual cost: ~ARS 167,868
+- Category A (revenue <= 12,009,410.45)
+- Monthly payment: ARS 49,527.18
+- Annual cost: ARS 594,326.16
 
 ### Example 3 -- Goods Seller, Category I
 
-**Input:** Online retailer, annual revenue ARS 12,000,000, premises 80 m2, unit price ARS 50,000.
+**Input:** Online retailer, annual revenue ARS 90,000,000, premises 80 m2, unit price ARS 50,000.
 
 **Computation:**
-- Category I (goods, revenue <= ~13,337,213)
+- Category I (revenue <= 91,699,761.90, above the Category H ceiling of 81,924,660.37)
 - Must verify premises area, electricity, rent are within limits
-- Monthly payment per Category I table
+- Monthly payment: ARS 474,992.78 (impuesto integrado 325,836.71 + aportes 80,637.26 + obra social 68,518.81)
 
 ### Example 4 -- Exclusion Trigger
 
-**Input:** Services freelancer, 12-month revenue ARS 13,000,000.
+**Input:** Services freelancer, 12-month revenue ARS 130,000,000.
 
 **Classification:**
-- Exceeds Category H ceiling (~11,916,410) for services
+- Exceeds Category K ceiling (126,610,838.75), which applies to services and goods alike
 - EXCLUDED from Monotributo
 - Must register for Regimen General (IVA + Ganancias)
 - ESCALATE to contador publico
 
 ### Example 5 -- Recategorization Needed
 
-**Input:** Currently Category B. Trailing 12-month revenue = ARS 4,000,000.
+**Input:** Currently Category B. Trailing 12-month revenue = ARS 20,000,000. No commercial premises, so area, energy and rent do not apply.
 
 **Computation:**
-- Exceeds Category B (~3,133,941) but within Category C (~4,387,518)
+- Exceeds Category B (17,595,182.74) but within Category C (24,670,494.31)
 - Must recategorize to C at next semi-annual window
-- New monthly payment: ~ARS 17,546
+- New monthly payment (services): ARS 66,020.12
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
@@ -189,19 +188,19 @@ Monotributo does NOT require expense tracking (no deductions). However, these pa
 
 ### 5.2 Category Determination
 
-- **Category determination** — Category is determined by the highest of: (a) gross revenue in the last 12 months, (b) commercial premises area, (c) electricity consumption, (d) rent paid. For services, only revenue applies. For goods, all parameters apply.  _(Ley 24.977, Art. 8)_
+- **Category determination** — Category is determined by the highest of: (a) gross revenue in the last 12 months, (b) commercial premises area, (c) electricity consumption, (d) rent paid. These parameters apply to services and goods alike where the activity is carried on in premises; a taxpayer without premises disregards area, and area is not considered in cities under 40,000 inhabitants (with some exceptions). Maximum unit price applies to goods only.  _(Ley 24.977 annex, Art. 8, as replaced by Ley 27.743, Art. 87; ARCA, Parámetros)_
 
 ### 5.3 Recategorization
 
-- **Recategorization** — Semi-annual recategorization (January and July). Based on revenue and parameters over the preceding 12 months. Deadline: January 20 and July 20. AFIP may recategorize automatically based on electronic invoice data.  _(Ley 24.977, Art. 9)_
+- **Recategorization** — Semi-annual recategorization (February and August), up to the 5th of the month, based on the last 12 months of activity. Those whose category stays the same, or with under 6 months of activity, take no action. ARCA may recategorize of its own motion where purchases, expenses or bank credits exceed the category's revenue limit.  _(ARCA, Recategorización, https://www.afip.gob.ar/monotributo/ayuda/recategorizacion.asp, opened 31 October 2026)_
 
 ### 5.4 Factura C Requirements
 
 - **Factura C requirements** — Monotributo invoices must be Factura C (no IVA discrimination). Must include: CUIT of issuer, current category letter, description of service/goods, total amount, and CAE from AFIP's online invoicing system. For exports: Factura E.
 
-### 5.5 Physical Parameter Limits (Goods)
+### 5.5 Physical Parameter Limits
 
-- **Physical parameter limits (goods)** — Premises area: from 30 m2 (Cat A) to 200 m2 (Cat K). Electricity consumed: from 3,330 kW to 20,000 kW. Rent paid: increasing ceilings per category. Unit price: max ~ARS 180,589 per unit. Services categories do NOT have physical parameters.  _(Ley 24.977, Art. 8)_
+- **Physical parameter limits** — From 1 August 2026: premises area from 30 m2 (Cat A) to 200 m2 (Cat G to K); electricity consumed from 3,330 kW to 20,000 kW; annual rent from ARS 2,792,886.15 (Cat A) to ARS 8,378,658.45 (Cat H to K). Unit price, goods only: max ARS 716,840.77 per unit.  _(Ley 24.977 annex, Art. 8; ARCA, Montos y categorías vigentes)_
 
 ### 5.6 Payment and Compliance
 
@@ -211,11 +210,11 @@ Monotributo does NOT require expense tracking (no deductions). However, these pa
 
 ### 6.1 Revenue Approaching Category Ceiling
 
-Freelancer in Category D with 11 months of revenue at ARS 5,200,000. If 12-month rolling revenue exceeds Category D ceiling, must recategorize to E at next semi-annual window. If exceeds all ceilings, exclusion applies. Flag for reviewer to monitor and advise.
+Freelancer in Category D with 11 months of revenue at ARS 29,500,000 (Category D ceiling from 1 August 2026: ARS 30,628,651.43). If 12-month rolling revenue exceeds Category D ceiling, must recategorize to E at next semi-annual window. If exceeds all ceilings, exclusion applies. Flag for reviewer to monitor and advise.
 
 ### 6.2 Mixed Services and Goods
 
-AFIP considers the primary activity. If goods sales are incidental, services categories apply. If both are significant, the higher threshold (goods) categories may apply, but all physical parameters must also be met. Flag for reviewer.
+Services and goods now share the same revenue ceilings, so mixed activity no longer changes the ceiling. It affects which impuesto integrado column applies and whether the unit price limit applies. The rule for choosing the column for a mixed taxpayer has not been confirmed at source. Flag for reviewer.
 
 ### 6.3 Client Receives Income from Abroad
 
@@ -234,14 +233,14 @@ Period: [12-month rolling period]
 A. REVENUE DETERMINATION
   A1. Gross revenue (last 12 months)              ___________
   A2. Activity type (services / goods / mixed)     ___________
-  A3. Premises area (m2) -- goods only             ___________
-  A4. Electricity consumption (kW) -- goods only   ___________
-  A5. Annual rent paid (ARS) -- goods only         ___________
-  A6. Max unit price of goods (ARS)                ___________
+  A3. Premises area (m2)                           ___________
+  A4. Electricity consumption (kW)                 ___________
+  A5. Annual rent paid (ARS)                       ___________
+  A6. Max unit price of goods (ARS) -- goods only  ___________
 
 B. CATEGORY DETERMINATION
   B1. Revenue-based category                       ___________
-  B2. Premises-based category (goods only)         ___________
+  B2. Premises-based category                      ___________
   B3. Final category (highest of B1, B2)           ___________
 
 C. MONTHLY PAYMENT
@@ -256,7 +255,7 @@ D. ANNUAL COST
 REVIEWER FLAGS:
   [ ] Revenue verified against AFIP invoicing data?
   [ ] Recategorization window approaching?
-  [ ] Physical parameters within limits (goods)?
+  [ ] Physical parameters within limits?
   [ ] Foreign income included in revenue?
   [ ] Approaching exclusion threshold?
 ```
@@ -314,10 +313,10 @@ ONBOARDING QUESTIONS -- ARGENTINA MONOTRIBUTO
 | Topic | Reference |
 | --- | --- |
 | Monotributo structure | Ley 24.977, Art. 6-11 |
-| Category table | Ley 24.977, Art. 8 |
-| Physical parameters | Ley 24.977, Art. 8 |
+| Category table | Ley 24.977 annex, Art. 8, as replaced by Ley 27.743, Art. 87; current values in ARCA, Montos y categorías vigentes |
+| Physical parameters | Ley 24.977 annex, Art. 8, as replaced by Ley 27.743, Art. 87 |
 | Recategorization | Ley 24.977, Art. 9 |
-| Exclusion rules | Ley 24.977, Art. 20-21 |
+| Exclusion rules | Ley 24.977 annex, Art. 20-21; Art. 20(a), (b) and (j) as replaced by Ley 27.743, Art. 89 (Category K) |
 | Payment deadlines | Ley 24.977, Art. 31 |
 | Factura C requirements | RG AFIP facturacion electronica |
 | Factura E (exports) | RG AFIP exportacion de servicios |
@@ -335,7 +334,7 @@ Interest accrues on unpaid amounts. After prolonged non-payment, AFIP may suspen
 - NEVER allow Monotributo for revenue exceeding the maximum category threshold -- client must be in Regimen General
 - NEVER issue Factura A or B from a Monotributo taxpayer -- Monotributo uses Factura C (or E for exports)
 - NEVER discriminate IVA on a Monotributo invoice -- IVA is embedded in the unified payment
-- NEVER ignore physical parameters for goods sellers -- revenue alone is insufficient
+- NEVER ignore physical parameters where the activity is carried on in premises -- revenue alone is insufficient
 - NEVER treat Monotributo amounts as fixed forever -- they are updated semi-annually by AFIP
 - NEVER allow a client excluded from Monotributo to continue making Monotributo payments
 - NEVER ignore the 3-year lockout when voluntarily leaving Monotributo
