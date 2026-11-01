@@ -319,7 +319,7 @@ Indonesian social security comes in two branches:
 | JKK (work accident) | 0.24% -- 1.74% by risk grade (PP 7/2025 Art. 4(1); BPJS Ketenagakerjaan, 17 December 2025; grade 2, e.g. retail and hospitality, 0.54%, of which 0.14% funds JKP under PP 6/2025) | 0 | None |
 | JKM (death) | 0.30% (BPJS Ketenagakerjaan, 17 December 2025; PP 6/2025 funds JKP without JKM, but PP 49/2023 Art. 18A has no repeal found and no BPJS bill was sighted, so confirm on the employer's statement) | 0 | None |
 | JHT (old age) | 3.7% | 2% | None |
-| JP (pension) | 2% | 1% | **IDR 11,086,300/month** from March 2026 (IDR 10,547,400 from March 2025; reset each March by BPJS Ketenagakerjaan; see `id-payroll-pph21` section 6b) |
+| JP (pension) | 2% | 1% | **IDR 11,086,300/month** from March 2026 as reported; the BPJS circular was not sighted, so confirm on the BPJS bill (IDR 10,547,400 from March 2025; reset each March by BPJS Ketenagakerjaan; see `id-payroll-pph21` section 6b) |
 
 - **Planning note on JP cap and deductibility** — Structuring founder compensation so fixed monthly wage sits just above the JP cap maximises pension coverage with no further JP cost. Employer BPJS deductible under Pasal 6(1)(c); employee parts reduce PPh 21 base. A self-employed OP without employees usually only pays BPJS Kesehatan PBPU.  _(Pasal 6(1)(c))_
 

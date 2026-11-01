@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Company registrar | Ministry of Corporate Affairs (MCA) / Registrar of Companies (ROC) -- mca.gov.in |
 | Key legislation | Companies Act, 2013; LLP Act, 2008 |
 | Typical formation time | 7--15 working days (SPICe+ online) |
-| Corporate tax rate | 22% + surcharge + cess (~25.17% effective, s 115BAA); 15% + surcharge + cess (~17.16% effective, s 115BAB) only for manufacturing companies set up and registered on or after 1 October 2019 that began manufacturing by 31 March 2024; a company formed now cannot qualify and uses s 115BAA |
+| Corporate tax rate | 22% + surcharge + cess (~25.17% effective, s 115BAA); 15% + surcharge + cess (~17.16% effective, s 115BAB) only for manufacturing companies set up and registered on or after 1 October 2019 that began manufacturing by 31 March 2024; a company formed now cannot qualify. The 22% rate is an option, not automatic: companies formed now may instead opt for 22% under s 115BAA (from tax year 2026-27, s 200 of the Income-tax Act 2025) by giving up specified deductions and filing the option by the return due date; otherwise the regular company rates apply |
 | Small company (Companies Act s 2(85)) | A private company with paid-up capital ≤ ₹10 crore and turnover ≤ ₹100 crore (thresholds effective 1 December 2025; ₹4 crore and ₹40 crore applied from 15 September 2022 until then). Never a small company, whatever its size: a public company, a holding or subsidiary company, a section 8 company, or a company governed by a special Act (s 2(85) and its proviso). Reliefs: no cash flow statement, CARO 2020 and auditor rotation do not apply, abridged annual return MGT-7A |
 | Skill version | 1.1 |
 

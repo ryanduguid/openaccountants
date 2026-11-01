@@ -178,9 +178,10 @@ Source: NTA Tax Answer No. 6498: https://www.nta.go.jp/taxes/shiraberu/taxanswer
 | Tax calculation | Tax payable = Output tax x 30% |
 | Duration | The 2027 and 2028 taxable periods (令和9年分・令和10年分) |
 | Base-period condition | Taxable sales in the base period (2 years before: 2025 for 2027, 2026 for 2028) of JPY 10M or less |
+| Further conditions (not exhaustive) | Taxable sales in the specified period (January to June of the previous year; wages paid may be used instead) of JPY 10M or less; not a foreign business without a permanent establishment on 1 January; taxable period not shortened by election; not a period made taxable by inheritance; not a year made taxable by purchasing high-value assets; and the other excluded cases in NTA Invoice Q&A 問115-2 |
 | Otherwise | General or simplified method. A business that used the 2割特例 or 3割特例 may elect the simplified method for the next taxable period by filing the election by that period's return deadline |
 
-Source: NTA Tax Answer No. 6498: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA invoice-system review page (3割特例 conditions): https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice-review/index.htm.
+Source: NTA Tax Answer No. 6498: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA invoice-system review page (3割特例 conditions): https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice-review/index.htm; its eligibility flowchart: https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice-review/img/img_contents-01.png; NTA Invoice Q&A 問115-2: https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115-2.pdf.
 
 ## Step 4: Computation -- General Method (本則課税) [T1]
 

@@ -303,7 +303,7 @@ Action Required: Do not advise. Refer to qualified professional. Document gap.
 ### Test 1 -- Standard freelancer, mid-range income (Tokyo 23 Wards illustrative)
 
 Input: Age 35, single, prior-year income JPY 5,000,000, no other household NHI members.
-Expected output: NHI taxable income = 5,000,000 - 430,000 = JPY 4,570,000. Medical: ~JPY 369,769. Support: ~JPY 124,994. Long-term care: N/A (under 40). Total NHI: ~JPY 494,763. Pension: JPY 210,120 (FY 2025). Total: ~JPY 704,883. For FY 2026 pension of JPY 215,040, total: ~JPY 709,803.
+Expected output: NHI taxable income = 5,000,000 - 430,000 = JPY 4,570,000. Medical: ~JPY 369,769. Support: ~JPY 124,994. Long-term care: N/A (under 40). Total NHI: ~JPY 494,763. Pension: JPY 210,120 (FY 2025). Total: ~JPY 704,883. For FY 2026, pension is JPY 215,040, but NHI must be recomputed with the ward's FY 2026 rates (including the new child and childcare support component), so no FY 2026 total is given.
 
 ### Test 2 -- Low-income freelancer qualifying for 70% reduction
 
@@ -313,7 +313,7 @@ Expected output: NHI taxable income = JPY 0. Income-based = JPY 0. 70% reduction
 ### Test 3 -- High earner hitting caps
 
 Input: Age 45, single, prior-year income JPY 20,000,000.
-Expected output: Medical capped at JPY 650,000. Support capped at JPY 240,000. Long-term care capped at JPY 170,000. Total NHI: JPY 1,060,000. Pension: JPY 210,120 (FY 2025). Total: JPY 1,270,120. For FY 2026 pension of JPY 215,040, total: JPY 1,275,040.
+Expected output: For FY 2025: Medical capped at JPY 660,000. Support capped at JPY 260,000. Long-term care capped at JPY 170,000. Total NHI: JPY 1,090,000 (the caps table above). Pension: JPY 210,120 (FY 2025). Total: JPY 1,300,120. For FY 2026: Medical capped at JPY 670,000, Support JPY 260,000, Long-term care JPY 170,000 and child and childcare support JPY 30,000, so total NHI JPY 1,130,000 (国民健康保険法施行令 art. 29-7, current text: https://laws.e-gov.go.jp/law/333CO0000000362). With pension of JPY 215,040, total: JPY 1,345,040.
 
 ### Test 4 -- Mid-year registration
 

@@ -241,7 +241,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.8 SaaS -- foreign suppliers (proxy payment, Article 52)
 
-- **Proxy payment (대리납부) on foreign SaaS** — A buyer of services from a non-resident supplier without a Korean place of business (국외사업자) must withhold 10% VAT when paying, unless it uses the service in its taxable business. Services whose input tax is not deductible under Article 39 stay within proxy payment. A taxable business using the service for its taxable supplies, with deductible input, has no Article 52 entry: record the expense with no VAT line. Proxy payment applies to exempt business use (면세사업) and non-deductible use (for example entertainment or non-business use); see Section 5.7.  _([VAT Act Art. 52(1)-(2)](https://www.law.go.kr/법령/부가가치세법/제52조))_
+- **Proxy payment (대리납부) on foreign SaaS** — A buyer of services from a foreign supplier (국외사업자: a non-resident or foreign corporation without a Korean place of business, or one with a Korean place of business that supplies the service unconnected with it, in the cases set by Presidential Decree) must withhold 10% VAT when paying, unless it uses the service in its taxable business. Services whose input tax is not deductible under Article 39 stay within proxy payment. A taxable business using the service for its taxable supplies, with deductible input, has no Article 52 entry: record the expense with no VAT line. Proxy payment applies to exempt business use (면세사업) and non-deductible use (for example entertainment or non-business use); see Section 5.7.  _([VAT Act Art. 52(1)-(2)](https://www.law.go.kr/법령/부가가치세법/제52조))_
 
 **SaaS suppliers table**
 
@@ -424,7 +424,7 @@ Office supplies purchased with corporate credit card. No e-tax invoice obtained.
 
 ### 5.7 Proxy payment on imported services (Article 52)
 
-- **Proxy payment (대리납부) on imported services** — Applies when a buyer receives services from a non-resident with no Korean place of business and uses them in exempt business, or their input tax is not deductible under Article 39. The buyer withholds 10% VAT when paying, files a 대리납부신고서 and pays by the preliminary or final return deadline (Art. 52(2), applying Art. 48(2) and 49(2)). Services used in a taxable business with deductible input are excluded: no output or input entry. For mixed taxable and exempt use, confirm the apportionment rule in the Enforcement Decree before filing.  _([VAT Act Art. 52(1)-(2)](https://www.law.go.kr/법령/부가가치세법/제52조))_
+- **Proxy payment (대리납부) on imported services** — Applies when a buyer receives services from a 국외사업자 (a non-resident or foreign corporation with no Korean place of business, or one whose Korean place of business is not connected with the supply, in the cases set by Presidential Decree) and uses them in exempt business, or their input tax is not deductible under Article 39. The buyer withholds 10% VAT when paying, files a 대리납부신고서 and pays by the preliminary or final return deadline (Art. 52(2), applying Art. 48(2) and 49(2)). Services used in a taxable business with deductible input are excluded: no output or input entry. For mixed taxable and exempt use, confirm the apportionment rule in the Enforcement Decree before filing.  _([VAT Act Art. 52(1)-(2)](https://www.law.go.kr/법령/부가가치세법/제52조))_
 
 ### 5.8 Simplified taxpayer regime (Articles 61-68)
 

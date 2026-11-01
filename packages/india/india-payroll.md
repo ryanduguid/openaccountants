@@ -112,7 +112,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Employee contribution | 12% of Basic wages + Dearness Allowance (DA) |
 | Wage ceiling for PF | INR 25,000/month from 17 September 2026, INR 15,000 before (S.O. 5109(E), Gazette of India, 17 September 2026); contributions mandatory up to this; voluntary above. See `in-pf-esi-employer` for enrolment and the September 2026 split |
-| Minimum Basic + DA | Must be ≥ 50% of total remuneration (Labour Codes) |
+| Allowances above 50% | No minimum Basic + DA; allowances and other payments, apart from basic pay, DA, retaining allowance, gratuity and retrenchment compensation, above 50% of total remuneration are added back to wages for PF, ESI and gratuity (Ministry of Labour FAQs on Labour Codes, Q4 and Q7); the Codes do not require the salary to be restructured |
 | Applies to | Establishments with 20+ employees (10+ in notified sectors) |
 
 ### Employee State Insurance (ESI)
@@ -414,7 +414,7 @@ Tax calculation:
 
 ### India-Specific Payroll Considerations
 
-- **New Labour Codes**: The four codes (Wages, Social Security, Industrial Relations, OSH) became effective 21 November 2025 (PIB release 2192463). Old rules and schemes continue until new ones are notified, only so far as they are in line with the Codes (Ministry of Labour FAQs on Labour Codes, Q1). Key impact: Basic + DA must be ≥ 50% of total remuneration, increasing PF/gratuity costs.
+- **New Labour Codes**: The four codes (Wages, Social Security, Industrial Relations, OSH) became effective 21 November 2025 (PIB release 2192463). Old rules and schemes continue until new ones are notified, only so far as they are in line with the Codes (Ministry of Labour FAQs on Labour Codes, Q1). Key impact: allowances and other payments, apart from basic pay, DA, retaining allowance, gratuity and retrenchment compensation, above 50% of total remuneration are added back to wages for PF, ESI and gratuity (Ministry of Labour FAQs on Labour Codes, Q4 and Q7); the Codes do not require the salary to be restructured, which can increase PF and gratuity costs.
 - **Dual tax regime**: Default is new regime (Section 115BAC). Employee must explicitly opt for old regime. Employer MUST compute TDS per new regime if no declaration received.
 - **State variations**: Minimum wages, Professional Tax rates, Shops & Establishments Act rules, and LWF contributions all vary by state. ALWAYS identify the employee's state of employment.
 - **PF wage ceiling**: Statutory ceiling is INR 25,000/month for mandatory PF from 17 September 2026 (S.O. 5109(E)); INR 15,000 before. Employees excluded until then with PF wages up to INR 25,000 must be enrolled from that date. Many employers contribute on actual Basic (above ceiling) voluntarily or per company policy.

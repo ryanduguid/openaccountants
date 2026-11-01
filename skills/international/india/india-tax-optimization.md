@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Central Board of Direct Taxes (CBDT); Income Tax Department |
 | Filing deadline | 31 July (individuals without audit); 31 October (businesses requiring audit) |
 | Individual top rate | 30% + 4% health & education cess = 31.2% (old regime); surcharge up to 25% on high incomes |
-| Corporate tax (domestic, new manufacturing) | 15% + surcharge + cess (s 115BAB): only companies set up on or after 1 October 2019 that began manufacturing by 31 March 2024; closed to new companies, which use s 115BAA (22%) |
+| Corporate tax (domestic, new manufacturing) | 15% + surcharge + cess (s 115BAB): only companies set up on or after 1 October 2019 that began manufacturing by 31 March 2024; closed to new companies; companies formed now may instead opt for 22% under s 115BAA (from tax year 2026-27, s 200 of the Income-tax Act 2025) by giving up specified deductions and filing the option by the return due date; otherwise the regular company rates apply |
 | Corporate tax (domestic, general) | 22% + cess (s 115BAA) or 25%/30% under regular provisions |
 | GST rates | 0%, 5%, 18%, and 40% for sin/luxury goods (two-slab structure from 22 September 2025; the former 12% and 28% slabs were abolished). Special rates remain for a few items, e.g. 3% on gold |
 

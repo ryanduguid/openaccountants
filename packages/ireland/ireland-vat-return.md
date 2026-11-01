@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Ireland (Eire) |
 | Standard rate | 23% |
-| Reduced rates | 13.5% (construction, repair, cleaning, short-term car hire, certain fuels; restaurant and catering before 1 July 2026), 9% (newspapers, e-publications, sporting facilities, hairdressing; gas and electricity until 31 December 2030; from 1 July 2026, food and non-excluded drink in restaurant, catering and hot takeaway services), 4.8% (livestock, greyhounds) |
+| Reduced rates | 13.5% (construction, repair, cleaning, short-term car hire, certain fuels; restaurant, catering and hairdressing before 1 July 2026), 9% (newspapers, e-publications, sporting facilities; gas and electricity until 31 December 2030; from 1 July 2026, hairdressing and food and non-excluded drink in restaurant, catering and hot takeaway services), 4.8% (livestock, greyhounds) |
 | Zero rate | 0% (exports, most food, children's clothing/footwear, books, oral medicines, medical devices, passenger transport) |
 | Second reduced rate | 0% items listed in Schedule 2 VATCA 2010 |
 | Flat-rate (farmers) | 5.5% flat-rate addition (farmer scheme — not covered, R-IE-6) |
@@ -373,12 +373,12 @@ Google Ireland Ltd is an IRISH entity billing an IRISH customer. This is a DOMES
 ### 5.2 Reduced rate 13.5% (Section 46(1)(c))
 
 - **Reduced rate 13.5%** — 13.5%  _(Section 46(1)(c) VATCA 2010)_
-- **Applicable supplies** — Construction, repair and maintenance of buildings, cleaning services, short-term car hire, restaurant/catering (before 1 July 2026), waste collection, certain fuels (coal, peat; gas and electricity are at 9% until 31 December 2030). Sales → T1. Purchases → T4 (input VAT at 13.5%).  _(Section 46(1)(c) VATCA 2010)_
+- **Applicable supplies** — Construction, repair and maintenance of buildings, cleaning services, short-term car hire, restaurant/catering and hairdressing (both before 1 July 2026), waste collection, certain fuels (coal, peat; gas and electricity are at 9% until 31 December 2030). Sales → T1. Purchases → T4 (input VAT at 13.5%).  _(Section 46(1)(c) VATCA 2010)_
 
 ### 5.3 Second reduced rate 9% (Section 46(1)(ca))
 
 - **Second reduced rate 9%** — 9%  _(Section 46(1)(ca) VATCA 2010)_
-- **Applicable supplies** — Newspapers, electronic publications, sporting facilities, hairdressing, printed and digital periodicals; gas and electricity until 31 December 2030; from 1 July 2026, food and drink (excluding alcohol, bottled waters, soft drinks, sports drinks and vegetable juices) supplied as part of a restaurant, catering or hot takeaway service. Source: Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf.  _(Section 46(1)(ca) VATCA 2010)_
+- **Applicable supplies** — Newspapers, electronic publications, sporting facilities, printed and digital periodicals; gas and electricity until 31 December 2030; from 1 July 2026 (Finance Act 2025 s 71), hairdressing services and food and drink (excluding alcohol, bottled waters, soft drinks, sports drinks and vegetable juices) supplied as part of a restaurant, catering or hot takeaway service. Sources: Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf; Revenue, VAT notes for guidance on Finance Act 2025, s 71 — https://www.revenue.ie/en/tax-professionals/documents/notes-for-guidance/vat/vat-guidance-notes-fa2025.pdf.  _(Section 46(1)(ca) VATCA 2010)_
 
 ### 5.4 Reduced rate 4.8% (Section 46(1)(cb))
 
@@ -588,7 +588,8 @@ v2.0, rewritten April 2026. Awaiting validation by Irish chartered accountant or
 
 1. VATCA 2010 (Value-Added Tax Consolidation Act 2010) — https://www.irishstatutebook.ie
 2. Revenue guidance — https://www.revenue.ie
-   - Budget 2026 summary (9% for gas and electricity to 31 December 2030; 9% for restaurant, catering and hot takeaway food from 1 July 2026) — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf
+   - Finance Act 2025 VAT notes for guidance (s 71: 9% for hairdressing and restaurant food from 1 July 2026) — https://www.revenue.ie/en/tax-professionals/documents/notes-for-guidance/vat/vat-guidance-notes-fa2025.pdf
+   - Budget 2026 summary (9% for gas and electricity to 31 December 2030; 9% for hairdressing and restaurant, catering and hot takeaway food from 1 July 2026) — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf
 3. ROS — https://www.ros.ie
 4. Council Directive 2006/112/EC — via eu-vat-directive companion skill
 5. VIES — https://ec.europa.eu/taxation_customs/vies/

@@ -357,19 +357,19 @@ Since 1 January 2023, no new FOR additions are allowed. Existing FOR on the bala
 
 **Example 6 -- BV vs Eenmanszaak (Profit EUR 150,000)**
 
-Assumptions: 2026 rates; single, below AOW age; urencriterium met, no startersaftrek, KIA or other income; the BV distributes all profit after VPB as a dividend; the DGA is not insured for employee insurances (no WW or WIA premiums); dividend withholding is credited against box 2 and ignored; the eenmanszaak's arbeidsinkomen is taken as its belastbare winst of EUR 129,902.40 (confirm against Wet IB 2001 art. 8.11).
+Assumptions: 2026 rates; single, below AOW age; urencriterium met, no startersaftrek, KIA or other income; the DGA's salary is the EUR 58,000 gebruikelijk loon minimum; the BV distributes all profit after VPB as a dividend; the DGA is not insured for employee insurances, so there are no WW or WIA premiums and the DGA pays the 4.85% Zvw contribution personally (no employer levy), with the withheld contribution not deducted from taxable wage; dividend withholding is credited against box 2 and ignored. The eenmanszaak's arbeidsinkomen is its profit before ondernemersaftrek and MKB-winstvrijstelling (EUR 150,000), above the EUR 132,920 at which arbeidskorting reaches nil.
 
-| Item | Eenmanszaak | BV (salary EUR 56,000 + dividend) |
+| Item | Eenmanszaak | BV (salary EUR 58,000 + dividend) |
 | --- | --- | --- |
 | Ondernemersaftrekken | EUR 1,200 zelfstandigenaftrek + EUR 18,897.60 MKB-winstvrijstelling (12.7% × EUR 148,800) | None |
-| Box 1 income tax | EUR 54,233.84 on EUR 129,902.40, plus EUR 2,399.65 tariefsaanpassing (11.94% of EUR 20,097.60), less EUR 196.39 arbeidskorting (EUR 5,685 less 6.51% of EUR 84,310.40): EUR 56,437.10 (algemene heffingskorting nil) | EUR 20,329.82 on the salary − EUR 5,007.44 arbeidskorting = EUR 15,322.38 (algemene heffingskorting nil: verzamelinkomen includes the dividend) |
-| ZVW | EUR 3,851.34 (4.85% × EUR 79,409 maximum) | EUR 3,416.00 employer levy (6.10% × EUR 56,000) |
-| VPB | -- | EUR 17,210.96 (19% × EUR 90,584) |
-| Box 2 | -- | EUR 18,270.85 on a EUR 73,373.04 dividend (24.5% × EUR 68,843 + 31% × EUR 4,530.04) |
-| **Total tax** | **EUR 60,288.44 (40.2%)** | **EUR 54,220.19 (36.1%)** |
-| **Annual saving with BV** |  | **EUR 6,068.25** |
+| Box 1 income tax | EUR 54,233.84 on EUR 129,902.40, plus EUR 2,399.65 tariefsaanpassing (11.94% of EUR 20,097.60): EUR 56,633.49 (arbeidskorting and algemene heffingskorting nil) | EUR 21,081.02 on the salary − EUR 4,877.24 arbeidskorting = EUR 16,203.78 (algemene heffingskorting nil: verzamelinkomen includes the dividend) |
+| ZVW | EUR 3,851.34 (4.85% × EUR 79,409 maximum) | EUR 2,813.00 paid by the DGA (4.85% × EUR 58,000) |
+| VPB | -- | EUR 17,480.00 (19% × EUR 92,000) |
+| Box 2 | -- | EUR 18,626.41 on a EUR 74,520.00 dividend (24.5% × EUR 68,843 + 31% × EUR 5,677) |
+| **Total tax** | **EUR 60,484.83 (40.3%)** | **EUR 55,123.19 (36.7%)** |
+| **Annual saving with BV** |  | **EUR 5,361.64** |
 
-Sources: Belastingdienst, Voorlopige aanslag 2026 (box 1, credits) — https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen; box 2 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/boxen_en_tarieven/box_2/box_2; zelfstandigenaftrek 2026 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026; tariefsaanpassing — https://www.belastingdienst.nl/wps/wcm/connect/nl/aftrek-en-kortingen/content/afbouw-tarief-aftrekposten-bij-hoog-inkomen; Zvw percentages — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/werk_en_inkomen/zorgverzekeringswet/veranderingen-bijdrage-zvw/percentages-zvw; MKB-winstvrijstelling 12.7% — https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek.
+Sources: Belastingdienst, Voorlopige aanslag 2026 (box 1, credits) — https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen; box 2 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/boxen_en_tarieven/box_2/box_2; zelfstandigenaftrek 2026 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026; tariefsaanpassing — https://www.belastingdienst.nl/wps/wcm/connect/nl/aftrek-en-kortingen/content/afbouw-tarief-aftrekposten-bij-hoog-inkomen; Zvw percentages — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/werk_en_inkomen/zorgverzekeringswet/veranderingen-bijdrage-zvw/percentages-zvw; MKB-winstvrijstelling 12.7% — https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek; Zvw for a DGA not insured for employee insurances — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/werk_en_inkomen/zorgverzekeringswet/bijdrage_zorgverzekeringswet/tabel_werkgeversheffing_zvw_of_bijdrage_zvw/tabel_werkgeversheffing_zvw_of_bijdrage_zvw; arbeidsinkomen — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/arbeidskorting/inkomen_uit_werk; gebruikelijk loon EUR 58,000 — https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/loon_pensioen_uitkeringen_en_afkoopsommen.
 
 ## Disclaimer
 
