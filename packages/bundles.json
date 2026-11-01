@@ -2384,6 +2384,19 @@
     "workflow-base.md"
    ]
   },
+  "french-southern-territories": {
+   "jurisdiction": "TF",
+   "name": "French Southern Territories",
+   "files": [
+    "intake.md",
+    "tf-kerguelen-crozet-fishing-duty-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "gabon": {
    "jurisdiction": "GA",
    "name": "Gabon",
@@ -2731,6 +2744,19 @@
    "files": [
     "intake.md",
     "hm-tax-scope-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
+  "holy-see": {
+   "jurisdiction": "VA",
+   "name": "Holy See",
+   "files": [
+    "intake.md",
+    "va-customs-fees-reference.md",
     "README.md"
    ],
    "shared": [
@@ -4441,6 +4467,19 @@
     "workflow-base.md"
    ]
   },
+  "pitcairn": {
+   "jurisdiction": "PN",
+   "name": "Pitcairn",
+   "files": [
+    "intake.md",
+    "pn-landing-fee-passenger-levy-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "poland": {
    "jurisdiction": "PL",
    "name": "Poland",
@@ -5151,6 +5190,19 @@
    "shared": [
     "foundation.md",
     "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "state-of-palestine": {
+   "jurisdiction": "PS",
+   "name": "State Of Palestine",
+   "files": [
+    "intake.md",
+    "ps-vat-legislative-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
     "workflow-base.md"
    ]
   },
