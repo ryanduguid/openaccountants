@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: DE
 category: international
 tax_year: 2025
-last_updated: 2026-10-15
+last_updated: 2026-10-31
 depends_on:
   - vat-workflow-base
   - eu-vat-directive
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Germany (Federal Republic of Germany) |
 | Standard rate | 19% |
-| Reduced rate | 7% (food, books, accommodation, local transport under 50 km, water, cultural events) |
+| Reduced rate | 7% (food, restaurant and catering services except drinks from 1 January 2026, books, accommodation, local transport under 50 km, water, cultural events) |
 | Other rates | 0% photovoltaic installations under 30 kWp (ss12(3) UStG); 5.5% forestry (rare) |
 | Zero rate (functional) | Exports (ss4 Nr.1a), intra-EU B2B goods (ss4 Nr.1b), B2B services to EU/non-EU (ss3a(2)) |
 | Return form | Umsatzsteuer-Voranmeldung (UStVA) -- advance VAT return |
@@ -217,7 +217,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | EDEKA | Default BLOCK | Same |
 | DM, ROSSMANN, MUELLER DROGERIE | Default BLOCK | Personal care, default not business |
 | PENNY, NETTO, KAUFLAND, REAL | Default BLOCK | Same |
-| RESTAURANT, GASTSTÄTTE, IMBISS (any named) | Domestic 19%, RECOVERABLE only if Bewirtungsbeleg complete | See Section 5 rule 5.3 for Bewirtung documentation requirements |
+| RESTAURANT, GASTSTÄTTE, IMBISS (any named) | Domestic from 1 Jan 2026: food 7%, drinks 19%, split per receipt. In 2025: restaurant service 19% on the whole bill, but prepared food supplied as goods with no supporting service (typically takeaway) could take 7% under ss12(2) Nr.1 (UStAE 3.6(1)), so check which applied; RECOVERABLE only if Bewirtungsbeleg complete | See Section 5 rule 5.3 for Bewirtung documentation requirements |
 
 ### 3.7 German rent
 
@@ -379,13 +379,13 @@ Betrag: -285,60 EUR
 ```
 
 **Reasoning:**
-Restaurant transaction. Unlike Malta where entertainment VAT is hard-blocked, in Germany business entertainment (Bewirtung) VAT is 100% recoverable under ss15(1) Nr.1 UStG -- provided proper documentation exists: maschinell erstellte Rechnung, attendees listed on back of receipt, business purpose noted, host's signature. The 30% disallowance is an income tax rule only (ss4(5) Nr.2 EStG), NOT a VAT rule. Gross EUR 285.60 includes 19% VAT. Net = EUR 240.00, VAT = EUR 45.60. Default: BLOCK (conservative -- Bewirtungsbeleg documentation unknown). Flag for reviewer.
+Restaurant transaction. Unlike Malta where entertainment VAT is hard-blocked, in Germany business entertainment (Bewirtung) VAT is 100% recoverable under ss15(1) Nr.1 UStG -- provided proper documentation exists: maschinell erstellte Rechnung, attendees listed on back of receipt, business purpose noted, host's signature. The 30% disallowance is an income tax rule only (ss4(5) Nr.2 EStG), NOT a VAT rule. The meal is dated 2026, so food is at 7% and drinks at 19% (ss12(2) Nr.15 UStG, from 1 January 2026). The bank line does not show the split, so take it from the receipt. Assume the receipt shows food EUR 254.66 gross (net EUR 238.00, VAT EUR 16.66 at 7%) and drinks EUR 30.94 gross (net EUR 26.00, VAT EUR 4.94 at 19%). Total net = EUR 264.00, VAT = EUR 21.60. Default: BLOCK (conservative -- Bewirtungsbeleg documentation unknown). Flag for reviewer.
 
-**Example 3 output table**  _("Bewirtung: do you have a properly completed Bewirtungsbeleg? If yes, EUR 45.60 Vorsteuer is recoverable via Kz 66.")_
+**Example 3 output table**  _("Bewirtung: do you have a properly completed Bewirtungsbeleg? If yes, EUR 21.60 Vorsteuer is recoverable via Kz 66.")_
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Kz (input) | Default? | Question? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 15.04.2026 | RESTAURANT ZUM GOLDENEN HIRSCH | -285.60 | -240.00 | 0 | 19% | -- | Y | Q1 | "Bewirtung: do you have a properly completed Bewirtungsbeleg? If yes, EUR 45.60 Vorsteuer is recoverable via Kz 66." |
+| 15.04.2026 | RESTAURANT ZUM GOLDENEN HIRSCH | -285.60 | -264.00 | 0 | 7% food / 19% drinks | -- | Y | Q1 | "Bewirtung: do you have a properly completed Bewirtungsbeleg? If yes, EUR 21.60 Vorsteuer is recoverable via Kz 66." |
 
 ### Example 4 -- Domestic purchase, standard 19%
 
@@ -464,11 +464,11 @@ Each rule states the legal source and the Kennzahl mapping. Apply silently if th
 
 ### 5.2 Reduced rate 7% (ss12(2) UStG)
 
-- **Reduced rate scope** — Applies to: food (excluding restaurant service, alcohol, luxury food), books (including e-books since 2020), newspapers, water supply, cut flowers and plants, accommodation (short-term, excluding breakfast/parking/Wi-Fi which are 19%), local public transport (Nahverkehr <= 50 km), cultural admissions (theatre, concert, museum, zoo), passenger transport (Fernverkehr, permanent 7%). Sales: Kz 86 (net; tax auto-calculated). Purchases: Kz 66 (enter tax amount at 7%).  _(ss12(2) UStG)_
+- **Reduced rate scope** — Applies to: food (excluding alcohol, luxury food), restaurant and catering services except drinks for supplies from 1 January 2026 (Nr.15; in 2025 these services were 19%, whilst prepared food supplied as goods, typically takeaway with no supporting service, could take 7% under Nr.1 (UStAE 3.6(1), status 31 December 2025); drinks stay at 19%; for set-price packages of food and drink such as buffets or all-inclusive offers, the tax authority does not object to treating 30% of the package price as drinks), books (including e-books since 2020), newspapers, water supply, cut flowers and plants, accommodation (short-term; parking and Wi-Fi that do not directly serve the letting are 19% under Nr.11; breakfast is also outside Nr.11, and whether it now takes 7% under Nr.15 is not confirmed in this guide, so flag it for review), local public transport (Nahverkehr <= 50 km), cultural admissions (theatre, concert, museum, zoo), passenger transport (Fernverkehr, permanent 7%). Sales: Kz 86 (net; tax auto-calculated). Purchases: Kz 66 (enter tax amount at 7%).  _(ss12(2) UStG; Steueränderungsgesetz 2025 art 4 no 2 and art 12(2), BGBl. 2025 I Nr. 363; BMF letter of 22 December 2025, III C 2 - S 7220/00023/014/027)_
 
 ### 5.3 Bewirtung (business entertainment) -- VAT fully recoverable
 
-- **Bewirtung VAT recovery rules** — This is a commonly misunderstood rule. Unlike Malta and Ireland where entertainment VAT is blocked, in Germany: - VAT on business entertainment IS 100% recoverable under ss15(1) Nr.1 UStG, provided: - A proper VAT invoice exists (maschinell erstellte Rechnung from the restaurant) - The back of the receipt documents: date, names of attendees, business purpose, and the host's signature - The entertainment has a concrete business reason (Bewirtung aus geschaeftlichem Anlass) - The 30% disallowance is ONLY an income tax rule under ss4(5) Nr.2 EStG. It does NOT affect VAT recovery. - Example: Business dinner EUR 200 net + EUR 38 VAT (19%). Kz 66 = EUR 38 (full VAT recovery). For income tax: only EUR 140 (70% of EUR 200) is deductible. - **Conservative default when documentation status is unknown: BLOCK.** Only recover if the client confirms the Bewirtungsbeleg is properly completed.  _(ss15(1) Nr.1 UStG; ss4(5) Nr.2 EStG)_
+- **Bewirtung VAT recovery rules** — This is a commonly misunderstood rule. Unlike Malta and Ireland where entertainment VAT is blocked, in Germany: - VAT on business entertainment IS 100% recoverable under ss15(1) Nr.1 UStG, provided: - A proper VAT invoice exists (maschinell erstellte Rechnung from the restaurant) - The back of the receipt documents: date, names of attendees, business purpose, and the host's signature - The entertainment has a concrete business reason (Bewirtung aus geschaeftlichem Anlass) - The 30% disallowance is ONLY an income tax rule under ss4(5) Nr.2 EStG. It does NOT affect VAT recovery. - Example (2026, food only): Business dinner EUR 200 net + EUR 14 VAT (7%). Kz 66 = EUR 14 (full VAT recovery). For income tax: only EUR 140 (70% of EUR 200) is deductible. - **Conservative default when documentation status is unknown: BLOCK.** Only recover if the client confirms the Bewirtungsbeleg is properly completed.  _(ss15(1) Nr.1 UStG; ss4(5) Nr.2 EStG)_
 
 ### 5.4 Zero-rated and tax-free with input deduction
 
@@ -750,13 +750,13 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 ### Sources
 
 **Primary legislation:**
-1. Umsatzsteuergesetz (UStG) -- German Value Added Tax Act, especially ss1-3a, ss4, ss9, ss12, ss13b, ss14, ss15, ss15a, ss18, ss19, ss20, ss25a
+1. Umsatzsteuergesetz (UStG) -- German Value Added Tax Act, especially ss1-3a, ss4, ss9, ss12, ss13b, ss14, ss15, ss15a, ss18, ss19, ss20, ss25a; ss12(2) Nr.15 at https://www.gesetze-im-internet.de/ustg_1980/__12.html, as replaced by Steueränderungsgesetz 2025 art 4 no 2, in force 1 January 2026 under art 12(2): https://www.recht.bund.de/bgbl/1/2025/363/regelungstext.pdf?__blob=publicationFile&v=3
 2. Umsatzsteuer-Durchfuehrungsverordnung (UStDV) -- implementing regulation, especially ss17a-17c (IC supply proof), ss46-48 (Dauerfristverlaengerung)
 3. Abgabenordnung (AO) -- General Tax Code, especially ss149, ss152, ss233a, ss238, ss240, ss328, ss370
 4. Einkommensteuergesetz (EStG) -- ss4(5) (entertainment/gifts income tax disallowance, cross-referenced for VAT blocked input)
 
 **Authority guidance:**
-5. BMF (Bundesministerium der Finanzen) official form guidance for UStVA
+5. BMF (Bundesministerium der Finanzen) official form guidance for UStVA; BMF letter of 22 December 2025, III C 2 - S 7220/00023/014/027 (restaurant rate, 30% drinks share for packages, non-objection for the night of 31 December 2025 to 1 January 2026)
 6. ELSTER filing system -- https://www.elster.de
 7. BZSt USt-IdNr verification -- https://evatr.bff-online.de
 

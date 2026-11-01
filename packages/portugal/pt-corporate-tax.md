@@ -4,7 +4,7 @@ description: "LER SEMPRE este skill antes de tratar fiscalidade de pessoas colet
 jurisdiction: PT
 category: international
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-31
 version: 1.1
 review_status: pending_review
 tier: 2
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Madeira IBC (CINM)** | **5%** para entidades licenciadas no Centro Internacional de Negócios da Madeira até **31 dez 2027** (DL 165/86, alterado; aprovação UE Decisão SA.21259) |
 | **Derrama Estadual** | Escalões progressivos sobre lucro tributável: 1,5% (€1,5M – €7,5M), 3% (€7,5M – €35M), 5% (€35M – €200M), 9% (> €200M) — art.º 87.º-A CIRC |
 | **Derrama Municipal** | 0% a **1,5%** sobre lucro tributável, fixada por cada município (Lei 73/2013 – Lei das Finanças Locais). Lisboa e Porto: 1,5%; vários municípios do interior: 0% |
-| **Tributação Autónoma (TA)** | Art.º 88.º CIRC — taxas variáveis sobre viaturas, despesas representação, ajudas de custo, paraísos fiscais; **+10 p.p. se exercício de prejuízo fiscal** |
+| **Tributação Autónoma (TA)** | Art.º 88.º CIRC — taxas variáveis sobre viaturas, despesas representação, ajudas de custo, paraísos fiscais; **+10 p.p. se exercício de prejuízo fiscal**, com as exceções da Secção 5 |
 | Declaração anual | **Modelo 22** + Anexos — submissão eletrónica via Portal das Finanças |
 | Prazo Modelo 22 | Até ao **último dia útil de maio** do ano seguinte (TY 2024: 31 maio 2025; TY 2025: 31 maio 2026 — confirmar dia útil) |
 | **IES** (Informação Empresarial Simplificada) | Até **15 julho** do ano seguinte |
@@ -62,8 +62,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Estatuto PME desconhecido | Aplicar 19% (não PME) até confirmação dos critérios da Recomendação UE 2003/361/CE |
 | Município desconhecido | Aplicar **1,5%** de derrama municipal (taxa máxima) até confirmação |
 | Madeira IBC sem licença confirmada | Aplicar 19% standard; flag para verificação da licença CINM |
-| Tributação autónoma — viatura sem valor de aquisição claro | Assumir escalão mais alto (35%) |
-| Exercício de prejuízo fiscal | Adicionar **+10 p.p.** a todas as TA (art.º 88.º n.º 14) |
+| Tributação autónoma — viatura sem valor de aquisição claro | Assumir escalão mais alto (32% em 2025 e 2026; art.º 88.º n.º 3 al. c) CIRC) |
+| Exercício de prejuízo fiscal | Adicionar **+10 p.p.** a todas as TA (art.º 88.º n.º 14), salvo início de atividade e período seguinte (n.º 15). Regime transitório de 2025 e 2026: manter o agravamento até o revisor confirmar a exceção (Secção 5) |
 | SIFIDE — incremental vs base | Confirmar média dos 2 anos anteriores; se incerto, aplicar só 32,5% (sem componente incremental) |
 | RFAI — região elegível | Confirmar NUTS II; se cliente em Lisboa/Algarve aplicar taxa reduzida ou recusar |
 | Reporte prejuízos pré-2014 | Aplicar regras transitórias específicas; sinalizar para revisor |
@@ -188,20 +188,20 @@ O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos ante
 ## Secção 5 — Tributação Autónoma (art.º 88.º CIRC)
 
 - **Natureza da TA** — A Tributação Autónoma (TA) é um imposto adicional sobre certas despesas, independentemente de se apurar matéria coletável positiva. Incide sobre o sujeito passivo (não sobre o beneficiário) e acresce ao IRC.  _(art.º 88.º CIRC)_
-- **Agravamento por prejuízo fiscal** — Se o sujeito passivo apresentar prejuízo fiscal no exercício, as taxas de TA são agravadas em 10 p.p. (com exceção das taxas de 35%/55% sobre paraísos fiscais que já são as máximas).  _(art.º 88.º n.º 14 CIRC)_
+- **Agravamento por prejuízo fiscal** — Se o sujeito passivo apresentar prejuízo fiscal no período, as taxas de TA são agravadas em 10 p.p. (n.º 14). O agravamento não se aplica no período de início de atividade e no seguinte (n.º 15). Em 2025 e 2026, também não se aplica quando: (a) tenha havido lucro tributável em um dos três períodos anteriores e as obrigações dos art.ºs 120.º e 121.º dos dois períodos anteriores tenham sido cumpridas; (b) seja o período de início de atividade ou um dos dois seguintes. O texto publicado não tem conetor entre (a) e (b) ([art.º 95.º n.º 5 da Lei n.º 73-A/2025, Diário da República](https://files.diariodarepublica.pt/1s/2025/12/25002/0000200271.pdf)). A OCC apresenta-as como alternativas ([Essencial IRC 2026, p. 6](https://www.occ.pt/sites/default/files/public/2026-03/Essencial_IRC2026_DIGc.pdf)), o que é corroboração e não fonte primária; esta revisão não localizou orientação da AT nem jurisprudência sobre o ponto. **Gate do revisor:** manter o agravamento até o revisor confirmar a aplicação do regime transitório.  _([art.º 88.º n.ºs 14 e 15 CIRC e notas; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 ### 5.1 Viaturas ligeiras de passageiros e mistas
 
-**Viaturas ligeiras de passageiros e mistas**  _(art.º 88.º CIRC)_
+**Viaturas ligeiras de passageiros e mistas: taxas para períodos de 2025 e 2026**  _([art.º 88.º n.ºs 3 e 14 CIRC, redação da Lei n.º 45-A/2024](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 | Custo de aquisição | Taxa TA (regra) | Taxa TA (com prejuízo) |
 | --- | --- | --- |
-| < €27.500 | 10% | 20% |
-| €27.500 — €35.000 | 27,5% | 37,5% |
-| > €35.000 | 35% | 45% |
+| < €37.500 | 8% | 18% |
+| ≥ €37.500 e < €45.000 | 25% | 35% |
+| ≥ €45.000 | 32% | 42% |
 
 - **Aplica-se sobre** — Depreciações, encargos com manutenção, combustíveis, seguros, rendas de locação, impostos (IUC).  _(art.º 88.º CIRC)_
-- **Exclusões** — Veículos exclusivamente elétricos com custo até €62.500 (taxa 0%); híbridos plug-in com taxas reduzidas (5%/10%/17,5%); GPL/GNV (taxas reduzidas — verificar art.º 88.º n.º 18 atual).  _(art.º 88.º n.º 18 CIRC)_
+- **Exclusões** — Veículos exclusivamente elétricos: tributados a 10% apenas se o custo de aquisição exceder o limite da portaria referida no art.º 34.º n.º 1 al. e) (n.º 20); este guia indica €62.500, valor da portaria não confirmado nesta revisão. Híbridos plug-in com autonomia elétrica mínima de 50 km e emissões oficiais inferiores a 50 gCO2/km (ou 80 gCO2/km se homologados segundo a norma Euro 6e-bis, aditamento da Lei n.º 73-A/2025) e viaturas a GNV: 2,5% / 7,5% / 15% (n.º 18). O GPL não consta do n.º 18.  _([art.º 88.º n.ºs 18 e 20 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 ### 5.2 Outras categorias
 
@@ -456,11 +456,11 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 ## Secção 18 — Casos práticos
 
-### 18.1 Lda restauração em Lisboa — não PME
+### 18.1 Lda restauração em Lisboa — PME (pequena empresa)
 
-**Factos:** Restaurante das Janelas, Lda. Período coincide com ano civil. Exercício 2025.
+**Factos:** Restaurante das Janelas, Lda. Período coincide com ano civil. Exercício 2026.
 - Volume de negócios: €1.500.000.
-- 25 trabalhadores. Critério PME cumprido (micro/pequena).
+- 25 trabalhadores. Critério PME cumprido: pequena empresa (menos de 50 pessoas e volume de negócios até €10 milhões; balanço e empresas parceiras ou associadas não indicados, a confirmar).  _([anexo ao DL 372/2007, art.º 2.º n.º 2](https://www.iapmei.pt/media/984f2190/20260811-224520_Certificacao-PME-legislacao-consolidada.pdf))_
 - Resultado líquido contabilístico: €120.000.
 - Acréscimos fiscais (TA de viaturas extra, multas, donativos não enquadráveis): +€15.000.
 - Deduções (provisões fiscalmente aceites revertidas): −€5.000.
@@ -475,7 +475,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 #### 18.1.2 IRC.
 
-- **IRC** — Pequena empresa — taxa reduzida nos primeiros €50.000. IRC sobre €50.000 a 15%   = €7.500 IRC sobre €80.000 a 19%   = €15.200 ───────────── IRC                       = €22.700
+- **IRC** — Pequena empresa — taxa reduzida nos primeiros €50.000. IRC sobre €50.000 a 15%   = €7.500 IRC sobre €80.000 a 19%   = €15.200 ───────────── IRC                       = €22.700  _([art.º 87.º n.ºs 1 e 2 CIRC e disposição transitória para 2026](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc87.aspx))_
 
 #### 18.1.3 Derrama Estadual.
 
@@ -487,15 +487,15 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 #### 18.1.5 Tributação Autónoma.
 
-- **Tributação Autónoma** — Viatura €40.000 a 35%                = €40.000 × 35% × 1 (depreciação/encargos anuais ~ €10.000) TA = €10.000 × 35%                  = €3.500 Viatura €25.000 a 10% (encargos €6.000) TA = €6.000 × 10%                   = €600 Despesas representação €8.000 a 10%   = €800 ───────────── TA total                              = €4.900 *(Notas: TA aplica-se aos encargos do exercício, não ao custo total de aquisição. Exemplo simplificado.)*
+- **Tributação Autónoma** — Viatura €40.000 a 25% (escalão ≥ €37.500 e < €45.000; encargos anuais ~ €10.000) TA = €10.000 × 25%                  = €2.500 Viatura €25.000 a 8% (encargos €6.000) TA = €6.000 × 8%                   = €480 Despesas representação €8.000 a 10%   = €800 ───────────── TA total                              = €3.780 *(Notas: TA aplica-se aos encargos do exercício, não ao custo total de aquisição. Exemplo simplificado.)*  _([art.º 88.º n.ºs 3 e 7 CIRC](https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/CIRC_2R/Pages/irc88.aspx))_
 
 #### 18.1.6 Coleta total a pagar.
 
-- **Coleta total a pagar** — IRC                  €22.700 Derrama Estadual          €0 Derrama Municipal     €1.950 TA                    €4.900 ───────────── Total                €29.550
+- **Coleta total a pagar** — IRC                  €22.700 Derrama Estadual          €0 Derrama Municipal     €1.950 TA                    €3.780 ───────────── Total                €28.430
 
 #### 18.1.7 Acerto:
 
-- **Acerto** — Coleta total                       €32.150 − Retenções na fonte sofridas        (€800) − PPC efetuados (julho/set/dez)   (€20.000) ───────────── A pagar com Modelo 22              €11.350 Modelo 22 a submeter até **31 maio 2026** (verificar dia útil). IES até **15 julho 2026**.
+- **Acerto** — Coleta total                       €28.430 − Retenções na fonte sofridas        (€800) − PPC efetuados (julho/set/dez)   (€20.000) ───────────── A pagar com Modelo 22               €7.630 Modelo 22 a submeter até **31 maio 2027** (verificar dia útil). IES até **15 julho 2027**.
 
 ### 18.2 SGPS holding com dividendos de filial UE
 
@@ -571,8 +571,8 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 | Estatuto PME | Não PME (21%) até confirmação da Recomendação UE 2003/361/CE em base consolidada |
 | Sede / Município | DM 1,5% (taxa máxima) até confirmação |
 | Madeira IBC | Não aplicável (21% standard) até prova de licença CINM válida |
-| TA em exercício de prejuízo | Adicionar +10 p.p. (art.º 88.º n.º 14) |
-| Viaturas — escalão | Quando dúvida, escalão mais alto (35%) |
+| TA em exercício de prejuízo | Adicionar +10 p.p. (art.º 88.º n.º 14), salvo n.º 15; regime transitório só após confirmação do revisor (Secção 5) |
+| Viaturas — escalão | Quando dúvida, escalão mais alto (32% em 2025 e 2026) |
 | Prejuízos reportáveis | Aplicar limite 65% MC; respeitar ordem cronológica; verificar alterações de controlo |
 | SIFIDE | Não aplicar sem declaração ANI emitida; sem componente incremental se média 2 anos anteriores incerta |
 | RFAI | Verificar região NUTS II e mapa de auxílios; PMEs com manutenção 3 anos / não PMEs 5 anos |
@@ -615,7 +615,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 - **Não aplicar taxa Madeira IBC sem licença CINM** — NUNCA aplicar a taxa Madeira IBC de 5% sem licença CINM válida emitida pela SDM e sem verificação do cumprimento dos requisitos de emprego/investimento e dos plafonds de matéria coletável.
 - **Não omitir Derrama Estadual** — NUNCA omitir a Derrama Estadual quando o lucro tributável excede €1.500.000.
 - **Não presumir DM a 0%** — NUNCA presumir Derrama Municipal a 0% sem confirmar a deliberação da Assembleia Municipal para o exercício — usar 1,5% como default conservador.
-- **Agravamento TA em exercício de prejuízo** — NUNCA esquecer o agravamento de +10 p.p. sobre todas as Tributações Autónomas em exercício de prejuízo fiscal (art.º 88.º n.º 14).  _(art.º 88.º n.º 14)_
+- **Agravamento TA em exercício de prejuízo** — NUNCA esquecer o agravamento de +10 p.p. sobre todas as Tributações Autónomas em exercício de prejuízo fiscal (art.º 88.º n.º 14), salvo n.º 15; o regime transitório de 2025 e 2026 só se aplica após confirmação do revisor (Secção 5).  _(art.º 88.º n.ºs 14 e 15; art.º 116.º n.º 4 da Lei n.º 45-A/2024; art.º 95.º n.º 5 da Lei n.º 73-A/2025)_
 - **Limite dedução prejuízos fiscais 65%** — NUNCA deduzir prejuízos fiscais acima de 65% da matéria coletável do exercício (art.º 52.º n.º 2).  _(art.º 52.º n.º 2)_
 - **Limite temporal dedução prejuízos** — NUNCA deduzir prejuízos fiscais com mais de 12 períodos de tributação de antiguidade (ou as regras transitórias para exercícios pré-2023, conforme caso).
 - **SIFIDE requer declaração ANI** — NUNCA aplicar o crédito SIFIDE sem a declaração emitida pela ANI; a candidatura submetida não basta.

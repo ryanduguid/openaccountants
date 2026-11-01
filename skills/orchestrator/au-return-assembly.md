@@ -6,7 +6,7 @@ jurisdiction: AU
 category: orchestrator
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-10-15
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -49,7 +49,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 2 -- Execution order and dependency chain
 
-0. **Run australia-gst first** - BAS return (quarterly, if GST registered). Runs first because GST turnover figures feed into the ITR. For GST-registered: prepare any outstanding quarterly BAS; verify previously lodged quarters. Output: BAS box values (1A GST on sales, 1B GST on purchases), net GST position, turnover (ex-GST). If this producer cannot supply validated output, return Needs Input and hold its dependent results and the complete filing package. Do not substitute an assembler computation.
+0. **Run australia-gst first** - BAS return (quarterly, if GST registered). Runs first because GST turnover figures feed into the ITR. For GST-registered: prepare any outstanding quarterly BAS; verify previously lodged quarters. For unregistered traders, apply Check AU7 before skipping the BAS. Output: BAS box values (1A GST on sales, 1B GST on purchases), net GST position, turnover (ex-GST). If this producer cannot supply validated output, return Needs Input and hold its dependent results and the complete filing package. Do not substitute an assembler computation.
 0. **Run au-individual-return second** - Individual tax return (ITR). Depends on BAS output: business income must use ex-GST turnover for GST-registered traders. Depends on BAS output: GST credits are excluded from deductible expenses (net amounts only). Output: ITR label values, taxable income, tax on taxable income, tax offsets, tax liability. If this producer cannot supply validated output, return Needs Input and hold its dependent results and the complete filing package. Do not substitute an assembler computation.
 0. **Run au-super-guarantee third** - Voluntary super contributions reconciliation. Use the provisional ITR figures and the year-specific contribution evidence to reconcile the allowable personal deduction and cap position. Return the validated reconciliation to the ITR producer. If it changes a deduction or another ITR input, rerun that producer and its checks before proceeding; retain the updated output as the final ITR. Medicare and PAYG must use those final validated values. Verifies contributions are within the $30,000 concessional cap for 2025-26, plus any eligible carry-forward amounts. Output: contribution amounts, cap utilisation, any excess contributions. If this producer cannot supply validated output, return Needs Input and hold its dependent results and the complete filing package. Do not substitute an assembler computation.
 0. **Run au-medicare-levy fourth** - Medicare levy and surcharge. Depends on ITR: levy is 2% of taxable income; surcharge applies if no PHI and income above threshold. Checks PHI status from intake package. Output: Medicare levy amount, surcharge amount (if applicable), PHI rebate adjustment. If this producer cannot supply validated output, return Needs Input and hold its dependent results and the complete filing package. Do not substitute an assembler computation.
@@ -105,21 +105,22 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 | PAYG Input | Source | Rule |
 | --- | --- | --- |
-| Instalments paid during 2025-26 | BAS PAYG instalment labels (T7/T8) or ATO records | Credit against final tax |
+| Instalments paid during 2025-26 | BAS PAYG instalment labels (T7, T9 or T11, as carried to 5A) or ATO records | Credit against final tax |
 | Tax withheld by employer (if any) | PAYG summary | Additional credit |
 | Final tax liability | ITR computation | Total tax - credits = balance due or refund |
 
 ### Cross-check 5: Instant asset write-off consistency
 
-**If inconsistency:** An asset claimed as instant write-off but costing above the threshold (on the correct GST basis) must be moved to depreciation schedule. Flag for reviewer.
+**If inconsistency:** An asset claimed as instant write-off but costing at or above the threshold (on the correct GST basis), or claimed by a trader not using simplified depreciation, cannot stay an immediate deduction. Apply the table below and flag for reviewer. The write-off and the pool are for small businesses with aggregated turnover under $10 million that use simplified depreciation, which must then apply those rules to all depreciating assets except excluded ones ([ATO, Instant asset write-off](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/instant-asset-write-off)).
 
 **Cross-check 5 table**
 
 | System | Threshold (2025-26) | Treatment |
 | --- | --- | --- |
-| GST-registered | Asset cost ex-GST < $20,000 | Immediate deduction; GST credit claimed separately |
-| Non-GST-registered | Asset cost inc-GST < $20,000 | Immediate deduction on gross cost |
-| Above threshold | Depreciate using effective life | ITR depreciation schedule |
+| Simplified depreciation, GST-registered | Asset cost ex-GST < $20,000 | Immediate deduction; GST credit claimed separately |
+| Simplified depreciation, non-GST-registered | Asset cost inc-GST < $20,000 | Immediate deduction on gross cost |
+| Simplified depreciation, at or above threshold | Asset cost $20,000 or more on the same GST basis | Small business pool: 15% in the year allocated, then 30% |
+| Not using simplified depreciation, or an excluded asset | No write-off under this limit | Depreciate using effective life; ITR depreciation schedule |
 
 ## Section 4 -- Final reviewer package contents
 
@@ -178,7 +179,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - Total deductions (including personal deductible super)
 - Taxable income
 - Tax on taxable income (rate table applied)
-- Tax offsets (low income, LMITO if applicable, PHI rebate)
+- Tax offsets (low income, small business income tax offset if eligible, PHI rebate)
 - Medicare levy
 - HELP compulsory repayment
 - Total tax liability
@@ -189,6 +190,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 ## Depreciation Schedule
 - Asset register with cost, purchase date, effective life, method (prime cost / diminishing value)
 - Instant asset write-off items (under $20K threshold)
+- Small business pool (simplified depreciation users): opening balance, additions, deductions, closing balance
 - Continuing depreciation from prior years
 - Written-down values carried forward to 2026-27
 
@@ -220,7 +222,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - 2026-27 instalment rate (from NOA): X%
 - 2026-27 quarterly instalment amounts:
   - Q1 (Jul-Sep): due 28 Oct 2026
-  - Q2 (Oct-Dec): due 28 Feb 2027
+  - Q2 (Oct-Dec): due 28 Feb 2027 (a Sunday, so Monday 1 Mar 2027)
   - Q3 (Jan-Mar): due 28 Apr 2027
   - Q4 (Apr-Jun): due 28 Jul 2027
 
@@ -241,7 +243,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - PHI rebate tier boundary
 - HELP repayment income threshold
 - Any income approaching tax bracket boundaries
-- Any turnover approaching $75K GST registration threshold (if not registered)
+- Any current or projected GST turnover at or approaching the $75K registration threshold, or any taxi, limousine or ride-sourcing supply (if not registered)
 
 ## Positions Taken
 [List with legislation citations]
@@ -253,7 +255,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 ## Planning Notes for 2026-27
 - PAYG instalment schedule (quarterly amounts and dates)
 - Super contribution strategy (remaining cap, carry-forward unused cap from prior years)
-- GST registration threshold monitoring (if approaching $75K)
+- GST registration threshold monitoring (if current or projected GST turnover is approaching $75K)
 - Depreciation schedule continuing into 2026-27 (WDV schedule)
 - PHI rebate tier based on projected income
 - 2026-27 changes: the second resident bracket falls from 16% to 15%, the concessional cap rises to $32,500, the cents-per-km rate rises to 91c, and SG for any employees moves to payday super
@@ -268,11 +270,12 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ### Note on lodgement deadlines:
 - Self-lodgers: Monday 2 November 2026 for the 2025-26 year covered by this package.
-- Tax agent lodgement: confirm the client-specific ATO date. Eligible 2025-26 clients not required earlier generally have 15 May 2027; the client must be on the agent's list by 31 October 2026, and that alone does not guarantee the 15 May date.
+- Tax agent lodgement: confirm the client-specific ATO date. Eligible 2025-26 clients not required earlier generally have 15 May 2027 (a Saturday, so Monday 17 May 2027); the client must be on the agent's list by 31 October 2026, and that alone does not guarantee the 15 May date. For individuals, partnerships and trusts, the 5 June concession allows lodgment by 5 June without penalty, provided any payment required is also made by that date ([ATO, Individuals and trusts](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/individuals-and-trusts)). 5 June 2027 is a Saturday; the ATO page does not say how the weekend rule applies to the concession, so confirm the date.
+- A due date on a Saturday, Sunday or public holiday can be met on the first business day after without penalty or general interest charge ([ATO, Due dates](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying)).
 
 ### Quarterly obligations for 2026-27:
 - BAS Q1 (Jul-Sep): lodge and pay by 28 October 2026
-- BAS Q2 (Oct-Dec): lodge and pay by 28 February 2027
+- BAS Q2 (Oct-Dec): lodge and pay by 28 February 2027 (a Sunday, so Monday 1 March 2027)
 - BAS Q3 (Jan-Mar): lodge and pay by 28 April 2027
 - BAS Q4 (Apr-Jun): lodge and pay by 28 July 2027
 
@@ -283,10 +286,10 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ### Ongoing:
 1. Issue tax invoices for all sales (if GST registered)
-2. Retain all records for 5 years from lodgement date
+2. Retain business records for 5 years from when each record was prepared or obtained or the transaction was completed, whichever is later; some records have a different start or a longer period ([ATO, Record-keeping rules](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business))
 3. Maintain motor vehicle logbook if claiming logbook method
 4. Track home office hours if claiming fixed rate method
-5. Monitor turnover for GST registration threshold ($75K)
+5. Monitor current and projected GST turnover for the registration threshold ($75,000 or more)
 6. Review PAYG instalment rate -- vary if income changes significantly
 ```
 
@@ -306,8 +309,8 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - **Check AU4 -- Medicare levy surcharge correctly assessed** — MLS applied only if no adequate PHI and income above threshold; MLS not applied if PHI held for full year.  _(Section 6 -- Self-checks)_
 - **Check AU5 -- PAYG instalments correctly credited** — Total instalments paid during 2025-26 credited against final tax liability.  _(Section 6 -- Self-checks)_
 - **Check AU6 -- GST treatment correct for registered traders** — Business income reported ex-GST; input tax credits excluded from deductible expenses; GST credits claimed on BAS.  _(Section 6 -- Self-checks)_
-- **Check AU7 -- GST treatment correct for unregistered traders** — Business income reported gross; all expenses reported gross (GST-inclusive); no BAS required.  _(Section 6 -- Self-checks)_
-- **Check AU8 -- Instant asset write-off threshold correct** — Assets under $20,000 (on correct GST basis) claimed as immediate deduction; assets above threshold depreciated.  _(Section 6 -- Self-checks)_
+- **Check AU7 -- GST treatment correct for unregistered traders** — The trader is confirmed as not required to register: projected GST turnover under $75,000, current GST turnover under $75,000 (or at or above it with the Commissioner satisfied that projected GST turnover is below $75,000, GST Act s 188-10), and no taxi, limousine or ride-sourcing supply. Business income reported gross; all expenses reported gross (GST-inclusive); no BAS required for GST. If registration was required, this check fails.  _(Section 6 -- Self-checks)_
+- **Check AU8 -- Instant asset write-off threshold correct** — Assets under $20,000 (on correct GST basis) claimed as immediate deduction only by a small business using simplified depreciation; at or above the threshold that business uses the small business pool unless the asset is excluded; other traders and excluded assets use effective life.  _(Section 6 -- Self-checks)_
 - **Check AU9 -- Personal super deduction and ITR reconciliation** - Confirm the year-specific super reconciliation establishes the allowable deduction and notice status; the final ITR uses that validated deduction, and its affected income, tax, levy and PAYG figures have been recalculated by their producers and passed their checks. The reviewer brief records any notice action required before lodgement. An unresolved notice or reconciliation holds the dependent results and the complete filing package.  _(Section 6 -- Self-checks)_
 - **Check AU10 -- Tax rate table correct for residency** — Resident tax rates applied (including tax-free threshold of $18,200).  _(Section 6 -- Self-checks)_
 - **Check AU11 -- HELP compulsory repayment calculated from repayment income** — Repayment income = taxable income + net investment loss + reportable fringe benefits + reportable super + exempt foreign employment income. From 2025-26 the repayment is marginal: nil to $67,000, then 15c per $1 to $125,000, then $8,700 plus 17c per $1, capped at 10% of total repayment income above $179,285.  _(Section 6 -- Self-checks)_

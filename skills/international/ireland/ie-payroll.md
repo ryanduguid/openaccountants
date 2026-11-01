@@ -4,7 +4,7 @@ description: Use this skill whenever asked to compute, review, or advise on end-
 jurisdiction: IE
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-18
+last_updated: 2026-10-31
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 6 | Apply **RPN** — standard rate cut-off point (SRCOP) for the period, and weekly/monthly tax credits | Determines PAYE bracket and credit | Revenue notifies via RPN |
 | 7 | Compute **PAYE** — 20% up to SRCOP, 40% above; then subtract tax credits | → PAYE for the period | Employee (withheld) |
 | 8 | Compute **USC** — bands applied on taxable pay (after pension); standard 2025 bands (see `ie-usc`) | → USC for the period | Employee (withheld) |
-| 9 | Compute **PRSI Class A** — employee 4.1% on full gross (before pension), employer 8.9% (≤ €496/week) or 11.15% (> €496/week) on full gross | → PRSI employee + employer | Both |
+| 9 | Compute **PRSI Class A** — employee and employer rates for the pay date from the dated table in Section 1, on full gross (before pension). From 1 Oct 2026: employee 4.35%, employer 9.15% (≤ €552/week) or 11.40% (> €552/week) | → PRSI employee + employer | Both |
 | 10 | − **LPT at source** if Revenue has issued an instruction (Local Property Tax mandatory deduction order) | Deducted from net pay | Employee |
 | 11 | **Net pay** = Total gross − Pension − PAYE − USC − Employee PRSI − LPT − any voluntary deductions | — | — |
 
@@ -56,10 +56,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | USC band 3 (€27,383 – €70,044) | 3% (reduced from 4% — Finance Act 2024) | `ie-usc` |
 | USC band 4 (> €70,044) | 8% | `ie-usc` |
 | USC surcharge — self-employed > €100k | +3% | `ie-usc` (not applicable to Class A payroll) |
-| PRSI Class A employee | 4.1% (rate raised from 4.0% on 1 Oct 2024) | `ie-prsi-class-s` |
-| PRSI Class A employer (≤ €496/wk) | 8.9% | `ie-prsi-class-s` |
-| PRSI Class A employer (> €496/wk) | 11.15% | `ie-prsi-class-s` |
+| PRSI Class A employee | 4.1% to 30 Sep 2025; 4.2% from 1 Oct 2025 | Dated table below |
+| PRSI Class A employer (≤ €527/wk) | 8.9% to 30 Sep 2025; 9.0% from 1 Oct 2025 | Dated table below |
+| PRSI Class A employer (> €527/wk) | 11.15% to 30 Sep 2025; 11.25% from 1 Oct 2025 | Dated table below |
 | Earnings cap for pension tax relief | €115,000 | Revenue, Pensions Manual |
+
+### PRSI Class A rates by date
+
+**PRSI Class A rates by date**
+
+| Period | Employee | Employer, weekly pay up to threshold | Weekly threshold | Employer, weekly pay above threshold |
+| --- | --- | --- | --- | --- |
+| 1 Jan 2025 to 30 Sep 2025 | 4.1% | 8.9% | €527 | 11.15% |
+| 1 Oct 2025 to 31 Dec 2025 | 4.2% | 9.0% | €527 | 11.25% |
+| 1 Jan 2026 to 30 Sep 2026 | 4.2% | 9.0% | €552 | 11.25% |
+| From 1 Oct 2026 | 4.35% | 9.15% | €552 | 11.40% |
+
+Employee PRSI is nil at weekly pay of €38 to €352 (subclass A0), and a tapered credit applies from €352.01 to €424 (subclass AX), per SW14 January 2026. Employer rates include the 1% National Training Fund levy, so the statutory employer figures in section 13(2)(d) of the Social Welfare Consolidation Act 2005 are 1 point lower. The 2024 Act sets further steps from 1 Oct 2027, which this table does not show.
+
+Sources: Social Welfare (Miscellaneous Provisions) Act 2024 s 3 (rates by date): https://data.oireachtas.ie/ie/oireachtas/act/2024/24/eng/enacted/a2424.pdf; Social Welfare Act 2024 s 2 (threshold €527 from 1 Jan 2025): https://data.oireachtas.ie/ie/oireachtas/act/2024/36/eng/enacted/a3624.pdf; Advance Notice for 2026 (threshold €552 from 1 Jan 2026): https://assets.gov.ie/static/documents/b9146265/20251008_Advance_Notice_2026_Final.pdf; SW14 January 2026 (2026 rates, subclasses, credit, levy): https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf.
 
 ### Age-related pension contribution limits (% of net relevant earnings, capped at €115,000)
 
@@ -158,8 +173,8 @@ The procedure below is the **canonical pay run**. Apply per employee. Periodicit
 
 ### Step 6 — Compute PRSI Class A on GROSS (before pension)
 
-- **PRSI Class A formula** — PRSI employee = 4.1% × G                  (from 1 Oct 2024; was 4.0%) PRSI employer = 8.9%  × G  if G ≤ €496 per week = 11.15% × G  if G > €496 per week  _(Section 3 Step 6)_
-- **PRSI credit taper** — For employees earning €352.01 – €424 per week (Class A1), a tapering PRSI credit reduces the employee PRSI. The credit is `€12 − (gross − €352.01) ÷ 6`, applied per week. The RPN does NOT compute this — the payroll software does. See `ie-prsi-class-s` for the full taper table.  _(`ie-prsi-class-s`)_
+- **PRSI Class A formula** — PRSI employee = employee rate for the pay date × G (nil if G ≤ €352 per week) PRSI employer = lower employer rate for the pay date × G  if G ≤ the weekly threshold (€527 in 2025; €552 from 1 Jan 2026) = higher employer rate for the pay date × G  if G > the threshold. Rates are in the dated table in Section 1  _(Section 3 Step 6)_
+- **PRSI credit taper** — For employees earning €352.01 – €424 per week (subclass AX), a tapering PRSI credit reduces the employee PRSI. The credit is `€12 − (gross − €352.01) ÷ 6`, applied per week. The RPN does NOT compute this — the payroll software does. See `ie-prsi-class-s` for the full taper table.  _(`ie-prsi-class-s`)_
 
 ### Step 7 — Apply LPT-at-source (if RPN-instructed)
 
@@ -317,8 +332,8 @@ The procedure below is the **canonical pay run**. Apply per employee. Periodicit
 | BIK valuations consistent across months (esp. company car mileage band) | Year-end true-up filed if mileage band changed |
 | Any retro pay or bonus → captured in PSR for the actual pay date | ✓ |
 | All leavers have a final PSR with cessation date | ✓ |
-| Total employer PRSI rate transitions (8.9% ↔ 11.15%) properly reflected when weekly pay crosses €496 | ✓ |
-| PRSI rate change on 1 Oct 2024 (4.0% → 4.1%) correctly applied across the year | ✓ for 2024 reconciliation; not applicable to 2025 (whole-year 4.1%) |
+| Total employer PRSI rate transitions properly reflected when weekly pay crosses the threshold (€527 in 2025; €552 from 1 Jan 2026), at the rates in the Section 1 dated table | ✓ |
+| PRSI rate changes on 1 Oct 2025 (employee 4.1% → 4.2%; employer 8.9% → 9.0% and 11.15% → 11.25%) and 1 Oct 2026 (employee 4.2% → 4.35%; employer 9.0% → 9.15% and 11.25% → 11.40%) correctly applied across the year | ✓ for 2025 and 2026 reconciliations; neither year has a single rate |
 
 ## Section 7 — Worked example
 
@@ -374,7 +389,7 @@ Annualised taxable = €66,999.96. Below €70,044 → never enters the 8% band.
 
 ### F — PRSI Class A1 employee
 
-- **PRSI employee calc** — Employee PRSI = 4.1% × 5,933.33 = 243.27
+- **PRSI employee calc** — Employee PRSI (May 2025 rate) = 4.1% × 5,933.33 = 243.27
 
 Earnings well above €424/wk equivalent → no PRSI credit taper.
 
@@ -400,7 +415,7 @@ Earnings well above €424/wk equivalent → no PRSI credit taper.
 | --- | --- |
 | Gross pay (cash + BIK) | 5,933.33 |
 | Employer pension (6%) | 350.00 |
-| Employer PRSI (11.15% × 5,933.33; weekly equivalent ≈ €1,370 > €496) | 661.57 |
+| Employer PRSI (May 2025 rate: 11.15% × 5,933.33; weekly equivalent ≈ €1,370 > €527) | 661.57 |
 | **Total employer cost** | **6,944.90** |
 
 ### I — Remittances arising from this payslip
@@ -426,10 +441,11 @@ Earnings well above €424/wk equivalent → no PRSI credit taper.
 | Taxable | 67,000 |
 | PAYE | ≈ 13,999.92 |
 | USC | ≈ 1,556.16 |
-| Employee PRSI | ≈ 2,919.24 |
-| Net | ≈ 48,524.68 |
+| Employee PRSI | ≈ 2,937.03 |
+| Net | ≈ 48,506.89 |
+| Employer PRSI (not deducted from net) | ≈ 7,956.63 |
 
-(Annual figures are the monthly figures × 12; small rounding differences will appear in the EDS.)
+(2025 figures. PAYE and USC are the monthly figures × 12. PRSI changes on 1 Oct 2025, so employee PRSI is 9 × 243.27 + 3 × 249.20 (4.2%) and employer PRSI is 9 × 661.57 + 3 × 667.50 (11.25%). Small rounding differences will appear in the EDS.)
 
 ## Section 8 — Conservative defaults
 
@@ -442,7 +458,7 @@ Earnings well above €424/wk equivalent → no PRSI credit taper.
 | EV BIK — uncertain whether OMV relief applies | Apply the **lower** OMV relief in the taper table for the year (€10,000 in 2025) and flag |
 | Pension contribution above age-related cap | Apply relief on the cap only; excess flows through PAYE/USC at full rates |
 | Employer matching pension above scheme rules | Treat employer contribution as fully tax-free for the employee per Revenue Pensions Manual; but flag if scheme is unapproved |
-| PRSI class uncertain | Apply Class A1 (employee 4.1%, employer 11.15%) — most common; flag for HR to confirm AX, J, etc. cases |
+| PRSI class uncertain | Apply Class A1 (from 1 Oct 2026: employee 4.35%, employer 11.40%; earlier periods per the Section 1 dated table) — most common; flag for HR to confirm AX, J, etc. cases |
 | LPT requested by employee but no RPN instruction | Do NOT deduct — Revenue must instruct; tell employee to amend their LPT in myAccount |
 | Mid-month joiner | Apply pro-rated gross; cumulative basis from RPN will smooth credits/SRCOP across remaining months |
 | Mid-month leaver | Apply final PSR with cessation date; do NOT issue any P45-equivalent — employee uses myAccount EDS |
@@ -461,6 +477,10 @@ Earnings well above €424/wk equivalent → no PRSI credit taper.
 | Taxes Consolidation Act 1997 (TCA 1997), as amended | Irish Statute Book |
 | Finance Act 2024 (PAYE / USC / PRSI 2025 changes) | Irish Statute Book |
 | Social Welfare Consolidation Act 2005 (PRSI Class A) | Department of Social Protection |
+| Social Welfare (Miscellaneous Provisions) Act 2024 s 3 (Class A rates from 1 Oct 2024 to 1 Oct 2028) | https://data.oireachtas.ie/ie/oireachtas/act/2024/24/eng/enacted/a2424.pdf |
+| Social Welfare Act 2024 s 2 (€527 threshold from 1 Jan 2025) | https://data.oireachtas.ie/ie/oireachtas/act/2024/36/eng/enacted/a3624.pdf |
+| Advance Notice for 2026 (€552 threshold from 1 Jan 2026) | https://assets.gov.ie/static/documents/b9146265/20251008_Advance_Notice_2026_Final.pdf |
+| SW14, PRSI Contribution Rates and User Guide, January 2026 | https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf |
 | Revenue Employer's Guide to PAYE | https://www.revenue.ie/en/employing-people/index.aspx |
 | PAYE Modernisation — Real-time payroll reporting | https://www.revenue.ie/en/employing-people/paye-modernisation/index.aspx |
 | Revenue Online Service (ROS) | https://www.ros.ie |

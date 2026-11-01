@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) pa
 version: 0.2
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -264,7 +264,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 
 ## Section 10 — Worked Examples
 
-> All examples assume **gross = monthly taxable salary in XOF**, no benefits in kind unless stated, and an **AT/MP placeholder of 3%** (mid-band) — reviewer to substitute the employer's actual risk rate. CMU assumes **1 covered person** (500 XOF each side). All arithmetic self-checked to the franc.
+> All examples assume **gross = monthly taxable salary in XOF**, no benefits in kind unless stated, and an **AT/MP placeholder of 3%** (mid-band) — reviewer to substitute the employer's actual risk rate. CMU assumes **1 covered person** (500 XOF each side). Figures are for tax year 2025. Total employer cost = gross + employer CNPS + employer contribution; the FDFP components are inside the employer contribution ([annexe fiscale à la Loi de Finances n° 2024-1109, art. 16 (CGI art. 146)](https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)). All arithmetic self-checked to the franc.
 
 ### Example 1 — Single employee at the SMIG, 75,000 XOF, 1 part
 
@@ -275,7 +275,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - **Net pay = 75,000 − 0 − 5,225 = 69,775 XOF.**
 - Employer CNPS: 7.70% × 75,000 = 5,775 (retirement); family+maternity 5.75% × 70,000 (capped) = 4,025; AT/MP 3% × 70,000 = 2,100; CMU 500 → employer CNPS = **12,400**.
 - Employer contribution (local 2.8%): 2,100 -- of which 300 taxe d'apprentissage and 900 formation continue. No separate FDFP charge.
-- **Total employer cost = 75,000 + 12,400 + 2,100 + 1,200 = 90,700 XOF.**
+- **Total employer cost = 75,000 + 12,400 + 2,100 = 89,500 XOF.**
 
 ### Example 2 — Single employee, 500,000 XOF, 1 part
 
@@ -285,7 +285,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - **Net pay = 500,000 − 81,000 − 32,000 = 387,000 XOF.**
 - Employer CNPS: 7.70% × 500,000 = 38,500 + 5.75% × 70,000 = 4,025 + 3% × 70,000 = 2,100 + CMU 500 = **45,125**.
 - Employer contribution (local 2.8%): 14,000, FDFP components included. No separate FDFP charge.
-- **Total employer cost = 500,000 + 45,125 + 14,000 + 8,000 = 567,125 XOF.**
+- **Total employer cost = 500,000 + 45,125 + 14,000 = 559,125 XOF.**
 
 ### Example 3 — Married employee, 2 children (3 parts), 500,000 XOF
 
@@ -294,7 +294,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - Employee CNPS: 31,500 + CMU (assume 1 person) 500 = **32,000**.
 - **Net pay = 500,000 − 59,000 − 32,000 = 409,000 XOF.**
 - Employer side identical to Example 2: employer CNPS 45,125, employer contribution 14,000 (FDFP components included).
-- **Total employer cost = 567,125 XOF** (unchanged; RICF affects only employee ITS).
+- **Total employer cost = 559,125 XOF** (unchanged; RICF affects only employee ITS).
 
 ### Example 4 — Senior local employee, 1,000,000 XOF, 1 part
 
@@ -304,7 +304,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - **Net pay = 1,000,000 − 192,000 − 63,500 = 744,500 XOF.**
 - Employer CNPS: 7.70% × 1,000,000 = 77,000 + 5.75% × 70,000 = 4,025 + 3% × 70,000 = 2,100 + CMU 500 = **83,625**.
 - Employer contribution (local 2.8%): 28,000, FDFP components included.
-- **Total employer cost = 1,000,000 + 83,625 + 28,000 + 16,000 = 1,127,625 XOF.**
+- **Total employer cost = 1,000,000 + 83,625 + 28,000 = 1,111,625 XOF.**
 
 ### Example 5 — Expatriate executive, 4,000,000 XOF, 1 part
 
@@ -314,7 +314,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - **Net pay = 4,000,000 − 976,000 − 213,125 = 2,810,875 XOF.**
 - Employer CNPS: retirement 7.70% × 3,375,000 (capped) = 259,875 + family/maternity 5.75% × 70,000 = 4,025 + AT/MP 3% × 70,000 = 2,100 + CMU 500 = **266,500**.
 - Employer contribution (**expatriate 12%**): 12% x 4,000,000 = 480,000 -- of which 368,000 contribution employeur proprement dite, 48,000 contribution nationale, 16,000 taxe d'apprentissage and 48,000 formation continue. No separate FDFP charge.
-- **Total employer cost = 4,000,000 + 266,500 + 480,000 + 64,000 = 4,810,500 XOF.**
+- **Total employer cost = 4,000,000 + 266,500 + 480,000 = 4,746,500 XOF.**
 
 ### Example 6 — High earner above the top band, 10,000,000 XOF, 1 part
 
@@ -324,7 +324,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - **Net pay = 10,000,000 − 2,736,000 − 213,125 = 7,050,875 XOF.**
 - Employer CNPS: 7.70% × 3,375,000 = 259,875 + 5.75% × 70,000 = 4,025 + 3% × 70,000 = 2,100 + CMU 500 = **266,500**.
 - Employer contribution (local 2.8%): 280,000, FDFP components included.
-- **Total employer cost = 10,000,000 + 266,500 + 280,000 + 160,000 = 10,706,500 XOF.**
+- **Total employer cost = 10,000,000 + 266,500 + 280,000 = 10,546,500 XOF.**
 
 ## Section 11 — Tier 1 Rules (always apply — no judgement)
 
@@ -368,9 +368,9 @@ These items require an Ivorian expert-comptable to confirm before sign-off:
 | M | CMU (employer) | =500 × persons |
 | N | Employer payroll tax | =IF(expat, 12%, 2.8%) × B |
 | O | FDFP components (memo only -- already inside N) | =1.6% x B |
-| P | Total employer cost | =B + J + K + L + M + N + O |
+| P | Total employer cost | =B + J + K + L + M + N |
 
-Control totals: sum of F -> DGI liability; sum of (G+H+J+K+L+M) -> CNPS liability; sum of N -> employer contribution liability. **Column O is a memo of the FDFP share already inside N; never add it to N.**
+Control totals: sum of F -> DGI liability; sum of (G+H+J+K+L+M) -> CNPS liability; sum of N -> employer contribution liability. **Column O is a memo of the FDFP share already inside N; never add it to N or P.**
 
 ## Section 14 — Bank Statement / Terminology Reading Guide
 

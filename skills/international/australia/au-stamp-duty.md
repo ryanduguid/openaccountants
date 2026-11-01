@@ -5,7 +5,7 @@ version: "1.0"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 duty year"
-last_updated: 2026-09-14
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -78,7 +78,7 @@ There is **no market-value relief**. A transfer to a spouse, child, family trust
 
 - **Liability date** — Duty is imposed when the dutiable transaction occurs: the date the contract or agreement for sale is entered into. Settlement is generally only the *payment* trigger, not the *liability* trigger.
 - **Rate year** — Set by the contract date. A contract signed 28 June is assessed on the old-year scale even if it settles in September (explicit in Revenue NSW guidance). A rate change or new concession announced after contract date does not apply unless the legislation says so — check the transitional rule before promising a saving.
-- **Payment deadlines** — NSW: 3 months from the liability date (on settlement for e-conveyancing; off-the-plan owner-occupiers may defer up to 12 months). VIC: 30 days from settlement via Duties Online. QLD: 30 days from the liability date. WA: 1 month from assessment. SA: on settlement via RevenueSA Online. TAS: 3 months from the transaction. ACT: generally 14 days from settlement. NT: 60 days from the transaction or settlement, whichever is earlier. Late payment attracts interest plus penalty tax under each jurisdiction's Taxation Administration Act. Confirm the current lodgement rule before advising.
+- **Payment deadlines** — Confirmed on the revenue office's page on 31 October 2026: VIC: 30 days from settlement via Duties Online; NT: 60 days from the transaction or settlement, whichever is earlier. **Unverified on 31 October 2026 (no revenue office page confirmed them; do not rely on them without checking):** NSW: 3 months from the liability date (on settlement for e-conveyancing; off-the-plan owner-occupiers may defer up to 12 months); QLD: 30 days from the liability date; WA: 1 month from assessment; SA: on settlement via RevenueSA Online; TAS: 3 months from the transaction; ACT: generally 14 days from settlement. Late payment attracts interest plus penalty tax under each jurisdiction's Taxation Administration Act. Confirm the current lodgement rule before advising.
 
 ## Section 4 -- Rates by Jurisdiction (verified 20 August 2026)
 
@@ -123,6 +123,10 @@ The $960,001--$2,000,000 band is a **flat rate on the entire value** — a notch
 
 **QLD home concession rate** (occupied as your home): $1.00 per $100 to $350,000; $3,500 + $3.50 per $100 to $540,000; $10,150 + $4.50 per $100 to $1,000,000; $30,850 + $5.75 per $100 above. The general scale above is also used for **corporate trustee duty and landholder duty**.
 
+**QLD eligibility from 1 August 2026**: For transactions entered into on or after 1 August 2026, the buyer must be an Australian citizen, permanent resident or specified foreign retiree to get the home, first home or first home vacant land concession. Temporary residents generally get no concession and pay standard rates plus the 8% AFAD. Self-funded foreign retirees holding certain legacy visas (subclass 405 or 410), already exempt from AFAD, are outside the change. Earlier transactions are not subject to this test.
+
+**QLD mixed eligibility**: The test applies buyer by buyer at the time the transaction is entered into ('specified resident', new s 90A *Duties Act 2001* (Qld), as QRO describes it). An eligible buyer can claim a concession on their own interest even if a co-buyer is ineligible. The ineligible buyer's interest gets no concession and bears full transfer duty, and AFAD may also apply to that buyer if a foreign person. In QRO's example, Fiona (citizen, 75%) claims the home concession; Mark (not eligible, 25%) is calculated at full duty and AFAD also applies. Enter the ineligible interest as 'no concession claimed' in QRO's calculator and use its result for the total duty and the AFAD base, which QRO's pages do not spell out. A trustee claim needs all beneficiaries to meet the test. See [QRO, home concession changes](https://qro.qld.gov.au/event/changes-to-home-concessions/) and [home concession](https://qro.qld.gov.au/duties/transfer-duty/concessions/homes/home-concession/).
+
 ### 4.4 Western Australia
 
 **WA Transfer Duty -- general rate**
@@ -162,11 +166,11 @@ WA also has a separate concessional **residential rate** for lower-value homes a
 
 At exactly $3 million, NT duty is **$172,500** (5.75%); at exactly $5 million it is **$297,500** (5.95%). These endpoints match the [NT conveyance calculator](https://nt.gov.au/property/buying-and-selling-a-home/settle-the-sale/stamp-duty-buying-or-selling-a-home/conveyance-calculator) for 15 August 2026. Use the calculator for the final payable amount and rounding.
 
-ACT rates above are the eligible owner-occupier scale (unchanged from 1 July 2025); non-owner-occupiers pay a higher scale. ACT is phasing conveyance duty out over 20 years in favour of general rates -- from 1 July 2026 commercial property with a dutiable value of $2,100,000 or less pays **no** conveyance duty, with a flat 5% above that.
+ACT rates above are the eligible owner-occupier scale (unchanged from 1 July 2025); non-owner-occupiers pay a higher scale. ACT is phasing conveyance duty out over 20 years in favour of general rates -- from 1 July 2026 commercial property with a dutiable value of $2,100,000 or less pays **no** conveyance duty. Above that, duty is 5% of the **total** transaction value, not only the excess ([ACT Revenue, commercial duty](https://www.revenue.act.gov.au/rates-and-property-charges/conveyance-duty-stamp-duty/conveyance-duty-for-commercial-property), which prints the rate as '$5,00' per $100; earlier years show $5.00).
 
 ## Section 5 -- Concessions and Exemptions
 
-### 5.1 First Home Buyer Relief (verified 20 August 2026)
+### 5.1 First Home Buyer Relief (verified 20 August 2026; QLD and ACT rows rechecked 31 October 2026)
 
 **First Home Buyer Duty Relief**
 
@@ -174,21 +178,23 @@ ACT rates above are the eligible owner-occupier scale (unchanged from 1 July 202
 | --- | --- | --- |
 | NSW (FHBAS) | New or existing home to $800,000; vacant land to $350,000 | Home $800,001--$1,000,000; land $350,001--$450,000 |
 | VIC | Dutiable value to $600,000 | $600,001--$750,000, phased by (value − $600,000) ÷ $150,000 |
-| QLD | Established home to $700,000; **new home or vacant land — full concession, no value cap**, contracts from 1 May 2025 | Established home $700,000--$799,999.99 (concession tapers from $17,350 to nil at $800,000) |
+| QLD | Established home to $700,000; **new home or vacant land — full concession, no value cap**, contracts from 1 May 2025. From 1 August 2026, only the interest of a citizen, permanent resident or specified foreign retiree qualifies (§4.3) | Established home $700,000--$799,999.99 (concession tapers from $17,350 to nil at $800,000) |
 | WA | Home to $600,000 (from 7 May 2026); vacant land to $450,000 | Home $600,001--$800,000 at $16.15 per $100 over $600,000; land $450,001--$550,000 at $20.14 per $100 over $450,000 |
 | SA | New home, off-the-plan apartment or vacant land — relief for contracts from 15 June 2023 (value caps depend on contract date) | Per RevenueSA calculator. Note: for contracts from 13 February 2025, FHB relief no longer extends to the foreign ownership surcharge — a foreign first home buyer pays the 7% surcharge even when the base duty is relieved |
 | TAS | **Expired** — the 100% established-home exemption (to $750,000) is unavailable for transfers settling after 30 June 2026 | None currently |
-| ACT | Home Buyer Concession Scheme — income-tested, full exemption to $1,020,000 property value (from 1 July 2025), maximum concession $35,238 | Above $1,020,000 |
+| ACT | Home Buyer Concession Scheme, not limited to first home buyers, covering new homes, established homes and vacant residential land. Transaction dates from 1 July 2026: eligible buyers are exempt, with **no price cap or income test**. All buyers and domestic partners must have held no property interest in the last 5 years, subject to limited exemptions (executor or trustee interests, orders to relinquish an interest, separation and family violence). A buyer must own and live in the home continuously for at least 12 months, starting within one year of settlement or, for vacant land, of the certificate of occupancy and use being issued ([ACT Budget updates](https://www.revenue.act.gov.au/about-the-act-revenue-office/news/act-budget-2026-27-updates); [scheme page](https://www.revenue.act.gov.au/home-buyer-assistance/home-buyer-concession-scheme/about-the-home-buyer-concession-scheme)) | None from 1 July 2026. Earlier transactions go by transaction date; for 1 July 2025 to 30 June 2026 the guide's earlier record is income-tested, full exemption to $1,020,000, maximum concession $35,238 |
 | NT | No general first home duty concession currently; territory home-owner grants operate separately | — |
 
-All FHB schemes impose residence requirements (typically 6--12 months' continuous occupation starting within 12 months of settlement), a natural-person requirement (no companies or trusts), and a prior-ownership bar covering spouses.
+All FHB schemes impose residence requirements (typically 6--12 months' continuous occupation starting within 12 months of settlement), a natural-person requirement (no companies or trusts), and a prior-ownership bar covering spouses. Queensland also has the eligibility test in §4.3 for transactions from 1 August 2026.
 
 ### 5.2 Off-the-Plan and Residence Concessions
 
 - **NSW off-the-plan** — No value deduction, but owner-occupiers may **defer** duty up to 12 months or until settlement, whichever is earlier. Deferral is cash flow, not a saving.
-- **VIC off-the-plan** — Deducts outstanding **construction and refurbishment costs** from dutiable value. The temporarily expanded version (all buyers including investors and companies, strata apartments and townhouses, no value threshold) runs from 21 October 2024 and is extended to **21 April 2027**. QLD, SA and NT have no dedicated off-the-plan concession — ordinary rates apply to the full contract price.
-- **Residence concessions** — VIC PPR concession: dutiable value up to $550,000 with 12 continuous months' occupation, not combinable with the FHB exemption. VIC City of Melbourne: 50% concession or full exemption for new residential property in the LGA up to $1 million (different contract-date windows). QLD home concession: available to any buyer occupying the property as a home, not just first home buyers (§4.3 scale).
-- **Pensioner/concession-card relief** — VIC (to $750,000), SA seniors downsizing relief, and jurisdiction-specific equivalents. One benefit per transaction: an eligible pensioner who is also a first home buyer must choose.
+- **VIC off-the-plan** — Deducts outstanding **construction and refurbishment costs** from dutiable value. The temporarily expanded version (all buyers including investors and companies, strata apartments and townhouses, no value threshold) runs from 21 October 2024 and covers contracts entered into **on or before 20 April 2027** ([SRO, Tax Relief Amendment Act 2026](https://www.sro.vic.gov.au/about-us/news-and-events/news/building-legislation-and-treasury-legislation-tax-relief-amendment-act-2026)). QLD, SA and NT have no dedicated off-the-plan concession — ordinary rates apply to the full contract price.
+- **WA off-the-plan** — Extended to 30 June 2028 for transactions entered into on or after 12 March 2026. The maximum concession rate applies up to $800,000, phasing down to the base concession rate above $900,000, and eligibility now includes new dwellings bought off the plan in survey-strata and community titles (land) schemes. Confirm the amount with RevenueWA's calculator ([WA, 2026-27 Housing Taxation Package](https://www.wa.gov.au/government/announcements/2026-27-housing-taxation-package); [WA, Off-the-plan Duty Concession](https://www.wa.gov.au/government/announcements/the-plan-duty-concession)).
+- **ACT off-the-plan and new units** — From 1 July 2026 the price cap is removed from the off-the-plan unit duty exemption, and a Newly Unit Titled Duty Exemption covers owner-occupiers buying a newly constructed, unit titled property not sold off the plan ([ACT Budget updates](https://www.revenue.act.gov.au/about-the-act-revenue-office/news/act-budget-2026-27-updates)).
+- **Residence concessions** — VIC PPR concession: dutiable value up to $550,000 with 12 continuous months' occupation, not combinable with the FHB exemption. VIC City of Melbourne: 50% concession or full exemption for new residential property in the LGA up to $1 million (different contract-date windows). QLD home concession: available to any eligible buyer occupying the property as a home, not just first home buyers (§4.3 scale and eligibility test).
+- **Pensioner/concession-card relief** — VIC (to $750,000), SA seniors downsizing relief, and jurisdiction-specific equivalents. The ACT removed the price cap from its Pensioner and Disability Duty Concession Schemes from 1 July 2026 ([ACT Budget updates](https://www.revenue.act.gov.au/about-the-act-revenue-office/news/act-budget-2026-27-updates)). One benefit per transaction: an eligible pensioner who is also a first home buyer must choose.
 
 ## Section 6 -- Foreign Purchaser Surcharges
 
@@ -308,7 +314,7 @@ One purchaser buys two adjoining vacant lots from the same vendor under one arra
 A foreign-owned company contracts on 10 August 2026 to buy a Brisbane residential unit for **$1,300,000**. No home concession (not a residence).
 
 - Transfer duty: $38,025 + 5.75% × ($1,300,000 − $1,000,000) = $38,025 + $17,250 = **$55,275**. AFAD: 8% × $1,300,000 = **$104,000**.
-- **Total duty: $159,275**. The $104,000 surcharge adds about **188%** of the $55,275 base duty; it represents about 65% of the total. An Australian resident individual occupying the unit would instead use the home concession scale: $30,850 + 5.75% × $300,000 = **$48,100**.
+- **Total duty: $159,275**. The $104,000 surcharge adds about **188%** of the $55,275 base duty; it represents about 65% of the total. An Australian citizen or permanent resident occupying the unit would instead use the home concession scale: $30,850 + 5.75% × $300,000 = **$48,100**.
 
 ### Example 5 -- NSW landholder duty, 60% share acquisition
 
@@ -355,13 +361,20 @@ All jurisdictions offer some form of **corporate reconstruction/consolidation** 
 **Revenue office sources verified 20 August 2026**
 
 - Revenue NSW — "How to calculate transfer duty" (2026/27 thresholds, premium duty, FHBAS, 9% surcharge); "What is landholder duty"; "Types of insurance"; "Transfer duty concession for deceased estate transfers"; "Off the plan property purchases"; Revenue Ruling DUT 012 v4.
-- SRO Victoria — "Land transfer duty – non-principal place of residence (current rates)"; "First home buyer duty exemption or concession"; "Principal place of residence duty concession"; "Strata apartments and townhouses temporary concession" (extended to 21 April 2027); "Understanding foreign purchaser additional duty"; "Deceased estates and duty".
+- SRO Victoria — "Land transfer duty – non-principal place of residence (current rates)"; "First home buyer duty exemption or concession"; "Principal place of residence duty concession"; "Strata apartments and townhouses temporary concession" (contracts on or before 20 April 2027, per the 2026 Act news item below); "Understanding foreign purchaser additional duty"; "Deceased estates and duty".
 - Queensland Revenue Office — "Transfer duty rates"; "Transfer duty home concession rates"; "Additional foreign acquirer duty"; "Insurance duty rates"; "Assessing if business asset transfers are dutiable"; qld.gov.au vehicle registration duty rates.
 - Government of WA (Treasury/Finance) — "Transfer duty assessment" (general and first home owner rates); "Duties Fact Sheet – First Home Owner Rate"; "About foreign buyers duty".
 - RevenueSA — "Stamp Duty on Land"; "Calculate stamp duty" (qualifying land use codes, IC 103); "Stamp Duty Relief for Eligible First Home Buyers"; "Foreign Ownership Surcharge".
 - SRO Tasmania — "Rates of duty"; "First home buyers of established homes duty relief"; "Foreign investor duty surcharge".
 - ACT Revenue Office — "Conveyance duty for non-commercial property"; "About conveyance duty (stamp duty)".
 - Territory Revenue Office (NT) — "Stamp duty: buying or selling a home"; "Examples of duty and rates"; conveyance calculator formula.
+
+**Rechecked 31 October 2026**
+
+- ACT Revenue Office — [ACT Budget 2026-27 updates](https://www.revenue.act.gov.au/about-the-act-revenue-office/news/act-budget-2026-27-updates); [Home Buyer Concession Scheme](https://www.revenue.act.gov.au/home-buyer-assistance/home-buyer-concession-scheme/about-the-home-buyer-concession-scheme); [commercial duty](https://www.revenue.act.gov.au/rates-and-property-charges/conveyance-duty-stamp-duty/conveyance-duty-for-commercial-property).
+- Queensland Revenue Office — [Home concession changes](https://qro.qld.gov.au/event/changes-to-home-concessions/); [First home concession](https://qro.qld.gov.au/duties/transfer-duty/concessions/homes/first-home/); [Home concession](https://qro.qld.gov.au/duties/transfer-duty/concessions/homes/home-concession/); [First home vacant land concession](https://qro.qld.gov.au/duties/transfer-duty/concessions/homes/first-home-vacant-land/).
+- SRO Victoria — [Tax Relief Amendment Act 2026](https://www.sro.vic.gov.au/about-us/news-and-events/news/building-legislation-and-treasury-legislation-tax-relief-amendment-act-2026).
+- Government of WA — [2026-27 Housing Taxation Package](https://www.wa.gov.au/government/announcements/2026-27-housing-taxation-package); [Off-the-plan Duty Concession](https://www.wa.gov.au/government/announcements/the-plan-duty-concession).
 
 **Cross-references**: `au-capital-gains` (cost base), `au-rental-property` (which property outgoings are deductible), `au-nonresident-cgt` (FRCGW — separate from duty), `australia-bookkeeping` (capitalisation and chart of accounts), `australia-payroll` (payroll tax — a different state tax, do not conflate).
 

@@ -13,7 +13,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-11
+last_updated: 2026-10-31
 review_status: pending_review
 category: international
 tier: 2
@@ -50,8 +50,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Distribution statement (private company) | Within 4 months of the end of the income year of the distribution |
 | Loss carry-forward | COT (s 165-12) or business continuity test (s 165-13: same business s 165-210; similar business s 165-211 for losses of years starting on/after 1 July 2015) |
 | Loss carry-back | Replacement enacted for income years starting on or after 1 July 2026; Schedule 1 of the Tax Reform No. 2 Act 2026 commenced on 1 October 2026. Test Rule 8 conditions. |
-| Return due (2025-26, typical agent client) | 15 May 2027 lodge and pay (31 March 2027 if 2024-25 total income > $2m) |
-| Return due (self-preparer small company) | Generally 28 February 2027 lodge and pay (31 October 2026 if prior years outstanding) |
+| Return due (2025-26, typical agent client) | 15 May 2027 lodge and pay, a Saturday, so Monday 17 May 2027 (31 March 2027 if 2024-25 total income > $2m) |
+| Return due (self-preparer small company) | Generally 28 February 2027 lodge and pay, a Sunday, so Monday 1 March 2027 (31 October 2026 if prior years outstanding, a Saturday, so Monday 2 November 2026) |
 | PAYG instalment GDP uplift | 5% for 2026-27 (4% for 2025-26) |
 | Amendment period (SMB, aggregated turnover < $50m) | Generally 2 years, subject to statutory exceptions. For 2024-25 and later assessments, an approved-form taxpayer application can use the additional 2-year window, limited to giving effect to that application. Other companies generally have 4 years. |
 | Contributor | Open Accountants |
@@ -220,7 +220,7 @@ The SBT conclusion is a judgement call -- document the four LCR 2019/1 factors a
 
 ### Rule 5 -- Benchmark rule (private companies: one percentage per year)
 
-- **Rule 5 -- Benchmark rule (private companies: one percentage per year)** — A private company's franking period is its whole income year. The franking percentage on the FIRST frankable distribution in the period sets the benchmark; every later frankable distribution in the period must be franked to the same percentage. Franking above benchmark = over-franking tax (equal to the excess credits, not creditable to anyone); below benchmark = under-franking debit (credits wasted -- debited as if fully franked at benchmark without reaching shareholders). Disclose to the ATO where the benchmark moves by more than 20 percentage points (x intervening periods) between successive franking periods with frankable distributions. Plan the year's dividends BEFORE the first statement is issued.
+- **Rule 5 -- Benchmark rule (private companies: one percentage per year)** — A private company's franking period is its whole income year. The franking percentage on the FIRST frankable distribution in the period sets the benchmark; every later frankable distribution in the period must be franked to the same percentage. Franking above benchmark = over-franking tax (equal to the excess credits, not creditable to anyone); below benchmark = under-franking debit (credits wasted -- debited as if fully franked at benchmark without reaching shareholders). Disclose to the ATO where the benchmark moves by more than 20 percentage points (x intervening periods) between successive franking periods with frankable distributions. The Commissioner may, on written application, permit a departure in extraordinary circumstances only ([s 203-55](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/203-55)): escalate any such application. Plan the year's dividends BEFORE the first statement is issued.
 
 ### Rule 6 -- Franking deficit tax
 
@@ -236,7 +236,7 @@ The SBT conclusion is a judgement call -- document the four LCR 2019/1 factors a
 
 ### Rule 9 -- Lodgment and payment (2025-26 returns, 30 June balancers)
 
-- **Rule 9 -- Lodgment and payment (2025-26 returns, 30 June balancers)** — Company income tax is full self-assessment: payment is due with lodgment per the program, not on a notice. Registered agent program: 31 October 2026 lodge / 1 December 2026 pay where prior-year returns were outstanding at 30 June 2026; 31 January 2027 lodge / 1 December 2026 pay for large-medium taxpayers taxable in 2024-25; 28 February 2027 for large-medium non-taxable and new registrant large-medium; 31 March 2027 where 2024-25 total income > $2m; **15 May 2027** for the rest; 5 June 2027 concession where both years are non-taxable/refund. Self-preparer small companies: generally 28 February 2027. Late lodgment risks FTL penalties and GIC -- and GIC from 1 July 2025 is non-deductible, so late payment now costs pre-tax dollars.
+- **Rule 9 -- Lodgment and payment (2025-26 returns, 30 June balancers)** — Company income tax is full self-assessment: payment is due with lodgment per the program, not on a notice. Registered agent program: 31 October 2026 lodge / 1 December 2026 pay where prior-year returns were outstanding at 30 June 2026; 31 January 2027 lodge / 1 December 2026 pay for large-medium taxpayers taxable in 2024-25; 28 February 2027 for large-medium non-taxable and new registrant large-medium; 31 March 2027 where 2024-25 total income > $2m; **15 May 2027** for the rest; 5 June 2027 concession where both years are non-taxable/refund. Self-preparer small companies: generally 28 February 2027. These are nominal dates: where one falls on a weekend or public holiday, lodgment or payment on the first business day after attracts no penalty or GIC ([ATO, Due dates](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying)). So 31 October 2026 moves to 2 November 2026, 31 January 2027 to 1 February, 28 February to 1 March, 15 May to 17 May and 5 June to 7 June 2027. Late lodgment risks FTL penalties and GIC -- and GIC from 1 July 2025 is non-deductible, so late payment now costs pre-tax dollars.
 
 ### Rule 10 -- PAYG instalments interaction
 
@@ -368,11 +368,11 @@ If the client provides only financial statements and a trial balance:
 | BREPI and trust tracing | LCR 2019/5 Base rate entities and base rate entity passive income; TR 2019/1 |
 | Imputation rate and max credit | ato.gov.au Allocating franking credits (QC 47305); ITAA 1997 Div 202, s 995-1 (corporate tax rate for imputation purposes) |
 | Franking account / FDT | ITAA 1997 Div 205; ato.gov.au Franking deficit tax (QC 47303); Franking account tax return and instructions 2026 |
-| Benchmark rule / franking periods | ITAA 1997 Div 203, s 204-75; ato.gov.au Benchmark rule and Franking period pages |
+| Benchmark rule / franking periods | ITAA 1997 Div 203 (s 203-55), s 204-75; ato.gov.au Benchmark rule and Franking period pages |
 | Distribution statements | ITAA 1997 Subdiv 202-E; ato.gov.au Issuing distribution statements (4-month private company rule) |
 | Losses | ITAA 1997 Div 36 (ss 36-17, 36-55), Div 165 (ss 165-12, 165-13, 165-96, 165-210, 165-211); LCR 2019/1 |
 | Loss carry-back | Replacement Division 160: [Tax Reform No. 2 Act 2026, section 2 and schedules 1-2](https://www.legislation.gov.au/C2026A00071/asmade/text) |
-| Lodgment program | ato.gov.au Companies and super funds -- agent lodgment program (QC 34562, updated 1 July 2026); Income tax return -- companies (28 February self-preparer) |
+| Lodgment program | ato.gov.au Companies and super funds -- agent lodgment program (QC 34562, updated 1 July 2026); Income tax return -- companies (28 February self-preparer); [Due dates](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying) (weekend rule) |
 | PAYG instalments | ato.gov.au PAYG instalments (entry $2m/$500; monthly > $20m); GDP adjustment 5% for 2026-27 |
 | Amendment periods | [ITAA 1936, section 170(1), table items 1-3A](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170); additional taxpayer-request window is conditional |
 | GIC/SIC deduction denial | Treasury Laws Amendment (Tax Incentives and Integrity) Act 2025 (No. 29, 2025) Sch 2; ato.gov.au QC 73746 -- GIC/SIC incurred from 1 July 2025 not deductible |
@@ -393,7 +393,7 @@ If the client provides only financial statements and a trial balance:
 
 **Test 7:** Franking account deficit $13,000; credits arising in the year $20,000. -> FDT $13,000 by 31 July; deficit > 10% of credits -> offset reduced to $9,100.
 
-**Test 8:** First interim dividend franked 100%; final dividend proposed at 50%. -> Benchmark breach: under-franking debit on the final (credits wasted); same-year distributions must match the benchmark.
+**Test 8:** First interim dividend franked 100%; final dividend proposed at 50%. -> Benchmark breach: under-franking debit on the final (credits wasted); same-year distributions must match the benchmark, unless the Commissioner permits a departure in extraordinary circumstances (s 203-55; escalate).
 
 **Test 9:** $300,000 loss from 2023-24; 60% share sale Feb 2026. -> COT fails; similar business test available (loss year starts post-1 July 2015); escalate the SBT judgement.
 
