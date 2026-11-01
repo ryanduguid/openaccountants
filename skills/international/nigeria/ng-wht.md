@@ -28,13 +28,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | Nigerian Naira (NGN, ₦) — foreign-currency payments converted at the CBN official rate on the date of payment |
 | Tax year | Calendar year (1 Jan – 31 Dec) for corporate WHT; assessment year aligned with FIRS practice |
 | Current tax year | 2026 (NTA 2025 and NTAA 2025 in force from 1 January 2026) |
-| Federal tax authority | Federal Inland Revenue Service (FIRS) — for companies, non-residents, and Abuja FCT residents |
+| Federal tax authority | Nigeria Revenue Service (NRS) from 1 January 2026, established under the Nigeria Revenue Service (Establishment) Act 2025 ([NTAA 2025 s 3(1)](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)); the Federal Inland Revenue Service (FIRS) before then — for companies, non-residents, and Abuja FCT residents |
 | State tax authorities | State Internal Revenue Services (SIRS, e.g. LIRS in Lagos) — for individuals, partnerships, and unincorporated entities resident in the State |
 | Filing portal | TaxPro-Max (https://taxpromax.firs.gov.ng) for FIRS WHT; State portals for SIRS WHT (e.g. LIRS eTax) |
 | Remittance receipt | FIRS WHT Credit Note (electronic) — issued upon successful remittance and reconciliation |
 | Company-payer deadline | **21st** day of the month following the month of deduction |
 | Individual-payer deadline (where applicable) | **10th** day of the month following the month of deduction, under the pre-2026 rules; from 1 January 2026 NTAA s 107(1) penalises any person who deducts tax under the Act and does not remit it by the **21st** day of the following month |
-| Governing law (current) | Companies Income Tax Act (CITA) Cap C21 LFN 2004 (as amended), Personal Income Tax Act (PITA) Cap P8 LFN 2004 (as amended), Petroleum Profits Tax Act (PPTA), Capital Gains Tax Act, plus the Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997), **revoked by the Deduction of Tax at Source (Withholding) Regulations 2024** (see the banner above) |
+| Governing law (to 31 December 2025) | Companies Income Tax Act (CITA) Cap C21 LFN 2004 (as amended), Personal Income Tax Act (PITA) Cap P8 LFN 2004 (as amended), Petroleum Profits Tax Act (PPTA), Capital Gains Tax Act, all repealed from 1 January 2026 by [NTA 2025 s 195](https://nass.gov.ng/documents/download/11249), plus the Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997), **revoked by the Deduction of Tax at Source (Withholding) Regulations 2024** (see the banner above) |
 | Governing law (from 1 Jan 2026) | **Nigeria Tax Administration Act 2025 (NTAA) s 51** — tax is deducted at the rate prescribed in regulations relating to deduction of tax at source; s 51(2) makes the deduction final tax for a non-resident recipient of dividends, interest, rent, royalties, directors' fees and payments to entertainers and sportspersons |
 | Validated by | Verified by Omolola Fasasi (MB058950) on 2026-06-21 |
 | Skill version | 1.0 |

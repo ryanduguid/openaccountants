@@ -84,10 +84,11 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017; LC 224/2025 (tex
 | --- | --- | --- |
 | Lucros e dividendos | 10%, em qualquer valor, desde janeiro de 2026 | Ver 'Lucros e dividendos a partir de janeiro de 2026' |
 | Juros sobre o capital próprio (JCP) | 17,5% desde 1º/01/2026 (antes, 15%) | Lei 9.249/1995, art. 9º, § 2º, na redação da LC 224/2025, art. 8º; LC 224/2025, art. 14, III |
-| Rendimentos do trabalho e da prestação de serviços | 25% | Receita Federal, tabelas de 2026, 'Remessas ao exterior' |
+| Serviços técnicos, assistência técnica e royalties de qualquer natureza | 15% | MP 2.159-70/2001, art. 3º |
+| Demais rendimentos do trabalho e da prestação de serviços | 25% | Receita Federal, tabelas de 2026, 'Remessas ao exterior' |
 | Demais rendimentos de fontes situadas no Brasil | 15% | Receita Federal, tabelas de 2026, 'Remessas ao exterior' |
 
-- **Antes de aplicar** — Verificar tratado para evitar a dupla tributação, alíquota majorada para beneficiário em país com tributação favorecida (exceto dividendos, já tratados acima), CIDE sobre royalties e serviços técnicos e o enquadramento do rendimento. A alíquota de royalties não foi confirmada em fonte primária nesta revisão: confirmar antes de usar a linha 'Demais rendimentos' para royalties.
+- **Antes de aplicar** — Verificar tratado para evitar a dupla tributação, alíquota majorada para beneficiário em país com tributação favorecida (exceto dividendos, já tratados acima), CIDE sobre royalties e serviços técnicos e o enquadramento do rendimento. Texto da MP 2.159-70/2001 aberto em 2026-11-01: https://legis.senado.leg.br/norma/558979
 
 ### Desconto Simplificado
 

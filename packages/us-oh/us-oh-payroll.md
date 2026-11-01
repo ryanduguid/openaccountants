@@ -44,13 +44,13 @@ This skill governs **Ohio employer payroll compliance for tax year 2025** for bu
 | $100,001 and above | 3.125% |
 
 - **Phase-down trajectory** — 2023: top rate 3.99% (four brackets); 2024: top rate 3.50%, three brackets (consolidated); 2025: $342.00 + 2.75% of income over $26,050 up to $100,000, then $2,394.32 + 3.125% above $100,000; 2026 and later: flat $332.00 + 2.75% of income over $26,050, with no revenue trigger. See `us-oh-income-tax` for the full schedule.  _(HB 33 (2023); R.C. 5747.02(A)(3)(b)-(c), effective September 30, 2025 (HB 96), https://codes.ohio.gov/ohio-revised-code/section-5747.02/9-30-2025)_
-- **Withholding tables method** — The Ohio Department of Taxation publishes withholding tables under O.A.C. 5703-7-10. The 2025 tables continue to compute withholding using a simplified two-tier method approximating the 2025 2.75% / 3.125% structure, after applying the personal exemption amounts ($2,400 / $2,150 / $1,900 tiered by federal AGI under R.C. 5747.025).  _(O.A.C. 5703-7-10; R.C. 5747.025)_
+- **Withholding tables method** — Withholding on regular wages follows the Department's published tables (O.A.C. 5703-7-10(B)(1)), not the income tax brackets. The optional computer formula sets taxable wage TW = (pay per period x pay periods per year) - ($650 x number of IT 4 exemptions), then annual withholding by three tiers. From October 1, 2025: TW of $26,050 or less, TW x 1.775%; $26,051 to $100,000, (TW - 26,050) x 2.990% + $462.39; above $100,000, (TW - 100,000) x 3.640% + $2,673.50. For wages paid from August 1, 2026: TW x 1.600%; (TW - 26,050) x 2.990% + $416.80; (TW - 100,000) x 3.400% + $2,627.91. Divide by pay periods per year for the per-period amount. Withholding exemptions are $650 each, separate from the R.C. 5747.025 personal exemptions used on the return.  _(Ohio Department of Taxation, Employer Withholding Taxes: Optional Computer Formula (effective October 1, 2025, Rev. 09/25) (https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/employer_withholding/2025%20Withholding%20Tables/WHT_OptionalComputerFormula_2025.pdf); Optional Computer Formula (effective August 1, 2026, Rev. 07/26) (https://dam.assets.ohio.gov/image/upload/tax.ohio.gov/employer_withholding/2026%20Withholding%20Tables/WHT_OptionalComputerFormula_2026.pdf))_
 
 ### 2.2 Supplemental wage withholding
 
-- **Supplemental wage withholding methods** — Ohio does not publish a separate statutory supplemental rate. The Department's withholding guidelines (Employer's Withholding Tax Guide, rev. 1/2025) instruct employers to: Aggregate method — combine supplemental wages with regular wages and withhold using normal tables, OR Flat method — withhold at 3.5% on supplemental payments (bonuses, commissions, severance) — this approximates the top marginal rate. Most payroll systems default to the 3.5% flat method for bonuses paid separately. This is acceptable to the Department and is the practical industry standard.  _(Ohio Department of Taxation, Employer's Withholding Tax Guide, rev. 1/2025)_
+- **Supplemental wage withholding methods** — O.A.C. 5703-7-10 sets the supplemental rate. The Department's withholding guidelines (Employer's Withholding Tax Guide, rev. 1/2025) instruct employers to: Aggregate method — combine supplemental wages with regular wages and withhold using normal tables, OR Flat method — withhold at a flat rate on supplemental payments (bonuses, commissions, severance). From January 1, 2026 the rule requires the highest rate in R.C. 5747.02(A)(3) for the taxable year, which is 2.75% for 2026; for 2025 the earlier version of the rule set at least 3.5% (as reported by EY, 24 September 2025; the earlier rule text was not read).  _(O.A.C. 5703-7-10(B)(2), effective January 1, 2026 (https://codes.ohio.gov/ohio-administrative-code/rule-5703-7-10); Ohio Department of Taxation, Employer's Withholding Tax Guide, rev. 1/2025)_
 
-**AUDIT FLASH POINT:** Some payroll providers still use the legacy 3.50% rate that was set when the top marginal was 3.99%. Verify your provider has updated to 3.5% for 2025 — and confirm whether they apply the flat rate to severance (which Ohio treats as supplemental wages, not regular wages, for withholding).
+**AUDIT FLASH POINT:** Verify your provider uses the 2.75% supplemental rate for 2026 payments, not the 3.5% that applied through 2025 — and confirm whether they apply the flat rate to severance (which Ohio treats as supplemental wages, not regular wages, for withholding).
 
 ### 2.3 Form IT 4 — Employee's Withholding Exemption Certificate
 
@@ -261,7 +261,7 @@ The post-2022 remote-work environment has produced a new high-audit-risk pattern
    - Box 18: Independence wages, Box 19: Independence tax, Box 20: "INDEPENDENCE"
    - Box 18: Cleveland wages, Box 19: Cleveland courtesy tax (0.5%), Box 20: "CLEVELAND"
 
-5. **IT 3 / IT 941** reconciliation: filed with Ohio Department of Taxation for the state-level 3.5%-or-less withholding, separate from the municipal filings.
+5. **IT 3 / IT 941** reconciliation: filed with Ohio Department of Taxation for the state-level withholding, separate from the municipal filings.
 
 **AUDIT FLASH POINT:** A common error is to send the Cleveland courtesy withholding to RITA (because the employer is "primarily a RITA filer"). RITA will accept the funds and book them to Cleveland... wait, no — RITA does not collect for Cleveland (Cleveland is CCA). RITA will reject or hold the funds, and Cleveland's claim against the employer accrues penalties. **Always route by destination municipality, not by employer's primary agency.**
 
@@ -385,7 +385,7 @@ The post-2022 remote-work environment has produced a new high-audit-risk pattern
 3. Confirm RITA member count (~330 cited) against current RITA published list
 4. Cross-check direct-file city list (Cincinnati, Columbus, Dayton, Toledo, Lakewood, Dublin) against current ODT bulletin
 5. Verify the 50% late-deposit penalty under R.C. 5747.071 is still automatic and not subject to recent legislative amendment
-6. Verify supplemental wage 3.5% flat-rate guidance is still endorsed by ODT's 2025 Withholding Tax Guide
+6. Read the pre-2026 text of O.A.C. 5703-7-10 to confirm the 3.5% supplemental rate for 2025
 
 ## End of skill.
 

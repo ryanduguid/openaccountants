@@ -63,7 +63,7 @@ Note: ECAL also applies separately as a levy on prescribed services (a consumpti
 
 ### Non-Resident Individuals
 
-- **Non-resident flat rate** — Flat 20% on Fiji-sourced chargeable income from the first dollar up to $270,000 — no tax-free threshold. Above $270,000 the 2024 non-resident table applies: $54,000 + 33% of excess over $270,000, rising to $324,900 + 39% of excess over $1,000,000 (FRCS Tax Rates page).  _(Source: FRCS Personal Income Tax page — https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/)_
+- **Non-resident rate** — Flat 20% on Fiji-sourced chargeable income from the first dollar up to $270,000 — no tax-free threshold. Above $270,000 the 2024 non-resident table applies: $54,000 + 33% of excess over $270,000, rising to $324,900 + 39% of excess over $1,000,000 (FRCS Tax Rates page).  _(Source: FRCS Personal Income Tax page — https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/)_
 
 ### FNPF — Fiji National Provident Fund (mandatory social security / pension)
 
@@ -124,7 +124,7 @@ Refusal if minimum is missing -- SOFT WARN. No bank statement at all = hard stop
 
 ### Refusal Catalogue
 
-- **R-FJ-1** — Residency status unknown. "Residency determines whether the tax-free threshold and progressive bands apply (resident) or a flat 20% from the first dollar applies (non-resident). This skill cannot compute tax without confirming residency. Please confirm before proceeding."
+- **R-FJ-1** — Residency status unknown. "Residency determines whether the tax-free threshold and progressive bands apply (resident) or 20% from the first dollar up to $270,000, then 33% to 39%, applies (non-resident). This skill cannot compute tax without confirming residency. Please confirm before proceeding."
 - **R-FJ-2** — Companies / partnerships. "This skill covers individuals and sole traders only. Companies (25% CIT) and partnerships file separate returns. Escalate to a Fiji-licensed practitioner."
 - **R-FJ-3** — High earners above FJD 270,000. "Chargeable income above $270,000 falls in the 33% to 39% income tax bands (SRT is integrated into these bands from 2024 and is not charged on top). Flag for reviewer before finalising."
 - **R-FJ-4** — Capital gains / asset disposals. "Capital Gains Tax (10%) computations require specialised analysis. Out of scope. Escalate to a Fiji-licensed practitioner."
@@ -341,7 +341,7 @@ Classification: Income tax = $8,000.00.
 | Status | Basis | Threshold | Rate |
 | --- | --- | --- | --- |
 | Resident | Worldwide income | $30,000 tax-free | Progressive (see Section 1) |
-| Non-resident | Fiji-sourced only | None | Flat 20% from first dollar |
+| Non-resident | Fiji-sourced only | None | 20% from first dollar to $270,000; 33% to 39% above (2024 non-resident table) |
 
 ### 5.4 Capital vs Revenue
 
@@ -532,7 +532,7 @@ If the client provides a bank statement but cannot answer onboarding questions i
 5. Present the following questions to the client:
 
 ONBOARDING QUESTIONS -- FIJI INCOME TAX
-1. Residency: resident (worldwide income, $30k tax-free) or non-resident (Fiji-source, flat 20%)?
+1. Residency: resident (worldwide income, $30k tax-free) or non-resident (Fiji-source, 20% from the first dollar to $270,000, 33% to 39% above)?
 2. Taxpayer type: sole trader only, employment + business income (PIT "B"), or wage earner?
 3. VAT registration: registered? Annual gross turnover above or below FJD 100,000?
 4. Home office: dedicated room or shared space? If dedicated, what % of floor area?

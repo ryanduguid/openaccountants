@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Regulation (EU) 2025/2083** of 8 October 2025 (the CBAM simplification 'Omnibus'), published in the Official Journal on 17 October 2025 and in force from 20 October 2025; its single mass-based threshold (new Article 2a) and the annual-declaration rules apply from 1 January 2026.
 - **Default values** and verified-emissions methodologies as published by the Commission.
 
-**Tax year coverage.** Current for **calendar 2025** (transitional reporting) and the **early definitive period 2026**, reflecting **Regulation (EU) 2025/2083** (the Omnibus simplification, proposed February 2025 and enacted 8 October 2025), which replaced the EUR 150 consignment exemption with a single mass-based threshold of 50 tonnes a year per importer from 1 January 2026 and clarified default-value usage.
+**Tax year coverage.** Current for **calendar 2025** (transitional reporting) and the **early definitive period 2026**, reflecting **Regulation (EU) 2025/2083** (the Omnibus simplification, proposed February 2025 and enacted 8 October 2025), which removed the EUR 150 consignment exemption from 20 October 2025 and introduced a single mass-based threshold of 50 tonnes a year per importer from 1 January 2026 and clarified default-value usage.
 
 **The reviewer is the customer of this output.** CBAM emissions data flows from production-site engineering records, customs classifications, and external verification. Every output must be reviewed by a credentialed practitioner (customs broker, EU import lawyer, or accredited verifier under Implementing Regulation (EU) 2018/2067) before submission.
 
@@ -79,7 +79,7 @@ This skill does NOT cover:
 
 ### Definitive period (from 1 January 2026)
 
-- **[T1] Only an Authorised CBAM Declarant can import CBAM goods** — Only an Authorised CBAM Declarant can import CBAM goods. Application via the national Competent Authority of the importer's Member State. Approval requires: No serious or repeated infringements of customs, tax, or market abuse rules; Financial standing; Established in the Member State.  _(Regulation (EU) 2023/956)_
+- **[T1] Only an Authorised CBAM Declarant can import CBAM goods** — Only an Authorised CBAM Declarant can import CBAM goods, unless the importer is exempt under the 50-tonne de minimis rule (Article 2a; Section 5.2). An importer established in a Member State applies before importing (Article 5(1)); an importer within the de minimis exemption applies once it expects to exceed the threshold (Article 5(1b)), and must not import further goods without the status once a competent authority decides it has exceeded it. An indirect customs representative must hold the status before importing and acts as declarant even where the importer is exempt (Article 5(1a)). Application via the national Competent Authority of the importer's Member State. Approval requires: No serious or repeated infringements of customs, tax, or market abuse rules; Financial standing; Established in the Member State.  _(Regulation (EU) 2023/956, Articles 2a and 5 as amended by Regulation (EU) 2025/2083 of 8 October 2025, OJ L, 2025/2083, 17.10.2025, in force 20 October 2025 (https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng))_
 - **Annual CBAM declaration contents** — Annual CBAM declaration due 30 September for the prior calendar year (first by 30 September 2027 for 2026; Article 6(1) as replaced by Regulation (EU) 2025/2083), containing: Total quantity imported per CN code per country of origin; Total embedded emissions (verified by accredited verifier, except where default values used); Total CBAM certificates to be surrendered; Carbon price paid in country of origin.  _(Regulation (EU) 2023/956)_
 - **Certificate purchase** — Declarant buys CBAM certificates at the weekly average price of EU ETS auctions, on the Common Central Platform managed by a designated entity (likely the European Energy Exchange).  _(Regulation (EU) 2023/956)_
 - **Certificate surrender** — Certificate surrender: equal to embedded emissions × applicable factor (reflecting any ETS free allocation phasing).  _(Article 31 / Annex II)_
@@ -123,7 +123,7 @@ This skill does NOT cover:
 
 ### 5.2 De minimis exemption (Article 2a, Regulation (EU) 2025/2083)
 
-- **[T1] De minimis exemption** — From 1 January 2026 the EUR 150 consignment exemption is replaced by a single mass-based threshold: an importer whose imports of CBAM goods total no more than 50 tonnes net mass in a calendar year is exempt (electricity and hydrogen are outside the threshold, per secondary summaries). Article 2a applies from 1 January 2026. Track cumulative tonnage through the year, and confirm in the Commission's guidance what applies to earlier imports once the threshold is exceeded. For 2025 imports, the transitional EUR 150 consignment rule still governs reporting.  _(Regulation (EU) 2025/2083 of 8 October 2025, OJ L, 2025/2083, 17.10.2025, in force 20 October 2025 (https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng); EY Global Tax News 2025-2136; Mayer Brown, October 2025)_
+- **[T1] De minimis exemption** — From 1 January 2026 a single mass-based threshold applies: an importer whose imports of CBAM goods total no more than 50 tonnes net mass in a calendar year is exempt and declares the exemption in each customs declaration (Article 2a(1)). Imports of electricity or hydrogen are outside the exemption (Article 2a(4)). Article 2a applies from 1 January 2026. Track cumulative tonnage through the year: once an importer exceeds 50 tonnes, all obligations apply to all goods imported in that calendar year, including those imported before the threshold was crossed (Article 2a(2)). The amending Regulation replaced Article 2(3), which held the EUR 150 consignment exemption, with effect from its entry into force on 20 October 2025, since Article 2(3) is not among the provisions deferred to 1 January 2026. Imports of 20 October to 31 December 2025 below EUR 150 may therefore fall into the Q4 2025 transitional report; confirm against the Commission's transitional-period guidance before omitting them.  _(Regulation (EU) 2025/2083 of 8 October 2025, OJ L, 2025/2083, 17.10.2025, in force 20 October 2025 (https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng); EY Global Tax News 2025-2136; Mayer Brown, October 2025)_
 
 ### 5.3 Re-imports of EU-originating goods
 
@@ -139,7 +139,7 @@ This skill does NOT cover:
 
 ### 5.6 Common Central Platform certificate handling
 
-- **Certificate account handling** — Authorised CBAM Declarants maintain a certificate account. Up to 1/3 of certificates held at the end of each quarter may be sold back at original price (mitigates price volatility). Certificates not surrendered by 31 May of the year following the import year are cancelled.
+- **Certificate account handling** — Authorised CBAM Declarants maintain a certificate account. Excess certificates may be repurchased on a request made by 31 October of the surrender year, limited to the number the declarant had to buy under Article 22(2) in the calendar year of purchase; certificates bought for 2026 emissions may be repurchased only in 2027. On 1 November each year the Commission cancels, without compensation, certificates bought in the year before the previous calendar year that remain on the account  _(Articles 23 and 24 as amended by Regulation (EU) 2025/2083 of 8 October 2025, OJ L, 2025/2083, 17.10.2025, in force 20 October 2025 (https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng))_.
 
 ### 5.7 Penalty exposure
 
@@ -180,7 +180,7 @@ Before delivering output, verify:
 
 - [ ] CN code matched to Annex I CBAM scope list (8-digit precision where required).
 - [ ] Country of origin not on Annex III exemption list.
-- [ ] Authorised CBAM Declarant status confirmed for definitive-period imports.
+- [ ] Authorised CBAM Declarant status confirmed for definitive-period imports, or the Article 2a 50-tonne exemption documented with a cumulative tonnage tracker.
 - [ ] Installation identification documented with operator-provided data.
 - [ ] Embedded emissions methodology hierarchy applied (verified actual → defaults within cap).
 - [ ] Default-value usage tracked at ≤ 20% of weight per declarant per quarter from Q4 2024.

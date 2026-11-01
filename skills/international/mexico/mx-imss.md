@@ -105,7 +105,7 @@ This is the deterministic pre-classifier for bank statement lines related to IMS
 | --- | --- | --- | --- |
 | IMSS CUOTA OBRERO PATRONAL / IMSS PAGO | IMSS contribution | EXCLUDE from business expenses | Personal social security -- ISR deduction (Art. 151) |
 | IMSS REGIMEN VOLUNTARIO / IMSS IVRO | IVRO contribution | EXCLUDE from business expenses | Personal deduction for ISR |
-| IMSS MODALIDAD 40 / IMSS MOD 40 | Modalidad 40 payment | EXCLUDE from business expenses | Personal deduction for ISR |
+| IMSS MODALIDAD 40 / IMSS MOD 40 | Modalidad 40 payment | EXCLUDE from business expenses | ISR deductibility not confirmed (see Example 2) |
 | IMSS SEGURO SALUD FAMILIA / IMSS SSF | Family health insurance | EXCLUDE from business expenses | Medical expense deduction (limited) |
 | INFONAVIT / INFONAVIT PAGO | Housing contribution | EXCLUDE | Not IMSS; separate programme |
 
@@ -137,7 +137,7 @@ IVRO at 1 UMA daily (approx. MXN 113.14/day). Monthly base approx. MXN 3,439.46.
 **Reasoning:**
 Eligible for Modalidad 40 (has 52+ weeks, within 5-year window). Daily base: approx. MXN 1,131.40. Monthly base: approx. MXN 34,394.60. Rate: approx. 13.347% (2025). Monthly cost: approx. MXN 4,591. Covers pension only -- NO health coverage.
 
-**Classification:** Modalidad 40 contribution approx. MXN 4,591/month (2025). Deductible for ISR. Client needs separate health coverage.
+**Classification:** Modalidad 40 contribution approx. MXN 4,591/month (2025). ISR deductibility not confirmed: Modalidad 40 cuotas are paid to IMSS and are not among the AFORE and retirement-plan contributions listed in LISR Art. 151, fracción V; do not deduct them without confirming against the official LISR text. Client needs separate health coverage.
 
 ### Example 3 -- Seguro de Salud para la Familia
 
@@ -226,7 +226,7 @@ SM = salario mínimo. Source opened 2026-11-01: https://www.dof.gob.mx/nota_deta
 | Contribution Type | Deductible? |
 | --- | --- |
 | IVRO contributions | Yes -- social security contribution deduction |
-| Modalidad 40 | Yes -- deductible for ISR |
+| Modalidad 40 | Not confirmed -- not among the AFORE and retirement-plan contributions in Art. 151, fracción V; confirm before deducting (see Example 2) |
 | Seguro de Salud para la Familia | Yes -- medical expense deduction (limited) |
 
 ### 5.5 Eligibility Rules

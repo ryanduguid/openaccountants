@@ -48,7 +48,7 @@ The output is a reviewer-ready package: line-by-line return working paper, cross
 | Field | Value |
 | --- | --- |
 | Country | Federal Republic of Nigeria |
-| Federal tax authority | Nigeria Revenue Service (NRS) from 1 January 2026, replacing the Federal Inland Revenue Service (FIRS) under the Nigeria Revenue Service (Establishment) Act 2025; FIRS for FY 2025 and earlier |
+| Federal tax authority | Nigeria Revenue Service (NRS) from 1 January 2026, replacing the Federal Inland Revenue Service (FIRS) under the Nigeria Revenue Service (Establishment) Act 2025 ([NTAA 2025 s 3(1)](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)); FIRS for FY 2025 and earlier |
 | State tax authorities | 36 State Internal Revenue Services + FCT-IRS (Lagos = LIRS, Rivers = RIRS, etc.) |
 | Federal filing portal | FIRS Tax Pro-Max (https://taxpromax.firs.gov.ng) |
 | Payment platform | Remita (https://www.remita.net) — Treasury Single Account (TSA) consolidation |
@@ -378,7 +378,7 @@ The Nigeria Tax Act 2025 (effective 1 January 2026) introduces sweeping changes 
 
 - Development Levy at 4% consolidating TET (3%), NITDA (1%), and NASENI (0.25%) into a single levy
 - Small company threshold for the 0% CIT rate raised to ₦100M turnover **and** ≤ ₦250M fixed assets (NTA s.201; currently ₦25M turnover)
-- CIT rate **unchanged at 30%** for companies that are not small; the medium-company 20% band is abolished. The Bill's 27.5% was not enacted; the 25% rate takes effect only from a date set by presidential order (s 56), and none was found when checked on 1 November 2026
+- CIT rate **unchanged at 30%** for companies that are not small; the medium-company 20% band is abolished. The Bill's 27.5% was not enacted; the 25% rate takes effect only from a date set by presidential order (s 56), so apply 30% unless such an order is produced
 - Minimum Effective Tax Rate (MEFR) of 15% for multinational groups with ≥ €750M consolidated revenue (Pillar Two adoption)
 - VAT rate to remain at 7.5% in 2026 (NTA 2025 left the rate untouched after political pushback on proposed increase)
 - Nigeria Revenue Service (NRS) replaces FIRS as the federal tax authority
@@ -640,7 +640,7 @@ The reviewer is a Chartered Accountant in Nigeria — ICAN (Institute of Charter
 ## Planning Notes for 2026 (NTA 2025 impact)
 - Development Levy at 4% replaces TET/NITDA/NASENI from 1 Jan 2026
 - Small company threshold rising to ₦100M turnover
-- CIT rate for companies that are not small stays at 30%; s 56 lets a presidential order reduce it to 25% from a date the order sets, and no such order was found when checked on 1 November 2026, so use 30% unless one is produced ([NTA 2025 s 56](https://nass.gov.ng/documents/download/11249))
+- CIT rate for companies that are not small stays at 30%; s 56 lets a presidential order reduce it to 25% from a date the order sets, so use 30% unless such an order is produced ([NTA 2025 s 56](https://nass.gov.ng/documents/download/11249))
 - MEFR of 15% for MNE groups (if applicable)
 - New PIT rates and ₦800,000 tax-free threshold for individuals
 - Rent relief for individuals: 20% of annual rent paid, up to ₦500,000 (NTA s 30(2)(a)(vi))
@@ -790,7 +790,7 @@ The capstone produces a forward-looking section so the taxpayer arrives at the n
 
 | Area | FY 2025 (historical) | FY 2026 (NTA 2025, current) | Action |
 | --- | --- | --- | --- |
-| CIT rate, companies that are not small | 30% (large) / 20% (medium) | **30% flat — medium band abolished** | Companies previously in the 20% band face a 10-point rise. s 56 provides for 25% only from a date set by presidential order; none found when checked on 1 November 2026 |
+| CIT rate, companies that are not small | 30% (large) / 20% (medium) | **30% flat — medium band abolished** | Companies previously in the 20% band face a 10-point rise. s 56 provides for 25% only from a date set by presidential order; apply 30% unless such an order is produced |
 | Small company threshold (0% CIT) | Turnover ≤ ₦25M | **Turnover ≤ ₦100M AND fixed assets ≤ ₦250M** (NTA s.201; 0% rate s.56; levy exemption s.59) | Companies between ₦25M and ₦100M with qualifying assets move from 20% to 0% and pay no 4% levy |
 | TET + NITDA + NASENI | 3% + 1% + 0.25% separate levies | Consolidated **Development Levy of 4%** | Single line in 2026 computation |
 | Minimum tax (companies) | Section 33 CITA: 0.5% turnover | **MEFR 15%** for MNE groups ≥ €750M consolidated revenue (Pillar Two) | Pillar Two diagnostic for MNE clients |

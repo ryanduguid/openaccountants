@@ -61,7 +61,7 @@ The higher rate for self-employed compensates for the absence of employer arbeid
 
 ### Section 4 -- Calculation rules and thresholds
 
-- **Trygdeavgift formula** — trygdeavgift = personinntekt_from_business x 10.9%
+- **Trygdeavgift formula** — trygdeavgift = personinntekt_from_business x rate, where rate = 10.9% (2025) or 10.8% (2026)
 
 **Threshold and phase-in table**
 
@@ -71,7 +71,7 @@ The higher rate for self-employed compensates for the absence of employer arbeid
 | Phase-in rate | 25% |
 
 - **Below threshold rule** — If personinntekt <= NOK 99,650: no trygdeavgift.  _(Skatteetaten, national insurance contributions, 2025 and 2026 (https://www.skatteetaten.no/en/rates/national-insurance-contributions/))_
-- **Phase-in formula** — phase_in_cap = (personinntekt - 99,650) x 25% trygdeavgift = min(personinntekt x 10.9%, phase_in_cap)
+- **Phase-in formula** — phase_in_cap = (personinntekt - 99,650) x 25% trygdeavgift = min(personinntekt x rate, phase_in_cap), rate as above (2026 check: NOK 500,000 x 10.8% = NOK 54,000)
 - **No upper cap rule** — No upper cap. Trygdeavgift applies to full personinntekt without limit.
 - **Age 70+ reduction** — Reduced rate of 5.1% applies. Standard 10.9% does NOT apply.
 
@@ -109,32 +109,38 @@ Confirm current premium rates with NAV before advising.
 
 **Total marginal rates table**  _(Skatteetaten, bracket tax, 2025 and 2026 (https://www.skatteetaten.no/en/rates/bracket-tax/); Skatteetaten, national insurance contributions, 2025 and 2026 (https://www.skatteetaten.no/en/rates/national-insurance-contributions/))_
 
-| Income bracket | Income tax (22%) | Trinnskatt | Trygdeavgift (10.9%) | Combined |
+| Income bracket | Income tax (22%) | Trinnskatt | Trygdeavgift (business income) | Combined |
 | --- | --- | --- | --- | --- |
-| NOK 0 -- 217,400 | 22% | 0% | 10.9% | 32.9% |
+| NOK 0 -- 99,650 | 22% | 0% | 0% | 22.0% |
+| NOK 99,651 -- 176,684 | 22% | 0% | 25% (phase-in) | 47.0% |
+| NOK 176,685 -- 217,400 | 22% | 0% | 10.9% | 32.9% |
 | NOK 217,401 -- 306,050 | 22% | 1.7% | 10.9% | 34.6% |
 | NOK 306,051 -- 697,150 | 22% | 4.0% | 10.9% | 36.9% |
 | NOK 697,151 -- 942,400 | 22% | 13.7% | 10.9% | 46.6% |
 | NOK 942,401 -- 1,410,750 | 22% | 16.7% | 10.9% | 49.6% |
 | Over NOK 1,410,750 | 22% | 17.7% | 10.9% | 50.6% |
 
-Trygdeavgift is 0% below the NOK 99,650 lower limit and phased in above it (Section 4).
+Trygdeavgift is 0% up to the NOK 99,650 lower limit. Above it the 25% phase-in cap, (personinntekt - 99,650) x 25%, is lower than 10.9% of personinntekt until NOK 176,684 (99,650 x 25% / (25% - 10.9%) = 176,684.40), so each extra krone in that range costs 25% (Section 4). The income tax column assumes general income above the personal allowance (NOK 108,550 in 2025)  _(Skatteetaten, personal allowance, 2025 (https://www.skatteetaten.no/en/rates/personal-allowance/))_.
 
 **Trinnskatt and trygdeavgift (2026)**  _(Skatteetaten, bracket tax, 2025 and 2026 (https://www.skatteetaten.no/en/rates/bracket-tax/); Skatteetaten, national insurance contributions, 2025 and 2026 (https://www.skatteetaten.no/en/rates/national-insurance-contributions/))_
 
 | Income bracket | Trinnskatt | Trygdeavgift (business income) |
 | --- | --- | --- |
-| NOK 0 -- 226,100 | 0% | 10.8% |
+| NOK 0 -- 99,650 | 0% | 0% |
+| NOK 99,651 -- 175,440 | 0% | 25% (phase-in) |
+| NOK 175,441 -- 226,100 | 0% | 10.8% |
 | NOK 226,101 -- 318,300 | 1.7% | 10.8% |
 | NOK 318,301 -- 725,050 | 4.0% | 10.8% |
 | NOK 725,051 -- 980,100 | 13.7% | 10.8% |
 | NOK 980,101 -- 1,467,200 | 16.8% | 10.8% |
 | Over NOK 1,467,200 | 17.8% | 10.8% |
 
+For 2026 the phase-in cap is lower than 10.8% of personinntekt until NOK 175,440 (99,650 x 25% / (25% - 10.8%) = 175,440.14).
+
 ## Section 7 -- Registration and frikort
 
 - **Registration requirement** — Register with Brønnøysundregistrene before starting activity. Tax registration automatic via Skatteetaten.
-- **Frikort exemption scope** — Frikort exempts from tax withholding (income under NOK 100,000) but NOT from trygdeavgift. If personinntekt exceeds NOK 99,650, trygdeavgift is still assessed at settlement.
+- **Frikort exemption scope** — Frikort exempts from tax withholding (income of NOK 100,000 or less for the year) but NOT from trygdeavgift. If personinntekt exceeds NOK 99,650, trygdeavgift is still assessed at settlement.
 
 ## Section 8 -- Edge case registry
 
@@ -160,8 +166,8 @@ Resolution: Trygdeavgift = NOK 0. No minimum.
 
 ### EC5 -- Frikort with business income
 
-Situation: Frikort, business income NOK 120,000.
-Resolution: Frikort does not exempt from trygdeavgift. Will owe at settlement: min(120,000 x 10.9% = 13,080, (120,000 - 99,650) x 25% = 5,087.50) = NOK 5,087.50.
+Situation: Frikort (total income for the year NOK 100,000 or less), business income NOK 100,000 (2025).
+Resolution: Frikort does not exempt from trygdeavgift. Will owe at settlement: min(100,000 x 10.9% = 10,900, (100,000 - 99,650) x 25% = 87.50) = NOK 87.50. If income will exceed NOK 100,000, the frikort no longer fits and a tax deduction card is needed  _(Skatteetaten, frikort (https://www.skatteetaten.no/person/skatt/skattekort/frikort/))_.
 
 ### EC6 -- Cross-border EEA
 

@@ -113,7 +113,7 @@ Tax is computed on **Net Taxable Income** (เงินได้สุทธิ)
 | --- | --- | --- |
 | Home loan interest (ดอกเบี้ยบ้าน) | 100,000 | Purchase/build residence |
 | Easy E-Receipt 2.0 (2025) | 50,000 | Purchases 16 January to 28 February 2025 only, with an e-Tax Invoice or e-Receipt: up to 30,000 on any goods or services, plus up to 20,000 on OTOP goods and purchases from registered community or social enterprises (RD 2568 instructions, item 17). Not a standing deduction; check whether a scheme exists for 2026 |
-| Thai ESG fund units | 30% of assessable income, max 100,000 | Max 300,000 for units bought 1 January 2024 to 31 December 2026, held at least 5 years; otherwise held at least 8 years (RD 2568 instructions, item 18) |
+| Thai ESG fund units | 30% of assessable income, max 300,000 for units bought 1 January 2024 to 31 December 2026 (max 100,000 otherwise) | Units bought 2024 to 2026 held at least 5 years; otherwise held at least 8 years (RD 2568 instructions, items 18.1 to 18.3) |
 | Thai ESGX fund units | 30% of assessable income, max 300,000 | Units bought within 2 months of the fund's first offer and by 30 June 2025, held at least 5 years (RD 2568 instructions, item 19) |
 
 ## Section 8 — Donations (เงินบริจาค)

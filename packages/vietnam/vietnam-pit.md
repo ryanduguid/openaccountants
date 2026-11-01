@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | Luật số 109/2025/QH15, amended by Luật số 09/2026/QH16 (in force 01/07/2026; residents' employment and business income from the 2026 tax period, art. 29); Luật Thuế Thu Nhập Cá Nhân No. 04/2007/QH12 (amended) for earlier periods |
 | Tax authority | Tổng cục Thuế (General Department of Taxation — GDT) |
 | Filing portal | etax.gdt.gov.vn / thuedientu.gdt.gov.vn |
-| Filing deadline | Annual finalisation: employers, 31 March of the following year; individuals self-filing, last day of the 4th month (30 April) of the following year (Section 6) |
+| Filing deadline | Annual finalisation: employers, 31 March of the following year; individuals with salary or wage income finalising directly, last day of the 4th month (30 April) of the following year; business income, see Section 5 (Section 6) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Vietnam-licensed tax agent (đại lý thuế) or CPA |
 | Skill version | 1.1 |
@@ -168,12 +168,12 @@ Luật số 109/2025/QH15, art. 7 governs this income from the 2026 tax period (
 
 ### Annual finalisation (Quyết Toán Thuế)
 
-**Annual finalisation table**  _(Luật Quản lý Thuế No. 38/2019/QH14, art. 44.2(a) and (b): https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/07/38.signed.pdf. From 01/07/2026, Luật Quản lý thuế số 108/2025/QH15 leaves filing deadlines to the Government (art. 12.8) and Nghị định 252/2026/NĐ-CP sets them; that decree was not read for this guide, so confirm the deadlines for the 2026 tax period before filing)_
+**Annual finalisation table**  _(Luật Quản lý Thuế No. 38/2019/QH14, art. 44.2(a) and (b): https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/07/38.signed.pdf. From 01/07/2026, Luật Quản lý thuế số 108/2025/QH15 leaves filing deadlines to the Government (art. 12.8) and Nghị định 252/2026/NĐ-CP sets them; that decree was not read for this guide; a secondary report places the 4th-month deadline for individuals with salary or wage income finalising directly in its art. 10.5, so confirm the deadlines for the 2026 tax period before filing)_
 
 | Who | Deadline | Notes |
 | --- | --- | --- |
 | Employers (on behalf of employees) | 31 March of following year (last day of the 3rd month) | File form 05/QTT-TNCN |
-| Individuals self-filing | Last day of the 4th month of the following year (30 April; moved to the next working day if it is a holiday) | File form 02/QTT-TNCN |
+| Individuals with salary or wage income finalising directly | Last day of the 4th month of the following year (30 April; moved to the next working day if it is a holiday) | File form 02/QTT-TNCN. Business income of individuals and household businesses: annual finalisation by 31 March (Section 5) |
 | Individuals with single employer, no additional income | May authorise employer to finalise | No separate filing needed |
 
 ### When individual must self-file
@@ -373,7 +373,7 @@ The taxpayer may choose either method at this revenue level. Choosing the income
 - [ ] Insurance contribution caps applied correctly?
 - [ ] All income sources identified and categorised?
 - [ ] Withholding reconciled against annual liability?
-- [ ] Filing deadline noted (employer 31 March; self-filer last day of the 4th month)?
+- [ ] Filing deadline noted (employer 31 March; salary or wage self-filer last day of the 4th month; business income 31 March)?
 
 ## Section 13 — Changelog
 

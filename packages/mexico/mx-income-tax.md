@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 590,796.00 | 1,127,926.84 | 110,842.74 | 30.00% |
 | 1,127,926.85 | 1,503,902.46 | 271,981.99 | 32.00% |
 | 1,503,902.47 | 4,511,707.37 | 392,294.17 | 34.00% |
-| Over 4,511,707.38 | — | 1,414,947.85 | 35.00% |
+| From 4,511,707.38 | — | 1,414,947.85 | 35.00% |
 
 - **ISR calculation formula** — ISR = Fixed Fee + (Gross Income − Lower Limit) × Rate
 
@@ -49,7 +49,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 668,840.15 | 1,276,925.98 | 125,485.07 | 30.00% |
 | 1,276,925.99 | 1,702,567.97 | 307,910.81 | 32.00% |
 | 1,702,567.98 | 5,107,703.92 | 444,116.23 | 34.00% |
-| Over 5,107,703.93 | — | 1,601,862.46 | 35.00% |
+| From 5,107,703.93 | — | 1,601,862.46 | 35.00% |
 
 Annual tables are published each year in Anexo 8 of the Resolución Miscelánea Fiscal: use the 2025 table for ejercicio 2025 and the 2026 table for ejercicio 2026. Pagos provisionales made during 2026 use the 2026 monthly tariffs in Anexo 8 RMF 2026. Always verify current-year SAT tables. Source opened 2026-11-01: https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rmf/anexos/Anexo-8-RMF-2026_DOF-28122025.pdf
 

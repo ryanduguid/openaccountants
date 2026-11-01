@@ -477,7 +477,7 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
 - NEVER apply the 0.25% PSEB IT-exports concession without (a) current PSEB registration for the tax year, (b) banking-channel remittance evidence, and (c) reviewer verification that the section 154A conditions are met for the tax year.
 - NEVER skip the Section 113 minimum-tax computation — it applies even in tax-loss years.
 - NEVER skip the Section 113C ACT computation — accounting income can exceed taxable income materially.
-- NEVER omit Section 4C super tax where income exceeds Rs 150M.
+- NEVER omit Section 4C super tax where income exceeds the threshold for the tax year and sector: Rs 150M up to TY 2025-26; from TY 2026-27, Rs 150M for banking companies, Fifth Schedule Part I petroleum income and fertiliser income and Rs 500M for others (check the clause (104B) export exemption).
 - NEVER credit "final-tax" WHT against normal CIT — separate it out.
 - NEVER use current-year forecast as Section 147 basis without filing a formal Section 147(6) estimate; default to the latest-assessed basis.
 - NEVER advise late filing or late payment of tax / advance tax — Section 205 default surcharge and Section 182 penalties are severe.
