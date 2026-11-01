@@ -14,8 +14,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "Calendar tax year 2026. Consolidated text Dz.U. 2026 poz. 554, status 18 March 2026, read with later amenders to 31 October 2026."
 tier: 2
-last_updated: 2026-10-31
-version: 0.1
+last_updated: 2026-11-01
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -145,7 +145,7 @@ Income is revenue less deductible costs for each source (art 7). A cost is deduc
 - CIT-8 electronically, with payment (art 27(1), (1c)).
 - Tax books per art 9, as amended by poz. 779, from 1 July 2026.
 - Transfer pricing local file: PLN 10m for goods and financial transactions, PLN 2m for services and other; tax-haven PLN 2.5m and PLN 0.5m; information by the end of month 11 (arts 11k, 11t). Poz. 1371 changes TP information for years starting after 31 December 2025: reviewer.
-- **Audit and accounts (Accounting Act, Dz.U. 2026 poz. 522):** all S.A. are audited, except those in organisation at the balance date. Others are audited if they met 2 of 50 full-time staff, EUR 3.125m assets and EUR 6.25m revenue in the preceding financial year (art 64(1)). Approval within 6 months (art 53(1)); court register filing under art 69(1). Poz. 640 and 644 were not read.
+- **Audit and accounts:** screen all Accounting Act art 64 categories and special routes before concluding whether an audit is required. Annual accounts of continuing S.A. are audited except those in organisation at the balance date. For the remaining-entity route, at least 2 of the preceding year's measures must reach 50 average full-time equivalent staff, EUR 3.125m assets or EUR 6.25m net sales of goods and products, converted under art 3(2). Audit status and small-company presentation are separate. Ordinary approval is within 6 months, with a required audit before approval (art 53(1), (1a)); KRS filing is within 15 days of approval, with separate unapproved/repeated filing under art 69(2). Selected changes in poz. 640, 644 and future poz. 1206 were checked on 1 November 2026; their different commencement and excluded branch/group routes do not create a 60-day ordinary filing period. See `pl-small-company-financial-statements` for the scoped ordinary small-but-not-micro sp. z o.o. Annex 5 workflow, its elections, periods and holds. This paragraph is not a requalification of the rest of this tax guide.
 
 **Consequences:**
 
