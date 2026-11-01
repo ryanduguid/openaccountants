@@ -1,10 +1,10 @@
 ---
 name: nz-income-tax-ir3
 description: Use this skill whenever asked about New Zealand income tax for self-employed individuals filing an IR3 return. Trigger on phrases like "how much tax do I pay in NZ", "IR3", "income tax return New Zealand", "allowable deductions NZ", "provisional tax NZ", "schedular payments", "independent earner tax credit", "IETC", "ACC levies", "Working for Families", "residual income tax", "self-employed tax NZ", "schedular withholding NZ", or any question about filing or computing income tax for a self-employed individual in New Zealand. This skill covers NZ tax brackets (10.5%-39%), IR3 return structure, allowable deductions, ACC levies, provisional tax, IETC, penalties, and interaction with GST. ALWAYS read this skill before touching any NZ income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | New Zealand (Aotearoa) |
-| Tax | Income Tax (progressive 10.5%-39%) + ACC Earner Levy |
+| Tax | Income Tax (progressive 10.5%-39%); ACC levies are invoiced separately by ACC |
 | Currency | NZD only |
 | Tax year | 1 April to 31 March (FY 2025 = 1 April 2024 to 31 March 2025; FY 2026 = 1 April 2025 to 31 March 2026) |
 | Primary legislation | Income Tax Act 2007 (NZ) |
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 7 July (self-filers); 31 March of following year (with tax agent) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a NZ Chartered Accountant (CA ANZ) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Income Tax Brackets from 1 April 2025 (FY 2026 onwards) [T1]
 
@@ -67,18 +67,20 @@ Source: Inland Revenue, Tax rates for individuals: https://www.ird.govt.nz/incom
 
 - **Tax calculation formula** — Tax = cumulative tax for lower bracket + (income - lower bracket threshold) x marginal rate
 
-### ACC Levies 2025 [T1]
+### ACC Levies [T1]
 
-**ACC Levies 2025**
+**ACC Levies (2025-26 and 2026-27)**
 
 | Levy | Rate | Base | Cap |
 | --- | --- | --- | --- |
-| Work levy (sole traders) | ~NZD 1.33 per NZD 100 of liable earnings | Net self-employment income | NZD 139,384 (maximum liable earnings) |
+| Work levy (sole traders) | Varies by classification unit (see nz-acc-levies) | Net self-employment income | NZD 152,790 for 2025-26; NZD 156,641 for 2026-27 (maximum liable earnings) |
 | Working safer levy | NZD 0.08 per NZD 100 | Same base | Same cap |
-| Earner levy | ~NZD 1.33 per NZD 100 | Same base | Same cap |
+| Earner levy | NZD 1.67 per NZD 100 for 2025-26; NZD 1.75 for 2026-27 (GST inclusive) | Same base | Same cap |
 
-- **Total ACC rate** — Total ACC rate ~NZD 2.74 per NZD 100 of liable earnings (varies by industry -- confirm ACC invoice).
-- **ACC earner levy vs work levy distinction** — ACC earner levy is assessed by IRD alongside income tax. ACC work levy is a separate invoice from ACC and IS a deductible expense.
+Sources: [IRD earners' levy rates](https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates); [ACC minimum and maximum liable income](https://www.acc.co.nz/for-business/received-an-invoice/calculate-your-levies). NZD 139,384 was the 2023-24 maximum and NZD 142,283 the 2024-25 maximum.
+
+- **Total ACC rate** — Earner levy plus Working Safer levy plus the work levy for the client's classification unit (varies by industry -- confirm ACC invoice).
+- **ACC earner levy vs work levy distinction** — For self-employment income, ACC invoices the earner, work and Working Safer levies after IRD passes on the IR3 income. The earner levy is not part of income tax or RIT. ACC work levy IS a deductible expense.
 
 ### Provisional Tax [T1]
 
@@ -92,7 +94,7 @@ Source: Inland Revenue, Tax rates for individuals: https://www.ird.govt.nz/incom
 | Estimation method | Estimate current-year tax, pay in 3 instalments |
 | Ratio method (GST registered) | Available for GST-registered taxpayers; proportional to GST turnover |
 
-- **RIT formula** — RIT = Income tax + ACC earner levy - PAYE and withholding tax credits
+- **RIT formula** — RIT = Income tax on taxable income - tax credits (PAYE, schedular withholding, imputation, overseas tax and other credits). No ACC levy is included. _(IR3G 2025, Question 37 worksheet)_
 - **Provisional tax dates (most taxpayers, March balance date)** — 28 August, 15 January, 7 May
 
 ### Independent Earner Tax Credit (IETC) [T1]
@@ -119,7 +121,7 @@ Source: Inland Revenue, Tax rates for individuals: https://www.ird.govt.nz/incom
 | Home office deduction claimed | Apply only if dedicated workspace; use floor area proportion |
 | Motor vehicle: business % unclear | Use actual logbook records; if no logbook, default 25% business |
 | Schedular payment withholding rate unknown | Apply 20% default (standard schedular rate) |
-| ACC levy amount uncertain | Use ~2.74% of liable earnings; flag -- actual invoice may differ |
+| ACC levy amount uncertain | Earner levy 1.67% (2025-26) plus Working Safer 0.08% plus the CU work levy from nz-acc-levies; flag -- actual invoice may differ; never add to RIT |
 | Provisional tax method not specified | Standard method (105% of prior year) |
 
 ### Red Flag Thresholds [T1]
@@ -191,7 +193,7 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 | HILTON / IBIS / NOVOTEL / AIRBNB | Accommodation -- 100% deductible (business travel) | Fully deductible | Personal = 0%; require business purpose |
 | Z ENERGY / BP NZ / MOBIL NZ / GULL | Fuel -- deductible (business proportion) | Business portion | Require logbook or 25% default |
 | AA NZ / VEHICLE REGISTRATION / NZTA | Vehicle costs -- deductible (business %) | Business portion | Same logbook rule as fuel |
-| ACC LEVY / ACC INVOICE | ACC work levy -- 100% deductible | Fully deductible | Work levy paid to ACC is deductible; earner levy is in tax computation |
+| ACC LEVY / ACC INVOICE | ACC work levy -- 100% deductible | Fully deductible | Work levy paid to ACC is deductible; the earner levy is on the same ACC invoice and is not part of RIT |
 | INLAND REVENUE PROV TAX / IRD PROVISIONAL TAX | Provisional tax -- NOT deductible | EXCLUDE | Tax prepayments are not expenses |
 | GST PAYMENT IRD | GST payment -- NOT deductible | EXCLUDE | Separate tax; not income tax expense |
 | PROFESSIONAL INDEMNITY INS / PUBLIC LIABILITY INS | Business insurance -- 100% deductible | Fully deductible | Professional and business policies |
@@ -272,9 +274,9 @@ Windcave card payment settlement NZD 8,500. Rachel's annual gross revenue is NZD
 
 - **GST-registered ex-GST rule** — For GST-registered taxpayers, all income and expenses in the IR3 must be reported exclusive of GST. Strip 3/23 (for 15% GST) from GST-inclusive amounts. Apply without escalating.
 
-### 5.2 ACC Earner Levy Is Included in Tax Payment
+### 5.2 ACC Earner Levy Is Invoiced by ACC, Not Part of RIT
 
-- **ACC earner levy treatment** — The ACC earner levy (~1.33% of liable earnings) is assessed by IRD alongside income tax and paid with the IR3 balance. It is NOT a separate payment to ACC. The ACC work levy IS a separate invoice from ACC and IS a deductible expense. Apply this distinction consistently.
+- **ACC earner levy treatment** — For self-employment income, the ACC earner levy (1.67% of liable earnings for 2025-26 and 1.75% for 2026-27, GST inclusive) is invoiced by ACC together with the work and Working Safer levies, using the income IRD passes on from the IR3. It is NOT part of income tax, RIT or the IR3 balance, and does not count towards the NZD 5,000 provisional tax threshold. The ACC work levy IS a deductible expense. Apply this distinction consistently.
 
 ### 5.3 Entertainment: 50% Limitation
 
@@ -298,7 +300,7 @@ Windcave card payment settlement NZD 8,500. Rachel's annual gross revenue is NZD
 
 ### 5.8 Tax Computation Flow
 
-- **Tax Computation Flow** — Gross self-employment receipts (ex-GST if registered) Less: Allowable business expenses = Net taxable income Apply bracket rates Less: IETC (if income NZD 24,000-70,000; reduces by 13 cents per dollar over NZD 66,000; FY 2025 uses the composite calculation) = Net income tax Plus: ACC earner levy (~1.33% of liable earnings) = Total tax Less: Schedular withholding credits Less: Provisional tax paid = Residual Income Tax (RIT) / refund
+- **Tax Computation Flow** — Gross self-employment receipts (ex-GST if registered) Less: Allowable business expenses = Net taxable income Apply bracket rates Less: IETC (if income NZD 24,000-70,000; reduces by 13 cents per dollar over NZD 66,000; FY 2025 uses the composite calculation) = Net income tax Less: Schedular withholding and other tax credits = Residual Income Tax (RIT) Less: Provisional tax paid = Balance due / refund. ACC levies are invoiced separately by ACC and are not part of RIT.
 
 ### 5.9 Filing Deadlines
 
@@ -397,11 +399,11 @@ Tax at bracket rates (table for FY)    ___________
 Less: IETC (FY 2025: composite)       (___________)
 NET INCOME TAX                         ___________
 
-SECTION E -- ACC EARNER LEVY
-Net income x 1.33%                     ___________
+SECTION E -- ACC EARNER LEVY (ACC invoice; not part of RIT)
+Liable earnings x 1.67% (2025-26)      ___________
 
 SECTION F -- RIT AND PROVISIONAL TAX
-Income tax + ACC - withholding credits ___________
+Income tax - tax credits (RIT)         ___________
 Less: provisional tax paid             (___________)
 RIT BALANCE DUE / (REFUND)             ___________
 Next year provisional (105% of RIT):   ___________
@@ -445,7 +447,7 @@ SECTION G -- REVIEWER FLAGS
 | IRD PROV TAX / INLAND REVENUE | Tax payment | Tax prepayment -- exclude |
 | GST PAYMENT | GST remittance | Separate tax -- exclude |
 | INTEREST | Bank interest | Other income |
-| ACC LEVY | ACC payment | Work levy deductible; earner levy in tax |
+| ACC LEVY | ACC payment | Work levy deductible; earner levy on ACC invoice, not in RIT |
 
 ### NZ Three-Part Narration (Particulars/Code/Reference)
 
@@ -521,6 +523,7 @@ ONBOARDING QUESTIONS -- NEW ZEALAND INCOME TAX (IR3)
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 2.1 | November 2026 | ACC levy rates and caps by year (2025-26 and 2026-27); ACC earner levy removed from RIT and the computation flow |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; NZ bank formats (ANZ, BNZ, ASB, Westpac, Kiwibank); transaction pattern library; Windcave/PayNow patterns; worked examples; PROHIBITIONS and disclaimer added |
 | 1.0 | 2025 | Initial version |
 
@@ -530,11 +533,11 @@ ONBOARDING QUESTIONS -- NEW ZEALAND INCOME TAX (IR3)
 - [ ] Schedular payments grossed up (not net bank receipt)?
 - [ ] Motor vehicle claim supported by logbook or capped at 25%?
 - [ ] Entertainment limited to 50%?
-- [ ] ACC earner levy added to tax (not as a separate expense)?
+- [ ] ACC earner levy kept out of income tax and RIT (ACC invoices it)?
 - [ ] ACC work levy included as deductible expense?
 - [ ] Provisional tax excluded from expenses?
 - [ ] Foreign currency converted at receipt-date rate?
-- [ ] RIT correctly computed (income tax + ACC earner levy - withholding)?
+- [ ] RIT correctly computed (income tax less tax credits; no ACC levy)?
 
 ## PROHIBITIONS
 
@@ -543,7 +546,8 @@ ONBOARDING QUESTIONS -- NEW ZEALAND INCOME TAX (IR3)
 - NEVER allow entertainment deductions above 50% of the cost
 - NEVER include provisional tax or GST payments as deductible business expenses
 - NEVER apply IETC if the taxpayer receives Working for Families tax credits or NZ Super
-- NEVER confuse ACC earner levy (in tax computation) with ACC work levy (deductible expense)
+- NEVER confuse ACC earner levy (invoiced by ACC, not in RIT) with ACC work levy (deductible expense)
+- NEVER add the ACC earner levy to RIT or use it to test the NZD 5,000 provisional tax threshold
 - NEVER convert foreign currency income at year-end rate -- use receipt-date rate
 - NEVER treat schedular payment net receipts as gross income -- always gross up
 - NEVER apply resident rates to non-residents -- escalate

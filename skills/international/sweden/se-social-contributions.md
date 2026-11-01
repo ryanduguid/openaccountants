@@ -1,11 +1,11 @@
 ---
 name: se-social-contributions
 description: Use this skill whenever asked about Swedish self-employed social contributions (egenavgifter). Trigger on phrases like "egenavgifter", "Swedish self-employed contributions", "F-skatt", "Swedish social insurance", "Skatteverket egenavgifter", "enskild firma avgifter", or any question about social contribution obligations for a self-employed client in Sweden. Covers the ~28.97% combined rate, component breakdown, age-based reductions, and deductibility. ALWAYS read this skill before touching any Sweden social contributions work.
-version: 2.0
+version: 2.1
 jurisdiction: SE
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,11 +25,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Inkomstskattelagen (1999:1229); Skatteförfarandelagen (2011:1244) |
 | Total egenavgifter rate | 28.97% |
 | Effective rate after deduction | ~22.47% |
-| Age 67+ rate (born 1938-1957) | 10.21% (ålderspensionsavgift only) |
-| Age 88+ (born before 1938) | 0% |
+| Reduced rate (born 1938-1958, income years 2025 and 2026) | 10.21% (ålderspensionsavgift only) |
+| Born 1937 or earlier | 0% |
 | First 5 years reduction | ~21.47% (on first SEK 200,000) |
 | Upper cap | None |
-| F-skatt payment | Monthly (12th of each month) |
+| F-skatt payment | Monthly (12th of each month; 17th in January and August) |
 | Annual declaration | By 2 May |
 | Currency | SEK only |
 | Contributor | Open Accountants |
@@ -64,9 +64,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Age category | Effective rate |
 | --- | --- |
-| Born 1958 or later (under ~67) | 28.97% |
-| Born 1938-1957 (67-86) | 10.21% (only ålderspensionsavgift) |
-| Born before 1938 (88+) | 0% |
+| Born 1959 or later | 28.97% (10.21% with full old-age pension for the whole year, or full sickness or activity compensation for any part of it) |
+| Born 1938-1958 | 10.21% (only ålderspensionsavgift) |
+| Born 1937 or earlier | 0% |
+
+Birth years are for income years 2025 and 2026; check them again for each later year.  _(Skatteverket, Belopp och procent 2025 and 2026: https://www.skatteverket.se/foretag/skatterochavdrag/beloppochprocent/2026.106.1522bf3f19aea8075ba3294.html)_
 
 - **First 5 years reduction** — Sjukförsäkringsavgift reduced by up to 7.5 percentage points on first SEK 200,000 of net business income. Effective rate ~21.47% for qualifying new businesses. Available only once per person.  _(SAL 3 kap. 18 Section)_
 
@@ -78,7 +80,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Step 5.2 -- Apply age reduction
 
-- **Apply age reduction** — IF born_1938_to_1957: rate = 10.21% ELIF born_before_1938: rate = 0% ELSE: rate = 28.97%
+- **Apply age reduction** — IF born_1938_to_1958: rate = 10.21% ELIF born_before_1938: rate = 0% ELSE: rate = 28.97% (income years 2025 and 2026)
 
 ### Step 5.3 -- Calculate
 
@@ -94,7 +96,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Payment | Due date |
 | --- | --- |
-| Monthly F-skatt | 12th of each month (17th for Feb/Aug) |
+| Monthly F-skatt | 12th of each month (17th for January and August; moved to the next weekday when it falls on a weekend) |
 | Annual reconciliation | Inkomstdeklaration by 2 May |
 
 Client can request jämkning if income changes significantly.

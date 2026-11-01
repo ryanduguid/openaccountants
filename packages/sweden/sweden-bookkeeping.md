@@ -1,10 +1,10 @@
 ---
 name: sweden-bookkeeping
 description: Use this skill whenever asked about Swedish bookkeeping, chart of accounts, BAS kontoplan, financial statements, or accounting standards in Sweden. Trigger on phrases like "Swedish bookkeeping", "bokföring Sverige", "BAS kontoplan", "kontoplan", "årsredovisning", "K2", "K3", "BFL", "ÅRL", "resultaträkning", "balansräkning", "enskild firma bokföring", "årsbokslut", "Bokföringsnämnden", "BFN", "avskrivning", "förenklat årsbokslut", or any question about recording transactions, financial reporting, or accounting standards for Swedish entities.
-version: 1.1
+version: 1.2
 jurisdiction: SE
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -539,6 +539,11 @@ SUMMA EGET KAPITAL OCH SKULDER                                 xxx
 - **Egenavgifter rate** — approximately 28.97 % (Egenavgifter (self-employed social contributions): approximately 28.97% of profit)
 - **Schablonavdrag home office deduction** — SEK 2,000/year SEK/year (Schablonavdrag (standard deduction) available for home office: SEK 2,000/year)
 - **Cross-reference** — Use the se-income-tax skill for detailed computation
+
+### Payments to Non-Residents (Withholding)
+
+- **Dividends (kupongskatt)** — 30% of the dividend, withheld for a non-resident individual or foreign legal entity whose dividend is not tied to a Swedish permanent establishment. Treaty relief can reduce it  _(Kupongskattelag (1970:624) 4 and 5 §§)_
+- **Interest and royalties** — No Swedish withholding tax as such on interest or royalties paid abroad. Royalties can still be taxable in Sweden through a Swedish permanent establishment of the recipient; confirm with Skatteverket before relying on this (older Skatteverket and Riksdag sources only)
 
 ### VAT (Moms)
 

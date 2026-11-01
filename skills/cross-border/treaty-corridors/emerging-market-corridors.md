@@ -1,10 +1,10 @@
 ---
 name: emerging-market-corridors
 description: "version: 1.0"
-version: 1.1
+version: 1.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-11-01
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -129,14 +129,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 1. **Capital gains history:** Pre-2016, capital gains on Indian shares by Mauritius residents were exempt from Indian tax (taxable only in Mauritius, which imposed 0% on foreign-source gains). This created massive treaty shopping. The 2016 Protocol introduced source-country taxation at 50% of India's domestic rate (grandfathered for investments made before April 2017; full domestic rate from April 2019).
 
-2. **2024 Protocol (signed 7 March 2024):** Introduces Principal Purpose Test (PPT) aligned with MLI. Awaiting ratification/notification by both countries. Once effective, treaty benefits will be denied if one of the principal purposes of an arrangement is to obtain treaty benefits.
+2. **2024 Protocol (signed 7 March 2024):** Introduces the Principal Purpose Test (PPT) aligned with the MLI and amends the preamble against treaty shopping. **In force from 10 August 2026**; India notified it by S.O. 5611(E) dated 13 October 2026. A treaty benefit is denied where obtaining it was one of the principal purposes of an arrangement or transaction, unless granting it accords with the object and purpose of the relevant provisions. The PPT applies prospectively, to transactions on or after 10 August 2026 (CBDT Circular No. 1 of 2025). **Check for every claim on or after that date:** document the commercial purpose and Mauritius substance of the arrangement before applying any treaty rate in this table. Source: Khaitan & Co ERGO, 15 October 2026 (https://www.khaitanco.com/sites/default/files/2026-10/Ergo_Protocol%20to%20India-Mauritius%20DTAA%20Notified_15102026.pdf), citing Notification S.O. 5611(E) dated 13 October 2026; the notification itself (incometaxindia.gov.in, Notification No. 135/2026) returned HTTP 403.
 
 3. **LOB clause:** Mauritius-resident companies must satisfy LOB conditions including expenditure, substance, and no-round-tripping requirements.
 
 4. **Interest rate of 7.5%** is notably lower than most India treaties (typically 10-15%).
 
 5. India domestic WHT: dividends 20%, interest 20%, royalties/FTS 10%. India requires Form 10F (Form 41 from 2026) + TRC + LOB declaration.
-**Last verified:** May 2026
+**Last verified:** May 2026 (2024 Protocol status updated 1 November 2026)
 
 ## Turkey → Germany
 

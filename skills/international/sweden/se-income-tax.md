@@ -1,11 +1,11 @@
 ---
 name: se-income-tax
 description: Use this skill whenever asked about Swedish income tax for self-employed individuals (enskild firma / enskild näringsidkare). Trigger on phrases like "Swedish tax", "kommunalskatt", "statlig inkomstskatt", "jobbskatteavdrag", "grundavdrag", "NE-bilaga", "F-skatt", "expansionsfond", "räntefördelning", "Inkomstdeklaration 1", "self-employed tax Sweden", or any question about filing or computing income tax for a Swedish self-employed client. Covers kommunalskatt, statlig inkomstskatt, jobbskatteavdrag, grundavdrag, egenavgifter, F-skatt, expansionsfond, räntefördelning, deductible expenses, filing deadlines, and penalties. ALWAYS read this skill before touching any Swedish income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: SE
 category: international
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,10 +29,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Return form | Inkomstdeklaration 1 with NE-bilaga (business income attachment) |
 | Filing deadline (digital) | 2 May of the following year |
 | Filing deadline (via ombud) | 16 June |
-| F-skatt instalments | 12th of each month |
+| F-skatt instalments | 12th of each month (17th in January and August; moved to the next weekday when it falls on a weekend) |
 | Kommunalskatt (municipal + regional) | Average 32.41% (range 28.98%--35.30%) |
 | Statlig inkomstskatt (state tax) | 20% on taxable earned income above SEK 625,800 (under 66); SEK 733,200 (66+) |
-| Egenavgifter (self-employment contributions) | 28.97% (full); 10.21% (age 66+) |
+| Egenavgifter (self-employment contributions) | 28.97% (full, born 1959 or later); 10.21% (born 1938–1958, income years 2025 and 2026); nil (born 1937 or earlier) |
 | Grundavdrag (basic deduction) | SEK 17,300--45,300 (under 66); up to SEK 86,500 (66+) |
 | Jobbskatteavdrag | Tax credit reducing kommunalskatt; approximately SEK 44,000--46,000 for average earners |
 | Contributor | Open Accountants Community |
@@ -300,7 +300,7 @@ The client can choose either the standard deduction of SEK 2,000/year or actual 
 
 ### 5.2 Egenavgifter and schablonavdrag
 
-- **Egenavgifter and schablonavdrag** — Egenavgifter = 28.97% of net business profit (10.21% for age 66+). Since egenavgifter are calculated on the profit they reduce, apply schablonavdrag of 25% as preliminary deduction from net business profit. Actual egenavgifter reconciled on the return.  _(SAL)_
+- **Egenavgifter and schablonavdrag** — Egenavgifter = 28.97% of net business profit (10.21% if born 1938–1958, for income years 2025 and 2026; nil if born 1937 or earlier). Since egenavgifter are calculated on the profit they reduce, apply schablonavdrag of 25% as preliminary deduction from net business profit. Actual egenavgifter reconciled on the return.  _(SAL)_
 - **Schablonavdrag computation** — (1) Net profit before egenavgifter = X. (2) Schablonavdrag = X x 25% = Y. (3) Taxable business income = X - Y. (4) Actual egenavgifter computed on final adjusted base.  _(SAL)_
 
 ### 5.3 Statlig inkomstskatt
@@ -333,11 +333,11 @@ The client can choose either the standard deduction of SEK 2,000/year or actual 
 
 ### 5.10 Moms interaction
 
-- **Moms interaction** — Moms collected on sales: NOT income (exclude from R1). Input moms recovered: NOT an expense (exclude from costs). Non-deductible moms (e.g., representation): IS an expense. Non-momsregistrerad (under SEK 80,000 turnover): no moms separation needed, gross = net.  _(ML)_
+- **Moms interaction** — Moms collected on sales: NOT income (exclude from R1). Input moms recovered: NOT an expense (exclude from costs). Non-deductible moms (e.g., representation): IS an expense. Non-momsregistrerad (momsbefrielse: turnover of at most SEK 120,000 in the year and in each of the 2 preceding years, from 1 January 2025; SEK 80,000 before): no moms separation needed, gross = net.  _(ML; Skatteverket, Höjd omsättningsgräns för moms)_
 
 ### 5.11 F-skatt
 
-- **F-skatt** — All self-employed must register for F-skatt. Monthly instalments due 12th of each month. Without F-skatt, clients paying the individual must pay arbetsgivaravgifter.  _(SFL kap. 55)_
+- **F-skatt** — All self-employed must register for F-skatt. Monthly instalments due 12th of each month, except January and August, when they are due the 17th (moved to the next weekday when that falls on a weekend). Without F-skatt, clients paying the individual must pay arbetsgivaravgifter.  _(SFL kap. 55)_
 
 ### 5.12 Loss carry-forward
 
@@ -359,7 +359,7 @@ The client can choose either the standard deduction of SEK 2,000/year or actual 
 
 ### 6.3 Räntefördelning
 
-- **Räntefördelning** — Why ambiguous: Positive räntefördelning reclassifies business income as capital income (30% tax). Requires net business assets > SEK 50,000. Rate: 2.96% (statslåneräntan + 6pp). Default: Do not apply without reviewer confirmation. Question: "What were your net business assets at the start of the income year?"
+- **Räntefördelning** — Why ambiguous: Positive räntefördelning reclassifies business income as capital income (30% tax). Rate (statslåneräntan + 6pp): 7.96% for income year 2025; 8.55% for 2026. For income years beginning on or after 1 January 2025 a capital base above zero suffices; the condition that it exceed SEK 50,000 applied only to earlier years. The negative rate (statslåneräntan + 1pp) is 2.96% for 2025 and 3.55% for 2026.  _(Skatteverket, Räntefördelning; Belopp och procent 2026)_ Default: Do not apply without reviewer confirmation. Question: "What were your net business assets at the start of the income year?"
 
 ### 6.4 Mixed-use phone/internet
 
@@ -507,7 +507,7 @@ Input: Momsregistrerad client reports SEK 1,250,000 gross receipts including 25%
 Expected: NE R1 = SEK 1,000,000. Exclude SEK 250,000 moms.
 
 Input: Net business assets SEK 500,000. Business income SEK 400,000.
-Expected: Räntefördelningsbelopp = SEK 14,800 (500,000 x 2.96%). Reclassified to capital income (30% tax). Taxable business income = SEK 385,200.
+Expected: Räntefördelningsbelopp = SEK 39,800 (500,000 x 7.96%, income year 2025). Reclassified to capital income (30% tax). Taxable business income = SEK 360,200. For 2026: SEK 42,750 (500,000 x 8.55%) and SEK 357,250.
 
 ### Edge case registry
 

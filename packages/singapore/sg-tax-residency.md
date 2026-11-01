@@ -1,10 +1,10 @@
 ---
 name: sg-tax-residency
 description: "Use this skill for any question about Singapore tax residency. Trigger on: \"Singapore tax resident\", \"SG residency 183 days\", \"move to Singapore tax\", \"Singapore non-resident tax rate\", \"Employment Pass Singapore tax\", \"Singapore PR taxes\", \"Singapore foreigner income tax\", \"SG territorial taxation\". Covers residency tests, resident vs non-resident rates, territorial taxation, and foreign income exemption."
-version: 1.0
+version: 1.1
 jurisdiction: SG
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Capital gains tax | **None** — Singapore has no CGT |
 | Residency test | 183+ days physical presence in calendar year |
 | Resident individual top rate | 24% (marginal, from YA 2024) |
-| Non-resident rate | 15% flat on employment income or 22% (higher of) |
+| Non-resident rate | Employment income: higher of 15% flat and the progressive resident rates; most other income 24% (from YA 2024; 22% before) |
 | Primary legislation | Income Tax Act 1947 (Cap. 134) |
 | Tax authority | Inland Revenue Authority of Singapore (iras.gov.sg) |
 | Verified by | Pending — Singapore tax adviser sign-off required |
@@ -80,7 +80,7 @@ Source: IRAS, Individual income tax rates (from YA 2024): https://www.iras.gov.s
 
 - **Non-resident rates — employment income** — 15% or progressive resident rates, whichever is higher
 - **Non-resident rates — director fees** — 24%
-- **Non-resident rates — other income (interest, royalties)** — 24%
+- **Non-resident rates — other income (interest, royalties)** — Loan interest: 15% reduced final withholding rate; royalties for the use of movable property: 10% reduced final withholding rate. Both are subject to conditions, including that the income is not derived from a trade, business, profession or vocation the non-resident carries on in Singapore; otherwise 24% (from YA 2024). Source: IRAS, Individual income tax rates: https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates.
 
 ## Section 5 — Key Employment Passes
 

@@ -1,12 +1,12 @@
 ---
 name: uk-national-insurance
 description: Use this skill whenever asked about UK National Insurance Contributions (NIC) for self-employed individuals or employers. Trigger on phrases like "how much NIC do I pay", "Class 2 contributions", "Class 4 NIC", "Class 1 employer NIC", "Employer NIC 15%", "Secondary Threshold £5,000", "Employment Allowance £10,500", "April 2026 NIC", "Class 2 abolished", "national insurance self-employed", "NIC calculation", "state pension qualifying years", "NIC deferment", "voluntary Class 2", "HMRC NIC payment", or any question about UK NIC obligations. Also trigger when classifying bank statement transactions showing HMRC NIC debits, Self Assessment NIC payments, or Class 2 direct debits. This skill covers Class 1 (employee and employer), Class 2 (voluntary post-April 2024), Class 4 (profit-based), thresholds, payment schedule, bank statement pattern classification, Employment Allowance, interaction with employment Class 1, deferment, state pension entitlement, and edge cases across three tax years (2024-25, 2025-26, 2026-27). ALWAYS read this skill before touching any UK NIC-related work.
-version: 3.1
+version: 3.2
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: James Power
-review_status: current
+review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
 category: international
@@ -16,8 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK National Insurance
 
-## UK National Insurance -- Comprehensive Skill v3.1
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+## UK National Insurance -- Comprehensive Skill v3.2
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. The threshold freeze end date and the Employment Allowance prior-year limit were corrected on 2026-11-01, after that sign-off, and await review.
 
 ## Section 1 -- Quick reference (3-year comparison)
 
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Class 1 employer rate** | 13.8% | **15%** | 15% |
 | **Secondary Threshold (employer)** | £9,100/yr (£175/wk) | **£5,000/yr (£96/wk)** | £5,000/yr |
 | **Primary Threshold (employee)** | £12,570/yr | £12,570/yr | £12,570/yr |
-| **Upper Earnings Limit (UEL)** | £50,270/yr (£967/wk) | £50,270/yr | £50,270/yr (frozen to 2027-28) |
+| **Upper Earnings Limit (UEL)** | £50,270/yr (£967/wk) | £50,270/yr | £50,270/yr (frozen to 5 April 2031) |
 | **Employment Allowance** | £5,000 | **£10,500** | £10,500 |
 | **Class 2 status** | Abolished (voluntary only) | Abolished (voluntary only) | Abolished (voluntary only) |
 | **Class 2 voluntary weekly rate** | £3.45 | £3.50 | £3.65 |
@@ -61,7 +61,7 @@ Sources: GOV.UK, Rates and allowances: National Insurance contributions — http
 | Unknown whether client wants voluntary Class 2 | Recommend if profits below SPT and client needs qualifying years |
 | Unknown state pension record | Flag for reviewer |
 | Unknown age (state pension age) | Ask -- over state pension age = no Class 4 |
-| Unknown payroll size for Employer NIC | Ask -- Employment Allowance depends on prior-year secondary Class 1 < £100k and connected-company rules |
+| Unknown payroll size for Employer NIC | Ask -- Employment Allowance depends on the single-director exclusion and connected-company rules; the prior-year secondary Class 1 < £100k test applies only to 2024-25 and earlier claims |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -229,7 +229,7 @@ Class 4 rates and thresholds are unchanged across all three years. Class 2 treat
 
 ### Rule 1 -- Class 1 employee formula (all three years -- unchanged)
 
-- **Class 1 employee formula** — Class 1 (employee) = max(0, min(earnings, UEL) - PT) x 8% + max(earnings - UEL, 0) x 2% PT = £12,570/yr, UEL = £50,270/yr (frozen through 2027-28)  _(Rule 1)_
+- **Class 1 employee formula** — Class 1 (employee) = max(0, min(earnings, UEL) - PT) x 8% + max(earnings - UEL, 0) x 2% PT = £12,570/yr, UEL = £50,270/yr (frozen through 2030-31; GOV.UK, Maintaining income tax and equivalent NICs thresholds until 5 April 2031 — https://www.gov.uk/government/publications/maintaining-income-tax-and-equivalent-national-insurance-contributions-thresholds-until-5-april-2031)  _(Rule 1)_
 
 ### Rule 2 -- Class 1 employer formula (rate and threshold CHANGE in 2025-26)
 

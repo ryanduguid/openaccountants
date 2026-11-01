@@ -1,10 +1,10 @@
 ---
 name: philippines-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Philippines VAT return (BIR Form 2550M/2550Q), classify transactions for Philippine VAT purposes, or advise on VAT registration and filing in the Philippines. Trigger on phrases like "Philippines VAT", "BIR Form 2550", "input VAT Philippines", "output VAT Philippines", "VAT-registered Philippines", "percentage tax Philippines", or any Philippines VAT request. ALWAYS read this skill before touching any Philippines VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: PH
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 reviewed_by: Jonathan I. Ruiz, CPA
 review_status: pending_review
 depends_on:
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 1 — Quick reference
 
-**Quick reference table**  _(RA 10963 s.37; RMC 52-2023; RR 1-2024. Corrected by Jonathan I. Ruiz (CPA, Philippines))_
+**Quick reference table**  _(RA 10963 s.37; RMC 5-2023: https://bir-cdn.bir.gov.ph/local/pdf/RMC%20No.%205-2023.pdf; RMC 52-2023: https://bir-cdn.bir.gov.ph/local/pdf/RMC%20No.%2052-2023.pdf; RR 1-2024: https://bir-cdn.bir.gov.ph/BIR/pdf/RR%20No.%201-2024.pdf; RR 3-2024: https://bir-cdn.bir.gov.ph/BIR/pdf/RR%203-2024%20(final).pdf. Corrected by Jonathan I. Ruiz (CPA, Philippines))_
 
 | Field | Value |
 | --- | --- |
@@ -28,19 +28,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | Calendar year (1 Jan – 31 Dec) |
 | Standard rate | 12% |
 | Zero rate | 0% (exports; services to non-residents; PEZA/BOI-registered enterprises; international transport) |
-| Exempt | Agricultural products (unprocessed), educational services, medical/hospital services, housing below threshold (PHP 3.199M), financial services (some), life insurance premiums, importation of basic necessities |
+| Exempt | Agricultural products (unprocessed), educational services, medical/hospital services, housing below threshold (PHP 3,600,000, RR 1-2024; see 5.3), financial services (some), life insurance premiums, importation of basic necessities |
 | Registration threshold | PHP 3,000,000 per year in gross sales/receipts |
 | Non-VAT (percentage tax) | 3% on gross receipts for non-VAT-registered (< PHP 3M); quarterly Form 2551Q |
 | Tax authority | Bureau of Internal Revenue (BIR) |
-| Monthly return | BIR Form 2550M (due: 20th of following month) |
+| Monthly return | BIR Form 2550M — optional for transactions from 1 January 2023, with no prescribed deadline (RMC 5-2023; RMC 52-2023; see 5.7) |
 | Quarterly return | BIR Form 2550Q (due: 25th of month following quarter end) |
 | Filing portal | EFPS (Electronic Filing and Payment System) — https://efps.bir.gov.ph |
-| Tax invoice | Official Receipt (OR) or Sales Invoice — BIR-registered |
+| Tax invoice | Invoice — BIR-registered. Under RA 11976 (EOPT Act) and RR 3-2024 a single Invoice replaces Sales Invoices and Official Receipts for goods and services (see 5.4) |
 | TIN | Tax Identification Number (9 or 12 digits) |
 | RDO | Revenue District Office — taxpayer's registered district |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Philippine CPA or tax practitioner |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key Form 2550M/Q lines
 
@@ -69,7 +69,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown counterparty country | Domestic Philippines |
 | Unknown export/zero-rate qualification | 12% until evidence confirmed |
 | Unknown business-use % (vehicle, phone) | 0% input VAT |
-| Unknown whether Official Receipt compliant | No input credit |
+| Unknown whether the supplier's VAT Invoice is compliant | No input credit |
 | Unknown B2B vs B2C for digital services bought from a nonresident | Client engaged in business: reverse charge at 12% (Section 3.6) |
 | Unknown PEZA status | Not zero-rated until certificate confirmed |
 
@@ -91,15 +91,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Minimum viable** — bank statement for the period in CSV, PDF, or pasted text. TIN and confirmation of VAT registration (Certificate of Registration — COR, BIR Form 2303).
 
-**Recommended** — Official Receipts (ORs) or Sales Invoices for all output VAT, supplier ORs/invoices for all input VAT claimed, prior period excess credit.
+**Recommended** — Invoices for all output VAT, supplier VAT Invoices for all input VAT claimed, prior period excess credit.
 
 **Ideal** — complete sales/purchase journal, import entries, prior quarterly return, EFPS filing confirmation.
 
-**Refusal if minimum missing — SOFT WARN.** No bank statement = hard stop. "Input VAT credits require BIR-registered Official Receipts (OR) or Sales Invoices from VAT-registered suppliers. All credits are provisional pending receipt verification."
+**Refusal if minimum missing — SOFT WARN.** No bank statement = hard stop. "Input VAT credits require BIR-registered VAT Invoices from VAT-registered suppliers. All credits are provisional pending invoice verification."
 
 ### Refusal catalogue
 
-- **R-PH-1 — Non-VAT (percentage tax) taxpayer** — Businesses below the PHP 3M threshold pay percentage tax (3% of gross receipts) via Form 2551Q, not VAT. They cannot register ORs for VAT and cannot recover input VAT. This skill covers VAT-registered businesses only.
+- **R-PH-1 — Non-VAT (percentage tax) taxpayer** — Businesses below the PHP 3M threshold pay percentage tax (3% of gross receipts) via Form 2551Q, not VAT. They cannot issue VAT Invoices and cannot recover input VAT. This skill covers VAT-registered businesses only.
 - **R-PH-2 — PEZA/BOI zero-rating complex structures** — PEZA-registered enterprises have specific zero-rating rules for sales within the ecozone. If the client sells to a PEZA entity and claims zero-rating, verify the PEZA certificate — if complex, escalate to a Philippine CPA.
 - **R-PH-3 — Partial exemption with mixed supplies** — If the business makes both taxable and exempt supplies and cannot directly attribute input VAT, an allocation is required. Out of scope without the annual ratio — escalate.
 - **R-PH-4 — Withholding VAT (Final Withholding VAT)** — Certain transactions (e.g., payments by government, non-residents) are subject to final withholding VAT. If significant government contracts exist, track separately — escalate to a CPA.
@@ -273,7 +273,7 @@ Six classifications from a hypothetical Manila-based IT consultant. Format: BDO 
 `04/15/2025  CREDIT  ABC TECH SOLUTIONS INC  REF INV-2025-041  PHP 1,120,000.00  PHP 5,000,000.00`
 
 **Reasoning:**
-Incoming PHP 1,120,000 from a Philippine company for IT consulting. Standard 12% VAT. Gross PHP 1,120,000 includes VAT. Net = PHP 1,000,000 (taxable base) + PHP 120,000 output VAT. A BIR-registered Official Receipt or Service Invoice must be issued. Report on Form 2550M Part I-A.
+Incoming PHP 1,120,000 from a Philippine company for IT consulting. Standard 12% VAT. Gross PHP 1,120,000 includes VAT. Net = PHP 1,000,000 (taxable base) + PHP 120,000 output VAT. A BIR-registered Invoice must be issued. Output VAT on services is declared in the quarter the service is billed (accrual basis under RA 11976 and RR 3-2024), not when payment is received: confirm the date of INV-2025-041. Report on Form 2550Q Part I-A for that quarter.
 
 **Classification:** Output VAT 12% — PHP 120,000. Net sales: PHP 1,000,000.
 
@@ -283,7 +283,7 @@ Incoming PHP 1,120,000 from a Philippine company for IT consulting. Standard 12%
 `04/22/2025  CREDIT  ACME CORPORATION USA  USD 10,000 (PHP 560,000.00)  PHP 5,560,000.00`
 
 **Reasoning:**
-USD receipt from a US company for IT consulting services rendered to a non-resident. Zero-rated if: (1) service rendered in the Philippines; (2) paid by a non-resident in foreign currency; (3) proceeds inwardly remitted through Philippine banking. Report PHP 560,000 on Form 2550M Part I-B (zero-rated). Output VAT: PHP 0. Confirm: inward remittance documentation held.
+USD receipt from a US company for IT consulting services rendered to a non-resident. Zero-rated if: (1) service rendered in the Philippines; (2) paid by a non-resident in foreign currency; (3) proceeds inwardly remitted through Philippine banking. Report PHP 560,000 on Form 2550Q Part I-B (zero-rated) for the quarter in which the service is billed. Output VAT: PHP 0. Confirm: inward remittance documentation held.
 
 **Classification:** Zero-rated — PHP 560,000. Output VAT: PHP 0.
 
@@ -293,7 +293,7 @@ USD receipt from a US company for IT consulting services rendered to a non-resid
 `04/10/2025  DEBIT  MERALCO  April 2025 Electric Bill  -PHP 11,200.00  PHP 4,988,800.00`
 
 **Reasoning:**
-MERALCO electricity bill. Taxable at 12%. Gross PHP 11,200 includes VAT. Net = PHP 10,000 + PHP 1,200 input VAT. MERALCO issues BIR-registered ORs — input credit of PHP 1,200 claimable. Report on Form 2550M Part III.
+MERALCO electricity bill. Taxable at 12%. Gross PHP 11,200 includes VAT. Net = PHP 10,000 + PHP 1,200 input VAT. MERALCO issues BIR-registered VAT Invoices — input credit of PHP 1,200 claimable. Report on Form 2550Q Part III.
 
 **Classification:** Input VAT 12% — PHP 1,200. Net expense: PHP 10,000.
 
@@ -303,7 +303,7 @@ MERALCO electricity bill. Taxable at 12%. Gross PHP 11,200 includes VAT. Net = P
 `04/08/2025  DEBIT  CEBU PACIFIC AIR  Manila-Cebu ticket  -PHP 4,480.00  PHP 4,984,320.00`
 
 **Reasoning:**
-Domestic flight (Manila to Cebu) on Cebu Pacific. Domestic air transport is taxable at 12%. Gross PHP 4,480. Net = PHP 4,000 + PHP 480 input VAT. Cebu Pacific issues VAT ORs for domestic tickets — input credit of PHP 480 claimable if OR is BIR-registered.
+Domestic flight (Manila to Cebu) on Cebu Pacific. Domestic air transport is taxable at 12%. Gross PHP 4,480. Net = PHP 4,000 + PHP 480 input VAT. Cebu Pacific issues VAT Invoices for domestic tickets — input credit of PHP 480 claimable if the Invoice is BIR-registered.
 
 **Classification:** Input VAT 12% — PHP 480. Net expense: PHP 4,000.
 
@@ -323,9 +323,9 @@ SSS employer contribution. Government social insurance — EXCLUDE from VAT retu
 `04/12/2025  DEBIT  JOLLIBEE FOODS CORP  Client lunch  -PHP 1,120.00  PHP 4,978,700.00`
 
 **Reasoning:**
-Client lunch at Jollibee. In the Philippines, there is no absolute block on entertainment/meals input VAT (unlike Malta). Restaurant meals are taxable at 12%. If a BIR-registered OR is obtained, input VAT of PHP 120 is claimable (PHP 1,120 gross / 1.12 = PHP 1,000 net + PHP 120 VAT). However, BIR scrutinises entertainment claims — ensure business purpose is documented. If no OR: no credit.
+Client lunch at Jollibee. In the Philippines, there is no absolute block on entertainment/meals input VAT (unlike Malta). Restaurant meals are taxable at 12%. If a BIR-registered VAT Invoice is obtained, input VAT of PHP 120 is claimable (PHP 1,120 gross / 1.12 = PHP 1,000 net + PHP 120 VAT). However, BIR scrutinises entertainment claims — ensure business purpose is documented. If no VAT Invoice: no credit.
 
-**Classification:** Input VAT 12% — PHP 120 (if OR held). Net expense: PHP 1,000. Flag: confirm BIR-registered OR from Jollibee.
+**Classification:** Input VAT 12% — PHP 120 (if VAT Invoice held). Net expense: PHP 1,000. Flag: confirm BIR-registered VAT Invoice from Jollibee.
 
 ### 5.1 Standard rate 12%
 
@@ -339,13 +339,13 @@ Client lunch at Jollibee. In the Philippines, there is no absolute block on ente
 
 - **Exempt supplies** — Agricultural products in original state; educational services; medical/hospital services; literary/musical compositions; housing below PHP 3,600,000 (RR 1-2024 — re-indexed from PHP 3,199,200; next CPI re-index due 2027 per NIRC s.109(P)); lease of residential unit below PHP 15,000/month; life insurance premiums; common carriers below threshold; importation of basic necessities.  _(NIRC Section 109; RR No. 1-2024. Corrected by Jonathan I. Ruiz (CPA, Philippines))_
 
-### 5.4 Official Receipt (OR) / Sales Invoice requirements
+### 5.4 Invoice requirements
 
-- **OR/Sales Invoice requirements** — BIR-registered ORs or Sales Invoices are required for input credit. Must contain: TIN of seller and buyer, BIR-registered serial number, date, description, net amount, VAT rate, VAT amount. Electronic invoices allowed via EFPS-registered providers.
+- **Invoice requirements** — A BIR-registered VAT Invoice is required for input credit. Under RA 11976 (EOPT Act), RR 3-2024 and RR 7-2024 a single Invoice now covers sales of both goods and services; references to Sales Invoices or Official Receipts are read as Invoice, and an Official Receipt is no longer the document for a sale of services. Output VAT on services is recognised on billing (accrual basis), not on collection. The transitory rules for unused Official Receipts are in RR 7-2024 and were not read for this guide. The Invoice must contain: TIN of seller and buyer, BIR-registered serial number, date, description, net amount, VAT rate, VAT amount. Electronic invoices allowed via EFPS-registered providers.
 
 ### 5.5 Input VAT limitations
 
-- **Input VAT limitations** — Input VAT is not creditable for: entertainment/representation expenses (limited — see Section 6.1); motor vehicles not used exclusively for business; purchases from non-VAT-registered suppliers; purchases without valid ORs.
+- **Input VAT limitations** — Input VAT is not creditable for: entertainment/representation expenses (limited — see Section 6.1); motor vehicles not used exclusively for business; purchases from non-VAT-registered suppliers; purchases without valid VAT Invoices.
 
 ### 5.6 Transitional input VAT
 
@@ -369,14 +369,14 @@ Client lunch at Jollibee. In the Philippines, there is no absolute block on ente
 | --- | --- |
 | Late filing | PHP 1,000 per return + 25% surcharge |
 | Late payment | 12% interest per annum on unpaid tax |
-| Failure to issue OR | 50% surcharge on transaction + compromise penalty |
+| Failure to issue an Invoice | 50% surcharge on transaction + compromise penalty |
 | Fraud/falsification | 50% surcharge + criminal liability |
 
 ## Section 6 — Tier 2 catalogue
 
 ### 6.1 Entertainment expense input VAT limit
 
-- **Entertainment expense input VAT limit** — **What it shows:** Restaurant, hotel, or entertainment expense claimed as business entertainment. **What's missing:** Whether BIR-registered OR held and whether expense is within the entertainment deduction limit. **Conservative default:** No input credit (treat as personal if OR not confirmed). **Question to ask:** "Is there a BIR-registered OR for this entertainment expense? Is this within the 0.5% of net sales / 1% of net revenue entertainment ceiling?"
+- **Entertainment expense input VAT limit** — **What it shows:** Restaurant, hotel, or entertainment expense claimed as business entertainment. **What's missing:** Whether a BIR-registered VAT Invoice is held and whether expense is within the entertainment deduction limit. **Conservative default:** No input credit (treat as personal if the VAT Invoice is not confirmed). **Question to ask:** "Is there a BIR-registered VAT Invoice for this entertainment expense? Is this within the 0.5% of net sales / 1% of net revenue entertainment ceiling?"
 
 ### 6.2 Zero-rating for services to non-residents
 
@@ -421,7 +421,7 @@ C. NET VAT PAYABLE
   C4. Net payable / (refund) (C1−C2−C3)         ___________
 
 REVIEWER FLAGS:
-  [ ] BIR-registered ORs/invoices confirmed for all input credits?
+  [ ] BIR-registered VAT Invoices confirmed for all input credits?
   [ ] Inward remittance documentation for zero-rated services?
   [ ] PEZA certificates confirmed for zero-rated sales to ecozone?
   [ ] Form 1600-VT filed for every nonresident digital service purchase?
@@ -471,7 +471,7 @@ If the client provides a bank statement but cannot answer all questions immediat
 PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 1. TIN (Tax Identification Number) and RDO (Revenue District Office)?
 2. Certificate of Registration (BIR Form 2303) — VAT registered? What is the effective date?
-3. Filing basis: monthly (2550M) or monthly + quarterly (2550Q)?
+3. Filing basis: quarterly 2550Q only (mandatory), or also optional monthly 2550M?
 4. Do you have any exports or services to non-resident clients?
    If yes: was payment received in foreign currency with inward remittance?
 5. Do you have any PEZA-registered customers?
@@ -493,7 +493,7 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 | Zero-rated sales | NIRC Sections 106(A)(2), 108(B) |
 | Exempt transactions | NIRC Section 109 |
 | Input VAT | NIRC Section 110 |
-| Official Receipts | NIRC Section 237 |
+| Invoices (replacing Official Receipts) | NIRC Section 237, as amended by RA 11976; RR 3-2024 (BIR digest: https://bir-cdn.bir.gov.ph/BIR/pdf/RR%203-2024%20(final).pdf); RR 7-2024 |
 | Registration threshold | NIRC Section 109(BB) (PHP 3M) |
 | VAT on digital services | R.A. 12023 (VAT on Digital Services Law, signed 2 Oct 2024); RR 3-2025; RMC 47-2025 |
 | Penalties | NIRC Sections 248–249 |
@@ -508,7 +508,7 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 
 ### Self-check before filing
 
-- [ ] BIR-registered ORs/invoices held for all input VAT claimed
+- [ ] BIR-registered VAT Invoices held for all input VAT claimed
 - [ ] Inward remittance documentation for all zero-rated services
 - [ ] PEZA certificates on file for any PEZA zero-rated sales
 - [ ] Reverse charge on nonresident digital services remitted on Form 1600-VT, and input VAT supported by the filed form
@@ -524,6 +524,7 @@ PHILIPPINES VAT ONBOARDING — MINIMUM QUESTIONS
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, Digital Economy Act note, no inline tier tags |
 | 2.0 | 31 October 2026 | Corrected the digital services citation to RA 12023 and rewrote Section 3.6 and related rules around the reverse charge |
+| 2.1 | 1 November 2026 | Made Form 2550M optional throughout, with no prescribed deadline; replaced Official Receipts with the single Invoice and accrual-basis output VAT on services (RR 3-2024); corrected the housing exemption threshold in the quick reference to PHP 3,600,000 |
 
 ## Prohibitions
 

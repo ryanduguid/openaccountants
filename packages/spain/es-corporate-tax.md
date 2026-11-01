@@ -1,10 +1,10 @@
 ---
 name: es-corporate-tax
 description: Use this skill whenever asked about Spanish corporate income tax (Impuesto sobre Sociedades, IS), Modelo 200, Modelo 202 (pagos fraccionados), corporate tax rates in Spain, SL tax obligations, company formation tax, deducciones empresariales, bases imponibles negativas (BINs), reserva de capitalizacion, reserva de nivelacion, or foral corporate tax. Trigger on phrases like "Impuesto de Sociedades", "Modelo 200", "Modelo 202", "IS Spain", "corporate tax Spain", "tipo gravamen sociedades", "SL taxes", "nueva creacion", "empresa reducida dimension", "microempresa fiscal", "BINs", "compensacion perdidas sociedad", "pago fraccionado empresa", "ZEC Canarias", "bonificacion Ceuta Melilla sociedades", "I+D deduccion sociedades", "donativos sociedad", "resultado contable", or any question about computing or filing corporate income tax in Spain. ALWAYS read this skill before touching any Spanish corporate tax work.
-version: 1.0
+version: 1.1
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # ES Corporate Tax
 
-## Spain Corporate Income Tax (Impuesto sobre Sociedades) Skill v1.0
+## Spain Corporate Income Tax (Impuesto sobre Sociedades) Skill v1.1
 
 > **Based on work by [Nambu89 (Impuestify)](https://github.com/Nambu89/Impuestify)** and **[Pau March (larenta)](https://github.com/paumrch/larenta)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -158,6 +158,18 @@ consolidated text rather than the version published on 21 December 2024.
 | Ceuta/Melilla | 25% with 50% bonificación on qualifying income | Income generated in Ceuta/Melilla |
 | Cooperativas fiscalmente protegidas | 20% | Ley 20/1990 |
 | Cooperativas especialmente protegidas | 20% + 50% bonificación cuota | Art. 34.2 Ley 20/1990 |
+
+### Payments to Non-Residents (IRNR Withholding)
+
+**Domestic rates on payments to non-residents without a permanent establishment**  _(TRLIRNR, RDLeg 5/2004, arts 25.1 and 31.2: https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527)_
+
+| Payment | Rate | Reference |
+| --- | --- | --- |
+| Dividends | 19% | Art. 25.1.f).1.º |
+| Interest | 19% | Art. 25.1.f).2.º |
+| Royalties (cánones) and other income | 24% general; 19% for residents of an EU or EEA state with effective exchange of tax information | Art. 25.1.a) |
+
+The payer withholds the amount of the tax due under these rates or the applicable tax treaty (art. 31.2). No withholding applies to income exempt under art. 14 or a treaty (art. 31.4.a). Check the treaty rate before withholding.
 
 ## Section 3 -- Liquidation Pipeline (Modelo 200)
 

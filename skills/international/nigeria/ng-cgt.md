@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Nigerian Capital Gains Tax. Tri
 jurisdiction: NG
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -43,10 +43,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Asset class | Rate | Notes |
 | --- | --- | --- |
 | Real property (land & buildings) | 10% | On chargeable gain (proceeds − cost − allowable expenses) |
-| Shares — aggregate disposals ≤ ₦100M in any 12 months | 0% | Exempt (Finance Act 2021) |
-| Shares — aggregate disposals > ₦100M in any 12 months, where proceeds NOT reinvested in Nigerian shares within the same year | 10% | Tax base is the chargeable gain only on the portion above ₦100M |
+| Shares — disposals to 31 December 2025: aggregate disposals ≤ ₦100M in any 12 months | 0% | Exempt (Finance Act 2021) |
+| Shares — disposals to 31 December 2025: aggregate disposals > ₦100M in any 12 months, where proceeds NOT reinvested in Nigerian shares within the same year | 10% | Tax base is the chargeable gain only on the portion above ₦100M |
 | Business assets (plant, goodwill, intangibles) | 10% | Rollover relief may apply (see §4) |
-| Listed shares disposed of via NGX, below threshold | 0% | Pre-Finance Act 2021 blanket exemption now restricted to the ₦100M threshold |
+| Listed shares disposed of via NGX to 31 December 2025, below threshold | 0% | Pre-Finance Act 2021 blanket exemption restricted to the ₦100M threshold |
+| Shares — disposals from 1 January 2026 | 0% if exempt | Not chargeable where aggregate proceeds are below ₦150M **and** the chargeable gain does not exceed ₦10M in any 12 consecutive months, on a regulated securities-lending transfer, or to the extent proceeds are reinvested in Nigerian company shares in the same year of assessment; otherwise taxed at the s 56 or s 58 rate (see §4.4). [Nigeria Tax Act 2025, s.34(1)(a)](https://nass.gov.ng/documents/download/11249) |
 | Non-resident on Nigerian-situs assets | 10% | Buyer / payment agent may be required to withhold |
 
 The 10% rates above are the CGTA rates for periods to 31 December 2025. From 1 January 2026, NTA 2025 taxes chargeable gains as income: companies at 30% (s 56), individuals at the s 58 progressive rates (see §4.4).
@@ -68,7 +69,7 @@ STOP and do not produce a final CGT figure where any of the following applies:
 - **Mineral rights / oil-block disposals** — Petroleum Industry Act overlay — out of scope
 - **Trust / estate disposals** — Specialist trust-CGT regime — out of scope
 - **Disposal on or after 1 January 2026** - Apply the NTA 2025 framework. If the applicable treatment cannot be established, stop the tax calculation and obtain qualified review. Do not use the repealed CGTA as a default for these periods. [Nigeria Tax Act 2025, ss.56, 59 and 202](https://nass.gov.ng/documents/download/11249)
-- **Insufficient evidence that the ₦100M share threshold has been correctly aggregated across the taxpayer's full portfolio** — Cannot confirm exemption eligibility
+- **Insufficient evidence that the share threshold (₦100M proceeds to 31 December 2025; ₦150M proceeds and ₦10M gain from 1 January 2026) has been correctly aggregated across the taxpayer's full portfolio** — Cannot confirm exemption eligibility
 
 ## Section 3 — Tier 1 — chargeable persons, chargeable assets, computation
 
@@ -116,9 +117,9 @@ The following are exempt from CGT:
 | Compensation for personal injury | CGTA s. 35 | Restricted to genuine injury awards |
 | Diplomatic missions | CGTA s. 39 | Reciprocal basis |
 
-### 4.2 Shares — the ₦100M threshold (Finance Act 2021)
+### 4.2 Shares — the ₦100M threshold (Finance Act 2021; disposals to 31 December 2025)
 
-- **₦100M share threshold rule** — Before the Finance Act 2021, gains on disposals of shares (especially listed shares) were broadly exempt. The Finance Act 2021 introduced a threshold rule: - Share disposals where the aggregate proceeds across all share disposals by the taxpayer in any 12-month period do not exceed ₦100 million remain exempt. - Where aggregate proceeds exceed ₦100 million in any 12-month period, the portion above ₦100M is brought into charge at 10%, unless the proceeds are reinvested in the shares of any Nigerian company within the same tax year. - The reinvestment relief is asset-class specific — reinvestment must be in Nigerian company shares, not in other asset classes. - The taxpayer must aggregate disposals across all brokers, accounts, and NGX-listed and unlisted companies. Worked aggregation rule: Compute total share-disposal proceeds in the rolling 12-month window. Deduct ₦100M. If the residual is positive AND not reinvested in Nigerian shares within the tax year, the chargeable gain attributable to that residual portion is taxable at 10%.  _(Finance Act 2021)_
+- **₦100M share threshold rule** — Applies to disposals to 31 December 2025 only; for disposals from 1 January 2026 use the s 34(1)(a) tests in §4.4. Before the Finance Act 2021, gains on disposals of shares (especially listed shares) were broadly exempt. The Finance Act 2021 introduced a threshold rule: - Share disposals where the aggregate proceeds across all share disposals by the taxpayer in any 12-month period do not exceed ₦100 million remain exempt. - Where aggregate proceeds exceed ₦100 million in any 12-month period, the portion above ₦100M is brought into charge at 10%, unless the proceeds are reinvested in the shares of any Nigerian company within the same tax year. - The reinvestment relief is asset-class specific — reinvestment must be in Nigerian company shares, not in other asset classes. - The taxpayer must aggregate disposals across all brokers, accounts, and NGX-listed and unlisted companies. Worked aggregation rule: Compute total share-disposal proceeds in the rolling 12-month window. Deduct ₦100M. If the residual is positive AND not reinvested in Nigerian shares within the tax year, the chargeable gain attributable to that residual portion is taxable at 10%.  _(Finance Act 2021)_
 
 ### 4.3 Rollover relief — replacement of business assets (CGTA s. 32)
 
@@ -207,7 +208,7 @@ The CGT is reported with the 2025 PIT return. If Mrs Okonkwo had reinvested ≥ 
 | --- | --- |
 | Unknown acquisition cost | STOP — cannot compute gain |
 | Acquisition by gift or inheritance with no valuation | Obtain probate / market valuation; if unavailable, STOP |
-| Unknown whether the ₦100M share threshold is breached in aggregate | Assume breached → compute at 10% conservatively, refund position later if portfolio aggregation confirms exemption |
+| Unknown whether the share threshold is breached in aggregate | Assume breached → compute at 10% for disposals to 31 December 2025, or at the s 56 or s 58 rate for disposals from 1 January 2026; refund position later if portfolio aggregation confirms exemption |
 | Unknown whether reinvestment in Nigerian shares occurred within the tax year | Assume no reinvestment → tax the residual |
 | Unknown whether parties are connected | Treat as connected → apply market value rule |
 | Routine repair vs enhancement expenditure ambiguous | Treat as routine repair → NOT deductible |

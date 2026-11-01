@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese Consumption Tax (消�
 jurisdiction: JP
 category: international
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated By | Pending -- requires sign-off by a Japanese tax accountant (税理士) |
 | Validation Date | Pending |
-| Skill Version | 1.0 |
+| Skill Version | 1.1 |
 | Tax Year | 2025 |
 | Confidence Coverage | Tier 1: rate application, threshold determination, simplified taxation calculation. Tier 2: mixed-supply classification, partial exemption, transitional measures. Tier 3: cross-border digital services, customs duties, group taxation. |
 
@@ -166,7 +166,21 @@ Source: NTA leaflet インボイス制度に関するお知らせ (September 202
 | Calendar 2026 example | A sole proprietor's 2026 period (return due 31 March 2027) includes 30 September 2026, so it meets the period test; NTA's return guide shows the available period running to the end of 令和8年 for sole proprietors and December-year corporations (https://www.nta.go.jp/publication/pamph/pdf/0023008-043.pdf, November 2025 edition, page 1). It qualifies only if the status conditions are also met, including 2024 taxable sales and January to June 2025 taxable sales (or wages) of JPY 10M or less, tested for that period |
 | Election | No prior filing needed; elect on the return |
 
-Source: NTA Tax Answer No. 6498: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA Invoice Q&A 問115: https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf; NTA 2割特例 flowchart (September 2024): https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0024003-131.pdf. NTA Tax Answer No. 6498 also describes a separate 3割特例 for sole proprietors for the 2027 and 2028 taxable periods; its conditions are not covered here.
+Source: NTA Tax Answer No. 6498: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA Invoice Q&A 問115: https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf; NTA 2割特例 flowchart (September 2024): https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/0024003-131.pdf. NTA Tax Answer No. 6498 also describes a separate 3割特例 for sole proprietors for the 2027 and 2028 taxable periods; see below.
+
+### Small Sole Proprietor Measure (3割特例) [T1]
+
+**Small Sole Proprietor Measure (3割特例)**
+
+| Detail | Value |
+| --- | --- |
+| Eligibility | Sole proprietors (個人事業者) who became taxable by registering as invoice issuers; corporations cannot use it |
+| Tax calculation | Tax payable = Output tax x 30% |
+| Duration | The 2027 and 2028 taxable periods (令和9年分・令和10年分) |
+| Base-period condition | Taxable sales in the base period (2 years before: 2025 for 2027, 2026 for 2028) of JPY 10M or less |
+| Otherwise | General or simplified method. A business that used the 2割特例 or 3割特例 may elect the simplified method for the next taxable period by filing the election by that period's return deadline |
+
+Source: NTA Tax Answer No. 6498: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA invoice-system review page (3割特例 conditions): https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice-review/index.htm.
 
 ## Step 4: Computation -- General Method (本則課税) [T1]
 
@@ -257,7 +271,7 @@ Sources: NTA Tax Answer No. 6505 簡易課税制度 — https://www.nta.go.jp/ta
 ### EC1 -- Freelancer newly registered for qualified invoice [T1]
 
 **Situation:** Freelancer with JPY 5M sales registers as qualified invoice issuer starting October 2023. Previously tax-exempt.
-**Resolution:** Becomes taxable from registration date. May use the 2割特例 (20% special measure) for taxable periods that include any day up to 30 September 2026, if the status conditions above are met for each period, paying only 20% of output tax as consumption tax. No need to track actual input tax.
+**Resolution:** Becomes taxable from registration date. May use the 2割特例 (20% special measure) for taxable periods that include any day up to 30 September 2026, if the status conditions above are met for each period, paying only 20% of output tax as consumption tax. No need to track actual input tax. For 2027 and 2028, the 3割特例 may apply if its conditions are met.
 
 ### EC2 -- Mixed standard and reduced rate supplies [T1]
 

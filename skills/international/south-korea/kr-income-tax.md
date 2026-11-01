@@ -1,10 +1,10 @@
 ---
 name: kr-income-tax
 description: Use this skill whenever asked about South Korean income tax for self-employed individuals. Trigger on phrases like "comprehensive income tax", "종합소득세", "global income tax Korea", "사업소득", "business income Korea", "간편장부", "simplified bookkeeping", "복식부기", "double-entry Korea", "local income tax surtax", "estimated tax Korea", "Korean income tax return", "Hometax Korea", "Kakao Pay income", "Naver Pay settlement", "KakaoBank statement", or any question about filing or computing income tax for a Korean freelancer or self-employed person. This skill covers progressive brackets (6--45%), local income tax (10% surtax), bookkeeping methods, standard deduction rates, personal deductions, estimated tax, filing deadlines, and penalties. ALWAYS read this skill before touching any Korean income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: KR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 reviewed_by: Yeong Min Lee
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # KR Income Tax
 
-## South Korean Income Tax (종합소득세) -- Self-Employed Skill v2.0
+## South Korean Income Tax (종합소득세) -- Self-Employed Skill v2.1
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 31 May of the following year |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a qualified 세무사 (tax accountant) or 공인회계사 (CPA) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### National Tax Rate Table (2025) [T1]
 
@@ -100,7 +100,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Flag | Threshold |
 | --- | --- |
 | Double-entry bookkeeping required | Revenue > KRW 75,000,000 (services) |
-| Estimated tax (중간예납) required | Prior year tax > KRW 300,000 |
+| Estimated tax (중간예납) collected | Instalment (about half of prior year tax) KRW 500,000 or more |
 | VAT registration required | Revenue > KRW 48,000,000 (standard) |
 | Tax accountant (세무사) recommended | Revenue > KRW 100,000,000 |
 
@@ -228,12 +228,12 @@ National pension premium (국민연금) KRW 268,500. This is NOT a business expe
 ### Example 4 -- Estimated Tax Payment
 
 **Input line (우리은행 Woori Bank statement):**
-`2025-11-30 | 국세청 중간예납 | -450,000 | 잔액 3,210,000`
+`2025-11-30 | 국세청 중간예납 | -650,000 | 잔액 3,210,000`
 
 **Reasoning:**
-Estimated tax (중간예납) payment to NTS. This is a prepayment of income tax -- NOT a business expense. Self-employed persons with prior year tax liability > KRW 300,000 must pay an estimated tax instalment in November.
+Estimated tax (중간예납) payment to NTS. This is a prepayment of income tax -- NOT a business expense. NTS collects a November instalment of about half the prior year's tax from self-employed persons unless the instalment is under KRW 500,000.
 
-**Classification:** EXCLUDE. Record as 중간예납 KRW 450,000 (credit against final liability).
+**Classification:** EXCLUDE. Record as 중간예납 KRW 650,000 (credit against final liability).
 
 ### Example 5 -- Business Meal (Entertainment)
 
@@ -298,7 +298,7 @@ Adobe Creative Cloud monthly subscription KRW 80,000. Business software used for
 
 ### 5.5 Estimated Tax / Prepayment (중간예납)
 
-- **Estimated tax requirements** — Required when prior year comprehensive income tax > KRW 300,000. Amount: approximately 50% of prior year tax. Due: 30 November (payment window: 1--30 November). NTS issues a notice (중간예납세액 납부고지서).  _(Income Tax Act Art. 65)_
+- **Estimated tax requirements** — Residents with comprehensive income are in principle liable. Amount: approximately 50% of prior year tax. Not collected where the instalment is under KRW 500,000 (so in practice prior year tax below about KRW 1,000,000), or for new businesses, closed or suspended businesses and other excluded cases on the NTS page. Due: 30 November (payment window: 1--30 November). NTS issues a notice (중간예납세액 납부고지서).  _(Income Tax Act Art. 65 and Art. 86; [NTS 중간예납 guidance](https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7673&mi=2236))_
 
 ### 5.6 Filing Deadlines
 
@@ -499,6 +499,7 @@ ONBOARDING QUESTIONS -- SOUTH KOREA 종합소득세
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 2.1 | November 2026 | Estimated tax: KRW 500,000 instalment floor replaces the KRW 300,000 prior year test |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Korean bank formats; local platform patterns (KakaoTalk Pay, Naver Pay, Toss); worked examples |
 | 1.0 | 2025 | Initial version |
 

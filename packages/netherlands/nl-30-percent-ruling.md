@@ -1,10 +1,10 @@
 ---
 name: nl-30-percent-ruling
 description: "Netherlands 30% ruling (tax-free allowance for inbound expats): 30% of salary tax-free, conditions, 5-year duration, partial non-resident election. Trigger on: \"Netherlands 30% ruling\", \"30 procent regeling\", \"Holland expat tax ruling\", \"Netherlands inbound worker tax\", \"30% allowance Netherlands\", \"Dutch expat regime\", \"Netherlands tax ruling expatriate\", \"partial non-resident Netherlands\"."
-version: 1.0
+version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -21,7 +21,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Benefit | **30% of salary** (including the allowance) paid tax-free as cost reimbursement |
 | Effective top rate reduction | From 49.5% to ~34.65% on gross salary |
-| Duration | **5 years** (from 2024; previously 5 years, was 8 before 2019) |
+| Duration | **5 years** (was 8 before 2019) |
+| Rate from 2027 | **27%** for employees who first applied the ruling in 2024 or later; 30% kept for rulings applied by 31 December 2023 (see '2024 changes') |
 | Salary threshold (2025) | Minimum €46,660 gross taxable salary (€41,954 for under-30 with master's) |
 | Application | Employer applies to Belastingdienst within 4 months of start of employment |
 | Legislation | Wet IB 2001 Art. 10e–10ef; Uitvoeringsbesluit LB 2001 |
@@ -44,26 +45,31 @@ Example: €100,000 gross salary
 - **Specific expertise salary threshold (2025)** — €46,660 EUR (Salary must exceed statutory threshold)
 - **Dutch employer sponsorship** — Dutch employer sponsoring the application
 
-## Partial non-resident taxation (keuzerecht)
+## Partial non-resident taxation (keuzerecht) — abolished from 2025
 
-- **Partial non-resident election** — 30% ruling holders can elect to be treated as a partial non-resident of the Netherlands for Box 2 and Box 3 purposes
-- **Box 2 treatment** — Box 2 (substantial interests in Dutch companies): taxed as resident
-- **Box 3 treatment** — Box 3 (savings and investment wealth tax): only Dutch real estate taxed — foreign assets excluded from the Dutch wealth tax base
+- **No new elections from 1 January 2025** — Article 2.6 Wet IB 2001 was abolished from 1 January 2025. An employee who used the 30% ruling before 2024 can, under transitional law, still use partial non-resident status up to and including 2026. **2026 is the final year**; it is not available to employees who started using the ruling in 2024 or later.
+- **Effect while it applies** — The employee is treated as a non-resident taxpayer for Box 2 and Box 3, although living in the Netherlands, so only Dutch-source Box 2 and Box 3 items are taxed.
+- **Election timing** — The election is made on the annual income tax return.
 
-This is a significant benefit for high-net-worth individuals with foreign investment portfolios.
-
-- **Election timing** — The partial non-resident election must be made on the annual tax return.
+Source: Belastingdienst, Partiële buitenlandse belastingplicht — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/vermogen_en_aanmerkelijk_belang/vermogen/wat_is_uw_vermogen/partiele_buitenlandse_belastingplicht_30_bewijsregel
 
 ## 2024 changes
 
-- **Duration change from 2024** — From 1 January 2024, duration reduced to 5 years (not extended beyond that)
-- **Full rate for years 1-5** — The 30% rate applies in full for years 1–5
+- **Maximum 30% in 2025 and 2026, 27% from 2027** — The tax-free allowance stays at a maximum of 30% in 2025 and 2026 and falls to a maximum of 27% from 2027, when a higher salary norm also applies. Transitional rows by when the 30% decision was first applied:
 
-Previously (the old transitional regime): the rate stepped down from 30% → 20% → 10% in years 4 and 5. The full 30% for all 5 years is an improvement for new applicants.
+| First applied | 2025 and 2026 | 2027 onward |
+| --- | --- | --- |
+| By 31 December 2023 | 30%, current salary norm | 30%, current salary norm |
+| In 2024 | 30%, current salary norm | 27%, current salary norm |
+| From 1 January 2025 | 30%, current salary norm | 27%, new salary norm |
+
+- **Salary cap** — From 1 January 2026 the allowance applies to salary up to EUR 262,000 a year for all expats.
+
+Source: Rijksoverheid, Expatregeling hoogopgeleide buitenlandse werknemers — https://www.rijksoverheid.nl/themas/werk/inkomstenbelasting/belastingvoordeel-buitenlandse-werknemers. See `netherlands-30-percent-ruling` for the 2026 salary norms and payroll method.
 
 ## After the ruling expires
 
-- **Post-ruling taxation** — When the 5-year ruling period ends, the employee becomes a fully taxable Dutch resident: taxed at normal progressive rates on worldwide income; all Box 3 wealth included in the Dutch tax base
+- **Post-ruling taxation** — When the 5-year ruling period ends (and, for transitional partial non-resident users, from 2027 at the latest), the employee is taxed as a full Dutch resident: normal progressive rates on worldwide income; all Box 3 wealth included in the Dutch tax base
 
 Plan ahead for year 6 — the income tax hit can be significant
 

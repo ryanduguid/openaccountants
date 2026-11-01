@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing a 2025 In
 jurisdiction: ID
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -66,7 +66,7 @@ Some inferred from documents, the rest gap-filled. All mandatory before handoff.
 - **Identity / registration:** legal name (KTP), NPWP (16 digits = NIK since 1 July 2024 per PMK 136/2023, PER-06/PJ/2024), KPP terdaftar, 5-digit KLU code (PER-17/PJ/2015), PTKP (TK/0…3, K/0…3, K/I/0…3).
 - **Entity:** OP / UD / PT Perorangan (UU 11/2020 art. 109(2), PP 8/2021) / PT / CV / Firma. PT Perorangan: SK Menkumham date. PT / CV: Akta, NIB (OSS), domicile.
 - **Revenue:** 2025 peredaran bruto, monthly turnover detail, domestic vs international mix (exported services may be excluded from PKP threshold under PMK 32/2019).
-- **Tax history:** first year on UMKM Final 0.5% (PP 55/2022 art. 59 clock), prior-year SPT (1770 / 1770 S / 1770 SS / 1771), outstanding pajak terutang / lebih bayar.
+- **Tax history:** first year on UMKM Final 0.5% (needed only for a koperasi, and for a CV / firma / PT / BUMDes registered before 22 April 2026; OP and PT Perorangan have no time limit since PP 20/2026), prior-year SPT (single SPT Tahunan PPh OP from tax year 2025; 1770 / 1770 S / 1770 SS to 2024; 1771), outstanding pajak terutang / lebih bayar.
 - **Operational:** employee count (PPh 21 / BPJS), PKP status (PMK 197/2013), Coretax DJP account active (PER-24/PJ/2024; KMK 360/KMK.03/2024), e-Faktur usage if PKP.
 - **Documents:** rekening koran 2025, faktur penjualan / kuitansi, faktur pembelian / faktur pajak masukan, bukti potong PPh 21 / 23 / 4(2) / 26, prior-year SPT, SSP / e-Billing receipts.
 
@@ -91,7 +91,7 @@ All thresholds 2025-effective.
 
 ### 4.4 Entity gate — UU 40/2007, UU 11/2020, PP 8/2021
 
-- **Entity type routing** — OP / UD → SPT 1770 / 1770 S / 1770 SS. Route `id-income-tax` and/or `id-pph-final-umkm`. PT Perorangan (UU 11/2020 art. 109(2), PP 8/2021) → separate entity → SPT 1771. Owner reports dividend/salary on SPT 1770. Limited to single Indonesian-citizen founder meeting micro/small criteria (PP 7/2021 art. 35). Route `id-corporate-tax`. PT / CV / Firma → SPT 1771 (CV/Firma treated as badan since UU 7/2021). Route `id-corporate-tax`. Entity unclear → route `id-formation`. PT Perorangan and small PT/CV in scope; full PT with > 50 employees, multiple subsidiaries, or audited financials → refuse.  _(UU 40/2007; UU 11/2020 art. 109(2); PP 8/2021; PP 7/2021 art. 35)_
+- **Entity type routing** — OP / UD → SPT Tahunan PPh OP (one form from tax year 2025, PER-11/PJ/2025; 1770 / 1770 S / 1770 SS to 2024). Route `id-income-tax` and/or `id-pph-final-umkm`. PT Perorangan (UU 11/2020 art. 109(2), PP 8/2021) → separate entity → SPT 1771. Owner reports dividend/salary on their individual SPT Tahunan. Limited to single Indonesian-citizen founder meeting micro/small criteria (PP 7/2021 art. 35). Route `id-corporate-tax`. PT / CV / Firma → SPT 1771 (CV/Firma treated as badan since UU 7/2021). Route `id-corporate-tax`. Entity unclear → route `id-formation`. PT Perorangan and small PT/CV in scope; full PT with > 50 employees, multiple subsidiaries, or audited financials → refuse.  _(UU 40/2007; UU 11/2020 art. 109(2); PP 8/2021; PP 7/2021 art. 35)_
 
 ### 4.5 PKP / VAT gate — UU 42/2009 as amended by UU 7/2021; PMK 197/2013
 
@@ -158,7 +158,7 @@ Use `ask_user_input_v0`. Batch where independent.
 | Q5 no but turnover > Rp4.8B | flag **PKP overdue**; route `indonesia-vat`; reviewer to register |
 | Q6 ≥ 1 employee | route `id-payroll-pph21` |
 | Q6 > 20 | flag (HR-grade load) |
-| Q7 — apply PP 55/2022 art. 59 clock | if expired in 2025 → force progressive; drop `id-pph-final-umkm` |
+| Q7 — UMKM eligibility (PP 55/2022 as amended by PP 20/2026) | OP / PT Perorangan: no time limit (for an OP whose old 7-year window ended in 2024, see `id-pph-final-umkm` section 4 for FY2025); CV / firma / ordinary PT / BUMDes registered from 22 April 2026: not eligible; registered earlier: only inside the old 3- or 4-year window (art. II(e)); koperasi: 4 years. Not eligible → force progressive; drop `id-pph-final-umkm` |
 | Q8 | captured for PTKP; consumed by `id-income-tax` (irrelevant under UMKM Final) |
 
 ### 5.3 Withholding question

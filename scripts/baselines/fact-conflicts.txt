@@ -88,10 +88,8 @@ skills/international/montenegro::labour fund
 skills/international/montenegro::pension disability insurance
 skills/international/mozambique::inss total
 skills/international/netherlands::above eur
-skills/international/netherlands::buildings
 skills/international/nicaragua::enfermedad y maternidad
 skills/international/nigeria::finance act
-skills/international/nigeria::late payment
 skills/international/nigeria::minimum tax
 skills/international/norway::standard
 skills/international/pakistan::above rs
@@ -127,11 +125,5 @@ skills/international/uruguay::fonasa
 skills/international/uzbekistan::turnover tax
 skills/international/venezuela::paro forzoso
 skills/international/zimbabwe::standard corporate income tax
-skills/us-states/md::allegany county
-skills/us-states/md::calvert county
-skills/us-states/md::cecil county
-skills/us-states/md::dorchester county
-skills/us-states/md::st mary s county
-skills/us-states/md::washington county
 skills/us-states/mi::detroit
 skills/us-states/pa::resident

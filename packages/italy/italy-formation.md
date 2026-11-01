@@ -1,10 +1,10 @@
 ---
 name: italy-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Italy. Trigger on phrases like "set up a company in Italy", "SRL formation", "SRLS", "Camera di Commercio", "Italian company formation", "register a business Italy", "società a responsabilità limitata", "Registro delle Imprese", "partita IVA", "Italian notary", or any question about starting a business entity in Italy. Covers entity types (SRL, SRLS, SPA, SNC, SAS), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Italian company formation.
-version: 1.0
+version: 1.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Italy Formation
 
-## Italy Company Formation Skill v1.0
+## Italy Company Formation Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -28,8 +28,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Company registrar | Camera di Commercio / Registro delle Imprese |
 | Key legislation | Codice Civile (Art. 2462--2483 for SRL); D.Lgs. 123/2025 |
 | Typical formation time | 1--3 weeks |
-| Corporate tax rate | 24% IRES + 3.9% IRAP = ~27.9% effective |
-| Skill version | 1.0 |
+| Corporate tax rate | 24% IRES + 3.9% IRAP = ~27.9% effective. For the tax period following the one in progress at 31 December 2024 (2025 for calendar-year companies), IRES is reduced by 4 points to 20% ('IRES premiale') for companies meeting the conditions of L. 207/2024, art. 1, commi 436-444. Confirm the conditions before applying it; no later year was confirmed  _(Agenzia delle Entrate, Redditi SC 2026 instructions)_ |
+| Skill version | 1.1 |
 
 ## Section 2 -- Entity Types Comparison
 

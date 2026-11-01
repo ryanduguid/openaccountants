@@ -1,10 +1,10 @@
 ---
 name: netherlands-tax-optimization
 description: Use this skill whenever asked about reducing tax in the Netherlands, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals (ZZP'ers/ondernemers) in the Netherlands. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "belasting besparen", "belastingoptimalisatie", "minder belasting betalen", "aftrekposten", "zelfstandigenaftrek". ALWAYS read this skill before advising on any Dutch tax optimization strategy.
-version: 1.0
+version: 1.1
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -33,9 +33,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable income (EUR) | Rate |
 | --- | --- |
-| 0 -- 38,882 | 35.70% |
-| 38,883 -- 78,425 | 37.56% |
-| 78,426+ | 49.50% |
+| 0 -- 38,883 | 35.75% |
+| 38,884 -- 78,426 | 37.56% |
+| 78,427+ | 49.50% |
+
+Source: Belastingdienst, Voorlopige aanslag 2026 — https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen
 
 Note: The Dutch system has no 0% tax bracket. Instead, heffingskortingen (tax credits) provide the equivalent of a tax-free threshold.
 
@@ -45,7 +47,7 @@ Note: The Dutch system has no 0% tax bracket. Instead, heffingskortingen (tax cr
 
 | Korting | Max amount | Phase-out |
 | --- | --- | --- |
-| Algemene heffingskorting | ~EUR 3,400 | Reduces from ~EUR 25,000 income |
+| Algemene heffingskorting | EUR 3,115 | Reduces by 6.398% of verzamelinkomen above EUR 29,736; nil from EUR 78,427 |
 | Arbeidskorting (for earned income) | ~EUR 5,600 | Reduces from ~EUR 40,000 income |
 
 ## Section 2 -- Income Splitting & Structuring
@@ -56,8 +58,8 @@ Note: The Dutch system has no 0% tax bracket. Instead, heffingskortingen (tax cr
 
 | Factor | Eenmanszaak (sole trader, IB-ondernemer) | BV (Besloten Vennootschap) |
 | --- | --- | --- |
-| Top marginal rate | 49.50% | VPB: 19% (first EUR 200,000) / 25.8% above + dividend: 26.9% box 2 |
-| Effective combined rate (BV) | N/A | ~39-45% (VPB + dividend tax) |
+| Top marginal rate | 49.50% | VPB: 19% (first EUR 200,000) / 25.8% above + dividend: box 2 24.5% to EUR 68,843, 31% above (2026) |
+| Effective combined rate (BV) | N/A | ~38.8% (19% VPB, then 24.5% box 2) to ~48.8% (25.8% VPB, then 31% box 2) on distributed profit |
 | When to incorporate | When profits consistently exceed ~EUR 100,000-120,000 and substantial profits can be retained | Requires notarial deed, annual accounts, compliance costs |
 | Key IB advantages lost in BV | Zelfstandigenaftrek, startersaftrek, MKB-winstvrijstelling, KIA | N/A |
 
@@ -260,10 +262,10 @@ Since 1 January 2023, no new FOR additions are allowed. Existing FOR on the bala
 
 | Feature | 2026 Detail |
 | --- | --- |
-| Heffingvrij vermogen | EUR 57,000 per person (EUR 114,000 for partners) |
+| Heffingvrij vermogen | EUR 59,357 per person (EUR 118,714 for partners) |
 | Rate | 36% on deemed return (overbruggingswetgeving until actual-return system in 2028) |
-| Deemed return | Different rates for savings (low), investments (higher), and debts (negative) |
-| Strategy | Keep assets below EUR 57,000 threshold if possible. Invest in primary residence (box 1, not box 3) or lijfrente (box 1 deduction, not box 3 wealth). If actual return < deemed return, request adjustment via tegenbewijs. |
+| Deemed return | Bank 1.28%, other assets 6.00%, debts 2.70% (bank and debt rates provisional until early 2027). Source: Belastingdienst — https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen |
+| Strategy | Keep assets below the EUR 59,357 threshold if possible. Invest in primary residence (box 1, not box 3) or lijfrente (box 1 deduction, not box 3 wealth). If actual return < deemed return, request adjustment via tegenbewijs. |
 
 ## Section 10 -- Red Lines
 
@@ -355,11 +357,19 @@ Since 1 January 2023, no new FOR additions are allowed. Existing FOR on the bala
 
 **Example 6 -- BV vs Eenmanszaak (Profit EUR 150,000)**
 
+Assumptions: 2026 rates; single, below AOW age; urencriterium met, no startersaftrek, KIA or other income; the BV distributes all profit after VPB as a dividend; the DGA is not insured for employee insurances (no WW or WIA premiums); dividend withholding is credited against box 2 and ignored; the eenmanszaak's arbeidsinkomen is taken as its belastbare winst of EUR 129,902.40 (confirm against Wet IB 2001 art. 8.11).
+
 | Item | Eenmanszaak | BV (salary EUR 56,000 + dividend) |
 | --- | --- | --- |
-| Ondernemersaftrekken | ~EUR 1,200 + MKB | None |
-| Effective tax rate | ~44% (IB + ZVW) | ~38% (VPB + salary tax + dividend tax) |
-| **Annual saving with BV** |  | **~EUR 9,000** |
+| Ondernemersaftrekken | EUR 1,200 zelfstandigenaftrek + EUR 18,897.60 MKB-winstvrijstelling (12.7% × EUR 148,800) | None |
+| Box 1 income tax | EUR 54,233.84 on EUR 129,902.40, plus EUR 2,399.65 tariefsaanpassing (11.94% of EUR 20,097.60), less EUR 196.39 arbeidskorting (EUR 5,685 less 6.51% of EUR 84,310.40): EUR 56,437.10 (algemene heffingskorting nil) | EUR 20,329.82 on the salary − EUR 5,007.44 arbeidskorting = EUR 15,322.38 (algemene heffingskorting nil: verzamelinkomen includes the dividend) |
+| ZVW | EUR 3,851.34 (4.85% × EUR 79,409 maximum) | EUR 3,416.00 employer levy (6.10% × EUR 56,000) |
+| VPB | -- | EUR 17,210.96 (19% × EUR 90,584) |
+| Box 2 | -- | EUR 18,270.85 on a EUR 73,373.04 dividend (24.5% × EUR 68,843 + 31% × EUR 4,530.04) |
+| **Total tax** | **EUR 60,288.44 (40.2%)** | **EUR 54,220.19 (36.1%)** |
+| **Annual saving with BV** |  | **EUR 6,068.25** |
+
+Sources: Belastingdienst, Voorlopige aanslag 2026 (box 1, credits) — https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen; box 2 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/boxen_en_tarieven/box_2/box_2; zelfstandigenaftrek 2026 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026; tariefsaanpassing — https://www.belastingdienst.nl/wps/wcm/connect/nl/aftrek-en-kortingen/content/afbouw-tarief-aftrekposten-bij-hoog-inkomen; Zvw percentages — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/werk_en_inkomen/zorgverzekeringswet/veranderingen-bijdrage-zvw/percentages-zvw; MKB-winstvrijstelling 12.7% — https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/ondernemersaftrek_en_investeringsaftrek.
 
 ## Disclaimer
 

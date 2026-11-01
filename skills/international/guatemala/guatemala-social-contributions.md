@@ -1,10 +1,10 @@
 ---
 name: guatemala-social-contributions
 description: Use this skill whenever asked about Guatemala social-security contributions (IGSS) and payroll income-tax withholding (ISR sobre rentas del trabajo) for employees and employers. Trigger on phrases like "how much IGSS do I pay", "cuota laboral", "cuota patronal", "IGSS employee rate", "IGSS employer rate", "INTECAP IRTRA", "Guatemala payroll deductions", "ISR retencion empleados", "ISR planilla", "salario minimo Guatemala", "bonificacion incentivo", "Q250 bono", "constancia de retencion", "SAT-1331", "crédito por IVA planilla", or any question about Guatemalan payroll, social contributions, or employee income-tax withholding. Also trigger when classifying bank statement transactions that relate to IGSS debits, INTECAP/IRTRA levies, or SAT income-tax payments from Banco Industrial, Banrural, BAM, G&T Continental, or other Guatemalan banks. This skill covers the 15.50% combined IGSS split (4.83% employee / 10.67% employer + 2% parafiscal), the Q250 bonificación incentivo, the 2026 minimum wage, ISR brackets and deductions (including the Decreto 13-2026 reform), forms, deadlines, penalties, bank-statement classification, and edge cases. ALWAYS read this skill before touching any Guatemalan payroll or IGSS work.
-version: 0.1
+version: 0.2
 jurisdiction: GT
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -229,7 +229,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 4 -- ISR base (rentas del trabajo)
 
-- **ISR taxable income formula** — annual_taxable = annual_ordinary_salary + annual_bono_incentivo (subject to ISR, NOT to IGSS) - IGSS_IVS_and_other_deductible_contributions - Q48,000 fixed personal deduction (no documentation) - life insurance (non-dotal, proportional share) - donations (state/universities unlimited; non-profits capped at 5% of gross) - IVA credit (documented personal purchases, capped at Q12,000/year)  _(Decreto 10-2012; SAT; vescco; inbers)_
+- **ISR taxable income formula** — annual_taxable = annual_ordinary_salary + annual_bono_incentivo (subject to ISR, NOT to IGSS) - employee_IGSS_4.83%_and_other_art72c_contributions - Q48,000 fixed personal deduction (no documentation) - life insurance (non-dotal, proportional share) - donations (state/universities unlimited; non-profits capped at 5% of gross) - IVA credit (documented personal purchases, capped at Q12,000/year)  _(Decreto 10-2012; SAT; vescco; inbers)_
 
 The first Q4,000/month is effectively exempt via the Q48,000 fixed deduction.
 
@@ -338,7 +338,7 @@ IGSS COMPUTATION (base = ordinary salary, EXCLUDES Q250 bono)
 ISR COMPUTATION (annual)
   Annual ordinary salary:             Q [____]
   Annual bono incentivo (ISR base):   Q 3,000.00
-  Less IGSS/IVS deductible:           Q [____]
+  Less employee IGSS 4.83%:           Q [____]
   Less fixed personal deduction:      Q 48,000.00   (pre-Decreto 13-2026)
   Less other deductions:              Q [____]
   Annual taxable income:              Q [____]
@@ -409,17 +409,19 @@ If the client provides only a bank statement and no other information:
 
 *Spot-check (Q5,000):* 4.83% × 5,000 = 241.50; 10.67% × 5,000 = 533.50; 2% × 5,000 = 100.00; 12.67% × 5,000 = 633.50. ✓ Source: igssgt.org/cuotas.
 
-### ISR computation examples (annual; Q48,000 fixed deduction; IGSS-IVS 1.83% only deducted)
+### ISR computation examples (annual; Q48,000 fixed deduction; full employee IGSS 4.83% deducted)
 
-**ISR computation examples table**  _(Decreto 10-2012; SAT)_
+**ISR computation examples table**  _(Decreto 10-2012, art. 72(c): 'Las cuotas por contribuciones al Instituto Guatemalteco de Seguridad Social, al Instituto de Previsión Militar y al Estado y sus instituciones por cuotas de regímenes de previsión social', text as reproduced in ICEFI, Análisis de la iniciativa 5234 (https://www.icefi.org/sites/default/files/_analisis_iniciativa_5234.pdf))_
 
-| Annual ordinary salary | Annual IVS (1.83%) | Fixed deduction | Taxable | Annual ISR |
+| Annual ordinary salary | Annual employee IGSS (4.83%) | Fixed deduction | Taxable | Annual ISR |
 | --- | --- | --- | --- | --- |
-| Q60,000 | Q1,098.00 | Q48,000 | Q10,902.00 | Q545.10 (5%) |
-| Q120,000 | Q2,196.00 | Q48,000 | Q69,804.00 | Q3,490.20 (5%) |
-| Q360,000 | Q6,588.00 | Q48,000 | Q305,412.00 | Q15,000 + 7%×Q5,412 = Q15,378.84 |
+| Q60,000 | Q2,898.00 | Q48,000 | Q9,102.00 | Q455.10 (5%) |
+| Q120,000 | Q5,796.00 | Q48,000 | Q66,204.00 | Q3,310.20 (5%) |
+| Q360,000 | Q17,388.00 | Q48,000 | Q294,612.00 | Q14,730.60 (5%) |
 
-*Spot-check (Q360,000):* taxable Q360,000 − Q6,588 − Q48,000 = Q305,412.00; over Q300,000 by Q5,412.00; ISR = Q15,000 + 7% × Q5,412.00 = Q15,000 + Q378.84 = Q15,378.84. ✓ Source: Decreto 10-2012; SAT. (Worked Example 3 above deducts the full 4.83% IGSS rather than IVS-only; reviewer to confirm which contributions are deductible for the specific client — both treatments shown for transparency.)
+*Spot-check (Q360,000):* taxable Q360,000 − Q17,388 − Q48,000 = Q294,612.00, below Q300,000; ISR = 5% × Q294,612.00 = Q14,730.60. ✓ Art. 72(c) allows the employee's IGSS cuotas without limiting them to the IVS component, so the full 4.83% is deducted, as in Worked Example 3 and in `guatemala-payroll` and `guatemala-income-tax`.
+
+**[RESEARCH GAP — reviewer to confirm]** Decreto 13-2026 is reported (Prensa Libre; Softland) to add, for the 1 January to 31 December 2026 period only, an extraordinary deduction of Q3,024 without documentation on top of the art. 72 deductions, and to replace the fixed Q48,000 deduction from 1 January 2027. The decree text (congreso.gob.gt) could not be retrieved, so the examples above do not apply it; if confirmed, each 2026 example's ISR falls by up to 5% × Q3,024 = Q151.20.
 
 ### Penalties
 

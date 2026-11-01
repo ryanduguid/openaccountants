@@ -1,10 +1,10 @@
 ---
 name: it-impatriati
 description: "Italy impatriati tax regime: 50% income exclusion for qualifying inbound workers, conditions, duration, and the €100k/€200k flat tax for high-net-worth new residents. Trigger on: \"Italy impatriati regime\", \"Italy inbound worker tax\", \"50% exclusion Italy\", \"move to Italy taxes\", \"Italy flat tax €100k\", \"Italy regime impatriati\", \"Italy Beckham equivalent\", \"Italy special tax regime new residents\". ALWAYS load before advising a new Italy-based worker or HNW individual on their Italian tax."
-version: 1.0
+version: 1.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Regime | Who it's for |
 | --- | --- |
 | Impatriati | Qualifying workers (employed/self-employed) moving to Italy |
-| €100k/€200k flat tax | High-net-worth individuals moving to Italy (no work requirement) |
+| €100k/€200k/€300k flat tax (by date of transfer) | High-net-worth individuals moving to Italy (no work requirement) |
 
 ## Regime 1: Impatriati (D.Lgs 209/2023, from 2024)
 
@@ -54,25 +54,25 @@ Pre-2024 rules (for those who started before 1 Jan 2024 under the old regime):
 - **Included in 50% benefit** — Included in the 50% benefit: employment income (PAYE), self-employment income
 - **Not included in 50% benefit** — NOT included: investment income (dividends, capital gains), rental income (these are taxed at normal Italian rates or flat imputed rates)
 
-## Regime 2: €100,000 Flat Tax (Res Non-Dom — Art. 24-bis TUIR)
+## Regime 2: Flat Tax on Foreign Income (Res Non-Dom — Art. 24-bis TUIR)
 
 ### Who it's for
 
-- **Who the €100k flat tax is for** — High-net-worth individuals who transfer tax residence to Italy and have not been Italian tax residents for 9 of the previous 10 years.  _(TUIR Art. 24-bis)_
+- **Who the flat tax is for** — High-net-worth individuals who transfer tax residence to Italy and have not been Italian tax residents for 9 of the previous 10 years.  _(TUIR Art. 24-bis)_
 
 ### How it works
 
-- **€100,000 annual flat tax on foreign income** — Pay a €100,000 annual flat tax on ALL foreign-source income and gains (regardless of amount)  _(TUIR Art. 24-bis)_
+- **Annual flat tax on foreign income** — Pay an annual flat tax (imposta sostitutiva) on ALL foreign-source income and gains (regardless of amount). The amount depends on when residence was transferred: €100,000 up to 10 August 2024 (the Agenzia's wording is 'fino al 10 agosto 2024'); €200,000 for later transfers up to 31 December 2025; €300,000 for transfers from 1 January 2026 (Legge di Bilancio 2026). Confirm the amount that applies to an earlier election  _(TUIR Art. 24-bis; Agenzia delle Entrate, Opzione per i neo residenti)_
 - **Italian-source income taxation** — Italian-source income taxed at normal Italian progressive rates  _(TUIR Art. 24-bis)_
-- **Flat tax for additional family member** — €25,000 EUR (flat tax for each additional family member who also opts in)  _(TUIR Art. 24-bis)_
+- **Flat tax for additional family member** — €25,000 for each additional family member who also opts in; €50,000 for transfers of residence from 1 January 2026  _(TUIR Art. 24-bis; Agenzia delle Entrate, Opzione per i neo residenti)_
 
 ### Duration
 
-- **Duration of €100k flat tax regime** — 15 years (renewable annually by paying the flat tax). Can exit at any time.  _(TUIR Art. 24-bis)_
+- **Duration of the flat tax regime** — 15 years from the first tax year of the option (renewable annually by paying the flat tax). Can exit at any time.  _(TUIR Art. 24-bis)_
 
 ### What it covers
 
-Foreign dividends, interest, capital gains, rental income, employment income from abroad — all covered by the €100k payment. No per-income-item analysis needed for foreign income.
+Foreign dividends, interest, capital gains, rental income, employment income from abroad — all covered by the flat tax payment. No per-income-item analysis needed for foreign income.
 
 ## Italy progressive income tax rates (for reference)
 
@@ -81,13 +81,15 @@ Foreign dividends, interest, capital gains, rental income, employment income fro
 | Taxable income | Rate |
 | --- | --- |
 | Up to €28,000 | 23% |
-| €28,001 – €50,000 | 35% |
+| €28,001 – €50,000 | 35% (2025); 33% from 2026 |
 | Above €50,000 | 43% |
 
 ## Sources
 
 - D.Lgs. 209/2023 (reformed impatriati regime, effective 2024)
-- TUIR Art. 24-bis (€100k flat tax for HNW non-doms)
+- TUIR Art. 24-bis (flat tax for HNW non-doms)
+- Agenzia delle Entrate, Opzione per i neo residenti: https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/opzione-per-i-neo-residenti/infogen-opzionale-neo-residenti
+- Agenzia delle Entrate, Aliquote e calcolo dell'Irpef (2026 rates): https://www.agenziaentrate.gov.it/portale/aliquote-e-calcolo-dell-irpef7
 - Agenzia delle Entrate: agenziaentrate.gov.it
 
 > Working paper only. The 2024 reform significantly changed the impatriati eligibility.

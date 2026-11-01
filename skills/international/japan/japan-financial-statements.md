@@ -1,10 +1,10 @@
 ---
 name: japan-financial-statements
 description: Use this skill when preparing, reviewing, or advising on annual financial statements (計算書類 / 財務諸表) for a Japanese company. Trigger on phrases like "計算書類", "財務諸表", "会社法", "金融商品取引法", "J-GAAP", "日本基準", "決算書", "貸借対照表", "損益計算書", "大会社", "会計監査人", "有価証券報告書", or any question about preparing and filing statutory accounts under Japanese corporate law. Covers J-GAAP framework, company categories (大会社/中小), required statements, formats, notes, filing, and audit requirements.
-version: 1.0
+version: 1.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - financial-statements-workflow-base
@@ -269,6 +269,7 @@ Companies Act standard format:
 | Item | Detail |
 | --- | --- |
 | Corporate tax return (確定申告) | Within 2 months of fiscal year-end (extendable by 1 month) |
+| Defence special corporate tax return (防衛特別法人税) | Within 2 months of fiscal year-end in principle, for fiscal years starting on or after 1 April 2026; required even if the tax (4% of base corporate tax less JPY 5,000,000 a year) is nil. Source: https://www.e-tax.nta.go.jp/topics/2026/topics_20260417.htm |
 | Local tax returns | Same deadline; filed with prefectural/municipal tax offices |
 | Format | e-Tax (electronic) or paper |
 

@@ -1,10 +1,10 @@
 ---
 name: spain-tax-optimization
 description: Use this skill whenever asked about reducing tax in Spain, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals (autónomos) in Spain. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pagar menos impuestos", "optimización fiscal", "ahorrar en impuestos", "deducciones IRPF", "autónomo fiscal". ALWAYS read this skill before advising on any Spanish tax optimization strategy.
-version: 1.0
+version: 1.1
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Spain Tax Optimization
 
-## Spain Tax Optimization -- Self-Employed (Autónomo) Skill v1.0
+## Spain Tax Optimization -- Self-Employed (Autónomo) Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -52,8 +52,8 @@ Autonomous community (CCAA) rates vary. Madrid has the lowest combined rates; Ca
 
 | Factor | Autónomo (Persona Física) | Sociedad Limitada (SL) |
 | --- | --- | --- |
-| Top marginal rate | 47-54% (IRPF + CCAA) | 25% Impuesto sobre Sociedades (IS); 23% for first EUR 50,000 if turnover < EUR 1m |
-| Extraction | N/A | Salary (deductible, taxed as income) + dividends (19-28% withholding) |
+| Top marginal rate | 47-54% (IRPF + CCAA) | 25% Impuesto sobre Sociedades (IS). Turnover (INCN) < EUR 1m (microempresa): periods starting in 2025, 21% on the first EUR 50,000 and 22% on the rest; 2026, 19% and 21%; 2027 onwards, 17% and 20% (LIS art. 29.1 and DT 44ª; see es-corporate-tax) |
+| Extraction | N/A | Salary (deductible, taxed as income) + dividends (19% withholding, LIRPF art. 101.4; taxed in the savings scale at 19-30%) |
 | When to incorporate | When net profits consistently exceed ~EUR 40,000-50,000 | Requires notarial deed, compliance costs, annual accounts |
 
 - **Legislation** — Ley 27/2014 del Impuesto sobre Sociedades; Ley del IRPF Art. 25-26  _(Ley 27/2014 del Impuesto sobre Sociedades; Ley del IRPF Art. 25-26)_
@@ -244,7 +244,7 @@ From 2025/2026, autónomo contributions are based on real net income brackets:
 | 6,001 -- 50,000 | 21% |
 | 50,001 -- 200,000 | 23% |
 | 200,001 -- 300,000 | 27% |
-| 300,001+ | 28% |
+| 300,001+ | 30% (from 1 January 2025; LIRPF arts 66 and 76) |
 
 **Strategy:** Time realization of capital gains across tax years to stay in lower brackets. Use the EUR 6,000 @ 19% band each year.
 

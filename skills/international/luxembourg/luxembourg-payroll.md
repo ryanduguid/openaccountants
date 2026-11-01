@@ -1,10 +1,10 @@
 ---
 name: luxembourg-payroll
 description: Use this skill whenever asked about Luxembourg payroll processing for employed persons. Trigger on phrases like "Luxembourg payroll", "retenue d'impot Luxembourg", "wage withholding Luxembourg", "fiche de retenue", "tax card Luxembourg", "tax class 1 1a 2", "CCSS contributions", "centre commun de la securite sociale", "pension contribution Luxembourg", "assurance dependance", "dependency insurance", "Mutualite des Employeurs", "MDE", "accident insurance Luxembourg", "sante au travail", "SSM Luxembourg", "salaire social minimum", "social minimum wage Luxembourg", "CIS CISSM CIM tax credit", "solidarity surcharge Luxembourg", "fonds pour l'emploi", "MyGuichet payroll", "extrait de compte salaire", "net salary Luxembourg", "gross to net Luxembourg", "PAYE Luxembourg", or any question about computing employee pay, wage withholding tax, or social security contributions for Luxembourg-based employees. This skill covers monthly wage withholding tax (PAYE via the tax card), CCSS social security (employee and employer), the dependency-insurance abatement, employer-only funds (accident, occupational health, Mutualite des Employeurs), the social minimum wage, tax credits (CIS, CISSM, CIM) and filing obligations. ALWAYS read this skill before processing any Luxembourg payroll.
-version: 0.2
+version: 0.3
 jurisdiction: LU
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Luxembourg Payroll
 
-## Luxembourg Payroll Skill v0.2
+## Luxembourg Payroll Skill v0.3
 
 **Tier 2 (research-verified).** The 2025 income tax scale (post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment), the solidarity surcharge and the CIS/CISSM/CIM tax credits are confirmed against a secondary practitioner summary. The CCSS contribution rate table (sickness 2.80%+2.80%, pension 8%+8%, dependency 1.40%, accident base 0.700%, Mutualite des Employeurs 0.07-2.64%, sante au travail 0.14%) is taken directly from the official CCSS *Avis aux employeurs - Taux de cotisation au 01.01.2025* (notice of 17.01.2025) and is firm. The min/max contribution base and the May 2025 indexation are corroborated from Orbitax and WAT Fiduciary. The live CCSS HTML "parametres sociaux" page and several Big-4 newsletter pages returned HTTP 403 to automated fetch, so the official CCSS PDF and Orbitax/WAT were used to corroborate the May 2025 figures. Figures carry **[RESEARCH GAP — reviewer to confirm]** markers where the primary authority figure could not be pinned to a single fixed published value (notably class 1a withholding mechanics and the exact statutory penalty for late annual-statement filing).
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social-contribution ceiling (max base = 5x SSM) | EUR 13,188.96/month (1 Jan 2025, index 944.43) -> EUR 13,518.68/month (from 1 May 2025, index 968.04); annual max approx EUR 162,224 (CCSS Avis 17.01.2025; Orbitax) |
 | Social-contribution floor (min base = SSM unskilled) | EUR 2,637.79/month (Jan 2025) -> EUR 2,703.74/month (May 2025) (CCSS Avis 17.01.2025) |
 | Validated by | Pending -- requires sign-off by a Luxembourg reviewer (expert-comptable / fiduciaire) |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 **Headline contribution rates (2025)**  _(CCSS Avis aux employeurs 17.01.2025)_
 
@@ -54,6 +54,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Family benefits (prestations familiales) | -- | 1.70% (**PUBLIC-sector employers ONLY**; 0% private sector) |
 | **Typical employee deduction (ex-tax)** | **~12.45%** (8.00 + 2.80 + 0.25 + 1.40) | -- |
 | **Typical private-sector employer on-cost (ex-tax, MDE Class 2)** | -- | **~12.88%** (8.00 + 2.80 + 0.25 + 0.700 + 0.14 + 0.99) |
+
+**2026 pension rate.** From 1 January 2026 the pension contribution is **8.50% employee + 8.50% employer** (17.00% combined), replacing 8.00% each. Sickness (3.05% each) and dependency (1.40%) are unchanged in the 2026 parameters; the 2026 accident base rate is 0.65%. With the 2026 pension rate the typical employee deduction (ex-tax) is ~12.95% (8.50 + 2.80 + 0.25 + 1.40). For the worked examples in Section 9, the 2026 pension amount per party is EUR 229.82 on EUR 2,703.74, EUR 382.50 on EUR 4,500.00 and EUR 1,149.09 on the capped EUR 13,518.68; the rest of each example (including the 2025 tax scale) is not recomputed for 2026.  _(CCSS, Avis aux non-salariés, taux de cotisation au 01.01.2026 (assurance pension 17,00 %), 13 March 2026 (https://ccss.public.lu/dam-assets/publications/2026/ccss-20260313-avis-60-fr-de.pdf); FEDIL, Paramètres sociaux applicables à partir du 1er janvier 2026 (employer 8.50%, employee 8.50%) (https://www.fedil.lu/fr/publications/parametres-sociaux-applicables-a-partir-du-1er-janvier-2026/))_
 
 - **Dependency contribution base note** — The dependency contribution (1.40%, employee only) is levied on gross income after an abatement of 1/4 of the SSM and has no floor or ceiling — its base differs from every other branch. See Section 3.
 
@@ -647,7 +649,7 @@ Payroll → Self-employed: Self-employed and non-salaried persons are handled ou
 5. Family benefits 1.70% applies to public-sector employers only; private-sector payroll sets it to 0%.
 6. The 17-18 (80%) and 15-17 (75%) SSM rates are given for Jan 2025; the May 2025 equivalents are not enumerated in the research data.
 7. The exact statutory penalty for late/non-filing of the annual salary statement (additional tax vs fine) is not published as a single fixed figure.
-8. A separate state pension reform raised the pension contribution rate for 2026 (from 8% to 8.05% per party); this is out of scope for 2025 and must NOT be applied to 2025 payroll.
+8. The pension contribution rate rose from 1 January 2026 from 8.00% to 8.50% per party (17.00% employee plus employer), per the CCSS notice of 13 March 2026 and FEDIL's 2026 parameters (see Section 1). It must NOT be applied to 2025 payroll and MUST be applied to 2026 payroll.
 9. The live CCSS HTML "parametres sociaux" page and several Big-4 newsletter pages returned HTTP 403 to automated fetch; figures are anchored to the official CCSS 17.01.2025 PDF and corroborated by Orbitax/WAT — a reviewer should confirm against the CCSS table before filing.
 
 ### Test Suite
@@ -683,7 +685,7 @@ A correct implementation should pass each of these checks (May 2025 / index 968.
 - NEVER compute capped-branch contributions on earnings above the ceiling (EUR 13,518.68/month from May 2025; EUR 13,188.96 Jan--Apr 2025).
 - NEVER mix the two 2025 parameter sets — use index 944.43 for Jan--Apr 2025 and index 968.04 from May 2025.
 - NEVER omit the employer-only funds (accident 0.700%, occupational health 0.14%, MDE by class) on top of employer pension and sickness.
-- NEVER apply the 2026 pension rate (8.05%/party) to 2025 — that change takes effect 1 January 2026 and is out of scope.
+- NEVER apply the 2026 pension rate (8.50%/party) to 2025, or the 2025 rate (8.00%/party) to 2026 — the change takes effect 1 January 2026.
 - NEVER forget the solidarity surcharge (7%, or 9% above EUR 150,000 / 300,000) on top of the income tax due.
 - NEVER miss the wage-withholding remittance (by the 10th of the following month via MyGuichet.lu), the CCSS payment (within 10 days of the statement), the CCSS entry declaration (within 8 days of hiring) or the annual salary statement (before 1 March) — penalties apply.
 - NEVER run a self-employed / non-salaried person through employer payroll — trigger R-LU-P-2.

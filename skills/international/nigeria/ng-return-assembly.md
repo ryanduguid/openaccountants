@@ -4,8 +4,8 @@ description: Use this skill whenever asked to assemble, finalize, or package a N
 jurisdiction: NG
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-31
-version: 1.1
+last_updated: 2026-11-01
+version: 1.2
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NG Return Assembly
 
-## Nigeria — Return Assembly (Capstone) — Skill v1.1
+## Nigeria — Return Assembly (Capstone) — Skill v1.2
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -48,20 +48,23 @@ The output is a reviewer-ready package: line-by-line return working paper, cross
 | Field | Value |
 | --- | --- |
 | Country | Federal Republic of Nigeria |
-| Federal tax authority | Federal Inland Revenue Service (FIRS) — soon transitioning to Nigeria Revenue Service (NRS) under NTA 2025 |
+| Federal tax authority | Nigeria Revenue Service (NRS) from 1 January 2026, replacing the Federal Inland Revenue Service (FIRS) under the Nigeria Revenue Service (Establishment) Act 2025; FIRS for FY 2025 and earlier |
 | State tax authorities | 36 State Internal Revenue Services + FCT-IRS (Lagos = LIRS, Rivers = RIRS, etc.) |
 | Federal filing portal | FIRS Tax Pro-Max (https://taxpromax.firs.gov.ng) |
 | Payment platform | Remita (https://www.remita.net) — Treasury Single Account (TSA) consolidation |
 | Currency | NGN (Nigerian Naira / ₦) |
 | Tax year | Calendar year for individuals (1 January – 31 December); accounting year-end for companies (commonly 31 December, but any 12-month period) |
-| Current tax year | 2025 (filing window for Dec 2025 year-ends opens January 2026) |
+| Current tax year | 2026. The Nigeria Tax Act 2025 (NTA) and Nigeria Tax Administration Act 2025 (NTAA) are in force from 1 January 2026. This guide's FY 2025 computations and dates are historical: use them only for late or amended FY 2025 returns |
 | Individual return | PIT — Form A (annual income declaration), filed with State IRS |
 | Corporate return | CIT Self-Assessment Return (Tax Pro-Max electronic form), filed with FIRS |
 | Employer annual return | Form H1 (annual PAYE reconciliation), filed with State IRS |
 | VAT return | FIRS VAT Form 002 (monthly) |
-| Individual filing deadline | **31 March 2026** (PITA Section 41 — 90 days after year-end) |
-| Employer Form H1 deadline | **31 January 2026** (PITA Section 81 — 31 January following year-end) |
-| CIT deadline | **6 months after FYE** — for 31 December 2025 year-end, due **30 June 2026** (CITA Section 55) |
+| Individual filing deadline (FY 2025, passed) | **31 March 2026** (PITA Section 41 — 90 days after year-end) |
+| Employer Form H1 deadline (FY 2025, passed) | **31 January 2026** (PITA Section 81 — 31 January following year-end) |
+| CIT deadline (FY 2025, passed) | **6 months after FYE** — for 31 December 2025 year-end, due **30 June 2026** (CITA Section 55) |
+| Individual filing deadline (FY 2026) | NTAA s 13 requires an annual self-assessment return but its text states no due date; confirm the State IRS's due date before filing ([NTAA 2025 s 13](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)) |
+| Employer annual return (FY 2026) | **31 January 2027** (NTAA s 14(1): by 31 January for the preceding year) |
+| CIT deadline (FY 2026) | **6 months after FYE** — for a 31 December 2026 year-end, due **30 June 2027** (NTAA s 11(5)(a)) |
 | VAT monthly deadline | **21st of following month** (VAT Act Section 14) |
 | Confirmation receipt | Tax Pro-Max acknowledgement (Federal); SIRS portal acknowledgement (State); Remita RRR / e-receipt for payment |
 | Governing law | Companies Income Tax Act (CITA, Cap C21 LFN 2004 as amended); Personal Income Tax Act (PITA, Cap P8 LFN 2004 as amended); Value Added Tax Act (Cap V1 LFN 2004 as amended); Capital Gains Tax Act (Cap C1 LFN 2004 as amended); Tertiary Education Trust Fund Act 2011; FIRS Establishment Act 2007; **Nigeria Tax Act 2025 (NTA 2025)** — assented June 2025, key provisions effective 1 January 2026 |
@@ -177,7 +180,7 @@ If mismatch: Likely causes are (i) VAT-exempt or zero-rated supplies not in VAT 
 | --- | --- | --- |
 | Sum of monthly Form G PAYE remitted (Jan–Dec 2025) | ng-paye / ng-payroll | Should equal total PAYE in Form H1 |
 | Form H1 total PAYE | ng-paye | Annual reconciliation |
-| Form H1 due date | Fixed | **31 January 2026** |
+| Form H1 due date | Fixed | **31 January 2026** for FY 2025; the FY 2026 employer return is due **31 January 2027** (NTAA s 14(1)) |
 | Late-filing penalty | PITA Section 81(3) | ₦500,000 (company) or ₦50,000 (individual employer) per month |
 
 If mismatch: Likely cause is mid-year joiners/leavers, bonus / 13th-month paid in December not captured in monthly remittance, or PAYE on benefits-in-kind only recognised at year-end.
@@ -299,9 +302,9 @@ Form A is the annual income declaration filed with the relevant State Internal R
 ### 4.3 NTA 2025 transitional note for individuals
 
 The Nigeria Tax Act 2025 (assented June 2025) revises the PIT regime from 1 January 2026, including:
-- New graduated PIT rates (0% / 15% / 18% / 21% / 23% / 25% per draft as published — confirm at FY 2026 filing time)
+- New graduated PIT rates (0% / 15% / 18% / 21% / 23% / 25%) in the NTA Fourth Schedule, as enacted ([NTA 2025 s 58 and Fourth Schedule](https://nass.gov.ng/documents/download/11249))
 - New tax-free threshold of ₦800,000 annual chargeable income (replacing CRA structure)
-- Rent relief of up to ₦200,000 per year
+- Rent relief of 20% of annual rent paid, up to ₦500,000 ([NTA 2025 s 30(2)(a)(vi)](https://nass.gov.ng/documents/download/11249))
 - Consolidation of the unified TIN regime
 - None of these apply to the 2025 return. Flag in the 2026 planning section.
 
@@ -375,7 +378,7 @@ The Nigeria Tax Act 2025 (effective 1 January 2026) introduces sweeping changes 
 
 - Development Levy at 4% consolidating TET (3%), NITDA (1%), and NASENI (0.25%) into a single levy
 - Small company threshold for the 0% CIT rate raised to ₦100M turnover **and** ≤ ₦250M fixed assets (NTA s.201; currently ₦25M turnover)
-- CIT rate **unchanged at 30%** for companies that are not small; the medium-company 20% band is abolished. The Bill's proposed 27.5% / 25% was not enacted
+- CIT rate **unchanged at 30%** for companies that are not small; the medium-company 20% band is abolished. The Bill's 27.5% was not enacted; the 25% rate takes effect only from a date set by presidential order (s 56), and none was found when checked on 1 November 2026
 - Minimum Effective Tax Rate (MEFR) of 15% for multinational groups with ≥ €750M consolidated revenue (Pillar Two adoption)
 - VAT rate to remain at 7.5% in 2026 (NTA 2025 left the rate untouched after political pushback on proposed increase)
 - Nigeria Revenue Service (NRS) replaces FIRS as the federal tax authority
@@ -637,10 +640,10 @@ The reviewer is a Chartered Accountant in Nigeria — ICAN (Institute of Charter
 ## Planning Notes for 2026 (NTA 2025 impact)
 - Development Levy at 4% replaces TET/NITDA/NASENI from 1 Jan 2026
 - Small company threshold rising to ₦100M turnover
-- CIT large-company rate dropping to 25%
+- CIT rate for companies that are not small stays at 30%; s 56 lets a presidential order reduce it to 25% from a date the order sets, and no such order was found when checked on 1 November 2026, so use 30% unless one is produced ([NTA 2025 s 56](https://nass.gov.ng/documents/download/11249))
 - MEFR of 15% for MNE groups (if applicable)
 - New PIT rates and ₦800,000 tax-free threshold for individuals
-- Rent relief up to ₦200,000 for individuals
+- Rent relief for individuals: 20% of annual rent paid, up to ₦500,000 (NTA s 30(2)(a)(vi))
 - Unified TIN regime full rollout
 - FIRS → Nigeria Revenue Service (NRS) rebrand
 - Consolidated Nigeria Tax Account view in Tax Pro-Max from 1 Jan 2026
@@ -785,13 +788,13 @@ The capstone produces a forward-looking section so the taxpayer arrives at the n
 
 **NTA 2025 transitional changes table**  _(Nigeria Tax Act 2025 (NTA 2025))_
 
-| Area | FY 2025 (current) | FY 2026 (NTA 2025) | Action |
+| Area | FY 2025 (historical) | FY 2026 (NTA 2025, current) | Action |
 | --- | --- | --- | --- |
-| CIT rate, companies that are not small | 30% (large) / 20% (medium) | **30% flat — medium band abolished** | Companies previously in the 20% band face a 10-point rise; the Bill's 25% was not enacted |
+| CIT rate, companies that are not small | 30% (large) / 20% (medium) | **30% flat — medium band abolished** | Companies previously in the 20% band face a 10-point rise. s 56 provides for 25% only from a date set by presidential order; none found when checked on 1 November 2026 |
 | Small company threshold (0% CIT) | Turnover ≤ ₦25M | **Turnover ≤ ₦100M AND fixed assets ≤ ₦250M** (NTA s.201; 0% rate s.56; levy exemption s.59) | Companies between ₦25M and ₦100M with qualifying assets move from 20% to 0% and pay no 4% levy |
 | TET + NITDA + NASENI | 3% + 1% + 0.25% separate levies | Consolidated **Development Levy of 4%** | Single line in 2026 computation |
 | Minimum tax (companies) | Section 33 CITA: 0.5% turnover | **MEFR 15%** for MNE groups ≥ €750M consolidated revenue (Pillar Two) | Pillar Two diagnostic for MNE clients |
-| PIT structure | Graduated 7–24%, CRA, Sixth Schedule reliefs | New brackets 0–25%; ₦800K tax-free threshold; rent relief ₦200K | Update payroll PAYE calculations from 1 Jan 2026 |
+| PIT structure | Graduated 7–24%, CRA, Sixth Schedule reliefs | New brackets 0–25%; ₦800K tax-free threshold; rent relief 20% of rent up to ₦500K (s 30(2)(a)(vi)) | Update payroll PAYE calculations from 1 Jan 2026 |
 | TIN | Separate FIRS TIN (companies) and JTB TIN (individuals) | **Unified TIN** — single identifier | Re-validate identifiers post 1 Jan 2026 |
 | Tax authority | FIRS | **Nigeria Revenue Service (NRS)** | Portal rebrand; processes substantively unchanged in short term |
 | VAT rate | 7.5% | **7.5%** (unchanged — proposed increase dropped) | No change |

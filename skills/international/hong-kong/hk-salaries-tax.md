@@ -1,10 +1,10 @@
 ---
 name: hk-salaries-tax
 description: Use this skill whenever asked about Hong Kong salaries tax. Trigger on phrases like "Hong Kong tax", "salaries tax", "BIR60", "IRD", "net chargeable income", "standard rate", "progressive rate HK", "personal allowance Hong Kong", "provisional tax HK", "tax return Hong Kong", or any question about computing, filing, or planning salaries tax for an individual in Hong Kong. This skill covers progressive and standard rate calculations, allowances, deductions, provisional tax, and BIR60 filing. ALWAYS read this skill before advising on Hong Kong salaries tax.
-version: 1.0
+version: 1.1
 jurisdiction: HK
-tax_year: 2024
-last_updated: 2026-09-28
+tax_year: 2025
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # HK Salaries Tax
 
-## Hong Kong Salaries Tax -- Skill v1.0
+## Hong Kong Salaries Tax -- Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | ird.gov.hk / eTAX (etax.ird.gov.hk) |
 | Filing deadline | 1 month from BIR60 issue (usually June/July); eTAX: 1 extra month |
 | Validated by | Pending — requires sign-off by a Hong Kong CPA or tax representative |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Tax Calculation Method
 
@@ -61,24 +61,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | First 5,000,000 | 15% |
 | Exceeding 5,000,000 | 16% |
 
-### Personal Allowances (2024/25)
+### Personal Allowances (2024/25 to 2026/27)
 
-**Personal Allowances (2024/25)**
+**Personal Allowances (2024/25 to 2026/27)**
 
-| Allowance | Amount (HK$) |
-| --- | --- |
-| Basic allowance | 132,000 |
-| Married person's allowance | 264,000 |
-| Child allowance (each child) | 130,000 |
-| Child allowance -- year of birth (additional) | 130,000 |
-| Dependent parent/grandparent (aged 60+) | 50,000 |
-| Dependent parent/grandparent (aged 60+, living together) | 100,000 |
-| Dependent parent/grandparent (aged 55--59) | 25,000 |
-| Dependent parent/grandparent (aged 55--59, living together) | 50,000 |
-| Dependent brother/sister allowance | 37,500 |
-| Single parent allowance | 132,000 |
-| Disabled dependant allowance | 75,000 |
-| Personal disability allowance | 75,000 |
+| Allowance | 2024/25 and 2025/26 (HK$) | From 2026/27 (HK$) |
+| --- | --- | --- |
+| Basic allowance | 132,000 | 145,000 |
+| Married person's allowance | 264,000 | 290,000 |
+| Child allowance (each child) | 130,000 | 140,000 |
+| Child allowance -- newborn (additional) | 130,000 (year of birth) | 140,000 in each of the first 2 years (children born on or after 1 April 2025) |
+| Dependent parent/grandparent (aged 60+) | 50,000 | 55,000 |
+| Dependent parent/grandparent (aged 60+, living together) | 100,000 | 110,000 |
+| Dependent parent/grandparent (aged 55--59) | 25,000 | 27,500 |
+| Dependent parent/grandparent (aged 55--59, living together) | 50,000 | 55,000 |
+| Dependent brother/sister allowance | 37,500 | 37,500 (no change announced) |
+| Single parent allowance | 132,000 | 145,000 |
+| Disabled dependant allowance | 75,000 | 75,000 (no change announced) |
+| Personal disability allowance | 75,000 | 75,000 (no change announced) |
+
+Source: IRD, 2026-27 Budget FAQ (2025/26 and 2026/27 columns; passed 13 May 2026, gazetted 22 May 2026): https://www.ird.gov.hk/eng/faq/budget2026_27.htm
 
 ### Conservative Defaults
 
@@ -86,12 +88,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown marital status | Apply basic allowance (HK$132,000) only |
+| Unknown marital status | Apply basic allowance (HK$132,000 to 2025/26; HK$145,000 from 2026/27) only |
 | Unknown whether children qualify | Do not claim child allowance |
 | Unknown dependent parent arrangement | Do not claim additional allowance for living together |
 | MPF deduction cap | Apply HK$18,000 cap per employee |
 | Unknown whether progressive or standard rate lower | Calculate both; apply lower |
-| Tax reduction year | Apply 2024/25 reduction: 100%, ceiling HK$1,500 |
+| Tax reduction year | Apply the reduction for the year assessed: 2024/25 100%, ceiling HK$1,500; 2025/26 100%, ceiling HK$3,000. Do not assume one for 2026/27 |
 
 ### 2.1 Charge to Salaries Tax (IRO Sec. 8)
 
@@ -122,7 +124,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Self-education expenses | HK$100,000 |
 | MPF mandatory contributions (employee) | HK$18,000 |
 | Approved charitable donations | 35% of assessable income |
-| Elderly residential care expenses | HK$100,000 |
+| Elderly residential care expenses | HK$100,000 (HK$110,000 from 2026/27) |
 | Home loan interest | HK$100,000 (max 20 years of assessment) |
 | Qualifying premiums (VHIS) | HK$8,000 per insured person |
 | Qualifying annuity premiums (QDAP) | HK$60,000 |
@@ -270,7 +272,9 @@ Less 2024/25 reduction: **HK$92,360**
 | 2022/23 | 100% | HK$6,000 |
 | 2023/24 | 100% | HK$3,000 |
 | 2024/25 | 100% | HK$1,500 |
-| 2025/26 (proposed) | 100% | HK$3,000 |
+| 2025/26 | 100% | HK$3,000 (enacted; gazetted 22 May 2026) |
+
+Source for 2025/26: IRD, 2026-27 Budget FAQ: https://www.ird.gov.hk/eng/faq/budget2026_27.htm
 
 ## Section 6 -- Penalties and Surcharges
 

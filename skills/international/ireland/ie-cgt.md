@@ -4,7 +4,7 @@ description: ALWAYS read this skill before touching any Irish Capital Gains Tax 
 jurisdiction: IE
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | EUR (€) |
 | Tax year | 1 January to 31 December (calendar year) |
 | Primary legislation | Taxes Consolidation Act (TCA) 1997, Parts 19–21 |
-| Headline rate | **33%** on chargeable gains (raised from 30% in Budget 2013; previously 25%, 20%, 22%) |
+| Headline rate | **33%** on chargeable gains for disposals before 7 October 2026 (raised from 30% in Budget 2013; previously 25%, 20%, 22%); **31%** for disposals on or after 7 October 2026 (Budget 2027; Finance (No. 2) Bill 2026, not confirmed enacted at 1 November 2026) |
 | Entrepreneur Relief rate | **10%** on first €1,000,000 lifetime of qualifying business asset disposals (TCA 1997 s. 597AA) |
 | Annual exemption | **€1,270** per individual per tax year (non-transferable between spouses) |
 | Tax authority | Office of the Revenue Commissioners ("Revenue") |
@@ -38,12 +38,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Asset class / scenario | Rate | Notes |
 | --- | --- | --- |
-| Standard chargeable gains (property, shares, crypto, intangibles) | **33%** | Single headline rate since 6 December 2012 |
+| Standard chargeable gains (property, shares, crypto, intangibles) | **33%**; **31%** from 7 October 2026 | 33% for disposals from 6 December 2012 to 6 October 2026; 31% under TCA s. 28(3) as amended, for disposals on or after 7 October 2026 |
 | Qualifying business asset disposal — Entrepreneur Relief | **10%** | First €1M lifetime cap (TCA s. 597AA) |
 | Foreign life policies, certain offshore funds | 40% | Higher rate under TCA Part 27 — out of scope of this skill |
 | Principal Private Residence (PPR) — fully occupied throughout ownership | 0% | TCA s. 604 — full exemption |
 | Disposal of land/buildings/minerals > €500,000 — no CG50 | Buyer withholds 15% on account | Refunded once seller's CGT liability assessed |
-| Non-resident disposing of Irish-situs land, mineral rights, or unquoted shares deriving value from Irish land | 33% | Limited Irish CGT scope for non-residents (TCA s. 29) |
+| Non-resident disposing of Irish-situs land, mineral rights, or unquoted shares deriving value from Irish land | 33%; 31% from 7 October 2026 | Limited Irish CGT scope for non-residents (TCA s. 29) |
 
 ## Section 2 — Required inputs & refusal catalogue
 
@@ -222,7 +222,7 @@ Facts. Ms de Paor, aged 47, founded an Irish trading company in 2018 and held 10
 | Acquisition by gift or inheritance with no probate / CAT valuation | Obtain probate / market valuation; if unavailable, STOP |
 | PPR claimed but property had periods of letting beyond rent-a-room | Apportion conservatively; assume non-qualifying for the let period |
 | Garden / grounds > 1 acre | Apportion proportionally; restrict PPR to one-acre site |
-| Unclear whether Entrepreneur Relief 5% / 3-year / working-director conditions are met | Assume conditions not met → 33% standard rate |
+| Unclear whether Entrepreneur Relief 5% / 3-year / working-director conditions are met | Assume conditions not met → standard rate (33%, or 31% for disposals on or after 7 October 2026) |
 | Unknown whether prior Retirement Relief lifetime threshold breached | Assume threshold partly used → restrict relief conservatively, request prior claim history |
 | Indexation factor for pre-2003 acquisition unclear | Use Revenue's published indexation table for the year of acquisition; if year unclear, STOP |
 | Unknown whether parties are connected | Treat as connected → apply market value rule |
@@ -237,7 +237,7 @@ Facts. Ms de Paor, aged 47, founded an Irish trading company in 2018 and held 10
 
 ## Section 8 — Sources
 
-1. Taxes Consolidation Act 1997 (TCA 1997) — primary statute, in particular: Part 19 (Principal Provisions Relating to Taxation of Chargeable Gains). Part 20 (Companies' Chargeable Gains). Part 21 (Mergers, Divisions, Transfers of Assets and Exchanges of Shares Concerning Companies of Different Member States). s. 28 (charge to capital gains tax); s. 29 (persons chargeable and territorial scope); s. 532 (assets); s. 542 (date of disposal); s. 547 (acquisition by way of gift); s. 549 (connected persons); s. 552 (allowable deductions); s. 556 (indexation); s. 573 (death); s. 581 (share identification); s. 597AA (Entrepreneur Relief); s. 598 & s. 599 (Retirement Relief); s. 602 (chattels); s. 603 (wasting chattels); s. 603A (site to child); s. 604 (PPR); s. 980 (CG50 / withholding); s. 1028 (spousal transfers). 2. Finance Act 2012 — increased headline CGT rate to 30% (effective 7 December 2011). 3. Finance Act 2013 (Budget 2013 measures) — increased headline CGT rate to 33% (effective 6 December 2012). 4. Finance Act 2013 — introduced Entrepreneur Relief at the original 20% rate. 5. Finance Act 2015 — replaced the original Entrepreneur Relief with the current TCA s. 597AA regime at 20%, capped €1M lifetime. 6. Finance Act 2016 — reduced the Entrepreneur Relief rate to 10% (effective 1 January 2017). 7. Finance Act 2014 — introduced the €3M cap on s. 599 Retirement Relief for disponers aged 66+ on transfers to a child. 8. Finance Act 2024 / Budget 2025 measures — confirm any current-year changes to thresholds, lifetime caps, or rate via published Revenue guidance. 9. Revenue Tax and Duty Manuals (TDMs) — Part 19 series, including the PPR TDM, the Entrepreneur Relief TDM, the Retirement Relief TDM, and the CG50 TDM. 10. Revenue Form CG1 and accompanying guidance notes for the relevant tax year. 11. Revenue Form 11 / Form 11S self-assessment return and accompanying guidance. 12. Revenue Online Service (ROS) guidance — e-filing instructions for CG1 and Form 11. 13. Irish Tax Institute (ITI) Capital Tax materials — practitioner-level commentary on CGT, PPR, Entrepreneur Relief, Retirement Relief, and CG50. 14. Chartered Accountants Ireland — Taxation reference materials — current-year CGT updates and worked guidance.
+1. Taxes Consolidation Act 1997 (TCA 1997) — primary statute, in particular: Part 19 (Principal Provisions Relating to Taxation of Chargeable Gains). Part 20 (Companies' Chargeable Gains). Part 21 (Mergers, Divisions, Transfers of Assets and Exchanges of Shares Concerning Companies of Different Member States). s. 28 (charge to capital gains tax); s. 29 (persons chargeable and territorial scope); s. 532 (assets); s. 542 (date of disposal); s. 547 (acquisition by way of gift); s. 549 (connected persons); s. 552 (allowable deductions); s. 556 (indexation); s. 573 (death); s. 581 (share identification); s. 597AA (Entrepreneur Relief); s. 598 & s. 599 (Retirement Relief); s. 602 (chattels); s. 603 (wasting chattels); s. 603A (site to child); s. 604 (PPR); s. 980 (CG50 / withholding); s. 1028 (spousal transfers). 2. Finance Act 2012 — increased headline CGT rate to 30% (effective 7 December 2011). 3. Finance Act 2013 (Budget 2013 measures) — increased headline CGT rate to 33% (effective 6 December 2012). 4. Finance Act 2013 — introduced Entrepreneur Relief at the original 20% rate. 5. Finance Act 2015 — replaced the original Entrepreneur Relief with the current TCA s. 597AA regime at 20%, capped €1M lifetime. 6. Finance Act 2016 — reduced the Entrepreneur Relief rate to 10% (effective 1 January 2017). 7. Finance Act 2014 — introduced the €3M cap on s. 599 Retirement Relief for disponers aged 66+ on transfers to a child. 8. Finance Act 2024 / Budget 2025 measures — confirm any current-year changes to thresholds, lifetime caps, or rate via published Revenue guidance. 9. Revenue Tax and Duty Manuals (TDMs) — Part 19 series, including the PPR TDM, the Entrepreneur Relief TDM, the Retirement Relief TDM, and the CG50 TDM. 10. Revenue Form CG1 and accompanying guidance notes for the relevant tax year. 11. Revenue Form 11 / Form 11S self-assessment return and accompanying guidance. 12. Revenue Online Service (ROS) guidance — e-filing instructions for CG1 and Form 11. 13. Irish Tax Institute (ITI) Capital Tax materials — practitioner-level commentary on CGT, PPR, Entrepreneur Relief, Retirement Relief, and CG50. 14. Chartered Accountants Ireland — Taxation reference materials — current-year CGT updates and worked guidance. 15. Department of Finance, Finance (No. 2) Bill 2026 press release (19 October 2026) — standard CGT rate in s. 28(3) reduced from 33% to 31% effective from 7 October 2026 — https://www.gov.ie/en/department-of-finance/press-releases/department-of-finance-publishes-finance-bill-no2-2026/.
 
 <!-- openaccountants-cta-block -->
 

@@ -1,11 +1,11 @@
 ---
 name: us-oh-payroll
-description: Tier 2 Ohio content skill for employer payroll compliance covering tax year 2025. Includes the OH PIT brackets up to 3.5% (phasing down), IT 941 quarterly withholding, OH SUI wage base $9,000 with rates 0.30-9.80%, the 600+ municipal income tax system collected via RITA (Regional Income Tax Agency, ~330 cities) and CCA (Central Collection Agency, ~50 cities) with direct-file cities like Cincinnati/Columbus/Dayton/Toledo, the 20-day work-in-municipality threshold under SB 22 (2021) triggering non-resident withholding, and BWC mandatory state-fund workers' compensation.
+description: Tier 2 Ohio content skill for employer payroll compliance covering tax year 2025. Includes the OH PIT brackets up to 3.125% for 2025 (flat 2.75% above $26,050 from 2026), IT 941 quarterly withholding, OH SUI wage base $9,000 with rates 0.30-9.80%, the 600+ municipal income tax system collected via RITA (Regional Income Tax Agency, ~330 cities) and CCA (Central Collection Agency, ~50 cities) with direct-file cities like Cincinnati/Columbus/Dayton/Toledo, the 20-day work-in-municipality threshold under SB 22 (2021) triggering non-resident withholding, and BWC mandatory state-fund workers' compensation.
 jurisdiction: US-OH
 category: payroll
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -41,10 +41,10 @@ This skill governs **Ohio employer payroll compliance for tax year 2025** for bu
 | --- | --- |
 | $0 — $26,050 | 0.00% |
 | $26,051 — $100,000 | 2.75% |
-| $100,001 and above | 3.50% |
+| $100,001 and above | 3.125% |
 
-- **Phase-down trajectory** — 2023: top rate 3.99% (four brackets); 2024: top rate 3.50%, three brackets (consolidated); 2025: top rate 3.50% (held flat per HB 96); 2026: top rate 3.125% (HB 96 sets a glide path); 2027 target: flat 2.75% if revenue triggers are met  _(HB 33 (2023); HB 96 (2025))_
-- **Withholding tables method** — The Ohio Department of Taxation publishes withholding tables under O.A.C. 5703-7-10. The 2025 tables continue to compute withholding using a simplified two-tier method approximating the 2.75% / 3.50% structure, after applying the personal exemption amounts ($2,400 / $2,150 / $1,900 tiered by federal AGI under R.C. 5747.025).  _(O.A.C. 5703-7-10; R.C. 5747.025)_
+- **Phase-down trajectory** — 2023: top rate 3.99% (four brackets); 2024: top rate 3.50%, three brackets (consolidated); 2025: $342.00 + 2.75% of income over $26,050 up to $100,000, then $2,394.32 + 3.125% above $100,000; 2026 and later: flat $332.00 + 2.75% of income over $26,050, with no revenue trigger. See `us-oh-income-tax` for the full schedule.  _(HB 33 (2023); R.C. 5747.02(A)(3)(b)-(c), effective September 30, 2025 (HB 96), https://codes.ohio.gov/ohio-revised-code/section-5747.02/9-30-2025)_
+- **Withholding tables method** — The Ohio Department of Taxation publishes withholding tables under O.A.C. 5703-7-10. The 2025 tables continue to compute withholding using a simplified two-tier method approximating the 2025 2.75% / 3.125% structure, after applying the personal exemption amounts ($2,400 / $2,150 / $1,900 tiered by federal AGI under R.C. 5747.025).  _(O.A.C. 5703-7-10; R.C. 5747.025)_
 
 ### 2.2 Supplemental wage withholding
 
@@ -360,7 +360,7 @@ The post-2022 remote-work environment has produced a new high-audit-risk pattern
 - HB 110 (2021) — Budget bill confirming SB 22 changes
 - SB 22 (2021) — 20-day rule rewrite; rollback of pandemic telework fiction
 - HB 33 (2023) — Income tax phase-down (3.99% → 3.50% top rate over 2 years)
-- HB 96 (2025) — Continued phase-down (3.50% held in 2025; 3.125% set for 2026)
+- HB 96 (2025) — Continued phase-down (3.125% top rate for 2025; flat 2.75% above $26,050 from 2026)
 
 **Federal guidance referenced:**
 - IRS Rev. Rul. 87-41 — 20-factor common-law worker classification

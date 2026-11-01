@@ -1,10 +1,10 @@
 ---
 name: france-payroll
 description: Use this skill whenever asked about French payroll processing for employees. Trigger on phrases like "French payroll", "bulletin de paie", "fiche de paie", "prélèvement à la source", "PAS", "URSSAF cotisations", "cotisations sociales France", "CSG CRDS", "SMIC", "AGIRC-ARRCO", "retraite complémentaire", "DSN", "net imposable", "net à payer", "salaire brut net France", "charges patronales", "charges salariales", "PMSS", "plafond sécurité sociale", "minimum wage France", "congés payés", "13ème mois", "mutuelle obligatoire", or any question about computing employee pay, income tax withholding, or social contributions in France. This skill covers prélèvement à la source (PAS), URSSAF contributions, AGIRC-ARRCO, CSG/CRDS, mandatory benefits, payslip (bulletin de paie) requirements, DSN filing, and employer cost analysis. ALWAYS read this skill before processing any French employee payroll.
-version: 1.0
+version: 1.1
 jurisdiction: FR
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social Security Ceiling (PMSS, 2026) | EUR 4,005/month (EUR 48,060/year) |
 | Electronic declaration | DSN (Déclaration Sociale Nominative) via net-entreprises.fr |
 | Validated by | Pending -- requires sign-off by a French expert-comptable |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Income Tax Withholding (Prélèvement à la Source)
 
@@ -150,9 +150,11 @@ Used when no personalised rate is available. Based on monthly net imposable. Pro
 
 | Contribution | Employer Rate | Base |
 | --- | --- | --- |
-| Assurance chômage | 4.05% | Up to 4 PMSS (EUR 16,020/month) |
+| Assurance chômage | 4.00% | Up to 4 PMSS (EUR 16,020/month; EUR 192,240/year in 2026) |
 | AGS (Association pour la Gestion du régime d'assurance des créances des Salariés) | 0.25% | Up to 4 PMSS |
 | Prévoyance cadres (minimum) | 1.50% | Up to 1 PMSS (Convention collective nationale des cadres) |
+
+*Assurance chômage source: Urssaf, Taux de cotisations secteur privé — https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-secteur-prive.html*
 
 ### Total Employer Cost (Approximate)
 

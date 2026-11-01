@@ -1,10 +1,10 @@
 ---
 name: es-social-contributions
 description: Use this skill whenever asked about Spanish self-employed social contributions (cuota de autonomos / RETA). Trigger on phrases like "cuota autonomos", "RETA", "social contributions Spain", "autónomo contributions", "how much do I pay as autonomo", "tarifa plana", "cese de actividad", "regularizacion cuotas", "base de cotización", "TGSS direct debit", "cuota mensual", or any question about Spanish self-employed social security. Also trigger when classifying bank statement transactions showing TGSS direct debits, cuota autonomos debits, or Seguridad Social payments. ALWAYS read this skill before touching any Spanish social contributions work.
-version: 2.0
+version: 2.1
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -23,15 +23,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Spain |
 | Primary Legislation | LGSS; Real Decreto-ley 13/2022 (income-based system) |
-| Supporting Legislation | Orden PJC/178/2025 (2025 rates); Ley 20/2007 (Estatuto Trabajo Autonomo); Ley 35/2006 IRPF |
+| Supporting Legislation | Orden PJC/178/2025 (2025 rates); Orden PJC/297/2026 (2026 rates); Ley 20/2007 (Estatuto Trabajo Autonomo); Ley 35/2006 IRPF |
 | Tax Authority | Tesoreria General de la Seguridad Social (TGSS) |
 | Currency | EUR only |
 | Total contribution rate (2025) | 31.40% |
+| Total contribution rate (2026) | 31.50% (MEI 0.90%) |
 | Tarifa plana (new autonomos) | EUR 80/month (first 12 months) |
 | Payment frequency | Monthly (last business day of current month) |
 | Payment method | Domiciliacion bancaria (direct debit) -- mandatory |
 | 15 income tranches | Tranche 1 (<=EUR 670/mo) to Tranche 15 (>EUR 6,000/mo) |
 | Maximum base (2025) | EUR 4,909.50/month |
+| Maximum base (2026) | EUR 5,101.20/month |
 | Autonomo societario minimum | EUR 1,000.00/month |
 | Base change windows | 6 per year (Feb, Apr, Jun, Aug, Oct, Dec) |
 | Regularisation | Automatic after IRPF filing |
@@ -193,53 +195,55 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 
 - **Net income formula** — Rendimientos netos = Ingresos computables - Gastos deducibles Rendimientos netos RETA = Rendimientos netos - 7% deduccion generica (3% for societarios) Monthly net = Rendimientos netos RETA / 12
 
-### Rule 2 -- 2025 tranche table (15 tranches)
+### Rule 2 -- 2025 and 2026 tranche table (15 tranches)
 
 **Tabla Reducida (Tranches 1-3)** and **Tabla General (Tranches 4-15)**.
 
 **Tabla Reducida (Tranches 1-3)**
 
-| Tranche | Monthly Net (EUR) | Min. Base (EUR) | Approx. Min. Cuota (EUR/month) |
-| --- | --- | --- | --- |
-| 1 | <= 670 | 653.59 | ~200 |
-| 2 | 670.01-900.00 | 718.95 | ~220 |
-| 3 | 900.01-1,125.90 | 849.67 | ~260 |
+| Tranche | Monthly Net (EUR) | Min. Base (EUR) | Min. Cuota 2025 at 31.40% (EUR/month) | Min. Cuota 2026 at 31.50% (EUR/month) |
+| --- | --- | --- | --- | --- |
+| 1 | <= 670 | 653.59 | 205.23 | 205.88 |
+| 2 | 670.01-900.00 | 718.95 | 225.75 | 226.47 |
+| 3 | 900.01 to under 1,166.70 | 849.67 | 266.80 | 267.65 |
 
 **Tabla General (Tranches 4-15)**
 
-| Tranche | Monthly Net (EUR) | Min. Base (EUR) | Approx. Min. Cuota (EUR/month) |
-| --- | --- | --- | --- |
-| 4 | 1,125.91-1,300.00 | 950.98 | ~291 |
-| 5 | 1,300.01-1,500.00 | 960.78 | ~294 |
-| 6 | 1,500.01-1,700.00 | 960.78 | ~294 |
-| 7 | 1,700.01-1,850.00 | 1,143.79 | ~350 |
-| 8 | 1,850.01-2,030.00 | 1,209.15 | ~370 |
-| 9 | 2,030.01-2,330.00 | 1,274.51 | ~390 |
-| 10 | 2,330.01-2,760.00 | 1,356.21 | ~415 |
-| 11 | 2,760.01-3,190.00 | 1,437.91 | ~440 |
-| 12 | 3,190.01-3,620.00 | 1,519.61 | ~465 |
-| 13 | 3,620.01-4,050.00 | 1,601.31 | ~490 |
-| 14 | 4,050.01-6,000.00 | 1,732.03 | ~530 |
-| 15 | > 6,000.00 | 1,928.10 | ~590 |
+| Tranche | Monthly Net (EUR) | Min. Base (EUR) | Min. Cuota 2025 at 31.40% (EUR/month) | Min. Cuota 2026 at 31.50% (EUR/month) |
+| --- | --- | --- | --- | --- |
+| 4 | 1,166.70-1,300.00 | 950.98 | 298.61 | 299.56 |
+| 5 | 1,300.01-1,500.00 | 960.78 | 301.68 | 302.65 |
+| 6 | 1,500.01-1,700.00 | 960.78 | 301.68 | 302.65 |
+| 7 | 1,700.01-1,850.00 | 1,143.79 | 359.15 | 360.29 |
+| 8 | 1,850.01-2,030.00 | 1,209.15 | 379.67 | 380.88 |
+| 9 | 2,030.01-2,330.00 | 1,274.51 | 400.20 | 401.47 |
+| 10 | 2,330.01-2,760.00 | 1,356.21 | 425.85 | 427.21 |
+| 11 | 2,760.01-3,190.00 | 1,437.91 | 451.50 | 452.94 |
+| 12 | 3,190.01-3,620.00 | 1,519.61 | 477.16 | 478.68 |
+| 13 | 3,620.01-4,050.00 | 1,601.31 | 502.81 | 504.41 |
+| 14 | 4,050.01-6,000.00 | 1,732.03 | 543.86 | 545.59 |
+| 15 | > 6,000.00 | 1,928.10 | 605.42 | 607.35 |
 
-- **Maximum base for all tranches** — EUR 4,909.50/month
+- **2026 table** — Orden PJC/297/2026 art. 18 keeps these minimum bases and net-income bands for 2026 (it numbers the general table 1-12). Tranche 3 of the reduced table runs to under EUR 1,166.70 and the general table starts at EUR 1,166.70. Cuotas are minimum base x total rate.  _(Orden PJC/297/2026, arts 18 and 37: https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296)_
 
-### Rule 3 -- Contribution rate breakdown (2025)
+- **Maximum base for all tranches** — EUR 4,909.50/month (2025); EUR 5,101.20/month (2026). Top cuota 2026: 5,101.20 x 31.50% = EUR 1,606.88/month  _(Orden PJC/297/2026, arts 18 and 37)_
 
-**Contribution rate breakdown (2025)**
+### Rule 3 -- Contribution rate breakdown (2025 and 2026)
 
-| Concept | Rate |
-| --- | --- |
-| Contingencias comunes | 28.30% |
-| Contingencias profesionales | 1.30% |
-| Cese de actividad | 0.90% |
-| Formacion profesional | 0.10% |
-| MEI | 0.80% |
-| **Total** | **31.40%** |
+**Contribution rate breakdown (2025 and 2026)**  _(Orden PJC/178/2025; Orden PJC/297/2026, arts 18 and 37)_
+
+| Concept | 2025 | 2026 |
+| --- | --- | --- |
+| Contingencias comunes | 28.30% | 28.30% |
+| Contingencias profesionales | 1.30% | 1.30% |
+| Cese de actividad | 0.90% | 0.90% |
+| Formacion profesional | 0.10% | 0.10% |
+| MEI | 0.80% | 0.90% |
+| **Total** | **31.40%** | **31.50%** |
 
 ### Rule 4 -- Cuota formula
 
-- **Cuota mensual formula** — Cuota mensual = Base de cotizacion elegida x 31.40%
+- **Cuota mensual formula** — Cuota mensual = Base de cotizacion elegida x 31.40% (2025) or 31.50% (2026)
 
 ### Rule 5 -- Tarifa plana
 
@@ -316,7 +320,7 @@ INPUT DATA
 
 CUOTA COMPUTATION
   Chosen base (min of tranche):  EUR [____]
-  Rate:                          31.40%
+  Rate:                          31.40% (2025) / 31.50% (2026)
   Monthly cuota:                 EUR [____]
   Annual cuota (12 months):      EUR [____]
 

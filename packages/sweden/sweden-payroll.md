@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Swedish payroll processing, emp
 version: 1.0
 jurisdiction: SE
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -136,10 +136,12 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 
 | Category | Rate | Condition |
 | --- | --- | --- |
-| Employees aged 67+ at year start | 10.21% | Only ålderspensionsavgift |
+| Born 1938–1958 (aged 67+ at the start of 2026) | 10.21% | Only ålderspensionsavgift |
 | Born 1937 or earlier | 0% | No contributions at all |
 | Youth (19-23) from 1 April 2026 | 20.81% | On salary up to SEK 25,000/month; full 31.42% above |
 | R&D reduction | 10.21% | On portion of salary for qualifying R&D work (max 450,000 SEK/month per company) |
+
+Birth-year rates for 2026: Skatteverket, Belopp och procent 2026 (https://www.skatteverket.se/foretag/skatterochavdrag/beloppochprocent/2026.106.1522bf3f19aea8075ba3294.html).
 
 ### Youth Discount (Temporary: 1 April 2026 -- 30 September 2027)
 

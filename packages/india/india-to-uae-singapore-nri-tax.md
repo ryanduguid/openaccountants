@@ -4,7 +4,7 @@ description: Becoming a non-resident Indian is a day-count game with three statu
 jurisdiction: IN
 category: international
 tax_year: 2025
-last_updated: 2026-08-03
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -47,8 +47,10 @@ NRI-specific machinery:
   - Reinvestment reliefs (s.54/54F/54EC) remain available to NRIs.
 - **Interest**: NRO-account and Indian bond/deposit interest is taxable (TDS 30%);
   **NRE and FCNR deposit interest is tax-free** while you qualify as NRI under FEMA (Part 3).
-- **Dividends** from Indian companies: taxable, TDS 20% (treaty-reducible to 10% under both
-  the UAE and Singapore DTAAs — claim via TRC + Form 10F).
+- **Dividends** from Indian companies: taxable, TDS 20% (treaty-reducible to 10% under the
+  UAE DTAA; under the Singapore DTAA, 10% only for a company holding at least 25% of the
+  shares and 15% otherwise, so an individual NRI resident in Singapore pays 15% (Art. 10;
+  Income Tax Department DTAA rate table) — claim via TRC + Form 10F).
 
 **Compliance spine:** file the Indian return whenever Indian income exceeds the basic
 threshold (or to reclaim excess TDS — for NRIs, over-withholding is the norm, and the refund

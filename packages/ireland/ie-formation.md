@@ -4,8 +4,8 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 jurisdiction: IE
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-11-01
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -144,7 +144,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Corporation Tax (CT) rates** — 12.5% on trading income (Schedule D Case I / II); 25% on non-trading income (passive: rents, dividends from non-EEA / non-treaty sources, investment income, foreign-source income); 33% Capital Gains Tax on chargeable gains (effective 33% via s.78 CTCA mechanism); 15% Pillar Two top-up (Qualified Domestic Top-up Tax) for in-scope multinational groups with consolidated revenue ≥ €750M  _(TCA 1997; EU Pillar Two Directive (Directive (EU) 2022/2523); Part 4A TCA 1997; Finance (No. 2) Act 2023; effective for accounting periods beginning on or after 31 December 2023)_
 - **Close-company surcharge** — Close-company surcharge (s.440 TCA 1997): a 20% surcharge on undistributed investment and rental income of a close company; a higher surcharge applies to undistributed professional services income of a close service company (s.441) — relevant for one-person LTDs providing services.  _(TCA 1997 s.440; s.441)_
-- **R&D Tax Credit** — 30% credit (rate increased from 25% with effect from accounting periods commencing on or after 1 January 2024 under Finance (No. 2) Act 2023) of qualifying R&D expenditure, payable in three instalments. The first instalment threshold was raised to €75,000 under Budget 2025.  _(TCA 1997 s.766; Finance (No. 2) Act 2023; Budget 2025)_
+- **R&D Tax Credit** — 35% credit for accounting periods beginning on or after 1 January 2026 (Finance Act 2025; it was 30% from 1 January 2024 under Finance (No. 2) Act 2023, up from 25%) of qualifying R&D expenditure, payable in three instalments. A claim of up to €87,500 is paid in full in the first instalment; that threshold rose from €75,000 under Finance Act 2025.  _(TCA 1997 s.766; Finance (No. 2) Act 2023; Finance Act 2025; Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf)_
 - **Knowledge Development Box (KDB)** — 10% effective rate on qualifying IP income — relevant for software, pharma, and biotech. The KDB sunset was extended by Finance Act 2022 to accounting periods commencing before 1 January 2027.  _(TCA 1997 s.769G–s.769R; Finance Act 2022)_
 - **Start-up Relief for Entrepreneurs (Section 486C)** — New trading companies in their first 3 years may obtain CT relief reducing CT liability up to €40,000 per year, tapered to €60,000, where employer's PRSI payable in the year does not exceed €40,000 (extended through 2026 by Finance Act 2023).  _(TCA 1997 s.486C; Finance Act 2023)_
 - **VAT registration thresholds** — €42,500 services / €85,000 goods from 1 January 2025
@@ -291,7 +291,7 @@ CRO registration is fully electronic through the CORE (Companies Online Registra
 | LP | Pass-through | Same as partnership | Same as partnership | Form 1 + partner Form 11s |
 | ILP (regulated fund) | Tax-transparent vehicle | n/a — pass-through to investors | Investor-level taxation | Specific to fund regime |
 | LLP (solicitors) | Pass-through unless elected | Same as partnership | Same as partnership | Form 1 + partner Form 11s |
-| LTD / DAC | Corporation Tax | 12.5% trading / 25% non-trading / 33% CGT effective | Start-up Relief s.486C (up to €40k/yr first 3 years); R&D Tax Credit 30%; KDB 10%; Pillar Two QDTT if in scope | Form CT1 by 8 months 23 days after period end; Form B1 annual return to CRO |
+| LTD / DAC | Corporation Tax | 12.5% trading / 25% non-trading / 33% CGT effective | Start-up Relief s.486C (up to €40k/yr first 3 years); R&D Tax Credit 35% (periods beginning on or after 1 January 2026); KDB 10%; Pillar Two QDTT if in scope | Form CT1 by 8 months 23 days after period end; Form B1 annual return to CRO |
 | CLG (non-charity) | Corporation Tax | 12.5% trading / 25% non-trading | Same as LTD | CT1 + B1 |
 | CLG (charity with CHY) | Charitable exemption on objects-related income | 0% on charitable application; 12.5% / 25% on non-objects trading | TCA 1997 s.207 / s.208 exemption; gift aid not applicable in Ireland; charitable donations scheme s.848A | CT1 (with exemption claim) + B1 + Charities Regulator annual report |
 | PLC | Corporation Tax | 12.5% trading / 25% non-trading; Pillar Two 15% top-up if in scope | Same as LTD; quoted-share CGT considerations | CT1 + B1 + audited accounts + listed-company disclosures if listed |
@@ -313,10 +313,10 @@ CRO registration is fully electronic through the CORE (Companies Online Registra
   - Income tax: €44,000 @ 20% = €8,800; €51,000 @ 40% = €20,400. Subtotal €29,200.
   - Less personal credit €2,000 + earned income credit €2,000 = €4,000.
   - Net income tax: €25,200.
-  - PRSI Class S: €95,000 × 4.1% Jan-Sep 2025; 4.2% from 1 Oct 2025 = €3,895.
-  - USC: €12,012 @ 0.5% = €60; €13,748 @ 2% = €275; €70,044 @ 8% (rate after €25,760 cumulative threshold; verify against Budget 2025 schedule). Cumulative ~ €6,000.
+  - PRSI Class S: €95,000 × 4.125% (2025 blended rate: 4.1% to 30 September, 4.2% from 1 October 2025) = €3,918.75.
+  - USC (2025 bands): €12,012 @ 0.5% = €60.06; €15,370 @ 2% = €307.40; €42,662 @ 3% = €1,279.86; €24,956 @ 8% = €1,996.48. Total €3,643.80.
   - 3% USC surcharge on Case II income above €100,000: not triggered at €95,000.
-  - Indicative total: ~€35,000 (≈ 37% effective on €95,000 profit).
+  - Indicative total: €25,200 + €3,918.75 + €3,643.80 = €32,762.55 (≈ 34.5% effective on €95,000 profit).
 - VAT: €120,000 turnover above the €42,500 services threshold — VAT registration mandatory. Charge 23% to Irish / EU B2C customers; reverse charge to EU B2B; export of services to US client outside VAT scope (place of supply rules under VAT Consolidation Act 2010 s.34).
 - No corporation tax; no audit; no CRO B1.
 
@@ -331,20 +331,22 @@ CRO registration is fully electronic through the CORE (Companies Online Registra
 - Corporation tax: €35,000 @ 12.5% = €4,375.
 - Director's salary €60,000 taxed via PMOD:
   - Income tax: €44,000 @ 20% + €16,000 @ 40% = €8,800 + €6,400 = €15,200; less PAYE personal credit €2,000 + employee credit €2,000 = €11,200.
-  - Employee PRSI Class A: €60,000 × 4.1% Jan-Sep 2025; 4.2% from 1 Oct 2025 = €2,460 (proprietary directors >50% holding go to Class S — Aoife is 100% so she is Class S, 4.1% Jan-Sep 2025; 4.2% from 1 Oct 2025 as well; net same).
-  - USC on €60,000: cumulative ~€2,200.
-  - Personal tax burden on €60,000 salary: ~€15,900.
-- Total combined tax (Option B): CT €4,375 + personal €15,900 = €20,275, with €35,000 retained in the company (less CT already paid → €30,625 retained after tax).
+  - Employee PRSI Class A: €60,000 × 4.125% (2025 blended rate) = €2,475 (proprietary directors >50% holding go to Class S — Aoife is 100% so she is Class S, at the same 2025 blended 4.125%; net same).
+  - USC on €60,000: €60.06 + €307.40 + €32,618 @ 3% = €978.54; total €1,346.00.
+  - Personal tax burden on €60,000 salary: €11,200 + €2,475 + €1,346 = €15,021.
+- Total combined tax (Option B): CT €4,375 + personal €15,021 = €19,396, with €35,000 retained in the company (less CT already paid → €30,625 retained after tax).
 - Close-company surcharge (s.441): as a service company, undistributed "professional services" income retained beyond 18 months attracts a surcharge — the s.441 surcharge is 15% of half the undistributed estate-and-investment / professional-services income (effective ~7.5% additional on retained professional services income). Aoife should plan distributions or salary uplift to avoid the surcharge. Estimate s.441 exposure on €30,625 retained: ~€2,300/year if undistributed beyond 18 months.
 - VAT: same as Option A — mandatory registration; LTD charges VAT, recovers input VAT.
 - Annual: Form B1 + small-company abridged accounts to CRO; CT1 to Revenue.
+
+Sources for the 2025 USC and PRSI figures in Options A and B: Revenue, USC rates and thresholds — https://www.revenue.ie/en/jobs-and-pensions/usc/standard-rates-thresholds.aspx; Department of Social Protection, SW14 PRSI contribution rates (January 2026) — https://assets.gov.ie/static/documents/cb168977/PRSI_C20260116_Contribution_Rates_and_User_Guide_-_SW_14_-_English_Version_-_January_2026_.pdf-web.pdf.
 
 ### Recommendation
 
 - The LTD is more tax-efficient on cash-flow when Aoife can leave some profit in the company (e.g., to fund equipment, build a cash buffer, or eventually exploit Entrepreneur Relief s.597AA on exit at 10% CGT instead of 33%).
 - The Sole Trader is simpler and cheaper to administer if Aoife intends to spend all the profit each year on personal living costs — in which case the LTD's close-company surcharge erodes most of the saving.
 - At €120,000 revenue with material retained profits and a 5–10 year horizon, the LTD wins. At lower revenue (< €70,000) with no retained profits, Sole Trader is usually equivalent or better once you account for accounting fees (€1,500–€3,000/year for an LTD vs €500–€1,000 for a Sole Trader).
-- Operational steps for Aoife if she chooses LTD: incorporate via CORE; register with Revenue via TR2; file RBO; engage a payroll provider; set up a SEPA-enabled corporate bank account; register for VAT MOSS / OSS for EU B2C SaaS sales; document her R&D (if any) for the 30% R&D Tax Credit; consider KDB eligibility if she develops original IP.
+- Operational steps for Aoife if she chooses LTD: incorporate via CORE; register with Revenue via TR2; file RBO; engage a payroll provider; set up a SEPA-enabled corporate bank account; register for VAT MOSS / OSS for EU B2C SaaS sales; document her R&D (if any) for the 35% R&D Tax Credit; consider KDB eligibility if she develops original IP.
 
 ## Section 13 — Decision Tree
 

@@ -1,11 +1,11 @@
 ---
 name: ireland-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Irish VAT return (VAT3 form) for a self-employed individual or small business in Ireland. Trigger on phrases like "prepare VAT return", "do the VAT", "Irish VAT", "VAT3", "ROS return", "Revenue Online", or any request involving Ireland VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Ireland only and only standard VAT-registered businesses. VAT groups, Capital Goods Scheme adjustments, and complex property transactions are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Irish VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: IE
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ireland VAT Return
 
-## Ireland VAT Return Skill (VAT3) v2.0
+## Ireland VAT Return Skill (VAT3) v2.1
 
 ## Section 1 — Quick reference
 
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Ireland (Eire) |
 | Standard rate | 23% |
-| Reduced rates | 13.5% (construction, repair, cleaning, short-term car hire, certain fuels), 9% (newspapers, e-publications, sporting facilities, hairdressing), 4.8% (livestock, greyhounds) |
+| Reduced rates | 13.5% (construction, repair, cleaning, short-term car hire, certain fuels; restaurant and catering before 1 July 2026), 9% (newspapers, e-publications, sporting facilities, hairdressing; gas and electricity until 31 December 2030; from 1 July 2026, food and non-excluded drink in restaurant, catering and hot takeaway services), 4.8% (livestock, greyhounds) |
 | Zero rate | 0% (exports, most food, children's clothing/footwear, books, oral medicines, medical devices, passenger transport) |
 | Second reduced rate | 0% items listed in Schedule 2 VATCA 2010 |
 | Flat-rate (farmers) | 5.5% flat-rate addition (farmer scheme — not covered, R-IE-6) |
@@ -142,10 +142,10 @@ Match by case-insensitive substring. If none match, fall through to Tier 1 rules
 
 | Pattern | Treatment | Box | Notes |
 | --- | --- | --- | --- |
-| ESB, ELECTRIC IRELAND | Domestic 23% or 13.5% | T4 (input) | Electricity — domestic energy at 23% (may have been temporarily reduced) |
-| BORD GÁIS, BORD GÁIS ENERGY | Domestic 23% or 13.5% | T4 (input) | Gas supply |
-| SSE AIRTRICITY | Domestic 23% or 13.5% | T4 (input) | Electricity/gas |
-| ENERGIA, PANDA POWER, FLOGAS | Domestic 23% or 13.5% | T4 (input) | Energy suppliers |
+| ESB, ELECTRIC IRELAND | Domestic 9% | T4 (input) | Electricity at the 9% second reduced rate until 31 December 2030 |
+| BORD GÁIS, BORD GÁIS ENERGY | Domestic 9% | T4 (input) | Gas supply (9% until 31 December 2030) |
+| SSE AIRTRICITY | Domestic 9% | T4 (input) | Electricity/gas (9% until 31 December 2030) |
+| ENERGIA, PANDA POWER, FLOGAS | Domestic 9% (gas and electricity) | T4 (input) | Energy suppliers; gas and electricity at 9% until 31 December 2030. Check the rate on the invoice for other fuels |
 | EIR, EIRCOM | Domestic 23% | T4 (input) | Telecoms |
 | THREE IRELAND, 3 IRELAND, THREE | Domestic 23% | T4 (input) | Mobile telecoms |
 | VODAFONE IE | Domestic 23% | T4 (input) | Mobile telecoms |
@@ -195,9 +195,9 @@ Match by case-insensitive substring. If none match, fall through to Tier 1 rules
 | TESCO IE, TESCO IRELAND | Zero-rated for most food | Food is zero-rated in Ireland (Schedule 2 VATCA 2010) |
 | SUPERVALU, DUNNES STORES, ALDI IE, LIDL IE | Zero-rated for most food | Same — but confectionery, ice cream, soft drinks are at 23% |
 | CENTRA, SPAR IE | Zero-rated / 23% mixed | Split between zero-rated food and standard-rate items |
-| RESTAURANTS, PUB FOOD, CAFES | Domestic 13.5% | Restaurant/catering services at 13.5% |
+| RESTAURANTS, PUB FOOD, CAFES | Domestic 13.5% before 1 July 2026; 9% from 1 July 2026 | Restaurant, catering and hot takeaway food and drink at 9% from 1 July 2026; alcohol, bottled waters, soft drinks, sports drinks and vegetable juices are excluded and keep their own rate |
 
-**Note on Irish entertainment/meals:** Ireland has no hard block on business entertainment VAT. If the meal is a genuine business expense, input VAT at 13.5% is deductible. However, Section 59 VATCA 2010 blocks VAT on entertainment of any kind that is not part of a taxable supply. Default: block for non-hospitality businesses. [T2] flag if client claims business purpose.
+**Note on Irish entertainment/meals:** Ireland has no hard block on business entertainment VAT. If the meal is a genuine business expense, input VAT at the rate charged (13.5% before 1 July 2026; 9% on food and non-excluded drink from that date) is deductible. However, Section 59 VATCA 2010 blocks VAT on entertainment of any kind that is not part of a taxable supply. Default: block for non-hospitality businesses. [T2] flag if client claims business purpose.
 
 ### 3.8 SaaS — EU suppliers (reverse charge, T1/T4)
 
@@ -373,12 +373,12 @@ Google Ireland Ltd is an IRISH entity billing an IRISH customer. This is a DOMES
 ### 5.2 Reduced rate 13.5% (Section 46(1)(c))
 
 - **Reduced rate 13.5%** — 13.5%  _(Section 46(1)(c) VATCA 2010)_
-- **Applicable supplies** — Construction, repair and maintenance of buildings, cleaning services, short-term car hire, restaurant/catering, waste collection, certain fuels (coal, peat, gas for residential). Sales → T1. Purchases → T4 (input VAT at 13.5%).  _(Section 46(1)(c) VATCA 2010)_
+- **Applicable supplies** — Construction, repair and maintenance of buildings, cleaning services, short-term car hire, restaurant/catering (before 1 July 2026), waste collection, certain fuels (coal, peat; gas and electricity are at 9% until 31 December 2030). Sales → T1. Purchases → T4 (input VAT at 13.5%).  _(Section 46(1)(c) VATCA 2010)_
 
 ### 5.3 Second reduced rate 9% (Section 46(1)(ca))
 
 - **Second reduced rate 9%** — 9%  _(Section 46(1)(ca) VATCA 2010)_
-- **Applicable supplies** — Newspapers, electronic publications, sporting facilities, hairdressing, printed and digital periodicals.  _(Section 46(1)(ca) VATCA 2010)_
+- **Applicable supplies** — Newspapers, electronic publications, sporting facilities, hairdressing, printed and digital periodicals; gas and electricity until 31 December 2030; from 1 July 2026, food and drink (excluding alcohol, bottled waters, soft drinks, sports drinks and vegetable juices) supplied as part of a restaurant, catering or hot takeaway service. Source: Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf.  _(Section 46(1)(ca) VATCA 2010)_
 
 ### 5.4 Reduced rate 4.8% (Section 46(1)(cb))
 
@@ -588,6 +588,7 @@ v2.0, rewritten April 2026. Awaiting validation by Irish chartered accountant or
 
 1. VATCA 2010 (Value-Added Tax Consolidation Act 2010) — https://www.irishstatutebook.ie
 2. Revenue guidance — https://www.revenue.ie
+   - Budget 2026 summary (9% for gas and electricity to 31 December 2030; 9% for restaurant, catering and hot takeaway food from 1 July 2026) — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf
 3. ROS — https://www.ros.ie
 4. Council Directive 2006/112/EC — via eu-vat-directive companion skill
 5. VIES — https://ec.europa.eu/taxation_customs/vies/

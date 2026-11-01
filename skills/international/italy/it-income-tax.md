@@ -1,10 +1,10 @@
 ---
 name: it-income-tax
 description: Use this skill whenever asked about Italian income tax for self-employed individuals (lavoratori autonomi, liberi professionisti) under regime ordinario. Trigger on phrases like "Modello Redditi PF", "Quadro RE", "IRPEF", "redditi di lavoro autonomo", "imposta sul reddito Italy", "deduzioni", "detrazioni", "addizionale regionale", "addizionale comunale", "regime ordinario", "acconti IRPEF", "no tax area", "INPS Gestione Separata", "rivalsa INPS", or any question about filing or computing income tax for an Italian freelancer or professional. Also trigger when preparing or reviewing a Modello Redditi PF, computing deductions, or advising on regime ordinario tax obligations. This skill covers progressive IRPEF brackets, deduzioni, detrazioni, addizionali, acconti, Quadro RE structure, rivalsa INPS, and penalties. ALWAYS read this skill before touching any Italian income tax work. Does NOT cover regime forfettario -- see it-regime-forfettario.md.
-version: 2.0
+version: 2.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 31 October (online Modello Redditi PF; 2 November 2026 as 31 October is a Saturday); 30 September (Modello 730). 30 June is the **payment** date, not a filing date |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a qualified Italian Commercialista |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### IRPEF Brackets 2025 (Regime Ordinario) [T1]
 
@@ -45,6 +45,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Tax formula** — Tax = cumulative tax for lower bracket + (income - lower bracket threshold) x marginal rate  _(IRPEF Brackets 2025 (Regime Ordinario) [T1])_
 - **No-tax area** — Detrazioni per lavoro autonomo reduce effective IRPEF to zero up to EUR 5,500 reddito complessivo (EUR 1,265 / 23%; result of detrazioni calculation, not a true zero-tax band).  _(TUIR art. 13, c. 5; IRPEF Brackets 2025 (Regime Ordinario) [T1])_
+
+### IRPEF Brackets 2026 (Regime Ordinario) [T1]
+
+**IRPEF Brackets 2026 (Regime Ordinario) [T1]**  _(L. 199/2025, Legge di Bilancio 2026; Agenzia delle Entrate, Aliquote e calcolo dell'Irpef: https://www.agenziaentrate.gov.it/portale/aliquote-e-calcolo-dell-irpef7)_
+
+| Taxable Income (EUR) | Rate | Tax on Band | Cumulative Tax |
+| --- | --- | --- | --- |
+| 0 -- 28,000 | 23% | 6,440 | 6,440 |
+| 28,001 -- 50,000 | 33% | 7,260 | 13,700 |
+| Over 50,000 | 43% | on excess | 13,700 + 43% |
+
+- **High-income neutralisation (2026)** — For reddito complessivo above EUR 200,000, a mechanism neutralises the benefit of the cut from 35% to 33%. Apply it before relying on the 2026 table for such clients.  _(L. 199/2025, art. 1, commi 3-4)_
 
 ### Addizionali (Regional + Municipal Surtaxes) [T1]
 
@@ -80,7 +92,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Freelancer with pension fund (con cassa) | 24% |
 | Pensioners or those with other coverage | 24% |
 
-- **INPS base and cap** — Applied to net income (gross receipts - deductible expenses). Cap: EUR 119,650 gross.  _(INPS Gestione Separata (Social Contributions) [T1])_
+- **INPS base and cap** — Applied to net income (gross receipts - deductible expenses). Massimale: EUR 120,607 for 2025; EUR 122,295 for 2026 (INPS circolare 8 of 3 February 2026). No contributions on income above it.  _(INPS Gestione Separata (Social Contributions) [T1])_
 - **Rivalsa INPS (4% surcharge on invoices)** — Freelancers without a cassa may add 4% to invoice. Rivalsa received is taxable income; corresponding INPS paid is deductible.  _(INPS Gestione Separata (Social Contributions) [T1])_
 
 ### Acconti IRPEF (Advance Payments) [T1]
@@ -137,7 +149,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **R-IT-1** — Client provides only bank totals, no itemised expenses. "Request itemised expense list with F24/receipts before proceeding."  _(R-IT-1)_
 - **R-IT-2** — Income from both regime ordinario AND regime forfettario in same year. "Mixed regime not possible in the same year. Verify which applies and for which period."  _(R-IT-2)_
-- **R-IT-3** — Gross receipts > EUR 85,000 but client claims regime forfettario. "Forfettario threshold exceeded. Regime ordinario applies automatically. Proceed under ordinario."  _(R-IT-3)_
+- **R-IT-3** — Gross receipts above EUR 85,000 but client claims regime forfettario. If receipts are above EUR 85,000 and at most EUR 100,000: "Forfettario continues for this year and ends from next year. Proceed under forfettario for this year and plan regime ordinario for next year." If receipts are above EUR 100,000: "Forfettario ends in this year, with IVA due from the operation that crosses EUR 100,000. Proceed under regime ordinario." _(Agenzia delle Entrate, Regime forfetario: le regole)_  _(R-IT-3)_
 - **R-IT-4** — Non-resident claiming full Italian detrazioni. "Non-residents have restricted access to detrazioni. Clarify residency status -- escalate."  _(R-IT-4)_
 - **R-IT-5** — Client requests deduction for private vehicle without usage log. "Reject vehicle deduction beyond 20% cap. Art. 164 TUIR requires documented business use."  _(R-IT-5)_
 
@@ -528,6 +540,7 @@ Official texts: [TUIR art. 13](https://www.normattiva.it/uri-res/N2Ls?urn:nir:pr
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 2.1 | November 2026 | 2026 IRPEF brackets; Gestione Separata massimale by year; R-IT-3 split at EUR 85,000 and EUR 100,000 |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Italian bank formats (Intesa, UniCredit, FinecoBank, N26, Hype); transaction pattern library; Nexi/Satispay patterns; worked examples; PROHIBITIONS and disclaimer added |
 | 1.0 | 2025 | Initial version |
 

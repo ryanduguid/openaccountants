@@ -1,10 +1,10 @@
 ---
 name: italy-tax-optimization
 description: Use this skill whenever asked about reducing tax in Italy, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in Italy. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "risparmiare sulle tasse", "ottimizzazione fiscale", "pagare meno tasse", "detrazioni", "deduzioni". ALWAYS read this skill before advising on any Italian tax optimization strategy.
-version: 1.1
+version: 1.2
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -34,8 +34,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Taxable income (EUR) | Rate |
 | --- | --- |
 | 0 -- 28,000 | 23% |
-| 28,001 -- 50,000 | 35% (2025 rate; reduced to 33% from 2026) |
-| 50,001+ | 43% |
+| 28,001 -- 50,000 | 33% (35% for 2025) |
+| 50,001+ | 43% (tax EUR 13,700 + 43% of the excess over EUR 50,000) |
+
+Above EUR 200,000 of reddito complessivo, the benefit of the 33% rate is neutralised (L. 199/2025, art. 1, commi 3-4)  _(Agenzia delle Entrate, Aliquote e calcolo dell'Irpef: https://www.agenziaentrate.gov.it/portale/aliquote-e-calcolo-dell-irpef7)_
 
 - **Addizionali** — Plus addizionale regionale (0.9-3.33% depending on region) and addizionale comunale (0-0.9%).
 
@@ -65,9 +67,21 @@ For a professional (BNC) with EUR 60,000 revenue and actual expenses of EUR 10,0
 
 | Factor | Ditta Individuale | SRL |
 | --- | --- | --- |
-| Top tax rate | 43% IRPEF + addizionali | 24% IRES + 3.9% IRAP = ~28% |
+| Top tax rate | 43% IRPEF + addizionali | 24% IRES + 3.9% IRAP = ~28% (conditional 20% IRES for 2025: see note below) |
 | Extraction costs | N/A | Dividends: 26% withholding on distributed profits |
 | When to incorporate | When profits consistently exceed EUR 50,000 and can be retained | Requires notarial deed, annual accounts, compliance costs |
+
+For the tax period following the one in progress at 31 December 2024 (2025 for calendar-year companies), IRES is reduced by 4 points to 20% ('IRES premiale') for companies meeting the conditions of L. 207/2024, art. 1, commi 436-444. Confirm the conditions before applying it; no later year was confirmed  _(Agenzia delle Entrate, Redditi SC 2026 instructions)_.
+
+**Withholding on payments to non-residents (domestic rates, 2026)**  _(D.P.R. 600/1973 arts 25, 26 and 27; D.L. 66/2014 art. 3, c. 1)_
+
+| Payment | Rate | Reference |
+| --- | --- | --- |
+| Dividends | 26% (1.20% to companies subject to corporate tax in, and resident in, a listed EU or EEA state) | Art. 27, c. 3 and 3-ter; the 27% in art. 27, c. 3 is read as 26% under D.L. 66/2014 art. 3 |
+| Interest and other capital income | 26%, unless an exemption or a different rate applies (D.L. 66/2014 art. 3, c. 2 lists exceptions) | Art. 26, c. 5; D.L. 66/2014 art. 3 |
+| Royalties | 30% on the taxable portion of the amount | Art. 25, c. 4 |
+
+Treaty rates and EU directive exemptions can reduce these; check them before withholding. Normattiva shows arts 25 to 27 of D.P.R. 600/1973 abrogated with effect from 1 January 2027 by D.Lgs. 33/2025 (as amended by D.L. 200/2025); recheck the references from 2027.
 
 ### Impresa Familiare (Family Business)
 
@@ -192,7 +206,7 @@ In the start-up phase (first 3 years), maximize deductible expenses to create la
 | Category | Contribution rate (2025/2026) | Base |
 | --- | --- | --- |
 | Gestione Separata (professionals without cassa) | 26.07% (without other coverage) / 24% (with other coverage) | Net income |
-| Artigiani/Commercianti | ~24% up to EUR 55,448; 25% above | Minimum income EUR 18,415 → minimum contribution ~EUR 4,427 |
+| Artigiani/Commercianti | 2026: 24% (artigiani) or 24.48% (commercianti) up to EUR 56,224; 25% or 25.48% above | 2026 minimum income EUR 18,808 → minimum contribution about EUR 4,514 (artigiani) or EUR 4,604 (commercianti), before any fixed maternity amount  _(INPS circolare 14 of 9 February 2026)_ |
 | Casse professionali (regulated professions) | Varies by cassa (Inarcassa, Cassa Forense, etc.) | Varies |
 
 ### Optimization Strategies

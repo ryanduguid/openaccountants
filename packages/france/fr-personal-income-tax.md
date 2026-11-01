@@ -1,10 +1,10 @@
 ---
 name: fr-personal-income-tax
 description: "Comprehensive French personal income tax (impôt sur le revenu / IR) guide for all individuals. Trigger on phrases like \"impôt sur le revenu\", \"IR France\", \"barème progressif\", \"quotient familial\", \"décote\", \"prélèvement à la source\", \"PAS\", \"CEHR\", \"contribution exceptionnelle hauts revenus\", \"CDHR\", \"déclaration 2042\", \"revenus exceptionnels\", \"quotient pour revenus exceptionnels\", \"TMI\", \"taux marginal d'imposition\", \"tranches d'imposition France\", \"parts fiscales\", \"parent isolé case T\", \"pension alimentaire déduction\", \"réductions d'impôt\", \"crédits d'impôt\", \"emploi à domicile\", \"dons associations\", \"plafonnement niches fiscales\", \"non-résident fiscal France\", \"exit tax\", \"impatriation\", \"PUMA cotisation subsidiaire\", \"calcul IR France\", \"simulation impôt sur le revenu\", \"avis d'imposition\". Covers the full IR computation sequence: progressive brackets, quotient familial with plafonnement, décote, CEHR, CDHR, prélèvement à la source, deductions/reductions/credits, non-residents, and special cases. For capital gains see fr-capital-gains, for rental income see fr-rental-income, for crypto see fr-crypto-tax."
-version: 1.1
+version: 1.2
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-10-18
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # FR Personal Income Tax
 
-## France — Personal Income Tax (Impôt sur le Revenu) — Comprehensive Guide v1.1
+## France — Personal Income Tax (Impôt sur le Revenu) — Comprehensive Guide v1.2
 
 > **Based on work by [Romain Simon (@romainsimon)](https://github.com/romainsimon/paperasse)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -105,11 +105,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Unemployment (ARE)** | **1AP/1BP** | **None** | — | Common trap: never put in 1AJ |
 | Dividends (option barème) | 2DC | 40% | — | Only under barème option |
 | Dividends (PFU) | 2DC | None | — |  |
-| Micro-BNC | 5TE | 34% | min EUR 305, ceiling EUR 77,700 |  |
+| Micro-BNC | 5TE | 34% | min EUR 305, ceiling EUR 77,700 (2025 income; EUR 83,600 from 2026) |  |
 | Micro-foncier (bare rental) | 4BE | 30% | ceiling EUR 15,000 |  |
-| Micro-BIC LMNP long-term | 5ND | 50% | ceiling EUR 77,700 |  |
+| Micro-BIC LMNP long-term | 5ND | 50% | ceiling EUR 77,700 (2025 income; EUR 83,600 from 2026) |  |
 | Micro-BIC furnished tourism unclassified | 5ND | 30% | ceiling EUR 15,000 | Loi Le Meur |
-| Micro-BIC furnished tourism classified | 5NG | 50% | ceiling EUR 77,700 |  |
+| Micro-BIC furnished tourism classified | 5NG | 50% | ceiling EUR 77,700 (2025 income; EUR 83,600 from 2026) |  |
+
+*From 2026 income, all furnished letting except unclassified tourist lets uses the EUR 83,600 ceiling with a 50% abattement; unclassified tourist lets stay at EUR 15,000 and 30%. Source: BOFiP, ACTU-2025-00127 — https://bofip.impots.gouv.fr/bofip/14765-PGP.html/ACTU-2025-00127*
 
 **Salary terminology trap table**
 

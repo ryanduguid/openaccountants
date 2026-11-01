@@ -1,10 +1,10 @@
 ---
 name: nl-deductions
 description: Use this skill whenever asked about Dutch tax deductions and special schemes (aftrekposten en regelingen) beyond self-employed deductions. Trigger on phrases like "aftrekposten", "belastingaftrek", "deductions Netherlands", "hypotheekrenteaftrek", "mortgage interest deduction", "eigenwoningforfait", "specifieke zorgkosten", "giftenaftrek", "studiekosten", "alimentatie aftrek", "persoonsgebonden aftrek", "partnerregeling", "heffingskorting", "ouderenkorting", "jonggehandicaptenkorting", "levensloopvrijstelling", "box 3 vrijstelling", "groene belegging", "ANBI", "kom ik in aanmerking", "tax deduction check NL", or any question about Dutch individual or business tax deductions, credits, or special regimes. This skill covers persoonsgebonden aftrek, hypotheekrenteaftrek, zorgkosten, giften, heffingskortingen, and business investment schemes. ALWAYS read this skill before advising on Dutch deduction eligibility.
-version: 1.0
+version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NL Deductions
 
-## Netherlands Tax Deductions & Schemes — Aftrekposten en Regelingen v1.0
+## Netherlands Tax Deductions & Schemes — Aftrekposten en Regelingen v1.1
 
 > **Based on work by [John in 't Hout (@johnhout)](https://github.com/johnhout/knowledge-work-belastingzaken)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | Mijn Belastingdienst via DigiD |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a qualified Dutch belastingadviseur |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Deduction Categories Overview [T1]
 
@@ -172,7 +172,7 @@ Tax credits reduce the computed tax (not the taxable income). They are applied a
 
 | Credit | Maximum Amount (EUR) | Phase-out | Notes |
 | --- | --- | --- | --- |
-| Algemene heffingskorting | 3,068 | Phases out from EUR 24,813 to EUR 76,817 income | Universal; reduces to EUR 0 at top |
+| Algemene heffingskorting | 3,068 | Phases out from EUR 28,406 to EUR 76,817 income (6.337%) | Universal; reduces to EUR 0 at top |
 | Arbeidskorting (employment credit) | 5,174 | Phases out above EUR 43,071 | For those with employment/business income |
 | Inkomensafhankelijke combinatiekorting (IACK) | 2,950 | Requires youngest child < 12 and > EUR 6,073 income | Working parent credit |
 | Ouderenkorting (elderly credit) | 2,010 | Phases out above EUR 44,770 | For those at/above AOW age |
@@ -183,7 +183,7 @@ Tax credits reduce the computed tax (not the taxable income). They are applied a
 
 ### Algemene Heffingskorting Phase-Out Formula [T1]
 
-- **Algemene Heffingskorting Phase-Out Formula** — If income ≤ EUR 24,813: full EUR 3,068 If income between EUR 24,813 and EUR 76,817: Reduction = 5.902% × (income − EUR 24,813) Credit = EUR 3,068 − reduction If income ≥ EUR 76,817: EUR 0
+- **Algemene Heffingskorting Phase-Out Formula** — Income is verzamelinkomen. 2025: If income ≤ EUR 28,406: full EUR 3,068 If income between EUR 28,407 and EUR 76,817: Reduction = 6.337% × (income − EUR 28,406) Credit = EUR 3,068 − reduction If income ≥ EUR 76,818: EUR 0. 2026: If income ≤ EUR 29,736: full EUR 3,115 If income between EUR 29,737 and EUR 78,426: Reduction = 6.398% × (income − EUR 29,736) Credit = EUR 3,115 − reduction If income ≥ EUR 78,427: EUR 0. Example (2025, income EUR 40,000): EUR 3,068 − 6.337% × EUR 11,594 = EUR 2,333.29. Sources: Belastingdienst, Tabel algemene heffingskorting 2025 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2025; 2026 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2026
 
 ### Arbeidskorting Phase-Out Formula [T1]
 
@@ -245,14 +245,16 @@ Tax credits reduce the computed tax (not the taxable income). They are applied a
 
 ## Section 6 — Box 3 Relevant Deductions & Exemptions
 
-### Box 3 Tax-Free Allowance 2025 [T1]
+### Box 3 Tax-Free Allowance [T1]
 
-**Box 3 Tax-Free Allowance 2025**
+**Box 3 Tax-Free Allowance**
 
-| Parameter | Value |
-| --- | --- |
-| Heffingsvrij vermogen (per person) | EUR 57,000 |
-| Fiscal partners (combined) | EUR 114,000 |
+| Parameter | 2025 | 2026 |
+| --- | --- | --- |
+| Heffingsvrij vermogen (per person) | EUR 57,684 | EUR 59,357 |
+| Fiscal partners (combined) | EUR 115,368 | EUR 118,714 |
+
+Sources: Belastingdienst, Berekening box 3-inkomen 2025 — https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2025; Voorlopige aanslag 2026 — https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen
 
 ### Green Investment Exemption [T1]
 
@@ -338,7 +340,7 @@ Escalate to a qualified belastingadviseur when:
 - Anti-abuse provisions triggered (e.g., recycling box migration)
 - Transitional rules from abolished deductions (study costs, FOR)
 
-## Netherlands Tax Deductions & Schemes — Aftrekposten en Regelingen v1.0
+## Netherlands Tax Deductions & Schemes — Aftrekposten en Regelingen v1.1
 
 **⚠️ DISCLAIMER: This skill provides workflow support only and does not constitute tax advice. All deduction positions must be reviewed and signed off by a qualified Dutch belastingadviseur before filing. Thresholds and amounts change annually — verify all figures against belastingdienst.nl for the applicable tax year.**
 

@@ -1,11 +1,11 @@
 ---
 name: ar-social-contributions
 description: Use this skill whenever asked about Argentine self-employed social contributions (aportes autónomos). Trigger on phrases like "aportes autónomos", "categoría autónomos", "jubilación autónomos", "PAMI autónomos", "cuánto pago de autónomo", "contribuciones SIPA", or any question about Argentine social security obligations for self-employed individuals. Covers Categories I-V, retirement (SIPA), PAMI (INSSJP), and obra social contributions, monthly fixed amounts, VEP payment, and edge cases. ALWAYS read this skill before touching any Argentine social contribution work.
-version: 2.0
+version: 2.1
 jurisdiction: AR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 reviewed_by: Maria Valeria Benvenuti
 review_status: current
 tier: 1
@@ -14,7 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AR Social Contributions
 
-## Argentina Social Contributions (Aportes Autónomos) -- Self-Employed Skill v2.0
+## Argentina Social Contributions (Aportes Autónomos) -- Self-Employed Skill v2.1
+
+> **Scope:** autónomo contributions only. Employer contributions and employee contributions withheld on salaries are not covered by this or any other Argentina guide; see `ar-tax-overview` for the employer rates ARCA states, and refer employer payroll to a local adviser.
 
 ## Section 1 -- Quick reference
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about filing, invoicing, or submittin
 jurisdiction: ID
 category: invoicing
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -33,7 +33,7 @@ This skill is the **platform manual** for the Indonesian tax administration syst
 | Primary URL | coretaxdjp.pajak.go.id |
 | Legacy URL still live | pajak.go.id / djponline.pajak.go.id (residual tax-year 2024 work) |
 | Mobile app | "Coretax DJP" — Play Store and App Store (individual taxpayers) |
-| Coretax Form | Offline preparation form for SPT 1770 — broadly available February 2026; submission and processing procedures under PER-3/PJ/2026 |
+| Coretax Form | Offline preparation form for the individual SPT Tahunan — broadly available February 2026; submission and processing procedures under PER-3/PJ/2026 |
 | Currency | IDR (Indonesian Rupiah) |
 | NPWP format | 16-digit (NIK-as-NPWP) for Indonesians since 1 July 2024; 15-digit padded to 16 for entities / foreigners |
 | Tax invoice | Faktur Pajak via Coretax e-Faktur from 1 Jan 2025 |
@@ -114,7 +114,7 @@ Tax payment settlement still happens at a bank, BPD, Pos Indonesia, marketplace,
 | e-Faktur | Faktur Pajak issuance, NSFP balance, replacement & cancellation |
 | e-Bupot Unifikasi | PPh 23/26/4(2)/15 slips + monthly SPT Masa Unifikasi |
 | e-Bupot 21/26 | Employment withholding monthly form |
-| SPT Tahunan | 1770 / 1770S / 1770SS (individuals); 1771 (corporates) |
+| SPT Tahunan | One SPT Tahunan PPh Orang Pribadi in Coretax from tax year 2025 (PER-11/PJ/2025); 1770 / 1770S / 1770SS for tax year 2024 and earlier; 1771 (corporates) |
 | Pembayaran | Kode Billing, payment history |
 | Restitusi | Refund applications |
 | Sengketa | Objection (Keberatan) and appeal |
@@ -227,7 +227,7 @@ Coretax accepts CSV/XML bulk upload (template in the e-Faktur module). Server-si
 
 ### 6.4 Monthly SPT Masa PPh Unifikasi
 
-- **Monthly SPT Masa PPh Unifikasi process and deadlines** — At month-end Coretax aggregates all Bukti Potong issued per article. The user reviews, adjusts for voids/amendments, generates a **Kode Billing**, pays, then returns to attach the **NTPN** (Nomor Transaksi Penerimaan Negara) and lodges the SPT. Statutory deadlines (unchanged by Coretax): SPT Masa Unifikasi due by the **20th** of the following month; payment by the **10th** of the following month (UU KUP). PPh 21 deadlines live in `id-payroll-pph21`.  _(UU KUP)_
+- **Monthly SPT Masa PPh Unifikasi process and deadlines** — At month-end Coretax aggregates all Bukti Potong issued per article. The user reviews, adjusts for voids/amendments, generates a **Kode Billing**, pays, then returns to attach the **NTPN** (Nomor Transaksi Penerimaan Negara) and lodges the SPT. Statutory deadlines (unchanged by Coretax): SPT Masa Unifikasi due by the **20th** of the following month; payment by the **15th** of the following month (PMK 81/2024 Art. 94(2), from 1 January 2025). PPh 21 deadlines live in `id-payroll-pph21`.  _(UU KUP)_
 
 ## Section 7 — SPT filing channels
 
@@ -237,9 +237,9 @@ Coretax exposes four channels for SPT submission. Pick the channel that matches 
 
 | Channel | Used for | Notes |
 | --- | --- | --- |
-| **Coretax web portal** | All forms — SPT Masa (PPN, Unifikasi, PPh 21/26), SPT Tahunan (1770, 1770S, 1770SS, 1771) | Default channel; supports inline editing and validation |
-| **Coretax Form** | SPT 1770 (individual self-employed) initially; later expansion | Downloadable offline form; user fills it, then uploads the signed file back to Coretax. Phased rollout — broad availability **February 2026** for SPT 1770 |
-| **Coretax Mobile** | SPT Tahunan 1770 SS and 1770 S for simple individual returns; profile updates; payment | iOS and Android. Convenient for employees with one source of income |
+| **Coretax web portal** | All forms — SPT Masa (PPN, Unifikasi, PPh 21/26), SPT Tahunan (individual single form from tax year 2025, 1771) | Default channel; supports inline editing and validation |
+| **Coretax Form** | Individual SPT Tahunan (self-employed) initially; later expansion | Downloadable offline form; user fills it, then uploads the signed file back to Coretax. Phased rollout — broad availability **February 2026** for the individual SPT Tahunan |
+| **Coretax Mobile** | Individual SPT Tahunan for simple employee returns; profile updates; payment | iOS and Android. Convenient for employees with one source of income |
 | **Host-to-host (PJAP)** | Bulk Faktur Pajak issuance, bulk Bukti Potong, automated SPT lodgement | Requires PJAP onboarding — engineering project; out of scope for this skill |
 
 ### 7.1 Deadlines and reminders
@@ -250,11 +250,11 @@ Coretax exposes four channels for SPT submission. Pick the channel that matches 
 | --- | --- | --- |
 | SPT Masa PPN payment | End of month following the tax period | Coretax dashboard banner; email |
 | SPT Masa PPN filing | End of month following the tax period | Same |
-| SPT Masa PPh Unifikasi payment | 10th of the following month | Coretax dashboard + e-mail nudge |
+| SPT Masa PPh Unifikasi payment | 15th of the following month (PMK 81/2024 Art. 94(2)) | Coretax dashboard + e-mail nudge |
 | SPT Masa PPh Unifikasi filing | 20th of the following month | Same |
-| SPT Masa PPh 21/26 payment | 10th of the following month | Same |
+| SPT Masa PPh 21/26 payment | 15th of the following month (PMK 81/2024 Art. 94(2)) | Same |
 | SPT Masa PPh 21/26 filing | 20th of the following month | Same |
-| SPT Tahunan 1770 individual | 31 March of the following year | Coretax sends e-mail reminders from January |
+| SPT Tahunan PPh Orang Pribadi (individual) | 31 March of the following year | Coretax sends e-mail reminders from January |
 | SPT Tahunan 1771 corporate | 30 April (4 months after fiscal year-end) | Same |
 | NSFP year-end return | 31 March of the following year for unused serials | Coretax e-Faktur reminder |
 
@@ -290,7 +290,7 @@ For each, the Section 10 default applies: document the attempt, screenshot the e
 | SPT Masa PPh 21/26 (original) | December 2024 or earlier | **e-Bupot 21/26 (legacy)** |
 | SPT Masa PPh 21/26 (original) | January 2025 onward | **Coretax e-Bupot 21/26** |
 | SPT Tahunan 1770 / 1771 | Tax year 2024 (filed Q1 2025) | **DJP Online** — the 2024 annual returns filed in early 2025 mostly remained on the legacy portal (TBC — confirm against current DJP announcement) |
-| SPT Tahunan 1770 / 1771 | Tax year 2025 (filed 2026) | **Coretax** |
+| SPT Tahunan PPh OP (single form, PER-11/PJ/2025) / 1771 | Tax year 2025 (filed 2026) | **Coretax** |
 | Kode Billing for any tax payment | From 1 Jan 2025 | **Coretax** (legacy DJP Online billing module sunsetted) |
 | Faktur Pajak | From 1 Jan 2025 | **Coretax e-Faktur only** — desktop e-Faktur Java client retired |
 
@@ -336,7 +336,7 @@ When Coretax behaves unexpectedly, prefer **document-and-retry** over **guess-an
 ### Known gaps
 
 - **Foreign-taxpayer onboarding** — DJP has signalled a dedicated 16-digit foreign ID; foreigners currently retain 15-digit NPWP padded to 16. **TBC.**
-- **Coretax Form** — full SPT 1770 availability **February 2026**; later expansion TBC.
+- **Coretax Form** — full individual SPT Tahunan availability **February 2026**; later expansion TBC.
 - **Pembetulan of pre-2025 periods through Coretax** — no single conclusive DJP instruction; default to legacy channel.
 - **PJAP integration patterns** — out of scope for this skill.
 
@@ -359,6 +359,7 @@ When Coretax behaves unexpectedly, prefer **document-and-retry** over **guess-an
 | Version | Date | Change |
 | --- | --- | --- |
 | 1.0 | May 2026 | Initial release covering Coretax DJP from 1 Jan 2025 go-live: account activation, NIK-as-NPWP, e-Faktur inside Coretax, e-Bupot Unifikasi, SPT channels, Q1-2025 implementation issues, and DJP Online cutover routing. |
+| 1.0 | 1 November 2026 | Withheld PPh payment date moved to the 15th (PMK 81/2024 Art. 94(2)); individual annual return shown as one form from tax year 2025 (PER-11/PJ/2025). |
 
 ## Prohibitions
 

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T05:48:07+00:00",
+ "generated_at": "2026-11-01T06:41:05+00:00",
  "counts": {
   "guides": 2011,
   "jurisdictions": 292,
@@ -17,7 +17,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "cross-border-invoicing-compliance",
@@ -472,7 +472,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "eu-intra-rates",
@@ -836,7 +836,7 @@
    "reviewed_by": "Christopher Aryee, CPA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "us-form-1041-trust-and-estate-income",
@@ -875,7 +875,7 @@
    "reviewed_by": "Christopher Aryee, CPA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "us-form-5471-cfc-information",
@@ -914,7 +914,7 @@
    "reviewed_by": "James Wallach",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "us-gilti-fdii-beat",
@@ -1096,7 +1096,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "us-section-1031-like-kind-exchange",
@@ -2292,7 +2292,7 @@
    "reviewed_by": "Maria Valeria Benvenuti",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ar-income-tax",
@@ -2305,7 +2305,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ar-monotributo",
@@ -2331,7 +2331,7 @@
    "reviewed_by": "Maria Valeria Benvenuti",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ar-tax-overview",
@@ -2344,7 +2344,7 @@
    "reviewed_by": "Maria Valeria Benvenuti",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ar-vat-return",
@@ -4541,7 +4541,7 @@
    "reviewed_by": "Ariane Marrocos",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "br-indirect-tax",
@@ -5529,7 +5529,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "canada-transfer-pricing",
@@ -6621,7 +6621,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "cn-corporate-tax",
@@ -6712,7 +6712,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "cn-stamp-tax",
@@ -8935,7 +8935,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "fj-payroll-social",
@@ -8948,7 +8948,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "fj-tax-overview",
@@ -9117,7 +9117,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "fr-personal-income-tax",
@@ -9130,7 +9130,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-18"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "fr-rental-income",
@@ -9156,7 +9156,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "fr-tax-audit",
@@ -9234,7 +9234,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "france-tax-optimization",
@@ -9247,7 +9247,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "france-transfer-pricing",
@@ -9286,7 +9286,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-08-03"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "france-references",
@@ -9650,7 +9650,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "de-payroll",
@@ -9663,7 +9663,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "de-rental-income",
@@ -9780,7 +9780,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "germany-tax-optimization",
@@ -9793,7 +9793,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "germany-to-switzerland-cross-border-tax",
@@ -10222,7 +10222,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "gg-personal-allowance-reference",
@@ -10637,8 +10637,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2024",
-   "last_updated": "2026-09-28"
+   "tax_year": "2025",
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "hk-tax-overview",
@@ -10677,7 +10677,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "hu-income-tax",
@@ -10872,7 +10872,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "in-professional-tax",
@@ -10963,7 +10963,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "india-gst",
@@ -10989,7 +10989,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "india-tax-optimization",
@@ -11002,7 +11002,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "india-to-uae-singapore-nri-tax",
@@ -11015,7 +11015,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-08-03"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "india-transfer-pricing",
@@ -11054,7 +11054,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-corporate-tax",
@@ -11067,7 +11067,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-einvoice-coretax",
@@ -11080,7 +11080,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-formation",
@@ -11093,7 +11093,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-freelance-intake",
@@ -11106,7 +11106,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-income-tax",
@@ -11119,7 +11119,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-payroll-pph21",
@@ -11132,7 +11132,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-pph-final-umkm",
@@ -11158,7 +11158,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-tax-optimization",
@@ -11171,7 +11171,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "id-withholding",
@@ -11184,7 +11184,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "indonesia-vat",
@@ -11210,7 +11210,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ir-company-formation",
@@ -11405,7 +11405,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ie-corporation-tax",
@@ -11418,7 +11418,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ie-formation",
@@ -11431,7 +11431,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ie-freelance-intake",
@@ -11444,7 +11444,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ie-income-tax-form11",
@@ -11522,7 +11522,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ie-usc",
@@ -11548,7 +11548,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "im-company-formation",
@@ -11795,7 +11795,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "it-income-tax",
@@ -11808,7 +11808,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "it-inps-contributions",
@@ -11821,7 +11821,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "it-irap",
@@ -11886,7 +11886,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "italy-formation",
@@ -11899,7 +11899,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "italy-payroll",
@@ -11912,7 +11912,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "italy-tax-optimization",
@@ -11925,7 +11925,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "italy-transfer-pricing",
@@ -11951,7 +11951,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-15"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "italy-references",
@@ -12003,7 +12003,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ivory-coast-vat",
@@ -12133,7 +12133,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "japan-financial-statements",
@@ -12146,7 +12146,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "japan-formation",
@@ -12159,7 +12159,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "japan-payroll",
@@ -12185,7 +12185,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "japan-transfer-pricing",
@@ -12211,7 +12211,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "jp-estimated-tax",
@@ -12250,7 +12250,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "jp-incorporation",
@@ -12263,7 +12263,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "jp-nonpermanent-resident",
@@ -12289,7 +12289,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "japan-references",
@@ -13823,7 +13823,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "luxembourg-social-contributions",
@@ -14109,7 +14109,7 @@
    "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "my-company-formation",
@@ -14135,7 +14135,7 @@
    "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "my-epf-socso",
@@ -14148,7 +14148,7 @@
    "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "my-income-tax",
@@ -14161,7 +14161,7 @@
    "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "my-pcb",
@@ -14850,7 +14850,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "mx-imss",
@@ -14863,7 +14863,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "mx-income-tax",
@@ -14876,7 +14876,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "mexico-references",
@@ -15734,7 +15734,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "netherlands-crypto-tax",
@@ -15799,7 +15799,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "netherlands-transfer-pricing",
@@ -15838,7 +15838,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "nl-corporate-tax",
@@ -15851,7 +15851,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "nl-deductions",
@@ -15864,7 +15864,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "nl-income-tax",
@@ -15877,7 +15877,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "nl-payroll-tax",
@@ -15981,7 +15981,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "nz-capital-gains",
@@ -16020,7 +16020,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "nz-provisional-tax",
@@ -16228,7 +16228,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ng-cit",
@@ -16241,7 +16241,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ng-formation",
@@ -16267,7 +16267,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ng-income-tax",
@@ -16280,7 +16280,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ng-payroll",
@@ -16319,7 +16319,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ng-vat-return",
@@ -16332,7 +16332,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ng-vat",
@@ -16358,7 +16358,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "nigeria-vat",
@@ -16904,7 +16904,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "no-social-contributions",
@@ -16917,7 +16917,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "no-tax-overview",
@@ -17086,7 +17086,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "pk-crypto-tax",
@@ -17138,7 +17138,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "pk-income-tax",
@@ -17567,7 +17567,7 @@
    "reviewed_by": "Jonathan I. Ruiz, CPA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ph-income-tax",
@@ -17632,7 +17632,7 @@
    "reviewed_by": "Jonathan I. Ruiz, CPA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "pl-capital-gains",
@@ -18802,7 +18802,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "sa-freelance-intake",
@@ -18893,7 +18893,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "saudi-einvoice",
@@ -18906,7 +18906,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "senegal-income-tax",
@@ -19257,7 +19257,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "sg-tax-residency",
@@ -19270,7 +19270,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "sg-zero-cgt",
@@ -19335,7 +19335,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "singapore-transfer-pricing",
@@ -19699,7 +19699,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "za-capital-gains",
@@ -19711,8 +19711,8 @@
    "verified_by": null,
    "reviewed_by": "Werner Britz",
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "tax_year": "2026",
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "za-income-tax",
@@ -19738,7 +19738,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "za-tax-residency",
@@ -19764,7 +19764,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "gs-ordinary-income-tax-reference",
@@ -19790,7 +19790,7 @@
    "reviewed_by": "Yeong Min Lee",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "kr-social-insurance",
@@ -19803,7 +19803,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "south-korea-references",
@@ -19855,7 +19855,7 @@
    "reviewed_by": "Yeong Min Lee",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ss-company-formation",
@@ -19946,7 +19946,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "es-beckham",
@@ -19972,7 +19972,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "es-corporate-tax",
@@ -19985,7 +19985,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "es-estimated-tax",
@@ -20063,7 +20063,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "spain-references",
@@ -20167,7 +20167,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "spain-transfer-pricing",
@@ -20544,7 +20544,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "se-social-contributions",
@@ -20557,7 +20557,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "sweden-bookkeeping",
@@ -20570,7 +20570,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "sweden-crypto-tax",
@@ -20596,7 +20596,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "sweden-vat-return",
@@ -20609,7 +20609,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ch-ahv-iv",
@@ -20622,7 +20622,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ch-cantonal-tax",
@@ -20674,7 +20674,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ch-lump-sum",
@@ -21012,7 +21012,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "th-tax-overview",
@@ -21037,8 +21037,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2024",
-   "last_updated": "2026-10-18"
+   "tax_year": "2025",
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "thailand-vat",
@@ -21831,7 +21831,7 @@
    "reviewed_by": "James Power",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "uk-national-insurance",
@@ -21842,9 +21842,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "James Power",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "uk-non-dom",
@@ -21881,9 +21881,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "James Power",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "uk-rental-sa105",
@@ -21946,9 +21946,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "James Power",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "uk-to-italy-flat-tax-relocation",
@@ -21974,7 +21974,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-08-03"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "uk-transfer-pricing",
@@ -22221,7 +22221,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ae-income-tax",
@@ -22715,7 +22715,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "vietnam-vat",
@@ -22728,7 +22728,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "vn-company-formation",
@@ -22754,7 +22754,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "vn-payroll-social",
@@ -22780,7 +22780,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "zambia-vat",
@@ -23352,7 +23352,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "pk-return-assembly",
@@ -23365,7 +23365,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-18"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "ru-freelance-intake",
@@ -24626,7 +24626,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "us-md-payroll",
@@ -24639,7 +24639,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "us-md-sales-tax",
@@ -25458,7 +25458,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-01"
   },
   {
    "slug": "us-oh-sales-tax",

@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package an 
 jurisdiction: IE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -82,7 +82,7 @@ The assembly skill does not recompute anything. It expects structured outputs fr
 | `ireland-vat-return` | If VAT-registered: bi-monthly VAT3 history; RTD; cross-check turnover | Cross-check; nothing flows to Form 11 directly |
 | `ie-paye` | Employment income from P60 / PAYE Modernisation (PMOD) Employment Detail Summary | Form 11 PAYE Panel |
 | `ie-payroll` | Employer-side PAYE / USC / PRSI summaries (if proprietary director or employer themselves) | Form 11 Director / Employer panels |
-| `ie-cgt` | CGT disposals during 2025: chargeable gains, annual exemption €1,270, 33% rate | Form 11 CGT Panel (or separate CG1) |
+| `ie-cgt` | CGT disposals during 2025: chargeable gains, annual exemption €1,270, 33% rate (31% for disposals on or after 7 October 2026) | Form 11 CGT Panel (or separate CG1) |
 | `ie-cat` | Gifts / inheritances received in valuation date year | Separate IT38; cross-reference in Form 11 not required |
 | `ie-formation` | Sole trader registration (TR1) / business name / start-of-trade adjustments | Identity panel |
 
@@ -240,7 +240,7 @@ The working paper is built around the ROS Form 11 panel structure. Form 11S (sho
 | **Foreign Income (Schedule D Case III)** | Foreign trading / employment / rental / investment | Including FTC | ie-income-tax-form11 |
 | **Rental Income (Schedule D Case V)** | Net rental income after allowable deductions; pre-letting expenses; PRTB registration check | s97 TCA 1997 framework | ie-income-tax-form11 |
 | **Investment Income (Schedule D Case IV / F)** | Deposit interest (DIRT applied — final liability for most; PRSI / USC may still apply); dividends | All | ie-income-tax-form11 |
-| **Capital Gains** | Disposals 2025; €1,270 annual exemption; 33% rate; entrepreneur relief (10% on lifetime €1m under s597AA) | All | ie-cgt |
+| **Capital Gains** | Disposals 2025; €1,270 annual exemption; 33% rate (31% for disposals on or after 7 October 2026); entrepreneur relief (10% on lifetime €1m under s597AA) | All | ie-cgt |
 | **USC** | Bands applied; surcharge on non-PAYE > €100,000 (3% under s531AN) | All | ie-usc |
 | **PRSI Class S** | 4.1% (4.2% from 1 Oct 2025); €650 minimum | All | ie-prsi-class-s |
 | **Tax Credits** | Personal (€2,000 / €4,000 married 2025); PAYE (€2,000); Earned Income (€2,000); Home Carer; SPCCC; Age Tax Credit; etc. | All | ie-income-tax-form11 |
@@ -281,7 +281,7 @@ The working paper is built around the ROS Form 11 panel structure. Form 11S (sho
 |  | Group / consortium relief (s411/s420 TCA 1997) | If group exists | ie-corporation-tax |
 | **Passive / Investment Income (Case III/IV/V)** | Rental, interest, foreign income | Charged at 25% (s21A) | ie-corporation-tax |
 | **Chargeable Gains** | Disposals re-grossed under s78 to give effective 33% rate | All | ie-cgt |
-| **R&D Tax Credit** | 25% (or 30% on first €75,000 from 2025 budget) of qualifying R&D expenditure (s766) | If R&D claim made | ie-corporation-tax |
+| **R&D Tax Credit** | 35% of qualifying R&D expenditure for accounting periods beginning on or after 1 January 2026 (30% for periods from 1 January 2024); a claim of up to €87,500 is paid in full in the first instalment (s766; see Section 10.4) | If R&D claim made | ie-corporation-tax |
 | **Close Company Surcharges** | s440 (investment income) 20%; s441 (service company trading) 15% | If close company | ie-corporation-tax |
 | **Tax Computation** | 12.5% trading + 25% passive + 33% gains + surcharges − credits | All | ie-corporation-tax |
 | **Preliminary Tax** | "Large company" (CT > €200,000 prior year): two payments — 50% by month 6, balance to 90% by 31st of month 11; "Small company": single payment of 100% prior year or 90% current year by 31st of month 11 (s959AS TCA 1997) | ie-corporation-tax + ie-preliminary-tax |  |
@@ -495,7 +495,7 @@ The reviewer brief is a single markdown file the credentialed reviewer (CAI / AC
 - Mixed-use expenses; client entertainment (non-deductible — s840A)
 - Related-party transactions (transfer pricing per s835D-G if in scope)
 - Pension contributions on / before 31 October for current-year relief
-- R&D claim documentation (TBC — confirm 30% rate on first €75,000 per latest Finance Act)
+- R&D claim documentation (35% credit for periods beginning on or after 1 January 2026; €87,500 first-instalment threshold; see Section 10.4)
 - EII / SCI subscription certificates (Form RICT)
 - Close company surcharge exposure
 
@@ -513,7 +513,7 @@ The reviewer brief is a single markdown file the credentialed reviewer (CAI / AC
 - Pension contribution headroom for 2026
 - Capital allowances opening pools rolled forward
 - Loss memorandum
-- Legislative changes effective 1 January 2026 (Finance Act 2025 — TBC; review at year-end)
+- Legislative changes effective 1 January 2026 (Finance Act 2025, including the R&D credit at 35% and the €87,500 first-instalment threshold; review other changes at year-end)
 - USC band shifts (Budget 2026)
 - PRSI rate transitions (4.2% Class S in force full-year 2026)
 ```
@@ -694,7 +694,7 @@ If execution runs out of context mid-build, complete the computation work first 
 5. SARP, FED, remittance basis, and split-year residency are out of scope (Section 12).
 6. Pillar Two QDMTT / IIR / UTPR detailed computation is out of scope (Section 12, R-IE-ASM-7).
 7. Stamp duty, customs, VRT, LPT, DWT reclaim, MAP/APA all out of scope.
-8. Some Finance Act 2024 / Finance Act 2025 figures (Standard Fund Threshold schedule, R&D 30% uplift, ROS pay & file extended date) are marked TBC — confirm against the latest published Finance Act and Revenue eBrief at filing time.
+8. Some Finance Act 2024 / Finance Act 2025 figures (Standard Fund Threshold schedule, ROS pay & file extended date) are marked TBC — confirm against the latest published Finance Act and Revenue eBrief at filing time.
 9. CRO annual return (Form B1) is referenced but is a CRO filing, not a Revenue filing — handled separately.
 
 ### Change log
@@ -710,7 +710,8 @@ If execution runs out of context mid-build, complete the computation work first 
 | Taxes Consolidation Act 1997 (TCA 1997, as amended) | Income tax, corporation tax, capital gains tax, USC, PRSI Class S, preliminary tax, surcharges, interest, retention |
 | Value-Added Tax Consolidation Act 2010 (VATCA 2010) | VAT framework, VAT3, RTD, registration thresholds |
 | Capital Acquisitions Tax Consolidation Act 2003 (CATCA 2003) | CAT / IT38 |
-| Finance Act 2024 | R&D 30% first €75,000 uplift; Standard Fund Threshold phased increase; other 2025 changes |
+| Finance Act 2024 | R&D first-instalment threshold €50,000 → €75,000; Standard Fund Threshold phased increase; other 2025 changes |
+| Finance Act 2025 | R&D credit 30% → 35% and first-instalment threshold €75,000 → €87,500 (Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf) |
 | Finance (No. 2) Act 2023 | VAT thresholds €85,000 / €42,500 (effective 1 Jan 2025); Pillar Two Part 4A TCA 1997 |
 | s959AN / s959AS / s959AT TCA 1997 | Preliminary tax safe harbours (individuals + companies) |
 | s1080 TCA 1997 | Interest on late payment |

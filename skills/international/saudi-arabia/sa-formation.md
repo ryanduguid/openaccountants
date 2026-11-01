@@ -4,7 +4,7 @@ description: "ALWAYS read this skill whenever asked about forming, incorporating
 jurisdiction: SA
 category: formation
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 version: 1.1
 reviewed_by: Mehran Habib
 review_status: pending_review
@@ -133,7 +133,7 @@ placeholder
 
 #### Tax
 
-- **Sole Establishment tax** — Zakat at 2.5% of the Zakat base (computed on equity-based formula under Zakat Implementing Regulations 2017). No CIT for Saudi/GCC-owned Sole Establishments — Zakat is the only direct tax on profits. VAT at 15% if turnover exceeds SAR 375,000 (mandatory) or SAR 187,500 (voluntary). WHT obligations on payments to non-resident service providers (royalties 15%, management fees 20%, technical / consulting fees 5%, etc.). Annual Zakat return filing with ZATCA; periodic VAT returns (monthly if turnover > SAR 40M, otherwise quarterly).  _(Zakat Implementing Regulations 2017)_
+- **Sole Establishment tax** — Zakat at 2.5% of the Zakat base for a Hijri year (2.5777% for a 365-day Gregorian year), computed under the Zakat Implementing Regulation issued by Ministerial Resolution No. 1007 of 19/8/1445H for Zakat years starting on or after 1 January 2024: additions less deductions, then the minimum and maximum limits (see `sa-zakat`). No CIT for Saudi/GCC-owned Sole Establishments — Zakat is the only direct tax on profits. VAT at 15% if turnover exceeds SAR 375,000 (mandatory) or SAR 187,500 (voluntary). WHT obligations on payments to non-resident service providers (royalties 15%, management fees 20%, technical / consulting fees 5%, etc.). Annual Zakat return filing with ZATCA; periodic VAT returns (monthly if turnover > SAR 40M, otherwise quarterly).  _(Ministerial Resolution No. 1007 of 19/8/1445H; [ZATCA Zakat General Guideline 1445AH](https://zatca.gov.sa/en/HelpCenter/guidelines/Documents/Zakat-General-Guideline-Zakat-Collection-1445AH.pdf), s 3.1 and s 3.4.8)_
 
 #### When to use
 

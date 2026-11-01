@@ -4,7 +4,7 @@ description: "Use this skill whenever asked to compute, classify, or review Nige
 jurisdiction: NG
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: Omolola Fasasi 
 review_status: current
 tier: 1
@@ -14,6 +14,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # NG Wht
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Omolola Fasasi** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+
+> **Rates not current: the 1997 Regulations have been revoked.** The Deduction of Tax at Source (Withholding) Regulations 2024 revoked the Withholding Tax Regulations 1997 that this guide's rate tables, rules and examples are built on. Reported commencement dates differ (1 July 2024 per [Mondaq](https://www.mondaq.com/nigeria/withholding-tax/1496012/an-overview-of-the-key-provisions-of-the-deduction-of-tax-at-source-withholding-regulations-2024); 1 January 2025 per [KPMG](https://kpmg.com/kpmg-us/content/dam/kpmg/taxnewsflash/pdf/2024/10/tnf-nigeria-oct3-2024.pdf)); both are secondary sources, and the 2024 gazette was not retrieved. Summaries of the 2024 Regulations report changed rates, including 10% on royalties paid to companies, and a deduction at double the standard rate where the payee has no TIN (secondary only). From 1 January 2026, NTAA 2025 s 51(1) requires deduction at the rate prescribed in regulations relating to deduction of tax at source; it creates no separate rate schedule ([NTAA 2025 s 51](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)). **Before applying any rate in this guide to a payment made on or after 1 July 2024, check it against the First Schedule of the 2024 Regulations.** The non-resident 10% rates for dividends, interest and royalties match the 2024 summaries.
 
 ## Section 1 — Quick reference (rate table by transaction type)
 
@@ -25,40 +27,40 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax covered | Withholding Tax (WHT) — advance income tax collected at source on specified payments |
 | Currency | Nigerian Naira (NGN, ₦) — foreign-currency payments converted at the CBN official rate on the date of payment |
 | Tax year | Calendar year (1 Jan – 31 Dec) for corporate WHT; assessment year aligned with FIRS practice |
-| Current tax year | 2025 (transitional — NTA 2025 takes effect 1 January 2026) |
+| Current tax year | 2026 (NTA 2025 and NTAA 2025 in force from 1 January 2026) |
 | Federal tax authority | Federal Inland Revenue Service (FIRS) — for companies, non-residents, and Abuja FCT residents |
 | State tax authorities | State Internal Revenue Services (SIRS, e.g. LIRS in Lagos) — for individuals, partnerships, and unincorporated entities resident in the State |
 | Filing portal | TaxPro-Max (https://taxpromax.firs.gov.ng) for FIRS WHT; State portals for SIRS WHT (e.g. LIRS eTax) |
 | Remittance receipt | FIRS WHT Credit Note (electronic) — issued upon successful remittance and reconciliation |
 | Company-payer deadline | **21st** day of the month following the month of deduction |
-| Individual-payer deadline (where applicable) | **10th** day of the month following the month of deduction |
-| Governing law (current) | Companies Income Tax Act (CITA) Cap C21 LFN 2004 (as amended), Personal Income Tax Act (PITA) Cap P8 LFN 2004 (as amended), Petroleum Profits Tax Act (PPTA), Capital Gains Tax Act, plus the **Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997)** as amended by FIRS Information Circulars (most recently the 2024 update) |
-| Governing law (from 1 Jan 2026) | **Nigeria Tax Act 2025 (NTA 2025)** — consolidates WHT into a single tax-at-source Schedule (implementing regulations TBC) |
+| Individual-payer deadline (where applicable) | **10th** day of the month following the month of deduction, under the pre-2026 rules; from 1 January 2026 NTAA s 107(1) penalises any person who deducts tax under the Act and does not remit it by the **21st** day of the following month |
+| Governing law (current) | Companies Income Tax Act (CITA) Cap C21 LFN 2004 (as amended), Personal Income Tax Act (PITA) Cap P8 LFN 2004 (as amended), Petroleum Profits Tax Act (PPTA), Capital Gains Tax Act, plus the Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997), **revoked by the Deduction of Tax at Source (Withholding) Regulations 2024** (see the banner above) |
+| Governing law (from 1 Jan 2026) | **Nigeria Tax Administration Act 2025 (NTAA) s 51** — tax is deducted at the rate prescribed in regulations relating to deduction of tax at source; s 51(2) makes the deduction final tax for a non-resident recipient of dividends, interest, rent, royalties, directors' fees and payments to entertainers and sportspersons |
 | Validated by | Verified by Omolola Fasasi (MB058950) on 2026-06-21 |
 | Skill version | 1.0 |
 
 ### Quick-look: payment type → WHT rate (residents vs non-residents)
 
-**Quick-look payment type to WHT rate table**
+**Quick-look payment type to WHT rate table** (1997 Regulations rates; not checked against the 2024 Regulations, see the banner above)
 
 | Payment type | Resident — individuals (PITA) | Resident — companies (CITA) | Non-resident (CITA, treaty-cap may apply) | Credit / Final? |
 | --- | --- | --- | --- | --- |
 | Dividends | 10% | 10% | 10% | **Final** for residents (franked investment income); creditable / final for non-residents per treaty |
 | Interest | 10% | 10% | 10% | **Final** for residents on bank/govt interest; otherwise creditable |
 | Rent (land, building, equipment hire) | 10% | 10% | 10% | Creditable |
-| Royalties | 5% | 5% | 10% | Creditable / final depending on category |
+| Royalties | 5% | 5% (2024 Regulations reportedly 10% to companies; check) | 10% | Creditable / final depending on category |
 | Technical / professional services fees | 5% | 5% (10% if also a consultant fee) | 10% | Creditable |
 | Management fees | 5% | 5% | 10% | Creditable |
 | Consultancy fees | 5% | 5% | 10% | Creditable |
 | Commissions | 5% | 5% | 10% | Creditable |
 | All types of contracts (supply, construction) other than sales in the ordinary course of business | 5% | 5% | 5% (PSC: 10% per FIRS practice) | Creditable |
 | Directors' fees | 10% | n/a (companies are not directors) | 10% | Creditable / final |
-| Building, construction, and related activities | 2.5% (NEW rate per 2015 amendment) | 2.5% | 5% / 10% non-resident | Creditable |
+| Building, construction, and related activities | 2.5% (2015 amendment to the 1997 Regulations; check the 2024 Regulations) | 2.5% (check the 2024 Regulations) | 5% / 10% non-resident | Creditable |
 | Hire of equipment (other than land/building) | 10% | 10% | 10% | Creditable |
 | Charter — aircraft, ship, etc. | 10% | 10% | 10% | Creditable |
 | Petroleum (PSC and JV operator payments to contractors) | n/a | 5% / 10% per PSC | 5% / 10% per PSC | Creditable against CIT / PPT |
 
-- **Critical rule (Regulation 4, WHT Regulations 1997)** — WHT must be deducted by the payer at the time of payment OR when the liability is credited in the books — whichever comes first. The base is the gross amount excluding VAT. Where VAT applies (currently 7.5%), strip it before computing WHT.  _(Regulation 4, WHT Regulations 1997)_
+- **Critical rule (Regulation 4, WHT Regulations 1997, now revoked; check the equivalent 2024 rule)** — WHT must be deducted by the payer at the time of payment OR when the liability is credited in the books — whichever comes first. The base is the gross amount excluding VAT. Where VAT applies (currently 7.5%), strip it before computing WHT.  _(Regulation 4, WHT Regulations 1997)_
 - **Critical rule (2024 FIRS Information Circular)** — Small companies (turnover ≤ ₦25m) and individuals making payments below specified de-minimis thresholds (typically ₦10,000 per transaction or ₦25,000 in a month to the same recipient for services) are NOT required to deduct WHT on those payments. Verify the current threshold before applying.  _(2024 FIRS Information Circular)_
 
 ## Section 2 — Required inputs and refusal catalogue
@@ -93,7 +95,7 @@ Refuse the engagement (explicit refusal, do not guess) in any of the following c
 - **R-NG-WHT-5** — Treaty rate claim without a valid TRC dated before the tax point  _(Default to non-resident statutory rate (10% etc.); treaty relief denied.)_
 - **R-NG-WHT-6** — Sales of goods in the ordinary course of business  _(NOT subject to WHT under WHT Regs 1997 — confirm with payer and refuse to over-withhold.)_
 - **R-NG-WHT-7** — Bespoke FIRS / SIRS administrative concessions or rulings  _(Cannot rely on private rulings without sight of the actual letter — refuse and request the document.)_
-- **R-NG-WHT-8** — NTA 2025 transitional questions covering periods straddling 31 Dec 2025 / 1 Jan 2026  _(Implementing regulations TBC; refuse to commit to post-1-Jan-2026 mechanics until FIRS publishes the WHT Schedule.)_
+- **R-NG-WHT-8** — NTA 2025 transitional questions covering periods straddling 31 Dec 2025 / 1 Jan 2026  _(NTAA s 51 applies the rates prescribed in the deduction-at-source regulations; refer transitional questions to a Nigerian practitioner.)_
 - **R-NG-WHT-9** — Multi-jurisdictional split between FCT (FIRS) and a State (SIRS) for the same payer  _(Each agency claims residency on different tests — refer to a Nigerian practitioner.)_
 - **R-NG-WHT-10** — WHT on intra-group reimbursements without supporting invoices  _(Likely re-characterisable as service fee — refuse and request the underlying contracts.)_
 
@@ -101,9 +103,9 @@ Refuse the engagement (explicit refusal, do not guess) in any of the following c
 
 ### 3.1 Statutory basis
 
-- **Statutory basis** — WHT is imposed by section 78 (and ss. 79–82) CITA (companies) and section 69 (and ss. 70–74) PITA (individuals and unincorporated bodies). Specific rates and procedures are prescribed by the Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997) as amended, supplemented by FIRS Information Circulars (most recently the 2024 update consolidating earlier practice).  _(CITA s 78-82; PITA s 69-74; Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997))_
+- **Statutory basis** — WHT is imposed by section 78 (and ss. 79–82) CITA (companies) and section 69 (and ss. 70–74) PITA (individuals and unincorporated bodies). Specific rates and procedures were prescribed by the Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997) as amended, which the Deduction of Tax at Source (Withholding) Regulations 2024 revoked (commencement reported as 1 July 2024 or 1 January 2025; secondary sources). From 1 January 2026 NTAA s 51 governs deduction at source, at the rates prescribed in those regulations.  _(CITA s 78-82; PITA s 69-74; Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997))_
 
-### 3.2 Resident rates (current — 2025)
+### 3.2 Resident rates (1997 Regulations; check against the 2024 Regulations)
 
 The current rate table for payments to Nigerian residents (both companies under CITA and individuals/partnerships under PITA) is:
 
@@ -114,19 +116,19 @@ The current rate table for payments to Nigerian residents (both companies under 
 | Dividends | 10% |
 | Interest | 10% |
 | Rent (land, building, plant, machinery, equipment) | 10% |
-| Royalties | 5% |
+| Royalties | 5% (2024 Regulations reportedly 10% to companies; check) |
 | Technical service fees | 5% |
 | Management fees | 5% |
 | Consultancy fees | 5% |
 | Professional fees (legal, accounting, engineering, etc.) | 5% |
 | Commissions | 5% |
-| Building, construction, and related activities | 2.5% (reduced from 5% under the 2015 amendment) |
+| Building, construction, and related activities | 2.5% (reduced from 5% under the 2015 amendment to the 1997 Regulations; check the 2024 Regulations) |
 | All contracts other than sales in the ordinary course of business | 5% |
 | Hire of equipment (movables) | 10% |
 | Charter (aircraft, ship, etc.) | 10% |
 | Directors' fees (paid to non-employee directors) | 10% |
 
-### 3.3 Non-resident rates (current — 2025)
+### 3.3 Non-resident rates (1997 Regulations; check against the 2024 Regulations)
 
 For payments to non-residents without a Nigerian permanent establishment, the default statutory rate is generally 10%, often capped or reduced by a Double Tax Treaty (DTT) with the recipient's country. The default non-resident table is:
 
@@ -176,7 +178,7 @@ Nigeria has DTTs in force with: United Kingdom, Belgium, Canada, China, Czech Re
 
 ### 4.2 Building and construction — 2.5% reduced rate
 
-- **2.5% reduced rate scope** — The 2015 amendment to the WHT Regulations reduced the rate on building, construction, and related activities from 5% to 2.5% for residents, in response to industry representations on cash-flow pressure. The reduced rate covers civil engineering, construction works, painting, plumbing, and electrical installation when integral to building works. Pure consultancy on a construction project (architects, quantity surveyors as standalone fees) remains at 5% professional fees, NOT 2.5%.  _(2015 amendment)_
+- **2.5% reduced rate scope** — The 2015 amendment to the WHT Regulations reduced the rate on building, construction, and related activities from 5% to 2.5% for residents, in response to industry representations on cash-flow pressure. The reduced rate covers civil engineering, construction works, painting, plumbing, and electrical installation when integral to building works. Pure consultancy on a construction project (architects, quantity surveyors as standalone fees) remains at 5% professional fees, NOT 2.5%. This 2.5% rate comes from the 1997 Regulations as amended in 2015, which the 2024 Regulations revoked; check the 2024 First Schedule before applying it.  _(2015 amendment)_
 
 ### 4.3 Treaty rates — common matrix
 
@@ -198,15 +200,17 @@ Nigeria has DTTs in force with: United Kingdom, Belgium, Canada, China, Czech Re
 
 ### 4.4 Transitional under Nigeria Tax Act 2025 (NTA 2025)
 
-The Nigeria Tax Act 2025 (assented June 2025) consolidates Federal tax laws into a single statute and replaces CITA, PITA, PPTA, VAT Act, and the WHT Regulations 1997 from 1 January 2026. Key WHT-related changes flagged for 2026 (subject to implementing regulations):
+The Nigeria Tax Act 2025 and the Nigeria Tax Administration Act 2025 (NTAA) apply from 1 January 2026 and replace CITA, PITA, PPTA and the VAT Act. For deduction at source, the NTAA keeps the regulations as the source of rates; it does not create a separate rate schedule:
 
-- Consolidation of WHT into a single "Tax at Source" Schedule, replacing the 1997 Regulations.
-- Indications of revised rate ranges — possible reductions for technical/professional services to align with regional practice (Kenya 5%, Ghana 7.5%).
-- Express recognition of digital and cross-border services as a WHT category (currently grey under SEP — Significant Economic Presence Order 2020).
-- Streamlined single electronic WHT credit note via the consolidated FIRS portal.
-- Potential harmonisation of company-payer and individual-payer remittance deadlines (likely to consolidate to 21st of the following month for all payers).
+- **s 51(1)** — the payer deducts tax at the date of payment or settlement, at the rate prescribed in regulations relating to deduction of tax at source.
+- **s 51(2)** — for dividends, interest, rent, royalties, directors' fees and payments to entertainers and sportspersons, the deduction is the final tax of a non-resident recipient.
+- **s 51(8)** — a non-resident company providing technical, consulting, professional or management services to a labelled startup suffers a 5% final deduction.
+- **s 105** — failing to collect, deduct or withhold tax due carries an administrative penalty of 40% of the amount not deducted.
+- **s 107(1)** — tax deducted and not remitted by the 21st day of the following month is payable with a 10% a year administrative penalty and interest at the CBN monetary policy rate.
 
-- **TBC under NTA 2025 implementing regulations** — Until FIRS publishes the WHT Schedule and the implementing regulations under NTA 2025, do NOT commit to post-1-January-2026 mechanics. Flag transitional issues and refer.
+_([NTAA 2025 ss 51, 105 and 107](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf))_
+
+- **Rates from 1 January 2026** — Take each rate from the First Schedule of the Deduction of Tax at Source (Withholding) Regulations 2024, or any later regulations, not from the 1997 tables in this guide. Flag transitional issues and refer.
 
 ### 4.5 Digital and cross-border services — Significant Economic Presence (SEP)
 
@@ -274,7 +278,7 @@ NewCo Nigeria Ltd. declares ₦100,000,000 dividend to its parent OldCo Nigeria 
 
 ### 6.4 Penalties for non-compliance
 
-- **Late remittance penalty** — Late remittance: penalty of 10% of the tax due plus interest at the CBN Monetary Policy Rate (MPR) plus a spread, per CITA s. 82.  _(CITA s. 82)_
+- **Late remittance penalty** — Late remittance: penalty of 10% of the tax due plus interest at the CBN Monetary Policy Rate (MPR) plus a spread, per CITA s. 82, for periods before 2026. From 1 January 2026, NTAA s 107(1) applies: the unremitted tax, a 10% a year administrative penalty and interest at the CBN monetary policy rate; failure to deduct carries 40% of the amount not deducted (s 105).  _(CITA s. 82; NTAA 2025 ss 105 and 107)_
 - **Failure to deduct penalty** — Failure to deduct: the payer becomes personally liable for the unpaid WHT plus penalty and interest — the recipient is not pursued.
 - **Failure to file return penalty** — Failure to file the WHT return / schedule of deductees: administrative penalty of ₦25,000 (companies) per month or ₦5,000 (individuals) per month.
 - **Failure to issue credit notes** — Failure to issue WHT Credit Notes: recipient may claim against the payer directly under common-law breach of regulatory duty.
@@ -315,11 +319,13 @@ The general principle: withhold the higher rate when in doubt and let the recipi
 - Capital Gains Tax Act Cap C1 LFN 2004 (CGT — out of scope here).
 - Value Added Tax Act Cap V1 LFN 2004 (VAT — distinct from income-tax WHT).
 
-**Future legislation (from 1 January 2026).**
-- Nigeria Tax Act 2025 (NTA 2025) — assented June 2025; replaces CITA, PITA, PPTA, VAT Act, WHT Regulations 1997 from 1 January 2026; consolidates WHT into a single "Tax at Source" Schedule (implementing regulations TBC).
+**Legislation from 1 January 2026.**
+- Nigeria Tax Act 2025 (NTA 2025) — assented June 2025; replaces CITA, PITA, PPTA and the VAT Act from 1 January 2026.
+- [Nigeria Tax Administration Act 2025](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf) — s 51 (deduction at source, at the rates prescribed in regulations), s 105 (failure to deduct) and s 107 (failure to remit).
 
 **Subsidiary legislation.**
-- Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997), as amended (including the 2015 amendment reducing building/construction WHT to 2.5%).
+- Withholding Tax (Companies and Persons other than Companies) Regulations 1997 (S.I. No. 28 of 1997), as amended (including the 2015 amendment reducing building/construction WHT to 2.5%); revoked by the 2024 Regulations.
+- Deduction of Tax at Source (Withholding) Regulations 2024 — gazette not retrieved; revocation of the 1997 Regulations and the rate changes are from secondary summaries, e.g. [KPMG](https://kpmg.com/kpmg-us/content/dam/kpmg/taxnewsflash/pdf/2024/10/tnf-nigeria-oct3-2024.pdf).
 - Companies Income Tax (Significant Economic Presence) Order 2020 — SEP for non-resident digital services.
 
 **FIRS Information Circulars.**

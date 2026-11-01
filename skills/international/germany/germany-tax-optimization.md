@@ -1,10 +1,10 @@
 ---
 name: germany-tax-optimization
 description: Use this skill whenever asked about reducing tax in Germany, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in Germany. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "Steuern sparen", "Steueroptimierung", "Steuerlast senken". ALWAYS read this skill before advising on any German tax optimization strategy.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Germany Tax Optimization
 
-## Germany Tax Optimization -- Self-Employed Skill v1.0
+## Germany Tax Optimization -- Self-Employed Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -192,9 +192,9 @@ Legislation: Sozialgesetzbuch (SGB)
 
 | Feature | Detail |
 | --- | --- |
-| Deduction limit | 100% of contributions deductible (since 2023). Max EUR 29,344 (single) / EUR 58,688 (joint) for 2026. |
+| Deduction limit | 100% of contributions deductible (since 2023). Max EUR 30,826 (single) / EUR 61,652 (joint) for 2026: the maximum knappschaftliche pension contribution, 24.7% × EUR 124,800, rounded up (EUR 29,344 / EUR 58,688 in 2025). Sources: § 10 Abs. 3 EStG — https://www.gesetze-im-internet.de/estg/__10.html; RV-Beitragssatz 2026 — https://www.gesetze-im-internet.de/rvbeitrsbek_2026/----.html; BBG 2026 — https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2025/sozialversicherungsrechengroessen-2026.html |
 | Tax treatment in retirement | Taxed as income, but typically at lower marginal rate. |
-| Strategy | The primary pension vehicle for Freiberufler and Gewerbetreibende. Contributions reduce taxable income EUR-for-EUR up to the limit. At 42% marginal rate, EUR 29,344 contribution = EUR 12,325 tax saving. |
+| Strategy | The primary pension vehicle for Freiberufler and Gewerbetreibende. Contributions reduce taxable income EUR-for-EUR up to the limit. At 42% marginal rate, EUR 30,826 contribution = EUR 12,947 tax saving. |
 
 ### Riester-Rente -- §10a EStG
 

@@ -4,7 +4,7 @@ description: "France has become a net wealth-outflow country for the first time,
 jurisdiction: FR
 category: international
 tax_year: 2025
-last_updated: 2026-08-03
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -31,8 +31,10 @@ departure, and on the departure date you hold:
 - a stake of **at least 50%** in any company.
 
 **What it does.** Your unrealised gains (plus certain deferred gains and earn-outs) are
-deemed realised on departure — taxed at the **30% flat tax** (12.8% income tax + 17.2%
-social levies), or under the progressive scale by election. The tax is *computed*
+deemed realised on departure — taxed at the **31.4% flat tax** (12.8% income tax + 18.6%
+social levies) for departures from 1 January 2025, or 30% (17.2% levies) for earlier
+departures, or under the progressive scale by election. The 18.6% treats exit-tax gains as
+revenus du patrimoine (art. L. 136-6 CSS), like other gains on securities; confirm for the case. The tax is *computed*
 immediately, but:
 
 **Payment is suspended (sursis de paiement) automatically** if you move to an EU/EEA state
@@ -171,7 +173,7 @@ foyer-in-France trap for commuters.
 
 CGI art. 4 B (residence tests); art. 167 bis (exit tax: 6-of-10-years condition, €800k /
 50% thresholds, sursis de paiement, 2/5-year erasure at the €2.57m line, forms 2074-ETD/ETS);
-PFU 30% (12.8% + 17.2%); IFI arts. 964 ss. (€1.3m threshold, non-resident French-property
+PFU 31.4% (12.8% + 18.6% social levies on revenus du patrimoine from 2025 income, LFSS 2026 art. 12; Service-Public F2329 — https://www.service-public.gouv.fr/particuliers/vosdroits/F2329); IFI arts. 964 ss. (€1.3m threshold, non-resident French-property
 scope); non-resident minimum rates (art. 197 A: 20%/30%) and social levies with the 7.5%
 EU/EEA/UK rate; art. 750 ter (succession reach, heir 6-of-10-years rule); assurance-vie
 arts. 990 I / 757 B; France–Switzerland DTA art. 4 (lump-sum residents exclusion);

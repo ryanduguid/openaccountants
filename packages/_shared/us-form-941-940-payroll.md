@@ -4,8 +4,8 @@ description: Tier 2 US federal content skill for employer payroll tax compliance
 jurisdiction: US
 category: payroll
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-29
+version: 1.2
+last_updated: 2026-11-01
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -69,7 +69,7 @@ The form has four functional sections:
 - **Line 2 — Total wages** — Total wages, tips, and other compensation (Box 1 federal income tax wages — federal income tax wages, not FICA wages)  _(Form 941 Line 2)_
 - **Line 3 — Federal income tax withheld** — Federal income tax withheld from those wages, tips, and other compensation  _(Form 941 Line 3)_
 - **Line 4 — no wages subject to SS/Medicare checkbox** — Checkbox if no wages, tips, and other compensation are subject to Social Security or Medicare tax (rare — used by certain religious organizations and certain agricultural employers filing 943 instead)  _(Form 941 Line 4)_
-- **Line 5a — Taxable SS wages tax** — Taxable Social Security wages × 0.124 (combined 6.2% employee + 6.2% employer). Column 1 is the wages, Column 2 is the tax. The wages reported here are capped per employee per calendar year at the Social Security wage base ($176,100 for 2025).  _(Form 941 Line 5a)_
+- **Line 5a — Taxable SS wages tax** — Taxable Social Security wages × 0.124 (combined 6.2% employee + 6.2% employer). Column 1 is the wages, Column 2 is the tax. The wages reported here are capped per employee per calendar year at the Social Security wage base ($176,100 for 2025; $184,500 for 2026; $192,300 for 2027). Use the base for the calendar year in which the wages are paid.  _(Form 941 Line 5a; SSA, Contribution and Benefit Base)_
 - **Line 5a(i) — Qualified sick leave wages** — Qualified sick leave wages × 0.062 (legacy FFCRA — should be zero for 2025; FFCRA credits expired 9/30/2021)  _(Form 941 Line 5a(i))_
 - **Line 5a(ii) — Qualified family leave wages** — Qualified family leave wages × 0.062 (legacy FFCRA — should be zero for 2025)  _(Form 941 Line 5a(ii))_
 - **Line 5b — Taxable Social Security tips** — Taxable Social Security tips × 0.124  _(Form 941 Line 5b)_
@@ -171,7 +171,7 @@ Form 945 is annual, due January 31 (February 10 extension). Federal income tax w
 ### 3.1 Social Security (OASDI)
 
 - **Combined Social Security rate** — 12.4% (6.2% employee + 6.2% employer)  _(Social Security Administration Fact Sheet released October 10, 2024)_
-- **Social Security wage base 2025** — $176,100 USD (limits OASDI portion of SE tax)  _(8.2 Practical SE-tax Examples (skill text))_
+- **Social Security wage base 2025** — $176,100 USD (limits OASDI portion of SE tax). The base is $184,500 for 2026 and $192,300 for 2027; this skill's examples use 2025, so use the later figure for wages paid in 2026 or 2027.  _(SSA, Contribution and Benefit Base, ssa.gov/oact/cola/cbb.html)_
 - **Self-employed equivalent** — 12.4% on the same $176,100 base, computed against 92.35% of net SE earnings.  _(Schedule SE)_
 - **Wage base is per employer's EIN** — The wage base is per employer's EIN. If an employee works for two unrelated employers in the same year, each employer is independently obligated to withhold 6.2% up to $176,100 of wages it paid. The employee then receives a credit for the excess on Form 1040, Schedule 3, Line 11 ("Excess Social Security and tier 1 RRTA tax withheld"). The employers do NOT get a refund of their portion — the excess refund is to the employee only.  _(Form 1040 Schedule 3 Line 11)_
 - **Single employer with multiple EINs** — For a single employer with multiple EINs (e.g., common paymaster arrangement under §3121(s) or successor employer rule), there is one combined base if the requirements are met.  _(IRC §3121(s))_
@@ -222,6 +222,8 @@ This creates two common reconciliation scenarios:
 | Additional Medicare | 0.9% | 0% | $200,000 (employer withholding trigger) | Variable |
 | FUTA | 0% | 6.0% gross / 0.6% net | $7,000 | $42.00 (net) |
 | Federal income tax | Variable | 0% | None | Variable |
+
+- **Later years** — The Social Security wage base is $184,500 for 2026 (maximum $11,439.00 each side) and $192,300 for 2027 (maximum $11,922.60 each side).  _(SSA, Contribution and Benefit Base)_
 
 ## 4. Deposit Schedule — The Lookback Rule
 
@@ -829,6 +831,7 @@ This skill is based on the following primary sources, all current as of November
 - IRM 20.1.1 (Penalty Handbook) — for First-Time Abatement and reasonable-cause procedures
 - DOL Credit Reduction State announcements at oui.doleta.gov/unemploy/futa_credit.asp (November 2024 for tax year 2024 Form 940; November 2025 for tax year 2025 Form 940)
 - SSA Fact Sheet on 2025 Social Security Changes (October 10, 2024) — for the $176,100 wage base
+- SSA, Contribution and Benefit Base (ssa.gov/oact/cola/cbb.html) — for the 2026 ($184,500) and 2027 ($192,300) wage bases
 - IRS news release IR-2024-273 and Rev. Proc. 2024-40 for 2025 figures
 
 **Verification status**: The $176,100 wage base, the 0.6%/1.5% effective FUTA rates, the credit reduction state list (CA, NY, VI, CT for 2024), and the 0.9% Additional Medicare employer withholding threshold of $200,000 are all verified against the cited primary sources as of November 15, 2025. The 2025 final credit reduction state list (for Form 940 to be filed January 2026) must be re-verified against the DOL November 2025 announcement before any 2025 Form 940 is finalized. The 2026 backup withholding rate, 2026 SS wage base, and 2026 OBBBA-driven 1099-NEC threshold are referenced as scope notes; this skill does not produce 2026 returns.
