@@ -331,7 +331,7 @@ CRO registration is fully electronic through the CORE (Companies Online Registra
 - Corporation tax: €35,000 @ 12.5% = €4,375.
 - Director's salary €60,000 taxed via PMOD:
   - Income tax: €44,000 @ 20% + €16,000 @ 40% = €8,800 + €6,400 = €15,200; less PAYE personal credit €2,000 + employee credit €2,000 = €11,200.
-  - PRSI: Aoife holds 100%, so as a proprietary director she pays Class S: €60,000 × 4.125% (2025 blended rate, SW14) = €2,475, assuming even pay through the year.
+  - PRSI: Aoife holds 100%, so as a proprietary director she pays Class S, at 4.1% to 30 September 2025 and 4.2% from 1 October (SW14 2025); with even pay through the year, €60,000 × 4.125% = €2,475.
   - USC on €60,000: €60.06 + €307.40 + €32,618 @ 3% = €978.54; total €1,346.00.
   - Personal tax burden on €60,000 salary: €11,200 + €2,475 + €1,346 = €15,021.
 - Total combined tax (Option B): CT €4,375 + personal €15,021 = €19,396, with €35,000 retained in the company (less CT already paid → €30,625 retained after tax).
