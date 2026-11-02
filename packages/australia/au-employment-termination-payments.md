@@ -10,10 +10,10 @@ description: >
   "Schedule 7", "termination pay withholding", "golden handshake", "payment in
   lieu of notice", "preservation age ETP", "whole-of-income cap", "ETP code R",
   "ETP code O". Covers 2026-27 figures for employers, payroll staff and advisers.
-version: 1.4
+version: 1.5
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-11-02
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -23,7 +23,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Employment Termination Payments v1.4
+# AU Employment Termination Payments v1.5
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## The method, step by step
 
-### Australia Employment Termination Payments and Redundancy v1.4
+### Australia Employment Termination Payments and Redundancy v1.5
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
@@ -177,7 +177,7 @@ Use the full exclusions in [ITAA 1997 s 82-135](https://www.legislation.gov.au/C
 - **Whole-of-income cap**: The $180,000 amount is not indexed and cannot be reduced below zero. For employer withholding, follow Schedule 11's payment-based steps and document which payments are known. For the employee's final assessment, s 82-10(4)(c), (5) and (7) use taxable income with their specific current/later ETP exclusions. Other taxable income, including later salary, interest and the taxable component of relevant earlier ETPs, can reduce the final cap; allowable deductions also affect taxable income. Only 5% of pre-16 August 1978 long service leave is assessable for this purpose. Tax-free redundancy does not reduce it. Do not treat withholding as the final income tax or assume all ETPs can be left out of the income reconciliation. For a non-excluded payment, compare the remaining applicable ETP cap with this cap; Schedule 11 uses the whole-of-income cap if equal. [ITAA 1997 s 82-10](https://www.legislation.gov.au/C2026C00471/latest/text); [Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments); [ATO, whole-of-income cap](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/working-out-the-whole-of-income-cap-amount).
 - **A package with both kinds**: Process the excluded part first, then apply the remaining ETP cap and whole-of-income test to the non-excluded part. For the statutory final assessment, s 82-10(7) does not disregard the excluded taxable component when testing the non-excluded part. Schedule 11 example 4 instead illustrates employer withholding with a $397 redundancy excess withheld at 32%, a $17,678 gratuity, a $40,000 payment-based whole-of-income cap and a $269,603 ETP cap balance. Preserve that example's withholding scope; do not substitute its cap for the statutory assessment calculation. The ATO whole-of-income page's exclusion list also conflicts with its own mixed-payment explanation and examples. Follow the statute for assessment and obtain qualified review where that distinction affects reporting or final tax. [ITAA 1997 s 82-10(5) and (7)](https://www.legislation.gov.au/C2026C00471/latest/text); [Schedule 11, example 4](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments); [ATO mixed-payment examples](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/working-out-the-whole-of-income-cap-amount).
 - **Death benefits**: Keep life and death benefit caps separate. For a death benefit, reconcile the recipient's earlier death benefit payments for the same termination, including earlier income years; another recipient's payment does not automatically consume this recipient's cap. Nil withholding from a payment to the estate trustee does not establish that the estate or beneficiaries owe no tax. [ITAA 1997 ss 82-65 to 82-75](https://www.legislation.gov.au/C2026C00471/latest/text).
-- **When other income is large**: An employee with $200,000 of other taxable income has a whole-of-income cap of nil, so a golden handshake is withheld at 47% in full while the redundancy excess still gets the ETP cap.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
+- **When other income is large**: If the paying employer has already made $200,000 of other taxable payments to the employee in the income year, its Schedule 11 whole-of-income cap is nil, so a golden handshake is withheld at 47% in full while the redundancy excess still gets the ETP cap. Income from other payers does not enter that withholding calculation; on assessment, taxable income of $180,000 or more under s 82-10(4)(c) and (5) still leaves a nil final whole-of-income cap.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
 - **Detail pages**: The ATO's cap pages walk through which cap applies and how to work out the whole-of-income cap with more than one payment in the year.  _([ATO, Applying the ETP caps](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/applying-the-etp-caps))_
 
 ### Section 7 - Withholding rates under Schedule 11 (from 1 July 2026)
@@ -362,7 +362,7 @@ expected:
 
 ### Checked case 2: an age-only failure is different from a different dismissal cause
 
-A synthetic resident employee is 67 at dismissal, has quoted a valid TFN and receives an $80,000 taxable life benefit within 12 months. Other taxable payments already made are $200,000; there are no earlier ETPs or tax-free ETP components. If all genuine redundancy conditions hold except s 83-175(2)(a), the payment is excluded from the whole-of-income test and the full $80,000 is within the $270,000 ETP cap: Schedule 11 rate arithmetic at 17% gives $13,600. If instead the verified facts establish a non-excluded disciplinary termination with no other excluded-payment condition, the whole-of-income cap is zero and 47% gives $37,600. The $24,000 difference makes the missing classification material. This is a comparison of different established facts, not a choice of code; return Needs Input if the cause or conditions are unknown, and verify the age-only reporting code before submission. [ITAA 1997 s 82-10(6)(a)](https://www.legislation.gov.au/C2026C00471/latest/text); [ATO, applying the caps](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/applying-the-etp-caps); [Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments).
+A synthetic resident employee is 67 at dismissal, has quoted a valid TFN and receives an $80,000 taxable life benefit within 12 months. Other taxable payments this employer already made to the employee in the income year are $200,000; there are no earlier ETPs or tax-free ETP components. If all genuine redundancy conditions hold except s 83-175(2)(a), the payment is excluded from the whole-of-income test and the full $80,000 is within the $270,000 ETP cap: Schedule 11 rate arithmetic at 17% gives $13,600. If instead the verified facts establish a non-excluded disciplinary termination with no other excluded-payment condition, the whole-of-income cap is zero and 47% gives $37,600. The $24,000 difference makes the missing classification material. This is a comparison of different established facts, not a choice of code; return Needs Input if the cause or conditions are unknown, and verify the age-only reporting code before submission. [ITAA 1997 s 82-10(6)(a)](https://www.legislation.gov.au/C2026C00471/latest/text); [ATO, applying the caps](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/applying-the-etp-caps); [Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments).
 
 ```oa-check
 name: Age-only excluded payment versus independently non-excluded termination (2026-27)
