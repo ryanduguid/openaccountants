@@ -2,10 +2,12 @@
 
 import importlib.util
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from decimal import Decimal
 
 
@@ -121,18 +123,132 @@ class ExampleParsingTests(unittest.TestCase):
         for text in ("```oa-check\n" + CASE, "```oa-check extra\n" + CASE + "```\n",
                      " ```oa-check\n" + CASE + "```\n", fenced() + "```oa-check\n" + CASE):
             with self.subTest(text=text), tempfile.TemporaryDirectory() as directory:
-                path = Path(directory) / "case.md"
+                path = Path(directory) / "skills" / "case.md"
+                path.parent.mkdir()
                 path.write_text(text, encoding="utf-8")
-                self.assertTrue(checker.check_file(path)[1])
+                with patch.object(checker, "REPO_ROOT", directory):
+                    self.assertTrue(checker.check_file(path)[1])
 
 
 class ExampleCliTests(unittest.TestCase):
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.directory = Path(temporary.name)
+        self.root = self.directory / "checkout"
+        scripts = self.root / "scripts"
+        shutil.copytree(ROOT / "scripts" / "oa_tools", scripts / "oa_tools",
+                        ignore=shutil.ignore_patterns("__pycache__"))
+        self.script = scripts / SCRIPT.name
+        shutil.copyfile(SCRIPT, self.script)
+        self.guide = self.root / "skills" / "international" / "australia" / "au-case.md"
+        self.guide.parent.mkdir(parents=True)
+
+    def invoke(self, *args, cwd=None):
+        return subprocess.run([sys.executable, str(self.script), *map(str, args)],
+                              cwd=cwd or self.root, capture_output=True, text=True,
+                              encoding="utf-8", timeout=10)
+
     def run_checker(self, text, *args):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "au-case.md"
-            path.write_text(text, encoding="utf-8")
-            return subprocess.run([sys.executable, str(SCRIPT), *args, str(path)],
-                                  capture_output=True, text=True, timeout=10)
+        self.guide.write_text(text, encoding="utf-8")
+        return self.invoke(*args, self.guide)
+
+    def assert_rejected(self, result):
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn("FAIL", result.stdout)
+        self.assertIn("0 oa-check blocks", result.stdout)
+        self.assertNotIn("OUTSIDE_CONTENT", result.stdout + result.stderr)
+        self.assertNotIn("Traceback", result.stderr)
+
+    def symlink(self, link, target, *, directory=False):
+        try:
+            link.symlink_to(target, target_is_directory=directory)
+        except (NotImplementedError, OSError) as exc:
+            self.skipTest(f"symlinks unavailable: {exc}")
+
+    def test_accepts_absolute_relative_and_contained_traversal_paths(self):
+        self.guide.write_text(fenced() * 2, encoding="utf-8")
+        for path, cwd in ((self.guide, self.root),
+                          (self.guide.relative_to(self.root), self.root),
+                          ("../australia/au-case.md", self.guide.parent)):
+            with self.subTest(path=path):
+                result = self.invoke("--require", path, cwd=cwd)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn("2 oa-check blocks", result.stdout)
+
+    def test_rejects_external_absolute_relative_and_prefix_collision_paths(self):
+        outside = self.directory / "outside.md"
+        sibling = self.directory / "checkout-other" / "skills" / "outside.md"
+        sibling.parent.mkdir(parents=True)
+        for path in (outside, sibling):
+            path.write_text(fenced(CASE + "OUTSIDE_CONTENT: 73\n"), encoding="utf-8")
+        for path in (outside, "../outside.md", sibling):
+            with self.subTest(path=path):
+                self.assert_rejected(self.invoke(path))
+                self.assert_rejected(self.invoke("--require", path))
+
+    def test_rejects_non_guides_missing_files_and_directories(self):
+        for name in ("README.md", "readme-draft.md", "case.txt"):
+            path = self.guide.parent / name
+            path.write_text(fenced() * 2, encoding="utf-8")
+            with self.subTest(path=path):
+                self.assert_rejected(self.invoke(path))
+        directory = self.guide.parent / "directory.md"
+        directory.mkdir()
+        for path in (directory, self.guide, self.root / "skills"):
+            with self.subTest(path=path):
+                self.assert_rejected(self.invoke(path))
+
+    def test_explicit_and_discovered_file_symlinks_cannot_escape(self):
+        outside = self.directory / "outside.md"
+        outside.write_text(fenced(CASE + "OUTSIDE_CONTENT: 73\n"), encoding="utf-8")
+        self.symlink(self.guide, outside)
+        self.assert_rejected(self.invoke(self.guide))
+        self.assert_rejected(self.invoke())
+
+    def test_directory_symlink_cannot_escape_but_contained_links_work(self):
+        outside = self.directory / "outside"
+        outside.mkdir()
+        (outside / "case.md").write_text(fenced(CASE + "OUTSIDE_CONTENT: 73\n"), encoding="utf-8")
+        escape = self.guide.parent / "escape"
+        self.symlink(escape, outside, directory=True)
+        self.assert_rejected(self.invoke(escape / "case.md"))
+        self.guide.write_text(fenced() * 2, encoding="utf-8")
+        alias = self.guide.parent / "alias.md"
+        self.symlink(alias, self.guide)
+        contained = self.root / "skills" / "alias"
+        self.symlink(contained, self.guide.parent, directory=True)
+        for path in (alias, contained / self.guide.name):
+            with self.subTest(path=path):
+                result = self.invoke("--require", path)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_symlink_aliases_cannot_disguise_readmes_or_non_markdown(self):
+        for name in ("README.md", "case.txt"):
+            target = self.guide.parent / name
+            target.write_text(fenced() * 2, encoding="utf-8")
+            alias = self.guide.parent / ("alias-" + name + ".md")
+            self.symlink(alias, target)
+            with self.subTest(target=target):
+                self.assert_rejected(self.invoke(alias))
+
+    def test_broken_and_looping_symlinks_are_failures(self):
+        dangling = self.guide.parent / "dangling.md"
+        looping = self.guide.parent / "loop.md"
+        self.symlink(dangling, self.guide)
+        self.symlink(looping, looping)
+        for path in (dangling, looping):
+            with self.subTest(path=path):
+                self.assert_rejected(self.invoke(path))
+
+    def test_symlinked_skills_root_cannot_expand_the_checkout_boundary(self):
+        outside = self.directory / "outside"
+        outside.mkdir()
+        (outside / "case.md").write_text(fenced(CASE + "OUTSIDE_CONTENT: 73\n"), encoding="utf-8")
+        (self.root / "skills").rename(self.root / "original-skills")
+        self.symlink(self.root / "skills", outside, directory=True)
+        self.assert_rejected(self.invoke(self.root / "skills" / "case.md"))
+        self.assert_rejected(self.invoke())
 
     def test_require_checks_a_pair_without_a_slug_heuristic(self):
         for count in (0, 1, 2):

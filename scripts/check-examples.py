@@ -7,7 +7,10 @@ OpenAccountants scripts/check-examples.py at commit
 
 Run without paths to check every source guide. --require additionally requires
 at least 2 cases in every selected file; use explicit paths for a migrated
-scope. No cases is otherwise allowed in guides not yet migrated.
+scope. Paths are relative to the caller's working directory or absolute and
+must resolve to Markdown source guides inside this checkout's skills/ tree.
+Symlink targets must stay inside that tree. No cases is otherwise allowed in
+guides not yet migrated.
 
 Only numbers, earlier names, + - * / and min, max, abs, round, floor, ceil,
 pct and clamp are supported. round uses ROUND_HALF_UP. Every case needs named
@@ -23,11 +26,12 @@ import os
 import re
 import sys
 from decimal import ROUND_HALF_UP, Decimal, DecimalException
+from pathlib import Path
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
-from oa_tools.guides import guide_files  # noqa: E402
+from oa_tools.guides import guide_files, is_guide_filename  # noqa: E402
 from oa_tools.paths import REPO_ROOT  # noqa: E402
 
 BLOCK_RE = re.compile(r"^```oa-check[ \t]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
@@ -191,7 +195,17 @@ def run_block(block):
 
 
 def check_file(path):
-    with open(path, encoding="utf-8") as handle:
+    requested = Path(path)
+    try:
+        source = requested.resolve(strict=True)
+    except RuntimeError as exc:  # Python 3.11 reports symlink loops this way.
+        raise CheckError("source-guide path contains a symlink loop") from exc
+    if (not source.is_relative_to(Path(REPO_ROOT).resolve() / "skills")
+            or not source.is_file()
+            or not is_guide_filename(requested.name)
+            or not is_guide_filename(source.name)):
+        raise CheckError("path must resolve to a Markdown source guide inside this checkout's skills/ tree")
+    with source.open(encoding="utf-8") as handle:
         text = handle.read()
     matches = list(BLOCK_RE.finditer(text))
     failures = []
@@ -222,7 +236,7 @@ def main(argv=None):
             failures.extend(errors)
             if args.require and found < 2:
                 failures.append(f"{path}: requires 2 worked cases, found {found}")
-        except (OSError, UnicodeError) as exc:
+        except (CheckError, OSError, UnicodeError, ValueError) as exc:
             failures.append(f"{path}: {exc}")
     for failure in failures:
         print("FAIL", failure)
