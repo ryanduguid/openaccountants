@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T15:50:47+00:00",
+ "generated_at": "2026-11-02T15:53:55+00:00",
  "counts": {
   "guides": 2016,
   "jurisdictions": 293,
@@ -10508,7 +10508,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "hm-tax-scope-reference",
