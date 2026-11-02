@@ -4,7 +4,7 @@ description: "Netherlands 30% ruling (tax-free allowance for inbound expats): 30
 version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 category: international
 tier: 2
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Benefit | **30% of salary** (including the allowance) paid tax-free as cost reimbursement |
 | Effective top rate reduction | From 49.5% to ~34.65% on gross salary |
-| Duration | **5 years** (was 8 before 2019) |
+| Duration | **5 years** |
 | Rate from 2027 | **27%** for employees who first applied the ruling in 2024 or later; 30% kept for rulings applied by 31 December 2023 (see '2024 changes') |
 | Salary threshold (2025) | Minimum €46,660 gross taxable salary (€41,954 for under-30 with master's) |
 | Application | Employer applies to Belastingdienst within 4 months of start of employment |
@@ -49,7 +49,7 @@ Example: €100,000 gross salary
 
 - **No new elections from 1 January 2025** — Article 2.6 Wet IB 2001 was abolished from 1 January 2025. An employee who used the 30% ruling before 2024 can, under transitional law, still use partial non-resident status up to and including 2026. **2026 is the final year**; it is not available to employees who started using the ruling in 2024 or later.
 - **Effect while it applies** — The employee is treated as a non-resident taxpayer for Box 2 and Box 3, although living in the Netherlands, so only Dutch-source Box 2 and Box 3 items are taxed.
-- **Election timing** — The election is made on the annual income tax return.
+- **Election timing** — The choice is made in the income tax return and can be notified until the assessment is final (onherroepelijk).
 
 Source: Belastingdienst, Partiële buitenlandse belastingplicht — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/vermogen_en_aanmerkelijk_belang/vermogen/wat_is_uw_vermogen/partiele_buitenlandse_belastingplicht_30_bewijsregel
 

@@ -5,7 +5,7 @@ version: 2.2
 jurisdiction: IT
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 depends_on:
   - vat-workflow-base
   - eu-vat-directive
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | https://www.agenziaentrate.gov.it (Fatture e Corrispettivi / Fisconline) |
 | Authority | Agenzia delle Entrate |
 | Currency | EUR only |
-| Filing frequencies | Monthly (prior-year turnover > €500,000 for services businesses and professionals / > €800,000 for other activities; Agenzia delle Entrate, Come pagare l'IVA); Quarterly (below thresholds, with 1% interest surcharge); Annual (Dichiarazione IVA by 30 April) |
+| Filing frequencies | Monthly (prior-year turnover > €500,000 for services businesses and professionals / > €800,000 for other activities; Agenzia delle Entrate, Come pagare l'IVA); Quarterly (at or below the thresholds, with 1% interest surcharge); Annual (Dichiarazione IVA by 30 April) |
 | Deadline | LIPE: last day of 2nd month after quarter end (Q1 by 31 May, Q2 by 16 Sept, Q3 by 30 Nov, Q4 by 28 Feb); monthly: 16th of following month for payment |
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Companion skill (Tier 2, EU directive) | **eu-vat-directive v0.1 or later — MUST be loaded** |

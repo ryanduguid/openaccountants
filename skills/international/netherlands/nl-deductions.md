@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch tax deductions and specia
 version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -183,7 +183,7 @@ Tax credits reduce the computed tax (not the taxable income). They are applied a
 
 ### Algemene Heffingskorting Phase-Out Formula [T1]
 
-- **Algemene Heffingskorting Phase-Out Formula** — Income is verzamelinkomen. 2025: If income ≤ EUR 28,406: full EUR 3,068 If income between EUR 28,407 and EUR 76,817: Reduction = 6.337% × (income − EUR 28,406) Credit = EUR 3,068 − reduction If income ≥ EUR 76,818: EUR 0. 2026: If income ≤ EUR 29,736: full EUR 3,115 If income between EUR 29,737 and EUR 78,426: Reduction = 6.398% × (income − EUR 29,736) Credit = EUR 3,115 − reduction If income ≥ EUR 78,427: EUR 0. Example (2025, income EUR 40,000): EUR 3,068 − 6.337% × EUR 11,594 = EUR 2,333.29. Sources: Belastingdienst, Tabel algemene heffingskorting 2025 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2025; 2026 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2026
+- **Algemene Heffingskorting Phase-Out Formula** — Income is verzamelinkomen. 2025: If income ≤ EUR 28,406: full EUR 3,068 If income between EUR 28,407 and EUR 76,817: Reduction = 6.337% × (income − EUR 28,406) Credit = EUR 3,068 − reduction If income ≥ EUR 76,818: EUR 0. 2026: If income ≤ EUR 29,736: full EUR 3,115 If income between EUR 29,737 and EUR 78,426: Reduction = 6.398% × (income − EUR 29,736) Credit = EUR 3,115 − reduction, not below EUR 0 If income ≥ EUR 78,427: EUR 0. Example (2025, income EUR 40,000): EUR 3,068 − 6.337% × EUR 11,594 = EUR 2,333.29. Sources: Belastingdienst, Tabel algemene heffingskorting 2025 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2025; 2026 — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/algemene_heffingskorting/tabel-algemene-heffingskorting-2026
 
 ### Arbeidskorting Phase-Out Formula [T1]
 

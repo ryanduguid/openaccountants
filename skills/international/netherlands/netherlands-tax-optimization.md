@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in the Netherlands
 version: 1.1
 jurisdiction: NL
 tax_year: 2026
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -30,6 +30,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Income Tax Rates 2026 (Box 1)
 
 **Income Tax Rates 2026 (Box 1)**
+
+Rates below AOW age; the first bracket is lower once AOW age is reached.
 
 | Taxable income (EUR) | Rate |
 | --- | --- |

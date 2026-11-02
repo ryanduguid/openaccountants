@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Born 1937 or earlier | 0% |
 | First 5 years reduction | ~21.47% (on first SEK 200,000) |
 | Upper cap | None |
-| F-skatt payment | Monthly (12th of each month; 17th in January and August, but the 12th in August if the VAT base exceeds SEK 40 million) |
+| F-skatt payment | Monthly (12th of each month; 17th in January and August, but the 12th in August if the VAT base excluding intra-EU acquisitions and imports exceeds SEK 40 million) |
 | Annual declaration | By 2 May |
 | Currency | SEK only |
 | Contributor | Open Accountants |
@@ -80,7 +80,7 @@ Birth years are for income years 2025 and 2026; check them again for each later 
 
 ### Step 5.2 -- Apply age reduction
 
-- **Apply age reduction** — IF born_1938_to_1958: rate = 10.21% ELIF born_before_1938: rate = 0% ELSE: rate = 28.97% (income years 2025 and 2026)
+- **Apply age reduction** — IF born_1938_to_1958: rate = 10.21% ELIF born_before_1938: rate = 0% ELIF full old-age pension for the whole year OR full sickness or activity compensation for any part of it: rate = 10.21% ELSE: rate = 28.97% (income years 2025 and 2026)
 
 ### Step 5.3 -- Calculate
 
@@ -96,7 +96,7 @@ Birth years are for income years 2025 and 2026; check them again for each later 
 
 | Payment | Due date |
 | --- | --- |
-| Monthly F-skatt | 12th of each month (17th in January and August, but the 12th in August if the VAT base exceeds SEK 40 million; a date on a weekend, public holiday, Midsummer Eve, Christmas Eve or New Year's Eve moves to the next weekday) |
+| Monthly F-skatt | 12th of each month (17th in January and August, but the 12th in August if the VAT base excluding intra-EU acquisitions and imports exceeds SEK 40 million; a date on a weekend, public holiday, Midsummer Eve, Christmas Eve or New Year's Eve moves to the next weekday) |
 | Annual reconciliation | Inkomstdeklaration by 2 May |
 
 Client can request jämkning if income changes significantly.

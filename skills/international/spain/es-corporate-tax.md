@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Spanish corporate income tax (I
 version: 1.1
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -167,7 +167,8 @@ consolidated text rather than the version published on 21 December 2024.
 | --- | --- | --- |
 | Dividends | 19% | Art. 25.1.f).1.º |
 | Interest | 19% | Art. 25.1.f).2.º |
-| Royalties (cánones) and other income | 24% general; 19% for residents of an EU or EEA state with effective exchange of tax information | Art. 25.1.a) |
+| Gains on transfers of assets | 19% | Art. 25.1.f).3.º |
+| Royalties (cánones) and other income taxed at the general rate | 24% general; 19% for residents of an EU or EEA state with effective exchange of tax information | Art. 25.1.a) |
 
 The payer withholds the amount of the tax due under these rates or the applicable tax treaty (art. 31.2). No withholding applies to income exempt under art. 14 or a treaty (art. 31.4.a). Check the treaty rate before withholding.
 

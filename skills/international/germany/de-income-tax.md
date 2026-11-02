@@ -6,7 +6,7 @@ version: 2.1
 jurisdiction: DE
 tax_year: 2025
 tier: 2
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -56,6 +56,8 @@ verified_by: pending
 | 17,800 -- 69,878 | 24% -- 42% | (173.10 × z + 2,397) × z + 1,034.87, z = (zvE − 17,799) / 10,000 |
 | 69,879 -- 277,825 | 42% | 0.42 × zvE − 11,135.63 |
 | 277,826+ | 45% | 0.45 × zvE − 19,470.38 |
+
+Round zvE down to whole euros before applying the formula, and round the resulting tax down to whole euros (§ 32a Abs. 1 Sätze 1 and 6 EStG).
 
 Source: § 32a Abs. 1 EStG in the version for the 2025 assessment period (Steuerfortentwicklungsgesetz of 23 December 2024, BGBl. 2024 I Nr. 449); the consolidated text at https://www.gesetze-im-internet.de/estg/__32a.html shows the 2026 tariff (Grundfreibetrag EUR 12,348; zone limits EUR 17,799, 69,878 and 277,825).
 

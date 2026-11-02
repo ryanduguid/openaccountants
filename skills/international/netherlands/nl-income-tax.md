@@ -122,7 +122,7 @@ Source (2026): Belastingdienst, Voorlopige aanslag 2026: gebruikte tarieven en h
 
 - **R-NL-1** — No hour log available. "Cannot confirm urencriterium. Zelfstandigenaftrek is at risk without a contemporaneous hour log. Proceed without zelfstandigenaftrek and flag for client to provide evidence."
 - **R-NL-2** — Client is BV director (DGA), not zzp. "This skill covers eenmanszaak/zzp only. BV/DGA tax is fundamentally different -- escalate to a belastingadviseur."
-- **R-NL-3** — Box 3 assets > EUR 57,684 per person (2025; EUR 59,357 in 2026). "Box 3 return required. Do not estimate Box 3 tax without a full asset breakdown -- escalate."
+- **R-NL-3** — Box 3 assets > EUR 57,684 per person (2025; EUR 59,357 in 2026). "Box 3 tax may be due; confirm the filing position. Do not estimate Box 3 tax without a full asset breakdown -- escalate."
 - **R-NL-4** — Foreign income or foreign employer. "Double-tax treaty analysis required. Stop income tax computation and escalate."
 - **R-NL-5** — Revenue ex-BTW vs incl-BTW unclear. "Income tax is computed on amounts ex-BTW. Do not mix inclusive and exclusive figures. Clarify before proceeding."
 

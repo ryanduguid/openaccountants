@@ -56,7 +56,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 28,001 -- 50,000 | 33% | 7,260 | 13,700 |
 | Over 50,000 | 43% | on excess | 13,700 + 43% |
 
-- **High-income neutralisation (2026)** — For reddito complessivo above EUR 200,000, a mechanism neutralises the benefit of the cut from 35% to 33% by reducing the detrazioni for listed oneri by EUR 440 (the full benefit is EUR 22,000 x 2% = EUR 440). Apply it before relying on the 2026 table for such clients.  _(L. 199/2025, art. 1, commi 3-4; TUIR art. 16-ter, c. 5-bis)_
+- **High-income neutralisation (2026)** — For reddito complessivo above EUR 200,000, a mechanism neutralises the benefit of the cut from 35% to 33% by reducing the detrazioni for listed oneri by EUR 440, limited to the detrazioni the client has for those oneri (the full benefit is EUR 22,000 x 2% = EUR 440). Apply it before relying on the 2026 table for such clients.  _(L. 199/2025, art. 1, commi 3-4; TUIR art. 16-ter, c. 5-bis)_
 
 ### Addizionali (Regional + Municipal Surtaxes) [T1]
 
@@ -149,7 +149,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **R-IT-1** — Client provides only bank totals, no itemised expenses. "Request itemised expense list with F24/receipts before proceeding."  _(R-IT-1)_
 - **R-IT-2** — Income from both regime ordinario AND regime forfettario in same year. "Mixed regime not possible in the same year. Verify which applies and for which period."  _(R-IT-2)_
-- **R-IT-3** — Gross receipts above EUR 85,000 but client claims regime forfettario. If receipts are above EUR 85,000 and at most EUR 100,000: "Forfettario continues for this year and ends from next year. Proceed under forfettario for this year and plan regime ordinario for next year." If receipts are above EUR 100,000: "Forfettario ends in this year, with IVA due from the operation that crosses EUR 100,000. Proceed under regime ordinario." _(Agenzia delle Entrate, Regime forfetario: le regole)_  _(R-IT-3)_
+- **R-IT-3** — Gross receipts above EUR 85,000 but client claims regime forfettario. If last year's receipts, annualised, were above EUR 85,000: "Forfettario is not available this year. Proceed under regime ordinario." If last year's were within the limit and this year's are above EUR 85,000 and at most EUR 100,000: "Forfettario continues for this year and ends from next year. Proceed under forfettario for this year and plan regime ordinario for next year." If this year's receipts are above EUR 100,000: "Forfettario ends in this year, with IVA due from the operation that crosses EUR 100,000. Proceed under regime ordinario." _(L. 190/2014, art. 1, c. 54(a) and 71; Agenzia delle Entrate, Regime forfetario: le regole)_  _(R-IT-3)_
 - **R-IT-4** — Non-resident claiming full Italian detrazioni. "Non-residents have restricted access to detrazioni. Clarify residency status -- escalate."  _(R-IT-4)_
 - **R-IT-5** — Client requests deduction for private vehicle without usage log. "Reject vehicle deduction beyond 20% cap. Art. 164 TUIR requires documented business use."  _(R-IT-5)_
 

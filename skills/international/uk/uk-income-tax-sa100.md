@@ -83,9 +83,9 @@ The Personal Allowance (GBP 12,570) and the basic rate limit (GBP 37,700, so a G
 | Validated by | Verified by James Power on 2026-06-03 |
 | Skill version | 2.2 |
 
-### 1.0 Three-Year Comparison -- Headline rUK Bands (FROZEN through 2030-31) [T1]
+### 1.0 Three-Year Comparison -- Headline rUK Bands (Personal Allowance and basic rate limit FROZEN through 2030-31) [T1]
 
-**1.0 Three-Year Comparison -- Headline rUK Bands (FROZEN through 2030-31) [T1]**
+**1.0 Three-Year Comparison -- Headline rUK Bands (Personal Allowance and basic rate limit FROZEN through 2030-31) [T1]**
 
 | Item | 2024-25 | 2025-26 | 2026-27 |
 | --- | --- | --- | --- |
@@ -131,7 +131,7 @@ The Personal Allowance (GBP 12,570) and the basic rate limit (GBP 37,700, so a G
 | Higher rate | GBP 50,271 -- 125,140 | 40% |
 | Additional rate | Over GBP 125,140 | 45% |
 
-Headline rates and thresholds are **unchanged** from 2025-26 -- the freeze continues through 2030-31. Autumn Budget 2025 changes are confined to investment income (see Section 1.5).
+Headline rates and thresholds are **unchanged** from 2025-26. The Personal Allowance and basic rate limit stay frozen through 2030-31 (FA 2026 s 10); rates are set each year. Autumn Budget 2025 changes are confined to investment income (see Section 1.5).
 
 ### 1.4 Scottish Income Tax Bands [T1]
 

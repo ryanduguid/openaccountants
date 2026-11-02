@@ -194,7 +194,7 @@ Matches F24 + "RAVVEDIMENTO" + "DPPI". This is a late INPS acconto payment with 
 
 ### Rule 2 -- Computation formula
 
-- **INPS computation formula** — INPS base = Net professional income (Quadro RE or LM) + rivalsa 4% received INPS contribution = min(INPS_base, massimale) x aliquota, with massimale EUR 120,607 for 2025 and EUR 122,295 for 2026  _(Rule 2 -- Computation formula)_
+- **INPS computation formula** — INPS base = Net professional income (Quadro RE or LM), which already includes rivalsa 4% received (do not add it again) INPS contribution = min(INPS_base, massimale) x aliquota, with massimale EUR 120,607 for 2025 and EUR 122,295 for 2026  _(Rule 2 -- Computation formula)_
 
 ### Rule 3 -- Massimale and minimale
 
