@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-02T14:50:41+00:00",
+ "generated_at": "2026-11-02T15:50:47+00:00",
  "counts": {
-  "guides": 2014,
+  "guides": 2016,
   "jurisdictions": 293,
   "accountant_reviewed": 164
  },
@@ -7521,6 +7521,19 @@
    "last_updated": "2026-10-15"
   },
   {
+   "slug": "dk-annual-reporting-reference",
+   "path": "skills/international/denmark/dk-annual-reporting-reference.md",
+   "name": "dk-annual-reporting-reference",
+   "jurisdiction": "DK",
+   "category": "financial-statements",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "dk-capital-gains",
    "path": "skills/international/denmark/dk-capital-gains.md",
    "name": "dk-capital-gains",
@@ -7532,6 +7545,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "dk-corporate-income-tax",
+   "path": "skills/international/denmark/dk-corporate-income-tax.md",
+   "name": "dk-corporate-income-tax",
+   "jurisdiction": "DK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "dk-income-tax",

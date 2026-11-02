@@ -24,10 +24,10 @@ carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **2,014** |
+| Guide files indexed | **2,016** |
 | Distinct `jurisdiction` codes | **293** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,850** |
+| `tier: 2` (source-cited draft) | **1,852** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
 | Country directories under `skills/international/` | **234** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
