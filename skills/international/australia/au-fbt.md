@@ -2,7 +2,7 @@
 name: au-fbt
 description: >
   Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
-version: 1.5
+version: 1.6
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027 (1 April 2026 - 31 March 2027)"
@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.5
+# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -69,7 +69,7 @@ If the client provides only a GL and payroll data:
 | FBT Year | Ending 31 March 2027 (1 April 2026 -- 31 March 2027) |
 | Currency | AUD only |
 | FBT rate | 47% |
-| Type 1 gross-up (provider entitled to GST credit) | 2.0802 |
+| Type 1 gross-up (provider or GST group member entitled to the relevant GST credit) | 2.0802 |
 | Type 2 gross-up (no GST credit entitlement) | 1.8868 |
 | Return due -- self-preparer, or tax agent lodging on paper | 21 May 2027 (lodge and pay) |
 | Return due -- tax agent lodging electronically | 25 June 2027 (client must be on the agent's FBT list by 21 May 2027) |
@@ -135,7 +135,11 @@ FBT work starts with a ledger sweep, not a form. These are the account patterns 
 
 #### Rule 1 -- FBT liability formula
 
-- **FBT liability formula** — ``` FBT payable = 47% x [ (sum of Type 1 taxable values x 2.0802) + (sum of Type 2 taxable values x 1.8868) ] ``` Type 1 where the provider is entitled to a GST credit on providing the benefit; Type 2 otherwise (GST-free/input-taxed supplies, provider not registered). Never assume Type 1.
+For an ordinary taxable employer, add the taxable values by GST-creditability class, gross up each class and add the results. Type 1 uses **2.0802** where the benefit provider or a member of its GST group is or was entitled to the relevant GST credit under FBTAA s 149A. Actual claiming is not the test. Type 2 uses **1.8868** where there is no such entitlement. Confirm the facts; unknown entitlement means **Needs Input**.
+
+Include taxable benefits excluded from employee RFBA reporting in the appropriate employer aggregate. An RFBA exclusion is not an FBT exemption. Apply the current ATO employer guide's nearest-whole-dollar rounding to each grossed-up aggregate, add those amounts and multiply by **47%**, keeping cents in the tax. Do not round each benefit separately or apply the rate to the unrounded aggregates. For return preparation, use the approved form/software for the relevant year; the 2026 form specifies whole-dollar fields at items 14 and 15. NFP caps/rebates and the record-keeping exemption's earlier-year calculation require separate assessment.
+
+Sources: [FBTAA ss 5B, 5C](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1), [s 149A](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2), [FBT Tax Act s 6](https://www.legislation.gov.au/C2004A03281/2018-06-19/text) and [ATO employer guide, chapter 2](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00003).
 
 #### Rule 2 -- Return and payment dates (2027 FBT year)
 
@@ -247,11 +251,12 @@ OTHER BENEFITS (PER TYPE)
   LAFHA (excess over TD 2026/2 reasonable + statutory food): AUD [____]
 
 GROSS-UP AND LIABILITY
-  Type 1 aggregate:               AUD [____] x 2.0802 = AUD [____]
-  Type 2 aggregate:               AUD [____] x 1.8868 = AUD [____]
-  Fringe benefits taxable amount: AUD [____]
-  FBT @ 47%:                      AUD [____]
-  Instalments credited:           AUD [____]
+  Type 1 taxable values:          AUD [____] x 2.0802 -> nearest dollar [____]
+  Type 2 taxable values:          AUD [____] x 1.8868 -> nearest dollar [____]
+  Fringe benefits taxable amount: AUD [____] (sum the rounded aggregates)
+  FBT @ 47%:                      AUD [____] (retain cents)
+  Instalment credit:              AUD [____] (reported/payable, net of variation credits)
+  Cash paid / unpaid instalments: AUD [____] / [____] (reconcile separately)
 
 RFBA (PER EMPLOYEE, individual fringe benefits amount > $2,000 -- excl car parking,
 non-salary-packaged meal entertainment, pooled cars; INCL exempt EV notional)
@@ -296,16 +301,41 @@ REVIEWER FLAGS
 
 #### Example 1 -- Car fringe benefit, statutory formula
 
-Car cost $40,000 (GST-inclusive base value), available for private use all 365 days of the year ending 31 March 2027, employee contributed $1,000 after tax. The employer is GST-registered and claimed the GST credit on the car's acquisition.
+An ordinary taxable employer first acquires the car on 1 April 2026. Verified statutory-formula inputs are a $40,000 GST-inclusive base value, all 365 days available for private use and a $1,000 after-tax contribution paid directly to the employer for that car. No base-value reduction, exemption, otherwise-deductible reduction or operating-cost election applies. The employer has an established GST credit entitlement on acquisition. This is its only taxable benefit for the year ending 31 March 2027; NFP concessions and the record-keeping exemption do not apply.
 
 ```
 Taxable value = 20% x $40,000 x (365/365) - $1,000 = $7,000
 GST credit entitlement established above -> Type 1 (established, never assumed)
-Grossed-up = $7,000 x 2.0802 = $14,561.40
-FBT = 47% x $14,561.40 = $6,843.86
+Grossed-up calculation = $7,000 x 2.0802 = $14,561.40
+Nearest-dollar Type 1 aggregate = $14,561; Type 2 = $0
+Fringe benefits taxable amount = $14,561
+FBT = 47% x $14,561 = $6,843.67
 ```
 
-Employee contribution is assessable income to the employer and has GST consequences.
+Employee contribution is assessable income to the employer and has GST consequences. The calculation uses current ATO aggregate rounding; verify the approved 2027 form/software before filing.
+
+```oa-check
+name: Car-only employer rounds the aggregate before tax
+inputs:
+  base_value: 40000
+  statutory_percent: 20
+  available_days: 365
+  year_days: 365
+  contribution: 1000
+  type1_factor: 2.0802
+  fbt_percent: 47
+steps:
+  taxable_value: max(0, pct(base_value, statutory_percent) * available_days / year_days - contribution)
+  unrounded_aggregate: taxable_value * type1_factor
+  taxable_amount: round(unrounded_aggregate, 0)
+  tax_payable: pct(taxable_amount, fbt_percent)
+expected:
+  taxable_value: 7000
+  unrounded_aggregate: 14561.40
+  taxable_amount: 14561
+  tax_payable: 6843.67
+tolerance: 0
+```
 
 #### Example 2 -- Exempt EV that still creates RFBA
 
@@ -343,6 +373,39 @@ Interest charged = $0 -> taxable value = $4,135 (Type 2 -> x 1.8868)
 
 If the employee would have deducted the interest (e.g. loan used for their income-producing investment), the otherwise-deductible rule can reduce the taxable value -- declaration required.
 
+#### Example 7 -- RFBA exclusions remain in employer aggregates
+
+For an ordinary taxable employer in the year ended 31 March 2026, assume the benefit valuations and GST entitlements have been verified: $7,700 car benefits and $1,100 non-salary-packaged meal entertainment are Type 1; $6,000 school-fee reimbursements and $3,000 remote-area rent reimbursements are Type 2. The meal entertainment and remote-area rent are excluded from employee RFBA reporting, but remain taxable in the employer aggregates. No NFP concession, exemption or earlier-year record-keeping method applies.
+
+This reproduces the [ATO employer guide chapter 2 illustration](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00003): Type 1 $8,800 x 2.0802 = $18,305.76, rounded to $18,306; Type 2 $9,000 x 1.8868 = $16,981.20, rounded to $16,981. The taxable amount is $35,287 and FBT is $16,584.89. Round after aggregation within each class.
+
+```oa-check
+name: Taxable RFBA-excluded benefits and nearest-dollar gross-up
+inputs:
+  car: 7700
+  meal_entertainment: 1100
+  school_fees: 6000
+  remote_rent: 3000
+  type1_factor: 2.0802
+  type2_factor: 1.8868
+  fbt_percent: 47
+steps:
+  type1_values: car + meal_entertainment
+  type2_values: school_fees + remote_rent
+  type1_aggregate: round(type1_values * type1_factor, 0)
+  type2_aggregate: round(type2_values * type2_factor, 0)
+  taxable_amount: type1_aggregate + type2_aggregate
+  tax_payable: pct(taxable_amount, fbt_percent)
+expected:
+  type1_values: 8800
+  type2_values: 9000
+  type1_aggregate: 18306
+  type2_aggregate: 16981
+  taxable_amount: 35287
+  tax_payable: 16584.89
+tolerance: 0
+```
+
 ## When to refuse or refer
 
 Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
@@ -379,7 +442,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 **Test 1:** Type 1 aggregate $10,000, Type 2 aggregate $5,000. -> ($10,000 x 2.0802) + ($5,000 x 1.8868) = $30,236.00; FBT = 47% x $30,236.00 = $14,210.92.
 
-**Test 2:** Car base value $40,000, available 365 days, $1,000 contribution. -> TV $7,000 (Example 1); FBT $6,843.86.
+**Test 2:** Under all Example 1 assumptions, the only benefit is the car: verified $40,000 base, 365/365 availability and $1,000 contribution. -> TV $7,000, Type 1 nearest-dollar aggregate $14,561 and FBT $6,843.67.
 
 **Test 3:** Same car, fourth anniversary of first holding fell before the start of the FBT year. -> Base value $26,666.67 (one-third reduction); TV = 20% x $26,666.67 - $1,000 = $4,333.33.
 
@@ -401,6 +464,13 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 | Source | URL | Read on |
 |---|---|---|
+| Current FBT rate, FBT Tax Act s 6 | <https://www.legislation.gov.au/C2004A03281/2018-06-19/text> | 2 November 2026; compilation 9 current metadata and s 6 |
+| Employer aggregation, FBTAA ss 5B, 5C and RFBA exclusions in s 5E | <https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1> | 2 November 2026; compilation 97, selected provisions |
+| GST-creditable benefits s 149A and instalment credit s 105 | <https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2> | 2 November 2026; compilation 97, selected provisions |
+| Employer guide chapter 2, aggregation and nearest-dollar illustration | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00003> | 2 November 2026; selected sections 2.3 to 2.12, current document 22 November 2024 |
+| 2026 return instructions, ordinary taxable employers items 14 to 22 | <https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-return-2026-calculation-details-for-taxable-employers> | 2 November 2026; annual assembly and credit sections |
+| ATO rates covering years ending 31 March 2026 and 2027 | <https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-rates-and-thresholds-for-2026> | 2 November 2026; Table 1 |
+| Approved 2026 FBT return NAT 1067-01.2026 | <https://iorder.com.au/publication/Download.aspx?ProdID=1067-01.2026> | 2 November 2026; page 3 field precision |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19860039/41> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=TXR/TR9717/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00015> | Not re-read for this format update; see retained provenance |
@@ -429,7 +499,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | LAFHA | TD 2026/2 (25 March 2026); TR 2021/4; PCG 2021/3 |
 | Record-keeping exemption | ato.gov.au rates page Table 6 |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: This source check covers ordinary-employer annual aggregation, GST-creditability classification, rounding and instalment credit only. The 2 oa-check cases recompute the stated numeric inputs; they do not establish benefit valuations, GST entitlements or legal eligibility from client evidence. A complete page-level source/read-date audit, the approved 2027 form/software and independent qualified legal review remain outstanding. Other retained dates, source claims and qualifications keep their original scope. If taxable values or contributions contain cents, confirm the approved return/software input precision and reconcile the workpaper before filling whole-dollar fields. These cases use whole-dollar inputs and do not settle that policy; return **Needs Input** if it is unconfirmed.
 
 <!-- openaccountants-cta-block -->
 

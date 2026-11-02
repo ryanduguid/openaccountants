@@ -9,7 +9,7 @@ description: >
   annual RFBA reporting, paper-to-digital transition, and exemption/rebate reconciliation.
   Trigger on "FBT year end", "FBT return", "FBT instalment", "vary FBT", "RFBA timing",
   "FBT due date". Read au-fbt first for benefit-level computation; this skill covers the CYCLE.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027"
@@ -20,7 +20,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia FBT Annual Cycle -- Employer Skill v1.2
+# Australia FBT Annual Cycle -- Employer Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -115,13 +115,15 @@ If you vary and the estimate of the year's FBT used to work out an instalment (l
 
 #### 4.4 Year-end set-off
 
-At the annual return, instalments paid offset the actual liability: shortfall payable with the return; excess refunded after lodgment. Instalments are reported at Item 20 of the return (see Section 5).
+At the annual return, the credit is the year's instalments payable less credits claimed under s 112A, not merely cash paid (FBTAA s 105). Item 20 uses instalment amounts reported on activity statements. Reconcile reported liabilities and variation credits separately from payments and outstanding instalment debt. The assessment credit does not cancel an unpaid instalment. A net credit may offset other tax debts before any refund. See Section 5.
 
 ---
 
 ### Section 5 -- What goes in the return
 
-Computation of each benefit's taxable value belongs to **au-fbt**. The return assembles those values. Apply the form's whole-dollar precision at items 14A, 14B and 15 before calculating tax at item 16. Keep cents in the tax and balance fields:
+Computation of each benefit's taxable value belongs to **au-fbt**. For an ordinary taxable employer, assemble the values by GST-creditability class, including taxable RFBA-excluded benefits. Type 1 depends on the provider's or its GST group member's entitlement under s 149A, not whether a credit was claimed; unknown entitlement means **Needs Input**.
+
+Round each grossed-up aggregate to the nearest whole dollar, as illustrated in the [ATO employer guide chapter 2](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00003), then add them before calculating 47% tax. Do not floor the aggregates, round each benefit separately or apply tax to unrounded totals. The [2026 return](https://iorder.com.au/publication/Download.aspx?ProdID=1067-01.2026) requires whole dollars at items 14A, 14B and 15. Keep cents in the tax and balance fields. The worked return uses that form; check the approved 2027 form/software before filing the current year:
 
 | Return item | Content |
 |---|---|
@@ -132,7 +134,7 @@ Computation of each benefit's taxable value belongs to **au-fbt**. The return as
 | Item 16 | Tax payable = 47% x Item 15 |
 | Items 17/18 | Rebatable employers only -- aggregate non-rebatable amount / rebate (out of scope here: R-AU-FY-3) |
 | Item 19 | Sub-total |
-| Item 20 | Less instalment amounts reported on activity statements |
+| Item 20 | Year's instalment amounts reported on activity statements, reconciled to instalments payable net of s 112A credits; exclude penalties and other years. Do not substitute cash paid |
 | Item 21 | Payment due when item 19 exceeds item 20: item 19 minus item 20 (may round down to the nearest 5c) |
 | Item 22 | Credit when item 20 exceeds item 19: item 20 minus item 19. It may be offset against other tax debts before a refund |
 
@@ -189,7 +191,7 @@ An employee who leaves between 1 April and 30 June with reportable benefits over
 
 #### Example 1 -- Return assembly with instalment credit
 
-GST-registered employer, FBT year ended 31 March 2026. Type 1 taxable values $11,000 (car $10,000 statutory + $1,000 meal entertainment), Type 2 taxable values $9,000 (expense payments). Instalments paid via BAS: $16,000.
+GST-registered employer, FBT year ended 31 March 2026. Type 1 taxable values $11,000 (car $10,000 statutory + $1,000 meal entertainment), Type 2 taxable values $9,000 (expense payments). Instalment amounts reported on the 4 activity statements total $16,000, all paid. The benefit valuations and creditability classes are stipulated; no NFP concession or earlier-year record-keeping method applies.
 
 ```
 14A: $11,000 x 2.0802 = $22,882.20; whole-dollar field $22,882
@@ -202,7 +204,37 @@ GST-registered employer, FBT year ended 31 March 2026. Type 1 taxable values $11
 22:  no credit; lodge and pay by 21 May 2026 (self-lodger)
 ```
 
-(The inputs and field precision match the illustrated ATO FBT return 2026 instructions, items 14 to 22.)
+The inputs and field precision match the illustrated [ATO FBT return 2026 instructions, items 14 to 22](https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-return-2026-calculation-details-for-taxable-employers).
+
+```oa-check
+name: 2026 return assembly and reported instalment credit
+inputs:
+  type1_values: 11000
+  type2_values: 9000
+  type1_factor: 2.0802
+  type2_factor: 1.8868
+  fbt_percent: 47
+  reported_instalments: 16000
+steps:
+  item14a: round(type1_values * type1_factor, 0)
+  item14b: round(type2_values * type2_factor, 0)
+  item15: item14a + item14b
+  item16: pct(item15, fbt_percent)
+  item19: item16
+  item20: reported_instalments
+  item21: max(0, item19 - item20)
+  item22: max(0, item20 - item19)
+expected:
+  item14a: 22882
+  item14b: 16981
+  item15: 39863
+  item16: 18735.61
+  item19: 18735.61
+  item20: 16000
+  item21: 2735.61
+  item22: 0
+tolerance: 0
+```
 
 #### Example 2 -- Varying an instalment in the December quarter
 
@@ -236,6 +268,45 @@ Reported through STP for the income year ended 30 June 2026; finalisation declar
 Small employer (8 staff), one packaged car. FBT year ends 31 March 2027. In mid-April 2027 they compute the employee's RFBA ($5,660 on a $3,000 taxable value) and lodge a single STP update event with the YTD RFBA; finalisation declaration follows by 14 July 2027. The employee resigns effective 12 May 2027 and receives $2,300 of reportable benefits in April--May 2027 (the new FBT year): that $2,300 x 1.8868 = $4,339 (whole dollars) is reported in the NEXT income year (ending 30 June 2028) even though there may be no wages then. Miss this and the employee's 2027-28 income statement is wrong.
 
 ---
+
+#### Example 6 -- Credit uses instalments payable, with unpaid debt separate
+
+An ordinary taxable employer has verified 2026 taxable benefit values of $6,000 Type 1 and $2,500 Type 2, with no NFP concession or earlier-year record-keeping method. Its 4 activity statements report $9,000 of FBT instalments payable, no s 112A credits, penalties or other-year amounts. Only $8,000 has been paid. All statements are lodged.
+
+Item 20 is $9,000. The nearest-dollar aggregates are $12,481 and $4,717, so the taxable amount is $17,198 and tax is $8,083.06. Item 22 is a $916.94 credit. The unpaid $1,000 instalment remains owing; if the credit is applied to that debt, $83.06 remains. This is not a $916.94 cash refund or an $83.06 item 21 balance. Interest or other debts may affect the account. [FBTAA s 105](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2); [ATO item 20 and item 22 instructions](https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-return-2026-calculation-details-for-taxable-employers).
+
+```oa-check
+name: Unpaid instalment remains separate from return credit
+inputs:
+  type1_values: 6000
+  type2_values: 2500
+  type1_factor: 2.0802
+  type2_factor: 1.8868
+  fbt_percent: 47
+  reported_instalments: 9000
+  cash_paid: 8000
+steps:
+  item14a: round(type1_values * type1_factor, 0)
+  item14b: round(type2_values * type2_factor, 0)
+  item15: item14a + item14b
+  item19: pct(item15, fbt_percent)
+  item20: reported_instalments
+  item21: max(0, item19 - item20)
+  item22: max(0, item20 - item19)
+  unpaid_instalment: reported_instalments - cash_paid
+  debt_after_credit: max(0, unpaid_instalment - item22)
+expected:
+  item14a: 12481
+  item14b: 4717
+  item15: 17198
+  item19: 8083.06
+  item20: 9000
+  item21: 0
+  item22: 916.94
+  unpaid_instalment: 1000
+  debt_after_credit: 83.06
+tolerance: 0
+```
 
 ## When to refuse or refer
 
@@ -329,7 +400,7 @@ You must lodge **all** activity statements for the FBT year ending 31 March -- *
 | Ordinary fixed cash allowances | Employee assessable income; check PAYG withholding and STP. Classify LAFHA and kilometre-based car reimbursements separately | Payroll treatment for ordinary allowances; do not route them to item 23E |
 | Staff gifts, welfare, amenities | <$300 and infrequent per occasion? | Exempt (s 58P) or residual/property categories |
 | Loans to employees / directors' debit loans | Benchmark 8.27% vs rate charged; Div 7A first for shareholders (au-fbt T2-6) | Item 23 (loans) |
-| FBT instalments paid (BAS clearing account) | Reconcile to ATO activity statement account BEFORE the return | Item 20 |
+| FBT instalments reported/payable (BAS liability account) | Reconcile the year's liabilities net of variation credits to the ATO account; reconcile cash paid and unpaid debt separately | Item 20 |
 
 #### 7.2 FBT year-end checklist (April--June)
 
@@ -375,6 +446,13 @@ Legacy pattern: shoebox of receipts, spreadsheet car register, paper FBT return 
 
 | Source | URL | Read on |
 |---|---|---|
+| Current FBT rate, FBT Tax Act s 6 | <https://www.legislation.gov.au/C2004A03281/2018-06-19/text> | 2 November 2026; compilation 9 current metadata and s 6 |
+| Employer aggregation, FBTAA ss 5B, 5C and RFBA exclusions in s 5E | <https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1> | 2 November 2026; compilation 97, selected provisions |
+| GST-creditable benefits s 149A and instalment credit s 105 | <https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2> | 2 November 2026; compilation 97, selected provisions |
+| Employer guide chapter 2, aggregation and nearest-dollar illustration | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00003> | 2 November 2026; selected sections 2.3 to 2.12, current document 22 November 2024 |
+| 2026 return instructions, ordinary taxable employers items 14 to 22 | <https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-return-2026-calculation-details-for-taxable-employers> | 2 November 2026; annual assembly and credit sections |
+| ATO rates covering years ending 31 March 2026 and 2027 | <https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-rates-and-thresholds-for-2026> | 2 November 2026; Table 1 |
+| Approved 2026 FBT return NAT 1067-01.2026 | <https://iorder.com.au/publication/Download.aspx?ProdID=1067-01.2026> | 2 November 2026; page 3 field precision |
 | Retained citation | <https://www.legislation.gov.au/C2004A03280/latest/text/2> | Not re-read for this format update; see retained provenance |
 
 ### Section 10 -- Reference material
@@ -395,7 +473,7 @@ Legacy pattern: shoebox of receipts, spreadsheet car register, paper FBT return 
 | Statutory framework | Fringe Benefits Tax Assessment Act 1986 (esp. s 136(1) "year of tax"; Pt XIA record-keeping exemption; s 58P minor benefits; Div 9A meal entertainment) |
 | Penalty unit $364 from 1 July 2026 | ato.gov.au -- penalty units indexation announcement |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: This source check covers ordinary-employer annual aggregation, GST-creditability classification, rounding and instalment credit only. The 2 oa-check cases recompute the stated numeric inputs; they do not establish benefit valuations, GST entitlements or legal eligibility from client evidence. A complete page-level source/read-date audit, the approved 2027 form/software and independent qualified legal review remain outstanding. Other retained dates, source claims and qualifications keep their original scope. If taxable values or contributions contain cents, confirm the approved return/software input precision and reconcile the workpaper before filling whole-dollar fields. These cases use whole-dollar inputs and do not settle that policy; return **Needs Input** if it is unconfirmed.
 
 <!-- openaccountants-cta-block -->
 
