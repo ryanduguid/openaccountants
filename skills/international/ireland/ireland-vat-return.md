@@ -197,7 +197,7 @@ Match by case-insensitive substring. If none match, fall through to Tier 1 rules
 | CENTRA, SPAR IE | Zero-rated / 23% mixed | Split between zero-rated food and standard-rate items |
 | RESTAURANTS, PUB FOOD, CAFES | Domestic 13.5% before 1 July 2026; 9% from 1 July 2026 | Restaurant, catering and hot takeaway food and drink at 9% from 1 July 2026; alcohol, bottled waters, soft drinks, sports drinks and vegetable juices are excluded and keep their own rate |
 
-**Note on Irish entertainment/meals:** Ireland has no hard block on business entertainment VAT. If the meal is a genuine business expense, input VAT at the rate charged (13.5% before 1 July 2026; 9% on food and non-excluded drink from that date) is deductible. However, Section 59 VATCA 2010 blocks VAT on entertainment of any kind that is not part of a taxable supply. Default: block for non-hospitality businesses. [T2] flag if client claims business purpose.
+**Note on Irish entertainment/meals:** VAT on food, drink and accommodation bought by the business, and on entertainment expenses of the business, its agents or employees, is not deductible (VATCA 2010 s 60(2)(a)(i) and (iii)), except to the extent the food, drink or accommodation is bought for a taxable supply of services (for example by a caterer or hotel); where deductible, the rate charged is 13.5% before 1 July 2026 and 9% on food and non-excluded drink from that date. Default: block for non-hospitality businesses. [T2] flag if client claims business purpose.
 
 ### 3.8 SaaS — EU suppliers (reverse charge, T1/T4)
 

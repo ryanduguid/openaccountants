@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | EUR (€) |
 | Tax year | 1 January to 31 December (calendar year) |
 | Primary legislation | Taxes Consolidation Act (TCA) 1997, Parts 19–21 |
-| Headline rate | **33%** on chargeable gains for disposals before 7 October 2026 (raised from 30% in Budget 2013; previously 25%, 20%, 22%); **31%** for disposals on or after 7 October 2026 (Budget 2027; Finance (No. 2) Bill 2026, not confirmed enacted at 1 November 2026) |
+| Headline rate | **33%** on chargeable gains for disposals before 7 October 2026 (raised from 30% in Budget 2013; previously 25%, 20%, 22%); **31%** proposed for disposals on or after 7 October 2026 (Budget 2027; Finance (No. 2) Bill 2026, at First Stage and not enacted at 3 November 2026) |
 | Entrepreneur Relief rate | **10%** on first €1,000,000 lifetime of qualifying business asset disposals (TCA 1997 s. 597AA) |
 | Annual exemption | **€1,270** per individual per tax year (non-transferable between spouses) |
 | Tax authority | Office of the Revenue Commissioners ("Revenue") |
@@ -38,12 +38,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Asset class / scenario | Rate | Notes |
 | --- | --- | --- |
-| Standard chargeable gains (property, shares, crypto, intangibles) | **33%**; **31%** from 7 October 2026 | 33% for disposals from 6 December 2012 to 6 October 2026; 31% for disposals on or after 7 October 2026 under TCA s. 28(3) as Finance (No. 2) Bill 2026 amends it (not confirmed enacted) |
+| Standard chargeable gains (property, shares, crypto, intangibles) | **33%**; **31%** proposed from 7 October 2026 | 33% for disposals from 6 December 2012 (to 6 October 2026 if the Bill is enacted as published); 31% proposed for disposals on or after 7 October 2026 under TCA s. 28(3) as Finance (No. 2) Bill 2026 would amend it (not enacted at 3 November 2026) |
 | Qualifying business asset disposal — Entrepreneur Relief | **10%** | First €1M lifetime cap (TCA s. 597AA) |
 | Foreign life policies, certain offshore funds | 40% | Higher rate under TCA Part 27 — out of scope of this skill |
 | Principal Private Residence (PPR) — fully occupied throughout ownership | 0% | TCA s. 604 — full exemption |
 | Disposal of land/buildings/minerals > €500,000 — no CG50 | Buyer withholds 15% on account | Refunded once seller's CGT liability assessed |
-| Non-resident disposing of Irish-situs land, mineral rights, or unquoted shares deriving value from Irish land | 33%; 31% from 7 October 2026 | Limited Irish CGT scope for non-residents (TCA s. 29) |
+| Non-resident disposing of Irish-situs land, mineral rights, or unquoted shares deriving value from Irish land | 33%; 31% proposed from 7 October 2026 (not enacted) | Limited Irish CGT scope for non-residents (TCA s. 29) |
 
 ## Section 2 — Required inputs & refusal catalogue
 
@@ -222,7 +222,7 @@ Facts. Ms de Paor, aged 47, founded an Irish trading company in 2018 and held 10
 | Acquisition by gift or inheritance with no probate / CAT valuation | Obtain probate / market valuation; if unavailable, STOP |
 | PPR claimed but property had periods of letting beyond rent-a-room | Apportion conservatively; assume non-qualifying for the let period |
 | Garden / grounds > 1 acre | Apportion proportionally; restrict PPR to one-acre site |
-| Unclear whether Entrepreneur Relief 5% / 3-year / working-director conditions are met | Assume conditions not met → standard rate (33%, or 31% for disposals on or after 7 October 2026) |
+| Unclear whether Entrepreneur Relief 5% / 3-year / working-director conditions are met | Assume conditions not met → standard rate (33%, or 31% proposed for disposals on or after 7 October 2026, not enacted) |
 | Unknown whether prior Retirement Relief lifetime threshold breached | Assume threshold partly used → restrict relief conservatively, request prior claim history |
 | Indexation factor for pre-2003 acquisition unclear | Use Revenue's published indexation table for the year of acquisition; if year unclear, STOP |
 | Unknown whether parties are connected | Treat as connected → apply market value rule |
