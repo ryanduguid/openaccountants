@@ -10,7 +10,7 @@ description: >
   reported amounts and source conditions before applying the instructions.
   Preserve exceptions and self-checks, and refer unresolved classifications or
   filing procedures for professional review.
-version: 1.6
+version: 1.7
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-11-02
@@ -20,7 +20,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU GST Bas v1.6
+# AU GST Bas v1.7
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -128,7 +128,7 @@ Two methods are available:
 
 #### 4.4 Net BAS payable / refundable
 
-- **Net BAS payable formula:** Total BAS payable = GST payable (from australia-gst.md labels) + W5 + PAYG instalment at 5A + F1 - any credits, including an eligible PAYG variation credit at 5B.  _(australia-gst.md)_ Do not treat an annual estimate at T8 as a tax payment.
+- **Net BAS payable or refundable:** Use the amounts reported in the issued statement's summary: total liabilities at 8A less total credits at 8B gives the net amount at 9. Include every applicable tax role. Where only GST, PAYG withholding, PAYG instalments and FBT instalments apply, the components are `(1A - 1B) + 4 + 5A + 6A - 5B - 6B`, using only labels applicable to that statement. Other liabilities and credits must also enter the summary when present. A positive result is payable; a negative result is a credit before any ATO account offsets. W5 transfers to 4 where required; large withholders pay withholding separately and do not add it to this BAS. Use F1 at 6A if unchanged, or the reportable varied F3 at 6A. For a negative FBT variation calculation, F3 and 6A are zero and an eligible credit may be claimed as a positive amount at 6B. Do not add F1 again after using 6A, or treat annual estimates at T8 or F2 as payments. ([ATO, FBT instalment](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/fringe-benefits-tax-fbt-instalment); [ATO, PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO, PAYG activity statement labels](https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement).)
 
 ## Boundary and exception table
 
@@ -158,7 +158,73 @@ Two methods are available:
 
 ## Worked cases
 
-No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
+### Case 1: varied FBT replaces the pre-filled instalment
+
+For the quarter ending 31 December 2026, F1 is $10,000, estimated annual FBT at F2 is $28,000 and previous instalment liabilities are $20,000 with no previous credits. The ATO formula gives F3 and 6A of $1,000. The independently reconciled GST labels are 1A $40,500 and 1B $26,900, withholding at 4 is $5,400 and unchanged PAYG instalments at 5A are $6,200. No other liabilities, credits or account offsets apply. The BAS is $26,200 payable. Adding F1 instead would produce $35,200 and overstate it by $9,000.
+
+```oa-check
+name: AU BAS uses varied FBT at 6A
+inputs:
+  f1: 10000
+  f2: 28000
+  quarter_fraction: 0.75
+  prior_fbt_liabilities: 20000
+  prior_fbt_credits: 0
+  gst_1a: 40500
+  gst_1b: 26900
+  paygw_4: 5400
+  paygi_5a: 6200
+steps:
+  - varied_fbt: f2 * quarter_fraction - (prior_fbt_liabilities - prior_fbt_credits)
+  - fbt_6a: max(0, varied_fbt)
+  - total_8a: gst_1a + paygw_4 + paygi_5a + fbt_6a
+  - total_8b: gst_1b
+  - net_9: total_8a - total_8b
+  - using_f1_instead: gst_1a + paygw_4 + paygi_5a + f1 - total_8b
+  - overstatement: using_f1_instead - net_9
+expected:
+  varied_fbt: 1000
+  fbt_6a: 1000
+  total_8a: 53100
+  total_8b: 26900
+  net_9: 26200
+  using_f1_instead: 35200
+  overstatement: 9000
+```
+
+### Case 2: negative PAYG variation is a positive credit
+
+The taxpayer has paid quarterly PAYG instalments from the first quarter of 2026-27. At the third quarter it estimates annual instalment tax of $6,000 and has paid $8,000 in the first 2 quarters, with no earlier credits. The variation calculation is negative $3,500. T9 and 5A are zero; entitlement to claim the full $3,500 credit at 5B is stipulated and the taxpayer chooses to claim it. Separately established labels are 1A $1,000, 1B $500 and 4 $2,000. No FBT, other tax roles or account offsets apply. The BAS result is a $1,000 credit. This illustration assumes current rules continue through the March 2027 quarter.
+
+```oa-check
+name: AU BAS negative PAYG variation labels
+inputs:
+  estimated_annual_tax: 6000
+  quarter_fraction: 0.75
+  earlier_instalments: 8000
+  earlier_credits: 0
+  gst_1a: 1000
+  gst_1b: 500
+  paygw_4: 2000
+steps:
+  - varied_paygi: estimated_annual_tax * quarter_fraction - earlier_instalments + earlier_credits
+  - t9: max(0, varied_paygi)
+  - paygi_5a: t9
+  - paygi_5b: max(0, -varied_paygi)
+  - total_8a: gst_1a + paygw_4 + paygi_5a
+  - total_8b: gst_1b + paygi_5b
+  - net_9: total_8a - total_8b
+expected:
+  varied_paygi: -3500
+  t9: 0
+  paygi_5a: 0
+  paygi_5b: 3500
+  total_8a: 3000
+  total_8b: 4000
+  net_9: -1000
+```
+
+Recompute with `python3 scripts/check-examples.py --require skills/international/australia/au-gst-bas.md`. These synthetic cases check label arithmetic for stipulated entitlements, not variation reason codes, estimates, GIC, taxpayer eligibility or a final ATO account refund.
 
 ## When to refuse or refer
 
@@ -189,7 +255,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 | Situation | BAS frequency | Source |
 | --- | --- | --- |
-| GST turnover < $20M, no monthly election | Quarterly | GST Act Div 27 and s 31-5 |
+| GST turnover < $20M, no monthly election or ATO direction to report monthly, and no annual reporting arrangement | Quarterly | [ATO, BAS reporting cycles](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas) |
 | GST turnover >= $20M | Monthly | GST Act s 27-15 and s 31-5 |
 | Voluntary monthly reporter | Monthly | ATO election |
 | PAYG withholding (with or without GST) | Set by the withholder class below, not by GST turnover | TAA 1953 Sch 1 ss 16-75, 16-95 to 16-105 |
@@ -239,16 +305,18 @@ Before delivering output, verify:
 
 | Source | URL | Read on |
 |---|---|---|
+| ATO BAS due dates, updated 17 September 2026 | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas> | 2026-11-02; monthly direction, quarterly and annual conditions |
+| ATO PAYG activity statement, updated 9 January 2023 | <https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement> | 2026-11-02; option 1 labels and option 2 T1/T2/T3/T11/5A |
 | Retained citation | <https://www.ato.gov.au/api/public/content/0-0b929c4e-ddac-4b4f-a627-7427575b94a2> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/when-to-pay-and-report-on-activity-statements> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/changes-to-your-payg-withholding-cycle> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments> | Not re-read for this format update; see retained provenance |
+| ATO PAYG variations, updated 23 June 2026 | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments> | 2026-11-02; amount-method steps 3-5, quarterly formula, zero T9/5A and positive 5B |
 | Retained citation | <https://softwaredevelopers.ato.gov.au/gdp-adjustment-2025-26-gst-and-payg-instalments> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://softwaredevelopers.ato.gov.au/GDPupliftfactor> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/fringe-benefits-tax-fbt-instalment> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding> | Not re-read for this format update; see retained provenance |
+| ATO FBT instalment, updated 1 May 2025 | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/fringe-benefits-tax-fbt-instalment> | 2026-11-02; F3 formula, zero floor, 6A/6B and December example |
+| ATO PAYG withholding, updated 1 May 2025 | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding> | 2026-11-02; W5 to 4 and large-withholder exception |
 | Retained citation | <https://www.ato.gov.au/online-services/businesses-and-organisations-online-services/employees-in-online-services-for-business> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.legislation.gov.au/C1953A00001/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_2/document_2.html#_Toc235715860> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/concessional-reporting> | Not re-read for this format update; see retained provenance |
@@ -259,7 +327,7 @@ Before delivering output, verify:
 | Retained citation | <https://www.legislation.gov.au/C1953A00001/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_2/document_2.html> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.legislation.gov.au/F2026N00424/asmade/2026-06-16/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: The 2 executable cases check the selected BAS label arithmetic only. A complete page-level source/read-date audit and independent legal review have not been performed for this guide. Retained dates, thresholds, variation eligibility, GIC and annual FBT procedures outside the selected reads remain subject to their original qualifications and qualified review.
 
 <!-- openaccountants-cta-block -->
 

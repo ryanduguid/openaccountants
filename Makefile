@@ -45,7 +45,7 @@ checkers:  ## Baseline gates, cited-hosts selftest and worked cases (validate.ym
 	$(PYTHON) scripts/check-sourcing-floor.py
 	$(PYTHON) scripts/check-cited-hosts.py --selftest
 	$(PYTHON) scripts/check-examples.py
-	$(PYTHON) scripts/check-examples.py --require skills/international/australia/au-rates-2026-27.md skills/international/australia/au-individual-return.md skills/international/australia/au-deductions-offsets.md skills/international/australia/au-sole-trader-schedule.md skills/international/australia/australia-tax-optimization.md skills/international/australia/au-medicare-levy.md
+	$(PYTHON) scripts/check-examples.py --require skills/international/australia/au-rates-2026-27.md skills/international/australia/au-individual-return.md skills/international/australia/au-deductions-offsets.md skills/international/australia/au-sole-trader-schedule.md skills/international/australia/australia-tax-optimization.md skills/international/australia/au-medicare-levy.md skills/international/australia/au-gst-bas.md skills/international/australia/au-bas-preparation.md
 
 baselines:  ## Rewrite the gate checkers' baselines from the current tree, after reading what changed
 	$(PYTHON) scripts/check-arithmetic.py --update-baseline

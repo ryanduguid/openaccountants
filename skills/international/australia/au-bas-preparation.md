@@ -11,7 +11,7 @@ description: >
   "1A 1B W1 W2 T7 5A", "net amount on BAS", "fix a BAS", "BAS due date". For the GST
   classification rules behind the labels see australia-gst; for the label-level PAYG detail see
   au-gst-bas.
-version: 0.5
+version: 0.6
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-11-02
@@ -24,7 +24,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia BAS Preparation v0.5
+# Australia BAS Preparation v0.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -197,10 +197,10 @@ Classify every transaction first, using `australia-gst.md`. Then map.
 
 | Option | Labels used | How it works |
 | --- | --- | --- |
-| Option 1, instalment amount | T7, and T8, T9, T4 if varying | Pay the amount the ATO calculated at T7. Enter it at 5A |
-| Option 2, instalment rate | T1, T2, and T3, T4 if varying | Multiply instalment income at T1 by the rate at T2. Enter the result at 5A |
+| Option 1, instalment amount | T7; T8, T9, T4 and eligible 5B if varying | If unchanged, copy T7 to 5A. If varying, use T9 at 5A, subject to the zero-floor and credit rules below |
+| Option 2, instalment rate | T1, T2, T11; T3, T4 and eligible 5B if varying | Multiply T1 by T2, or varied T3. Report the result at T11 and 5A. Check any separate credit entitlement at 5B |
 
-- **Negative varied amount at T9** — If a varied amount at T9 is negative, a credit may be claimed at 5B.  _([ATO, PAYG instalments: how to complete your activity statement](https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement))_
+- **Negative instalment-amount variation:** If the option 1 calculation is nil or negative, enter zero at T9 and 5A. A negative calculation may support a credit for earlier PAYG instalments in the same income year; claim the eligible amount as a positive number at 5B. Do not enter the negative calculation at T9 or add both it and the 5B credit to the summary. A credit need not be claimed on the activity statement. ([ATO, How to vary your PAYG instalments, amount method steps 4-5](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).)
 - **Varying carries a risk** — **Varying carries a risk.** If varied instalments come to less than 85% of the total tax payable on instalment income for the year, general interest charge can apply to the difference, and penalties are possible.  _([ATO, How to vary your PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments))_
 - **Instalment notices** — **Instalment notices.** Where the entity receives an instalment notice rather than an activity statement, and does not wish to vary, the amount can simply be paid. No lodgment is required.
 
@@ -222,7 +222,8 @@ These are three different things. Treat them separately.
 | Value limit | None | Under $20m: less than $12,500. $20m to under $100m: less than $25,000. $100m to under $500m: less than $50,000. $500m to under $1b: less than $100,000. $1b and over: less than $560,000 |
 | Other conditions | Cannot claim additional GST credits after the four-year credit time limit has ended | Must not result from recklessness or intentional disregard of a GST law |
 
-- **Net sum value limit and audit exclusion** — The value limit applies to the net sum of debit errors less credit errors on the same BAS. Where the net sum exceeds the limit, correct up to the limit on the later BAS and revise the original period for the excess. An error cannot be corrected on a later BAS while the entity is subject to an ATO audit or other compliance activity for the relevant period.  _([ATO, Types of GST errors; LI 2023/32, Correcting GST Errors Determination 2023](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors))_
+- **Common conditions:** Section 6 of the determination requires the earlier tax period to start on or after 1 July 2012 and the later return to be lodged within the earlier assessment's period of review. The error must not already have been corrected to any extent in another tax period. The compliance exclusion covers an error relating to a matter under notified compliance activity or made in a period under that activity, unless the Commissioner has given written permission to correct it under the instrument. These conditions apply to credit and debit errors; debit errors also need every section 7 condition. ([Determination 2023, sections 4 and 6-8](https://www.legislation.gov.au/F2023L01284/latest).)
+- **Net sum and unresolved value-limit boundary:** The value limit applies to debit errors less credit errors included on the same BAS. Section 7(c) requires that net sum to be **less than** the limit. The ATO table agrees, but its partial-correction wording says 'up to' the limit and its Greg's Garage and Serge's Auto examples permit exactly $12,500. This source conflict remains unresolved. Return **Needs Input** for an exact-limit or partial-at-limit correction and obtain qualified review or ATO clarification; do not automatically accept equality or choose a partial amount from this guide. Revising the original period, where permitted, remains an alternative. The ATO also says excess amounts cannot be rolled into another later BAS. ([Determination 2023, section 7(c)](https://www.legislation.gov.au/F2023L01284/latest); [ATO, Types of GST errors](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors), updated 14 September 2026, read 2 November 2026.)
 
 #### 7.3 Revising an earlier BAS
 
@@ -281,7 +282,9 @@ Drawn from the ATO's published analysis of GST corrections and from recurring pr
 
 ### Section 10 - Worked example
 
-**Facts.** Coastline Joinery Pty Ltd, a quarterly GST lodger with GST turnover of $1.4 million, so it uses Simpler BAS. It accounts for GST on a non-cash (accruals) basis and reports G1 including GST. It has two part-time employees and is registered for PAYG withholding as a small withholder: it has not withheld more than $25,000 in any earlier financial year, and no Commissioner determination applies. One quarter does not itself set the class (see `au-gst-bas.md` Section 2.2). It pays PAYG instalments using option 1. The period is the quarter ended 30 September 2026. All figures are synthetic.
+**Facts.** Coastline Joinery Pty Ltd is a quarterly GST lodger. Its issued statement uses Simpler BAS; eligibility for that method is stipulated rather than inferred from a turnover figure without a measurement period. It accounts for GST on a non-cash (accruals) basis and reports G1 including GST. It has two part-time employees and is registered for PAYG withholding as a small withholder: it has not withheld more than $25,000 in any earlier financial year, and no Commissioner determination applies. One quarter does not itself set the class (see `au-gst-bas.md` Section 2.2). It pays PAYG instalments using option 1. The period is the quarter ended 30 September 2026. All figures are synthetic.
+
+The export independently satisfies the GST-free export conditions. All listed taxable sales and wholly creditable acquisitions are attributable to this quarter, with valid tax invoices held when required and no special valuation, private-use or credit-limit rules. The bad debt relates to an earlier taxable sale whose GST was already attributed; the unpaid debt is written off in this quarter and qualifies for the $500 decreasing adjustment. The supplier credit note relates to an earlier fully credited acquisition; the $100 increasing adjustment is attributable this quarter. The $1,200 bank fee carries no GST. These classifications and adjustment entitlements are stipulated, not determined by the arithmetic. No FBT, other tax-role liabilities or credits, or ATO account offsets apply.
 
 **Transactions for the quarter**
 
@@ -354,6 +357,97 @@ T7 ATO instalment amount                      =   6,200
 
 **What the example shows.** Net GST of $13,600 is just over half of the amount payable. The company must fund $5,400 of employees' withheld tax and $6,200 of its own income tax prepayment out of the same quarter's cash. A business that budgets for net GST alone will be short on the due date.
 
+### Case 1 arithmetic: Coastline label reconciliation
+
+The executable case below recomputes the retained illustration using its stated classifications and adjustments. It does not establish export status, credit entitlement or adjustment timing. The standard taxable-price arithmetic uses GST Act sections 9-70 and 9-75; credit amounts use sections 11-20 and 11-25.
+
+```oa-check
+name: AU Coastline BAS reconciles GST and income tax prepayments
+inputs:
+  taxable_sales_including_gst: 451000
+  gst_free_export: 22000
+  capital_purchase_including_gst: 88000
+  other_purchases_including_gst: 209000
+  bad_debt_including_gst: 5500
+  supplier_credit_including_gst: 1100
+  paygw_4: 5400
+  paygi_5a: 6200
+steps:
+  - sales_gst: taxable_sales_including_gst / 11
+  - bad_debt_adjustment: bad_debt_including_gst / 11
+  - gst_1a: sales_gst - bad_debt_adjustment
+  - capital_credit: capital_purchase_including_gst / 11
+  - other_credit: other_purchases_including_gst / 11
+  - supplier_adjustment: supplier_credit_including_gst / 11
+  - gst_1b: capital_credit + other_credit - supplier_adjustment
+  - total_sales_g1: taxable_sales_including_gst + gst_free_export
+  - net_gst: gst_1a - gst_1b
+  - total_8a: gst_1a + paygw_4 + paygi_5a
+  - total_8b: gst_1b
+  - net_9: total_8a - total_8b
+expected:
+  sales_gst: 41000
+  bad_debt_adjustment: 500
+  gst_1a: 40500
+  capital_credit: 8000
+  other_credit: 19000
+  supplier_adjustment: 100
+  gst_1b: 26900
+  total_sales_g1: 473000
+  net_gst: 13600
+  total_8a: 52100
+  total_8b: 26900
+  net_9: 25200
+```
+
+### Case 2: a GST credit can still leave a BAS payable
+
+For a synthetic 2026-27 period, independently reconciled labels are 1A $1,000, 1B $4,000, 4 $2,500 and 5A $2,000. No variations, other tax roles or account offsets apply. Net GST is a $3,000 credit, but the full BAS is $1,500 payable. Do not describe the GST component as the total refund.
+
+```oa-check
+name: AU GST credit does not determine whole BAS result
+inputs:
+  gst_1a: 1000
+  gst_1b: 4000
+  paygw_4: 2500
+  paygi_5a: 2000
+steps:
+  - net_gst: gst_1a - gst_1b
+  - total_8a: gst_1a + paygw_4 + paygi_5a
+  - total_8b: gst_1b
+  - net_9: total_8a - total_8b
+expected:
+  net_gst: -3000
+  total_8a: 5500
+  total_8b: 4000
+  net_9: 1500
+```
+
+### Case 3: the GST error limit is a net amount with an unresolved equality boundary
+
+Current GST turnover is below $20 million. All section 6 conditions, the debit-error time limit and the absence of recklessness or intentional disregard are stipulated. Debit errors total $14,000. If eligible credit errors included on the same BAS total $1,501, the net debit errors are $12,499, $1 below the statutory cap. If those credits are $1,500, the net is exactly $12,500: return Needs Input under section 7.2 because the statutory wording and ATO partial-correction examples conflict. Do not infer that an error can be split across later returns. This arithmetic checks the net amounts and distance from the cap; it does not execute legal eligibility or resolve the source conflict.
+
+```oa-check
+name: AU GST debit error net amounts at value boundary
+inputs:
+  debit_errors: 14000
+  credits_below: 1501
+  credits_at: 1500
+  value_limit: 12500
+steps:
+  - net_below: debit_errors - credits_below
+  - headroom_below: value_limit - net_below
+  - net_at: debit_errors - credits_at
+  - headroom_at: value_limit - net_at
+expected:
+  net_below: 12499
+  headroom_below: 1
+  net_at: 12500
+  headroom_at: 0
+```
+
+Recompute with `python3 scripts/check-examples.py --require skills/international/australia/au-bas-preparation.md`. The checker verifies the displayed arithmetic, not the stipulated classifications, source accuracy or the rest of this guide.
+
 ## When to refuse or refer
 
 Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
@@ -412,18 +506,19 @@ Before lodging, confirm:
 
 | Source | URL | Read on |
 |---|---|---|
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/complete-your-bas/step-5-summary> | Not re-read for this format update; see retained provenance |
+| GST Act, compilation 96 effective 1 January 2026 | <https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html> | 2026-11-02; selected sections 9-70, 9-75(1) including formula alternative text, 11-20, 11-25, 21-5 and 29-5/29-10; other sections not newly audited |
+| ATO BAS due dates, updated 17 September 2026 | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas> | 2026-11-02; monthly direction, quarterly dates and extensions |
+| ATO GST summary, updated 9 September 2026 | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/complete-your-bas/step-5-summary> | 2026-11-02; 1A/1B and quarterly-instalment exception |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts/changing-a-withholding-cycle> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/identify-your-accounting-basis> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19990055/29-10> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/goods-and-services-tax-gst/simpler-bas-gst-bookkeeping-guide> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments> | Not re-read for this format update; see retained provenance |
+| ATO PAYG withholding, updated 1 May 2025 | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding> | 2026-11-02; W5 to 4 and large-withholder exception |
+| ATO PAYG activity statement, updated 9 January 2023 | <https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement> | 2026-11-02; option 1 labels and option 2 T1/T2/T3/T11/5A |
+| ATO PAYG variations, updated 23 June 2026 | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments> | 2026-11-02; amount-method steps 3-5, zero T9/5A and positive 5B |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19990055/19-10> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.legislation.gov.au/F2023L01284/latest> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors> | Not re-read for this format update; see retained provenance |
+| GST error Determination 2023, in force | <https://www.legislation.gov.au/F2023L01284/latest> | 2026-11-02; sections 4 and 6-8; strict section 7(c) conflicts with ATO partial-correction examples |
+| ATO Types of GST errors, updated 14 September 2026 | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors> | 2026-11-02; time limits, net sum, value table and partial-correction examples |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/fix-a-mistake-or-amend-your-tax-return/correct-an-activity-statement/revising-an-earlier-activity-statement> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19990055/31-5> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/api/public/content/0-0b929c4e-ddac-4b4f-a627-7427575b94a2> | Not re-read for this format update; see retained provenance |
@@ -446,7 +541,7 @@ Before lodging, confirm:
 
 Sources were checked on 16 September 2026; the GST error time and value limits were rechecked against the ATO page (updated 14 September 2026) on 11 October 2026; withholder classes, GST instalments and the instalment-form lodgment rule were checked on 31 October 2026. Rates, thresholds and administrative processes change; confirm each figure against the cited page for the period being reported.
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: The 3 executable cases check selected BAS arithmetic only. The exact GST debit-error cap and partial-at-cap source conflict in section 7.2 remains unresolved and must be referred. Coastline's classifications, GST-free export, credit entitlement and adjustment timing are stipulated, not established by the checker. A complete source/read-date audit, other retained claims and illustrations, and independent legal review remain outstanding.
 
 <!-- openaccountants-cta-block -->
 
