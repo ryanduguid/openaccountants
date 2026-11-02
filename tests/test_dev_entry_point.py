@@ -10,6 +10,7 @@ pull-request runs cancelled, a timeout on every job, and a pip cache.
 
 from __future__ import annotations
 
+import importlib.util
 import re
 import shutil
 import subprocess
@@ -22,7 +23,7 @@ WORKFLOWS = REPO_ROOT / ".github" / "workflows"
 #: The workflows that run this repository's own checks.
 GATES = ("validate.yml", "sync-integrity.yml")
 DISCOVER = 'unittest discover -s tests -p "test_*.py"'
-TARGETS = ("help", "install", "build", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "check")
+TARGETS = ("help", "install", "build", "merge-main", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "check")
 #: The gate checkers (scripts/oa_tools/findings.py), as CI and the Makefile name them.
 GATE_CHECKERS = ("arithmetic", "bracket-tables", "expired-rules", "fact-conflicts", "coverage-claims", "sourcing-floor")
 
@@ -139,13 +140,24 @@ class MakefileTests(unittest.TestCase):
         self.assertIn("BASE=<rev>", result.stderr)
         self.assertNotIn("check-sync-integrity.py", result.stdout)
 
-    def test_build_target_runs_the_four_generators_in_order(self) -> None:
-        """packages, then the index (read by the roster), then the roster
-        (embedded in llms-full.txt), then llms-full.txt."""
+    def test_build_target_runs_the_generators_in_order(self) -> None:
+        """packages, then the index, then the coverage figures (read from the
+        index and packages/), then the roster (read from the index), then
+        llms-full.txt (which embeds the figures and the roster)."""
         out = _dry_run("build")
-        positions = [out.index(f"scripts/{name}.py")
-                     for name in ("build-packages", "build-index", "build-partners", "build-llms-full")]
+        positions = [out.index(f"scripts/{name}.py") for name in
+                     ("build-packages", "build-index", "check-coverage-claims", "build-partners", "build-llms-full")]
         self.assertEqual(positions, sorted(positions), out)
+        self.assertIn("scripts/check-coverage-claims.py --write", out)
+
+    def test_merge_main_rebuilds_with_the_build_recipe(self) -> None:
+        """scripts/merge-main.py runs `make build`'s commands without make."""
+        spec = importlib.util.spec_from_file_location("merge_main", REPO_ROOT / "scripts" / "merge-main.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        recipe = re.search(r"(?m)^build:.*\n((?:\t.*\n)+)", self.text).group(1)
+        steps = [tuple(line.split()[1:]) for line in recipe.splitlines()]
+        self.assertEqual([("scripts/" + step[0],) + step[1:] for step in module.BUILD], steps)
 
     def test_recipes_use_tabs(self) -> None:
         """A recipe line indented with spaces is a Makefile parse error; the

@@ -545,6 +545,37 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         self.assertEqual(by_path[("README.md", "Guides")], {"claimed": 9, "actual": 2})
         self.assertEqual(len(by_path), 2)
 
+    def test_the_reviewed_jurisdictions_sentence_is_checked(self) -> None:
+        files = self.corpus()
+        files["docs/COVERAGE.md"] = files["docs/COVERAGE.md"].replace(
+            "\n\n## Upstream", "\n\nAccountant-reviewed guides exist in 2 of the 2 jurisdiction codes;\n\n## Upstream")
+        self.write(files)
+        code, document = self.run_json(baseline=False)
+        self.assertEqual(code, 1)
+        self.assertEqual([(f["key"], f["detail"]) for f in document["findings"]],
+                         [("reviewed jurisdictions", {"claimed": [2, 2], "actual": [1, 2]})])
+
+    def test_write_sets_every_figure_and_leaves_the_rest(self) -> None:
+        drifted = "**9 Guides** across **9 jurisdictions** · **9 accountant-reviewed** · **9 named accountants**"
+        files = self.corpus(**{"Guide files indexed": 3, "Distinct `reviewed_by` values": 7,
+                               "headline": drifted, "llms": drifted, "tiers": drifted})
+        files["docs/COVERAGE.md"] = files["docs/COVERAGE.md"].replace(
+            "\n\n## Upstream", "\n\nAccountant-reviewed guides exist in 5 of the 9 jurisdiction codes;\n\n## Upstream")
+        self.write(files)
+        self.assertEqual(self.run_checker(baseline=False).returncode, 1)
+
+        written = self.run_checker("--write", baseline=False)
+        self.assertEqual(written.returncode, 0, written.stderr)
+        self.assertIn("figures updated: docs/COVERAGE.md", written.stdout)
+        code, document = self.run_json(baseline=False)
+        self.assertEqual(code, 0, document)
+        expected = self.corpus()
+        expected["docs/COVERAGE.md"] = expected["docs/COVERAGE.md"].replace(
+            "\n\n## Upstream", "\n\nAccountant-reviewed guides exist in 1 of the 2 jurisdiction codes;\n\n## Upstream")
+        for rel in ("docs/COVERAGE.md", "README.md", "llms.txt", "docs/QUALITY-TIERS.md"):
+            self.assertEqual((self.root / rel).read_text(encoding="utf-8"), expected[rel], rel)
+        self.assertEqual(self.run_checker("--write", baseline=False).stdout, "", "a second --write changed something")
+
     def test_missing_doc_is_a_finding(self) -> None:
         files = self.corpus()
         del files["docs/COVERAGE.md"]

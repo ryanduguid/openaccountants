@@ -19,8 +19,8 @@ holds the old tables.
 
 ## This repository (derived from `index.json`)
 
-Regenerate with `python3 scripts/build-index.py`; the `counts` block at the top
-of `index.json` carries the first three rows, and the gate checks every row.
+Regenerate with `make build`; the `counts` block at the top of `index.json`
+carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
@@ -93,9 +93,9 @@ verification-log entry
 
 ## How to update this file
 
-The derived table is hand-written but machine-checked. When a change to
-`skills/` moves the counts, `scripts/check-coverage-claims.py` names the row and
-the tree's value: update the row, the headline line in `README.md`, `llms.txt`
-and `docs/QUALITY-TIERS.md`, regenerate `PARTNERS.md` (`make build`), and run
-the gate until it passes. The tax-year list and the tier-2 names figure are
+`make build` writes the figures in the derived table, the sentence under it and
+the headline line in `README.md`, `llms.txt` and `docs/QUALITY-TIERS.md`
+(`scripts/check-coverage-claims.py --write`), and the same script gates them.
+When a change to `skills/` moves the counts, run `make build`; edit the text
+around the figures by hand. The tax-year list and the tier-2 names figure are
 not gated; the commands beside them re-derive them.

@@ -12,7 +12,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 2. Create your skill in the appropriate **source** directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
 3. Follow the [skill template](docs/skill-template.md)
 4. Regenerate the derived trees and commit them with your change (`make build`):
-   `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py`
+   `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/check-coverage-claims.py --write && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py`
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
 > **Important:** write in `skills/**`, never by hand in `packages/`, `index.json`, `PARTNERS.md` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI fails when the committed copies are stale (`guard-derived-trees` rebuilds `packages/`, `index.json` and `llms-full.txt`; the coverage gate re-renders `PARTNERS.md`). One exception: **`packages/us-federal/`** (the federal rates JSONs and their runbook) is hand-authored and may be edited directly. Renaming or deleting a guide needs an entry in `docs/guide-migrations.json` (`from`, `to` or null, `slug`, `replacement`) in the same change, with every reference repointed to the replacement slug; the sync-integrity gate fails an unrecorded deletion or rename.
@@ -86,7 +86,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Deadline engine, threshold alerts, optimisation advisor | `skills/intelligence/` (bundled as `packages/_intelligence/`) |
 | Orchestrator files (router, intake, assembly) | `skills/orchestrator/` (a country's `<code>-freelance-intake.md` and `<code>-return-assembly.md` are copied into its package) |
 
-After editing, run the generators (`make build`, or `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py`) and commit the regenerated `packages/`, `index.json`, `PARTNERS.md` and `llms-full.txt` together with your source change. CI rebuilds them and fails on any difference; `python3 scripts/validate-guides.py --derived-only` and `python3 scripts/check-coverage-claims.py` run the same checks locally.
+After editing, run the generators (`make build`, or `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/check-coverage-claims.py --write && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py`) and commit the regenerated `packages/`, `index.json`, `PARTNERS.md` and `llms-full.txt`, and any coverage figures the build updated, together with your source change. CI rebuilds them and fails on any difference; `python3 scripts/validate-guides.py --derived-only` and `python3 scripts/check-coverage-claims.py` run the same checks locally.
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 
@@ -103,7 +103,8 @@ make check                                       # validate + sync-check + test:
 
 | Target | What it runs | CI job |
 |---|---|---|
-| `make build` | the four generators: `scripts/build-packages.py`, `scripts/build-index.py`, `scripts/build-partners.py`, `scripts/build-llms-full.py` | none: you commit the output |
+| `make build` | the four generators: `scripts/build-packages.py`, `scripts/build-index.py`, `scripts/build-partners.py`, `scripts/build-llms-full.py`, with `scripts/check-coverage-claims.py --write` after the index to set the coverage figures | none: you commit the output |
+| `make merge-main` | `scripts/merge-main.py`: merges `origin/main` (or `REV=<rev>`) and rebuilds every derived file ("Bring a branch up to date" below) | none: you commit the merge |
 | `make validate` | `scripts/validate-guides.py`: the frontmatter contract and derived-tree freshness | `validate.yml` |
 | `make sync-check` | `scripts/check-sync-integrity.py --mode audit --strict-metadata` from the merge base with `origin/main` (fetch it first, or pass `BASE=<rev>`) | `sync-integrity.yml`, `compare` |
 | `make checkers` | the six gate checkers (`check-arithmetic.py`, `check-bracket-tables.py`, `check-expired-rules.py`, `check-fact-conflicts.py`, `check-coverage-claims.py`, `check-sourcing-floor.py`) against `scripts/baselines/`, plus `check-cited-hosts.py --selftest` | `validate.yml`, `gate-checkers` |
@@ -116,6 +117,14 @@ A gate checker fails on a finding its baseline does not list and on a baseline e
 `make help` lists the targets. Without `make` (Windows), run the commands the table names: `make -n <target>` prints them exactly. In Windows PowerShell, set `$env:PYTHONUTF8 = "1"` before running checks with redirected output so they can print Unicode guide text. Run the listed commands from the repository root. Corpus review aids use this checkout by default; explicit directory arguments are resolved from the caller's working directory. `list-incomplete-fixes.py` reviews the caller's Git repository.
 
 Shared code for the scripts lives in `scripts/oa_tools/` (repository paths, guide discovery, the frontmatter reader in tolerant and strict form). A hyphenated script name cannot be imported, so put anything two scripts need there rather than copying it; each script puts its own directory on `sys.path` before importing it, which is what lets the tests load scripts by file path.
+
+## Bring a branch up to date
+
+Merge `origin/main` into your branch with `make merge-main` (or `python3 scripts/merge-main.py`; pass another revision as `REV=<rev>` or as the argument), not a plain `git merge`. Parallel guide PRs all rewrite the same derived files, so a plain merge conflicts on `index.json`, `PARTNERS.md`, `llms-full.txt`, the package tree and the coverage figures even when the guides are unrelated, and a derived file resolved by hand is easily left stale.
+
+The script refuses to start over uncommitted changes. It merges with `--no-commit`, then resolves every file `.gitattributes` marks `oa-merge`: `regenerate` files are rebuilt by `make build`'s commands; `figures` files (`README.md`, `llms.txt`, `docs/QUALITY-TIERS.md`, `docs/COVERAGE.md`) are merged with their coverage figures masked and the figures then rewritten; `baseline` files are merged as sets of fingerprints, keeping an entry either side added and dropping one either side removed. It stages the result and runs `check-coverage-claims.py` and the checker of each baseline it merged. When any other file conflicts, or a figures file conflicts outside its figures, it stops before touching a derived file: resolve and `git add` the files it lists, then run `python3 scripts/merge-main.py --continue`. Review the staged merge, run `make check`, and commit with `git commit --no-edit`.
+
+There is nothing to install. The script uses no Git merge driver: Git runs a driver one file at a time before the merged tree exists, so a driver could only pick a side, and GitHub ignores custom drivers. Merge rather than rebase; pull requests are squash-merged, so a merge commit on the branch does not reach `main`.
 
 ## Review
 
