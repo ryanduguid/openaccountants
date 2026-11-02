@@ -9,7 +9,7 @@ description: >
   PAYG instalments, or bucket companies receiving trust distributions. Trigger on phrases like
   "company tax rate", "base rate entity", "franking credits", "franking account", or "company
   losses". ALWAYS read this skill before touching any company tax work.
-version: 1.4
+version: 1.5
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -20,19 +20,28 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Company Income Tax -- Private SME Company Skill v1.4
+# Australia Company Income Tax -- Private SME Company Skill v1.5
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia Company Income Tax -- Private SME Company Skill v1.4
+### Australia Company Income Tax -- Private SME Company Skill v1.5
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Law-change context.** (1) General interest charge (GIC) and shortfall interest charge (SIC) incurred on or after 1 July 2025 are NO LONGER deductible -- 2025-26 returns (this lodgment season) are the first affected; add back any GIC/SIC in the ledger. (2) The former temporary loss carry-back ended with 2022-23 claims. A replacement was enacted on 26 August 2026, commenced on 1 October 2026 and applies to income years starting on or after 1 July 2026: see Rule 8. (3) For eligible small/medium businesses, the additional amendment window for 2024-25 and later assessments requires a taxpayer application in the approved form; it is not an unrestricted extension of ATO review: see Rule 11.
 
 ## Ask the client first
+
+Confirm these facts before selecting a rate, franking a dividend or setting a deadline:
+
+1. The income year, balancing date, residence and entity type, including whether any special company rate, trustee capacity, consolidation or substituted accounting period applies.
+2. Current-year aggregated turnover with connected-entity and affiliate workings, and the company's own assessable income and traced BREPI composition.
+3. The previous year's turnover, assessable income and BREPI, or evidence that the entity did not exist in that year, for the separate imputation-rate test.
+4. The taxable-income reconciliation, any losses and offsets with their eligibility evidence, and actual PAYG credits.
+5. Proposed dividend dates and amounts, recipient credit eligibility, the franking account and the period's benchmark percentage.
+6. Whether a registered agent acts, the ATO client-list lodgment and payment dates, and any outstanding returns or approved deferrals. Do not infer a payment date from a lodgment date.
 
 ### Section 9 -- Onboarding fallback
 
@@ -58,18 +67,18 @@ If the client provides only financial statements and a trial balance:
 | Primary Legislation | ITAA 1997; ITAA 1936; Income Tax Rates Act 1986 (rates: s 23(2); BRE: ss 23AA, 23AB) |
 | Tax Authority | Australian Taxation Office (ATO) |
 | Income Year | 2026-27 (1 July 2026 -- 30 June 2027); lodgment season for 2025-26 |
-| Base rate entity (BRE) rate | 25% (2021-22 onwards; 2025-26 and 2026-27 both 25%) |
-| Standard company rate | 30% (all companies that are not BREs) |
-| BRE test (BOTH limbs, current year) | Aggregated turnover < $50m AND base rate entity passive income (BREPI) <= 80% of assessable income |
-| Corporate tax rate for imputation purposes | Tested on the PRIOR year's turnover/BREPI/assessable income; new entities default to BRE (25%) |
-| Maximum franking credit | Distribution x (1 / gross-up rate); at 25%: distribution / 3; at 30%: distribution x 3/7 |
+| Base rate entity (BRE) rate | 25% for an ordinary company meeting BOTH current-year limbs in 2026-27; special-rate entities are outside this guide. [ITRA s 23(2)](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Standard company rate | 30% for an ordinary company within this guide's scope that is not a BRE. [ITRA s 23(2)](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| BRE test (BOTH limbs, current year) | Aggregated turnover strictly below $50m AND BREPI no more than 80% of the company's own assessable income; test at year end. [ITRA ss 23AA-23AB](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Corporate tax rate for imputation purposes | Use the previous year's turnover, BREPI and assessable income as the current-year test assumptions. If the entity did not exist in the previous income year, use the BRE rate. [ITAA 1997 s 995-1, both corporate-rate definitions](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1) |
+| Maximum franking credit | Distribution divided by the applicable gross-up rate: dividend / 3 at 25%, dividend x 3/7 at 30%. This is a statutory ceiling, not a choice of rates. [ITAA 1997 ss 202-60, 202-65](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/202-60) |
 | Franking period (private company) | The whole income year -- one benchmark franking percentage per year |
 | Franking deficit tax (FDT) | Deficit at year end -> franking account tax return + FDT by 31 July (30 June balancers) |
 | Distribution statement (private company) | Within 4 months of the end of the income year of the distribution |
 | Loss carry-forward | COT (s 165-12) or business continuity test (s 165-13: same business s 165-210; similar business s 165-211 for losses of years starting on/after 1 July 2015) |
 | Loss carry-back | Replacement enacted for income years starting on or after 1 July 2026; Schedule 1 of the Tax Reform No. 2 Act 2026 commenced on 1 October 2026. Test Rule 8 conditions. |
-| Return due (2025-26, typical agent client) | 15 May 2027 lodge and pay, a Saturday, so Monday 17 May 2027 (31 March 2027 if 2024-25 total income > $2m) |
-| Return due (self-preparer small company) | Generally 28 February 2027 lodge and pay, a Sunday, so Monday 1 March 2027 (31 October 2026 if prior years outstanding, a Saturday, so Monday 2 November 2026) |
+| Return due (2025-26, typical agent client) | Eligible remaining clients: nominal 15 May 2027 lodgment and payment, effective 17 May 2027; earlier categories override. Total income over $2m in 2024-25 generally gives 31 March 2027 unless required earlier. [ATO company program](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds), [holiday rule](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/lodgment-and-payment-dates-on-weekends-or-public-holidays) |
+| Return due (self-preparer small company) | Residual lodgment date: nominal 28 February 2027, effective 2 March 2027 after the nationwide WA holiday adjustment, unless required earlier. An October lodgment category can apply after a late previous return or outstanding returns. Verify payment separately; February lodgment does not establish February payment. [ATO business income-tax dates](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax), [holiday rule](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/lodgment-and-payment-dates-on-weekends-or-public-holidays) |
 | PAYG instalment GDP uplift | 5% for 2026-27 (4% for 2025-26) |
 | Amendment period (SMB, aggregated turnover < $50m) | Generally 2 years, subject to statutory exceptions. For 2024-25 and later assessments, an approved-form taxpayer application can use the additional 2-year window, limited to giving effect to that application. Other companies generally have 4 years. |
 | Contributor | Open Accountants |
@@ -148,7 +157,25 @@ Signs a company return needs attention. Sweep the trial balance before touching 
 
 #### Rule 9 -- Lodgment and payment (2025-26 returns, 30 June balancers)
 
-- **Rule 9 -- Lodgment and payment (2025-26 returns, 30 June balancers)** — Company income tax is full self-assessment: payment is due with lodgment per the program, not on a notice. Registered agent program: 31 October 2026 lodge / 1 December 2026 pay where prior-year returns were outstanding at 30 June 2026; 31 January 2027 lodge / 1 December 2026 pay for large-medium taxpayers taxable in 2024-25; 28 February 2027 for large-medium non-taxable and new registrant large-medium; 31 March 2027 where 2024-25 total income > $2m; **15 May 2027** for the rest; 5 June 2027 concession where both years are non-taxable/refund. Self-preparer small companies: generally 28 February 2027. These are nominal dates: where one falls on a weekend or public holiday, lodgment or payment on the first business day after attracts no penalty or GIC ([ATO, Due dates](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying)). So 31 October 2026 moves to 2 November 2026, 31 January 2027 to 1 February, 28 February to 1 March, 15 May to 17 May and 5 June to 7 June 2027. Late lodgment risks FTL penalties and GIC -- and GIC from 1 July 2025 is non-deductible, so late payment now costs pre-tax dollars.
+Use the ATO category and check lodgment and payment separately. The [2026-27 registered-agent company program](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds) gives the following nominal dates for 2025-26 returns of 30 June balancers:
+
+| Category, unless an earlier requirement or approved arrangement applies | Nominal lodgment | Nominal payment | Authority |
+|---|---|---|---|
+| Prior returns outstanding at 30 June 2026; also specified prosecution or early-lodgment cases | 31 October 2026 | 1 December 2026 | [ATO company program](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds) |
+| Large/medium taxpayers whose 2025 return was taxable | 31 January 2027 | 1 December 2026 | same |
+| Large/medium non-taxable and specified new registrants; check the program's detailed eligibility | 28 February 2027 | 28 February 2027 | same |
+| Total income in 2024-25 over $2m | 31 March 2027 | 31 March 2027 | same |
+| Remaining eligible tax-agent clients | 15 May 2027 | 15 May 2027 | same |
+| Concession for returns otherwise due 15 May where both prior and current years are non-taxable or refundable; excludes large/medium taxpayers and consolidated head companies | 5 June 2027 concession | 5 June 2027 concession | same |
+| Companies that are not full self-assessment taxpayers (NFSA) | 1 December 2026 | As on the notice of assessment | same |
+
+The June arrangement is a penalty-waiver concession, not a new lodgment due date. Consolidated, NFSA and substituted-accounting-period cases need their specific program or specialist referral. Check client-list dates and approved deferrals before acting.
+
+The older general business income-tax page lists 15 January for taxable large/medium companies. For a registered-agent 2025-26 return, use the specific program updated 1 July 2026, which states 31 January 2027, unless the client's earlier requirement or approved arrangement overrides it. Do not transfer that program date to a self-preparer without confirming their applicable category.
+
+Apply the [ATO nationwide weekend/public-holiday rule](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/lodgment-and-payment-dates-on-weekends-or-public-holidays): a whole-state or territory holiday counts for taxpayers throughout Australia. Nominal 31 October 2026 moves to 2 November 2026; 31 January 2027 to 1 February; 28 February to **2 March**, because 1 March is WA Labour Day; 15 May to 17 May; and the 5 June concession to **8 June**, because 7 June is Western Australia Day. Recheck the ATO holiday table, which may change.
+
+For residual self-preparers, the [business income-tax page](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax) gives 28 February as a lodgment date unless required earlier; its October category also covers a previous return lodged late. This does not establish their payment date. For companies required to lodge by 31 October, that page gives 1 December payment. If the applicable payment date or concession eligibility is unconfirmed, return Needs Input. Late lodgment can attract FTL penalties and unpaid tax can attract GIC. See the retained GIC/SIC rule for deductibility.
 
 #### Rule 10 -- PAYG instalments interaction
 
@@ -240,7 +267,7 @@ FLAGS
 2. Trust distributions: character is set in the trust's books, not the company's. No trust workings = assume passive = 30% until proven otherwise.
 3. The franking account is continuous. Every instalment, refund and dividend moves it; the year-end balance decides FDT, not intentions.
 4. Losses: the share register is the evidence, not the client's memory. Any transfer, issue or redemption inside the ownership test period reopens the analysis.
-5. Payment dates are lodgment-linked for most SMEs (full self-assessment) -- lodging early does not delay payment beyond the program date, and lodging late compounds FTL penalties with non-deductible GIC.
+5. Establish lodgment and payment dates separately from the applicable ATO category, client list and any approved deferral. Some payment dates precede lodgment; NFSA companies pay according to their notice. Do not substitute a lodgment date for an unknown payment date (Rule 9).
 
 
 #### Key figures (2025-26 and 2026-27)
@@ -265,17 +292,65 @@ FLAGS
 
 #### Example 1 -- The two-limb BRE test and the 25% rate
 
-Trading company, 2026-27: aggregated turnover $8.0m (no connected entities), assessable income $8.24m including $40,000 bank interest; taxable income $480,000.
+Ordinary trading company, 2026-27: separately reconciled aggregated turnover $8.0m (no connected entities or affiliates), assessable income $8.24m and taxable income $480,000. The only verified BREPI is $40,000 bank interest; the other assessable items have been confirmed not to be BREPI. No special-rate rule, loss or offset changes this calculation. The statutory tests use different measures; do not derive aggregated turnover from assessable income. [ITRA ss 23(2), 23AA-23AB](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html).
 
 ```
 Limb 1: $8.0m < $50m                          PASS
-Limb 2: BREPI = $40,000 / $8,240,000 = 0.5%   <= 80%  PASS
+Limb 2: BREPI = $40,000 / $8,240,000 = 0.485437% (rounded)   <= 80%  PASS
 Rate = 25%; tax = $480,000 x 25% = $120,000
 ```
 
 Both limbs are tested on CURRENT-year figures; prior-year turnover is irrelevant to the tax rate (contrast the imputation rate, Example 4).
 
+```oa-check
+name: Ordinary trading company current-year BRE calculation 2026-27
+tolerance: 0.000001
+inputs:
+  aggregated_turnover: 8000000
+  turnover_limit: 50000000
+  assessable_income: 8240000
+  brepi: 40000
+  taxable_income: 480000
+  rate_percent: 25
+steps:
+  - turnover_below_limit: turnover_limit - aggregated_turnover
+  - brepi_percent: round(brepi / assessable_income * 100, 6)
+  - income_tax_before_offsets: pct(taxable_income, rate_percent)
+expected:
+  turnover_below_limit: 42000000
+  brepi_percent: 0.485437
+  income_tax_before_offsets: 120000
+```
+
+**Decision case: an unresolved income classification at the 80% boundary.** Another ordinary company has verified aggregated turnover below $50m, assessable income $1m and taxable income $480,000. Its verified BREPI is $800,000. A further $1 receipt already included in assessable income is either active service income or a royalty; classification does not change taxable income in this illustration. If active, BREPI is exactly 80% and the company qualifies for 25%. If a royalty, BREPI is 80.0001% and the company pays 30%. The income-tax difference is $24,000 before offsets. Establish the receipt's legal character; do not choose the lower rate or round the ratio to 80%. Return Needs Input until resolved. At exactly $50m aggregated turnover the turnover limb fails regardless of the passive-income ratio. [ITRA ss 23AA-23AB](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html).
+
+```oa-check
+name: Unresolved royalty classification crosses BRE passive-income boundary 2026-27
+tolerance: 0.000001
+inputs:
+  assessable_income: 1000000
+  verified_brepi: 800000
+  unresolved_receipt: 1
+  taxable_income: 480000
+  bre_rate_percent: 25
+  standard_rate_percent: 30
+steps:
+  - active_classification_percent: verified_brepi / assessable_income * 100
+  - royalty_classification_percent: (verified_brepi + unresolved_receipt) / assessable_income * 100
+  - tax_if_active: pct(taxable_income, bre_rate_percent)
+  - tax_if_royalty: pct(taxable_income, standard_rate_percent)
+  - tax_difference: tax_if_royalty - tax_if_active
+expected:
+  active_classification_percent: 80
+  royalty_classification_percent: 80.0001
+  tax_if_active: 120000
+  tax_if_royalty: 144000
+  tax_difference: 24000
+```
+
 #### Example 2 -- Franking arithmetic at 25% and at 30%
+
+These are separate companies with their imputation rates, fully frankable distributions, benchmark compliance and available franking credits already established. For this combined-tax comparison only, each company's actual tax rate on its $100,000 underlying profit matches its imputation rate; Example 4 shows why that is not a general assumption. The rate is determined by law, not selected to optimise a shareholder outcome. The shareholder is an Australian resident entitled to the whole franking offset, and every additional grossed-up dollar is stipulated to fall in the top income-tax band with the full Medicare levy. The 47% is an incremental marginal rate in this illustration, excluding MLS, other levies and other offsets; it is not the tax rate on a person's total income of $100,000. Confirm the recipient's actual treatment separately. For personal bands and levy rules, use [au-rates-2026-27](au-rates-2026-27.md) and [au-medicare-levy](au-medicare-levy.md). Company ceilings use [ITAA 1997 s 202-60](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/202-60) and [s 995-1, corporate-rate definitions](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1).
 
 **(a) BRE for imputation purposes (25%).** Company pays a $75,000 fully franked dividend.
 
@@ -291,12 +366,45 @@ Resident shareholder (top marginal 47% incl Medicare):
 **(b) Standard rate for imputation purposes (30%).** Company pays a $70,000 fully franked dividend.
 
 ```
-Gross-up rate = (100% - 30%) / 30% = 2.3333
+Gross-up rate = (100% - 30%) / 30% = 7/3 (approximately 2.3333)
 Maximum franking credit = $70,000 x 3/7 = $30,000
 Shareholder: assessable $100,000; tax $47,000 - $30,000 = $17,000 net
 ```
 
-Imputation washes company tax out at the shareholder's marginal rate either way -- but only if the franking account actually holds the credits being attached.
+Under those eligibility and marginal-rate assumptions, each $100,000 grossed-up amount has $47,000 combined illustrative company and incremental shareholder tax. Available credits alone do not establish the shareholder's entitlement.
+
+```oa-check
+name: Separate statutory imputation rates and stipulated incremental shareholder tax 2026-27
+inputs:
+  underlying_profit_each: 100000
+  dividend_a: 75000
+  imputation_rate_a: 25
+  dividend_b: 70000
+  imputation_rate_b: 30
+  incremental_shareholder_percent: 47
+steps:
+  - credit_a: dividend_a * imputation_rate_a / (100 - imputation_rate_a)
+  - credit_b: dividend_b * imputation_rate_b / (100 - imputation_rate_b)
+  - company_tax_a: pct(underlying_profit_each, imputation_rate_a)
+  - company_tax_b: pct(underlying_profit_each, imputation_rate_b)
+  - grossed_up_a: dividend_a + credit_a
+  - grossed_up_b: dividend_b + credit_b
+  - shareholder_increment_a: pct(grossed_up_a, incremental_shareholder_percent) - credit_a
+  - shareholder_increment_b: pct(grossed_up_b, incremental_shareholder_percent) - credit_b
+  - combined_a: company_tax_a + shareholder_increment_a
+  - combined_b: company_tax_b + shareholder_increment_b
+expected:
+  credit_a: 25000
+  credit_b: 30000
+  company_tax_a: 25000
+  company_tax_b: 30000
+  grossed_up_a: 100000
+  grossed_up_b: 100000
+  shareholder_increment_a: 22000
+  shareholder_increment_b: 17000
+  combined_a: 47000
+  combined_b: 47000
+```
 
 #### Example 3 -- Bucket company: trust distributions are usually passive income
 
@@ -315,6 +423,25 @@ Net payable = $42,000; the $18,000 also CREDITS Bucket Co's franking account
 #### Example 4 -- The imputation-rate mismatch (franking at a different rate than you pay)
 
 Grower Pty Ltd's 2026-27 aggregated turnover is $30m with minimal BREPI -> taxed at **25%**. But its 2025-26 turnover was $55m. The imputation test uses the PRIOR year: turnover $55m >= $50m -> NOT a BRE for imputation -> franks 2026-27 distributions at **30%** (max credit = dividend x 3/7).
+
+For the executable illustration, current-year taxable income is $480,000 before offsets and the fully frankable dividend is $70,000. Current-year BREPI eligibility, the prior-year turnover workings, benchmark compliance and sufficient franking credits are stipulated as confirmed. Income tax before offsets is $120,000, whilst the maximum dividend credit is $30,000 and the grossed-up distribution is $100,000. Use the separate-year tests in [ITRA s 23AA](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) and [ITAA 1997 s 995-1](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1), then [s 202-60](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/202-60).
+
+```oa-check
+name: Current company tax rate and prior-year imputation rate diverge 2026-27
+inputs:
+  taxable_income: 480000
+  current_rate_percent: 25
+  imputation_rate_percent: 30
+  dividend: 70000
+steps:
+  - income_tax_before_offsets: pct(taxable_income, current_rate_percent)
+  - maximum_credit: dividend * imputation_rate_percent / (100 - imputation_rate_percent)
+  - grossed_up_distribution: dividend + maximum_credit
+expected:
+  income_tax_before_offsets: 120000
+  maximum_credit: 30000
+  grossed_up_distribution: 100000
+```
 
 Reverse case: Holdco is taxed at 30% in 2026-27 (100% BREPI bucket company) but last year's figures pass the BRE test -> it must frank at **25%** (max credit = dividend / 3). Tax paid at 30% enters the franking account, but each dollar of dividend can only carry out credits at the 25% rate -- credits strand in the account until a 30%-franking year. The rate you pay and the rate you frank at are set by different years' facts; establish both every year before any distribution statement is issued.
 
@@ -424,6 +551,13 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 | Source | URL | Read on |
 |---|---|---|
+| Current registered Income Tax Rates Act 1986, compilation 66, ss 23(2)-(5), 23A, 23AA and 23AB: ordinary-company rates, special-rate exclusions, both BRE limbs and passive-income classes. Selected wording: 'less than $50 million'. | <https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html> | 2026-11-02; selected provisions, compilation effective 1 July 2026 and registered 16 July 2026 |
+| ITAA 1997 s 995-1: selected corporate tax rate, corporate tax gross-up rate and corporate tax rate for imputation purposes definitions, including prior-year assumptions and an entity that did not exist in that year. Selected wording: 'for the previous income year'. | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1> | 2026-11-02; these definitions only |
+| ITAA 1997 s 202-60: maximum credit formula and stated-credit limit. Selected wording: 'Applicable gross-up rate'. | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/202-60> | 2026-11-02; subsections (1)-(2) |
+| ITAA 1997 s 202-65: a stated credit exceeding the maximum is limited to that maximum. Selected wording: 'not the amount stated'. | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/202-65> | 2026-11-02; whole section |
+| ATO Companies and super funds, updated 1 July 2026: 30 June balancers' 2025-26 lodgment/payment table and NFSA notes. Selected wording: 'not a lodgment due date' for the June concession. | <https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds> | 2026-11-02; these table rows and notes, not all SAP rules |
+| ATO weekend/public-holiday rule, updated 1 July 2026: nationwide application and 2027 WA holiday rows. Selected wording: 'taxpayers in all states and territories'. | <https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/lodgment-and-payment-dates-on-weekends-or-public-holidays> | 2026-11-02; general rule and 2026-27 date tables |
+| ATO business income-tax dates, updated 8 September 2025: October, December, January and February sections. Selected wording: 'Income tax return lodgment due date'. | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax> | 2026-11-02; selected sections; this page does not establish residual self-preparer February payment |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/203-55> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.legislation.gov.au/C2026A00071/asmade/text> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying> | Not re-read for this format update; see retained provenance |
@@ -431,7 +565,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ### Section 10 -- Reference material
 
-#### Primary sources (verified 20 August 2026)
+#### Historical source record (recorded as verified 20 August 2026; not a fresh whole-guide check)
 
 **Primary sources (verified 20 August 2026; loss carry-back schedule and lodgment dates rechecked 11 October 2026)**
 
@@ -450,7 +584,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | Amendment periods | [ITAA 1936, section 170(1), table items 1-3A](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170); additional taxpayer-request window is conditional |
 | GIC/SIC deduction denial | Treasury Laws Amendment (Tax Incentives and Integrity) Act 2025 (No. 29, 2025) Sch 2; ato.gov.au QC 73746 -- GIC/SIC incurred from 1 July 2025 not deductible |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: The current source check covers the selected ordinary-company rate/BRE provisions, corporate-rate definitions, maximum-credit formula and company deadline/holiday sections listed above. Four executable cases check stated arithmetic; they do not decide unresolved income character, grouping, loss eligibility or recipient credit entitlement. The retained historical claim that the 25% rate commenced in 2021-22 has not been reverified here. The remaining franking-account/FDT, loss, carry-back, PAYG, amendment and deduction claims, retained examples outside these checks and complete portal/form/field workflow still need their full source and qualified Australian review. The approved 2026-27 return/software and residual self-preparer payment date have not been verified. Return Needs Input for an unconfirmed payment date, deadline category, credit entitlement or classification. Historical provenance retains its original scope; no accountant sign-off is asserted.
 
 <!-- openaccountants-cta-block -->
 
