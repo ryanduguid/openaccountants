@@ -1,448 +1,521 @@
 ---
 name: au-small-business-cgt
 description: >
-  Use this skill whenever an Australian small business owner, company, trust or partnership asks about the Division 152 small business CGT concessions -- selling a business, premises, goodwill, or shares/units in a trading entity; the $2m turnover or $6m maximum net asset value gateways; the active asset test; the 15-year exemption; the 50% active asset reduction; the retirement exemption; the small business rollover; significant individual or CGT concession stakeholder tests; or contributing sale proceeds to super under the CGT cap. Trigger on "small business CGT", "SBCGT", "Div 152", "active asset", "retirement exemption", "CGT cap election". ALWAYS read this skill before touching any Div 152 work.
-version: 1.2
+  Use this skill for Australian small business CGT working papers for individuals, companies, trusts and partners in 2026-27. It covers Division 152 eligibility, aggregated turnover, maximum net asset value, active assets, shares and trust interests, the 15-year exemption, active asset reduction, retirement exemption and replacement asset rollover. It distinguishes concession choices, stakeholder payments and super CGT cap elections, with dated source conditions and hypothetical calculations. Trigger on 'small business CGT', 'SBCGT', 'Division 152', 'active asset', 'significant individual', 'retirement exemption', 'replacement asset period' and 'CGT cap election'. Read before preparing these positions; unresolved facts, period law and filing procedures require review.
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
-tax_year_notes: "2026-27"
+tax_year_notes: "2026-27 framework; verify operative law for each event, choice, payment and contribution date"
 last_updated: 2026-11-02
 review_status: pending_review
+depends_on:
+  - workflow-base
+  - au-capital-gains
+  - au-individual-return
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Small Business CGT Concessions -- Division 152 Skill v1.2
+# Australia Small Business CGT Concessions v1.3
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+> **General reference only.** Prepare a working paper for a qualified Australian reviewer. This source-cited draft does not establish a taxpayer's eligibility, an approved return field or final tax liability. Obtain professional review before filing, paying, making an election or taking a position.
 
 ## Scope
 
-> **Law-change context (Tax Reform No. 1 Act 2026, Royal Assent 26 June 2026).** From **1 July 2027** the *Treasury Laws Amendment (Tax Reform No. 1) Act 2026* replaces the general 50% CGT discount for individuals and trusts (including gains flowing through partnerships) with **cost-base indexation plus a 30% minimum tax rate** on gains accruing from that date, deems assets held on 30 June 2027 (including pre-CGT assets) re-acquired on 1 July 2027, and -- **enacted in the Act via amendments made during passage** -- lifts the aggregated turnover gateway for the **small business 50% active asset reduction only** from **$2 million to $10 million** from 1 July 2027. The other three Div 152 concessions keep the $2m/$6m gateways. Everything below states the law for CGT events happening **up to 30 June 2027**; Rule 15 maps the transition. Straddle and timing questions escalate (R-AU-SBC-5).
+Prepare an Australian Division 152 eligibility register, concession comparison and payment/election timetable for 2026-27. Cover a capital gain on a business asset, goodwill, qualifying share or trust interest, including an asset held outside the entity using it. Separate the asset owner, business user, concession claimant, CGT concession stakeholder and super contributor. These roles can belong to different people or entities. Use AUD and supported market values. [ITAA 1997 Div 152](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+Load [workflow-base](../../foundation/workflow-base.md), [au-capital-gains](au-capital-gains.md) and the relevant return guide. Route company tax and extraction to [au-company-tax](au-company-tax.md), trust assessment and distributions to [au-trust-distributions](au-trust-distributions.md), partnerships to [au-partnerships](au-partnerships.md), residence to [au-tax-residency](au-tax-residency.md), foreign-resident CGT to [au-nonresident-cgt](au-nonresident-cgt.md) and SMSF acceptance/administration to [au-smsf](au-smsf.md). A deduction, trading-stock profit or Division 40 balancing adjustment is not automatically a Division 152 capital gain. CGT event K7 is excluded by s 152-10(1)(a).
+
+The current compilation read here applies from 1 October 2026 to 1 December 2026. It contains amendments whose assessment application starts later. Verify amendments and applicable compilations for the actual event, choice, payment and contribution dates, including earlier historical events. For assessments in the income year including 1 July 2027 and later years, the Tax Reform No. 1 Act changes the active asset reduction gateway by disregarding the specific $2 million restriction for that reduction. The general small business entity requirements still apply. It does not extend that change to the other 3 concessions. Establish the actual reform application, residence, asset and transition conditions with [au-capital-gains](au-capital-gains.md); do not assume a universal cost-base reset or minimum tax on every disposal. No timing recommendation or final 2027-28 liability is supplied here. [Tax Reform No. 1 Act, Sch 1 items 77A-82](https://www.legislation.gov.au/C2026A00071/latest/text).
 
 ## Ask the client first
 
-- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
-- Which income year or transaction period applies?
-- What records support the amounts, dates and classifications?
-- Which residence, election, exception or eligibility conditions in this guide affect the answer?
-- What facts or source conditions remain unresolved?
+1. Who legally and beneficially owns each asset, who uses it, which entity claims the concession and what residence history applies?
+2. What are the acquisition, contract/event, cessation, proceeds, choice, stakeholder payment and proposed super contribution dates? Which requested periods are supported by operative sources?
+3. What control rights, affiliates, trust distributions, connected entities and partnership interests exist, including changes during the relevant income years?
+4. What supports every turnover route, market value, related debt/provision and asset-use period, including residential income use, rent and the share/trust look-through tests?
+5. What capital losses, previous retirement exemption choices, previous CGT cap contributions, stakeholder ages, retirement/incapacity evidence and proposed replacement expenditure apply?
+6. What records, written choices, fund acceptance evidence, election receipts, approved forms/software and professional decisions remain missing?
 
 ## The method, step by step
 
-### Section 1 -- Quick reference
 
-**Read this whole section before computing or classifying anything.**
+### Figures and timing register
 
-| Field | Value |
+This is the consolidated register for the checked 2026-27 framework. Conditions, exceptions and the relevant person/date are explained in the numbered steps. A figure does not establish eligibility or operative law for an unverified date.
+
+| Measure | Amount, boundary or period | Official source |
+|---|---|---|
+| CGT small business turnover / MNAV | Aggregated turnover less than $2 million under the applicable route / net asset value no more than $6 million just before the event | [ss 152-10/15, 328-110](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Turnover estimate exception | Both previous 2 business years at least $2 million prevents that estimate route; actual-year route remains separate | same |
+| General control / modified object-entity control | At least 40% / substitute 20%; possible general control determination only at least 40% but below 50% | [ss 328-125, 152-10(2)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Discretionary trust control distribution history | Previous 4 income years; statutory 40% distribution test, separate from directions/wishes | [s 328-125(3)-(6)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Special child affiliate rule | Child under 18, subject to the specific passive-asset conditions | [s 152-47](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Active periods | Owned no more than 15 years: at least half the test period; owned more than 15 years: at least 7.5 active years | [s 152-35](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Cessation modification | Normally business ceased within 12 months before event; longer period only if allowed | same |
+| Share/trust asset ratio / significant individual / alternative stakeholder ownership | At least 80% / at least 20% / at least 90%, each subject to its own statutory conditions | [ss 152-40, 152-55, 152-10(2)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| 15-year exemption | At least 15 years continuous ownership; age 55 or older with retirement connection, or permanent incapacity; additional significant-individual history where required | [ss 152-105/110/115](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| General individual discount / active asset reduction | Each 50% where separately eligible; companies have no general discount; J-event restrictions apply | [ss 115-100, 152-205](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Retirement exemption | $500,000 lifetime per individual, reduced by earlier choices; age under 55 at individual choice or stakeholder payment triggers the relevant mandatory super rule | [ss 152-305/320/325](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Entity retirement payments / individual mandatory contribution | Normally later of 7 days after choice and 7 days after proceeds / at the later of choice and receipt; special J-event and instalment rules apply | [ss 152-305/325](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Stakeholder exemption and allocation measures | For s 152-125, relevant stakeholder percentage multiplied by exempt amount; discretionary category percentage is 100 divided by stakeholder count. Retirement allocations in writing total 100%, and may include zero | [ss 152-125(2), 152-315(5)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| General CGT choice deadline | By the day the relevant return is actually lodged, or further time actually allowed; written retirement-choice requirements remain separate | [ss 103-25, 152-315](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Entity 15-year payment window | Before later of 2 years after event and relevant 6-month earnout period, subject to an allowed s 152-125 extension | [s 152-125](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Individual CGT cap contribution category / qualifying entity payment contribution | Normally by later of required return-lodgement day and 30 days after proceeds / within 30 days after qualifying payment; amount and category conditions apply | [s 292-100](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| CGT cap published index amounts | 2026-27 $1,935,000; 2025-26 $1,865,000 as historical comparison. Reconcile individual prior usage and annual increases in the contribution year | [ATO Table 6](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps?anchor=CGTcapamount); [s 292-105](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| CGT cap election | At or before contribution; late election invalid for this exclusion | [s 292-100(9)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Replacement asset period | One year before last qualifying rollover event in income year to later of 2 years after that event and relevant 6-month earnout period; specific modifications/extensions apply | [s 104-190](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Estate event window | Normally within 2 years of death; longer period requires actual Commissioner extension | [s 152-80](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+
+### 1. Establish the asset, source period and evidence states
+
+Build a dated register of each separately acquired asset or interest. Establish the CGT event and its timing, proceeds, GST adjustments, cost base, reduced cost base, market-value substitutions and any earnout before applying concessions. A sale contract usually determines A1 timing; settlement and super contribution can fall in different income years. Defer to the actual event rules in [au-capital-gains](au-capital-gains.md). Separate pre-CGT assets, depreciating assets, revenue transactions and foreign/temporary-resident restrictions.
+
+For each fact, record source document, date, classification and reviewer flag. The permitted factual default is to leave an unsupported amount or condition as Needs Input. Do not invent a connected entity, age, retirement intention, rent classification, zero trust participation, $2 million eligibility, extension or election. Reconstruct missing records from available legal documents, accounts, valuations and transaction records. Withhold the affected concession, dependent net capital gain and final tax until resolved; disclose any independently calculable gross amount as provisional. No monetary threshold permits guessing these conditions.
+
+
+| Unresolved fact | Permitted default | Effect |
+|---|---|---|
+| Turnover, control map or market value | No invented amount or connected/affiliate status | Needs Input for affected gateway and dependent totals. |
+| Rental/main use, active period or intangible classification | No assumed activity or automatic rejection | Obtain rights and use history before deciding. |
+| Trust distributions or stakeholder rights | No assumed zero percentage or nomination | Obtain relevant-year and prior-year documents. |
+| Age, retirement, incapacity or prior lifetime usage | No presumed age or remaining limit | Hold affected exemption and required-payment conclusion. |
+| Contribution year, fund acceptance or timely election | No assumed acceptance or CGT cap exclusion | Hold cap treatment; identify the actual evidence gap. |
+| Extension, determination or period law | No assumed discretion or legal authority | Refer the condition and withhold affected results. |
+
+### 2. Prove a basic eligibility gateway
+
+A gain generally needs a CGT event other than K7, an otherwise resulting capital gain, a gateway in s 152-10(1)(c) and the active asset test. Check the modified D1 conditions for a created right, the additional share/trust conditions and the special partnership membership-interest requirement. Do not use the ordinary disposal shortcut for every event. [ITAA 1997 ss 152-10/12](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+| Gateway or condition | Amount and timing | Official source |
+|---|---|---|
+| CGT small business entity | Carries on business; apply the less-than-$2 million aggregated-turnover substitution for 2026-27 | [ss 152-10(1AA), 328-110](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Maximum net asset value (MNAV) | No more than $6 million just before the relevant event; exactly $6 million passes this gateway | [ss 152-15/20](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Passively held asset | Claimant carries on no business other than in partnership; qualifying affiliate/connected business user is a CGT small business entity; satisfy all asset and use conditions | [s 152-10(1A)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Partnership asset interest | Claimant is a partner in a partnership that is a CGT small business entity; gain concerns their interest in a partnership asset | [s 152-10(1)(c)(iii)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Partner's separately owned asset | Partnership is a CGT small business entity; claimant is a partner, carries on no business other than in partnership and satisfies the non-partnership-interest and business-use conditions | [s 152-10(1B)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+
+For the turnover route, distinguish the previous year's actual aggregated turnover, a permitted current-year estimate made at the start of the year or business, and actual aggregated turnover established at year end. The estimate route is unavailable where business was carried on in both previous years and each year's aggregated turnover was at least $2 million. Failure of that estimate does not establish that the year-end actual route fails. Exactly $2 million fails a less-than test. Record the route and evidence for every relevant year. Winding-up rules can preserve business status in specified circumstances. [ss 328-110, 152-49](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO CGT small business entity eligibility](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/cgt-small-business-entity-eligibility).
+
+Annual turnover is ordinary income in the ordinary course of business, excluding GST and retail fuel sales under the specific rules. Exclude capital asset proceeds and borrowings; assess the actual receipt's character. Apply reasonable full-year estimation for a part-year business and arm's-length amounts for associate dealings. Aggregate the relevant annual turnovers of affiliates and connected entities, excluding specified dealings within the group and periods outside the connection. Do not substitute accounting sales or profit for the statutory calculation. [ss 328-115/120](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+Map direct, common and indirect control under s 328-125. The usual control threshold is at least 40% of relevant income/capital rights or company voting power, including relevant affiliate rights. A discretionary trust also has the directions/wishes test and the distribution test over the previous 4 income years. A Commissioner determination for a control percentage of at least 40% but less than 50% is conditional, never automatic. An affiliate can be an individual or company acting according to directions/wishes or in concert in its business affairs. Trusts, partnerships and super funds cannot themselves be affiliates. Relationship, directorship, trusteeship or partnership alone is insufficient. Consider the special spouse/child-under-18 rule for passively held assets, its 2-stage application and the related aggregation rules. [ss 328-125/130, 152-47/48/78](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO affiliates](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/small-business-affiliates).
+
+For MNAV, total supported market values of the statutory asset group less related liabilities and the specified provisions for annual leave, long service leave, unearned income and tax liabilities. Net value can be negative, zero or positive. Include non-business CGT assets unless a specific exclusion applies. Do not deduct every accounting provision. Do not double-count excluded connected-entity equity interests and underlying net assets; the equity exclusion does not exclude debt interests and specifically preserves related liabilities. Affiliate-only asset inclusion and the exception for an entity connected only through an affiliate require the actual business-use facts. [ss 152-15/20](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+For an individual, test the specific exclusions for assets used solely for personal use, qualifying residence value, super rights and life insurance. An interest-earning personal bank account is not solely personal-use property. Residential income use depends on the hypothetical interest-deductibility test, floor area and length of income use over ownership, not just the percentage used on sale day. Apportion the related residence liability consistently. A high MNAV result rules out this gateway; it does not rule out an independently proved turnover, passive-asset or partnership gateway. [s 152-20(2)-(4)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO MNAV](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/maximum-net-asset-value-test).
+
+### 3. Establish active use and additional ownership tests
+
+| Test | Requirement | Official source |
+|---|---|---|
+| Owned for 15 years or less | Active for at least half the statutory test period | [s 152-35](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Owned for more than 15 years | Active for at least 7.5 years during that test period | same |
+| End of test period | Earlier of event or business cessation where cessation is within the preceding 12 months, or a longer period allowed by the Commissioner | same |
+| Resident company/trust share or interest | Apply the 80% asset test, inherent-business cash/financial instruments, continuity and temporary-failure rules, then the modified conditions where required | [ss 152-40(3)-(4), 152-10(2)-(2B)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Significant individual | Small business participation percentage at least 20%, direct plus indirect | [ss 152-55/65/70/75](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| CGT concession stakeholder | Significant individual, or that person's spouse with a participation percentage above zero | [s 152-60](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Alternative ownership condition | Relevant stakeholders in the object company/trust together have at least 90% participation in the claimant just before the event | [s 152-10(2)(d)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+
+Measure active periods, which need not be continuous. An asset, tangible or intangible, can qualify through actual use or functional readiness in the relevant business. An intangible can alternatively qualify through inherent connection with that business; it need satisfy only one of those routes. Assess the whole asset's main use in the relevant periods. Financial instruments and assets mainly used to derive rent, interest, annuities, royalties or foreign exchange gains are generally excluded, subject to the statutory exceptions, including temporary rental use and qualifying improved intangibles. For rent, inspect the actual occupation rights, services and use. Business status alone does not defeat the rent exclusion. [s 152-40](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO active asset test](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/active-asset-test).
+
+Under s 152-40(4A), disregard specified personal use and treat use by an affiliate or connected entity as the owner's use. That is not a universal rental exemption: a connected user's subletting to an unrelated tenant can retain a rent character. Nor does a later unrelated lease automatically erase earlier qualifying active periods. Where relevant, verify the statutory continuation choices for relationship breakdown or involuntary disposals rather than replacing the actual ownership history. [ss 152-40(4A), 152-45/115](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+For company participation, use the smallest applicable voting, dividend and capital rights, considering all relevant classes, redeemable-share exclusions and the jointly held voting rule. Fixed-trust rights and discretionary-trust distributions have different tests. Under s 152-70, where only one distribution measure applies, use that measure; do not invent a zero capital percentage when no capital distribution occurred. A no-distribution year can use a qualifying prior distribution year where the tax-loss/no-net-income conditions hold. No distribution history, or undistributed net income without a tax loss, can instead produce zero. Separate this from the signed controller nomination under s 152-78, which is not an automatic significant-individual election. Multiply indirect percentages through each intermediate entity and add separate direct/indirect paths. [ss 152-65/70/75/78](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+Widely held company shares and specified listed/widely held trust interests are excluded from active-asset status unless the holder is a CGT concession stakeholder in the relevant entity under s 152-40(4)(b)/(c). The 80% ratio or alternative 90% ownership route does not remove that holder restriction; a company/trust cannot itself be an individual stakeholder. Refer or hold such a position unless the actual statutory exception is established.
+
+For shares or trust interests subject to s 152-10(2), also prove the claimant's business status just before the event unless the claimant meets MNAV. Apply the object entity's modified CGT small business/MNAV tests: the controlled-entity threshold is 20%, with the specified Commissioner determination disregarded and the statutory affiliate/controlled group included. Apply the modified active-asset look-through, weighting later-entity assets by participation, excluding the replaced equity interests and limiting qualifying later-entity assets by that entity's modified gateway and the claimant's participation/stakeholder conditions. Exclude cash or instruments injected with a purpose of passing the test. A current 80% ratio alone does not prove the required active period. [ss 152-10(2)-(2B)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO additional conditions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/additional-conditions-if-the-cgt-asset-is-a-share-or-trust-interest).
+
+### 4. Compare concessions in the correct order
+
+First test the 15-year exemption. For a qualifying individual, continuous ownership for at least 15 years and the age-55/retirement connection or permanent-incapacity condition are required. If the asset is a share/trust interest, the object entity must also have had a significant individual for at least 15 years in total during ownership. For a company/trust claimant, test its continuous ownership, at least 15 years in total with a significant individual and a significant individual just before the event meeting the age/retirement or incapacity condition. The significant individual need not be the same person for all 15 years. Test each separately acquired interest. Retirement is a factual connection, not an assumption from age or the concession's name. [ss 152-105/110/115](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+If the 15-year exemption applies, disregard that gain before using capital losses; preserve losses for other eligible gains or future years. Otherwise apply current-year capital losses, available prior-year capital losses in the required order, any eligible Division 115 discount and then the 50% active asset reduction. Companies do not receive the general discount. The active asset reduction applies where its conditions hold unless the claimant chooses out; it is distinct from the general discount. After that, choose a supported retirement exemption, rollover or their order for any remaining gain. Compare only legally available choices and disclose lifetime-limit, payment and extraction effects. Do not equate the resulting net capital gain with tax payable. [ss 102-5, 152-205/210/215/220](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO active asset reduction](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-50-percent-active-asset-reduction).
+
+A qualifying 15-year company/trust payment has its own stakeholder, time and amount limits under s 152-125, normally before the later of 2 years after the event and 6 months after the latest possible look-through earnout benefit, subject to an allowed extension. The exemption limit for each stakeholder is its statutory participation percentage multiplied by the exempt amount. For a company or the fixed-entitlement trust category, use the relevant small business participation percentage just before the event; for the discretionary-trust category, use 100 divided by the number of CGT concession stakeholders just before the event, expressed as a percentage. Other company/trust cash distributions do not become tax free merely because the entity reduced or rolled over a gain. Trust beneficiary gross-up/assessment and company distributions require their separate rules. Do not assign a flat 47% personal or 25% company tax saving without establishing the actual incremental assessment. [s 152-125](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO 15-year exemption](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-15-year-exemption).
+
+### 5. Make retirement choices and payments separately from a super cap election
+
+The retirement exemption has a $500,000 lifetime limit per individual, reduced by previous choices made by or for that individual, including applicable old-law amounts. Actual retirement is not required. Specify the CGT exempt amount in writing. A company/trust in a public-entity category listed in s 328-125(8) cannot make the retirement choice. For an eligible non-public company/trust, prove a significant individual and all s 152-325 conditions; allocate the exempt amount in writing amongst its stakeholders, with percentages totalling 100%. A percentage may be zero and need not match equity ownership. Track each person's remaining lifetime limit. [ss 152-305/315/320/325](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+| Situation | Required payment/contribution and timing | Official source |
+|---|---|---|
+| Individual under 55 just before choosing retirement exemption | Contribute the exempt amount to a complying super fund/RSA at the later of the choice and proceeds receipt; apply the instalment rules | [s 152-305(1)-(1B)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Individual J2/J5/J6 retirement choice | Required under-55 contribution when the choice is made | same |
+| Individual 55 or older just before choice | No compulsory Division 152 super contribution; a voluntary CGT cap contribution still has its own conditions | same |
+| Company/trust ordinary retirement payment | Pay the statutory amount by the later of 7 days after choice and 7 days after proceeds receipt; apply instalments successively up to the exempt amount | [s 152-325(1)-(6)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| Company/trust J2/J5/J6 retirement choice | Make the required payment within 7 days after the choice | same |
+| Stakeholder under 55 just before payment | Entity must contribute the required payment to the stakeholder's complying fund/RSA and notify the fund at that time under s 152-325(7) | [s 152-325(7)-(8)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+
+A gift or deemed market-value gain can qualify without actual cash proceeds, but the payment/contribution conditions still require evidence and funding. Entity payments use the statutory lesser-of limit and stakeholder allocations, not a free distribution of all proceeds. Qualifying payments have the specific non-assessable/non-exempt, non-deductible and company dividend/Division 7A treatment in ss 152-310/325. Do not extend that treatment to an unrelated payment. [ATO retirement exemption](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-retirement-exemption).
+
+A mandatory contribution under Division 152 is not automatically a contribution under the super CGT cap. Section 292-100 requires an eligible personal contribution satisfying the relevant 15-year or retirement category, its amount and time conditions, and an approved election made at or before contribution. Give the signed and dated NAT 71161 to the receiving fund at or before the contribution, not to the ATO. Retain delivery/acceptance evidence. A missing or late election cannot be treated as valid. The separate entity notice under s 152-325(7) does not replace this election. [s 292-100(1), (9)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO CGT cap election](https://www.ato.gov.au/forms-and-instructions/capital-gains-tax-cap-election).
+
+For an individual's qualifying 15-year contribution, the category concerns eligible capital proceeds; for an individual's retirement contribution, it concerns the disregarded gain. The s 292-100(2)/(7) outer deadline is the later of the day the relevant income tax return is required to be lodged and 30 days after receipt of the capital proceeds. That outer cap-category deadline does not extend a stricter required retirement contribution at choice/receipt. For qualifying entity payments, separately check s 292-100(4)/(8), including the payment's amount/time conditions and the individual's contribution within 30 days of payment where applicable. A direct required entity contribution must still meet its earlier s 152-325 deadline. A payment extension under s 152-125 does not itself extend the separate s 292-100(4) contribution-category conditions. The ATO 15-year page uses the day of actual lodgement in its contribution summary; the statutory required-lodgement date controls. Do not conflate either with the general CGT choice deadline in s 103-25, which refers to the day the return is lodged, or assume an extension. [ss 103-25, 292-100](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+| Super CGT cap measure | Amount/condition | Official source |
+|---|---|---|
+| Published index amount for 2026-27 | $1,935,000 | [ATO contributions caps, CGT cap amount](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps?anchor=CGTcapamount) |
+| Published index amount for 2025-26 | $1,865,000; historical comparison only, not proof of the law for another transaction | same |
+| Individual's available CGT cap | Reconcile previous qualifying contributions and annual index increases; use the contribution financial year, not automatically the sale year | [s 292-105](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+
+Fund acceptance, personal-contribution character, age restrictions and any non-concessional or bring-forward capacity require their own current evidence. The CGT cap is separate from the $500,000 retirement exemption lifetime limit. A failure of the CGT cap exclusion does not itself calculate excess-contributions tax or establish fund acceptance. Do not direct a taxpayer to contribute a residual amount without those checks.
+
+### 6. Record a rollover and monitor its conditions
+
+A claimant satisfying the applicable basic conditions can choose rollover for all or part of a gain before acquiring a replacement asset or incurring qualifying fourth-element improvement expenditure. The same claimant must acquire/incur it. Record the disregarded amount, relevant events, replacement asset period, expenditure and active/stakeholder conditions; do not report permanent exemption. [ss 152-410/415](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+The replacement asset period starts one year before the last CGT event in the income year for which rollover is obtained. It ends at the later of 2 years after that last event and, where relevant, 6 months after the latest possible look-through earnout benefit. Apply the specific s 104-190 modifications for recovered/misappropriated proceeds or an actual Commissioner extension. Several events in a year can change the period; do not calculate a separate assumed 2-year deadline from each sale. [s 104-190](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+| Event | Consequence under the checked provisions | Official source |
+|---|---|---|
+| J5 | At period end, no qualifying replacement/expenditure or failed required conditions can bring back the full deferred gain | [s 104-197](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| J6 | Qualifying assets/expenditure exist but qualifying first-element cost, incidental costs and fourth-element expenditure total less than the deferred gain; gain is the shortfall at period end | [s 104-198](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+| J2 | After period end a relevant change in replacement-asset use/status can bring back the deferred amount, adjusted for qualifying remaining assets and prior J2/J6 recaptures | [s 104-185](https://www.legislation.gov.au/C2004A05138/2026-10-01/text) |
+
+J2/J5/J6 gains cannot receive the 15-year exemption or active asset reduction; they do not receive the ordinary general discount. J5/J6 cannot receive a further small business rollover. A retirement exemption may remain available, with the basic-condition waiver for J5/J6 but all relevant retirement requirements still needed. J2 can potentially qualify for further rollover or retirement relief where the applicable conditions hold. A disposal of the replacement asset can also produce a separate A1 gain. Apply the law for the later event year and do not double-count earlier recaptures. [ss 152-10(4), 152-305(4), 115-25/40](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [ATO rollover](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-roll-over).
+
+## Boundary and exception table
+
+| Situation | Required treatment |
 |---|---|
-| Country | Australia |
-| Primary legislation | ITAA 1997 Division 152 (Subdivs 152-A to 152-E); s 292-100 (CGT cap contributions) |
-| Tax authority | Australian Taxation Office (ATO) |
-| Income year | 2026-27 (1 July 2026 -- 30 June 2027); lodgment season for 2025-26 |
-| Gateway tests (either) | CGT small business entity: aggregated turnover < $2m -- OR -- maximum net asset value (MNAV) <= $6m just before the CGT event |
-| Active asset test | Active for at least half the ownership period, or 7.5 years if owned > 15 years |
-| Significant individual | Small business participation percentage (SBPP) >= 20% (direct + indirect) |
-| CGT concession stakeholder | Significant individual, or their spouse with SBPP > 0% |
-| 15-year exemption | 15 years' continuous ownership + (55+ and in connection with retirement, or permanent incapacity) -- gain fully disregarded |
-| Retirement exemption | $500,000 lifetime limit per individual; under 55 must pay the amount into complying super/RSA |
-| Rollover replacement period | 1 year before to 2 years after the CGT event (extendable); exit via CGT events J2/J5/J6 |
-| CGT cap amount | **2026-27: $1,935,000; 2025-26: $1,865,000** (excluded from the NCC cap with a valid election) |
-| From 1 July 2027 | 50% reduction gateway becomes $10m aggregated turnover (law); general discount replaced by indexation + 30% minimum |
-| Contributor | Open Accountants |
-| Validated by | Pending |
-
-**Conservative defaults:**
-
-| Ambiguity | Default |
-|---|---|
-| Turnover unknown or near $2m | Do not assume the SBE gateway; compute MNAV; if both unproven, flag eligibility as unestablished |
-| Related entities not mapped | Assume connected/affiliated until control percentages (40%+) and "acts in concert" facts are verified |
-| Asset partly rented out | Assume main use is deriving rent (NOT active) until the affiliate/connected-entity carve-out or temporary-use facts are evidenced |
-| Discretionary trust, no distribution in event year | Assume no significant individual until prior-year distribution minutes are sighted (s 152-70 alternative rule) |
-| Prior retirement-exemption use unknown | Treat the remaining lifetime limit as unverified; require written records of every prior CGT exempt amount |
-| Taxpayer's age near 55 | Assume under 55 -- super payment required -- until DOB confirmed against the date the choice is made |
-| "In connection with retirement" unclear | Flag: requires at least a significant reduction in working hours/involvement, not necessarily permanent exit |
-| CGT event date near 30 June 2027 | Assume the post-reform regime may apply; escalate before any computation is relied on |
-| Contract vs settlement dates differ | CGT event A1 happens at CONTRACT date; test everything at that date |
-
-### Section 2 -- Eligibility decision tree
-
-| Step | Question | Yes | No |
-|---|---|---|---|
-| 1 | Pre-CGT asset (acquired before 20 Sep 1985)? | Escalate (R-AU-SBC-4) -- and note reform removes pre-CGT status from 1 July 2027 | Continue |
-| 2 | Gain from CGT event J5/J6 (failed earlier rollover)? | Skip to retirement exemption only (Rule 12) -- no discount, no AAR, no 15-year | Continue |
-| 3 | Gateway: CGT SBE (< $2m aggregated turnover), MNAV <= $6m, passively-held-asset rules, or partner rules satisfied? | Continue | STOP -- no Div 152; general discount only |
-| 4 | Active asset test met (Rule 5)? | Continue | STOP -- no Div 152 |
-| 5 | Asset is a share or trust interest? | Extra conditions (Rules 7-8): stakeholder/90% test + object entity test + modified active asset test. Fail any -> STOP | Continue |
-| 6 | 15-year exemption conditions met (Rule 9)? | Gain FULLY disregarded -- losses preserved, lifetime limits untouched; consider CGT cap contribution | Continue |
-| 7 | Waterfall | Capital losses -> general 50% discount (if eligible) -> 50% active asset reduction (automatic unless choose out) -> retirement exemption and/or rollover, in either order, to reduce the remainder (to nil if limits allow) | -- |
-
-### Section 3 -- Basic conditions (Subdiv 152-A)
-
-#### Rule 1 -- The gateway: s 152-10
-
-A capital gain (except from CGT events H2, J5, J6 for gateway purposes -- J5/J6 have their own path) may be reduced or disregarded if: (a) a CGT event happens to your asset; (b) the event would otherwise produce a gain; (c) you satisfy ONE of: CGT small business entity (< $2m aggregated turnover), the $6m MNAV test, the passively-held asset rules (s 152-10(1A)/(1B)), or the partner rules; and (d) the asset passes the active asset test. Shares/units carry extra conditions (Rules 7-8). Test everything at the time of the CGT event -- for a sale contract, the CONTRACT date. **CGT event D1** has a modified active asset test: the created right must be inherently connected with another CGT asset that meets the active asset test. Apply the remaining eligibility conditions. D1 does not qualify for the separate general CGT discount.
-
-#### Rule 2 -- CGT small business entity: aggregated turnover < $2 million
-
-"CGT small business entity" (s 152-10(1AA)) = would be a small business entity under s 328-110 if the $10m there read $2m. You must carry on a business in the event year and pass any one of: prior-year aggregated turnover < $2m; a reasonable current-year estimate < $2m (unavailable if actual turnover was $2m+ in BOTH of the two prior years); or actual current-year turnover < $2m. **Aggregated turnover** = your annual turnover + annual turnovers of entities **connected with you** (control >= 40%: shareholdings carrying >= 40% of voting/dividend/capital rights; for a discretionary trust, trustee acts on your directions or you received >= 40% of distributions in any of the 4 prior years) + turnovers of your **affiliates** (an individual or company that acts, or could reasonably be expected to act, on your directions or in concert with you -- spouses and children are NOT automatic affiliates), excluding inter-group dealings.
-
-#### Rule 3 -- Maximum net asset value test: $6 million (s 152-20)
-
-Just before the CGT event, the sum of the **net values** (market value minus attached liabilities minus provisions for annual leave, long service leave, unearned income and tax) of the CGT assets of you, entities connected with you, and your affiliates (and entities connected with your affiliates) must not exceed **$6,000,000**. It is a cliff, not a phase-out, and it is NOT indexed. Count affiliate-side assets only if used (or held ready for use) in a business carried on by you or an entity connected with you.
-
-**Excluded assets** (individuals): your own **main residence** to the extent of private use -- if part is used to produce assessable income with deductible interest, include only that percentage of the dwelling's net value; **superannuation** and approved-deposit-fund rights; life insurance policies; assets used solely for personal use and enjoyment by you or your affiliate (boats, holiday homes never rented). Also disregard shares/interests in your own connected entities to avoid double counting (their underlying assets already count).
-
-#### Rule 4 -- Passively-held assets and partners
-
-You can access Div 152 without carrying on a business where your asset is used in the business of your **affiliate or an entity connected with you**, and that business entity is the CGT small business entity (s 152-10(1A)/(1B)) -- the classic case: individual owns the premises, their trading company runs the business. A spouse or child under 18 is deemed an affiliate where their entity uses your asset (s 152-47). Partners: an interest in a partnership asset, or a partner's own asset used in the partnership business, qualifies where the partnership is the CGT SBE.
-
-### Section 4 -- Active asset test (s 152-35, s 152-40)
-
-#### Rule 5 -- The period test
-
-The asset must be active for at least **half of the ownership period** (acquisition to CGT event, or to business cessation if the event happens within 12 months after cessation), or for at least **7.5 years** if owned for more than 15 years. The active periods do NOT need to be continuous. An asset is active if you, your affiliate, or an entity connected with you uses it (or holds it ready for use) in carrying on a business -- or, for intangibles (goodwill, licences), it is inherently connected with the business. Look at the asset as a whole, not just the portion used.
-
-#### Rule 6 -- Excluded assets and the rent nuance
-
-**Generally excluded:** assets whose main use is to derive rent, interest, an annuity, royalties or foreign exchange gains; financial instruments (loans, debentures, futures); shares and trust interests (unless the 80% test below is met); subdivided vacant land held passively. The passive-income exclusion has an exception for an intangible asset whose market value has substantially increased through the owner's improvement or development. A substantially developed business trademark can therefore qualify despite royalty income, subject to the remaining active asset and eligibility conditions. Apply the rental qualifications below separately.
-
-**The rent carve-out that saves most premises:** in working out "main use", **disregard rent derived from your affiliate or a connected entity that uses the asset in its business** (s 152-40(4A)) -- premises leased to your own trading company or trust ARE active. Rent from unrelated tenants counts against you: a building mainly let to third parties fails even if the business occupies part. Temporary rental use is also disregarded. Short-stay accommodation with substantial services and no exclusive possession (motel-style) may not be "rent" at all -- degree-of-control analysis (TD 2006/78); flag, don't assume.
-
-**The 80% test for shares/units as active assets:** a share in an Australian-resident company (or interest in a resident trust) is active where active assets plus inherently-connected cash and financial instruments are >= 80% of the market value of all its assets. Momentary or temporary dips below 80% are ignored.
-
-### Section 5 -- Shares and trust interests: extra conditions (s 152-10(2))
-
-#### Rule 7 -- Significant individual, stakeholder, 90% test
-
-- **Small business participation percentage (SBPP)** = direct + indirect. Direct, for a company: the **smallest** of the percentages of voting power, dividend entitlement, and capital entitlement (all share classes except redeemable; discretionary dividend rights can drive it to 0%). For a trust where entitlements are not fixed: the smaller of the income and capital distribution percentages actually made **during the event year**; if the trustee distributed nothing and the trust had no net income or a tax loss that year, use the most recent prior distribution year (s 152-70). Indirect = your direct percentage in the interposed entity x its total percentage in the target.
-- **Significant individual**: SBPP >= 20% in the company or trust.
-- **CGT concession stakeholder**: a significant individual, or the spouse of one with SBPP > 0%.
-- **The 90% test**: where the entity CLAIMING the concession is itself a company or trust, CGT concession stakeholders in the object company/trust must together hold an SBPP of at least **90% in the claimant entity**.
-
-#### Rule 8 -- The four extra conditions (gains from 8 February 2018)
-
-For a gain on shares or trust interests, ALL of:
-
-1. You either carried on a business just before the CGT event or you satisfy the MNAV test yourself;
-2. Just before the event, you are a CGT concession stakeholder in the object company/trust, OR the 90% test is met for the claimant entity;
-3. The object company/trust would itself be a CGT small business entity or satisfy the MNAV test, applying a **modified connected-entity rule** (deemed control at 20%+ when tracing what the object entity controls) so groups cannot be fragmented;
-4. The shares/units pass the **modified active asset test**: look through to the underlying assets; active assets + inherently-connected cash and financial instruments must be >= 80% of total market value, disregarding cash/instruments injected to pass the test, and ignoring temporary breaches.
-
-Gains made before 8 February 2018 faced fewer conditions -- historical only. These integrity rules kill many HoldCo sales: run them BEFORE the waterfall.
-
-### Section 6 -- The four concessions
-
-#### Rule 9 -- 15-year exemption (Subdiv 152-B) -- always first
-
-The ENTIRE gain is disregarded (no cap) if: basic conditions are met; you **continuously owned the asset for the 15 years** ending just before the CGT event; and you are **55 or older** at the event and it happens **in connection with your retirement** (a significant reduction in hours/involvement suffices; permanent exit not required), or you are **permanently incapacitated** (no age requirement). Company/trust claimants must additionally have had a significant individual for periods totalling at least 15 years of ownership (not necessarily the same person or continuous), and the individual who is a significant individual just before the event must satisfy the 55+/retirement or incapacity limb. Payments of the exempt amount by a company/trust to its CGT concession stakeholders **within 2 years** of the event (capped by each stakeholder's participation percentage) are not assessable and not dividends (s 152-125). If the 15-year exemption applies, capital losses are NOT consumed and the other concessions are irrelevant. Death: the LPR/beneficiary can claim within 2 years of death to the extent the deceased could have (55+ just before death; no retirement connection needed).
-
-#### Rule 10 -- 50% active asset reduction (Subdiv 152-C)
-
-Basic conditions only -- no extra tests. The remaining gain (after losses and the general discount) is reduced by 50%. It applies **automatically unless you choose for it not to apply**. Why skip it: a company or trust that skips the AAR can shelter a LARGER amount with the retirement exemption and pay it out tax-free to stakeholders -- the AAR-sheltered half otherwise sits in the company as untaxed profit that is an **unfranked dividend** (or CGT event G1/E4 issue) when extracted later. Companies never get the general discount; the AAR is their only 50%.
-
-#### Rule 11 -- Retirement exemption (Subdiv 152-D)
-
-Disregard a chosen "CGT exempt amount" up to a **$500,000 lifetime limit per individual** (per CGT concession stakeholder for company/trust claimants -- also $500,000 each, reduced by earlier use). No requirement to actually retire or stop working. Keep a written record of every amount chosen. **Individuals under 55 just before making the choice** (the choice is generally made when the return is lodged -- turning 55 before then removes the requirement) must contribute the exempt amount to a complying super fund or RSA by the later of making the choice and receiving the proceeds. For a gain from CGT event J2, J5 or J6 the contribution is made when the choice is made, and proceeds received in instalments, including under a look-through earnout right, are tested instalment by instalment up to the CGT exempt amount ([s 152-305(1)(c), (1A), (1B)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/152-305)).
-
-**Company/trust claimants** must record the exempt amount and, if there is more than one CGT concession stakeholder, each stakeholder's allocation percentage in writing under s 152-315(5). These percentages may include zero and must total 100%; they need not match participation percentages. Payments under s 152-325 follow those allocations, subject to each stakeholder's unused $500,000 lifetime limit and the remaining conditions. For eligible 20% and 80% stakeholders with sufficient unused limits, a $300,000 exempt amount can be allocated entirely to the 20% stakeholder. Keep this separate from Rule 9's participation-based 15-year-exemption payment limit. Pay within 7 days after the later of making the choice and receiving capital proceeds, or within 7 days after the choice for a gain from CGT event J2, J5 or J6, with instalments tested in succession ([s 152-325(2), (4)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/152-325)); if the stakeholder is under 55 just before the payment, the entity must pay it into super on their behalf. The payment is NANE income of the stakeholder, not a dividend. Gains from CGT events J5/J6 can use this exemption without re-meeting the basic conditions.
-
-#### Rule 12 -- Replacement asset rollover (Subdiv 152-E; CGT events J2/J5/J6)
-
-Defer all or part of the remaining gain by acquiring a **replacement active asset or making a 4th-element capital improvement** to an existing asset within the **replacement asset period: 1 year before to 2 years after** the CGT event (extendable by the Commissioner; extended automatically for look-through earnout rights). The same entity must choose and acquire. Replacement shares/units must pass the 80% test with a stakeholder connection maintained. Exit events:
-
-- **J5** -- no qualifying replacement (or it isn't active) at the end of the period: the whole rolled-over gain crystallises at that time.
-- **J6** -- replacement acquired but its cost (1st + 2nd element + improvement spend) is less than the rolled-over amount: the shortfall crystallises at the end of the period.
-- **J2** -- after the period, the replacement asset later changes status (sold, stops being active, becomes trading stock): the deferred gain revives then; a further rollover or the retirement exemption can be chosen.
-
-J5/J6 gains get NO general discount, NO 50% AAR and NO 15-year exemption -- only the retirement exemption (basic conditions not re-tested). Rolling over into nothing is therefore only a 2-year deferral, commonly used by 53-54 year-olds to reach 55 before a retirement-exemption choice (planning -- escalate, don't advise).
-
-### Section 7 -- Ordering and stacking
-
-#### Rule 13 -- The waterfall and the arithmetic
-
-For each gain, in order: **(0)** 15-year exemption -- if it applies, stop, the gain never enters the net-capital-gain calculation; **(1)** capital losses (current then carried forward; taxpayer chooses allocation for pre-1 July 2027 events); **(2)** general 50% discount (individuals/trusts, asset held > 12 months; NEVER companies; not J2/J5/J6 gains); **(3)** small business 50% active asset reduction (automatic unless choose out); **(4)** retirement exemption and/or rollover on the remainder, in either order, until nil.
-
-```
-Individual, active asset held > 12 months, no losses, gain G:
-  after discount              G x 50%        = 0.50G
-  after 50% AAR               0.50G x 50%    = 0.25G   (25% inclusion)
-  tax at 47% top marginal     0.25G x 47%    = 11.75% effective
-  retirement exemption/rollover on 0.25G     -> 0% if within limits
-Trust beneficiary gross-up: x2 if one halving applied, x4 if both.
-Company: no discount -- AAR alone leaves 0.50G; 25% rate -> 12.5% effective,
-  and the sheltered half is untaxed profit with an extraction cost later.
-```
-
-The concessions apply per-asset, per-gain: with several gains you may stack every concession you qualify for on each until each is nil.
-
-### Section 8 -- CGT cap super contributions (s 292-100; QC 18123)
-
-#### Rule 14 -- Getting sale proceeds into super outside the NCC cap
-
-Amounts sheltered by the **15-year exemption** (up to the whole **capital proceeds**, even though the gain was disregarded) and the **retirement exemption** (the CGT exempt amount, max $500,000) can be contributed to super and **excluded from the non-concessional contributions cap**, up to the lifetime **CGT cap amount**: **$1,935,000 for 2026-27** ($1,865,000 for 2025-26; indexed to AWOTE in $5,000 increments). Mechanics -- all three must hold, or the contribution counts as an ordinary NCC (2026-27 NCC cap: $130,000):
-
-1. **Form**: give the fund a **CGT cap election (NAT 71161) at or before the time the contribution is made** -- late is fatal;
-2. **Timing (individual)**: contribute by the later of the day the return for the event year is due to be lodged and 30 days after receiving the proceeds. The compulsory under-55 retirement-exemption payment automatically counts against the CGT cap;
-3. **Timing (via company/trust)**: the stakeholder contributes within 30 days after receiving the s 152-125 / s 152-325 payment.
-
-The CGT cap is a lifetime running total across both concessions. Contributions still count toward total super balance and transfer balance cap planning -- flag, don't advise.
-
-### Section 9 -- Interaction with the 1 July 2027 CGT reform
-
-#### Rule 15 -- What is law and what is only announced (as at 31 October 2026)
-
-| Item | Status |
-|---|---|
-| *Treasury Laws Amendment (Tax Reform No. 1) Act 2026* | **Law** -- Royal Assent 26 June 2026 |
-| General 50% discount replaced by cost-base indexation + 30% minimum tax rate on gains accruing from 1 July 2027 (individuals and trusts, incl. gains through partnerships); discount retained for new residential dwellings and affordable housing | **Law** -- applies from 1 July 2027 |
-| Deemed disposal/re-acquisition of assets held 30 June 2027; later disposals split into pre/post components across four asset categories | **Law** -- from 1 July 2027 |
-| Pre-CGT (pre-20 Sep 1985) status removed after 30 June 2027 | **Law** |
-| Capital losses must reduce gains in a fixed category order: deferred non-residential, deferred residential (both pre-1 July 2027 gains), then non-residential, then residential gains (s 102-5(1)); choice remains only within a category | **Law** -- from 2027-28 |
-| **Small business 50% active asset reduction gateway: aggregated turnover $2m -> $10m** | **Law** -- enacted in the Act (added by government amendments during passage): the $2m CGT small business entity limit is disregarded for the 50% reduction (ss 152-10(1AA) note 2, 152-200, 152-205(2)), for assessments for 2027-28 onward, and **ONLY for the 50% reduction**. The 15-year exemption, retirement exemption and rollover keep the $2m turnover / $6m MNAV gateways |
-| 50% discount for early-stage investors/founders (start-up carve-out) | **Announced only** -- Treasury consultation; not law |
-| 30% minimum tax on discretionary trusts, income years starting on or after 1 July 2028 (Tax Reform No. 3 Bill Sch 1) | **Bill, not law** -- Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. [APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554) |
-| Restructure roll-over for minimum tax trusts, transfers from 1 July 2027 to 30 June 2030 (Sch 2); one-off excluded election trust election in the 2028-29 income year, for a trust existing on 1 July 2028, as an alternative to the roll-over (Sch 3) | **Bill, not law** -- same status |
-| Deferred pre-July 2027 gains and the 15-year exemption: s 152-105 and s 152-110 would be deferral exemptions, with the conditions tested at the deferral realisation event (Sch 4, s 112-152(2)). Other CGT adjustments: see `au-capital-gains.md` Section 9 | **Bill, not law** -- same status. [Explanatory Memorandum, ch 4](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) |
-
-Practical consequences: CGT events **up to 30 June 2027** use everything in this skill unchanged. From 1 July 2027, Div 152 itself survives -- the AAR still halves the gain -- but the base it halves is an indexed gain, the 30% minimum rate applies underneath, and a $2m-$10m turnover business gains AAR access (but still needs the $6m MNAV or another gateway for the other three concessions). How the minimum rate, indexation, deemed re-acquisition and the Div 152 waterfall interleave in detail awaits ATO guidance -- **any disposal, rollover tail (J2/J5/J6) or contribution-timing question straddling 1 July 2027 escalates (R-AU-SBC-5)**. Never advise accelerating or deferring a sale around the date.
-
-### Section 12 -- Excel working paper template
-
-```
-AUSTRALIA DIV 152 -- SBCGT ELIGIBILITY AND WATERFALL
-Taxpayer: [name/entity]   CGT event + date (CONTRACT date): [____]
-Income year: 2026-27      Prepared: [date]
-
-GATEWAY
-  Aggregated turnover (self + connected + affiliates): AUD [____]  < $2m? [Y/N]
-  Connected entities (>= 40% control) mapped:          [list]
-  Affiliates (acts in concert) mapped:                 [list]
-  MNAV just before event (per schedule):               AUD [____]  <= $6m? [Y/N]
-    - main residence % included / super excluded / personal-use excluded? [Y/N]
-  Passively-held asset rules relied on?                [Y/N -- business entity: ____]
-
-ACTIVE ASSET TEST
-  Ownership period: [____] yrs   Active periods: [____] yrs
-  Test: >= half, or >= 7.5 yrs if owned > 15 yrs:      [PASS/FAIL]
-  Rent component? Carve-out (affiliate/connected user) evidenced? [____]
-
-SHARES/UNITS ONLY (s 152-10(2))
-  Claimant carried on business OR own MNAV pass:       [____]
-  Stakeholder status / 90% test (SBPP workings):       [____]
-  Object entity CGT SBE or MNAV (modified rule):       [____]
-  Modified active asset test: [active+cash] / [total] = [____]% >= 80%? [Y/N]
-
-WATERFALL (per gain)
-  Gross gain:                       AUD [____]
-  15-year exemption? (15 yrs + 55+/retirement or incapacity) [Y/N -> if Y, STOP]
-  less capital losses:              AUD [____]
-  less general 50% discount:        AUD [____]   (individual/trust only; > 12 mths)
-  less 50% AAR (unless choose-out): AUD [____]   (choose-out reason: ____)
-  less retirement exemption:        AUD [____]   (lifetime register below)
-  less rollover:                    AUD [____]   (replacement period ends: ____)
-  NET CAPITAL GAIN:                 AUD [____]
-
-REGISTERS
-  Retirement exemption lifetime ($500,000): prior use AUD [____] + this AUD [____]
-  Under 55 at choice? Super payment made + date:        [____]
-  CGT cap (2026-27 $1,935,000): prior use AUD [____] + this AUD [____]
-  NAT 71161 given at/before contribution?               [Y/N + date]
-  Company/trust: stakeholder payment within 7 days (152-D) / 2 yrs (152-B)? [____]
-
-REVIEWER FLAGS
-  [R-AU-SBC items triggered; post-1 July 2027 exposure]
-```
-
-
-#### Key figures
-
-| Item | Value |
-|---|---|
-| Gateways | < $2m aggregated turnover (CGT SBE) OR <= $6m MNAV (not indexed) |
-| Active asset period | >= half of ownership, or >= 7.5 years if owned > 15 years |
-| Significant individual / stakeholder | SBPP >= 20% / significant individual or spouse with > 0% |
-| 90% test / modified active asset test | 90% SBPP in claimant entity / 80% underlying-asset threshold |
-| Retirement exemption | $500,000 lifetime per individual; under-55 super payment compulsory |
-| Rollover window | 1 year before to 2 years after event; J5/J6 at period end; J2 later |
-| CGT cap | 2026-27: $1,935,000; 2025-26: $1,865,000 (NCC caps: $130,000 / $120,000) |
-| Company/trust payment windows | Retirement: 7 days after later of choice/proceeds; 15-year: 2 years |
-| From 1 July 2027 | AAR turnover gateway $10m (law); indexation + 30% minimum replaces discount |
+| Unknown turnover or group map | Leave eligibility unresolved, reconstruct records and test alternate gateways only with evidence. |
+| MNAV above $6 million | This gateway fails. Independently test the other statutory gateways and all additional conditions. |
+| Mixed rent/business use or connected user's sublease | Establish main use during each relevant period; a family or company relationship alone does not establish activity. |
+| No discretionary trust distribution | Check tax loss/net income and the last actual distribution year; do not assume either zero participation or a valid controller nomination. |
+| Earnout, non-arm's-length dealing or no cash proceeds | Establish event/proceeds/substitution rules, relevant payment funding and extended statutory periods. Obtain specialist review for unresolved rights or valuation. |
+| Foreign/temporary residence, pre-CGT interest or 2027 reform boundary | Route to the relevant CGT/residence guide; hold affected calculations until operative sources and application are established. |
+| Death or permanent incapacity | Check s 152-80/152-420 and the actual qualifying facts. The estate rule can modify retirement/age/super conditions, normally within 2 years of death, with any longer period requiring an actual extension. |
+| Relationship breakdown or compulsory acquisition | Verify the particular rollover and continuity choice under ss 152-45/115. A transfer does not automatically supply 15 years' ownership. |
+| Late election, missing payment or exhausted lifetime limit | Do not claim satisfaction; report the specific failed condition and obtain advice on any available remedy. |
 
 ## Worked cases
 
-### Section 10 -- Worked examples
+All cases are hypothetical AUD workpapers, not factual defaults or whole-return tax assessments. Eligibility, values and source conditions are stipulated only within each case. Cases using 2026-27 future dates are illustrations under the checked provisions, subject to rechecking operative law when those dates occur. The blocks recompute arithmetic; they cannot prove eligibility, an election, fund acceptance or professional approval.
 
-All examples assume CGT events in 2026-27 (before 1 July 2027), Australian residents, and no capital losses unless stated.
+### Case 1: Net assets and an alternate gateway
 
-#### Example 1 -- Gateways: turnover fails, MNAV passes (and a fail variant)
+Nadia, an Australian resident, contracts to sell an active business property on 30 November 2026 after 8 years. All amounts are stipulated net statutory values, after the required group and liability adjustments: premises $1.9 million, connected company underlying net assets $1.75 million and an unconnected investment portfolio $600,000. Her residence has market value $1.2 million and related debt $600,000. The hypothetical interest test is met for 50% of its area during 5 of 10 ownership years and zero for the other 5, including the current year. The supported area/time fraction is 25%, giving residence net inclusion $150,000 and MNAV $4.4 million. If only the portfolio instead becomes $2.5 million, MNAV is $6.3 million. That fails MNAV; it does not prove that all gateways fail. In a separate variant, substantiated year-end aggregated turnover of $1.9 million and current business status establish the turnover gateway, with the active-asset and other conditions still required. A $3.4 million prior-year amount and $3.1 million estimate alone would not establish the eventual actual turnover. [ss 152-10/15/20, 328-110](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
 
-Nadia (58) contracts on 30 November 2026 to sell her sole-trader business premises, owned 8 years and used in her business throughout. Aggregated turnover (including her 100%-owned company) was $3.4m in 2025-26 and is estimated at $3.1m for 2026-27 -- **CGT SBE gateway fails**. MNAV just before the event:
-
-```
-Business premises ($2,600,000 MV - $700,000 mortgage)        $1,900,000
-Trading company (connected, 100%): net CGT assets            $1,750,000
-Share portfolio                                                $600,000
-Main residence: 10% deductible-interest office use
-  10% x ($2,400,000 - $900,000)                                $150,000
-Super balance $1,900,000                                       excluded
-Boat (solely personal use)                                     excluded
-Total net asset value                                        $4,400,000  <= $6,000,000  PASS
-```
-
-Basic conditions met via MNAV. **Variant:** if the portfolio were $2,500,000, the total is $6,300,000 -- MNAV fails by $300,000, both gateways fail, and only the general 50% discount applies. There is no shading: $6,000,001 is out.
-
-#### Example 2 -- Stacking to zero
-
-Continuing Example 1: gain $900,000; premises active 8 of 8 years (>= half) -- active asset test passed. Not owned 15 years, so no 15-year exemption.
-
-```
-Capital gain                                    $900,000
-less general 50% discount (held > 12 months)   -$450,000  -> $450,000
-less 50% active asset reduction                -$225,000  -> $225,000
-less retirement exemption (elects $225,000)    -$225,000  -> NET GAIN NIL
-```
-
-Nadia is 58 -- 55+ just before making the choice, so NO super payment is required. Lifetime retirement-exemption tally: $225,000 used, $275,000 remains. She may still voluntarily contribute the $225,000 to super under the CGT cap (Rule 14). Without the retirement exemption her tax would have been $225,000 x 47% = **$105,750** (11.75% effective on the gross gain); with it, **nil**.
-
-#### Example 3 -- Retirement exemption under 55: super is compulsory
-
-Marco (48) sells an active asset in March 2027: gain $600,000, held 4 years, basic conditions met.
-
-```
-Gain $600,000 -> discount -> $300,000 -> 50% AAR -> $150,000
-Retirement exemption elected: $150,000 -> net gain NIL
+```oa-check
+name: MNAV historical residence use and alternate turnover gateway
+inputs:
+  premises_net: 1900000
+  connected_net: 1750000
+  portfolio: 600000
+  home_value: 1200000
+  home_debt: 600000
+  income_area: 0.5
+  income_years: 5
+  ownership_years: 10
+  alternative_portfolio: 2500000
+  mnav_limit: 6000000
+  alternative_turnover: 1900000
+  turnover_limit: 2000000
+steps:
+  home_fraction: income_area * income_years / ownership_years
+  home_net_included: (home_value - home_debt) * home_fraction
+  mnav: premises_net + connected_net + portfolio + home_net_included
+  mnav_headroom: mnav_limit - mnav
+  alternative_mnav: mnav - portfolio + alternative_portfolio
+  mnav_excess: alternative_mnav - mnav_limit
+  turnover_headroom: turnover_limit - alternative_turnover
+expected:
+  home_fraction: 0.25
+  home_net_included: 150000
+  mnav: 4400000
+  mnav_headroom: 1600000
+  alternative_mnav: 6300000
+  mnav_excess: 300000
+  turnover_headroom: 100000
 ```
 
-Because Marco is **under 55 just before making the choice**, he MUST pay $150,000 into a complying super fund/RSA by the later of making the choice and receiving the proceeds -- with a **CGT cap election (NAT 71161) given to the fund at or before the contribution**. The $150,000 is excluded from his $130,000 (2026-27) NCC cap and uses $150,000 of his $1,935,000 lifetime CGT cap. Lifetime retirement limit remaining: $350,000. (A 53-54 year-old wanting the cash instead could roll over for up to 2 years and choose the retirement exemption after turning 55 -- planning; escalate.)
+### Case 2: Losses before discount and a real concession choice
 
-#### Example 4 -- Share sale with the stakeholder tests
+A resident individual aged 58 has an eligible gain of $900,000 on an asset held for 8 years, current capital losses $100,000 and supported available prior capital losses $80,000. The 15-year exemption is unavailable. All Division 152 and discount predicates are stipulated. Earlier retirement exemption choices total $90,000. Losses leave $720,000, the 50% discount leaves $360,000 and the active asset reduction leaves $180,000. A valid written retirement exemption for $180,000 leaves nil from this gain and $230,000 lifetime retirement capacity. If the individual instead chooses out of the active asset reduction, fully exempting $360,000 leaves $50,000 lifetime capacity. Both routes require their conditions; the additional lifetime consumption is $180,000. There is no compulsory Division 152 super contribution at age 58. No flat-rate tax saving or automatic preference is inferred. [ss 102-5, 152-205/220/305/320](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
 
-Priya has owned 40% of OpCo Pty Ltd (one ordinary class, equal rights) for 9 years; unrelated Kai owns 60%. She sells her parcel in October 2026 for a $700,000 gain. Extra conditions (Rule 8):
+```oa-check
+name: Capital losses and discount precede active asset and retirement choices
+inputs:
+  gain: 900000
+  current_losses: 100000
+  prior_losses: 80000
+  prior_retirement: 90000
+  lifetime_limit: 500000
+steps:
+  after_losses: gain - current_losses - prior_losses
+  after_discount: after_losses * 0.5
+  after_active_reduction: after_discount * 0.5
+  retirement_choice: after_active_reduction
+  net_capital_gain: after_active_reduction - retirement_choice
+  retirement_remaining: lifetime_limit - prior_retirement - retirement_choice
+  no_reduction_choice: after_discount
+  no_reduction_remaining: lifetime_limit - prior_retirement - no_reduction_choice
+  extra_lifetime_used: no_reduction_choice - retirement_choice
+expected:
+  after_losses: 720000
+  after_discount: 360000
+  after_active_reduction: 180000
+  retirement_choice: 180000
+  net_capital_gain: 0
+  retirement_remaining: 230000
+  no_reduction_choice: 360000
+  no_reduction_remaining: 50000
+  extra_lifetime_used: 180000
+```
 
-1. Priya carries on no business -- she must pass MNAV herself. Her 40% >= 40% makes her **connected** with OpCo, so OpCo's net assets count: total $4.2m <= $6m. PASS.
-2. Direct SBPP = smallest of voting/dividend/capital = 40% >= 20% -- **significant individual**, hence CGT concession stakeholder. PASS (90% test not needed for an individual claimant who is a stakeholder).
-3. OpCo is a CGT SBE (aggregated turnover $1.6m), applying the modified connected-entity rule. PASS.
-4. Modified active asset test: OpCo assets at market value $2.0m; active assets $1,550,000 + inherently-connected cash and receivables $250,000 = $1,800,000; $1,800,000 / $2,000,000 = **90% >= 80%**. PASS.
+### Case 3: Under 55 contribution with and without a valid cap election
 
-Waterfall: $700,000 -> discount -> $350,000 -> AAR -> $175,000 -> retirement exemption/rollover available. **Fail variants:** if Priya held non-voting shares with discretionary dividends, her smallest percentage could be 0% -- not a significant individual, concessions denied. If a HoldCo she owns 100% held the 40% instead and sold, Priya's indirect SBPP in OpCo = 100% x 40% = 40% (stakeholder), and stakeholders of OpCo hold 100% >= 90% of HoldCo -- the **90% test** rescues the HoldCo sale.
+Marco is 48 immediately before making a retirement exemption choice in 2026-27. His eligible $600,000 gain is on a qualifying long-held asset; no losses apply and the general discount and active asset reduction are available. The remaining $150,000 is validly chosen for the retirement exemption and must be contributed at the later of choice and proceeds receipt. All dates in this illustration fall in 2026-27. Previous qualifying cap usage, after the required annual reconciliation, leaves $1,735,000 available before this contribution; no prior retirement exemption has been used. With an eligible contribution and timely signed NAT 71161, $150,000 uses the CGT cap and leaves $1,585,000. In the alternative of a missing/late election, the compulsory contribution alone does not establish a CGT cap exclusion: excluded amount is zero and $150,000 needs assessment under the non-concessional rules. That does not calculate excess-contributions tax. An October 2027 choice/contribution instead requires the 2027-28 cap and period law, not this sale-year cap. [ss 152-305, 292-100/105](https://www.legislation.gov.au/C2004A05138/2026-10-01/text); [NAT 71161](https://www.ato.gov.au/forms-and-instructions/capital-gains-tax-cap-election).
 
-#### Example 5 -- 15-year exemption plus CGT cap contribution
+```oa-check
+name: Mandatory retirement contribution does not establish CGT cap election
+inputs:
+  gain: 600000
+  index_amount: 1935000
+  reconciled_prior_usage: 200000
+  retirement_limit: 500000
+steps:
+  after_discount: gain * 0.5
+  retirement_amount: after_discount * 0.5
+  mandatory_contribution: retirement_amount
+  available_cap: index_amount - reconciled_prior_usage
+  remaining_cap_with_election: available_cap - mandatory_contribution
+  retirement_remaining: retirement_limit - retirement_amount
+  excluded_without_election: mandatory_contribution * 0
+  ncc_without_election: mandatory_contribution - excluded_without_election
+expected:
+  after_discount: 300000
+  retirement_amount: 150000
+  mandatory_contribution: 150000
+  available_cap: 1735000
+  remaining_cap_with_election: 1585000
+  retirement_remaining: 350000
+  excluded_without_election: 0
+  ncc_without_election: 150000
+```
 
-Colin (62) contracts in September 2026 to sell farmland owned 22 years, used in his primary production business for 16 of those years (>= 7.5-year test), turnover $850,000, retiring to part-time consulting (significant reduction -- "in connection with retirement"). Gain $1,100,000; proceeds $2,100,000.
+### Case 4: Shares and an income-only trust participation measure
 
-The gain is **fully disregarded** under the 15-year exemption -- no discount, no losses consumed, retirement lifetime limit untouched. Colin may contribute up to the **capital proceeds** to super under the CGT cap: maximum exclusion **$1,935,000** (2026-27 cap; the remaining $165,000 of proceeds would be an ordinary NCC against his $130,000 cap -- flag bring-forward analysis). Deadline: later of his 2026-27 lodgment due date and 30 days after receiving proceeds; NAT 71161 at or before each contribution.
+Priya, a resident individual aged 58, owns 40% of one non-redeemable equal-rights share class for 5 years. Voting, dividend and capital rights are all 40%. Her MNAV is supported at $4.2 million. The object company and its modified statutory group have $1.6 million aggregated turnover. Its $2 million asset pool comprises $1.55 million active assets, $250,000 inherently connected business cash and $200,000 other assets; no later entities or purpose-injected assets exist. The supported 90% ratio and use history satisfy the applicable active period. A $700,000 share gain with no losses becomes $350,000 after discount and $175,000 after active asset reduction. With all retirement conditions and no prior usage, a $175,000 choice leaves nil and $325,000 lifetime capacity. In a separate discretionary-trust example, a beneficiary receives $200,000 of the year's $1 million income distribution and there is no capital distribution. The applicable income measure is 20%, not an invented zero capital measure; other stakeholder conditions still require proof. [ss 152-10(2), 152-40/55/70](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
 
-#### Example 6 -- Rollover with no replacement: CGT event J5
+```oa-check
+name: Share asset ratio and applicable discretionary trust participation
+inputs:
+  active_assets: 1550000
+  business_cash: 250000
+  total_assets: 2000000
+  share_gain: 700000
+  retirement_limit: 500000
+  beneficiary_income: 200000
+  distributed_income: 1000000
+steps:
+  qualifying_assets: active_assets + business_cash
+  active_ratio: qualifying_assets / total_assets
+  after_discount: share_gain * 0.5
+  retirement_amount: after_discount * 0.5
+  net_capital_gain: retirement_amount - retirement_amount
+  retirement_remaining: retirement_limit - retirement_amount
+  trust_participation: beneficiary_income / distributed_income
+expected:
+  qualifying_assets: 1800000
+  active_ratio: 0.9
+  after_discount: 350000
+  retirement_amount: 175000
+  net_capital_gain: 0
+  retirement_remaining: 325000
+  trust_participation: 0.2
+```
 
-A trading trust rolls over a $180,000 remainder (after discount and AAR) from a March 2027 disposal. Replacement asset period: March 2026 to March 2029. By March 2029 it has acquired nothing. **CGT event J5** happens at the end of the period: a $180,000 capital gain arises in 2028-29 -- no discount, no AAR, no 15-year exemption. The trust may choose the **retirement exemption** without re-meeting the basic conditions, but must have a CGT concession stakeholder to pay (Rule 11). NOTE: this J5 gain arises AFTER 1 July 2027 -- how the reform's indexation/minimum-rate rules treat J-event gains from pre-reform rollovers is not yet settled in ATO guidance. Escalate (R-AU-SBC-5).
+### Case 5: 15-year priority preserves losses and has a different super amount
+
+Colin, a resident individual aged 62, sells his continuously owned 22-year business asset in connection with evidenced retirement. It was active for 16 years; all basic and 15-year conditions are stipulated. Capital proceeds are $2.1 million and the gain is $1.1 million. The whole gain is disregarded first, preserving $50,000 available capital losses and leaving the $500,000 retirement exemption lifetime limit unused. A proposed eligible 2026-27 personal contribution of $1,935,000 fits his fully available CGT cap, subject to all s 292-100 conditions, fund acceptance and timely election. The $165,000 remaining proceeds are not a direction to make another super contribution; their possible treatment requires separate evidence. The 15-year contribution category can concern proceeds, not merely the disregarded gain. [ss 152-105/215/330/430, 292-100(2)/105](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+```oa-check
+name: 15-year exemption precedes losses and contribution can use proceeds
+inputs:
+  proceeds: 2100000
+  gain: 1100000
+  available_losses: 50000
+  proposed_contribution: 1935000
+  available_cgt_cap: 1935000
+  retirement_limit: 500000
+steps:
+  disregarded_gain: gain
+  included_gain: gain - disregarded_gain
+  losses_preserved: available_losses
+  cap_after_proposal: available_cgt_cap - proposed_contribution
+  remaining_proceeds: proceeds - proposed_contribution
+  contribution_above_gain: proposed_contribution - gain
+  retirement_capacity_preserved: retirement_limit
+expected:
+  disregarded_gain: 1100000
+  included_gain: 0
+  losses_preserved: 50000
+  cap_after_proposal: 0
+  remaining_proceeds: 165000
+  contribution_above_gain: 835000
+  retirement_capacity_preserved: 500000
+```
+
+### Case 6: Replacement period and alternative recapture arithmetic
+
+For planning only, assume qualifying rollover events on 15 March and 15 June 2027 in the same income year, with no earnout or extension. Under the checked s 104-190 rule, the common period starts 15 June 2026 and ends 15 June 2029, not 15 March 2029. A stipulated deferred amount is $180,000. At period end, a qualifying replacement has first-element cost $90,000, eligible acquisition incidental costs $10,000 and qualifying fourth-element expenditure $20,000. The current-law J6 mechanism would return a $60,000 shortfall and leave $120,000 deferred. In the alternative of no qualifying replacement, J5 would return $180,000; do not add both alternatives. If the sole qualifying asset later changes status after that $60,000 J6 recapture, the corresponding full J2 recapture would be $120,000, not $180,000 again. No future-year taxable gain, retirement relief, rollover eligibility or tax assessment is concluded: recheck operative law at the period end/later event and apply its conditions. [ss 104-185/190/197/198](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+```oa-check
+name: Rollover expenditure shortfall and no duplicate recapture
+inputs:
+  deferred_gain: 180000
+  first_element: 90000
+  incidental_costs: 10000
+  fourth_element: 20000
+steps:
+  qualifying_expenditure: first_element + incidental_costs + fourth_element
+  j6_mechanism: deferred_gain - qualifying_expenditure
+  remaining_deferred: deferred_gain - j6_mechanism
+  alternative_j5_mechanism: deferred_gain
+  later_full_j2_mechanism: deferred_gain - j6_mechanism
+  total_j6_then_j2: j6_mechanism + later_full_j2_mechanism
+expected:
+  qualifying_expenditure: 120000
+  j6_mechanism: 60000
+  remaining_deferred: 120000
+  alternative_j5_mechanism: 180000
+  later_full_j2_mechanism: 120000
+  total_j6_then_j2: 180000
+```
+
+### Case 7: Company allocation and the age at payment
+
+A private company has an eligible $800,000 gain and no capital losses. It has no general CGT discount and the 15-year exemption is unavailable. After its active asset reduction, it validly chooses $400,000 retirement exemption, allocated in writing 75% to stakeholder A and 25% to stakeholder B, with all other conditions established. Prior lifetime choices were $50,000 for A and $120,000 for B. Proceeds were received on 10 December 2026 and the company chooses on 15 December: the ordinary statutory payment deadline is 22 December. Immediately before payment A is exactly 55 and B is 54. Required payments are $300,000 and $100,000; only B's payment must be contributed directly to super under s 152-325(7). Its fund notice and any CGT cap election remain separate requirements. Retirement limits remaining are $150,000 and $280,000. Choosing out of the reduction and allocating an $800,000 retirement amount in the same percentages would allocate $600,000 to A, exceeding A's $450,000 remaining limit by $150,000, so that proposed full choice cannot be made on these facts. [ss 152-205/220/305/315/320/325](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+```oa-check
+name: Company retirement allocation lifetime limits and mandatory super
+inputs:
+  gain: 800000
+  allocation_a: 0.75
+  allocation_b: 0.25
+  prior_a: 50000
+  prior_b: 120000
+  lifetime_limit: 500000
+steps:
+  retirement_choice: gain * 0.5
+  payment_a: retirement_choice * allocation_a
+  payment_b: retirement_choice * allocation_b
+  required_super: payment_b
+  remaining_a: lifetime_limit - prior_a - payment_a
+  remaining_b: lifetime_limit - prior_b - payment_b
+  no_reduction_a: gain * allocation_a
+  no_reduction_a_excess: no_reduction_a - (lifetime_limit - prior_a)
+expected:
+  retirement_choice: 400000
+  payment_a: 300000
+  payment_b: 100000
+  required_super: 100000
+  remaining_a: 150000
+  remaining_b: 280000
+  no_reduction_a: 600000
+  no_reduction_a_excess: 150000
+```
+
+### Case 8: Active duration and the exact asset-ratio boundary
+
+Assume the statutory test periods equal the stipulated ownership durations, with no cessation or continuity modification. A property owned for 10 years was active in the owner's business for 4 years and then used solely for unrelated long-term rent for 6 years. It is short of the required 5 active years by one year. This conclusion follows the active-period test, not a rule that rent in a majority of ownership years always decides every asset. A separate 20-year asset active for 8 years exceeds the 7.5-year requirement by half a year. For a separate resident company with verified asset classifications and all relevant modified tests addressed, $1.6 million qualifying assets of $2 million meets the 80% point-in-time boundary exactly; $1,599,999 is one dollar short. The ratio alone does not prove historical active periods or other eligibility. [ss 152-35/40, 152-10(2)](https://www.legislation.gov.au/C2004A05138/2026-10-01/text).
+
+```oa-check
+name: Active duration and inclusive 80-percent boundary
+inputs:
+  short_ownership: 10
+  short_active: 4
+  long_active: 8
+  long_required: 7.5
+  total_assets: 2000000
+  qualifying_at_boundary: 1600000
+  qualifying_below: 1599999
+steps:
+  short_required: short_ownership * 0.5
+  shortfall_years: short_required - short_active
+  long_excess_years: long_active - long_required
+  required_qualifying_assets: total_assets * 0.8
+  boundary_ratio: qualifying_at_boundary / total_assets
+  below_shortfall: required_qualifying_assets - qualifying_below
+expected:
+  short_required: 5
+  shortfall_years: 1
+  long_excess_years: 0.5
+  required_qualifying_assets: 1600000
+  boundary_ratio: 0.8
+  below_shortfall: 1
+```
 
 ## When to refuse or refer
 
-### Section 11 -- Refusal catalogue
+| Code | Trigger | Required action and verbatim output |
+|---|---|---|
+| R-AU-SBC-1 | Gateway, control, valuation, active use, ownership rights, age or previous exemption usage is unresolved | Stop affected eligibility and dependent totals. List the missing evidence and questions for the reviewer; do not invent the higher-tax answer. Output: 'I cannot establish this concession from unsupported eligibility facts. The affected result is held for a qualified Australian reviewer pending the identified evidence.' |
+| R-AU-SBC-2 | Written choice, statutory payment, fund acceptance, notice or cap election is missing, late or disputed | Hold the affected relief/cap exclusion and dependent filing output. Identify each deadline and obtain specialist advice on any available remedy. Output: 'I cannot treat the relief or CGT cap election as effective without evidence of the required choice, payment, fund conditions and timely notice. The affected result remains held for review.' |
+| R-AU-SBC-3 | Earnout, non-arm's-length restructuring, contested main use, complex look-through or distribution rights cannot be established | Preserve the known facts and alternative computations; refer the unresolved legal/valuation decision. Output: 'I cannot determine this legal classification or valuation from the supplied facts. A qualified Australian specialist must resolve the identified issue before the affected result is finalised.' |
+| R-AU-SBC-4 | Mixed/foreign residence, pre-CGT status, historical law or the 2027 transition lacks applicable sources | Stop the affected period calculation and route to the CGT/residence specialist. Do not infer reform application or a tax-minimising disposal date. Output: 'I cannot apply this position without verified authority for the requested period and residence facts. The affected calculation is held for a qualified Australian reviewer.' |
+| R-AU-SBC-5 | Death, incapacity or Commissioner extension/determination is material | Verify evidence and the exact special rule. Do not assume an extension or medical/legal conclusion. Output: 'I cannot assume incapacity, a statutory exception or a Commissioner discretion. The affected position is held until the required evidence or decision is established.' |
+| R-AU-SBC-6 | Filing/payment requested without qualified review, or source/record uncertainty remains | Deliver the provisional workpaper, unresolved items and reviewer brief; refuse to describe it as ready to file or pay. Output: 'These are working papers for a qualified Australian reviewer. I cannot remove that review or present an unresolved result as ready to file or pay.' |
 
-#### R-AU-SBC-1 -- Look-through earnout rights
+Reviewer cash threshold: $0, a workflow control rather than a statutory tax threshold. Flag every gain, loss, concession claim, stakeholder payment and proposed super contribution regardless of amount or certainty, including a nil calculated balance. There is no de minimis amount for an unknown legal condition, false election or missed deadline. Flag every unresolved condition, failed reconciliation and time-sensitive action. Any estimate must be supported, permitted by the applicable rule and labelled with its effect. No factual default can cure an unresolved source condition.
 
-**Trigger:** sale consideration includes contingent financial benefits over up to 5 years (Subdiv 118-I). **Issue:** MNAV valuation choices for the right, prior-year amendments as benefits arrive, retirement-exemption payment and CGT cap timing recalibrated to each benefit, extended replacement periods. **Action:** refuse computation; document the earnout terms; escalate.
+## Filing and payment
 
-#### R-AU-SBC-2 -- Marriage/relationship breakdown rollovers combined with Div 152
+This guide prepares a concession workpaper, not a separate Division 152 return or a universal payment date. Establish the claimant's entity return, CGT schedule requirement, approved fields, lodgement due date, payment date and software for the actual year. Route the final net capital gain to the appropriate individual, company, trust or partnership workflow only after reconciliation and review. The approved 2027 return schedules, electronic specifications and complete filing procedures have not been verified here. Do not invent a label or treat a contribution date as the CGT event date.
 
-**Trigger:** asset previously transferred under a Subdiv 126-A breakdown rollover now claimed under Div 152. **Issue:** the transferee inherits acquisition history for some purposes but active-asset and 15-year continuity questions (and s 152-45 modifications) are fact-heavy and unforgiving. **Action:** map the transfer chain; escalate.
+Make CGT choices under s 103-25 by the day the relevant return is actually lodged, subject to any further time actually allowed. Keep the retirement amount and entity stakeholder percentages in writing under s 152-315. Maintain a separate deadline register for Division 152 payments, s 292-100 contribution categories, the receiving fund's election delivery and any replacement-period monitoring. A calendar reminder is not proof of payment or election.
 
-#### R-AU-SBC-3 -- Non-resident or temporary-resident stakeholders
+For the currently linked blank NAT 71161, revision 06.2022, map Section A to the receiving fund/member reference, B to the individual's details, C to a payer acting on the individual's behalf where relevant, D to the specific concession, elected amount and look-through earnout question, and E to the actual declaration, signature and date. The PDF has 3 pages. It warns that an election after contribution is invalid. The receiving fund, not the ATO, receives it. Keep actual tax identifiers, signatures and private account details in the authorised filing/fund process; use redacted references in these workpapers. An employer obligation does not automatically become an eligible personal contribution. Reconfirm the approved form and fund process before use. [ATO form and instructions](https://www.ato.gov.au/forms-and-instructions/capital-gains-tax-cap-election).
 
-**Trigger:** any significant individual, spouse stakeholder, or claimant who is (or becomes) a foreign or temporary resident; non-resident object entities; assets that are not taxable Australian property. **Issue:** residency interacts with the discount denial, the 80% test's residency limb, and payment mechanics. **Action:** refuse analysis; escalate.
+Deliver all 4 universal outputs required by [workflow-base](../../foundation/workflow-base.md): working paper, reviewer brief, action list and review checklist. The working paper must identify the owner/user/claimant/stakeholder/contributor, source periods, every gateway, group and MNAV schedules, active periods, participation/look-through tests, gross gain/loss ordering and each concession choice. Include separate lifetime retirement and super CGT cap reconciliations, signed-choice/payment/election evidence and rollover monitoring. The brief must distinguish known results, permitted estimates, source gaps and decisions withheld. The checklist adds the checks below to the universal checks and retains qualified reviewer sign-off.
 
-#### R-AU-SBC-4 -- Pre-CGT assets
+### Revision record
 
-**Trigger:** asset acquired before 20 September 1985. **Issue:** gains generally disregarded without Div 152 -- but the Tax Reform No. 1 Act 2026 removes pre-CGT status after 30 June 2027 (deemed re-acquisition), making the exemption's endgame a valuation and timing problem. **Action:** never assume continued exemption; escalate.
-
-#### R-AU-SBC-5 -- Transactions straddling 1 July 2027
-
-**Trigger:** contracts, settlements, rollover tails (J2/J5/J6), retirement-exemption payments or CGT cap contributions falling on either side of 1 July 2027, or requests to time a sale around it. **Action:** compute the pre-reform position only, labelled as such; refuse timing recommendations; escalate.
-
-#### R-AU-SBC-6 -- Death, incapacity evidence, and extensions of time
-
-**Trigger:** deceased-estate claims outside the 2-year window, permanent-incapacity determinations, or any Commissioner discretion (replacement-period or 2-year extensions). **Action:** state the standard rule; refuse to assume a discretion will be exercised; escalate.
-
-
-#### Prohibitions
-
-- NEVER apply any concession before the gateway AND active asset test are evidenced at the CGT event (contract) date
-- NEVER treat a rent-deriving asset as active without checking the affiliate/connected-entity carve-out -- and never the reverse
-- NEVER apply the general 50% discount to a company, or any discount/AAR/15-year to a J5/J6 gain
-- NEVER exceed the $500,000 lifetime retirement limit or skip the under-55 compulsory super payment
-- NEVER treat a CGT cap contribution as excluded without a NAT 71161 given at or before the contribution
-- NEVER use the $10m turnover gateway before 1 July 2027, or for any concession other than the 50% active asset reduction
-- NEVER advise timing a disposal around 1 July 2027 -- compute the pre-reform position, label it, escalate
-- NEVER present figures as definitive
-
----
-
-
-### Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-
+Version 1.3, 2 November 2026: corrected alternate gateways, grouping, active-use and participation conditions, separated retirement payments from super cap elections and their deadlines, qualified future-law application, added 8 recomputing cases and completed the topical workflow controls. Tier 2 and pending professional review remain applicable. Version 1.2 was the structural template migration; it did not supply substantive sign-off.
 
 ## Completion checklist
 
-
-
-#### Test suite
-
-**Test 1:** Turnover $3.4m, MNAV $4.4m. -> Gateway passes via MNAV; turnover irrelevant.
-
-**Test 2:** MNAV $6,000,001. -> Fails; no Div 152; general discount only.
-
-**Test 3:** Premises leased 100% to the owner's own trading company for 10 of 10 years. -> Rent disregarded (s 152-40(4A)); active asset.
-
-**Test 4:** Same premises leased to unrelated tenants for 6 of 10 years, own business 4. -> Main use deriving rent for the majority; fails unless facts change the main-use conclusion; flag.
-
-**Test 5:** Individual gain $900,000, discount + AAR + retirement $225,000. -> Net gain nil; lifetime tally $225,000; 58yo -> no super payment.
-
-**Test 6:** Same but company. -> No discount: $900,000 -> AAR $450,000 -> retirement exemption capped at $500,000 per stakeholder; consider choosing OUT of AAR so two 50% stakeholders can extract $450,000 each ($900,000 total) tax-free within their lifetime limits.
-
-**Test 7:** 30% shareholding, one equal-rights class. -> SBPP 30%; significant individual; stakeholder.
-
-**Test 8:** Discretionary trust, no distribution and tax loss in event year; last distribution year gave A 21%. -> A is a significant individual via the prior-year rule.
-
-**Test 9:** Rolled over $200,000; replacement cost only $150,000 at period end. -> J6 gain $50,000; retirement exemption only.
-
-**Test 10:** Retirement exemption $150,000, taxpayer 48. -> Compulsory super payment $150,000; NAT 71161 at/before contribution; excluded from NCC cap; CGT cap reduced to $1,785,000.
-
-**Test 11:** 2027-28 disposal, turnover $7m, net assets $8m. -> Post-reform: 50% AAR available ($10m gateway, law from 1 July 2027); 15-year/retirement/rollover NOT available (fails $2m and $6m); escalate for indexation/minimum-rate mechanics.
+- [ ] Each requested period and event/choice/payment/contribution date has applicable primary sources, including amendments and transitional application.
+- [ ] Asset owners, users, claimants, group rights, affiliates, previous trust distributions and all alternate gateway results are evidenced.
+- [ ] MNAV uses supported market values, permitted debts/provisions, correct connected-interest treatment and historical residential income use.
+- [ ] Active periods, main use, 80%/modified look-through, stakeholder and significant-individual conditions are established independently of arithmetic.
+- [ ] The 15-year test precedes capital losses; losses precede the eligible discount and active asset reduction; company and J-event restrictions are respected.
+- [ ] Every retirement amount, previous use, stakeholder allocation, age test, required payment and written choice is reconciled.
+- [ ] Fund acceptance, personal-contribution category, contribution-year available CGT cap, applicable deadline and timely NAT 71161 are separately evidenced.
+- [ ] Rollover is recorded as deferred, with the common replacement period, expenditure, monitoring and later-event source holds; no recapture is duplicated.
+- [ ] Return/schedule/software and tax/payment calculations are verified for the actual year; no example is treated as final tax payable.
+- [ ] All 4 universal outputs identify unresolved items and the qualified reviewer has checked and signed the final position.
 
 ## Sources
 
 | Source | URL | Read on |
 |---|---|---|
-| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/152-305> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/152-325> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf> | Not re-read for this format update; see retained provenance |
+| ITAA 1997 compilation 268, C2026C00471; selected Div 152 basic conditions, MNAV, active use, participation, death and all 4 concessions; ss 152-10 to 152-430, including formula-image alternative text in s 152-125 | <https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_4/document_4.html> | 2026-11-02; selected operative sections, not the whole volume; compilation period 2026-10-01 to 2026-12-01 |
+| Same compilation, selected ss 103-25 and 104-185/190/197/198; gain/loss and discount ordering reused from the CGT source review, not a fresh whole-volume review | <https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html> | 2026-11-02; choice and J-event sections read for this guide; broader CGT review retains its own scope |
+| Same compilation, ss 292-100/105 contribution categories, election and individual cap adjustments | <https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_6/document_6.html> | 2026-11-02; selected sections only; statutory required-lodgement date distinguished from ATO summary |
+| Same compilation, ss 328-110/115/120/125/130 business, turnover, control and affiliates | <https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_7/document_7.html> | 2026-11-02; selected sections only |
+| Tax Reform No. 1 Act 2026, Sch 1 items 77A-82; active asset reduction gateway amendments and assessment application | <https://www.legislation.gov.au/C2026A00071/latest/text> | 2026-11-02; selected amendment/application provisions re-read, not a fresh whole-Act review |
+| ATO eligibility overview, updated 28 January 2026; alternate gateways and partnership rights | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/cgt-concessions-eligibility-overview> | 2026-11-02; operative gateway and event-condition passages |
+| ATO CGT small business entity, updated 6 June 2023; turnover routes, inclusions, exclusions and grouping | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/cgt-small-business-entity-eligibility> | 2026-11-02; selected operative passages, checked with ss 328-110/115/120 |
+| ATO affiliates and special passive-asset spouse/child conditions, updated 6 June 2023 | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/small-business-affiliates> | 2026-11-02; operative definitions and special-rule passages |
+| ATO connected entities, direct/indirect control and conditional Commissioner discretion | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/entities-connected-with-you-and-control-relationships> | 2026-11-02; selected control and discretion passages |
+| ATO MNAV, related liabilities, exclusions and historical residence use | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/maximum-net-asset-value-test> | 2026-11-02; selected operative passages and residence example; no reuse of its rounded example as an exact formula |
+| ATO active asset test, durations, rental use and connected-user attribution | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/active-asset-test> | 2026-11-02; selected operative passages and use examples |
+| ATO additional share/trust conditions, participation, modified control and weighted look-through | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-cgt-concessions-eligibility-conditions/additional-conditions-if-the-cgt-asset-is-a-share-or-trust-interest> | 2026-11-02; selected operative passages and ownership/look-through examples |
+| ATO 15-year exemption, updated 6 June 2023; continuous ownership, stakeholder payments and contribution summary | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-15-year-exemption> | 2026-11-02; selected operative conditions, payment and super passages; follow s 292-100 on contribution deadline wording |
+| ATO active asset reduction, updated 6 June 2023; order, choice out and trust beneficiary treatment | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-50-percent-active-asset-reduction> | 2026-11-02; operative order, choice and beneficiary passages |
+| ATO retirement exemption, updated 6 June 2023; written choices, ages, instalments, payments and cap-election separation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-retirement-exemption> | 2026-11-02; operative conditions, payment/contribution and death passages |
+| ATO rollover, updated 4 September 2025; choice before replacement, common replacement period and J2/J5/J6 | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/small-business-cgt-concessions/small-business-roll-over> | 2026-11-02; selected operative period and recapture passages |
+| ATO contributions caps, updated 11 September 2026; Table 6 CGT cap amounts and indexation explanation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps?anchor=CGTcapamount> | 2026-11-02; selected CGT cap table, including 2026-27 and 2025-26; other super acceptance rules not reviewed |
+| ATO CGT cap election instructions, updated 14 November 2016; currently linked blank NAT 71161 revision 06.2022, 3 pages | <https://www.ato.gov.au/forms-and-instructions/capital-gains-tax-cap-election> | 2026-11-02; operative instructions and all 3 native-text PDF pages, including fields, recipient and timing warning |
 
-### Section 13 -- Reference material
+Not yet confirmed: Qualified Australian sign-off, complete historical and later operative compilations, individual residence/retirement/incapacity and valuation facts, actual trust/company rights, fund acceptance and non-concessional capacity, remedies for late actions, Commissioner determinations/extensions, approved 2027 return forms/software and the complete substantive template standard across the wider catalogue. An editing date, capture or passing arithmetic check does not resolve these dependencies.
 
-#### Primary sources (verified 20 August 2026)
-
-| Topic | Source |
-|---|---|
-| Statute | ITAA 1997 Div 152: Subdiv 152-A (basic conditions, ss 152-10 to 152-49), 152-B (15-year), 152-C (50% AAR), 152-D (retirement), 152-E (rollover); ss 104-185/190/197-198 (J2/J5/J6); s 292-100 (CGT cap) |
-| ATO hub | Small business CGT concessions (QC 72742); eligibility conditions (QC 72743) |
-| Gateways | Maximum net asset value test (QC 52270); CGT small business entity eligibility pages under QC 72743 |
-| Active asset test | QC 52271 (updated 2 February 2026) -- rent carve-out, 80% test |
-| Shares/trust interests | Additional conditions (QC 52283) -- stakeholder, SBPP, 90% test, modified tests |
-| The four concessions | 15-year exemption (QC 52288); 50% active asset reduction (QC 52289); retirement exemption (QC 52290); roll-over (QC 52291) |
-| CGT cap amount | ATO key super rates and thresholds -- contributions caps, Table 6 (QC 18123); CGT cap election form NAT 71161 |
-| Reform | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026); 2026-27 Budget (12 May 2026); Treasury consultations on start-up carve-out and trust minimum tax (not law) |
-
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 
@@ -450,13 +523,15 @@ Not yet confirmed: A complete page-level source/read-date audit and independent 
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a
