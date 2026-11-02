@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 jurisdiction: IE
 category: formation
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 version: 1.2
 review_status: pending_review
 tier: 2
@@ -144,7 +144,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Corporation Tax (CT) rates** — 12.5% on trading income (Schedule D Case I / II); 25% on non-trading income (passive: rents, dividends from non-EEA / non-treaty sources, investment income, foreign-source income); 33% Capital Gains Tax on chargeable gains (effective 33% via s.78 CTCA mechanism); 15% Pillar Two top-up (Qualified Domestic Top-up Tax) for in-scope multinational groups with consolidated revenue ≥ €750M  _(TCA 1997; EU Pillar Two Directive (Directive (EU) 2022/2523); Part 4A TCA 1997; Finance (No. 2) Act 2023; effective for accounting periods beginning on or after 31 December 2023)_
 - **Close-company surcharge** — Close-company surcharge (s.440 TCA 1997): a 20% surcharge on undistributed investment and rental income of a close company; a higher surcharge applies to undistributed professional services income of a close service company (s.441) — relevant for one-person LTDs providing services.  _(TCA 1997 s.440; s.441)_
-- **R&D Tax Credit** — 35% credit for accounting periods beginning on or after 1 January 2026 (Finance Act 2025; it was 30% from 1 January 2024 under Finance (No. 2) Act 2023, up from 25%) of qualifying R&D expenditure, payable in three instalments. A claim of up to €87,500 is paid in full in the first instalment; that threshold rose from €75,000 under Finance Act 2025.  _(TCA 1997 s.766; Finance (No. 2) Act 2023; Finance Act 2025; Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf)_
+- **R&D Tax Credit** — 35% credit for accounting periods with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026 (Finance Act 2025; it was 30% for periods commencing on or after 1 January 2024 under Finance (No. 2) Act 2023, up from 25%) of qualifying R&D expenditure, payable in three instalments. A claim of up to €87,500 is paid in full in the first instalment; that threshold rose from €75,000 under Finance Act 2025, for the same periods.  _(TCA 1997 s.766; Finance (No. 2) Act 2023; Finance Act 2025; Revenue, TDM 29-02-03 — https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-29/29-02-03.pdf; Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf)_
 - **Knowledge Development Box (KDB)** — 10% effective rate on qualifying IP income — relevant for software, pharma, and biotech. The KDB sunset was extended by Finance Act 2022 to accounting periods commencing before 1 January 2027.  _(TCA 1997 s.769G–s.769R; Finance Act 2022)_
 - **Start-up Relief for Entrepreneurs (Section 486C)** — New trading companies in their first 3 years may obtain CT relief reducing CT liability up to €40,000 per year, tapered to €60,000, where employer's PRSI payable in the year does not exceed €40,000 (extended through 2026 by Finance Act 2023).  _(TCA 1997 s.486C; Finance Act 2023)_
 - **VAT registration thresholds** — €42,500 services / €85,000 goods from 1 January 2025
@@ -291,7 +291,7 @@ CRO registration is fully electronic through the CORE (Companies Online Registra
 | LP | Pass-through | Same as partnership | Same as partnership | Form 1 + partner Form 11s |
 | ILP (regulated fund) | Tax-transparent vehicle | n/a — pass-through to investors | Investor-level taxation | Specific to fund regime |
 | LLP (solicitors) | Pass-through unless elected | Same as partnership | Same as partnership | Form 1 + partner Form 11s |
-| LTD / DAC | Corporation Tax | 12.5% trading / 25% non-trading / 33% CGT effective | Start-up Relief s.486C (up to €40k/yr first 3 years); R&D Tax Credit 35% (periods beginning on or after 1 January 2026); KDB 10%; Pillar Two QDTT if in scope | Form CT1 by 8 months 23 days after period end; Form B1 annual return to CRO |
+| LTD / DAC | Corporation Tax | 12.5% trading / 25% non-trading / 33% CGT effective | Start-up Relief s.486C (up to €40k/yr first 3 years); R&D Tax Credit 35% (periods with a specified return date on or after 23 September 2027, in general ending on or after 31 December 2026); KDB 10%; Pillar Two QDTT if in scope | Form CT1 by 8 months 23 days after period end; Form B1 annual return to CRO |
 | CLG (non-charity) | Corporation Tax | 12.5% trading / 25% non-trading | Same as LTD | CT1 + B1 |
 | CLG (charity with CHY) | Charitable exemption on objects-related income | 0% on charitable application; 12.5% / 25% on non-objects trading | TCA 1997 s.207 / s.208 exemption; gift aid not applicable in Ireland; charitable donations scheme s.848A | CT1 (with exemption claim) + B1 + Charities Regulator annual report |
 | PLC | Corporation Tax | 12.5% trading / 25% non-trading; Pillar Two 15% top-up if in scope | Same as LTD; quoted-share CGT considerations | CT1 + B1 + audited accounts + listed-company disclosures if listed |
@@ -346,7 +346,7 @@ Sources for the 2025 USC and PRSI figures in Options A and B: Revenue, USC rates
 - The LTD is more tax-efficient on cash-flow when Aoife can leave some profit in the company (e.g., to fund equipment, build a cash buffer, or eventually exploit Entrepreneur Relief s.597AA on exit at 10% CGT instead of 33%).
 - The Sole Trader is simpler and cheaper to administer if Aoife intends to spend all the profit each year on personal living costs — in which case the LTD's close-company surcharge erodes most of the saving.
 - At €120,000 revenue with material retained profits and a 5–10 year horizon, the LTD wins. At lower revenue (< €70,000) with no retained profits, Sole Trader is usually equivalent or better once you account for accounting fees (€1,500–€3,000/year for an LTD vs €500–€1,000 for a Sole Trader).
-- Operational steps for Aoife if she chooses LTD: incorporate via CORE; register with Revenue via TR2; file RBO; engage a payroll provider; set up a SEPA-enabled corporate bank account; register for VAT MOSS / OSS for EU B2C SaaS sales; document her R&D (if any) for the 35% R&D Tax Credit; consider KDB eligibility if she develops original IP.
+- Operational steps for Aoife if she chooses LTD: incorporate via CORE; register with Revenue via TR2; file RBO; engage a payroll provider; set up a SEPA-enabled corporate bank account; register for VAT MOSS / OSS for EU B2C SaaS sales; document her R&D (if any) for the R&D Tax Credit (35% for periods ending, in general, on or after 31 December 2026; 30% before); consider KDB eligibility if she develops original IP.
 
 ## Section 13 — Decision Tree
 

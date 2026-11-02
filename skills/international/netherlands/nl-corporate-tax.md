@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch corporate income tax (ven
 version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -258,7 +258,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Buildings (own use) | Depreciate to max 100% of WOZ value (bodemwaarde) |
 | Buildings (investment) | Depreciate to max 100% of WOZ value (bodemwaarde) |
 
-Wet Vpb 1969 art. 8(1) applies Wet IB 2001 art. 3.30a(1) to (7); art. 3.30a(3) sets the bodemwaarde at the WOZ value with no own-use or investment split. Check the transitional rule in Wet IB 2001 art. 10a.3, which art. 8(1) also applies, for buildings depreciated under the former 50% own-use floor. Sources: Wet IB 2001 — https://wetten.overheid.nl/BWBR0011353/2026-01-01; Wet Vpb 1969 — https://wetten.overheid.nl/BWBR0002672/2026-01-01
+Wet Vpb 1969 art. 8(1) applies Wet IB 2001 art. 3.30a(1) to (7); art. 3.30a(3) sets the bodemwaarde at the WOZ value with no own-use or investment split. Under a transitional rule the Belastingdienst states for income tax, a building taken into own use before 1 January 2024 and depreciated for less than 3 years may keep the former 50% floor until 3 years after first use; confirm the Vpb treatment. Sources: Belastingdienst, Afschrijving bedrijfspand — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/afschrijving/afschrijving_bedrijfspand; Wet IB 2001 — https://wetten.overheid.nl/BWBR0011353/2026-01-01; Wet Vpb 1969 — https://wetten.overheid.nl/BWBR0002672/2026-01-01
 | Goodwill | Max 10% per year (minimum 10-year life) |
 | Other intangibles | Based on useful economic life |
 | Tangible fixed assets | Based on economic life; no minimum |

@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: SE
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Authority | Skatteverket (Swedish Tax Agency) |
 | Currency | SEK only |
 | Filing frequencies | Turnover above SEK 40M: monthly only. Up to SEK 40M: quarterly or monthly. Up to SEK 1M: also annual (beskattningsår) |
-| Deadline | Above SEK 40M: 26th of the month after the period (27th for December). Up to SEK 40M, monthly: 12th of the second month after the period (17th in January and August). Quarterly: 12th of the second month after the quarter (17th in August). Annual, sole traders without EU trade: 12 May of the following year (26 June with byråanstånd); with EU trade: 26 February  _(Skatteverket, När ska jag deklarera moms?)_ |
+| Deadline | Above SEK 40M: 26th of the month after the period (27 December for the November period). Up to SEK 40M, monthly: 12th of the second month after the period (17th in January and August). Quarterly: 12th of the second month after the quarter (17th in August). Annual, sole traders without EU trade: 12 May of the following year (26 June with byråanstånd); with EU trade: 26 February  _(Skatteverket, När ska jag deklarera moms?)_ |
 | VAT exemption (momsbefrielse) | Turnover of at most SEK 120,000 in the year and in each of the 2 preceding years (from 1 January 2025; SEK 80,000 before). Exemption is optional; above the limit, registration is required  _(Skatteverket, Höjd omsättningsgräns för moms; Registrera ditt företag för moms)_ |
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Companion skill (Tier 2, EU directive) | **eu-vat-directive v0.1 or later — MUST be loaded** |

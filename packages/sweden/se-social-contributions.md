@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: SE
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Born 1937 or earlier | 0% |
 | First 5 years reduction | ~21.47% (on first SEK 200,000) |
 | Upper cap | None |
-| F-skatt payment | Monthly (12th of each month; 17th in January and August) |
+| F-skatt payment | Monthly (12th of each month; 17th in January and August, but the 12th in August if the VAT base exceeds SEK 40 million) |
 | Annual declaration | By 2 May |
 | Currency | SEK only |
 | Contributor | Open Accountants |
@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Required inputs** — Before computing, you MUST obtain: 1. Business form -- enskild firma, handelsbolag partner, or kommanditbolag? 2. F-skatt registration -- confirmed? 3. Överskott av näringsverksamhet -- net business income 4. Age/birth year -- reduced rates for 67+ 5. Any concurrent employment? -- separate egenavgifter 6. Business year -- first 5 years? (reduction available)
 - **F-skatt status unknown** — If F-skatt status is unknown, STOP.
 - **R-SE-SOC-1 -- Cross-border worker** — Trigger: client works in Sweden and Denmark/other EU state. Message: "EU Regulation 883/2004 applies. A1 certificate required. Escalate."
-- **Prohibitions** — NEVER forget the circular deduction (effective rate ~22.47%, not 28.97%); NEVER apply full rate to persons born 1938-1957 -- only 10.21%; NEVER state there is a cap -- there is no upper limit; NEVER apply egenavgifter to capital income -- only näringsverksamhet; NEVER ignore the first-5-years reduction; NEVER confuse egenavgifter (28.97%) with arbetsgivaravgifter (31.42%); NEVER present F-skatt as only income tax -- it includes egenavgifter
+- **Prohibitions** — NEVER forget the circular deduction (effective rate ~22.47%, not 28.97%); NEVER apply full rate to persons born 1938-1958 -- only 10.21%; NEVER state there is a cap -- there is no upper limit; NEVER apply egenavgifter to capital income -- only näringsverksamhet; NEVER ignore the first-5-years reduction; NEVER confuse egenavgifter (28.97%) with arbetsgivaravgifter (31.42%); NEVER present F-skatt as only income tax -- it includes egenavgifter
 
 ## Section 3 -- Rate components (2025)
 
@@ -96,7 +96,7 @@ Birth years are for income years 2025 and 2026; check them again for each later 
 
 | Payment | Due date |
 | --- | --- |
-| Monthly F-skatt | 12th of each month (17th for January and August; moved to the next weekday when it falls on a weekend) |
+| Monthly F-skatt | 12th of each month (17th in January and August, but the 12th in August if the VAT base exceeds SEK 40 million; a date on a weekend, public holiday, Midsummer Eve, Christmas Eve or New Year's Eve moves to the next weekday) |
 | Annual reconciliation | Inkomstdeklaration by 2 May |
 
 Client can request jämkning if income changes significantly.

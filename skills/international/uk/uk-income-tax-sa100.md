@@ -5,7 +5,7 @@ version: 2.3
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2024-25, 2025-26 and 2026-27; 2026-27 reconciled to Finance Act 2026 (c. 11)"
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 reviewed_by: James Power
 review_status: pending_review
 depends_on:
@@ -27,7 +27,7 @@ This skill covers **three tax years in parallel**:
 - **Current year:** 2025-26 (6 April 2025 -- 5 April 2026) -- filed by 31 January 2027
 - **From 6 April 2026:** 2026-27 (6 April 2026 -- 5 April 2027) -- filed by 31 January 2028
 
-All headline income tax rates and thresholds are **frozen to 5 April 2031 (through 2030-31)**. The Autumn Budget 2025 announced targeted rate increases on investment income, but they do **not** all start together: **dividends** rise from 6 April 2026, while **savings** and **property** income rise from 6 April **2027** -- see Section 1.5.
+The Personal Allowance (GBP 12,570) and the basic rate limit (GBP 37,700, so a GBP 50,270 higher rate threshold) are **frozen to 5 April 2031 (through 2030-31)**; the Scottish Parliament sets Scottish rates and limits. The Autumn Budget 2025 announced targeted rate increases on investment income, but they do **not** all start together: **dividends** rise from 6 April 2026, while **savings** and **property** income rise from 6 April **2027** -- see Section 1.5.
 
 ## Rates and thresholds: review pending
 
@@ -211,7 +211,7 @@ The Autumn Budget 2025 changes take effect in two stages. **Dividends** rise fro
 - **Dividend rates** -- confirmed 2pp uplift on ordinary and upper rates from 6 April 2026. See companion skill `uk-dividends` for the detailed dividend computation, the GBP 500 allowance interaction, and worked examples.
 - **Savings income and property income** -- the Autumn Budget 2025 rates are **22% / 42% / 47%**, and they apply **from 6 April 2027**, a year after the dividend change. They are specific, not "expected", and the additional rate does move (to 47%). For **2026-27** savings and property income is taxed at the ordinary **20% / 40% / 45%**: compute it, do not hold it open. Applying 22/42/47 to a 2026-27 return overstates the liability at every band.
 - **HICBC** -- the GBP 60,000 starting / GBP 80,000 full claw-back tapered threshold introduced from 2024-25 remains in force for 2026-27 (no further reform announced).
-- **All other bands frozen** -- Personal Allowance (GBP 12,570), basic rate threshold (GBP 50,270), additional rate threshold (GBP 125,140), and PA taper threshold (GBP 100,000) are all frozen through 2030-31.
+- **Other thresholds** -- Personal Allowance (GBP 12,570) and basic rate threshold (GBP 50,270) are frozen through 2030-31 (FA 2021 s 5 as extended by FA 2026 s 10). The additional rate threshold (GBP 125,140) and the PA taper threshold (GBP 100,000) are fixed sums with no indexation in ITA 2007 (s 21 indexes only the basic rate limit and the starting rate limit for savings; s 57 does not list the s 35(2) taper limit).
 
 ### Key Allowances and Thresholds [T1]
 

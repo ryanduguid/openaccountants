@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German payroll processing for e
 version: 1.1
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -160,9 +160,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Item | Amount |
 | --- | --- |
 | Employer SV (RV+KV+PV+AV) | ~EUR 953 |
-| Umlagen (U1+U2+Insolvenz) | ~EUR 50--75 (Insolvenzgeldumlage 0.15% = EUR 6.75; U1 and U2 rates vary by Krankenkasse) |
+| Umlagen (U1+U2+Insolvenz) | ~EUR 56--227 (U1 0.9% to 4.1% and U2 0.19% to 0.8% by Krankenkasse, plus Insolvenzgeldumlage 0.15% = EUR 6.75) |
 | Berufsgenossenschaft | varies |
-| **Total employer add-on** | **~21--25% of gross** |
+| **Total employer add-on** | **~22--26% of gross, plus Berufsgenossenschaft** |
 
 ## Section 5 -- Minimum Wage and Overtime
 

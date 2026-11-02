@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: IE
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -378,12 +378,12 @@ Google Ireland Ltd is an IRISH entity billing an IRISH customer. This is a DOMES
 ### 5.3 Second reduced rate 9% (Section 46(1)(ca))
 
 - **Second reduced rate 9%** — 9%  _(Section 46(1)(ca) VATCA 2010)_
-- **Applicable supplies** — Newspapers, electronic publications, sporting facilities, printed and digital periodicals; gas and electricity until 31 December 2030; from 1 July 2026 (Finance Act 2025 s 71), hairdressing services and food and drink (excluding alcohol, bottled waters, soft drinks, sports drinks and vegetable juices) supplied as part of a restaurant, catering or hot takeaway service. Sources: Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf; Revenue, VAT notes for guidance on Finance Act 2025, s 71 — https://www.revenue.ie/en/tax-professionals/documents/notes-for-guidance/vat/vat-guidance-notes-fa2025.pdf.  _(Section 46(1)(ca) VATCA 2010)_
+- **Applicable supplies** — Newspapers, electronic publications, sporting facilities, printed and digital periodicals; gas and electricity until 31 December 2030; from 1 July 2026 (Finance Act 2025 s 71), hairdressing services and food and drink (excluding alcohol, bottled waters, soft drinks, sports drinks and vegetable juices) supplied as part of a restaurant, catering or hot takeaway service. Sources: Revenue, Budget 2026 summary — https://www.revenue.ie/en/corporate/press-office/budget-information/current-year/budget-summary.pdf; Revenue, VAT notes for guidance on Finance Act 2025, s 71 — https://www.revenue.ie/en/tax-professionals/documents/notes-for-guidance/vat/vat-guidance-notes-fa2025.pdf.  _(Section 46(1)(ca) VATCA 2010; gas and electricity s 46(1)(caa); from 1 July 2026 hairdressing and restaurant, catering and hot takeaway food and drink s 46(1)(cb), as substituted by Finance Act 2025 s 71)_
 
-### 5.4 Reduced rate 4.8% (Section 46(1)(cb))
+### 5.4 Reduced rate 4.8% (Section 46(1)(d))
 
-- **Reduced rate 4.8%** — 4.8%  _(Section 46(1)(cb) VATCA 2010)_
-- **Applicable supplies** — Livestock (cattle, sheep), greyhounds. Very niche — unlikely for IT consultants.  _(Section 46(1)(cb) VATCA 2010)_
+- **Reduced rate 4.8%** — 4.8%  _(Section 46(1)(d) VATCA 2010)_
+- **Applicable supplies** — Livestock (cattle, sheep), greyhounds. Very niche — unlikely for IT consultants.  _(Section 46(1)(d) VATCA 2010)_
 
 ### 5.5 Zero rate (Section 46(1)(b), Schedule 2)
 

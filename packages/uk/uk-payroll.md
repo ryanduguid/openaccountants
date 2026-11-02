@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK payroll, PAYE, National Insu
 version: 1.2
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 reviewed_by: James Power
 review_status: pending_review
 depends_on:
@@ -124,7 +124,7 @@ Source: GOV.UK, Rates and thresholds for employers 2025 to 2026 — https://www.
 
 ### Employment Allowance
 
-- **Employment Allowance** — Up to £10,500 per year offset against employer NIC. Not available if the sole employee is a director. From 6 April 2025 there is no prior-year limit: the £100,000 prior-year employer NIC limit applies only to claims for 2024-25 and earlier.
+- **Employment Allowance** — Up to £10,500 per year offset against employer NIC. Not available where the company's only director is also its only employee liable for secondary Class 1 NICs. From 6 April 2025 there is no prior-year limit: the £100,000 prior-year employer NIC limit applies only to claims for 2024-25 and earlier.
 
 Source: GOV.UK, Employment Allowance: eligibility — https://www.gov.uk/claim-employment-allowance/eligibility.
 

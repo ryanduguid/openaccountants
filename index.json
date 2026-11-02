@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T07:06:07+00:00",
+ "generated_at": "2026-11-02T17:31:23+00:00",
  "counts": {
   "guides": 2011,
   "jurisdictions": 292,
@@ -9286,7 +9286,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "france-references",
@@ -9780,7 +9780,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "germany-tax-optimization",
@@ -11405,7 +11405,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "ie-corporation-tax",
@@ -11418,7 +11418,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "ie-formation",
@@ -11431,7 +11431,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "ie-freelance-intake",
@@ -11522,7 +11522,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "ie-usc",
@@ -11548,7 +11548,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "im-company-formation",
@@ -11808,7 +11808,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "it-inps-contributions",
@@ -11821,7 +11821,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "it-irap",
@@ -11912,7 +11912,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "italy-tax-optimization",
@@ -15734,7 +15734,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "netherlands-crypto-tax",
@@ -15851,7 +15851,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "nl-deductions",
@@ -15877,7 +15877,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "nl-payroll-tax",
@@ -20167,7 +20167,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "spain-transfer-pricing",
@@ -20557,7 +20557,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "sweden-bookkeeping",
@@ -20609,7 +20609,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "ch-ahv-iv",
@@ -20622,7 +20622,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "ch-cantonal-tax",
@@ -21831,7 +21831,7 @@
    "reviewed_by": "James Power",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "uk-national-insurance",
@@ -21844,7 +21844,7 @@
    "reviewed_by": "James Power",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "uk-non-dom",
@@ -21883,7 +21883,7 @@
    "reviewed_by": "James Power",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "uk-rental-sa105",

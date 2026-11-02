@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: CH
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -141,7 +141,7 @@ Self-employed persons are NOT obligatorily insured under BVG but may join volunt
 
 ### Step 5.2 -- Apply sliding scale or full rate
 
-- **Sliding scale / full rate application** — IF adjusted_income < 10,100: annual_contribution = 530  (minimum) ELIF adjusted_income < 60,500: annual_contribution = adjusted_income x sliding_scale_rate  (from table) ELSE: annual_contribution = adjusted_income x 10.00%. Limits are those for 2025 and 2026 (BSV, Beträge gültig ab dem 1. Januar 2026: no change from 2025). From 1 January 2027 the minimum rises to CHF 541 (BSV); recheck the scale limits before using them for 2027.
+- **Sliding scale / full rate application** — IF adjusted_income < 10,100: annual_contribution = 530  (minimum) ELIF adjusted_income < 60,500: annual_contribution = adjusted_income x sliding_scale_rate  (from table) ELSE: annual_contribution = adjusted_income x 10.00%. Limits are those for 2025 and 2026 (BSV, Beträge gültig ab dem 1. Januar 2026: no change from 2025). From 1 January 2027 the minimum rises to CHF 541 and the limits to CHF 10,300 and CHF 61,500 (BSV, Erläuterungen of 2 October 2026; the ordinance text is marked provisional).
 
 ### Step 5.3 -- Add FAK if applicable
 

@@ -4,7 +4,7 @@ description: "France has become a net wealth-outflow country for the first time,
 jurisdiction: FR
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -33,8 +33,8 @@ departure, and on the departure date you hold:
 **What it does.** Your unrealised gains (plus certain deferred gains and earn-outs) are
 deemed realised on departure — taxed at the **31.4% flat tax** (12.8% income tax + 18.6%
 social levies) for departures from 1 January 2025, or 30% (17.2% levies) for earlier
-departures, or under the progressive scale by election. The 18.6% treats exit-tax gains as
-revenus du patrimoine (art. L. 136-6 CSS), like other gains on securities; confirm for the case. The tax is *computed*
+departures, or under the progressive scale by election. The 18.6% applies because art. L. 136-6 I e bis CSS
+lists the gains and receivables of art. 167 bis I and II CGI among revenus du patrimoine. The tax is *computed*
 immediately, but:
 
 **Payment is suspended (sursis de paiement) automatically** if you move to an EU/EEA state

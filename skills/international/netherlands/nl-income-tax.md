@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Netherlands income tax for self
 version: 2.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -76,7 +76,7 @@ Source (2026): Belastingdienst, Voorlopige aanslag 2026: gebruikte tarieven en h
 
 | Credit | Amount 2025 | Notes |
 | --- | --- | --- |
-| Algemene heffingskorting | Up to EUR 3,068 (phases out above EUR 28,406 at 6.337%; 2026: EUR 3,115 above EUR 29,736 at 6.398%) | General tax credit; reduces to EUR 0 at EUR 76,817 (2026: EUR 78,427) |
+| Algemene heffingskorting | Up to EUR 3,068 (phases out above EUR 28,406 at 6.337%; 2026: EUR 3,115 above EUR 29,736 at 6.398%) | General tax credit; reduces to EUR 0 from EUR 76,818 (2026: EUR 78,427) |
 | Arbeidskorting | Up to EUR 5,174 (phases out above EUR 43,071) | Employment/work credit; phases out at higher incomes |
 | Inkomensafhankelijke combinatiekorting | Up to EUR 2,950 | For working parents with child < 12; urencriterium must be met |
 

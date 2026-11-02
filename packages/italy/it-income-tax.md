@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Italian income tax for self-emp
 version: 2.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -56,7 +56,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 28,001 -- 50,000 | 33% | 7,260 | 13,700 |
 | Over 50,000 | 43% | on excess | 13,700 + 43% |
 
-- **High-income neutralisation (2026)** — For reddito complessivo above EUR 200,000, a mechanism neutralises the benefit of the cut from 35% to 33%. Apply it before relying on the 2026 table for such clients.  _(L. 199/2025, art. 1, commi 3-4)_
+- **High-income neutralisation (2026)** — For reddito complessivo above EUR 200,000, a mechanism neutralises the benefit of the cut from 35% to 33% by reducing the detrazioni for listed oneri by EUR 440 (the full benefit is EUR 22,000 x 2% = EUR 440). Apply it before relying on the 2026 table for such clients.  _(L. 199/2025, art. 1, commi 3-4; TUIR art. 16-ter, c. 5-bis)_
 
 ### Addizionali (Regional + Municipal Surtaxes) [T1]
 

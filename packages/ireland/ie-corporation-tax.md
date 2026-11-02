@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Irish Corporation Tax for a re
 jurisdiction: IE
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 version: 1.2
 review_status: pending_review
 tier: 2
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Close-company surcharge** | 20% on undistributed investment / rental income; 15% on undistributed professional service income (Sections 440, 441 TCA) |
 | **Pillar Two — IIR / QDMTT** | Effective minimum tax **15%** for MNEs with consolidated revenue **> €750M** for at least 2 of the previous 4 financial years — Part 4A TCA 1997 (inserted by Finance (No. 2) Act 2023); effective for fiscal years beginning on or after 31 December 2023 |
 | **Pillar Two — UTPR** | Undertaxed Profits Rule, effective for fiscal years beginning on or after 31 December 2024 |
-| **R&D Tax Credit** | **35%** for accounting periods beginning on or after 1 January 2026 (Finance Act 2025); **30%** for periods commencing on or after 1 January 2024 — Section 766 TCA; refundable in 3 instalments, or in full in the first instalment where the claim does not exceed **€87,500** |
+| **R&D Tax Credit** | **35%** for accounting periods with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026 (Finance Act 2025; Revenue, TDM 29-02-03 — https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-29/29-02-03.pdf); **30%** for periods commencing on or after 1 January 2024 — Section 766 TCA; refundable in 3 instalments, or in full in the first instalment where the claim does not exceed **€87,500** |
 | **Knowledge Development Box (KDB)** | Effective rate **10%** (12.5% on profits after a 20% deduction) on qualifying IP-derived income — Section 769G-R TCA; extended to accounting periods beginning before 1 January 2027 (Finance Act 2022) |
 | **Group relief threshold** | **75%** ownership (effective beneficial); Sections 411–429 TCA |
 | **Loss relief** | Trading losses: 1-year carry-back (Section 396A); indefinite carry-forward against same trade (Section 396) |
@@ -225,7 +225,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 R&D Tax Credit — Section 766 TCA
 
-- **R&D credit rate** — **35%** of qualifying R&D expenditure for accounting periods **beginning on or after 1 January 2026** (Finance Act 2025). **30%** for periods commencing on or after 1 January 2024, raised from 25% by Finance (No. 2) Act 2023 — this line previously attributed that increase to Finance Act 2024 and stopped there. The rate has moved twice in three years, so read it off the accounting period rather than from memory  _(Section 766 TCA; Finance (No. 2) Act 2023; Finance Act 2025)_
+- **R&D credit rate** — **35%** of qualifying R&D expenditure for accounting periods **with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026** (Finance Act 2025). **30%** for periods commencing on or after 1 January 2024, raised from 25% by Finance (No. 2) Act 2023 — this line previously attributed that increase to Finance Act 2024 and stopped there. The rate has moved twice in three years, so read it off the accounting period rather than from memory  _(Section 766 TCA; Finance (No. 2) Act 2023; Finance Act 2025)_
 - **Qualifying expenditure** — - Salaries of R&D staff (apportioned to qualifying time). - Consumables used in R&D. - Plant and machinery used wholly and exclusively for R&D (capital allowances accelerated where used in R&D). - Subcontracted R&D (Section 766(1)(b)(vii)) capped at 15% of in-house R&D spend or €100,000 (whichever greater). - Outsourced to a third-level institution capped at 5% of in-house spend.  _(Section 766(1)(b)(vii) TCA)_
 - **Qualifying activity** — Must satisfy the Frascati Manual definition (systematic, investigative, creative, novel, uncertain). Must be in a "field of science or technology" (Section 766(1)(a)). Software development qualifies where it meets the technological-uncertainty test (Revenue R&D Guidelines).  _(Section 766(1)(a) TCA)_
 - **Refundability — Section 766C** — The credit can be (i) offset against CT of the claim period, (ii) carried forward, or (iii) paid as a cash refund in 3 instalments over 33 months: - Instalment 1: Greater of €75,000 (FA 2024 raised threshold) or 50% of the credit — payable on filing. - Instalment 2: 60% of the remaining balance — 12 months later. - Instalment 3: Final balance — 24 months later.  _(Section 766C TCA)_

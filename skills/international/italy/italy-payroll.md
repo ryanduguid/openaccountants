@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Italian payroll processing for 
 version: 1.1
 jurisdiction: IT
 tax_year: 2026
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -66,7 +66,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 28,001 -- 50,000 | EUR 1,910 x [(50,000 - income) / 22,000] |
 | Above 50,000 | Nil (nessuna detrazione) |
 
-The EUR 690 floor applies only up to EUR 15,000. Other provisions of TUIR art. 13 still apply.  _(TUIR art. 13, c. 1; Agenzia delle Entrate, Circolare 4/E of 16 May 2025)_
+The EUR 690 floor applies only up to EUR 15,000. For income over EUR 25,000 up to EUR 35,000 the deduction rises by EUR 65 (TUIR art. 13, c. 1.1); other provisions of art. 13 still apply.  _(TUIR art. 13, c. 1 and 1.1; Agenzia delle Entrate, Circolare 4/E of 16 May 2025)_
 
 ### Addizionali IRPEF (Regional and Municipal Surcharges)
 
@@ -88,8 +88,8 @@ The EUR 690 floor applies only up to EUR 15,000. Other provisions of TUIR art. 1
 | Contribution | Employee Rate | Base | Notes |
 | --- | --- | --- | --- |
 | IVS (Invalidità, Vecchiaia, Superstiti) | 9.19% | Up to INPS ceiling | General rate for industry/commerce employees |
-| IVS additional 1% (aliquota aggiuntiva) | 1% | Pay above EUR 56,224/year (EUR 4,685/month), 2026 | D.L. 384/1992 art. 3-ter; the statute ties it to schemes whose employee rate is below 10%, so it is treated as the employee's (confirm in INPS circolare 6 of 30 January 2026) |
-| IVS above massimale | Nil | Above EUR 122,295/year (2026) | Massimale of the contribution base for workers first insured from 1 January 1996 (L. 335/1995 art. 2, c. 18): no IVS on the excess |
+| IVS additional 1% (aliquota aggiuntiva) | 1% | Pay above EUR 56,224/year (EUR 4,685/month), 2026 | D.L. 384/1992 art. 3-ter; the statute ties it to schemes whose employee rate is below 10%, and INPS circolare 6 of 30 January 2026 puts it 'a carico del lavoratore' (borne by the employee) |
+| IVS above massimale | Nil | Above EUR 122,295/year (2026) | Massimale of the contribution base for workers first insured from 1 January 1996 or who opt into the contributory system (L. 335/1995 art. 2, c. 18): no IVS on the excess |
 | Fondo di garanzia TFR | -- | -- | No employee share |
 | CIG (Cassa Integrazione Guadagni) | -- | -- | Employer-only for most sectors |
 | CIGS (for companies > 15 employees) | -- | -- | Employer-only |

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK National Insurance Contribut
 version: 3.2
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 reviewed_by: James Power
 review_status: pending_review
 depends_on:
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Class 1 employer rate** | 13.8% | **15%** | 15% |
 | **Secondary Threshold (employer)** | £9,100/yr (£175/wk) | **£5,000/yr (£96/wk)** | £5,000/yr |
 | **Primary Threshold (employee)** | £12,570/yr | £12,570/yr | £12,570/yr |
-| **Upper Earnings Limit (UEL)** | £50,270/yr (£967/wk) | £50,270/yr | £50,270/yr (frozen to 5 April 2031) |
+| **Upper Earnings Limit (UEL)** | £50,270/yr (£967/wk) | £50,270/yr | £50,270/yr (announced to 5 April 2031; not yet legislated) |
 | **Employment Allowance** | £5,000 | **£10,500** | £10,500 |
 | **Class 2 status** | Abolished (voluntary only) | Abolished (voluntary only) | Abolished (voluntary only) |
 | **Class 2 voluntary weekly rate** | £3.45 | £3.50 | £3.65 |
@@ -211,7 +211,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 - Worked check, 2025-26: (£35,000 - £5,000) x 15% = £30,000 x 0.15 = £4,500.00 ✓.
 - Worked check, 2024-25: (£35,000 - £9,100) x 13.8% = £25,900 x 0.138 = £3,574.20 ✓.
 
-**Reviewer flag:** Confirm Employment Allowance eligibility (employer's secondary Class 1 in the prior tax year was below £100,000, not a single-director-only company, and not the connected company in a group that already claims).
+**Reviewer flag:** Confirm Employment Allowance eligibility (for 2024-25 and earlier claims only, employer's secondary Class 1 in the prior tax year was below £100,000; the company's only director is not its only employee liable for secondary Class 1; and not the connected company in a group that already claims).
 
 ### Example 8 -- Self-employed Class 4 across 3 years (same £30,000 profit)
 
@@ -229,7 +229,7 @@ Class 4 rates and thresholds are unchanged across all three years. Class 2 treat
 
 ### Rule 1 -- Class 1 employee formula (all three years -- unchanged)
 
-- **Class 1 employee formula** — Class 1 (employee) = max(0, min(earnings, UEL) - PT) x 8% + max(earnings - UEL, 0) x 2% PT = £12,570/yr, UEL = £50,270/yr (frozen through 2030-31; GOV.UK, Maintaining income tax and equivalent NICs thresholds until 5 April 2031 — https://www.gov.uk/government/publications/maintaining-income-tax-and-equivalent-national-insurance-contributions-thresholds-until-5-april-2031)  _(Rule 1)_
+- **Class 1 employee formula** — Class 1 (employee) = max(0, min(earnings, UEL) - PT) x 8% + max(earnings - UEL, 0) x 2% PT = £12,570/yr, UEL = £50,270/yr (announced to stay at £50,270 through 2030-31, not yet legislated for NICs; GOV.UK, Maintaining income tax and equivalent NICs thresholds until 5 April 2031 — https://www.gov.uk/government/publications/maintaining-income-tax-and-equivalent-national-insurance-contributions-thresholds-until-5-april-2031)  _(Rule 1)_
 
 ### Rule 2 -- Class 1 employer formula (rate and threshold CHANGE in 2025-26)
 
@@ -307,7 +307,7 @@ Class 4 rates and thresholds are unchanged across all three years. Class 2 treat
 
 ### T2-6 -- Employment Allowance eligibility
 
-- **T2-6** — Trigger: Employer payroll client; need to confirm EA can be claimed. Action: Confirm (a) prior-year secondary Class 1 < £100,000, (b) not a single-director-only company (sole director with no other employees), (c) for a connected-company group, only one company claims. Flag for reviewer if any criterion is uncertain.  _(T2-6)_
+- **T2-6** — Trigger: Employer payroll client; need to confirm EA can be claimed. Action: Confirm (a) for 2024-25 and earlier claims only, prior-year secondary Class 1 < £100,000, (b) the company's only director is not its only employee liable for secondary Class 1, (c) for a connected-company group, only one company claims. Flag for reviewer if any criterion is uncertain.  _(T2-6)_
 
 ### T2-7 -- Director on annual earnings basis
 

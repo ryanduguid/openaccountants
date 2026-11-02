@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch bookkeeping, chart of acc
 version: 1.2
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -225,7 +225,7 @@ The RGS (Referentie GrootboekSchema) is not mandatory but is the de facto Dutch 
 | Low-value asset expensing | No statutory threshold | Practice: items < EUR 450 often expensed directly |
 | Real estate floor (bodemwaarde) | WOZ-value | Cannot depreciate below WOZ-value for tax |
 | Buildings (beleggingspand) | Max 100% WOZ-value | Investment property: cannot depreciate below 100% WOZ |
-| Buildings (own use) | Max 100% WOZ-value | Own-use property: floor is 100% of WOZ-value (Wet IB 2001 art. 3.30a(3), applied to Vpb by Wet Vpb 1969 art. 8(1)); check the art. 10a.3 transitional rule for buildings depreciated under the former 50% floor — https://wetten.overheid.nl/BWBR0011353/2026-01-01 |
+| Buildings (own use) | Max 100% WOZ-value | Own-use property: floor is 100% of WOZ-value (Wet IB 2001 art. 3.30a(3), applied to Vpb by Wet Vpb 1969 art. 8(1)); a building taken into own use before 1 January 2024 and depreciated for less than 3 years may keep the former 50% floor until 3 years after first use (Belastingdienst, stated for income tax; confirm for Vpb) — https://wetten.overheid.nl/BWBR0011353/2026-01-01; https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/afschrijving/afschrijving_bedrijfspand |
 
 ### Depreciation Methods and Rates
 

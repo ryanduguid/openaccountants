@@ -4,7 +4,7 @@ description: ALWAYS read this skill before touching any Irish Capital Gains Tax 
 jurisdiction: IE
 category: international
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Asset class / scenario | Rate | Notes |
 | --- | --- | --- |
-| Standard chargeable gains (property, shares, crypto, intangibles) | **33%**; **31%** from 7 October 2026 | 33% for disposals from 6 December 2012 to 6 October 2026; 31% under TCA s. 28(3) as amended, for disposals on or after 7 October 2026 |
+| Standard chargeable gains (property, shares, crypto, intangibles) | **33%**; **31%** from 7 October 2026 | 33% for disposals from 6 December 2012 to 6 October 2026; 31% for disposals on or after 7 October 2026 under TCA s. 28(3) as Finance (No. 2) Bill 2026 amends it (not confirmed enacted) |
 | Qualifying business asset disposal — Entrepreneur Relief | **10%** | First €1M lifetime cap (TCA s. 597AA) |
 | Foreign life policies, certain offshore funds | 40% | Higher rate under TCA Part 27 — out of scope of this skill |
 | Principal Private Residence (PPR) — fully occupied throughout ownership | 0% | TCA s. 604 — full exemption |

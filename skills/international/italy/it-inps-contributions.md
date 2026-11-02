@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Italian INPS social contributio
 version: 2.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -198,7 +198,7 @@ Matches F24 + "RAVVEDIMENTO" + "DPPI". This is a late INPS acconto payment with 
 
 ### Rule 3 -- Massimale and minimale
 
-- **Massimale and minimale** — Massimale: EUR 120,607 for 2025, EUR 122,295 for 2026 (INPS circolare 8 of 3 February 2026) -- no contributions on income above this. Minimale: EUR 18,555 for 2025 (EUR 18,808 for 2026) -- income below this earns proportionally reduced pension credit months: months = floor(income / EUR 18,555 x 12). There is NO mandatory minimum contribution in Gestione Separata.  _(Rule 3 -- Massimale and minimale)_
+- **Massimale and minimale** — Massimale: EUR 120,607 for 2025, EUR 122,295 for 2026 (INPS circolare 8 of 3 February 2026) -- no contributions on income above this. Minimale: EUR 18,555 for 2025 (EUR 18,808 for 2026) -- income below this earns proportionally reduced pension credit months: months = floor(income / minimale of the year x 12). There is NO mandatory minimum contribution in Gestione Separata.  _(Rule 3 -- Massimale and minimale)_
 
 ### Rule 4 -- Rivalsa INPS 4%
 
