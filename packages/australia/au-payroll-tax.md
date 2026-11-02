@@ -11,10 +11,10 @@ description: >
   "designated group employer", "relevant contract", "payroll tax grouping",
   "mental health levy", "payroll tax nexus", "annual reconciliation". Covers the
   2026-27 financial year for employers, payroll staff and advisers.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-11-01
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -23,16 +23,30 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Payroll Tax
+# AU Payroll Tax v1.2
 
-## Australia State and Territory Payroll Tax v1.1
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
+
+### Australia State and Territory Payroll Tax v1.2
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
 > elections, deadlines, residency, filing status or local procedures. Do not rely on it to
 > lodge, pay, amend or take a tax position without review by a qualified professional.
 
-## Section 1 - Quick Reference
+## Ask the client first
+
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
+
+## The method, step by step
+
+### Section 1 - Quick Reference
 
 **Quick reference table**
 
@@ -50,7 +64,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Records | Keep for at least five years, in English, available on request |
 | Reviewed by | Pending. Australian CPA or CA review required |
 
-## Section 2 - The calculation workflow
+### Section 2 - The calculation workflow
 
 **Step 1. Identify taxable wages.**
 Wages is defined broadly: salary, allowances, bonuses, commissions, director's fees,
@@ -78,7 +92,7 @@ employers in the ACT and the NT all turn on Australia-wide wages. See Section 3.
 Register in every jurisdiction where wages are paid once Australia-wide wages exceed its
 threshold, lodge monthly by the due date (generally the 7th) and reconcile annually by 21 July or 28 July. See Section 9.
 
-## Section 3 - Rates and thresholds for 2026-27
+### Section 3 - Rates and thresholds for 2026-27
 
 **Rates and thresholds by jurisdiction**  _(Payroll Tax Australia, Rates and thresholds — https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds)_
 
@@ -104,7 +118,7 @@ threshold, lodge monthly by the due date (generally the 7th) and reconcile annua
 - **South Australia** — The rate is set by Australia-wide wages before the deduction is subtracted, rising from 0% at $1.5m to 4.95% at $1.7m, and the deduction is capped at $600,000. Exempt allowance rates for 2026-27 are 88 cents per kilometre and $328.85 per night.  _(RevenueSA, Rates and thresholds — https://www.revenuesa.sa.gov.au/payrolltax/rates-and-thresholds)_
 - **Tasmania and NSW** — Tasmania publishes two rates and two thresholds for 2026-27 and an annual adjustment return guideline for part-year calculations; NSW publishes monthly thresholds of $92,055, $98,630 and $101,918 for 28-, 30- and 31-day months.  _(SRO Tasmania, Rates and thresholds — https://www.sro.tas.gov.au/payroll-tax/rates-thresholds)_
 
-## Section 4 - Taxable wages, exemptions and allowances
+### Section 4 - Taxable wages, exemptions and allowances
 
 - **Definition of wages** — The harmonised definition is not limited to salary. It covers remuneration, allowances, bonuses, commissions, director's fees, superannuation contributions, fringe benefits, shares and options, employment termination payments and deemed wages under the contractor and employment agency provisions.  _(Payroll Tax Australia, Definitions: wages — https://www.payrolltax.gov.au/definitions-acronyms-list/w)_
 - **Termination payments** — An employment termination payment within s 82-130 ITAA 1997 that would be included in the employee's assessable income is wages, as is a payment that would be an ETP but for being made more than 12 months after termination. The tax-free component and the tax-free part of a genuine redundancy payment are not assessable and so are not wages, while accrued leave paid on termination is. See `au-employment-termination-payments.md`.  _(Payroll Tax Australia, Definitions: employment termination payment — https://www.payrolltax.gov.au/employment-termination-payment)_
@@ -113,7 +127,7 @@ threshold, lodge monthly by the due date (generally the 7th) and reconcile annua
 - **Common exemptions** — Each Act exempts particular wages, for example wages paid during maternity, paternity or adoption leave, workers compensation payments, and wages paid by certain charities for exempt work; some jurisdictions also exempt apprentices and trainees. The lists differ, so confirm each exemption on the relevant office's site before claiming it.  _(Payroll Tax Australia, Revenue rulings table — https://www.payrolltax.gov.au/revenue-rulings-table)_
 - **Audit findings** — The revenue offices report the same errors year after year: omitted director's fees, super and fringe benefits; undeclared employee share scheme benefits; wrongly claimed exemptions; wages declared in the wrong jurisdiction; employees classified as contractors; and wrong grouping status.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging)_
 
-## Section 5 - Thresholds, deductions and apportionment
+### Section 5 - Thresholds, deductions and apportionment
 
 - **Part-year employment** — Multiply the annual threshold by the days wages were paid divided by the days in the financial year. In NSW an employer paying wages for 184 days of 2025-26 received $604,931.51.  _(Revenue NSW, Thresholds and rates — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates)_
 - **Interstate wages** — Multiply the threshold by the jurisdiction's wages divided by total Australian wages. NSW wages of $900,000 out of $3,000,000 Australian wages give a NSW threshold of $360,000. Interstate wages must be declared in every return even where they fall below the other jurisdiction's threshold.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
@@ -121,14 +135,14 @@ threshold, lodge monthly by the due date (generally the 7th) and reconcile annua
 - **Groups** — One threshold per group, claimed by the designated group employer. Other members pay the flat rate on all their wages. In some jurisdictions an unused deduction can be allocated to another member at the annual return.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging)_
 - **Registration in several jurisdictions** — Liability is tested on Australia-wide wages, so an employer whose total wages exceed a state's threshold must register there even if the wages paid in that state alone are below it.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
 
-## Section 6 - Nexus: which jurisdiction taxes the wages
+### Section 6 - Nexus: which jurisdiction taxes the wages
 
 - **Services wholly in one jurisdiction** — Where an employee's services in a calendar month are performed wholly in one state or territory, the wages for that month are taxable there, even if the employee normally works elsewhere.  _(Revenue NSW, Nexus provisions — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/nexus-provisions)_
 - **Services in more than one place** — Apply a four-tier test in order for that month: the employee's principal place of residence (the one held on the last day of the month if there is more than one); then the employer's ABN address, or principal place of business if there is no single ABN address; then the jurisdiction where the wages are paid, using the largest portion where they are paid in several; then the jurisdiction where the services are mainly performed, meaning more than half the time worked. A deemed corporate employee's residence is its ABN address or principal place of business.  _(Revenue NSW, Nexus provisions — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/nexus-provisions)_
 - **Working overseas** — Wages for services performed wholly overseas are taxable in the jurisdiction where they are paid for up to six continuous months. Once the continuous period exceeds six months the wages are exempt, including the first six months. A holiday, or a return of less than a month for work related to the overseas assignment, does not break continuity. Services performed offshore but outside any state or territory are taxable where the wages are paid, however long the assignment.  _(Revenue NSW, Nexus provisions — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/nexus-provisions)_
 - **Harmonised ruling** — Revenue Ruling PTA 039 sets out the nexus rules and their deeming provisions, and each office publishes its own copy.  _(Payroll Tax Australia, Revenue rulings table — https://www.payrolltax.gov.au/revenue-rulings-table)_
 
-## Section 7 - Grouping
+### Section 7 - Grouping
 
 - **How a group forms** — Related corporations within s 50 of the Corporations Act 2001; common employees, where an employee of one business performs duties for another; common control, where the same person or set of persons controls two businesses; tracing of interests, where an entity holds a controlling interest in a corporation; and subsuming, where smaller groups join a larger one. Grouping applies across jurisdictions and industries.  _(Revenue NSW, What is payroll tax grouping — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/grouping/what-is-payroll-tax-grouping)_
 - **Consequences** — The gross wages of every member are added together, a single threshold applies to the group, the threshold is apportioned by the group's share of wages in the jurisdiction, and every member is liable for any unpaid payroll tax of any other member. Group Australia-wide wages also set the rate tier and levy position in the ACT, NT, QLD and VIC.  _(Revenue NSW, What is payroll tax grouping — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/grouping/what-is-payroll-tax-grouping)_
@@ -136,7 +150,7 @@ threshold, lodge monthly by the due date (generally the 7th) and reconcile annua
 - **Exclusion** — A member can apply to be excluded where its business is carried on independently of, and is not connected with, the other members. Related corporations cannot be excluded.  _(Revenue NSW, What is payroll tax grouping — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/grouping/what-is-payroll-tax-grouping)_
 - **Registration failures** — Revenue offices penalise employers each year for failing to register a related entity under the grouping provisions, including holding and subsidiary relationships, common shareholders or directors and shared employees.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
 
-## Section 8 - Contractors and employment agents
+### Section 8 - Contractors and employment agents
 
 - **Employee first** — Test the totality of the relationship using only the legal rights and obligations in the contract. An ABN, a company structure or a label such as independent contractor does not settle it. All wages paid to a common law employee are taxable, and the contractor exemptions do not apply.  _(Revenue NSW, Contractors — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/contractors)_
 - **Relevant contracts** — A relevant contract is one under which a person in the course of business supplies or receives services for the performance of work, or gives out goods for work to be done on them and re-supplied. The contractor is deemed the employee and the payer the employer, and the labour component of the payments is wages unless an exemption applies. Western Australia has no relevant contract provisions and relies on the employee tests.  _(Payroll Tax Australia, relevant contract — https://www.payrolltax.gov.au/relevant-contract)_
@@ -146,16 +160,24 @@ threshold, lodge monthly by the due date (generally the 7th) and reconcile annua
 - **Principal contractor recovery** — In NSW the Chief Commissioner can recover a subcontractor's unpaid payroll tax from the principal unless the principal holds a signed subcontractor's statement covering the work. The statement does not remove the principal's own liability on payments to the subcontractor.  _(Revenue NSW, Contractors — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/contractors)_
 - **Medical and allied health practices** — Practices that engage practitioners under service agreements have been an audit focus, and several offices publish rulings and concessions on when the relevant contract provisions apply. Check the ruling in the relevant jurisdiction before assuming the practitioners fall outside the provisions.  _(ACT Revenue Office, Designated medical practices with general practitioners — https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/designated-medical-practices-with-general-practitioners)_
 
-## Section 9 - Registration, lodgment and compliance
+## Boundary and exception table
 
-- **Register before the first return** — Payroll tax is self-assessed. Register with each revenue office where wages are paid once Australia-wide taxable wages, or group wages, exceed the threshold, and cancel the registration when the business stops employing there, drops below the threshold or moves to a new ABN.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
-- **Monthly returns** — Due on the 7th of the following month, or the next business day where the 7th falls on a weekend or public holiday, with these exceptions. NT: within 21 days after the end of the month. December return: 14 January in the ACT and NSW (14 January 2027 for December 2026). June: no separate monthly return in NSW, Victoria, Tasmania, the ACT or the NT, because June goes in the annual return. The December and June treatment in Queensland, WA and SA was not confirmed on their pages, so check with those offices. Some jurisdictions offer other periods.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging; Payroll Tax Act 2009 (NT) s 87 — https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078; Revenue NSW, Key dates — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/key-dates; ACT Revenue Office, About payroll tax — https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax; SRO Tasmania, Lodge your return — https://www.sro.tas.gov.au/payroll-tax/lodge-your-return; SRO Victoria, Lodge your annual reconciliation — https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/managing-your-payroll-tax/lodge-your-annual-reconciliation)_
-- **Annual return** — Every registered employer lodges an annual reconciliation (in some jurisdictions an annual adjustment return) by 21 July, or by 28 July in the ACT, NSW and SA, even where the result is nil. RevenueSA states that the SA annual reconciliation is due on 28 July and that it accepts lodgement on the next business day where 28 July falls on a weekend or public holiday.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging; RevenueSA, Returns and Annual Reconciliation — https://www.revenuesa.sa.gov.au/payrolltax/returns-and-annual-reconciliation)_
-- **Final returns** — Ceasing to employ, a change of grouping status or the appointment of an administrator or receiver can require a final return in each jurisdiction.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
-- **Penalties and disclosure** — Interest applies to any underpayment and penalty tax can follow; a voluntary disclosure attracts a lower rate of penalty tax than an underpayment found by data matching with the ATO and other agencies.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
-- **Records** — Keep records showing how each jurisdiction's wages were calculated for at least five years, in English or a form easily translated, and available for audit.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
+### Section 11 - Common errors
 
-## Section 10 - Worked example
+- Claiming the full threshold while paying interstate wages, or not updating the interstate figure after another office's audit.
+- Leaving out director's fees, superannuation contributions, grossed-up fringe benefits and employee share scheme benefits.
+- Declaring wages in the wrong jurisdiction when services were performed wholly in one state for the month.
+- Treating a worker with an ABN or a company as outside the contractor provisions without testing the exemptions.
+- Missing the employment agency provisions, which switch off the contractor exemptions.
+- Lodging as non-grouped when a common director, shareholder or shared employee creates a group.
+- Applying the Victorian phase-out or the Queensland or NT deduction taper to the jurisdiction's wages rather than Australian wages.
+- Forgetting that the ACT rate, the NT 6.5% rate, the Queensland levy and the Victorian surcharges are set by group Australia-wide wages.
+- Missing the monthly due date (generally the 7th; Section 9), or the 21 July and 28 July annual due dates.
+- Failing to declare portable long service leave and redundancy scheme payments in WA and the ACT.
+
+## Worked cases
+
+### Section 10 - Worked example
 
 **Worked example facts**
 
@@ -211,20 +233,24 @@ the Victorian annual reconciliation by 21 July 2027.
 employers should model the group's Australian wages in each jurisdiction before assuming a single
 national rate.
 
-## Section 11 - Common errors
+## When to refuse or refer
 
-- Claiming the full threshold while paying interstate wages, or not updating the interstate figure after another office's audit.
-- Leaving out director's fees, superannuation contributions, grossed-up fringe benefits and employee share scheme benefits.
-- Declaring wages in the wrong jurisdiction when services were performed wholly in one state for the month.
-- Treating a worker with an ABN or a company as outside the contractor provisions without testing the exemptions.
-- Missing the employment agency provisions, which switch off the contractor exemptions.
-- Lodging as non-grouped when a common director, shareholder or shared employee creates a group.
-- Applying the Victorian phase-out or the Queensland or NT deduction taper to the jurisdiction's wages rather than Australian wages.
-- Forgetting that the ACT rate, the NT 6.5% rate, the Queensland levy and the Victorian surcharges are set by group Australia-wide wages.
-- Missing the monthly due date (generally the 7th; Section 9), or the 21 July and 28 July annual due dates.
-- Failing to declare portable long service leave and redundancy scheme payments in WA and the ACT.
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
 
-## Section 12 - Self-checks
+## Filing and payment
+
+### Section 9 - Registration, lodgment and compliance
+
+- **Register before the first return** — Payroll tax is self-assessed. Register with each revenue office where wages are paid once Australia-wide taxable wages, or group wages, exceed the threshold, and cancel the registration when the business stops employing there, drops below the threshold or moves to a new ABN.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
+- **Monthly returns** — Due on the 7th of the following month, or the next business day where the 7th falls on a weekend or public holiday, with these exceptions. NT: within 21 days after the end of the month. December return: 14 January in the ACT and NSW (14 January 2027 for December 2026). June: no separate monthly return in NSW, Victoria, Tasmania, the ACT or the NT, because June goes in the annual return. The December and June treatment in Queensland, WA and SA was not confirmed on their pages, so check with those offices. Some jurisdictions offer other periods.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging; Payroll Tax Act 2009 (NT) s 87 — https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078; Revenue NSW, Key dates — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/key-dates; ACT Revenue Office, About payroll tax — https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax; SRO Tasmania, Lodge your return — https://www.sro.tas.gov.au/payroll-tax/lodge-your-return; SRO Victoria, Lodge your annual reconciliation — https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/managing-your-payroll-tax/lodge-your-annual-reconciliation)_
+- **Annual return** — Every registered employer lodges an annual reconciliation (in some jurisdictions an annual adjustment return) by 21 July, or by 28 July in the ACT, NSW and SA, even where the result is nil. RevenueSA states that the SA annual reconciliation is due on 28 July and that it accepts lodgement on the next business day where 28 July falls on a weekend or public holiday.  _(Payroll Tax Australia, Lodging — https://www.payrolltax.gov.au/lodging; RevenueSA, Returns and Annual Reconciliation — https://www.revenuesa.sa.gov.au/payrolltax/returns-and-annual-reconciliation)_
+- **Final returns** — Ceasing to employ, a change of grouping status or the appointment of an administrator or receiver can require a final return in each jurisdiction.  _(Payroll Tax Australia, Registration — https://www.payrolltax.gov.au/registration)_
+- **Penalties and disclosure** — Interest applies to any underpayment and penalty tax can follow; a voluntary disclosure attracts a lower rate of penalty tax than an underpayment found by data matching with the ATO and other agencies.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
+- **Records** — Keep records showing how each jurisdiction's wages were calculated for at least five years, in English or a form easily translated, and available for audit.  _(Revenue NSW, Interstate wages — https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages)_
+
+## Completion checklist
+
+### Section 12 - Self-checks
 
 - [ ] Every component of remuneration, including super, fringe benefits and ETPs, is in the wages figure.
 - [ ] Each employee's wages are assigned month by month under the nexus rules.
@@ -237,7 +263,43 @@ national rate.
 - [ ] Monthly and annual returns are lodged in every registered jurisdiction, including nil returns.
 - [ ] Records supporting each jurisdiction's wages are kept for five years.
 
-## Section 13 - Sources
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/calculating-payroll-tax> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-changes-from-1-july-2026> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://qro.qld.gov.au/payroll-tax/calculate/deductions/> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/thresholds-and-grouping/threshold-and-phase-out-rate> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.wa.gov.au/government/multi-step-guides/payroll-tax-employer-guide/calculation-payroll-tax-employer-guide> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenuesa.sa.gov.au/payrolltax/rates-and-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.sro.tas.gov.au/payroll-tax/rates-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.payrolltax.gov.au/definitions-acronyms-list/w> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.payrolltax.gov.au/employment-termination-payment> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/fringe-benefits> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.payrolltax.gov.au/revenue-rulings-table> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.payrolltax.gov.au/lodging> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/interstate-wages> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.payrolltax.gov.au/registration> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/nexus-provisions> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/grouping/what-is-payroll-tax-grouping> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/contractors> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.payrolltax.gov.au/relevant-contract> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/designated-medical-practices-with-general-practitioners> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/key-dates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.sro.tas.gov.au/payroll-tax/lodge-your-return> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.sro.vic.gov.au/businesses-and-organisations/payroll-tax/managing-your-payroll-tax/lodge-your-annual-reconciliation> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenuesa.sa.gov.au/payrolltax/returns-and-annual-reconciliation> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://qro.qld.gov.au/payroll-tax/calculate/rates-thresholds/> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://qro.qld.gov.au/payroll-tax/mental-health-levy/> | Not re-read for this format update; see retained provenance |
+
+### Section 13 - Sources
 
 - Payroll Tax Act 2007 (NSW), Payroll Tax Act 2007 (Vic), Payroll Tax Act 1971 (Qld), Pay-roll Tax Assessment Act 2002 (WA), Payroll Tax Act 2009 (SA), Payroll Tax Act 2008 (Tas), Payroll Tax Act 2011 (ACT) and Payroll Tax Act 2009 (NT); links on the Payroll Tax Australia legislation table.
 - Payroll Tax Australia, Rates and thresholds, https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds
@@ -273,6 +335,8 @@ Sources were checked on 27 September 2026. The NT deduction, the monthly return 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before registering, lodging or amending a payroll tax return. Thresholds, deduction formulas and levies change with each state budget, and grouping and contractor positions turn on the facts.
 >
 > Contributed by Ryan Duguid.
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

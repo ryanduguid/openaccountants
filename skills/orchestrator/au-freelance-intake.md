@@ -1,28 +1,52 @@
 ---
 name: au-freelance-intake
-description: ALWAYS USE THIS SKILL when a user asks for help preparing their Australian tax returns AND mentions freelancing, self-employment, contracting, sole trading, or ABN-based work. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm a sole trader in Australia", "I'm a freelancer in Australia", "do my taxes as a contractor", "prepare my BAS and income tax", or any similar phrasing where the user is an Australian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Australian self-employed tax workflow -- every other skill in the stack (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments, au-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Australian full-year residents only; sole traders only.
-version: 0.4
+description: >
+  Use this intake for Australian full-year resident individual sole traders
+  seeking help preparing their 2025-26 returns, including freelancers,
+  self-employed contractors and ABN-based work. It runs before the Australian
+  content skills and au-return-assembly to produce the structured intake package.
+  The workflow checks scope, receives the supplied documents, infers supported
+  facts, asks about gaps and confirms the result with the user. It does not
+  compute tax. Trigger on preparing an Australian sole trader ITR or BAS,
+  self-employment tax preparation or contractor returns. Preserve the refusal
+  conditions, confirmation and handoff requirements, and the registered tax agent
+  review required before lodgement.
+version: 0.5
 jurisdiction: AU
 category: orchestrator
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Freelance Intake
+# AU Freelance Intake v0.5
 
-## Australia Sole Trader Intake Skill v0.4
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-## What this file is
+## Scope
+
+### Australia Sole Trader Intake Skill v0.5
+
+### What this file is
 
 The intake orchestrator for Australian-resident sole traders. Every downstream Australian content skill (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments) and the assembly orchestrator (au-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `au-return-assembly`.
 
-## Design principles
+## Ask the client first
+
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
+
+## The method, step by step
+
+### Design principles
 
 This skill follows the same upload-first, inference-then-confirm pattern as mt-freelance-intake v0.1:
 
@@ -34,7 +58,7 @@ This skill follows the same upload-first, inference-then-confirm pattern as mt-f
 
 Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user who has to go fetch documents.
 
-## Critical operating principles
+### Critical operating principles
 
 **Do not narrate the workflow.** Do not say "Phase 1," "Phase 2," "Now I'll ask you about deductions." Just do the work.
 
@@ -50,7 +74,7 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
-## Section 1 -- The opening
+### Section 1 -- The opening
 
 - **Opening message structure** — When triggered, respond with ONE message that: 1. One-line greeting (no paragraph of expectation-setting) 2. One-line summary of the flow (scope check -> upload -> gaps -> handoff to return assembly) 3. One-line reviewer reminder (must be reviewed by registered tax agent before filing) 4. Launch the refusal sweep immediately using `ask_user_input_v0`
 
@@ -69,7 +93,7 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
-## Section 2 -- Refusal sweep (compact)
+### Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
 
@@ -110,7 +134,7 @@ Q6: "Industry?"
 
 Total time: ~45 seconds if the user taps through.
 
-## Section 3 -- The dump
+### Section 3 -- The dump
 
 Once the refusal sweep passes, immediately ask for the document dump. Single message. No preamble.
 
@@ -149,7 +173,7 @@ Then wait. Do not ask any other questions while waiting.
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
 
-## Section 4 -- The inference pass
+### Section 4 -- The inference pass
 
 **Bank statement:**
 - Total deposits (candidate gross receipts)
@@ -220,7 +244,7 @@ Then wait. Do not ask any other questions while waiting.
 
 After parsing everything, build an internal inference object. Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
 
-## Section 5 -- The confirmation
+### Section 5 -- The confirmation
 
 After inference, present a single compact summary message. Use a structured format that is fast to scan. Invite the user to correct anything wrong.
 
@@ -283,7 +307,7 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
-## Section 6 -- Gap filling
+### Section 6 -- Gap filling
 
 After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
 
@@ -341,7 +365,7 @@ Q: "Any other income in 2025-26?"
 
 - **Other income handling** — If any selected -> ask for amounts as text input. Flag rental income and capital gains as potentially out of scope for this workflow (complex supplementary schedules).
 
-## Section 7 -- The final handoff
+### Section 7 -- The final handoff
 
 Once gap-filling is done, produce a final handoff message and hand off to `au-return-assembly`.
 
@@ -367,7 +391,7 @@ Once gap-filling is done, produce a final handoff message and hand off to `au-re
 
 Then internally invoke `au-return-assembly` with the structured intake package.
 
-## Section 8 -- Structured intake package (internal format)
+### Section 8 -- Structured intake package (internal format)
 
 The downstream skill (`au-return-assembly`) consumes a JSON structure. It is internal and not shown to the user unless they ask. Key fields:
 
@@ -472,7 +496,7 @@ The downstream skill (`au-return-assembly`) consumes a JSON structure. It is int
 
 - **Concessional contributions cap default value** — AUD 30,000, the 2025-26 general cap (default concessional_cap field value in the intake package; carry-forward amounts are added separately)
 
-## Section 9 -- Refusal handling
+### Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., company structure discovered in documents).
 
@@ -494,7 +518,62 @@ When a refusal fires:
 >
 > I can't help with this one.
 
-## Section 10 -- Self-checks
+### Section 11 -- Performance targets
+
+For a prepared user (documents in a folder, ready to upload):
+- **Refusal sweep**: 45 seconds (1-2 interactive turns)
+- **Document upload**: 2 minutes (1 upload turn)
+- **Inference and confirmation display**: 1 minute Claude processing + 1 turn for user confirmation
+- **Gap filling**: 2 minutes (2-3 interactive turns)
+- **Handoff**: immediate
+- **Total**: ~6 minutes
+
+For an unprepared user (has to go fetch documents):
+- Refusal sweep: same
+- Document discovery: 10-20 minutes offline
+- Rest: same
+- **Total**: 15-25 minutes
+
+### Section 12 -- Cross-skill references
+
+**Inputs:** User-provided documents and answers.
+
+**Outputs:** Structured intake package consumed by `au-return-assembly`.
+
+**Downstream skills triggered (via au-return-assembly):**
+- `australia-gst` -- BAS quarterly GST return
+- `au-individual-return` -- Individual tax return (ITR)
+- `au-super-guarantee` -- Super contributions reconciliation
+- `au-medicare-levy` -- Medicare levy and surcharge
+- `au-payg-instalments` -- PAYG instalment schedule
+
+0. **Downstream invocation - GST** — BAS quarterly GST return
+
+#### Change log
+
+- **v0.4 (October 2026):** Rolled forward to the 2025-26 income year (self-lodgment due Monday 2 November 2026); PHI and fixed-rate figures updated; company and trust refusals point to the company and trust workflow, and partnership refusals to `au-partnerships`.
+- **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
+
+## Worked cases
+
+No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
+
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+
+### Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+
+
+## Completion checklist
+
+### Section 10 -- Self-checks
 
 **Check IN1 -- No one-question-at-a-time prose in the refusal sweep.** If the skill asked "Question 1 of 10" or walked through questions as separate messages, check fails.
 
@@ -520,49 +599,17 @@ When a refusal fires:
 
 **Check IN12 -- GST registration status was established.** GST registered vs unregistered was confirmed before inference, as it changes how every transaction is classified. An unregistered status was tested against current and projected GST turnover and the taxi and ride-sourcing rule, and any failure is in `open_flags`.
 
-## Section 11 -- Performance targets
 
-For a prepared user (documents in a folder, ready to upload):
-- **Refusal sweep**: 45 seconds (1-2 interactive turns)
-- **Document upload**: 2 minutes (1 upload turn)
-- **Inference and confirmation display**: 1 minute Claude processing + 1 turn for user confirmation
-- **Gap filling**: 2 minutes (2-3 interactive turns)
-- **Handoff**: immediate
-- **Total**: ~6 minutes
+### End of Intake Skill v0.5
 
-For an unprepared user (has to go fetch documents):
-- Refusal sweep: same
-- Document discovery: 10-20 minutes offline
-- Rest: same
-- **Total**: 15-25 minutes
+## Sources
 
-## Section 12 -- Cross-skill references
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method> | Not re-read for this format update; see retained provenance |
 
-**Inputs:** User-provided documents and answers.
-
-**Outputs:** Structured intake package consumed by `au-return-assembly`.
-
-**Downstream skills triggered (via au-return-assembly):**
-- `australia-gst` -- BAS quarterly GST return
-- `au-individual-return` -- Individual tax return (ITR)
-- `au-super-guarantee` -- Super contributions reconciliation
-- `au-medicare-levy` -- Medicare levy and surcharge
-- `au-payg-instalments` -- PAYG instalment schedule
-
-0. **Downstream invocation - GST** — BAS quarterly GST return
-
-### Change log
-
-- **v0.4 (October 2026):** Rolled forward to the 2025-26 income year (self-lodgment due Monday 2 November 2026); PHI and fixed-rate figures updated; company and trust refusals point to the company and trust workflow, and partnership refusals to `au-partnerships`.
-- **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
-
-## End of Intake Skill v0.4
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Workflow acceptance cases have not been independently tested for this format update.
 
 <!-- openaccountants-cta-block -->
 

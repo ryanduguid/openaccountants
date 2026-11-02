@@ -11,20 +11,36 @@ description: >
   "activity statement", "annual leave", "long service leave",
   "minimum wage Australia", or any question about running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.4
+version: 2.10
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-31
+last_updated: 2026-11-03
 review_status: pending_review
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.4
+# Australia -- Payroll Skill v2.10
 
-## Section 1 -- Quick Reference
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
+
+> Use this skill whenever asked about Australian payroll, PAYG withholding, superannuation guarantee, Single Touch Payroll, or employer obligations in Australia. Trigger on phrases like "PAYG", "pay as you go withholding", "superannuation", "super guarantee", "STP", "Single Touch Payroll", "STP Phase 2", "Medicare levy", "tax file number", "TFN declaration", "HECS-HELP", "STSL", "Fair Work", "NES", "national employment standards", "modern award", "payslip Australia", "ATO payroll", "BAS", "IAS", "activity statement", "annual leave", "long service leave", "minimum wage Australia", or any question about running payroll in Australia. ALWAYS read this skill before processing any Australian payroll work.
+
+## Ask the client first
+
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
+
+## The method, step by step
+
+### Section 1 -- Quick Reference
 
 **Quick Reference table**
 
@@ -40,13 +56,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 2.4 |
+| Skill version | 2.7 |
 
-## Section 2 -- Income Tax Withholding (PAYG)
+### Section 2 -- Income Tax Withholding (PAYG)
 
 PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -- NAT 1004) or the Statement of Formulas. The employer applies the appropriate coefficients based on weekly/fortnightly/monthly earnings.
 
-### Resident Individual Tax Rates (2026--27)
+#### Resident Individual Tax Rates (2026--27)
 
 | Taxable Income (AUD) | Rate | Tax on This Income |
 | --- | --- | --- |
@@ -58,7 +74,7 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 
 - **Rates exclude Medicare levy** — These rates **exclude** the Medicare levy (2%). From 1 July 2026 the rate on $18,201--$45,000 dropped from 16% to 15% (Treasury Laws Amendment (More Cost of Living Relief) Act 2025); it drops again to 14% from 1 July 2027.  _(Treasury Laws Amendment (More Cost of Living Relief) Act 2025)_
 
-### Medicare Levy
+#### Medicare Levy
 
 **Medicare Levy**
 
@@ -66,24 +82,24 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 | --- | --- |
 | Standard rate | 2% of taxable income |
 | Low-income threshold (single, 2025-26) | No levy up to $28,011; reduced levy $28,012--$35,013 (the ATO sets the 2026-27 thresholds later in the year) |
-| Low-income threshold (family, 2025-26) | No levy up to $47,238; reduced $47,239--$59,047, plus $4,338 per dependent child |
+| Low-income threshold (family, 2025-26) | Base threshold $47,238 plus $4,338 for each qualifying child. Above the threshold, calculate the family reduction under Medicare Levy Act s 8; it reaches zero at 1.25 times that threshold. Apply the spouse-sharing rules in `au-medicare-levy.md`. These are annual assessment rules, not PAYG withholding formulas |
 | Medicare Levy Surcharge | 1.0%--1.5% additional for high earners without private hospital cover |
 
 - **Medicare levy incorporation** — The Medicare levy is incorporated into PAYG withholding calculations via the tax tables.
 
-### Tax File Number (TFN) Declaration
+#### Tax File Number (TFN) Declaration
 
 - **TFN declaration requirement:** Every new employee must complete a TFN declaration. Check the declaration before using no-TFN withholding. A payee who declares a TFN application or enquiry has 28 days to provide the TFN; an exemption may also apply. If no TFN is quoted, no exemption is claimed and no application or enquiry is declared, use 47% for a resident or 45% for a foreign resident, ignoring cents. After the 28-day period, use that rate unless the ATO directs otherwise. Do not add tax offsets, Medicare adjustments or an STSL component to no-TFN withholding. See [ATO: payee declarations](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-1-statement-of-formulas-for-calculating-amounts-to-be-withheld/payee-declarations).
 
-### Study and Training Support Loans (STSL)
+#### Study and Training Support Loans (STSL)
 
 - **STSL description** — Formerly HECS-HELP. Compulsory repayments are withheld via PAYG using the Schedule 8 formulas in force on the payment date. The marginal repayment system took effect for withholding from 24 September 2025; for payments from 1 July 2026 use the 2026-27 Schedule 8 (weekly threshold $1,337).  _([ATO, Schedule 8](https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components))_
 
-## Section 3 -- Social Security: Employee Deductions
+### Section 3 -- Social Security: Employee Deductions
 
 Australia does not have a separate employee social security contribution. The Medicare levy (2%) serves a similar function but is collected through PAYG withholding, not as a separate line item.
 
-### Employee-Side Deductions Summary
+#### Employee-Side Deductions Summary
 
 **Employee-Side Deductions Summary**
 
@@ -95,36 +111,40 @@ Australia does not have a separate employee social security contribution. The Me
 
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
 
-## Section 4 -- Superannuation Guarantee
+### Section 4 -- Superannuation Guarantee
 
 **Superannuation Guarantee rates and rules**
 
+The SG formulas, contribution base, SG shortfall percentage and worked SG amounts in this guide use the general schedule. Norfolk Island's transitional rate is 10% for 2025-26, 11% for 2026-27 and 12% from 1 July 2027. Check the separate Norfolk Island SG rules before applying the general formulas or base to a Norfolk Island arrangement. [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee).
+
 | Item | Detail |
 | --- | --- |
-| SG rate | 12% of qualifying earnings |
-| Maximum contribution base | $270,830 per year (ANNUAL, year-to-date basis; quarterly base abolished for earnings paid from 1 Jul 2026) |
+| General SG rate | 12% of qualifying earnings |
+| Maximum contribution base (general schedule) | $270,830 per year (ANNUAL, year-to-date basis; quarterly base abolished for earnings paid from 1 Jul 2026) |
 | Minimum earnings threshold | Abolished (no $450/month threshold from 1 Jul 2022) |
 | Payment deadline | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
 | Eligible employees | Assess SGAA eligibility. An under-18 employee must work more than 30 actual hours in the week; exactly 30 does not qualify |
 
+**Choose QE before applying the rate.** From 1 July 2026, include all commissions, including those for work entirely outside ordinary hours. Include salary sacrificed to super if it would otherwise have been QE and the payments expressly included for extended employees. Count overlapping categories once. Ordinary overtime outside QE is different from an outside-hours commission; do not exclude both merely because they arise outside ordinary hours. Salary sacrifice to super does not satisfy employer SG. Check statutory exclusions and the annual base before calculating; unknown classifications or YTD records mean Needs Input. See Rule 1 in [au-super-guarantee](au-super-guarantee.md), [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2026C00272/latest/text) and [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings).
+
 - **SG under-18 hours test** — An under-18 employee must work more than 30 actual hours in the week to qualify for SG; exactly 30 does not qualify. Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
 
-- **Deadline exceptions** — new employee / new fund / a worker rehired or recommenced under a new arrangement -- 20 business days for the first contribution; out-of-cycle payments (such as bonuses, where the employee has a regular pay schedule and the payment falls outside it) ride with the next regular payday's deadline, but with no later regular payday (for example a final payment when employment ends) the usual 7 business days apply, and payments to workers with irregular paydays (such as a contractor paid on invoice) are not out of cycle; ATO exceptional-circumstances determinations -- 20 business days.
+- **Deadline exceptions** — 20 business days for the first eligible contribution for a new employee or a worker rehired or recommenced under a new arrangement, or to a new complying fund/RSA for an existing employee after eligible contributions to another fund/RSA have ceased. Verify the conditions; a new fund alone does not establish the extension. A later QE day inherits that extended deadline only when its usual deadline ends earlier and an earlier eligible contribution was actually made and applied for an earlier QE day (SGAA s 18C(2) item 4); otherwise its usual 7 business days apply unless another extension independently applies. Out-of-cycle payments (such as bonuses, where the employee has a regular pay schedule and the payment falls outside it) ride with the next regular payday's deadline, but with no later regular payday (for example a final payment when employment ends) the usual 7 business days apply, and payments to workers with irregular paydays (such as a contractor paid on invoice) are not out of cycle. An applicable ATO exceptional-circumstances determination gives the later of 20 business days after the QE day or 20 business days after the determination. Verify fund receipt and the applicable national business-day calendar. [ATO payday deadlines](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super).
 - **Legacy** — quarterly due dates (28 Oct/28 Jan/28 Apr/28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026. The ATO Small Business Super Clearing House closed permanently on 1 July 2026 -- small employers now use payroll-software super payments or commercial clearing houses.
-- **Final scheduled SG rate** — 12% is the final scheduled SG rate (reached 1 July 2025). No further increases are scheduled.
+- **Final scheduled general SG rate**: 12% is the final scheduled general SG rate (reached 1 July 2025). No further general-rate increases are scheduled; Norfolk Island reaches 12% on 1 July 2027.
 
-### Superannuation Guarantee Charge (SGC) -- redesigned from 1 July 2026
+#### Superannuation Guarantee Charge (SGC) -- redesigned from 1 July 2026
 
-- **SGC redesign components** — For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components: - The final SG shortfall (12% of qualifying earnings unpaid) - Notional earnings (GIC-rate interest, compounding daily from the day after the deadline) - An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record) - Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached  _(SGAA ss 16B, 18D, 19A and 19B; SGAR regs 13A to 13D; [ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly))_
+- **SGC redesign components** — For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components: - The final SG shortfall (12% of qualifying earnings unpaid under the general schedule) - Notional earnings (GIC-rate interest, compounding daily from the day after the deadline) - An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record) - Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached  _(SGAA ss 16B, 18D, 19A and 19B; SGAR regs 13A to 13D; [ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly))_
 - **SGC deductibility and penalties** — The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment penalty are not). Old-regime SGC for quarters before 1 July 2026 remains non-deductible. Unpaid SGC 28 days after assessment triggers a Notice to Pay, then a 25% or 50% late payment penalty. First-year ATO compliance approach, which does not remove liability: PCG 2026/1.  _([ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly); [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super); [PCG 2026/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20261/NAT/ATO/00001) for the first-year approach)_
 
-## Section 5 -- Employer On-costs
+### Section 5 -- Employer On-costs
 
-### Workers' Compensation Insurance
+#### Workers' Compensation Insurance
 
 - **Workers' compensation insurance** — Mandatory in all states/territories. Premium rates vary by industry, state, and claims history. Typically 1%--5% of wages for office-based roles.
 
-### Payroll Tax (State/Territory)
+#### Payroll Tax (State/Territory)
 
 **Payroll Tax (State/Territory)**  _(Payroll Tax Australia, Rates and thresholds)_
 
@@ -146,9 +166,9 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 - **Interstate employers** — Interstate employers must register in each jurisdiction where they pay wages once Australia-wide wages exceed its threshold. Deduction formulas, grouping, contractor and nexus rules are in `au-payroll-tax.md`.
 - **Payroll tax figures** — The table carries the 2026-27 thresholds and rates published by Payroll Tax Australia on 2 September 2026 and by each revenue office. The ACT moved to a $1.75m threshold with tiered rates from 1 July 2026, and the NT threshold rose to $2.5m from 1 July 2025.  _([Payroll Tax Australia, Rates and thresholds](https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds); NT deduction: [Payroll Tax Act 2009 (NT) Sch 1 cl 3, 5 and 7](https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078) and [Territory Revenue Office, Payroll changes from 1 July 2026](https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-changes-from-1-july-2026))_
 
-## Section 6 -- Fair Work Entitlements
+### Section 6 -- Fair Work Entitlements
 
-### National Minimum Wage (from the first full pay period on or after 1 July 2026)
+#### National Minimum Wage (from the first full pay period on or after 1 July 2026)
 
 **National Minimum Wage (from the first full pay period on or after 1 July 2026)**
 
@@ -160,7 +180,7 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 
 - **Modern award coverage** — Most employees are covered by a modern award, which sets higher minimum rates by classification level.
 
-### Overtime (Under Awards)
+#### Overtime (Under Awards)
 
 **Overtime (Under Awards)**
 
@@ -173,27 +193,27 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 
 - **Overtime rate variability** — Exact rates depend on the applicable modern award or enterprise agreement. The Fair Work Act does not prescribe a single universal overtime rate.  _(Fair Work Act)_
 
-### Maximum Ordinary Hours
+#### Maximum Ordinary Hours
 
 - **Maximum ordinary hours** — 38 hours/week under the NES. Can be averaged over up to 26 weeks if permitted by the award or agreement.  _(NES)_
 
-### Annual Leave
+#### Annual Leave
 
 - **Annual leave entitlement** — 4 weeks per year (pro-rata for part-time). Accrues progressively. Shift workers may receive 5 weeks. 17.5% annual leave loading is common under awards (paid on top of base rate when leave is taken).
 
-### Personal / Carer's Leave (Sick Leave)
+#### Personal / Carer's Leave (Sick Leave)
 
 - **Personal/Carer's leave entitlement** — 10 days per year for full-time employees (pro-rata for part-time). Accumulates year to year with no cap. Paid at the base rate of pay.
 
-### Compassionate / Bereavement Leave
+#### Compassionate / Bereavement Leave
 
 - **Compassionate/bereavement leave entitlement** — 2 days per occasion (paid for permanent employees).
 
-### Long Service Leave
+#### Long Service Leave
 
 - **Long service leave entitlement** — Governed by state/territory legislation. Typically 8.67 weeks after 10 years of continuous service. Some states allow pro-rata access after 5--7 years.
 
-### Parental Leave
+#### Parental Leave
 
 **Parental Leave**
 
@@ -202,11 +222,11 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 | Government Paid Parental Leave | Up to 130 days (26 weeks on a five-day basis) for eligible births/adoptions from 1 July 2026 | National minimum wage rate |
 | Unpaid parental leave | Up to 12 months (can request additional 12 months) | Nil (job-protected) |
 
-### Public Holidays
+#### Public Holidays
 
 - **Public holidays entitlement** — 8 national public holidays. Additional state/territory-specific holidays. Employees (except casuals) are entitled to be absent on public holidays without loss of pay.
 
-### Redundancy Pay (NES)
+#### Redundancy Pay (NES)
 
 **Redundancy Pay (NES)**
 
@@ -225,11 +245,11 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 
 - **Small business exemption** — Small business employers (< 15 employees) are exempt from NES redundancy pay.  _(NES)_
 
-## Section 7 -- Payslip Requirements
+### Section 7 -- Payslip Requirements
 
 - **Payslip issuance timing** — Payslips must be issued within 1 working day of payday (Fair Work Act ss 536 and 539, Fair Work Regulations regs 3.45 to 3.48).  _([Fair Work Ombudsman, Pay slips](https://www.fairwork.gov.au/pay-and-wages/paying-wages/pay-slips))_
 
-### Mandatory Payslip Contents
+#### Mandatory Payslip Contents
 
 - Employer's name and ABN
 - Employee's name
@@ -242,11 +262,11 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 - Superannuation contributions (employer and any salary sacrifice)
 - Name of superannuation fund
 
-### Leave Balances
+#### Leave Balances
 
 Not strictly required on payslips but must be provided to employees on request. Best practice is to include annual leave and personal leave balances.
 
-### Single Touch Payroll (STP) Phase 2
+#### Single Touch Payroll (STP) Phase 2
 
 **Single Touch Payroll (STP) Phase 2**
 
@@ -258,7 +278,7 @@ Not strictly required on payslips but must be provided to employees on request. 
 | Finalisation deadline | 14 July for arm's length employees, subject to an approved deferral |
 | Closely held payees | Generally finalise by 30 September. For employers with 19 or fewer employees and only closely held payees, use each payee's tax return due date. Quarterly reporting concessions have separate conditions; employers with 20 or more employees report each payday. See the [ATO finalisation rules](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/start-reporting/end-of-year-finalisation-through-stp) |
 
-### PAYG Withholding Remittance
+#### PAYG Withholding Remittance
 
 **PAYG Withholding Remittance**
 
@@ -270,9 +290,9 @@ Not strictly required on payslips but must be provided to employees on request. 
 
 Confirm the ATO withholding class, including any determination varying it. The deferral does not cover an entity choosing or required to pay GST monthly. If a due date is a weekend or public holiday, use the next business day. For example, a large withholder deducting on Monday 7 September 2026 pays by Monday 14 September 2026. (TAA 1953 Sch 1 Subdiv 16-B; [ATO, Paying and reporting PAYG withholding amounts](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts).)
 
-## Section 8 -- Deadlines and Penalties
+### Section 8 -- Deadlines and Penalties
 
-### Annual Obligations
+#### Annual Obligations
 
 **Annual obligations**
 
@@ -283,7 +303,7 @@ Confirm the ATO withholding class, including any determination varying it. The d
 | Workers' comp annual declaration | Per state insurer schedule |
 | Payroll tax annual reconciliation | Per state revenue office (typically July/August) |
 
-### Penalties
+#### Penalties
 
 **Penalties**
 
@@ -294,17 +314,9 @@ Confirm the ATO withholding class, including any determination varying it. The d
 | Late BAS/IAS lodgement | General interest charge (GIC) + potential failure-to-lodge penalty |
 | Payslip and record-keeping non-compliance | Court-ordered penalties of up to $21,840 per contravention for an individual and $109,200 for a company with fewer than 15 employees (60 and 300 penalty units at the $364 unit from 1 July 2026); $546,000 for larger companies, and higher maximums for serious contraventions ([Fair Work Ombudsman, Litigation](https://www.fairwork.gov.au/about-us/compliance-and-enforcement/litigation)) |
 
-## Sources for current rates and reporting
+### Section 9 -- Common Payroll Patterns
 
-- [ATO pay-period tax tables](https://softwaredevelopers.ato.gov.au/PAYGWTaxtables): choose the payment date and employee circumstances.
-- [ATO large-withholder rules](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding): distinguish payment timing from activity-statement reporting.
-- [Revenue NSW](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates) and [SRO Victoria](https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates): apply grouping, interstate allocation, threshold phase-out and surcharges. The other state rows are starting points requiring current verification before calculation.
-- [Fair Work Commission](https://fwc.gov.au/work-conditions/minimum-wages-and-conditions/national-minimum-wage): national minimum wage; determine any applicable award/agreement separately.
-- [Services Australia](https://www.servicesaustralia.gov.au/paid-parental-leave-scheme-changes): Parental Leave Pay days depend on the birth/adoption date. Check eligibility and the separate government-funded super payment.
-
-## Section 9 -- Common Payroll Patterns
-
-### Pattern 1 -- Full-Time Monthly Employee
+#### Pattern 1 -- Full-Time Monthly Employee
 
 Annual salary $85,000. Paid monthly. No STSL debt.
 
@@ -313,7 +325,7 @@ Annual salary $85,000. Paid monthly. No STSL debt.
 3. Super guarantee: $7,083.33 × 12% = $850.00 (employer cost, received by the fund within 7 business days of the payday)
 4. Net pay: $7,083.33 - $1,475.00 - deductions
 
-### Pattern 2 -- Casual Employee with Loading
+#### Pattern 2 -- Casual Employee with Loading
 
 Base rate $28.50/hour under award. Casual loading 25% = $35.63/hour. Works 25 hours.
 
@@ -322,7 +334,7 @@ Base rate $28.50/hour under award. Casual loading 25% = $35.63/hour. Works 25 ho
 3. Super: $890.75 × 12% = $106.89 (employer cost)
 4. No leave accrual (casual loading compensates)
 
-### Pattern 3 -- Employee with Salary Sacrifice to Super
+#### Pattern 3 -- Employee with Salary Sacrifice to Super
 
 Annual salary $120,000. Sacrifices $10,000/year to super.
 
@@ -331,13 +343,13 @@ Annual salary $120,000. Sacrifices $10,000/year to super.
 3. Concessional super cap: $32,500 (2026-27) (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
 4. The $10,000 is taxed at 15% inside the super fund instead of the employee's marginal rate
 
-### Pattern 4 -- STSL Repayment
+#### Pattern 4 -- STSL Repayment
 
 For 2026-27, assume a resident employee has a HELP debt, claims the tax-free threshold and earns $65,000 evenly over 52 weekly pays, with no allowances, bonuses or other repayment-income components. Weekly earnings are $1,250; Schedule 8 uses x = $1,250.99. This is below $1,337, so a = 0 and b = 0: the weekly STSL component is zero. Apply the correct pay frequency, declaration scale and pay-date schedule; ordinary PAYG withholding still applies.
 
 The final compulsory repayment is a separate annual calculation. Repayment income of $65,000 is below $67,000 for 2025-26 and $69,528 for 2026-27, giving nil. For 2024-25, the annual 2% rate gives $1,300, not $2,925. Additional repayment-income components can change the annual result. Sources: [ATO Schedule 8 from 1 July 2026](https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components) and [ATO repayment thresholds](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds).
 
-## Section 10 -- Interaction with Other Skills
+### Section 10 -- Interaction with Other Skills
 
 **Interaction with Other Skills**
 
@@ -348,13 +360,134 @@ The final compulsory repayment is a separate annual calculation. Repayment incom
 | au-gst-bas | PAYG withholding (W1/W2) reported on BAS/IAS; GST does not apply to wages |
 | au-payg-instalments | Instalment obligations sit alongside withholding on the same activity statement |
 
-## Disclaimer
+## Worked cases
+
+### Case 1 -- Commissions outside ordinary hours remain in QE
+
+Eligible adult common-law employee, general schedule, 2026-27, below the annual base, with no exemption certificate or higher award/agreement obligation. The payroll record separately identifies ordinary earnings of $2,000 before a $500 sacrifice to super, $400 genuine overtime outside OTE and $300 commission for work entirely outside ordinary hours. The worker is not in an extended employee category that brings the overtime into QE, and no statutory exclusion affects the other amounts. Cash earnings before withholding are $2,200, but QE is $2,300: exclude the specified overtime, include the commission and retain the sacrificed ordinary earnings. Employer SG is $276 in addition to the $500 sacrifice. Excluding the commission would understate SG by $36. This case does not calculate PAYG withholding, net pay or payroll tax. [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2026C00272/latest/text).
+
+```oa-check
+name: Payroll commission outside ordinary hours and salary sacrifice 2026-27
+tolerance: 0.000001
+inputs:
+  ordinary_earnings_before_sacrifice: 2000
+  sacrifice_to_super: 500
+  overtime_outside_qe: 400
+  commission_outside_ordinary_hours: 300
+  sg_percent: 12
+steps:
+  - cash_before_withholding: ordinary_earnings_before_sacrifice - sacrifice_to_super + overtime_outside_qe + commission_outside_ordinary_hours
+  - qualifying_earnings: ordinary_earnings_before_sacrifice + commission_outside_ordinary_hours
+  - employer_sg: pct(qualifying_earnings, sg_percent)
+  - scheduled_fund_total: employer_sg + sacrifice_to_super
+  - sg_if_commission_omitted: pct(ordinary_earnings_before_sacrifice, sg_percent)
+  - commission_shortfall: employer_sg - sg_if_commission_omitted
+expected:
+  cash_before_withholding: 2200
+  qualifying_earnings: 2300
+  employer_sg: 276
+  scheduled_fund_total: 776
+  sg_if_commission_omitted: 240
+  commission_shortfall: 36
+```
+
+### Case 2 -- Reconcile each employee's fund receipt
+
+Two eligible adult employees of one employer, general schedule, 2026-27, no exemption certificates, salary sacrifice or higher obligations. A has verified prior YTD QE of $268,000 and current QE of $10,000; B has no prior QE and current QE of $4,000. Required SG is $339.60 for A and $480 for B, or $819.60 in total. A bank debit to a clearing house for $819.60 does not prove completeness. Fund records and allocation information establish eligible SG contributions received by each applicable deadline of $339.60 for A and only $400 for B, with no other contributions or credits available. B's outstanding required SG is $80. Reconcile the missing amount and refer the late-payment/SGC position under the specialist guide; the $80 is not a calculation of the total SGC. Without the payroll allocations or fund records, return Needs Input rather than marking the batch complete. [ATO annual base](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee); [ATO fund receipt requirement](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super).
+
+```oa-check
+name: Employee-level annual base and clearing house receipt reconciliation 2026-27
+tolerance: 0.000001
+inputs:
+  annual_base: 270830
+  a_prior_qe: 268000
+  a_current_qe: 10000
+  b_prior_qe: 0
+  b_current_qe: 4000
+  sg_percent: 12
+  a_eligible_receipt: 339.60
+  b_eligible_receipt: 400
+  clearing_house_debit: 819.60
+steps:
+  - a_required_sg: pct(min(a_current_qe, max(0, annual_base - a_prior_qe)), sg_percent)
+  - b_required_sg: pct(min(b_current_qe, max(0, annual_base - b_prior_qe)), sg_percent)
+  - total_required_sg: a_required_sg + b_required_sg
+  - bank_amount_difference: clearing_house_debit - total_required_sg
+  - a_outstanding_sg: max(0, a_required_sg - a_eligible_receipt)
+  - b_outstanding_sg: max(0, b_required_sg - b_eligible_receipt)
+  - receipt_reconciliation_gap: clearing_house_debit - a_eligible_receipt - b_eligible_receipt
+expected:
+  a_required_sg: 339.60
+  b_required_sg: 480
+  total_required_sg: 819.60
+  bank_amount_difference: 0
+  a_outstanding_sg: 0
+  b_outstanding_sg: 80
+  receipt_reconciliation_gap: 80
+```
+
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+
+### Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 > Contributed by Ryan Duguid.
+
+
+
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A, 18A and 18C | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual base, sacrificed contributions and selected deadline extensions |
+| ATO qualifying earnings | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings> | 2026-11-02; selected QE categories, double counting and salary sacrifice sections |
+| ATO payday deadlines | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super> | 2026-11-02; selected fund receipt, business-day and extension rules |
+| Medicare Levy Act 1986, compilation 53 (C2026C00295): selected s 3 and ss 6-8, including the s 8(2) formula | <https://www.legislation.gov.au/C2026C00295/latest/text> | 2026-11-02; only the ordinary family-threshold summary rechecked here |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-1-statement-of-formulas-for-calculating-amounts-to-be-withheld/payee-declarations> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components> | Not re-read for this format update; see retained provenance |
+| ATO SG rates and bases | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | 2026-11-02; selected general/Norfolk rates and annual/legacy base rows |
+| Retained citation | <https://business.gov.au/finance/superannuation> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=COG/PCG20261/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://qro.qld.gov.au/payroll-tax/calculate/rates-thresholds/> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.sro.tas.gov.au/payroll-tax/rates-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.wa.gov.au/government/multi-step-guides/payroll-tax-employer-guide/calculation-payroll-tax-employer-guide> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.revenuesa.sa.gov.au/payrolltax/rates-and-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://legislation.nt.gov.au/api/sitecore/Act/PDF?id=12078> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-changes-from-1-july-2026> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.fairwork.gov.au/pay-and-wages/paying-wages/pay-slips> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/start-reporting/end-of-year-finalisation-through-stp> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.fairwork.gov.au/about-us/compliance-and-enforcement/litigation> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://softwaredevelopers.ato.gov.au/PAYGWTaxtables> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://fwc.gov.au/work-conditions/minimum-wages-and-conditions/national-minimum-wage> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.servicesaustralia.gov.au/paid-parental-leave-scheme-changes> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds> | Not re-read for this format update; see retained provenance |
+
+### Sources for current rates and reporting
+
+- [ATO pay-period tax tables](https://softwaredevelopers.ato.gov.au/PAYGWTaxtables): choose the payment date and employee circumstances.
+- [ATO large-withholder rules](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding): distinguish payment timing from activity-statement reporting.
+- [Revenue NSW](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates) and [SRO Victoria](https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates): apply grouping, interstate allocation, threshold phase-out and surcharges. The other state rows are starting points requiring current verification before calculation.
+- [Fair Work Commission](https://fwc.gov.au/work-conditions/minimum-wages-and-conditions/national-minimum-wage): national minimum wage; determine any applicable award/agreement separately.
+- [Services Australia](https://www.servicesaustralia.gov.au/paid-parental-leave-scheme-changes): Parental Leave Pay days depend on the birth/adoption date. Check eligibility and the separate government-funded super payment.
+
+Two executable cases cover selected SG payroll calculations and fund receipt reconciliation. They do not verify PAYG withholding, net pay, awards, leave, state payroll tax or the other obligations in this guide.
+
+Not yet confirmed: a complete page-level source/read-date audit and independent legal review of the whole guide. Existing dates and qualifications retain their original scope.
 
 <!-- openaccountants-cta-block -->
 

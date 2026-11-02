@@ -2,21 +2,43 @@
 name: australia-references
 jurisdiction: AU
 category: international
+tax_year: 2026
+tax_year_notes: "Reference catalogue snapshot; not an annual tax computation"
 tier: 2
-last_updated: 2026-10-31
-version: 1.3
-description: Primary source references and related open-source and source-available projects for this jurisdiction.
+last_updated: 2026-11-02
+version: 1.4
+description: >
+  Use this catalogue to locate Australian tax and accounting reference projects:
+  PolicyEngine Australia, Quick Tax Calc, AU Tax Legislation Corpus, Payday Super
+  Checker and ATO Benchmark Compare. It records their stated purpose, licence
+  qualifications and possible role in a verification workflow. Use it when
+  selecting a reference implementation, legislation retrieval source or local
+  comparison tool. The catalogue does not calculate tax, certify a project's
+  current accuracy or grant permission to incorporate its material. Check the
+  exact version, source-data rights, licence and proposed use independently
+  before relying on or reusing a listed project.
 ---
 
-# Australia — Related Open-Source and Source-Available Projects
+# Australia — Related Open-Source and Source-Available Projects v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
 
 OpenAccountants uses different licences for software and guides. [LICENSING.md](../../../LICENSING.md) maps software to AGPL-3.0-only and guides and their exports to the source-available OA Guide License. It preserves the original AGPL/GPL terms for guides containing or derived from third-party copyleft material. Earlier copies already distributed under AGPL retain those rights.
 
 Before incorporating material, check its exact licence, the proposed use and the destination file's terms. Attribution alone does not establish compatibility or satisfy every licence obligation. The projects below are references; their listing is not a blanket permission to incorporate them. This describes repository policy, not a determination of ownership or infringement.
 
-## PolicyEngine Australia
+## Ask the client first
+
+- Which project and exact version is being considered?
+- What is the proposed use and destination?
+- What licence and source-data rights apply?
+- Which claims need independent verification?
+
+## The method, step by step
+
+### PolicyEngine Australia
 
 - Repository: [PolicyEngine/policyengine-au](https://github.com/PolicyEngine/policyengine-au)
 - License: AGPL-3.0
@@ -27,7 +49,7 @@ Before incorporating material, check its exact licence, the proposed use and the
   - Check the applicable AGPL terms and preserve third-party copyleft rights for any derivative material; the general OA Guide License mapping does not replace them.
   - Use as a validation reference for income tax brackets, Medicare levy surcharge thresholds, HECS-HELP repayment rates, and superannuation contribution caps.
 
-## Quick Tax Calc
+### Quick Tax Calc
 
 - Repository: [zorfling/quick-tax-calc](https://github.com/zorfling/quick-tax-calc)
 - License: verify before reuse
@@ -38,7 +60,7 @@ Before incorporating material, check its exact licence, the proposed use and the
   - Reference for tax bracket calculations and rate verification against ATO published tables.
   - Treat as reference-only until the licence is confirmed.
 
-## AU Tax Legislation Corpus
+### AU Tax Legislation Corpus
 
 - Repository: [ryanduguid/au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus)
 - License: Functional Source License 1.1, ALv2 Future License (FSL-1.1-ALv2); excludes a Competing Use
@@ -50,7 +72,7 @@ Before incorporating material, check its exact licence, the proposed use and the
   - Use as the primary-source verification layer when reviewing or updating any Australian guide's legislative citations.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
 
-## Payday Super Checker
+### Payday Super Checker
 
 - Repository: [ryanduguid/australian-accounting: payday-super-checker](https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker)
 - License: Functional Source License 1.1, ALv2 Future License (FSL-1.1-ALv2); excludes a Competing Use
@@ -62,7 +84,7 @@ Before incorporating material, check its exact licence, the proposed use and the
   - Use to sanity-check worked examples in `au-super-guarantee` and `australia-payroll`.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
 
-## ATO Benchmark Compare
+### ATO Benchmark Compare
 
 - Repository: [ryanduguid/australian-accounting: ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare)
 - License: Functional Source License 1.1, ALv2 Future License (FSL-1.1-ALv2); excludes a Competing Use
@@ -73,6 +95,26 @@ Before incorporating material, check its exact licence, the proposed use and the
   - Check the FSL-1.1-ALv2 terms, including the Competing Use exclusion, for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Reference for adding a benchmark-screen step to sole trader workflows.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
+
+## Worked cases
+
+No tax computation is performed by this project catalogue. Validate a proposed use against the selected project, its exact version, licence and primary-source evidence.
+
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://github.com/PolicyEngine/policyengine-au> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://github.com/zorfling/quick-tax-calc> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://github.com/ryanduguid/au-tax-legislation-corpus> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare> | Not re-read for this format update; see retained provenance |
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. This is a project reference catalogue, not a tax calculation. Project currency, licences and suitability require their own checks.
 
 <!-- openaccountants-cta-block -->
 

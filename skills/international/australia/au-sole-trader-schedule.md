@@ -1,10 +1,20 @@
 ---
 name: au-sole-trader-schedule
-description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 70c/hour or actual), motor vehicle (logbook or cents per km at 88c/km for 2025-26 and 91c/km for 2026-27), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
-version: 1.4
+description: >
+  Use this guide to prepare the Australian Business and Professional Items
+  Schedule for an individual sole trader. It covers assessable business income,
+  allowable deductions, home office methods, motor vehicle methods, depreciation,
+  prepaid expenses and trading stock within its stated scope. Read each rate with
+  its labelled income year and conditions, including the distinctions between
+  2025-26 and 2026-27. Trigger on sole trader business schedules, business income
+  or deductions and supporting working papers. Reconcile the supplied records,
+  preserve the guide's exceptions and self-checks, and obtain qualified review
+  before filing or acting on the output.
+version: 1.6
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-31
+tax_year_notes: "Primarily 2025-26; the 3 small-business-pool worked cases are explicitly 2026-27"
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -13,11 +23,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Sole Trader Schedule
+# AU Sole Trader Schedule v1.6
 
-## Australia Sole Trader Business Schedule v1.4
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-## What this file is
+## Scope
+
+### What this file is
 
 **Obligation category:** IT (Income Tax)
 **Functional role:** Bookkeeping + Computation
@@ -25,11 +37,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This file covers the Business and Professional Items (BPI) schedule that sole traders attach to their individual income tax return. The BPI schedule feeds into the individual return at "Business income or loss" items.
 
-**Tax year coverage:** This skill targets the 2025–26 income year (1 July 2025 to 30 June 2026). Match the intake and assembly year before calculating. For 2026-27 work, take resident rates and other annual figures from `au-rates-2026-27`; this guide labels the 2026-27 rates it carries, and its schedule labels are for 2025-26.
+**Tax year coverage:** This skill targets the 2025–26 income year (1 July 2025 to 30 June 2026). Match the intake and assembly year before calculating. For 2026-27 work, take resident rates and other annual figures from `au-rates-2026-27`; this guide labels the 2026-27 rates it carries, and its schedule labels are for 2025-26. The 3 small-business-pool cases below extend that illustration to 2026-27 only; use the year-specific guides for the rest of a 2026-27 return.
 
 **The reviewer is the customer of this output.** This skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
 
-## Section 1 — Scope statement
+### Section 1 — Scope statement
 
 This skill covers:
 
@@ -44,26 +56,19 @@ This skill does NOT cover:
 - Primary production-specific items (though basic rules noted)
 - Personal services income (PSI) determinations in detail — flag for reviewer
 
-## Section 2 — Filing requirements
+## Ask the client first
 
-### 2.1 Who must lodge
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
 
-- **Who must lodge** — Any individual who carried on a business as a sole trader during the income year. Even if the business made a loss, the schedule must be lodged.  _(ATO instructions for BPI schedule)_
+## The method, step by step
 
-### 2.2 Due dates
+### Australia Sole Trader Business Schedule v1.6
 
-**Due dates**
-
-| Lodgement type | Due date |
-| --- | --- |
-| Self-lodgers | 2 November 2026 (31 October falls on Saturday; check applicable extensions) |
-| Tax agent lodgement | Per the ATO tax agent lodgement programme (2026–27 programme, depending on client category) |
-
-### 2.3 ABN requirement
-
-- **ABN requirement** — Check ABN entitlement, GST registration and withholding consequences separately. An ABN is not compulsory for every business activity. A tax invoice must meet GST requirements, and eligible payments without an ABN can attract 47% withholding subject to exceptions. GST registration is required at GST turnover of $75,000 or more, current or projected, and for taxi, limousine or ride-sourcing travel regardless of turnover.  _([ABR](https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement); [ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst))_
-
-## Section 3 — Rates and thresholds
+### Section 3 — Rates and thresholds
 
 **Rates and thresholds**  _(ITAA 1997 Div 328; ATO QC 103578)_
 
@@ -77,17 +82,17 @@ This skill does NOT cover:
 | Trading stock threshold (change in value) | $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake | ITAA 1997 s 328-285 |
 | Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1936 ss 82KZL and 82KZM |
 
-## Section 4 — Computation rules
+### Section 4 — Computation rules
 
-### 4.1 Business income (P8)
+#### 4.1 Business income (P8)
 
 - **Business income (P8)** — Step 1. Sum all gross business income received during the year: Sales of goods or services; Government subsidies (e.g., any remaining COVID-era grants assessable); Insurance recoveries; Commissions received. Step 2. Exclude amounts that are capital in nature (these go to the CGT schedule). Step 3. Report at P8 on the schedule.
 
-### 4.2 Cost of sales / Cost of goods sold
+#### 4.2 Cost of sales / Cost of goods sold
 
 - **Cost of goods sold** — Step 1. Opening stock + Purchases - Closing stock = Cost of goods sold. Step 2. Trading stock can be valued at cost, market selling value, or replacement value (ITAA 1997 s 70-45). The method can differ item by item. Step 3. An eligible business can choose to use opening stock as its closing tax value where a reasonable estimate of the change is $5,000 or less, including exactly $5,000 in either direction. Keep the estimate and the choice, and report it at P21. (ITAA 1997 Subdiv 328-E.)  _(ITAA 1997 s 70-45)_
 
-### 4.3 Allowable deductions
+#### 4.3 Allowable deductions
 
 - **General deduction provision** — Deductions must satisfy the general deduction provision: incurred in gaining or producing assessable income, or necessarily incurred in carrying on a business for that purpose. Losses and outgoings of a capital, private, or domestic nature are not deductible (subject to specific provisions).  _(ITAA 1997 s 8-1)_
 
@@ -104,65 +109,184 @@ This skill does NOT cover:
 
 Use the [ATO 2026 BPI expenses instructions](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026/business-income-and-expenses-p8/expenses-p8) for the primary-production and non-primary-production columns. These labels are for 2025-26; verify the schedule for another year.
 
-### 4.4 Motor vehicle expenses
+#### 4.4 Motor vehicle expenses
 
 Two methods available for sole traders:
 
-#### Method 1 — Cents per kilometre
+##### Method 1 — Cents per kilometre
 
 - **Cents per kilometre method** — Claim the current rate per business km, up to 5,000 km per car per year. 2025-26: 88c, maximum claim = 5,000 x $0.88 = $4,400 per car. 2026-27: 91c, maximum = $4,550. No logbook or written evidence of individual trips required, but must be able to show how the estimate was calculated.  _(ATO cents per kilometre method; ITAA 1997 s 28-25)_
 
-#### Method 2 — Logbook
+##### Method 2 — Logbook
 
 - **Logbook method** — Maintain a logbook for a continuous 12-week period (valid for 5 years unless circumstances change). Calculate business-use percentage from logbook. Apply that percentage to total car expenses: fuel, insurance, registration, repairs, lease payments, depreciation. Depreciation of the car is capped at the car limit ($69,674 for 2024-25 and 2025-26; $69,883 for 2026-27).  _(ATO car limit determination)_
 
-### 4.5 Depreciation
+#### 4.5 Depreciation
 
-#### Small business simplified depreciation (if SBE)
+##### Small business simplified depreciation (if SBE)
 
-- **Small business simplified depreciation** — Step 1. Check eligibility: aggregated turnover < $10M. Step 2. Instant asset write-off: assets costing less than $20,000 (excl GST if registered) first used or installed ready for use in the income year are fully deductible in that year. Step 3. Assets costing $20,000 or more go into the small business pool: Pool is depreciated at 15% in the first year and 30% each year thereafter (diminishing value). If the pool balance falls below the instant asset write-off threshold at the end of the year, the entire pool is written off.
+- **Small business simplified depreciation** — Step 1. Check eligibility: aggregated turnover < $10M. Step 2. Instant asset write-off: assets costing less than $20,000 (excl GST if registered) first used or installed ready for use in the income year are fully deductible in that year. Step 3. Allocate eligible assets costing $20,000 or more to the general small business pool. Before annual depreciation, test the opening pool plus taxable-purpose additions and cost additions, less taxable-purpose termination values (s 328-210). If that amount is above zero but below the applicable $20,000 threshold, deduct it and close the pool at zero. Otherwise, subject to disposal and adjustment rules, deduct 30% of the opening pool and 15% of relevant current-year additions (s 328-190). A closing balance below $20,000 after those annual deductions does not trigger another write-off for that year. A negative amount requires the assessable-income treatment in s 328-215.
 
-#### General depreciation (non-SBE or election out of simplified)
+##### General depreciation (non-SBE or election out of simplified)
 
 - **General depreciation** — Use the effective life determined by the ATO (Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025) or a self-assessed effective life. Choose diminishing value (rate = 200% / effective life) or prime cost (rate = 100% / effective life). Apply from the date the asset is first used or installed ready for use.  _(ATO Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025)_
 
-### 4.6 Home office expenses
+#### 4.6 Home office expenses
 
-#### Fixed rate method (70c per work hour for 2024-25 and 2025-26) — PCG 2023/1
+##### Fixed rate method (70c per work hour for 2024-25 and 2025-26) — PCG 2023/1
 
 - **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home for the entire income year, made at the time (e.g., timesheets, diary, roster); an estimate is not accepted. Must also keep at least one record for each running expense the rate covers that the taxpayer incurred. Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate. Decline in value of depreciating assets used for work is claimed separately.  _([ATO PCG 2023/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001); [ATO, Fixed rate method](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method))_
 
-#### Actual cost method
+##### Actual cost method
 
 - **Actual cost method** — Calculate the actual costs of running the home office. Apportion based on floor area of the dedicated work area as a percentage of total home area, and the proportion of the year the area is used for work. Keep receipts and records for every expense claimed.
 
-### 4.7 Net business income or loss (P8 Y/Z)
+#### 4.7 Net business income or loss (P8 Y/Z)
 
 - **Net business income or loss (P8 Y/Z):** Complete the P8 reconciliation of business income and allowable deductions. Report net primary-production income or loss at Y and non-primary-production income or loss at Z, then transfer them to supplementary return question 15 labels B and C respectively. For example, a $40,000 non-primary-production profit after reconciliation goes to P8 Z and question 15 C. If this is a loss, apply Division 35 before carrying it into the individual return. For the four-test route, income for Division 35 must be less than $250,000 AND at least one test must pass: activity assessable income of at least $20,000; a profit in 3 of 5 years including the current year; qualifying real property of at least $500,000; or qualifying other assets of at least $100,000. Apply the asset exclusions. The income measure includes taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses. Otherwise defer the loss unless an exception or the Commissioner's discretion applies. Primary production and professional arts have an exception where assessable income from other sources, excluding net capital gains, is less than $40,000. (ITAA 1997 Division 35, including ss 35-10(2E) and 35-10(4); [ATO, Non-commercial losses](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses).)
 
-## Section 5 — Edge cases and special rules
+## Boundary and exception table
 
-### 5.1 Personal services income (PSI)
+### Section 5 — Edge cases and special rules
+
+#### 5.1 Personal services income (PSI)
 
 - **Personal services income (PSI):** Income mainly (more than 50%) for an individual's personal effort or skills is PSI. The separate 80% test concerns PSI from one client and its associates and limits which personal services business tests can be self-assessed. Work through the results test, other available tests and any determination in `au-psi.md` before applying attribution or deduction restrictions. Flag unresolved facts for the reviewer. (ITAA 1997 Divisions 84-87.)
 
-### 5.2 Mixed-use assets
+#### 5.2 Mixed-use assets
 
 - **Mixed-use assets** — Assets used partly for private and partly for business purposes: claim only the business-use percentage. Maintain records of the split (e.g., logbook for car, diary for home office).
 
-### 5.3 Prepaid expenses (SBE)
+#### 5.3 Prepaid expenses (SBE)
 
 - **Prepaid expenses (SBE)** — Small business entities can immediately deduct prepaid expenses if the service period is 12 months or less and ends by 30 June of the following income year. Example: 12-month insurance premium paid in May 2026 covering May 2026 to April 2027: deductible in 2025–26 if the statutory conditions are met.
 
-### 5.4 Capital vs revenue
+#### 5.4 Capital vs revenue
 
 - **Capital vs revenue** — Expenditure that creates a new asset or provides an enduring benefit is capital and not deductible under s 8-1. It may instead be depreciable or added to the cost base for CGT purposes. Common grey areas: website development, major software, business restructuring costs.  _(ITAA 1997 s 8-1)_
 
-### 5.5 Hobby vs business
+#### 5.5 Hobby vs business
 
 - **Hobby vs business** — The ATO may deny deductions if the activity is a hobby, not a business. Indicators of a business: intention to make a profit, repetition and regularity, business-like organisation, size and scale, business plan.  _(ATO guidelines, TR 97/11)_
 
-## Section 6 — Self-checks
+## Worked cases
+
+These 3 synthetic cases cover only small-business-pool deductions for 2026-27. Each taxpayer is an individual sole trader independently confirmed eligible for, and using, Subdivision 328-D. All assets and first-use dates satisfy the applicable allocation rules. Costs are correctly adjusted for GST, and the stated business-use proportions are the statutory taxable-purpose proportions. There are no other cost additions, changes in use, rollovers or pool adjustments. The checker does not establish those eligibility facts. The cases exclude income-tax liability, offsets, Medicare, HELP, payment credits and refunds. The [current ITAA 1997, sections 328-180, 328-190 and 328-210](https://www.legislation.gov.au/C2026C00471/latest/text), and [Schedule 2 to the Tax Reform No. 2 Act 2026](https://www.legislation.gov.au/C2026A00071/asmade/text) support these rules.
+
+### Case 1: a closing balance below the threshold is not another write-off
+
+With an opening pool of $21,000 and no additions or disposals, the test before annual deductions is $21,000. It fails the less-than-$20,000 test. The ordinary deduction is $6,300 and the closing pool is $14,700. Do not then write off that closing balance in the same year.
+
+```oa-check
+name: AU 2026-27 pool threshold is tested before annual deductions
+inputs:
+  opening_pool: 21000
+  taxable_additions: 0
+  taxable_termination_values: 0
+steps:
+  - pre_deduction_test: opening_pool + taxable_additions - taxable_termination_values
+  - ordinary_deduction: opening_pool * 0.30 + taxable_additions * 0.15
+  - closing_pool: pre_deduction_test - ordinary_deduction
+expected:
+  pre_deduction_test: 21000
+  ordinary_deduction: 6300
+  closing_pool: 14700
+```
+
+### Case 2: an asset costing exactly $20,000 goes into the pool
+
+An eligible asset costing exactly $20,000 is first used in 2026-27, wholly for the business. It fails the strict less-than-$20,000 immediate-write-off test before apportionment. With an opening pool of $5,000 and no disposals, the pool test is $25,000. Ordinary deductions are $1,500 on the opening pool and $3,000 on the new asset, giving a $4,500 deduction and a $20,500 closing pool. The asset's classification and the pool-test decision are established from the cited rules before running this arithmetic.
+
+```oa-check
+name: AU 2026-27 exact asset threshold requires pooling
+inputs:
+  opening_pool: 5000
+  asset_cost: 20000
+  immediate_writeoff_threshold: 20000
+  taxable_proportion: 1
+  taxable_termination_values: 0
+steps:
+  - cost_above_threshold: asset_cost - immediate_writeoff_threshold
+  - taxable_addition: asset_cost * taxable_proportion
+  - pre_deduction_test: opening_pool + taxable_addition - taxable_termination_values
+  - opening_deduction: opening_pool * 0.30
+  - addition_deduction: taxable_addition * 0.15
+  - ordinary_deduction: opening_deduction + addition_deduction
+  - closing_pool: pre_deduction_test - ordinary_deduction
+expected:
+  cost_above_threshold: 0
+  taxable_addition: 20000
+  pre_deduction_test: 25000
+  opening_deduction: 1500
+  addition_deduction: 3000
+  ordinary_deduction: 4500
+  closing_pool: 20500
+```
+
+### Case 3: write off the qualifying pool before annual depreciation
+
+The opening pool is $28,500. An eligible new asset costs $21,000 and has an 80% taxable-purpose proportion, adding $16,800. Disposed pool assets have taxable-purpose termination values totalling $29,600. The test amount is $15,700, above zero and below $20,000. Deduct that whole amount under section 328-210 and close the pool at zero, rather than first subtracting ordinary depreciation. These synthetic 2026-27 facts use the same figures as the statutory example, whose stated income year is 2024-25.
+
+```oa-check
+name: AU 2026-27 full pool deduction before annual depreciation
+inputs:
+  opening_pool: 28500
+  asset_cost: 21000
+  taxable_proportion: 0.80
+  taxable_termination_values: 29600
+steps:
+  - taxable_addition: asset_cost * taxable_proportion
+  - pre_deduction_test: opening_pool + taxable_addition - taxable_termination_values
+  - pool_deduction: pre_deduction_test
+  - closing_pool: pre_deduction_test - pool_deduction
+expected:
+  taxable_addition: 16800
+  pre_deduction_test: 15700
+  pool_deduction: 15700
+  closing_pool: 0
+```
+
+Recompute with `python3 scripts/check-examples.py --require skills/international/australia/au-sole-trader-schedule.md`. It checks the displayed arithmetic and assertions, not eligibility, source accuracy or the rest of this schedule.
+
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+
+### Section 7 — Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+> Contributed by Ryan Duguid.
+
+
+
+## Filing and payment
+
+### Section 2 — Filing requirements
+
+#### 2.1 Who must lodge
+
+- **Who must lodge** — Any individual who carried on a business as a sole trader during the income year. Even if the business made a loss, the schedule must be lodged.  _(ATO instructions for BPI schedule)_
+
+#### 2.2 Due dates
+
+**Due dates**
+
+| Lodgement type | Due date |
+| --- | --- |
+| Self-lodgers | 2 November 2026 (31 October falls on Saturday; check applicable extensions) |
+| Tax agent lodgement | Per the ATO tax agent lodgement programme (2026–27 programme, depending on client category) |
+
+#### 2.3 ABN requirement
+
+- **ABN requirement** — Check ABN entitlement, GST registration and withholding consequences separately. An ABN is not compulsory for every business activity. A tax invoice must meet GST requirements, and eligible payments without an ABN can attract 47% withholding subject to exceptions. GST registration is required at GST turnover of $75,000 or more, current or projected, and for taxi, limousine or ride-sourcing travel regardless of turnover.  _([ABR](https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement); [ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst))_
+
+## Completion checklist
+
+### Section 6 — Self-checks
 
 Before delivering output, verify:
 
@@ -178,13 +302,22 @@ Before delivering output, verify:
 - [ ] Rates and thresholds match the income year being prepared (this guide targets 2025–26; see `au-rates-2026-27` for 2026-27)
 - [ ] Output format matches the base skill spec
 
-## Section 7 — Disclaimer
+## Sources
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst> | Not re-read for this format update; see retained provenance |
+| Tax Reform No. 2 Act 2026: commencement and Schedule 2 items 1-22, including asset, cost-addition and pool application rules | <https://www.legislation.gov.au/C2026A00071/asmade/text> | 2026-11-02; Schedule 2 commenced 1 October 2026; asset first-use and cost-addition changes apply from 1 July 2026 |
+| ITAA 1997, compilation 268: selected sections 328-180, 328-185, 328-190, 328-200, 328-210 and 328-215 on asset cost, pool deductions and termination values | <https://www.legislation.gov.au/C2026C00471/latest/text> | 2026-11-02; compilation in force 1 October 2026; selected pool provisions only |
+| ATO instant asset write-off: eligibility, first-use timing, strict asset-cost test before business-use apportionment and pool rates | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/instant-asset-write-off> | 2026-11-02; page updated 28 August 2026; selected eligibility, threshold and apportionment guidance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026/business-income-and-expenses-p8/expenses-p8> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses> | Not re-read for this format update; see retained provenance |
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-> Contributed by Ryan Duguid.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review of this schedule have not been performed. The 2 November 2026 check covers only the 3 named asset/pool source rows and the 3 executable 2026-27 pool cases. These cases do not verify the retained 2025-26 return labels, other deductions, losses, GST or income-tax liability. Eligibility is stipulated, not proved by arithmetic. Existing dates and qualifications retain their original scope. This remains a tier 2 draft pending qualified review.
 
 <!-- openaccountants-cta-block -->
 

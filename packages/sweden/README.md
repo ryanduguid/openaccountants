@@ -8,20 +8,24 @@
 1. `intake.md`
 2. `references.md`
 3. `se-capital-gains.md`
-4. `se-income-tax.md`
-5. `se-social-contributions.md`
-6. `sweden-bookkeeping.md`
-7. `sweden-crypto-tax.md`
-8. `sweden-payroll.md`
-9. `sweden-vat-return.md`
+4. `se-corporate-income-tax.md`
+5. `se-income-tax.md`
+6. `se-social-contributions.md`
+7. `sweden-bookkeeping.md`
+8. `sweden-crypto-tax.md`
+9. `sweden-financial-statements.md`
+10. `sweden-payroll.md`
+11. `sweden-vat-return.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
 - [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
