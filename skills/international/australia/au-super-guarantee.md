@@ -2,7 +2,7 @@
 name: au-super-guarantee
 description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, payday super deadlines, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, Division 296 large-balance tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "payday super", "7 business days super", "SG shortfall", "concessional cap", "Division 293", "Division 296", "$3 million super tax", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or clearing house payments. ALWAYS read this skill before touching any SG-related work.
-version: 3.7
+version: 3.8
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.7
+# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.8
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -55,10 +55,10 @@ The remaining payday calculations and indexed figures below concern 2026–27. [
 If the client provides only a bank statement:
 
 1. **Scan for super fund debits** -- match against fund names in Section 3
-2. **Identify SG vs personal contributions** -- payday-aligned amounts = likely SG; ad hoc amounts = likely personal
-3. **Check debit cadence against pay cycle** -- SG debits should follow every payday from July 2026
-4. **Sum SG debits per employee** -- compare against expected qualifying earnings x 12% YTD under the general schedule to verify completeness
-5. **Flag:** "Super contribution classification derived from bank statement patterns. Fund receipt dates, qualifying earnings, s 290-170 notice status, and TSB have not been independently verified. Reviewer must confirm before tax return lodgement."
+2. **Propose a classification** -- payday alignment or ad hoc timing can suggest employer or personal contributions; neither proves their purpose
+3. **Compare debit cadence with the pay cycle as an investigation lead** -- fund receipt deadlines and any applicable extension decide timeliness; bank cadence alone does not
+4. **Record candidate debits without certifying completeness** -- obtain per-employee payroll allocations, actual qualifying earnings and YTD bases, the applicable SG schedule and fund receipt records before reconciling required SG against eligible contributions. A clearing house debit cannot establish what each fund received
+5. **Return Needs Input:** "Bank patterns identify candidate contributions only. Purpose, employee allocation, actual payday, qualifying earnings, fund receipt, notice status and TSB remain unverified. Do not determine timeliness, deductions or the cap position from these debits alone."
 
 ## The method, step by step
 
@@ -98,9 +98,9 @@ If the client provides only a bank statement:
 | Unknown whether sole trader has employees | Ask -- determines SG requirement |
 | Unknown payment date vs 1 July 2026 | Ask -- decides quarterly vs payday regime |
 | Unknown SG schedule or year | Ask which year and whether the Norfolk Island transition applies; do not assume the general schedule |
-| Unknown YTD qualifying earnings vs $270,830 (general schedule) | Assume below cap; flag to confirm before stopping SG |
-| Unknown TSB for carry-forward | Assume >= $500,000 (no carry-forward); ask client |
-| Unknown s 290-170 notice status | Assume NOT lodged; warn about deadline |
+| Unknown YTD qualifying earnings vs $270,830 (general schedule) | Needs Input: obtain the employer's per-employee YTD QE ledger before determining the payable amount or stopping SG |
+| Unknown TSB for carry-forward | Needs Input: obtain the prior 30 June TSB and unused cap records; do not assert an available carry-forward amount |
+| Unknown s 290-170 notice status | Needs Input: obtain the valid notice and acknowledgement before claiming a deduction; check the notice deadline |
 | Unknown contractor vs employee | Flag for reviewer -- multi-factor test |
 
 ### Section 3 -- Payment pattern library
@@ -190,7 +190,9 @@ SG per payday  = 12% x min(Qualifying_earnings_paid_this_payday, remaining_base)
 
 SG applies only to the first $270,830 of qualifying earnings an employer pays an employee in the financial year -- the payday that crosses the base attracts SG only on the portion beneath it, and later paydays attract none. The base is tested per employer, so an employee with 2 employers has a separate base with each (T2-2). Annual maximum SG per employee from one employer: exactly $32,499.60.
 
-**Qualifying earnings (QE)** (SGAA s 10A) are ordinary time earnings, plus amounts of those earnings sacrificed to super under a salary sacrifice arrangement, plus amounts expressly within the former salary or wages rules for workers under the extended definition of employee in s 12. Use pre-sacrifice pay as the base: an amount sacrificed to super stays in QE if it would have been QE when paid as wages. Amounts sacrificed that would not have been QE (such as overtime) and amounts sacrificed to other benefits (such as a novated lease) are outside QE. A sacrificed contribution is not an eligible contribution (s 18A), so it cannot count toward the 12%. For fortnightly earnings of $2,500 with $500 sacrificed to super, QE is $2,500 and the employer owes 12% x $2,500 = $300 in addition to the $500. Using post-sacrifice pay, or counting the sacrificed amount toward SG, creates a shortfall and SGC exposure. [ATO, What payments are qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super).
+**Qualifying earnings (QE)** include ordinary time earnings, **all commissions**, the payments expressly included for workers under the extended employee definition and amounts sacrificed to super that would otherwise be QE. From 1 July 2026, commissions for work entirely outside ordinary hours are included too. An amount falling into more than one category is counted once. Check the statutory exclusions in SGAA s 10A(3). [SGAA s 10A](https://www.legislation.gov.au/C2026C00272/latest/text); [ATO, What payments are qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings).
+
+Use pre-sacrifice QE as the base: an amount sacrificed to super stays in QE if it would have been QE when paid as wages. A sacrificed amount that would otherwise be outside QE, or an amount sacrificed to another benefit such as a novated lease, is not added back. Do not exclude a payment merely because it relates to work outside ordinary hours: commissions and the extended employee rules can include it. A sacrificed contribution cannot satisfy the employer's SG obligation (s 18A). For fortnightly QE of $2,500 with $500 sacrificed to super, the employer owes $300 SG in addition to the $500. See executable Case 2 below and the payroll guide's separate commission/overtime case. [SGAA ss 10A, 18A](https://www.legislation.gov.au/C2026C00272/latest/text); [ATO, salary sacrifice treatment](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings).
 
 #### Rule 2 -- SG rate
 
@@ -441,9 +443,9 @@ Matches "AUSTRALIAN SUPER" (pattern 3.1), so this is a candidate employee super 
 `15.05.2027 ; BPAY HOSTPLUS ; DEBIT ; PERSONAL CONTRIBUTION ; -10,000.00 ; AUD`
 
 **Reasoning:**
-Matches "BPAY" + "HOSTPLUS" (pattern 3.2). Sole trader making a personal super contribution. Whether this is concessional (deductible) depends on whether a valid s 290-170 notice is given on time and acknowledged. If a valid, timely notice is acknowledged and other deduction conditions are met: $10,000 concessional contribution, tax-deductible, taxed at 15% in the fund, counts toward the $32,500 cap. If no notice: non-concessional, no deduction.
+Matches "BPAY" + "HOSTPLUS" (pattern 3.2), suggesting a personal contribution. Confirm the contributor, fund receipt and income year. If the fund received $10,000 in 2026-27, a valid timely s 290-170 notice is acknowledged and all other deduction conditions are met, the deductible amount is a concessional contribution counted with all other concessional contributions against the applicable cap. If no deduction is claimed, an ordinary personal after-tax contribution is generally non-concessional. The bank line does not establish these facts or the fund's tax treatment.
 
-**Classification:** EXCLUDE -- personal super contribution. Deductibility depends on s 290-170 notice status. Flag: "Has the Notice of Intent to Claim a Deduction been lodged with the fund?"
+**Classification:** EXCLUDE -- candidate personal super contribution. Return Needs Input for fund receipt, eligibility, notice and acknowledgement before asserting a deduction or cap position.
 
 #### Example 3 -- Commercial clearing house payment (SBSCH is gone)
 
@@ -475,15 +477,119 @@ Sole traders have NO SG obligation to themselves. Drawings are not salary. If th
 
 **Classification:** No SG payment expected for sole trader's own account. Recommend voluntary contribution strategy.
 
-#### Example 6 -- ATO tax payment (NOT super)
+#### Example 6 -- ATO liability payment with unverified allocation
 
 **Input line:**
 `28.10.2026 ; ATO ; DEBIT ; IAS SEP QTR ; -3,500.00 ; AUD`
 
 **Reasoning:**
-Matches "ATO" + "IAS" (pattern 3.6). This is an Instalment Activity Statement (PAYG/GST) payment, NOT a super contribution. (Quarterly IAS/BAS cycles continue -- only SG moved to payday timing.)
+Matches "ATO" + "IAS" (pattern 3.6), suggesting an activity statement payment. Obtain the statement and ATO account allocation. An ATO debit may settle different liabilities, including an SG charge; the descriptor does not establish its allocation. Quarterly activity statement cycles continue independently of payday SG.
 
-**Classification:** EXCLUDE -- tax payment. NOT super.
+**Classification:** EXCLUDE -- candidate ATO liability payment. Return Needs Input for the liability allocation; do not count it as an eligible employee fund contribution or assert its tax treatment from the descriptor.
+
+### Executable Case 1 -- Crossing the annual contribution base
+
+Eligible adult employee, general schedule, 2026-27, one employer, no shortfall exemption certificate or higher award/agreement obligation. Verified YTD QE before this payday is $268,000 and current QE is $10,000. Earlier required SG of $32,160 has been paid correctly. Only $2,830 of this payday remains under the $270,830 base, giving $339.60 SG. Later QE from this employer has no further statutory minimum SG for the year. This does not cancel an earlier shortfall. [ATO annual base](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee); [SGAA s 10A(6)](https://www.legislation.gov.au/C2026C00272/latest/text).
+
+```oa-check
+name: General SG annual base crossing 2026-27
+tolerance: 0.000001
+inputs:
+  annual_base: 270830
+  prior_qe: 268000
+  current_qe: 10000
+  later_qe: 4000
+  sg_percent: 12
+steps:
+  - remaining_base: max(0, annual_base - prior_qe)
+  - current_sg: pct(min(current_qe, remaining_base), sg_percent)
+  - prior_sg: pct(prior_qe, sg_percent)
+  - year_sg: prior_sg + current_sg
+  - later_sg: pct(min(later_qe, max(0, annual_base - prior_qe - current_qe)), sg_percent)
+expected:
+  remaining_base: 2830
+  current_sg: 339.60
+  prior_sg: 32160
+  year_sg: 32499.60
+  later_sg: 0
+```
+
+### Executable Case 2 -- Salary sacrifice does not satisfy SG
+
+Eligible adult employee, general schedule, 2026-27, below the annual base and without an exemption certificate or higher obligation. The fortnight's $2,500 is verified QE before a $500 sacrifice to super; the sacrificed amount would otherwise be QE. Cash earnings before withholding are $2,000, SG is $300 and the scheduled fund contributions total $800. The $500 sacrifice cannot offset the $300 employer obligation. These are required amounts, not proof of fund receipt. [ATO salary sacrifice example](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [SGAA s 18A](https://www.legislation.gov.au/C2026C00272/latest/text).
+
+```oa-check
+name: Pre-sacrifice QE and separate employer SG 2026-27
+tolerance: 0.000001
+inputs:
+  pre_sacrifice_qe: 2500
+  sacrifice_to_super: 500
+  sg_percent: 12
+steps:
+  - cash_before_withholding: pre_sacrifice_qe - sacrifice_to_super
+  - employer_sg: pct(pre_sacrifice_qe, sg_percent)
+  - scheduled_fund_total: employer_sg + sacrifice_to_super
+  - shortfall_if_cash_base_used: employer_sg - pct(cash_before_withholding, sg_percent)
+expected:
+  cash_before_withholding: 2000
+  employer_sg: 300
+  scheduled_fund_total: 800
+  shortfall_if_cash_base_used: 60
+```
+
+### Executable Case 3 -- Carry-forward balance boundary and expiry
+
+For 2026-27, verified unused amounts in the preceding 5 years are $1,000 (2021-22), $2,000 (2022-23), $5,000 (2023-24), $10,000 (2024-25) and $15,000 (2025-26). An unused $9,000 from 2020-21 has expired and is excluded. With prior 30 June TSB of $499,999, the available cap is $65,500. At TSB of exactly $500,000, carry-forward is unavailable and the cap is $32,500. The arithmetic below compares those separately established eligibility scenarios; it does not determine TSB or unused balances. Unknown TSB or contribution records mean Needs Input. [ATO contribution caps and carry-forward](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps).
+
+```oa-check
+name: Carry-forward five-year window and strict TSB threshold 2026-27
+tolerance: 0.000001
+inputs:
+  basic_cap: 32500
+  unused_2021_22: 1000
+  unused_2022_23: 2000
+  unused_2023_24: 5000
+  unused_2024_25: 10000
+  unused_2025_26: 15000
+steps:
+  - eligible_unused: unused_2021_22 + unused_2022_23 + unused_2023_24 + unused_2024_25 + unused_2025_26
+  - cap_if_tsb_below_threshold: basic_cap + eligible_unused
+  - cap_if_tsb_at_threshold: basic_cap
+expected:
+  eligible_unused: 33000
+  cap_if_tsb_below_threshold: 65500
+  cap_if_tsb_at_threshold: 32500
+```
+
+### Executable Case 4 -- Carry-forward contributions still count for Division 293
+
+Ordinary accumulation fund, 2026-27, no defined benefit, constitutionally protected fund, excess contributions or discretionary reallocation. The verified Division 293 components are taxable income $225,000, reportable fringe benefits $10,000, net financial investment loss $3,000, net rental property loss $2,000, nil family trust distribution tax amount, taxed super lump sum elements with a zero tax rate $1,000 and assessable FHSS released amount $4,000. Division 293 income is $235,000. Fund-reported concessional contributions of $55,000 are within the verified $65,500 carry-forward cap, but **all $55,000** count for Division 293. The taxable amount is $40,000 and additional tax is $6,000. As a separate boundary scenario, Division 293 income of $195,000 plus the same contributions equals $250,000, giving nil additional tax. [ATO Division 293 calculation and income components](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/division-293-tax-on-concessional-contributions-by-high-income-earners).
+
+```oa-check
+name: Division 293 full income adjustments and carry-forward contributions 2026-27
+tolerance: 0.000001
+inputs:
+  taxable_income: 225000
+  reportable_fringe_benefits: 10000
+  net_financial_investment_loss: 3000
+  net_rental_property_loss: 2000
+  zero_rate_super_lump_sum: 1000
+  assessable_fhss_release: 4000
+  division_293_contributions: 55000
+  threshold: 250000
+  tax_percent: 15
+  boundary_income: 195000
+steps:
+  - division_293_income: taxable_income + reportable_fringe_benefits + net_financial_investment_loss + net_rental_property_loss - zero_rate_super_lump_sum - assessable_fhss_release
+  - taxable_contributions: min(division_293_contributions, max(0, division_293_income + division_293_contributions - threshold))
+  - division_293_tax: pct(taxable_contributions, tax_percent)
+  - boundary_tax: pct(min(division_293_contributions, max(0, boundary_income + division_293_contributions - threshold)), tax_percent)
+expected:
+  division_293_income: 235000
+  taxable_contributions: 40000
+  division_293_tax: 6000
+  boundary_tax: 0
+```
 
 ## When to refuse or refer
 
@@ -526,15 +632,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 **Test 2:** Employee YTD qualifying earnings $268,000 before a $10,000 payday in March 2027. -> Crossing payday SG = 12% x min($10,000, $270,830 - $268,000) = 12% x $2,830 = $339.60. All later 2026-27 paydays: $0. Year SG total = exactly $32,499.60.
 
-**Test 3:** Sole trader contributes $25,000, gives a valid s 290-170 notice on time and receives acknowledgement. TSB $200,000. -> $25,000 concessional. Deduction $25,000. Within $32,500 cap.
+**Test 3:** Sole trader's fund receives $25,000 in 2026-27; all other deduction conditions are satisfied, a valid s 290-170 notice is given on time and acknowledgement is received before claiming. No other concessional contributions. -> $25,000 concessional. Deduction $25,000. Within $32,500 cap.
 
 **Test 4:** Taxable income $260,000, low-tax contributions $30,000, no other income adjustments. -> Combined amount $290,000. Div 293 tax = 15% x $30,000 = $4,500. With $210,000 taxable income, $20,000 reportable fringe benefits and the same contributions, tax is $1,500 (Rule 10).
 
-**Test 5:** TSB $400,000. Unused cap: $5,000 (2023-24) + $10,000 (2024-25) + $15,000 (2025-26). -> Available 2026-27 cap = $32,500 + $30,000 = $62,500.
+**Test 5:** Verified TSB at 30 June 2026 is $400,000. Verified unused cap: $5,000 (2023-24) + $10,000 (2024-25) + $15,000 (2025-26), with no other unused amounts. -> Available 2026-27 cap = $32,500 + $30,000 = $62,500.
 
-**Test 6:** Income $45,000, non-concessional contribution $1,000. -> Co-contribution = $500 (income below $49,293 lower threshold).
+**Test 6:** For 2026-27, co-contribution income $45,000 and eligible personal non-concessional contribution $1,000 received by the fund; all other applicable co-contribution conditions have been separately verified. -> Co-contribution = $500 (income below $49,293 lower threshold). Income and contribution amount alone do not establish eligibility.
 
-**Test 7:** $5,000 to spouse's fund, spouse income $36,000, spouse TSB $300,000. -> Offset = $540.
+**Test 7:** Eligible spouse contribution of $5,000, spouse offset income $36,000 and prior 30 June spouse TSB $300,000; all other applicable spouse-offset conditions have been separately verified. -> Offset = $540. These figures alone do not establish eligibility.
 
 **Test 8:** Sole trader asks about SG to self. -> $0. No obligation. Advise voluntary contributions.
 
@@ -554,17 +660,19 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 | Source | URL | Read on |
 |---|---|---|
-| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
+| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A, 12 and 18A | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual-base crossing and sacrificed contribution exclusion |
+| ATO SG rates and bases | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | 2026-11-02; selected general/Norfolk rates and annual/legacy base rows |
+| ATO contribution caps | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps> | 2026-11-02; selected concessional cap and carry-forward sections |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/290-170> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://business.gov.au/finance/superannuation> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/print?DocID=PAC%2F19920111%2F12&PiT=99991231235958> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings> | Not re-read for this format update; see retained provenance |
+| ATO qualifying earnings | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings> | 2026-11-02; selected QE categories, double counting and salary sacrifice sections |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super> | Not re-read for this format update; see retained provenance |
+| ATO payday deadlines | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super> | 2026-11-02; selected fund receipt, business-day and extension rules |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/division-293-tax-on-concessional-contributions-by-high-income-earners> | Not re-read for this format update; see retained provenance |
+| ATO Division 293 | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/division-293-tax-on-concessional-contributions-by-high-income-earners> | 2026-11-02; selected income components, contributions and threshold calculation |
 | Retained citation | <https://www.legislation.gov.au/C2026A00008/asmade/text> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/super-from-your-employer/super-guarantee-opt-out-for-high-income-earners-with-multiple-employers> | Not re-read for this format update; see retained provenance |
@@ -594,7 +702,9 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | Shortfall exemption certificate | ato.gov.au -- [Super guarantee opt out](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/super-from-your-employer/super-guarantee-opt-out-for-high-income-earners-with-multiple-employers) (checked 31 October 2026) |
 | Schedule 6 Bill note | [APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) (checked 31 October 2026) |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Four executable cases cover the selected annual-base, salary-sacrifice, carry-forward and Division 293 calculations. Their eligibility facts are stipulated; arithmetic checks do not verify client records, fund receipt or legal entitlement.
+
+Not yet confirmed: a complete page-level source/read-date audit and independent legal review of the whole guide. Existing dates and qualifications retain their original scope.
 
 <!-- openaccountants-cta-block -->
 

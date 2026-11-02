@@ -11,7 +11,7 @@ description: >
   "activity statement", "annual leave", "long service leave",
   "minimum wage Australia", or any question about running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.7
+version: 2.8
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -22,7 +22,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.7
+# Australia -- Payroll Skill v2.8
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -125,9 +125,11 @@ The SG formulas, contribution base, SG shortfall percentage and worked SG amount
 | Payment deadline | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
 | Eligible employees | Assess SGAA eligibility. An under-18 employee must work more than 30 actual hours in the week; exactly 30 does not qualify |
 
+**Choose QE before applying the rate.** From 1 July 2026, include all commissions, including those for work entirely outside ordinary hours. Include salary sacrificed to super if it would otherwise have been QE and the payments expressly included for extended employees. Count overlapping categories once. Ordinary overtime outside QE is different from an outside-hours commission; do not exclude both merely because they arise outside ordinary hours. Salary sacrifice to super does not satisfy employer SG. Check statutory exclusions and the annual base before calculating; unknown classifications or YTD records mean Needs Input. See Rule 1 in [au-super-guarantee](au-super-guarantee.md), [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2026C00272/latest/text) and [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings).
+
 - **SG under-18 hours test** — An under-18 employee must work more than 30 actual hours in the week to qualify for SG; exactly 30 does not qualify. Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
 
-- **Deadline exceptions** — new employee / new fund / a worker rehired or recommenced under a new arrangement -- 20 business days for the first contribution; out-of-cycle payments (such as bonuses, where the employee has a regular pay schedule and the payment falls outside it) ride with the next regular payday's deadline, but with no later regular payday (for example a final payment when employment ends) the usual 7 business days apply, and payments to workers with irregular paydays (such as a contractor paid on invoice) are not out of cycle; ATO exceptional-circumstances determinations -- 20 business days.
+- **Deadline exceptions** — new employee / new fund / a worker rehired or recommenced under a new arrangement -- 20 business days for the first contribution; an overlapping later contribution inherits that extended deadline. Out-of-cycle payments (such as bonuses, where the employee has a regular pay schedule and the payment falls outside it) ride with the next regular payday's deadline, but with no later regular payday (for example a final payment when employment ends) the usual 7 business days apply, and payments to workers with irregular paydays (such as a contractor paid on invoice) are not out of cycle. An applicable ATO exceptional-circumstances determination gives the later of 20 business days after the QE day or 20 business days after the determination. Verify fund receipt and the applicable national business-day calendar. [ATO payday deadlines](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super).
 - **Legacy** — quarterly due dates (28 Oct/28 Jan/28 Apr/28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026. The ATO Small Business Super Clearing House closed permanently on 1 July 2026 -- small employers now use payroll-software super payments or commercial clearing houses.
 - **Final scheduled general SG rate**: 12% is the final scheduled general SG rate (reached 1 July 2025). No further general-rate increases are scheduled; Norfolk Island reaches 12% on 1 July 2027.
 
@@ -360,7 +362,69 @@ The final compulsory repayment is a separate annual calculation. Repayment incom
 
 ## Worked cases
 
-No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
+### Case 1 -- Commissions outside ordinary hours remain in QE
+
+Eligible adult common-law employee, general schedule, 2026-27, below the annual base, with no exemption certificate or higher award/agreement obligation. The payroll record separately identifies ordinary earnings of $2,000 before a $500 sacrifice to super, $400 genuine overtime outside OTE and $300 commission for work entirely outside ordinary hours. The worker is not in an extended employee category that brings the overtime into QE, and no statutory exclusion affects the other amounts. Cash earnings before withholding are $2,200, but QE is $2,300: exclude the specified overtime, include the commission and retain the sacrificed ordinary earnings. Employer SG is $276 in addition to the $500 sacrifice. Excluding the commission would understate SG by $36. This case does not calculate PAYG withholding, net pay or payroll tax. [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2026C00272/latest/text).
+
+```oa-check
+name: Payroll commission outside ordinary hours and salary sacrifice 2026-27
+tolerance: 0.000001
+inputs:
+  ordinary_earnings_before_sacrifice: 2000
+  sacrifice_to_super: 500
+  overtime_outside_qe: 400
+  commission_outside_ordinary_hours: 300
+  sg_percent: 12
+steps:
+  - cash_before_withholding: ordinary_earnings_before_sacrifice - sacrifice_to_super + overtime_outside_qe + commission_outside_ordinary_hours
+  - qualifying_earnings: ordinary_earnings_before_sacrifice + commission_outside_ordinary_hours
+  - employer_sg: pct(qualifying_earnings, sg_percent)
+  - scheduled_fund_total: employer_sg + sacrifice_to_super
+  - sg_if_commission_omitted: pct(ordinary_earnings_before_sacrifice, sg_percent)
+  - commission_shortfall: employer_sg - sg_if_commission_omitted
+expected:
+  cash_before_withholding: 2200
+  qualifying_earnings: 2300
+  employer_sg: 276
+  scheduled_fund_total: 776
+  sg_if_commission_omitted: 240
+  commission_shortfall: 36
+```
+
+### Case 2 -- Reconcile each employee's fund receipt
+
+Two eligible adult employees of one employer, general schedule, 2026-27, no exemption certificates, salary sacrifice or higher obligations. A has verified prior YTD QE of $268,000 and current QE of $10,000; B has no prior QE and current QE of $4,000. Required SG is $339.60 for A and $480 for B, or $819.60 in total. A bank debit to a clearing house for $819.60 does not prove completeness. Fund records and allocation information establish eligible SG contributions received by each applicable deadline of $339.60 for A and only $400 for B, with no other contributions or credits available. B's outstanding required SG is $80. Reconcile the missing amount and refer the late-payment/SGC position under the specialist guide; the $80 is not a calculation of the total SGC. Without the payroll allocations or fund records, return Needs Input rather than marking the batch complete. [ATO annual base](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee); [ATO fund receipt requirement](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super).
+
+```oa-check
+name: Employee-level annual base and clearing house receipt reconciliation 2026-27
+tolerance: 0.000001
+inputs:
+  annual_base: 270830
+  a_prior_qe: 268000
+  a_current_qe: 10000
+  b_prior_qe: 0
+  b_current_qe: 4000
+  sg_percent: 12
+  a_eligible_receipt: 339.60
+  b_eligible_receipt: 400
+  clearing_house_debit: 819.60
+steps:
+  - a_required_sg: pct(min(a_current_qe, max(0, annual_base - a_prior_qe)), sg_percent)
+  - b_required_sg: pct(min(b_current_qe, max(0, annual_base - b_prior_qe)), sg_percent)
+  - total_required_sg: a_required_sg + b_required_sg
+  - bank_amount_difference: clearing_house_debit - total_required_sg
+  - a_outstanding_sg: max(0, a_required_sg - a_eligible_receipt)
+  - b_outstanding_sg: max(0, b_required_sg - b_eligible_receipt)
+  - receipt_reconciliation_gap: clearing_house_debit - a_eligible_receipt - b_eligible_receipt
+expected:
+  a_required_sg: 339.60
+  b_required_sg: 480
+  total_required_sg: 819.60
+  bank_amount_difference: 0
+  a_outstanding_sg: 0
+  b_outstanding_sg: 80
+  receipt_reconciliation_gap: 80
+```
 
 ## When to refuse or refer
 
@@ -381,10 +445,13 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 | Source | URL | Read on |
 |---|---|---|
+| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A and 18A | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual base and sacrificed contributions |
+| ATO qualifying earnings | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings> | 2026-11-02; selected QE categories, double counting and salary sacrifice sections |
+| ATO payday deadlines | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super> | 2026-11-02; selected fund receipt, business-day and extension rules |
 | Medicare Levy Act 1986, compilation 53 (C2026C00295): selected s 3 and ss 6-8, including the s 8(2) formula | <https://www.legislation.gov.au/C2026C00295/latest/text> | 2026-11-02; only the ordinary family-threshold summary rechecked here |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-1-statement-of-formulas-for-calculating-amounts-to-be-withheld/payee-declarations> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
+| ATO SG rates and bases | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | 2026-11-02; selected general/Norfolk rates and annual/legacy base rows |
 | Retained citation | <https://business.gov.au/finance/superannuation> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super> | Not re-read for this format update; see retained provenance |
@@ -418,7 +485,9 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 - [Fair Work Commission](https://fwc.gov.au/work-conditions/minimum-wages-and-conditions/national-minimum-wage): national minimum wage; determine any applicable award/agreement separately.
 - [Services Australia](https://www.servicesaustralia.gov.au/paid-parental-leave-scheme-changes): Parental Leave Pay days depend on the birth/adoption date. Check eligibility and the separate government-funded super payment.
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Two executable cases cover selected SG payroll calculations and fund receipt reconciliation. They do not verify PAYG withholding, net pay, awards, leave, state payroll tax or the other obligations in this guide.
+
+Not yet confirmed: a complete page-level source/read-date audit and independent legal review of the whole guide. Existing dates and qualifications retain their original scope.
 
 <!-- openaccountants-cta-block -->
 
