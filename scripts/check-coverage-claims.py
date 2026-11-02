@@ -230,7 +230,10 @@ def derived_table(problem, index):
 
     # the sentence under the table says how many codes hold accountant-reviewed guides
     m = REVIEWED_IN.search(block.group(1))
-    if m:
+    if not m:
+        problem(doc, 'reviewed jurisdictions', '%s: the derived section has no "Accountant-reviewed guides exist in '
+                'N of the N jurisdiction codes" sentence' % DOC)
+    else:
         claimed = [int(m.group(2).replace(',', '')), int(m.group(4).replace(',', ''))]
         tree = [figures(index)['reviewed in'], expected['Distinct `jurisdiction` codes']]
         if claimed != tree:

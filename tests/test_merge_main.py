@@ -22,7 +22,9 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = REPO_ROOT / "scripts"
-COPIED = ("merge-main.py", "check-coverage-claims.py", "build-index.py", "build-partners.py", "build-llms-full.py")
+COPIED = ("merge-main.py", "check-coverage-claims.py", "check-arithmetic.py",
+          "build-index.py", "build-partners.py", "build-llms-full.py")
+BASELINE = "scripts/baselines/arithmetic.txt"
 STUB_PACKAGES = (
     "import os, shutil\n"
     "root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n"
@@ -80,6 +82,9 @@ class MergeMainTests(unittest.TestCase):
         for key, value in (("user.name", "Test"), ("user.email", "test@example.test"), ("commit.gpgsign", "false"),
                            ("core.autocrlf", "false"), ("core.hooksPath", str(Path(tmp.name) / "no-hooks"))):
             self.git("config", key, value)
+        # one real gate baseline, empty: the corpus has no arithmetic findings
+        recorded = self.run_script("check-arithmetic.py", "--update-baseline")
+        self.assertEqual(recorded.returncode, 0, recorded.stdout + recorded.stderr)
         self.build_and_commit("base")
 
     def write(self, files: dict[str, str]) -> None:
@@ -185,11 +190,36 @@ class MergeMainTests(unittest.TestCase):
         self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
         self.assertEqual(self.blocking(result.stdout), ["README.md"])
 
+    def test_every_baseline_is_gated_including_a_clean_merge_and_on_every_continue(self) -> None:
+        stale = "skills/international/aa/aa-vat.md::1 + 1 = 3"
+        baseline = (self.root / BASELINE).read_text(encoding="utf-8")
+        self.two_branches({"skills/international/bb/bb-vat.md": guide("bb-vat", "BB")},
+                          {"skills/international/cc/cc-vat.md": guide("cc-vat", "CC"),
+                           "skills/international/dd/dd-vat.md": guide("dd-vat", "DD"),
+                           BASELINE: baseline + stale + "\n"})
+        result = self.run_script("merge-main.py", "main")
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn("check-arithmetic.py failed on the merged tree", result.stdout)
+        self.assertNotIn(BASELINE, self.unmerged(), "the fixture must merge the baseline cleanly")
+
+        again = self.run_script("merge-main.py", "--continue")
+        self.assertEqual(again.returncode, 1, again.stdout + again.stderr)
+        self.assertIn("check-arithmetic.py failed on the merged tree", again.stdout)
+
     def test_refuses_to_start_over_uncommitted_changes(self) -> None:
         self.write({"START-HERE.md": "Edited.\n"})
         result = self.run_script("merge-main.py", "main")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("commit or stash", result.stderr)
+
+    def test_refuses_to_start_over_untracked_derived_files(self) -> None:
+        self.write({"packages/aa/notes.md": "Mine.\n", "scratch.txt": "Not derived.\n"})
+        result = self.run_script("merge-main.py", "main")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("packages/aa/notes.md", result.stderr)
+        self.assertNotIn("scratch.txt", result.stderr)
+        self.assertEqual((self.root / "packages/aa/notes.md").read_text(encoding="utf-8"), "Mine.\n")
+        self.assertNotEqual(self.git("rev-parse", "-q", "--verify", "MERGE_HEAD", check=False).returncode, 0)
 
 
 class BaselineMergeTests(unittest.TestCase):

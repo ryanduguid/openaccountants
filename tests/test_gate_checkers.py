@@ -481,7 +481,9 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
             rows.append(f"| {label} | **{value}**{suffix} |")
         coverage = (
             "# Coverage\n\n## This repository (derived from `index.json`)\n\n"
-            "| Measure | This tree |\n|---|---|\n" + "\n".join(rows) + "\n\n## Upstream\n\nFrozen.\n"
+            "| Measure | This tree |\n|---|---|\n" + "\n".join(rows) + "\n\n"
+            + overrides.get("reviewed_in", "Accountant-reviewed guides exist in 1 of the 2 jurisdiction codes;\n\n")
+            + "## Upstream\n\nFrozen.\n"
         )
         correct = "**2 Guides** across **2 jurisdictions** · **1 accountant-reviewed** · **1 named accountants**"
         partners, _ = roster.render_partners(self.INDEX, self.PROFILES["reviewers"])
@@ -545,23 +547,25 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         self.assertEqual(by_path[("README.md", "Guides")], {"claimed": 9, "actual": 2})
         self.assertEqual(len(by_path), 2)
 
-    def test_the_reviewed_jurisdictions_sentence_is_checked(self) -> None:
-        files = self.corpus()
-        files["docs/COVERAGE.md"] = files["docs/COVERAGE.md"].replace(
-            "\n\n## Upstream", "\n\nAccountant-reviewed guides exist in 2 of the 2 jurisdiction codes;\n\n## Upstream")
-        self.write(files)
+    def test_the_reviewed_jurisdictions_sentence_is_checked_and_required(self) -> None:
+        self.write(self.corpus(reviewed_in="Accountant-reviewed guides exist in 2 of the 2 jurisdiction codes;\n\n"))
         code, document = self.run_json(baseline=False)
         self.assertEqual(code, 1)
         self.assertEqual([(f["key"], f["detail"]) for f in document["findings"]],
                          [("reviewed jurisdictions", {"claimed": [2, 2], "actual": [1, 2]})])
 
+        self.write(self.corpus(reviewed_in="Reviewed guides sit in a few places.\n\n"))
+        code, document = self.run_json(baseline=False)
+        self.assertEqual(code, 1)
+        self.assertEqual([f["key"] for f in document["findings"]], ["reviewed jurisdictions"])
+
     def test_write_sets_every_figure_and_leaves_the_rest(self) -> None:
         drifted = "**9 Guides** across **9 jurisdictions** · **9 accountant-reviewed** · **9 named accountants**"
-        files = self.corpus(**{"Guide files indexed": 3, "Distinct `reviewed_by` values": 7,
-                               "headline": drifted, "llms": drifted, "tiers": drifted})
-        files["docs/COVERAGE.md"] = files["docs/COVERAGE.md"].replace(
-            "\n\n## Upstream", "\n\nAccountant-reviewed guides exist in 5 of the 9 jurisdiction codes;\n\n## Upstream")
-        self.write(files)
+        self.write(self.corpus(**{
+            "Guide files indexed": 3, "Distinct `reviewed_by` values": 7,
+            "headline": drifted, "llms": drifted, "tiers": drifted,
+            "reviewed_in": "Accountant-reviewed guides exist in 5 of the 9 jurisdiction codes;\n\n",
+        }))
         self.assertEqual(self.run_checker(baseline=False).returncode, 1)
 
         written = self.run_checker("--write", baseline=False)
@@ -570,8 +574,6 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         code, document = self.run_json(baseline=False)
         self.assertEqual(code, 0, document)
         expected = self.corpus()
-        expected["docs/COVERAGE.md"] = expected["docs/COVERAGE.md"].replace(
-            "\n\n## Upstream", "\n\nAccountant-reviewed guides exist in 1 of the 2 jurisdiction codes;\n\n## Upstream")
         for rel in ("docs/COVERAGE.md", "README.md", "llms.txt", "docs/QUALITY-TIERS.md"):
             self.assertEqual((self.root / rel).read_text(encoding="utf-8"), expected[rel], rel)
         self.assertEqual(self.run_checker("--write", baseline=False).stdout, "", "a second --write changed something")

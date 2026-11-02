@@ -18,12 +18,15 @@ resolved by hand is easily left stale. The `oa-merge` attribute in
 
 A git merge driver cannot do this: git runs drivers one file at a time before
 the merged tree exists, so a driver can only pick a side, and GitHub ignores
-custom drivers. So this script runs `git merge --no-commit`. When any other
-file conflicts it stops before touching a derived file; resolve and `git add`
-those files, then run it with --continue. It then resolves the derived files,
-runs `make build`'s generators, stages what they changed and gates the result
-with check-coverage-claims.py and the checker of each baseline it merged.
-The merge is left staged for you to review and commit.
+custom drivers. So this script refuses uncommitted changes and untracked files
+among the derived paths, then runs `git merge --no-commit`. When any other
+file conflicts it stops before resolving a derived file or running a
+generator (git has already written its merge of each derived file, conflict
+markers included); resolve and `git add` those files, then run it with
+--continue. It then resolves the derived files, runs `make build`'s
+generators, stages what they changed and gates the result with
+check-coverage-claims.py and every baseline's checker. The merge is left
+staged for you to review and commit.
 
 Usage: python3 scripts/merge-main.py [REV]     (make merge-main [REV=<rev>])
        python3 scripts/merge-main.py --continue
@@ -174,9 +177,14 @@ def finish():
         print('merge-main: still conflicted: ' + ', '.join(left))
         return 1
 
-    gates = [('check-coverage-claims.py',)]
-    gates += [('check-%s.py' % os.path.basename(path)[:-len('.txt')],) for path in sorted(baselines)]
-    failed = [gate[0] for gate in gates if run_script(*gate)]
+    # Every baseline's checker, not only the merged ones': a clean textual merge
+    # can still list a fingerprint the merged tree no longer reproduces, and a
+    # rerun with --continue must not skip a baseline that failed last time.
+    tracked = nul_list(git('ls-files', '-z').stdout)
+    gates = ['check-coverage-claims.py']
+    gates += ['check-%s.py' % os.path.basename(path)[:-len('.txt')]
+              for path, kind in sorted(merge_kinds(tracked).items()) if kind == 'baseline']
+    failed = [gate for gate in gates if run_script(gate)]
     if failed:
         print('merge-main: %s failed on the merged tree; fix that before committing' % ', '.join(failed))
         return 1
@@ -202,6 +210,12 @@ def main(argv=None):
         sys.exit('merge-main: a merge is already in progress; finish it with --continue or run git merge --abort')
     if git('status', '--porcelain', '--untracked-files=no').stdout.strip():
         sys.exit('merge-main: commit or stash your changes first')
+    # The build replaces packages/ and the script stages new derived paths, so
+    # an untracked file there would be lost or staged unasked.
+    untracked = nul_list(git('ls-files', '--others', '--exclude-standard', '-z').stdout)
+    stray = sorted(path for path, kind in merge_kinds(untracked).items() if kind)
+    if stray:
+        sys.exit('merge-main: move or delete these untracked files first:\n  ' + '\n  '.join(stray))
     result = git('merge', '--no-ff', '--no-commit', args.rev, check=False)
     print(result.stdout, end='')
     if not merging():  # already up to date, or the merge never started
