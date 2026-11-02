@@ -11,7 +11,7 @@ description: >
   "1A 1B W1 W2 T7 5A", "net amount on BAS", "fix a BAS", "BAS due date". For the GST
   classification rules behind the labels see australia-gst; for the label-level PAYG detail see
   au-gst-bas.
-version: 0.7
+version: 0.8
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-11-02
@@ -24,13 +24,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia BAS Preparation v0.7
+# Australia BAS Preparation v0.8
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia BAS Preparation v0.7
+### Australia BAS Preparation v0.8
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
@@ -496,7 +496,7 @@ Before lodging, confirm:
 - [ ] 1A and 1B include every adjustment for the period and no corrections that are out of time.
 - [ ] Where W1 and W2 reporting is required, the amounts reconcile to the payroll register and relevant STP figures for the period.
 - [ ] Where these labels apply, W5 equals W2 plus W3 plus W4, and label 4 equals W5. Large withholders follow Section 6.1 instead.
-- [ ] 5A comes from T7, or from T9 if the amount was varied, or from T1 multiplied by T2.
+- [ ] 5A comes from T7 for an unchanged amount, T9 for an amount variation, or T11 calculated as T1 x T2 for the pre-filled rate or T1 x T3 for a current rate variation.
 - [ ] 8A less 8B equals label 9, recalculated independently.
 - [ ] Any correction of a prior period error is within its time and value limits.
 - [ ] Suspense and clearing accounts are nil or fully explained.
