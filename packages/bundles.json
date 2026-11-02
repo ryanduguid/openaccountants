@@ -1941,13 +1941,17 @@
    "files": [
     "intake.md",
     "denmark-vat-return.md",
+    "dk-annual-reporting-reference.md",
     "dk-capital-gains.md",
+    "dk-corporate-income-tax.md",
     "dk-income-tax.md",
     "references.md",
     "README.md"
    ],
    "shared": [
+    "corporate-income-tax-workflow-base.md",
     "eu-vat-directive.md",
+    "financial-statements-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
     "vat-workflow-base.md",
