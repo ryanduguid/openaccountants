@@ -148,7 +148,7 @@ Source: § 32a EStG — https://www.gesetze-im-internet.de/estg/__32a.html. Use 
 | KV/PV-BBG | EUR 5,812.50 | EUR 69,750 | Health + Care insurance |
 | RV-BBG | EUR 8,450.00 | EUR 101,400 | Pension insurance (general, unified East and West; knappschaftliche RV EUR 10,400.00 / EUR 124,800) |
 | AV-BBG | EUR 8,450.00 | EUR 101,400 | Unemployment insurance |
-| JAEG (Versicherungspflichtgrenze) | EUR 6,450.00 | EUR 77,400 | Threshold above which employees may opt for PKV (EUR 69,750 for those exempt and privately insured on 31 December 2002, § 6 Abs. 7 SGB V) |
+| JAEG (Versicherungspflichtgrenze) | EUR 6,450.00 | EUR 77,400 | Threshold above which employees may opt for PKV (EUR 69,750 for employees who on 31 December 2002 were exempt because their pay exceeded the then JAEG and had substitutive private health insurance, § 6 Abs. 7 SGB V) |
 
 Source: BMAS, Sozialversicherungsrechengrößen 2026 — https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2025/sozialversicherungsrechengroessen-2026.html
 
