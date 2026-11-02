@@ -160,9 +160,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Item | Amount |
 | --- | --- |
 | Employer SV (RV+KV+PV+AV) | ~EUR 953 |
-| Umlagen (U1+U2+Insolvenz) | ~EUR 56--227 (U1 0.9% to 4.1% and U2 0.19% to 0.8% by Krankenkasse, plus Insolvenzgeldumlage 0.15% = EUR 6.75) |
+| Umlagen (U1+U2+Insolvenz) | ~EUR 56--227 for an employer in U1 (about EUR 15--43 without U1) (U1 0.9% to 4.1% and U2 0.19% to 0.8% by Krankenkasse, plus Insolvenzgeldumlage 0.15% = EUR 6.75) |
 | Berufsgenossenschaft | varies |
-| **Total employer add-on** | **~22--26% of gross, plus Berufsgenossenschaft** |
+| **Total employer add-on** | **~22--26% of gross (about 21.5--22% without U1), plus Berufsgenossenschaft** |
 
 ## Section 5 -- Minimum Wage and Overtime
 

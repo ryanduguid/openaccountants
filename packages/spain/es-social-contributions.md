@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Spanish self-employed social co
 version: 2.1
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -224,9 +224,9 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 | 14 | 4,050.01-6,000.00 | 1,732.03 | 543.86 | 545.59 |
 | 15 | > 6,000.00 | 1,928.10 | 605.42 | 607.35 |
 
-- **2026 table** — Orden PJC/297/2026 art. 18 keeps these minimum bases and net-income bands for 2026 (it numbers the general table 1-12). Tranche 3 of the reduced table runs to under EUR 1,166.70 and the general table starts at EUR 1,166.70. Cuotas are minimum base x total rate.  _(Orden PJC/297/2026, arts 18 and 37: https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296)_
+- **2026 table** — Orden PJC/297/2026 art. 18 keeps these minimum bases and net-income bands for 2026, unchanged from Orden PJC/178/2025 art. 18.1 (it numbers the general table 1-12). Tranche 3 of the reduced table runs to under EUR 1,166.70 and the general table starts at EUR 1,166.70. Cuotas are minimum base x total rate.  _(Orden PJC/297/2026, arts 18 and 37: https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296)_
 
-- **Maximum base for all tranches** — EUR 4,909.50/month (2025); EUR 5,101.20/month (2026). Top cuota 2026: 5,101.20 x 31.50% = EUR 1,606.88/month  _(Orden PJC/297/2026, arts 18 and 37)_
+- **Maximum base** — Each tranche has its own maximum base (for example EUR 718.94 in tranche 1). The overall maximum, EUR 4,909.50/month (2025) and EUR 5,101.20/month (2026), applies only in tranches 14 and 15. Top cuota 2026 (tranches 14 and 15): 5,101.20 x 31.50% = EUR 1,606.88/month  _(Orden PJC/297/2026, arts 18 and 37)_
 
 ### Rule 3 -- Contribution rate breakdown (2025 and 2026)
 

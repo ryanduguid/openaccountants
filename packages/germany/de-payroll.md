@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German payroll tax (Lohnsteuer)
 version: 1.1
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -146,9 +146,9 @@ Source: § 32a EStG — https://www.gesetze-im-internet.de/estg/__32a.html. Use 
 | Ceiling | Monthly | Annual | Applies to |
 | --- | --- | --- | --- |
 | KV/PV-BBG | EUR 5,812.50 | EUR 69,750 | Health + Care insurance |
-| RV-BBG | EUR 8,450.00 | EUR 101,400 | Pension insurance (unified) |
+| RV-BBG | EUR 8,450.00 | EUR 101,400 | Pension insurance (general, unified East and West; knappschaftliche RV EUR 10,400.00 / EUR 124,800) |
 | AV-BBG | EUR 8,450.00 | EUR 101,400 | Unemployment insurance |
-| JAEG (Versicherungspflichtgrenze) | EUR 6,450.00 | EUR 77,400 | Threshold above which employees may opt for PKV |
+| JAEG (Versicherungspflichtgrenze) | EUR 6,450.00 | EUR 77,400 | Threshold above which employees may opt for PKV (EUR 69,750 for employees who on 31 December 2002 were exempt because their pay exceeded the then JAEG and had substitutive private health insurance, § 6 Abs. 7 SGB V) |
 
 Source: BMAS, Sozialversicherungsrechengrößen 2026 — https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2025/sozialversicherungsrechengroessen-2026.html
 
@@ -192,7 +192,7 @@ All values are annual. For monthly/weekly/daily payroll, the PAP annualises the 
 ### Formula (§32a EStG, 2025 PAP constants)
 
 - **UPTAB25 tariff formula** — Input: X = zu versteuerndes Einkommen (taxable income) in EUR, whole euros GFB = 12,096 Zone 0 -- Grundfreibetrag: If X < GFB + 1 (i.e., X <= 12,096): ST = 0 Zone 1 -- Progressive zone 1 (14% entry rate): If 12,097 <= X < 17,444: Y = (X - 12,096) / 10,000 RW = Y * 932.30 + 1,400 ST = floor(RW * Y) Zone 2 -- Progressive zone 2: If 17,444 <= X < 68,481: Y = (X - 17,443) / 10,000 RW = Y * 176.64 + 2,397 ST = floor(RW * Y + 1,015.13) Zone 3 -- Proportionalzone (42%): If 68,481 <= X < 277,826: ST = floor(X * 0.42 - 10,911.92) Zone 4 -- Reichensteuer (45%): If X >= 277,826: ST = floor(X * 0.45 - 19,246.67) Final: ST = ST * KZTAB (KZTAB = 2 for Steuerklasse III Splitting; KZTAB = 1 for all others)  _(§32a EStG, 2025 PAP constants; MarcelLehmann/Lohnsteuer Lohnsteuer2025.java)_
-- **2026 tariff formula (§ 32a Abs. 1 EStG, from the 2026 assessment period)** — X = taxable income rounded down to whole euros. X <= 12,348: ST = 0. 12,349 <= X <= 17,799: Y = (X - 12,348) / 10,000; ST = floor((914.51 * Y + 1,400) * Y). 17,800 <= X <= 69,878: Z = (X - 17,799) / 10,000; ST = floor((173.10 * Z + 2,397) * Z + 1,034.87). 69,879 <= X <= 277,825: ST = floor(0.42 * X - 11,135.63). X >= 277,826: ST = floor(0.45 * X - 19,470.38). Payroll for 2026 pay periods uses the BMF PAP 2026, which implements this tariff.  _(§ 32a EStG — https://www.gesetze-im-internet.de/estg/__32a.html)_
+- **2026 tariff formula (§ 32a Abs. 1 EStG, from the 2026 assessment period)** — X = taxable income rounded down to whole euros. X <= 12,348: ST = 0. 12,349 <= X <= 17,799: Y = (X - 12,348) / 10,000; ST = floor((914.51 * Y + 1,400) * Y). 17,800 <= X <= 69,878: Z = (X - 17,799) / 10,000; ST = floor((173.10 * Z + 2,397) * Z + 1,034.87). 69,879 <= X <= 277,825: ST = floor(0.42 * X - 11,135.63). X >= 277,826: ST = floor(0.45 * X - 19,470.38). Payroll for 2026 pay periods follows the BMF PAP 2026; check payroll results against it.  _(§ 32a EStG — https://www.gesetze-im-internet.de/estg/__32a.html)_
 
 ### Steuerklasse V/VI Special Method (MST5_6)
 

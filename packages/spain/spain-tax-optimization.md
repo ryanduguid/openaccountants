@@ -52,7 +52,7 @@ Autonomous community (CCAA) rates vary. Madrid has the lowest combined rates; Ca
 
 | Factor | Autónomo (Persona Física) | Sociedad Limitada (SL) |
 | --- | --- | --- |
-| Top marginal rate | 47-54% (IRPF + CCAA) | 25% Impuesto sobre Sociedades (IS). Previous period's turnover (INCN) < EUR 1m (microempresa): periods starting in 2025, 21% on the first EUR 50,000 and 22% on the rest; 2026, 19% and 21%; 2027 onwards, 17% and 20% (LIS art. 29.1 and DT 44ª; see es-corporate-tax) |
+| Top marginal rate | 47-54% (IRPF + CCAA) | 25% Impuesto sobre Sociedades (IS). Previous period's turnover (INCN) < EUR 1m (microempresa): periods starting in 2025, 21% on the first EUR 50,000 and 22% on the rest; 2026, 19% and 21%; 2027 onwards, 17% and 20%, unless another art. 29 rate applies; the EUR 50,000 band is prorated for periods shorter than a year (LIS art. 29.1 and DT 44ª; see es-corporate-tax) |
 | Extraction | N/A | Salary (deductible, taxed as income) + dividends (19% withholding, LIRPF art. 101.4; taxed in the savings scale at 19-30%) |
 | When to incorporate | When net profits consistently exceed ~EUR 40,000-50,000 | Requires notarial deed, compliance costs, annual accounts |
 

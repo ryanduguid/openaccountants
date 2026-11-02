@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T17:31:23+00:00",
+ "generated_at": "2026-11-02T21:20:29+00:00",
  "counts": {
   "guides": 2011,
   "jurisdictions": 292,
@@ -9117,7 +9117,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "fr-personal-income-tax",
@@ -9156,7 +9156,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "fr-tax-audit",
@@ -9247,7 +9247,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "france-transfer-pricing",
@@ -9650,7 +9650,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "de-payroll",
@@ -9663,7 +9663,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "de-rental-income",
@@ -11795,7 +11795,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "it-income-tax",
@@ -11886,7 +11886,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "italy-formation",
@@ -11951,7 +11951,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "italy-references",
@@ -15799,7 +15799,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "netherlands-transfer-pricing",
@@ -15838,7 +15838,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "nl-corporate-tax",
@@ -15864,7 +15864,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "nl-income-tax",
@@ -19985,7 +19985,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "es-estimated-tax",
@@ -20063,7 +20063,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "spain-references",
@@ -21948,7 +21948,7 @@
    "reviewed_by": "James Power",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "uk-to-italy-flat-tax-relocation",

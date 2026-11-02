@@ -4,7 +4,7 @@ description: Use this skill whenever asked about French income tax for self-empl
 version: 2.1
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -66,7 +66,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Micro-Entrepreneur Revenue Thresholds [T1]**
 
-| Activity | 2023 to 2025 | 2026 to 2028 |
+| Activity | 2025 | 2026 to 2028 |
 | --- | --- | --- |
 | Sales of goods | EUR 188,700 | EUR 203,100 |
 | Services / professions libérales | EUR 77,700 | EUR 83,600 |

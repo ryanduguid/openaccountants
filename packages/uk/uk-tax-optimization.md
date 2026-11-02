@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in the UK, tax pla
 version: 1.2
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 reviewed_by: James Power
 review_status: pending_review
 depends_on: []
@@ -297,7 +297,7 @@ Sources: GOV.UK, Venture capital schemes: tax relief for investors — https://w
 
 **Example 2 -- Incorporation (Profits £60,000, Single, No Other Income)**
 
-Assumptions: 12-month accounting period with no associated companies, so the 19% small profits rate applies (taxable profit £50,000 or less; 19% in both FY2025 and FY2026); all post-tax profit paid out as dividends; no Employment Allowance (a company whose only employee is a director cannot claim it); no other income. Class 2 is voluntary from 6 April 2024, so the sole trader pays Class 4 only. Company side: salary £12,570, employer NIC 15% × (£12,570 − £5,000) = £1,135.50, taxable profit £60,000 − £12,570 − £1,135.50 = £46,294.50, dividends £46,294.50 − £8,795.96 = £37,498.54, of which £500 is covered by the dividend allowance.
+Assumptions: taxpayer in England, Wales or Northern Ireland (rUK rates; Scottish rates differ); 12-month accounting period with no associated companies, so the 19% small profits rate applies (taxable profit £50,000 or less; 19% in both FY2025 and FY2026); all post-tax profit paid out as dividends; no Employment Allowance (a company whose only employee is a director cannot claim it); no other income. Class 2 is voluntary from 6 April 2024, so the sole trader pays Class 4 only. Company side: salary £12,570, employer NIC 15% × (£12,570 − £5,000) = £1,135.50, taxable profit £60,000 − £12,570 − £1,135.50 = £46,294.50, dividends £46,294.50 − £8,795.96 = £37,498.54, of which £500 is covered by the dividend allowance.
 
 **2025-26** (dividend basic rate 8.75%)
 
