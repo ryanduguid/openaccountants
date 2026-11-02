@@ -115,7 +115,6 @@ skills/international/spain::contingencias comunes
 skills/international/spain::general
 skills/international/sudan::standard
 skills/international/sweden::arbetsmarknadsavgift
-skills/international/sweden::egenavgifter
 skills/international/sweden::sjukf rs kringsavgift
 skills/international/tunisia::reduced
 skills/international/uk::additional

@@ -1,11 +1,11 @@
 ---
 name: australia-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Australian taxpayers — individuals, sole traders, and small business owners. Trigger on phrases like "reduce my tax", "tax planning Australia", "salary vs dividends", "negative gearing", "instant asset write-off", "superannuation strategy", "CGT discount", "trust distribution", "income splitting", "GAAR", "Part IVA", or any question about structuring affairs to legally minimize Australian tax. Covers entity selection, deduction optimization, capital allowances, loss utilization, timing strategies, GST planning, superannuation, and red lines. ALWAYS read this skill before giving Australian tax optimization advice.
-version: 1.4
+version: 1.8
 jurisdiction: AU
 tax_year: 2026
-tax_year_notes: "2026-27 primary; 2025-26 kept only as labelled prior-year figures"
-last_updated: 2026-10-31
+tax_year_notes: "2026-27 primary; 2025-26 labelled prior-year figures; prepayment cases follow deductions into 2027-28 and 2028-29"
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -14,9 +14,25 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Tax Optimization
+# Australia Tax Optimization v1.8
 
-## Section 1 — Quick Reference
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## What this file is
+
+Load the workflow bases named in depends_on with this guide. Its output is working papers for review.
+
+## Scope statement
+
+Use this skill when advising on LEGAL tax minimization strategies for Australian taxpayers — individuals, sole traders, and small business owners. Trigger on phrases like "reduce my tax", "tax planning Australia", "salary vs dividends", "negative gearing", "instant asset write-off", "superannuation strategy", "CGT discount", "trust distribution", "income splitting", "GAAR", "Part IVA", or any question about structuring affairs to legally minimize Australian tax. Covers entity selection, deduction optimization, capital allowances, loss utilization, timing strategies, GST planning, superannuation, and red lines. ALWAYS read this skill before giving Australian tax optimization advice.
+
+## Filing requirements
+
+Use the filing and review conditions retained in the computation and scope sections. Establish any procedure not covered here from its official source before acting.
+
+## Rates and thresholds
+
+### Section 1 — Quick Reference
 
 **Quick Reference**
 
@@ -34,9 +50,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Company rate (other) | 30% |
 | CGT discount (individuals) | 50% on assets held >12 months, for CGT events before 1 July 2027; an asset held through that date generally keeps it only on the gain to 30 June 2027. From that date a discount continues for qualifying new residential dwellings (50%) and affordable housing (up to 60%) (Section 9) |
 | GST rate | 10% |
-| Superannuation guarantee | 12% (2026-27; also 2025-26) |
+| General superannuation guarantee rate | 12% (2026-27; also 2025-26) |
 
-### Individual Tax Brackets (2026-27, with 2025-26 as prior year)
+**Choose the SG schedule before applying a rate.** The rates and examples in this guide use the general SG schedule. Norfolk Island's transitional rate is 10% for 2025-26, 11% for 2026-27 and 12% from 1 July 2027. For a Norfolk Island arrangement, check the separate SG rules in `au-super-guarantee.md` before using a general rate or example. [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee).
+
+#### Individual Tax Brackets (2026-27, with 2025-26 as prior year)
 
 **Individual Tax Brackets (2026-27, with 2025-26 as prior year)**  _([ATO, Tax rates: Australian residents](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents))_
 
@@ -51,23 +69,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Medicare levy and surcharge** — Plus 2% Medicare levy on total taxable income. Medicare levy surcharge (1%–1.5%) applies if no private hospital cover and income exceeds $105,000 (single) in 2026-27 ($101,000 in 2025-26).  _([ATO, MLS thresholds](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates))_
 - **2026-27 rates and the standard deduction** — Do not carry 2025-26 rates into 2026-27. The basic tax on $180,000 taxable income is $47,670 in 2026-27 and was $47,938 in 2025-26, before Medicare levy and offsets. From 2026-27, section 25-130 provides a standard deduction for qualifying assessable labour income: the lesser of $1,000 and that income, reduced by specified actual deductions, to a minimum of zero. It is not an extra $1,000 on top of work expenses; certain insurance premiums and trade, business or professional association memberships are excluded from the reduction.  _([ATO, Tax rates: Australian residents](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents); [ITAA 1997 (Cth) s 25-130](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/25-130))_
 
-## Section 2 — Income Splitting & Structuring
+## Computation rules
 
-### Sole Trader vs Company
+### Section 2 — Income Splitting & Structuring
+
+#### Sole Trader vs Company
 
 - **Sole trader taxation** — all profit taxed at individual marginal rates (up to 47%). Simple structure, ABN-based. Losses offset other personal income (subject to non-commercial loss rules, s 35-10 ITAA 1997). No separate return.  _(s 35-10 ITAA 1997)_
 - **Company (Pty Ltd) taxation** — profits taxed at 25% (base rate entity) or 30%. Profits retained in the company are not taxed again until distributed. Franking credits attached to dividends prevent double taxation. Division 7A (ITAA 1936, ss 109C–109T) treats loans and payments to shareholders/associates as unfranked dividends unless complying loan agreements are in place.  _(Division 7A, ITAA 1936, ss 109C–109T)_
 - **Rule of thumb — incorporation threshold** — incorporation typically benefits when taxable profit consistently exceeds ~$100,000, allowing retention at 25% vs a 32% marginal rate at that level (30% plus 2% Medicare levy; 47% starts above $190,000). Below $45,000 profit, sole trader is usually superior (15% marginal in 2026-27, 16% in 2025-26, vs 25% corporate + extraction costs).
 - **Model the whole position** — Do not recommend incorporation from profit alone: include company tax, personal tax on remuneration and distributions, superannuation, payroll obligations, administration and access to cash. Company money retained after tax is not the shareholder's after-tax spending money, base rate entity status must be checked for the year, and the personal services income rules can attribute an individual's income back to them regardless of the entity.  _([TR 2022/3](https://www.ato.gov.au/law/view/view.htm?docid=TXR%2FTR20223%2FNAT%2FATO%2F00001))_
 
-### Salary vs Dividends (Company Directors)
+#### Salary vs Dividends (Company Directors)
 
-- **Salary** — deductible to the company, taxed to the individual, triggers PAYG withholding and super guarantee (12%). Generates assessable income for super contribution purposes.
+- **Salary** — deductible to the company, taxed to the individual, triggers PAYG withholding and super guarantee (general SG rate 12%). Generates assessable income for super contribution purposes.
 - **Franked dividends** — not deductible to the company, carry franking credits. Grossed-up amount included in individual return, franking credit offset applied. No super guarantee obligation.
 - **Optimal mix** — pay enough salary to cover super guarantee obligations and utilise the tax-free threshold ($18,200); distribute remaining as franked dividends. Model the combined company + personal tax.
 - **Division 7A before drawing on company cash** — Review private company payments, loans and debt forgiveness under Division 7A, including loan documentation, deadlines, benchmark interest and minimum repayments, before treating an advance as tax-free access to profits.  _([ATO, Division 7A calculator and decision tool](https://www.ato.gov.au/calculators-and-tools/division-7a-calculator-and-decision-tool))_
 
-### Family Trusts
+#### Family Trusts
 
 Discretionary (family) trusts allow income distribution to adult family members in lower brackets. The trustee resolution must be made before 30 June. Key constraints:
 
@@ -76,12 +96,12 @@ Discretionary (family) trusts allow income distribution to adult family members 
 - **Minor beneficiaries:** For a resident prescribed person under Division 6AA, eligible income up to $416 is tax-free; $417-$1,307 is taxed at 66% of the excess over $416; $1,308 or more is taxed at 45% of the whole eligible amount. Check excepted-person and excepted-income rules separately. (ITAA 1936 Division 6AA; Income Tax Rates Act 1986 Sch 11 Pt I.)
 - **Proposed trust minimum tax (Bill, not law)** — Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. As introduced, they propose a 30% minimum tax on the net income of certain discretionary trusts from 1 July 2028, payable by the trustee, with a non-refundable offset for eligible non-corporate beneficiaries, roll-over relief for restructures from 1 July 2027 to 30 June 2030, and an excluded election trust election in the 2028-29 income year. Flag this in any structuring decision running past 1 July 2028 and do not apply it as enacted; see `au-trust-distributions`.  _([APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Bills Digest No. 24, 2026-27](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2627/27bd024))_
 
-### Superannuation as Income Splitting
+#### Superannuation as Income Splitting
 
 - **Spouse contributions** — up to $3,000 contribution to a low-income spouse's super fund → tax offset of up to $540 (18% of $3,000). Spouse must earn <$40,000.
 - **Contribution splitting** — up to 85% of concessional contributions from the prior year can be rolled to a spouse's super account (not a deduction, but shifts wealth tax-efficiently).
 
-## Section 3 — Deductions Most People Miss
+### Section 3 — Deductions Most People Miss
 
 **Deductions Most People Miss**
 
@@ -90,26 +110,26 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | Home office running expenses | s 8-1 ITAA 1997 | Fixed rate 70c/hour for 2025-26 or actual cost. The [ATO page](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method) (updated 8 June 2026) lists no 2026-27 rate, so confirm the rate before using it for 2026-27. Must keep contemporaneous records (timesheets, diary) |
 | Self-education expenses | s 8-1 | Must have sufficient connection to current employment/business. The former $250 reduction was removed from 2022-23 |
 | Phone and internet | s 8-1 | Apportion business use %. ATO accepts a representative 4-week diary |
-| Income protection insurance | s 8-1 | Premiums for policies replacing lost income are deductible |
+| Income protection insurance | s 8-1 | Claim only the personally paid income-replacement component. Exclude capital cover and premiums deducted through super; payment as a lump sum does not itself decide whether the benefit is income |
 | Professional memberships and subscriptions | s 8-1 | CPA Australia, CA ANZ, industry bodies |
-| Tax agent fees | s 25-5 | Cost of managing tax affairs including prior-year amendments |
+| Tax agent fees | s 25-5 | Eligible costs of managing tax affairs, including prior-year amendments. Apply the recognised-adviser condition and statutory exclusions; a capital asset is not an immediate s 25-5 deduction merely because it is used for tax work |
 | Union fees | s 8-1 | Full deduction |
 | Tools and equipment: immediate deduction | s 40-80(2) ITAA 1997 | Cost $300 or less, used predominantly to produce non-business assessable income, with the set and identical-asset limits; the $100 low-cost figure belongs to business taxpayers under PS LA 2003/8, see the note below |
 | Travel between workplaces | s 8-1 | Deductible (but NOT home-to-work commuting) |
 | Donations to DGRs | Div 30 | Deductible gifts to Deductible Gift Recipients |
-| Prepaid expenses ≤12 months | s 82KZM ITAA 1936 | Non-business individuals can prepay deductible expenses before 30 June for immediate deduction |
+| Qualifying prepaid expenses | s 82KZM ITAA 1936 | For eligible non-business individuals, the eligible service period must be no more than 12 calendar months and end no later than the following income-year end. Confirm underlying deductibility, excluded expenditure and any other applicable prepayment rules before claiming immediately |
 
 **Equipment deduction note**: The ATO text of [section 40-80(2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-80) specifies a cost no greater than $300, predominant use for non-business assessable income, and limits for sets and identical or substantially identical assets acquired in the same income year. The below-$100 immediate write-off is a different rule: [PS LA 2003/8](https://www.ato.gov.au/law/view/document?docid=PSR/PS20038/NAT/ATO/00001) lets a taxpayer carrying on a business deduct low-cost items of $100 or less in the year of purchase, and it does not extend to an employee's tools. Apply s 40-80(2) to employee equipment and PS LA 2003/8 or the small business instant asset write-off to business assets; do not claim either under s 8-1.
 
-## Section 4 — Capital Allowances Optimization
+### Section 4 — Capital Allowances Optimization
 
-### Instant Asset Write-Off
+#### Instant Asset Write-Off
 
 - **Instant asset write-off eligibility** — Small businesses (aggregated turnover <$10m) using simplified depreciation can immediately deduct assets costing less than $20,000 (per asset) first used or installed ready for use in 2026-27, under the ongoing threshold below. For 2025-26 (prior year), the same limit applied to assets first used or installed ready for use by 30 June 2026.  _(Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025)_
 - **Simplified depreciation pool** — Assets ≥$20,000 enter the small business simplified depreciation pool: 15% first year, 30% declining balance thereafter. A pool balance <$20,000 at the end of the income year can be written off entirely (s 328-210(1)).
 - **Ongoing $20,000 threshold from 1 July 2026** — The Treasury Laws Amendment (Tax Reform No. 2) Act 2026, assented to on 26 August 2026 with its schedules commenced on 1 October 2026, makes the $20,000 instant asset write-off threshold ongoing, with application provisions covering assets first used or installed from 1 July 2026. Simplified depreciation eligibility and the taxable-use rules still apply, and a deduction reduces taxable income without reimbursing the purchase price.  _([Treasury Laws Amendment (Tax Reform No. 2) Act 2026](https://www.legislation.gov.au/C2026A00071/asmade/text))_
 
-### General Depreciation
+#### General Depreciation
 
 **General Depreciation Methods**
 
@@ -120,44 +140,44 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 - **Effective life determination**: Use the applicable asset entry and period in the *Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025*, made under s 40-100(1), or a permitted, supportable self-assessment. Confirm the asset description and industry before selecting its life. TR 2024/3 concerns self-education deductions and is not the effective-life schedule. (F2025L01097, made 2 September 2025: [Federal Register of Legislation](https://www.legislation.gov.au/F2025L01097/latest/text); [ATO, Effective life determinations, rulings and law](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/general-depreciation-rules-capital-allowances/effective-life-of-an-asset/effective-life-determinations-rulings-and-law).)
 
-### Motor Vehicles
+#### Motor Vehicles
 
 - **Car cost limit for depreciation** — $69,883 AUD for a car first used or leased in 2026-27; $69,674 in 2025-26 (prior year). (Only the business-use portion of this amount can be depreciated)  _([ATO, Car thresholds from 1 July](https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/car-thresholds-from-1-july))_
 - **Business-use substantiation** — Business-use percentage must be substantiated via logbook (minimum continuous 12-week period, valid for 5 years).
 - **Cents-per-km alternative** — Cents per km is a separate deduction method. It does not establish a business-use percentage, and its rate already covers running expenses and depreciation. For 2026-27: 91c/km, max 5,000 business km = $4,550. For 2025-26 (prior year): 88c/km, max $4,400.  _([ATO, Cents per kilometre method](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/deductions/deductions-for-motor-vehicle-expenses/cents-per-kilometre-method); [ATO, 2026 rate determination](https://softwaredevelopers.ato.gov.au/CentsperKilometreDeductionRateforCarExpenses))_
 
-## Section 5 — Loss Utilization
+### Section 5 — Loss Utilization
 
-### Individual/Sole Trader Losses
+#### Individual/Sole Trader Losses
 
 - **Loss carry forward** — Tax losses carry forward indefinitely (s 36-15 ITAA 1997). No carry-back for individuals.  _(s 36-15 ITAA 1997)_
 - **Non-commercial loss rules:** For the four-test route, income for Division 35 must be less than $250,000 AND at least one test must pass: activity assessable income of at least $20,000; a profit in 3 of 5 years including the current year; qualifying real property of at least $500,000; or qualifying other assets of at least $100,000. Apply the asset exclusions. The income measure includes taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses. Otherwise defer the loss unless an exception or the Commissioner's discretion applies. Primary production and professional arts have an exception where assessable income from other sources, excluding net capital gains, is less than $40,000. (ITAA 1997 Division 35, including ss 35-10(2E) and 35-10(4); [ATO, Non-commercial losses](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses).)
 
-### Company Losses
+#### Company Losses
 
-- **Continuity of ownership test (COT)** — Carry forward subject to continuity of ownership test (COT) — same persons must maintain >50% voting, dividend, and capital rights (s 165-12). If COT fails, the same business test (SBT) may save losses if the company carries on the same business (s 165-13). SBT was broadened in 2015 to a "similar business test."  _(s 165-12; s 165-13)_
+- **Continuity of ownership test (COT)**: Carry forward subject to the COT: the same persons must maintain >50% voting, dividend and capital rights (s 165-12). If the COT fails, the business continuity test may permit the use of tax losses (s 165-13). The same business test remains available under s 165-210. The [2019 amending Act](https://www.legislation.gov.au/C2019A00007/asmade/2019-03-01/text/original/epub/OEBPS/document_1/document_1.html), which commenced on 1 April 2019, added the alternative similar business test under s 165-211 for carried-forward tax losses incurred in income years starting on or after 1 July 2015. Business continuity judgements require specialist review; see au-company-tax and [LCR 2019/1](https://www.ato.gov.au/law/view/document?DocID=COG/LCR20191/NAT/ATO/00001).
 
-### Loss Carry-Back (Companies)
+#### Loss Carry-Back (Companies)
 
 - **2025-26 (prior year)**: The original temporary loss carry-back scheme does not cover losses made in this income year. Do not apply the former $5 billion threshold as a current entitlement.
 - **Original temporary scheme**: Eligible corporate entities could use losses from 2019-20 to 2022-23, claiming in 2020-21 to 2022-23 returns against eligible earlier liabilities. The turnover test used a $5 billion small-business-entity threshold. Apply the original entity, loss, lodgement and franking-account conditions. See [ATO original scheme](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/how-loss-carry-back-tax-offsets-work) and [original eligibility rules](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/eligibility-for-the-tax-offset).
 - **Income years starting on or after 1 July 2026**: A corporate tax entity that is not a significant global entity for the loss year (s 160-5) can carry revenue losses back to either or both of the preceding 2 income years, where it has an income tax liability in that year and its returns for the current year and previous 5 years are lodged, not required or assessed. An entity is a significant global entity if it is, or is grouped under, a global parent with annual global income of $1 billion or more, or the Commissioner so determines (s 960-555). The refundable offset is limited by the franking-account balance, except for an entity that was a foreign resident (other than an NZ franking company) for more than half of each eligible carry back year it carries an amount back to (s 160-10(3)). First claims are in 2026-27 returns. It does not cover a loss made in 2025-26. See [Tax Reform No. 2 Act 2026, Sch 1](https://www.legislation.gov.au/C2026A00071/asmade/text), [s 960-555](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/960-555) and [ATO 2026 reform](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-tax-loss-carry-back).
 
-## Section 6 — Timing Strategies
+### Section 6 — Timing Strategies
 
 **Timing Strategies**
 
 | Strategy | Detail |
 | --- | --- |
 | Defer income to next FY | Delay invoicing until after 30 June if cash-basis taxpayer. For accrual-basis, delay delivery/completion |
-| Accelerate deductions before 30 June | Prepay up to 12 months of deductible expenses (rent, insurance, subscriptions) — s 82KZM ITAA 1936 |
+| Accelerate qualifying deductions before year end | Apply the full s 82KZM gateway: eligible taxpayer and expenditure, eligible service period no longer than 12 calendar months and ending no later than the following income-year end. A payment before 30 June alone does not establish an immediate deduction |
 | Bring forward asset purchases | Use instant asset write-off before 30 June deadline. Asset must be first used or installed ready for use |
 | Concessional super contribution | Maximise contributions before 30 June — $32,500 cap (2026-27; $30,000 in 2025-26). Carry-forward unused cap available if total super balance <$500,000 |
 | Capital gains harvest | Realise capital losses before 30 June to offset gains. Wash sale rules: ATO will scrutinise buybacks of substantially similar assets |
 | Defer capital gains | Hold assets >12 months to access 50% CGT discount (individuals and trusts) on CGT events before 1 July 2027. For an asset held through that date, generally only the gain to 30 June 2027 keeps the discount. Later growth generally moves to cost base indexation, with a conditional 30% minimum tax for resident individuals, unless the new residential dwelling or affordable housing rules apply, so deferring a sale past that date does not generally secure the discount on later growth; see Section 9 and `au-capital-gains` |
 | Small business CGT concessions | Div 152: 15-year exemption, 50% active asset reduction, retirement exemption ($500k lifetime cap), rollover. Maximum net asset value no more than $6 million immediately before the CGT event, or the qualifying turnover route below $2 million. Apply aggregation, exclusions, the active-asset test and all other concession conditions; see `au-small-business-cgt` |
 
-## Section 7 — GST Optimization
+### Section 7 — GST Optimization
 
 **GST Optimization**
 
@@ -173,9 +193,9 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 - **Conditions, not elections** — Going-concern and margin-scheme treatment depend on their own conditions and agreement between the parties; neither is an automatic election that makes a sale cheaper. Establish registration, creditable purpose and valid tax invoices before claiming credits.
 
-## Section 8 — Superannuation & Social Security Optimization
+### Section 8 — Superannuation & Social Security Optimization
 
-### Superannuation (Retirement)
+#### Superannuation (Retirement)
 
 **Superannuation (Retirement)**
 
@@ -203,11 +223,11 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 - **2026-27 concessional cap** — The general concessional cap is $32,500 for 2026-27, up from $30,000 in 2025-26. Count contributions across all funds, including employer and salary sacrifice amounts, and check fund receipt dates and the actual unused amounts before relying on the carry-forward. Before claiming a personal contribution deduction, lodge the notice of intent and obtain the fund's acknowledgement, and weigh contributions tax, Division 293 and preservation against the personal tax saving.  _([ATO, Concessional contributions cap](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/concessional-contributions-cap); [ATO, Personal super contributions](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/personal-super-contributions))_
 
-### Medicare Levy Surcharge Avoidance
+#### Medicare Levy Surcharge Avoidance
 
 - **MLS avoidance** — Private hospital cover avoids 1%–1.5% MLS if income >$105,000 (single) or >$210,000 (family) in 2026-27 ($101,000 or $202,000 in 2025-26). The family threshold rises by $1,500 for each MLS dependent child after the first. Cost of basic hospital cover is often less than the MLS.
 
-## Section 9 — Investment & Retirement
+### Section 9 — Investment & Retirement
 
 **Investment & Retirement**
 
@@ -215,7 +235,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | --- | --- |
 | CGT 50% discount | Individuals and trusts — hold assets >12 months for 50% discount on net capital gain, on CGT events before 1 July 2027. From that date, cost base indexation generally replaces it for resident individuals and trusts, and Division 119 can add tax for a resident individual. An individual who is not a foreign or temporary resident keeps 50% on a new residential dwelling (s 115-102), directly or through a trust or partnership. Affordable housing used on at least 1,095 days can reach up to 60% (s 115-125). Indexation may be chosen instead in some cases. See the note below and `au-capital-gains` |
 | Negative gearing | Investment property/share portfolio borrowing costs exceed income, so the net loss offsets other income. From 2027-28, excess deductions on residential dwellings acquired after 7:30 pm on 12 May 2026 (other than new residential dwellings) are quarantined under s 26-155; see `au-rental-property` |
-| Franking credits | Australian company dividends carry franking credits. Excess credits refundable for individuals and super funds |
+| Franking credits | Eligible franked distributions can carry a tax offset. Excess can be refundable for eligible resident individuals and complying super funds, subject to qualification rules and s 67-25 exclusions |
 | Super in pension phase | The general transfer balance cap is $2.1 million for 2026-27 ($2 million in 2025-26) ([ATO](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/transfer-balance-cap)). Establish the member's personal cap and previous retirement-phase use separately. The cap limits transfers into retirement phase, not later investment earnings. Earnings supporting qualifying retirement-phase income streams may be exempt, subject to the fund and pension conditions. Division 296 is tested on the member's total super balance across all interests |
 | Transition to retirement (TTR) | Access super as an income stream from preservation age while still working. A TTR income stream outside retirement phase generally has fund earnings taxed at 15%. It can enter retirement phase automatically at age 65, after a qualifying release condition is notified to the provider, or when paid to a reversionary beneficiary. The existing stream need not restart to qualify for the earnings exemption; check the conditions below |
 
@@ -223,13 +243,96 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 - **Model the transaction year** — The Tax Reform No. 1 Act limits the general 50% discount to CGT events before 1 July 2027, with continuing discounts from that date for new residential dwellings (s 115-102) and affordable housing (s 115-125). Otherwise, for events from that date, resident individuals and trusts generally use cost base indexation, and an asset held through that date is generally deemed sold and reacquired so that only the gain to 30 June 2027 keeps the discount. Division 119 applies only to an individual who is an Australian resident at any time in the year and has a minimum tax gap amount: extra income tax brings the remaining residential and non-residential capital gains, less gift and conservation covenant deductions, to 30% before offsets. Gains under s 115-102 and s 115-125 are excluded, and s 119-15 exempts a person who receives a listed social support, veterans' or military compensation payment during the year (see `au-capital-gains`). The Act also restricts excess residential rental deductions from 2027-28, with transitional rules and exceptions, and the working Australians tax offset also starts in 2027-28. Model capital gains and rental deductions for the actual year of the transaction and keep a dated comparison with assumptions, eligibility evidence, implementation deadlines and whole-year tax and cash effects.  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/asmade/text))_
 
-## Section 10 — Red Lines (GAAR & Scrutiny Triggers)
+### Section 11 — Annual Tax Planning Calendar
 
-### Part IVA (General Anti-Avoidance Rule)
+**Annual Tax Planning Calendar**
+
+| When | Action |
+| --- | --- |
+| July | New FY starts. Review prior year's unused concessional super cap. Lodge prior-year BAS |
+| August–September | Obtain prior-year tax assessment. Review loss carry-forward position |
+| October | Self-lodger deadline (31 Oct). Review investment portfolio for CGT planning |
+| November–December | Mid-year tax review. Adjust PAYG instalments if income changed materially |
+| January | Review Division 7A loan repayments. Employer SG is now due within 7 business days of each payday (payday super from 1 July 2026); the last quarterly SG date was 28 July 2026 |
+| February–March | Lodge Q2 BAS. Model year-end tax position. Begin pre-30 June planning |
+| April–May | Execute prepayment strategies. Make concessional super contributions. Review asset purchases for instant write-off |
+| June (before 30 June) | **Critical month.** Finalise trust distribution resolutions. Make super contributions (allow processing time — contribute by ~25 June). Prepay expenses. Realise capital losses. Lodge PAYG variation if needed |
+
+### Section 12 — Cash Impact Examples
+
+#### Recomputable prepayment timing cases, 2026-27
+
+These 2 synthetic cases test the planning effect of the section 82KZM cutoff. The same eligible individual incurs and pays an otherwise deductible $3,660 non-business prepayment in June 2027. Independently confirmed eligibility, choices and underlying deductibility apply; no excluded expenditure, tax-shelter rule or other provision changes the result. Assume the current law applies in the later service years. Compare deduction timing only: both cases deduct $3,660 in total, so this working does not establish a permanent tax saving or final tax liability. Other cash-impact illustrations below have not been reverified by this pair.
+
+**Timing case 1: services end on 30 June 2028.** Services run from 1 July 2027 to 30 June 2028. This is 12 calendar months containing 366 days and ends on the last day of the following income year. The established gateway permits the full deduction in 2026-27, with no second deduction for the same payment.
+
+```oa-check
+name: AU planning prepayment ends on following income-year end
+inputs:
+  otherwise_allowable_deduction: 3660
+steps:
+  - deduction_2026_27: otherwise_allowable_deduction
+  - deduction_2027_28: otherwise_allowable_deduction - deduction_2026_27
+  - deduction_2028_29: 0
+  - total_deductions: deduction_2026_27 + deduction_2027_28 + deduction_2028_29
+expected:
+  deduction_2026_27: 3660
+  deduction_2027_28: 0
+  deduction_2028_29: 0
+  total_deductions: 3660
+```
+
+**Timing case 2: services end one day later.** Services instead run from 2 July 2027 to 1 July 2028, still 12 calendar months containing 366 days. The period ends after the following income-year end, so the immediate deduction gateway fails. None of the services falls in 2026-27; 365 days fall in 2027-28 and one day in 2028-29. Spread the otherwise allowable deduction under section 82KZM(1).
+
+```oa-check
+name: AU planning prepayment ends one day after following income-year end
+inputs:
+  otherwise_allowable_deduction: 3660
+  eligible_service_days: 366
+  service_days_2026_27: 0
+  service_days_2027_28: 365
+  service_days_2028_29: 1
+steps:
+  - deduction_2026_27: otherwise_allowable_deduction * service_days_2026_27 / eligible_service_days
+  - deduction_2027_28: otherwise_allowable_deduction * service_days_2027_28 / eligible_service_days
+  - deduction_2028_29: otherwise_allowable_deduction * service_days_2028_29 / eligible_service_days
+  - total_deductions: deduction_2026_27 + deduction_2027_28 + deduction_2028_29
+expected:
+  deduction_2026_27: 0
+  deduction_2027_28: 3650
+  deduction_2028_29: 10
+  total_deductions: 3660
+```
+
+Recompute both timing cases with `python3 scripts/check-examples.py --require skills/international/australia/australia-tax-optimization.md`. The checker does not decide the statutory eligibility or calendar classifications.
+
+#### Example 1 — Sole Trader Incorporates
+
+**Before:** Sole trader, $180,000 taxable income. Under the 2026-27 resident bands, tax before offsets is $4,020 + $90,000 x 30% + $45,000 x 37% = $47,670, plus $3,600 Medicare = $51,270.
+
+**After:** Assume the company qualifies for the 25% rate, deducts an $80,000 salary and $12,000 super contribution, and has $88,000 taxable profit. Company tax is $22,000. Personal tax before offsets on the salary is $14,520 plus $1,600 Medicare. Combined company and personal income tax is $38,120, a $13,150 difference before offsets, any s 25-130 standard deduction, contributions tax, administration costs and any later tax on extracting retained profits. This is a retained-profit illustration; it does not establish a final saving from incorporation.
+
+#### Example 2 — Maximising Super Contributions
+
+Sole trader, 2026-27, $120,000 profit. Claims $32,500 concessional super contribution (deductible). Taxable income drops to $87,500. Income tax falls from $26,520 to $16,770 ($9,750), and the ordinary 2% Medicare levy from $2,400 to $1,750 ($650). Combined saving $10,400 less 15% super tax ($4,875) = **net saving $5,525 + compounding in super environment.** This assumes no Medicare levy reduction or surcharge.
+
+#### Example 3 — Instant Asset Write-Off
+
+Small business buys 3 laptops at $2,500 each and a vehicle at $18,000. Total: $25,500 immediately deductible (each asset <$20,000). At 30% marginal rate = **$7,650 cash saving in the year of purchase** vs multi-year depreciation.
+
+#### Example 4 — Negative Gearing Investment Property
+
+Employee earns $120,000. Investment property: $25,000 rent less $35,000 expenses (interest, rates, depreciation) = $10,000 net loss. Taxable income: $110,000. Income-tax reduction at the assumed 30% marginal rate: **$3,000**, before Medicare and other adjustments. An ATO-approved downward PAYG withholding variation can reduce future withholding from the next available payday once the payer receives the official notice. It does not itself pay a $3,000 refund. The return determines the actual liability and any refund or amount payable. See [ATO withholding variations](https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/varying-your-payg-withholding).
+
+## Edge cases and special rules
+
+### Section 10 — Red Lines (GAAR & Scrutiny Triggers)
+
+#### Part IVA (General Anti-Avoidance Rule)
 
 - **Part IVA GAAR** — ITAA 1936, Part IVA (ss 177A–177J). The Commissioner can cancel a tax benefit arising from a scheme if the dominant purpose (assessed objectively) was to obtain the tax benefit. Penalties: 50% shortfall (scheme); 25% if reasonably arguable position.  _(ITAA 1936, Part IVA (ss 177A–177J))_
 
-### ATO Scrutiny Triggers
+#### ATO Scrutiny Triggers
 
 **ATO Scrutiny Triggers**
 
@@ -245,7 +348,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | Contractor vs employee misclassification | Super guarantee charge, penalties |
 | Cryptocurrency — unreported disposal events | ATO data-matching from exchanges |
 
-### Absolute Prohibitions
+#### Absolute Prohibitions
 
 - NEVER advise backdating trust distribution resolutions past 30 June
 - NEVER advise sham contracting arrangements
@@ -253,48 +356,67 @@ Discretionary (family) trusts allow income distribution to adult family members 
 - NEVER structure arrangements with the dominant purpose of tax avoidance
 - NEVER advise ignoring Division 7A requirements for private company loans
 
-## Section 11 — Annual Tax Planning Calendar
+## Self-checks
 
-**Annual Tax Planning Calendar**
+Trace each input to its records, confirm the selected year and source conditions, recompute the working and retain unresolved items for review.
 
-| When | Action |
-| --- | --- |
-| July | New FY starts. Review prior year's unused concessional super cap. Lodge prior-year BAS |
-| August–September | Obtain prior-year tax assessment. Review loss carry-forward position |
-| October | Self-lodger deadline (31 Oct). Review investment portfolio for CGT planning |
-| November–December | Mid-year tax review. Adjust PAYG instalments if income changed materially |
-| January | Review Division 7A loan repayments. Employer SG is now due within 7 business days of each payday (payday super from 1 July 2026); the last quarterly SG date was 28 July 2026 |
-| February–March | Lodge Q2 BAS. Model year-end tax position. Begin pre-30 June planning |
-| April–May | Execute prepayment strategies. Make concessional super contributions. Review asset purchases for instant write-off |
-| June (before 30 June) | **Critical month.** Finalise trust distribution resolutions. Make super contributions (allow processing time — contribute by ~25 June). Prepay expenses. Realise capital losses. Lodge PAYG variation if needed |
+## Sources
 
-## Section 12 — Cash Impact Examples
+| Source | URL | Read on |
+|---|---|---|
+| ITAA 1936, compilation 193 (C2026C00454): s 82KZL eligible-service-period and excluded-expenditure definitions; s 82KZM | <https://www.legislation.gov.au/C2026C00454/latest/text> | 2026-11-02; compilation in force 1 October 2026; selected provisions and spreading formula only |
+| ITAA 1997, compilation 268 (C2026C00471): s 25-5 and s 67-25 (refundability only) | <https://www.legislation.gov.au/C2026C00471/latest/text> | 2026-11-02; compilation in force 1 October 2026; selected provisions only |
+| ATO: Income protection insurance | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/investments-insurance-and-super/income-protection-insurance> | 2026-11-02; updated 8 June 2026; premium/benefit classification and super exclusion only |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/25-130> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/view.htm?docid=TXR%2FTR20223%2FNAT%2FATO%2F00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/calculators-and-tools/division-7a-calculator-and-decision-tool> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=TXR/TR20224/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2627/27bd024> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-80> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PSR/PS20038/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2026A00071/asmade/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/F2025L01097/latest/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/general-depreciation-rules-capital-allowances/effective-life-of-an-asset/effective-life-determinations-rulings-and-law> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/car-thresholds-from-1-july> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/deductions/deductions-for-motor-vehicle-expenses/cents-per-kilometre-method> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://softwaredevelopers.ato.gov.au/CentsperKilometreDeductionRateforCarExpenses> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2019A00007/asmade/2019-03-01/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?DocID=COG/LCR20191/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/how-loss-carry-back-tax-offsets-work> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/eligibility-for-the-tax-offset> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/960-555> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-tax-loss-carry-back> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19990055/188-10> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/government-contributions> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2026A00008/asmade/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2026A00009/asmade/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/292-85> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/concessional-contributions-cap> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/personal-super-contributions> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/transfer-balance-cap> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2026A00049/asmade/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/varying-your-payg-withholding> | Not re-read for this format update; see retained provenance |
 
-### Example 1 — Sole Trader Incorporates
-
-**Before:** Sole trader, $180,000 taxable income. Under the 2026-27 resident bands, tax before offsets is $4,020 + $90,000 x 30% + $45,000 x 37% = $47,670, plus $3,600 Medicare = $51,270.
-
-**After:** Assume the company qualifies for the 25% rate, deducts an $80,000 salary and $12,000 super contribution, and has $88,000 taxable profit. Company tax is $22,000. Personal tax before offsets on the salary is $14,520 plus $1,600 Medicare. Combined company and personal income tax is $38,120, a $13,150 difference before offsets, any s 25-130 standard deduction, contributions tax, administration costs and any later tax on extracting retained profits. This is a retained-profit illustration; it does not establish a final saving from incorporation.
-
-### Example 2 — Maximising Super Contributions
-
-Sole trader, 2026-27, $120,000 profit. Claims $32,500 concessional super contribution (deductible). Taxable income drops to $87,500. Income tax falls from $26,520 to $16,770 ($9,750), and the ordinary 2% Medicare levy from $2,400 to $1,750 ($650). Combined saving $10,400 less 15% super tax ($4,875) = **net saving $5,525 + compounding in super environment.** This assumes no Medicare levy reduction or surcharge.
-
-### Example 3 — Instant Asset Write-Off
-
-Small business buys 3 laptops at $2,500 each and a vehicle at $18,000. Total: $25,500 immediately deductible (each asset <$20,000). At 30% marginal rate = **$7,650 cash saving in the year of purchase** vs multi-year depreciation.
-
-### Example 4 — Negative Gearing Investment Property
-
-Employee earns $120,000. Investment property: $25,000 rent less $35,000 expenses (interest, rates, depreciation) = $10,000 net loss. Taxable income: $110,000. Income-tax reduction at the assumed 30% marginal rate: **$3,000**, before Medicare and other adjustments. An ATO-approved downward PAYG withholding variation can reduce future withholding from the next available payday once the payer receives the official notice. It does not itself pay a $3,000 refund. The return determines the actual liability and any refund or amount payable. See [ATO withholding variations](https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/varying-your-payg-withholding).
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review of this guide have not been performed. The 2 November 2026 checks cover only the selected provisions and page content in the named ITAA 1936, ITAA 1997 and income-protection source rows, the affected summaries and arithmetic in the 2 executable timing cases. The cases do not establish taxpayer eligibility or verify the other cash-impact illustrations. Other strategies, rates, eligibility rules and dates retain their original qualifications and require their own reconciliation. This remains a tier 2 draft pending qualified review.
 
 ## Disclaimer
+
+### Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, registered tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 > Contributed by Ryan Duguid.
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal or financial advice. All outputs require review by a qualified professional before filing or acting.
 
 <!-- openaccountants-cta-block -->
 

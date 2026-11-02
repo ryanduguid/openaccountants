@@ -16,8 +16,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "Art 540 expressly commences the Code on 1 October 2026. The 1 October to 30 September fiscal year for salary income rests on inference, and the first return and transition treatment remain unestablished; fictional examples assume a full 2026-27 year."
 tier: 2
-last_updated: 2026-10-31
-version: 0.5
+last_updated: 2026-11-02
+version: 0.8
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -27,11 +27,17 @@ depends_on:
 
 # Haiti Salary Income Tax and Employer Withholding Reference
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Source-cited reference pending professional review. Affected engagement work is stopped.** This conditional reference explains selected wording of the Code Fiscal and supplies labelled fictional arithmetic for source review. Before actual classification, calculation or output preparation, load both declared bases, establish the requested period's operative law and satisfy their source and companion requirements. Load the payroll base and applicable topical sources as well for actual payroll or payslips. Missing law or companion content stops affected work; professional review alone cannot supply missing authority. The mandatory outputs, checks and professional sign-off remain required before delivery.
 
 > **General reference only.** This material has not been reviewed for any person's facts, documents, elections, deadlines, residence, filing status or local procedures. Do not rely on it to file, pay, amend or take a position without review by a qualified professional in Haiti.
 
 ## Scope
+
+**Coverage period and operational hold.** The 2026 label identifies the selected Code commencement, not a complete verified salary fiscal year or current operational treatment. This is a partial source reference for reviewers. Confirm the applicable period law, every required original source and companion, classification and workflow gate before any actual computation or output preparation. Historical source readings are attributed below; this conversion does not establish a new live source reading or legal currency. The unqualified July and October notices remain leads. The separate CTA is preserved verbatim and supplies no legal or professional clearance.
+
+### Scope
 
 Covers selected individual salary-income, employer-withholding, monthly-statement and penalty provisions of the Code Fiscal commencing 1 October 2026. It also compares selected June 2026 Rectificatif provisions as a separate dated source. It does not expressly establish the salary fiscal year, and does not establish the first return, transition treatment or a complete operative source chain for an engagement.
 
@@ -39,75 +45,91 @@ Outside this reference: business and professional income, company tax, capital g
 
 Uniform administration across the country was not assessed.
 
-## Source library
+### Period and commencement
 
-Pinpoints are PDF page numbers, which match the printed page numbers on every page viewed.
+| Point | Reading | Page | Source and qualification |
+|---|---|---| --- |
+| Commencement | S1 enters into force on 1 October 2026. Application methods are to be set by decisions of the Minister (Art 540). | 169 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Repeals | Taxes not carried over are repealed (Art 541), as are procedures not carried over (Art 542) and contrary laws and decrees (Art 543). | 169 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Budget interaction | S3 Art 3 continues the 'impôts, droits et taxes' collected at 30 September 2026 for the State and territorial collectivities for 2026-27, with recovery under their governing laws and decrees. Its interaction with the new Code and repeals must be established before an old obligation is continued or treated as removed. It does not authorise an assumed old rate. | S3, 3 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. S3 interaction remains held: https://www.mef.gouv.ht/storage/app/uploads/public/6ac/d23/530/6acd235307ba7010970151.pdf |
+| Fiscal year | Art 69(1) sets the taxable period for the real profit regime as the exercice fiscal from 1 October to 30 September. Art 50 taxes income for each exercice fiscal, on income realised or at the taxpayer's disposal in it. **Inference:** salaries follow the same 1 October to 30 September year. Art 69 is framed for the profit regime, and no separate definition for salaries was found. Art 17(2) (p 12, OCR only) uses the same year, but only 'aux fins du b. du 1.'. S3 p 3 gives the budget year as 1 October 2026 to 30 September 2027, and S7 and S8 apply the year to employees' returns. These support the inference without being an express salary rule. | 24, 19, 12 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Budget closing clause | S3 Art 106 repeals contrary laws, decrees and decree-laws, including their contrary provisions, and directs publication and execution through the Ministers of Economy and Finance and Planning and External Cooperation, each as concerned. The given date is 30 September 2026; the gazette issue is 1 October. This selected clause contains no express salary-transition, sunset or retroactivity rule and does not decide which earlier payroll rule survives. | S3, 65; signature context 66 | Selected original wording checked on 2026-11-02; actual period-law interaction remains held: https://www.mef.gouv.ht/storage/app/uploads/public/6ac/d23/530/6acd235307ba7010970151.pdf#page=65 |
+| Transition | Arts 540 to 543 contain no rule for salaries earned before and paid after 1 October 2026, or for the return on 2025-26 income. Not found; hold under R-HT-PERIOD. S6 and S7 are reported leads on this boundary, set out below. | 169 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
 
-| Source | Status and limits |
-|---|---|
-| **S1. Décret remplaçant le Décret du 19 décembre 2022 portant Code Fiscal, *Le Moniteur*, Spécial N° 48-A, 30 September 2026, 184 pp.** [DGI copy](https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf), [MEF lead](https://www.mef.gouv.ht/storage/app/uploads/public/6ac/fb4/9bc/6acfb49bca658143176190.pdf) | Primary. DGI copy independently retrieved with verified TLS on 30 October 2026 UTC; SHA256 `9b00c3196dab63be29fae182c726e25628c4fd2455fd97b2c84f965c5b3d04fe`. Scanned, with no usable native text. Selected complete units were checked against original images. Incorporated procedures and definitions are held where incomplete. The rest of the 184 pages and the complete later-law chain are not qualified. The MEF copy, reported as 182 pages, was not compared with it, so page references may not transfer. |
-| **S2. [MEF/NOTE/018/10-2026](https://www.mef.gouv.ht/storage/app/uploads/public/6ad/78c/8a5/6ad78c8a59af2501868949.pdf), 'Informations sur le nouveau Code fiscal'** | Ministry information note, 3 pp, independently retrieved with verified TLS. All 3 originals read, including the entire page 2 simulation table omitted by native extraction. SHA256 `8d7e7495f287fd8070923de459c355693f610c15aab410c0d23bc141535dd4f4`. The PDF gives no exact issue-day. It models specialised police-unit agents, holds remuneration constant and excludes social contributions and other possible deductions. No Art 540 decision is established by this note. It cannot override S1 and is used only as an administrative arithmetic control. |
-| **S3. [Décret établissant le Budget Général 2026-27](https://www.mef.gouv.ht/storage/app/uploads/public/6ac/d23/530/6acd235307ba7010970151.pdf), *Le Moniteur*, Spécial N° 49, 1 October 2026, 230 pp.** | Independently retrieved with verified TLS. Originals 1 to 9 were read, with selected units checked. Article 3, the TMS-related repeals in Arts 15 to 19 and selected replacements in Arts 25 to 30 are positive source conditions below. Pages 10 to 12 were read as OCR only and the remaining pages were not checked, except a lead that Art 106 (p 65) repeals contrary laws, read as an image and not reconciled. No absence of a salary amendment follows. SHA256 `b10fdbeea304a660531d66ecff7041c5d51e4e4145e6e3c9d22825242f135323`. |
-| **S4. [MEF/Comité de Politique Fiscale, Révision du barème de l'IRPP en Haïti](https://mef.gouv.ht/storage/app/uploads/public/6a6/cc3/3dc/6a6cc33dcbf11650887297.pdf), July 2026, 53 pp.** | Downloaded directly with verified TLS. SHA256 `72ce2a4be45edbbd738fc4bff3027a8362722ddb67b95655f699abce987efc9e`. Native text extracted; only originals 1 and 5 to 8 were read, covering the cover, complete executive summary and reform chronology. They describe analytical scenarios and ministerial selection for integration into the future Code. They do not establish a post-commencement Art 540 method, current circular, form or general payroll algorithm. The rest remains unqualified. |
-| **S5. [Décret établissant le Budget Rectificatif 2025-2026](https://www.mef.gouv.ht/storage/app/uploads/public/6a3/07e/237/6a307e237e055879451887.pdf), *Le Moniteur*, Spécial N° 29, 5 June 2026, 100 pp.** | Primary MEF copy retrieved with verified TLS on 31 October 2026 UTC, 9,756,086 bytes, SHA256 `5cd50c180dbce4d8eb0822668ba920d7cee8f7e75c0591bba2fb7b71e5bab0db`. Original p1 identifies the issue; complete Arts 2–3 on p4 and Art 12 on p27, with signature context on pp28–29, were checked against the original. Other pages were not checked against the original. The full 100-page decree and its application chain are not qualified. The given date of 2 June and issue date of 5 June are separate; neither is accepted here as the legal application date. |
-| **S6. MEF Avis administratif BM-DIF/DGI/148/07-2026, 14 July 2026 (reported)** | Not obtained from an official host. A [copy on bucofisc.com](https://bucofisc.com/en/download/avis-mef-sur-le-report-de-larticle-3-du-budget-rectificatif/), read as an image and signed Serge Gabriel Collin, says application of the 15% withholding is 'reportée au 1er octobre 2026', naming primes, frais fixes, allocations, étrennes, untaken-leave pay and overtime, and citing technical adjustments to the scale. It takes effect 'à compter de sa publication', a date not established. [AlterPresse, 19 July 2026](https://www.alterpresse.org/Haiti-Fiscalite-Le-gouvernement-reporte-au-1er-octobre-la-hausse-de-la-retenue-a-la-source-sur-certains-revenus) reports the same notice and date. Authenticity, publication and the effect of a ministerial notice on a decree are not established. |
-| **S7. DGI notice on final returns, as reproduced by [HaitiLibre, 21 October 2026](https://www.haitilibre.com/en/news-48710-haiti-notice-final-tax-declaration-and-new-tax-code.html) (reported)** | Press reproduction in English; the DGI original, date and signatory were not obtained, and official searches on 31 October 2026 did not find it. It says returns run from 1 October 2026 to 31 January 2027, and that the earlier scale stays applicable to 2025-26 income on non-retroactivity grounds. |
-| **S8. [DGI page, Déclaration Définitive d'Impôt sur le Revenu](https://dgi.gouv.ht/dgi_sev/declaration-definitive-impot-revenu/)** | Undated official page, with a 2013-14 example. It gives the 1 October to 31 January filing window and a 5-year credit carry-forward. It prints the same 5 bands as S7, undated. It also says the DGI, on an employee's express request, issues a certificate allowing the employer to deduct the credit from salary withholding. Its date is not established, and it appears to be legacy text; its continued authority under S1 and Art 542 is not established. |
-
-Named and not read: the Décret du 19 décembre 2022; the 29 September 2005 income tax decree, cited in the visas; the DGI 'Commentaires sur le Code général des impôts' (document page dated 11 April 2023, so it cannot be assumed to address S1).
-
-## Period and commencement
-
-| Point | Reading | Page |
-|---|---|---|
-| Commencement | S1 enters into force on 1 October 2026. Application methods are to be set by decisions of the Minister (Art 540). | 169 |
-| Repeals | Taxes not carried over are repealed (Art 541), as are procedures not carried over (Art 542) and contrary laws and decrees (Art 543). | 169 |
-| Budget interaction | S3 Art 3 continues the 'impôts, droits et taxes' collected at 30 September 2026 for the State and territorial collectivities for 2026-27, with recovery under their governing laws and decrees. Its interaction with the new Code and repeals must be established before an old obligation is continued or treated as removed. It does not authorise an assumed old rate. | S3, 3 |
-| Fiscal year | Art 69(1) sets the taxable period for the real profit regime as the exercice fiscal from 1 October to 30 September. Art 50 taxes income for each exercice fiscal, on income realised or at the taxpayer's disposal in it. **Inference:** salaries follow the same 1 October to 30 September year. Art 69 is framed for the profit regime, and no separate definition for salaries was found. Art 17(2) (p 12, OCR only) uses the same year, but only 'aux fins du b. du 1.'. S3 p 3 gives the budget year as 1 October 2026 to 30 September 2027, and S7 and S8 apply the year to employees' returns. These support the inference without being an express salary rule. | 24, 19, 12 |
-| Transition | Arts 540 to 543 contain no rule for salaries earned before and paid after 1 October 2026, or for the return on 2025-26 income. Not found; hold under R-HT-PERIOD. S6 and S7 are reported leads on this boundary, set out below. | 169 |
-
-### June 2026 Rectificatif: separate source comparison
+#### June 2026 Rectificatif: separate source comparison
 
 S5 is an earlier instrument. The readings below establish its selected printed wording, not which rule applies to a requested payment or period.
 
-| Selected provision | Complete relevant conditions | Original page |
-|---|---|---|
-| Art 2, base-wage exemption | Income-tax exemption 'sur la base des retenues à la source' for base wages of segment F workers by reference to the minimum wage, limited to export-oriented assembly and other export-oriented manufacturing industries. The minimum wage and the exemption's survival under later law remain unestablished; a non-official scan of an Arrêté of 6 May 2026 gives 1,000 Gourdes per 8-hour day for this segment (lead, not adopted). This does not exempt all pay or all employees, or establish a final annual exemption. | 4 |
-| Art 3, listed payments | Frais fixes, salary supplements, employee allowances, primes, étrennes, untaken-leave compensation and overtime: 15% on gross amounts, as an income-tax advance credited upon production of the definitive declaration for the fiscal year concerned. Remit withheld amounts to the DGI between the 1st and 15th of the month following payment. | 4 |
-| Art 3, late remittance | Failure to remit within that window attracts a 3% penalty per month or fraction of delay, without prejudice to other sanctions under applicable legislation. The sentence supplies no express penalty calculation base. This reference calculates no charge under it. | 4 |
-| Art 12, closing provision | Repeals contrary laws, decrees, decree-laws or their provisions and directs publication and execution by the Ministers of Economy and Finance and Planning and External Cooperation, each as concerned. Given at Port-au-Prince on 2 June 2026; the gazette issue is 5 June. This clause states no express calendar commencement, sunset or survival rule for Arts 2–3. | 27; signature context 28–29 |
+| Selected provision | Complete relevant conditions | Original page | Source and qualification |
+|---|---|---| --- |
+| Art 2, base-wage exemption | Income-tax exemption 'sur la base des retenues à la source' for base wages of segment F workers by reference to the minimum wage, limited to export-oriented assembly and other export-oriented manufacturing industries. The minimum wage and the exemption's survival under later law remain unestablished; a non-official scan of an Arrêté of 6 May 2026 gives 1,000 Gourdes per 8-hour day for this segment (lead, not adopted). This does not exempt all pay or all employees, or establish a final annual exemption. | 4 | unverified for actual use; selected printed wording: https://www.mef.gouv.ht/storage/app/uploads/public/6a3/07e/237/6a307e237e055879451887.pdf; all source, period and method holds apply. |
+| Art 3, listed payments | Frais fixes, salary supplements, employee allowances, primes, étrennes, untaken-leave compensation and overtime: 15% on gross amounts, as an income-tax advance credited upon production of the definitive declaration for the fiscal year concerned. Remit withheld amounts to the DGI between the 1st and 15th of the month following payment. | 4 | unverified for actual use; selected printed wording: https://www.mef.gouv.ht/storage/app/uploads/public/6a3/07e/237/6a307e237e055879451887.pdf; all source, period and method holds apply. |
+| Art 3, late remittance | Failure to remit within that window attracts a 3% penalty per month or fraction of delay, without prejudice to other sanctions under applicable legislation. The sentence supplies no express penalty calculation base. This reference calculates no charge under it. | 4 | unverified for actual use; selected printed wording: https://www.mef.gouv.ht/storage/app/uploads/public/6a3/07e/237/6a307e237e055879451887.pdf; all source, period and method holds apply. |
+| Art 12, closing provision | Repeals contrary laws, decrees, decree-laws or their provisions and directs publication and execution by the Ministers of Economy and Finance and Planning and External Cooperation, each as concerned. Given at Port-au-Prince on 2 June 2026; the gazette issue is 5 June. This clause states no express calendar commencement, sunset or survival rule for Arts 2–3. | 27; signature context 28–29 | unverified for actual use; selected printed wording: https://www.mef.gouv.ht/storage/app/uploads/public/6a3/07e/237/6a307e237e055879451887.pdf; all source, period and method holds apply. |
 
 S5 Art 3's enumeration does not expressly name boni. Do not equate primes or étrennes with S1 Art 103's boni category without the applicable classification authority; S1 Art 19(1)(a) (p 12, OCR only) lists 'boni, étrennes, heures supplémentaires' separately. S1 Art 103 distinguishes other additional cash remuneration at 15% and boni at 10%; its paragraphs 3–4 require the following-month remittance window and explanatory statement and make withholding deductible from the employee's definitive income tax. The more complete S1 reading is below. S1 Art 470's 2.5% interest has its own predicates and expressly is not a fiscal penalty. Do not replace it with S5's 3% penalty or calculate an automatic combined charge.
 
-S1 Arts 540–543, S3 Art 3 and its reported Art 106 and S5 Art 12 must be reconciled for the requested period before treating an earlier obligation as continued or removed. A fiscal-year title or issue date alone does not establish sunset, retroactivity or survival. R-HT-PERIOD, R-HT-METHOD and R-HT-COMPLETE continue to stop affected actual work. The fictional examples below retain their express S1 assumptions and are not computations under S5.
+S1 Arts 540–543, S3 Arts 3 and 106 and S5 Art 12 must be reconciled for the requested period before treating an earlier obligation as continued or removed. A fiscal-year title or issue date alone does not establish sunset, retroactivity or survival. R-HT-PERIOD, R-HT-METHOD and R-HT-COMPLETE continue to stop affected actual work. The fictional examples below retain their express S1 assumptions and are not computations under S5.
 
 **Reported notices, not adopted.** S6 reportedly postpones S5 Art 3's 15% withholding to 1 October 2026. It names Art 3 only, so it says nothing on S5 Art 2. S7 reportedly keeps an earlier scale for 2025-26 income: 0% to 60,000 Gourdes, 10% to 240,000, 15% to 480,000, 25% to 1,000,000 and 30% on '1,000,000 Gourdes and above', a boundary that overlaps as reported. **Inference:** S2 p 2's 'régime antérieur' column (4,380 on annualised gross of 470,400, for example) recomputes on these 5 bands, and S8 prints them undated, so an MEF note and a DGI page corroborate them as the pre-Code scale. S2 also says the levy on a 30,000 prime 'passe de 3 000 à 4 500 gourdes', which models the earlier regime at 10%, not S5 Art 3's 15%. That fits S6 but does not establish its authenticity or legal effect. Neither notice's official text was obtained, so neither period rule nor office rule is applied here. Do not compute a 2025-26 return from these figures until the DGI original and the enactment supplying that scale are read. R-HT-PERIOD still applies.
 
-## Persons taxed
+## Ask the client first
 
-| Provision | Reading | Page |
-|---|---|---|
-| Art 47 | Income tax falls on the taxpayer's annual global net income. | 18 |
-| Art 48(1) | Fiscal domicile in Haiti: all income. Fiscal domicile abroad: Haitian-source income. Also anyone receiving income whose taxation a double tax convention allocates to Haiti. | 18 |
-| Art 48(4) | Domicile tests, each stated as an alternative: centre of economic interests; salaried or other professional activity in Haiti, unless shown to be accessory to a principal activity abroad, which leaves Haitian-source liability; permanent home in Haiti or a stay above 6 months in the fiscal year; habitual place of stay; Haitian State agent posted abroad. | 18-19 |
-| Art 48(2)-(3) | A person is taxed on personal income and on that of minor children and other dependants. Spouses declare separately, but joint income and the income of minor children and dependants must be declared by one of them. | 18 |
-| Art 49 | Mission members accredited in Haiti who are not Haitian nationals, or have no permanent residence in Haiti, are exempt subject to reciprocity. Haitian-source income from acts outside their functions is taxed. | 19 |
-| Art 102 | Haitian staff working in Haiti in diplomatic, consular or similar missions are taxable in Haiti. Whether the mission must withhold was not found stated; Art 99(2) does not name missions, and its list is introduced by 'notamment'. | 37 |
+The following 6 fact groups determine whether the source and refusal gates can be assessed. Reuse supplied redacted evidence and the shared maximum of 10 questions; the detailed original intake below remains controlling.
 
-## Salary base and exempt receipts
+1. Requested fiscal period, work period and each payment date, including any commencement boundary.
+2. Employee domicile, nationality where relevant, start date and redacted identity-completeness flags.
+3. Employer type, redacted identifier-completeness flags and penalty directorate or turnover class.
+4. Each payment nature and currency, full-year or irregular employment, other employers and other income.
+5. Claimed deductions and prior withholding, levies and payments with redacted supporting statements and receipts.
+6. Dated official decisions, circulars or forms and any treaty, segment F, investment, free-zone or NGO relief claim.
+
+
+
+### Intake
+
+Read redacted records first, infer the profile and reuse facts already supplied. Ask only unanswered factual questions, grouped with the single profile-confirmation round trip. Keep a shared maximum of 10 questions in total across profile confirmation, intake and later factual checkpoints; these 10 topics are not 10 required questions. Do not classify or calculate before profile confirmation and the source/refusal gate. Keep actual tax identifiers, identity documents, bank details and credentials outside agent inputs and outputs; the reviewer retains them. Use stable redacted references and reviewer-held identifier sighting/completeness flags. The following topics guide the unresolved questions:
+
+1. The fiscal year and the payment date of each amount, and the period the work relates to.
+2. Employee's fiscal domicile facts under Art 48(4), nationality where Art 49 or 102 may apply, stable employee reference, identifier-completeness flag and start date.
+3. Employer type under Art 99(2), stable employer reference, identifier-completeness flag and DGI directorate or turnover class for Art 475.
+4. Each pay element by nature: base salary, probation, secondment supplement, overtime, commission, prime, boni, étrennes, untaken-leave pay, paid leave, frais fixes, allowance, reimbursement, in-kind benefit, directors' fee. Amount, currency and whether cash or in kind.
+5. Whether employment is full-year, and any other employer or other income.
+6. Deductions claimed under Art 126, with redacted supporting records.
+7. Withholding, levies and TMS already paid, with redacted statements and receipts, including dates and the Treasury-payment proof required by Art 104(5) where applicable.
+8. Any ministerial decision, circular, DGI form or notice the employer holds, with its date.
+9. Whether Arts 242, 243 or 152 exemptions are claimed, and on what basis.
+10. Any treaty, investment code, free zone or NGO status relied on, and any segment F base-wage exemption claimed under S5 Art 2.
+
+No default is authorised for an unknown fact or rule. Unknown amounts stay distinct from zero. Reviewer policy, not a statutory threshold: flag every domicile, classification, commencement and penalty decision, whatever the amount.
+
+## The method, step by step
+
+### Persons taxed
+
+| Provision | Reading | Page | Source and qualification |
+|---|---|---| --- |
+| Art 47 | Income tax falls on the taxpayer's annual global net income. | 18 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Art 48(1) | Fiscal domicile in Haiti: all income. Fiscal domicile abroad: Haitian-source income. Also anyone receiving income whose taxation a double tax convention allocates to Haiti. | 18 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Art 48(4) | Domicile tests, each stated as an alternative: centre of economic interests; salaried or other professional activity in Haiti, unless shown to be accessory to a principal activity abroad, which leaves Haitian-source liability; permanent home in Haiti or a stay above 6 months in the fiscal year; habitual place of stay; Haitian State agent posted abroad. | 18-19 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Art 48(2)-(3) | A person is taxed on personal income and on that of minor children and other dependants. Spouses declare separately, but joint income and the income of minor children and dependants must be declared by one of them. | 18 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Art 49 | Mission members accredited in Haiti who are not Haitian nationals, or have no permanent residence in Haiti, are exempt subject to reciprocity. Haitian-source income from acts outside their functions is taxed. | 19 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Art 102 | Haitian staff working in Haiti in diplomatic, consular or similar missions are taxable in Haiti. Whether the mission must withhold was not found stated; Art 99(2) does not name missions, and its list is introduced by 'notamment'. | 37 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+
+### Salary base and exempt receipts
 
 **Art 98 (p 36).** The base takes account of the gross amount of salaries, probation pay, salary supplements, overtime, traitements, function and responsibility allowances, boni, primes, paid leave, directors' fees, tantièmes, reimbursements, commissions paid to individuals, flat expense allowances and all cash or in-kind benefits. No valuation rule for in-kind benefits was found in Arts 98 to 104.
 
 **Art 54 (p 20).** Exempt from income tax: civil and military pensions; retirement and invalidity indemnities; workplace accident indemnities; life and health insurance indemnities received by individuals; notice indemnities under the Code du Travail and the separation-indemnity branch under privileges legislation for *anciens grands commis*; trainee allowances during placement; court-ordered maintenance; and income of the State, territorial collectivities and public establishments, excluding income of public enterprises and autonomous bodies supplying commercial, industrial or financial goods or services. The printed lettering repeats (a, b, c, d, c, d, e, f), so cite by description as well as letter. This does not establish a blanket severance exemption.
 
-## Withholding
+### Withholding
 
-| Payment | Rule | Due | Page |
-|---|---|---|---|
-| Salaries, probation pay and salary supplements on a secondment (*mise à disposition*) | Art 100(1): the employer withholds monthly 1/12 of the annual income tax due on them. The employee credits it against tax on global income. | Art 100(2): between the 1st and 15th of the month after the month of payment, with the Art 101 monthly statement | 36 |
-| Other cash remuneration additional to base salary | Art 103(1): 15%. The rate may be revised for certain trades by ministerial circular (Art 103(2)); none found. | Art 103(3): same window, month after payment, with a statement | 37 |
-| Boni | Art 103(1): 10%. | As above | 37 |
-| Directors' fees and tantièmes paid by a company to its administrators | Art 104(1): 15%, outside Art 100. Final for a non-resident beneficiary (Art 104(4)); otherwise deductible from the beneficiary's annual tax (Art 104(3)). The beneficiary bears the burden of proving payment of the withholding to the Treasury (Art 104(5)). The paying company supplies a copy of the fiscal administration's receipt (Art 104(6)). | Art 104(2): same window, with the specified statement | 37 |
+| Payment | Rule | Due | Page | Source and qualification |
+|---|---|---|---| --- |
+| Salaries, probation pay and salary supplements on a secondment (*mise à disposition*) | Art 100(1): the employer withholds monthly 1/12 of the annual income tax due on them. The employee credits it against tax on global income. | Art 100(2): between the 1st and 15th of the month after the month of payment, with the Art 101 monthly statement | 36 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Other cash remuneration additional to base salary | Art 103(1): 15%. The rate may be revised for certain trades by ministerial circular (Art 103(2)); none found. | Art 103(3): same window, month after payment, with a statement | 37 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Boni | Art 103(1): 10%. | As above | 37 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Directors' fees and tantièmes paid by a company to its administrators | Art 104(1): 15%, outside Art 100. Final for a non-resident beneficiary (Art 104(4)); otherwise deductible from the beneficiary's annual tax (Art 104(3)). The beneficiary bears the burden of proving payment of the withholding to the Treasury (Art 104(5)). The paying company supplies a copy of the fiscal administration's receipt (Art 104(6)). | Art 104(2): same window, with the specified statement | 37 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
 
 **Who withholds (Art 99, p 36).** Anyone paying Art 98 amounts to employees, officials, members, managers, company directors, partners and any person with an income-producing activity. The list expressly includes enterprises, the non-profit bodies in Art 92, NGOs, the State, local authorities, public bodies and public enterprises.
 
@@ -117,7 +139,7 @@ S1 Arts 540–543, S3 Art 3 and its reported Art 106 and S5 Art 12 must be recon
 
 **Credit (Arts 100(1), 103(4), 133; pp 36, 37, 45).** Non-final withholding and provisional payments are credited against annual tax on global income.
 
-### Method gaps in Art 100
+#### Method gaps in Art 100
 
 S1 gives the 1/12 rule and no formula. The following were not found, and each holds under R-HT-METHOD:
 
@@ -129,23 +151,23 @@ S1 gives the 1/12 rule and no formula. The following were not found, and each ho
 - an employer year-end reconciliation, or an employer-issued certificate for employees, under S1;
 - a required form or portal for the Art 101 statement. Arts 125 and 95(2) mention forms for their own filings only.
 
-## Annual tax
+### Annual tax
 
 **Art 125 (p 43).** Individuals file a general and detailed *Déclaration définitive* for all income on a form supplied free by the administration, signed by the taxpayer or a representative, by 31 January each year for the preceding fiscal year's income. **Conditional inference only:** if the 2026-27 salary year is established as 1 October 2026 to 30 September 2027, the corresponding date would be 31 January 2028. Neither these paragraphs nor this reference establishes that salary-period premise; R-HT-PERIOD stops actual use.
 
 **Art 126 (pp 43-44).** Deductible from total income on supporting documents, where not already deducted in a category:
 
-| Item | Deduction | Limit |
-|---|---|---|
-| a | Annual rent of the principal residence (defined in Art 275(2), p 84) | 25% of the rent |
-| b | Mortgage interest paid to a financial or credit institution established in Haiti or a *prêteur patenté* on acquiring or building the principal residence, and its CFPB | None stated; establish the specific *patente* qualification rather than treating any licence as equivalent |
-| c | Levies lawfully taken from salaries, other than income tax | None stated |
-| d | Retirement or housing savings paid during the fiscal year to legally recognised institutions | None stated |
-| e | Life and health premiums borne by the taxpayer and paid to a company fiscally resident in Haiti; Art 126(e) literally cites Art 60 | None stated. Complete Art 60 distinguishes residence from permanent establishment but supplies no affirmative insurer-residence definition. Haitian premises, representation, premium collection or a permanent establishment alone do not clear this condition; insurer residence remains held |
-| f | Medical costs not covered by a life and health policy | None stated |
-| g | Taxpayer's training and *perfectionnement* expenses, and school fees with the printed Haitian-establishment, minor-child and justification conditions | Printed limits: 100,000 Gourdes per child, 300,000 in total. Their reach over the taxpayer's own training remains held. |
-| h | Meals and lodging on real, invoiced professional travel | None stated |
-| i | Gifts to the listed foundations, charities, relief bodies, political parties subject to their legislation and specified recognised or registered institutions | 10% of income after items a to h; establish the complete recipient qualification and any political-party limit before applying it |
+| Item | Deduction | Limit | Source and qualification |
+|---|---|---| --- |
+| a | Annual rent of the principal residence (defined in Art 275(2), p 84) | 25% of the rent | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| b | Mortgage interest paid to a financial or credit institution established in Haiti or a *prêteur patenté* on acquiring or building the principal residence, and its CFPB | None stated; establish the specific *patente* qualification rather than treating any licence as equivalent | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| c | Levies lawfully taken from salaries, other than income tax | None stated | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| d | Retirement or housing savings paid during the fiscal year to legally recognised institutions | None stated | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| e | Life and health premiums borne by the taxpayer and paid to a company fiscally resident in Haiti; Art 126(e) literally cites Art 60 | None stated. Complete Art 60 distinguishes residence from permanent establishment but supplies no affirmative insurer-residence definition. Haitian premises, representation, premium collection or a permanent establishment alone do not clear this condition; insurer residence remains held | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| f | Medical costs not covered by a life and health policy | None stated | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| g | Taxpayer's training and *perfectionnement* expenses, and school fees with the printed Haitian-establishment, minor-child and justification conditions | Printed limits: 100,000 Gourdes per child, 300,000 in total. Their reach over the taxpayer's own training remains held. | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| h | Meals and lodging on real, invoiced professional travel | None stated | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| i | Gifts to the listed foundations, charities, relief bodies, political parties subject to their legislation and specified recognised or registered institutions | 10% of income after items a to h; establish the complete recipient qualification and any political-party limit before applying it | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
 
 Art 126(2): a category's deficit can be set only against income of the same category.
 
@@ -153,13 +175,13 @@ Article 275(2), incorporated by the principal-home limbs, defines the home as th
 
 **Art 132 (p 45).** Applied to the taxpayer's total income, by fraction:
 
-| Fraction of annual income (Gourdes) | Rate |
-|---|---|
-| 1 to 360,000 | 0% |
-| 360,001 to 540,000 | 12% |
-| 540,001 to 1,080,000 | 18% |
-| 1,080,001 to 2,160,000 | 25% |
-| Above 2,160,000 | 30% |
+| Fraction of annual income (Gourdes) | Rate | Source and qualification |
+|---|---| --- |
+| 1 to 360,000 | 0% | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| 360,001 to 540,000 | 12% | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| 540,001 to 1,080,000 | 18% | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| 1,080,001 to 2,160,000 | 25% | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Above 2,160,000 | 30% | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
 
 **Rounding.** Art 300 (p 93) rounds the tax base to the nearest Gourde, with a half Gourde counted up. A rounding rule for the tax or for the monthly withholding was not found.
 
@@ -175,40 +197,40 @@ Above 100,000 Gourdes of rights, Art 510 requires guarantees covering the contes
 
 Under Art 511, depreciation or revealed insufficiency permits a further-security demand under Art 314. Failure within 30 days permits the specified bank-account-blocking authorisation route or summary referral to the Doyen du Tribunal de Première Instance for conservatory measures; it does not establish automatic unilateral account blocking. Art 512 permits the Comptable Public to admit replacement by another guarantee of at least equal value. Actual use requires the competent authority, notification and grant/guarantee records and the applicable receipt/day rules. Complete court and conservatory-enforcement procedures remain held. A stay does not establish an interest exemption: retain Art 534's separate taxpayer-interest conditions and Arts 535-536's guarantee-return/expense rules.
 
-## Linked payroll charges
+### Linked payroll charges
 
 These are identified for a companion. No full payroll calculation is offered.
 
-| Charge | Reading | Page |
-|---|---|---|
-| Fonds d'Urgence, Art 242 | 1% levy on salaries of public and non-public employees. Day workers, trainees and *vacataires* are exempt. Withheld by the employer and paid from the 1st to 15th of each month for the preceding month, together with income tax withholding. | 78 |
-| Caisse d'Assistance Sociale, Art 243 | 1% monthly levy on the same employees, with the same exemptions, withholding and timing. | 78 |
-| Taxe sur la masse salariale, Art 152 | 3% on remuneration of all kinds paid to staff of public or private entities and financially autonomous public bodies. The employer bears it. Embassies and consulates are exempt. Between the 1st and 15th of each month the employer declares its own fiscal identifier and each staff member's name, NIF and remuneration, and pays the tax. The article does not specify which month's remuneration the declaration covers. These are statutory record fields; actual identifier values stay with the reviewer. | 49 |
-| CFGDCT 1% on salaries | S2 (p 3) describes removal. Complete Art 267 lists customs and TCA sources and no salary limb. That selected omission alone does not establish a universal payroll exemption; resolve S3 Art 3, repeals and the complete operative chain before actual treatment. | 82; S2, 3; S3, 3 |
+| Charge | Reading | Page | Source and qualification |
+|---|---|---| --- |
+| Fonds d'Urgence, Art 242 | 1% levy on salaries of public and non-public employees. Day workers, trainees and *vacataires* are exempt. Withheld by the employer and paid from the 1st to 15th of each month for the preceding month, together with income tax withholding. | 78 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Caisse d'Assistance Sociale, Art 243 | 1% monthly levy on the same employees, with the same exemptions, withholding and timing. | 78 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Taxe sur la masse salariale, Art 152 | 3% on remuneration of all kinds paid to staff of public or private entities and financially autonomous public bodies. The employer bears it. Embassies and consulates are exempt. Between the 1st and 15th of each month the employer declares its own fiscal identifier and each staff member's name, NIF and remuneration, and pays the tax. The article does not specify which month's remuneration the declaration covers. These are statutory record fields; actual identifier values stay with the reviewer. | 49 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| CFGDCT 1% on salaries | S2 (p 3) describes removal. Complete Art 267 lists customs and TCA sources and no salary limb. That selected omission alone does not establish a universal payroll exemption; resolve S3 Art 3, repeals and the complete operative chain before actual treatment. | 82; S2, 3; S3, 3 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. S3 interaction remains held: https://www.mef.gouv.ht/storage/app/uploads/public/6ac/d23/530/6acd235307ba7010970151.pdf S2 administrative removal description (not a universal payroll exemption): https://www.mef.gouv.ht/storage/app/uploads/public/6ad/78c/8a5/6ad78c8a59af2501868949.pdf; all source, period and method holds remain. |
 
 S3 Arts 15 to 18 (p 5, original read) repeal specified Code des Investissements clauses on TMS and other direct internal-tax exemptions; Art 19 states a broader repeal of that Code's communal-tax and TMS/other direct internal-tax exemption clauses. Article 14 also repeals its specified communal-tax clause. Arts 12 and 13 (p 5) deal with an organisation's own tax exemption and a corporate income tax exemption for 7 years; neither names an employee's salary or TMS. Complete selected Arts 25 to 30 (pp 6-9) replace specified investment and free-zone benefits. Art 30 replaces Art 21 of the Law of 9 July 2002 on free zones; its income-tax exemption concerns legal persons promoting/operating free zones for their investment projects. Do not convert that corporate exemption or import relief into an employee salary-tax or TMS exemption. These selected texts do not complete the investment, free-zone or NGO relief chain; prior instruments, remaining provisions and their application stay held.
 
 **Art 95 (pp 34-35).** Every enterprise or non-profit body declares each year, between 1 and 31 October, the sums paid in the preceding fiscal year, expressly including salaries, boni, primes, indemnities, per diems, flat allowances, directors' fees and tantièmes, along with the tax withheld on them, identifying each beneficiary by name and for tax purposes. The State and public bodies are not named in Art 95(1). Whether this applied in October 2026 to 2025-26 payments was not found; hold under R-HT-PERIOD.
 
-## Non-compliance
+### Non-compliance
 
 These are selected source provisions, not self-executing liability findings or a complete penalty workflow. Establish the actual obligation, taxpayer class, default, notice, procedure and operative law before any calculation. Article 471 (p 146) requires the specified inspector decision and visas, including the additional superior visa for Art 472 insufficiency penalties, factual/legal reasons and notification. Observation rights follow Art 435, including the 15-day extension where Art 435(2)'s request conditions are met. Missing required visa or reasons entails cancellation. The Art 435 response rules and Art 436 discretionary regularisation procedure have different silence effects; neither can be replaced by an assumed administrative acceptance.
 
-| Failure | Consequence | Provision and page |
-|---|---|---|
-| Withholding paid late or not paid, return filed | Surcharge of 10% of the deferred amount, on the principal unpaid at the deadline | Art 476(1)-(3), p 148 |
-| Withholding return absent or late | Surcharge of 10% of the amounts that should have been declared. 40% if not filed within 30 days of receiving a formal notice, with assessment under Art 438. 80% for concealed activity under Art 352(2) | Art 474, pp 147-148 |
-| Any return absent or late | In addition, a fine per month or part month: 10,000 Gourdes (turnover under 10,000,000); 50,000 (attached to the DMC); 100,000 (DGC or DOEE); 5,000 in the residual branch, which includes the specified non-BIC/BNC natural persons. These are printed categories; no precedence algorithm for an overlapping or unknown profile is established | Art 475, p 148 |
-| Overlap | The Art 476 surcharge does not apply where Art 474 or 475 applies | Art 476(4), p 148 |
-| Inaccurate withholding return | Selected insufficiency branches: 40% deliberate failure; 80% fraudulent conduct; a separate 80% concealed contract-price branch. For the specified Art 449 abuse procedures, 80% where principal initiative or principal benefit is established, otherwise 40%; different office-assessment branches remain held. Good faith excludes the insufficiency penalty. The Administration bears proof of deliberate/fraudulent character. Preserve the applicable reassessed-tax or improperly requested-refund base | Arts 472, 449; pp 146-147, 140 |
-| Unpaid tax debt | Art 470: 2.5% per month or fraction on principal, excluding fiscal penalties and criminal sanctions, from Art 302 exigibility. Subject to contrary CGI provisions, Art 302's 30 days run from the issue date of a payment authorisation delivered to the taxpayer or, without one, AMR notification under Art 314. The special withholding-deadline interaction remains held. Interest stops at the notification-month end for rectification/office assessment only if the AMR is paid within Art 311's period; accepted Art 436 regularisation uses the supplementary-declaration month end; other cases, including missed Art 311 payment, use payment-month end. Do not assume one universal end date | Arts 470, 302, 308, 311, 436; pp 145-146, 93-96, 134-135 |
-| Business expense | A charge on which required withholding was not taken and paid on time is not deductible from BIC profit | Art 75(p), pp 27-28 |
-| Public bodies | Heads of public administrations and services, and general managers and legal representatives of public enterprises, are personally liable for the withholding and related penalties | Art 100(3), p 36 |
-| Effective managers of a legal person | Legally or factually, directly or indirectly exercising effective management; the Administration must prove fraudulent manoeuvres or serious repeated non-compliance caused collection to become impossible. Joint liability is not automatic director/employer liability | Art 337, p 102 |
-| Co-perpetrators and accomplices | Art 341(2) jointly addresses unpaid withholding where a person has been sanctioned for non-remittance. Keep this separate from Art 341(1)'s final-conviction fraud branch | Art 341, pp 102-103 |
-| Procurement | Regularisation and presentation of fiscal clearance are required for the stated procurement restriction; discretionary suspension of an existing contract is a separate branch | Art 477, pp 148-149 |
-| Fiscal-identifier suspension | Director-General decision after 4 consecutive months of Art 474 filing default and failure to regularise the fourth month within the notice's 30-day period. A further 30-day failure or recurrence leads to the stated definitive suspension/deregistration branch. Suspension does not discharge tax/customs obligations. Incorporated Art 329 restrictions have their own conditions | Art 478, p 149; Art 329, pp 100-101 |
-| Tax fraud | Selected natural-person baseline: Tribunal-imposed penalties of 1,000,000 Gourdes and 1 to 5 years, with fraudulent intent proved by the prosecution. Aggravated branches specify 3,000,000 and 5 years; legal-person fines are multiplied by 10 and imprisonment does not apply. Do not select or apply a criminal branch from this table alone | Art 484, pp 151-152 |
+| Failure | Consequence | Provision and page | Source and qualification |
+|---|---|---| --- |
+| Withholding paid late or not paid, return filed | Surcharge of 10% of the deferred amount, on the principal unpaid at the deadline | Art 476(1)-(3), p 148 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Withholding return absent or late | Surcharge of 10% of the amounts that should have been declared. 40% if not filed within 30 days of receiving a formal notice, with assessment under Art 438. 80% for concealed activity under Art 352(2) | Art 474, pp 147-148 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Any return absent or late | In addition, a fine per month or part month: 10,000 Gourdes (turnover under 10,000,000); 50,000 (attached to the DMC); 100,000 (DGC or DOEE); 5,000 in the residual branch, which includes the specified non-BIC/BNC natural persons. These are printed categories; no precedence algorithm for an overlapping or unknown profile is established | Art 475, p 148 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Overlap | The Art 476 surcharge does not apply where Art 474 or 475 applies | Art 476(4), p 148 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Inaccurate withholding return | Selected insufficiency branches: 40% deliberate failure; 80% fraudulent conduct; a separate 80% concealed contract-price branch. For the specified Art 449 abuse procedures, 80% where principal initiative or principal benefit is established, otherwise 40%; different office-assessment branches remain held. Good faith excludes the insufficiency penalty. The Administration bears proof of deliberate/fraudulent character. Preserve the applicable reassessed-tax or improperly requested-refund base | Arts 472, 449; pp 146-147, 140 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Unpaid tax debt | Art 470: 2.5% per month or fraction on principal, excluding fiscal penalties and criminal sanctions, from Art 302 exigibility. Subject to contrary CGI provisions, Art 302's 30 days run from the issue date of a payment authorisation delivered to the taxpayer or, without one, AMR notification under Art 314. The special withholding-deadline interaction remains held. Interest stops at the notification-month end for rectification/office assessment only if the AMR is paid within Art 311's period; accepted Art 436 regularisation uses the supplementary-declaration month end; other cases, including missed Art 311 payment, use payment-month end. Do not assume one universal end date | Arts 470, 302, 308, 311, 436; pp 145-146, 93-96, 134-135 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Business expense | A charge on which required withholding was not taken and paid on time is not deductible from BIC profit | Art 75(p), pp 27-28 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Public bodies | Heads of public administrations and services, and general managers and legal representatives of public enterprises, are personally liable for the withholding and related penalties | Art 100(3), p 36 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Effective managers of a legal person | Legally or factually, directly or indirectly exercising effective management; the Administration must prove fraudulent manoeuvres or serious repeated non-compliance caused collection to become impossible. Joint liability is not automatic director/employer liability | Art 337, p 102 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Co-perpetrators and accomplices | Art 341(2) jointly addresses unpaid withholding where a person has been sanctioned for non-remittance. Keep this separate from Art 341(1)'s final-conviction fraud branch | Art 341, pp 102-103 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Procurement | Regularisation and presentation of fiscal clearance are required for the stated procurement restriction; discretionary suspension of an existing contract is a separate branch | Art 477, pp 148-149 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Fiscal-identifier suspension | Director-General decision after 4 consecutive months of Art 474 filing default and failure to regularise the fourth month within the notice's 30-day period. A further 30-day failure or recurrence leads to the stated definitive suspension/deregistration branch. Suspension does not discharge tax/customs obligations. Incorporated Art 329 restrictions have their own conditions | Art 478, p 149; Art 329, pp 100-101 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Tax fraud | Selected natural-person baseline: Tribunal-imposed penalties of 1,000,000 Gourdes and 1 to 5 years, with fraudulent intent proved by the prosecution. Aggravated branches specify 3,000,000 and 5 years; legal-person fines are multiplied by 10 and imprisonment does not apply. Do not select or apply a criminal branch from this table alone | Art 484, pp 151-152 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
 
 **Amounts deducted but not remitted.** Art 476(1) treats withholding the employer must make as sums due, and Art 476(3) refers to 'sommes en principal'. Art 341(2) (p 103) makes co-perpetrators and accomplices jointly liable for 'ces retenues à la source', which presupposes the primary debt (inference). **Not found:** an express private sector rule making an employer liable for tax it never deducted, as distinct from Art 100(3)'s public sector liability. That exposure is held under R-HT-METHOD. Arts 335 to 341 and the audit and reassessment chapters were read only where cited.
 
@@ -226,24 +248,26 @@ The complete incorporated Arts 361-362, 425-426, 350-360 and control-scope/durat
 
 **Factual ruling, Art 469 (pp 144-145).** A request to the Director General under Arts 298-299 must give the prescribed identity/address fields, fiscal provisions, precise and complete facts and legal arguments. Actual identifiers stay with the reviewer; the agent uses redacted references. The 3-month response period runs from receipt by the Director General, who informs the applicant; for an incomplete request it runs from receipt of the requested additional information. A response must follow Arts 298-299. Silence or an informal response is not a formal position. A formal rescrit is opposable only where the taxpayer follows the solution and the situation is strictly identical. The taxpayer concerned and, where applicable, participants in the act/transaction may rely on it. A changed administrative position operates only prospectively, with advance notice. This is a route for a specific evidenced situation, not a general payroll method or proof of an Art 540 decision.
 
-## Payment
+## Boundary and exception table
 
-Art 303 (p 94) requires irrevocable and unconditional payment, identifying the taxpayer, fiscal number and tax paid. It permits cash strictly below 15,000 Gourdes, transfer, bank card, manager's cheque, mobile payment and electronic wallet. It provides for a receipt with an express stamp-duty exception and permits a duplicate request. Retain the relevant salary-tax receipt in the reviewer's records and a redacted reference with the statement. The reviewer retains actual identifiers and executes payment personally.
+The detailed scope, method gaps, completion register and refusal catalogue state what this reference leaves open. In particular, actual-period application, the complete later-law chain, salary-year definition, ministerial methods, forms and portal practice remain held. Linked levies are not a complete payroll or social-contribution companion. The fictional positions do not clear any of those gates.
 
-## Administrative control
+## Worked cases
+
+### Administrative control
 
 S2 publishes monthly salary withholding for 4 agents. Recomputing from S1 on annualised gross salary, with no Art 126 deduction, reproduces each figure. S2 is an illustration, and this match does not settle the method gaps above.
 
-| Monthly salary | Annual salary | Annual tax | Monthly | S2 |
-|---|---:|---:|---:|---:|
-| 39,200 | 470,400 | 13,248 | 1,104 | 1,104 |
-| 41,700 | 500,400 | 16,848 | 1,404 | 1,404 |
-| 44,600 | 535,200 | 21,024 | 1,752 | 1,752 |
-| 47,200 | 566,400 | 26,352 | 2,196 | 2,196 |
+| Monthly salary | Annual salary | Annual tax | Monthly | S2 | Source and qualification |
+|---|---:|---:|---:|---:| --- |
+| 39,200 | 470,400 | 13,248 | 1,104 | 1,104 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. S2 administrative illustration (S1 supplies the statutory arithmetic, not the illustrative payroll method): https://www.mef.gouv.ht/storage/app/uploads/public/6ad/78c/8a5/6ad78c8a59af2501868949.pdf; all source, period and method holds remain. |
+| 41,700 | 500,400 | 16,848 | 1,404 | 1,404 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. S2 administrative illustration (S1 supplies the statutory arithmetic, not the illustrative payroll method): https://www.mef.gouv.ht/storage/app/uploads/public/6ad/78c/8a5/6ad78c8a59af2501868949.pdf; all source, period and method holds remain. |
+| 44,600 | 535,200 | 21,024 | 1,752 | 1,752 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. S2 administrative illustration (S1 supplies the statutory arithmetic, not the illustrative payroll method): https://www.mef.gouv.ht/storage/app/uploads/public/6ad/78c/8a5/6ad78c8a59af2501868949.pdf; all source, period and method holds remain. |
+| 47,200 | 566,400 | 26,352 | 2,196 | 2,196 | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. S2 administrative illustration (S1 supplies the statutory arithmetic, not the illustrative payroll method): https://www.mef.gouv.ht/storage/app/uploads/public/6ad/78c/8a5/6ad78c8a59af2501868949.pdf; all source, period and method holds remain. |
 
 S2's 4,500 Gourdes on a 30,000 Gourdes prime also equals Art 103's 15%.
 
-## Fictional worked positions
+### Fictional worked positions
 
 Invented facts, full-year employment from 1 October 2026 at a single employer, no other income unless stated. These illustrations stipulate the stated period, classification, deduction and arithmetic premises; they do not clear the unresolved legal methods for an engagement. Gourdes throughout.
 
@@ -261,43 +285,293 @@ Invented facts, full-year employment from 1 October 2026 at a single employer, n
 
 **E7. Deduction limits.** Total income 1,000,000. Assume every institution, child, payment, supporting-document and donation-recipient condition is satisfied. Fees of 120,000, 90,000 and 110,000 for 3 minor children give 100,000 + 90,000 + 100,000 = 290,000, below 300,000. These fees are the only items a to h; none has already been deducted by category. Gifts are 100,000. The gift limit is (1,000,000 - 290,000) x 10% = 71,000. Taxable income is 639,000. Conditional tax is 21,600 + (99,000 x 18% = 17,820) = 39,420.
 
-**E8. Late withholding.** Fictional withholding is 10,000 and that entire principal remains unpaid at the applicable deadline. Return filed on time and paid late: conditional Art 476 surcharge 1,000. Return also late: conditional Art 474 surcharge 1,000 plus the Art 475 fine for the established employer class per month or part month, with no Art 476 surcharge. All applicable notice, decision and procedural predicates must first be established. If the applicable authority and facts establish interest for 2 months or part months: 10,000 x 2.5% x 2 = 500. The start date stays held.
+**E8. Late withholding.** Fictional withholding is 10,000 and that entire principal remains unpaid at the applicable deadline. Return filed on time and paid late: conditional Art 476 surcharge 1,000. Return also late, assuming the ordinary 10% Art 474 branch and that its 40% formal-notice and 80% concealed-activity branches do not apply: conditional Art 474 surcharge 1,000 plus the Art 475 fine for the established employer class per month or part month, with no Art 476 surcharge. All applicable notice, decision and procedural predicates must first be established. If the applicable authority and facts establish interest for 2 months or part months: 10,000 x 2.5% x 2 = 500. The start date stays held.
 
 **E9. Fraction of a Gourde.** Salary 41,111 a month, 493,332 a year. Tax 133,332 x 12% = 15,999.84. Monthly 1,333.32. Art 300 addresses the base and no rule for the result was found. This fictional example shows the unrounded amount; R-HT-METHOD stops actual work.
 
 **E10. Refusal.** A user asks for October 2026 payroll for an employee hired on 15 October with an irregular commission. Part-year treatment and commission classification are not established. R-HT-METHOD fires; no withholding figure is given.
 
-## Intake
+### Recomputing the labelled illustrations
 
-Read redacted records first, infer the profile and reuse facts already supplied. Ask only unanswered factual questions, grouped with the single profile-confirmation round trip. Keep a shared maximum of 10 questions in total across profile confirmation, intake and later factual checkpoints; these 10 topics are not 10 required questions. Do not classify or calculate before profile confirmation and the source/refusal gate. Keep actual tax identifiers, identity documents, bank details and credentials outside agent inputs and outputs; the reviewer retains them. Use stable redacted references and reviewer-held identifier sighting/completeness flags. The following topics guide the unresolved questions:
+These arithmetic blocks reproduce the 9 numeric fictional positions and the historical administrative illustration under their stated premises. E10 remains a refusal and has no amount. They do not establish an actual salary year, deduction, classification, interest period or operational method. E8 keeps its two surcharge branches separate and assumes the ordinary 10% branch; no fine or combined charge is computed. E9 deliberately preserves the unrounded result.
 
-1. The fiscal year and the payment date of each amount, and the period the work relates to.
-2. Employee's fiscal domicile facts under Art 48(4), nationality where Art 49 or 102 may apply, stable employee reference, identifier-completeness flag and start date.
-3. Employer type under Art 99(2), stable employer reference, identifier-completeness flag and DGI directorate or turnover class for Art 475.
-4. Each pay element by nature: base salary, probation, secondment supplement, overtime, commission, prime, boni, étrennes, untaken-leave pay, paid leave, frais fixes, allowance, reimbursement, in-kind benefit, directors' fee. Amount, currency and whether cash or in kind.
-5. Whether employment is full-year, and any other employer or other income.
-6. Deductions claimed under Art 126, with redacted supporting records.
-7. Withholding, levies and TMS already paid, with redacted statements and receipts, including dates and the Treasury-payment proof required by Art 104(5) where applicable.
-8. Any ministerial decision, circular, DGI form or notice the employer holds, with its date.
-9. Whether Arts 242, 243 or 152 exemptions are claimed, and on what basis.
-10. Any treaty, investment code, free zone or NGO status relied on, and any segment F base-wage exemption claimed under S5 Art 2.
+### E11: choose the branch only after classification is established
 
-No default is authorised for an unknown fact or rule. Unknown amounts stay distinct from zero. Reviewer policy, not a statutory threshold: flag every domicile, classification, commencement and penalty decision, whatever the amount.
+For an invented payment of 20,000 Gourdes, suppose the applicable period law and every source gate have already been independently established. Compare two separately established fact patterns: an Art103 prime at a stipulated 15%, or an Art103 boni at a stipulated 10%. This is a classification decision based on evidence, not an election to relabel pay. The first branch withholds 3,000 and leaves 17,000 after this withholding only; the second withholds 2,000 and leaves 18,000 after this withholding only. The 1,000 difference concerns this cash advance. It is not annual tax saved and excludes other payroll deductions. Actual classification and annual tax/credit treatment remain subject to the reference's holds.
 
-## Refusal catalogue
+#### E1 stipulated annual salary arithmetic
+
+```oa-check
+name: E1 stipulated annual salary arithmetic
+inputs:
+  monthly_salary: 30000
+steps:
+  - annual_salary: monthly_salary * 12
+  - annual_tax: max(0, min(annual_salary, 540000) - 360000) * 0.12 + max(0, min(annual_salary, 1080000) - 540000) * 0.18 + max(0, min(annual_salary, 2160000) - 1080000) * 0.25 + max(0, annual_salary - 2160000) * 0.30
+  - monthly_withholding: annual_tax / 12
+expected:
+  annual_salary: 360000
+  annual_tax: 0
+  monthly_withholding: 0
+```
+
+#### E2 stipulated annual salary arithmetic
+
+```oa-check
+name: E2 stipulated annual salary arithmetic
+inputs:
+  monthly_salary: 40000
+steps:
+  - annual_salary: monthly_salary * 12
+  - annual_tax: max(0, min(annual_salary, 540000) - 360000) * 0.12 + max(0, min(annual_salary, 1080000) - 540000) * 0.18 + max(0, min(annual_salary, 2160000) - 1080000) * 0.25 + max(0, annual_salary - 2160000) * 0.30
+  - monthly_withholding: annual_tax / 12
+expected:
+  annual_salary: 480000
+  annual_tax: 14400
+  monthly_withholding: 1200
+```
+
+#### E9 stipulated annual salary arithmetic
+
+```oa-check
+name: E9 stipulated annual salary arithmetic
+inputs:
+  monthly_salary: 41111
+steps:
+  - annual_salary: monthly_salary * 12
+  - annual_tax: max(0, min(annual_salary, 540000) - 360000) * 0.12 + max(0, min(annual_salary, 1080000) - 540000) * 0.18 + max(0, min(annual_salary, 2160000) - 1080000) * 0.25 + max(0, annual_salary - 2160000) * 0.30
+  - monthly_withholding: annual_tax / 12
+expected:
+  annual_salary: 493332
+  annual_tax: 15999.84
+  monthly_withholding: 1333.32
+```
+
+#### E3 three fractions under stipulated premises
+
+```oa-check
+name: E3 three fractions under stipulated premises
+inputs:
+  monthly_salary: 100000
+steps:
+  - annual_salary: monthly_salary * 12
+  - band12: 180000 * 0.12
+  - band18: 540000 * 0.18
+  - band25: (annual_salary - 1080000) * 0.25
+  - annual_tax: band12 + band18 + band25
+  - monthly_withholding: annual_tax / 12
+expected:
+  annual_salary: 1200000
+  band12: 21600
+  band18: 97200
+  band25: 30000
+  annual_tax: 148800
+  monthly_withholding: 12400
+```
+
+#### E4 top fraction under stipulated premises
+
+```oa-check
+name: E4 top fraction under stipulated premises
+inputs:
+  monthly_salary: 250000
+steps:
+  - annual_salary: monthly_salary * 12
+  - band12: 180000 * 0.12
+  - band18: 540000 * 0.18
+  - band25: 1080000 * 0.25
+  - band30: (annual_salary - 2160000) * 0.30
+  - annual_tax: band12 + band18 + band25 + band30
+  - monthly_withholding: annual_tax / 12
+expected:
+  annual_salary: 3000000
+  band12: 21600
+  band18: 97200
+  band25: 270000
+  band30: 252000
+  annual_tax: 640800
+  monthly_withholding: 53400
+```
+
+#### E5 prime and boni with fictional annual balance
+
+```oa-check
+name: E5 prime and boni with fictional annual balance
+inputs:
+  monthly_salary: 40000
+  prime: 20000
+  boni: 50000
+steps:
+  - regular_annual: monthly_salary * 12
+  - regular_tax: max(0, min(regular_annual, 540000) - 360000) * 0.12 + max(0, min(regular_annual, 1080000) - 540000) * 0.18 + max(0, min(regular_annual, 2160000) - 1080000) * 0.25 + max(0, regular_annual - 2160000) * 0.30
+  - regular_monthly: regular_tax / 12
+  - prime_withheld: prime * 0.15
+  - boni_withheld: boni * 0.10
+  - relevant_month: regular_monthly + prime_withheld + boni_withheld
+  - annual_base: regular_annual + prime + boni
+  - annual_tax: max(0, min(annual_base, 540000) - 360000) * 0.12 + max(0, min(annual_base, 1080000) - 540000) * 0.18 + max(0, min(annual_base, 2160000) - 1080000) * 0.25 + max(0, annual_base - 2160000) * 0.30
+  - annual_withheld: regular_tax + prime_withheld + boni_withheld
+  - balance: annual_tax - annual_withheld
+expected:
+  regular_annual: 480000
+  regular_tax: 14400
+  regular_monthly: 1200
+  prime_withheld: 3000
+  boni_withheld: 5000
+  relevant_month: 9200
+  annual_base: 550000
+  annual_tax: 23400
+  annual_withheld: 22400
+  balance: 1000
+```
+
+#### E6 stipulated levy deduction without surplus remedy
+
+```oa-check
+name: E6 stipulated levy deduction without surplus remedy
+inputs:
+  annual_salary: 480000
+  each_monthly_levy: 400
+  annual_withheld: 14400
+steps:
+  - both_annual_levies: each_monthly_levy * 12 * 2
+  - annual_base: annual_salary - both_annual_levies
+  - annual_tax: max(0, min(annual_base, 540000) - 360000) * 0.12 + max(0, min(annual_base, 1080000) - 540000) * 0.18 + max(0, min(annual_base, 2160000) - 1080000) * 0.25 + max(0, annual_base - 2160000) * 0.30
+  - excess: annual_withheld - annual_tax
+expected:
+  both_annual_levies: 9600
+  annual_base: 470400
+  annual_tax: 13248
+  excess: 1152
+```
+
+#### E7 independently qualified child fees and gifts stipulated
+
+```oa-check
+name: E7 independently qualified child fees and gifts stipulated
+inputs:
+  income: 1000000
+  fee1: 120000
+  fee2: 90000
+  fee3: 110000
+  child_cap: 100000
+  total_cap: 300000
+  gifts: 100000
+steps:
+  - fees: min(min(fee1, child_cap) + min(fee2, child_cap) + min(fee3, child_cap), total_cap)
+  - after_fees: income - fees
+  - gift_limit: after_fees * 0.10
+  - gift_deduction: min(gifts, gift_limit)
+  - taxable: after_fees - gift_deduction
+  - annual_tax: max(0, min(taxable, 540000) - 360000) * 0.12 + max(0, min(taxable, 1080000) - 540000) * 0.18 + max(0, min(taxable, 2160000) - 1080000) * 0.25 + max(0, taxable - 2160000) * 0.30
+expected:
+  fees: 290000
+  after_fees: 710000
+  gift_limit: 71000
+  gift_deduction: 71000
+  taxable: 639000
+  annual_tax: 39420
+```
+
+#### E8 mutually exclusive ordinary branches and stipulated interest period
+
+```oa-check
+name: E8 mutually exclusive ordinary branches and stipulated interest period
+inputs:
+  unpaid_principal: 10000
+  ordinary_rate: 0.1
+  interest_rate: 0.025
+  established_months: 2
+steps:
+  - timely_return_surcharge: unpaid_principal * ordinary_rate
+  - late_return_ordinary_surcharge: unpaid_principal * ordinary_rate
+  - conditional_interest: unpaid_principal * interest_rate * established_months
+expected:
+  timely_return_surcharge: 1000
+  late_return_ordinary_surcharge: 1000
+  conditional_interest: 500
+```
+
+#### E11 classification gate and cash after this withholding only
+
+```oa-check
+name: E11 classification gate and cash after this withholding only
+inputs:
+  payment: 20000
+  stipulated_prime_rate: 0.15
+  stipulated_boni_rate: 0.1
+steps:
+  - prime_withheld: payment * stipulated_prime_rate
+  - boni_withheld: payment * stipulated_boni_rate
+  - prime_cash: payment - prime_withheld
+  - boni_cash: payment - boni_withheld
+  - withholding_difference: prime_withheld - boni_withheld
+  - cash_difference: boni_cash - prime_cash
+expected:
+  prime_withheld: 3000
+  boni_withheld: 2000
+  prime_cash: 17000
+  boni_cash: 18000
+  withholding_difference: 1000
+  cash_difference: 1000
+```
+
+#### Historical S2 administrative illustration arithmetic only
+
+```oa-check
+name: Historical S2 administrative illustration arithmetic only
+inputs:
+  prime: 30000
+  monthly1: 39200
+  monthly2: 41700
+  monthly3: 44600
+  monthly4: 47200
+steps:
+  - prime_withheld: prime * 0.15
+  - annual1: monthly1 * 12
+  - tax1: max(0, min(annual1, 540000) - 360000) * 0.12 + max(0, min(annual1, 1080000) - 540000) * 0.18 + max(0, min(annual1, 2160000) - 1080000) * 0.25 + max(0, annual1 - 2160000) * 0.30
+  - withheld1: tax1 / 12
+  - annual2: monthly2 * 12
+  - tax2: max(0, min(annual2, 540000) - 360000) * 0.12 + max(0, min(annual2, 1080000) - 540000) * 0.18 + max(0, min(annual2, 2160000) - 1080000) * 0.25 + max(0, annual2 - 2160000) * 0.30
+  - withheld2: tax2 / 12
+  - annual3: monthly3 * 12
+  - tax3: max(0, min(annual3, 540000) - 360000) * 0.12 + max(0, min(annual3, 1080000) - 540000) * 0.18 + max(0, min(annual3, 2160000) - 1080000) * 0.25 + max(0, annual3 - 2160000) * 0.30
+  - withheld3: tax3 / 12
+  - annual4: monthly4 * 12
+  - tax4: max(0, min(annual4, 540000) - 360000) * 0.12 + max(0, min(annual4, 1080000) - 540000) * 0.18 + max(0, min(annual4, 2160000) - 1080000) * 0.25 + max(0, annual4 - 2160000) * 0.30
+  - withheld4: tax4 / 12
+expected:
+  prime_withheld: 4500
+  annual1: 470400
+  tax1: 13248
+  withheld1: 1104
+  annual2: 500400
+  tax2: 16848
+  withheld2: 1404
+  annual3: 535200
+  tax3: 21024
+  withheld3: 1752
+  annual4: 566400
+  tax4: 26352
+  withheld4: 2196
+```
+
+## When to refuse or refer
+
+### Refusal catalogue
 
 Apply the universal catalogue and record each code as cleared or fired.
 
-| Code | Trigger | Verbatim output |
-|---|---|---|
-| R-HT-PERIOD | The first return or transition treatment is unestablished, the amount falls before 1 October 2026, straddles it, or concerns a 2025-26 return or Art 95 declaration, or an S5 Art 2 exemption is claimed for any period | 'The Haitian law applying to this period has not been established. Hold the affected treatment and obtain the applicable period law and any transitional decision.' |
-| R-HT-FACTS | A required intake fact is missing | 'The facts needed to apply this Haitian rule are missing. Keep the item as Needs Input until the evidence is supplied.' |
-| R-HT-METHOD | A result needs an unresolved method, incorporated eligibility test, penalty class/procedure, part-year or irregular pay treatment, classification, deduction at source, in-kind valuation, result rounding, excess-withholding treatment, interest period, principal liability for tax never deducted, non-domiciled source allocation or currency conversion | 'The Code Fiscal text read here does not settle this method. Stop the affected classification, calculation and output preparation. Obtain the applicable official authority and evidenced facts for qualified review.' |
-| R-HT-DECISION | A user relies on, or a calculation would be changed by, a decision or circular under Art 540 or 103(2) | 'No such decision was found in the sources listed in this reference. Obtain the dated official text before applying it.' |
-| R-HT-SCOPE | Social insurance, labour law, treaty relief, business income, investment or free zone relief, or NGO status | 'This reference does not cover that question. Stop the affected work and load a topical companion with its own applicable primary sources for qualified review.' |
-| R-HT-COMPLETE | Any actual classification, calculation or output preparation is requested before required companion content and source conditions are established, or delivery is requested before outputs, checks and professional review are complete | 'The mandatory financial workflow is incomplete. Stop the affected classification, calculation and output preparation until the source and companion requirements are established. Hold delivery until all required outputs, checks and professional review are complete.' |
+| Code | Trigger | Verbatim output | Source and qualification |
+|---|---|---| --- |
+| R-HT-PERIOD | The first return or transition treatment is unestablished, the amount falls before 1 October 2026, straddles it, or concerns a 2025-26 return or Art 95 declaration, or an S5 Art 2 exemption is claimed for any period | 'The Haitian law applying to this period has not been established. Hold the affected treatment and obtain the applicable period law and any transitional decision.' | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| R-HT-FACTS | A required intake fact is missing | 'The facts needed to apply this Haitian rule are missing. Keep the item as Needs Input until the evidence is supplied.' | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| R-HT-METHOD | A result needs an unresolved method, incorporated eligibility test, penalty class/procedure, part-year or irregular pay treatment, classification, deduction at source, in-kind valuation, result rounding, excess-withholding treatment, interest period, principal liability for tax never deducted, non-domiciled source allocation or currency conversion | 'The Code Fiscal text read here does not settle this method. Stop the affected classification, calculation and output preparation. Obtain the applicable official authority and evidenced facts for qualified review.' | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| R-HT-DECISION | A user relies on, or a calculation would be changed by, a decision or circular under Art 540 or 103(2) | 'No such decision was found in the sources listed in this reference. Obtain the dated official text before applying it.' | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| R-HT-SCOPE | Social insurance, labour law, treaty relief, business income, investment or free zone relief, or NGO status | 'This reference does not cover that question. Stop the affected work and load a topical companion with its own applicable primary sources for qualified review.' | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| R-HT-COMPLETE | Any actual classification, calculation or output preparation is requested before required companion content and source conditions are established, or delivery is requested before outputs, checks and professional review are complete | 'The mandatory financial workflow is incomplete. Stop the affected classification, calculation and output preparation until the source and companion requirements are established. Hold delivery until all required outputs, checks and professional review are complete.' | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
 
-## Delivery holds
+### Delivery holds
 
 These are evidence and workflow gates for any actual engagement. A reviewer records how each is satisfied; sign-off alone cannot waive missing law, facts or required companion content. Labelled hypothetical source examples remain available within their stated assumptions:
 
@@ -309,7 +583,15 @@ These are evidence and workflow gates for any actual engagement. A reviewer reco
 6. **Transition.** The boundary at 1 October 2026 remains open. The selected S5 clauses do not resolve prior, deferred or straddling payments or the 2025-26 return. S6 and S7 remain unofficial copies and supply no accepted period rule here.
 7. **Outputs.** No engagement workbook, brief, action list or checklist has been produced or tested.
 
-## Outputs and self-checks
+## Filing and payment
+
+### Payment
+
+Art 303 (p 94) requires irrevocable and unconditional payment, identifying the taxpayer, fiscal number and tax paid. It permits cash strictly below 15,000 Gourdes, transfer, bank card, manager's cheque, mobile payment and electronic wallet. It provides for a receipt with an express stamp-duty exception and permits a duplicate request. Retain the relevant salary-tax receipt in the reviewer's records and a redacted reference with the statement. The reviewer retains actual identifiers and executes payment personally.
+
+## Completion checklist
+
+### Outputs and self-checks
 
 For an engagement whose source and companion gates are established, follow this combined order: read redacted records and establish the period, residence and filing unit; infer and confirm one profile; run the universal and country refusal sweep; classify income, expenses, allowances and losses; show all 9 income-tax computation rungs separately; resolve only remaining factual ambiguities; prepare the combined outputs; run both bases' checks and this topical checklist; deliver once to the professional reviewer. Unknown is distinct from zero. A rung may be zero only when the applicable rule and facts support zero.
 
@@ -329,31 +611,60 @@ Before delivery check:
 - [ ] S5 pay labels and the separate penalty are not substituted for S1 categories or interest without the applicable period-law chain
 - [ ] A recheck for Art 540 decisions and later amendments is dated
 
-## Completion register
+### Completion register
 
 This is a requirement map, not a conformity claim. Every row remains subject to the source and professional-review gates above.
 
-| Requirement | Present evidence | Remaining requirement |
-|---|---|---|
-| Scope and period | Selected salary provisions and express Code commencement | Confirm the salary fiscal year; establish transitions and the operative amendment/application chain |
-| Rates, thresholds and position rules | Selected printed scale, deductions, withholding and levies | Resolve incorporated predicates, method gaps, external relief and current authority |
-| Sources, currency and revision | Pinned principal sources | Complete currentness search, budget reading and unresolved source units |
-| Refusals, defaults and reviewer flags | Stop conditions, no-default policy, unknown distinct from zero, all-amount classification/period/penalty flags | Run the universal, domain and topical refusal sweep against confirmed facts |
-| Fictional cases | 10 conditional examples | No example establishes a real person's classification, method or liability |
-| Intake and workflow | Redacted records, one profile confirmation and shared question budget; combined order specified above | Execute the complete ordered workflow against an actual authorised engagement |
-| Universal outputs and checks | All 4 outputs and 18 checks retained | No engagement files, recalculation or checks have been executed |
-| Income classification and transaction patterns | Selected salary/withholding categories | Complete transaction-pattern and exclusion map; business, professional, investment, rental and mixed-income treatment |
-| Expenses, allowances and losses | Selected Art 126 provisions and same-category loss restriction | Complete expense/capital rules, eligibility, interaction and loss mechanics |
-| Credits, prepayments and social interaction | Selected non-final withholding credits and linked levies | Complete credits, provisional payments, social sources and refund route |
-| Filing, payment and precision | Selected statutory dates, receipt fields and base rounding | Current forms/routes, exact period law, payment procedure, currency conversion and result rounding |
-| Income-tax ladder, outputs and checks | All 9 rungs, 5 components and 12 checks retained | Complete employee, self-employed and mixed-income ladders; execute every applicable check |
-| Other domains | Boundaries stated | Payroll, social, formation and cross-border content need their own sources, outputs and checks |
+| Requirement | Present evidence | Remaining requirement | Source and qualification |
+|---|---|---| --- |
+| Scope and period | Selected salary provisions and express Code commencement | Confirm the salary fiscal year; establish transitions and the operative amendment/application chain | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Rates, thresholds and position rules | Selected printed scale, deductions, withholding and levies | Resolve incorporated predicates, method gaps, external relief and current authority | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Sources, currency and revision | Pinned principal sources | Complete currentness search, budget reading and unresolved source units | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Refusals, defaults and reviewer flags | Stop conditions, no-default policy, unknown distinct from zero, all-amount classification/period/penalty flags | Run the universal, domain and topical refusal sweep against confirmed facts | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Fictional cases | 10 conditional examples | No example establishes a real person's classification, method or liability | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Intake and workflow | Redacted records, one profile confirmation and shared question budget; combined order specified above | Execute the complete ordered workflow against an actual authorised engagement | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Universal outputs and checks | All 4 outputs and 18 checks retained | No engagement files, recalculation or checks have been executed | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Income classification and transaction patterns | Selected salary/withholding categories | Complete transaction-pattern and exclusion map; business, professional, investment, rental and mixed-income treatment | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Expenses, allowances and losses | Selected Art 126 provisions and same-category loss restriction | Complete expense/capital rules, eligibility, interaction and loss mechanics | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Credits, prepayments and social interaction | Selected non-final withholding credits and linked levies | Complete credits, provisional payments, social sources and refund route | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Filing, payment and precision | Selected statutory dates, receipt fields and base rounding | Current forms/routes, exact period law, payment procedure, currency conversion and result rounding | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Income-tax ladder, outputs and checks | All 9 rungs, 5 components and 12 checks retained | Complete employee, self-employed and mixed-income ladders; execute every applicable check | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
+| Other domains | Boundaries stated | Payroll, social, formation and cross-border content need their own sources, outputs and checks | unverified for actual use; selected printed wording: https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf; all source, period and method holds apply. |
 
-## Revision record
+## Sources
+
+The reading entries below describe historical records. A window crossing midnight is not an exact per-page reading date. Dates of retrieval, publication or later editing do not substitute for reading. The S1 MEF alternate copy was not read or compared. S3 Art106/p65 remains an unreviewed third-party image lead; later montage pages are not added to the qualified original extent, and later printed/PDF pagination must not be assumed equal.
+
+
+
+### Source library
+
+Pinpoints are PDF page numbers. Equality with printed numbering was checked only on the selected qualified originals in the reading map; do not assume it elsewhere. In particular, later S3 pagination is not established by the selected opening pages.
+
+| Source | Status and limits | Recorded reading (UTC) |
+|---|---| --- |
+| **S1. Décret remplaçant le Décret du 19 décembre 2022 portant Code Fiscal, *Le Moniteur*, Spécial N° 48-A, 30 September 2026, 184 pp.** [DGI copy](https://dgi.gouv.ht/wp-content/uploads/2026/10/Code-Fiscal.pdf), [MEF lead](https://www.mef.gouv.ht/storage/app/uploads/public/6ac/fb4/9bc/6acfb49bca658143176190.pdf) | Primary. DGI copy independently retrieved with verified TLS on 30 October 2026 UTC; SHA256 `9b00c3196dab63be29fae182c726e25628c4fd2455fd97b2c84f965c5b3d04fe`. Scanned, with no usable native text. Selected complete units were checked against original images. Incorporated procedures and definitions are held where incomplete. The rest of the 184 pages and the complete later-law chain are not qualified. The MEF copy, reported as 182 pages, was not compared with it, so page references may not transfer. | Initial selected originals: exact day unknown within the 2026-10-30 to 2026-10-31 UTC session; additional selected units 2026-10-31 UTC by session bounds. MEF alternate copy not read or compared. |
+| **S2. [MEF/NOTE/018/10-2026](https://www.mef.gouv.ht/storage/app/uploads/public/6ad/78c/8a5/6ad78c8a59af2501868949.pdf), 'Informations sur le nouveau Code fiscal'** | Ministry information note, 3 pp, independently retrieved with verified TLS. All 3 originals read, including the entire page 2 simulation table omitted by native extraction. SHA256 `8d7e7495f287fd8070923de459c355693f610c15aab410c0d23bc141535dd4f4`. The PDF gives no exact issue-day. It models specialised police-unit agents, holds remuneration constant and excludes social contributions and other possible deductions. No Art 540 decision is established by this note. It cannot override S1 and is used only as an administrative arithmetic control. | Exact reading day unknown within the 2026-10-30 to 2026-10-31 UTC session. All 3 originals read then; later pp2-3 recheck has no recorded date. |
+| **S3. [Décret établissant le Budget Général 2026-27](https://www.mef.gouv.ht/storage/app/uploads/public/6ac/d23/530/6acd235307ba7010970151.pdf), *Le Moniteur*, Spécial N° 49, 1 October 2026, 230 pp.** | Independently retrieved with verified TLS. Originals 1 to 9 were read, with selected units checked. Article 3, the TMS-related repeals in Arts 15 to 19 and selected replacements in Arts 25 to 30 are positive source conditions below. Pages 10 to 12 were read as OCR only. On 2 November 2026, original p1 was rechecked for issue identity, complete Art 106 on original/printed p65 was checked against the image, with the given date and selected signature context on pp65-66. It repeals contrary laws, decrees and decree-laws or their provisions and directs publication and execution by the 2 named Ministers, each as concerned. Other later pages and other clauses on pp65-66 remain unqualified; the operative interaction is not reconciled. No absence of a salary amendment follows. SHA256 `b10fdbeea304a660531d66ecff7041c5d51e4e4145e6e3c9d22825242f135323`. | Original pp1-6: exact day unknown within the 2026-10-30 to 2026-10-31 UTC session; pp7-9 read 2026-10-31 UTC by session bounds. 2026-11-02 UTC: original p1 identity recheck, complete Art106/p65, given date and selected signature context pp65-66. OCR was checked against those originals; no whole-law reading. |
+| **S4. [MEF/Comité de Politique Fiscale, Révision du barème de l'IRPP en Haïti](https://mef.gouv.ht/storage/app/uploads/public/6a6/cc3/3dc/6a6cc33dcbf11650887297.pdf), July 2026, 53 pp.** | Downloaded directly with verified TLS. SHA256 `72ce2a4be45edbbd738fc4bff3027a8362722ddb67b95655f699abce987efc9e`. Native text extracted; only originals 1 and 5 to 8 were read, covering the cover, complete executive summary and reform chronology. They describe analytical scenarios and ministerial selection for integration into the future Code. They do not establish a post-commencement Art 540 method, current circular, form or general payroll algorithm. The rest remains unqualified. | Exact reading day unknown within the 2026-10-30 to 2026-10-31 UTC session; originals1 and5-8 only. Earlier acquisition/extraction was not a substantive reading. |
+| **S5. [Décret établissant le Budget Rectificatif 2025-2026](https://www.mef.gouv.ht/storage/app/uploads/public/6a3/07e/237/6a307e237e055879451887.pdf), *Le Moniteur*, Spécial N° 29, 5 June 2026, 100 pp.** | Primary MEF copy retrieved with verified TLS on 31 October 2026 UTC, 9,756,086 bytes, SHA256 `5cd50c180dbce4d8eb0822668ba920d7cee8f7e75c0591bba2fb7b71e5bab0db`. Original p1 identifies the issue; complete Arts 2–3 on p4 and Art 12 on p27, with signature context on pp28–29, were checked against the original. Other pages were not checked against the original. The full 100-page decree and its application chain are not qualified. The given date of 2 June and issue date of 5 June are separate; neither is accepted here as the legal application date. | 2026-10-31 UTC: original p1 identity, complete Arts2-3/p4 and Art12/p27, signature context pp28-29. Independent p4 check recorded03:54:49.321Z. |
+| **S6. MEF Avis administratif BM-DIF/DGI/148/07-2026, 14 July 2026 (reported)** | Not obtained from an official host. A [copy on bucofisc.com](https://bucofisc.com/en/download/avis-mef-sur-le-report-de-larticle-3-du-budget-rectificatif/), read as an image and signed Serge Gabriel Collin, says application of the 15% withholding is 'reportée au 1er octobre 2026', naming primes, frais fixes, allocations, étrennes, untaken-leave pay and overtime, and citing technical adjustments to the scale. It takes effect 'à compter de sa publication', a date not established. [AlterPresse, 19 July 2026](https://www.alterpresse.org/Haiti-Fiscalite-Le-gouvernement-reporte-au-1er-octobre-la-hausse-de-la-retenue-a-la-source-sur-certains-revenus) reports the same notice and date. Authenticity, publication and the effect of a ministerial notice on a decree are not established. | 2026-11-02 UTC: retained unofficial single-page copy read again as an original image after default OCR flagged 90-degree rotation. Earlier image reading and AlterPresse reading dates remain unknown. Authenticity, publication and legal effect remain unverified. |
+| **S7. DGI notice on final returns, as reproduced by [HaitiLibre, 21 October 2026](https://www.haitilibre.com/en/news-48710-haiti-notice-final-tax-declaration-and-new-tax-code.html) (reported)** | Press reproduction in English; the DGI original, date and signatory were not obtained, and official searches on 31 October 2026 did not find it. It says returns run from 1 October 2026 to 31 January 2027, and that the earlier scale stays applicable to 2025-26 income on non-retroactivity grounds. | 2026-11-02 UTC: complete captured English press reproduction read again. Earlier reading date remains unknown; the official original, date and signatory remain unverified. |
+| **S8. [DGI page, Déclaration Définitive d'Impôt sur le Revenu](https://dgi.gouv.ht/dgi_sev/declaration-definitive-impot-revenu/)** | Undated official page, with a 2013-14 example. It gives the 1 October to 31 January filing window and a 5-year credit carry-forward. It prints the same 5 bands as S7, undated. It also says the DGI, on an employee's express request, issues a certificate allowing the employer to deduct the credit from salary withholding. Its date is not established, and it appears to be legacy text; its continued authority under S1 and Art 542 is not established. | 2026-11-02 UTC: complete substantive service-page body read again, including its legacy 2013-14 example. Earlier reading date remains unknown; current legal authority is not established. |
+
+Named and not read: the Décret du 19 décembre 2022; the 29 September 2005 income tax decree, cited in the visas; the DGI 'Commentaires sur le Code général des impôts' (document page dated 11 April 2023, so it cannot be assumed to address S1).
+
+Not yet confirmed: exact per-page reading dates where the historical session crosses midnight or has no timestamp; the S1 alternate copy; complete incorporated rules and later-law chain; remaining S3 later pages and their pagination outside the newly checked originals 65-66; July and October notices and their publication/legal effect; salary fiscal-year and transition treatment; all method, form, portal, social, cross-border, professional-review and actual-engagement outputs/checks held above.
+
+### Revision record
 
 Version 0.5, 31 October 2026: Tier 2, pending professional and operational review. Adds the selected June Rectificatif comparison and 2 reported notices as held leads. No actual-period application is accepted. A retrieval or editing date does not certify current law.
 
-## Disclaimer
+Version 0.8, 2 November 2026: checks complete S3 Art 106 against original p65, the issue identity on p1 and selected signature context on pp65-66. Replaces the reported closing-clause lead with its bounded source reading. Actual period-law reconciliation, July and October notice authority, methods, workflows and professional review remain held. No amount, example, source-period conclusion or coverage count changes.
+
+Version 0.7, 2 November 2026: canonical method layout and explicit historical reading extents; inherited v0.6 notices retained. Clarifies the unreviewed S3 image lead, limited pagination and E8 ordinary penalty branch. Adds recomputing hypothetical checks without qualifying actual treatment. No professional review or filing clearance.
+
+### Disclaimer
 
 This guide and its outputs are for information and computation only and are not tax, legal or financial advice. Open Accountants and its contributors accept no liability for errors, omissions or outcomes from its use. All outputs must be reviewed and signed off by a qualified professional in the relevant jurisdiction before filing or acting on them.
 

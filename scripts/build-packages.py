@@ -660,7 +660,7 @@ def find_country_skills(country_dir):
 
     for root, _dirs, files in os.walk(country_dir):
         for f in sorted(files):
-            if not f.endswith('.md') or f.startswith('.'):
+            if not f.endswith('.md') or f.startswith('.') or f.lower().startswith('readme'):
                 continue
             filepath = os.path.join(root, f)
             with open(filepath, 'r', errors='ignore') as fh:
