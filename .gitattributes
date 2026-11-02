@@ -21,5 +21,19 @@
 /docs/COUNTRY-COVERAGE.md linguist-generated=true
 /docs/FORM-REGISTER.md linguist-generated=true
 
+# How scripts/merge-main.py (make merge-main) merges derived files: regenerate
+# means `make build` rebuilds it; figures means hand-written text whose coverage
+# figures `make build` writes; baseline means a gate baseline merged as a set.
+# A plain `git merge` ignores this attribute.
+/packages/** oa-merge=regenerate
+/index.json oa-merge=regenerate
+/PARTNERS.md oa-merge=regenerate
+/llms-full.txt oa-merge=regenerate
+/README.md oa-merge=figures
+/llms.txt oa-merge=figures
+/docs/QUALITY-TIERS.md oa-merge=figures
+/docs/COVERAGE.md oa-merge=figures
+/scripts/baselines/*.txt oa-merge=baseline
+
 # Federal rates and their runbook are hand-authored and require review.
-/packages/us-federal/** -linguist-generated
+/packages/us-federal/** -linguist-generated -oa-merge
