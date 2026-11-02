@@ -5489,6 +5489,23 @@
     "workflow-base.md"
    ]
   },
+  "turks-and-caicos-islands": {
+   "jurisdiction": "TC",
+   "name": "Turks And Caicos Islands",
+   "files": [
+    "intake.md",
+    "tc-formation-and-business-licensing-reference.md",
+    "tc-sector-taxes-reference.md",
+    "tc-social-contributions-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "tuvalu": {
    "jurisdiction": "TV",
    "name": "Tuvalu",
