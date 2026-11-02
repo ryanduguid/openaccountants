@@ -4,7 +4,7 @@ description: Use this skill whenever asked about incorporating in Japan -- trans
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - jp-income-tax
@@ -356,7 +356,7 @@ The totals use the component rates and allocation assumptions above. Split healt
 
 ### 7.3 Invoice Registration Caution
 
-- **Invoice registration caution** — If the sole proprietor was already a qualified invoice issuer: - The corporation needs its own new invoice registration - Registering makes the corporation taxable from the registration date, losing the exemption - The individual's registration does NOT automatically cancel -- submit a cancellation notice (適格請求書発行事業者の登録の取消しを求める届出書) - The 20% special measure (2割特例) may apply to the new corporation through periods ending September 2026
+- **Invoice registration caution** — If the sole proprietor was already a qualified invoice issuer: - The corporation needs its own new invoice registration - Registering makes the corporation taxable from the registration date, losing the exemption - The individual's registration does NOT automatically cancel -- submit a cancellation notice (適格請求書発行事業者の登録の取消しを求める届出書) - The 20% special measure (2割特例) may apply to the new corporation for taxable periods that include any day up to 30 September 2026, unless a status exclusion applies, such as the new-corporation rules (NTA Invoice Q&A 問115, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf)
 
 ## Section 8 -- Establishment Procedure
 

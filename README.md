@@ -4,7 +4,7 @@
 
 **Fork status**
 
-[![Fork code quality](https://app.codacy.com/project/badge/Grade/aae907e043db42b1ad1791f8a4d64028?branch=main)](https://app.codacy.com/gh/ryanduguid/openaccountants/dashboard) [![Fork Validate Guides](https://github.com/ryanduguid/openaccountants/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/ryanduguid/openaccountants/actions/workflows/validate.yml)
+[![Fork code quality](https://app.codacy.com/project/badge/Grade/aae907e043db42b1ad1791f8a4d64028?branch=main)](https://app.codacy.com/gh/ryanduguid/openaccountants/dashboard)
 
 </div>
 
@@ -14,8 +14,9 @@
 > as it stood before upstream rewrote its history, plus the corrections and
 > tooling merged here since. The two repositories share no commits and nothing
 > syncs between them in either direction. Changes land here through pull
-> requests to this repository's `main`, gated by the checks in
-> `.github/workflows/`; a change you also want in the upstream project needs a
+> requests to this repository's `main`. GitHub Actions is off for this fork, so
+> the checks in `.github/workflows/` do not run on GitHub; `make check` runs
+> them locally. A change you also want in the upstream project needs a
 > separate pull request there.
 >
 > Not operated from this fork: the hosted MCP endpoint and website at
@@ -86,7 +87,7 @@ reviewed what, and `index.json` derives the counts above from it.
 [PARTNERS.md](PARTNERS.md) is generated from the index by
 `scripts/build-partners.py` with the same rule (only `tier: 1` plus a named
 reviewer counts; a name on a `tier: 2` guide is attribution, not review) and
-lists the reviewers per person and per jurisdiction; CI fails when it is stale.
+lists the reviewers per person and per jurisdiction; `make check` fails when it is stale.
 [VERIFIERS.md](VERIFIERS.md) is upstream's roster as of 2026-08-22 and is not
 regenerated here, so where it disagrees with the frontmatter, the frontmatter
 wins.
@@ -96,8 +97,9 @@ wins.
 ## Contributing
 
 Pull requests to this repository are welcome: guide corrections, new guides,
-tooling. Edit `skills/`, regenerate the derived trees, open a PR; CI checks the
-frontmatter, the metadata bump, derived-tree freshness and the unit tests.
+tooling. Edit `skills/`, regenerate the derived trees, run `make check` (it
+checks the frontmatter, the metadata bump, derived-tree freshness and the unit
+tests; GitHub Actions is off for this fork), then open a PR.
 There is no contributor licence agreement here: a contribution is accepted
 under the licence of the files it changes. Process: [CONTRIBUTING.md](CONTRIBUTING.md).
 Which file to edit: [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).

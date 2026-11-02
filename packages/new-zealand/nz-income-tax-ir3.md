@@ -4,7 +4,7 @@ description: Use this skill whenever asked about New Zealand income tax for self
 version: 2.0
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-31
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | New Zealand (Aotearoa) |
 | Tax | Income Tax (progressive 10.5%-39%) + ACC Earner Levy |
 | Currency | NZD only |
-| Tax year | 1 April to 31 March (FY 2025 = 1 April 2024 to 31 March 2025) |
+| Tax year | 1 April to 31 March (FY 2025 = 1 April 2024 to 31 March 2025; FY 2026 = 1 April 2025 to 31 March 2026) |
 | Primary legislation | Income Tax Act 2007 (NZ) |
 | Supporting legislation | Tax Administration Act 1994; Goods and Services Tax Act 1985 |
 | Tax authority | Inland Revenue (Te Tari Taake) |
@@ -34,17 +34,36 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Validated by | Pending -- requires sign-off by a NZ Chartered Accountant (CA ANZ) |
 | Skill version | 2.0 |
 
+### Income Tax Brackets from 1 April 2025 (FY 2026 onwards) [T1]
+
+**Income Tax Brackets from 1 April 2025**
+
+| Taxable Income (NZD) | Rate | Tax on Band | Cumulative Tax |
+| --- | --- | --- | --- |
+| 0 -- 15,600 | 10.5% | 1,638.00 | 1,638.00 |
+| 15,601 -- 53,500 | 17.5% | 6,632.50 | 8,270.50 |
+| 53,501 -- 78,100 | 30% | 7,380.00 | 15,650.50 |
+| 78,101 -- 180,000 | 33% | 33,627.00 | 49,277.50 |
+| Over 180,000 | 39% | on excess | 49,277.50 + 39% |
+
 ### Income Tax Brackets FY 2025 (1 April 2024 - 31 March 2025) [T1]
+
+Composite rates for the year in which the thresholds changed.
 
 **Income Tax Brackets FY 2025**
 
 | Taxable Income (NZD) | Rate | Tax on Band | Cumulative Tax |
 | --- | --- | --- | --- |
-| 0 -- 14,000 | 10.5% | 1,470 | 1,470 |
-| 14,001 -- 48,000 | 17.5% | 5,950 | 7,420 |
-| 48,001 -- 70,000 | 30% | 6,600 | 14,020 |
-| 70,001 -- 180,000 | 33% | 36,300 | 50,320 |
-| Over 180,000 | 39% | on excess | 50,320 + 39% |
+| 0 -- 14,000 | 10.5% | 1,470.00 | 1,470.00 |
+| 14,001 -- 15,600 | 12.82% | 205.12 | 1,675.12 |
+| 15,601 -- 48,000 | 17.5% | 5,670.00 | 7,345.12 |
+| 48,001 -- 53,500 | 21.64% | 1,190.20 | 8,535.32 |
+| 53,501 -- 70,000 | 30% | 4,950.00 | 13,485.32 |
+| 70,001 -- 78,100 | 30.99% | 2,510.19 | 15,995.51 |
+| 78,101 -- 180,000 | 33% | 33,627.00 | 49,622.51 |
+| Over 180,000 | 39% | on excess | 49,622.51 + 39% |
+
+Source: Inland Revenue, Tax rates for individuals: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals. Example: taxable income of NZD 60,000 bears NZD 10,220.50 from 1 April 2025 and NZD 10,485.32 in FY 2025.
 
 - **Tax calculation formula** — Tax = cumulative tax for lower bracket + (income - lower bracket threshold) x marginal rate
 
@@ -78,15 +97,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Independent Earner Tax Credit (IETC) [T1]
 
-**IETC table**
+**IETC table (FY 2026 onwards)**
 
 | Income | IETC Amount |
 | --- | --- |
-| NZD 24,000 -- NZD 44,000 | NZD 520/year |
-| Phases out above NZD 44,000 | Reduces by NZD 13/NZD 1 above NZD 44,000 |
-| NZD 48,000+ | NZD 0 |
+| NZD 24,000 -- NZD 66,000 | NZD 520/year (NZD 10 per week) |
+| NZD 66,001 -- NZD 70,000 | Reduces by 13 cents for every dollar over NZD 66,000 |
+| Over NZD 70,000 | NZD 0 |
 
-- **IETC conditions** — Conditions: no Working for Families, not receiving NZ Super, income between NZD 24,000-48,000.
+- **IETC for FY 2025 only:** Composite calculation, not the table above: (A x 121 + B x 244) / 365 x eligible months/12. A (1 April to 30 July 2024) is 520 less 13 cents for each complete dollar over NZD 44,000, never below zero. B (31 July 2024 to 31 March 2025) is 520 less 13 cents for each complete dollar over NZD 66,000, never below zero. Nil if income is below NZD 24,000. FY 2025 examples for a full year of eligibility: NZD 45,000: (390 x 121 + 520 x 244) / 365 = NZD 476.90. NZD 60,000: (0 x 121 + 520 x 244) / 365 = NZD 347.62. NZD 67,000: (0 x 121 + 390 x 244) / 365 = NZD 260.71. Source: Income Tax Act 2007, ss LC 14 and LC 15, inserted by [Taxation (Budget Measures) Act 2024, s 4](https://www.legislation.govt.nz/act/public/2024/0019/latest/whole.html); [Inland Revenue, Bill commentary](https://www.taxpolicy.ird.govt.nz/-/media/project/ir/tp/publications/2024/taxation-budget-measures-bill/bill-commentary-taxation-budget-measures-bill.pdf).
+- **IETC conditions** — Conditions (from July 2024): NZ tax resident, income between NZD 24,000 and NZD 70,000; neither you nor your partner entitled to and receiving Working for Families; no income-tested benefit, NZ Super, Veteran's Pension or overseas equivalent. Worked out on whole months. Source: Inland Revenue, Independent earner tax credit: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/individual-tax-credits/independent-earner-tax-credit-ietc.
 
 ### Conservative Defaults [T1]
 
@@ -278,7 +298,7 @@ Windcave card payment settlement NZD 8,500. Rachel's annual gross revenue is NZD
 
 ### 5.8 Tax Computation Flow
 
-- **Tax Computation Flow** — Gross self-employment receipts (ex-GST if registered) Less: Allowable business expenses = Net taxable income Apply bracket rates Less: IETC (if income NZD 24,000-48,000) = Net income tax Plus: ACC earner levy (~1.33% of liable earnings) = Total tax Less: Schedular withholding credits Less: Provisional tax paid = Residual Income Tax (RIT) / refund
+- **Tax Computation Flow** — Gross self-employment receipts (ex-GST if registered) Less: Allowable business expenses = Net taxable income Apply bracket rates Less: IETC (if income NZD 24,000-70,000; reduces by 13 cents per dollar over NZD 66,000; FY 2025 uses the composite calculation) = Net income tax Plus: ACC earner levy (~1.33% of liable earnings) = Total tax Less: Schedular withholding credits Less: Provisional tax paid = Residual Income Tax (RIT) / refund
 
 ### 5.9 Filing Deadlines
 
@@ -316,7 +336,7 @@ Separate schedule in IR3. Different deductibility rules -- interest deductibilit
 
 ### 6.3 Brightline Property Sale
 
-10-year Brightline test: gains on residential property sold within 10 years are taxable. Complex rules; confirm purchase and sale dates.
+For residential property sold on or after 1 July 2024, the test applies if the bright-line end date is within 2 years of the bright-line start date, whatever the purchase date. Different periods apply to sales before 1 July 2024. Complex rules; confirm purchase and sale dates. Source: Inland Revenue, IR1229: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1200---ir1299/ir1229/bright-line-property-tax.pdf.
 
 ### 6.4 Working for Families Tax Credits
 
@@ -373,8 +393,8 @@ SECTION C -- NET TAXABLE INCOME
 Total income - Total expenses          ___________
 
 SECTION D -- INCOME TAX
-Tax at bracket rates (see table)       ___________
-Less: IETC (if income NZD 24k-48k)    (___________)
+Tax at bracket rates (table for FY)    ___________
+Less: IETC (FY 2025: composite)       (___________)
 NET INCOME TAX                         ___________
 
 SECTION E -- ACC EARNER LEVY
