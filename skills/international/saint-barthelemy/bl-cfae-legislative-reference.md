@@ -12,8 +12,8 @@ category: international
 tax_year: 2025
 tax_year_notes: "Historical 2025 form profile, with selected dated Code provisions and complete 2024-038 CT and 2024-075 CT decisions read by 1 November 2026 UTC. Publication and executory stamps are separate from tax-year applicability. The operative chain and requested-period application, including actual liability and filing, remain unqualified. This period label does not certify current law or actual 2026 obligations."
 tier: 2
-last_updated: 2026-11-01
-version: 0.1
+last_updated: 2026-11-02
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -21,27 +21,34 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Saint Barthélemy CFAE Legislative Reference
+# Saint Barthélemy CFAE Legislative Reference (v0.2)
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
 
 Load with workflow-base. **This reference is incomplete as an operational country skill.** It records selected dated provisions for the contribution forfaitaire annuelle des entreprises (CFAE). Actual liability, exemption, employee counting and allocation, assessment, penalty, filing, payment and collection remain **HOLD** until the applicable complete legal chain, companion content and case facts are established. The positions below are hypothetical source and arithmetic exercises for a credentialed professional reviewer.
 
-## Sources, periods and read bounds
+This is the selected dated reference described in the source and period records below. Actual work remains subject to its complete companion, source conditions, refusal gates and professional review.
 
-| Source | Complete relied units and read bounds | Limit |
-| --- | --- | --- |
-| **S1. [Official older Code des contributions](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_a687c0be-3095-4dfc-8921-f4a19be57d68)** | Complete 120-page capture; dated amendment list ends with 2021-047. Qualified selected original pp 1, 8–9 and 71, including complete Article 9 and Article 144. | Historical rate and rounding reference. No complete 2021–2026 amendment inventory, present consolidation or acceptance of adjacent provisions. |
-| **S2. [Délibération 2024-038 CT, 26 September 2024](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct.pdf)** | Entire 4-page decision, both articles and amendment dispositions. Article 1 adopts the attached Code revision; Article 2 mandates execution. Publication stamped 1 October 2024; executory stamp 17 October 2024. | These are distinct dates. No separate tax-year application or general transitional article appears in this complete decision. The annex remains necessary. |
-| **S3. [2024-038 CT2 revision annex](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct_annexe.pdf)** | Complete 38-page capture; only complete Articles 7, 10, 11 and 12 across physical pp 4–7 and complete Articles 156 and 158 across pp 32–33 are relied on. Original colour insertions and strike-through were checked. | Receipt/publication stamps 1 October 2024 and identifier ending 2024038CT2-DE match S2. This does not qualify all 38 pages, every amendment or the later chain. |
-| **S4. [Délibération 2024-075 CT, 20 December 2024](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_075_ct.pdf)** | Entire 3-page decision, both articles, the 5 quoted paragraphs replaced and the single replacement paragraph. Publication stamped 23 December 2024; executory stamp 8 January 2025. | Replaces specified opening Article 10 paragraphs, not the whole article. No separate tax-year application or general transitional article appears in the complete decision. |
-| **S5. [Official CFAE declaration and personnel annex for 2025](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_34215943-1a4c-4fa5-b62e-45887b937b3b)** | Entire 2-page blank official form, retrieved 1 November 2026 UTC. Page 1 says 2025; page 2 says DSN du 31/12/2024. Both original pages checked after native text extraction returned empty. | Administrative evidence for 2025 only. Retrieval in 2026 does not make it a 2026 form or establish the current filing channel. Printed payment account details are not reproduced or validated here. |
+## Ask the client first
 
-The separate earlier annex URL ending `2024_038ct_annexe.pdf` has different bytes, a CT identifier and 30 September 2024 stamps. S3 has the CT2 identifier and 1 October stamps matching S2. S2 does not name a filename, hash or correction history. This reference uses the identified CT2 selected units and makes no complete equivalence claim for the 2 variants.
+1. What obligation and period are requested, and is the work a dated source explanation or an actual engagement?
+2. Which person, entity, residence, territorial and establishment facts determine the applicable scope?
+3. Which activities, transactions, units, values and event dates are supported by redacted records?
+4. Which operative sources, classifications, exemptions, amendments and case-specific decisions have been established?
+5. Which prior-period, eligibility, input, deduction, credit, payment and other-component records affect this job?
+6. Which complete companion content, professional reviewer, current forms and filing or collection directions are available?
 
-Native extraction omits some coloured insertions and OCR can combine struck and inserted wording. Neither is a substitute for the original redline pages. S2 records 13 votes for, none against and 6 abstentions; its closing 'Adoptée à l’unanimité' is followed by the 6 abstentions. It does not establish 19 affirmative votes. S4 records 12 for and 7 against. Adoption, publication, executory status, express commencement and application to an actual tax year must be distinguished.
+## The method, step by step
 
-This reference establishes neither comprehensive BL coverage nor absence of other taxes. Residence, formation, payroll, social contributions, cross-border treatment, property, customs and other compliance require their own applicable complete sources and content. Adjacent provisions in the captured files are not adopted for those topics.
+### Historical stated amounts [S1](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_a687c0be-3095-4dfc-8921-f4a19be57d68) [S5](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_34215943-1a4c-4fa5-b62e-45887b937b3b)
 
-## Selected CFAE scope and amounts
+| Component and conditions | Amount | Reference period and limit | Official sources |
+| --- | --- | --- | --- |
+| One legally established historical contribution, with established employee count and no assumed relief; actual rate, count, allocation, cap and liability remain held | EUR 350 plus EUR 100 per established employee | Historical 2025 form and selected older Code; no 2026 entitlement inferred | https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_a687c0be-3095-4dfc-8921-f4a19be57d68 ; https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_34215943-1a4c-4fa5-b62e-45887b937b3b |
+
+### Selected CFAE scope and amounts [S1](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_a687c0be-3095-4dfc-8921-f4a19be57d68) [S3](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct_annexe.pdf) [S5](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_34215943-1a4c-4fa5-b62e-45887b937b3b)
 
 **S3 Article 7** replaces the old opening scope wording. It includes an enterprise with its registered office or effective management seat in Saint Barthélemy, including a dormant enterprise. It separately addresses French enterprises without a BL registered office or effective management seat that have establishments carrying on activity in BL, and foreign enterprises with establishments carrying on activity there. Do not retain S1's deleted 'activité régulière' condition as the amended test.
 
@@ -53,7 +60,7 @@ Where different activities within the same enterprise each have a distinct estab
 
 **S1 Article 144** rounds tax contribution bases, majorations, reductions and reliefs to the nearest euro, with exactly EUR 0.50 counted as one euro, at the computation of each individual tax or duty. This is the scope of that selected older provision. It does not establish rounding of individual employees, intermediate calculations or every accounting amount, or resolve its present application after later law.
 
-## Article 10: September amendment and December replacement
+### Article 10: September amendment and December replacement [S2](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct.pdf) [S3](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct_annexe.pdf) [S4](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_075_ct.pdf)
 
 S4 Article 1 replaces exactly these 5 quoted opening paragraphs of the September version: the annual dates and preceding full-year social-body attestation; remunerated contract categories; manager/accountant attestation based on the Registre Unique du Personnel; production of that register on control; and the general Article 158 majoration cross-reference. Its single replacement paragraph makes CFAE exigible from **1 January**, payable by **31 March** of the tax year, using employees appearing on the **Déclaration Sociale Nominative established at 31 December of the preceding year**. S4's recital about returning to earlier wording does not restore the whole older Article 10.
 
@@ -72,7 +79,7 @@ The following S3 Article 10 provisions lie outside S4's quoted replacement:
 
 **S3 Article 12** refers CFAE complaints to Articles 184 and following. Those complete procedural units have not been qualified here. No complaint deadline, tribunal, suspension, refund right or procedural step is derived from that cross-reference or from the decisions' separate challenge boilerplate.
 
-## Selected penalty provisions
+### Selected penalty provisions [S1](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_a687c0be-3095-4dfc-8921-f4a19be57d68) [S3](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct_annexe.pdf)
 
 **S3 Article 156**, complete across pp 32–33, retains **0.75% per month** for late interest and strikes out 'capitalisés'. It applies to sums charged to the taxpayer or whose payment has been deferred. Its printed period runs from the first day of the month following the month in which the principal should have been paid to the last day of the payment month. Do not treat the struck word as authority for compounding.
 
@@ -80,13 +87,19 @@ The following S3 Article 10 provisions lie outside S4's quoted replacement:
 
 These selected provisions are insufficient for an actual penalty assessment. Articles 154, 155 and 157, the full relevant collection and sanction chain, current applicability, possible relief and case-specific conditions remain unqualified. Do not infer that non-filing alone always triggers the paragraph III payment majoration, add interest and 80% automatically, compound interest, apply an assumed cap or calculate an actual sanction from this reference. Pure percentage arithmetic below is not a legal assessment.
 
-## The official 2025 form
+### The official 2025 form [S5](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_34215943-1a4c-4fa5-b62e-45887b937b3b)
 
 S5 cites Articles 7–12 and 157 in its header; Article 157 remains unqualified here. It asks for a declaration for each establishment, all identification fields, the establishment's SIRET, activity code and legal representative's declaration of employees according to the personnel annex. Its table is fixed part EUR 350, variable part employee count multiplied by EUR 100 and a total. The personnel page asks for identification, employees' surnames, given names and dates of birth and a total, with the DSN dated 31 December 2024. Do not collect or enter real personal data merely to illustrate this reference.
 
 For transfer, S5 instructs the filer to put the **14-digit SIRET for each establishment and the CFAE year paid** in the transfer label, then return the declaration and transfer proof, described as an avis d'opéré, to its printed CFAE contact. This is a description of that complete 2025 form, not permission to submit anything or a verified 2026 filing instruction. Obtain and verify the applicable form, destination, payment instructions and account details through the current official channel before any authorised filing or payment preparation. No account identifier is reproduced here.
 
-## Seven hypothetical positions
+## Boundary and exception table
+
+Apply every source-specific condition in the method and retained source library. Unknown law, classification or administration remains HOLD; no presentation default resolves it.
+
+## Worked cases
+
+### Seven hypothetical positions
 
 All premises below are deliberately supplied. They do not resolve unknown law or actual employment facts. Amounts are EUR; results are separate positions and must not be added into an engagement balance.
 
@@ -100,7 +113,40 @@ All premises below are deliberately supplied. They do not resolve unknown law or
 | **F. Percentage only** | An illustrative principal of 650 and the printed Article 158 III percentage are supplied solely for multiplication. | 650 × 80% = **520**. This is not an imposed majoration, total payable, interest computation or authority to cumulate sanctions. |
 | **G. Rounding boundaries** | Assume the selected S1 Article 144 rounding is legally applicable to 2 separate qualifying amounts. | 550.49 rounds to **550**; 550.50 rounds to **551**. Do not apply the examples as employee or intermediate rounding, or merge the 2 amounts before rounding. |
 
-## Workflow, evidence and refusal gates
+### Recompute the retained hypothetical positions
+
+The following blocks recompute 2 of the positions above using exactly their supplied premises. They are separate arithmetic exercises. The original classification, period, source, currency, precision and operational holds remain applicable. A nil or negative arithmetic component does not resolve an unknown liability or establish an exemption, refund or amount to pay.
+
+```oa-check
+name: BL position A hypothetical historical single contribution
+inputs:
+  fixed: 350
+  employees: 3
+  per_employee: 100
+steps:
+  - component: fixed + employees * per_employee
+expected:
+  component: 650
+tolerance: 0.000001
+```
+
+```oa-check
+name: BL position G separate historical qualifying rounding boundaries
+inputs:
+  below: 550.49
+  at_half: 550.5
+steps:
+  - below_rounded: round(below, 0)
+  - half_rounded: round(at_half, 0)
+expected:
+  below_rounded: 550
+  half_rounded: 551
+tolerance: 0.000001
+```
+
+## When to refuse or refer
+
+### Workflow, evidence and refusal gates
 
 Follow workflow-base in order. The audience for working papers and the reviewer brief is a credentialed professional, with no filing-ready output delivered directly to the taxpayer. Loading this reference alone does not remove the applicable domain and country-content requirements.
 
@@ -113,6 +159,44 @@ Follow workflow-base in order. The audience for working papers and the reviewer 
 Refuse the affected reliance request when it asks for filing-ready output without the credentialed reviewer, an invented 2026 rate or form, a fabricated DSN or employee allocation, automatic exemption from a zero headcount or dormancy, automatic penalties from the deleted wording, or unsupported treatment of another tax. Retain the supported historical source work and explain which complete authority or fact is missing; do not discard unrelated supported positions.
 
 The maintainer must qualify the relevant later Code amendments and current consolidation, exemption provisions, employee-counting/allocation rules, actual period and transition, current declaration/personnel instructions, necessary sanction/collection units and Articles 184 onward before expanding the held operational scope. Neither the pending review metadata nor successful arithmetic checks constitute professional verification or comprehensive BL coverage.
+
+## Filing and payment
+
+Actual filing, submission, payment and collection remain subject to the specific source conditions, complete companion content and refusal gates in this reference. Use the retained dated administration and form comparisons for explanation; they do not supply missing current directions or authorise an external action.
+
+## Completion checklist
+
+Current format revision: v0.2, edited 2 November 2026. This migration preserves the earlier draft's dated source content and revision records. It does not refresh law or confer professional review. Carry all outstanding source and operational holds through the working paper, reviewer brief, action list and review checklist.
+
+## Sources
+
+The table records the original reading evidence. A retrieval or capture is not a reading date. A reading bound is not an exact day. The retained library below controls extent, host, translation and source qualifications; formatting adds no new legal-source reading.
+
+| Source | URL | Read on |
+| --- | --- | --- |
+| S1. Official older Code des contributions | https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_a687c0be-3095-4dfc-8921-f4a19be57d68 | Exact reading day unrecorded; read by 2026-11-01 UTC |
+| S2. Délibération 2024-038 CT, 26 September 2024 | https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct.pdf | Exact reading day unrecorded; read by 2026-11-01 UTC |
+| S3. 2024-038 CT2 revision annex | https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct_annexe.pdf | Exact reading day unrecorded; read by 2026-11-01 UTC |
+| S4. Délibération 2024-075 CT, 20 December 2024 | https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_075_ct.pdf | Exact reading day unrecorded; read by 2026-11-01 UTC |
+| S5. Official CFAE declaration and personnel annex for 2025 | https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_34215943-1a4c-4fa5-b62e-45887b937b3b | Exact reading day unrecorded; retrieved 2026-11-01 UTC; both original pages checked |
+
+### Sources, periods and read bounds
+
+| Source | Complete relied units and read bounds | Limit |
+| --- | --- | --- |
+| **S1. [Official older Code des contributions](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_a687c0be-3095-4dfc-8921-f4a19be57d68)** | Complete 120-page capture; dated amendment list ends with 2021-047. Qualified selected original pp 1, 8–9 and 71, including complete Article 9 and Article 144. | Historical rate and rounding reference. No complete 2021–2026 amendment inventory, present consolidation or acceptance of adjacent provisions. |
+| **S2. [Délibération 2024-038 CT, 26 September 2024](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct.pdf)** | Entire 4-page decision, both articles and amendment dispositions. Article 1 adopts the attached Code revision; Article 2 mandates execution. Publication stamped 1 October 2024; executory stamp 17 October 2024. | These are distinct dates. No separate tax-year application or general transitional article appears in this complete decision. The annex remains necessary. |
+| **S3. [2024-038 CT2 revision annex](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_038_ct_annexe.pdf)** | Complete 38-page capture; only complete Articles 7, 10, 11 and 12 across physical pp 4–7 and complete Articles 156 and 158 across pp 32–33 are relied on. Original colour insertions and strike-through were checked. | Receipt/publication stamps 1 October 2024 and identifier ending 2024038CT2-DE match S2. This does not qualify all 38 pages, every amendment or the later chain. |
+| **S4. [Délibération 2024-075 CT, 20 December 2024](https://actes.eservices-comstbarth.fr/PJ/Deliberation%20CT/Deliberation%20CT_2024/2024_075_ct.pdf)** | Entire 3-page decision, both articles, the 5 quoted paragraphs replaced and the single replacement paragraph. Publication stamped 23 December 2024; executory stamp 8 January 2025. | Replaces specified opening Article 10 paragraphs, not the whole article. No separate tax-year application or general transitional article appears in the complete decision. |
+| **S5. [Official CFAE declaration and personnel annex for 2025](https://www.comstbarth.fr/in/rest/public/Attachment/attach_cmsUpload_34215943-1a4c-4fa5-b62e-45887b937b3b)** | Entire 2-page blank official form, retrieved 1 November 2026 UTC. Page 1 says 2025; page 2 says DSN du 31/12/2024. Both original pages checked after native text extraction returned empty. | Administrative evidence for 2025 only. Retrieval in 2026 does not make it a 2026 form or establish the current filing channel. Printed payment account details are not reproduced or validated here. |
+
+The separate earlier annex URL ending `2024_038ct_annexe.pdf` has different bytes, a CT identifier and 30 September 2024 stamps. S3 has the CT2 identifier and 1 October stamps matching S2. S2 does not name a filename, hash or correction history. This reference uses the identified CT2 selected units and makes no complete equivalence claim for the 2 variants.
+
+Native extraction omits some coloured insertions and OCR can combine struck and inserted wording. Neither is a substitute for the original redline pages. S2 records 13 votes for, none against and 6 abstentions; its closing 'Adoptée à l’unanimité' is followed by the 6 abstentions. It does not establish 19 affirmative votes. S4 records 12 for and 7 against. Adoption, publication, executory status, express commencement and application to an actual tax year must be distinguished.
+
+This reference establishes neither comprehensive BL coverage nor absence of other taxes. Residence, formation, payroll, social contributions, cross-border treatment, property, customs and other compliance require their own applicable complete sources and content. Adjacent provisions in the captured files are not adopted for those topics.
+
+Not yet confirmed: the complete operative chain and requested-period application, unresolved source conditions and administrative directions, exact reading days where unrecorded and professional verification. Retain every specific evidence gap, refusal and filing hold identified above.
 
 <!-- openaccountants-cta-block -->
 
