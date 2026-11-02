@@ -12,7 +12,7 @@ Concatenates, in order:
      (the roster of accountants on record, itself generated from index.json)
 
 Stdlib only. index.json and PARTNERS.md must be up to date first:
-    python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py
+    python3 scripts/build-index.py && python3 scripts/check-coverage-claims.py --write && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py
 """
 
 import json

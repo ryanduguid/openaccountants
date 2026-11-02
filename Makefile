@@ -11,7 +11,7 @@ PYTHON ?= python3
 # (fetch it first), or pass BASE=<rev>.
 BASE ?= $(shell git merge-base origin/main HEAD 2>/dev/null)
 
-.PHONY: help install build bundle validate sync-check checkers baselines test check
+.PHONY: help install build merge-main bundle validate sync-check checkers baselines test check
 
 help:  ## List the targets
 	@awk -F ':.*## ' '/^[a-z-]+:.*## /{printf "  make %-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -19,11 +19,15 @@ help:  ## List the targets
 install:  ## Install everything the generators, the gates and the tests need
 	$(PYTHON) -m pip install -r requirements-dev.txt
 
-build:  ## Regenerate packages/, index.json, PARTNERS.md and llms-full.txt from skills/
+build:  ## Regenerate packages/, index.json, the coverage figures, PARTNERS.md and llms-full.txt from skills/
 	$(PYTHON) scripts/build-packages.py
 	$(PYTHON) scripts/build-index.py
+	$(PYTHON) scripts/check-coverage-claims.py --write
 	$(PYTHON) scripts/build-partners.py
 	$(PYTHON) scripts/build-llms-full.py
+
+merge-main:  ## Merge origin/main (or REV=<rev>) into this branch and rebuild the derived files
+	$(PYTHON) scripts/merge-main.py $(REV)
 
 bundle:  ## One package plus its shared files as an upload-ready folder: make bundle JURISDICTION=us-ca
 	@test -n "$(JURISDICTION)" || { echo "make bundle: pass JURISDICTION=<package>, e.g. make bundle JURISDICTION=us-ca (python3 scripts/build-bundle.py --list shows them)" >&2; exit 1; }
