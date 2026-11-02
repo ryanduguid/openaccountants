@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-01T05:48:07+00:00",
+ "generated_at": "2026-11-02T14:52:47+00:00",
  "counts": {
-  "guides": 2011,
-  "jurisdictions": 292,
+  "guides": 2012,
+  "jurisdictions": 293,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -18517,6 +18517,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-30"
+  },
+  {
+   "slug": "vc-persons-abroad-contributions-reference",
+   "path": "skills/international/saint-vincent-and-the-grenadines/vc-persons-abroad-contributions-reference.md",
+   "name": "vc-persons-abroad-contributions-reference",
+   "jurisdiction": "VC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "ws-company-formation",
