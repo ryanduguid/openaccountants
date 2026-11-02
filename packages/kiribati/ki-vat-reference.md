@@ -15,8 +15,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established."
 tier: 2
-last_updated: 2026-10-31
-version: 0.1
+last_updated: 2026-11-02
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -25,7 +25,11 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Kiribati VAT Reference, 2026
+# Kiribati VAT Reference, 2026 (v0.2)
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Who this applies to
 
 Load this on top of `vat-workflow-base`. This file answers its section 7 slots so far as the sources allow. **It is incomplete as a country skill.** Slots 6, 7 and 13 have little or no Kiribati source. Use this file for rates, treatment, dates and briefing a local adviser. HOLD means the sources read do not establish the point, and no figure may be supplied for it from memory.
 
@@ -40,76 +44,42 @@ Load this on top of `vat-workflow-base`. This file answers its section 7 slots s
 
 All amounts are Australian dollars (Act s 48(1)). Foreign currency converts, for an import, at the rate applicable under the Customs Act for import duty and, otherwise, at the 'Reserve Bank of Australia mid-exchange rate' on the date the amount is taken into account (s 48(2)). No rounding rule was found: HOLD. The cents shown here are a drafting choice.
 
-## Slot 1: Standard rate
+### Refusal catalogue for every part of this reference
+
+- **Slot 8, refusals:**
+  - R-KI-1: treating a person as able to register voluntarily (s 9(5)).
+  - R-KI-2: gambling supplies (Regs 2014 reg 6) and prepaid telecommunications cards (reg 7).
+  - R-KI-3: foreign suppliers, electronic distribution platforms and electronically ordered goods.
+  - R-KI-4: going concern transfers (Sch 3 Part II para (1)).
+  - R-KI-5: diplomatic, international organisation and aid project refunds or cards (s 31; reg 11).
+  - R-KI-6: cancellation for turnover below the threshold, without the Board's confirmation.
+  - R-KI-7: lodgement-ready returns for a period with imported services or apportioned credit, or using boxes 6 or 14.
+  - R-KI-8: digital currency and tax avoidance determinations (s 47).
+
+## Rates, bands and thresholds
+
+| Item and conditions | Amount | Reference period | Official source |
+| --- | --- | --- | --- |
+| Taxable supply by a registered person, taxable import or imported services, subject to the retained charging and 2026 amendment conditions | 12.5% | Selected 2026 reference; requested-period chain remains held | https://tax.gov.ki/wp-content/uploads/2024/09/Value-Added-Tax-Act-No.14-of-2013.pdf ; https://www.president.gov.ki/images/Gazettes/2025/Value_Added_Tax_Amendment_Act_2025.pdf |
+| Legally established zero-rated supply under the applicable schedule; classification is not inferred | 0% | Selected 2026 reference; schedule and source conditions below apply | https://tax.gov.ki/wp-content/uploads/2024/09/Value-Added-Tax-Act-No.14-of-2013.pdf ; https://www.president.gov.ki/images/Gazettes/2026/VAT_Regulation.pdf |
+
+### Slot 1: Standard rate
 
 12.5% on a taxable supply by a registered person, a taxable import and a supply of imported services (Act s 7(1), (3)(b)). The Act applies to supplies and imports on or after 1 January 2014 (s 1(2)). The 2025 Act's amendment of s 7 touches s 7(7) only, and no other section read changes the rate.
 
 **Tax fraction:** r / (1 + r) (s 2). `0.125 ÷ 1.125 = 1/9` (computed), so tax-inclusive VAT is the amount divided by 9, as return boxes 5 and 11 do. Where no separate VAT is identified, value is A - (A x B), B being the tax fraction (s 17(4)).
 
-## Slot 2: Reduced rate
+### Slot 2: Reduced rate
 
 None. Section 7(3) has only zero percent for a zero-rated supply and 12.5% otherwise.
 
-## Slot 3: Return form
+## The base
 
-Form RET 020, 'Value Added Tax Return', is captured with 16 boxes. It is undated and cites 'VAT Act 2014'. Instructions exist in I-Kiribati only. The gist below is a reading of that text, not a certified translation.
-
-| Box | Form label | Instruction, in gist |
-|---|---|---|
-| 1 | Total Sales and Income including VAT | All sales, including zero-rated and exempt, and VAT-inclusive sales to Government even where VAT is withheld |
-| 2 | Zero-Rated Supplies | Exports and other Third Schedule supplies |
-| 3 | Exempt Supplies | Second Schedule supplies, such as uncooked rice and wheat flour |
-| 4 | Box 1 less boxes 2 and 3 | Sales bearing VAT |
-| 5 | Box 4 divided by 9 | VAT for the quarter |
-| 6 | Adjustments to VAT Collected | Corrections; needs the Board's permission or an explanatory letter first |
-| 7 | Boxes 5 and 6 | Total VAT Collected |
-| 8 | Total Purchases and Expenses including VAT | Excludes the cost of imports and VAT paid to Customs |
-| 9 | Non-creditable Acquisitions | Purchases with no VAT, such as uncooked rice or purchases from unregistered businesses; salaries and wages may go here |
-| 10 | Box 8 less box 9 | |
-| 11 | Box 10 divided by 9 | |
-| 12 | VAT on Imports Paid to Customs | |
-| 13 | Government Withheld VAT | VAT withheld by Government, so that it is not paid twice |
-| 14 | Adjustments to VAT Paid | Corrections as for box 6; also the 'one off' import duty credit on documentary evidence (inference: Act s 54(4), a transitional rule from VAT's introduction, so check its dates before any use in 2026) |
-| 15 | Boxes 11, 12, 13 and 14 | Total VAT Paid |
-| 16 | Difference between boxes 7 and 15 | Box 7 larger: VAT to pay. Box 15 larger: VAT credit |
-
-**HOLD:**
-
-- The form has no line for component B of s 29 (VAT on imported services) and no apportionment line. It appears to predate the 2025 Act (inference).
-- Box 9's instruction names only purchases with no VAT, but boxes 8 to 11 would credit every other purchase. Inference from its label, 'Non-creditable Acquisitions': entertainment and other s 26 purchases, and purchases wholly for exempt supplies (Regs 2014 reg 8(1)(b)), also go in box 9.
-- The form has no line for credit brought forward. Box 16 says 'VAT credit', whilst its instruction says 'refund' ('okiriko'). Apply s 30: carry forward first, and do not treat a box 16 credit as an immediate refund. Ask the Tax Division where to enter credit brought forward.
-- The form says 'Please include any late payment penalties for this period with your payment'. RAA s 68(4) makes a person liable for penalty only once it is assessed and served. Apply s 68(4) and flag the wording.
-- Do not assign imported services or apportioned credit to a box without the Tax Division's instruction. See R-KI-7.
-- No form was found for the s 38(2) liability notice.
-- Box 1 asks for all sales and income, and boxes 2 and 3 remove only zero-rated and exempt supplies. Applied literally to receipts outside VAT, such as sales through a foreign branch, box 5 would overstate output tax. Do not map these automatically: ask the Tax Division.
-
-## Slot 4: Portal
-
-No online filing system was found in the sources. The form says 'Return to Internal Revenue Board', P.O. Box 67, Bairiki, Tarawa, and the guidelines say a completed return is filed at the Tax office, signed by the owner or an authorised person with a consent letter. Documents must be delivered 'by personal delivery or normal post to an office of the Board' (RAA s 58; Regs 2014 reg 13), so post is available. The Board may establish electronic filing (RAA s 60); no procedure was found: HOLD electronic filing.
-
-## Slot 5: Deadlines
-
-| Item | Rule | Source |
-|---|---|---|
-| VAT period | 3 months ending on the last day of March, June, September and December | Act s 2 |
-| Return | 'within 15 days after the end of the period' | Act s 38(1), renumbered by 2025 Act s 27 |
-| Payment | 'payable by the due date for filing the VAT return' | Act s 39(1) |
-| Unregistered business, imported services (from 1 January 2026) | Liability notice within 15 days after the period; payment by the same date. The notice counts as a tax return and self-assessment return | Act ss 38(2), (3), 39(3); 2025 Act ss 27, 28 |
-| Taxable import | At the time of import | Act s 39(2) |
-| Government withholding | The Government entity pays within 15 days after the calendar month of its payment | Act s 43(1) |
-| Final return on cancellation | Within 15 days after the cancellation date | Act s 11(5)(b) |
-| Weekend or public holiday | The next business day | RAA s 61 |
-| Extension to file | Apply before the due date; 'does not change the date for payment' | RAA s 15 |
-
-For the 2026 periods: 15 January 2026 (a Thursday) for December 2025; 15 April 2026 (a Wednesday) for March; 15 July 2026 (a Wednesday) for June; 15 October 2026 (a Thursday) for September; 15 January 2027 (a Friday) for December. No holiday calendar was read, so check each date against RAA s 61.
-
-**Administrative conflict:** the due-dates leaflet's filing table says 'after end of the month' for the quarterly return, whilst its payment table says quarter. The filing obligations leaflet and guidelines say quarter. Act s 38(1) governs.
-
-## Accounting basis (HOLD on unpaid invoices)
+### Accounting basis (HOLD on unpaid invoices)
 
 Output tax is 'the VAT received' (s 2), component A of s 29 is output tax 'received or deemed to have been received', and credit is allowed in the period the input tax 'is paid' (s 25(2)). The Explanatory Memorandum says net VAT is 'accounted for on a payments basis' (p 48). Yet s 7(4) says liability arises at the time of supply, which is the earlier of invoice and payment (s 14(1)). Section 7(4) itself continues that the VAT is accounted for under s 39(1), which refers to net VAT under s 29, so it leads back to the 'received' test. Section 22(1) treats lay-by output tax as 'received' on delivery, and 'received' includes amounts applied on the person's behalf (s 2). Inference: an invoice unpaid at quarter end does not yet enter the return. Against that, box 1 asks for 'Total Sales and Income' and reg 8(1)(c) tests supplies 'made' in the period, so neither clearly follows receipts. Have the Tax Division confirm this. The worked examples assume receipts and payments in the same period.
 
-## Registration
+### Registration
 
 **Must apply (Act s 8(1)):**
 
@@ -145,7 +115,7 @@ Output tax is 'the VAT received' (s 2), component A of s 29 is output tax 'recei
 
 **HOLD, falling below the threshold:** the substituted s 11(1) to (3) drops the former limb for turnover below the threshold, yet the 2025 Explanatory Memorandum says s 11 provides a notification procedure where annual value falls below the threshold. Text and memorandum differ. See R-KI-6.
 
-## Taxable supply, place, time and value
+### Taxable supply, place, time and value
 
 **Taxable supply:** a supply, other than an exempt supply, made in Kiribati in the course or furtherance of an enterprise (s 2). An enterprise excludes employment and hobbies (s 3(2)). From 2026, 'Kiribati' includes the archipelago waters, territorial sea and exclusive economic zone (2025 Act s 4(6)).
 
@@ -179,7 +149,7 @@ Output tax is 'the VAT received' (s 2), component A of s 29 is output tax 'recei
 
 **Pricing:** to an unregistered person, prices are VAT-inclusive, with a sign or invoice notice, and invoices state whether the supply is taxable or exempt and the rate (s 37). Government entities within para (a) of the definition withhold VAT on supplies to them, which discharges the supplier (s 43).
 
-## Exempt supplies
+### Exempt supplies
 
 The Second Schedule para (1) now reads as follows. Do not read the Act's printed list alone.
 
@@ -203,7 +173,7 @@ The Second Schedule para (1) now reads as follows. Do not read the Act's printed
 - **Conflict on SOEs:** IMF Country Report 26/099, not law, says 'the VAT (Amendment) Act requires SOEs to pay VAT' and that exemptions in SOE-specific laws create inconsistencies. No amendment or repeal of para (1)A appears in the 2025 Act as read. Apply the text and have the Tax Division confirm before relying on the exemption. The same report says the RAA is under review.
 - An exemption in another Act or agreement does not exempt from VAT unless this Act provides it (s 50(2)).
 
-## Zero-rated supplies
+### Zero-rated supplies
 
 **Part I (exports):** an export of goods with documentary proof acceptable to the Board; consumable stores for an aircraft or ship leaving Kiribati or a fishing vessel going outside Kiribati waters; goods and services for temporarily imported goods; services for use or consumption outside Kiribati with documentary proof; telecommunications services supplied by a resident telecommunications supplier to a non-resident telecommunications supplier, or initiated from outside Kiribati; international transport services, not ancillary transport services; and a fishing licence used principally to make exports of fish (Sch 3 Part I; Regs 2014 reg 20(a)). Goods re-imported, or to be re-imported, do not qualify under para (1)(a) or (b) only (para (2)).
 
@@ -215,7 +185,7 @@ The Second Schedule para (1) now reads as follows. Do not read the Act's printed
 
 Zero rating of the menstrual products is an inference: the Regulations insert them in Part II, whose heading and introductory words make its supplies zero-rated. **Numbering conflict:** the 2025 Regs insert a new para (2) after 'paragraph 1(d)' although Regs 2014 reg 20 already added a para (2). Both appear to stand (inference).
 
-## Conflict with the August 2024 leaflet
+### Conflict with the August 2024 leaflet
 
 The leaflet says it is compiled from the Act, Regs 2014 and the 2016 Regs. Its rice, flour, kerosene, bicycle, mosquito net, benzol, oil No. 50 and exercise book items, and its 4 litre, 2.25 litre and $200 private use figures, trace to Regs 2014 regs 18 and 19, and its SOE and Council item traces to the 2016 Regs. On those items the printed Schedules are out of date and the leaflet is right. **Differences remain and are held. Apply the instrument text and flag each:**
 
@@ -235,7 +205,7 @@ This table lists the differences found and may not be exhaustive.
 
 Regs 2014 reg 1 starts the Regulations with the Act, on a date before they were made. They are dated 10 April 2014, handwritten on page 14 (page image). Section 51(3) gives retrospective effect only to transitional regulations. This affects early 2014 only: HOLD for those periods.
 
-## Input tax
+### Input tax
 
 **Entitlement:** credit for input tax on a creditable acquisition to the extent it was for making taxable supplies, as determined at the time of acquisition (s 25(1)). A creditable acquisition is a taxable supply by another registered person, a taxable import or, from 2026, a supply of imported services (s 2; 2025 Act s 4(2)). Zero-rated supplies are taxable supplies (s 7(3)(a)).
 
@@ -266,7 +236,7 @@ The test uses values for each VAT period, whereas the leaflet speaks of 'sales';
 - New registrants: in the first return, input tax paid on goods held at registration for making taxable supplies, if held as inventory at the end of the day before registration, acquired in a creditable acquisition no more than 4 months before registration, with documentary evidence satisfactory to the Board that input tax was paid (s 27(1)). Stock sold before registration does not qualify.
 - Second-hand goods: only for a 'second-hand goods supplier', a registered person whose enterprise 'principally involves the re-supply of second-hand goods in substantially the same state' (s 20(5)). An ordinary trader gets no credit on a purchase from an unregistered seller. The dealer's taxable supply must be by way of a sale or exchange, of goods bought from an unregistered person and previously used by an unregistered person in Kiribati, resold in substantially the same state, and their supply to the dealer must not be exempt or zero-rated (s 20(1), (5); 2025 Act s 18). Deemed input tax is the tax fraction of the price, credited when the resale occurs (s 20(2)). The dealer keeps a record whose contents depend on regulations not found (s 20(4)). The Act's trade-in rule is s 20(3).
 
-## Tax invoices and records
+### Tax invoices and records
 
 From 2026, a registered person making a taxable supply 'to another person' issues the original tax invoice at the time of supply, with the particulars in the Regulations (s 32(1) substituted; before 2026, only to registered persons). Other than for gambling (Regs 2014 reg 6(5)):
 
@@ -285,7 +255,79 @@ From 2026, a registered person making a taxable supply 'to another person' issue
 
 **Records:** the documents in s 36(3) and the books in Regs 2014 reg 12, including VAT accounts, ledgers, invoices, cash register rolls and bank statements, kept in Kiribati, in English, for 7 years after the tax period (RAA s 13). Issued documents are kept in chronological order (s 36(4)). The leaflet's 'after the tax year' differs from 'tax period': follow the RAA.
 
-## Interest, penalties and offences
+### Refunds
+
+- **Excess credit:** carried forward to the next period and the next, earliest first; any amount still uncredited is refunded on written application in the approved form under the RAA (s 30(1), (2)). The memorandum says 2 VAT periods (p 48).
+- **Time limit from 2026:** 'within 1 year after the end of the second VAT period', or the uncredited amount 'is reduced to zero' (s 30(4), (5); 2025 Act s 24). Inference: the second period is the second of the carry-forward periods.
+- **Regular excess:** where excess credits are 'a regular feature' of the enterprise, the Board must refund within 30 days after filing, on written application (s 30(3)). The memorandum's example is an exporter (p 48). Section 30(4) names only s 30(1)(b).
+- **Overpaid tax:** claim within 3 years of the end of the tax period (RAA s 42). HOLD whether this can reach a credit reduced to zero under s 30(5). Inference: it cannot, as that is not tax paid in excess.
+- **Cancellation:** s 11A above.
+- **Diplomats, international organisations, aid contractors:** s 31; Regs 2014 reg 11 (R-KI-5).
+
+## Deadlines and filing
+
+### Slot 3: Return form
+
+Form RET 020, 'Value Added Tax Return', is captured with 16 boxes. It is undated and cites 'VAT Act 2014'. Instructions exist in I-Kiribati only. The gist below is a reading of that text, not a certified translation.
+
+| Box | Form label | Instruction, in gist |
+|---|---|---|
+| 1 | Total Sales and Income including VAT | All sales, including zero-rated and exempt, and VAT-inclusive sales to Government even where VAT is withheld |
+| 2 | Zero-Rated Supplies | Exports and other Third Schedule supplies |
+| 3 | Exempt Supplies | Second Schedule supplies, such as uncooked rice and wheat flour |
+| 4 | Box 1 less boxes 2 and 3 | Sales bearing VAT |
+| 5 | Box 4 divided by 9 | VAT for the quarter |
+| 6 | Adjustments to VAT Collected | Corrections; needs the Board's permission or an explanatory letter first |
+| 7 | Boxes 5 and 6 | Total VAT Collected |
+| 8 | Total Purchases and Expenses including VAT | Excludes the cost of imports and VAT paid to Customs |
+| 9 | Non-creditable Acquisitions | Purchases with no VAT, such as uncooked rice or purchases from unregistered businesses; salaries and wages may go here |
+| 10 | Box 8 less box 9 | |
+| 11 | Box 10 divided by 9 | |
+| 12 | VAT on Imports Paid to Customs | |
+| 13 | Government Withheld VAT | VAT withheld by Government, so that it is not paid twice |
+| 14 | Adjustments to VAT Paid | Corrections as for box 6; also the 'one off' import duty credit on documentary evidence (inference: Act s 54(4), a transitional rule from VAT's introduction, so check its dates before any use in 2026) |
+| 15 | Boxes 11, 12, 13 and 14 | Total VAT Paid |
+| 16 | Difference between boxes 7 and 15 | Box 7 larger: VAT to pay. Box 15 larger: VAT credit |
+
+**HOLD:**
+
+- The form has no line for component B of s 29 (VAT on imported services) and no apportionment line. It appears to predate the 2025 Act (inference).
+- Box 9's instruction names only purchases with no VAT, but boxes 8 to 11 would credit every other purchase. Inference from its label, 'Non-creditable Acquisitions': entertainment and other s 26 purchases, and purchases wholly for exempt supplies (Regs 2014 reg 8(1)(b)), also go in box 9.
+- The form has no line for credit brought forward. Box 16 says 'VAT credit', whilst its instruction says 'refund' ('okiriko'). Apply s 30: carry forward first, and do not treat a box 16 credit as an immediate refund. Ask the Tax Division where to enter credit brought forward.
+- The form says 'Please include any late payment penalties for this period with your payment'. RAA s 68(4) makes a person liable for penalty only once it is assessed and served. Apply s 68(4) and flag the wording.
+- Do not assign imported services or apportioned credit to a box without the Tax Division's instruction. See R-KI-7.
+- No form was found for the s 38(2) liability notice.
+- Box 1 asks for all sales and income, and boxes 2 and 3 remove only zero-rated and exempt supplies. Applied literally to receipts outside VAT, such as sales through a foreign branch, box 5 would overstate output tax. Do not map these automatically: ask the Tax Division.
+
+### Slot 4: Portal
+
+No online filing system was found in the sources. The form says 'Return to Internal Revenue Board', P.O. Box 67, Bairiki, Tarawa, and the guidelines say a completed return is filed at the Tax office, signed by the owner or an authorised person with a consent letter. Documents must be delivered 'by personal delivery or normal post to an office of the Board' (RAA s 58; Regs 2014 reg 13), so post is available. The Board may establish electronic filing (RAA s 60); no procedure was found: HOLD electronic filing.
+
+### Slot 5: Deadlines
+
+| Item | Rule | Source |
+|---|---|---|
+| VAT period | 3 months ending on the last day of March, June, September and December | Act s 2 |
+| Return | 'within 15 days after the end of the period' | Act s 38(1), renumbered by 2025 Act s 27 |
+| Payment | 'payable by the due date for filing the VAT return' | Act s 39(1) |
+| Unregistered business, imported services (from 1 January 2026) | Liability notice within 15 days after the period; payment by the same date. The notice counts as a tax return and self-assessment return | Act ss 38(2), (3), 39(3); 2025 Act ss 27, 28 |
+| Taxable import | At the time of import | Act s 39(2) |
+| Government withholding | The Government entity pays within 15 days after the calendar month of its payment | Act s 43(1) |
+| Final return on cancellation | Within 15 days after the cancellation date | Act s 11(5)(b) |
+| Weekend or public holiday | The next business day | RAA s 61 |
+| Extension to file | Apply before the due date; 'does not change the date for payment' | RAA s 15 |
+
+For the 2026 periods: 15 January 2026 (a Thursday) for December 2025; 15 April 2026 (a Wednesday) for March; 15 July 2026 (a Wednesday) for June; 15 October 2026 (a Thursday) for September; 15 January 2027 (a Friday) for December. No holiday calendar was read, so check each date against RAA s 61.
+
+**Administrative conflict:** the due-dates leaflet's filing table says 'after end of the month' for the quarterly return, whilst its payment table says quarter. The filing obligations leaflet and guidelines say quarter. Act s 38(1) governs.
+
+### Delivery holds
+
+Tier 2 draft pending review by a Kiribati adviser. It establishes no filing readiness. Output is a working paper. Its 2026 completeness depends on the gaps below and on the RAA's commencement and amendments, so check the Gazette and any consolidation first. Not read or not found: instruments called for by the 2025 Act (digital currency, second-hand records, Customs documentation, updated invoice particulars); any amending instrument from 2014 to 2024 other than Regs 2014 and the 2016 Regs; any instrument after the 2025 Act; the Income Tax Act 2023, State Owned Enterprises Act, Customs Act 2019, Excise Act 2013 and the Ministry's customs exemption policy; rulings and administrative practice.
+
+## Penalties and interest
+
+### Interest, penalties and offences
 
 | Item | Rule | Source |
 |---|---|---|
@@ -316,16 +358,9 @@ From 2026, a registered person making a taxable supply 'to another person' issue
 - Section 44(2)(b) still says 'apply for cancellation', whilst s 11 now says notify.
 - RAA s 34 gives no daily method. Counting interest per day on a 365 day year is a drafting assumption.
 
-## Refunds
+## Cross-border points
 
-- **Excess credit:** carried forward to the next period and the next, earliest first; any amount still uncredited is refunded on written application in the approved form under the RAA (s 30(1), (2)). The memorandum says 2 VAT periods (p 48).
-- **Time limit from 2026:** 'within 1 year after the end of the second VAT period', or the uncredited amount 'is reduced to zero' (s 30(4), (5); 2025 Act s 24). Inference: the second period is the second of the carry-forward periods.
-- **Regular excess:** where excess credits are 'a regular feature' of the enterprise, the Board must refund within 30 days after filing, on written application (s 30(3)). The memorandum's example is an exporter (p 48). Section 30(4) names only s 30(1)(b).
-- **Overpaid tax:** claim within 3 years of the end of the tax period (RAA s 42). HOLD whether this can reach a credit reduced to zero under s 30(5). Inference: it cannot, as that is not tax paid in excess.
-- **Cancellation:** s 11A above.
-- **Diplomats, international organisations, aid contractors:** s 31; Regs 2014 reg 11 (R-KI-5).
-
-## Imports
+### Imports
 
 - **Exempt imports (Sch 1, as amended by reg 18):** by a passenger or crew member, non-commercial goods up to AUD $200, not more than 200 cigarettes or 250 grams of tobacco products, a combination of not more than 250 grams, not more than 4 litres of wine and 2.25 litres of other alcohol; ship and aircraft stores; a single consignment 'for private use up to a maximum value of' AUD $200; diplomatic and international organisation imports to the extent provided; goods whose supply in Kiribati would be exempt or zero-rated; and goods on which no customs duty is payable under the Ministry's exemption policy, which was not held (HOLD its contents).
 - **Value:** customs value, plus services treated as part of the import, 'including' freight and insurance from 2026, plus duty, excise and other charges other than VAT (s 24(1); 2025 Act s 21, which the memorandum calls CIF). Goods re-imported after export for repair, renovation or improvement: the increase in value, only if their form or character and their ownership have not changed; otherwise s 24(1) applies (s 24(2)).
@@ -333,7 +368,7 @@ From 2026, a registered person making a taxable supply 'to another person' issue
 - **Electronically ordered goods:** not a taxable import where a registered supplier or platform has collected the VAT in advance (s 2 as amended). The supplier gives Customs documentation specified in Regulations not found (s 39(4)).
 - **HOLD:** Regs 2014 reg 14(b) cites Customs Act sections and $500 and $20 limits, but the Customs Act reference is now 2019 (2025 Act s 4(3)). Those section numbers were not checked.
 
-## Imported services and non-residents (from 1 January 2026)
+### Imported services and non-residents (from 1 January 2026)
 
 **Imported services:** a supply to a registered person or unregistered business, by a person outside Kiribati with no place of business there, that is not a taxable supply only because it is not made in Kiribati and would be taxable if it were (s 6(1) as amended). Former para (e) is gone, so a fully taxable registered person is now within it. Section 18 is repealed.
 
@@ -345,7 +380,7 @@ From 2026, a registered person making a taxable supply 'to another person' issue
 
 **Foreign suppliers and platforms:** ss 15(2), (3), 16(2) to (2D), 16A, 26(1A), 41 and 48(3) to (5). Residence uses at least 2 of 6 indicators (s 16(2A)). The substituted s 41 removes the general duty on non-residents without a fixed place to appoint a representative: the Commissioner may require security on reasonable grounds of expected non-compliance, then a representative if the supplier fails. Regs 2014 reg 15 still refers to 'non-resident' for s 41: HOLD. See R-KI-3.
 
-## Slot 6: Supplier patterns (partial)
+### Slot 6: Supplier patterns (partial)
 
 The base requires 25 entries. The sources name classes, not bank-statement payees. This slot is not met.
 
@@ -358,26 +393,9 @@ The base requires 25 entries. The sources name classes, not bank-statement payee
 | Customs: VAT on import | Box 12, with Customs document | ss 25(4)(a), 40 |
 | Government department paying a registered supplier | Withholds; box 13 | s 43 |
 
-## Slots 7 to 10, 12 to 15
+## Two worked examples that recompute
 
-- **Slot 7, exclusions:** employment is outside an enterprise (s 3(2)(a)), and the instructions let wages go in box 9. Money is outside goods and services (s 2). No local bank patterns were found.
-- **Slot 8, refusals:**
-  - R-KI-1: treating a person as able to register voluntarily (s 9(5)).
-  - R-KI-2: gambling supplies (Regs 2014 reg 6) and prepaid telecommunications cards (reg 7).
-  - R-KI-3: foreign suppliers, electronic distribution platforms and electronically ordered goods.
-  - R-KI-4: going concern transfers (Sch 3 Part II para (1)).
-  - R-KI-5: diplomatic, international organisation and aid project refunds or cards (s 31; reg 11).
-  - R-KI-6: cancellation for turnover below the threshold, without the Board's confirmation.
-  - R-KI-7: lodgement-ready returns for a period with imported services or apportioned credit, or using boxes 6 or 14.
-  - R-KI-8: digital currency and tax avoidance determinations (s 47).
-- **Slot 9, questions:** taxable supplies in the last 12 months and expected in the next 12; associates; imported services and their use; exempt share of supplies; entertainment purpose; Government customers; invoice or cash timing.
-- **Slot 10, defaults:** keep input tax out where the document is missing (s 25(3)) or entertainment use is unknown. This is a drafting choice, not Kiribati law.
-- **Slot 12, template:** the 16 boxes in Slot 3.
-- **Slot 13, red flags:** no source. Use the base's general flags without a local figure.
-- **Slot 14, inputs:** sales and purchase records, tax invoices, bills of entry, withheld VAT records, prior period credit.
-- **Slot 15:** no source.
-
-## Slot 11: Worked examples (fictional)
+### Slot 11: Worked examples (fictional)
 
 Tarawa Bluewave Traders Ltd is registered. Prices include VAT unless stated. Receipts and payments fall in the period. The base's bank-statement requirement is not met.
 
@@ -423,11 +441,79 @@ Check by s 29, excluding withheld VAT from A: `(11,250 - 1,250) - (3,000 + 2,000
 
 This is not an assessed amount. It assumes interest counted daily on a 365 day year, and assessment and service of the penalties (RAA s 68(4)). No interest is shown on the penalties because they are due only on the date in the notice (RAA s 68(6)); interest would run if they stayed unpaid after it. No holiday shift is assumed.
 
-## Delivery holds
+### Recompute the retained hypothetical positions
 
-Tier 2 draft pending review by a Kiribati adviser. It establishes no filing readiness. Output is a working paper. Its 2026 completeness depends on the gaps below and on the RAA's commencement and amendments, so check the Gazette and any consolidation first. Not read or not found: instruments called for by the 2025 Act (digital currency, second-hand records, Customs documentation, updated invoice particulars); any amending instrument from 2014 to 2024 other than Regs 2014 and the 2016 Regs; any instrument after the 2025 Act; the Income Tax Act 2023, State Owned Enterprises Act, Customs Act 2019, Excise Act 2013 and the Ministry's customs exemption policy; rulings and administrative practice.
+The following blocks recompute 2 of the positions above using exactly their supplied premises. They are separate arithmetic exercises. The original classification, period, source, currency, precision and operational holds remain applicable. A nil or negative arithmetic component does not resolve an unknown liability or establish an exemption, refund or amount to pay.
+
+```oa-check
+name: KI existing tax inclusive ordinary sale
+inputs:
+  total: 1125
+steps:
+  - tax: total / 9
+  - value: total - tax
+  - check: value * 0.125
+expected:
+  tax: 125
+  value: 1000
+  check: 125
+tolerance: 0.000001
+```
+
+```oa-check
+name: KI existing lower mixed use ratio component
+inputs:
+  eligible_common_input: 900
+  taxable_fraction: 0.7
+steps:
+  - credit_component: eligible_common_input * taxable_fraction
+expected:
+  credit_component: 630
+tolerance: 0.000001
+```
+
+## Ask the client first
+
+1. What obligation and period are requested, and is the work a dated source explanation or an actual engagement?
+2. Which person, entity, residence, territorial and establishment facts determine the applicable scope?
+3. Which activities, transactions, units, values and event dates are supported by redacted records?
+4. Which operative sources, classifications, exemptions, amendments and case-specific decisions have been established?
+5. Which prior-period, eligibility, input, deduction, credit, payment and other-component records affect this job?
+6. Which complete companion content, professional reviewer, current forms and filing or collection directions are available?
+
+### Slots 7 to 10, 12 to 15
+
+- **Slot 7, exclusions:** employment is outside an enterprise (s 3(2)(a)), and the instructions let wages go in box 9. Money is outside goods and services (s 2). No local bank patterns were found.
+- **Slot 8, refusals:** Apply the refusal catalogue under 'Who this applies to'.
+- **Slot 9, questions:** taxable supplies in the last 12 months and expected in the next 12; associates; imported services and their use; exempt share of supplies; entertainment purpose; Government customers; invoice or cash timing.
+- **Slot 10, defaults:** keep input tax out where the document is missing (s 25(3)) or entertainment use is unknown. This is a drafting choice, not Kiribati law.
+- **Slot 12, template:** the 16 boxes in Slot 3.
+- **Slot 13, red flags:** no source. Use the base's general flags without a local figure.
+- **Slot 14, inputs:** sales and purchase records, tax invoices, bills of entry, withheld VAT records, prior period credit.
+- **Slot 15:** no source.
 
 ## Sources
+
+The table records the original reading evidence. A retrieval or capture is not a reading date. A reading bound is not an exact day. The retained library below controls extent, host, translation and source qualifications; formatting adds no new legal-source reading.
+
+| Source | URL | Read on |
+| --- | --- | --- |
+| Value Added Tax Act 2013 | https://tax.gov.ki/wp-content/uploads/2024/09/Value-Added-Tax-Act-No.14-of-2013.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Value Added Tax (Amendment) Act 2025 | https://www.president.gov.ki/images/Gazettes/2025/Value_Added_Tax_Amendment_Act_2025.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Value Added Tax Regulations 2014 | https://tax.gov.ki/wp-content/uploads/2024/09/VAT-Regulation.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Exempt Supplies Regulations 2016 | https://tax.gov.ki/wp-content/uploads/2024/09/2016-Exempt-Supplies-Regulation-for-Sect-51-of-VAT-Act-2013.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Value Added Tax (Amendment of Third Schedule) Regulations 2025 | https://www.president.gov.ki/images/Gazettes/2026/VAT_Regulation.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Revenue Administration Act 2013 | https://www.paclii.org/ki/legis/num_act/raa2013256/ | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| IMF Country Report 26/099 | https://www.elibrary.imf.org/view/journals/002/2026/099/article-A001-en.xml | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Exempt and zero-rated supplies, August 2024 | https://tax.gov.ki/wp-content/uploads/2025/05/Exempt-0-rated-supplies_AUG-2024-1.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| VAT return form | https://tax.gov.ki/wp-content/uploads/2025/05/VAT-Return-Form.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| VAT return instruction | https://tax.gov.ki/wp-content/uploads/2025/05/Kiribati-VAT-return-instruction.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Guidelines and obligations | https://tax.gov.ki/wp-content/uploads/2025/05/Guidelines-Obligations-for-VAT-Registered-Businesses.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Due dates, offences and penalties | https://tax.gov.ki/wp-content/uploads/2024/09/Due-Dates-Offences-Panalties.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Due dates poster | https://tax.gov.ki/wp-content/uploads/2024/09/Due-Dates-Public-Notice-Poster.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+| Filing obligations | https://tax.gov.ki/wp-content/uploads/2024/09/Filing-Obligations-new.pdf | 2026-10-31; local copies read that day; captured 2026-10-28 and 2026-10-30 |
+
+### Sources
 
 Retrieval date: 31 October 2026. Local copies were read that day, captured from these URLs on 28 and 30 October 2026.
 
@@ -439,6 +525,8 @@ Retrieval date: 31 October 2026. Local copies were read that day, captured from 
 - [Revenue Administration Act 2013](https://www.paclii.org/ki/legis/num_act/raa2013256/), PacLII, a non-official host, as enacted
 - [IMF Country Report 26/099](https://www.elibrary.imf.org/view/journals/002/2026/099/article-A001-en.xml), secondary and not law, for the SOE conflict only
 - Tax Division: [Exempt and zero-rated supplies, August 2024](https://tax.gov.ki/wp-content/uploads/2025/05/Exempt-0-rated-supplies_AUG-2024-1.pdf); [VAT return form](https://tax.gov.ki/wp-content/uploads/2025/05/VAT-Return-Form.pdf); [VAT return instruction](https://tax.gov.ki/wp-content/uploads/2025/05/Kiribati-VAT-return-instruction.pdf); [Guidelines and obligations](https://tax.gov.ki/wp-content/uploads/2025/05/Guidelines-Obligations-for-VAT-Registered-Businesses.pdf); [Due dates, offences and penalties](https://tax.gov.ki/wp-content/uploads/2024/09/Due-Dates-Offences-Panalties.pdf); [Due dates poster](https://tax.gov.ki/wp-content/uploads/2024/09/Due-Dates-Public-Notice-Poster.pdf); [Filing obligations](https://tax.gov.ki/wp-content/uploads/2024/09/Filing-Obligations-new.pdf)
+
+Not yet confirmed: the complete operative chain and requested-period application, unresolved source conditions and administrative directions, exact reading days where unrecorded and professional verification. Retain every specific evidence gap, refusal and filing hold identified above.
 
 <!-- openaccountants-cta-block -->
 

@@ -14,8 +14,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026 periods. FSM Code 2014 Title 54 Chs 1 and 9 and Title 53 Subtitle II, with s 112 read as re-enacted by PL 18-118 (from 1 April 2015) and PL 21-250 (from 1 January 2021), and T53 s 603 checked against PL 15-73 and PL 16-10. Law read as at captures of 25 to 31 October 2026. No 2026 consolidation found. Index titles show no later Act on the sections used, which is not proof of none. Section 114 regulations not found. FSMSSA Regulations No. 03 are dated 1 May 2012."
 tier: 2
-last_updated: 2026-11-01
-version: 0.4
+last_updated: 2026-11-02
+version: 0.5
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -25,7 +25,11 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Federated States of Micronesia National Tax and Social Security Reference, 2026
+# Federated States of Micronesia National Tax and Social Security Reference, 2026 (v0.5)
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Who this applies to
 
 Load this on top of the base files above. It answers their slots so far as the sources allow. **It is incomplete as a country skill.** The Slot coverage table shows what is missing. Use this file for rates, due dates, treatment and briefing a local adviser. HOLD means the sources read do not establish the point, and no figure may be supplied for it from memory.
 
@@ -42,15 +46,15 @@ Load this on top of the base files above. It answers their slots so far as the s
 
 All amounts are stated in dollars. The sources read do not separately name the currency: HOLD. T54 has no rounding rule in Chs 1 or 9: HOLD. T53 s 603(15) says remuneration 'shall, as may be prescribed by regulations, be computed to the nearest dollar', and no such regulation was found in the Regs. The cents shown here are a drafting choice.
 
-## National VAT: none found in the selected sources
+### National VAT: none found in the selected sources
 
 No national VAT was found. T54 Chs 1 to 9 as listed in the Code contain none, and the Act titles read add no VAT. The national tax on business is the gross revenue tax, which the Code's annotation says 'is distinguishable from a sales tax in several ways' (*Ponape Fed'n of Coop. Ass'ns v. FSM*, 2 FSM R. 124, 127). The only VAT text read is in PL 17-50 (see Chapter 8 below), where the VAT is a condition about state legislation. Treat absence as established only on these sources.
 
-## State taxes
+### State taxes
 
 The 4 states have unlike taxes, in separate instruments, and this guide does not cover them. A national result here does not mean no state tax is due. See R-FM-2.
 
-## Chapter 8 replacement revenue law: do not use
+### Chapter 8 replacement revenue law: do not use
 
 - PL 17-50 (1 May 2012) enacted a Revenue Administration Act of 2012 in T54 Ch 8. Its s 934 made the Act 'null and void' if any of the 4 states had not passed VAT legislation by midnight 19 April 2013.
 - PL 18-16 moved that date to 31 March 2014. PL 18-51 (31 March 2014) moved it to 'midnight May 31, 2014' and read: 'this act is null and void'. PL 17-83 and PL 18-06 also amended s 934 and were not read.
@@ -64,7 +68,7 @@ PL 22-190 ss 806 and 807 stand apart. The Secretary may require a Taxpayer Ident
 
 **Dated RMS evidence.** An official Department news item published on 4 November 2025 describes a Pohnpei Revenue Management System workshop held on 14 to 16 October 2025, covering employee withholding, gross revenue tax, return verification and submission. It describes online registration, filing, payment and record access. This establishes dated rollout evidence. It does not establish current 2026 access, mandatory taxpayer phasing, approved return boxes, calculation methods or that RMS is the statutory Electronic Notice System. Keep those points on HOLD.
 
-## Tax year and basis
+### Tax year and basis
 
 **Calendar year: HOLD.** Code s 112(14) said 'Year' means calendar year. PL 18-118 s 1 and PL 21-250 s 1 each re-enact s 112 'to read as follows', and each text runs from (1) to (13)(l), then Section 2. Paragraph (14) is not there. Nothing in either Act says why.
 
@@ -83,20 +87,41 @@ Section 121 attaches no period to its $11,000. Inference only: work on a calenda
 
 **Employee or business:** 'usual common law rules' (s 112(3)). One who qualifies as an employee is not a business (s 112(1)). The annotation to s 121 looks to the nature of the services and the person performing them, not the contract's label (*Heston v. FSM*, 2 FSM R. 61, 64). The Department's contractor guideline gives criteria for FSM Government contracts: it is guidance for that setting, not law.
 
-## Section 112 as amended
+### Refusal catalogue for every part of this reference
+
+#### Refusals
+
+- **R-FM-1:** major corporations under T54 Ch 3. No computation.
+- **R-FM-2:** all state taxes, including state sales, gross receipts and income-type charges.
+- **R-FM-3:** customs and import duties (T54 Ch 2).
+- **R-FM-4:** the Ch 8 replacement revenue law (PL 17-50 and its reference-only text).
+- **R-FM-5:** unemployment assistance under T54 ss 160 and 161 (PL 21-145), including its 10% tax and 15% social security deduction on foreign grants.
+- **R-FM-6:** foreign aid and foreign programme exemptions (s 112(5)(g), (13)(k), and the US programme note in the Department's guideline). Send these to the CTA.
+- **R-FM-7:** partner self-employment bases, because of the 2.5% and 5% conflict.
+- **R-FM-8:** fraud, wilful default, criminal exposure and any penalty waiver. State the rule, compute nothing and send to an adviser.
+- **R-FM-9:** lodgement-ready returns. Forms and s 114 regulations were not found, so output is a working paper.
+
+
+## Rates, bands and thresholds
+
+| Item and conditions | Amount | Reference period and limit | Official source |
+| --- | --- | --- | --- |
+| Section 121 wages and salaries of an employee as defined, except section 122; period, employer allocation and withholding method remain held as explained below | 6% on the first $11,000; 10% on the excess | Selected 2026 reference to dated principal text; no annual or quarterly band rule inferred | https://dofa.gov.fm/wp-content/uploads/2025/07/FSMCode-Taxation-of-Wages-Salaries-Gross-Revenues.pdf |
+
+### Section 112 as amended
 
 Read all of s 112 in the PL 21-250 form, from 1 January 2021. The Code text is out of date. A word comparison of the Code section against both Acts found these differences.
 
 | Paragraph | 2014 Code | Current reading | Source |
 |---|---|---|---|
-| (8)(a) | Wages, salaries and benefits reasonably paid to or on behalf of business employees for personal services relating to producing gross revenues; wages and salaries reported under T54 Ch 1 subchapter III | Those conditions remain; do not deduct unqualified or unreported payments | PL 21-250 s 1 |
-| (8)(b) | Social security contributions by the business in respect of its employees pursuant to T53 s 902 | Unchanged | PL 21-250 s 1 |
-| (8)(c) | Absent | 'Electric utility and water utilities costs paid by the business which are directly related to business operations' | PL 18-118 s 1, from 1 April 2015 |
-| (8)(d) | Absent | 'Communication expenses paid by the business which are directly related to business operations' | Same |
-| (8)(e) | Absent | 'Contributions made by the business on behalf of their employees towards the employees' MiCare health insurance plan' | PL 21-250 s 1, from 1 January 2021 |
-| (14) | 'Year' means calendar year | Omitted | PL 18-118 s 1; PL 21-250 s 1 |
-| (5)(a) to (l) | Exclusions, including (l) on recycling and waste removal | Same exclusions; both Acts carry them forward | Both Acts |
-| (13)(a) to (l) | Wage exclusions | Same exclusions | Both Acts |
+| (8)(a) | Wages, salaries and benefits reasonably paid to or on behalf of business employees for personal services relating to producing gross revenues; wages and salaries reported under T54 Ch 1 subchapter III | Those conditions remain; do not deduct unqualified or unreported payments | PL 21-250 s 1  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-250.pdf |
+| (8)(b) | Social security contributions by the business in respect of its employees pursuant to T53 s 902 | Unchanged | PL 21-250 s 1  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-250.pdf |
+| (8)(c) | Absent | 'Electric utility and water utilities costs paid by the business which are directly related to business operations' | PL 18-118 s 1, from 1 April 2015  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-118.pdf |
+| (8)(d) | Absent | 'Communication expenses paid by the business which are directly related to business operations' | Same  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-118.pdf |
+| (8)(e) | Absent | 'Contributions made by the business on behalf of their employees towards the employees' MiCare health insurance plan' | PL 21-250 s 1, from 1 January 2021  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-250.pdf |
+| (14) | 'Year' means calendar year | Omitted | PL 18-118 s 1; PL 21-250 s 1  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-118.pdf ; https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-250.pdf |
+| (5)(a) to (l) | Exclusions, including (l) on recycling and waste removal | Same exclusions; both Acts carry them forward | Both Acts  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-118.pdf ; https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-250.pdf |
+| (13)(a) to (l) | Wage exclusions | Same exclusions | Both Acts  https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-118.pdf ; https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-250.pdf |
 
 **Printing points, none treated as a change of substance (inference):**
 
@@ -109,7 +134,7 @@ Read all of s 112 in the PL 21-250 form, from 1 January 2021. The Code text is o
 
 **Dates:** PL 18-118 was printed 'OVERRIDE 4/11/15', and the Congress index dates it 04.15.15. PL 21-250 was signed on 29 April 2021 with a stated effect of 1 January 2021. Both effect dates are before 2026, so these differences do not change a 2026 result.
 
-## Wage tax (T54 ss 121 to 124)
+### Wage tax (T54 ss 121 to 124)
 
 **Charge:** 'a tax of six percent upon the first $11,000 and ten percent upon the amount over the first $11,000 of all wages and salaries received by every employee, as defined, except as provided in section 122' (s 121).
 
@@ -148,27 +173,18 @@ Employee social security is not among them, so wage tax falls on wages before it
 
 | Gross annual wages | Withheld | Tax after s 122 | Refund |
 |---|---|---|---|
-| $900 | `900 × 6% = 54.00` | nil; the deduction exceeds the wages (inference) | `54 - 0 = 54.00` |
-| $4,800 | `4,800 × 6% = 288.00` | `(4,800 - 1,000) × 6% = 228.00` | `288 - 228 = 60.00` |
-| $4,999 | `4,999 × 6% = 299.94` | `(4,999 - 1,000) × 6% = 239.94` | `299.94 - 239.94 = 60.00` |
-| Exactly $5,000 | `5,000 × 6% = 300.00` | `300.00`; no deduction, as $5,000 is 'or more' | `300 - 300 = 0.00` |
+| $900 | `900 × 6% = 54.00` | nil; the deduction exceeds the wages (inference) | `54 - 0 = 54.00`  https://dofa.gov.fm/wp-content/uploads/2025/07/FSMCode-Taxation-of-Wages-Salaries-Gross-Revenues.pdf |
+| $4,800 | `4,800 × 6% = 288.00` | `(4,800 - 1,000) × 6% = 228.00` | `288 - 228 = 60.00`  https://dofa.gov.fm/wp-content/uploads/2025/07/FSMCode-Taxation-of-Wages-Salaries-Gross-Revenues.pdf |
+| $4,999 | `4,999 × 6% = 299.94` | `(4,999 - 1,000) × 6% = 239.94` | `299.94 - 239.94 = 60.00`  https://dofa.gov.fm/wp-content/uploads/2025/07/FSMCode-Taxation-of-Wages-Salaries-Gross-Revenues.pdf |
+| Exactly $5,000 | `5,000 × 6% = 300.00` | `300.00`; no deduction, as $5,000 is 'or more' | `300 - 300 = 0.00`  https://dofa.gov.fm/wp-content/uploads/2025/07/FSMCode-Taxation-of-Wages-Salaries-Gross-Revenues.pdf |
 
 HOLD whether 'gross annual wages' counts amounts excluded by s 112(13).
 
 **Refund (s 123):** on application, if the Secretary is satisfied that the amount was paid to the Government, was not used as a credit, and the application 'was filed within one year after the end of the calendar year in which the amount to be refunded was withheld or paid'. For an amount paid in 2026, that is by 31 December 2027 (inference from the wording). A decision is due within 90 days of submission. The application form was not found. The CIT-Refund-Request-Form listed on the Department's site was not read, and its name points to another tax.
 
-## Employer withholding (T54 ss 131 to 139)
+## The base
 
-- **Who:** 'Employer' is widely defined and includes governments (s 112(4)).
-- **Where:** pay the National revenue officer of the State of the principal place of business, or the Secretary if there is no place of business in FSM (s 131(2)).
-- **When:** 'on or before the last day of the month following the close of each quarter, to wit, on or before April 30, July 31, October 31, and January 31', with a return showing wages and tax (s 132(1)).
-- **Frequency:** the Secretary may require more frequent returns but no more often than monthly. For good cause the Secretary may extend, but not beyond the last day of the first month after the due date (s 132(3)).
-- **Employee statements:** written statement to each employee by 31 January of the succeeding year, or on the last payment if employment ends earlier. A duplicate goes with the final return or by 31 January. An extension of up to 60 days is possible (s 133).
-- **Trust and liability:** withheld tax is held in trust. An employer who fails to withhold or pay is liable, and the amount is a lien with priority except as the Secured Transactions Act provides. The employer may recover from the employee an amount it paid from its own funds (s 135). The employee has no action for proper withholding (s 136).
-- **Government pay:** the Secretary may set special procedures (s 132(2)).
-- **Non-resident employers:** where the employer has no FSM place of business and no responsible agent, the individual files and pays (s 137). The same applies to US Government wages unless tax was withheld. The return follows ss 131 and 132 and states employer details, the last 3 months' pay and the tax (s 138). The Secretary may permit semiannual returns, and may extend for good cause but not beyond the twentieth day of the second month after the due date (s 139).
-
-## Gross revenue tax (T54 ss 141 to 144 and s 112)
+### Gross revenue tax (T54 ss 141 to 144 and s 112)
 
 **Gross revenue** means gross receipts, 'cash or accrued', from services, trade, business and sales, and receipts by reason of capital including interest, rentals, royalties and fees, 'without any deductions on account of the cost of property sold, the cost of materials used, taxes, royalties, or interest paid or any other expenses whatsoever' (s 112(5)). Cost of goods therefore does not reduce it.
 
@@ -229,28 +245,7 @@ Uneven revenue can make the even method overpay against the annual result. Secti
 
 **Major corporations:** T54 Ch 3 exists and is not computed here (R-FM-1).
 
-## Penalties and interest, T54
-
-| Item | Rule | Source |
-|---|---|---|
-| Late return | 1% of the tax for each 30 days or fraction; 'minimum penalty under this subsection shall be five dollars and the maximum penalty under this section shall be 25 percent of the tax due' | s 155(1) |
-| Failure to furnish a statement | $5 per statement, if wilful | s 155(2) |
-| Failure after demand | 10% of tax assessed, in addition to s 155(1) | s 155(3) |
-| Fraud | 50% of the deficiency, in addition to s 155(1) to (3) | s 155(4) |
-| Interest | 'on the unpaid balance of the tax principal at the rate of six percent per annum from its due date until the date it is paid' | s 155(5) |
-| Late payment | 5% of principal if not more than one month, 'an additional one percent for each additional month or fraction thereof', 'not exceeding 25 percent in the aggregate, in addition to any penalties assessed under section 155' | s 902 |
-| Criminal | Up to $1,000, or up to one year for a natural person, or both; separate from civil penalties | ss 154, 155 |
-| Wilful violation | Up to one year, or up to $500, or both, unless another penalty is specified | s 901 |
-
-- **Stacking:** s 902 stacks on s 155 in express words. Section 155(1) and s 902 can therefore both apply where a return and payment are both late. A return on time with late payment attracts s 902 and interest only. The annotations confirm s 902 reaches gross revenue tax (*FSM v. George*, 2 FSM R. 88, 94; *Setik v. FSM*, 5 FSM R. 407, 409).
-- **Interest on penalties:** interest runs on tax principal, so none is shown on penalties (inference from s 155(5)).
-- **HOLD:** no day count for interest. 'Month' means calendar month in Ch 1 (s 112(7)), but s 902 sits in Ch 9. Counting from the due date's day of the month is a drafting assumption.
-- **HOLD, minimum against maximum:** on a small tax the $5 minimum can pass the 25% cap. For tax of $20, `20 × 1% = 0.20`, raised to $5.00, and `20 × 25% = 5.00`, so they agree. For tax of $10, `10 × 25% = 2.50` is below $5.00, and the text does not rank them.
-- **Assessment:** on failure, the Secretary may demand. After 30 days from receipt, the Secretary may make the return, file a lien notice and assess, and the assessment is presumed correct (s 152). Taxes are a lien (s 153). Review lies to a court within one year of an adverse decision (s 156).
-- **Waiver:** Code s 903 is a past waiver. PL 19-66 amends it for 'a specific period' on its title, and its text was not read. HOLD any waiver: R-FM-8.
-- **Weekends and holidays:** no rule was found in T54 Chs 1 or 9. HOLD. Treat the printed date as the date.
-
-## Social security (T53 Subtitle II)
+### Social security (T53 Subtitle II)
 
 **Rates:** 'with respect to wages paid on and after January 1, 2013, the rate shall be seven point five (7.5) percent', on the employee (s 901(1)(g)) and on the employer as an excise tax (s 902(7)). PL 16-10 ss 5 and 6 enact this. Its s 902 says 'employment' where the Code says 'covered employment', and the rate is the same. Regs § 100.41 still says 7% each and 14% combined. It predates the rise, so follow the statute. The employer withholds the employee share when wages are paid and pays both shares (Regs § 100.41; annotation, *Kingtex*, 7 FSM R. 280, 285).
 
@@ -329,7 +324,20 @@ Appeal from a final audit: 60 calendar days (Regs § 100.50).
 
 **Interaction with T54:** employer contributions under s 902 reduce taxable gross revenue (T54 s 112(8)(b)). The employee share is part of wages (inference). HOLD whether a self-employed person's own contributions are deductible: s 112(8)(b) says 'in respect of its employees', and T53 s 603(8)(c) calls that person an employee. The Administrator and the Secretary may exchange tax information (T53 s 704(2)).
 
-## Due dates for 2026 periods
+## Deadlines and filing
+
+### Employer withholding (T54 ss 131 to 139)
+
+- **Who:** 'Employer' is widely defined and includes governments (s 112(4)).
+- **Where:** pay the National revenue officer of the State of the principal place of business, or the Secretary if there is no place of business in FSM (s 131(2)).
+- **When:** 'on or before the last day of the month following the close of each quarter, to wit, on or before April 30, July 31, October 31, and January 31', with a return showing wages and tax (s 132(1)).
+- **Frequency:** the Secretary may require more frequent returns but no more often than monthly. For good cause the Secretary may extend, but not beyond the last day of the first month after the due date (s 132(3)).
+- **Employee statements:** written statement to each employee by 31 January of the succeeding year, or on the last payment if employment ends earlier. A duplicate goes with the final return or by 31 January. An extension of up to 60 days is possible (s 133).
+- **Trust and liability:** withheld tax is held in trust. An employer who fails to withhold or pay is liable, and the amount is a lien with priority except as the Secured Transactions Act provides. The employer may recover from the employee an amount it paid from its own funds (s 135). The employee has no action for proper withholding (s 136).
+- **Government pay:** the Secretary may set special procedures (s 132(2)).
+- **Non-resident employers:** where the employer has no FSM place of business and no responsible agent, the individual files and pays (s 137). The same applies to US Government wages unless tax was withheld. The return follows ss 131 and 132 and states employer details, the last 3 months' pay and the tax (s 138). The Secretary may permit semiannual returns, and may extend for good cause but not beyond the twentieth day of the second month after the due date (s 139).
+
+### Due dates for 2026 periods
 
 | Quarter | Wage tax and gross revenue tax (ss 132, 143) | Social security (s 605(4); Regs § 100.40) |
 |---|---|---|
@@ -341,53 +349,45 @@ Appeal from a final audit: 60 calendar days (Regs § 100.50).
 
 No holiday calendar was read. The Department lists a Tax-filing-dates image on its site, which was not read. Section 133 statements for 2026 are due by 31 January 2027.
 
-## Slot coverage
+### Delivery holds
 
-| Base | Slot | State |
+This file has not been verified by an FSM adviser. It establishes no filing readiness, and output is a working paper. Confirm current law with the CTA and FSMSSA first.
+
+Not found: s 114 regulations; s 115 forms; withholding tables; rounding rules; a weekend rule for T54; any current calendar-year definition; bank statement patterns; minimum wage, overtime, leave and termination rules.
+
+Not read in full: the Code's T54 Ch 8 operative chapter; PL 17-83, PL 18-06, PL 19-01, PL 19-66, PL 18-107 and Bill CB 24-51. The Chapter 8 codifier notes were read with the historical limits stated above. Also not read: FSMSSA's Quarterly Tax Return form; the Department's Tax Admin Compliance Advisor and tax filing dates image; rulings and administrative practice. The Taxpayers' Charter's native text was captured, but its page layout and additional obligations remain unqualified.
+
+## Penalties and interest
+
+### Penalties and interest, T54
+
+| Item | Rule | Source |
 |---|---|---|
-| Income tax | 1 Tax year | Partial: HOLD above |
-| Income tax | 2 Categories | Wages and business gross revenue, schedular (inference) |
-| Income tax | 3 Rates | Stated above |
-| Income tax | 4 Allowances | ss 122, 141(3) only |
-| Income tax | 5 Expenses | s 112(8) only; no capital allowance found |
-| Income tax | 6 Losses | Not found |
-| Income tax | 7 Withholding | Stated above; no instalment system beyond the quarterly payments |
-| Income tax | 8 Social interaction | Stated above |
-| Income tax | 9 Filing | Dates and penalties stated; dated official RMS rollout evidence found; current forms, mandatory phasing, access and accepted operation held |
-| Income tax | 10 Patterns | No source |
-| Income tax | 11 Refusals | Below |
-| Income tax | 12 Currency and rounding | HOLD |
-| Income tax | 13 Examples | Partial: employee and business below; no mixed case or balance ladder, as no annual return was found |
-| Payroll | 1, 2, 8 Withholding, social, pension | Stated above; no tables |
-| Payroll | 3, 4, 5 Minimum wage, overtime, mandatory benefits | Not in the sources read; wage laws not searched: HOLD. MiCare appears only as a s 112(8)(e) deduction |
-| Payroll | 6 Filing | Stated above |
-| Payroll | 7 Payslip | No payslip rule found; s 133 annual statement only |
-| Payroll | 9, 10, 11 Frequency, tax codes, termination | Not found, except s 133(1) on the last payment. Nothing read uses a tax code |
-| Payroll | 12 Currency | HOLD |
-| Social | 1 to 7 | Stated above, one programme covering old age, disability and survivors |
-| Social | 8 | Stated above |
-| Social | 9 Patterns | No source |
-| Social | 10 Refusals | Below |
-| Social | 11 Currency | HOLD |
-| Social | 12 Examples | Below |
+| Late return | 1% of the tax for each 30 days or fraction; 'minimum penalty under this subsection shall be five dollars and the maximum penalty under this section shall be 25 percent of the tax due' | s 155(1) |
+| Failure to furnish a statement | $5 per statement, if wilful | s 155(2) |
+| Failure after demand | 10% of tax assessed, in addition to s 155(1) | s 155(3) |
+| Fraud | 50% of the deficiency, in addition to s 155(1) to (3) | s 155(4) |
+| Interest | 'on the unpaid balance of the tax principal at the rate of six percent per annum from its due date until the date it is paid' | s 155(5) |
+| Late payment | 5% of principal if not more than one month, 'an additional one percent for each additional month or fraction thereof', 'not exceeding 25 percent in the aggregate, in addition to any penalties assessed under section 155' | s 902 |
+| Criminal | Up to $1,000, or up to one year for a natural person, or both; separate from civil penalties | ss 154, 155 |
+| Wilful violation | Up to one year, or up to $500, or both, unless another penalty is specified | s 901 |
 
-**Questions to ask:** employee or business; quarterly wages per employee and other employers; non-cash pay; prior-year gross revenue; States of operation; whether a corporation is within T54 Ch 3; utilities, communications and MiCare records; dates filed and paid.
+- **Stacking:** s 902 stacks on s 155 in express words. Section 155(1) and s 902 can therefore both apply where a return and payment are both late. A return on time with late payment attracts s 902 and interest only. The annotations confirm s 902 reaches gross revenue tax (*FSM v. George*, 2 FSM R. 88, 94; *Setik v. FSM*, 5 FSM R. 407, 409).
+- **Interest on penalties:** interest runs on tax principal, so none is shown on penalties (inference from s 155(5)).
+- **HOLD:** no day count for interest. 'Month' means calendar month in Ch 1 (s 112(7)), but s 902 sits in Ch 9. Counting from the due date's day of the month is a drafting assumption.
+- **HOLD, minimum against maximum:** on a small tax the $5 minimum can pass the 25% cap. For tax of $20, `20 × 1% = 0.20`, raised to $5.00, and `20 × 25% = 5.00`, so they agree. For tax of $10, `10 × 25% = 2.50` is below $5.00, and the text does not rank them.
+- **Assessment:** on failure, the Secretary may demand. After 30 days from receipt, the Secretary may make the return, file a lien notice and assess, and the assessment is presumed correct (s 152). Taxes are a lien (s 153). Review lies to a court within one year of an adverse decision (s 156).
+- **Waiver:** Code s 903 is a past waiver. PL 19-66 amends it for 'a specific period' on its title, and its text was not read. HOLD any waiver: R-FM-8.
+- **Weekends and holidays:** no rule was found in T54 Chs 1 or 9. HOLD. Treat the printed date as the date.
 
-**Defaults (a drafting choice, not FM law):** keep a deduction out unless every applicable s 112(8) condition is evidenced, including reasonable payment, relevant employee services and reported wages/salaries; withhold in full and leave s 122 and s 141(3) to a refund claim; use the $9,000 base; do not treat a held point as settled.
+## Cross-border points
 
-## Refusals
+Apply the refusal catalogue under 'Who this applies to' before any work. It controls every section, including state taxes, customs, foreign programme exemptions and the unqualified replacement revenue law. This reference does not establish another jurisdiction's treatment.
 
-- **R-FM-1:** major corporations under T54 Ch 3. No computation.
-- **R-FM-2:** all state taxes, including state sales, gross receipts and income-type charges.
-- **R-FM-3:** customs and import duties (T54 Ch 2).
-- **R-FM-4:** the Ch 8 replacement revenue law (PL 17-50 and its reference-only text).
-- **R-FM-5:** unemployment assistance under T54 ss 160 and 161 (PL 21-145), including its 10% tax and 15% social security deduction on foreign grants.
-- **R-FM-6:** foreign aid and foreign programme exemptions (s 112(5)(g), (13)(k), and the US programme note in the Department's guideline). Send these to the CTA.
-- **R-FM-7:** partner self-employment bases, because of the 2.5% and 5% conflict.
-- **R-FM-8:** fraud, wilful default, criminal exposure and any penalty waiver. State the rule, compute nothing and send to an adviser.
-- **R-FM-9:** lodgement-ready returns. Forms and s 114 regulations were not found, so output is a working paper.
 
-## Worked examples (fictional)
+## Two worked examples that recompute
+
+### Worked examples (fictional)
 
 Pohnpei Lagoon Traders Inc operates in Pohnpei only and is assumed to be outside T54 Ch 3. Its 2 employees are common law employees with level cash pay, one employer each, and no excluded items. A calendar year is assumed. **Each wage tax and gross revenue tax quarterly split is conditional on a method the text leaves open.**
 
@@ -479,15 +479,143 @@ It is not an assessed amount.
 
 **2 employers; refund calculation held:** $9,000 from each in one quarter gives `9,000 × 7.5% = 675.00` withheld by each, a combined `675 + 675 = 1,350.00`. Section 904 provides an employee-only refund where its conditions are met, but the cross-employer excess/aggregation method remains unresolved. Do not compute a refundable amount from this illustration; no employer refund is allowed.
 
-## Delivery holds
+### Recompute the retained hypothetical positions
 
-This file has not been verified by an FSM adviser. It establishes no filing readiness, and output is a working paper. Confirm current law with the CTA and FSMSSA first.
+The following blocks recompute 2 of the positions above using exactly their supplied premises. They are separate arithmetic exercises. The original classification, period, source, currency, precision and operational holds remain applicable. A nil or negative arithmetic component does not resolve an unknown liability or establish an exemption, refund or amount to pay.
 
-Not found: s 114 regulations; s 115 forms; withholding tables; rounding rules; a weekend rule for T54; any current calendar-year definition; bank statement patterns; minimum wage, overtime, leave and termination rules.
+```oa-check
+name: FM existing employee social components with separate base cap
+inputs:
+  a_wages: 6000
+  b_wages: 12000
+  cap: 9000
+  rate: 0.075
+steps:
+  - a_base: min(a_wages, cap)
+  - b_base: min(b_wages, cap)
+  - a_employee: a_base * rate
+  - b_employee: b_base * rate
+  - employees: a_employee + b_employee
+  - employers: employees
+  - combined_components: employees + employers
+expected:
+  a_base: 6000
+  b_base: 9000
+  a_employee: 450
+  b_employee: 675
+  employees: 1125
+  employers: 1125
+  combined_components: 2250
+tolerance: 0.000001
+```
 
-Not read in full: the Code's T54 Ch 8 operative chapter; PL 17-83, PL 18-06, PL 19-01, PL 19-66, PL 18-107 and Bill CB 24-51. The Chapter 8 codifier notes were read with the historical limits stated above. Also not read: FSMSSA's Quarterly Tax Return form; the Department's Tax Admin Compliance Advisor and tax filing dates image; rulings and administrative practice. The Taxpayers' Charter's native text was captured, but its page layout and additional obligations remain unqualified.
+```oa-check
+name: FM held wage timing comparison both existing Q1 illustrations
+inputs:
+  a_q1: 6000
+  b_q1: 12000
+  annual_band: 11000
+steps:
+  - ytd_a: a_q1 * 0.06
+  - ytd_b: annual_band * 0.06 + (b_q1 - annual_band) * 0.10
+  - ytd_sum: ytd_a + ytd_b
+  - even_a: 2750 * 0.06 + 3250 * 0.10
+  - even_b: 2750 * 0.06 + 9250 * 0.10
+  - even_sum: even_a + even_b
+  - difference: even_sum - ytd_sum
+expected:
+  ytd_a: 360
+  ytd_b: 760
+  ytd_sum: 1120
+  even_a: 490
+  even_b: 1090
+  even_sum: 1580
+  difference: 460
+tolerance: 0.000001
+```
+
+## Ask the client first
+
+1. What obligation and period are requested, and is the work a dated source explanation or an actual engagement?
+2. Which person, entity, residence, territorial and establishment facts determine the applicable scope?
+3. Which activities, transactions, units, values and event dates are supported by redacted records?
+4. Which operative sources, classifications, exemptions, amendments and case-specific decisions have been established?
+5. Which prior-period, eligibility, input, deduction, credit, payment and other-component records affect this job?
+6. Which complete companion content, professional reviewer, current forms and filing or collection directions are available?
+
+### Slot coverage
+
+| Base | Slot | State |
+|---|---|---|
+| Income tax | 1 Tax year | Partial: HOLD above |
+| Income tax | 2 Categories | Wages and business gross revenue, schedular (inference) |
+| Income tax | 3 Rates | Stated above |
+| Income tax | 4 Allowances | ss 122, 141(3) only |
+| Income tax | 5 Expenses | s 112(8) only; no capital allowance found |
+| Income tax | 6 Losses | Not found |
+| Income tax | 7 Withholding | Stated above; no instalment system beyond the quarterly payments |
+| Income tax | 8 Social interaction | Stated above |
+| Income tax | 9 Filing | Dates and penalties stated; dated official RMS rollout evidence found; current forms, mandatory phasing, access and accepted operation held |
+| Income tax | 10 Patterns | No source |
+| Income tax | 11 Refusals | Below |
+| Income tax | 12 Currency and rounding | HOLD |
+| Income tax | 13 Examples | Partial: employee and business below; no mixed case or balance ladder, as no annual return was found |
+| Payroll | 1, 2, 8 Withholding, social, pension | Stated above; no tables |
+| Payroll | 3, 4, 5 Minimum wage, overtime, mandatory benefits | Not in the sources read; wage laws not searched: HOLD. MiCare appears only as a s 112(8)(e) deduction |
+| Payroll | 6 Filing | Stated above |
+| Payroll | 7 Payslip | No payslip rule found; s 133 annual statement only |
+| Payroll | 9, 10, 11 Frequency, tax codes, termination | Not found, except s 133(1) on the last payment. Nothing read uses a tax code |
+| Payroll | 12 Currency | HOLD |
+| Social | 1 to 7 | Stated above, one programme covering old age, disability and survivors |
+| Social | 8 | Stated above |
+| Social | 9 Patterns | No source |
+| Social | 10 Refusals | Below |
+| Social | 11 Currency | HOLD |
+| Social | 12 Examples | Below |
+
+**Questions to ask:** employee or business; quarterly wages per employee and other employers; non-cash pay; prior-year gross revenue; States of operation; whether a corporation is within T54 Ch 3; utilities, communications and MiCare records; dates filed and paid.
+
+**Defaults (a drafting choice, not FM law):** keep a deduction out unless every applicable s 112(8) condition is evidenced, including reasonable payment, relevant employee services and reported wages/salaries; withhold in full and leave s 122 and s 141(3) to a refund claim; use the $9,000 base; do not treat a held point as settled.
 
 ## Sources
+
+The table records the original reading evidence. A retrieval or capture is not a reading date. A reading bound is not an exact day. The retained library below controls extent, host, translation and source qualifications; formatting adds no new legal-source reading.
+
+| Source | URL | Read on |
+| --- | --- | --- |
+| Historical T54 Chapter 8 reference-only text and codifier notes | https://www.fsmlaw.org/fsm/code/code2014/FSMCode2014Tit54Chap08ReferenceOnly.html | Exact reading day unrecorded; capture: 31 October 2026; retained host and reading limits apply |
+| DoFA RMS rollout news item | https://dofa.gov.fm/news/pohnpei-businesses-adopt-rms-for-faster-paperless-tax-returns/ | Exact reading day unrecorded; capture: 31 October 2026; retained host and reading limits apply |
+| DoFA Taxpayers' Charter | https://dofa.gov.fm/wp-content/uploads/2025/07/Taxpayers-Charter.pdf | Exact reading day unrecorded; capture: 31 October 2026; retained host and reading limits apply |
+| T54 Ch 1, Code 2014, Department of Finance and Administration | https://dofa.gov.fm/wp-content/uploads/2025/07/FSMCode-Taxation-of-Wages-Salaries-Gross-Revenues.pdf | Exact reading day unrecorded; capture: 31 October 2026; retained host and reading limits apply |
+| T54 Ch 1 subchapter IV, fsmlaw.org | https://fsmlaw.org/fsm/code/title54/T54_Ch01_SubChpIV_2014.html | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| T54 Ch 9, Code 2014 | https://fsmlaw.org/fsm/code/code2014/pdf/FSMCode2014Tit54Chap09.pdf | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| T53 Ch 6 | https://fsmlaw.org/fsm/code/title53/T53_Ch06_2014.html | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| T53 Ch 7 | https://fsmlaw.org/fsm/code/title53/T53_Ch07_2014.html | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| T53 Ch 9 | https://fsmlaw.org/fsm/code/title53/T53_Ch09_2014.html | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| PL 18-118 | https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-118.pdf | Exact reading day unrecorded; capture: 26 October 2026; retained host and reading limits apply |
+| PL 21-250 | https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-250.pdf | Exact reading day unrecorded; capture: 26 October 2026; retained host and reading limits apply |
+| PL 21-145 | https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__21-145.pdf | Exact reading day unrecorded; capture: 26 October 2026; retained host and reading limits apply |
+| PL 22-190 | https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC_LAW_NO__22-190.pdf | Exact reading day unrecorded; capture: 26 October 2026; retained host and reading limits apply |
+| PL 17-50 | https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-17-50.pdf | Exact reading day unrecorded; capture: October 2026; retained host and reading limits apply |
+| PL 18-16 | https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-16.pdf | Exact reading day unrecorded; capture: October 2026; retained host and reading limits apply |
+| PL 18-51 | https://www.cfsm.gov.fm/wp-content/uploads/2024/07/PUBLIC-LAW-18-51.pdf | Exact reading day unrecorded; capture: October 2026; retained host and reading limits apply |
+| PL 14-86 | https://fsmlaw.org/fsm/code/PDF/CODE%2053/PL%2014-86.pdf | Exact reading day unrecorded; capture: 31 October 2026; retained host and reading limits apply |
+| PL 15-73 | http://fsmssa.fm/files/laws/PublicLaw15-73.pdf | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| PL 16-10 | http://fsmssa.fm/files/laws/PublicLaw16-10.pdf | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| PL 22-166 | http://www.fsmssa.fm/wp-content/uploads/2023/02/PUBLIC_LAW_NO__22-166.pdf | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| FSMSSA Regulations No. 03 | http://fsmssa.fm/files/laws/AdoptedFSMSSregulation.pdf | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| Employers | https://www.fsmssa.fm/employers/ | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| FAQ | https://www.fsmssa.fm/f-a-q/ | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| Forms | https://www.fsmssa.fm/forms/ | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| Laws | https://www.fsmssa.fm/laws/ | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| 2017 notice | https://www.fsmssa.fm/fsm-social-security-taxable-wage-base-to-increase-on-january-1-2018/ | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| 2022 press release | http://www.fsmssa.fm/wp-content/uploads/2022/06/Quarterly-Taxable-Wage-Base-Increase.jpg | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| Guideline for tax clause in contractors' contracts | https://dofa.gov.fm/wp-content/uploads/2025/07/Guideline-on-Tax-Clause-for-Contractors-1.pdf | Exact reading day unrecorded; capture: 30 October 2026; retained host and reading limits apply |
+| 18th Congress index | https://www.cfsm.gov.fm/wp-json/wp/v2/pages?slug=18th-cfsm-public-laws | Exact reading day unrecorded; capture: 26 October 2026; retained host and reading limits apply |
+| 22nd Congress index | https://www.cfsm.gov.fm/wp-json/wp/v2/pages?slug=22nd-public-laws | Exact reading day unrecorded; capture: 26 October 2026; retained host and reading limits apply |
+| fsmlaw.org amendment list | http://fsmlaw.org/fsm/code/Amendments.html | Exact reading day unrecorded; capture: 31 October 2026; retained host and reading limits apply |
+
+### Sources
 
 Dates are capture dates from the local copies, in UTC.
 
@@ -506,6 +634,8 @@ Dates are capture dates from the local copies, in UTC.
 - FSMSSA pages, 30 October 2026: [Employers](https://www.fsmssa.fm/employers/); [FAQ](https://www.fsmssa.fm/f-a-q/); [Forms](https://www.fsmssa.fm/forms/); [Laws](https://www.fsmssa.fm/laws/); [2017 notice](https://www.fsmssa.fm/fsm-social-security-taxable-wage-base-to-increase-on-january-1-2018/); [2022 press release](http://www.fsmssa.fm/wp-content/uploads/2022/06/Quarterly-Taxable-Wage-Base-Increase.jpg)
 - [Guideline for tax clause in contractors' contracts](https://dofa.gov.fm/wp-content/uploads/2025/07/Guideline-on-Tax-Clause-for-Contractors-1.pdf), Department of Finance and Administration, 30 October 2026, guidance and not law
 - Later law, titles only: [18th Congress index](https://www.cfsm.gov.fm/wp-json/wp/v2/pages?slug=18th-cfsm-public-laws) and [22nd Congress index](https://www.cfsm.gov.fm/wp-json/wp/v2/pages?slug=22nd-public-laws), 26 October 2026; the 19th, 20th, 21st, 23rd and 24th Congress public law pages and 24th Congress bills page on cfsm.gov.fm, October 2026; [fsmlaw.org amendment list](http://fsmlaw.org/fsm/code/Amendments.html), non-official and undated, 31 October 2026
+
+Not yet confirmed: the complete operative chain and requested-period application, unresolved source conditions and administrative directions, exact reading days where unrecorded and professional verification. Retain every specific evidence gap, refusal and filing hold identified above.
 
 <!-- openaccountants-cta-block -->
 

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T10:23:02+00:00",
+ "generated_at": "2026-11-02T15:43:16+00:00",
  "counts": {
   "guides": 2021,
   "jurisdictions": 298,
@@ -9338,7 +9338,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "ga-company-formation",
@@ -10521,7 +10521,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "hn-company-formation",
@@ -12965,7 +12965,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "kosovo-income-tax",
@@ -14941,7 +14941,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "md-company-formation",
@@ -15695,7 +15695,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "nr-corporate-annual-return-reference",
@@ -15721,7 +15721,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "nr-tax-administration-reference",
@@ -15734,7 +15734,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "nepal-corporate-tax",
@@ -17372,7 +17372,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "panama-income-tax",
@@ -17749,7 +17749,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "pl-capital-gains",
@@ -20466,7 +20466,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-01"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "sd-company-formation",
