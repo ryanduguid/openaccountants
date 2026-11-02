@@ -2,24 +2,56 @@
 name: au-smsf
 description: >
   Use this skill whenever asked about Australian self-managed superannuation funds -- SMSF accounting, the SMSF annual return (SAR), supervisory levy, fund tax at 15%, exempt current pension income (ECPI), actuarial certificates, non-arm's length income or expenses (NALI/NALE), contribution caps and acceptance rules, minimum pension drawdowns, transfer balance cap and TBAR reporting, SMSF audits, in-house assets, LRBA safe harbour rates, or Division 296. Trigger on phrases like "SMSF", "self-managed super", "SAR", "supervisory levy", "actuarial certificate", "ECPI", "NALI", "TBAR", "minimum pension", "bare trust", or "SMSF audit". ALWAYS read this skill before touching any SMSF work.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.3
+# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
+## Scope
+
 > **Law-change context (2026-27).** Four regime changes hit SMSF files this year. (1) **Division 296** is law (Building a Stronger and Fairer Super System Act 2026): from 2026-27 an EXTRA 15% applies to the earnings proportion attributable to total super balance (TSB) between $3m and $10m, and an extra 25% above $10m -- realised-earnings basis, thresholds indexed, levied on the MEMBER personally, not the fund, although the trustee must calculate and report each in-scope member's relevant super earnings (Section 5.3). (2) **Payday super**: employer contributions now arrive within 7 business days of each payday -- frequent small receipts are the new normal and the fund's ESA/bank details must work. (3) The **NALE rules** as amended by the Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024 cap general-expense NALI at TWICE the expense shortfall (applied from 2018-19). (4) **LRBAs over real property are limited to business real property** for borrowing arrangements entered into from 10 August 2026 (Treasury Laws Amendment (Tax Reform No. 1) Act 2026 Sch 5; SIS Act s 67A(2)(c)); refinancing an existing borrowing and acquisitions under arrangements entered into earlier are grandfathered. This skill covers SMSF accounting, tax and compliance only -- it is NOT financial product advice (see R-AU-SF-1).
 
-## Section 1 -- Quick reference
+## Ask the client first
+
+### Section 2 -- Required inputs and refusal catalogue
+
+#### Required inputs
+
+**Minimum viable** -- trust deed and member list, trustee type (individual vs corporate), member ages and account phases (accumulation / retirement), trial balance or bank statements, prior-year SAR, and each member's TSB at 30 June 2026.
+
+**Recommended** -- actuarial certificate (if proportionate), 30 June market valuations with evidence, contribution and pension payment schedules per member, TBAR lodgment history, LRBA loan agreement and amortisation schedule, investment strategy with last review date.
+
+**Ideal** -- signed trustee declarations (NAT 71089), audit workpapers and prior auditor management letters, deed history including pension documentation, lease agreements for any related-party tenancy, insurance policy schedule.
+
+#### Refusal catalogue
+
+**R-AU-SF-1 -- Financial product / investment advice (AFSL boundary).** *Trigger:* asked to recommend investments, whether to start/commute a pension, how much to contribute, or whether an SMSF suits the client. *Message:* "That is personal financial product advice requiring an Australian Financial Services Licence (the accountants' exemption ended 1 July 2016). I can handle SMSF accounting, tax and compliance only. Refer to a licensed financial adviser." HARD refusal -- no exceptions.
+
+**R-AU-SF-2 -- In-specie contribution / off-market transfer valuations.** *Trigger:* asked to set the value of an asset contributed or transferred in-specie. *Message:* "Contribution value must be market value with qualified valuation evidence; s 66 acquisition rules also apply. Obtain an independent valuation and escalate."
+
+**R-AU-SF-3 -- LRBA structuring.** *Trigger:* asked to establish a bare/holding trust, draft loan terms, or design a related-party LRBA. *Message:* "LRBA establishment is legal and financial advice, and from 10 August 2026 a new LRBA can acquire real property only if it is business real property. I can classify payments on an EXISTING documented LRBA and check the PCG 2016/5 safe harbour only. Escalate."
+
+**R-AU-SF-4 -- Related-party acquisitions.** *Trigger:* proposed purchase from / lease to a member or related party. *Message:* "s 66 prohibits most related-party acquisitions (exceptions: listed securities and business real property at market value, within in-house limits). Transaction design must be escalated before any step is taken."
+
+**R-AU-SF-5 -- Early-access schemes.** *Trigger:* any request to pay benefits without a documented condition of release, or to 'temporarily borrow' fund money. *Message:* "Illegal early access -- taxed at marginal rates plus penalties, trustee disqualification, potential fund non-compliance (45% on assets), and promoter penalties. Refuse and warn; compassionate release runs through the ATO only."
+
+**R-AU-SF-6 -- Wind-ups.** *Trigger:* asked to wind up a fund. *Message:* "Wind-up sequencing (benefit payments/rollovers, final audit, final SAR with levy adjustment, deregistration) is judgment work with irreversible steps. Escalate to a qualified practitioner."
+
+**R-AU-SF-7 -- Death benefit disputes / BDBNs.** *Trigger:* death benefit payment directions, binding death benefit nomination validity, or competing claims. *Message:* "Legal advice. Escalate to an estate/superannuation lawyer."
+
+## The method, step by step
+
+### Section 1 -- Quick reference
 
 **Read this whole section before computing or classifying anything.**
 
@@ -64,35 +96,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown member age | Ask -- age drives acceptance rules AND pension minimums |
 | Payment to a member with no documented condition of release | Treat as potential illegal early access; escalate (never classify as a benefit) |
 
-## Section 2 -- Required inputs and refusal catalogue
+### Section 3 -- Fund structure and registration
 
-### Required inputs
-
-**Minimum viable** -- trust deed and member list, trustee type (individual vs corporate), member ages and account phases (accumulation / retirement), trial balance or bank statements, prior-year SAR, and each member's TSB at 30 June 2026.
-
-**Recommended** -- actuarial certificate (if proportionate), 30 June market valuations with evidence, contribution and pension payment schedules per member, TBAR lodgment history, LRBA loan agreement and amortisation schedule, investment strategy with last review date.
-
-**Ideal** -- signed trustee declarations (NAT 71089), audit workpapers and prior auditor management letters, deed history including pension documentation, lease agreements for any related-party tenancy, insurance policy schedule.
-
-### Refusal catalogue
-
-**R-AU-SF-1 -- Financial product / investment advice (AFSL boundary).** *Trigger:* asked to recommend investments, whether to start/commute a pension, how much to contribute, or whether an SMSF suits the client. *Message:* "That is personal financial product advice requiring an Australian Financial Services Licence (the accountants' exemption ended 1 July 2016). I can handle SMSF accounting, tax and compliance only. Refer to a licensed financial adviser." HARD refusal -- no exceptions.
-
-**R-AU-SF-2 -- In-specie contribution / off-market transfer valuations.** *Trigger:* asked to set the value of an asset contributed or transferred in-specie. *Message:* "Contribution value must be market value with qualified valuation evidence; s 66 acquisition rules also apply. Obtain an independent valuation and escalate."
-
-**R-AU-SF-3 -- LRBA structuring.** *Trigger:* asked to establish a bare/holding trust, draft loan terms, or design a related-party LRBA. *Message:* "LRBA establishment is legal and financial advice, and from 10 August 2026 a new LRBA can acquire real property only if it is business real property. I can classify payments on an EXISTING documented LRBA and check the PCG 2016/5 safe harbour only. Escalate."
-
-**R-AU-SF-4 -- Related-party acquisitions.** *Trigger:* proposed purchase from / lease to a member or related party. *Message:* "s 66 prohibits most related-party acquisitions (exceptions: listed securities and business real property at market value, within in-house limits). Transaction design must be escalated before any step is taken."
-
-**R-AU-SF-5 -- Early-access schemes.** *Trigger:* any request to pay benefits without a documented condition of release, or to 'temporarily borrow' fund money. *Message:* "Illegal early access -- taxed at marginal rates plus penalties, trustee disqualification, potential fund non-compliance (45% on assets), and promoter penalties. Refuse and warn; compassionate release runs through the ATO only."
-
-**R-AU-SF-6 -- Wind-ups.** *Trigger:* asked to wind up a fund. *Message:* "Wind-up sequencing (benefit payments/rollovers, final audit, final SAR with levy adjustment, deregistration) is judgment work with irreversible steps. Escalate to a qualified practitioner."
-
-**R-AU-SF-7 -- Death benefit disputes / BDBNs.** *Trigger:* death benefit payment directions, binding death benefit nomination validity, or competing claims. *Message:* "Legal advice. Escalate to an estate/superannuation lawyer."
-
-## Section 3 -- Fund structure and registration
-
-### 3.1 Definition of an SMSF (SIS Act s 17A)
+#### 3.1 Definition of an SMSF (SIS Act s 17A)
 
 - **Maximum 6 members** (up from 4 on 1 July 2021).
 - **Individual trustees:** every member is a trustee and every trustee is a member. Single-member fund: 2 individual trustees (the member + 1 other).
@@ -102,7 +108,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Disqualified persons** (s 120: undischarged bankrupts, dishonesty convictions, civil penalty orders) can never act -- check the ATO disqualified trustees register at onboarding.
 - Minors and members lacking capacity act through a legal personal representative or parent/guardian (s 17A(3)); an enduring power of attorney can stand in for a member.
 
-### 3.2 Individual vs corporate trustee
+#### 3.2 Individual vs corporate trustee
 
 | Factor | Individual trustees | Corporate trustee |
 |---|---|---|
@@ -114,7 +120,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 At the 2026-27 penalty unit of $364, a 60-penalty-unit breach (lending, borrowing, in-house assets) costs $21,840 -- **per individual trustee** ($43,680 for a couple) but once for a corporate trustee. Flag this when a new fund file shows individual trustees.
 
-### 3.3 Registration checklist (new fund)
+#### 3.3 Registration checklist (new fund)
 
 1. Execute trust deed, appoint trustees, hold initial assets (fund is not legally established until it holds assets).
 2. Each trustee/director signs the **ATO trustee declaration (NAT 71089)** within 21 days of appointment; retain 10 years.
@@ -124,9 +130,9 @@ At the 2026-27 penalty unit of $364, a 60-penalty-unit breach (lending, borrowin
 6. Prepare the investment strategy (SIS Reg 4.09) BEFORE investing.
 7. First-year fund with no assets: request cancellation or 'return not necessary' -- otherwise the SAR is due.
 
-## Section 4 -- Fund taxation (ITAA 1997 Div 295)
+### Section 4 -- Fund taxation (ITAA 1997 Div 295)
 
-### 4.1 Rate structure
+#### 4.1 Rate structure
 
 | Income class | Rate | Notes |
 |---|---|---|
@@ -140,7 +146,7 @@ At the 2026-27 penalty unit of $364, a 60-penalty-unit breach (lending, borrowin
 
 Franking credits offset fund tax and are refundable. Capital losses offset only capital gains (carry forward; losses on segregated pension assets are disregarded entirely).
 
-### 4.2 ECPI -- exempt current pension income
+#### 4.2 ECPI -- exempt current pension income
 
 **Segregated method** (ss 295-385): specific assets documented as solely supporting retirement-phase pensions; ALL income (and gains/losses -- disregarded) from those assets is exempt. No actuarial certificate needed for periods of full segregation. A fund 100% in retirement phase at ALL times in the year is deemed segregated for the whole year -- no certificate.
 
@@ -150,7 +156,7 @@ Franking credits offset fund tax and are refundable. Capital losses offset only 
 
 **Minimum-payment condition:** ECPI for an account-based pension is only available if the SIS minimum was actually paid for the year (Section 6.1; Example 4).
 
-### 4.3 NALI and NALE -- **AUDIT FLASH POINT**
+#### 4.3 NALI and NALE -- **AUDIT FLASH POINT**
 
 Income is NALI (s 295-550, taxed at 45%) where it exceeds an arm's-length amount from a non-arm's-length scheme, where the non-fixed trust distribution rule applies, or where the applicable non-arm's-length expenditure (NALE) rules apply. A private-company dividend is NALI unless its amount is consistent with an arm's-length dealing. Assess the statutory factors, including share value, cost, dividend rate and other relevant circumstances. In a complying accumulation fund, a $10,000 unfranked dividend satisfying that exception is ordinarily taxed at 15% ($1,500), before other deductions or offsets, rather than 45% ($4,500). (s 295-550(2)-(3); [LCR 2021/2](https://www.ato.gov.au/law/view/document?docid=COG/LCR20212/NAT/ATO/00001).)
 
@@ -162,9 +168,9 @@ Post the 2024 Act (Treasury Laws Amendment (Support for Small Business and Chari
 - The overall non-arm's-length component cannot exceed the fund's assessable income less deductions, excluding assessable contributions and their deductions.
 - Trustee-capacity services (unpaid, own equipment, not through a business) are NOT NALE; discounted services through the trustee's firm ARE (LCR 2021/2). PCG 2020/5's transitional relief for general expenses ended 30 June 2023.
 
-## Section 5 -- Contributions
+### Section 5 -- Contributions
 
-### 5.1 Acceptance (SIS Reg 7.04)
+#### 5.1 Acceptance (SIS Reg 7.04)
 
 | Member age | Fund may accept |
 |---|---|
@@ -182,21 +188,21 @@ For a complying fund, additional no-TFN tax is 32%. An amount is excluded where 
 
 **Allocation timing:** an SMSF has 28 calendar days after the end of the month in which a contribution is received to allocate or reject it. The 3 business day rule for other funds does not apply, and Payday Super did not change this. ([ATO, How Payday Super affects SMSFs](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs).)
 
-### 5.2 Caps (2026-27)
+#### 5.2 Caps (2026-27)
 
 **Rule 8 -- caps and bring-forward.** Concessional $32,500 (2025-26: $30,000); carry-forward of up to 5 prior years' unused cap only if TSB < $500,000 at 30 June 2026. Non-concessional $130,000 (4 x concessional). Bring-forward by TSB at 30 June 2026: < $1.84m -> $390,000 over 3 years; $1.84m to < $1.97m -> $260,000 over 2 years; $1.97m to < $2.1m -> $130,000 only; >= $2.1m -> nil.
 
 **Excess flows:** excess concessional -> included in the member's assessable income at marginal rates less a 15% offset; may elect to release up to 85%; unreleased excess counts to the NCC cap (no excess concessional charge since 2021-22). Excess non-concessional -> release + associated earnings taxed at marginal rates, or (if retained) 47% on the excess. The FUND's accounting never changes -- assessable contributions stay taxed at 15% in the fund; the excess consequences land on the member. A Bill would disregard certain June 2026 quarter employer contributions made in July 2026 when working out 2026-27 concessional contributions; it is not law at 31 October 2026 (see `au-super-guarantee` Rule 6).
 
-### 5.3 Member surcharges -- flag, never compute
+#### 5.3 Member surcharges -- flag, never compute
 
 - **Division 293:** extra 15% on concessional contributions where income + contributions > $250,000 (frozen). ATO-assessed on the member.
 - **Division 296 (NEW, first year 2026-27):** extra 15% on the earnings proportion for TSB between $3m and $10m, extra 25% above $10m (thresholds indexed; realised-earnings basis; ATO-assessed on the MEMBER, payable personally or released from super). The ATO assesses the member, but the trustee must supply the input: from the 2026-27 SAR the SMSF calculates its Division 296 fund earnings (an adjusted amount of fund taxable income), attributes a share to each in-scope member as relevant super earnings and reports that share in the SAR. Subject to exceptions such as nil fund earnings, the ATO says an actuary will need to work out the attributed amount. If the SAR omits it, the ATO notifies the fund (through Online services for agents where there is a tax agent) and the SAR must be amended. Accurate 30 June member balances and market valuations remain essential. A member is in scope when TSB exceeds $3m. LRBA amounts are disregarded in the Division 296 TSB, and a member whose SMSF interest is under $3m can still be in scope through other super interests, so ask members about those. **Do not attempt the member's tax in bookkeeping workflows. Flag any member with TSB near $3m, and escalate the fund-level calculation and attribution:** the ATO said on 24 September 2026 that its draft guidance was still to come. For 2026-27 only the TSB at 30 June 2027 is tested. ([ATO, About Division 296 tax for SMSFs](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/about-division-296-tax-for-smsfs); [ATO, Division 296 tax the latest for SMSFs](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-newsroom/division-296-tax-the-latest-for-smsfs).)
 - **Division 296 cost-base reset choice (small funds):** the trustee of a small superannuation fund can choose, in the approved form, to treat each asset held at the end of 30 June 2026 as having a first-element cost base equal to its market value at that time, with other elements reset to nil and no indexation, for working out Division 296 fund earnings only. The choice covers all assets held at that date, is irrevocable, must be made by the due date for lodging the fund's 2026-27 return, and requires records of the choice and the adjusted cost bases kept for 5 years after they stop being relevant. It does not change the fund's ordinary income tax. Flag it before the 2026-27 SAR for any fund with a member near $3m. (Income Tax (Transitional Provisions) Act 1997 ss 296-50, 296-55, inserted by the Building a Stronger and Fairer Super System Act 2026.)
 
-## Section 6 -- Pensions
+### Section 6 -- Pensions
 
-### 6.1 Account-based pension minimums (SIS Reg 1.06(9A), Sch 7)
+#### 6.1 Account-based pension minimums (SIS Reg 1.06(9A), Sch 7)
 
 | Age at 1 July (or commencement) | Minimum % of account balance |
 |---|---|
@@ -216,14 +222,14 @@ No reduced ("COVID-halved") rates are in force in 2026-27. Round to the nearest 
 
 All remaining conditions must also hold: ECPI would otherwise have continued; the catch-up is made as soon as practicable after discovery in the following income year (generally within 28 days); it would have met the prior year's minimum; and it is treated for all other purposes as paid in that prior year. A trustee who has previously received this concession must apply to the ATO again. If all conditions hold and there has been no prior use, the trustee can generally self-assess continuation. Otherwise refer for ATO consideration rather than assuming relief. (SIS Regulations 1994 reg 1.06(9A) and Sch 7; [ATO, Exception to minimum pension payment requirements](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/paying-smsf-benefits/income-stream-pension-rules-and-payments/exception-to-minimum-pension-payment-requirements).)
 
-### 6.2 Transfer balance cap and TBAR
+#### 6.2 Transfer balance cap and TBAR
 
 - General TBC 2026-27: **$2.1m**. Personal caps differ per member (proportional indexing of unused cap space) -- read the member's ATO TB account, never assume the general cap.
 - **TBAR: quarterly for ALL SMSFs since 1 July 2023** (no TSB carve-out), due **28 days after quarter end**: 28 Oct / 28 Jan / 28 Apr / 28 Jul. No nil lodgments required.
 - Report: retirement-phase pension commencements and their value, commutations (including commutations to fix excess TB), certain LRBA repayment value-shifts, structured settlement contributions. Pension payments themselves and investment earnings are NOT TB events.
 - Excess TB: commute promptly per the determination; respond to a commutation authority within 60 days. Late TBARs make the ATO compute excess determinations off stale data -- a common, avoidable mess.
 
-## Section 7 -- Investment and prohibited-transaction rules
+### Section 7 -- Investment and prohibited-transaction rules
 
 - **Sole purpose test (s 62):** fund maintained solely for retirement/death benefits -- any current-day member benefit (use of the holiday house, art on the wall, wine in the cellar) breaches it.
 - **s 65 -- no loans or financial assistance to members/relatives.** Ever, in any amount. 60 penalty units per trustee.
@@ -233,7 +239,7 @@ All remaining conditions must also hold: ECPI would otherwise have continued; th
 - **Valuations (SIS Reg 8.02B):** all assets at market value each 30 June, on objective supportable evidence -- unlisted trusts, private companies and property are the perennial audit qualification triggers.
 - **Investment strategy (SIS Reg 4.09):** must address risk, return, liquidity, diversification and insurance for members; review REGULARLY -- document a review at least annually and on any significant event (new member, pension commencement, LRBA, market dislocation).
 
-## Section 8 -- Compliance calendar (2025-26 SAR season, 2026-27 year)
+### Section 8 -- Compliance calendar (2025-26 SAR season, 2026-27 year)
 
 | Date | Obligation |
 |---|---|
@@ -250,7 +256,7 @@ A SAR due date on a weekend or public holiday moves to the next business day ([A
 
 SAR more than 2 weeks overdue -> Super Fund Lookup status changes to "Regulation details removed": employers and APRA funds will refuse contributions and rollovers until lodgment catches up.
 
-## Section 9 -- Common breach patterns
+### Section 9 -- Common breach patterns
 
 | Pattern in the file | Provision | Consequence | Action |
 |---|---|---|---|
@@ -263,9 +269,11 @@ SAR more than 2 weeks overdue -> Super Fund Lookup status changes to "Regulation
 | Benefit paid, no condition of release | s 62 / SIS Reg 6.17 | Illegal early access: marginal tax + penalties, disqualification, possible fund non-compliance (45%) | Refuse to classify as benefit; escalate (R-AU-SF-5) |
 | Fund asset used personally (holiday house week) | s 62 sole purpose | Compliance action; NALI risk on related income | Escalate; document cessation |
 
-## Section 10 -- Worked examples
+## Worked cases
 
-### Example 1 -- Fund tax on mixed income with ECPI and a discounted gain (2026-27)
+### Section 10 -- Worked examples
+
+#### Example 1 -- Fund tax on mixed income with ECPI and a discounted gain (2026-27)
 
 Two-member fund, one accumulation, one account-based pension; unsegregated; actuary certifies **60% exempt proportion**. Income: rent $32,000, interest $8,000, unfranked dividends $10,000 (= $50,000 ordinary); gross capital gain $30,000 on shares held 3 years; employer + salary-sacrifice contributions $30,000; general admin expenses $4,000.
 
@@ -281,7 +289,7 @@ Payable with SAR      = $8,460 + $259 levy            = $8,719
 
 The gain's effective rate here: net gain $20,000, taxed share 40% = $8,000, tax $1,200 = 4.0% of the gross $30,000 (10% without ECPI). Contributions are NEVER sheltered by ECPI.
 
-### Example 2 -- NALE on a general expense (2x rule)
+#### Example 2 -- NALE on a general expense (2x rule)
 
 The trustee's accounting firm charges the fund $1,000 for 2026-27 administration; the arm's-length fee is $3,500. This is a non-arm's-length GENERAL expense.
 
@@ -293,7 +301,7 @@ Tax       = 45% x $5,000    = $2,250  (vs $750 at 15% -- a $1,500 penalty effect
 
 Cap check: NALC cannot exceed assessable income less deductions excluding contributions -- here $60,000, so not binding. For a specific property expense, apply the income/expense nexus in Section 4.3. A maintenance discount tied only to an earlier year does not automatically taint a later sale. If a $30,000 gain qualifies for the one-third discount, is in the accumulation phase and has no NALI cause, the $20,000 net gain is taxed at 15% ($3,000), not 45% ($9,000). Unpaid trustee-capacity work with the trustee's own equipment is not NALE (LCR 2021/2).
 
-### Example 3 -- Excess concessional contributions flow
+#### Example 3 -- Excess concessional contributions flow
 
 Member (TSB $600,000 -- no carry-forward) receives SG + salary sacrifice totalling $40,000 in 2026-27 against the $32,500 cap.
 
@@ -307,7 +315,7 @@ Member: assessable at marginal 39% (37% + 2% Medicare)  = $2,925
 
 Member may elect to release up to 85% of the excess ($6,375) from the fund; unreleased excess also counts toward the $130,000 NCC cap. Nothing is amended in the fund's SAR.
 
-### Example 4 -- Minimum pension shortfall and the exception
+#### Example 4 -- Minimum pension shortfall and the exception
 
 Member aged 76 at 1 July 2026; pension balance $480,000. Minimum = 6% x $480,000 = **$28,800**. The fund pays only $22,000 by 30 June 2027 -- shortfall $6,800.
 
@@ -315,7 +323,47 @@ The $6,800 shortfall exceeds one-twelfth of the minimum ($2,400), so it fails th
 
 If relief is unavailable, the pension is treated as ceasing on 1 July 2026, ECPI is lost for that interest for the year, and the $22,000 is treated as lump sums. Restarting requires fresh pension documentation and the applicable transfer balance reporting. An honest-mistake shortfall of $2,400 or less still needs every other exception condition; a catch-up alone is insufficient.
 
-## Section 11 -- Provenance
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+
+#### Prohibitions
+
+- NEVER give investment, product or contribution-strategy advice (R-AU-SF-1 -- AFSL boundary)
+- NEVER compute a member's Division 296 or Division 293 liability -- flag and escalate. The trustee's Division 296 calculation, attribution and SAR reporting still have to happen (Section 5.3)
+- NEVER claim ECPI without checking method eligibility, minimum payments, and (proportionate) the actuarial certificate
+- NEVER apply the individuals' 50% CGT discount to a fund (1/3 only)
+- NEVER treat NALI as 15% income, or net capital losses against segregated-asset gains
+- NEVER accept a related-party transaction value without qualified market evidence
+- NEVER classify a payment to a member as a benefit without a documented condition of release
+- NEVER assume the general $2.1m TBC applies to a member -- personal caps differ
+- NEVER lodge (or treat as lodgeable) a SAR before the audit is finalised
+- NEVER present figures as definitive
+
+
+### Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+
+
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=COG/LCR20212/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/about-division-296-tax-for-smsfs> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-newsroom/division-296-tax-the-latest-for-smsfs> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/paying-smsf-benefits/income-stream-pension-rules-and-payments/exception-to-minimum-pension-payment-requirements> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/other-super-rates-and-thresholds> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/lodge-smsf-annual-returns> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds> | Not re-read for this format update; see retained provenance |
+
+### Section 11 -- Provenance
 
 | Topic | Source |
 |---|---|
@@ -337,24 +385,7 @@ If relief is unavailable, the pension is treated as ceasing on 1 July 2026, ECPI
 
 All ATO figures verified against ato.gov.au on 20 August 2026. The LRBA rate, the Schedule 5 LRBA limit and the Division 296 small-fund choice were checked on 11 October 2026. The Division 296 reporting duty, the allocation period and the agent lodgment dates were checked on 31 October 2026.
 
-### Prohibitions
-
-- NEVER give investment, product or contribution-strategy advice (R-AU-SF-1 -- AFSL boundary)
-- NEVER compute a member's Division 296 or Division 293 liability -- flag and escalate. The trustee's Division 296 calculation, attribution and SAR reporting still have to happen (Section 5.3)
-- NEVER claim ECPI without checking method eligibility, minimum payments, and (proportionate) the actuarial certificate
-- NEVER apply the individuals' 50% CGT discount to a fund (1/3 only)
-- NEVER treat NALI as 15% income, or net capital losses against segregated-asset gains
-- NEVER accept a related-party transaction value without qualified market evidence
-- NEVER classify a payment to a member as a benefit without a documented condition of release
-- NEVER assume the general $2.1m TBC applies to a member -- personal caps differ
-- NEVER lodge (or treat as lodgeable) a SAR before the audit is finalised
-- NEVER present figures as definitive
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 
