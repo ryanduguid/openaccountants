@@ -18,8 +18,9 @@ resolved by hand is easily left stale. The `oa-merge` attribute in
 
 A git merge driver cannot do this: git runs drivers one file at a time before
 the merged tree exists, so a driver can only pick a side, and GitHub ignores
-custom drivers. So this script refuses uncommitted changes and untracked files
-among the derived paths, then runs `git merge --no-commit`. When any other
+custom drivers. So this script refuses uncommitted changes and (here and on
+--continue) untracked files among the derived paths, then runs
+`git merge --no-commit`. When any other
 file conflicts it stops before resolving a derived file or running a
 generator (git has already written its merge of each derived file, conflict
 markers included); resolve and `git add` those files, then run it with
@@ -192,6 +193,16 @@ def finish():
     return 0
 
 
+def refuse_untracked_derived():
+    """Exit when an untracked file sits among the derived paths: the build
+    replaces packages/ and finish() stages new derived paths, so the file
+    would be lost or staged unasked."""
+    untracked = nul_list(git('ls-files', '--others', '--exclude-standard', '-z').stdout)
+    stray = sorted(path for path, kind in merge_kinds(untracked).items() if kind)
+    if stray:
+        sys.exit('merge-main: move or delete these untracked files first:\n  ' + '\n  '.join(stray))
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog='merge-main.py', description=__doc__.split('\n\n')[0],
@@ -205,17 +216,13 @@ def main(argv=None):
     if args.resume:
         if not merging():
             sys.exit('merge-main: no merge in progress; run python3 scripts/merge-main.py [REV]')
+        refuse_untracked_derived()
         return finish()
     if merging():
         sys.exit('merge-main: a merge is already in progress; finish it with --continue or run git merge --abort')
     if git('status', '--porcelain', '--untracked-files=no').stdout.strip():
         sys.exit('merge-main: commit or stash your changes first')
-    # The build replaces packages/ and the script stages new derived paths, so
-    # an untracked file there would be lost or staged unasked.
-    untracked = nul_list(git('ls-files', '--others', '--exclude-standard', '-z').stdout)
-    stray = sorted(path for path, kind in merge_kinds(untracked).items() if kind)
-    if stray:
-        sys.exit('merge-main: move or delete these untracked files first:\n  ' + '\n  '.join(stray))
+    refuse_untracked_derived()
     result = git('merge', '--no-ff', '--no-commit', args.rev, check=False)
     print(result.stdout, end='')
     if not merging():  # already up to date, or the merge never started

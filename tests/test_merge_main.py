@@ -221,6 +221,20 @@ class MergeMainTests(unittest.TestCase):
         self.assertEqual((self.root / "packages/aa/notes.md").read_text(encoding="utf-8"), "Mine.\n")
         self.assertNotEqual(self.git("rev-parse", "-q", "--verify", "MERGE_HEAD", check=False).returncode, 0)
 
+    def test_continue_refuses_untracked_derived_files_too(self) -> None:
+        self.two_branches(
+            {"skills/international/aa/aa-vat.md": guide("aa-vat", "AA", "Feature body.\n")},
+            {"skills/international/aa/aa-vat.md": guide("aa-vat", "AA", "Main body.\n")},
+        )
+        self.assertEqual(self.run_script("merge-main.py", "main").returncode, 1)
+        self.write({"skills/international/aa/aa-vat.md": guide("aa-vat", "AA", "Agreed body.\n"),
+                    "packages/aa/notes.md": "Mine.\n"})
+        self.git("add", "skills/international/aa/aa-vat.md")
+        result = self.run_script("merge-main.py", "--continue")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("packages/aa/notes.md", result.stderr)
+        self.assertEqual((self.root / "packages/aa/notes.md").read_text(encoding="utf-8"), "Mine.\n")
+
 
 class BaselineMergeTests(unittest.TestCase):
     def test_an_entry_either_side_removed_goes_and_one_either_side_added_stays(self) -> None:
