@@ -10,7 +10,7 @@ description: >
   "franking credits refund", "substantiation", "do I need a receipt", "capital or revenue",
   "apportion private use", "small business concessions". It routes to the specialist guides
   rather than restating their rules.
-version: 0.9
+version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "Primarily 2026-27; prepayment cases follow deductions into 2027-28 and 2028-29"
@@ -23,7 +23,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Deductions, Offsets and Concessions v0.9
+# Australia Deductions, Offsets and Concessions v1.0
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -343,7 +343,7 @@ Cases 1 to 4 isolate deductions and taxable income for 2026-27. All facts are sy
 
 ### Case 1: separate deductions do not use up the standard deduction
 
-Nadia's $92,000 salary supports a $1,000 ceiling. Her $780 of covered actual deductions leaves a $220 standard deduction. The union fees, eligible income protection premiums, DGR gift and investment interest remain separate deductions. Total deductions are $3,660 and taxable income is $88,340. The retained illustration below continues beyond this deduction-only case; its levy and refund assumptions are outside this new check.
+Nadia's $92,000 salary supports a $1,000 ceiling. Her $780 of covered actual deductions leaves a $220 standard deduction. The union fees, eligible income protection premiums, DGR gift and investment interest remain separate deductions. Total deductions are $3,660 and taxable income is $88,340. Cases 12 and 13 below separately check the retained illustration's tax, ordinary levy and illustrative refund under their stated assumptions.
 
 ```oa-check
 name: AU 2026-27 standard deduction with separate eligible deductions
@@ -606,13 +606,80 @@ expected:
   remaining_stated_tax: 1000
 ```
 
-Recompute all 11 cases with `python3 scripts/check-examples.py --require skills/international/australia/au-deductions-offsets.md`. The statutory decisions, eligibility and all excluded assessment components still require separate verification.
+Recompute all 13 cases with `python3 scripts/check-examples.py --require skills/international/australia/au-deductions-offsets.md`. The statutory decisions, eligibility and all excluded assessment components still require separate verification.
+
+### Case 12: Nadia with the standard deduction
+
+This 2026-27 case uses all the independently established eligibility and liability assumptions in Section 11. It checks the stated income-tax bands, nil LITO, ordinary levy and PAYG subtraction. It does not establish deductions, exemptions, surcharge liability, other assessment components or the ATO account result.
+
+```oa-check
+name: AU 2026-27 Nadia with standard deduction assessment illustration
+inputs:
+  salary: 92000
+  covered_actual_deductions: 780
+  additional_deductions: 2660
+  payg_withheld: 19000
+steps:
+  - standard_deduction: max(0, min(1000, salary) - covered_actual_deductions)
+  - total_deductions: covered_actual_deductions + additional_deductions + standard_deduction
+  - taxable_income: salary - total_deductions
+  - income_tax: (45000 - 18200) * 0.15 + (taxable_income - 45000) * 0.30
+  - lito: max(0, 325 - (taxable_income - 45000) * 0.015)
+  - net_income_tax: max(0, income_tax - lito)
+  - ordinary_medicare_levy: taxable_income * 0.02
+  - total_tax_and_levy: net_income_tax + ordinary_medicare_levy
+  - illustrative_refund: payg_withheld - total_tax_and_levy
+expected:
+  standard_deduction: 220
+  total_deductions: 3660
+  taxable_income: 88340
+  income_tax: 17022
+  lito: 0
+  net_income_tax: 17022
+  ordinary_medicare_levy: 1766.80
+  total_tax_and_levy: 18788.80
+  illustrative_refund: 211.20
+```
+
+### Case 13: Nadia without the standard deduction
+
+This 2026-27 case uses all the independently established eligibility and liability assumptions in Section 11. It checks the stated income-tax bands, nil LITO, ordinary levy and PAYG subtraction. It does not establish deductions, exemptions, surcharge liability, other assessment components or the ATO account result.
+
+```oa-check
+name: AU 2026-27 Nadia without standard deduction assessment illustration
+inputs:
+  salary: 92000
+  covered_actual_deductions: 780
+  additional_deductions: 2660
+  payg_withheld: 19000
+steps:
+  - standard_deduction: 0
+  - total_deductions: covered_actual_deductions + additional_deductions + standard_deduction
+  - taxable_income: salary - total_deductions
+  - income_tax: (45000 - 18200) * 0.15 + (taxable_income - 45000) * 0.30
+  - lito: max(0, 325 - (taxable_income - 45000) * 0.015)
+  - net_income_tax: max(0, income_tax - lito)
+  - ordinary_medicare_levy: taxable_income * 0.02
+  - total_tax_and_levy: net_income_tax + ordinary_medicare_levy
+  - illustrative_refund: payg_withheld - total_tax_and_levy
+expected:
+  standard_deduction: 0
+  total_deductions: 3440
+  taxable_income: 88560
+  income_tax: 17088
+  lito: 0
+  net_income_tax: 17088
+  ordinary_medicare_levy: 1771.20
+  total_tax_and_levy: 18859.20
+  illustrative_refund: 140.80
+```
 
 ### Section 11 - Worked example
 
 **Facts.** Nadia is an Australian tax resident for the whole of the 2026-27 income year. She is an
-employee with salary of $92,000 and $19,000 of PAYG withheld. She has no spouse, no private health
-insurance obligations in issue, and no HELP debt. All figures are synthetic.
+employee with salary of $92,000 and $19,000 of PAYG withheld. She has no spouse or dependent children. Her full tax-free threshold and ordinary resident rates apply. She is liable for the ordinary 2% Medicare levy for the whole year, with no exemption, family reduction or surcharge. She has no HELP or other study and training support loan liability. All figures are synthetic.
+
+Each deduction below is stipulated to be independently eligible after its substantive conditions, apportionment, GST treatment and evidence requirements, with no reimbursement or salary packaging. There is no other income, offset, levy, repayment, payment credit or account adjustment. These facts support a limited illustration under the law in force on 2 November 2026, assuming it remains applicable for 2026-27; they do not establish any real taxpayer's entitlement or ATO account balance.
 
 Her substantiated amounts for the year:
 
@@ -676,8 +743,7 @@ Refund                                          =    211.20
 **Step 7, compare without the standard deduction.** At the same 2026-27 rates, her deductions would
 be $3,440, giving taxable income of $88,560, tax of $17,088, a Medicare levy of $1,771.20 and a
 refund of $140.80. The $220 standard deduction is worth $70.40, being $220 at her 30% marginal
-rate plus the 2% Medicare levy. This is not a 2025-26 result: that year's 16% rate on the same
-$88,560 gives tax of $17,356 and $127.20 payable.
+rate plus the 2% Medicare levy. For comparison only, a hypothetical 2025-26 taxpayer with the same $88,560 taxable income and all the other stated liability and credit assumptions would have tax of $17,356 and $127.20 payable at that year's 16% first-band rate. The standard deduction did not apply in 2025-26.
 
 **What the example shows.** The value of a deduction is the deduction multiplied by the marginal
 rate and the levy, not the deduction itself. It also shows why the four extra items matter: none
@@ -728,7 +794,7 @@ The most up-to-date version of this skill is maintained at
 | ATO non-commercial losses index: links to loss, income-test and discretion guidance | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses> | 2026-11-02; routing page only, not evidence of detailed thresholds |
 | ATO: Income protection insurance | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/investments-insurance-and-super/income-protection-insurance> | 2026-11-02; updated 8 June 2026; premium/benefit classification and super exclusion only |
 | ATO: Gifts and donations | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/gifts-and-donations> | 2026-11-02; updated 6 July 2026; gift conditions, DGR status and money-gift overview only |
-| ITAA 1997, compilation 268 (C2026C00471): selected ss 8-1, 8-5, 25-5, 25-130, 26-5, 26-102, 27-5, 28-100, 28-115, 28-120, 30-15(1)-(2) and item 1 (money gifts only), 32-5, 32-20, 35-10, 35-30, 35-55, 40-80(2), 40-291A, 40-425, 61-155, 61-160, 61-205, 63-10, 67-23, 67-25, 110-45(1)-(4), 118-24, 290-150, 290-170, 328-180, 328-185, 328-190, 328-200, 328-210, 328-215, 355-100 (offset classification), 770-75, 770-80, 900-15, 900-25, 900-115 and 900-165 | <https://www.legislation.gov.au/C2026C00471/latest/text> | 2026-11-02; compilation in force 1 October 2026; selected provisions, not the whole Act |
+| ITAA 1997, compilation 268 (C2026C00471): selected ss 4-10, 4-15(1), 8-1, 8-5, 25-5, 25-130, 26-5, 26-102, 27-5, 28-100, 28-115, 28-120, 30-15(1)-(2) and item 1 (money gifts only), 32-5, 32-20, 35-10, 35-30, 35-55, 40-80(2), 40-291A, 40-425, 61-155, 61-160, 61-205, 63-10, 67-23, 67-25, 110-45(1)-(4), 118-24, 290-150, 290-170, 328-180, 328-185, 328-190, 328-200, 328-210, 328-215, 355-100 (offset classification), 770-75, 770-80, 900-15, 900-25, 900-115 and 900-165 | <https://www.legislation.gov.au/C2026C00471/latest/text> | 2026-11-02; compilation in force 1 October 2026; selected provisions, not the whole Act |
 | ATO about tax offsets: general non-refundable and refundable distinction | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/about-tax-offsets> | 2026-11-02; page updated 8 June 2026 |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/63-10> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/8-5> | Not re-read for this format update; see retained provenance |
@@ -743,6 +809,9 @@ The most up-to-date version of this skill is maintained at
 | PCG 2023/1: paragraph 26A rate table and selected paragraphs 27-28 and 58-63 on covered costs and records | <https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001> | 2026-11-02; 70c from 1 July 2024 without a stated end date; confirm 2026-27 applicability as explained above |
 | ATO instant asset write-off: eligibility, timing and cost before business-use apportionment | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/instant-asset-write-off> | 2026-11-02; page updated 28 August 2026; selected guidance |
 | Tax Reform No. 2 Act 2026: commencement and Schedule 2 items 1-22, including application | <https://www.legislation.gov.au/C2026A00071/asmade/text> | 2026-11-02; Schedule 2 commenced 1 October 2026 |
+| Income Tax Rates Act 1986, compilation 66 (C2026C00300): full-threshold definition, resident-rate year selection and Schedule 7 Parts I-II | <https://www.legislation.gov.au/C2026C00300/latest/text> | 2026-11-02; unchanged selected evidence reused from the rates-card check |
+| ATO resident rates: full-year and full-threshold conditions, 2025-26 and 2026-27 tables, Medicare exclusion | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents> | 2026-11-02; unchanged captured evidence reused from the rates-card check |
+| Medicare Levy Act 1986, compilation 53 (C2026C00295): selected s 3 and ss 6-8, including the s 8(2) formula | <https://www.legislation.gov.au/C2026C00295/latest/text> | 2026-11-02; in force 1 July 2026; supports the stipulated ordinary levy, not a new exemption or surcharge eligibility audit |
 | ATO LITO: eligibility, taper and non-refundable limit | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/low-income-tax-offset> | 2026-11-02; page updated 8 June 2026; unchanged captured evidence reused from the rates-card check |
 | ATO SAPTO: selected pension/allowance and income-test eligibility, transfer and Medicare-threshold guidance | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/seniors-and-pensioners-tax-offset> | 2026-11-02; page updated 2 October 2026; full pension and income-threshold rules not re-audited |
 | Retained citation | <https://www.legislation.gov.au/C2026A00049/latest> | Not re-read for this format update; see retained provenance |
@@ -787,7 +856,7 @@ Legislation, and the ATO working from home page (updated 8 June 2026) still list
 for 2024-25 and 2025-26. On 31 October 2026 the same page was still updated 8 June 2026, and PCG
 2023/1 para 26A read 70c from 1 July 2024 with no end date.
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review of the whole guide have not been performed. The 2 November 2026 checks cover only the stated read scopes in the 18 named source rows above and arithmetic in the 11 executable cases. The newer general-deduction, denial, GST, prepayment, Division 35, personal-super notice and R&D classification checks do not establish taxpayer eligibility. Detailed gift eligibility, detailed PSI and concession gateways, other offset eligibility, contribution methods and caps, the retained full-return illustration and levy/refund claims still require reconciliation and qualified review. Other dates and qualifications retain their original scope, including statutory application dates not re-audited here. This remains a tier 2 draft pending qualified review.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review of the whole guide have not been performed. The 2 November 2026 checks cover only the stated read scopes in the 21 named source rows above and arithmetic in the 13 executable cases. The newer general-deduction, denial, GST, prepayment, Division 35, personal-super notice and R&D classification checks do not establish taxpayer eligibility. Detailed gift eligibility, detailed PSI and concession gateways, other offset eligibility, contribution methods and caps and assessment components outside the stated Nadia assumptions still require reconciliation and qualified review. Cases 12 and 13 check only the stated synthetic assessment illustration; they do not establish real deductions, Medicare eligibility or an ATO refund. Other dates and qualifications retain their original scope, including statutory application dates not re-audited here. This remains a tier 2 draft pending qualified review.
 
 <!-- openaccountants-cta-block -->
 

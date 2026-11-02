@@ -11,7 +11,7 @@ description: >
   "activity statement", "annual leave", "long service leave",
   "minimum wage Australia", or any question about running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.6
+version: 2.7
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -22,7 +22,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.6
+# Australia -- Payroll Skill v2.7
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -56,7 +56,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 2.4 |
+| Skill version | 2.7 |
 
 ### Section 2 -- Income Tax Withholding (PAYG)
 
@@ -82,7 +82,7 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 | --- | --- |
 | Standard rate | 2% of taxable income |
 | Low-income threshold (single, 2025-26) | No levy up to $28,011; reduced levy $28,012--$35,013 (the ATO sets the 2026-27 thresholds later in the year) |
-| Low-income threshold (family, 2025-26) | No levy up to $47,238; reduced $47,239--$59,047, plus $4,338 per dependent child |
+| Low-income threshold (family, 2025-26) | Base threshold $47,238 plus $4,338 for each qualifying child. Above the threshold, calculate the family reduction under Medicare Levy Act s 8; it reaches zero at 1.25 times that threshold. Apply the spouse-sharing rules in `au-medicare-levy.md`. These are annual assessment rules, not PAYG withholding formulas |
 | Medicare Levy Surcharge | 1.0%--1.5% additional for high earners without private hospital cover |
 
 - **Medicare levy incorporation** — The Medicare levy is incorporated into PAYG withholding calculations via the tax tables.
@@ -381,6 +381,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 | Source | URL | Read on |
 |---|---|---|
+| Medicare Levy Act 1986, compilation 53 (C2026C00295): selected s 3 and ss 6-8, including the s 8(2) formula | <https://www.legislation.gov.au/C2026C00295/latest/text> | 2026-11-02; only the ordinary family-threshold summary rechecked here |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-1-statement-of-formulas-for-calculating-amounts-to-be-withheld/payee-declarations> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |

@@ -1,7 +1,7 @@
 ---
 name: au-medicare-levy
 description: Use this skill whenever asked about the Australian Medicare Levy, Medicare Levy Surcharge (MLS), low-income reduction thresholds, family thresholds, surcharge tiers, private health insurance (PHI) rebate interaction, or Medicare levy exemptions. Trigger on phrases like "Medicare levy", "Medicare surcharge", "MLS", "do I pay Medicare levy", "low income Medicare", "Medicare levy reduction", "Medicare levy exemption", "private health insurance rebate", "PHI rebate", "M1", "M2", or any question about Medicare-related levies on an Australian tax return. ALWAYS read this skill before touching any Medicare levy work.
-version: 2.5
+version: 2.6
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-11-02
@@ -11,13 +11,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Medicare Levy v2.5
+# AU Medicare Levy v2.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia Medicare Levy and Medicare Levy Surcharge Skill v2.5
+### Australia Medicare Levy and Medicare Levy Surcharge Skill v2.6
 
 ## Ask the client first
 
@@ -55,12 +55,12 @@ Read this whole section before computing anything.
 | Currency | AUD only |
 | Contributor | Open Accountants |
 | Validation Date | October 2026 (2025-26 low-income thresholds confirmed against Treasury Laws Amendment (Delivering an Efficient and Trusted Tax System) Act 2026, Sch 5) |
-| Skill version | 2.4 |
+| Skill version | 2.6 |
 | Confidence Coverage | Tier 1: standard levy, low-income reduction, surcharge tiers, family thresholds. Tier 2: half-year exemptions, part-year residents, PHI rebate tier selection. Tier 3: Norfolk Island transitional, diplomatic exemptions, prescribed overseas forces. |
 
 **Low-income reduction thresholds (2025-26)**
 
-| Category | Lower Threshold (no levy) | Upper Threshold (full levy) | Shade-in Rate |
+| Category | Lower Threshold (no levy) | Upper threshold (ATO guide figures for families) | Shade-in Rate |
 | --- | --- | --- | --- |
 | Single (general) | $28,011 | $35,013 | 10 cents per $1 |
 | Single (SAPTO-entitled) | $44,268 | $55,335 | 10 cents per $1 |
@@ -203,9 +203,9 @@ This is the deterministic pre-classifier for bank statement entries related to M
 - **Who can use the family route** — A person who was married (including de facto) on the last day of the income year, is entitled to the invalid or invalid carer tax offset for their child (Subdiv 61-A), or is entitled to a notional tax offset under Subdiv 961-B. The ATO's list refers to sole care of a dependent child, and also to a spouse who died during the year with no new spouse by year end. A sole parent's threshold rises for a child only if family tax benefit was payable to them for that child.  _([Medicare Levy Act 1986 s 8(1), (2), (6)](https://www.legislation.gov.au/C2004A03351/latest/text); [ATO, Family income](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income); [ATO, M1 2026](https://www.ato.gov.au/forms-and-instructions/individual-tax-return-2026-instructions/medicare-levy-questions-m1-m2-individual-tax-return-2026/m1-medicare-levy-reduction-or-exemption-2026))_
 - **Family threshold formula** — Family threshold = $47,238 + ($4,338 x number_of_dependent_children)  _(Medicare Levy Act 1986 s 8)_
 - **SAPTO family threshold formula** — For SAPTO-entitled families: Family threshold = $61,623 + ($4,338 x number_of_dependent_children). If SAPTO entitlement reduces to nil before the upper limit, use the non-SAPTO thresholds. Being eligible for SAPTO without receiving the offset does not give the higher thresholds.  _(Medicare Levy Act 1986 s 8(7); [ATO, Family income](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income))_
-- **Family upper threshold (full levy)** — The reduction phases out entirely at the upper family income threshold: $59,047 (+ $5,423 per dependent child), or $77,028 (+ $5,423 per child) when SAPTO-entitled. Above it no family reduction remains, and each person's levy is the amount under ss 6 and 7.  _(Medicare Levy Act 1986 s 8)_
+- **Family upper figures and the calculation**: The ATO publishes $59,047 plus $5,423 per dependent child, or $77,028 plus $5,423 when SAPTO entitled. These are guide figures. For a calculation, use the section 8(2) formula below with the unrounded family threshold. The reduction reaches zero at exactly 1.25 times that threshold; adding separately rounded upper figures can change the cut-off, especially with multiple children. Once the reduction is nil, each person's levy is the amount under ss 6 and 7. _([Medicare Levy Act 1986 s 8](https://www.legislation.gov.au/C2026C00295/latest/text); [ATO, Family income](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income))_
 - **Family threshold effect** — Family income at or below the family threshold: no Medicare levy payable by either spouse (s 8(1)). Family income above the family threshold: apply the family reduction below.  _([Medicare Levy Act 1986 s 8](https://www.legislation.gov.au/C2004A03351/latest/text))_
-- **Family reduction formula** — Family reduction = (2% x family threshold) - 0.08 x (family income - family threshold), and nil if the result is not positive. It reaches nil at about 1.25 times the family threshold, which is the upper threshold. Subtract it from the levy otherwise payable under ss 6 and 7, so work out any single low-income shade-in first.  _([Medicare Levy Act 1986 s 8(2)](https://www.legislation.gov.au/C2004A03351/latest/text))_
+- **Family reduction formula** — Family reduction = (2% x family threshold) - 0.08 x (family income - family threshold), and nil if the result is not positive. It reaches nil at exactly 1.25 times the family threshold. Do not use separately rounded ATO upper figures to replace this formula. Subtract it from the levy otherwise payable under ss 6 and 7, so work out any single low-income shade-in first.  _([Medicare Levy Act 1986 s 8(2)](https://www.legislation.gov.au/C2004A03351/latest/text))_
 - **Sharing between spouses** — If the spouse would also be liable for levy apart from ss 8 and 9, the person's reduction is the family reduction x (own taxable income / family income). If the spouse would not be liable, the person takes the whole reduction. Where a person's reduction exceeds their levy, the excess reduces the spouse's levy.  _([Medicare Levy Act 1986 s 8(3), (4)](https://www.legislation.gov.au/C2004A03351/latest/text))_
 - **The ATO's individual income condition** — The ATO's family income page lists individual taxable income above $35,013 ($55,335 with SAPTO) as an eligibility condition. Section 8 has no such condition, and the same page's example gives a person with $49,700 and SAPTO a family reduction. Compute under s 8, and flag any case below those amounts for the reviewer. The ATO works out the reduction from the spouse details and the number of dependent children at M1 Y.  _([ATO, Family income](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income); [ATO, M1 2026](https://www.ato.gov.au/forms-and-instructions/individual-tax-return-2026-instructions/medicare-levy-questions-m1-m2-individual-tax-return-2026/m1-medicare-levy-reduction-or-exemption-2026))_
 - **Family income for Medicare levy purposes** — For the ordinary levy reduction, family taxable income is max(own taxable income, 0) + max(spouse taxable income, 0), or own taxable income for a sole parent. Do not add MLS adjustments. A family with $45,000 combined taxable income and $5,000 reportable super tests $45,000 here, not $50,000.  _(Medicare Levy Act 1986 s 8)_
@@ -304,6 +304,98 @@ Situation: 2025-26. Client held appropriate PHI for 200 days of the year, no cov
 Resolution: MLS is pro-rated for the 165 uncovered days. MLS = $120,000 x 1.25% x (165/365) = $678.08 (approximately). Flag for reviewer -- confirm exact uncovered days.
 
 ## Worked cases
+
+### Executable family-reduction cases
+
+These synthetic 2025-26 cases isolate the ordinary family reduction under [Medicare Levy Act 1986 ss 6-8](https://www.legislation.gov.au/C2026C00295/latest/text). Both spouses are full-year Australian residents, married and living together on the last day of the year, with no SAPTO entitlement or Medicare exemption. Each is otherwise liable for the ordinary 2% levy and has taxable income above the individual phase-in limit. The $4,338 increase is independently established for each of 3 children under section 8(5), including its notional-offset conditions. The arithmetic does not establish those conditions. These cases exclude MLS, private health rebates, income tax and the final assessment. Equal incomes make each spouse's section 8(3) share one-half; no reduction exceeds either spouse's levy.
+
+The family threshold is $60,252 and the exact formula reaches zero at $75,315. Do not replace it with the payroll summary's former $59,047 + 3 x $4,338 = $72,061 or the ATO guide figures added as $59,047 + 3 x $5,423 = $75,316. The latter is published guidance, not the exact statutory zero.
+
+#### Family case below the zero point
+
+```oa-check
+name: AU 2025-26 three-child family below the zero point
+inputs:
+  own_taxable_income: 37000
+  spouse_taxable_income: 37000
+  qualifying_children: 3
+steps:
+  - family_income: own_taxable_income + spouse_taxable_income
+  - family_threshold: 47238 + 4338 * qualifying_children
+  - exact_zero_point: family_threshold * 1.25
+  - ordinary_levy: own_taxable_income * 0.02
+  - family_reduction: max(0, family_threshold * 0.02 - (family_income - family_threshold) * 0.08)
+  - own_reduction: family_reduction * own_taxable_income / family_income
+  - own_levy_after_reduction: ordinary_levy - own_reduction
+  - combined_levy: own_levy_after_reduction * 2
+expected:
+  family_income: 74000
+  family_threshold: 60252
+  exact_zero_point: 75315
+  ordinary_levy: 740.00
+  family_reduction: 105.20
+  own_reduction: 52.60
+  own_levy_after_reduction: 687.40
+  combined_levy: 1374.8
+```
+
+#### Family case one dollar below the zero point
+
+```oa-check
+name: AU 2025-26 three-child family one dollar below the zero point
+inputs:
+  own_taxable_income: 37657
+  spouse_taxable_income: 37657
+  qualifying_children: 3
+steps:
+  - family_income: own_taxable_income + spouse_taxable_income
+  - family_threshold: 47238 + 4338 * qualifying_children
+  - exact_zero_point: family_threshold * 1.25
+  - ordinary_levy: own_taxable_income * 0.02
+  - family_reduction: max(0, family_threshold * 0.02 - (family_income - family_threshold) * 0.08)
+  - own_reduction: family_reduction * own_taxable_income / family_income
+  - own_levy_after_reduction: ordinary_levy - own_reduction
+  - combined_levy: own_levy_after_reduction * 2
+expected:
+  family_income: 75314
+  family_threshold: 60252
+  exact_zero_point: 75315
+  ordinary_levy: 753.14
+  family_reduction: 0.08
+  own_reduction: 0.04
+  own_levy_after_reduction: 753.10
+  combined_levy: 1506.2
+```
+
+#### Family case one dollar above the zero point
+
+```oa-check
+name: AU 2025-26 three-child family one dollar above the zero point
+inputs:
+  own_taxable_income: 37658
+  spouse_taxable_income: 37658
+  qualifying_children: 3
+steps:
+  - family_income: own_taxable_income + spouse_taxable_income
+  - family_threshold: 47238 + 4338 * qualifying_children
+  - exact_zero_point: family_threshold * 1.25
+  - ordinary_levy: own_taxable_income * 0.02
+  - family_reduction: max(0, family_threshold * 0.02 - (family_income - family_threshold) * 0.08)
+  - own_reduction: family_reduction * own_taxable_income / family_income
+  - own_levy_after_reduction: ordinary_levy - own_reduction
+  - combined_levy: own_levy_after_reduction * 2
+expected:
+  family_income: 75316
+  family_threshold: 60252
+  exact_zero_point: 75315
+  ordinary_levy: 753.16
+  family_reduction: 0.00
+  own_reduction: 0.00
+  own_levy_after_reduction: 753.16
+  combined_levy: 1506.32
+```
+
+Recompute all 3 cases with `python3 scripts/check-examples.py --require skills/international/australia/au-medicare-levy.md`. These are formula checks under stipulated facts, not eligibility decisions.
 
 ### Section 9 -- Test suite
 
@@ -417,11 +509,11 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | Retained citation | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7564> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7564_first-reps%2F0000%22;rec=0> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7564_ems_f6c3dfdd-63a3-4320-aad9-21455548f4b1%22> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.legislation.gov.au/C2004A03351/latest/text> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income> | Not re-read for this format update; see retained provenance |
+| Medicare Levy Act 1986, compilation 53 (C2026C00295): selected s 3 and ss 6-8, including the s 8(2) formula image alternative text | <https://www.legislation.gov.au/C2004A03351/latest/text> | 2026-11-02; current compilation in force 1 July 2026; other provisions not re-audited |
+| ATO family income: eligibility guidance, lower and rounded upper figures, child increments and Ashton example | <https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income> | 2026-11-02; page updated 30 June 2026; individual-income condition conflict retained above |
 | Retained citation | <https://www.ato.gov.au/forms-and-instructions/individual-tax-return-2026-instructions/medicare-levy-questions-m1-m2-individual-tax-return-2026/m1-medicare-levy-reduction-or-exemption-2026> | Not re-read for this format update; see retained provenance |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed. The 2 November 2026 read scopes and 3 executable cases check the selected ordinary levy and family-reduction formulas under stipulated facts. They do not establish child eligibility, SAPTO entitlement, exemptions, MLS, private health rebate treatment or a final assessment. The remaining source rows and retained examples have not been newly re-audited. Existing dates and qualifications retain their original scope. This remains a tier 2 draft pending qualified review.
 
 <!-- openaccountants-cta-block -->
 
