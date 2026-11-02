@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-02T15:51:36+00:00",
+ "generated_at": "2026-11-02T16:06:45+00:00",
  "counts": {
-  "guides": 2014,
-  "jurisdictions": 293,
+  "guides": 2017,
+  "jurisdictions": 294,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -10508,7 +10508,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "hm-tax-scope-reference",
@@ -21663,6 +21663,45 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "tc-formation-and-business-licensing-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-formation-and-business-licensing-reference.md",
+   "name": "tc-formation-and-business-licensing-reference",
+   "jurisdiction": "TC",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "tc-sector-taxes-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-sector-taxes-reference.md",
+   "name": "tc-sector-taxes-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2018",
+   "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "tc-social-contributions-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-social-contributions-reference.md",
+   "name": "tc-social-contributions-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "tv-npf-contribution-reference",
