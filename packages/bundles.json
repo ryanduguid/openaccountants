@@ -4709,6 +4709,20 @@
     "workflow-base.md"
    ]
   },
+  "saint-vincent-and-the-grenadines": {
+   "jurisdiction": "VC",
+   "name": "Saint Vincent And The Grenadines",
+   "files": [
+    "intake.md",
+    "vc-persons-abroad-contributions-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "samoa": {
    "jurisdiction": "WS",
    "name": "Samoa",
