@@ -12,10 +12,10 @@ description: >
   applicable workflow outputs and holds unknown facts and specialist cases
   for professional review. Calendar and programme summaries retain separate
   provenance and require current case-specific verification.
-version: 0.5
+version: 0.6
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-18
+last_updated: 2026-11-02
 review_status: pending_review
 category: international
 tier: 2
@@ -24,31 +24,13 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Lodgment Deadlines, Penalties and Interest
+# Australia Lodgment Deadlines, Penalties and Interest v0.6
 
-## Australia Lodgment Deadlines, Penalties and Interest v0.5
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **General reference only.** This skill is general tax and accounting reference material for
-> AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
-> elections, deadlines, residency, filing status or local procedures. Do not rely on it to
-> lodge, pay, amend or take a tax position without review by a qualified professional.
+## Scope
 
-**Scoped v0.5 revision, 18 October 2026:** penalty boundaries, interest
-liability/calculation/deduction timing, recoupment and selected correction
-routes were checked against the primary sources below. Unchanged programme,
-annual/BAS calendar and debt-recovery summaries retain their earlier
-16 September 2026 source provenance and require their own current checks.
-This revision is not a fresh financial sign-off for the whole guide.
-
-Load workflow-base and every applicable domain base and country reference.
-Preserve their source/period gates, confirmed profile, refusal rules, four
-universal outputs and all applicable domain outputs and checks. Unknown
-mandatory facts remain Needs Input; unresolved law remains held. A deadline
-or interest schedule is supporting work, not a completed return, filed
-request or permission to submit or pay. Keep identifiers, bank details and
-signing credentials with the reviewer.
-
-## What this file is
+### What this file is
 
 **Obligation category:** Administration
 **Functional role:** Deadline, penalty and interest reference across every ATO-administered role
@@ -63,7 +45,7 @@ This file covers federal obligations administered by the ATO. State and territor
 including payroll tax, land tax and duties, have their own deadlines and penalty regimes set by
 each revenue office. See `au-land-tax.md` and `au-stamp-duty.md`.
 
-## Section 1 - Scope statement
+### Section 1 - Scope statement
 
 This skill covers:
 
@@ -89,7 +71,9 @@ This skill does NOT cover:
 - Director penalty notices, garnishee notices and departure prohibition orders beyond the summary
   in Section 9. These are debt recovery actions requiring specific advice.
 
-## Section 2 - Establish the facts before you quote a date
+## Ask the client first
+
+### Section 2 - Establish the facts before you quote a date
 
 **Facts that change the date**
 
@@ -105,7 +89,9 @@ This skill does NOT cover:
 | Withholder size for PAYG withholding | Determines whether withheld amounts are remitted quarterly, monthly or more often |
 | Is the taxpayer in a declared disaster area | Concessional deferrals may apply automatically |
 
-## Section 3 - Activity statement deadlines
+## The method, step by step
+
+### Section 3 - Activity statement deadlines
 
 **Activity statement deadlines**  _([ATO, Due dates for lodging and paying your BAS](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas); [ATO, When are PAYG instalments due](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due))_
 
@@ -126,7 +112,7 @@ and excludes GIC itself. Filing adjustments have their own authority.
 Confirm the actual calendar and obligation rather than moving every charge
 for any local public holiday. [TAA-ADMIN1]
 
-## Section 4 - Income tax and annual return deadlines
+### Section 4 - Income tax and annual return deadlines
 
 **Income tax and annual return deadlines**  _([ATO, Due dates by topic: income tax](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax))_
 
@@ -146,50 +132,11 @@ through the agent's client list, it is conditional on the client being on that l
 relevant date, and it can be withdrawn where the client's lodgment record is poor. A taxpayer who
 engages an agent in April cannot assume the May date.
 
-## Section 5 - Deferrals, extensions and disaster support
+### Section 5 - Deferrals, extensions and disaster support
 
 - **Deferrals, extensions and disaster support**: 1. **Electronic lodgment concession.** Quarterly BAS lodgers may receive an extra two weeks for quarters 1, 3 and 4 when lodging online. Quarter 2 is excluded because its due date already carries a one month extension. 2. **Agent deferral.** A registered agent can request a deferral for a client, or a bulk deferral where a practice-level event prevents lodgment. 3. **Individual deferral.** A taxpayer can request more time. Apply before the due date; a request made after the due date does not undo a penalty that has already accrued. 4. **Disaster support.** Taxpayers in areas affected by a declared natural disaster may receive automatic deferrals of lodgment and payment, and in some cases faster processing of refunds. 5. **Payment arrangements.** An inability to pay is not a reason to delay lodgment. Lodge on time and negotiate a payment arrangement. General interest charge continues to accrue under a payment arrangement unless the ATO remits it.
 
-## Section 6 - Failure to lodge on time penalty
-
-- **Base penalty**: The FTL penalty is charged per document, not per dollar, and accrues by elapsed time. One penalty unit for every 28 days, or part of 28 days, that the document is overdue, to a maximum of five penalty units.  _([TAA 1953 Schedule 1 s 286-80](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
-
-**Published penalty unit history: apply the relevant statutory date rule**  _([ATO, Penalty units](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units))_
-
-| When the infringement occurred | Penalty unit |
-| --- | --- |
-| On or after 1 July 2026 | $364 |
-| 7 November 2024 to 30 June 2026 | $330 |
-| 1 July 2023 to 6 November 2024 | $313 |
-| 1 January 2023 to 30 June 2023 | $275 |
-
-For FTL, section **286-80(5)** uses the unit value at the **start of each
-28-day period**, not one automatic current amount for every overdue block.
-The period is counted from the confirmed due date through the date before
-receipt: 28 days late is one base unit, 29 days is two, capped at five.
-Verify actual deferrals and approved-form receipt. [TAA-ADMIN2];
-[PS-FTL, paragraphs 15-16][PS-FTL]
-
-**Entity size multiplier**  _([TAA 1953 (Cth) sch 1 s 286-80(3)–(4C)](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
-
-| Applicable test | Multiplier | Maximum penalty if all 5 base units are $364, before remission |
-| --- | --- | --- |
-| No increased multiplier applies | 1 | $1,820 |
-| Medium withholder, or assessable income or current GST turnover above $1 million but below $20 million | 2 | $3,640 |
-| Large withholder, or assessable income or current GST turnover of $20 million or more | 5 | $9,100 |
-| Special rule under s 286-80(4A) or (4C) | 500 | $910,000 |
-
-- **Applying the multiplier tests**: The withholder, assessable income and current GST turnover tests are alternatives. A small withholder can still attract a higher multiplier through either income or turnover. Use withholder status for the month the document was due, assessable income for the income year containing that due date, and current GST turnover worked out at a time in that month. The turnover test is not limited to that month's sales. Apply 5 if both the 2 and 5 tests are met.  _([TAA 1953 (Cth) sch 1 s 286-80(3)–(4C)](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
-- **Special 500 multiplier**: Check the special 500 multiplier separately: s 286-80(4A) covers significant global entities subject to its prior assessment, determination or reporting conditions and the exception in s 286-80(4B); s 286-80(4C) covers specified global minimum tax obligations. Where 500 applies, it replaces the 2 and 5 multipliers.  _([TAA 1953 (Cth) sch 1 s 286-80(3)–(4C)](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
-
-A nil/refund return is not a statutory FTL exemption, but the ATO generally
-does not apply FTL to these or isolated late lodgements, with stated
-exceptions. An estimated gross statutory amount is not a guaranteed
-imposition or final cost. [ATO-FTL]
-
-- **What FTL penalty applies to**: FTL penalty applies to activity statements, tax returns, FBT returns, PAYG withholding annual reports, Single Touch Payroll reports, annual GST returns and information reports, and taxable payments annual reports. The ATO states that it generally does not apply the penalty in isolated cases of late lodgment, and that it warns the taxpayer before applying it.  _([ATO, Failure to lodge on time penalty](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty); [ATO, Penalty units](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units); [TAA 1953 Schedule 1 s 286-80](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
-
-## Section 7 - Shortfall and statement penalties
+### Section 7 - Shortfall and statement penalties
 
 **Shortfall penalty by behaviour**  _([TAA Schedule 1, sections 284-75 and 284-90][TAA-ADMIN2])_
 
@@ -222,7 +169,7 @@ greater-of-**$20,000 or 2% of return-based net income** threshold. Minimum
 tax is separate. Reasonable care and reasonably arguable are distinct tests;
 verify section **284-15** and the actual branch. [TAA-ADMIN2]
 
-## Section 8 - Interest charges
+### Section 8 - Interest charges
 
 **GIC vs SIC comparison**  _(TAA 1953 s 8AAD; TAA 1953 Schedule 1 s 280-105)_
 
@@ -251,7 +198,7 @@ verify section **284-15** and the actual branch. [TAA-ADMIN2]
 - **Precision and allocation**: Use actual charge days, receipt and account allocation, and the calendar-year **365/366** divisor. Published daily rates are displays; retain calculation precision. TAA **8AAGA** permits the Commissioner to round GIC for a period down to **5-cent multiples**; it is not an automatic rule to round each day to cents or a verified SIC rounding rule. RBA and non-RBA treatment differ; do not count a credit twice. [TAA-ADMIN1]
 - **Remission**: GIC **8AAG** and SIC **280-160** have distinct powers and conditions, supplemented by the selected class/future-liability remedial determination. Prepare cause, period, mitigation and account evidence and confirm the required channel/form. A request, payment plan or dispute does not itself remit interest or pause recovery. Under **280-170**, the specified SIC remission objection threshold is unremitted charge **more than 20% of additional tax**, not the penalty-remission two-unit threshold. Actual decisions, review rights and deadlines need their own checks. [TAA-ADMIN1]; [TAA-ADMIN2]; [REMEDIAL]
 
-## Section 9 - Escalation beyond penalties and interest
+### Section 9 - Escalation beyond penalties and interest
 
 Where a liability remains unpaid, the ATO has recovery powers that go beyond interest. In outline only, because each requires specific advice:
 
@@ -262,7 +209,7 @@ Where a liability remains unpaid, the ATO has recovery powers that go beyond int
 
 Any of these is a signal to involve a registered tax agent or a lawyer immediately. Lodging the next statement does not address them.
 
-## Section 10 - Correction pathways
+### Section 10 - Correction pathways
 
 **Correction pathway by situation**
 
@@ -292,7 +239,25 @@ notice sending is not a universal substitute for the statutory trigger.
 - **Input-credit time limit**: GST **93-5** separately measures four years after the required return day for the period to which the credit would be attributable under **29-10(1)/(2)**, not the same assessment-review clock. **93-10** has exceptions and special attribution rules; **93-15** has a separate restriction involving the supplier's assessment and invoice. An amendment alone does not establish entitlement, and a blanket assertion that no exception exists is incorrect. Actual invoice, attribution, assessment and exception facts remain required. [GST]
 - **Amendment and voluntary disclosure**: An amendment increasing tax is not automatically a qualifying voluntary disclosure. Establish voluntariness, approved form, examination notification/public deadline and the actual disclosed issue under section **284-225**. Agreeing to an already identified shortfall does not by itself establish eligibility. [TAA-ADMIN2]
 
-## Section 11 - Worked example
+## Boundary and exception table
+
+### Section 12 - Common errors
+
+- Quoting an agent lodgment program date to a taxpayer who is not on that agent's client list.
+- Assuming the online BAS concession applies to quarter 2. It does not.
+- Assuming the online BAS concession applies to monthly lodgers. It does not.
+- Treating lodgment and payment as one obligation, so a taxpayer who cannot pay does not lodge.
+  This adds an FTL penalty to interest that would have accrued anyway.
+- Choosing interest deductibility only from payment date or underlying debt year, without the incurred event and actual income-year start.
+- Applying one GIC rate across a period that spans a quarter boundary.
+- Correcting a GST error on a later BAS after the debit error time limit has passed.
+- Requesting an amendment when the correct pathway is an objection, and running out of time.
+- Treating an adjustment event as an error, or an error as an adjustment.
+- Assuming a remission request pauses interest. It does not.
+
+## Worked cases
+
+### Section 11 - Worked example
 
 **Facts.** Harbourline Freight Pty Ltd is a monthly activity statement lodger and a small
 withholder. Its assessable income for the income year containing the due date and its current
@@ -368,21 +333,92 @@ remission, and the ATO's usual non-imposition practice for nil/refund returns. T
 days. Lodging on time while negotiating payment would have removed the larger of the two amounts
 in this example.
 
-## Section 12 - Common errors
+## When to refuse or refer
 
-- Quoting an agent lodgment program date to a taxpayer who is not on that agent's client list.
-- Assuming the online BAS concession applies to quarter 2. It does not.
-- Assuming the online BAS concession applies to monthly lodgers. It does not.
-- Treating lodgment and payment as one obligation, so a taxpayer who cannot pay does not lodge.
-  This adds an FTL penalty to interest that would have accrued anyway.
-- Choosing interest deductibility only from payment date or underlying debt year, without the incurred event and actual income-year start.
-- Applying one GIC rate across a period that spans a quarter boundary.
-- Correcting a GST error on a later BAS after the debit error time limit has passed.
-- Requesting an amendment when the correct pathway is an objection, and running out of time.
-- Treating an adjustment event as an error, or an error as an adjustment.
-- Assuming a remission request pauses interest. It does not.
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
 
-## Section 13 - Self-checks
+
+### Section 15 - Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do
+not constitute tax, legal or financial advice. Open Accountants and its contributors accept no
+liability for any errors, omissions or outcomes arising from the use of this skill. All outputs
+must be reviewed and signed off by a qualified professional in the relevant jurisdiction before
+lodging or acting upon them.
+
+This reference is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+
+> Contributed by Ryan Duguid.
+
+
+
+## Filing and payment
+
+### Australia Lodgment Deadlines, Penalties and Interest v0.6
+
+> **General reference only.** This skill is general tax and accounting reference material for
+> AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
+> elections, deadlines, residency, filing status or local procedures. Do not rely on it to
+> lodge, pay, amend or take a tax position without review by a qualified professional.
+
+**Scoped v0.5 revision, 18 October 2026:** penalty boundaries, interest
+liability/calculation/deduction timing, recoupment and selected correction
+routes were checked against the primary sources below. Unchanged programme,
+annual/BAS calendar and debt-recovery summaries retain their earlier
+16 September 2026 source provenance and require their own current checks.
+This revision is not a fresh financial sign-off for the whole guide.
+
+Load workflow-base and every applicable domain base and country reference.
+Preserve their source/period gates, confirmed profile, refusal rules, four
+universal outputs and all applicable domain outputs and checks. Unknown
+mandatory facts remain Needs Input; unresolved law remains held. A deadline
+or interest schedule is supporting work, not a completed return, filed
+request or permission to submit or pay. Keep identifiers, bank details and
+signing credentials with the reviewer.
+
+### Section 6 - Failure to lodge on time penalty
+
+- **Base penalty**: The FTL penalty is charged per document, not per dollar, and accrues by elapsed time. One penalty unit for every 28 days, or part of 28 days, that the document is overdue, to a maximum of five penalty units.  _([TAA 1953 Schedule 1 s 286-80](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
+
+**Published penalty unit history: apply the relevant statutory date rule**  _([ATO, Penalty units](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units))_
+
+| When the infringement occurred | Penalty unit |
+| --- | --- |
+| On or after 1 July 2026 | $364 |
+| 7 November 2024 to 30 June 2026 | $330 |
+| 1 July 2023 to 6 November 2024 | $313 |
+| 1 January 2023 to 30 June 2023 | $275 |
+
+For FTL, section **286-80(5)** uses the unit value at the **start of each
+28-day period**, not one automatic current amount for every overdue block.
+The period is counted from the confirmed due date through the date before
+receipt: 28 days late is one base unit, 29 days is two, capped at five.
+Verify actual deferrals and approved-form receipt. [TAA-ADMIN2];
+[PS-FTL, paragraphs 15-16][PS-FTL]
+
+**Entity size multiplier**  _([TAA 1953 (Cth) sch 1 s 286-80(3)–(4C)](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
+
+| Applicable test | Multiplier | Maximum penalty if all 5 base units are $364, before remission |
+| --- | --- | --- |
+| No increased multiplier applies | 1 | $1,820 |
+| Medium withholder, or assessable income or current GST turnover above $1 million but below $20 million | 2 | $3,640 |
+| Large withholder, or assessable income or current GST turnover of $20 million or more | 5 | $9,100 |
+| Special rule under s 286-80(4A) or (4C) | 500 | $910,000 |
+
+- **Applying the multiplier tests**: The withholder, assessable income and current GST turnover tests are alternatives. A small withholder can still attract a higher multiplier through either income or turnover. Use withholder status for the month the document was due, assessable income for the income year containing that due date, and current GST turnover worked out at a time in that month. The turnover test is not limited to that month's sales. Apply 5 if both the 2 and 5 tests are met.  _([TAA 1953 (Cth) sch 1 s 286-80(3)–(4C)](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
+- **Special 500 multiplier**: Check the special 500 multiplier separately: s 286-80(4A) covers significant global entities subject to its prior assessment, determination or reporting conditions and the exception in s 286-80(4B); s 286-80(4C) covers specified global minimum tax obligations. Where 500 applies, it replaces the 2 and 5 multipliers.  _([TAA 1953 (Cth) sch 1 s 286-80(3)–(4C)](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
+
+A nil/refund return is not a statutory FTL exemption, but the ATO generally
+does not apply FTL to these or isolated late lodgements, with stated
+exceptions. An estimated gross statutory amount is not a guaranteed
+imposition or final cost. [ATO-FTL]
+
+- **What FTL penalty applies to**: FTL penalty applies to activity statements, tax returns, FBT returns, PAYG withholding annual reports, Single Touch Payroll reports, annual GST returns and information reports, and taxable payments annual reports. The ATO states that it generally does not apply the penalty in isolated cases of late lodgment, and that it warns the taxpayer before applying it.  _([ATO, Failure to lodge on time penalty](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty); [ATO, Penalty units](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units); [TAA 1953 Schedule 1 s 286-80](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
+
+## Completion checklist
+
+### Section 13 - Self-checks
 
 - [ ] The entity type, balance date and agent status are confirmed before any date is quoted.
 - [ ] Prior year lodgment status has been checked, because it can pull the current date forward.
@@ -395,7 +431,36 @@ in this example.
 - [ ] Any voluntary disclosure is in the approved form.
 - [ ] Rates and penalty unit amounts have been rechecked against the ATO pages cited below.
 
-## Section 14 - Sources
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/general-interest-charge-rates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/shortfall-interest-charge-rates> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-relief> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/interest-we-charge/general-interest-charge> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/your-practice/tax-and-bas-agents/safe-harbour> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C1953A00001/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C1953A00001/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_2/document_2.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2024A00135/asmade/2024-12-10/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2025A00029/asmade/2025-03-27/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/F2023L00956/asmade/2023-07-04/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201112%2FNAT%2FATO%2F00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS20068%2FNAT%2FATO%2F00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201119%2FNAT%2FATO%2F00001> | Not re-read for this format update; see retained provenance |
+
+### Section 14 - Sources
 
 - Taxation Administration Act 1953, s 8AAD (GIC rate), Schedule 1 s 280-105 (SIC),
   Schedule 1 Division 284 (shortfall penalties) including s 284-225 (voluntary disclosure
@@ -442,18 +507,7 @@ against the cited ATO page before relying on it.
 [ATO-FTL]: https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty
 [ATO-RELIEF]: https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-relief
 
-## Section 15 - Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do
-not constitute tax, legal or financial advice. Open Accountants and its contributors accept no
-liability for any errors, omissions or outcomes arising from the use of this skill. All outputs
-must be reviewed and signed off by a qualified professional in the relevant jurisdiction before
-lodging or acting upon them.
-
-This reference is maintained in the
-[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
-
-> Contributed by Ryan Duguid.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

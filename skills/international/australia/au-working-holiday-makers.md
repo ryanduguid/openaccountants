@@ -11,10 +11,10 @@ description: >
   needed. Trigger on "backpacker tax", "working holiday maker",
   "417 visa tax", "462 visa tax", "WHM employer registration", "Schedule 15",
   "DASP", "backpacker super refund". Covers 2026-27.
-version: 1.2
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -24,16 +24,32 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Working Holiday Makers
+# AU Working Holiday Makers v1.4
 
-## Australia Working Holiday Makers v1.2
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
+
+> Use this skill for any Australian working holiday maker (WHM) tax question for holders of subclass 417 Working Holiday or 462 Work and Holiday visas and their employers: employer registration, Schedule 15 withholding and the $45,000 threshold, unregistered employer rates, no-TFN withholding, STP income type and tax treatment codes, superannuation guarantee, the departing Australia superannuation payment (DASP) and its 65% tax, residency, the non-discrimination article countries after Addy, and whether a return is needed. Trigger on "backpacker tax", "working holiday maker", "417 visa tax", "462 visa tax", "WHM employer registration", "Schedule 15", "DASP", "backpacker super refund". Covers 2026-27.
+
+## Ask the client first
+
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
+
+## The method, step by step
+
+### Australia Working Holiday Makers v1.4
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
 > elections, deadlines, residency, filing status or local procedures. Do not rely on it to
 > lodge, pay, amend or take a tax position without review by a qualified professional.
 
-## Section 1 - Quick Reference
+### Section 1 - Quick Reference
 
 **Quick reference table**
 
@@ -47,14 +63,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | No TFN | 45% of every payment, ignoring cents |
 | Tax on assessment | 15% to $45,000; $6,750 plus 30% to $135,000; $33,750 plus 37% to $190,000; $54,100 plus 45% above |
 | Tax-free threshold, offsets, Medicare levy adjustments | None for WHM withholding |
-| Superannuation guarantee | 12% of ordinary time earnings, with choice of fund |
+| Superannuation guarantee | General SG rate: 12% of ordinary time earnings, with choice of fund |
 | Departing Australia superannuation payment | Taxed at 65% for a WHM, claimed after leaving Australia, not included in a tax return |
 | Lodgment | No return needed where the only income is WHM salary or wages under $45,001 |
 | STP reporting | Income type WHM with the country of nationality; tax treatment code H with R, U or F |
 | Tax authority | Australian Taxation Office |
 | Reviewed by | Pending. Australian CPA or CA review required |
 
-## Section 2 - The employer workflow
+### Section 2 - The employer workflow
 
 **Step 1. Register before the first payment.**
 An employer of a 417 or 462 visa holder must be registered for PAYG withholding and then register
@@ -82,7 +98,7 @@ summary. See Section 5.
 A worker who moves to another visa stops being a WHM from that date; withhold under the ordinary
 tables and report a second income type from then.
 
-## Section 3 - Withholding and tax rates for 2026-27
+### Section 3 - Withholding and tax rates for 2026-27
 
 **Working holiday maker income tax rates and Schedule 15 coefficients**  _(ATO, Schedule 15)_
 
@@ -101,28 +117,24 @@ tables and report a second income type from then.
 - **Variations** — Only a PAYG withholding variation notice from the ATO changes the rate, for example for a resident WHM from a non-discrimination article country. See Section 7.  _([ATO, Employers of working holiday makers](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers))_
 - **Income tax rates** — The 2024-25, 2025-26 and 2026-27 scales are identical. From 2020-21 to 2023-24 the first thresholds were $45,000 and $120,000, with a 32.5% second rate. For 2017-18 they were $37,000 and $87,000, and for 2018-19 and 2019-20 they were $37,000 and $90,000. A prior-year return must use the table for that year.  _([ATO, Tax rates: working holiday maker](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-working-holiday-makers), to 2025-26; [ATO, Schedule 15](https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers), for 2026-27)_
 
-## Section 4 - Employer registration
+### Section 4 - Employer registration
 
 - **Who must register** — Any employer who employs, or plans to employ, a 417 or 462 visa holder, before making the first payment. The business must already be registered for PAYG withholding.  _([ATO, Employer registration for working holiday makers](https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers))_
 - **How** — Online through the ATO's Working Holiday Maker Employer Registration Form, through a registered tax or BAS agent, or by phone as an authorised business contact. A PAYG withholding branch can be registered with the branch application form.  _([ATO, Employer registration for working holiday makers](https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers))_
 - **Check and cancel** — The registration shows on the Australian Business Register, and can be cancelled by phoning the ATO business line on 13 28 66.  _([ATO, Employer registration for working holiday makers](https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers))_
 - **Contractors** — A WHM who is an employee on the facts must be taxed under Schedule 15 even if they quote an ABN; treating an employee as a contractor attracts penalties.  _([ATO, Employers of working holiday makers](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers))_
 
-## Section 5 - Reporting
+### Section 6 - Superannuation and the departing Australia superannuation payment
 
-- **STP Phase 2** — Report the income type WHM and the worker's home country, which is the country of nationality on the visa. The tax treatment code starts with H, followed by R for a registered employer, U for an unregistered employer or F where no TFN declaration was provided, with no study loan or Medicare levy variation characters.  _([ATO, How to report employment and tax information through STP Phase 2](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/in-detail/single-touch-payroll-phase-2-employer-reporting-guidelines/how-to-report-employment-and-tax-information-through-stp-phase-2))_
-- **Payment summaries** — An employer not reporting through STP gives every WHM a payment summary showing all payments in the gross section with H in the gross payment type box, and two payment summaries where the worker changed visa during the year.  _([ATO, Employers of working holiday makers](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers))_
-- **Income statement** — The worker sees year-to-date income, tax withheld and super in ATO online services through myGov, and uses it to decide whether to lodge.  _([ATO, Working holiday makers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers))_
+**Choose the SG schedule before applying a rate.** The rates and examples in this guide use the general SG schedule. Norfolk Island's transitional rate is 10% for 2025-26, 11% for 2026-27 and 12% from 1 July 2027. For a Norfolk Island arrangement, check the separate SG rules in `au-super-guarantee.md` before using a general rate or example. [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee).
 
-## Section 6 - Superannuation and the departing Australia superannuation payment
-
-- **Super guarantee** — A WHM is entitled to super like any other employee, at 12% of ordinary time earnings, and must be offered a choice of fund.  _([ATO, Super guarantee](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee))_
+- **Super guarantee** — A WHM is entitled to super like any other employee, at the general SG rate of 12% of ordinary time earnings, and must be offered a choice of fund.  _([ATO, Super guarantee](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee))_
 - **DASP eligibility** — After leaving Australia a former temporary resident can claim their super as a departing Australia superannuation payment once the visa has ceased and no other active visa is held, unless they are an Australian or New Zealand citizen or a permanent resident. Applications are made online free of charge and can be started before departure; a paper application to a fund may attract a fee and, above $5,000, a certification of immigration status from Home Affairs.  _([ATO, Departing Australia superannuation payment (DASP)](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/temporary-residents-and-superannuation/departing-australia-superannuation-payment-dasp))_
 - **DASP tax** — A final withholding applies when the payment is made: nil on the tax-free component and 65% on the taxable component where the fund holds contributions made while the person held a 417 or 462 visa or an associated bridging visa. The 65% rate then applies to the whole payment, including super earned on another visa. The ordinary rates are 35% on a taxed element and 45% on an untaxed element.  _([ATO, Departing Australia superannuation payment (DASP)](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/temporary-residents-and-superannuation/departing-australia-superannuation-payment-dasp))_
 - **Not assessable** — A DASP is not included in a tax return. The fund or the ATO issues a DASP payment summary within 14 days, with an H indicator where the WHM rate applied, and pays within about 28 days of a complete application.  _([ATO, Departing Australia superannuation payment (DASP)](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/temporary-residents-and-superannuation/departing-australia-superannuation-payment-dasp))_
 - **Unclaimed super** — Six months after the person leaves with a ceased visa, the fund transfers the balance to the ATO as unclaimed super, which can still be claimed as a DASP.  _([ATO, Departing Australia superannuation payment (DASP)](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/temporary-residents-and-superannuation/departing-australia-superannuation-payment-dasp))_
 
-## Section 7 - Residency and the non-discrimination article countries
+### Section 7 - Residency and the non-discrimination article countries
 
 - **Most WHMs are foreign residents** — The Commissioner's long-standing view is that a person who comes to Australia for a holiday and works to fund it is a visitor, not a resident, whatever the length of stay. Residency can start when the purpose changes, for example on committing to employer sponsorship or applying for a permanent visa.  _([ATO, Australian residency if you're on a working holiday or visit](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/australian-residency-if-you-re-on-a-working-holiday-or-visit))_
 - **Factors** — Purpose of the stay, living arrangements, community ties, location of assets and family ties in Australia are weighed together, against arrangements to return home, study or employment to go back to and continuing connections abroad.  _([TR 2023/1 Income tax: residency tests for individuals](https://www.ato.gov.au/law/view/document?DocID=TXR/TR20231/NAT/ATO/00001))_
@@ -130,7 +142,7 @@ tables and report a second income type from then.
 - **What changes for an eligible resident** — Employers keep withholding at 15%. The worker lodges a return as a resident, including foreign-sourced income where Australia has taxing rights, and receives the resident rates, the low income tax offset and a Medicare levy liability if that produces less tax. A person resident for only part of the year has a pro-rated tax-free threshold: $13,464 + ($4,736 x months resident / 12), counting the month residency began ([ATO, Tax-free threshold for newcomers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/tax-free-threshold-for-newcomers-to-australia)). A PAYG variation is available only after a prior year assessment as a resident or a private ruling.  _([ATO, Taxation of Australian resident WHMs from NDA countries](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/taxation-of-australian-resident-whms-from-nda-countries))_
 - **Employers are unaffected** — The decision changes nothing for employers unless the ATO issues a variation notice.  _([ATO, Employers of working holiday makers](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers))_
 
-## Section 8 - The worker's tax return
+### Section 8 - The worker's tax return
 
 - **When no return is needed** — A WHM whose only income was salary or wages earned as a WHM, totalling less than $45,001, does not need to lodge a return or a non-lodgment advice.  _([ATO, Working holiday makers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers))_
 - **When to lodge** — Lodge to claim deductions (from 2026-27 a WHM who is not a resident at any time in the year cannot get the standard deduction, and the $300 written evidence exception has ended; see `au-deductions-offsets`), where income passed $45,000 and withholding fell short, where an unregistered employer withheld 30%, or as an eligible NDA-country resident. The return asks for WHM net income and nationality in the adjustments section.  _([ATO, Taxation of Australian resident WHMs from NDA countries](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/taxation-of-australian-resident-whms-from-nda-countries))_
@@ -138,7 +150,24 @@ tables and report a second income type from then.
 - **Leaving early** — A worker leaving Australia permanently before 30 June can lodge the return early.  _([ATO, Working holiday makers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers))_
 - **TFN** — Apply online once the visa is granted; without a TFN the 45% rate applies to every payment.  _([ATO, Working holiday makers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers))_
 
-## Section 9 - Worked example
+## Boundary and exception table
+
+### Section 10 - Common errors
+
+- Employing a 417 or 462 visa holder without registering, then withholding 15% anyway.
+- Applying the 15% rate to a worker on any other visa, or continuing it after the worker moves to a sponsored or permanent visa.
+- Counting a previous employer's payments towards the $45,000 test. Schedule 15 tests the total payments the current employer has made, so a new employer starts at nil, and a multi-employer worker may have a shortfall on assessment ([ATO, Schedule 15](https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers)).
+- Using Schedule 7 or Schedule 11 for a WHM's leave or termination payments.
+- Allowing the tax-free threshold, offsets or a Medicare levy reduction through withholding.
+- Reporting WHM income under the salary and wages income type, or without the country of nationality.
+- Skipping super guarantee, or advising the worker that the DASP is taxed at the ordinary 35% rate.
+- Including the DASP in a tax return.
+- Treating a long stay, a lease or a steady job as proof of residency, or the reverse.
+- Advising an NDA-country worker to lodge as a resident without evidence that residency actually changed.
+
+## Worked cases
+
+### Section 9 - Worked example
 
 **Worked example facts**
 
@@ -146,7 +175,7 @@ tables and report a second income type from then.
 | --- | --- |
 | Worker | Lena, 417 visa, national of Spain, foreign resident for the whole of 2026-27, TFN quoted |
 | Employer | One registered WHM employer for the full year, paying $4,333.33 monthly ($52,000 for the year) |
-| Super | Superannuation guarantee at 12% |
+| Super | General SG schedule applies, at 12% |
 
 **Facts.** All figures are synthetic.
 
@@ -199,33 +228,53 @@ amount above the tax-free threshold plus the Medicare levy, less the low income 
 she became a resident during the year, the threshold is pro-rated: for residency from April it is
 $13,464 + ($4,736 x 3 / 12) = $14,648, not $18,200.
 
-## Section 10 - Common errors
+## When to refuse or refer
 
-- Employing a 417 or 462 visa holder without registering, then withholding 15% anyway.
-- Applying the 15% rate to a worker on any other visa, or continuing it after the worker moves to a sponsored or permanent visa.
-- Counting a previous employer's payments towards the $45,000 test. Schedule 15 tests the total payments the current employer has made, so a new employer starts at nil, and a multi-employer worker may have a shortfall on assessment ([ATO, Schedule 15](https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers)).
-- Using Schedule 7 or Schedule 11 for a WHM's leave or termination payments.
-- Allowing the tax-free threshold, offsets or a Medicare levy reduction through withholding.
-- Reporting WHM income under the salary and wages income type, or without the country of nationality.
-- Skipping super guarantee, or advising the worker that the DASP is taxed at the ordinary 35% rate.
-- Including the DASP in a tax return.
-- Treating a long stay, a lease or a steady job as proof of residency, or the reverse.
-- Advising an NDA-country worker to lodge as a resident without evidence that residency actually changed.
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
 
-## Section 11 - Self-checks
+## Filing and payment
+
+### Section 5 - Reporting
+
+- **STP Phase 2** — Report the income type WHM and the worker's home country, which is the country of nationality on the visa. The tax treatment code starts with H, followed by R for a registered employer, U for an unregistered employer or F where no TFN declaration was provided, with no study loan or Medicare levy variation characters.  _([ATO, How to report employment and tax information through STP Phase 2](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/in-detail/single-touch-payroll-phase-2-employer-reporting-guidelines/how-to-report-employment-and-tax-information-through-stp-phase-2))_
+- **Payment summaries** — An employer not reporting through STP gives every WHM a payment summary showing all payments in the gross section with H in the gross payment type box, and two payment summaries where the worker changed visa during the year.  _([ATO, Employers of working holiday makers](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers))_
+- **Income statement** — The worker sees year-to-date income, tax withheld and super in ATO online services through myGov, and uses it to decide whether to lodge.  _([ATO, Working holiday makers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers))_
+
+## Completion checklist
+
+### Section 11 - Self-checks
 
 - [ ] The employer's WHM registration is visible on the Australian Business Register.
 - [ ] The visa subclass has been verified on VEVO and the TFN declaration is on file.
 - [ ] Cumulative payments per worker are tracked so the rate moves at $45,000, $135,000 and $190,000.
 - [ ] Every payment type, including leave and termination amounts, runs through Schedule 15.
 - [ ] STP reports income type WHM, the country of nationality and an H tax treatment code.
-- [ ] Super guarantee is paid at 12% with a choice of fund offered.
+- [ ] The applicable SG schedule is checked; under the general schedule, super guarantee is paid at 12% with a choice of fund offered.
 - [ ] The worker knows the DASP is claimed after departure and taxed at 65%.
 - [ ] Residency has been assessed on purpose and behaviour, not on days alone.
 - [ ] NDA-country status and residency are both established before lodging as a resident.
 - [ ] The Medicare levy exemption is claimed for the foreign resident period.
 
-## Section 12 - Sources
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/registration-obligations-for-businesses/work-out-which-registrations-you-need/taxation-registrations/employer-registration-for-working-holiday-makers> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/hiring-a-new-worker/employers-of-working-holiday-makers> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-working-holiday-makers> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/in-detail/single-touch-payroll-phase-2-employer-reporting-guidelines/how-to-report-employment-and-tax-information-through-stp-phase-2> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/temporary-residents-and-superannuation/departing-australia-superannuation-payment-dasp> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/australian-residency-if-you-re-on-a-working-holiday-or-visit> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?DocID=TXR/TR20231/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/taxation-of-australian-resident-whms-from-nda-countries> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/tax-free-threshold-for-newcomers-to-australia> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-exemption/foreign-residents-medicare-levy-exemption> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/in-detail/single-touch-payroll-phase-2-employer-reporting-guidelines/reporting-the-amounts-you-have-paid/income-types> | Not re-read for this format update; see retained provenance |
+
+### Section 12 - Sources
 
 - Income Tax Rates Act 1986, Part III (working holiday maker income); Taxation Administration Act 1953, Schedule 1, section 12-35; Superannuation Guarantee (Administration) Act 1992; Superannuation (Departing Australia Superannuation Payments Tax) Act 2007.
 - ATO, Schedule 15 tax table for working holiday makers (from 1 July 2026), https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers
@@ -248,6 +297,8 @@ Sources were checked on 27 September 2026.
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before relying on it for withholding, registration or a return. Residency and the non-discrimination article position depend on the worker's facts.
 >
 > Contributed by Ryan Duguid.
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

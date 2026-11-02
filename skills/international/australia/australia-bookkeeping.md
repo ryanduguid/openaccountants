@@ -1,11 +1,11 @@
 ---
 name: australia-bookkeeping
 description: Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
-version: 1.5
+version: 1.8
 jurisdiction: AU
 tax_year: 2025
 tax_year_notes: "Mixed: 2025-26 and 2026-27 figures, each labelled by year where it differs"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -14,9 +14,25 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Bookkeeping
+# Australia Bookkeeping v1.8
 
-## Section 1 -- Quick Reference
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## What this file is
+
+Load the workflow bases named in depends_on with this guide. Its output is working papers for review.
+
+## Scope statement
+
+Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
+
+## Filing requirements
+
+Use the filing and review conditions retained in the computation and scope sections. Establish any procedure not covered here from its official source before acting.
+
+## Rates and thresholds
+
+### Section 1 -- Quick Reference
 
 **Quick Reference**
 
@@ -33,11 +49,67 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Small business entity threshold | Aggregated turnover < $10 million |
 | BAS lodgement | Quarterly (most small businesses) or monthly ($20m+ turnover) |
 
-## Section 2 -- Standard Chart of Accounts
+### Section 5 -- Asset vs Expense Thresholds
+
+#### Instant Asset Write-Off (IAWO)
+
+**Instant Asset Write-Off (IAWO)**  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
+
+| Period | Threshold | Eligibility |
+| --- | --- | --- |
+| 1 Jul 2023 – 30 Jun 2026 | < $20,000 per asset | Aggregated turnover < $10m, using simplified depreciation |
+| From 1 Jul 2026 | Less than $20,000 per eligible asset | Eligible small business entities using simplified depreciation. Enacted on 26 August 2026 by the Treasury Laws Amendment (Tax Reform No. 2) Act 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for taxable use from 1 July 2026. [Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text) |
+
+#### Small Business Pool (Simplified Depreciation)
+
+**Small Business Pool (Simplified Depreciation)**
+
+| Pool | Rate | Notes |
+| --- | --- | --- |
+| Current-year eligible additions | 15% | On the taxable-purpose proportion under s 328-190(2)-(4), subject to the low-pool-value test |
+| Opening pool balance | 30% | Under s 328-190(1), subject to the low-pool-value test |
+| Low pool value | Deduct the tested amount and close the pool at zero | Before annual depreciation: opening pool plus taxable-purpose additions and cost additions, less taxable-purpose termination values. The result must be above zero and below $20,000 (s 328-210); falling below $20,000 only after annual depreciation is insufficient. Apply s 328-215 separately to negative amounts |
+
+#### General (Non-SB) Depreciation
+
+**General (Non-SB) Depreciation**
+
+| Method | Application |
+| --- | --- |
+| Diminishing value | rate = days held ÷ 365 × (200% ÷ effective life) |
+| Prime cost (straight-line) | rate = days held ÷ 365 × (100% ÷ effective life) |
+
+#### Common Effective Lives
+
+Use the Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025 for Commissioner-determined Div 40 lives, or a supportable self-assessed life. Div 43 uses its own construction-date, use and rate rules; 4% applies only to an eligible category.
+
+**Common effective lives (2025 determination, asset-specific)**  _([Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025, Table B](https://www.legislation.gov.au/F2025L01097/asmade/text))_
+
+| Asset | Effective Life | DV Rate | PC Rate |
+| --- | --- | --- | --- |
+| Desktop computers | 4 years | 50% | 25% |
+| Laptops | 2 years | 100% | 50% |
+| Multi-function machines (fax, copy, print and scan) | 5 years | 40% | 20% |
+| Freestanding office chairs and general tables | 10 years | 20% | 10% |
+| Freestanding office desks and workstations | 20 years | 10% | 5% |
+| Cars, generally (hire cars, rental cars and taxis have their own rows) | 8 years | 25% | 12.5% |
+| Air-conditioning room units and mini split systems up to 20 kW | 10 years | 20% | 10% |
+| Packaged air-conditioning units | 15 years | 13.33% (rounded) | 6.67% (rounded) |
+| Eligible capital works (Div 43, 2.5% category) | 40 years | Not applicable | 2.5% of eligible construction expenditure; separate from Div 40 |
+
+These are selected Table B asset classes in the 2025 determination. Match the actual asset and applicable industry entry before using a Commissioner-determined life; other furniture and air-conditioning components have different lives. Calculate rates from the life without rounding intermediate deductions. A $10,000 freestanding office desk has a $500 prime-cost deduction for a full year of qualifying business use at 20 years, assuming no immediate-write-off concession.
+
+#### Car Limit
+
+- **Car cost limit for depreciation** — For 2025-26, the limit is AUD 69,674. For 2026-27, it is AUD 69,883. Only the business-use portion of the applicable limit can be depreciated.
+
+## Computation rules
+
+### Section 2 -- Standard Chart of Accounts
 
 Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. The structure below follows common Australian practice.
 
-### Assets (1000–1999)
+#### Assets (1000–1999)
 
 **Assets (1000–1999)**
 
@@ -68,7 +140,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 1361 | Accumulated Depreciation — Furniture & Fittings | Contra asset |
 | 1400 | Small Business Pool | Non-current asset |
 
-### Liabilities (2000–2999)
+#### Liabilities (2000–2999)
 
 **Liabilities (2000–2999)**
 
@@ -90,7 +162,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 2410 | Hire Purchase Liability | Non-current liability |
 | 2500 | Director's Loan Account | Non-current liability |
 
-### Equity (3000–3999)
+#### Equity (3000–3999)
 
 **Equity (3000–3999)**
 
@@ -103,7 +175,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 3200 | Current Year Profit/Loss | Equity |
 | 3300 | Reserves | Equity |
 
-### Revenue (4000–4999)
+#### Revenue (4000–4999)
 
 **Revenue (4000–4999)**
 
@@ -120,7 +192,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 4500 | Other Income | Revenue |
 | 4900 | Discount Allowed | Contra revenue |
 
-### Cost of Goods Sold (5000–5999)
+#### Cost of Goods Sold (5000–5999)
 
 **Cost of Goods Sold (5000–5999)**
 
@@ -135,7 +207,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 5110 | Closing Stock Adjustment | COGS |
 | 5200 | Import Duty and Customs | COGS |
 
-### Operating Expenses (6000–6999)
+#### Operating Expenses (6000–6999)
 
 **Operating Expenses (6000–6999)**
 
@@ -148,7 +220,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 6040 | Insurance — Business | Expense |
 | 6050 | Repairs and Maintenance | Expense |
 | 6100 | Wages and Salaries | Expense |
-| 6110 | Superannuation Guarantee (12% from Jul 2025) | Expense |
+| 6110 | Superannuation Guarantee (general rate 12% from Jul 2025) | Expense |
 | 6120 | Workers' Compensation Insurance | Expense |
 | 6130 | Payroll Tax (state-based) | Expense |
 | 6140 | Staff Training | Expense |
@@ -177,7 +249,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 6700 | Bad Debts Written Off | Expense |
 | 6800 | General and Sundry Expenses | Expense |
 
-### Other Income / Expenses (7000–7999)
+#### Other Income / Expenses (7000–7999)
 
 **Other Income / Expenses (7000–7999)**
 
@@ -190,7 +262,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 AASB 1060 paragraph 57 prohibits presenting income or expenses as extraordinary items in financial statements or notes. An unusual transaction still needs a description of its nature.
 
-### Tax (8000–8999)
+#### Tax (8000–8999)
 
 **Tax (8000–8999)**
 
@@ -200,9 +272,9 @@ AASB 1060 paragraph 57 prohibits presenting income or expenses as extraordinary 
 | 8010 | Deferred Tax Liability | Tax |
 | 8020 | Deferred Tax Asset | Tax |
 
-## Section 3 -- Revenue Recognition
+### Section 3 -- Revenue Recognition
 
-### Cash vs Accrual Rules
+#### Cash vs Accrual Rules
 
 **Cash vs Accrual Rules**
 
@@ -217,7 +289,7 @@ Determine income-tax derivation, GST attribution and financial reporting separat
 | Trading stock | An eligible business may choose simplified treatment if the reasonably estimated stock-value change is $5,000 or less; otherwise apply the opening/closing stock rules. |
 | Prepaid expenses | Test deductibility first. For eligible small or medium businesses, the s 82KZM rule allows a service period of 12 months or less ending by the end of the following income year. Separately, otherwise deductible expenditure below $1,000 is excluded from spreading under s 82KZL, after allowing for input tax credit entitlement. Otherwise apply the relevant spreading rules. |
 
-### AASB 15 Revenue from Contracts with Customers
+#### AASB 15 Revenue from Contracts with Customers
 
 Applies to reporting entities using Tier 1/Tier 2. Five-step model:
 1. Identify contract
@@ -228,9 +300,9 @@ Applies to reporting entities using Tier 1/Tier 2. Five-step model:
 
 Small businesses using simplified reporting typically recognise on delivery/completion.
 
-## Section 4 -- Expense Classification
+### Section 4 -- Expense Classification
 
-### ATO Individual Tax Return Categories (Sole Trader — Business Schedule)
+#### ATO Individual Tax Return Categories (Sole Trader — Business Schedule)
 
 **ATO Individual Tax Return Categories (Sole Trader — Business Schedule)**
 
@@ -251,7 +323,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 
 These labels follow the [ATO 2026 BPI expenses instructions](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026/business-income-and-expenses-p8/expenses-p8) for 2025-26. Keep the income and expenses sections separate where letters repeat, and check the applicable form for another year.
 
-### Non-Deductible Expenses (ATO)
+#### Non-Deductible Expenses (ATO)
 
 - Entertainment (not subject to FBT election) — non-deductible portion
 - Capital expenditure — must be depreciated or written off via SB pool
@@ -260,7 +332,7 @@ These labels follow the [ATO 2026 BPI expenses instructions](https://www.ato.gov
 - Clothing (non-compulsory, non-protective) — not deductible
 - Traffic infringements — not deductible
 
-### GST Classification for BAS
+#### GST Classification for BAS
 
 **GST Classification for BAS**
 
@@ -272,63 +344,9 @@ These labels follow the [ATO 2026 BPI expenses instructions](https://www.ato.gov
 | BAS Excluded | Wages, drawings, loan principal, private | Not reported |
 | No ABN Withholding | Payments to suppliers without ABN (47% w/h, subject to exceptions) | Separate |
 
-## Section 5 -- Asset vs Expense Thresholds
+### Section 6 -- P&L Format
 
-### Instant Asset Write-Off (IAWO)
-
-**Instant Asset Write-Off (IAWO)**  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
-
-| Period | Threshold | Eligibility |
-| --- | --- | --- |
-| 1 Jul 2023 – 30 Jun 2026 | < $20,000 per asset | Aggregated turnover < $10m, using simplified depreciation |
-| From 1 Jul 2026 | Less than $20,000 per eligible asset | Eligible small business entities using simplified depreciation. Enacted on 26 August 2026 by the Treasury Laws Amendment (Tax Reform No. 2) Act 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for taxable use from 1 July 2026. [Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text) |
-
-### Small Business Pool (Simplified Depreciation)
-
-**Small Business Pool (Simplified Depreciation)**
-
-| Pool | Rate | Notes |
-| --- | --- | --- |
-| Year 1 (first use) | 15% | On cost (or adjustable value if added later) |
-| Subsequent years | 30% | On opening pool balance |
-| Pool balance < IAWO threshold | Write off entire pool | End-of-year check |
-
-### General (Non-SB) Depreciation
-
-**General (Non-SB) Depreciation**
-
-| Method | Application |
-| --- | --- |
-| Diminishing value | rate = days held ÷ 365 × (200% ÷ effective life) |
-| Prime cost (straight-line) | rate = days held ÷ 365 × (100% ÷ effective life) |
-
-### Common Effective Lives
-
-Use the Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025 for Commissioner-determined Div 40 lives, or a supportable self-assessed life. Div 43 uses its own construction-date, use and rate rules; 4% applies only to an eligible category.
-
-**Common effective lives (2025 determination, asset-specific)**  _([Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025, Table B](https://www.legislation.gov.au/F2025L01097/asmade/text))_
-
-| Asset | Effective Life | DV Rate | PC Rate |
-| --- | --- | --- | --- |
-| Desktop computers | 4 years | 50% | 25% |
-| Laptops | 2 years | 100% | 50% |
-| Multi-function machines (fax, copy, print and scan) | 5 years | 40% | 20% |
-| Freestanding office chairs and general tables | 10 years | 20% | 10% |
-| Freestanding office desks and workstations | 20 years | 10% | 5% |
-| Cars, generally (hire cars, rental cars and taxis have their own rows) | 8 years | 25% | 12.5% |
-| Air-conditioning room units and mini split systems up to 20 kW | 10 years | 20% | 10% |
-| Packaged air-conditioning units | 15 years | 13.33% (rounded) | 6.67% (rounded) |
-| Eligible capital works (Div 43, 2.5% category) | 40 years | Not applicable | 2.5% of eligible construction expenditure; separate from Div 40 |
-
-These are selected Table B asset classes in the 2025 determination. Match the actual asset and applicable industry entry before using a Commissioner-determined life; other furniture and air-conditioning components have different lives. Calculate rates from the life without rounding intermediate deductions. A $10,000 freestanding office desk has a $500 prime-cost deduction for a full year of qualifying business use at 20 years, assuming no immediate-write-off concession.
-
-### Car Limit
-
-- **Car cost limit for depreciation** — For 2025-26, the limit is AUD 69,674. For 2026-27, it is AUD 69,883. Only the business-use portion of the applicable limit can be depreciated.
-
-## Section 6 -- P&L Format
-
-### Income Statement (AASB Simplified / Tier 2)
+#### Income Statement (AASB Simplified / Tier 2)
 
 ```
 STATEMENT OF PROFIT OR LOSS
@@ -355,7 +373,7 @@ Profit for the year                                   xxx
                                                      ════
 ```
 
-### Sole Trader — ATO Business Schedule Format
+#### Sole Trader — ATO Business Schedule Format
 
 ```
 BUSINESS INCOME
@@ -379,11 +397,11 @@ BUSINESS EXPENSES
 NET INCOME OR LOSS FROM BUSINESS              xxx
 ```
 
-## Section 7 -- Balance Sheet Format
+### Section 7 -- Balance Sheet Format
 
 Long service leave is current if settlement is expected in the normal operating cycle, it is held for trading, it is due within 12 months, or the entity lacks a right at the reporting date to defer settlement for at least 12 months. Classify other portions as non-current. A vested entitlement can be current even if payment is expected later. Apply AASB 1060 paragraphs 40 and 41 consistently to account 2130 and the statement.
 
-### Statement of Financial Position (Vertical — AASB Tier 2)
+#### Statement of Financial Position (Vertical — AASB Tier 2)
 
 ```
 STATEMENT OF FINANCIAL POSITION
@@ -436,9 +454,9 @@ TOTAL EQUITY                                          xxx
                                                      ════
 ```
 
-## Section 8 -- Bank Reconciliation Patterns
+### Section 8 -- Bank Reconciliation Patterns
 
-### Common Australian Bank Formats
+#### Common Australian Bank Formats
 
 **Common Australian Bank Formats**
 
@@ -452,7 +470,7 @@ TOTAL EQUITY                                          xxx
 | Bendigo Bank | CSV, OFX | Date, Description, Debit, Credit, Balance |
 | Up Bank / Neobanks | CSV | Date, Description, Amount, Category |
 
-### Common Transaction Descriptions
+#### Common Transaction Descriptions
 
 **Common Transaction Descriptions**
 
@@ -471,9 +489,9 @@ TOTAL EQUITY                                          xxx
 | SUPER STREAM, SUPER CLEARING | Superannuation (6110) |
 | XERO, STRIPE, SQUARE PAYOUT | Platform payout — match to invoices |
 
-## Section 9 -- Micro-Entity / Small Business Simplifications
+### Section 9 -- Micro-Entity / Small Business Simplifications
 
-### Small Business Entity Concessions (turnover < $10m)
+#### Small Business Entity Concessions (turnover < $10m)
 
 **Small Business Entity Concessions (turnover < $10m)**
 
@@ -487,7 +505,7 @@ TOTAL EQUITY                                          xxx
 | Cash accounting for GST | Report GST when paid/received, not invoiced |
 | PAYG instalments | Option to pay quarterly amount the ATO calculates |
 
-### Reporting Tiers
+#### Reporting Tiers
 
 **Reporting Tiers**
 
@@ -505,53 +523,14 @@ AASB 1053 paragraphs 11, 13 and 15 govern the tiers above. For periods beginning
 
 Check the reporting obligation and the compilation applicable to the period; size alone does not establish eligibility for special-purpose reporting.
 
-### Large proprietary thresholds (reporting obligation, not tier selection)
+#### Large proprietary thresholds (reporting obligation, not tier selection)
 
 - **Large Proprietary Thresholds** — Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
 - **Proposed increase (not law)** — Draft regulations released on 19 October 2026 would raise these to revenue of $100m and assets of $50m for financial years starting on or after 1 July 2027. Consultation is open until 2 November 2026, so recheck after it closes; the existing thresholds apply until any change is made.  _([Treasurer, 19 October 2026](https://ministers.treasury.gov.au/ministers/jim-chalmers-2022/media-releases/raising-reporting-thresholds-proprietary-companies); [ASIC, Company financial reports](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports))_
 
-## Section 10 -- Interaction with Tax Skills
+### Section 11 -- Classification, Evidence and Corrections
 
-### Income Tax Return
-
-- Sole traders: business schedule in individual return (myTax or tax agent)
-- Companies: Company Tax Return (form with labels mapped to financial statements)
-- Tax rate: individuals at marginal rates; companies at 25% (base rate entity: aggregated turnover < $50m and base rate entity passive income no more than 80% of assessable income; see `au-company-tax`) or 30%
-- Franking: company tax paid generates franking credits for shareholder dividends
-- Losses: carried forward indefinitely, subject to the continuity of ownership test or, failing that, the business continuity test (companies; ITAA 1997 ss 165-12 and 165-13; see `au-company-tax`) or non-commercial loss rules (individuals)
-
-### BAS / GST Return
-
-**BAS / GST Return**
-
-| BAS Label | Description | CoA Mapping |
-| --- | --- | --- |
-| G1 | Total sales (incl. GST-free and input taxed) | 4000–4500 |
-| 1A | GST on sales | 2050 |
-| 1B | GST on purchases (Input Tax Credits) | 1150 |
-| W1 | Total salary/wages and other payments | 6100 |
-| W2 | Amounts withheld from payments (PAYG-W) | 2100 |
-| T1 | PAYG instalment income | 4000–4500 |
-| T2 | PAYG instalment rate | Percentage; no nominal account |
-| 5A | PAYG instalment payable (from T7, varied T9 or rate-method T11) | 2140 |
-
-### Superannuation Guarantee
-
-- Rate: 12% from 1 July 2025 (11.5% in 2024-25)
-- Due: quarterly deadlines (28 days after quarter end) for earnings paid up to 30 June 2026; for earnings paid from 1 July 2026, contributions must reach the fund within 7 business days of payday (payday super). See au-super-guarantee
-- Nominal: 6110 (expense) / 2110 (payable)
-- SG Charge for quarters before 1 July 2026: non-deductible. Apply the separate redesigned rules to later earnings.
-
-### Fringe Benefits Tax (FBT)
-
-- FBT year: 1 April – 31 March
-- Rate: 47% (top marginal + Medicare levy)
-- Common items: car fringe benefit, entertainment, loan fringe benefit
-- Meals/entertainment: establish whether an available 50/50 valuation election was made and its scope before applying it. Otherwise use the applicable actual-benefit and deduction rules. Do not default every meal to a 50% deduction. [ATO FBT entertainment](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00001).
-
-## Section 11 -- Classification, Evidence and Corrections
-
-### 11.1 The classification decision
+#### 11.1 The classification decision
 
 Every transaction needs four decisions, not one. Answer them in this order, because a later answer can change an earlier one.
 
@@ -564,7 +543,7 @@ Every transaction needs four decisions, not one. Answer them in this order, beca
 
 **Unknown transactions.** Post to a clearing or suspense account and list them for the client. Never guess a classification to close a period. An unresolved suspense balance at period end means the BAS and the accounts are both unreliable. See `au-bas-preparation.md` Section 4.
 
-### 11.2 Evidence to hold
+#### 11.2 Evidence to hold
 
 **Evidence to hold**
 
@@ -583,7 +562,7 @@ Every transaction needs four decisions, not one. Answer them in this order, beca
 
 Business records are generally kept for five years from when the record was prepared or obtained or the transaction was completed, whichever is later. Some records start differently (FBT records from lodging the FBT return; employee super contribution records from the contribution date), and some are kept longer, including where a CGT asset, a carried-forward loss or a review period depends on them. Companies also keep financial records for seven years under the Corporations Act, a separate rule from the tax one.  _([ATO, Overview of record-keeping rules for business](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business))_
 
-### 11.3 Reconciliation as a control, not a chore
+#### 11.3 Reconciliation as a control, not a chore
 
 A reconciliation is what makes the ledger evidence rather than assertion. At minimum, each period:
 
@@ -595,7 +574,7 @@ A reconciliation is what makes the ledger evidence rather than assertion. At min
 - Loan accounts agreed to the lender statement, with interest and principal split correctly.
 - Clearing and suspense accounts at nil or fully explained.
 
-### 11.4 Accounting treatment is not tax treatment
+#### 11.4 Accounting treatment is not tax treatment
 
 The ledger produces the financial statements. The tax return starts from those statements and then adjusts. Recording the tax answer in the ledger destroys the financial statements; recording only the accounting answer and forgetting the adjustment understates or overstates tax. Keep both, and keep the reconciliation between them.
 
@@ -621,7 +600,7 @@ Choosing the cost model does not remove depreciation: allocate the depreciable a
 
 Record permanent and temporary differences in a tax reconciliation working paper. A company also needs deferred tax balances where it reports under the full recognition requirements.
 
-### 11.5 Correcting an error
+#### 11.5 Correcting an error
 
 Where the error is found matters more than how large it is.
 
@@ -638,7 +617,7 @@ Where the error is found matters more than how large it is.
 
 **Never fix a lodged period by silently re-opening it.** The accounts must continue to agree with what was lodged, or to a documented correction of it. An unexplained change to a locked period is the difference between a correction and a misstatement.
 
-### 11.6 Common bookkeeping errors
+#### 11.6 Common bookkeeping errors
 
 - Coding a transaction by the payee name rather than by what was supplied. The same supplier can produce taxable, GST-free and input taxed transactions.
 - Claiming a GST credit on wages, superannuation, bank fees, most government charges or stamp duty.
@@ -651,11 +630,80 @@ Where the error is found matters more than how large it is.
 - Treating an impairment allowance as a deductible bad debt.
 - Reconciling the bank but not the GST or PAYG withholding control accounts.
 
+## Edge cases and special rules
+
+### Section 10 -- Interaction with Tax Skills
+
+#### Income Tax Return
+
+- Sole traders: business schedule in individual return (myTax or tax agent)
+- Companies: Company Tax Return (form with labels mapped to financial statements)
+- Tax rate: individuals at marginal rates; companies at 25% (base rate entity: aggregated turnover < $50m and base rate entity passive income no more than 80% of assessable income; see `au-company-tax`) or 30%
+- Franking: company tax paid generates franking credits for shareholder dividends
+- Losses: carried forward indefinitely, subject to the continuity of ownership test or, failing that, the business continuity test (companies; ITAA 1997 ss 165-12 and 165-13; see `au-company-tax`) or non-commercial loss rules (individuals)
+
+#### BAS / GST Return
+
+**BAS / GST Return**
+
+| BAS Label | Description | CoA Mapping |
+| --- | --- | --- |
+| G1 | Total sales (incl. GST-free and input taxed) | 4000–4500 |
+| 1A | GST on sales | 2050 |
+| 1B | GST on purchases (Input Tax Credits) | 1150 |
+| W1 | Total salary/wages and other payments | 6100 |
+| W2 | Amounts withheld from payments (PAYG-W) | 2100 |
+| T1 | PAYG instalment income | 4000–4500 |
+| T2 | PAYG instalment rate | Percentage; no nominal account |
+| 5A | PAYG instalment payable (from T7, varied T9 or rate-method T11) | 2140 |
+
+#### Superannuation Guarantee
+
+**Choose the SG schedule before applying a rate.** The rates and examples in this guide use the general SG schedule. Norfolk Island's transitional rate is 10% for 2025-26, 11% for 2026-27 and 12% from 1 July 2027. For a Norfolk Island arrangement, check the separate SG rules in `au-super-guarantee.md` before using a general rate or example. [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee).
+
+- General SG rate: 12% from 1 July 2025 (11.5% in 2024-25)
+- Due: quarterly deadlines (28 days after quarter end) for earnings paid up to 30 June 2026; for earnings paid from 1 July 2026, contributions must reach the fund within 7 business days of payday (payday super). See au-super-guarantee
+- Nominal: 6110 (expense) / 2110 (payable)
+- SG Charge for quarters before 1 July 2026: non-deductible. Apply the separate redesigned rules to later earnings.
+
+#### Fringe Benefits Tax (FBT)
+
+- FBT year: 1 April – 31 March
+- Rate: 47% (top marginal + Medicare levy)
+- Common items: car fringe benefit, entertainment, loan fringe benefit
+- Meals/entertainment: establish whether an available 50/50 valuation election was made and its scope before applying it. Otherwise use the applicable actual-benefit and deduction rules. Do not default every meal to a 50% deduction. [ATO FBT entertainment](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00001).
+
+## Self-checks
+
+Trace each input to its records, confirm the selected year and source conditions, recompute the working and retain unresolved items for review.
+
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026/business-income-and-expenses-p8/expenses-p8> | Not re-read for this format update; see retained provenance |
+| Tax Reform No. 2 Act 2026: commencement and Schedule 2 items 1-22, including asset, cost-addition and pool application rules | <https://www.legislation.gov.au/C2026A00071/asmade/text> | 2026-11-02; Schedule 2 commenced 1 October 2026; asset first-use and cost-addition changes apply from 1 July 2026 |
+| ITAA 1997, compilation 268: selected sections 328-180, 328-185, 328-190, 328-200, 328-210 and 328-215 on asset cost, pool deductions and termination values | <https://www.legislation.gov.au/C2026C00471/latest/text> | 2026-11-02; compilation in force 1 October 2026; selected pool provisions only |
+| ATO instant asset write-off: eligibility, first-use timing, strict asset-cost test before business-use apportionment and pool rates | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/instant-asset-write-off> | 2026-11-02; page updated 28 August 2026; selected eligibility, threshold and apportionment guidance |
+| Retained citation | <https://www.legislation.gov.au/F2025L01097/asmade/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://ministers.treasury.gov.au/ministers/jim-chalmers-2022/media-releases/raising-reporting-thresholds-proprietary-companies> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://standards.aasb.gov.au/aasb-116-dec-2022#measurement_after_recognition> | Not re-read for this format update; see retained provenance |
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review of this guide have not been performed. The 2 November 2026 check covers only the 3 named asset/pool source rows and the affected pool summary. Other bookkeeping, reporting, tax and retention rules retain their original dates and qualifications and require their own reconciliation. This remains a tier 2 draft pending qualified review.
+
 ## Disclaimer
+
+### Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, registered tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 > Contributed by Ryan Duguid.
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal or financial advice. All outputs require review by a qualified professional before filing or acting.
 
 <!-- openaccountants-cta-block -->
 

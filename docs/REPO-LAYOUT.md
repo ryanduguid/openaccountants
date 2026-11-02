@@ -11,10 +11,10 @@ One page on how this repo is organized, what is generated vs hand-maintained, an
 **Regenerate after every source edit, and commit the output with the edit:**
 
 ```
-python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py
+python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/check-coverage-claims.py --write && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py
 ```
 
-`make build` runs the same four. Nothing else rebuilds the derived trees. CI (`guard-derived-trees` in `validate.yml`) rebuilds `packages/`, `index.json` and `llms-full.txt` into a temp dir and fails when the committed copies differ (`python3 scripts/validate-guides.py --derived-only` runs the same check locally), and the coverage gate (`scripts/check-coverage-claims.py`) fails when `PARTNERS.md` differs from a fresh render of `index.json`.
+`make build` runs the same commands. Nothing else rebuilds the derived trees. CI (`guard-derived-trees` in `validate.yml`) rebuilds `packages/`, `index.json` and `llms-full.txt` into a temp dir and fails when the committed copies differ (`python3 scripts/validate-guides.py --derived-only` runs the same check locally), and the coverage gate (`scripts/check-coverage-claims.py`) fails when `PARTNERS.md` differs from a fresh render of `index.json`.
 
 ## Directory tree
 
