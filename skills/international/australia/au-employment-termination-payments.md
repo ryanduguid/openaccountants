@@ -10,10 +10,10 @@ description: >
   "Schedule 7", "termination pay withholding", "golden handshake", "payment in
   lieu of notice", "preservation age ETP", "whole-of-income cap", "ETP code R",
   "ETP code O". Covers 2026-27 figures for employers, payroll staff and advisers.
-version: 1.1
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -23,16 +23,32 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Employment Termination Payments
+# AU Employment Termination Payments v1.3
 
-## Australia Employment Termination Payments and Redundancy v1.1
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
+
+> Use this skill for any Australian employment termination question: employment termination payments (ETPs), genuine redundancy, the tax-free redundancy limit, the ETP cap and whole-of-income cap, unused annual and long service leave on termination, payment in lieu of notice, ETP codes and STP reporting, delayed termination payments and death benefit ETPs. Trigger on "ETP", "redundancy payment", "genuine redundancy tax-free", "lump sum D", "Schedule 11", "Schedule 7", "termination pay withholding", "golden handshake", "payment in lieu of notice", "preservation age ETP", "whole-of-income cap", "ETP code R", "ETP code O". Covers 2026-27 figures for employers, payroll staff and advisers.
+
+## Ask the client first
+
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
+
+## The method, step by step
+
+### Australia Employment Termination Payments and Redundancy v1.3
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
 > elections, deadlines, residency, filing status or local procedures. Do not rely on it to
 > lodge, pay, amend or take a tax position without review by a qualified professional.
 
-## Section 1 - Quick Reference
+### Section 1 - Quick Reference
 
 **Quick reference table**
 
@@ -54,7 +70,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Australian Taxation Office |
 | Reviewed by | Pending. Australian CPA or CA review required |
 
-## Section 2 - The calculation workflow
+### Section 2 - The calculation workflow
 
 Work through these steps for every termination. Each component of the package gets its own
 treatment, and the order matters because the code R part reduces the cap left for the code O part.
@@ -91,7 +107,7 @@ The rate depends on the reason for termination and when the leave accrued. See S
 Each ETP carries a code, and a redundancy excess and a golden handshake from the same termination
 are reported as two ETPs. See Section 9.
 
-## Section 3 - What is and is not an ETP
+### Section 3 - What is and is not an ETP
 
 **Payments in and out of the ETP**
 
@@ -112,7 +128,7 @@ are reported as two ETPs. See Section 9.
 - **Life and death benefit ETPs** — A life benefit ETP is paid to the employee. A death benefit ETP is paid to a dependant, a non-dependant or the trustee of the estate because employment ended on death, and the withholding depends on who receives it. See Section 7.  _([ATO, Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
 - **Payments that are ETPs** — The ATO's lists of payments inside and outside an ETP are the starting point for Step 1, and compensation for wrongful dismissal counts only when paid within 12 months of the actual termination.  _([ATO, Payments that are ETPs](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/payments-that-are-etps))_
 
-## Section 4 - Genuine redundancy and early retirement schemes
+### Section 4 - Genuine redundancy and early retirement schemes
 
 - **What makes a redundancy genuine** — The employer decides that the position no longer exists and dismisses the employee. Dismissal is the employer's decision to end the employment, so an employee who accepts a package offered to minimise disruption or to comply with a workplace agreement is still dismissed, and a redundancy stays genuine when the employer calls for expressions of interest before choosing whom to dismiss. TR 2009/2 adds that the parties must deal at arm's length, the payment must exceed what the employee would have received on voluntary resignation, and there must be no arrangement to re-employ the person.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
 - **Non-genuine redundancy** — A payment is not a genuine redundancy payment where the employee is dismissed on reaching normal retirement age, is at or above age-pension age on the day of dismissal, leaves voluntarily, has a contract that simply ends, or is dismissed for disciplinary or inefficiency reasons. An employee left with little choice but to resign, for example through a pay cut or an unsuitable alternative role, is generally a non-genuine redundancy. The whole payment is then an ETP coded O.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
@@ -132,13 +148,13 @@ are reported as two ETPs. See Section 9.
 - **Age limit since 2019** — Dismissals on or after 1 July 2019 use age-pension age rather than 65. An employer who withheld on the old basis can refund the excess and correct the STP report.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
 - **Ruling** — TR 2009/2 sets out the Commissioner's view on each condition, including dismissal, arm's length dealing and the exclusion of payments the employee would have received anyway.  _([TR 2009/2 Income tax: genuine redundancy payments](https://www.ato.gov.au/law/view/document?DocID=TXR/TR20092/NAT/ATO/00001))_
 
-## Section 5 - Tax-free and taxable components of an ETP
+### Section 5 - Tax-free and taxable components of an ETP
 
 - **Tax-free component** — Only two things create a tax-free component: service before 1 July 1983 and an invalidity segment. Everything else is the taxable component. Do not withhold from the tax-free component, but report both.  _([ATO, Tax-free component of ETPs](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/tax-free-component-of-etps))_
 - **Pre-1 July 1983 segment** — Subtract any invalidity segment from the ETP, then multiply the result by the days of employment before 1 July 1983 divided by the total days of employment the ETP relates to.  _([ATO, Tax-free component of ETPs](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/tax-free-component-of-etps))_
 - **Invalidity segment** — Available only where employment ended because of ill health and two medical practitioners certify that the employee is unlikely ever to work again in a capacity for which they are reasonably qualified. The segment equals the ETP multiplied by the days to retirement divided by the sum of employment days and days to retirement, where retirement is generally the day the employee turns 65. A death benefit ETP cannot include an invalidity segment.  _([ATO, Tax-free component of ETPs](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/tax-free-component-of-etps))_
 
-## Section 6 - Which cap applies
+### Section 6 - Which cap applies
 
 **ETP codes and caps**
 
@@ -159,7 +175,7 @@ are reported as two ETPs. See Section 9.
 - **When other income is large** — An employee with $200,000 of other taxable income has a whole-of-income cap of nil, so a golden handshake is withheld at 47% in full while the redundancy excess still gets the ETP cap.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
 - **Detail pages** — The ATO's cap pages walk through which cap applies and how to work out the whole-of-income cap with more than one payment in the year.  _([ATO, Applying the ETP caps](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/applying-the-etp-caps))_
 
-## Section 7 - Withholding rates under Schedule 11 (from 1 July 2026)
+### Section 7 - Withholding rates under Schedule 11 (from 1 July 2026)
 
 **Table A summary**
 
@@ -181,7 +197,7 @@ are reported as two ETPs. See Section 9.
 - **Rounding** — Round to the nearest dollar, with 50 cents rounding up.  _([ATO, Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
 - **Death benefit dependants** — A dependant includes a spouse, a child under 18, a person in an interdependency relationship and anyone who was a dependant of the deceased just before death. Nothing is withheld from a payment to the trustee of the estate.  _([ATO, Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
 
-## Section 8 - Unused leave on termination under Schedule 7 (from 1 July 2026)
+### Section 8 - Unused leave on termination under Schedule 7 (from 1 July 2026)
 
 **Withholding on unused annual leave, leave loading and long service leave**
 
@@ -202,14 +218,24 @@ are reported as two ETPs. See Section 9.
 - **No study loan withholding** — Do not withhold for study and training support loans from lump sum termination payments.  _([ATO, Weekly tax table](https://www.ato.gov.au/tax-rates-and-codes/tax-table-weekly))_
 - **Super guarantee** — Superannuation guarantee is payable on ordinary time earnings. A payment in lieu of notice is ordinary time earnings; unused annual leave and long service leave paid on termination, and ETPs, are not. See `au-super-guarantee.md`.  _([SGR 2009/2](https://www.ato.gov.au/law/view/document?DocID=SGR/SGR20092/NAT/ATO/00001))_
 
-## Section 9 - Reporting
+## Boundary and exception table
 
-- **STP** — Report each ETP in the pay event with its code, the tax-free and taxable components, the tax withheld and the payment date. An employer that is exempt from or deferred on STP gives the employee a PAYG payment summary for the ETP within 14 days.  _([ATO, Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
-- **One package, several records** — A redundancy excess (code R) and a payment in lieu of notice (code O) from the same termination are two ETPs with two records, while the tax-free redundancy amount goes to lump sum D and the leave to lump sum A or to gross payments.  _([ATO, Schedule 11, example 4](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
-- **Working holiday makers** — Use Schedule 15, not Schedule 11 or Schedule 7, for every payment to a working holiday maker, including the taxable component of an ETP and unused leave. See `au-working-holiday-makers.md`.  _([ATO, Schedule 15](https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers))_
-- **Corrections** — Fix an STP error at the next pay event, or with an update event after finalisation. A payment summary already given to the employee cannot be changed; follow the ATO's amendment process instead.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
+### Section 11 - Common errors
 
-## Section 10 - Worked example
+- Treating a resignation, the end of a fixed-term contract or a dismissal at age-pension age as a genuine redundancy.
+- Counting part years of service in the tax-free limit.
+- Applying the whole-of-income cap to a code R payment, or forgetting to reduce it by salary and unused leave already paid in the year.
+- Testing preservation age at the termination date rather than at the end of the income year.
+- Withholding from the tax-free component or from the lump sum D amount.
+- Reporting a redundancy excess and a golden handshake under one ETP code.
+- Using Schedule 11 for unused leave, or marginal rates for leave paid on a genuine redundancy.
+- Withholding study loan amounts from a lump sum termination payment.
+- Treating a payment made more than 12 months after termination as an ETP without ATO approval.
+- Paying super guarantee on unused leave or an ETP, or omitting it from a payment in lieu of notice.
+
+## Worked cases
+
+### Section 10 - Worked example
 
 **Worked example facts**
 
@@ -266,7 +292,7 @@ Withholding at 32%                                1,920
 Reported at lump sum A
 ```
 
-**Step 6, super.** Superannuation guarantee at 12% applies to the $9,000 payment in lieu of notice
+**Step 6, super.** Under the general SG schedule, superannuation guarantee at 12% applies to the $9,000 payment in lieu of notice
 ($1,080) and to the salary, but not to the redundancy payment, the ETP or the unused leave.
 
 **Step 7, reporting.** The income statement shows lump sum D of $68,006 and lump sum A of $6,000.
@@ -278,20 +304,22 @@ with a taxable component of $9,000 and tax of $2,880. Total withholding on the p
 redundancy would not be genuine, the whole $80,000 would be an ETP coded O, and the whole-of-income
 cap would apply to all of it.
 
-## Section 11 - Common errors
+## When to refuse or refer
 
-- Treating a resignation, the end of a fixed-term contract or a dismissal at age-pension age as a genuine redundancy.
-- Counting part years of service in the tax-free limit.
-- Applying the whole-of-income cap to a code R payment, or forgetting to reduce it by salary and unused leave already paid in the year.
-- Testing preservation age at the termination date rather than at the end of the income year.
-- Withholding from the tax-free component or from the lump sum D amount.
-- Reporting a redundancy excess and a golden handshake under one ETP code.
-- Using Schedule 11 for unused leave, or marginal rates for leave paid on a genuine redundancy.
-- Withholding study loan amounts from a lump sum termination payment.
-- Treating a payment made more than 12 months after termination as an ETP without ATO approval.
-- Paying super guarantee on unused leave or an ETP, or omitting it from a payment in lieu of notice.
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
 
-## Section 12 - Self-checks
+## Filing and payment
+
+### Section 9 - Reporting
+
+- **STP** — Report each ETP in the pay event with its code, the tax-free and taxable components, the tax withheld and the payment date. An employer that is exempt from or deferred on STP gives the employee a PAYG payment summary for the ETP within 14 days.  _([ATO, Schedule 11](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
+- **One package, several records** — A redundancy excess (code R) and a payment in lieu of notice (code O) from the same termination are two ETPs with two records, while the tax-free redundancy amount goes to lump sum D and the leave to lump sum A or to gross payments.  _([ATO, Schedule 11, example 4](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments))_
+- **Working holiday makers** — Use Schedule 15, not Schedule 11 or Schedule 7, for every payment to a working holiday maker, including the taxable component of an ETP and unused leave. See `au-working-holiday-makers.md`.  _([ATO, Schedule 15](https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers))_
+- **Corrections** — Fix an STP error at the next pay event, or with an update event after finalisation. A payment summary already given to the employee cannot be changed; follow the ATO's amendment process instead.  _([ATO, Redundancy and early retirement](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement))_
+
+## Completion checklist
+
+### Section 12 - Self-checks
 
 - [ ] Every component of the package is classified before any rate is applied.
 - [ ] The genuine redundancy conditions, including age-pension age on the dismissal date, are documented.
@@ -304,7 +332,27 @@ cap would apply to all of it.
 - [ ] Foreign resident and no-TFN adjustments have been considered.
 - [ ] Super guarantee is paid on the payment in lieu of notice and not on the leave or the ETP.
 
-## Section 13 - Sources
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/82-130> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-11-tax-table-for-employment-termination-payments> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/payments-that-are-etps> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/redundancy-and-early-retirement> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?DocID=TXR/TR20092/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/tax-free-component-of-etps> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/applying-the-etp-caps> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-7-tax-table-for-unused-leave-payments-on-termination-of-employment> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/accrued-leave> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/tax-table-weekly> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?DocID=SGR/SGR20092/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/schedule-15-tax-table-for-working-holiday-makers> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/working-out-the-whole-of-income-cap-amount> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker/when-a-worker-leaves-your-business/taxation-of-termination-payments/the-12-month-rule> | Not re-read for this format update; see retained provenance |
+
+### Section 13 - Sources
 
 - Income Tax Assessment Act 1997, Division 82 (employment termination payments) and Division 83 (unused leave, genuine redundancy and early retirement scheme payments), https://www.ato.gov.au/law/view/document?docid=PAC/19970038/82-130
 - Taxation Administration Act 1953, Schedule 1, sections 12-85 and 12-90 (withholding from ETPs and unused leave payments).
@@ -327,6 +375,8 @@ Sources were checked on 27 September 2026.
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before paying or reporting a termination package. Genuine redundancy status and early retirement scheme approval turn on the facts of the dismissal.
 >
 > Contributed by Ryan Duguid.
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

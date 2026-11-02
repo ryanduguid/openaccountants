@@ -36,7 +36,7 @@ sync-check:  ## Metadata-bump audit of source-guide edits since BASE (sync-integ
 	@test -n "$(BASE)" || { echo "make sync-check: no merge base with origin/main; run 'git fetch origin main' or pass BASE=<rev>" >&2; exit 1; }
 	$(PYTHON) scripts/check-sync-integrity.py --base "$(BASE)" --head HEAD --mode audit --strict-metadata
 
-checkers:  ## The gate checkers against scripts/baselines/, plus the cited-hosts selftest (validate.yml, gate-checkers)
+checkers:  ## Baseline gates, cited-hosts selftest and worked cases (validate.yml, gate-checkers)
 	$(PYTHON) scripts/check-arithmetic.py
 	$(PYTHON) scripts/check-bracket-tables.py
 	$(PYTHON) scripts/check-expired-rules.py
@@ -44,6 +44,8 @@ checkers:  ## The gate checkers against scripts/baselines/, plus the cited-hosts
 	$(PYTHON) scripts/check-coverage-claims.py
 	$(PYTHON) scripts/check-sourcing-floor.py
 	$(PYTHON) scripts/check-cited-hosts.py --selftest
+	$(PYTHON) scripts/check-examples.py
+	$(PYTHON) scripts/check-examples.py --require skills/international/australia/au-rates-2026-27.md skills/international/australia/au-individual-return.md skills/international/australia/au-deductions-offsets.md skills/international/australia/au-sole-trader-schedule.md skills/international/australia/australia-tax-optimization.md
 
 baselines:  ## Rewrite the gate checkers' baselines from the current tree, after reading what changed
 	$(PYTHON) scripts/check-arithmetic.py --update-baseline

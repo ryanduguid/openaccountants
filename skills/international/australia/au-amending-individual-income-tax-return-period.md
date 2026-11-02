@@ -13,10 +13,10 @@ description: >
   statutory qualifications and complete notice chain. This draft is not
   an objection procedure or a completed financial review.
 jurisdiction: AU
-version: 1.3
+version: 1.4
 category: international
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,11 @@ depends_on:
   - income-tax-workflow-base
 ---
 
-# Amending an individual income tax return in Australia
+# Amending an individual income tax return in Australia v1.4
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
 
 An income-tax assessment can be amended following a taxpayer request or an ATO review. Establish the taxpayer, capacity, income year, correct substantive tax treatment, original notice and every amended notice before selecting the applicable period or calculating a correction. A new amended notice does not automatically restart an unrestricted period for the whole return. [ITAA 1936, section 170](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html).
 
@@ -33,11 +37,24 @@ An income-tax assessment can be amended following a taxpayer request or an ATO r
 
 Load workflow-base and income-tax-workflow-base with the applicable country references. Preserve source and period gates, the confirmed profile, refusals, four universal outputs and all domain outputs and checks. Missing mandatory facts remain Needs Input; unresolved law remains held. The reviewer retains sensitive identifiers and signing information and personally handles submission. A correction schedule alone is not a completed financial package.
 
-## Who this is for
+### Who this is for
 
 Individuals, including sole traders, who need to correct an already-assessed income tax return, and their agents. The ATO's individuals time-limit page directs businesses and super entities to its separate "Time limits for business and super amendments" material instead, so entity amendments are outside this Guide. Partnerships and trusts are covered here only to the extent that the reasonably arguable position threshold in the table below is quoted for them; their own lodgement and amendment processes are not covered.
 
-## Rates, thresholds and deadlines
+## Ask the client first
+
+### Ask the client first
+
+- What is the taxpayer's capacity and income year, which section 170 item and regulation applies, when was the original notice given, and what are the dates and changed particulars of every later assessment? Record the complete notice chain and evidence rather than using the newest notice date as an automatic restart.
+- Does the amendment increase or decrease the tax liability, and does it create a shortfall amount as the ATO defines it?
+- What is the income tax payable on the return as lodged, so the greater-of threshold for a not reasonably arguable position can be worked out?
+- Was the original position based on a view of the law, ATO advice, a published ATO statement or a general administrative practice, and can that be produced?
+- Has the ATO already contacted the client about this year (review, audit or information request), which affects whether a disclosure is voluntary and the level of reduction?
+- Is the client also a partner in a partnership or a beneficiary of a trust whose return would need amending, which brings the higher partnership and trust threshold into play?
+
+## The method, step by step
+
+### Rates, thresholds and deadlines
 
 **Amendment time limits table**  _(https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments)_
 
@@ -94,7 +111,7 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 | Trigger for the period | The relevant statutory notice-giving event | The statute measures the period after that event; verify the actual notice and time-computation/day-adjustment rules. Do not substitute income-year end or automatically reset to a later notice. |
 | Further amendments after an amended assessment | Restricted | Subsections 170(2) to (4) limit later amendments and allow particular matters to be revisited only in specified circumstances; business, partnership, trust and avoidance circumstances can take an individual outside the two-year category |
 
-## The method, step by step
+### The method, step by step
 
 1. Identify what the correct assessment should be and quantify the difference between the correct tax liability or credit entitlement and the amount calculated on the information already given — this difference is the "shortfall amount" as defined on the ATO false or misleading statements page (https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements).
 2. Establish the relevant section 170 item and every qualification for the taxpayer and income year. Use the ordinary individual table and, where applicable, the conditional item 3A business table. Record when notice of the original assessment was given, every amended notice and the particular matters changed. Apply subsections 170(2), (2A) and (3)-(4) before selecting any later clock; do not restart the ordinary whole-return period from the latest amended notice. Check the actual giving/service evidence and applicable day adjustments. An amendment request and an objection have distinct requirements and can have different periods. Objections retain the referral below.
@@ -111,16 +128,13 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 13. Choose the channel: ATO online services (in myGov linked to the ATO, select Manage tax returns, then Amend beside the income year), a registered tax agent, the paper amendment form, or a letter containing the required information. Enter the correct totals for the affected labels rather than replacing a total with the adjustment. A paper request must be signed by the taxpayer, the ATO charges no fee, and processing times are estimates, not a guarantee that a request completes before a deadline. Retain the submitted request and its acknowledgement (https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/how-to-request-an-amendment-to-your-tax-return).
 14. When the amended assessment issues, compare it with the reconciliation prepared at step 1: the tax difference, interest, penalties, credits, payment date and any effect on later returns. Retain the assessment and the evidence behind each corrected figure.
 
-## Ask the client first
+## Worked cases
 
-- What is the taxpayer's capacity and income year, which section 170 item and regulation applies, when was the original notice given, and what are the dates and changed particulars of every later assessment? Record the complete notice chain and evidence rather than using the newest notice date as an automatic restart.
-- Does the amendment increase or decrease the tax liability, and does it create a shortfall amount as the ATO defines it?
-- What is the income tax payable on the return as lodged, so the greater-of threshold for a not reasonably arguable position can be worked out?
-- Was the original position based on a view of the law, ATO advice, a published ATO statement or a general administrative practice, and can that be produced?
-- Has the ATO already contacted the client about this year (review, audit or information request), which affects whether a disclosure is voluntary and the level of reduction?
-- Is the client also a partner in a partnership or a beneficiary of a trust whose return would need amending, which brings the higher partnership and trust threshold into play?
+No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
 
 ## When to refuse or refer
+
+### When to refuse or refer
 
 - Amendments for companies, trusts, partnerships, superannuation funds and other business or super entities — the ATO's individuals page directs these to its separate business and super amendment time limits material.
 - Cases where fraud or evasion is in issue, where the individuals page states the ATO may amend outside the ordinary time limit; these need specialist and often legal advice.
@@ -130,6 +144,23 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 - Amendments involving transfer pricing, research and development or capital gains tax where the ATO states different amendment-period rules can apply.
 
 ## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/pdf?DocId=PSR%2FPS20125%2FNAT%2FATO%2F00001&filename=law%2Fview%2Fpdf%2Fpsr%2Fps2012-005c5.pdf&PiT=20191025000001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=MXR%2FMT20082%2FNAT%2FATO%2F00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/what-you-should-know/tailored-engagement/assessments-and-amendment-periods> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/how-to-request-an-amendment-to-your-tax-return> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2024A00135/asmade/2024-12-10/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/F2025L01060/asmade/2025-09-09/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/F2015L01415/2022-12-09/2022-12-09/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+
+### Sources
 
 - https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html (current section 170, qualifications and amended-assessment limits)
 - https://www.legislation.gov.au/C2024A00135/asmade/2024-12-10/text/original/epub/OEBPS/document_1/document_1.html (Schedule 3 commencement/application and conditional self-amendments)
@@ -147,6 +178,8 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 Drafted by OpenAccountants. Not yet reviewed or approved by a named accountant.
 
 > Contributed by Ryan Duguid.
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 
