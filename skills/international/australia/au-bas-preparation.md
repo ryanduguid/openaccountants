@@ -11,7 +11,7 @@ description: >
   "1A 1B W1 W2 T7 5A", "net amount on BAS", "fix a BAS", "BAS due date". For the GST
   classification rules behind the labels see australia-gst; for the label-level PAYG detail see
   au-gst-bas.
-version: 0.6
+version: 0.7
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-11-02
@@ -24,13 +24,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia BAS Preparation v0.6
+# Australia BAS Preparation v0.7
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia BAS Preparation v0.5
+### Australia BAS Preparation v0.7
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
@@ -201,7 +201,7 @@ Classify every transaction first, using `australia-gst.md`. Then map.
 | Option 2, instalment rate | T1, T2, T11; T3, T4 and eligible 5B if varying | Multiply T1 by T2, or varied T3. Report the result at T11 and 5A. Check any separate credit entitlement at 5B |
 
 - **Negative instalment-amount variation:** If the option 1 calculation is nil or negative, enter zero at T9 and 5A. A negative calculation may support a credit for earlier PAYG instalments in the same income year; claim the eligible amount as a positive number at 5B. Do not enter the negative calculation at T9 or add both it and the 5B credit to the summary. A credit need not be claimed on the activity statement. ([ATO, How to vary your PAYG instalments, amount method steps 4-5](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).)
-- **Varying carries a risk** — **Varying carries a risk.** If varied instalments come to less than 85% of the total tax payable on instalment income for the year, general interest charge can apply to the difference, and penalties are possible.  _([ATO, How to vary your PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments))_
+- **Varying carries a risk:** For rate-method GIC, compare the varied rate with 85% of the benchmark rate. For amount-method GIC, compare the annual benchmark-tax estimate used with 85% of benchmark tax. For a four-instalment payer, count cumulative amount variations from the first liable instalment and include applicable earlier credit entitlements. A final payment total does not clear every earlier estimate, and later top-ups reduce an amount-method shortfall from their due date. Work out the statutory amount and period separately; penalties may also apply. See [the PAYG guide](au-payg-instalments.md), [ATO variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments) and [TAA Sch 1 ss 45-230, 45-232, 45-233 and 45-410](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html).
 - **Instalment notices** — **Instalment notices.** Where the entity receives an instalment notice rather than an activity statement, and does not wish to vary, the amount can simply be paid. No lodgment is required.
 
 ### Section 7 - Step 5: Adjustments and corrections
@@ -506,6 +506,7 @@ Before lodging, confirm:
 
 | Source | URL | Read on |
 |---|---|---|
+| TAA 1953 compilation 227, selected Sch 1 ss 45-230, 45-232, 45-233 and 45-410: method-specific GIC and liable-instalment sequence | <https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html> | 2026-11-02; effective 1 October, registered 19 October 2026; selected PAYG provisions only |
 | GST Act, compilation 96 effective 1 January 2026 | <https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html> | 2026-11-02; selected sections 9-70, 9-75(1) including formula alternative text, 11-20, 11-25, 21-5 and 29-5/29-10; other sections not newly audited |
 | ATO BAS due dates, updated 17 September 2026 | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas> | 2026-11-02; monthly direction, quarterly dates and extensions |
 | ATO GST summary, updated 9 September 2026 | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/complete-your-bas/step-5-summary> | 2026-11-02; 1A/1B and quarterly-instalment exception |

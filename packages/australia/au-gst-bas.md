@@ -10,7 +10,7 @@ description: >
   reported amounts and source conditions before applying the instructions.
   Preserve exceptions and self-checks, and refer unresolved classifications or
   filing procedures for professional review.
-version: 1.7
+version: 1.8
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-11-02
@@ -20,7 +20,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU GST Bas v1.7
+# AU GST Bas v1.8
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -66,7 +66,7 @@ This skill does NOT cover:
 
 ## The method, step by step
 
-### Australia BAS: Non-GST Sections v1.6
+### Australia BAS: Non-GST Sections v1.8
 
 ### Section 3 — Rates and thresholds
 
@@ -115,11 +115,11 @@ Two methods are available:
 
 ##### Method A — Instalment amount method (label T7)
 
-- **Instalment amount method:** The notice shows the amount at T7; if unchanged, report it at 5A. For a variation, estimate annual benchmark tax at T8. For four quarterly instalments, apply 25%, 50%, 75% or 100% for the relevant quarter, subtract earlier instalments and add applicable earlier credits. Report the varied amount at T9 and 5A, and the reason at T4. If the result is nil or negative, enter zero at T9/5A; an eligible credit may be claimed as a positive amount at 5B. For Q3, $12,000 annual estimated tax less $8,000 earlier instalments, with no earlier credits, gives $12,000 x 75% - $8,000 = $1,000. ([ATO variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).)
+- **Instalment amount method:** The notice shows the amount at T7; if unchanged, report it at 5A. For a variation, estimate annual benchmark tax at T8. A four-instalment payer counts cumulative 25%, 50%, 75% or 100% from the first liable instalment, subtracts earlier instalments and restores applicable earlier credit entitlements. Report T9 and 5A, with the reason at T4. A nil or negative result gives zero T9/5A; an eligible credit may be claimed as a positive amount at 5B. At the third liable instalment, $12,000 annual estimated tax and $8,000 earlier instalments, with no earlier credits, give $12,000 x 75% - $8,000 = $1,000. A new payer first liable in January-March instead starts at 25%. For variation GIC, compare the annual benchmark-tax estimate used with 85% of benchmark tax; do not clear earlier periods from a final payment total. See [the PAYG guide](au-payg-instalments.md), [ATO variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments) and [TAA Sch 1 ss 45-232, 45-233, 45-410 and 45-415](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html).
 
 ##### Method B — Instalment rate method (labels T1-T2)
 
-- **Instalment rate method:** Calculate quarterly instalment income at T1, excluding salary and wages, GST and capital gains. Multiply by the notified percentage rate at T2 and report the amount at T11 and 5A. To vary, enter the new percentage at T3 and the reason at T4; multiply T1 by T3 for T11 and 5A. Any eligible credit claimed for earlier instalments goes at 5B. Assess variation interest against benchmark tax; below 85% may attract GIC. Benchmark tax is distinct from total assessed tax. (Taxation Administration Act 1953 (Cth) sch 1 div 45; ATO variation instructions above.)
+- **Instalment rate method:** Calculate gross quarterly instalment income at T1 under the applicable definition, excluding GST and salary/wages covered by PAYG withholding. Business deductions do not reduce T1; confirm special-regime treatment, including superannuation-fund capital gains, separately. Multiply by the pre-filled percentage at T2 and report T11 and 5A under the detailed statement instructions. To vary, enter T3 and the reason at T4; T1 x T3 gives T11 and 5A. Any eligible earlier-instalment credit claimed goes at 5B. For variation GIC, compare the varied rate with 85% of the benchmark rate, rather than comparing aggregate payments with total assessed tax. See [the PAYG guide](au-payg-instalments.md), [ATO instalment income](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/calculate-your-payg-instalments/instalment-income) and [TAA Sch 1 s 45-230](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html).
 - **Rate-method amount:** T1 x T2, or T1 x varied T3, gives the amount at T11 and 5A.
 
 #### 4.3 FBT instalment (label F1)
@@ -305,6 +305,8 @@ Before delivering output, verify:
 
 | Source | URL | Read on |
 |---|---|---|
+| TAA 1953 compilation 227, selected Sch 1 ss 45-230, 45-232, 45-233, 45-410 and 45-415: rate/annual-estimate tests and liable-instalment sequence | <https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html> | 2026-11-02; effective 1 October, registered 19 October 2026; selected PAYG provisions only |
+| ATO instalment income, included/excluded income sections | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/calculate-your-payg-instalments/instalment-income> | 2026-11-02; page updated 9 March 2022 |
 | ATO BAS due dates, updated 17 September 2026 | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas> | 2026-11-02; monthly direction, quarterly and annual conditions |
 | ATO PAYG activity statement, updated 9 January 2023 | <https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement> | 2026-11-02; option 1 labels and option 2 T1/T2/T3/T11/5A |
 | Retained citation | <https://www.ato.gov.au/api/public/content/0-0b929c4e-ddac-4b4f-a627-7427575b94a2> | Not re-read for this format update; see retained provenance |

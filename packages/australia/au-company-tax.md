@@ -9,7 +9,7 @@ description: >
   PAYG instalments, or bucket companies receiving trust distributions. Trigger on phrases like
   "company tax rate", "base rate entity", "franking credits", "franking account", or "company
   losses". ALWAYS read this skill before touching any company tax work.
-version: 1.5
+version: 1.6
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -20,13 +20,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Company Income Tax -- Private SME Company Skill v1.5
+# Australia Company Income Tax -- Private SME Company Skill v1.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia Company Income Tax -- Private SME Company Skill v1.5
+### Australia Company Income Tax -- Private SME Company Skill v1.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -179,7 +179,9 @@ For residual self-preparers, the [business income-tax page](https://www.ato.gov.
 
 #### Rule 10 -- PAYG instalments interaction
 
-Companies enter automatically with instalment income >= $2m in the latest return, notional tax >= $500, or as head of a consolidated group. Default quarterly (typically 28 October / 28 February / 28 April / 28 July); instalment income > $20m -> monthly (21st of the following month); notional tax < $8,000 -> annual option (conditions apply). Amount method instalments are uplifted by the GDP factor: **5% for 2026-27** (4% for 2025-26). Variation below 85% of benchmark tax may attract GIC. Calculate benchmark tax separately: for companies it excludes capital gains and disregards certain offsets under ss 45-365 to 45-375. For example, $9,000 varied instalments against $10,000 benchmark tax is 90%, even if total tax including a capital gain is $20,000. The 45% comparison with total tax is inapplicable. Instalments are credited against the assessed tax in the calculation statement -- reconcile the ICA before finalising; the 2026-27 instalments raised after the 2025-26 assessment are based on that return.
+Companies enter automatically with instalment income >= $2m in the latest return, notional tax >= $500, or as head of a consolidated group. Default quarterly (typically 28 October / 28 February / 28 April / 28 July); instalment income > $20m -> monthly (21st of the following month); notional tax < $8,000 -> annual option (conditions apply). For the amount method, use the current notice. GDP-adjusted notional tax increases statutory income bases rather than simply uplifting the old tax bill. The factor is **5% for 2026-27**, with 4% retained for SAP income years starting January, February or March 2026; it does not uplift the rate method or annual instalments. See [TAA Sch 1 ss 45-325, 45-400 and 45-405](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html) and the [ATO developer factor](https://softwaredevelopers.ato.gov.au/GDPupliftfactor).
+
+For a rate variation, compare the varied rate with 85% of the benchmark rate; for an amount variation, compare the annual benchmark-tax estimate used with 85% of benchmark tax. Do not clear earlier quarters from an aggregate year-end instalment total. Calculate benchmark tax separately: for companies it excludes capital gains and disregards certain offsets under ss 45-365 to 45-375. For example, a $9,000 annual benchmark-tax estimate against $10,000 benchmark tax is 90%, even if total tax including a capital gain is $20,000. The 45% comparison with total tax is inapplicable and this example does not determine a GIC amount or clear earlier estimates. See [TAA Sch 1 ss 45-230, 45-232 and 45-233](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html) and [the PAYG guide](au-payg-instalments.md) for sequence, credits and required inputs. Instalments are credited against the assessed tax in the calculation statement; reconcile the ICA before finalising. Confirm the current notice and the return and adjustments behind it.
 
 #### Rule 11 -- Return mechanics and add-backs
 
@@ -558,6 +560,8 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | ATO Companies and super funds, updated 1 July 2026: 30 June balancers' 2025-26 lodgment/payment table and NFSA notes. Selected wording: 'not a lodgment due date' for the June concession. | <https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds> | 2026-11-02; these table rows and notes, not all SAP rules |
 | ATO weekend/public-holiday rule, updated 1 July 2026: nationwide application and 2027 WA holiday rows. Selected wording: 'taxpayers in all states and territories'. | <https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/lodgment-and-payment-dates-on-weekends-or-public-holidays> | 2026-11-02; general rule and 2026-27 date tables |
 | ATO business income-tax dates, updated 8 September 2025: October, December, January and February sections. Selected wording: 'Income tax return lodgment due date'. | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax> | 2026-11-02; selected sections; this page does not establish residual self-preparer February payment |
+| TAA 1953 compilation 227, selected Sch 1 ss 45-230, 45-232, 45-233, 45-325, 45-400 and 45-405: variation tests and income-based GDP-adjusted notional tax | <https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html> | 2026-11-02; effective 1 October, registered 19 October 2026 as C2026C00468; current identity checked through the register API |
+| ATO developer GDP uplift factor, version 2027 description: 5% and January-March SAP qualification | <https://softwaredevelopers.ato.gov.au/GDPupliftfactor> | 2026-11-02; published 11 June 2026 |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/203-55> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.legislation.gov.au/C2026A00071/asmade/text> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying> | Not re-read for this format update; see retained provenance |
@@ -584,7 +588,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | Amendment periods | [ITAA 1936, section 170(1), table items 1-3A](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170); additional taxpayer-request window is conditional |
 | GIC/SIC deduction denial | Treasury Laws Amendment (Tax Incentives and Integrity) Act 2025 (No. 29, 2025) Sch 2; ato.gov.au QC 73746 -- GIC/SIC incurred from 1 July 2025 not deductible |
 
-Not yet confirmed: The current source check covers the selected ordinary-company rate/BRE provisions, corporate-rate definitions, maximum-credit formula and company deadline/holiday sections listed above. Four executable cases check stated arithmetic; they do not decide unresolved income character, grouping, loss eligibility or recipient credit entitlement. The retained historical claim that the 25% rate commenced in 2021-22 has not been reverified here. The remaining franking-account/FDT, loss, carry-back, PAYG, amendment and deduction claims, retained examples outside these checks and complete portal/form/field workflow still need their full source and qualified Australian review. The approved 2026-27 return/software and residual self-preparer payment date have not been verified. Return Needs Input for an unconfirmed payment date, deadline category, credit entitlement or classification. Historical provenance retains its original scope; no accountant sign-off is asserted.
+Not yet confirmed: The current source check covers the selected ordinary-company rate/BRE provisions, corporate-rate definitions, maximum-credit formula, company deadline/holiday sections and selected PAYG GDP/variation provisions listed above. Four executable cases check stated arithmetic; they do not decide unresolved income character, grouping, loss eligibility or recipient credit entitlement. The retained historical claim that the 25% rate commenced in 2021-22 has not been reverified here. The remaining franking-account/FDT, loss, carry-back, PAYG, amendment and deduction claims, retained examples outside these checks and complete portal/form/field workflow still need their full source and qualified Australian review. The approved 2026-27 return/software and residual self-preparer payment date have not been verified. Return Needs Input for an unconfirmed payment date, deadline category, credit entitlement or classification. Historical provenance retains its original scope; no accountant sign-off is asserted.
 
 <!-- openaccountants-cta-block -->
 
