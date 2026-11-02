@@ -1,7 +1,7 @@
 ---
 name: australia-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Australian GST return (Business Activity Statement / BAS) for any client. Trigger on phrases like "prepare BAS", "do the GST", "fill in BAS", "create the return", "GST return", "Activity Statement", or any request involving Australian GST filing. Also trigger when classifying transactions for GST purposes from bank statements, invoices, or other source data. This skill covers Australia only and covers both Simpler BAS and full BAS reporting. GST groups, margin scheme, partial exemption complex, and going concern are all in the refusal catalogue. ALWAYS read this skill before touching any GST-related work.
-version: 2.7
+version: 2.8
 jurisdiction: AU
 category: international
 tax_year: 2026
@@ -11,12 +11,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST v2.7
+# Australia GST v2.8
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
+Prepare Australian GST classification and BAS workpapers from verified facts and source documents. A bank statement supports reconciliation but does not establish taxability, credit entitlement or cross-border connection. Keep unresolved transactions provisional and apply the refusal catalogue before completing a return.
 
 ## Ask the client first
 
@@ -105,7 +106,7 @@ Infer the client profile from the data first. Only ask questions the data could 
 | Supporting legislation | Taxation Administration Act 1953 (Schedule 1); GST Regulations 2019; LCT Act 1999; WET Act 1999 |
 | Contributor | Open Accountants |
 | Validation date | Pending accountant review |
-| Skill version | 2.6 |
+| Skill version | 2.8 |
 
 **Read this whole section before classifying anything.**
 
@@ -136,20 +137,20 @@ Infer the client profile from the data first. Only ask questions the data could 
 - **Full BAS reporting scope** — Complete the labels required by the issued BAS. G4–G9 and G12–G19 are calculation-worksheet items, not a requirement to lodge every G label. Use G1, G2, G3, G10, G11, 1A and 1B where required, plus other tax labels that apply.  _([ATO GST reporting](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/goods-and-services-tax-gst))_
 - **GST calculation formulas** — GST = GST-inclusive price x 1/11; GST = GST-exclusive price x 10%; GST-inclusive = GST-exclusive x 1.1; GST-exclusive = GST-inclusive / 1.1  _(Section 1 -- Quick reference)_
 
-**Conservative defaults -- Australian-specific**
+**Unresolved facts -- Australian-specific**
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown GST status of a sale | Taxable at 10% |
-| Unknown GST status of a purchase | No input tax credit claimed |
-| Unknown business-use proportion (vehicle, phone, home office) | 0% credit |
-| Unknown whether food is basic or prepared | Taxable at 10% (prepared food) |
+| Unknown GST status of a sale | Needs Input: obtain supply evidence; keep the liability and classification unresolved |
+| Unknown GST status of a purchase | Withhold unsupported credit provisionally; record the evidence needed without deciding that no entitlement exists |
+| Unknown business-use proportion (vehicle, phone, home office) | Needs Input: obtain a supported creditable-use proportion; withhold the unsupported credit |
+| Unknown whether food is basic or prepared | Needs Input: identify the actual food and supply conditions before applying section 5.2 |
 | Unknown counterparty registration status | Verify registration and supply evidence; withhold unsupported credits and keep the treatment pending |
-| Unknown SaaS billing entity location | Non-resident, reverse charge applies |
-| Unknown insurance type (general vs life) | Input taxed (no credit) |
-| Unknown property type (commercial vs residential) | Residential (input taxed, no credit) |
-| Unknown whether transaction is in scope | In scope |
-| Cash withdrawal purpose | Owner drawing, exclude |
+| Unknown SaaS billing entity location | Needs Input: obtain the invoice, contracting entity, connection and use facts; no automatic reverse charge |
+| Unknown insurance type (general vs life) | Needs Input: obtain the policy and premium breakdown; withhold unsupported credit |
+| Unknown property type (commercial vs residential) | Needs Input: identify the premises, supply and applicable property rules; withhold unsupported credit |
+| Unknown whether transaction is in scope | Needs Input: retain it in the reconciliation and unresolved-item list until scope is established |
+| Cash withdrawal purpose | Needs Input: trace its use; do not classify it as a drawing or purchase from bank direction alone |
 
 **Red flag thresholds**
 
@@ -276,25 +277,25 @@ Use merchant patterns to identify candidate treatments. Confirm the actual suppl
 | RESTAURANT, CAFE, BISTRO, PIZZERIA | Domestic 10% | Prepared food -- always taxable |
 | BWS, DAN MURPHY'S, LIQUORLAND, FIRST CHOICE | Domestic 10% | Alcohol -- always taxable at 10% (plus excise/WET) |
 
-#### 3.7 SaaS (reverse charge from non-resident suppliers)
+#### 3.7 SaaS (verify the actual supply and any reverse charge)
 
-**SaaS table**
+**SaaS lookup table**
 
-| Pattern | Billing entity | Treatment | Notes |
-| --- | --- | --- | --- |
-| GOOGLE (Ads, Workspace, Cloud) | Google Asia Pacific Pte Ltd (SG) or Google LLC (US) | Non-resident supply | If supplier registered for AU GST: 10% charged on invoice, claim credit. If not: reverse charge if not fully creditable. |
-| MICROSOFT (365, Azure) | Microsoft Ireland Operations Ltd (IE) or Microsoft Regional Sales Pte Ltd (SG) | Non-resident supply | Same logic. Check invoice for ABN and GST charge. |
-| ADOBE | Adobe Systems Software Ireland Ltd (IE) | Non-resident supply | Check invoice |
-| META, FACEBOOK ADS | Meta Platforms Ireland Ltd (IE) | Non-resident supply | Check invoice for AU GST |
-| SLACK, SALESFORCE | Slack Technologies / Salesforce (US or IE entity) | Non-resident supply | Check invoice |
-| ATLASSIAN | Atlassian Pty Ltd (AU) | Domestic 10% | Atlassian is Australian -- domestic taxable supply, full credit |
-| CANVA | Canva Pty Ltd (AU) | Domestic 10% | Australian entity -- domestic taxable supply |
-| XERO | Xero Limited (NZ) or Xero Australia Pty Ltd | Check invoice | If AU entity: domestic 10%. If NZ entity: non-resident supply. |
-| ZOOM | Zoom Video Communications (US) | Non-resident supply | Check invoice for AU GST registration |
-| DROPBOX | Dropbox (IE or US) | Non-resident supply | Check invoice |
-| AWS, AMAZON WEB SERVICES | Amazon Web Services Inc (US) or AWS Australia Pty Ltd | Check invoice | If AU entity: domestic 10%. If US entity: non-resident. |
+| Bank pattern (lookup only) | Possible purchase to investigate |
+| --- | --- |
+| GOOGLE (Ads, Workspace, Cloud) | Advertising, subscriptions or cloud services |
+| MICROSOFT (365, Azure) | Subscriptions or cloud services |
+| ADOBE | Software subscriptions |
+| META, FACEBOOK ADS | Advertising |
+| SLACK, SALESFORCE | Business software subscriptions |
+| ATLASSIAN | Business software subscriptions |
+| CANVA | Design software subscriptions |
+| XERO | Accounting software subscriptions |
+| ZOOM | Communications subscriptions |
+| DROPBOX | Storage subscriptions |
+| AWS, AMAZON WEB SERVICES | Cloud services |
 
-- **Non-resident digital supplies note** — Since 1 July 2017, many non-resident digital suppliers (Netflix, Spotify, Google, etc.) have registered for Australian GST and charge 10% on B2C supplies. For B2B supplies where the recipient provides an ABN, the supplier may not charge GST -- reverse charge may apply on the recipient if the acquisition is not fully creditable. Always check the actual invoice.  _(3.7 SaaS (reverse charge from non-resident suppliers))_
+Obtain the actual invoice and contracting entity. These patterns do not verify a current billing entity, Australian connection, taxable supply or credit entitlement. Supplier registration alone does not mean GST is payable on this supply. If the supplier has charged GST incorrectly, seek correction from the supplier; do not claim it merely because it appears on an invoice. For a verified taxable supply, apply section 5.6 and the supported creditable-use proportion. For offshore supplies, apply section 5.5. An ABN alone does not establish that the recipient is outside the Australian-consumer definition; check registration, enterprise use and the supplier's evidence or reasonable-belief conditions.
 
 #### 3.8 Payment processors (classify the actual service)
 
@@ -445,13 +446,21 @@ Each rule states the legal source and the BAS label mapping. Apply silently if t
 | Dividends | Not a supply -- return on equity |
 | Loan principal repayments | Not a supply -- repayment of capital |
 | GST/income tax payments to ATO | Tax payment, not a supply |
-| Private transactions by individuals | Not in course of enterprise |
+| Private transactions by individuals | Generally outside the enterprise supply/credit rules, but check section 5.5 before excluding a purchase: recipient liability, including section 84-5 item 3, can apply without creditable use |
 | Owner drawings/transfers | Internal, not a supply |
 | Gifts/donations (no consideration) | No consideration = not a supply |
 
 #### 5.5 Reverse charge (Division 84)
 
-- **Australian reverse charge distinction from EU** — Key Australian distinction from EU: In Australia, reverse charge on offshore supplies to registered recipients applies ONLY when the acquisition is NOT fully creditable. If the recipient would claim 100% input tax credit anyway, no reverse charge -- no revenue leakage. When reverse charge applies: - Output GST (self-assessed): include in 1A - Input tax credit (if any): include in 1B - NOT reported in G1 (total sales) - Both sides appear on BAS  _(Division 84)_
+- **Connection and recipient facts.** Establish the actual supply, consideration, recipient registration (or requirement to register), where the supply is done, the supplier's enterprise connection and the acquisition's use. Apply sections 9-25 and 9-26 before selecting a section 84-5 route. A foreign merchant name, supplier registration or missing invoice GST does not itself establish reverse charge.
+- **Ordinary offshore services.** Section 84-5 table items 1 and 2 cover relevant non-connected intangible supplies and rights/options connected under section 9-25(5)(c). Their purpose test requires acquisition solely or partly for an enterprise carried on in Australia and not solely for a creditable purpose. A wholly creditable acquisition does not satisfy that test. GST-free and input taxed portions remain excluded under section 84-5(1).
+- **Consumer-status misrepresentation.** Item 3 has different conditions: a supply connected solely under section 9-25(5)(d), the supplier's section 84-100 treatment of the recipient as not an Australian consumer, a disclosed ABN (or prescribed identifier) and a registration declaration. The items 1 and 2 purpose test does not govern item 3. A registered purchaser's wholly private acquisition can therefore attract reverse charge where those conditions are met; no private-use credit follows.
+- **Liability and credit.** For an ordinary fully taxable, unrelated-party service with all consideration paid or payable by the recipient, section 84-12 GST is 10% of the price, not 1/11 of the payment. Determine any credit separately under sections 11-5, 11-15 and 84-13 using the documented creditable extent. A tax invoice is not required for the reverse-charge credit described by the ATO, but retain evidence of the supply, amount, liability, use and attribution. Do not use this exception for ordinary supplier-charged GST.
+- **BAS reporting.** Under the accounts method, include recipient-paid GST at 1A and the entitled credit at 1B. The ATO directs that the ordinary purchase price multiplied by 1.1 is included at G1 and, where required, G10 or G11. Preserve the bank amount and use the separate schedule in section 7 so neither the purchase nor its credit is counted twice. This G1 reporting entry is not business sales revenue.
+- **Special cases.** Obtain qualified review for associate valuation, transfers between branches, annual apportionment, low value goods or an agreement to reverse charge under Division 83. Those rules are not resolved by the ordinary service calculation above. Apply the existing financial-supply and other refusal triggers where relevant.
+
+Sources read on 2 November 2026: [GST Act compilation 96, sections 9-25, 9-26, 11-5, 11-15, 84-5, 84-10, 84-12, 84-13 and 84-100](https://www.legislation.gov.au/C2004A00446/2026-01-01/text); [ATO, Reverse charge GST on offshore goods and services purchases, QC 17450, PDF pages 32-38](https://www.ato.gov.au/api/public/content/0-5cfa3e60-d95b-41aa-9be1-cea62009de33) (section updated 26 July 2022).
+
 - **Offshore digital supplies** — Offshore digital supplies: section 9-25(5)(d) connects relevant supplies to Australian consumers with Australia. The usual registration threshold is at least $75,000 GST turnover. An ABN alone does not establish that a recipient is outside the Australian-consumer definition: the recipient must be GST-registered and acquire the supply wholly or partly for an enterprise. Suppliers must meet the evidence or reasonable-belief rules, including the ABN and registration declaration where applicable. Check other connection rules and any Division 84 reverse charge, particularly where the acquisition is not fully creditable. See [GSTR 2017/1](https://www.ato.gov.au/law/view/document?docid=GST/GSTR20171/NAT/ATO/00001) and GST Act sections 9-25(7), 84-100.  _([GSTR 2017/1] and GST Act sections 9-25(7), 84-100)_
 
 #### 5.6 Input tax credit entitlement (Division 11)
@@ -532,7 +541,7 @@ escalate rather than estimate.
 
 ### Section 6 -- Tier 2 catalogue
 
-For each ambiguity type: pattern, why the bank statement is insufficient, conservative default, question for the client.
+For each ambiguity, retain the transaction in the reconciliation, record the missing evidence and withhold unsupported credit provisionally. The pending amount is not a finding that no entitlement exists. Resolve the facts before final classification or lodgement.
 
 #### 6.1 Vehicle costs (fuel -- business or private?)
 
@@ -548,7 +557,7 @@ Pattern: Woolworths, Coles, IGA, Aldi, any supermarket. Why insufficient: a sing
 
 #### 6.4 Cash withdrawals
 
-Pattern: ATM, cash withdrawal, CBA cash, Westpac cash. Why insufficient: unknown what cash was spent on. Default: exclude as owner drawing. Question: "What was the cash used for? If business expenses, do you have receipts?"
+Pattern: ATM, cash withdrawal, CBA cash, Westpac cash. Why insufficient: unknown what cash was spent on. Pending treatment: keep the cash movement in the reconciliation and request its use and receipts; do not assume an owner drawing or a purchase. Question: "What was the cash used for? If business expenses, do you have receipts?"
 
 #### 6.5 Insurance premiums
 
@@ -556,7 +565,7 @@ Pattern: insurance premium or policy payment. Identify the policy and the invoic
 
 #### 6.6 Mixed personal/business subscriptions
 
-Pattern: Netflix, Spotify, Apple, Amazon Prime, gym membership. Why insufficient: if subscription is partly personal and partly business, only the business portion is creditable. Most streaming/entertainment subscriptions are purely personal. Default: exclude as private. Question: "Is this a business expense or personal? If mixed, what percentage is business use?"
+Pattern: Netflix, Spotify, Apple, Amazon Prime, gym membership. The name does not establish use, taxability or credit entitlement. Obtain the invoice, connection facts and supported creditable-use proportion; private use gives no credit and entertainment restrictions may also apply. Keep unresolved subscriptions pending. Before excluding an offshore purchase as private, apply section 5.5 because recipient liability can apply without a credit. Question: 'What is the actual supply, who billed it and how is it used? Did you provide an ABN or registration declaration?'
 
 #### 6.7 Airbnb income (short-stay accommodation -- residential or commercial?)
 
@@ -570,13 +579,17 @@ Columns:
 - A–D: Date, counterparty, bank direction and description.
 - E: Signed bank amount in AUD, retained unchanged for bank reconciliation.
 - F: Net amount for accounting, based on the invoice and verified GST component.
-- G: GST liability for a sale or verified GST credit for a purchase. Use positive amounts for ordinary transactions and negative amounts for supported reversals. For a wholly taxable GST-inclusive amount, G = M * ABS(E)/11, multiplied by the creditable-use proportion for a purchase. For mixed or specially valued supplies, use the invoice’s actual GST component with the reporting sign and creditable proportion instead. GST-free/input-taxed supplies and unsupported credits contribute zero. Record any pending credit in notes.
-- H: One primary category: G1 for taxable sales, G2 for exported goods, G3 for other GST-free sales (including exported services), G4 for input-taxed sales, G10 for capital purchases, G11 for non-capital purchases, or EXCLUDED. Split genuinely mixed transactions into supported components without duplicating the bank amount.
+- G: GST liability for a sale or verified GST credit for an ordinary purchase. For a reverse-charge purchase use zero here and record liability and credit in the separate schedule below. Use positive amounts for ordinary transactions and negative amounts for supported reversals. For a wholly taxable GST-inclusive amount, G = M * ABS(E)/11, multiplied by the creditable-use proportion for a purchase. For mixed or specially valued supplies, use the invoice’s actual GST component with the reporting sign and creditable proportion instead. GST-free/input-taxed supplies and unsupported credits contribute zero. Record any pending credit in notes.
+- H: One primary category: G1 for taxable sales, G2 for exported goods, G3 for other GST-free sales (including exported services), G4 for input-taxed sales, G10 for capital purchases, G11 for non-capital purchases, RC for a purchase reported through the reverse-charge schedule, or EXCLUDED. Split genuinely mixed transactions into supported components without duplicating the bank amount.
 - I–L: Provisional flag, question, exclusion reason and notes/evidence.
 - M: Reporting sign, 1 for ordinary sales/purchases and -1 for a supported refund or reversal. Infer this from the transaction, not bank direction alone.
-- N: GST-inclusive reporting amount = ABS(E) * M. This is positive for ordinary purchases despite the negative bank debit.
+- N: For ordinary transactions, GST-inclusive reporting amount = ABS(E) * M. For RC use zero here; the schedule supplies its reporting amounts. This is positive for ordinary purchases despite the negative bank debit.
 
 For H, use the primary categories above. Earlier G13/G14/G15 references describe calculation-worksheet exclusions and must not replace a G10/G11 purchase category. Keep the exclusion and creditability evidence in I–L. Retain the signed bank amount separately from positive reporting amounts.
+
+#### Separate reverse-charge schedule
+
+For each confirmed ordinary service covered by section 5.5, link one RC transaction to its invoice and record the attributable period, price paid or payable, 1A liability, supported 1B credit and price × 1.1 reporting amount. Assign that reporting amount once to G1 and once to either G10 or G11. Keep both G and N zero in the linked transaction row so the schedule is the sole source for these BAS amounts. Retain E unchanged for bank reconciliation and record the accounting journal separately, including any non-creditable GST. The grossed-up reporting amount is not a second bank movement or sales revenue. If liability, attribution or creditable use is unresolved, return Needs Input; do not present the workpaper as ready to lodge. Refer special cases listed in section 5.5.
 
 #### Sheet "BAS Summary" (Full BAS)
 
@@ -584,16 +597,16 @@ For H, use the primary categories above. Earlier G13/G14/G15 references describe
 
 | Label | Formula / rule |
 | --- | --- |
-| G1 | Sum N for H equal to G1, G2, G3 or G4; exclude loans, transfers and other EXCLUDED credits |
+| G1 | Sum N for H equal to G1, G2, G3 or G4, plus the reverse-charge schedule reporting amounts; exclude loans, transfers and other EXCLUDED credits |
 | G2, G3 | Sum N for the corresponding H category |
-| G10, G11 | Sum N for the corresponding purchase category, including purchases without credits where required by the BAS instructions |
-| 1A | Sum G for sales categories, plus supported GST adjustments |
-| 1B | Sum G for G10 and G11, plus supported credit adjustments |
+| G10, G11 | Sum N for the corresponding purchase category, including purchases without credits where required, plus the schedule amount assigned to that label |
+| 1A | Sum G for sales categories, plus schedule liability and supported GST adjustments |
+| 1B | Sum G for G10 and G11, plus schedule credit and supported credit adjustments |
 | Net GST | 1A - 1B |
 
 Use GST-inclusive reporting amounts consistently. Populate named cells with:
 
-For example, G10 = SUMIFS(Transactions!N:N,Transactions!H:H,"G10"). G1 combines four such SUMIFS for its sales categories. 1B sums the verified credits in G for G10 and G11. Do not subtract non-creditable purchases again from a total of credits. G4–G9 and G12–G19 may support a separate calculation worksheet but are not all lodged BAS labels.
+For example, ordinary G10 = SUMIFS(Transactions!N:N,Transactions!H:H,"G10"); add its reverse-charge schedule amount. G1 combines four such SUMIFS for its sales categories and adds the schedule reporting amounts. 1B sums the verified credits in G for G10 and G11 and adds the schedule credit. Do not subtract non-creditable purchases again from a total of credits. G4–G9 and G12–G19 may support a separate calculation worksheet but are not all lodged BAS labels.
 
 #### Sheet "Simpler BAS"
 
@@ -605,6 +618,7 @@ For eligible businesses with GST turnover below $10 million, report G1, 1A and 1
 - A wholly creditable taxable purchase of $110 gives 1B $10 even though the bank amount is -$110. Together with the sale, net GST is $90.
 - A $110 purchase with 50% creditable use gives a $5 credit if all other requirements are met. Do not exclude its private portion twice.
 - A $1,000 loan deposit contributes zero to G1 and 1A. A supported $110 sales refund reduces reported sales by $110 and output GST by $10.
+- A confirmed ordinary reverse-charge purchase priced at $1,000 with 60% creditable use gives schedule G1 $1,100, G11 $1,100, 1A $100, 1B $60 and net GST $40. Its transaction row retains bank E = -$1,000 with G = N = 0.
 - GST-free purchases contribute no GST credit; unsupported acquisitions remain pending until entitlement and evidence are established.
 
 [ATO GST reporting](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/goods-and-services-tax-gst); GST Act ss 9-70, 11-20 and 29-10.
@@ -697,7 +711,7 @@ From 1 July 2026 the ATO is moving some businesses with GST turnover of $10 mill
 | Feature | Australian GST | EU VAT |
 | --- | --- | --- |
 | Number of rates | 1 (10%) | 2-4 per member state |
-| Reverse charge trigger (B2B cross-border) | ONLY if not fully creditable | ALWAYS (Art. 196) |
+| Reverse charge trigger (B2B cross-border) | Apply the section 84-5 route and conditions; items 1 and 2 require the non-fully-creditable purpose test | Check the applicable EU place-of-supply and reverse-charge rules; this guide does not determine EU treatment |
 | Intra-community regime | N/A | Zero-rated supply + acquisition |
 | Entertainment credit | Follows FBT (credit if FBT paid) | Typically blocked outright |
 | Motor vehicle credit | Allowed, capped at car limit | Often blocked (e.g. Malta 10th Schedule) |
@@ -707,7 +721,7 @@ From 1 July 2026 the ATO is moving some businesses with GST turnover of $10 mill
 
 ### Section 4 -- Worked examples
 
-These are six fully worked classifications drawn from a hypothetical CBA NetBank bank statement of an Australian self-employed IT consultant based in Sydney. They illustrate the trickiest cases. Pattern-match against these when you encounter similar lines in any real statement.
+These 6 retained classifications use a hypothetical CBA NetBank bank statement of an Australian self-employed IT consultant based in Sydney. Confirm each transaction's facts and evidence; a similar bank description does not establish the same tax outcome. The executable cases below separately state their assumptions.
 
 #### Example 1 -- Non-resident SaaS, reverse charge not applicable (fully creditable)
 
@@ -715,7 +729,7 @@ These are six fully worked classifications drawn from a hypothetical CBA NetBank
 `05.04.2026 ; GOOGLE ASIA PACIFIC PTE LTD ; DEBIT ; Google Workspace Business ; AUD 21.60`
 
 **Reasoning:**
-Google Asia Pacific Pte Ltd is a Singapore entity (non-resident). The client is a fully taxable IT consultant (no input taxed supplies). Under Division 84, reverse charge applies ONLY when the acquisition is NOT fully creditable. Since this client would be entitled to a full input tax credit anyway, reverse charge does NOT apply. The supply has no GST component. Treat as a purchase with no GST in the price.
+For this hypothetical example, the contract and invoice establish an offshore service not connected with Australia under sections 9-25 and 9-26, no supplier GST payable and no GST charged. The client is GST-registered and uses the service wholly for a creditable enterprise purpose, with no private or input taxed use. All consideration is paid; no consumer-status misrepresentation, special reverse-charge route or other special rule applies. These facts are stipulated, not inferred from Google's name or the client's occupation. The section 84-5 item 1 purpose test is not met because the acquisition is wholly creditable, so recipient GST and the credit are both zero. Report the $21.60 non-capital purchase at G11 where required.
 
 **Example 1 output**
 
@@ -797,6 +811,106 @@ The name does not settle the GST treatment. In this example a valid Australian t
 | --- | --- | --- | --- | --- | --- | --- |
 | 25.04.2026 | STRIPE PAYMENTS AU | -145.20 | 132.00 | 13.20 | G11 | Valid tax invoice and wholly creditable use |
 
+### Executable cases: ordinary services and creditable use
+
+All figures are synthetic AUD. The cases use a 2026-27 period, the accounts method, G1 reported including GST and a full BAS requiring G11. Every listed amount is attributable to that period. The recipient pays or is liable for all consideration. No associates, branch transfers, annual apportionment, low value goods, Division 83 agreement, adjustments or other special rules apply. The stipulated supply and use facts must be independently verified in a real workpaper. The checker recomputes arithmetic; it does not execute the legal eligibility tests or decide missing facts.
+
+#### Case 1: fully creditable offshore service
+
+Apply the stipulated supply and use facts from retained Example 1 to a separate $21.60 service purchased in this case's 2026-27 period. The service is not connected with Australia, the acquisition is wholly creditable and no other reverse-charge route applies. Item 1's purpose test is not met. No supplier GST is payable or charged, so the input tax credit is also zero. The ordinary non-capital purchase is $21.60 at G11; there is no reverse-charge addition to G1.
+
+```oa-check
+name: AU fully creditable offshore service has no reverse charge
+inputs:
+  service_price: 21.60
+  gst_payable_under_stipulated_facts: 0
+steps:
+  - purchase_g11: service_price
+  - gst_1a: gst_payable_under_stipulated_facts
+  - gst_1b: gst_payable_under_stipulated_facts
+  - net_gst: gst_1a - gst_1b
+expected:
+  purchase_g11: 21.60
+  gst_1a: 0
+  gst_1b: 0
+  net_gst: 0
+```
+
+#### Case 2: offshore service with 60% creditable use
+
+An unrelated non-resident supplies an ordinary service for $1,000. It is not connected with Australia under sections 9-25 and 9-26 and no supplier GST is payable or charged. The registered recipient acquires it 60% for its Australian taxable enterprise activities and 40% privately, supported by a documented use allocation. Section 84-5 item 1 applies to the whole taxable service price. Recipient GST is $100; the section 84-13 credit is $60 and net GST is $40. The separate schedule contributes $1,100 to each of G1 and G11. The linked bank debit stays -$1,000 and its ordinary G and N fields are zero. A tax invoice is not required for this reverse-charge credit; the other evidence and attribution conditions remain necessary.
+
+```oa-check
+name: AU ordinary offshore reverse charge preserves liability credit and reporting
+inputs:
+  service_price: 1000
+  creditable_percent: 60
+  reverse_charge_percent: 10
+steps:
+  - gst_1a: pct(service_price, reverse_charge_percent)
+  - gst_1b: pct(gst_1a, creditable_percent)
+  - reporting_g1: service_price + gst_1a
+  - purchase_g11: reporting_g1
+  - net_gst: gst_1a - gst_1b
+  - signed_bank_amount: 0 - service_price
+expected:
+  gst_1a: 100
+  gst_1b: 60
+  reporting_g1: 1100
+  purchase_g11: 1100
+  net_gst: 40
+  signed_bank_amount: -1000
+```
+
+#### Case 3: supplier-charged GST with partial credit
+
+The invoice and supply evidence establish an ordinary Australian taxable software supply for $1,100 including $100 GST. The registered recipient holds the required valid tax invoice and has supported 60% creditable use and 40% private use. No reverse charge applies. Ordinary G11 is $1,100, the purchase credit is $60 and the purchase creates no recipient liability at 1A or addition to G1. The result follows from these facts, not the software brand or the supplier's ABN alone.
+
+```oa-check
+name: AU supplier GST does not imply full input tax credit
+inputs:
+  invoice_including_gst: 1100
+  creditable_percent: 60
+steps:
+  - invoice_gst: invoice_including_gst / 11
+  - gst_1b: pct(invoice_gst, creditable_percent)
+  - non_creditable_gst: invoice_gst - gst_1b
+  - purchase_g11: invoice_including_gst
+expected:
+  invoice_gst: 100
+  gst_1b: 60
+  non_creditable_gst: 40
+  purchase_g11: 1100
+```
+
+#### Case 4: private purchase with consumer-status misrepresentation
+
+A GST-registered Australian resident makes a wholly private $100 offshore service purchase. The supply is connected solely under section 9-25(5)(d). The recipient discloses an ABN and declares GST registration; the supplier satisfies section 84-100 and treats the recipient as not an Australian consumer. All item 3 conditions are stipulated and the service is neither GST-free nor input taxed. Section 84-5 item 3 applies despite the absence of enterprise use. Recipient GST is $10 and there is no credit. The schedule supplies G1 and G11 of $110 each; the private payment remains separately identified for accounting. Do not apply the items 1 and 2 purpose test to remove this liability.
+
+```oa-check
+name: AU consumer status misrepresentation has no private use credit
+inputs:
+  service_price: 100
+  reverse_charge_percent: 10
+  creditable_percent: 0
+steps:
+  - gst_1a: pct(service_price, reverse_charge_percent)
+  - gst_1b: pct(gst_1a, creditable_percent)
+  - reporting_g1: service_price + gst_1a
+  - purchase_g11: reporting_g1
+  - net_gst: gst_1a - gst_1b
+expected:
+  gst_1a: 10
+  gst_1b: 0
+  reporting_g1: 110
+  purchase_g11: 110
+  net_gst: 10
+```
+
+**Unresolved-fact boundary.** A bank description such as GOOGLE, ATLASSIAN or XERO without the invoice, connection or use facts returns Needs Input. Retain the payment in the reconciliation, list the missing evidence and withhold unsupported credit. Do not supply a final tax classification or assume a recipient liability from the name. This is a prose decision boundary, not an executable eligibility test.
+
+Recompute with `python3 scripts/check-examples.py --require skills/international/australia/australia-gst.md`. These checks do not revalidate the other retained examples or remove qualified-review requirements.
+
 ## When to refuse or refer
 
 Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
@@ -833,9 +947,9 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 
 
-#### Self-check (v2.7)
+#### Self-check (v2.8)
 
-1. Quick reference at top with BAS label table and conservative defaults: yes (Section 1).
+1. Quick reference at top with BAS label table and unresolved-fact actions: yes (Section 1).
 2. Supplier library as literal lookup tables: yes (Section 3, 12 sub-tables).
 3. Worked examples from bank statement format: yes (Section 4, 6 examples from CBA NetBank).
 4. Tier 1 rules compressed: yes (Section 5, 7 rules).
@@ -846,13 +960,13 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 9. Reference material at bottom: yes (Section 10).
 10. GST-free food detail table explicit: yes (Section 5.2, 22-item food table).
 11. Input taxed vs GST-free distinction explicit: yes (Section 5.2 and 5.3).
-12. Reverse charge Australian exception (fully creditable = no reverse charge) explicit: yes (Section 5.5 + Example 1).
+12. Reverse-charge routes, the items 1 and 2 purpose test and BAS reporting explicit: yes (Section 5.5 + Example 1).
 13. Bank fees as financial supply (input taxed, exclude) explicit: yes (Section 3.1 + Example 4).
 14. Payment processor fees classified from the invoice and the actual service, neither assumed to be financial supplies nor assumed taxable: yes (Section 3.8 + Example 6).
 15. Supermarket split (GST-free food vs taxable items) explicit: yes (Section 3.6 + Example 3).
 
 
-### End of Australia GST Return Preparation Skill v2.7
+### End of Australia GST Return Preparation Skill v2.8
 
 Preserve every review flag. The reviewer brief lists source versions, accounting
 basis, reconciliations, unresolved amounts, evidence needed and the next human
@@ -862,6 +976,8 @@ action. Do not describe an incomplete workpaper as ready to lodge.
 
 | Source | URL | Read on |
 |---|---|---|
+| GST Act, compilation 96, selected connection, entitlement and Division 84 provisions | <https://www.legislation.gov.au/C2004A00446/2026-01-01/text> | 2 November 2026; selected provisions only |
+| ATO, Reverse charge GST on offshore goods and services purchases, QC 17450 | <https://www.ato.gov.au/api/public/content/0-5cfa3e60-d95b-41aa-9be1-cea62009de33> | 2 November 2026; PDF pages 32-38; section updated 26 July 2022 |
 | Retained citation | <https://www.ato.gov.au/OSB> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://my.gov.au> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/goods-and-services-tax-gst> | Not re-read for this format update; see retained provenance |
@@ -888,7 +1004,7 @@ action. Do not describe an incomplete workpaper as ready to lodge.
 
 #### Validation status
 
-This skill was rewritten in April 2026 (v2.0) to align with the Malta v2.0 structure and has since been corrected through v2.6. The Australian-specific content (BAS label mappings, rates, thresholds, GST-free food rules, input taxed categories) has been checked against the GST Act 1999, ATO guidance and GST Regulations 2019; the G2/G3 reporting of exported services was checked against the ATO's Step 1: Sales page (updated 9 September 2026) on 11 October 2026.
+Version 2.8 corrects unresolved-fact handling, SaaS classification and the ordinary reverse-charge calculation and reporting route using the selected primary sources recorded above. It does not requalify every rate, threshold, supplier category or retained example in this guide. The earlier G2/G3 reporting review of exported services retains its recorded scope and date of 11 October 2026. Qualified Australian review remains pending.
 
 #### Sources
 
@@ -909,11 +1025,13 @@ This skill was rewritten in April 2026 (v2.0) to align with the Malta v2.0 struc
 
 #### Change log
 
+- **v2.8 (2 November 2026):** Replaced unsupported classifications from unknown facts, removed supplier-name credit assumptions, distinguished Division 84 routes and added a separate reverse-charge BAS schedule with executable ordinary-service cases.
+
 - **v2.6 (October 2026):** Restored Example 5 and moved exported services from G2 to G3; corrected the water and international transport subdivisions; restored the Section 2, 7 and 10 headings; replaced dead ATO links.
 - **v2.0 (April 2026):** Full rewrite to align with Malta v2.0 structure. Ten sections: quick reference (1), inputs and refusals (2), supplier pattern library with 12 sub-tables (3), six worked examples from CBA NetBank format (4), Tier 1 rules compressed (5), Tier 2 catalogue with 7 items (6), Excel template (7), bank statement reading guide (8), onboarding fallback with inference rules (9), reference material (10). Five Australia-specific refusals (R-AU-1 through R-AU-5).
 - **v1.1 (April 2026):** Monolithic skill with classification rules, BAS labels, reverse charge, thresholds, edge cases, and test suite. Comprehensive but not aligned with v2.0 architecture.
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. The executable cases in Worked cases check arithmetic under stipulated facts; they do not certify eligibility, source accuracy or every retained example.
 
 <!-- openaccountants-cta-block -->
 
