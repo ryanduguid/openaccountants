@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-02T19:10:18+00:00",
+ "generated_at": "2026-11-02T23:14:04+00:00",
  "counts": {
-  "guides": 2017,
+  "guides": 2019,
   "jurisdictions": 294,
   "accountant_reviewed": 164
  },
@@ -20573,6 +20573,19 @@
    "last_updated": "2026-10-04"
   },
   {
+   "slug": "se-corporate-income-tax",
+   "path": "skills/international/sweden/se-corporate-income-tax.md",
+   "name": "se-corporate-income-tax",
+   "jurisdiction": "SE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-03"
+  },
+  {
    "slug": "se-income-tax",
    "path": "skills/international/sweden/se-income-tax.md",
    "name": "se-income-tax",
@@ -20583,7 +20596,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "se-social-contributions",
@@ -20608,8 +20621,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "tax_year": "2026",
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "sweden-crypto-tax",
@@ -20625,6 +20638,19 @@
    "last_updated": "2026-09-28"
   },
   {
+   "slug": "sweden-financial-statements",
+   "path": "skills/international/sweden/sweden-financial-statements.md",
+   "name": "sweden-financial-statements",
+   "jurisdiction": "SE",
+   "category": "financial-statements",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "sweden-payroll",
    "path": "skills/international/sweden/sweden-payroll.md",
    "name": "sweden-payroll",
@@ -20635,7 +20661,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "sweden-vat-return",
