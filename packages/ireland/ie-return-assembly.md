@@ -82,7 +82,7 @@ The assembly skill does not recompute anything. It expects structured outputs fr
 | `ireland-vat-return` | If VAT-registered: bi-monthly VAT3 history; RTD; cross-check turnover | Cross-check; nothing flows to Form 11 directly |
 | `ie-paye` | Employment income from P60 / PAYE Modernisation (PMOD) Employment Detail Summary | Form 11 PAYE Panel |
 | `ie-payroll` | Employer-side PAYE / USC / PRSI summaries (if proprietary director or employer themselves) | Form 11 Director / Employer panels |
-| `ie-cgt` | CGT disposals during 2025: chargeable gains, annual exemption €1,270, 33% rate (31% for disposals on or after 7 October 2026) | Form 11 CGT Panel (or separate CG1) |
+| `ie-cgt` | CGT disposals during 2025: chargeable gains, annual exemption €1,270, 33% rate | Form 11 CGT Panel (or separate CG1) |
 | `ie-cat` | Gifts / inheritances received in valuation date year | Separate IT38; cross-reference in Form 11 not required |
 | `ie-formation` | Sole trader registration (TR1) / business name / start-of-trade adjustments | Identity panel |
 
@@ -240,7 +240,7 @@ The working paper is built around the ROS Form 11 panel structure. Form 11S (sho
 | **Foreign Income (Schedule D Case III)** | Foreign trading / employment / rental / investment | Including FTC | ie-income-tax-form11 |
 | **Rental Income (Schedule D Case V)** | Net rental income after allowable deductions; pre-letting expenses; PRTB registration check | s97 TCA 1997 framework | ie-income-tax-form11 |
 | **Investment Income (Schedule D Case IV / F)** | Deposit interest (DIRT applied — final liability for most; PRSI / USC may still apply); dividends | All | ie-income-tax-form11 |
-| **Capital Gains** | Disposals 2025; €1,270 annual exemption; 33% rate (31% for disposals on or after 7 October 2026); entrepreneur relief (10% on lifetime €1m under s597AA) | All | ie-cgt |
+| **Capital Gains** | Disposals 2025; €1,270 annual exemption; 33% rate; entrepreneur relief (10% on lifetime €1m under s597AA) | All | ie-cgt |
 | **USC** | Bands applied; surcharge on non-PAYE > €100,000 (3% under s531AN) | All | ie-usc |
 | **PRSI Class S** | 4.1% (4.2% from 1 Oct 2025); €650 minimum | All | ie-prsi-class-s |
 | **Tax Credits** | Personal (€2,000 / €4,000 married 2025); PAYE (€2,000); Earned Income (€2,000); Home Carer; SPCCC; Age Tax Credit; etc. | All | ie-income-tax-form11 |
@@ -281,10 +281,10 @@ The working paper is built around the ROS Form 11 panel structure. Form 11S (sho
 |  | Group / consortium relief (s411/s420 TCA 1997) | If group exists | ie-corporation-tax |
 | **Passive / Investment Income (Case III/IV/V)** | Rental, interest, foreign income | Charged at 25% (s21A) | ie-corporation-tax |
 | **Chargeable Gains** | Disposals re-grossed under s78 to give effective 33% rate | All | ie-cgt |
-| **R&D Tax Credit** | 35% of qualifying R&D expenditure for accounting periods with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026 (30% for periods from 1 January 2024); for those periods a claim of up to €87,500 is paid in full in the first instalment (s766; see Section 10.4) | If R&D claim made | ie-corporation-tax |
+| **R&D Tax Credit** | 35% of qualifying R&D expenditure for accounting periods with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026 (30% for periods from 1 January 2024); for those periods a claim of up to €87,500 is paid in full in the first instalment (TCA ss 766C(1) and 766D(1); see Section 10.4) | If R&D claim made | ie-corporation-tax |
 | **Close Company Surcharges** | s440 (investment income) 20%; s441 (service company trading) 15% | If close company | ie-corporation-tax |
 | **Tax Computation** | 12.5% trading + 25% passive + 33% gains + surcharges − credits | All | ie-corporation-tax |
-| **Preliminary Tax** | "Large company" (CT > €200,000 prior year): two payments — 50% by month 6, balance to 90% by 23rd of month 11; "Small company": single payment of 100% prior year or 90% current year by 23rd of month 11 (s959AS TCA 1997) | ie-corporation-tax + ie-preliminary-tax |  |
+| **Preliminary Tax** | "Large company" (CT > €200,000 prior year): where the accounting period is longer than 7 months, two instalments — 23rd of month 6 (50% of the previous period's CT or 45% of the current period's) and 23rd of month 11 (to 90% of the current period's CT); where it is under 7 months, 90% in one instalment; "Small company": single payment of 100% prior year or 90% current year by 23rd of month 11 (s959AS TCA 1997) | ie-corporation-tax + ie-preliminary-tax |  |
 | **Final Balance** | Final balance due 23 days after 9-month CT1 due date | Computed |  |
 
 ### 5.2 CT1 panels checklist
@@ -601,7 +601,7 @@ The capstone produces a forward-looking section so the taxpayer arrives at next 
 
 ### 10.4 R&D tax credit (corporates)
 
-- **R&D credit rules** — - **35%** of qualifying R&D expenditure for accounting periods **with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026** (Finance Act 2025; Revenue, TDM 29-02-03 — https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-29/29-02-03.pdf). It was **30%** for periods commencing on or after 1 January 2024 (Finance (No. 2) Act 2023, up from 25%). - The **€87,500** figure is the **first-instalment payment threshold**, not a rate band: where the claim does not exceed it the whole credit is paid in the first instalment. Finance Act 2025 raised that threshold from €75,000, which itself replaced €50,000 under Finance Act 2024. - Otherwise payable in cash over three instalments where there is no CT liability to offset. - Documentation: scientific narrative + financial schedule must be retained. **This bullet previously read "standard rate 25% ... first €75,000 of qualifying expenditure attracts uplift to 30%", which conflated the payment threshold with a rate band and was two Finance Acts behind. It also contradicted `ie-corporation-tax`, which had the 30% right.**  _(s766 TCA 1997; Finance (No. 2) Act 2023; Finance Act 2024; Finance Act 2025)_
+- **R&D credit rules** — - **35%** of qualifying R&D expenditure for accounting periods **with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026** (Finance Act 2025; Revenue, TDM 29-02-03 — https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-29/29-02-03.pdf). It was **30%** for periods commencing on or after 1 January 2024 (Finance (No. 2) Act 2023, up from 25%). - The **€87,500** figure is the **first-instalment payment threshold**, not a rate band: where the claim does not exceed it the whole credit is paid in the first instalment. Finance Act 2025 raised that threshold from €75,000, which itself replaced €50,000 under Finance Act 2024. - Otherwise payable in cash over three instalments where there is no CT liability to offset. - Documentation: scientific narrative + financial schedule must be retained. **This bullet previously read "standard rate 25% ... first €75,000 of qualifying expenditure attracts uplift to 30%", which conflated the payment threshold with a rate band and was two Finance Acts behind. It also contradicted `ie-corporation-tax`, which had the 30% right.**  _(ss 766C(1) and 766D(1) TCA 1997; Finance (No. 2) Act 2023; Finance Act 2024; Finance Act 2025)_
 
 ### 10.5 Pillar Two (in-scope groups only)
 
