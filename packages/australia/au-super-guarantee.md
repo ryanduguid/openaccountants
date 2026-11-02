@@ -2,7 +2,7 @@
 name: au-super-guarantee
 description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, payday super deadlines, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, Division 296 large-balance tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "payday super", "7 business days super", "SG shortfall", "concessional cap", "Division 293", "Division 296", "$3 million super tax", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or clearing house payments. ALWAYS read this skill before touching any SG-related work.
-version: 3.8
+version: 3.9
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.8
+# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.9
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -200,7 +200,7 @@ Use pre-sacrifice QE as the base: an amount sacrificed to super stays in QE if i
 
 #### Rule 3 -- Payment deadline (earnings paid from 1 July 2026)
 
-- **Payment deadline (earnings paid from 1 July 2026)** — A contribution is on time only if it is **received by the employee's super fund**, with the information needed to allocate it to the member account, **within 7 business days after payday** (the "QE day"). - **Business day** = any day except Saturday, Sunday, or a public holiday applying to the WHOLE of any Australian state or territory. A territory-wide holiday anywhere in Australia extends the deadline for ALL employers; part-of-state holidays do not. - **New employee, new fund, or a worker rehired or recommenced under a new arrangement:** first contribution due within 20 business days of the relevant QE day; later paydays revert to 7. If the extended date overlaps the next payday's deadline, the later contribution inherits the extended date. - **Out-of-cycle payments** (bonuses, commissions, allowances, back payments and payments in advance, per LI 2026/20): only where the employee has an established pay timing, pattern or schedule and the payment falls outside it. SG then rides with the next regular payday's 7-business-day deadline. If no later regular QE day follows (for example a final payment when employment ends), the extension does not apply and the usual 7 business days govern. Payments to workers with intermittent or irregular paydays, such as a contractor paid on invoice, are not out of cycle ([ATO, Payment deadlines](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super)). - **Exceptional circumstances** (ATO class determination, e.g. natural disasters): later of 20 business days after the QE day or 20 business days after the determination. - Funds must allocate or return contributions within 3 business days (down from 20); SMSFs instead have 28 calendar days after the end of the month of receipt, unchanged by Payday Super ([ATO, How Payday Super affects SMSFs](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs)). **Legacy:** earnings paid up to 30 June 2026 keep the quarterly deadlines (28 Oct / 28 Jan / 28 Apr / 28 Jul); the final quarterly deadline was 28 July 2026.
+- **Payment deadline (earnings paid from 1 July 2026)** — A contribution is on time only if it is **received by the employee's super fund**, with the information needed to allocate it to the member account, **within 7 business days after payday** (the "QE day"). - **Business day** = any day except Saturday, Sunday, or a public holiday applying to the WHOLE of any Australian state or territory. A territory-wide holiday anywhere in Australia extends the deadline for ALL employers; part-of-state holidays do not. - **First eligible contribution:** for a new employee or a worker rehired or recommenced under a new arrangement, or to a new complying fund/RSA for an existing employee after eligible contributions to another fund/RSA have ceased, receipt is due within 20 business days of the relevant QE day. Establish those conditions before using the extension; opening another fund alone does not establish it. Later paydays normally have 7 business days. If the extended date overlaps the next payday's deadline, the later contribution inherits the extended date. - **Out-of-cycle payments** (bonuses, commissions, allowances, back payments and payments in advance, per LI 2026/20): only where the employee has an established pay timing, pattern or schedule and the payment falls outside it. SG then rides with the next regular payday's 7-business-day deadline. If no later regular QE day follows (for example a final payment when employment ends), the extension does not apply and the usual 7 business days govern. Payments to workers with intermittent or irregular paydays, such as a contractor paid on invoice, are not out of cycle ([ATO, Payment deadlines](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super)). - **Exceptional circumstances** (ATO class determination, e.g. natural disasters): later of 20 business days after the QE day or 20 business days after the determination. - Funds must allocate or return contributions within 3 business days (down from 20); SMSFs instead have 28 calendar days after the end of the month of receipt, unchanged by Payday Super ([ATO, How Payday Super affects SMSFs](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/managing-superstream/how-payday-super-affects-smsfs)). **Legacy:** earnings paid up to 30 June 2026 keep the quarterly deadlines (28 Oct / 28 Jan / 28 Apr / 28 Jul); the final quarterly deadline was 28 July 2026.
 
 #### Rule 4 -- Maximum contribution base is ANNUAL from 2026-27
 
@@ -646,7 +646,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 **Test 9:** Payday Friday 4 Sep 2026; contribution received by fund Wednesday 16 Sep 2026 (8 business days). -> LATE. ATO-assessed SGC per Rule 11; new-regime SGC deductible.
 
-**Test 10:** New employee starts, first payday 10 Jul 2026, no fund details yet. -> First contribution due within 20 business days of the QE day; subsequent paydays revert to 7.
+**Test 10:** New employee starts, first payday 10 Jul 2026, no fund details yet. -> First eligible contribution due within 20 business days of the QE day; subsequent contributions normally have 7 business days, subject to the overlapping-deadline rule in Rule 3.
 
 **Test 11:** Employee aged 17 works exactly 30 hours in one week and 31 in the next. -> The first week fails the SG hours test; the second meets it. Check separate award or agreement obligations and the qualifying earnings attributable to each week.
 
@@ -656,11 +656,13 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 **Test 14:** Weekly-paid employee receives a final bonus on Monday 7 Dec 2026, and no regular payday follows. -> No out-of-cycle extension. Fund receipt by Wednesday 16 Dec 2026 (7 business days).
 
+**Test 15:** An existing employee adds a fund, but the records do not establish a qualifying first-contribution event or that eligible contributions to another fund have ceased. -> Do not grant 20 business days from the new fund description alone. Obtain the facts, check all applicable extensions and use Rule 3; an unsupported extension must not certify a late contribution as on time.
+
 ## Sources
 
 | Source | URL | Read on |
 |---|---|---|
-| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A, 12 and 18A | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual-base crossing and sacrificed contribution exclusion |
+| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A, 12, 18A and 18C | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual-base crossing, sacrificed contribution exclusion and selected deadline extensions |
 | ATO SG rates and bases | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | 2026-11-02; selected general/Norfolk rates and annual/legacy base rows |
 | ATO contribution caps | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps> | 2026-11-02; selected concessional cap and carry-forward sections |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/290-170> | Not re-read for this format update; see retained provenance |

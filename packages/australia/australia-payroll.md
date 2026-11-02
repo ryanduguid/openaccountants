@@ -11,7 +11,7 @@ description: >
   "activity statement", "annual leave", "long service leave",
   "minimum wage Australia", or any question about running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.8
+version: 2.9
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -22,7 +22,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.8
+# Australia -- Payroll Skill v2.9
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -129,7 +129,7 @@ The SG formulas, contribution base, SG shortfall percentage and worked SG amount
 
 - **SG under-18 hours test** — An under-18 employee must work more than 30 actual hours in the week to qualify for SG; exactly 30 does not qualify. Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
 
-- **Deadline exceptions** — new employee / new fund / a worker rehired or recommenced under a new arrangement -- 20 business days for the first contribution; an overlapping later contribution inherits that extended deadline. Out-of-cycle payments (such as bonuses, where the employee has a regular pay schedule and the payment falls outside it) ride with the next regular payday's deadline, but with no later regular payday (for example a final payment when employment ends) the usual 7 business days apply, and payments to workers with irregular paydays (such as a contractor paid on invoice) are not out of cycle. An applicable ATO exceptional-circumstances determination gives the later of 20 business days after the QE day or 20 business days after the determination. Verify fund receipt and the applicable national business-day calendar. [ATO payday deadlines](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super).
+- **Deadline exceptions** — 20 business days for the first eligible contribution for a new employee or a worker rehired or recommenced under a new arrangement, or to a new complying fund/RSA for an existing employee after eligible contributions to another fund/RSA have ceased. Verify the conditions; a new fund alone does not establish the extension. An overlapping later contribution inherits that extended deadline. Out-of-cycle payments (such as bonuses, where the employee has a regular pay schedule and the payment falls outside it) ride with the next regular payday's deadline, but with no later regular payday (for example a final payment when employment ends) the usual 7 business days apply, and payments to workers with irregular paydays (such as a contractor paid on invoice) are not out of cycle. An applicable ATO exceptional-circumstances determination gives the later of 20 business days after the QE day or 20 business days after the determination. Verify fund receipt and the applicable national business-day calendar. [ATO payday deadlines](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super).
 - **Legacy** — quarterly due dates (28 Oct/28 Jan/28 Apr/28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026. The ATO Small Business Super Clearing House closed permanently on 1 July 2026 -- small employers now use payroll-software super payments or commercial clearing houses.
 - **Final scheduled general SG rate**: 12% is the final scheduled general SG rate (reached 1 July 2025). No further general-rate increases are scheduled; Norfolk Island reaches 12% on 1 July 2027.
 
@@ -445,7 +445,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 | Source | URL | Read on |
 |---|---|---|
-| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A and 18A | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual base and sacrificed contributions |
+| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A, 18A and 18C | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual base, sacrificed contributions and selected deadline extensions |
 | ATO qualifying earnings | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings> | 2026-11-02; selected QE categories, double counting and salary sacrifice sections |
 | ATO payday deadlines | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super> | 2026-11-02; selected fund receipt, business-day and extension rules |
 | Medicare Levy Act 1986, compilation 53 (C2026C00295): selected s 3 and ss 6-8, including the s 8(2) formula | <https://www.legislation.gov.au/C2026C00295/latest/text> | 2026-11-02; only the ordinary family-threshold summary rechecked here |
