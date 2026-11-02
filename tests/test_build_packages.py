@@ -212,6 +212,19 @@ class RebuildTests(SyntheticTreeCase):
         self.assertIn("Upload ALL files in this folder AND the shared files listed above", readme)
         self.assertIn("make bundle JURISDICTION=<folder>", readme)
 
+    def test_country_source_readmes_are_metadata_not_packaged_guides(self) -> None:
+        self.write({
+            "skills/international/zzland/README.md":
+                "---\njurisdiction: ZZ\ncovered_by: {}\npartial: {}\n---\nSource pack map only.\n",
+            "skills/international/zzland/notes/ReadMe.md":
+                "# Nested source notes\n\nLine.\nLine.\nLine.\nLine.\n",
+        })
+        self.build()
+        entry = self.bundles()["packages"]["zzland"]
+        self.assertEqual(entry["files"], ["intake.md", "zz-vat.md", "README.md"])
+        self.assertNotIn("Source pack map only",
+                         (self.packages / "zzland" / "README.md").read_text(encoding="utf-8"))
+
     def test_shared_files_are_written_once_and_recorded_in_bundles_json(self) -> None:
         self.build()
         shared = self.packages / "_shared"

@@ -7,15 +7,19 @@
 
 1. `intake.md`
 2. `denmark-vat-return.md`
-3. `dk-capital-gains.md`
-4. `dk-income-tax.md`
-5. `references.md`
+3. `dk-annual-reporting-reference.md`
+4. `dk-capital-gains.md`
+5. `dk-corporate-income-tax.md`
+6. `dk-income-tax.md`
+7. `references.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)

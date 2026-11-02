@@ -1,11 +1,11 @@
 ---
 name: sweden-bookkeeping
 description: Swedish bookkeeping reference for BAS account selection, bank reconciliation and working-paper presentation, with selected 2026 K2/K3 conditions and explicit holds for incomplete entity, tax and filing workflows. Load with bookkeeping-workflow-base; professional review is required.
-version: 1.5
+version: 1.6
 jurisdiction: SE
 tax_year: 2026
 tax_year_notes: "2026 BAS and selected accounting rules for financial years beginning after 31 December 2025; the extended-first-year selector is stated below. Earlier 2025 tax shortcuts are withdrawn from operative use pending qualification."
-last_updated: 2026-11-02
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -518,6 +518,7 @@ P&L: no revenue; external costs 6,000; operating and net loss 6,000. Balance she
 Reviewer brief: 3 source financial rows, 3 register rows and 3 balanced journals. Opening balance is separately identified. No duplicate, unmatched, private, assumed or unresolved transaction occurs in this deliberately restricted fixture. Bank reconciliation is 100,000 + 20,000 − 5,000 − 1,000 = 114,000, matching the fictional closing statement. The loan is a non-revenue receipt. VAT check 12 is not run because no VAT return is computed; actual engagements need the relevant companion and reconciliation. The restricted fixture does not qualify omitted annual-report notes, tax or filing work.
 
 ```oa-check
+name: Restricted bank reconciliation and trial balance
 inputs:
   opening_bank: 100000
   loan_receipt: 20000
@@ -549,6 +550,7 @@ This independent fictional eligible K2 AB has a 12-month calendar 2026 year unde
 Under ordinary accrual, 6 of 12 service months belong to 2026: expense 3,000, prepayment 3,000 and profit 97,000. If the approved consistently applied relief is available and its individual/combined effect is not material, the qualifying below-7,000 transaction may instead produce expense 6,000, no prepayment and profit 94,000. The profit difference is 3,000. At exactly 7,000 the small-amount route is unavailable; a 3,000 accrual adjustment does not itself qualify an agreement costing 7,000 or more. If materiality, policy, aggregation or the period is unresolved, retain the ordinary supported treatment for the comparison and mark the relief decision Needs Input; do not choose it to obtain a preferred tax result.
 
 ```oa-check
+name: Conditional K2 accrual and small-amount comparison
 inputs:
   agreement_cost: 6000
   months_current_year: 6
@@ -598,6 +600,7 @@ P&L: revenue 0, accounting expense 200 and bank fee 100 give a loss of 300. Bala
 Bank controls: 1930 is 10,000 - 3,000 - 100 = 6,900; 1940 is 2,000 + 3,000 - 200 = 4,800. The transfer nets to 0. The reviewer brief records duplicate proof, the two-row/one-journal relationship, expense/VAT assumptions and professional/filing holds. All 5 working-paper outputs are supplied above. This is not a complete annual report or actual bank/SIE import test.
 
 ```oa-check
+name: Linked bank transfer and proven duplicate reconciliation
 inputs:
   bank_a_open: 10000
   bank_b_open: 2000

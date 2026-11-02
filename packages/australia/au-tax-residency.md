@@ -1,19 +1,44 @@
 ---
 name: au-tax-residency
-description: "Use this skill for any question about Australian tax residency. Trigger on: \"am I an Australian tax resident\", \"Australian residency test\", \"leaving Australia tax\", \"ceasing Australian residency\", \"domicile test Australia\", \"183-day test Australia\", \"resides test Australia\", \"exit CGT Australia\", \"Australian resident abroad\", \"dual resident Australia\", \"moving from Australia\", \"Australian expat tax status\". Covers the four residency tests, how to formally cease Australian residency, exit CGT consequences, and partial-year residency."
-version: 1.3
+description: >
+  Use this skill for any question about Australian tax residency. Trigger on: "am
+  I an Australian tax resident", "Australian residency test", "leaving Australia
+  tax", "ceasing Australian residency", "domicile test Australia", "183-day test
+  Australia", "resides test Australia", "exit CGT Australia", "Australian
+  resident abroad", "dual resident Australia", "moving from Australia",
+  "Australian expat tax status". Covers the four residency tests, how to formally
+  cease Australian residency, exit CGT consequences, and partial-year residency.
+  Confirm the applicable period, client facts and cited source conditions before
+  relying on the output.
+version: 1.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Tax Residency
+# AU Tax Residency v1.4
 
-## Section 1 — Quick Reference
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
+
+Use this skill for any question about Australian tax residency. Trigger on: \"am I an Australian tax resident\", \"Australian residency test\", \"leaving Australia tax\", \"ceasing Australian residency\", \"domicile test Australia\", \"183-day test Australia\", \"resides test Australia\", \"exit CGT Australia\", \"Australian resident abroad\", \"dual resident Australia\", \"moving from Australia\", \"Australian expat tax status\". Covers the four residency tests, how to formally cease Australian residency, exit CGT consequences, and partial-year residency.
+
+## Ask the client first
+
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
+
+## The method, step by step
+
+### Section 1 — Quick Reference
 
 **Section 1 — Quick Reference**
 
@@ -27,53 +52,73 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | ATO (ato.gov.au) |
 | Verified by | Pending — Australian CPA/CA sign-off required |
 
-## Section 2 — The Four Residency Tests
+### Section 2 — The Four Residency Tests
 
 A person is an Australian tax resident if they satisfy **any one** of these:
 
 - **Source of the tests** — The four tests come from the definition of resident in subsection 6(1) of the Income Tax Assessment Act 1936, as explained in Taxation Ruling TR 2023/1, which replaced the withdrawn TR 98/17 and IT 2650. Consider all four before concluding that a person is a foreign resident.  _([TR 2023/1](https://www.ato.gov.au/law/view/document?docid=TXR/TR20231/NAT/ATO/00001))_
 
-### Test 1: Resides Test (Ordinary Concepts)
+#### Test 1: Resides Test (Ordinary Concepts)
 
 - **Resides Test** — The primary test. A person "resides" in Australia under ordinary concepts — considers: Intention and purpose of stay; Family and business ties; Maintenance of a home in Australia; Frequency, regularity, and duration of visits; Social and living arrangements. No single factor is determinative. Short-term visitors may satisfy this test; long-term absentees may not.
 
-### Test 2: Domicile Test
+#### Test 2: Domicile Test
 
 - **Domicile Test** — A person domiciled in Australia is a resident UNLESS the ATO is satisfied they have a permanent place of abode outside Australia. Domicile in Australia is acquired by birth (domicile of origin) or by living in Australia with intent to remain permanently. "Permanent place of abode" requires more than temporary accommodation — established overseas home, settled intention to remain, family ties overseas. Applies to Australians living abroad who have not established a clear permanent place of abode elsewhere.
 - **Permanent place of abode** — A permanent place of abode can be a town or country rather than a particular dwelling, and it does not require ownership of a home or a promise never to return. Domicile is a legal concept distinct from tax residency, nationality and a mailing address.  _([TR 2023/1](https://www.ato.gov.au/law/view/document?docid=TXR/TR20231/NAT/ATO/00001))_
 
-### Test 3: 183-Day Test
+#### Test 3: 183-Day Test
 
 - **183-Day Test** — A person who is present in Australia for 183 days or more during an income year is a resident UNLESS: Their usual place of abode is outside Australia, AND They have no intention of taking up residence in Australia. This test can catch short-term workers and frequent visitors.
 
-### Test 4: Superannuation Test
+#### Test 4: Superannuation Test
 
 - **Superannuation test:** This applies to qualifying contributing members of the Public Sector Superannuation Scheme (PSS) or Commonwealth Superannuation Scheme (CSS), and their spouses and children under 16. Membership of the Public Sector Superannuation Accumulation Plan (PSSAP) does not qualify. A retired pension recipient who no longer contributes does not qualify merely because they receive a Commonwealth pension. Check the other residency tests separately.
 - **Scope of the superannuation test** — The test covers members of the PSS and CSS Commonwealth schemes, and their spouses and children under 16. Membership of another Australian fund, including PSSap, or government employment on its own is not enough.  _([TR 2023/1, paragraphs 96 to 97](https://www.ato.gov.au/law/view/document?docid=TXR/TR20231/NAT/ATO/00001))_
 
-## Section 3 — Ceasing Australian Tax Residency
+### Section 3 — Ceasing Australian Tax Residency
 
 - **Ceasing residency** — There is no formal departure filing or "exit application" required. Residency ceases when the facts show you no longer meet any of the four tests, including the resides test and the permanent place of abode limb of the domicile test. Factors include: having left Australia; having established a home in another country; where family ties, bank accounts and memberships sit; and how long you are committed to being away. Residency elsewhere and an intention never to return are not requirements: the ATO treats a family who moved overseas on a multi-year contract and rented out their home, intending to return one day, as foreign residents ([ATO, Your tax residency](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency), Bronwyn example). Date of cessation: the day you departed Australia (if that departure is the clear break), or a later date if you maintained strong Australian ties after departure.
 - **Study and training loans** — A debtor who intends to reside overseas for 183 days or more in any 12 months must notify the ATO within 7 days of leaving and may have to report worldwide income for the overseas levy. See `au-foreign-income`, Rule 13.  _([ATO, Overseas obligations](https://www.ato.gov.au/individuals-and-families/study-and-training-support-loans/overseas-repayments))_
 - **Arrival or departure during a year** — Identify when the facts changed. A person can remain resident after physically leaving, or become resident after arriving as a visitor, and a retained bank account or home is a fact to weigh rather than an automatic answer. Record travel dates and days in Australia for each income year, then the homes available in each country, family arrangements, employment terms, visas, belongings, social commitments and contemporaneous intentions, and explain any gap between stated intentions and actual conduct.  _([TR 2023/1](https://www.ato.gov.au/law/view/document?docid=TXR/TR20231/NAT/ATO/00001))_
 
-## Section 4 — Exit CGT: The Departure Tax
+### Section 4 — Exit CGT: The Departure Tax
 
 - **Exit CGT deemed disposal:** CGT event I1 occurs when you cease Australian tax residency, for assets you owned just before that time. Use market value at cessation and report the event in that income year. For example, cessation on 1 July 2026 falls in 2026-27, not 2025-26.
 - **Asset exceptions:** Taxable Australian property (TAP) is generally excluded from I1, but indirect Australian real property interests and options or rights to acquire those interests are not excluded by that exception. Australian real property and assets used in an Australian permanent establishment remain outside I1. Disregard gains or losses on assets acquired before 20 September 1985.
 - **Individual choice:** Under s 104-165, an individual may choose to disregard all gains and losses covered by I1. The choice applies to all covered assets, not selected assets. Treat them as TAP until the earlier of a subsequent CGT event or resuming Australian residency; later disposals can create Australian filing obligations.
 - **CGT discount effect of the choice:** The general CGT discount is not available for periods of foreign residency, so weigh this when choosing between I1 and the s 104-165 choice. Paying under I1 can suit a person who would lose the discount on later growth (Library, tax-examples, ¶2-480, reviewed 30 June 2026). The Tax Reform No. 1 Act 2026 also changes CGT from 1 July 2027 for assets later brought to tax. See `au-capital-gains`.
 
-## Section 5 — Dual Residency
+### Section 5 — Dual Residency
 
 - **Dual residency tie-breaker rules** — Australia's comprehensive DTAs (more than 40) contain tie-breaker rules for individuals resident in both Australia and the treaty country: 1. Permanent home: resident of the country where permanent home is available. 2. Centre of vital interests: if homes in both, resident where personal/economic ties are closer. 3. Habitual abode: if still unclear, where person habitually abides. 4. Nationality: if still unclear, by nationality. 5. Competent authority agreement.
 - **Read the actual treaty** — Domestic residence and treaty residence are separate findings. Where both countries treat the person as resident, apply the residence article of the treaty in force and any modifying provisions, and record its effect on each class of income. Temporary resident concessions need a separate assessment: an Australian tax resident on a temporary visa may qualify, but the visa alone does not answer the tax conditions.  _([ATO, Foreign residents and capital gains tax](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax))_
 
-## Section 6 — Partial-Year Residency
+### Section 6 — Partial-Year Residency
 
 - **Partial-year residency treatment:** If you change from resident to foreign resident during an income year, resident rates apply to taxable income for that year, with a tax-free threshold of $13,464 + ($4,736 x months resident / 12), counting the month of arrival or departure. For example, residency from 17 April gives 3 months and a threshold of $14,648. An eligible pensioner is not pro-rated ([Income Tax Rates Act 1986 Part II Div 4, s 20](https://www.legislation.gov.au/C2004A03348/latest/text); [ATO, Tax-free threshold for newcomers](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/tax-free-threshold-for-newcomers-to-australia)). A bonus paid after cessation does not automatically attract full-year foreign-resident rates. Determine when income is derived and its source. Foreign-source income after cessation is generally excluded, and Australian interest, dividends and royalties subject to final non-resident withholding are excluded from the return. Apply I1 and any choice as described above; later CGT treatment depends on whether the asset remains TAP.
 
-## Section 7 — Sources
+## Worked cases
+
+No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
+
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=TXR/TR20231/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/study-and-training-support-loans/overseas-repayments> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2004A03348/latest/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/tax-free-threshold-for-newcomers-to-australia> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-superannuation-test> | Not re-read for this format update; see retained provenance |
+
+### Section 7 — Sources
 
 - ITAA 1936, section 6(1) — definition of "resident of Australia"
 - ATO: ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency
@@ -88,6 +133,8 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 > **Working paper only.** Residency determination is highly fact-specific. Engage an Australian tax adviser for a formal residency opinion before making decisions that rely on non-resident status.
 
 > Contributed by Ryan Duguid.
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

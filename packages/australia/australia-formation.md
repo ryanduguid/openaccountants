@@ -1,10 +1,10 @@
 ---
 name: australia-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Australia. Trigger on phrases like "set up a company in Australia", "Pty Ltd", "ASIC registration", "Australian company formation", "register a business Australia", "ABN", "ACN", "proprietary limited", "sole trader Australia", "partnership Australia", or any question about starting a business entity in Australia. Covers entity types (Pty Ltd, Ltd, sole trader, partnership, trust), registration process, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Australian company formation.
-version: 1.4
+version: 1.6
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -13,11 +13,25 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Formation
+# Australia Formation v1.6
 
-## Australia Company Formation Skill v1.4
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-## Section 1 -- Quick Reference
+## Scope
+
+### Australia Company Formation Skill v1.6
+
+## Ask the client first
+
+- What taxpayer or entity, jurisdiction and reporting capacity are in scope?
+- Which income year or transaction period applies?
+- What records support the amounts, dates and classifications?
+- Which residence, election, exception or eligibility conditions in this guide affect the answer?
+- What facts or source conditions remain unresolved?
+
+## The method, step by step
+
+### Section 1 -- Quick Reference
 
 **Quick Reference**
 
@@ -31,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Corporate tax rate | 25% for base rate entities (aggregated turnover under $50m and base rate entity passive income no more than 80% of assessable income); 30% for all others |
 | Skill version | 1.4 |
 
-## Section 2 -- Entity Types Comparison
+### Section 2 -- Entity Types Comparison
 
 **Entity Types Comparison**
 
@@ -54,46 +68,48 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 - **Recommended default** — Proprietary company limited by shares (Pty Ltd) for most commercial purposes.
 - **Choose the structure before registering** — Compare ownership, funding, liability, profit distribution and ongoing administration; a company is not automatically the best structure for a small business. Shareholders' liability is generally limited to unpaid amounts on their shares, but directors can be personally liable through guarantees, breaches of duties, insolvent trading and tax obligations, and a corporate trustee does not remove every trustee or director risk.  _([ASIC, Becoming a company director](https://www.asic.gov.au/for-business-and-companies/small-business-director-essentials/becoming-a-company-director))_
 
-## Section 3 -- Registration Process
+### Section 3 -- Registration Process
 
-### Step 1: Choose Company Name
+#### Step 1: Choose Company Name
 
 - **Choose Company Name** — Check availability on ASIC's company name check tool; Must include "Pty Ltd" or "Proprietary Limited"; Can reserve name for 2 months ($65 fee) or register directly; Identical or near-identical names will be rejected  _(ASIC)_
 
-### Step 2: Obtain Consent from Officeholders
+#### Step 2: Obtain Consent from Officeholders
 
 - **Obtain Consent from Officeholders** — All proposed directors and secretaries must consent in writing before registration; At least 1 director must ordinarily reside in Australia (for Pty Ltd)
 - **Director eligibility and director ID** — Directors must be at least 18 and not disqualified from managing companies, and each must apply personally for a director identification number before appointment. A person appointed only to lend their name carries the same duties. A proprietary company using the crowd-sourced funding regime needs at least two directors.  _([ASIC, Becoming a company director](https://www.asic.gov.au/for-business-and-companies/small-business-director-essentials/becoming-a-company-director); [ASIC, Crowd-sourced funding](https://www.asic.gov.au/crowd-sourced-funding))_
 
-### Step 3: Prepare Company Details
+#### Step 3: Prepare Company Details
 
 - **Prepare Company Details** — Registered office address (must be in Australia; can be accountant's or agent's office); Principal place of business; Share structure (number and class of shares, rights); Details of shareholders, directors, secretary (if any)
 - **Governance rules and consents** — Decide whether the company runs on the replaceable rules, a constitution, or both where permitted. Record share classes, rights, numbers and amounts paid or unpaid, obtain members' written consents and the occupier's consent for a registered office the company does not occupy, and open the share register at registration. Registering a company name does not create trade mark rights.  _([ASIC, Register a company](https://www.asic.gov.au/for-business-and-companies/companies/register-a-company))_
 
-### Step 4: Register via Business Registration Service (BRS)
+#### Step 4: Register via Business Registration Service (BRS)
 
 - **Register via BRS** — Go to register.business.gov.au; Can simultaneously apply for: company registration, ABN, TFN, GST, PAYG withholding; Fee: $636 (company with share capital, from 1 July 2026); ASIC processes and issues ACN (Australian Company Number) typically within 1--3 days  _(BRS / ASIC)_
 
-### Step 5: Receive Certificate of Registration
+#### Step 5: Receive Certificate of Registration
 
 - **Receive Certificate of Registration** — Certificate confirms ACN, company name, date of registration, type; Company legally exists from date on certificate
 - **After registration** — Retain the certificate and ACN, check the register against the approved details and record the actual registration date. Do not promise a fixed processing or bank-account opening time, and keep access credentials with the authorised officeholder.
 
-### Step 6: Apply for ABN (Australian Business Number)
+#### Step 6: Apply for ABN (Australian Business Number)
 
 - **Apply for ABN** — Free via Australian Business Register (ABR); Required for tax invoices, GST, and dealing with other businesses; Can be applied for during BRS registration  _(ABR)_
 
-### Step 7: Register for GST (if applicable)
+#### Step 7: Register for GST (if applicable)
 
 - **GST registration threshold** — Registration is required when GST turnover is or will be $75,000 or more ($150,000 for non-profit bodies); voluntary registration is permitted below the threshold.
 - **GST turnover, not bank receipts** — The threshold uses the GST turnover definition, which differs from every receipt in the bank account. Taxi and ride-sourcing activities must register regardless of turnover, and voluntary registration below the threshold brings reporting obligations.  _([ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst))_
 
-### Step 8: Register for PAYG Withholding (if employing)
+#### Step 8: Register for PAYG Withholding (if employing)
 
 - **Register for PAYG Withholding** — Required before paying employees or directors; Register via BRS or ATO  _(BRS / ATO)_
-- **Payroll obligations from the first payment** — Before the first payment subject to withholding, set up payroll and check worker classification, Single Touch Payroll, awards, leave, workers compensation and state payroll tax. From 1 July 2026, Payday Super requires super guarantee contributions, at 12% of qualifying earnings, to reach the fund within seven business days of payday, subject to specific exceptions.  _([ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super))_
+- **Payroll obligations from the first payment** — Before the first payment subject to withholding, set up payroll and check worker classification, Single Touch Payroll, awards, leave, workers compensation and state payroll tax. From 1 July 2026, Payday Super requires super guarantee contributions, at the general SG rate of 12% of qualifying earnings, to reach the fund within seven business days of payday, subject to specific exceptions.  _([ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super))_
 
-## Section 4 -- Capital Requirements
+**Choose the SG schedule before applying a rate.** The rates and examples in this guide use the general SG schedule. Norfolk Island's transitional rate is 10% for 2025-26, 11% for 2026-27 and 12% from 1 July 2027. For a Norfolk Island arrangement, check the separate SG rules in `au-super-guarantee.md` before using a general rate or example. [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee).
+
+### Section 4 -- Capital Requirements
 
 **Capital Requirements**
 
@@ -104,7 +120,7 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 
 - **No minimum capital requirement** — Australia has no minimum capital requirements for company formation.
 
-## Section 5 -- Costs Breakdown
+### Section 5 -- Costs Breakdown
 
 **Costs Breakdown**
 
@@ -122,7 +138,7 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 
 ASIC fees are indexed each 1 July; the amounts above apply from 1 July 2026 ([ASIC, Fees for commonly lodged documents](https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents), checked 11 October 2026).
 
-### Annual Maintenance
+#### Annual Maintenance
 
 **Annual Maintenance**
 
@@ -134,7 +150,77 @@ ASIC fees are indexed each 1 July; the amounts above apply from 1 July 2026 ([AS
 | Registered office service (if using) | $200--$600/year |
 | ASIC late fees | $102 (≤1 month) / $428 (>1 month), running from the review fee's due date, 2 months after the review date |
 
-## Section 6 -- Post-Formation Compliance
+### Section 7 -- Bank Account Opening
+
+#### Documents Typically Required
+
+- **Documents Typically Required** — Certificate of registration (ACN); Company constitution or replaceable rules; ABN confirmation; ID (passport / driver's licence) for all directors; Proof of address for directors and shareholders
+
+#### Typical Timeline
+
+- **Typical Timeline** — 1--3 days (Big 4 banks and digital banks for Australian residents); 1--3 weeks (non-resident directors, enhanced KYC)
+
+#### Common Banks
+
+Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier); Airwallex, Wise Business (digital/international)
+
+### Section 8 -- Foreign Founder Considerations
+
+**Foreign Founder Considerations**
+
+| Question | Answer |
+| --- | --- |
+| Non-resident directors allowed? | Yes, but at least 1 director must ordinarily reside in Australia |
+| Resident director requirement | At least 1 (for Pty Ltd); at least 2 of 3 for public companies |
+| Nominee directors | Permitted (ASIC register shows actual director names) |
+| Physical presence required? | No (online registration); resident director must be genuinely resident |
+| Foreign ownership restrictions | Foreign Investment Review Board (FIRB) approval may be required for certain sectors and thresholds |
+| ABN for foreign entities | A foreign company carrying on business in Australia registers with ASIC ($636 from 1 July 2026), receives an ARBN and can apply for an ABN |
+| Tax treaty benefits | Australia has extensive DTA network; check withholding rates |
+
+- **Foreign founders** — Examine the resident director requirement, the founders' tax residency, foreign investment rules and the difference between incorporating an Australian company and registering an existing foreign company, and record the chosen structure and the reasons for it before applying.
+
+### Section 10 -- Timeline
+
+**Timeline**
+
+| Step | Duration | Cumulative |
+| --- | --- | --- |
+| Prepare documents and officer consents | 1--2 days | Day 1--2 |
+| Register via BRS (ABN + company + GST) | 1 day | Day 2--3 |
+| ASIC issues ACN and certificate | 1--3 days | Day 3--6 |
+| Open business bank account | 1--3 days (resident) / 1--3 weeks (non-resident) | Day 4--27 |
+| ATO registrations confirmed | 1--28 days | Day 4--34 |
+| **Ready to trade** |  | **As fast as 3--5 days (Australian-resident founders)** |
+
+## Worked cases
+
+No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
+
+## When to refuse or refer
+
+### Section 9 -- Common Mistakes and Refusals
+
+- **R-AU-F1 -- No Australian-resident director** — Every Pty Ltd must have at least one director who ordinarily resides in Australia. A company cannot be registered without this. Advise the client to appoint a local director or use a resident director service (with proper governance).  _(R-AU-F1)_
+- **R-AU-F2 -- Failing to pay ASIC annual review fee** — ASIC charges $342/year for a proprietary company from 1 July 2026. If the annual review fee stays unpaid, ASIC can start deregistering the company. The fee is due within 2 months after the review date; late fees then apply: $102 within 1 month of that due date, $428 after 1 month.  _(R-AU-F2)_
+- **R-AU-F3 -- GST threshold ignorance** — If annual turnover reaches $75,000, GST registration is mandatory. Failing to register when required results in penalties and backdated GST assessments.  _(R-AU-F3)_
+- **R-AU-F4 -- Superannuation non-compliance** — The general SG rate is 12% (11.5% for 2024-25). From 1 July 2026, Payday Super applies it to each payment of qualifying earnings, and the contribution must reach the employee's fund within seven business days of payday; on $100,000 of qualifying earnings the minimum is $12,000. Late or short payment results in the Superannuation Guarantee Charge (SGC). SGC for periods from 1 July 2026 is tax-deductible; penalties and interest after the ATO assesses it, and SGC under the former quarterly regime, are not. See `au-super-guarantee.md`.  _(R-AU-F4; [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super))_
+- **R-AU-F5 -- Shell company without substance** — This skill will not assist in forming a company with no genuine business activity in Australia. ASIC and the ATO actively pursue sham structures.  _(R-AU-F5)_
+
+
+### Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute legal, tax, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+
+> Contributed by Ryan Duguid.
+
+
+
+## Filing and payment
+
+### Section 6 -- Post-Formation Compliance
 
 **Post-Formation Compliance**
 
@@ -151,64 +237,20 @@ ASIC fees are indexed each 1 July; the amounts above apply from 1 July 2026 ([AS
 
 - **Keep the company separate and diarised** — Keep company money and transactions apart from personal finances, agree who maintains the share register, accounting records, tax calendar and ASIC correspondence, and diary the annual review, solvency resolution and change notifications. Retain financial records for seven years after the transactions they cover. Tax return and activity statement dates depend on the company's circumstances and lodgement arrangements; they are not all due on one date.  _([ASIC, What books and records should my company keep](https://asic.gov.au/for-business/running-a-company/company-officeholder-duties/what-books-and-records-should-my-company-keep/))_
 
-## Section 7 -- Bank Account Opening
+## Sources
 
-### Documents Typically Required
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.asic.gov.au/for-business-and-companies/small-business-director-essentials/becoming-a-company-director> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.asic.gov.au/crowd-sourced-funding> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.asic.gov.au/for-business-and-companies/companies/register-a-company> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://asic.gov.au/for-business/running-a-company/company-officeholder-duties/what-books-and-records-should-my-company-keep/> | Not re-read for this format update; see retained provenance |
 
-- **Documents Typically Required** — Certificate of registration (ACN); Company constitution or replaceable rules; ABN confirmation; ID (passport / driver's licence) for all directors; Proof of address for directors and shareholders
-
-### Typical Timeline
-
-- **Typical Timeline** — 1--3 days (Big 4 banks and digital banks for Australian residents); 1--3 weeks (non-resident directors, enhanced KYC)
-
-### Common Banks
-
-Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier); Airwallex, Wise Business (digital/international)
-
-## Section 8 -- Foreign Founder Considerations
-
-**Foreign Founder Considerations**
-
-| Question | Answer |
-| --- | --- |
-| Non-resident directors allowed? | Yes, but at least 1 director must ordinarily reside in Australia |
-| Resident director requirement | At least 1 (for Pty Ltd); at least 2 of 3 for public companies |
-| Nominee directors | Permitted (ASIC register shows actual director names) |
-| Physical presence required? | No (online registration); resident director must be genuinely resident |
-| Foreign ownership restrictions | Foreign Investment Review Board (FIRB) approval may be required for certain sectors and thresholds |
-| ABN for foreign entities | A foreign company carrying on business in Australia registers with ASIC ($636 from 1 July 2026), receives an ARBN and can apply for an ABN |
-| Tax treaty benefits | Australia has extensive DTA network; check withholding rates |
-
-- **Foreign founders** — Examine the resident director requirement, the founders' tax residency, foreign investment rules and the difference between incorporating an Australian company and registering an existing foreign company, and record the chosen structure and the reasons for it before applying.
-
-## Section 9 -- Common Mistakes and Refusals
-
-- **R-AU-F1 -- No Australian-resident director** — Every Pty Ltd must have at least one director who ordinarily resides in Australia. A company cannot be registered without this. Advise the client to appoint a local director or use a resident director service (with proper governance).  _(R-AU-F1)_
-- **R-AU-F2 -- Failing to pay ASIC annual review fee** — ASIC charges $342/year for a proprietary company from 1 July 2026. If the annual review fee stays unpaid, ASIC can start deregistering the company. The fee is due within 2 months after the review date; late fees then apply: $102 within 1 month of that due date, $428 after 1 month.  _(R-AU-F2)_
-- **R-AU-F3 -- GST threshold ignorance** — If annual turnover reaches $75,000, GST registration is mandatory. Failing to register when required results in penalties and backdated GST assessments.  _(R-AU-F3)_
-- **R-AU-F4 -- Superannuation non-compliance** — The SG rate is 12% (11.5% for 2024-25). From 1 July 2026, Payday Super applies it to each payment of qualifying earnings, and the contribution must reach the employee's fund within seven business days of payday; on $100,000 of qualifying earnings the minimum is $12,000. Late or short payment results in the Superannuation Guarantee Charge (SGC). SGC for periods from 1 July 2026 is tax-deductible; penalties and interest after the ATO assesses it, and SGC under the former quarterly regime, are not. See `au-super-guarantee.md`.  _(R-AU-F4; [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super))_
-- **R-AU-F5 -- Shell company without substance** — This skill will not assist in forming a company with no genuine business activity in Australia. ASIC and the ATO actively pursue sham structures.  _(R-AU-F5)_
-
-## Section 10 -- Timeline
-
-**Timeline**
-
-| Step | Duration | Cumulative |
-| --- | --- | --- |
-| Prepare documents and officer consents | 1--2 days | Day 1--2 |
-| Register via BRS (ABN + company + GST) | 1 day | Day 2--3 |
-| ASIC issues ACN and certificate | 1--3 days | Day 3--6 |
-| Open business bank account | 1--3 days (resident) / 1--3 weeks (non-resident) | Day 4--27 |
-| ATO registrations confirmed | 1--28 days | Day 4--34 |
-| **Ready to trade** |  | **As fast as 3--5 days (Australian-resident founders)** |
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute legal, tax, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
-
-> Contributed by Ryan Duguid.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 
