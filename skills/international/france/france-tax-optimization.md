@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in France, tax pla
 version: 1.1
 jurisdiction: FR
 tax_year: 2026
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -51,7 +51,7 @@ Income is divided by the number of parts (quotient familial): 1 per adult, 0.5 p
 
 | Factor | Micro-Entreprise (micro-BIC / micro-BNC) | Régime Réel |
 | --- | --- | --- |
-| Turnover ceiling (2026 to 2028) | EUR 83,600 (services/BNC) / EUR 203,100 (goods/BIC); EUR 77,700 / EUR 188,700 for 2023 to 2025 | No limit |
+| Turnover ceiling (2026 to 2028) | EUR 83,600 (services/BNC) / EUR 203,100 (goods/BIC); EUR 77,700 / EUR 188,700 for 2025 | No limit |
 | Taxation method | Flat abatement: 34% (BNC) or 50% (BIC services) or 71% (BIC goods) | Actual expenses deducted |
 | When to choose réel | When actual deductible expenses exceed the flat abatement | Always compare before choosing |
 | Social contributions | Based on turnover (micro) vs net profit (réel) | Réel may be lower if expenses are high |

@@ -32,8 +32,10 @@ departure, and on the departure date you hold:
 
 **What it does.** Your unrealised gains (plus certain deferred gains and earn-outs) are
 deemed realised on departure — taxed at the **31.4% flat tax** (12.8% income tax + 18.6%
-social levies) for departures from 1 January 2025, or 30% (17.2% levies) for earlier
-departures, or under the progressive scale by election. The 18.6% applies because art. L. 136-6 I e bis CSS
+social levies) for departures from 1 January 2025 (the levy rise applies from the taxation of 2025 income;
+confirm the boundary for a given departure against CGI art. 167 bis), or 30% (17.2% levies) for departures
+from 1 January 2018 to 31 December 2024 (earlier departures follow the rules of their year), or under the
+progressive scale by election. The 18.6% applies because art. L. 136-6 I e bis CSS
 lists the gains and receivables of art. 167 bis I and II CGI among revenus du patrimoine. The tax is *computed*
 immediately, but:
 

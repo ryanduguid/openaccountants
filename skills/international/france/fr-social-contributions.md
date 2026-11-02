@@ -4,7 +4,7 @@ description: Use this skill whenever asked about French social contributions (co
 version: 2.1
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-11-01
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -238,7 +238,7 @@ Urssaf applies the revised barème (decret n 2024-688 — https://www.legifrance
 | Invalidite-deces | 1.30% | Up to 1 PASS |
 | Allocations familiales | 0% below 110% PASS (EUR 52,866); progressive to 3.10% at 140% PASS (EUR 67,284); 3.10% above | Progressive |
 | CSG-CRDS | 9.70% combined | Revenus d'activite (reformed base) |
-| Formation professionnelle | 0.25% of PASS (EUR 120); 0.29% artisans (EUR 139); 0.34% with conjoint collaborateur (EUR 163) | Fixed |
+| Formation professionnelle | 0.25% of PASS (EUR 120); 0.29% artisans (EUR 139); 0.34% for a commerçant or PLNR with conjoint collaborateur (EUR 163); artisans with a conjoint collaborateur: see the Urssaf table | Fixed |
 
 *Source: Urssaf, Taux de cotisations - Artisan, commercant et profession liberale non reglementee (updated 27 February 2026) — https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-ac-plnr.html*
 
