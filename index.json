@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-02T19:10:18+00:00",
+ "generated_at": "2026-11-02T23:32:07+00:00",
  "counts": {
-  "guides": 2017,
+  "guides": 2018,
   "jurisdictions": 294,
   "accountant_reviewed": 164
  },
@@ -4269,6 +4269,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "bo-corporate-income-tax",
+   "path": "skills/international/bolivia/bo-corporate-income-tax.md",
+   "name": "bo-corporate-income-tax",
+   "jurisdiction": "BO",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "bolivia-income-tax",

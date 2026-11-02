@@ -4,7 +4,7 @@ Generated from `country-catalogue.json` and `index.json`. Regenerate with `pytho
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-229 of 250 target areas have at least one indexed guide; 21 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+235 of 250 target areas have at least one indexed guide; 15 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -42,7 +42,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BL | Saint Barthélemy | 0 | 0 |
 | BM | Bermuda | 7 | 0 |
 | BN | Brunei Darussalam | 7 | 0 |
-| BO | Bolivia (Plurinational State of) | 5 | 0 |
+| BO | Bolivia (Plurinational State of) | 6 | 0 |
 | BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |
 | BR | Brazil | 13 | 8 |
 | BS | Bahamas | 6 | 0 |
@@ -70,10 +70,10 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CX | Christmas Island | 4 | 0 |
 | CY | Cyprus | 6 | 5 |
 | CZ | Czechia | 7 | 0 |
-| DE | Germany | 22 | 0 |
+| DE | Germany | 23 | 0 |
 | DJ | Djibouti | 6 | 0 |
-| DK | Denmark | 4 | 0 |
-| DM | Dominica | 0 | 0 |
+| DK | Denmark | 6 | 0 |
+| DM | Dominica | 2 | 0 |
 | DO | Dominican Republic | 22 | 14 |
 | DZ | Algeria | 4 | 0 |
 | EC | Ecuador | 8 | 0 |
@@ -112,7 +112,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | HM | Heard Island and McDonald Islands | 1 | 0 |
 | HN | Honduras | 7 | 0 |
 | HR | Croatia | 8 | 0 |
-| HT | Haiti | 0 | 0 |
+| HT | Haiti | 1 | 0 |
 | HU | Hungary | 4 | 0 |
 | ID | Indonesia | 13 | 8 |
 | IE | Ireland | 13 | 0 |
@@ -123,7 +123,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IQ | Iraq | 7 | 0 |
 | IR | Iran (Islamic Republic of) | 6 | 0 |
 | IS | Iceland | 8 | 0 |
-| IT | Italy | 15 | 0 |
+| IT | Italy | 16 | 0 |
 | JE | Jersey | 14 | 0 |
 | JM | Jamaica | 6 | 0 |
 | JO | Jordan | 6 | 0 |
@@ -132,7 +132,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | KG | Kyrgyzstan | 6 | 0 |
 | KH | Cambodia | 6 | 0 |
 | KI | Kiribati | 0 | 0 |
-| KM | Comoros | 0 | 0 |
+| KM | Comoros | 1 | 0 |
 | KN | Saint Kitts and Nevis | 1 | 0 |
 | KP | Democratic People's Republic of Korea | 0 | 0 |
 | KR | Republic of Korea | 6 | 3 |
@@ -192,7 +192,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PG | Papua New Guinea | 6 | 0 |
 | PH | Philippines | 7 | 0 |
 | PK | Pakistan | 19 | 4 |
-| PL | Poland | 6 | 0 |
+| PL | Poland | 7 | 0 |
 | PM | Saint Pierre and Miquelon | 1 | 0 |
 | PN | Pitcairn | 0 | 0 |
 | PR | Puerto Rico | 2 | 0 |
@@ -224,10 +224,10 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SS | South Sudan | 6 | 0 |
 | ST | Sao Tome and Principe | 6 | 0 |
 | SV | El Salvador | 5 | 0 |
-| SX | Sint Maarten (Dutch part) | 0 | 0 |
+| SX | Sint Maarten (Dutch part) | 1 | 0 |
 | SY | Syrian Arab Republic | 0 | 0 |
 | SZ | Eswatini | 6 | 0 |
-| TC | Turks and Caicos Islands | 0 | 0 |
+| TC | Turks and Caicos Islands | 3 | 0 |
 | TD | Chad | 6 | 0 |
 | TF | French Southern Territories | 0 | 0 |
 | TG | Togo | 6 | 0 |
@@ -250,7 +250,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | UY | Uruguay | 7 | 0 |
 | UZ | Uzbekistan | 8 | 0 |
 | VA | Holy See | 0 | 0 |
-| VC | Saint Vincent and the Grenadines | 0 | 0 |
+| VC | Saint Vincent and the Grenadines | 1 | 0 |
 | VE | Venezuela (Bolivarian Republic of) | 5 | 5 |
 | VG | British Virgin Islands | 6 | 0 |
 | VI | United States Virgin Islands | 4 | 0 |

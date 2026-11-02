@@ -725,6 +725,7 @@
    "name": "Bolivia",
    "files": [
     "intake.md",
+    "bo-corporate-income-tax.md",
     "bolivia-income-tax.md",
     "bolivia-iva.md",
     "bolivia-payroll.md",
@@ -733,6 +734,7 @@
     "README.md"
    ],
    "shared": [
+    "corporate-income-tax-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
