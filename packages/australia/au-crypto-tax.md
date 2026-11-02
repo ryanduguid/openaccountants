@@ -1,7 +1,7 @@
 ---
 name: au-crypto-tax
 description: Use this skill whenever asked about Australian cryptocurrency taxation. Trigger on phrases like "crypto tax Australia", "Bitcoin CGT", "ATO crypto", "crypto capital gains", "personal use asset crypto", "staking income", "airdrop tax", "DeFi tax Australia", "crypto cost base", "crypto trading tax", "Coinbase tax", "Swyftx tax", "CoinSpot tax", "NFT tax Australia", or any question about how cryptocurrency is taxed by the ATO. This skill covers CGT treatment of crypto assets, the personal use asset exemption, trading vs investing distinction, staking and airdrop income, DeFi events, record-keeping requirements, and exchange-specific transaction patterns. ALWAYS read this skill before touching any Australian crypto tax work.
-version: 1.6
+version: 1.7
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-11-02
@@ -11,13 +11,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Crypto Tax v1.6
+# AU Crypto Tax v1.7
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia Crypto Tax -- CGT & Income Skill v1.6
+### Australia Crypto Tax -- CGT & Income Skill v1.7
 
 ## Ask the client first
 
@@ -81,11 +81,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown acquisition date | No 50% discount available |
-| Unknown cost base | $0 (maximum gain) -- obtain records |
-| Unknown whether personal use or investment | Treat as investment (CGT applies) |
-| Unknown whether trading or investing | Treat as investor (CGT, not ordinary income) |
-| DeFi event -- unknown character | Treat as disposal (CGT event) |
+| Unknown acquisition date | Reconstruct records; return Needs Input for holding-period eligibility |
+| Unknown cost base | Reconstruct exchange, wallet and bank records; return Needs Input for the affected gain and dependent totals. Missing records do not establish a zero cost base |
+| Unknown whether personal use or investment | Return Needs Input for classification; do not infer eligibility or liability from a missing fact |
+| Unknown whether trading or investing | Return Needs Input for capital/revenue classification and obtain qualified review |
+| DeFi event -- unknown character | Establish the actual rights and transaction before classifying; return Needs Input for unresolved treatment |
 
 ### Section 2 -- Classification Rules
 
@@ -113,11 +113,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Exchange fees / commission on acquisition | Yes |
 | Gas fees on acquisition transaction | Yes |
 | Exchange fees / commission on disposal | Second-element (incidental) cost of the disposed asset's cost base; do not also subtract it from capital proceeds |
-| Wallet transfer fees (own wallets) | Included in cost base of the asset |
+| Wallet transfer fees (own wallets) | Test the fee's character and statutory cost-base element; a transfer between own wallets does not automatically establish an eligible cost |
 | Subscription to crypto tax or portfolio software | Not a cost base element; software used to keep tax records or prepare the return is generally deductible as a cost of managing tax affairs (ITAA 1997 s 25-5) |
 
 - **Method for identical assets** — FIFO, LIFO, or specific identification -- must be consistent and documented. ATO does not mandate a method but requires consistency.
-- **Fees and missing parcel records** — Classify each fee by the transaction it belongs to: a fee on acquisition enters the cost base of that asset, a fee on disposal is an incidental cost of that event, and a network fee is not automatically deductible or an addition to every asset's cost base. Where a parcel or acquisition record is missing, investigate exchange exports, wallet history and bank transfers before falling back to the $0 conservative default.  _(ATO, Transactions: acquiring and disposing of crypto assets (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets))_
+- **Fees and missing parcel records** - Classify each fee by its transaction and eligible statutory element; a network fee is not automatically deductible or part of every asset's cost base. Where a parcel or acquisition record is missing, reconstruct exchange exports, wallet history and bank transfers. If that evidence remains incomplete, return Needs Input for the affected gain and dependent totals; do not invent a zero cost base or silently omit the disposal. A zero cost base established by a specific rule, such as an eligible chain-split asset, is a separate fact pattern. [ATO, keeping crypto records](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records), record and reconstruction sections read 2 November 2026; [ITAA 1997 ss 110-25 and 110-35](https://www.legislation.gov.au/C2004A05138/latest/text).
 
 #### 2.3 50% CGT Discount
 
@@ -198,13 +198,13 @@ Use the ATO [DeFi and wrapping guidance](https://www.ato.gov.au/individuals-and-
 
 | DeFi Action | Tax Treatment |
 | --- | --- |
-| Wrapping (e.g., ETH → WETH) | ATO view: likely a disposal (CGT event). Conservative: treat as disposal at market value |
+| Wrapping (e.g., ETH → WETH) | Test the actual rights and source conditions below; draft TD 2026/D2 is not a universal disposal default |
 | Unwrapping (WETH → ETH) | Disposal of WETH, acquisition of ETH |
 | Providing liquidity (LP tokens) | Disposal of deposited tokens; acquisition of LP token at combined market value |
 | Removing liquidity | Disposal of LP token; acquisition of underlying tokens |
 | Yield farming rewards | Ordinary income at market value when received |
 | Borrowing against crypto (collateral) | Not a disposal (no change of beneficial ownership). BUT if liquidated -- CGT event |
-| Bridge transactions (cross-chain) | Conservative: treat as disposal + acquisition |
+| Bridge transactions (cross-chain) | Establish the rights before and after bridging; an unknown arrangement requires Needs Input, not an assumed disposal |
 | Token migration/hard fork | New token acquired at $0 cost base; not assessable until disposed |
 
 - **Read the mechanics before choosing the event** — Depositing into a liquidity pool, receiving a replacement token, lending, borrowing, wrapping or unwrapping can change or end rights even where the economic exposure looks unchanged. Record the assets and rights held before and after the transaction; the CGT event can be A1, C2, E2 or H2 depending on the arrangement.  _(ATO, Decentralised finance and wrapping crypto (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/decentralised-finance-and-wrapping-crypto))_
@@ -268,7 +268,7 @@ Use the ATO [DeFi and wrapping guidance](https://www.ato.gov.au/individuals-and-
 | LP DEPOSIT (ADD LIQUIDITY) | Disposal of tokens, acquisition of LP token |  |
 | LP WITHDRAWAL (REMOVE LIQUIDITY) | Disposal of LP token, acquisition of tokens |  |
 | CLAIM REWARDS | Classify the reward under sections 2.6 and 2.7 | A claim transaction alone does not determine income character |
-| BRIDGE [TOKEN] TO [CHAIN] | Conservative: disposal + acquisition |  |
+| BRIDGE [TOKEN] TO [CHAIN] | Classify from actual rights and operative sources | Hold unresolved treatment as Needs Input under Section 2.8 |
 | MINT NFT | Acquisition | Cost base = mint price + gas |
 | APPROVE / REVOKE (no transfer) | Not a CGT event | Gas fee adds to cost of next related transaction |
 
@@ -280,7 +280,7 @@ Use the ATO [DeFi and wrapping guidance](https://www.ato.gov.au/individuals-and-
 
 #### Step 2: Calculate Gain/Loss per Event
 
-- **Calculate Gain/Loss per Event** — Capital proceeds − cost base = capital gain (or capital loss).
+- **Calculate gain or loss for the identified event** - For an ordinary A1 disposal, use proceeds less cost base for a gain and reduced cost base less proceeds for a loss. Proceeds between those bases produce neither. Other events have their own formulas. Do not infer a loss from a negative cost-base subtraction. See `au-capital-gains.md` and [ITAA 1997 s 104-10](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/104-10).
 
 #### Step 3: Offset Capital Losses
 
@@ -356,7 +356,7 @@ No separate worked-case section is supplied in this revision. Any illustrations 
 
 ### Section 7 -- Prohibitions
 
-- **Prohibitions** — NEVER claim the personal use asset exemption for investment, profit-making or business crypto; NEVER apply the 50% CGT discount without verifying 12+ months holding period; NEVER apply the individual 50% CGT discount to companies; calculate any retained foreign-resident discount from the full residency history; NEVER offset capital losses against ordinary income (only against capital gains); NEVER apply capital losses before gross gains (apply losses first, THEN discount); NEVER ignore crypto-to-crypto swaps as non-events -- each swap is a disposal; NEVER assume DeFi events are non-taxable -- conservative approach is to treat as disposals; NEVER omit assessable staking rewards or qualifying airdrop income; classify airdrops by activity and receipt character before deciding whether ordinary income arises; NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions** — NEVER claim the personal use asset exemption for investment, profit-making or business crypto; NEVER apply the 50% CGT discount without verifying 12+ months holding period; NEVER apply the individual 50% CGT discount to companies; calculate any retained foreign-resident discount from the full residency history; NEVER offset capital losses against ordinary income (only against capital gains); NEVER apply capital losses before gross gains (apply losses first, THEN discount); NEVER ignore crypto-to-crypto swaps as non-events -- each swap is a disposal; NEVER classify an unresolved DeFi arrangement as taxable or non-taxable by default; establish actual rights and sources or return Needs Input; NEVER omit assessable staking rewards or qualifying airdrop income; classify airdrops by activity and receipt character before deciding whether ordinary income arises; NEVER present tax calculations as definitive -- always label as estimated
 
 
 ### Disclaimer
@@ -386,6 +386,8 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 | Retained citation | <https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/decentralised-finance-and-wrapping-crypto> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D2/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records> | Not re-read for this format update; see retained provenance |
+
+Revision 1.7, 2 November 2026: removed unsupported missing-record and classification defaults, aligned fee and event formulas with `au-capital-gains.md` and retained unresolved arrangements as Needs Input. The keeping-records page was re-read for records and reconstruction only.
 
 Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
