@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,011 Guides** across **292 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,013 Guides** across **292 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2011 guides, 292 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2013 guides, 292 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -1704,10 +1704,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - sj-svalbard-wage-reference | SJ | tier 2 | reviewed_by -
 - sweden-references | SE | tier 2 | reviewed_by -
 - se-capital-gains | SE | tier 2 | reviewed_by -
+- se-corporate-income-tax | SE | tier 2 | reviewed_by -
 - se-income-tax | SE | tier 2 | reviewed_by -
 - se-social-contributions | SE | tier 2 | reviewed_by -
 - sweden-bookkeeping | SE | tier 2 | reviewed_by -
 - sweden-crypto-tax | SE | tier 2 | reviewed_by -
+- sweden-financial-statements | SE | tier 2 | reviewed_by -
 - sweden-payroll | SE | tier 2 | reviewed_by -
 - sweden-vat-return | SE | tier 2 | reviewed_by -
 - ch-ahv-iv | CH | tier 2 | reviewed_by -
@@ -2211,7 +2213,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,011 Guides** across **292 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,013 Guides** across **292 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 

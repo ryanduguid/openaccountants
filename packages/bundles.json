@@ -5217,18 +5217,22 @@
     "intake.md",
     "references.md",
     "se-capital-gains.md",
+    "se-corporate-income-tax.md",
     "se-income-tax.md",
     "se-social-contributions.md",
     "sweden-bookkeeping.md",
     "sweden-crypto-tax.md",
+    "sweden-financial-statements.md",
     "sweden-payroll.md",
     "sweden-vat-return.md",
     "README.md"
    ],
    "shared": [
     "bookkeeping-workflow-base.md",
+    "corporate-income-tax-workflow-base.md",
     "crypto-tax-workflow-base.md",
     "eu-vat-directive.md",
+    "financial-statements-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
     "workflow-base.md"
