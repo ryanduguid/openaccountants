@@ -12,14 +12,14 @@ class ReturnAssemblyContractTests(unittest.TestCase):
     def execution_producers(self, name):
         text = (ROOT / "skills" / "orchestrator" / name).read_text(encoding="utf-8")
         section = re.search(
-            r"^## Section 2\b[^\n]*\n(.*?)^## Section 3\b",
+            r"^(#{2,3}) Section 2\b[^\n]*\n(.*?)^\1 Section 3\b",
             text,
             flags=re.MULTILINE | re.DOTALL,
         )
         self.assertIsNotNone(section, "execution-order section is required")
         return re.findall(
             r"^0\. \*\*(?:Run )?([a-z0-9-]+) (?:first|second|third|fourth|fifth|step)\*\*",
-            section.group(1),
+            section.group(2),
             flags=re.MULTILINE,
         )
 

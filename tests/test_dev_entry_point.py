@@ -10,6 +10,7 @@ pull-request runs cancelled, a timeout on every job, and a pip cache.
 
 from __future__ import annotations
 
+import importlib.util
 import re
 import shutil
 import subprocess
@@ -22,7 +23,7 @@ WORKFLOWS = REPO_ROOT / ".github" / "workflows"
 #: The workflows that run this repository's own checks.
 GATES = ("validate.yml", "sync-integrity.yml")
 DISCOVER = 'unittest discover -s tests -p "test_*.py"'
-TARGETS = ("help", "install", "build", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "check")
+TARGETS = ("help", "install", "build", "merge-main", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "check")
 #: The gate checkers (scripts/oa_tools/findings.py), as CI and the Makefile name them.
 GATE_CHECKERS = ("arithmetic", "bracket-tables", "expired-rules", "fact-conflicts", "coverage-claims", "sourcing-floor")
 
@@ -79,8 +80,11 @@ class MakefileTests(unittest.TestCase):
         Makefile's `checkers` and `baselines` recipes, validate.yml's
         gate-checkers job, and the baseline files under scripts/baselines/."""
         make_checkers = re.findall(r"scripts/check-([a-z-]+)\.py", _dry_run("checkers"))
-        self.assertEqual(tuple(make_checkers[:-1]), GATE_CHECKERS)
+        self.assertEqual(tuple(make_checkers), (*GATE_CHECKERS, "cited-hosts", "examples", "examples"))
         self.assertIn("check-cited-hosts.py --selftest", _dry_run("checkers"))
+        self.assertIn("scripts/check-examples.py", _dry_run("checkers"))
+        required_examples = "scripts/check-examples.py --require skills/international/australia/au-rates-2026-27.md skills/international/australia/au-individual-return.md skills/international/australia/au-deductions-offsets.md skills/international/australia/au-sole-trader-schedule.md skills/international/australia/australia-tax-optimization.md skills/international/australia/au-medicare-levy.md skills/international/australia/au-gst-bas.md skills/international/australia/au-bas-preparation.md skills/international/australia/australia-gst.md skills/international/australia/au-fbt.md skills/international/australia/au-fbt-year.md skills/international/australia/au-company-tax.md skills/international/australia/au-payg-instalments.md skills/international/australia/au-super-guarantee.md skills/international/australia/australia-payroll.md skills/international/australia/au-employment-termination-payments.md skills/international/australia/au-capital-gains.md skills/international/australia/au-crypto-tax.md skills/international/australia/au-small-business-cgt.md skills/international/australia/au-amending-individual-income-tax-return-period.md"
+        self.assertIn(required_examples, _dry_run("checkers"))
         make_baselines = re.findall(r"scripts/check-([a-z-]+)\.py --update-baseline", _dry_run("baselines"))
         self.assertEqual(set(make_baselines), set(GATE_CHECKERS) - {"coverage-claims"},
                          "coverage-claims has no standing queue and so no baseline")
@@ -92,6 +96,8 @@ class MakefileTests(unittest.TestCase):
         self.assertIsNotNone(loop, "the job loops over the checkers so every one runs")
         self.assertEqual(tuple(loop.group(1).split()), GATE_CHECKERS)
         self.assertIn("check-cited-hosts.py --selftest", run)
+        self.assertIn("scripts/check-examples.py || status=1", run)
+        self.assertIn(required_examples + " || status=1", run)
         self.assertIn("|| status=1", run)
         self.assertIn('exit "$status"', run)
 
@@ -139,13 +145,24 @@ class MakefileTests(unittest.TestCase):
         self.assertIn("BASE=<rev>", result.stderr)
         self.assertNotIn("check-sync-integrity.py", result.stdout)
 
-    def test_build_target_runs_the_four_generators_in_order(self) -> None:
-        """packages, then the index (read by the roster), then the roster
-        (embedded in llms-full.txt), then llms-full.txt."""
+    def test_build_target_runs_the_generators_in_order(self) -> None:
+        """packages, then the index, then the coverage figures (read from the
+        index and packages/), then the roster (read from the index), then
+        llms-full.txt (which embeds the figures and the roster)."""
         out = _dry_run("build")
-        positions = [out.index(f"scripts/{name}.py")
-                     for name in ("build-packages", "build-index", "build-partners", "build-llms-full")]
+        positions = [out.index(f"scripts/{name}.py") for name in
+                     ("build-packages", "build-index", "check-coverage-claims", "build-partners", "build-llms-full")]
         self.assertEqual(positions, sorted(positions), out)
+        self.assertIn("scripts/check-coverage-claims.py --write", out)
+
+    def test_merge_main_rebuilds_with_the_build_recipe(self) -> None:
+        """scripts/merge-main.py runs `make build`'s commands without make."""
+        spec = importlib.util.spec_from_file_location("merge_main", REPO_ROOT / "scripts" / "merge-main.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        recipe = re.search(r"(?m)^build:.*\n((?:\t.*\n)+)", self.text).group(1)
+        steps = [tuple(line.split()[1:]) for line in recipe.splitlines()]
+        self.assertEqual([("scripts/" + step[0],) + step[1:] for step in module.BUILD], steps)
 
     def test_recipes_use_tabs(self) -> None:
         """A recipe line indented with spaces is a Makefile parse error; the

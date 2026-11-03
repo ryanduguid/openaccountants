@@ -19,8 +19,9 @@ this project must not inflate is how much review has happened.
 
 What is checked, all against index.json and the tree:
 
-  docs/COVERAGE.md       every row of the derived table, and the distinct-people
-                         figure the reviewer row narrates;
+  docs/COVERAGE.md       every row of the derived table, the distinct-people
+                         figure the reviewer row narrates, and the "N of the N
+                         jurisdiction codes" holding accountant-reviewed guides;
   README.md, llms.txt,   the headline line, "**N Guides** across **N
   docs/QUALITY-TIERS.md  jurisdictions** · **N accountant-reviewed** · **N
                          named accountants**", figure by figure;
@@ -34,13 +35,18 @@ guide is accountant-reviewed when it carries tier 1 and a reviewer's name,
 and a named accountant is such a reviewer who did not ask to be anonymous.
 
 Usage: python3 scripts/check-coverage-claims.py
+       python3 scripts/check-coverage-claims.py --write
 
 Gate: exits 1 on any claim that disagrees with the tree (and on a missing
 document or derived section). It has no standing queue, so it carries no
 baseline file; --json, --baseline PATH, --no-baseline and --update-baseline
 are described in scripts/oa_tools/findings.py. When a change to skills/
-moves the counts, update the figures it names, regenerate PARTNERS.md and
-run it again until it passes.
+moves the counts, run `make build`.
+
+--write sets every figure above except PARTNERS.md (build-partners.py writes
+that) to the tree's value and exits 0. `make build` runs it after
+build-index.py, so the figures are derived output like the index, and
+scripts/merge-main.py masks them when it merges a branch.
 """
 import glob, io, os, re, signal, sys, unicodedata
 
@@ -60,6 +66,13 @@ DOC = os.path.join('docs', 'COVERAGE.md')
 HEADLINE_FILES = ('README.md', 'llms.txt', os.path.join('docs', 'QUALITY-TIERS.md'))
 PARTNERS = 'PARTNERS.md'
 PROFILES = os.path.join('docs', 'partners.json')
+
+# What the gate reads and --write rewrites. The section runs to the next heading.
+SECTION = re.compile(r'##\s*This repository \(derived from `index\.json`\)(.*?)(?=\n##)', re.S)
+ROW = re.compile(r'^(\|\s*(.+?)\s*\|\s*\*\*)([\d,]+)(\*\*.*?\|\s*)$', re.M)
+PEOPLE = re.compile(r'(Distinct `reviewed_by` values \|\s*\*\*[\d,]+\*\*\s*\()(\d+)( people)')
+REVIEWED_IN = re.compile(r'(Accountant-reviewed guides exist in )([\d,]+)( of the )([\d,]+)( jurisdiction codes)')
+HEADLINE = re.compile(r'\*\*[\d,]+\s+Guides\*\*')
 
 
 def normalise(name):
@@ -89,9 +102,71 @@ def actual(index):
     }, {normalise(r) for r in reviewers}
 
 
+def figures(index):
+    """Every figure the documents state, as the tree has it."""
+    table, people = actual(index)
+    guides = index['guides']
+    return {
+        'table': table,
+        'people': len(people),
+        'reviewed in': len({g['jurisdiction'] for g in guides if g.get('jurisdiction') and roster.reviewer_of(g)}),
+        'headline': roster.headline(guides),
+    }
+
+
+def rewrite(path, text, want):
+    """``text``, the content of ``path``, with every figure the gate reads set
+    to ``want`` (from figures()). All other text is left as it is."""
+    path = path.replace(os.sep, '/')
+    if path == DOC.replace(os.sep, '/'):
+        block = SECTION.search(text)
+        if not block:
+            return text
+        table = want['table']
+        body = ROW.sub(lambda m: m.group(1) + format(table[m.group(2).strip()], ',') + m.group(4)
+                       if m.group(2).strip() in table else m.group(0), block.group(1))
+        body = PEOPLE.sub(lambda m: m.group(1) + str(want['people']) + m.group(3), body)
+        body = REVIEWED_IN.sub(lambda m: m.group(1) + format(want['reviewed in'], ',') + m.group(3)
+                               + format(table['Distinct `jurisdiction` codes'], ',') + m.group(5), body)
+        return text[:block.start(1)] + body + text[block.end(1):]
+    if path in {name.replace(os.sep, '/') for name in HEADLINE_FILES}:
+        lines = text.splitlines(True)
+        for i, line in enumerate(lines):
+            if HEADLINE.search(line):
+                for label in roster.HEADLINE_LABELS:
+                    line = re.sub(r'\*\*[\d,]+(\s+' + re.escape(label) + r'\*\*)',
+                                  lambda m: '**' + format(want['headline'][label], ',') + m.group(1), line)
+                lines[i] = line
+                break
+        return ''.join(lines)
+    return text
+
+
+def write_figures(index):
+    """--write: set the figures in each document to ``index``'s values."""
+    want = figures(index)
+    for path in (DOC,) + HEADLINE_FILES:
+        if not os.path.isfile(path):
+            continue  # the gate reports a missing document
+        with io.open(path, encoding='utf-8', newline='') as fh:
+            text = fh.read()
+        new = rewrite(path, text, want)
+        if new != text:
+            with io.open(path, 'w', encoding='utf-8', newline='') as fh:
+                fh.write(new)
+            print('figures updated: %s' % path.replace(os.sep, '/'))
+    return 0
+
+
 def main(argv=None):
     parser = findings.argument_parser('coverage-claims', __doc__.split('\n\n')[0], roots=False)
+    parser.add_argument('--write', action='store_true',
+                        help="set the documents' figures to the tree's values and exit 0 (make build runs it)")
     args = parser.parse_args(argv)
+    if args.write:
+        if not os.path.isfile('index.json'):
+            sys.exit('index.json not found; run python3 scripts/build-index.py')
+        return write_figures(roster.load_index('index.json'))
     report = findings.Report('coverage-claims', args)
 
     def problem(path, key, message, **detail):
@@ -125,15 +200,15 @@ def derived_table(problem, index):
         problem(doc, 'missing', '%s not found' % DOC)
         return
     text = io.open(DOC, encoding='utf-8').read()
-    block = re.search(r'##\s*This repository \(derived from `index\.json`\)(.*?)(?=\n##)', text, re.S)
+    block = SECTION.search(text)
     if not block:
         problem(doc, 'derived section', '%s: the derived section is missing' % DOC)
         return
 
     expected, people = actual(index)
     seen = set()
-    for row in re.finditer(r'^\|\s*(.+?)\s*\|\s*\*\*([\d,]+)\*\*(.*?)\|\s*$', block.group(1), re.M):
-        label, claimed = row.group(1).strip(), int(row.group(2).replace(',', ''))
+    for row in ROW.finditer(block.group(1)):
+        label, claimed = row.group(2).strip(), int(row.group(3).replace(',', ''))
         if label not in expected:
             continue
         seen.add(label)
@@ -148,10 +223,23 @@ def derived_table(problem, index):
                     % (DOC, label, format(expected[label], ',')), actual=expected[label])
 
     # the reviewer-count row also narrates how many distinct people that is
-    m = re.search(r'Distinct `reviewed_by` values \|\s*\*\*\d+\*\*\s*\((\d+) people', block.group(1))
-    if m and int(m.group(1)) != len(people):
+    m = PEOPLE.search(block.group(1))
+    if m and int(m.group(2)) != len(people):
         problem(doc, 'distinct people', '%s: the reviewer row says %s distinct people, the tree has %d'
-                % (DOC, m.group(1), len(people)), claimed=int(m.group(1)), actual=len(people))
+                % (DOC, m.group(2), len(people)), claimed=int(m.group(2)), actual=len(people))
+
+    # the sentence under the table says how many codes hold accountant-reviewed guides
+    m = REVIEWED_IN.search(block.group(1))
+    if not m:
+        problem(doc, 'reviewed jurisdictions', '%s: the derived section has no "Accountant-reviewed guides exist in '
+                'N of the N jurisdiction codes" sentence' % DOC)
+    else:
+        claimed = [int(m.group(2).replace(',', '')), int(m.group(4).replace(',', ''))]
+        tree = [figures(index)['reviewed in'], expected['Distinct `jurisdiction` codes']]
+        if claimed != tree:
+            problem(doc, 'reviewed jurisdictions', '%s: says accountant-reviewed guides exist in %s of the %s '
+                    'jurisdiction codes, the tree has %s of %s' % (DOC, claimed[0], claimed[1], tree[0], tree[1]),
+                    claimed=claimed, actual=tree)
 
 
 def headline_claims(problem, index):
@@ -173,7 +261,7 @@ def headline_claims(problem, index):
         # the first line that bolds a guide count with its label is the headline
         line = None
         for candidate in io.open(path, encoding='utf-8'):
-            if re.search(r'\*\*[\d,]+\s+Guides\*\*', candidate):
+            if HEADLINE.search(candidate):
                 line = candidate
                 break
         if line is None:

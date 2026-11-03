@@ -1941,13 +1941,17 @@
    "files": [
     "intake.md",
     "denmark-vat-return.md",
+    "dk-annual-reporting-reference.md",
     "dk-capital-gains.md",
+    "dk-corporate-income-tax.md",
     "dk-income-tax.md",
     "references.md",
     "README.md"
    ],
    "shared": [
+    "corporate-income-tax-workflow-base.md",
     "eu-vat-directive.md",
+    "financial-statements-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
     "vat-workflow-base.md",
@@ -4718,6 +4722,20 @@
     "workflow-base.md"
    ]
   },
+  "saint-vincent-and-the-grenadines": {
+   "jurisdiction": "VC",
+   "name": "Saint Vincent And The Grenadines",
+   "files": [
+    "intake.md",
+    "vc-persons-abroad-contributions-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "samoa": {
    "jurisdiction": "WS",
    "name": "Samoa",
@@ -5230,18 +5248,22 @@
     "intake.md",
     "references.md",
     "se-capital-gains.md",
+    "se-corporate-income-tax.md",
     "se-income-tax.md",
     "se-social-contributions.md",
     "sweden-bookkeeping.md",
     "sweden-crypto-tax.md",
+    "sweden-financial-statements.md",
     "sweden-payroll.md",
     "sweden-vat-return.md",
     "README.md"
    ],
    "shared": [
     "bookkeeping-workflow-base.md",
+    "corporate-income-tax-workflow-base.md",
     "crypto-tax-workflow-base.md",
     "eu-vat-directive.md",
+    "financial-statements-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
     "workflow-base.md"
@@ -5495,6 +5517,23 @@
     "company-formation-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "turks-and-caicos-islands": {
+   "jurisdiction": "TC",
+   "name": "Turks And Caicos Islands",
+   "files": [
+    "intake.md",
+    "tc-formation-and-business-licensing-reference.md",
+    "tc-sector-taxes-reference.md",
+    "tc-social-contributions-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "social-contributions-workflow-base.md",
     "workflow-base.md"
    ]
   },
