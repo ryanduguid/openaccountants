@@ -5,7 +5,7 @@ version: 1.2
 jurisdiction: DE
 tax_year: 2025
 tax_year_notes: "Retained historical 2025 reference with separately dated later-law notes; full historical and current-law currency remains unverified. Not requalified as a 2026 whole-guide computation."
-last_updated: 2026-11-02
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -295,7 +295,7 @@ The main bottleneck is Handelsregister processing time, which varies significant
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute legal, tax, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The upstream project is maintained at [openaccountants.com](https://www.openaccountants.com). This fork's migrated version and recorded review status are maintained in [ryanduguid/openaccountants](https://github.com/ryanduguid/openaccountants); upstream services do not publish or verify this fork's changes.
 
 Confirm the workflow base and output specification; retain all original refusal codes; trace each material input to evidence; establish the period and each source condition; recompute components; separate assumptions, unresolved items and nominal ceilings from actual entitlements; obtain professional review and all required filing/registration confirmations before acting.
 
@@ -338,13 +338,15 @@ Not yet confirmed: inherited entity-personality, liability, capital and paid-up 
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

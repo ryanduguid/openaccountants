@@ -1,7 +1,7 @@
 ---
 name: sweden-bookkeeping
 description: Swedish bookkeeping reference for BAS account selection, bank reconciliation and working-paper presentation, with selected 2026 K2/K3 conditions and explicit holds for incomplete entity, tax and filing workflows. Load with bookkeeping-workflow-base; professional review is required.
-version: 1.6
+version: 1.7
 jurisdiction: SE
 tax_year: 2026
 tax_year_notes: "2026 BAS and selected accounting rules for financial years beginning after 31 December 2025; the extended-first-year selector is stated below. Earlier 2025 tax shortcuts are withdrawn from operative use pending qualification."
@@ -711,7 +711,7 @@ The earlier guide's topics stay in scope. These inherited shortcuts have been wi
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon. The most up-to-date version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon. The upstream project is maintained at [openaccountants.com](https://www.openaccountants.com). This fork's migrated version and recorded review status are maintained in [ryanduguid/openaccountants](https://github.com/ryanduguid/openaccountants); upstream services do not publish or verify this fork's changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -719,13 +719,15 @@ This skill and its outputs are provided for informational and computational purp
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a
