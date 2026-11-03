@@ -813,6 +813,17 @@ PDF box. Unverified form fields remain **Needs Input** with the filer.
    Add/Edit** for an additional record. Confirm the actual year's item number,
    original amount, adjustment, corrected total and reason against the domain
    guide. A registered agent can submit through PLS. [ATO-AMEND-HOW]
+   If online amendment is unavailable, use **Request for amendment of income
+   tax return for individuals**. A person who completes their own paper form
+   must sign it and retain a copy. An agent may instead use **Request for
+   amendment of income tax return lodged by tax professionals**. The page
+   also permits a letter: include the taxpayer's identifying/contact and
+   refund-bank details, year, question/item and description, adjustments and
+   correct income/deduction/offset totals, reason and supporting documents,
+   with its prescribed signed, dated declarations. Use the current page's
+   delivery instructions and retain the request and attachments. Keep private
+   identifiers and bank details with the authorised filer; current uninspected
+   form fields remain **Needs Input**. [ATO-AMEND-HOW]
 3. For a company, partnership, trust or non-SMSF fund, the published alternatives
    are SBR-enabled software, Online services for business, a registered agent
    or a letter. Agents may use PLS or the agents' mail function for
