@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-03T00:55:55+00:00",
+ "generated_at": "2026-11-03T01:11:47+00:00",
  "counts": {
-  "guides": 2032,
+  "guides": 2033,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -7012,6 +7012,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "costa-rica-corporate-income-tax",
+   "path": "skills/international/costa-rica/costa-rica-corporate-income-tax.md",
+   "name": "costa-rica-corporate-income-tax",
+   "jurisdiction": "CR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "costa-rica-income-tax",
