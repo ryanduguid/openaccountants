@@ -1,27 +1,53 @@
 ---
 name: au-forex-gains-losses
-version: 1.2
-description: How Division 775 of the ITAA 1997 brings realised foreign currency gains and losses to account, including foreign currency bank accounts and the position of crypto assets such as stablecoins, for accountants advising Australian taxpayers.
+version: 1.3
+description: >
+  Use this guide for Australian foreign currency gains and losses under Division
+  775 of the ITAA 1997. It covers realised foreign exchange amounts, foreign
+  currency bank accounts and the treatment of crypto assets such as stablecoins
+  within the stated scope. Use it when an accountant needs to establish the
+  relevant transaction, source rule, timing and supporting records before
+  preparing a computation. The method, client questions and refusal conditions
+  must be read together. Confirm the applicable period and cited provisions
+  before relying on a result, and refer unresolved classifications for qualified
+  review.
 jurisdiction: AU
 category: international
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Foreign currency forex realisation gains and losses under Division 775 in Australia
+# Foreign currency forex realisation gains and losses under Division 775 in Australia v1.3
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
 
 Division 775 of the *Income Tax Assessment Act 1997* (ITAA 1997) contains rules under which foreign currency gains and losses are brought to account when they have been "realised", and the ATO states this applies even if the monetary elements of the transaction are not converted to Australian dollars. It applies to any taxpayer — individual, trust, partnership, company or fund — who holds foreign currency, holds a foreign currency denominated account, or has rights or obligations to receive or pay foreign currency, and it operates on an income-year basis. Figures are for tax year 2026. The ATO pages cited below state these amounts without attaching them to a particular income year, so no year-specific variation is shown on the pages read.
 
-## Who this is for
+### Who this is for
 
 This Guide is for taxpayers who make gains or losses attributable to fluctuations in a currency exchange rate, or to an agreed exchange rate differing from an actual exchange rate, where one of the forex realisation events listed in the table below happens. The ATO notes that the forex measures are contained in Division 775 and Subdivisions 960-C and 960-D of the ITAA 1997, and that common forex transactions include those made through foreign currency denominated accounts, shares and hedging transactions.
 
 It is not for financial arrangements subject to Division 230: the ATO states that "Division 775 does not apply to financial arrangements that are subject to Division 230 of the ITAA 1997". It is also not a guide to the functional currency rules in Subdivision 960-D. For crypto assets, see the stablecoins section below — section 995-1 excludes digital currency, which the ATO says includes bitcoin, from foreign currency, with effect for income years starting 1 July 2021.
 
-## Rates, thresholds and deadlines
+## Ask the client first
+
+### Ask the client first
+
+- Is the account a credit card account or held for the primary purpose of facilitating transactions, or is it held to hold money as an investment? This decides whether a limited balance election is even available.
+- Has the balance of the account, converted to Australian dollars, ever gone above the limit in the second table, and if so how many times in the income year and how quickly was it brought back?
+- When was the currency, right or obligation acquired or incurred — before or after the applicable commencement date in the third table — and was any transitional election made under s 775-150?
+- Are the funds private or domestic in character, and what is the first element of the cost base of the relevant CGT asset, measured against the threshold in the fourth table?
+- Is the arrangement a financial arrangement subject to Division 230 (TOFA), or covered by a fair value, reliance on financial reports, hedging or retranslation election?
+- Is the asset a foreign currency at all, or a crypto asset such as a stablecoin held on a trading platform or wallet?
+
+## The method, step by step
+
+### Rates, thresholds and deadlines
 
 **Forex realisation events and interaction (source: foreign-exchange-gains-and-losses)**  _([https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses))_
 
@@ -66,7 +92,7 @@ It is not for financial arrangements subject to Division 230: the ATO states tha
 | Source | all figures below | https://www.ato.gov.au/law/view/print?DocID=EV/1051822836045&PiT=99991231235958 |
 | Private or domestic exception — cost base test | over $10,000 (first element of the cost base of the asset) | the ruling states gains on withdrawals from a foreign currency denominated bank account are of a private or domestic nature and disregarded under paragraph 775-15(2)(a) unless this threshold is exceeded, in which case subsection 775-15(2)(b) applies and the gain is assessable; this is an edited private ruling and binds only the applicant |
 
-## The method, step by step
+### The method, step by step
 
 - **Step 1 — Confirm the amount is foreign currency** — Confirm the amount is "foreign currency". Section 995-1(1) provides that foreign currency means a currency other than Australian currency, digital currency or anything prescribed by the regulations for that paragraph, and that digital currency has the same meaning as in the GST Act. The terms "currency" and "Australian currency" are not defined in the Assessment Acts, so they take their ordinary meaning: see the reasoning in TD 2014/25, which itself applies only to income years before 1 July 2021.  _([s 995-1](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1); [https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001](https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001))_
 - **Step 2 — Check Division 775 applies at all** — Check Division 775 applies at all — it does not apply to financial arrangements subject to Division 230 (TOFA): Foreign exchange gains and losses.  _([https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses))_
@@ -85,7 +111,7 @@ It is not for financial arrangements subject to Division 230: the ATO states tha
 - **Step 10 — Return the result** — Return the result: forex realisation gains are included in assessable income and forex realisation losses are deductible under sections 775-15 and 775-30. The ATO pages cited in this Guide do not name a separate forex form, label or lodgment deadline, and do not set out forex-specific record-keeping requirements — check the taxpayer's normal return lodgment obligations separately.  _(sections 775-15 and 775-30)_
 - **Step 11: record and reconcile each item** — For each recognised item record the event, date, foreign currency amount, exchange rate source, Australian dollar calculation, exclusions or elections considered and the final treatment. Reconcile opening balances, deposits, withdrawals, settlements and closing balances to statements, and explain differences between book exchange gains and taxable amounts; an unrealised accounting entry is not itself a forex realisation event.
 
-## Stablecoins and other crypto assets
+### Stablecoins and other crypto assets
 
 Section 995-1(1) of the ITAA 1997 now excludes digital currency from foreign currency, and gives digital currency its GST Act meaning. Schedule 2 to the Treasury Laws Amendment (2022 Measures No. 4) Act 2023 made that change, with effect for income years starting 1 July 2021. TD 2014/25 concluded that bitcoin is not a "foreign currency" for the purposes of Division 775, reasoning that bitcoin is not a monetary unit recognised and adopted by the laws of any other sovereign State as the means for discharging monetary obligations. Paragraph 2 of the determination now records the amendment and says it applies for income years before 1 July 2021. The ATO's crypto asset guidance lists TD 2014/25 alongside TD 2014/26 (bitcoin is a CGT asset) and TD 2014/27 (bitcoin as trading stock), and states that the most common use of crypto is as an investment, in which case the crypto asset is a capital gains tax asset.
 
@@ -95,16 +121,13 @@ The official pages read for this Guide do not address stablecoins by name for Di
 
 For a crypto asset or stablecoin, establish the asset's legal character first; a price linked to a foreign currency does not by itself settle the Division 775 analysis, and determinations about bitcoin do not establish a stablecoin's position. A published private ruling binds only its applicant and stated arrangement, so it can identify issues but cannot establish another taxpayer's entitlement.
 
-## Ask the client first
+## Worked cases
 
-- Is the account a credit card account or held for the primary purpose of facilitating transactions, or is it held to hold money as an investment? This decides whether a limited balance election is even available.
-- Has the balance of the account, converted to Australian dollars, ever gone above the limit in the second table, and if so how many times in the income year and how quickly was it brought back?
-- When was the currency, right or obligation acquired or incurred — before or after the applicable commencement date in the third table — and was any transitional election made under s 775-150?
-- Are the funds private or domestic in character, and what is the first element of the cost base of the relevant CGT asset, measured against the threshold in the fourth table?
-- Is the arrangement a financial arrangement subject to Division 230 (TOFA), or covered by a fair value, reliance on financial reports, hedging or retranslation election?
-- Is the asset a foreign currency at all, or a crypto asset such as a stablecoin held on a trading platform or wallet?
+No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
 
 ## When to refuse or refer
+
+### When to refuse or refer
 
 - Financial arrangements subject to Division 230 (TOFA) — the ATO states Division 775 does not apply to them.
 - Functional currency elections under Subdivision 960-D, and the currency translation rules in Subdivision 960-C, which this Guide does not work through.
@@ -115,6 +138,27 @@ For a crypto asset or stablecoin, establish the asset's legal character first; a
 - Any question needing a reporting label, form name, payment date or lodgment deadline: the pages cited here do not state them.
 
 ## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/in-detail/forex-elections> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/775-155> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/775-165> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/print?DocID=EV/1051822836045&PiT=99991231235958> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/forex-realisation-events> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/common-forex-transactions> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/775-15> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/775-30> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/taxation-of-financial-arrangements-tofa/guide-to-the-taxation-of-financial-arrangements-tofa/elective-methods> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19990055/195-1> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/what-are-crypto-assets> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/gst-and-crypto-assets/gst-and-digital-currency> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/Series/C2004A05138> | Not re-read for this format update; see retained provenance |
+
+### Sources
 
 - https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses
 - https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/forex-realisation-events
@@ -136,6 +180,8 @@ For a crypto asset or stablecoin, establish the asset's legal character first; a
 Drafted by OpenAccountants. Not yet reviewed or approved by a named accountant.
 
 > Contributed by Ryan Duguid.
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

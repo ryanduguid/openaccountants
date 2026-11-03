@@ -9,24 +9,52 @@ description: >
   on "GST withholding", "GST at settlement", "margin scheme", "going concern", "new residential
   premises", "subdivision GST". Covers classification, withholding mechanics, worked arithmetic
   and escalation lines. ALWAYS read this skill before touching any property GST work.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST and Real Property Skill v1.3
+# Australia GST and Real Property Skill v1.4
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, or contracts. Do not rely on it to file, pay, settle, or take a tax position without review by a qualified professional.
 
 > **Relationship to the base GST skill.** General BAS mechanics (labels, tax invoices, Simpler BAS, reverse charge, food/health classifications) live in `australia-gst`. That skill's refusal lines R-AU-3 (margin scheme) and R-AU-4 (going concern) route here: this skill supplies the specialist property layer -- classification, withholding, margin, going concern, and adjustment computations -- with its own, narrower refusal catalogue (Section 8). Escalation still ends with a registered tax agent.
 
-## Section 1 -- Quick reference
+## Ask the client first
+
+### Section 10 -- Reading guide and onboarding fallback
+
+#### Reading guide
+
+1. **Classify the premises first** (Section 2) -- new vs existing vs commercial vs potential residential land controls everything downstream: taxability, ITCs, RW, and which concessions are even available.
+2. **The contract is the primary document.** Margin scheme agreements, going concern clauses, and supplier notifications all live in it; sight the executed clause, never a summary, and never rely on the agent's covering email.
+3. **Dates are unforgiving:** margin scheme agreement on or before settlement; going concern agreement and carry-on to the day of supply; Form two within the 2-business-day window; RW paid at settlement. Late fixes need the Commissioner's discretion or don't exist.
+4. **Withholding is not the liability.** RW is a payment plumbing change -- the BAS always self-assesses actual GST (full 1/11th or margin), and the credit arrives separately. Reconcile the GST property credits account every settlement.
+5. **Screen intent, not just facts:** Div 135 and Div 129 both turn on what the buyer/developer *intends* -- ask, document, and re-test at every adjustment period.
+6. **The enterprise question comes before registration**, and registration comes before any of this machinery applies. For one-off subdivisions, write up the MT 2006/1 factors before touching the GST treatment.
+
+#### Onboarding fallback
+
+If the client provides only a settlement statement and a trial balance:
+
+1. Sweep the GL per Section 8 -- pull every land/building line, RW line, and "GST-free" contract reference
+2. Request the full contract (including annexures) for every property transaction in the period; classify per Section 2 with all clause statuses UNKNOWN flagged
+3. Compute RW, margin, Div 135 and Div 129 exposures on stated figures, assumptions listed
+4. **Flag:** "Property GST positions built from settlement statement and TB only. Contracts, margin scheme agreements, going concern clauses, supplier notifications, valuations, and the purchaser's intended use are unverified. A registered tax agent must confirm every classification before lodgment."
+
+## The method, step by step
+
+### Section 1 -- Quick reference
 
 **Read this whole section before classifying any property transaction.**
 
@@ -62,7 +90,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | One-off subdivision | Enterprise question OPEN -- work the MT 2006/1 factors; never assume mere realisation |
 | Vendor GST registration status | Check ABN Lookup; do not accept the contract's assertion alone |
 
-## Section 2 -- Classifying supplies of real property
+### Section 2 -- Classifying supplies of real property
 
 | Supply | Treatment | Source |
 |---|---|---|
@@ -75,7 +103,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Farmland with continuing farming business | GST-free (conditions) | Subdiv 38-O |
 | Sale of a leased building as a going concern | GST-free (conditions -- Section 5) | s 38-325 |
 
-### 2.1 New residential premises (s 40-75)
+#### 2.1 New residential premises (s 40-75)
 
 Residential premises are **new** if any limb applies, subject to limb (a) overriding (b) and (c):
 
@@ -89,7 +117,7 @@ Subdividing or strata-titling existing (not-new) residential premises does **not
 
 **AUDIT FLASH POINT -- the 5-year rule (s 40-75(2)).** Premises cease to be new if, for a continuous period of at least 5 years since they first became residential premises / were last substantially renovated / were last built, they have **only** been used for making input-taxed supplies under para 40-35(1)(a) (residential rent). "Only" is strict: a developer who rents an apartment while simultaneously marketing it for sale is applying it to a dual purpose, so the 5-year clock never runs (ATO view in GSTR 2003/3 and GSTR 2009/4). Five years of rental with the property listed for sale in year 2 does NOT convert the premises. A later unbroken 5 years of rental alone, after marketing stops, does (GSTR 2009/4 paras 142-144). Short periods between tenancies while the premises are actively marketed for rent do not break the 5 years; private use, vacancy with no attempt to lease, GST-free supplies and periods held or marketed for sale do not count (GSTR 2003/3 paras 91-92). Transitional exception: an entity that relied on the Commissioner's earlier Issues Register view for its Div 129 adjustments on an acquisition before GSTR 2009/4 issued can stay on that basis, and the premises are then accepted as only used for residential rent under s 40-75(2), subject to any other additional use (GSTR 2009/4 para 5, retained by the March 2026 addendum). Conversion changes everything downstream: the eventual sale becomes input taxed, ITCs claw back through Div 129, and no RW applies.
 
-### 2.2 Input-taxed consequences and mixed developments
+#### 2.2 Input-taxed consequences and mixed developments
 
 Input-taxed supplies (existing residential sales, residential rent) carry **no GST and no input tax credits** on related acquisitions (s 11-15(2)(a)). Consequences:
 
@@ -97,7 +125,7 @@ Input-taxed supplies (existing residential sales, residential rent) carry **no G
 - A developer intending both taxable sales and input-taxed letting must **apportion** every acquisition (construction, professional fees, marketing) to its extent of creditable purpose using a fair and reasonable method (GSTR 2006/4); a mixed tower (shops below, rental apartments above) apportions by floor area, cost or expected revenue.
 - Apportionment percentages set at acquisition are provisional -- Div 129 (Section 6) trues them up against actual use.
 
-## Section 3 -- GST at settlement (residential withholding, from 1 July 2018)
+### Section 3 -- GST at settlement (residential withholding, from 1 July 2018)
 
 RW re-plumbs **payment**, not liability: the purchaser pays part of the price to the ATO, and the supplier's BAS still self-assesses the actual GST. Statute: s 14-250 Sch 1 TAA (withholding), s 14-255 (supplier notification), s 18-60 (supplier credit); LCR 2018/4.
 
@@ -124,7 +152,7 @@ RW re-plumbs **payment**, not liability: the purchaser pays part of the price to
 
 **FRCGW is a different regime.** Foreign resident capital gains withholding (15%, no threshold, all real property, from 1 January 2025) is income tax withholding with its own forms and clearance certificates. A new-apartment sale by a foreign developer can trigger BOTH. Cross-lodging the wrong regime's forms strands the credit -- the ATO will not allocate a GST property credit until the correct GST forms are lodged.
 
-## Section 4 -- The margin scheme (Division 75)
+### Section 4 -- The margin scheme (Division 75)
 
 GST on an eligible taxable sale of real property may be worked out as **1/11th of the margin** instead of 1/11th of the full price.
 
@@ -136,7 +164,7 @@ GST on an eligible taxable sale of real property may be worked out as **1/11th o
 - **Flow-on:** because the purchaser's acquisition was not a fully-taxable-without-margin supply, the purchaser can itself use the margin scheme on a later taxable resale (fresh written agreement required). A full-GST purchase permanently kills margin eligibility for that interest.
 - **RW interaction:** withholding on a margin scheme sale is 7% of the contract price, credited against the actual margin GST in the supplier's BAS -- over-withholding refunds through the BAS (Example 2).
 
-## Section 5 -- Going concern (s 38-325) and the Division 135 clawback
+### Section 5 -- Going concern (s 38-325) and the Division 135 clawback
 
 A supply of a going concern is **GST-free** if ALL of:
 
@@ -156,7 +184,7 @@ Increasing adjustment = 1/10 x supply price x proportion of non-creditable use
 
 -- attributable to the purchaser's tax period of the acquisition. Later changes in actual use adjust again under s 135-10 via Div 129. A purchaser buying a tenanted office block GST-free and converting it to rental apartments pays 1/10th of the full price to the ATO with no offsetting credit (Example 3). ALWAYS screen the purchaser's intended use before anyone signs a going concern clause.
 
-## Section 6 -- Developers who rent unsold stock: apportionment and Division 129
+### Section 6 -- Developers who rent unsold stock: apportionment and Division 129
 
 The **build-to-sell-then-rent trap**: a developer claims full ITCs during construction (intended 100% taxable sales), then the market softens and unsold apartments are rented out. Renting is input taxed, so the extent of creditable purpose has changed -- Div 129 requires **increasing adjustments**.
 
@@ -167,61 +195,7 @@ The **build-to-sell-then-rent trap**: a developer claims full ITCs during constr
 
 **AUDIT FLASH POINT -- enterprise vs mere realisation (MT 2006/1).** One-off subdivisions are the other side of this coin: an "enterprise" includes an isolated venture in the form of an adventure in the nature of trade (s 9-20), but the **mere realisation** of a capital asset -- even enhanced by subdivision -- is not one. MT 2006/1 paras 262-302 factors pointing TO an enterprise: change of purpose for which the land is held; additional land acquired; land brought to account as a business asset; a coherent plan for subdivision; a business organisation (manager, office, borrowings); interest on borrowed development funds claimed; development beyond what council approval minimally requires; buildings erected. The retiree subdividing the family block into three lots with minimum-compliance works and no borrowings is ordinarily realising a capital asset: no enterprise, no registration, no GST, no RW -- and s 188-25 excludes capital asset disposals from projected GST turnover, so the $75,000 threshold is not tripped by the sale itself. But add borrowings, staged construction, and a sales office, and the same block becomes an enterprise making taxable supplies of potential residential land -- with an isolated-transaction registration obligation the client never saw coming. Work the factors in writing every time; never assume either way.
 
-## Section 7 -- Worked examples
-
-### Example 1 -- New residential sale with RW and the BAS credit
-
-DevCo (registered, quarterly) sells a newly built townhouse for $880,000, margin scheme not applied. Contract notification: withholding $80,000 (1/11th). Purchaser pays a $88,000 deposit; her conveyancer lodges Form one (gets PRN/LRN), lodges Form two two days before settlement, and at settlement pays the ATO $80,000 and DevCo the balance:
-
-```
-$880,000 - $88,000 deposit - $80,000 RW = $712,000 to DevCo at settlement
-```
-
-DevCo's BAS for the settlement quarter: G1 $880,000; 1A $80,000. The $80,000 sits in DevCo's GST property credits account and transfers on lodgment -- net GST cash on the sale: nil. DevCo must NOT report only the net price or skip 1A "because the purchaser already paid it".
-
-### Example 2 -- Margin scheme with a 1 July 2000 valuation
-
-HoldCo, registered since 1998, has owned a vacant residentially-zoned lot, included in a registered property subdivision plan, since 1995. In 2026-27 it sells the lot for $1,650,000 to an unregistered individual; the contract contains a margin scheme agreement. An approved valuation (MSV 2020/1-compliant, signed certificate) fixes the 1 July 2000 value at $400,000.
-
-```
-Margin = $1,650,000 - $400,000            = $1,250,000
-GST    = $1,250,000 x 1/11                = $113,636 (vs $150,000 without the margin scheme)
-RW     = 7% x $1,650,000 (potential residential land in a plan, margin scheme) = $115,500
-BAS: G1 $1,250,000 (the margin, not the price); 1A $113,636
-Credit $115,500 - liability $113,636      = $1,864 refund to HoldCo
-```
-
-The ATO's [margin scheme activity statement guidance](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/property/gst-and-the-margin-scheme/completing-your-activity-statement) puts the margin at G1 (nothing if the margin is nil or negative) and the GST on the margin at 1A, never the amount withheld.
-
-The purchaser has no ITC (s 75-20) but keeps margin scheme eligibility for any future taxable resale.
-
-### Example 3 -- Going concern sale, purchaser converts to residential rental (Div 135)
-
-VendorCo sells a fully tenanted office building for $3,300,000, GST-free under s 38-325 (BuyerCo registered, written going concern clause, leases assigned, enterprise carried on to settlement). BuyerCo intends to convert the building entirely to residential apartments for rent -- 100% input-taxed use.
-
-```
-Increasing adjustment (s 135-5) = 1/10 x $3,300,000 x 100% = $330,000
-```
-
-payable in BuyerCo's tax period of acquisition, with no offsetting credit. Had BuyerCo intended 40% continued commercial letting / 60% residential: 1/10 x $3,300,000 x 60% = $198,000, with later actual-use changes adjusted via s 135-10 and Div 129. The "GST-free" label on the contract saved VendorCo nothing for BuyerCo -- screen intended use BEFORE settlement.
-
-### Example 4 -- Developer rents unsold apartments (Div 129 sketch)
-
-BuildCo claimed $55,000 of ITCs per apartment on development costs of $550,000 (GST-exclusive) each -- >= $500,000, so **10 adjustment periods**. Four apartments remain unsold at completion (Feb 2027) and are rented from March 2027 while still listed for sale. At the first adjustment period (June 2028 quarter), BuildCo's fair-and-reasonable method (GSTR 2009/4, expected-consideration basis) puts actual application at 80% creditable:
-
-```
-Increasing adjustment = 4 x $55,000 x (100% - 80%) = $44,000
-```
-
-At the next adjustment period, cumulative actual use of 80% is compared with the previous 80%, so the adjustment is nil. If cumulative use then rises to 90%, the decreasing adjustment is $220,000 x (90% - 80%) = $22,000. Retain each previous adjustment's actual application in the register; do not reuse the original 100% after an adjustment. If an apartment sells as new residential premises in 2029, that sale is taxable (RW applies) and later periods can throw off decreasing adjustments; if BuildCo instead delists and rents solely for 5+ years, the premises stop being new, the sale becomes input taxed, and the credits unwind toward nil. Method selection and the register need tax agent sign-off -- sketch, flag, escalate.
-
-A $660 GST-inclusive desk is below the $1,000 GST-exclusive exclusion, so a change from wholly business use to half private use does not create a general Div 129 adjustment. A separate $4,400 GST-inclusive computer falls in the two-period band. Apply the threshold per acquisition and check other adjustment provisions separately. (GST Act ss 129-10 and 129-20.)
-
-### Example 5 -- Subdivision enterprise assessment
-
-Margaret, 68, retired, subdivides her 4,000 m2 home block (owned 30 years) into three lots, keeping the house lot. Works: only what council requires (survey, one access driveway, utility connections), funded from savings; lots listed with a local agent. MT 2006/1 factors: no change of purpose beyond realisation, no extra land bought, no business organisation, no borrowings, minimum-compliance development, nothing built. **Conclusion:** mere realisation of a capital asset -- no enterprise, no GST registration (s 188-25 keeps the proceeds out of projected turnover), sales out of scope, no RW; the standard contract's supplier notification states "no withholding required". **Contrast:** had Margaret borrowed $900,000, built three houses and run the sales campaign through a site office, the venture is an enterprise; registration is required regardless of her retirement, the house sales are taxable supplies of new residential premises, and purchasers withhold 1/11th at settlement.
-
-## Section 8 -- GL sweep library
+### Section 8 -- GL sweep library
 
 Property GST problems surface in the ledger before anyone mentions them:
 
@@ -237,7 +211,65 @@ Property GST problems surface in the ledger before anyone mentions them:
 | Forfeited purchaser deposits | Div 99: forfeiture is consideration -- GST event for taxable-supply intent | Output GST 1/11th on forfeiture; do not book as GST-free windfall |
 | Stamp duty on acquisitions | Never creditable -- state tax, no GST | Cost base only; exclude from GST workings |
 
-## Section 9 -- Refusal catalogue (property)
+## Worked cases
+
+### Section 7 -- Worked examples
+
+#### Example 1 -- New residential sale with RW and the BAS credit
+
+DevCo (registered, quarterly) sells a newly built townhouse for $880,000, margin scheme not applied. Contract notification: withholding $80,000 (1/11th). Purchaser pays a $88,000 deposit; her conveyancer lodges Form one (gets PRN/LRN), lodges Form two two days before settlement, and at settlement pays the ATO $80,000 and DevCo the balance:
+
+```
+$880,000 - $88,000 deposit - $80,000 RW = $712,000 to DevCo at settlement
+```
+
+DevCo's BAS for the settlement quarter: G1 $880,000; 1A $80,000. The $80,000 sits in DevCo's GST property credits account and transfers on lodgment -- net GST cash on the sale: nil. DevCo must NOT report only the net price or skip 1A "because the purchaser already paid it".
+
+#### Example 2 -- Margin scheme with a 1 July 2000 valuation
+
+HoldCo, registered since 1998, has owned a vacant residentially-zoned lot, included in a registered property subdivision plan, since 1995. In 2026-27 it sells the lot for $1,650,000 to an unregistered individual; the contract contains a margin scheme agreement. An approved valuation (MSV 2020/1-compliant, signed certificate) fixes the 1 July 2000 value at $400,000.
+
+```
+Margin = $1,650,000 - $400,000            = $1,250,000
+GST    = $1,250,000 x 1/11                = $113,636 (vs $150,000 without the margin scheme)
+RW     = 7% x $1,650,000 (potential residential land in a plan, margin scheme) = $115,500
+BAS: G1 $1,250,000 (the margin, not the price); 1A $113,636
+Credit $115,500 - liability $113,636      = $1,864 refund to HoldCo
+```
+
+The ATO's [margin scheme activity statement guidance](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/property/gst-and-the-margin-scheme/completing-your-activity-statement) puts the margin at G1 (nothing if the margin is nil or negative) and the GST on the margin at 1A, never the amount withheld.
+
+The purchaser has no ITC (s 75-20) but keeps margin scheme eligibility for any future taxable resale.
+
+#### Example 3 -- Going concern sale, purchaser converts to residential rental (Div 135)
+
+VendorCo sells a fully tenanted office building for $3,300,000, GST-free under s 38-325 (BuyerCo registered, written going concern clause, leases assigned, enterprise carried on to settlement). BuyerCo intends to convert the building entirely to residential apartments for rent -- 100% input-taxed use.
+
+```
+Increasing adjustment (s 135-5) = 1/10 x $3,300,000 x 100% = $330,000
+```
+
+payable in BuyerCo's tax period of acquisition, with no offsetting credit. Had BuyerCo intended 40% continued commercial letting / 60% residential: 1/10 x $3,300,000 x 60% = $198,000, with later actual-use changes adjusted via s 135-10 and Div 129. The "GST-free" label on the contract saved VendorCo nothing for BuyerCo -- screen intended use BEFORE settlement.
+
+#### Example 4 -- Developer rents unsold apartments (Div 129 sketch)
+
+BuildCo claimed $55,000 of ITCs per apartment on development costs of $550,000 (GST-exclusive) each -- >= $500,000, so **10 adjustment periods**. Four apartments remain unsold at completion (Feb 2027) and are rented from March 2027 while still listed for sale. At the first adjustment period (June 2028 quarter), BuildCo's fair-and-reasonable method (GSTR 2009/4, expected-consideration basis) puts actual application at 80% creditable:
+
+```
+Increasing adjustment = 4 x $55,000 x (100% - 80%) = $44,000
+```
+
+At the next adjustment period, cumulative actual use of 80% is compared with the previous 80%, so the adjustment is nil. If cumulative use then rises to 90%, the decreasing adjustment is $220,000 x (90% - 80%) = $22,000. Retain each previous adjustment's actual application in the register; do not reuse the original 100% after an adjustment. If an apartment sells as new residential premises in 2029, that sale is taxable (RW applies) and later periods can throw off decreasing adjustments; if BuildCo instead delists and rents solely for 5+ years, the premises stop being new, the sale becomes input taxed, and the credits unwind toward nil. Method selection and the register need tax agent sign-off -- sketch, flag, escalate.
+
+A $660 GST-inclusive desk is below the $1,000 GST-exclusive exclusion, so a change from wholly business use to half private use does not create a general Div 129 adjustment. A separate $4,400 GST-inclusive computer falls in the two-period band. Apply the threshold per acquisition and check other adjustment provisions separately. (GST Act ss 129-10 and 129-20.)
+
+#### Example 5 -- Subdivision enterprise assessment
+
+Margaret, 68, retired, subdivides her 4,000 m2 home block (owned 30 years) into three lots, keeping the house lot. Works: only what council requires (survey, one access driveway, utility connections), funded from savings; lots listed with a local agent. MT 2006/1 factors: no change of purpose beyond realisation, no extra land bought, no business organisation, no borrowings, minimum-compliance development, nothing built. **Conclusion:** mere realisation of a capital asset -- no enterprise, no GST registration (s 188-25 keeps the proceeds out of projected turnover), sales out of scope, no RW; the standard contract's supplier notification states "no withholding required". **Contrast:** had Margaret borrowed $900,000, built three houses and run the sales campaign through a site office, the venture is an enterprise; registration is required regardless of her retirement, the house sales are taxable supplies of new residential premises, and purchasers withhold 1/11th at settlement.
+
+## When to refuse or refer
+
+### Section 9 -- Refusal catalogue (property)
 
 If a trigger fires: stop, output the message, escalate. These sit on top of the base skill's R-AU-1 to R-AU-5.
 
@@ -248,29 +280,8 @@ If a trigger fires: stop, output the message, escalate. These sit on top of the 
 - **R-AU-GP-5 -- Retirement villages.** Trigger: retirement village entry payments, deferred management fees, serviced apartments in villages. Message: "Retirement village GST sits under its own rulings and concessions and interacts with state retirement villages legislation. Out of scope -- specialist advice required."
 - **R-AU-GP-6 -- Government development agreements and long-term leases.** Trigger: development leases/agreements with government, 99-year Crown leases, build-to-rent concessions, Div 81 edge cases. Message: "Supplies under development arrangements with government (GSTR 2015/2) and long-term lease structures have bespoke GST outcomes. Please escalate to a registered tax agent."
 
-## Section 10 -- Reading guide and onboarding fallback
 
-### Reading guide
-
-1. **Classify the premises first** (Section 2) -- new vs existing vs commercial vs potential residential land controls everything downstream: taxability, ITCs, RW, and which concessions are even available.
-2. **The contract is the primary document.** Margin scheme agreements, going concern clauses, and supplier notifications all live in it; sight the executed clause, never a summary, and never rely on the agent's covering email.
-3. **Dates are unforgiving:** margin scheme agreement on or before settlement; going concern agreement and carry-on to the day of supply; Form two within the 2-business-day window; RW paid at settlement. Late fixes need the Commissioner's discretion or don't exist.
-4. **Withholding is not the liability.** RW is a payment plumbing change -- the BAS always self-assesses actual GST (full 1/11th or margin), and the credit arrives separately. Reconcile the GST property credits account every settlement.
-5. **Screen intent, not just facts:** Div 135 and Div 129 both turn on what the buyer/developer *intends* -- ask, document, and re-test at every adjustment period.
-6. **The enterprise question comes before registration**, and registration comes before any of this machinery applies. For one-off subdivisions, write up the MT 2006/1 factors before touching the GST treatment.
-
-### Onboarding fallback
-
-If the client provides only a settlement statement and a trial balance:
-
-1. Sweep the GL per Section 8 -- pull every land/building line, RW line, and "GST-free" contract reference
-2. Request the full contract (including annexures) for every property transaction in the period; classify per Section 2 with all clause statuses UNKNOWN flagged
-3. Compute RW, margin, Div 135 and Div 129 exposures on stated figures, assumptions listed
-4. **Flag:** "Property GST positions built from settlement statement and TB only. Contracts, margin scheme agreements, going concern clauses, supplier notifications, valuations, and the purchaser's intended use are unverified. A registered tax agent must confirm every classification before lodgment."
-
-## Section 11 -- Reference material
-
-### Prohibitions
+#### Prohibitions
 
 - NEVER treat a sale as margin-scheme eligible without sighting the written agreement AND the supplier's acquisition history
 - NEVER let a purchaser claim an ITC on a margin scheme acquisition (s 75-20) -- there is no tax invoice with GST for a reason
@@ -282,7 +293,44 @@ If the client provides only a settlement statement and a trial balance:
 - NEVER confuse FRCGW (15%, income tax, from 1 Jan 2025) with GST at settlement -- separate forms, both may apply
 - NEVER present computed figures as definitive
 
-### Primary sources (verified 20 August 2026; margin scheme BAS labels rechecked 11 October 2026; audit corrections checked 31 October 2026)
+
+### Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+
+
+## Completion checklist
+
+
+
+#### Test suite
+
+**Test 1:** New townhouse $880,000, no margin scheme -> RW $80,000; supplier BAS G1 $880,000 / 1A $80,000; credit $80,000.
+
+**Test 2:** Margin sale of a lot in a property subdivision plan, $1,650,000, 1 July 2000 valuation $400,000 -> margin $1,250,000; GST $113,636; RW 7% = $115,500; refund $1,864.
+
+**Test 3:** Apartment rented 6 years but listed for sale in year 2 -> still NEW residential premises (s 40-75(2) "only used" fails); sale taxable, RW applies.
+
+**Test 4:** Going concern purchase $3,300,000, 100% intended residential rent -> Div 135 increasing adjustment $330,000.
+
+**Test 5:** Developer acquisition $550,000 GST-exclusive -> 10 adjustment periods; ITC $55,000; actual application 80% at first period -> increasing adjustment $11,000.
+
+**Test 6:** Property bought with full 10% GST, full ITC claimed -> margin scheme NOT available on resale (s 75-5(2)); bought under margin scheme -> available again.
+
+---
+
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/property/gst-and-the-margin-scheme/completing-your-activity-statement> | Not re-read for this format update; see retained provenance |
+
+### Section 11 -- Reference material
+
+#### Primary sources (verified 20 August 2026; margin scheme BAS labels rechecked 11 October 2026; audit corrections checked 31 October 2026)
 
 | Topic | Source |
 |---|---|
@@ -299,27 +347,7 @@ If the client provides only a settlement statement and a trial balance:
 | FRCGW (contrast) | TAA 1953 Sch 1 Subdiv 14-D: 15%, no threshold, from 1 January 2025 |
 | Penalty unit | $364 from 1 July 2026 (Crimes Act 1914 s 4AA, as indexed) |
 
-### Test suite
-
-**Test 1:** New townhouse $880,000, no margin scheme -> RW $80,000; supplier BAS G1 $880,000 / 1A $80,000; credit $80,000.
-
-**Test 2:** Margin sale of a lot in a property subdivision plan, $1,650,000, 1 July 2000 valuation $400,000 -> margin $1,250,000; GST $113,636; RW 7% = $115,500; refund $1,864.
-
-**Test 3:** Apartment rented 6 years but listed for sale in year 2 -> still NEW residential premises (s 40-75(2) "only used" fails); sale taxable, RW applies.
-
-**Test 4:** Going concern purchase $3,300,000, 100% intended residential rent -> Div 135 increasing adjustment $330,000.
-
-**Test 5:** Developer acquisition $550,000 GST-exclusive -> 10 adjustment periods; ITC $55,000; actual application 80% at first period -> increasing adjustment $11,000.
-
-**Test 6:** Property bought with full 10% GST, full ITC claimed -> margin scheme NOT available on resale (s 75-5(2)); bought under margin scheme -> available again.
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

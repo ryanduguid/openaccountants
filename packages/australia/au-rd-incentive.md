@@ -2,26 +2,42 @@
 name: au-rd-incentive
 description: >
   Use this skill whenever asked about the Australian R&D Tax Incentive (R&DTI) -- the Division 355 tax offset for eligible research and development, who can claim (incorporated R&D entities only), the refundable offset for companies under $20m aggregated turnover, the non-refundable offset with intensity tiers for larger companies, core vs supporting R&D activities, excluded activities, registration with AusIndustry/DISR within 10 months of year end, the $20,000 expenditure threshold, the $150 million cap, feedstock and clawback adjustments, aggregated turnover grouping, and record-keeping. Trigger on phrases like "R&D tax incentive", "R&DTI", "R&D offset", "research and development tax", "43.5% offset", "refundable R&D", "Division 355", "AusIndustry registration", "core R&D activities", "feedstock adjustment", or "R&D intensity". ALWAYS read this skill before touching any R&D tax offset work.
-version: 1.5
+version: 1.6
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia R&D Tax Incentive Skill v1.5
+# Australia R&D Tax Incentive Skill v1.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
 
 > **Law-change context.** The R&DTI was reformed for income years starting on or after 1 July 2021 (Treasury Laws Amendment (A Tax Plan for the COVID-19 Economic Recovery) Act 2020): the old flat 43.5% refundable and 38.5% non-refundable rates were replaced with company-tax-rate-plus-premium rates and a two-tier R&D intensity test; the expenditure cap rose from $100m to $150m; a uniform clawback rule and Part IVA were extended to the offset. From income years starting on or after 1 July 2025, R&D activities relating to gambling, gambling services or gambling-like practices are ineligible unless conducted solely to generate new knowledge about minimising harm from them, and activities relating to tobacco, a tobacco product or accessory, a vaping good, tobacco extract, goods made using tobacco or its extract, or goods containing nicotine for human use (other than food whose only nicotine is naturally occurring) are ineligible unless conducted solely to generate new knowledge about the therapeutic use of therapeutic goods to minimise harm from those things or about ceasing the ingestion or transfer of nicotine ([Treasury Laws Amendment (Delivering an Efficient and Trusted Tax System) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00058/asmade/text), assent 30 June 2026); an earlier DISR finding for such a year does not bind the Commissioner to the extent it would treat an excluded activity as R&D. The statutory four-year amendment period applies to R&D claims. **Announced, not law:** the 2026-27 Budget (12 May 2026) proposes, from 1 July 2028, removing supporting R&D activities, raising the core offset rate by 4.5 percentage points, lowering the intensity premium threshold from 2% to 1.5%, limiting the refundable offset to a company's first 10 years, raising the minimum spend from $20,000 to $50,000, the refundable turnover threshold from $20m to $50m and the expenditure cap from $150m to $200m ([ATO, Better targeting the R&DTI](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-better-targeting-the-research-and-development-tax-incentive), checked 11 October 2026). Never apply these to a claim or plan around them as if enacted. Verify all rates before relying.
 
 > **AUDIT FLASH POINT** The R&DTI is one of the ATO's most actively audited concession areas. Whether an activity is a "core R&D activity" is a technical/engineering judgement about scientific uncertainty and the knowledge threshold, NOT an accounting judgement. Registration is with AusIndustry/DISR; the offset is claimed with the ATO. Both agencies run compliance programs, and expenditure claimed is published in an annual transparency report.
 
-## Section 1 -- Quick reference
+## Ask the client first
+
+### Section 9 -- Onboarding fallback
+
+If the client provides only financial statements:
+
+1. Sweep the GL per Section 3 for R&D-coded accounts, project codes and payroll allocations.
+2. Confirm the entity is a corporation and request the DISR registration (IISA) number for the relevant income year.
+3. Request timesheets, project plans and the apportionment methodology -- do not accept bare account balances.
+4. Compute aggregated turnover across connected/affiliated entities before selecting an offset rate.
+5. **Flag:** "Figures prepared from financial statements only. DISR registration number, contemporaneous project documentation, timesheets, apportionment methodology and group turnover not sighted. Activity eligibility is a technical judgement requiring review. No position should be taken until a qualified R&D tax adviser confirms."
+
+## The method, step by step
+
+### Section 1 -- Quick reference
 
 **Read this whole section before computing or classifying anything.**
 
@@ -58,7 +74,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Overseas R&D activity | Assume NOT claimable unless a positive DISR overseas finding (s 28D IR&D Act) is in place |
 | Expenditure incurred to an associate | Notionally deductible only when paid; check the ordinary-deduction choice for unpaid amounts in Rule 10 |
 
-## Section 2 -- What it is and who can claim
+### Section 2 -- What it is and who can claim
 
 The R&DTI is a tax offset claimed through the company tax return. It is **not a grant**: there is no application for funding, no competitive round, and no payment independent of the tax system. The benefit is delivered as an offset against tax, and for small companies the excess over tax liability is **paid out in cash**.
 
@@ -69,7 +85,7 @@ Eligible expenditure generally must be claimed under the R&DTI rather than anoth
 - **Refundable offset** -- aggregated turnover < $20m AND not controlled by one or more exempt entities. Rate = company tax rate + 18.5%. For a base-rate entity (25%) this is **43.5%**. Where the offset exceeds tax liability the balance is refunded in cash (subject to franking-debit deferral rules).
 - **Non-refundable offset** -- aggregated turnover >= $20m OR controlled by exempt entities. Rate = company tax rate + a premium set by R&D intensity (see Rule 5). It reduces tax; any unused amount may be carried forward under the tax offset carry-forward rules. It is never refunded.
 
-## Section 3 -- GL sweep library
+### Section 3 -- GL sweep library
 
 R&DTI work starts with the general ledger and the project/time records, not the offset claim the client hopes to make.
 
@@ -88,9 +104,129 @@ R&DTI work starts with the general ledger and the project/time records, not the 
 | Intercompany charges to associates for R&D | Notional deduction requires payment and no prior ordinary deduction | Check the unpaid-expenditure choice in Rule 10 and TA 2023/4 (R&D delivered by associates) |
 | Materials/feedstock consumed in trials | Feedstock adjustment on sale/own use of output | Track feedstock inputs and outputs; quantify the adjustment in the trigger year |
 
-## Section 4 -- Worked examples
+### Section 5 -- Tier 1 rules
 
-### Example 1 -- Small company refundable offset (43.5%)
+#### Rule 1 -- It is an offset, not a grant
+
+- **It is an offset, not a grant** — The R&DTI produces a tax offset under Division 355. It is claimed in the company tax return via the R&D schedule, and is administered jointly: DISR/AusIndustry registers activities and rules on their eligibility (including advance and overseas findings); the ATO administers the offset and the expenditure claimed. Receiving a DISR registration number means only that a complete application was received -- it is NOT a ruling that the activities qualify. Both agencies can take compliance action before or after the offset is paid, and claimed R&D expenditure is published in an annual transparency report (two years after year end).  _(Division 355)_
+
+#### Rule 2 -- Eligible entity (s 355-35)
+
+- **Eligible entity** — Only a corporation can be an R&D entity: incorporated under Australian law; or foreign-incorporated but an Australian tax resident; or foreign-incorporated, resident in a DTA country whose treaty defines "permanent establishment", and carrying on business in Australia through that PE. **Not eligible:** individuals (sole traders), partnerships as such (partners in an R&D partnership may claim at partner level), trusts (except a body corporate as trustee of a public trading trust), corporate limited partnerships, and exempt entities whose income is wholly exempt. Consolidated/MEC groups claim through the head company only.  _(s 355-35)_
+
+#### Rule 3 -- Core R&D activities
+
+- **Core R&D activities** — Experimental activities: (a) whose outcome cannot be known or determined in advance on the basis of current knowledge, information or experience; (b) determined only by applying a systematic progression of work based on established science, proceeding from hypothesis to experiment, observation and evaluation to logical conclusions; and (c) conducted for the purpose of generating new knowledge (including new or improved materials, products, devices, processes or services). All three limbs must be met. This is a **scientific/technical test, not an accounting one** -- whether the outcome "cannot be known in advance" turns on the state of knowledge in the field, which is a judgement for a competent engineer/scientist, not the bookkeeper.
+
+#### Rule 4 -- Supporting R&D activities
+
+- **Supporting R&D activities** — Activities directly related to core R&D activities. Where the activity produces (or is directly related to producing) goods or services, or is one of the excluded-core categories, it must ALSO have been undertaken for the **dominant purpose** of supporting a core R&D activity. Supporting activities never stand alone -- they exist only in relation to an eligible core activity.
+
+#### Rule 5 -- Offset rates and the intensity tiers
+
+- **Offset rates and the intensity tiers** — - **Refundable** (aggregated turnover < $20m, not exempt-controlled): company tax rate + 18.5%. Base-rate (25%) entity = 43.5%; standard-rate (30%) entity = 48.5%. - **Non-refundable** (>= $20m or exempt-controlled): company tax rate + 8.5% on notional deductions up to 2% R&D intensity, and company tax rate + 16.5% above 2%. R&D intensity = notional R&D deductions / total expenditure for the year. - **$150m cap:** for notional deductions above $150m in a year, the offset rate is the bare company tax rate (no premium). For years commencing before 1 July 2021 the cap was $100m.
+
+#### Rule 6 -- Excluded core activities (s 355-25(2))
+
+- **Excluded core activities** — The following CANNOT be core R&D activities (though some may qualify as supporting if directly related and dominant-purpose tests are met): 1. Market research/testing/development or sales promotion (incl. consumer surveys). 2. Prospecting, exploring or drilling for minerals or petroleum (to discover, locate, size or value deposits). 3. Management studies or efficiency surveys. 4. Research in the social sciences, arts or humanities. 5. Commercial, legal and administrative aspects of patenting, licensing or other IP activities. 6. Activities associated with complying with statutory requirements or standards (incl. routine testing/analysis). 7. Reproduction of a commercial product or process (by physical examination or from plans/public information). 8. Developing, modifying or customising computer software for the dominant purpose of internal administration of the entity or a connected/affiliated entity. **Tobacco and gambling:** from income years starting on or after 1 July 2025, activities relating to gambling, gambling services or gambling-like practices are ineligible as core or supporting unless conducted solely to generate new knowledge about minimising harm from them. Activities relating to tobacco, a tobacco product or accessory, a vaping good, tobacco extract, goods made using tobacco or its extract, or goods containing nicotine for human use (other than food whose only nicotine is naturally occurring) are ineligible as core or supporting unless conducted solely to generate new knowledge about the therapeutic use of therapeutic goods to minimise harm from those things, or about ceasing the ingestion or transfer of nicotine; general harm-minimisation research does not qualify on this limb (s 355-25(2)(i), (j), (3), (4) and s 355-30, inserted by Act No. 58 of 2026, Sch 4).  _(s 355-25(2))_
+
+#### Rule 7 -- Registration and the 10-month deadline
+
+Register activities with DISR for each income year before claiming the offset. The normal deadline is 10 months after year end, for example 30 April 2027 for a 30 June 2026 year end. The IISA registration number on the R&D schedule must match the income year. Registration does not certify activity eligibility.
+
+If the deadline cannot be met or has passed, refer the entity to DISR or its R&D adviser to request an extension through the R&DTI customer portal, with reasons and supporting evidence.
+
+DISR states that a request for 14 days or less made before the statutory deadline will be approved; the application must explain why extra time is needed and why that period is sufficient. Longer requests, or requests made after the deadline, are considered case by case with supporting reasons and evidence. An application remains required.
+
+Extensions generally cannot exceed 92 days after the statutory deadline; a related pending decision is the exception. Confirm valid registration within the statutory or approved extended period before claiming. A late application alone does not establish entitlement.
+
+DISR cannot extend the application deadline for an advance or overseas finding or accept those applications late. See [DISR: request an extension or variation](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation) and Part 3 of the Industry Research and Development Decision-making Principles 2022.
+
+#### Rule 8 -- The $20,000 threshold and the RSP exception
+
+Notional deductions for the year must total at least $20,000. Below that amount, the exception covers only contracted expenditure for services within the registered field of a research service provider (RSP) that is not an associate, or monetary contributions under the Cooperative Research Centres (CRC) program. It does not make other expenditure eligible merely because some work uses an RSP. Check the provider's registration for the relevant period. See [ATO R&D eligibility](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/eligibility-for-the-r-d-tax-incentive).
+
+For example, $18,000 paid to an associated RSP cannot use this exception. At an assumed 43.5% rate, the $7,830 offset is unavailable where the threshold and all other exception routes fail.
+
+#### Rule 9 -- Aggregated turnover grouping
+
+- **Aggregated turnover grouping** — Aggregated turnover = the entity's annual turnover + the annual turnover of every connected entity and affiliate (Australian and foreign) for the period they are connected/affiliated, excluding dealings between them. The rules mirror the small-business-entity aggregated-turnover rules. This grouping decides refundable vs non-refundable, so it must be computed across the whole group before the offset rate is chosen (R-AU-RD-5).
+
+#### Rule 10 -- Notional deductions: what can and can't be claimed
+
+Eligible expenditure on registered activities is claimed as a notional deduction in the year incurred. Exceptions: amounts incurred to an associate are notionally deductible only when paid; prepayment rules apply to services spanning years. **Cannot** be notionally deducted: interest expenditure; expenditure not "at risk" (TR 2021/5); core technology expenditure; expenditure included in the cost of a depreciating asset (decline-in-value notional deductions may apply instead); and expenditure to acquire/construct/improve a building.
+
+For expenditure incurred to an associate but paid in a later year, choose between an otherwise available ordinary deduction in the year incurred and a notional R&D deduction in the payment year, subject to all eligibility conditions. A later R&D claim requires that the amount has not already been deducted under the ordinary provisions by lodgement of the return for the most recent year before payment. An ordinary deduction choice cannot be reversed by amendment to obtain the incentive later. Never claim both. See [ATO expenditure guidance, payment to associates](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/amounts-you-can-claim/expenditure-you-can-claim).
+
+#### Rule 11 -- Clawback: feedstock, recoupments, balancing adjustments
+
+- **Clawback: feedstock, recoupments, balancing adjustments** — A clawback event adds an amount to assessable income (it does not reduce the offset) to recover the incentive/premium component. Triggers: (a) a government recoupment/grant for expenditure already claimed; (b) a feedstock adjustment where claimed feedstock inputs are transformed into products supplied to others or applied to own use; (c) an assessable balancing adjustment on disposal of an R&D asset (a deductible balancing adjustment gives a "catch-up" deduction instead). The clawback is the premium component grossed up to an assessable-income equivalent (see Example 5). From 1 July 2021 Part IVA extends to the R&D offset, including schemes to obtain a refundable rather than a non-refundable offset.
+
+#### Rule 12 -- Amendment and objection windows
+
+- **Amendment and objection windows** — The amendment period for R&D claims is generally **4 years** (a 2-year period may apply to 2021-22 and earlier). Special rules allow amendment outside the standard window to give effect to DISR findings (registration, overseas activities, core technology) and to DISR internal-review, ART or court decisions. DISR findings bind the Commissioner: the ATO must amend to give effect to them, and will commence an audit 28 days after a finding if the taxpayer does not self-amend.
+
+#### Rule 13 -- Interaction with the instant asset write-off and small business concessions
+
+- **Interaction with the instant asset write-off and small business concessions** — An R&D entity can be a small business entity and use the instant asset write-off ($20,000 for 2025-26; permanent threshold enacted with 1 October 2026 commencement and specified application from 1 July 2026 under [Tax Reform No. 2 Act 2026, section 2 and schedules 1-2](https://www.legislation.gov.au/C2026A00071/asmade/text)) for assets used in the business. But the R&DTI and IAWO interact at the asset-cost level: expenditure included in the cost of a depreciating asset is NOT a notional deduction, so an amount immediately written off under the IAWO is not also claimable as R&D expenditure. Instead, the R&DTI gives a notional deduction for the asset's **decline in value** to the extent of R&D use. Do not double-count an asset's cost across both concessions. The aggregated-turnover grouping rules are shared with the small business concessions, but the R&DTI has its own $20m threshold and exempt-entity-control test, which are not the same as the small business entity tests.  _(Tax Reform No. 2 Act 2026, section 2 and schedules 1-2)_
+
+### Section 6 -- Tier 2 catalogue
+
+#### T2-1 -- Core vs ordinary business activity
+
+- **Core vs ordinary business activity** — **Trigger:** claim includes routine, business-as-usual, or commercial-risk activities. **Issue:** TA 2017/3 targets claims for ordinary business activities dressed as R&D (no scientific uncertainty, no hypothesis-driven experiment, no new knowledge). **Action:** refuse classification (R-AU-RD-1); document; escalate.  _(TA 2017/3)_
+
+#### T2-2 -- Software development claims
+
+- **Software development claims** — **Trigger:** software development claimed as core R&D. **Issue:** internal-administration software for the entity/connected/affiliate is excluded from core; even non-internal-admin software must still clear the knowledge threshold (outcome not knowable in advance). Much routine development fails. **Action:** test dominant purpose and the knowledge threshold; escalate (R-AU-RD-1).
+
+#### T2-3 -- R&D delivered by associates / overseas related entities
+
+- **R&D delivered by associates / overseas related entities** — **Trigger:** notional deductions for R&D performed by an associate, or overseas R&D by a foreign related entity. **Issue:** amounts to associates claimable only when paid (TA 2023/4); overseas activities need a positive DISR overseas finding and must be conducted FOR the claimant, not the foreign entity. **Action:** confirm payment and findings; escalate (R-AU-RD-4).  _(TA 2023/4)_
+
+#### T2-4 -- Overhead apportionment
+
+- **Overhead apportionment** — **Trigger:** rent, utilities, admin overheads apportioned to R&D. **Issue:** apportionment must reflect the actual extent of R&D use on a reasonable, documented basis; salary-based ratios are appropriate for personnel but not necessarily for utilities. **Action:** sight the documented methodology; flag unreasonable apportionment.
+
+#### T2-5 -- Group aggregation and Part IVA
+
+- **Group aggregation and Part IVA** — **Trigger:** aggregated turnover near the $20m threshold, or group structures that appear to engineer a refundable rather than non-refundable outcome. **Issue:** connected/affiliate turnover must be aggregated; from 1 July 2021 Part IVA can cancel an offset (including a refundability benefit) where the dominant purpose was to obtain it. **Action:** compute group turnover properly; escalate structuring (R-AU-RD-5).
+
+#### T2-6 -- "At risk" expenditure
+
+- **"At risk" expenditure** — **Trigger:** R&D funded under arrangements guaranteeing a return, or covered by an indemnity. **Issue:** expenditure not at risk is not claimable (TR 2021/5). **Action:** examine funding terms; escalate.  _(TR 2021/5)_
+
+### Section 8 -- Reading guide
+
+1. Registration first: confirm valid DISR registration for the income year within the statutory or approved extended period (Rule 7) before claiming.
+2. Entity test second: only a corporation (R&D entity) can claim. A sole trader or trust "doing R&D" has no R&DTI pathway.
+3. Activity test third: core activities must clear all three limbs (unknowable outcome, systematic progression, new knowledge) -- and that is a technical judgement this skill refuses to make.
+4. Rate test fourth: aggregated turnover and exempt-entity control choose refundable vs non-refundable; intensity tiers set the non-refundable premium.
+5. Expenditure test fifth: only eligible notional deductions on registered activities count; associate amounts only when paid; asset costs give decline-in-value, not cost.
+6. Clawback always: grants, feedstock outputs and asset disposals pull back the premium through assessable income.
+
+
+#### Key figures
+
+**Key figures**
+
+| Item | Value |
+| --- | --- |
+| Refundable offset (turnover < $20m, not exempt-controlled) | Company tax rate + 18.5% (43.5% for a 25% base-rate entity) |
+| Non-refundable offset | Company tax rate + 8.5% (R&D <= 2% intensity); + 16.5% (R&D > 2% intensity) |
+| R&D intensity | Notional R&D deductions / total expenditure for the year |
+| Expenditure cap | $150m notional deductions; offset drops to bare company tax rate above it |
+| Minimum notional deduction | At least $20,000, with the expenditure-specific RSP/monetary CRC exceptions in Rule 8 |
+| Registration deadline | Normally 10 months after income year end, each year; Rule 7 covers extensions. Register before claiming |
+| Amendment period | Generally 4 years; special rules give effect to DISR findings |
+| Tobacco/gambling | Ineligible for income years from 1 July 2025. Gambling exception: solely new knowledge on minimising harm. Tobacco, vaping and nicotine exception: solely new knowledge on therapeutic goods for minimising harm, or on ceasing nicotine (Act No. 58 of 2026, Sch 4) |
+| Announced reform from 1 July 2028 | Not law: core-only offsets (+4.5 points), 1.5% intensity threshold, refundable offset for the first 10 years and turnover under $50m, $50,000 minimum spend, $200m cap |
+
+## Worked cases
+
+### Section 4 -- Worked examples
+
+#### Example 1 -- Small company refundable offset (43.5%)
 
 Innovate Pty Ltd (2026-27): aggregated turnover $4.2m, not exempt-controlled, base-rate entity (company tax rate 25%). Notional R&D deductions $300,000 on registered activities. Taxable income before offset $150,000.
 
@@ -104,7 +240,7 @@ Refund (cash) = $93,000   (excess offset refunded; franking-debit deferral appli
 
 The $93,000 is paid out in cash. This is the refundable offset's core feature: it funds loss-making R&D companies.
 
-### Example 2 -- Loss-making small company (full refund)
+#### Example 2 -- Loss-making small company (full refund)
 
 StartUp Co (2026-27): aggregated turnover $1.8m, notional R&D deductions $250,000, tax loss for the year (no tax payable).
 
@@ -116,7 +252,7 @@ Refund = $108,750 (entire offset refunded in cash)
 
 A small R&D company with no tax liability still receives the offset as cash. The notional deduction itself is not also claimed as a deduction -- the offset replaces it.
 
-### Example 3 -- Larger company non-refundable offset with intensity tiers
+#### Example 3 -- Larger company non-refundable offset with intensity tiers
 
 BigCo Ltd (2026-27): aggregated turnover $80m, standard company tax rate 30%, not exempt-controlled. Total expenditure $200m; notional R&D deductions $8m.
 
@@ -130,7 +266,7 @@ Offset = ($4,000,000 x 38.5%) + ($4,000,000 x 46.5%)
        = $3,400,000  (non-refundable; reduces tax, excess carried forward)
 ```
 
-### Example 4 -- Expenditure cap ($150m)
+#### Example 4 -- Expenditure cap ($150m)
 
 Company XYZ (2026-27): aggregated turnover $600m, company tax rate 30%. Total expenditure $250m; notional R&D deductions $170m.
 
@@ -146,7 +282,7 @@ Offset = ($5m x 38.5%) + ($145m x 46.5%) + ($20m x 30%)
 
 Above $150m of notional deductions, the offset rate collapses to the bare company tax rate, so the R&D premium (the incentive component) is nil on the excess.
 
-### Example 5 -- Feedstock adjustment (clawback)
+#### Example 5 -- Feedstock adjustment (clawback)
 
 Landscape Supplies Pty Ltd: aggregated turnover $15m (base-rate 25%, refundable 43.5%). Notional R&D deductions $22,000, including $10,000 feedstock expenditure. The granite-sand output is sold for $9,000 in the same year.
 
@@ -163,99 +299,9 @@ Step 3: gross up to assessable income = $1,665 / 25% = $6,660
 
 $6,660 is added to assessable income. The clawback recovers only the 18.5% incentive premium on the feedstock, not the base deduction equivalent.
 
-## Section 5 -- Tier 1 rules
+## When to refuse or refer
 
-### Rule 1 -- It is an offset, not a grant
-
-- **It is an offset, not a grant** — The R&DTI produces a tax offset under Division 355. It is claimed in the company tax return via the R&D schedule, and is administered jointly: DISR/AusIndustry registers activities and rules on their eligibility (including advance and overseas findings); the ATO administers the offset and the expenditure claimed. Receiving a DISR registration number means only that a complete application was received -- it is NOT a ruling that the activities qualify. Both agencies can take compliance action before or after the offset is paid, and claimed R&D expenditure is published in an annual transparency report (two years after year end).  _(Division 355)_
-
-### Rule 2 -- Eligible entity (s 355-35)
-
-- **Eligible entity** — Only a corporation can be an R&D entity: incorporated under Australian law; or foreign-incorporated but an Australian tax resident; or foreign-incorporated, resident in a DTA country whose treaty defines "permanent establishment", and carrying on business in Australia through that PE. **Not eligible:** individuals (sole traders), partnerships as such (partners in an R&D partnership may claim at partner level), trusts (except a body corporate as trustee of a public trading trust), corporate limited partnerships, and exempt entities whose income is wholly exempt. Consolidated/MEC groups claim through the head company only.  _(s 355-35)_
-
-### Rule 3 -- Core R&D activities
-
-- **Core R&D activities** — Experimental activities: (a) whose outcome cannot be known or determined in advance on the basis of current knowledge, information or experience; (b) determined only by applying a systematic progression of work based on established science, proceeding from hypothesis to experiment, observation and evaluation to logical conclusions; and (c) conducted for the purpose of generating new knowledge (including new or improved materials, products, devices, processes or services). All three limbs must be met. This is a **scientific/technical test, not an accounting one** -- whether the outcome "cannot be known in advance" turns on the state of knowledge in the field, which is a judgement for a competent engineer/scientist, not the bookkeeper.
-
-### Rule 4 -- Supporting R&D activities
-
-- **Supporting R&D activities** — Activities directly related to core R&D activities. Where the activity produces (or is directly related to producing) goods or services, or is one of the excluded-core categories, it must ALSO have been undertaken for the **dominant purpose** of supporting a core R&D activity. Supporting activities never stand alone -- they exist only in relation to an eligible core activity.
-
-### Rule 5 -- Offset rates and the intensity tiers
-
-- **Offset rates and the intensity tiers** — - **Refundable** (aggregated turnover < $20m, not exempt-controlled): company tax rate + 18.5%. Base-rate (25%) entity = 43.5%; standard-rate (30%) entity = 48.5%. - **Non-refundable** (>= $20m or exempt-controlled): company tax rate + 8.5% on notional deductions up to 2% R&D intensity, and company tax rate + 16.5% above 2%. R&D intensity = notional R&D deductions / total expenditure for the year. - **$150m cap:** for notional deductions above $150m in a year, the offset rate is the bare company tax rate (no premium). For years commencing before 1 July 2021 the cap was $100m.
-
-### Rule 6 -- Excluded core activities (s 355-25(2))
-
-- **Excluded core activities** — The following CANNOT be core R&D activities (though some may qualify as supporting if directly related and dominant-purpose tests are met): 1. Market research/testing/development or sales promotion (incl. consumer surveys). 2. Prospecting, exploring or drilling for minerals or petroleum (to discover, locate, size or value deposits). 3. Management studies or efficiency surveys. 4. Research in the social sciences, arts or humanities. 5. Commercial, legal and administrative aspects of patenting, licensing or other IP activities. 6. Activities associated with complying with statutory requirements or standards (incl. routine testing/analysis). 7. Reproduction of a commercial product or process (by physical examination or from plans/public information). 8. Developing, modifying or customising computer software for the dominant purpose of internal administration of the entity or a connected/affiliated entity. **Tobacco and gambling:** from income years starting on or after 1 July 2025, activities relating to gambling, gambling services or gambling-like practices are ineligible as core or supporting unless conducted solely to generate new knowledge about minimising harm from them. Activities relating to tobacco, a tobacco product or accessory, a vaping good, tobacco extract, goods made using tobacco or its extract, or goods containing nicotine for human use (other than food whose only nicotine is naturally occurring) are ineligible as core or supporting unless conducted solely to generate new knowledge about the therapeutic use of therapeutic goods to minimise harm from those things, or about ceasing the ingestion or transfer of nicotine; general harm-minimisation research does not qualify on this limb (s 355-25(2)(i), (j), (3), (4) and s 355-30, inserted by Act No. 58 of 2026, Sch 4).  _(s 355-25(2))_
-
-### Rule 7 -- Registration and the 10-month deadline
-
-Register activities with DISR for each income year before claiming the offset. The normal deadline is 10 months after year end, for example 30 April 2027 for a 30 June 2026 year end. The IISA registration number on the R&D schedule must match the income year. Registration does not certify activity eligibility.
-
-If the deadline cannot be met or has passed, refer the entity to DISR or its R&D adviser to request an extension through the R&DTI customer portal, with reasons and supporting evidence.
-
-DISR states that a request for 14 days or less made before the statutory deadline will be approved; the application must explain why extra time is needed and why that period is sufficient. Longer requests, or requests made after the deadline, are considered case by case with supporting reasons and evidence. An application remains required.
-
-Extensions generally cannot exceed 92 days after the statutory deadline; a related pending decision is the exception. Confirm valid registration within the statutory or approved extended period before claiming. A late application alone does not establish entitlement.
-
-DISR cannot extend the application deadline for an advance or overseas finding or accept those applications late. See [DISR: request an extension or variation](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation) and Part 3 of the Industry Research and Development Decision-making Principles 2022.
-
-### Rule 8 -- The $20,000 threshold and the RSP exception
-
-Notional deductions for the year must total at least $20,000. Below that amount, the exception covers only contracted expenditure for services within the registered field of a research service provider (RSP) that is not an associate, or monetary contributions under the Cooperative Research Centres (CRC) program. It does not make other expenditure eligible merely because some work uses an RSP. Check the provider's registration for the relevant period. See [ATO R&D eligibility](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/eligibility-for-the-r-d-tax-incentive).
-
-For example, $18,000 paid to an associated RSP cannot use this exception. At an assumed 43.5% rate, the $7,830 offset is unavailable where the threshold and all other exception routes fail.
-
-### Rule 9 -- Aggregated turnover grouping
-
-- **Aggregated turnover grouping** — Aggregated turnover = the entity's annual turnover + the annual turnover of every connected entity and affiliate (Australian and foreign) for the period they are connected/affiliated, excluding dealings between them. The rules mirror the small-business-entity aggregated-turnover rules. This grouping decides refundable vs non-refundable, so it must be computed across the whole group before the offset rate is chosen (R-AU-RD-5).
-
-### Rule 10 -- Notional deductions: what can and can't be claimed
-
-Eligible expenditure on registered activities is claimed as a notional deduction in the year incurred. Exceptions: amounts incurred to an associate are notionally deductible only when paid; prepayment rules apply to services spanning years. **Cannot** be notionally deducted: interest expenditure; expenditure not "at risk" (TR 2021/5); core technology expenditure; expenditure included in the cost of a depreciating asset (decline-in-value notional deductions may apply instead); and expenditure to acquire/construct/improve a building.
-
-For expenditure incurred to an associate but paid in a later year, choose between an otherwise available ordinary deduction in the year incurred and a notional R&D deduction in the payment year, subject to all eligibility conditions. A later R&D claim requires that the amount has not already been deducted under the ordinary provisions by lodgement of the return for the most recent year before payment. An ordinary deduction choice cannot be reversed by amendment to obtain the incentive later. Never claim both. See [ATO expenditure guidance, payment to associates](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/amounts-you-can-claim/expenditure-you-can-claim).
-
-### Rule 11 -- Clawback: feedstock, recoupments, balancing adjustments
-
-- **Clawback: feedstock, recoupments, balancing adjustments** — A clawback event adds an amount to assessable income (it does not reduce the offset) to recover the incentive/premium component. Triggers: (a) a government recoupment/grant for expenditure already claimed; (b) a feedstock adjustment where claimed feedstock inputs are transformed into products supplied to others or applied to own use; (c) an assessable balancing adjustment on disposal of an R&D asset (a deductible balancing adjustment gives a "catch-up" deduction instead). The clawback is the premium component grossed up to an assessable-income equivalent (see Example 5). From 1 July 2021 Part IVA extends to the R&D offset, including schemes to obtain a refundable rather than a non-refundable offset.
-
-### Rule 12 -- Amendment and objection windows
-
-- **Amendment and objection windows** — The amendment period for R&D claims is generally **4 years** (a 2-year period may apply to 2021-22 and earlier). Special rules allow amendment outside the standard window to give effect to DISR findings (registration, overseas activities, core technology) and to DISR internal-review, ART or court decisions. DISR findings bind the Commissioner: the ATO must amend to give effect to them, and will commence an audit 28 days after a finding if the taxpayer does not self-amend.
-
-### Rule 13 -- Interaction with the instant asset write-off and small business concessions
-
-- **Interaction with the instant asset write-off and small business concessions** — An R&D entity can be a small business entity and use the instant asset write-off ($20,000 for 2025-26; permanent threshold enacted with 1 October 2026 commencement and specified application from 1 July 2026 under [Tax Reform No. 2 Act 2026, section 2 and schedules 1-2](https://www.legislation.gov.au/C2026A00071/asmade/text)) for assets used in the business. But the R&DTI and IAWO interact at the asset-cost level: expenditure included in the cost of a depreciating asset is NOT a notional deduction, so an amount immediately written off under the IAWO is not also claimable as R&D expenditure. Instead, the R&DTI gives a notional deduction for the asset's **decline in value** to the extent of R&D use. Do not double-count an asset's cost across both concessions. The aggregated-turnover grouping rules are shared with the small business concessions, but the R&DTI has its own $20m threshold and exempt-entity-control test, which are not the same as the small business entity tests.  _(Tax Reform No. 2 Act 2026, section 2 and schedules 1-2)_
-
-## Section 6 -- Tier 2 catalogue
-
-### T2-1 -- Core vs ordinary business activity
-
-- **Core vs ordinary business activity** — **Trigger:** claim includes routine, business-as-usual, or commercial-risk activities. **Issue:** TA 2017/3 targets claims for ordinary business activities dressed as R&D (no scientific uncertainty, no hypothesis-driven experiment, no new knowledge). **Action:** refuse classification (R-AU-RD-1); document; escalate.  _(TA 2017/3)_
-
-### T2-2 -- Software development claims
-
-- **Software development claims** — **Trigger:** software development claimed as core R&D. **Issue:** internal-administration software for the entity/connected/affiliate is excluded from core; even non-internal-admin software must still clear the knowledge threshold (outcome not knowable in advance). Much routine development fails. **Action:** test dominant purpose and the knowledge threshold; escalate (R-AU-RD-1).
-
-### T2-3 -- R&D delivered by associates / overseas related entities
-
-- **R&D delivered by associates / overseas related entities** — **Trigger:** notional deductions for R&D performed by an associate, or overseas R&D by a foreign related entity. **Issue:** amounts to associates claimable only when paid (TA 2023/4); overseas activities need a positive DISR overseas finding and must be conducted FOR the claimant, not the foreign entity. **Action:** confirm payment and findings; escalate (R-AU-RD-4).  _(TA 2023/4)_
-
-### T2-4 -- Overhead apportionment
-
-- **Overhead apportionment** — **Trigger:** rent, utilities, admin overheads apportioned to R&D. **Issue:** apportionment must reflect the actual extent of R&D use on a reasonable, documented basis; salary-based ratios are appropriate for personnel but not necessarily for utilities. **Action:** sight the documented methodology; flag unreasonable apportionment.
-
-### T2-5 -- Group aggregation and Part IVA
-
-- **Group aggregation and Part IVA** — **Trigger:** aggregated turnover near the $20m threshold, or group structures that appear to engineer a refundable rather than non-refundable outcome. **Issue:** connected/affiliate turnover must be aggregated; from 1 July 2021 Part IVA can cancel an offset (including a refundability benefit) where the dominant purpose was to obtain it. **Action:** compute group turnover properly; escalate structuring (R-AU-RD-5).
-
-### T2-6 -- "At risk" expenditure
-
-- **"At risk" expenditure** — **Trigger:** R&D funded under arrangements guaranteeing a return, or covered by an indemnity. **Issue:** expenditure not at risk is not claimable (TR 2021/5). **Action:** examine funding terms; escalate.  _(TR 2021/5)_
-
-## Section 7 -- Refusal catalogue
+### Section 7 -- Refusal catalogue
 
 These are deliberate refusal-and-escalate zones. Do NOT answer them from this skill.
 
@@ -265,60 +311,36 @@ These are deliberate refusal-and-escalate zones. Do NOT answer them from this sk
 - **R-AU-RD-4** — Overseas R&D activities  ("Activities conducted overseas are claimable only with a positive DISR overseas finding, and only where conducted for the claimant (not a foreign related entity). This needs the finding in place before claiming. Refer to AusIndustry.")
 - **R-AU-RD-5** — Aggregated expenditure/turnover across connected or affiliated groups  ("Aggregated turnover across connected and affiliated entities (including foreign ones) determines refundable vs non-refundable, and group structuring can attract Part IVA. Compute the group position with the client's adviser; I can prepare the underlying turnover figures per entity.")
 
-## Section 8 -- Reading guide
 
-1. Registration first: confirm valid DISR registration for the income year within the statutory or approved extended period (Rule 7) before claiming.
-2. Entity test second: only a corporation (R&D entity) can claim. A sole trader or trust "doing R&D" has no R&DTI pathway.
-3. Activity test third: core activities must clear all three limbs (unknowable outcome, systematic progression, new knowledge) -- and that is a technical judgement this skill refuses to make.
-4. Rate test fourth: aggregated turnover and exempt-entity control choose refundable vs non-refundable; intensity tiers set the non-refundable premium.
-5. Expenditure test fifth: only eligible notional deductions on registered activities count; associate amounts only when paid; asset costs give decline-in-value, not cost.
-6. Clawback always: grants, feedstock outputs and asset disposals pull back the premium through assessable income.
+#### Prohibitions
 
-## Section 9 -- Onboarding fallback
+- NEVER treat the R&DTI as a grant -- it is a tax offset claimed in the company return
+- NEVER classify an activity as core/supporting R&D -- that is a technical/engineering judgement (R-AU-RD-1); escalate
+- NEVER prepare or lodge the DISR registration application -- refer to AusIndustry (R-AU-RD-2)
+- NEVER advise on advance or overseas findings -- DISR only (R-AU-RD-3, R-AU-RD-4)
+- NEVER compute the offset without confirming valid DISR registration for the income year within the statutory or approved extended period
+- NEVER choose refundable vs non-refundable without computing aggregated turnover across connected/affiliated entities (R-AU-RD-5)
+- NEVER claim a notional R&D deduction for an associate amount before payment, or after taking the ordinary-deduction choice for that amount
+- NEVER claim the cost of a depreciating asset -- use decline-in-value notional deductions
+- NEVER ignore a feedstock, recoupment or balancing-adjustment clawback
+- NEVER present figures as definitive
 
-If the client provides only financial statements:
 
-1. Sweep the GL per Section 3 for R&D-coded accounts, project codes and payroll allocations.
-2. Confirm the entity is a corporation and request the DISR registration (IISA) number for the relevant income year.
-3. Request timesheets, project plans and the apportionment methodology -- do not accept bare account balances.
-4. Compute aggregated turnover across connected/affiliated entities before selecting an offset rate.
-5. **Flag:** "Figures prepared from financial statements only. DISR registration number, contemporaneous project documentation, timesheets, apportionment methodology and group turnover not sighted. Activity eligibility is a technical judgement requiring review. No position should be taken until a qualified R&D tax adviser confirms."
+### Disclaimer
 
-## Section 10 -- Reference material
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-### Key figures
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
-**Key figures**
+> Contributed by Ryan Duguid.
 
-| Item | Value |
-| --- | --- |
-| Refundable offset (turnover < $20m, not exempt-controlled) | Company tax rate + 18.5% (43.5% for a 25% base-rate entity) |
-| Non-refundable offset | Company tax rate + 8.5% (R&D <= 2% intensity); + 16.5% (R&D > 2% intensity) |
-| R&D intensity | Notional R&D deductions / total expenditure for the year |
-| Expenditure cap | $150m notional deductions; offset drops to bare company tax rate above it |
-| Minimum notional deduction | At least $20,000, with the expenditure-specific RSP/monetary CRC exceptions in Rule 8 |
-| Registration deadline | Normally 10 months after income year end, each year; Rule 7 covers extensions. Register before claiming |
-| Amendment period | Generally 4 years; special rules give effect to DISR findings |
-| Tobacco/gambling | Ineligible for income years from 1 July 2025. Gambling exception: solely new knowledge on minimising harm. Tobacco, vaping and nicotine exception: solely new knowledge on therapeutic goods for minimising harm, or on ceasing nicotine (Act No. 58 of 2026, Sch 4) |
-| Announced reform from 1 July 2028 | Not law: core-only offsets (+4.5 points), 1.5% intensity threshold, refundable offset for the first 10 years and turnover under $50m, $50,000 minimum spend, $200m cap |
 
-### Primary sources (verified 20 August 2026; tobacco and gambling exclusion read in the Act on 31 October 2026; the announced 2028 reform checked on 11 October 2026)
 
-**Primary sources**
+## Completion checklist
 
-| Topic | Source |
-| --- | --- |
-| Statute | ITAA 1997 Division 355 (ss 355-1 to 355-750); s 355-25 (core activities/exclusions); s 355-35 (R&D entity); Industry Research and Development Act 1986, s 28D (overseas findings) |
-| Rates/entitlements | ato.gov.au -- R&D tax incentive rates and entitlements (QC 107282, 70869, 70890, updated 13 May 2026) |
-| Eligibility | ato.gov.au -- Eligibility for the R&D tax incentive (QC 70871, updated 13 May 2026) |
-| Steps/registration/records | ato.gov.au -- Steps for claiming R&D tax offset (QC 70872); Keeping records and calculating notional deductions (QC 71853) |
-| Excluded activities | business.gov.au -- Excluded R&D activities under the R&DTI (s 355-25(2) ITAA 1997) |
-| Clawback/feedstock | ato.gov.au -- Clawback of R&D tax incentive offset (QC 70876, 70889); TR 2013/3 (feedstock); TR 2021/5 (at-risk rule) |
-| Compliance | ato.gov.au -- Helping you get R&D claims right (QC 70873); TA 2017/3 (ordinary business activities); TA 2023/4 (associates) |
-| Amendments | ato.gov.au -- Correcting mistakes and disputing decisions (QC 70877) |
-| Registration extensions (checked 11 September 2026) | [DISR: request an extension or variation](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation); Industry Research and Development Decision-making Principles 2022, Part 3 |
 
-### Test suite
+
+#### Test suite
 
 **Test 1:** 25% base-rate entity, turnover $4m, notional deductions $300,000. -> Offset = $300,000 x 43.5% = $130,500 (refundable).
 
@@ -340,26 +362,36 @@ If the client provides only financial statements:
 
 **Test 10:** Company receives a $50,000 government grant recouping claimed R&D expenditure. -> Clawback: the premium component on the recouped amount is added to assessable income; the grant is not netted off.
 
-### Prohibitions
+## Sources
 
-- NEVER treat the R&DTI as a grant -- it is a tax offset claimed in the company return
-- NEVER classify an activity as core/supporting R&D -- that is a technical/engineering judgement (R-AU-RD-1); escalate
-- NEVER prepare or lodge the DISR registration application -- refer to AusIndustry (R-AU-RD-2)
-- NEVER advise on advance or overseas findings -- DISR only (R-AU-RD-3, R-AU-RD-4)
-- NEVER compute the offset without confirming valid DISR registration for the income year within the statutory or approved extended period
-- NEVER choose refundable vs non-refundable without computing aggregated turnover across connected/affiliated entities (R-AU-RD-5)
-- NEVER claim a notional R&D deduction for an associate amount before payment, or after taking the ordinary-deduction choice for that amount
-- NEVER claim the cost of a depreciating asset -- use decline-in-value notional deductions
-- NEVER ignore a feedstock, recoupment or balancing-adjustment clawback
-- NEVER present figures as definitive
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.legislation.gov.au/C2026A00058/asmade/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-better-targeting-the-research-and-development-tax-incentive> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/eligibility-for-the-r-d-tax-incentive> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/amounts-you-can-claim/expenditure-you-can-claim> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2026A00071/asmade/text> | Not re-read for this format update; see retained provenance |
 
-## Disclaimer
+### Section 10 -- Reference material
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+#### Primary sources (verified 20 August 2026; tobacco and gambling exclusion read in the Act on 31 October 2026; the announced 2028 reform checked on 11 October 2026)
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+**Primary sources**
 
-> Contributed by Ryan Duguid.
+| Topic | Source |
+| --- | --- |
+| Statute | ITAA 1997 Division 355 (ss 355-1 to 355-750); s 355-25 (core activities/exclusions); s 355-35 (R&D entity); Industry Research and Development Act 1986, s 28D (overseas findings) |
+| Rates/entitlements | ato.gov.au -- R&D tax incentive rates and entitlements (QC 107282, 70869, 70890, updated 13 May 2026) |
+| Eligibility | ato.gov.au -- Eligibility for the R&D tax incentive (QC 70871, updated 13 May 2026) |
+| Steps/registration/records | ato.gov.au -- Steps for claiming R&D tax offset (QC 70872); Keeping records and calculating notional deductions (QC 71853) |
+| Excluded activities | business.gov.au -- Excluded R&D activities under the R&DTI (s 355-25(2) ITAA 1997) |
+| Clawback/feedstock | ato.gov.au -- Clawback of R&D tax incentive offset (QC 70876, 70889); TR 2013/3 (feedstock); TR 2021/5 (at-risk rule) |
+| Compliance | ato.gov.au -- Helping you get R&D claims right (QC 70873); TA 2017/3 (ordinary business activities); TA 2023/4 (associates) |
+| Amendments | ato.gov.au -- Correcting mistakes and disputing decisions (QC 70877) |
+| Registration extensions (checked 11 September 2026) | [DISR: request an extension or variation](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation); Industry Research and Development Decision-making Principles 2022, Part 3 |
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

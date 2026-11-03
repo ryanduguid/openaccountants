@@ -12,11 +12,11 @@ description: >
   schemas, treaties, special financing rules and engagement facts require
   separate verification before producing or filing a completed documentation
   package. This is a source-cited draft awaiting professional review.
-version: 1.5
+version: 1.6
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "Selected law checked on 20 October 2026; Pillar Two, Public CBC and section 815-140 checked on 31 October 2026; IDS 2026 concerns 2025-26; actual income years, substituted periods and operative amendments require separate selection"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -26,7 +26,11 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia: transfer pricing, documentation and reporting
+# Australia: transfer pricing, documentation and reporting v1.6
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+## Scope
 
 Establish the entity, residence, permanent establishments, transaction,
 period and actual conditions before deciding an Australian TP adjustment
@@ -36,7 +40,45 @@ This reference supports selected statutory analysis; unresolved country
 requirements or engagement evidence prevent a completed filing package.
 It remains Tier 2 pending professional review.
 
-## Application and arm's length conditions
+## Ask the client first
+
+### Reviewer intake, refusals and outputs
+
+Confirm entity type/residence and all PEs; income/reporting periods;
+group accounting structure and previous-year CBC/current SGE evidence;
+all relevant dealings, contracts and actual conduct; financial statements;
+method alternatives and actual comparable data; currency observations;
+record completion and return dates; reporting notices/exemptions; and
+any adjustment, tax shortfall, purpose, RAP and disclosure evidence.
+Use synthetic or redacted working data. Credentials, identifiers and
+actual submission remain with the authorised professional.
+
+| Missing or disputed matter | Handling |
+|---|---|
+| Operative law, country slot, reporting schema or special regime | Needs Input; obtain the source before the affected output. |
+| Functions, comparables, actual rate or reliable adjustment | Hold the arm's length or conversion conclusion; no factual default. |
+| PCG eligibility, CBC exemption or foreign exchange filing relief | Hold the claimed relief; record all unverified conditions. |
+| Historical period or amendment/notice clock | Select the relevant law and dates; do not back-apply 2026 figures. |
+| Documentation, RAP, purpose, SGE or shortfall threshold | Hold the penalty conclusion; do not assume a nil or maximum amount. |
+
+These holds apply at any cash amount. Flag every proposed TP adjustment,
+penalty, exemption or statutory filing conclusion for professional review;
+there is no invented statutory or reviewer cash safe harbour. Conservative
+defaults concern presentation of missing evidence, never invented tax facts.
+Preserve the base refusal catalogue and verbatim messages. This reference
+adds no new refusal code and authorises no filing, payment or tax position.
+
+Keep a transaction/source ledger, functional and method analysis,
+benchmark/search record, conversion schedule, separate documentation and
+filing matrix, PCG conditions sheet and penalty decision trail. Map each
+conclusion to source, period, evidence, calculation and unresolved condition.
+Extend the reviewer brief with the missing country slots and an owner for
+each action. Preserve every base output even when marked incomplete; no
+Local File, Master File or CBC conclusion is ready whilst its gate is open.
+
+## The method, step by step
+
+### Application and arm's length conditions
 
 ITAA 1997 Subdivision 815-B substitutes arm's length conditions where
 actual conditions differ and the entity obtains the specified TP benefit.
@@ -100,7 +142,7 @@ special **7-year** amendment provisions measured from the assessment
 notice, with a separate consequential-adjustment exception; do not import
 an ordinary 2- or 4-year clock. [ITAA9]
 
-## Documentation, CBC reporting and the 2026 IDS
+### Documentation, CBC reporting and the 2026 IDS
 
 Keep these obligations separate:
 
@@ -152,7 +194,7 @@ reporting concessions; do not copy the old edition. Actual IDS fields and
 RTP schedules remain separate source gates.
 [IDS-A, questions 1-2][IDS-A]; [IDS-NEW]
 
-## Benchmarking and currency
+### Benchmarking and currency
 
 Record the transaction, selected method, indicator, tested party, search
 source/date, independence and geographic filters, rejected comparables,
@@ -192,7 +234,7 @@ quote direction. Apply an average only after its legal/practical conditions
 are verified; a published annual or year-end rate is not automatically the
 rate for every TP amount. Hold an unsupported conversion. [FX]
 
-## Simplified record keeping: conditional compliance options
+### Simplified record keeping: conditional compliance options
 
 PCG 2017/2 is an ATO resource-allocation approach. Eligible dealings still
 need self-assessed compliance with 815-B/C/D and eligibility evidence.
@@ -221,7 +263,7 @@ technical services and other PCG options require the relevant option and
 year to be checked; this reference supplies no loan safe-harbour rate.
 [OECD, 7.43-7.65][OECD]; [PCG]
 
-## TP penalties: establish liability before calculating
+### TP penalties: establish liability before calculating
 
 Apply TAA Schedule 1 section **284-145(2B)**: the Commissioner must amend
 an assessment or serve the specified withholding notice to give effect to
@@ -263,7 +305,7 @@ Verify their actual obligation, period and current sources before an amount;
 a CBC parent's size alone is insufficient. Do not substitute a fixed
 maximum or a good-faith remission example for those tests.
 
-## Advance pricing arrangements
+### Advance pricing arrangements
 
 PS LA 2015/4, revised **29 October 2025**, describes unilateral, bilateral
 and multilateral APAs. Its usual arrangement term is **3-5 years**, not a
@@ -280,41 +322,9 @@ APA application remains pending its complete procedure and case facts.
 TR 95/23 is not the current general procedure; PCG 2019/1 concerns inbound
 distributor risk rather than replacing PS LA 2015/4.
 
-## Reviewer intake, refusals and outputs
+## Worked cases
 
-Confirm entity type/residence and all PEs; income/reporting periods;
-group accounting structure and previous-year CBC/current SGE evidence;
-all relevant dealings, contracts and actual conduct; financial statements;
-method alternatives and actual comparable data; currency observations;
-record completion and return dates; reporting notices/exemptions; and
-any adjustment, tax shortfall, purpose, RAP and disclosure evidence.
-Use synthetic or redacted working data. Credentials, identifiers and
-actual submission remain with the authorised professional.
-
-| Missing or disputed matter | Handling |
-|---|---|
-| Operative law, country slot, reporting schema or special regime | Needs Input; obtain the source before the affected output. |
-| Functions, comparables, actual rate or reliable adjustment | Hold the arm's length or conversion conclusion; no factual default. |
-| PCG eligibility, CBC exemption or foreign exchange filing relief | Hold the claimed relief; record all unverified conditions. |
-| Historical period or amendment/notice clock | Select the relevant law and dates; do not back-apply 2026 figures. |
-| Documentation, RAP, purpose, SGE or shortfall threshold | Hold the penalty conclusion; do not assume a nil or maximum amount. |
-
-These holds apply at any cash amount. Flag every proposed TP adjustment,
-penalty, exemption or statutory filing conclusion for professional review;
-there is no invented statutory or reviewer cash safe harbour. Conservative
-defaults concern presentation of missing evidence, never invented tax facts.
-Preserve the base refusal catalogue and verbatim messages. This reference
-adds no new refusal code and authorises no filing, payment or tax position.
-
-Keep a transaction/source ledger, functional and method analysis,
-benchmark/search record, conversion schedule, separate documentation and
-filing matrix, PCG conditions sheet and penalty decision trail. Map each
-conclusion to source, period, evidence, calculation and unresolved condition.
-Extend the reviewer brief with the missing country slots and an owner for
-each action. Preserve every base output even when marked incomplete; no
-Local File, Master File or CBC conclusion is ready whilst its gate is open.
-
-## Fictional positions and checks
+### Fictional positions and checks
 
 All amounts below are invented AUD unless stated. Stipulated conditions
 are not findings about an actual taxpayer.
@@ -336,7 +346,49 @@ evidence, each reporting duty and deadline, every PCG condition, tax versus
 profit shortfall, separate exceptions, matter-level RAP and adjustments.
 Reconcile figures across all outputs and retain all 10 domain checks.
 
-## Sources, revision and outstanding work
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+
+### Disclaimer
+
+General reference only. Verify the actual law, facts and forms with a
+qualified professional before filing, paying or taking a tax position.
+
+> Contributed by Ryan Duguid.
+
+
+
+## Sources
+
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_9/document_9.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=COG/PCG20172/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/forms-and-instructions/international-dealings-schedule-2026-instructions/how-to-get-the-international-dealings-schedule-2026> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/forms-and-instructions/international-dealings-schedule-2026-instructions/definitions> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/forms-and-instructions/international-dealings-schedule-2026-instructions/instructions-to-complete-the-international-dealings-schedule/section-a-international-related-party-dealings> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/forms-and-instructions/international-dealings-schedule-2026-instructions/whats-new-for-the-international-dealings-schedule> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/foreign-exchange-rates-overview> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?DocID=PSR/PS20154/NAT/ATO/00001&PiT=99991231235958> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/pricing/advance-pricing-arrangements/advance-pricing-arrangement-apa-program> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/815-140> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/820-35> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/820-37> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/820-39> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/private-wealth-international-program/new-international-tax-measures-affecting-private-groups> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/thin-capitalisation/understanding-thin-capitalisation/how-the-rules-work/fixed-ratio-test> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/multinationals/global-and-domestic-minimum-tax> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/multinationals/global-and-domestic-minimum-tax/when-and-how-the-pillar-two-rules-apply> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/business-bulletins-newsroom/reminder-first-pillar-two-lodgments-due-30-june> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/public-cbc-reporting-parent> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/publishing-your-public-cbc-report> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/correcting-errors-in-public-cbc-reporting> | Not re-read for this format update; see retained provenance |
+
+### Sources, revision and outstanding work
 
 Version 1.5 replaces unsupported blanket IDS statements, unconditional
 simplifications and fee/processing claims with the selected primary rules.
@@ -389,12 +441,7 @@ linked below, for the rows and paragraph they support only.
 [PCBC-PUB]: https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/publishing-your-public-cbc-report
 [PCBC-ERR]: https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/large-business/public-country-by-country-reporting/correcting-errors-in-public-cbc-reporting
 
-## Disclaimer
-
-General reference only. Verify the actual law, facts and forms with a
-qualified professional before filing, paying or taking a tax position.
-
-> Contributed by Ryan Duguid.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 

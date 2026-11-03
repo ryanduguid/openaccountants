@@ -80,8 +80,11 @@ class MakefileTests(unittest.TestCase):
         Makefile's `checkers` and `baselines` recipes, validate.yml's
         gate-checkers job, and the baseline files under scripts/baselines/."""
         make_checkers = re.findall(r"scripts/check-([a-z-]+)\.py", _dry_run("checkers"))
-        self.assertEqual(tuple(make_checkers[:-1]), GATE_CHECKERS)
+        self.assertEqual(tuple(make_checkers), (*GATE_CHECKERS, "cited-hosts", "examples", "examples"))
         self.assertIn("check-cited-hosts.py --selftest", _dry_run("checkers"))
+        self.assertIn("scripts/check-examples.py", _dry_run("checkers"))
+        required_examples = "scripts/check-examples.py --require skills/international/australia/au-rates-2026-27.md skills/international/australia/au-individual-return.md skills/international/australia/au-deductions-offsets.md skills/international/australia/au-sole-trader-schedule.md skills/international/australia/australia-tax-optimization.md skills/international/australia/au-medicare-levy.md skills/international/australia/au-gst-bas.md skills/international/australia/au-bas-preparation.md skills/international/australia/australia-gst.md skills/international/australia/au-fbt.md skills/international/australia/au-fbt-year.md skills/international/australia/au-company-tax.md skills/international/australia/au-payg-instalments.md skills/international/australia/au-super-guarantee.md skills/international/australia/australia-payroll.md skills/international/australia/au-employment-termination-payments.md skills/international/australia/au-capital-gains.md skills/international/australia/au-crypto-tax.md skills/international/australia/au-small-business-cgt.md skills/international/australia/au-amending-individual-income-tax-return-period.md"
+        self.assertIn(required_examples, _dry_run("checkers"))
         make_baselines = re.findall(r"scripts/check-([a-z-]+)\.py --update-baseline", _dry_run("baselines"))
         self.assertEqual(set(make_baselines), set(GATE_CHECKERS) - {"coverage-claims"},
                          "coverage-claims has no standing queue and so no baseline")
@@ -93,6 +96,8 @@ class MakefileTests(unittest.TestCase):
         self.assertIsNotNone(loop, "the job loops over the checkers so every one runs")
         self.assertEqual(tuple(loop.group(1).split()), GATE_CHECKERS)
         self.assertIn("check-cited-hosts.py --selftest", run)
+        self.assertIn("scripts/check-examples.py || status=1", run)
+        self.assertIn(required_examples + " || status=1", run)
         self.assertIn("|| status=1", run)
         self.assertIn('exit "$status"', run)
 

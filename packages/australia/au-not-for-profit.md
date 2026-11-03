@@ -2,24 +2,40 @@
 name: au-not-for-profit
 description: >
   Use this skill whenever asked about Australian not-for-profit (NFP) tax compliance -- income tax exemption self-assessment, the annual NFP self-review return, ACNC charity registration and ATO endorsement, the mutuality principle for licensed clubs and member associations, taxable NFP shade-in rates, deductible gift recipient (DGR) endorsement and gift/contribution deductibility, FBT rebate and exemption caps for NFP employers, GST concessions for NFPs, PAYG withholding for NFP employees, or NFP salary packaging. Trigger on phrases like "NFP tax", "charity tax concession", "DGR", "deductible gift", "mutuality", "self-review return", "FBT rebate", "club taxable income". ALWAYS read this skill before touching any NFP tax work.
-version: 1.4
+version: 1.6
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27; the 2025-26 NFP self-review return season closes 31 Oct 2026"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.4
+# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
+## Scope
+
 > **Law-change context.** (1) From 1 July 2026 the $2 minimum threshold for DGR gift deductions is REMOVED -- backdated to gifts made from 1 July 2024 (all amounts deductible regardless of size; political donations excluded). (2) The NFP self-review return is an ANNUAL obligation from the 2023-24 income year -- non-charitable NFPs with an active ABN self-assessing as income-tax-exempt must lodge by 31 October each year; the 2023-24 return deadline was extended to 31 March 2025, but 31 October applies from 2024-25 onwards. (3) GIC and SIC incurred on or after 1 July 2025 are non-deductible for taxable NFPs. (4) From 1 October 2026, ancillary funds are renamed giving funds (public and private giving funds), and the public and private ancillary fund guidelines continue as the giving fund guidelines ([Treasury Laws Amendment (Strengthening Accountability for Tax Adviser Misconduct and Other Measures) Act 2026, Sch 7](https://www.legislation.gov.au/C2026A00086/asmade/text)). References to ancillary funds in other instruments are read as including giving funds.
 
-## Section 1 -- Quick reference
+## Ask the client first
+
+### Section 9 -- Onboarding fallback
+
+If the client provides only financial statements and an ABN:
+
+1. Look up the ABN: charity registration, ITEx/TCC endorsement, DGR status and scope
+2. Run the Section 3 sweep; list mutuality data gaps and DGR receipt risks
+3. Compute the taxable fallback (mutuality NOT applied where records are absent -- treat all revenue as assessable)
+4. Draft the FBT and GST position as "no concession" pending endorsement evidence
+5. **Flag:** "Computed from financial statements and public registers only. Governing documents, member/non-member records, endorsement instruments, election records and board reviews not sighted. Self-review return lodgment status unconfirmed. Reviewer must verify before any position is taken."
+
+## The method, step by step
+
+### Section 1 -- Quick reference
 
 **Read this whole section before computing or classifying anything.**
 
@@ -58,22 +74,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Governing documents not sighted | Assume NFP character NOT established; mutuality and exemption both unavailable |
 | Entertainment benefits salary packaged by NFP employer | Track packaged meal entertainment and entertainment facility leasing against their separate $5,000 grossed-up cap; add only the excess to the applicable general cap |
 
-## Section 2 -- Refusal catalogue
-
-**Refusal catalogue**
-
-| Code | Trigger | Action |
-| --- | --- | --- |
-| R-AU-NFP-1 | Charitable purpose or purposes questions: whether purposes are charitable at law, public benefit test, disqualifying purposes, Charities Act 2013 interpretation | Refuse; escalate to a lawyer. The ACNC's guidance is administrative, not legal advice |
-| R-AU-NFP-2 | Public benevolent institution (PBI) status: whether the organisation's main purpose is benevolent relief of poverty/sickness/distress, PBI vs ordinary charity distinction | Refuse; escalate. PBI status changes FBT treatment (exemption vs rebate) and DGR eligibility -- a wrong call is a concession-integrity issue |
-| R-AU-NFP-3 | DGR endorsement applications and pre-conditions: constitution amendments, gift fund requirements, winding-up clauses, specific DGR category fit, overseas aid fund questions | Refuse; escalate to the ACNC/ATO application process. You may assemble supporting documents but never submit or advise on eligibility |
-| R-AU-NFP-4 | Political campaigning, advocacy and lobbying limits: whether activities breach charity law, disqualifying political purpose, election campaigning | Refuse; escalate to a lawyer. Both charity law and electoral law apply; the ACNC has deregistration powers |
-| R-AU-NFP-5 | State-based concession applications: payroll tax exemption, land tax, stamp duty, gaming machine concessions -- each state and territory differs | Refuse; escalate to the relevant state revenue office process. This skill is Commonwealth tax only |
-| R-AU-NFP-6 | Charity registration itself: ACNC application, subtype selection (advancing health, education, religion, PBI etc.), governing document review for ACNC purposes | Refuse; escalate to the ACNC registration process or a charity lawyer |
-| R-AU-NFP-7 | Mutuality boundary disputes: whether a particular receipt is mutual or assessable where members and non-members are mixed (e.g. reciprocal club arrangements, joint memberships, corporate members) | Compute both ways; escalate the characterisation judgement |
-| R-AU-NFP-8 | Giving funds (private or public; called ancillary funds before 1 October 2026): establishment, winding up, distribution rules, trustee obligations | Refuse; escalate. Giving funds carry special DGR conditions and ACNC/ATO dual oversight |
-
-## Section 3 -- GL sweep library
+### Section 3 -- GL sweep library
 
 **GL sweep library**
 
@@ -91,114 +92,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Fundraising event income with no GST treatment choice recorded | Fundraising input-taxed election not documented | Available only to endorsed charities, certain gift-deductible entities and government schools (Rule 7). Election must be made and recorded BEFORE supplies take place |
 | "Charity" in the name but no ACNC registration | Cannot self-assess as exempt if all purposes charitable | Check ACNC Register; if charitable and unregistered, the NFP is taxable |
 
-## Section 4 -- Worked examples
+### Section 5 -- Tier 1 rules
 
-### Example 1 -- Self-assessing NFP: exemption confirmed, self-review return lodged
-
-A community service association (not a charity) has an ABN and governing documents prohibiting distributions to members. Its purposes are community service (not political/lobbying) and it passes the physical presence in Australia test. It self-assesses as income-tax-exempt under Div 50.
-
-```
-2025-26 self-review return: lodged 15 October 2026 (before 31 October 2026)
-Income tax result: exempt -- no company return, no income tax payable
-```
-
-Had the return NOT been lodged by 31 October: lodge as soon as possible, as FTL penalties may apply. Failing to lodge multiple returns may prompt an exemption review, and the NFP becomes taxable only if the eligibility conditions are not met. Document the board's self-assessment review.
-
-### Example 2 -- Taxable NFP company: $900 taxable income, base rate entity
-
-A social club (NFP company, BRE) computes taxable income of $900 for 2026-27 after mutuality apportionment.
-
-```
-Taxable income $900 falls in the $417-$762 band? No: $900 > $762.
-Therefore: $763 and above -> 25% on the WHOLE amount.
-Tax = $900 x 25% = $225
-```
-
-**Contrast -- same club but NOT a base rate entity** (e.g. high passive income):
-
-```
-$900 falls in the $417-$915 band -> 55% of excess over $416.
-Tax = ($900 - $416) x 55% = $484 x 55% = $266.20
-```
-
-### Example 3 -- Taxable NFP company: $500 taxable income (shade-in band)
-
-An NFP company (BRE) has taxable income of $500 for 2026-27.
-
-```
-$500 is in the $417-$762 band (BRE):
-Tax = ($500 - $416) x 55% = $84 x 55% = $46.20
-```
-
-The shade-in ensures tax at $762 = ($762 - $416) x 55% = $190.30, which is less than $762 x 25% = $190.50 -- the bands meet at the crossover. Above $762 the flat 25% on the whole amount applies.
-
-### Example 4 -- Mutuality apportionment: licensed club, Waratahs formula
-
-A licensed club has for 2026-27: total visitors (A) = 18,000; members' guests (B) = 4,000; average subscribed members (R) = 2,200; average daily member attendance percentage (S) = 8%; trading days (T) = 360.
-
-```
-C = A - B = 18,000 - 4,000 = 14,000
-Non-member percentage = [(B x 75%) + C] / [(R x S x T) + A]
-  = [(4,000 x 0.75) + 14,000] / [(2,200 x 0.08 x 360) + 18,000]
-  = [3,000 + 14,000] / [63,360 + 18,000]
-  = 17,000 / 81,360
-  = 20.9% (rounded)
-```
-
-The club applies 20.9% to apportionable bar and catering revenue and expenses:
-
-```
-Apportionable revenue $1,450,000 x 20.9% = $303,050 assessable (non-member share)
-Apportionable expenses $1,280,000 x 20.9% = $267,520 deductible
-Net contribution from non-member trading = $35,530
-Plus investment income (fully assessable) = $12,000
-Taxable income = $47,530 -> tax at 25% (BRE) = $11,882.50
-```
-
-The ATO accepts the Waratahs formula as a reasonable basis for registered/licensed clubs (NAT 73436). Simple methods (ticket counts, revenue percentages) are equally acceptable where they reasonably reflect member/non-member split. Recalculate the percentage EVERY year.
-
-### Example 5 -- FBT rebate: rebatable employer over the cap
-
-A community service NFP (rebatable employer, not a PBI) provides fringe benefits to an employee in the 2026-27 FBT year (1 April 2026 - 31 March 2027). Grossed-up taxable value = $38,000.
-
-```
-Rebate applies to the first $30,000 grossed-up only.
-FBT on $30,000 x 47% FBT rate = $14,100 gross FBT
-Rebate = 47% x $14,100 = $6,627
-FBT on excess $8,000 x 47% = $3,760 (no rebate)
-Net FBT payable = ($14,100 - $6,627) + $3,760 = $11,233
-```
-
-**Contrast -- same benefits provided by a PBI (FBT-exempt):**
-
-```
-First $30,000 grossed-up: exempt (FBT = nil)
-Excess $8,000 x 47% = $3,760 FBT payable
-```
-
-### Example 6 -- DGR gift vs auction purchase contribution
-
-**(a) Genuine gift.** Priya donates $200 cash to a DGR-endorsed charity, receiving nothing in return. From 1 July 2024 the $2 minimum no longer applies, so the full $200 is deductible (no benefit received).
-
-**(b) Auction purchase with minor benefit.** Liam bids $500 at a DGR's charity auction for a ticket with a GST-inclusive market value of $90.
-
-```
-Contribution $500 > $150                                  PASS
-Benefit $90 < lesser of (20% x $500 = $100) and $150      PASS ($90 < $100)
-Deductible amount = $500 - $90 = $410
-```
-
-**(c) Benefit too large -- no deduction.** Bernie pays $400 for a gala ticket with a $100 market value: 20% of $400 = $80; benefit $100 > $80 -> minor benefit rules FAIL; no part of the $400 is deductible, even though the charity keeps it all.
-
-**(d) Small gift under old rules.** A $1 donation made on 15 June 2024: not deductible (under the old $2 minimum). The same $1 donation made on or after 1 July 2024: deductible ($2 threshold removed, backdated).
-
-## Section 5 -- Tier 1 rules
-
-### Rule 1 -- Two exemption pathways: charity vs self-assessment
+#### Rule 1 -- Two exemption pathways: charity vs self-assessment
 
 - **Two exemption pathways** — **Charity pathway:** an NFP whose purposes are ALL charitable must register with the ACNC and be endorsed by the ATO to be income-tax-exempt. A charitable NFP that does not register CANNOT self-assess -- it is taxable. Endorsement as a tax concession charity (TCC) also unlocks GST charity concessions and the FBT rebate or exemption, and refunds of franking credits. **Self-assessment pathway:** a non-charitable NFP can self-assess as income-tax-exempt if it fits one of 8 categories in ITAA 1997 Div 50: community service, cultural, educational, health, employment (registered/recognised trade unions and employee/employer associations), resource development (aviation, tourism, ICT, agriculture etc.), scientific, and sporting. Each category has its own tests (generally: NFP character, society/association/club form, main purpose, not a charity, and one of three tests -- physical presence in Australia, prescribed by law, or listed by name), plus the governing rules condition and the income and assets condition. The $416/$762/$915 taxable-NFP thresholds do NOT apply to exempt organisations -- they apply only to NFPs that are taxable.  _(ITAA 1997 Div 50)_
 
-### Rule 2 -- The NFP self-review return (annual, from 2023-24)
+#### Rule 2 -- The NFP self-review return (annual, from 2023-24)
 
 Non-charitable NFPs with an active ABN that self-assess as income-tax-exempt must lodge an NFP self-review return each year, between 1 July and 31 October following the income year (substituted accounting periods: check the ATO page). The return confirms the organisation's continued eligibility -- purpose, NFP clauses in governing documents, and category fit.
 
@@ -206,7 +106,7 @@ Late lodgement can attract FTL penalties. Repeated non-compliance may prompt an 
 
 The return is lodged via ATO online services (for business or agents); there is no paper form. Registered charities do NOT lodge this return -- their exemption rests on ACNC registration plus ATO endorsement, and they report to the ACNC via the Annual Information Statement instead.
 
-### Rule 3 -- Taxable NFP companies: the $416 threshold and shade-in rates
+#### Rule 3 -- Taxable NFP companies: the $416 threshold and shade-in rates
 
 - **$416 threshold and shade-in** — An NFP company (including incorporated and unincorporated associations treated as companies) that is NOT exempt is taxable. Special rates apply (Income Tax Rates Act 1986): taxable income <= $416 -> nil tax, and the NFP may notify a non-lodgment advice instead of a return. Above $416, lodge a company return.  _(Income Tax Rates Act 1986)_
 
@@ -221,11 +121,11 @@ The return is lodged via ATO online services (for business or agents); there is 
 
 The BRE test (aggregated turnover < $50m AND <= 80% passive income) applies to NFP companies in the same way as to for-profit companies (see au-company-tax). Clubs whose documents do NOT prohibit member distributions are "other taxable companies" -- no $416 threshold, standard company rates, return every year.
 
-### Rule 4 -- Mutuality principle
+#### Rule 4 -- Mutuality principle
 
 - **Mutuality principle** — Receipts from mutual dealings with members are NOT assessable income (mutual receipts); expenses incurred in deriving them are NOT deductible. The principle applies where the organisation and its members share a common identity: contributions to a common fund, and participation in the surplus only as member benefits, not distributions. Typical application: licensed clubs, sporting clubs, professional associations that are taxable. Members' subscriptions, bar sales to members, and members' raffle tickets are mutual receipts; sales to non-members, interest, rent, and grants from outside are assessable. Apportion mixed revenue and expenses using a reasonable method: simple methods (ticket counts, non-member revenue percentage) or the Waratahs formula for clubs (Example 4). The chosen method must reasonably reflect the actual member/non-member split and be recalculated each year. Mutuality does NOT apply to exempt organisations (no need), to "other taxable companies" (no NFP clause), or to dealings that are not truly mutual (e.g. a club trading with the public through a separate entity).
 
-### Rule 5 -- DGR endorsement and gift deductibility
+#### Rule 5 -- DGR endorsement and gift deductibility
 
 Only gifts to organisations with DGR status are deductible. DGR status comes from ATO endorsement or listing by name in income tax law.
 
@@ -237,11 +137,15 @@ Gift conditions: voluntary transfer of money or property, no material benefit to
 
 For an individual making a contribution to an eligible DGR fundraising event in Australia, the contribution must exceed $150 and the GST-inclusive benefit must be no more than $150 and no more than 20% of the contribution. These inclusive benefit limits apply to eligible attendance and auction contributions. Raffle and art-union ticket purchases are excluded from this deduction route, regardless of the amount.
 
-Deduction = contribution minus benefit. Maximum 2 attendance contributions per event per individual; auction purchases unlimited; a DGR running 15 or more same-type eligible events in a year loses eligibility for the later ones. Political contributions follow separate rules (the $2 removal does not apply).
+Deduction = contribution minus benefit. Maximum 2 attendance contributions per event per individual; auction purchases unlimited. Political contributions follow separate rules (the $2 removal does not apply).
+
+**Fundraising-event frequency:** Both attendance and auction contributions require an event that meets the statutory definition, including the restriction on a series or regular run of like or similar events. [ITAA 1997 section 995-1](https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html) imports [GST Act section 40-165](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html), omitting the goods-sale price condition. The [2026 frequency determination, sections 4 and 6](https://www.legislation.gov.au/F2026L00187/asmade/2026-03-03/text/original/epub/OEBPS/document_1/document_1.html) permits 15 or fewer fund-raising events in the entity's prescribed accounting year: the 12-month period ending on the date it balances its accounts. If that frequency protection is exceeded, hold affected contribution deductions for review of event qualification.
+
+**Source discrepancy (checked 1 November 2026):** the ATO's [running-events page](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/fundraising-events/running-fundraising-events) and [further-conditions page](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/fundraising-events/further-conditions-for-a-tax-deductible-contribution) state 'fewer than 15' in a financial year and display 25 July 2017 as their last update. The current determination uses 15 or fewer and the prescribed accounting year. Use the statutory definition and current determination for this frequency test, and confirm unresolved event facts before allowing a deduction.
 
 For otherwise qualifying individual contributions, $500 with a $100 benefit allows a $400 deduction; $1,000 with a $150 benefit allows $850. See [ATO minor-benefit conditions](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/valuing-contributions-and-minor-benefits/minor-benefits) and [ATO, Fundraising events](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/fundraising-events) (ITAA 1997 s 30-15, items 7 and 8).
 
-### Rule 6 -- FBT for NFP employers
+#### Rule 6 -- FBT for NFP employers
 
 Two regimes, never mixed:
 
@@ -251,53 +155,55 @@ Two regimes, never mixed:
 
 **Capping:** Check the exclusions for car parking and entertainment outside salary packaging separately. Salary-packaged meal entertainment and entertainment facility leasing share a separate $5,000 grossed-up cap. Only the excess is added to other benefits for the applicable general exemption or rebate cap. For an eligible hospital employee, $17,000 of other grossed-up benefits plus $4,000 of these packaged entertainment benefits fits within the two caps and creates no FBT excess. The FBT year is 1 April to 31 March. Register, calculate and claim the applicable concession in the FBT return. (FBTAA 1986 ss 5B(1E), 57A and 65J.)
 
-### Rule 7 -- GST concessions for NFPs
+#### Rule 7 -- GST concessions for NFPs
 
-- **GST concessions for NFPs** — Available concessions (GST Act 1999): the $150,000 GST registration threshold (all NFPs, automatic; vs $75,000 standard); no GST on genuine gifts received (voluntary, no material benefit); GST groups and non-profit sub-entities (choice); cash-basis accounting regardless of turnover (endorsed charities, gift-deductible entities, government schools -- must choose); non-commercial supplies GST-free (consideration below 50% of GST-inclusive market value or below 75% of what the supplier paid to acquire the thing; for accommodation, below 75% of GST-inclusive market value or of the cost of providing it -- endorsed charities, gift-deductible entities and government schools); fundraising events input-taxed (choice, made and recorded before any transaction -- endorsed charities, certain gift-deductible entities and government schools only; the event must be for fundraising, in an eligible category (fete, ball, gala show, dinner, performance or similar; goods sold for $20 or less each, with no alcohol or tobacco and not a normal part of the business; or ATO-approved) and not part of a series: more than 15 of a category in a financial year disqualifies that category); raffles and bingo GST-free (endorsed charities, certain gift-deductible entities and government schools only; no contravention of state or territory law); school tuckshop sales input-taxed (choice); volunteer expense reimbursement GST credits; donated second-hand goods GST-free; religious services GST-free (advancing religion subtype). Where a DGR is endorsed in part (for a fund only), concessions apply only to supplies connected with the fund's principal purpose. Register when GST turnover meets $150,000 (s 188-10(1): projected turnover at or above it, or current turnover at or above it unless the Commissioner is satisfied projected turnover is below it); voluntary registration below that makes input tax credits available.  _(GST Act 1999, including [s 38-250](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/38-250); [ATO, GST on raffles and bingo](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/gst-for-not-for-profits/gst-concessions-for-not-for-profits-and-government-schools/gst-on-raffles-and-bingo); [ATO, GST on fundraising events](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/gst-for-not-for-profits/gst-concessions-for-not-for-profits-and-government-schools/gst-on-fundraising-events))_
+- **GST concessions for NFPs** — Available concessions (GST Act 1999): the $150,000 GST registration threshold (all NFPs, automatic; vs $75,000 standard); no GST on genuine gifts received (voluntary, no material benefit); GST groups and non-profit sub-entities (choice); cash-basis accounting regardless of turnover (endorsed charities, gift-deductible entities, government schools -- must choose); non-commercial supplies GST-free (consideration below 50% of GST-inclusive market value or below 75% of what the supplier paid to acquire the thing; for accommodation, below 75% of GST-inclusive market value or of the cost of providing it -- endorsed charities, gift-deductible entities and government schools); fundraising events input-taxed (choice, made and recorded before any transaction -- endorsed charities, certain gift-deductible entities and government schools only; the event must be for fundraising, in an eligible category (fete, ball, gala show, dinner, performance or similar; goods sold for $20 or less each, with no alcohol or tobacco and not a normal part of the business; or ATO-approved) and not part of a series or regular run of like or similar events; the current frequency determination permits 15 or fewer fund-raising events in the prescribed accounting year defined in Rule 5); raffles and bingo GST-free (endorsed charities, certain gift-deductible entities and government schools only; no contravention of state or territory law); school tuckshop sales input-taxed (choice); volunteer expense reimbursement GST credits; donated second-hand goods GST-free; religious services GST-free (advancing religion subtype). Where a DGR is endorsed in part (for a fund only), concessions apply only to supplies connected with the fund's principal purpose. Register when GST turnover meets $150,000 (s 188-10(1): projected turnover at or above it, or current turnover at or above it unless the Commissioner is satisfied projected turnover is below it); voluntary registration below that makes input tax credits available.  _(GST Act 1999, including [s 38-250](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/38-250); [ATO, GST on raffles and bingo](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/gst-for-not-for-profits/gst-concessions-for-not-for-profits-and-government-schools/gst-on-raffles-and-bingo); [ATO, GST on fundraising events](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/gst-for-not-for-profits/gst-concessions-for-not-for-profits-and-government-schools/gst-on-fundraising-events); [2026 frequency determination](https://www.legislation.gov.au/F2026L00187/asmade/2026-03-03/text/original/epub/OEBPS/document_1/document_1.html))_
 
-### Rule 8 -- PAYG withholding and payroll obligations
+#### Rule 8 -- PAYG withholding and payroll obligations
 
-- **PAYG withholding and payroll obligations** — NFP status -- exempt, endorsed, or taxable -- does NOT relieve an employer of PAYG withholding. Withhold from employee wages from the first dollar, report via Single Touch Payroll, pay super guarantee (12% from 1 July 2025; the 1 July 2026 Payday Super change concerns payment timing, not the start of the 12% rate. See [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee) and au-super-guarantee), and meet workers compensation and state payroll tax obligations unless a state exemption applies. Volunteers are not employees; genuine reimbursements of volunteer expenses are not wages, but allowances and honoraria can be -- characterise before assuming no withholding. Contractors: check the employee/contractor boundary the same as for any employer.  _(ATO super guarantee rates)_
+- **PAYG withholding and payroll obligations** — NFP status -- exempt, endorsed, or taxable -- does NOT relieve an employer of PAYG withholding. Withhold from employee wages from the first dollar, report via Single Touch Payroll, pay super guarantee (general SG rate of 12% from 1 July 2025; the 1 July 2026 Payday Super change concerns payment timing, not the start of the 12% rate. See [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee) and au-super-guarantee), and meet workers compensation and state payroll tax obligations unless a state exemption applies. Volunteers are not employees; genuine reimbursements of volunteer expenses are not wages, but allowances and honoraria can be -- characterise before assuming no withholding. Contractors: check the employee/contractor boundary the same as for any employer.  _(ATO super guarantee rates)_
 
-### Rule 9 -- Salary packaging in the NFP sector
+**Choose the SG schedule before applying a rate.** The rates and examples in this guide use the general SG schedule. Norfolk Island's transitional rate is 10% for 2025-26, 11% for 2026-27 and 12% from 1 July 2027. For a Norfolk Island arrangement, check the separate SG rules in `au-super-guarantee.md` before using a general rate or example. [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee).
+
+#### Rule 9 -- Salary packaging in the NFP sector
 
 NFP employees can salary-package benefits up to the employer's cap ($30,000 grossed-up for PBI/HPC-exempt employers or rebatable employers; $17,000 for hospitals) with the FBT concession absorbing the cost that a for-profit employer would pay. Common packaged items: living expenses (mortgage, rent, general purchases up to the cap), meal entertainment and venue hire (apply the separate $5,000 grossed-up salary-packaged entertainment cap, then add only its excess to the general cap). Novated leases and remote-area benefits follow the standard FBT rules. Amounts packaged beyond the cap attract full FBT (for exempt employers) or unrebated FBT (for rebatable employers) -- model the employee's package against the cap before committing. Reportable fringe benefits (RFBA) still appear on the employee's income statement where the underlying individual fringe benefits amount exceeds $2,000, after considering excluded benefits; then report the relevant grossed-up amount, affecting HELP repayments, Medicare levy surcharge, and some offsets even though the employer paid no FBT.
 
-### Rule 10 -- State concessions (flag only)
+#### Rule 10 -- State concessions (flag only)
 
 - **State concessions (flag only)** — States and territories grant payroll tax exemptions, land tax concessions, stamp duty relief, and gaming concessions, generally keyed to charity status (ACNC registration) or to specific purposes. Each state's tests differ -- e.g. NSW payroll tax exemption under Sch 2 of the Payroll Tax Act 2007 (NSW) for charitable organisations; Victoria, Queensland and others have their own Acts and public benevolent/charitable tests. Do NOT advise on eligibility or applications (R-AU-NFP-5); flag the existence of the concession and refer to the state revenue office.  _(Payroll Tax Act 2007 (NSW) Sch 2)_
 
-### Rule 11 -- ACNC vs ATO division of labour
+#### Rule 11 -- ACNC vs ATO division of labour
 
 - **ACNC vs ATO division of labour** — The ACNC registers charities, determines charity subtypes (including PBI), maintains the Charity Register, receives Annual Information Statements, and regulates charity governance. The ATO administers ALL tax outcomes: endorsement for charity tax concessions (income tax exemption, GST charity concessions, FBT rebate/exemption), DGR endorsement, the NFP self-review return, taxable NFP returns, and all FBT/GST/PAYG administration. One application to the ACNC can be forwarded to the ATO for endorsement; the ATO decides the tax questions independently. An organisation dealing with "charity status" goes to the ACNC; one dealing with "tax status" goes to the ATO; most questions involve both.
 
-## Section 6 -- Tier 2 catalogue
+### Section 6 -- Tier 2 catalogue
 
-### T2-1 -- Self-review return never lodged
+#### T2-1 -- Self-review return never lodged
 
 **Trigger:** self-assessing NFP with ABN; no self-review return on file for 2023-24 or later years. **Issue:** possible FTL penalties and an exemption review for repeated non-compliance. **Action:** arrange outstanding lodgements promptly and document the board's exemption assessment for each year. Compute a taxable position only if the exemption conditions fail or as a clearly labelled scenario where eligibility is unresolved.
 
-### T2-2 -- Charity-shaped but unregistered
+#### T2-2 -- Charity-shaped but unregistered
 
 **Trigger:** purposes all charitable, no ACNC registration, client assumes exemption. **Issue:** self-assessment is NOT available to charities -- the NFP is taxable regardless of how worthy its purposes are. **Action:** compute as taxable; escalate ACNC registration (R-AU-NFP-6); amend any prior positions taken on an exempt basis.
 
-### T2-3 -- DGR receipt practice
+#### T2-3 -- DGR receipt practice
 
 **Trigger:** the NFP issues "tax deductible" receipts but DGR endorsement is unconfirmed, in part only, or for a fund whose purpose the receipted gift does not match. **Issue:** donors claim deductions they are not entitled to; the NFP risks misleading-conduct exposure. **Action:** verify endorsement scope on ABN Lookup; restrict deductible receipts to the endorsed fund/purpose; review receipt wording.
 
-### T2-4 -- Mutuality method shopping
+#### T2-4 -- Mutuality method shopping
 
 **Trigger:** the apportionment method changes year to year, or the chosen method produces an implausibly low non-member percentage. **Issue:** the method must reasonably reflect the actual split; the ATO can substitute its own apportionment. **Action:** document the method and data (registers, surveys, till splits); keep it consistent unless the facts change.
 
-### T2-5 -- FBT cap tracking across benefit types
+#### T2-5 -- FBT cap tracking across benefit types
 
 **Trigger:** salary-packaged meal entertainment plus living-expense benefits for the same employee. **Issue:** packaged meal entertainment and entertainment facility leasing share a separate $5,000 grossed-up cap. Only the excess uses the applicable general cap alongside other benefits. **Action:** calculate the packaged-entertainment excess first, then test the general cap for each employee and FBT year; model before packaging more.
 
-### T2-6 -- NFP trading subsidiary
+#### T2-6 -- NFP trading subsidiary
 
 **Trigger:** the NFP channels commercial activity through a separate company. **Issue:** mutuality does not reach the subsidiary; income tax exemption depends on the subsidiary's own status (charitable purpose and ACNC registration, or taxable at standard rates with possible donation back under gift rules). **Action:** map the structure; compute the subsidiary standalone; escalate structuring questions.
 
-## Section 7 -- Excel working paper template
+### Section 7 -- Excel working paper template
 
 ```
 AUSTRALIA NFP -- ANNUAL COMPLIANCE WORKING PAPER
@@ -337,14 +243,14 @@ GST
 
 PAYROLL
   PAYG withholding registered and withheld: [Y/N]   STP current: [Y/N]
-  Super guarantee 12% (from 1 Jul 2025): [Y/N]
+  General SG rate 12% (from 1 Jul 2025); applicable schedule checked: [Y/N]
   State payroll tax exemption claimed: [Y/N -- state: ____]
 
 FLAGS
   Refusal triggers hit (R-AU-NFP-1..8): [____]   Tier 2 flags (T2-1..6): [____]
 ```
 
-## Section 8 -- Reading guide
+### Section 8 -- Reading guide
 
 1. Status before numbers: establish charity registration, endorsement, or self-assessment category from the ACNC Register and ABN Lookup before computing anything -- income tax, FBT, GST and receipts all depend on it.
 2. Charities cannot self-assess: all-charitable purposes plus no ACNC registration means taxable, no matter how worthy the purposes look.
@@ -353,19 +259,8 @@ FLAGS
 5. FBT: establish eligibility for exemption or rebate. The general grossed-up cap is $30,000 for PBIs/HPCs and rebatable employers, or $17,000 for eligible hospitals and ambulance services. Apply the separate $5,000 packaged-entertainment cap first and add only its excess to the applicable general cap. Check exclusions for non-packaged entertainment separately.
 6. Distinguish gifts from eligible individual event and auction contributions. Apply the inclusive minor-benefit limits and other Rule 5 conditions; raffle tickets remain excluded.
 
-## Section 9 -- Onboarding fallback
 
-If the client provides only financial statements and an ABN:
-
-1. Look up the ABN: charity registration, ITEx/TCC endorsement, DGR status and scope
-2. Run the Section 3 sweep; list mutuality data gaps and DGR receipt risks
-3. Compute the taxable fallback (mutuality NOT applied where records are absent -- treat all revenue as assessable)
-4. Draft the FBT and GST position as "no concession" pending endorsement evidence
-5. **Flag:** "Computed from financial statements and public registers only. Governing documents, member/non-member records, endorsement instruments, election records and board reviews not sighted. Self-review return lodgment status unconfirmed. Reviewer must verify before any position is taken."
-
-## Section 10 -- Reference material
-
-### Key figures (2025-26 and 2026-27)
+#### Key figures (2025-26 and 2026-27)
 
 **Key figures (2025-26 and 2026-27)**
 
@@ -381,28 +276,158 @@ If the client provides only financial statements and an ABN:
 | GST registration threshold (NFP) | $150,000 | $150,000 |
 | DGR gift minimum | $2 (removed from 1 Jul 2026, backdated to 1 Jul 2024) | none |
 | Contribution minor benefit test | Eligible individual contribution > $150; benefit <= both 20% and $150 | same |
-| Super guarantee rate (see au-super-guarantee) | 12% | 12% |
+| General super guarantee rate (see au-super-guarantee) | 12% | 12% |
 
-### Primary sources (verified 20 August 2026)
+## Worked cases
 
-**Primary sources (verified 20 August 2026)**  _(verified 20 August 2026)_
+### Section 4 -- Worked examples
 
-| Topic | Source |
-| --- | --- |
-| Exemption categories | ITAA 1997 Div 50; ato.gov.au Types of income tax exempt organisations (8 categories); Income tax exempt organisations |
-| Self-review return | ato.gov.au NFP self-review return reporting requirement (QC 73184); due date 31 October; first year 2023-24 |
-| Taxable NFP rates | Income Tax Rates Act 1986 s 23; ato.gov.au Taxable NFP organisations (QC 33593, updated 26 August 2025); Changes to company tax rates (NFP $416/55% bands). Currency confirmed: the ATO's Changes to company tax rates page states the base-rate-entity shade-in limit of $762 applies "for the 2021-22 income year and later years", so the $762/$915 crossovers stand for 2026-27 |
-| Mutuality | ato.gov.au Mutuality and taxable income for not-for-profits (NAT 73436); Waratahs formula [(B x 75%) + C] / [(R x S x T) + A]; TD 93/194 |
-| DGR endorsement | ITAA 1997 Div 30; ato.gov.au Is my organisation eligible for DGR endorsement; ABN Lookup DGR tool; giving funds renamed from ancillary funds on 1 October 2026 (Act No. 86 of 2026, Sch 7, read 11 October 2026) |
-| Gift deductions | ato.gov.au Gifts and donations (QC 72185, updated 6 July 2026 -- $2 threshold removed from 1 Jul 2026, backdated to 1 Jul 2024) |
-| Contribution minor benefit | ato.gov.au Plan fundraising dinners or auctions with confidence (QC 107542, 16 June 2026); Valuing contributions and minor benefits |
-| FBT rebate | FBTAA 1986 s 65J; ato.gov.au FBT rebatable employers (QC 71167); Completing your FBT return 2026 -- NFP employers |
-| FBT exemption | FBTAA 1986 s 57A; ato.gov.au FBT-exempt organisations (PBI/HPC $30,000; hospital/ambulance $17,000) |
-| GST concessions | A New Tax System (GST) Act 1999, s 38-250; ato.gov.au GST concessions available to your organisation (QC 107815, published 30 July 2026); GST on raffles and bingo (QC107818) and GST on fundraising events (QC107819), both published 30 July 2026 and read 31 October 2026 |
-| ACNC/ATO roles | acnc.gov.au Charity tax concessions; acnc.gov.au Organisations that have been self-assessing as income tax exempt |
-| PAYG | TAA 1953 Sch 1 Div 12; ato.gov.au PAYG withholding (no NFP carve-out) |
+#### Example 1 -- Self-assessing NFP: exemption confirmed, self-review return lodged
 
-### Test suite
+A community service association (not a charity) has an ABN and governing documents prohibiting distributions to members. Its purposes are community service (not political/lobbying) and it passes the physical presence in Australia test. It self-assesses as income-tax-exempt under Div 50.
+
+```
+2025-26 self-review return: lodged 15 October 2026 (before 31 October 2026)
+Income tax result: exempt -- no company return, no income tax payable
+```
+
+Had the return NOT been lodged by 31 October: lodge as soon as possible, as FTL penalties may apply. Failing to lodge multiple returns may prompt an exemption review, and the NFP becomes taxable only if the eligibility conditions are not met. Document the board's self-assessment review.
+
+#### Example 2 -- Taxable NFP company: $900 taxable income, base rate entity
+
+A social club (NFP company, BRE) computes taxable income of $900 for 2026-27 after mutuality apportionment.
+
+```
+Taxable income $900 falls in the $417-$762 band? No: $900 > $762.
+Therefore: $763 and above -> 25% on the WHOLE amount.
+Tax = $900 x 25% = $225
+```
+
+**Contrast -- same club but NOT a base rate entity** (e.g. high passive income):
+
+```
+$900 falls in the $417-$915 band -> 55% of excess over $416.
+Tax = ($900 - $416) x 55% = $484 x 55% = $266.20
+```
+
+#### Example 3 -- Taxable NFP company: $500 taxable income (shade-in band)
+
+An NFP company (BRE) has taxable income of $500 for 2026-27.
+
+```
+$500 is in the $417-$762 band (BRE):
+Tax = ($500 - $416) x 55% = $84 x 55% = $46.20
+```
+
+The shade-in ensures tax at $762 = ($762 - $416) x 55% = $190.30, which is less than $762 x 25% = $190.50 -- the bands meet at the crossover. Above $762 the flat 25% on the whole amount applies.
+
+#### Example 4 -- Mutuality apportionment: licensed club, Waratahs formula
+
+A licensed club has for 2026-27: total visitors (A) = 18,000; members' guests (B) = 4,000; average subscribed members (R) = 2,200; average daily member attendance percentage (S) = 8%; trading days (T) = 360.
+
+```
+C = A - B = 18,000 - 4,000 = 14,000
+Non-member percentage = [(B x 75%) + C] / [(R x S x T) + A]
+  = [(4,000 x 0.75) + 14,000] / [(2,200 x 0.08 x 360) + 18,000]
+  = [3,000 + 14,000] / [63,360 + 18,000]
+  = 17,000 / 81,360
+  = 20.9% (rounded)
+```
+
+The club applies 20.9% to apportionable bar and catering revenue and expenses:
+
+```
+Apportionable revenue $1,450,000 x 20.9% = $303,050 assessable (non-member share)
+Apportionable expenses $1,280,000 x 20.9% = $267,520 deductible
+Net contribution from non-member trading = $35,530
+Plus investment income (fully assessable) = $12,000
+Taxable income = $47,530 -> tax at 25% (BRE) = $11,882.50
+```
+
+The ATO accepts the Waratahs formula as a reasonable basis for registered/licensed clubs (NAT 73436). Simple methods (ticket counts, revenue percentages) are equally acceptable where they reasonably reflect member/non-member split. Recalculate the percentage EVERY year.
+
+#### Example 5 -- FBT rebate: rebatable employer over the cap
+
+A community service NFP (rebatable employer, not a PBI) provides fringe benefits to an employee in the 2026-27 FBT year (1 April 2026 - 31 March 2027). Grossed-up taxable value = $38,000.
+
+```
+Rebate applies to the first $30,000 grossed-up only.
+FBT on $30,000 x 47% FBT rate = $14,100 gross FBT
+Rebate = 47% x $14,100 = $6,627
+FBT on excess $8,000 x 47% = $3,760 (no rebate)
+Net FBT payable = ($14,100 - $6,627) + $3,760 = $11,233
+```
+
+**Contrast -- same benefits provided by a PBI (FBT-exempt):**
+
+```
+First $30,000 grossed-up: exempt (FBT = nil)
+Excess $8,000 x 47% = $3,760 FBT payable
+```
+
+#### Example 6 -- DGR gift vs auction purchase contribution
+
+**(a) Genuine gift.** Priya donates $200 cash to a DGR-endorsed charity, receiving nothing in return. From 1 July 2024 the $2 minimum no longer applies, so the full $200 is deductible (no benefit received).
+
+**(b) Auction purchase with minor benefit.** Liam bids $500 at a DGR's charity auction for a ticket with a GST-inclusive market value of $90.
+
+```
+Contribution $500 > $150                                  PASS
+Benefit $90 < lesser of (20% x $500 = $100) and $150      PASS ($90 < $100)
+Deductible amount = $500 - $90 = $410
+```
+
+**(c) Benefit too large -- no deduction.** Bernie pays $400 for a gala ticket with a $100 market value: 20% of $400 = $80; benefit $100 > $80 -> minor benefit rules FAIL; no part of the $400 is deductible, even though the charity keeps it all.
+
+**(d) Small gift under old rules.** A $1 donation made on 15 June 2024: not deductible (under the old $2 minimum). The same $1 donation made on or after 1 July 2024: deductible ($2 threshold removed, backdated).
+
+## When to refuse or refer
+
+### Section 2 -- Refusal catalogue
+
+**Refusal catalogue**
+
+| Code | Trigger | Action |
+| --- | --- | --- |
+| R-AU-NFP-1 | Charitable purpose or purposes questions: whether purposes are charitable at law, public benefit test, disqualifying purposes, Charities Act 2013 interpretation | Refuse; escalate to a lawyer. The ACNC's guidance is administrative, not legal advice |
+| R-AU-NFP-2 | Public benevolent institution (PBI) status: whether the organisation's main purpose is benevolent relief of poverty/sickness/distress, PBI vs ordinary charity distinction | Refuse; escalate. PBI status changes FBT treatment (exemption vs rebate) and DGR eligibility -- a wrong call is a concession-integrity issue |
+| R-AU-NFP-3 | DGR endorsement applications and pre-conditions: constitution amendments, gift fund requirements, winding-up clauses, specific DGR category fit, overseas aid fund questions | Refuse; escalate to the ACNC/ATO application process. You may assemble supporting documents but never submit or advise on eligibility |
+| R-AU-NFP-4 | Political campaigning, advocacy and lobbying limits: whether activities breach charity law, disqualifying political purpose, election campaigning | Refuse; escalate to a lawyer. Both charity law and electoral law apply; the ACNC has deregistration powers |
+| R-AU-NFP-5 | State-based concession applications: payroll tax exemption, land tax, stamp duty, gaming machine concessions -- each state and territory differs | Refuse; escalate to the relevant state revenue office process. This skill is Commonwealth tax only |
+| R-AU-NFP-6 | Charity registration itself: ACNC application, subtype selection (advancing health, education, religion, PBI etc.), governing document review for ACNC purposes | Refuse; escalate to the ACNC registration process or a charity lawyer |
+| R-AU-NFP-7 | Mutuality boundary disputes: whether a particular receipt is mutual or assessable where members and non-members are mixed (e.g. reciprocal club arrangements, joint memberships, corporate members) | Compute both ways; escalate the characterisation judgement |
+| R-AU-NFP-8 | Giving funds (private or public; called ancillary funds before 1 October 2026): establishment, winding up, distribution rules, trustee obligations | Refuse; escalate. Giving funds carry special DGR conditions and ACNC/ATO dual oversight |
+
+
+#### Prohibitions
+
+- NEVER treat a charitable-purpose NFP as self-assessing -- charities need ACNC registration plus ATO endorsement
+- NEVER skip the NFP self-review return for a self-assessing NFP with an ABN -- annual, 31 October
+- NEVER apply the $416 threshold or shade-in rates to an exempt organisation -- they are for taxable NFPs only
+- NEVER tell a donor a gift is deductible without confirming DGR endorsement and scope on ABN Lookup
+- NEVER treat an event ticket, dinner or auction purchase as a plain gift -- run the 20%/$150 minor benefit test
+- NEVER claim the FBT rebate above the $30,000 per-employee grossed-up cap, or for a PBI/HPC (they are exempt, not rebatable)
+- NEVER leave salary-packaged meal entertainment out of the cap tracking -- apply its separate $5,000 grossed-up cap and add only the excess to the applicable general cap
+- NEVER assume NFP status removes PAYG withholding, STP, or super guarantee obligations
+- NEVER advise on ACNC registration, DGR applications, PBI status, charitable purpose at law, political activity limits, or state concessions -- escalate (Section 2)
+- NEVER present figures as definitive
+
+
+### Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+> Contributed by Ryan Duguid.
+
+
+
+## Completion checklist
+
+
+
+#### Test suite
 
 **Test 1:** Self-assessing community service NFP, ABN active, 2025-26 return lodged 20 October 2026. -> Exempt; timely (before 31 October 2026).
 
@@ -424,26 +449,47 @@ If the client provides only financial statements and an ABN:
 
 **Test 10:** $1.50 gift to a DGR made August 2024. -> Deductible ($2 minimum removed from 1 July 2026, backdated to 1 July 2024). Same gift made May 2024 -> not deductible.
 
-### Prohibitions
+## Sources
 
-- NEVER treat a charitable-purpose NFP as self-assessing -- charities need ACNC registration plus ATO endorsement
-- NEVER skip the NFP self-review return for a self-assessing NFP with an ABN -- annual, 31 October
-- NEVER apply the $416 threshold or shade-in rates to an exempt organisation -- they are for taxable NFPs only
-- NEVER tell a donor a gift is deductible without confirming DGR endorsement and scope on ABN Lookup
-- NEVER treat an event ticket, dinner or auction purchase as a plain gift -- run the 20%/$150 minor benefit test
-- NEVER claim the FBT rebate above the $30,000 per-employee grossed-up cap, or for a PBI/HPC (they are exempt, not rebatable)
-- NEVER leave salary-packaged meal entertainment out of the cap tracking -- apply its separate $5,000 grossed-up cap and add only the excess to the applicable general cap
-- NEVER assume NFP status removes PAYG withholding, STP, or super guarantee obligations
-- NEVER advise on ACNC registration, DGR applications, PBI status, charitable purpose at law, political activity limits, or state concessions -- escalate (Section 2)
-- NEVER present figures as definitive
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.legislation.gov.au/C2026A00086/asmade/text> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/statements-and-returns/nfp-self-review-return-reporting-requirement/what-happens-if-you-lodge-the-nfp-self-review-return-late> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://abr.business.gov.au/Help/DGR> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.legislation.gov.au/F2026L00187/asmade/2026-03-03/text/original/epub/OEBPS/document_1/document_1.html> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/fundraising-events/running-fundraising-events> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/fundraising-events/further-conditions-for-a-tax-deductible-contribution> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/valuing-contributions-and-minor-benefits/minor-benefits> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/fundraising-events> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19990055/38-250> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/gst-for-not-for-profits/gst-concessions-for-not-for-profits-and-government-schools/gst-on-raffles-and-bingo> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/your-organisation/gst-for-not-for-profits/gst-concessions-for-not-for-profits-and-government-schools/gst-on-fundraising-events> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
 
-## Disclaimer
+### Section 10 -- Reference material
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+#### Primary sources (verified 20 August 2026)
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+**Primary sources (verified 20 August 2026)**  _(verified 20 August 2026)_
 
-> Contributed by Ryan Duguid.
+| Topic | Source |
+| --- | --- |
+| Exemption categories | ITAA 1997 Div 50; ato.gov.au Types of income tax exempt organisations (8 categories); Income tax exempt organisations |
+| Self-review return | ato.gov.au NFP self-review return reporting requirement (QC 73184); due date 31 October; first year 2023-24 |
+| Taxable NFP rates | Income Tax Rates Act 1986 s 23; ato.gov.au Taxable NFP organisations (QC 33593, updated 26 August 2025); Changes to company tax rates (NFP $416/55% bands). Currency confirmed: the ATO's Changes to company tax rates page states the base-rate-entity shade-in limit of $762 applies "for the 2021-22 income year and later years", so the $762/$915 crossovers stand for 2026-27 |
+| Mutuality | ato.gov.au Mutuality and taxable income for not-for-profits (NAT 73436); Waratahs formula [(B x 75%) + C] / [(R x S x T) + A]; TD 93/194 |
+| DGR endorsement | ITAA 1997 Div 30; ato.gov.au Is my organisation eligible for DGR endorsement; ABN Lookup DGR tool; giving funds renamed from ancillary funds on 1 October 2026 (Act No. 86 of 2026, Sch 7, read 11 October 2026) |
+| Gift deductions | ato.gov.au Gifts and donations (QC 72185, updated 6 July 2026 -- $2 threshold removed from 1 Jul 2026, backdated to 1 Jul 2024) |
+| Contribution minor benefit | ato.gov.au Plan fundraising dinners or auctions with confidence (QC 107542, 16 June 2026); Valuing contributions and minor benefits |
+| FBT rebate | FBTAA 1986 s 65J; ato.gov.au FBT rebatable employers (QC 71167); Completing your FBT return 2026 -- NFP employers |
+| FBT exemption | FBTAA 1986 s 57A; ato.gov.au FBT-exempt organisations (PBI/HPC $30,000; hospital/ambulance $17,000) |
+| GST concessions | A New Tax System (GST) Act 1999, s 38-250; ato.gov.au GST concessions available to your organisation (QC 107815, published 30 July 2026); GST on raffles and bingo (QC107818) and GST on fundraising events (QC107819), both published 30 July 2026 and read 31 October 2026 |
+| ACNC/ATO roles | acnc.gov.au Charity tax concessions; acnc.gov.au Organisations that have been self-assessing as income tax exempt |
+| PAYG | TAA 1953 Sch 1 Div 12; ato.gov.au PAYG withholding (no NFP carve-out) |
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 
