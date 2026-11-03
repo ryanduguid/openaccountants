@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T01:11:47+00:00",
+ "generated_at": "2026-11-03T03:58:22+00:00",
  "counts": {
   "guides": 2033,
   "jurisdictions": 302,
@@ -2656,7 +2656,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-forex-gains-losses",
