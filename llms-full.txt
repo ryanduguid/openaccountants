@@ -2252,7 +2252,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,870 Tier 2 guides amongst the 2,034 indexed guides. These inventory
+There are 1,870 Tier 2 guides among the 2,034 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
