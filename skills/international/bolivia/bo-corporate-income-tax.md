@@ -18,14 +18,14 @@ tax_year_notes: "Rules read as at 3 November 2026; December 2025 extension histo
 tier: 2
 review_status: pending_review
 last_updated: 2026-11-03
-version: 0.1
+version: 0.2
 depends_on:
   - workflow-base
   - corporate-income-tax-workflow-base
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Bolivia corporate income tax v0.1
+# Bolivia corporate income tax v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -78,7 +78,7 @@ The following are reference rules read in the 2026 sources. Every row retains it
 | Paid intangible | Amortisation over 5 years from exploitation, for an admitted acquired intangible for which a price was paid | 2026 reference | DS 24051 arts. 18(e) and 27: 'cinco (5) años'. https://www.impuestos.gob.bo/wp-content/uploads/2026/10/1.-LEY-N%C2%B0-843-09-26-1.pdf |
 | Domestic owner/shareholder loan interest | Apply the payment-date BCB active bank rate restriction and the limit of 30% of interest paid by the company to third parties in the same year. Necessary business purpose and evidence remain required | 2026 reference | DS 24051 art. 18(k): 'treinta por ciento (30%)'. https://www.impuestos.gob.bo/wp-content/uploads/2026/10/1.-LEY-N%C2%B0-843-09-26-1.pdf |
 | Ordinary annual return and payment | Within 120 days following the applicable fiscal close, subject to verified current extensions and calendar rules | 2026 reference, not a verified 2027 filing date | DS 24051 art. 39: 'ciento veinte (120) días posteriores al cierre'. https://www.impuestos.gob.bo/wp-content/uploads/2026/10/1.-LEY-N%C2%B0-843-09-26-1.pdf |
-| Additional financial reporting | Annual sales/gross income at or above Bs 1,700,000 triggers the additional package. Prior threshold history must also be tested | 2026 reporting amendment | RND 102600000014, sole article II replacing art. 7(b): 'iguales o mayores a Bs1.700.000'. https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf |
+| Additional financial reporting | SIN clarifies that the Bs 1,700,000 audit threshold applies to fiscal closes from 2027. Hold the package decision for earlier closes pending period-specific review; test prior threshold history | Close-sensitive threshold and separate digital transmission rules | RND 102600000014, sole article II and SIN notice of 22 April 2026. https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf ; https://www.impuestos.gob.bo/index.php/comunicados/comunicado-rnd-102600000014/ |
 | Omission of payment penalty | Statutory starting fine of 60% of the UFV-updated omitted tax, subject to art. 165, cure/reduction provisions and any applicable relief. Do not automatically apply it to every late filing | 2026 reference | Ley 2492 art. 165 and related DS 27310 art. 42 text: 'sesenta por ciento (60%)'. https://www.impuestos.gob.bo/wp-content/uploads/2026/10/2.-LEY-N%C2%B0-2492-09-26-2.pdf |
 
 ### 3. Reconcile the books to tax [Ley 843, art. 47; DS 24051, arts. 6-31](https://www.impuestos.gob.bo/wp-content/uploads/2026/10/1.-LEY-N%C2%B0-843-09-26-1.pdf)
@@ -236,12 +236,14 @@ expected:
   isolated_tax_effect: 3000
 ```
 
-### Case 5: choose the reporting package at the exact threshold
+### Case 5: respect the threshold commencement before comparing amounts
 
-Consider 2 newly operating ordinary companies with no inherited or earlier reporting obligation and otherwise identical facts. Their established annual sales/gross income under RND 101800000004 article 3(a) is Bs 1,699,999 and Bs 1,700,000 respectively. The first enters amended article 7(a)'s F605 information branch. The second reaches article 7(b) and must also supply the additional information and signed PDF reports described below. The difference is Bs one. A zero IUE liability would not itself remove these reporting duties. If either company has an earlier threshold history, stop this simplified decision and apply the persistence provision to that history.
+For a fictional fiscal close in 2027, assume the reviewer has verified that the announced Bs 1,700,000 threshold remains operative, with no inherited or earlier reporting obligation and otherwise identical facts. Annual sales/gross income under RND 101800000004 article 3(a) is Bs 1,699,999 for one company and Bs 1,700,000 for the other. Under that expressly conditional rule, the first is below amended article 7(b)'s threshold and the second reaches it. The difference is Bs one. This is an illustration of the announced future threshold, not verified 2027 filing advice.
+
+For a 2025 or 2026 fiscal close, stop before making that branch selection. SIN's 22 April 2026 notice says the new audit threshold concerns closes from 2027. A company below Bs 1,700,000 is therefore not cleared of an audit package for an earlier close by this comparison. Qualify the earlier threshold, prior history and applicable reporting instructions separately. A zero IUE liability does not itself remove reporting duties.
 
 ```oa-check
-name: Bolivia reporting threshold equality, fictional 2026
+name: Bolivia announced threshold arithmetic, fictional 2027
 inputs:
   lower_company_gross_income: 1699999
   threshold: 1700000
@@ -253,7 +255,7 @@ expected:
   higher_company_gross_income: 1700000
 ```
 
-The block checks the amounts, not the legal branch selection. The reviewer must check '<' against 'equal to or above' and the history conditions against the actual resolution.
+The block checks arithmetic only. It does not select the legally applicable threshold or establish a filing package. Verify the fiscal close, commencement, later changes and prior history before applying any threshold.
 
 ### Case 6: separate the historical return and supporting-document dates
 
@@ -284,7 +286,9 @@ SIN's [official F500 instructions](https://siatinfo.impuestos.gob.bo/index.php/d
 
 [RND 101800000004 article 8](https://unumlex.impuestos.gob.bo/wp-content/uploads/2022/02/RND-No-101800000004-Estados-Financieros.docx-MOD3.pdf) sets the ordinary financial-document transmission period at 120 days after close, separately from the IUE return/payment under DS article 39. Verify current exceptions for each obligation. The Tax Code's [article 4 time rules](https://www.impuestos.gob.bo/wp-content/uploads/2026/10/2.-LEY-N%C2%B0-2492-09-26-2.pdf) distinguish calendar and working-day periods and address a non-working final day. Do not label the ordinary 120-day period as 120 working days or derive an actual deadline without the applicable calendar.
 
-Under [RND 102600000014, sole article II](https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf), ordinary bookkeeping taxpayers below Bs 1,700,000 annual sales/gross income send through SIAT/F605:
+**Threshold commencement hold.** SIN's [official notice of 22 April 2026](https://www.impuestos.gob.bo/index.php/comunicados/comunicado-rnd-102600000014/) clarifies that the Bs 1,700,000 external-audit threshold in RND 102600000014 concerns fiscal closes from 2027. Do not apply it to clear a company with an earlier close. The captured older RND 101800000004 article 4 used Bs 1,200,000, but this guide withholds a 2025 or 2026 package decision until the reviewer qualifies the operative earlier threshold, amendment timing, prior history and current instructions. The threshold clarification does not itself reverse the separate changes to digital transmission.
+
+Under [RND 102600000014, sole article II](https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf), the amended article 7 lists the following information for ordinary bookkeeping taxpayers through SIAT/F605. Its Bs 1,700,000 package distinction must be read with the commencement hold above:
 
 1. Trial balance of sums and balances.
 2. Balance sheet.
@@ -295,7 +299,7 @@ Under [RND 102600000014, sole article II](https://www.impuestos.gob.bo/wp-conten
 7. Valued physical inventory.
 8. Loss compensation information where the benefit applies.
 
-At or above that threshold, also send Información Tributaria Complementaria and attach the signed PDF financial statements, external audit opinion, tax opinion, minimum tax procedures report and complementary tax information. RND 101800000004 article 3(a)'s gross-income definition extends beyond VAT-taxable invoiced sales to the other recurring and exceptional receipts described there. Reconcile that definition rather than substituting net taxable profit or cash bank deposits.
+For a close to which the new threshold applies, at or above it also send Información Tributaria Complementaria and attach the signed PDF financial statements, external audit opinion, tax opinion, minimum tax procedures report and complementary tax information. RND 101800000004 article 3(a)'s gross-income definition extends beyond VAT-taxable invoiced sales to the other recurring and exceptional receipts described there. Reconcile that definition rather than substituting net taxable profit or cash bank deposits.
 
 The additional-package obligation established in a year 'subsistirá hasta la siguiente gestión fiscal' in which the specified threshold is not reached. Establish the prior history and the period in which the duty ceases under the applicable text and official instructions. This guide does not resolve a taxpayer's falling-income transition by assuming immediate exemption from the reports.
 
@@ -322,6 +326,7 @@ Article 165's omission fine, formal-duty penalties, articles 156-157 cure/reduct
 Before an actual engagement output, retain all universal and corporate base requirements and add these checks:
 
 - [ ] Confirmed ordinary entity/activity/period, principal registered close and source coverage, including later amendments and any applicable incentive or sector branch.
+- [ ] Reporting threshold matches the fiscal close. SIN's Bs 1,700,000 clarification starts with closes in 2027; earlier-close package selection, prior history and transmission requirements have been separately qualified.
 - [ ] Required technical accounting and currency rules, UFV inputs, asset tax bases, form precision and current filing instructions are established; no source hold is treated as a factual default.
 - [ ] PBT ties to the approved statements. Every source item appears once, with an adjustment/exclusion reason, source citation and reviewer flag; ordinary expenses are not deducted twice.
 - [ ] Foreign-source and intercompany-distribution exclusions meet the exact conditions. Payroll, banking evidence, indirect tax recoverability, interest and asset deductions are supported.
@@ -333,7 +338,7 @@ Before an actual engagement output, retain all universal and corporate base requ
 - [ ] Workbook rows retain the universal A-L field mapping, evidence references, default/attention flags and exclusion reasons; include asset, loss, benefit/payment, currency, reporting-threshold and filing schedules. Read all reported figures from verified recalculation. Missing tools prevent delivery.
 - [ ] A qualified Bolivian practitioner reviews the result before any filing or reliance. Until then, this Tier 2 guide remains `pending_review`; no professional sign-off is claimed.
 
-Revision: v0.1, 3 November 2026, adds the ordinary IUE reference and separately labelled filing history. Hypothetical examples do not constitute a reviewed client computation.
+Revision: v0.2, 3 November 2026, corrects audit-threshold commencement against SIN's 22 April notice and holds earlier-close package selection. Hypothetical examples do not constitute a reviewed client computation.
 
 ## Sources
 
@@ -343,10 +348,11 @@ Only the specified units were read; a long compilation has not been reviewed in 
 | --- | --- | --- |
 | SIN, Ley 843 and DS 24051, updated 30 September 2026 | https://www.impuestos.gob.bo/wp-content/uploads/2026/10/1.-LEY-N%C2%B0-843-09-26-1.pdf | 2026-11-03: IUE arts. 36-51, selected related amendment notes; DS arts. 1-4, 6-33, 35-40 and 48 as relied on above, selected ordinary asset rows in art. 22 annex. Special exemption/incentive and later remittance notes are not fully qualified; official reference compendium, not Gaceta certification |
 | SIN, Ley 2492 compendium, updated 30 September 2026 | https://www.impuestos.gob.bo/wp-content/uploads/2026/10/2.-LEY-N%C2%B0-2492-09-26-2.pdf | 2026-11-03: arts. 4-5, 8, 47 and its displayed methodology notes, selected 156-157 and 165/related DS text. Formula extraction damaged; no actual arrears method qualified |
-| RND 102600000014, 16 April 2026 | https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf | 2026-11-03: full 5-page resolution, including digital package, threshold/history, extensions and repeals |
-| Errata to RND 102600000014 | https://www.impuestos.gob.bo/wp-content/uploads/2026/04/Fe-de-Erratas-RND-1026000000141.pdf | 2026-11-03: full page; corrects first additional provision to 4 May and the fourth provision's cross-reference |
-| RND 102600000043, 28 October 2026 | https://www.impuestos.gob.bo/wp-content/uploads/2026/10/RND-43.pdf | 2026-11-03: full 2-page resolution; only June 2026 close extension |
-| RND 101800000004, prior SIN consolidation | https://unumlex.impuestos.gob.bo/wp-content/uploads/2022/02/RND-No-101800000004-Estados-Financieros.docx-MOD3.pdf | 2026-11-03: arts. 1-3 and 8-12 for definitions, transmission period and framework; read with the 2026 amendments, not as current authority for repealed physical requirements |
+| RND 102600000014, 16 April 2026 | https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf | 2026-11-03: read in full, 5-page resolution, including digital package, threshold/history, extensions and repeals |
+| SIN, threshold commencement notice, 22 April 2026 | https://www.impuestos.gob.bo/index.php/comunicados/comunicado-rnd-102600000014/ | 2026-11-03: official notice image read in full and transcription checked; Bs 1,700,000 external-audit threshold concerns fiscal closes from 2027, with earlier-close package selection held |
+| Errata to RND 102600000014 | https://www.impuestos.gob.bo/wp-content/uploads/2026/04/Fe-de-Erratas-RND-1026000000141.pdf | 2026-11-03: read in full, one page; corrects first additional provision to 4 May and the fourth provision's cross-reference |
+| RND 102600000043, 28 October 2026 | https://www.impuestos.gob.bo/wp-content/uploads/2026/10/RND-43.pdf | 2026-11-03: read in full, 2-page resolution; only June 2026 close extension |
+| RND 101800000004, prior SIN consolidation | https://unumlex.impuestos.gob.bo/wp-content/uploads/2022/02/RND-No-101800000004-Estados-Financieros.docx-MOD3.pdf | 2026-11-03: arts. 1-4 and 8-12 for definitions, historical audit threshold, transmission period and framework; article 4 is expressly repealed by RND 102600000014 and is not current authority for an earlier-close package decision; read with the 2026 amendments, not as current authority for repealed physical requirements |
 | SIN/SIAT, Formulario 500 instructions | https://siatinfo.impuestos.gob.bo/index.php/declaraciones-juradas-en-formato-electronico/impuesto-a-las-utilidades-de-las-empresas/500-iue-contribuyentes-obligados-a-llevar-registros-contables | 2026-11-03: full undated live text on entities, rubros and SIAT route; not a requested-year box/rounding specification or authenticated test |
 | SIN/SIAT, Actividades Económicas | https://siatinfo.impuestos.gob.bo/index.php/actividades-economicas | 2026-11-03: principal-activity fiscal-close guidance and activity groups; actual registered profile still needed |
 | Ley 1733, 27 May 2026, official text | https://www.impuestos.gob.bo/wp-content/uploads/2026/05/L17332051NCPP.pdf | 2026-11-03: extracted 7-page text, arts. 1-3 and additional/final provisions; debt-relief procedure, exact numbered-column alignment and implementation remain outside qualified computation |
