@@ -24,24 +24,24 @@ carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **2,018** |
-| Distinct `jurisdiction` codes | **294** |
+| Guide files indexed | **2,034** |
+| Distinct `jurisdiction` codes | **302** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,854** |
+| `tier: 2` (source-cited draft) | **1,870** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **235** |
+| Country directories under `skills/international/` | **243** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **306** |
+| Generated bundles under `packages/` | **314** |
 
 Guides are present for all 50 US states and DC.
-Accountant-reviewed guides exist in 24 of the 294 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 302 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
 
 ### Guides with earlier period labels
 
-Twelve guides carry a `tax_year` of 2024 or earlier. These are the indexed
+Thirteen guides carry a `tax_year` of 2024 or earlier. These are the indexed
 period labels; they do not establish current law or complete topic coverage.
 The Anguilla payroll draft explicitly requires verification of the applicable
 law before calculating an engagement liability from its 2022 baseline.
@@ -60,6 +60,7 @@ law before calculating an engagement liability from its 2022 baseline.
 | `sb-npf-contribution-reference` | 2024 | Conditional ordinary monthly NPF contribution mechanics; current law, actual coverage, recovery and operation held |
 | `thailand-pit` | 2024 | Personal income tax |
 | `tv-npf-contribution-reference` | 2022 | Conditional ordinary monthly NPF contribution mechanics; current law, actual coverage, deductions, special branches and operation held |
+| `wf-patente-registration-reference` | 2019 | Selected dated patente tariff-base figures; mixed-period registration and administration provisions, with the principal, later chain and actual assessment and operation held |
 
 Regenerate this list with:
 

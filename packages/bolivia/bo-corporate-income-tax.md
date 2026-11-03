@@ -18,14 +18,14 @@ tax_year_notes: "Rules read as at 3 November 2026; December 2025 extension histo
 tier: 2
 review_status: pending_review
 last_updated: 2026-11-03
-version: 0.2
+version: 0.3
 depends_on:
   - workflow-base
   - corporate-income-tax-workflow-base
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Bolivia corporate income tax v0.2
+# Bolivia corporate income tax v0.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -311,9 +311,11 @@ RND 102600000014 repeals the old resolution's articles 4-6 and the specified phy
 | --- | --- | --- | --- |
 | 31 December 2025 | IUE return and payment | 4 May 2026, correcting the original 29 May date | RND 102600000014 additional first provision and its errata. https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf ; https://www.impuestos.gob.bo/wp-content/uploads/2026/04/Fe-de-Erratas-RND-1026000000141.pdf |
 | 31 December 2025 | Specified digital financial statements, annual report, transfer-pricing study and F601, as applicable | 29 May 2026 | RND 102600000014 additional second provision. https://www.impuestos.gob.bo/wp-content/uploads/2026/04/RND-102600000014.pdf |
-| 30 June 2026 | IUE return/payment and the specified digital statements/annual report/transfer-pricing information, as applicable | 30 November 2026 | RND 102600000043, sole article I-II. This is a different activity-close branch. https://www.impuestos.gob.bo/wp-content/uploads/2026/10/RND-43.pdf |
+| 30 June 2026 | IUE return/payment; specified digital financial statements, annual report and transfer-pricing study through Form605, and Form601, as applicable | 30 November 2026 | RND 102600000043, sole article I-II. This is a different activity-close branch. https://www.impuestos.gob.bo/wp-content/uploads/2026/10/RND-43.pdf |
 
 None of these rows establishes the due date for a December 2026 close. Maintain separate return, tax payment, financial-document and specialist-information entries, with extension authority and reviewer evidence. The ordinary annual-payment rule does not establish a separate instalment or provisional-payment schedule; qualify any such obligation or claim before reliance.
+
+**Linked SIN ownership update.** [RND 102500000005, sole article I-II](https://www.impuestos.gob.bo/wp-content/uploads/2025/10/RND-102500000005.pdf) requires beneficial-owner information on SIN registration for national-tax subjects constituted as legal persons carrying on taxable activities in Bolivia, then annual updating by the activity-specific IUE declaration/payment deadline. On those provisions, a covered legal person with a 30 June 2026 fiscal close follows the extended 30 November 2026 deadline for its annual SIN update. This is an interpretation of the annual rule's cross-reference, not an express ownership extension in RND 102600000043. Verify actual coverage, publication and later amendments before reliance. It does not extend SEPREC or other ownership filings. This screen supplies no complete ownership-identification, sanctions or filing procedure.
 
 ### Late obligations need their own computation
 
@@ -338,7 +340,7 @@ Before an actual engagement output, retain all universal and corporate base requ
 - [ ] Workbook rows retain the universal A-L field mapping, evidence references, default/attention flags and exclusion reasons; include asset, loss, benefit/payment, currency, reporting-threshold and filing schedules. Read all reported figures from verified recalculation. Missing tools prevent delivery.
 - [ ] A qualified Bolivian practitioner reviews the result before any filing or reliance. Until then, this Tier 2 guide remains `pending_review`; no professional sign-off is claimed.
 
-Revision: v0.2, 3 November 2026, corrects audit-threshold commencement against SIN's 22 April notice and holds earlier-close package selection. Hypothetical examples do not constitute a reviewed client computation.
+Revision: v0.3, 3 November 2026, specifies the June 2026 Form605/Form601 extension and qualifies the linked annual SIN ownership update. The v0.2 audit-threshold commencement correction and earlier-close package hold remain. Hypothetical examples do not constitute a reviewed client computation.
 
 ## Sources
 
@@ -352,6 +354,7 @@ Only the specified units were read; a long compilation has not been reviewed in 
 | SIN, threshold commencement notice, 22 April 2026 | https://www.impuestos.gob.bo/index.php/comunicados/comunicado-rnd-102600000014/ | 2026-11-03: official notice image read in full and transcription checked; Bs 1,700,000 external-audit threshold concerns fiscal closes from 2027, with earlier-close package selection held |
 | Errata to RND 102600000014 | https://www.impuestos.gob.bo/wp-content/uploads/2026/04/Fe-de-Erratas-RND-1026000000141.pdf | 2026-11-03: read in full, one page; corrects first additional provision to 4 May and the fourth provision's cross-reference |
 | RND 102600000043, 28 October 2026 | https://www.impuestos.gob.bo/wp-content/uploads/2026/10/RND-43.pdf | 2026-11-03: read in full, 2-page resolution; only June 2026 close extension |
+| RND 102500000005, 15 January 2025 | https://www.impuestos.gob.bo/wp-content/uploads/2025/10/RND-102500000005.pdf | 2026-11-03: read in full, 2-page resolution; legal-person scope, annual IUE-deadline cross-reference, historical transition and publication condition; not a complete ownership-filing procedure or later-amendment certification |
 | RND 101800000004, prior SIN consolidation | https://unumlex.impuestos.gob.bo/wp-content/uploads/2022/02/RND-No-101800000004-Estados-Financieros.docx-MOD3.pdf | 2026-11-03: arts. 1-4 and 8-12 for definitions, historical audit threshold, transmission period and framework; article 4 is expressly repealed by RND 102600000014 and is not current authority for an earlier-close package decision; read with the 2026 amendments, not as current authority for repealed physical requirements |
 | SIN/SIAT, Formulario 500 instructions | https://siatinfo.impuestos.gob.bo/index.php/declaraciones-juradas-en-formato-electronico/impuesto-a-las-utilidades-de-las-empresas/500-iue-contribuyentes-obligados-a-llevar-registros-contables | 2026-11-03: full undated live text on entities, rubros and SIAT route; not a requested-year box/rounding specification or authenticated test |
 | SIN/SIAT, Actividades Económicas | https://siatinfo.impuestos.gob.bo/index.php/actividades-economicas | 2026-11-03: principal-activity fiscal-close guidance and activity groups; actual registered profile still needed |

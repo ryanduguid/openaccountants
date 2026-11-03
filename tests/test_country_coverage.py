@@ -54,6 +54,28 @@ class CountryCoverageTests(unittest.TestCase):
         self.assertIn("| XK | Kosovo | 0 | 0 |", report)
         self.assertTrue(report.endswith("\n"))
 
+    def test_excluded_areas_keep_published_guides_without_inflating_the_target(self):
+        self.catalogue["countries"].extend([
+            {"code": "IR", "name": "Iran"}, {"code": "KP", "name": "North Korea"},
+            {"code": "HT", "name": "Haiti"}])
+        rows = country_coverage.coverage(self.catalogue, [
+            {"jurisdiction": "IR", "tier": 2}, {"jurisdiction": "DE", "tier": 2}])
+        report = country_coverage.render(self.catalogue, rows)
+        self.assertIn("1 of 4 target areas", report)
+        self.assertIn("2 catalogue areas excluded by Ryan", report)
+        self.assertIn("| IR | Iran | 1 | 0 |", report)
+        self.assertIn("| HT | Haiti | 0 | 0 |", report)
+        with patch.object(country_coverage, "CATALOGUE") as catalogue, \
+             patch.object(country_coverage, "load_index", return_value={"guides": [
+                 {"jurisdiction": "IR", "tier": 2}, {"jurisdiction": "DE", "tier": 2}]}):
+            catalogue.read_text.return_value = json.dumps(self.catalogue)
+            output = io.StringIO()
+            with redirect_stdout(output):
+                self.assertEqual(country_coverage.main([]), 0)
+            self.assertIn("1/4 target areas have guides; 3 missing; 2 excluded by Ryan", output.getvalue())
+            self.assertIn("HT Haiti", output.getvalue())
+            self.assertNotIn("KP North Korea", output.getvalue())
+
     def test_cli_markdown_is_read_only_and_report_check_detects_drift(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
