@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,021 Guides** across **298 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,032 Guides** across **302 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2021 guides, 298 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2032 guides, 302 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -703,7 +703,9 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - czech-republic-vat-return | CZ | tier 2 | reviewed_by -
 - czech-republic-references | CZ | tier 2 | reviewed_by -
 - denmark-vat-return | DK | tier 2 | reviewed_by -
+- dk-annual-reporting-reference | DK | tier 2 | reviewed_by -
 - dk-capital-gains | DK | tier 2 | reviewed_by -
+- dk-corporate-income-tax | DK | tier 2 | reviewed_by -
 - dk-income-tax | DK | tier 2 | reviewed_by -
 - denmark-references | DK | tier 2 | reviewed_by -
 - dj-company-formation | DJ | tier 2 | reviewed_by -
@@ -1493,6 +1495,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - pl-capital-gains | PL | tier 2 | reviewed_by -
 - pl-corporate-income-tax | PL | tier 2 | reviewed_by -
 - pl-income-tax | PL | tier 2 | reviewed_by -
+- pl-small-company-financial-statements | PL | tier 2 | reviewed_by -
 - pl-zus-contributions | PL | tier 2 | reviewed_by -
 - poland-einvoice | PL | tier 2 | reviewed_by -
 - poland-vat-return | PL | tier 2 | reviewed_by -
@@ -1554,10 +1557,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - rwanda-payroll | RW | tier 2 | reviewed_by -
 - rwanda-social-contributions | RW | tier 2 | reviewed_by -
 - rwanda-vat | RW | tier 2 | reviewed_by -
+- bl-cfae-legislative-reference | BL | tier 2 | reviewed_by -
 - kn-social-security-reconciliation | KN | tier 2 | reviewed_by -
 - lc-national-insurance-reference | LC | tier 2 | reviewed_by -
 - mf-individual-investment-reference | MF | tier 2 | reviewed_by -
 - pm-social-contributions-reference | PM | tier 2 | reviewed_by -
+- vc-persons-abroad-contributions-reference | VC | tier 2 | reviewed_by -
 - ws-company-formation | WS | tier 2 | reviewed_by -
 - ws-corporate-income-tax | WS | tier 2 | reviewed_by -
 - ws-income-tax | WS | tier 2 | reviewed_by -
@@ -1714,10 +1719,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - sj-svalbard-wage-reference | SJ | tier 2 | reviewed_by -
 - sweden-references | SE | tier 2 | reviewed_by -
 - se-capital-gains | SE | tier 2 | reviewed_by -
+- se-corporate-income-tax | SE | tier 2 | reviewed_by -
 - se-income-tax | SE | tier 2 | reviewed_by -
 - se-social-contributions | SE | tier 2 | reviewed_by -
 - sweden-bookkeeping | SE | tier 2 | reviewed_by -
 - sweden-crypto-tax | SE | tier 2 | reviewed_by -
+- sweden-financial-statements | SE | tier 2 | reviewed_by -
 - sweden-payroll | SE | tier 2 | reviewed_by -
 - sweden-vat-return | SE | tier 2 | reviewed_by -
 - ch-ahv-iv | CH | tier 2 | reviewed_by -
@@ -1798,6 +1805,9 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - tm-payroll-social | TM | tier 2 | reviewed_by -
 - tm-tax-overview | TM | tier 2 | reviewed_by -
 - tm-vat-gst | TM | tier 2 | reviewed_by -
+- tc-formation-and-business-licensing-reference | TC | tier 2 | reviewed_by -
+- tc-sector-taxes-reference | TC | tier 2 | reviewed_by -
+- tc-social-contributions-reference | TC | tier 2 | reviewed_by -
 - tv-npf-contribution-reference | TV | tier 2 | reviewed_by -
 - ug-company-formation | UG | tier 2 | reviewed_by -
 - ug-corporate-income-tax | UG | tier 2 | reviewed_by -
@@ -1887,6 +1897,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - vn-corporate-income-tax | VN | tier 2 | reviewed_by -
 - vn-payroll-social | VN | tier 2 | reviewed_by -
 - vn-tax-overview | VN | tier 2 | reviewed_by -
+- wf-patente-registration-reference | WF | tier 2 | reviewed_by -
 - zambia-vat | ZM | tier 2 | reviewed_by -
 - zm-company-formation | ZM | tier 2 | reviewed_by -
 - zm-corporate-income-tax | ZM | tier 2 | reviewed_by -
@@ -2221,7 +2232,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,021 Guides** across **298 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,032 Guides** across **302 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2364,7 +2375,7 @@ Quality tiers describe the review status of a skill, not a guarantee that any sp
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 298 jurisdictions · 38 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 302 jurisdictions · 38 reviewed guides edited since their review.**
 
 ## Reviewers
 
@@ -2425,7 +2436,7 @@ Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes
 | NG | 2 | Omolola Fasasi (2) |
 | BH | 1 | Mehran Habib (1) |
 
-The other 274 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
+The other 278 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
 
 ## How a name gets here
 

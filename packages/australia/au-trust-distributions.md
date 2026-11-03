@@ -2,24 +2,60 @@
 name: au-trust-distributions
 description: >
   Use this skill whenever asked about Australian discretionary or family trust distributions -- trustee resolutions, present entitlement, section 95 net income versus trust income, streaming capital gains or franked distributions, minors' penalty rates under Division 6AA, section 99A trustee assessments, family trust elections, interposed entity elections, family trust distribution tax, section 100A reimbursement agreements, unpaid present entitlements after Bendel, TFN withholding for closely held trusts, or trust losses. Trigger on phrases like "trust distribution", "trustee resolution", "distribution minute", "streaming", "FTE", "FTDT", "s 100A", "bucket company", "UPE", or "30 June deadline". ALWAYS read this skill before touching any trust distribution work.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-31
+last_updated: 2026-11-02
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Trust Distributions -- Discretionary & Family Trusts Skill v1.3
+# Australia Trust Distributions -- Discretionary & Family Trusts Skill v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
+## Scope
+
 > **Law-change context (three live fronts).** (1) *Commissioner of Taxation v Bendel* [2026] HCA 18 (10 June 2026): a UPE owed to a corporate beneficiary is not, of itself, a Div 7A loan; ATO decision impact statement 26 June 2026 accepts it -- see Rule 10 and the au-div7a skill. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount for individuals, trusts and partnerships is replaced by cost base indexation plus a 30% minimum rate on capital gains, with new trustee capital-gain categorisation/statement obligations -- LAW, see Rule 14. (3) A 30% minimum tax on the net income of discretionary trusts from 1 July 2028 (testamentary trusts carved out, subject to conditions) is NOT in that Act. It is in Bills, NOT LAW: Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026 -- see Rule 14. Verify all three before relying.
 
-## Section 1 -- Quick reference
+## Ask the client first
+
+### Section 2 -- Required inputs and refusal catalogue
+
+#### Required inputs
+
+**Minimum viable** -- trust deed (plus amendments), the signed distribution resolution/minute with its date, draft trust income and s 95 net income, beneficiary list with residency/age/TFN status, FTE/IEE status.
+
+**Recommended** -- prior-year statements of distribution, beneficiary loan/UPE ledgers, franking account of any corporate beneficiary, capital gains schedule with acquisition dates, evidence of payment of entitlements.
+
+**Ideal** -- family group map around the test individual, streaming clauses marked up in the deed, bank evidence of where entitlement cash actually went (s 100A), loss schedules with Sch 2F test evidence.
+
+#### Refusal catalogue
+
+- **R-AU-TR-1 -- Deceased estates and testamentary trusts** — *Trigger:* deceased estate in administration, testamentary trust, s 99 concessional-rate questions, excepted-income status of testamentary distributions to minors. *Message:* "Deceased estate and testamentary trust taxation (s 99 discretion, stages of administration, Div 6AA excepted income, and the proposed minimum-tax carve-out) is out of scope. Escalate to a qualified practitioner."  _(s 99; Div 6AA)_
+- **R-AU-TR-2 -- Special disability trusts** — *Trigger:* special disability trust or vulnerable-beneficiary trust. *Message:* "Special disability trusts have their own concessional rules and social-security interactions. Out of scope. Escalate."
+- **R-AU-TR-3 -- Non-resident beneficiaries or trustees** — *Trigger:* any non-resident beneficiary, foreign trust, or beneficiary who changed residency. *Message:* "Trustee assessment under s 98(2A)/(3)/(4), withholding, treaty issues and the *Greensill* line on capital gains are out of scope. Escalate before any resolution is signed."  _(s 98(2A)/(3)/(4); *Greensill*)_
+- **R-AU-TR-4 -- Circular trust distributions / TBNT** — *Trigger:* trust-to-trust distributions that loop back (directly or indirectly), or trustee beneficiary statement failures. *Message:* "Circular distributions attract trustee beneficiary non-disclosure tax at 47% (s 102UM) -- family trusts included. Computation and remediation are out of scope. Escalate."  _(s 102UM)_
+- **R-AU-TR-5 -- s 100A red-zone positions** — *Trigger:* facts matching any PCG 2022/2 red-zone scenario, or entitlement cash that went to someone other than the beneficiary. *Message:* "This has red-zone s 100A features. Document the flows; do not sign off or restructure. Escalate."  _(PCG 2022/2; s 100A)_
+- **R-AU-TR-6 -- Trust loss recoupment** — *Trigger:* prior-year losses claimed as deductions in net income. *Message:* "Schedule 2F testing (50% stake, control, pattern of distributions, income injection) is out of scope beyond the overview in Rule 13. Escalate."  _(Schedule 2F)_
+- **R-AU-TR-7 -- FTE revocation, variation or FTDT remediation** — *Trigger:* request to revoke/vary an FTE or IEE, or FTDT already triggered. *Message:* "Revocation and variation windows are narrow and FTDT is joint-and-several for directors. Escalate."
+
+### Section 9 -- Onboarding fallback
+
+If the client provides only financial statements and a trial balance:
+
+1. Pull trust income and any "distributions" from equity/liability movements; list beneficiary credit balances as UPE candidates
+2. Build the resolution register with resolution date UNKNOWN flagged; request the signed minutes and the deed
+3. Recompute Bamford shares from stated percentages against net income per the return workpapers
+4. Screen every UPE for s 100A zone features; screen every beneficiary against the (unconfirmed) family group
+5. **Flag:** "Prepared from financial statements only. Deed, signed resolutions, streaming records, TFN evidence and FTE status not sighted. Present entitlement at 30 June unverified -- s 99A exposure unquantified. Reviewer must confirm before lodgment."
+
+## The method, step by step
+
+### Section 1 -- Quick reference
 
 **Read this whole section before computing or classifying anything.**
 
@@ -57,29 +93,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | UPE credit balance in the books | Passive UPE = no Div 7A loan (post-Bendel), but ALWAYS run the s 100A screen |
 | Trust has carried-forward losses | Schedule 2F tests unresolved -- escalate before offsetting |
 
-## Section 2 -- Required inputs and refusal catalogue
+### Section 3 -- Distribution-resolution timeline and GL sweep
 
-### Required inputs
-
-**Minimum viable** -- trust deed (plus amendments), the signed distribution resolution/minute with its date, draft trust income and s 95 net income, beneficiary list with residency/age/TFN status, FTE/IEE status.
-
-**Recommended** -- prior-year statements of distribution, beneficiary loan/UPE ledgers, franking account of any corporate beneficiary, capital gains schedule with acquisition dates, evidence of payment of entitlements.
-
-**Ideal** -- family group map around the test individual, streaming clauses marked up in the deed, bank evidence of where entitlement cash actually went (s 100A), loss schedules with Sch 2F test evidence.
-
-### Refusal catalogue
-
-- **R-AU-TR-1 -- Deceased estates and testamentary trusts** — *Trigger:* deceased estate in administration, testamentary trust, s 99 concessional-rate questions, excepted-income status of testamentary distributions to minors. *Message:* "Deceased estate and testamentary trust taxation (s 99 discretion, stages of administration, Div 6AA excepted income, and the proposed minimum-tax carve-out) is out of scope. Escalate to a qualified practitioner."  _(s 99; Div 6AA)_
-- **R-AU-TR-2 -- Special disability trusts** — *Trigger:* special disability trust or vulnerable-beneficiary trust. *Message:* "Special disability trusts have their own concessional rules and social-security interactions. Out of scope. Escalate."
-- **R-AU-TR-3 -- Non-resident beneficiaries or trustees** — *Trigger:* any non-resident beneficiary, foreign trust, or beneficiary who changed residency. *Message:* "Trustee assessment under s 98(2A)/(3)/(4), withholding, treaty issues and the *Greensill* line on capital gains are out of scope. Escalate before any resolution is signed."  _(s 98(2A)/(3)/(4); *Greensill*)_
-- **R-AU-TR-4 -- Circular trust distributions / TBNT** — *Trigger:* trust-to-trust distributions that loop back (directly or indirectly), or trustee beneficiary statement failures. *Message:* "Circular distributions attract trustee beneficiary non-disclosure tax at 47% (s 102UM) -- family trusts included. Computation and remediation are out of scope. Escalate."  _(s 102UM)_
-- **R-AU-TR-5 -- s 100A red-zone positions** — *Trigger:* facts matching any PCG 2022/2 red-zone scenario, or entitlement cash that went to someone other than the beneficiary. *Message:* "This has red-zone s 100A features. Document the flows; do not sign off or restructure. Escalate."  _(PCG 2022/2; s 100A)_
-- **R-AU-TR-6 -- Trust loss recoupment** — *Trigger:* prior-year losses claimed as deductions in net income. *Message:* "Schedule 2F testing (50% stake, control, pattern of distributions, income injection) is out of scope beyond the overview in Rule 13. Escalate."  _(Schedule 2F)_
-- **R-AU-TR-7 -- FTE revocation, variation or FTDT remediation** — *Trigger:* request to revoke/vary an FTE or IEE, or FTDT already triggered. *Message:* "Revocation and variation windows are narrow and FTDT is joint-and-several for directors. Escalate."
-
-## Section 3 -- Distribution-resolution timeline and GL sweep
-
-### 3.1 Compliance timeline (2025-26 year being lodged; same shape every year)
+#### 3.1 Compliance timeline (2025-26 year being lodged; same shape every year)
 
 **Compliance timeline**
 
@@ -94,7 +110,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | By 28 October | Annual activity statement + payment of TFN amounts withheld |
 | Trust return lodgment | Statement of distribution (annual trustee payment report); beneficiary TFNs reported here from the 2027 return; TB statements where Div 6D applies |
 
-### 3.2 GL / document sweep
+#### 3.2 GL / document sweep
 
 **GL / document sweep**
 
@@ -109,69 +125,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Trust lends cash to the person who funded a beneficiary's entitlement | Circular benefit | Red zone screen (R-AU-TR-5) |
 | Resolution undated / signed with return | Backdating risk; s 99A | Sight contemporaneous evidence (emails, file notes) |
 
-## Section 4 -- Worked examples
+### Section 5 -- Tier 1 rules
 
-### Example 1 -- Proportionate approach (trust income vs s 95 net income)
-
-Deed defines income as ordinary income. Trust income $100,000; s 95 net income $120,000 (non-deductible amounts and timing differences). Resolution: A 60%, B 40% of trust income.
-
-Bamford proportionate approach: each beneficiary is assessed on their PERCENTAGE of net income, not the dollars they were promised. A: 60% x $120,000 = **$72,000**. B: 40% x $120,000 = **$48,000**. The $20,000 gap is taxed even though nobody can bank it -- flag to the client.
-
-### Example 2 -- Streaming a capital gain and a franked dividend
-
-2026-27 receipts: $80,000 gross capital gain (asset held > 12 months), $70,000 fully franked dividend (franking credit $70,000 x 30/70 = $30,000), $40,000 rent. Trustee validly streams: gain 100% to A (individual; capital appointment recorded 20 August 2027 -- inside 31 August), franked dividend 100% to C Pty Ltd (recorded by 30 June 2027), rent to B.
-
-- A (Subdiv 115-C): attributable gain $40,000 (post-discount share) grossed up x2 = $80,000 capital gain in A's own return; A applies A's own 50% discount (no losses) = **$40,000 assessable**. (From 1 July 2027 this discount mechanic changes -- Rule 14.)
-- C (Subdiv 207-B): includes $70,000 + $30,000 credit = $100,000; tax at 30% (bucket company is not a base rate entity on passive trust income) = $30,000 less $30,000 franking offset = **nil net**, franking account credited $30,000.
-- B (Div 6/6E): assessed on the $40,000 rent share.
-
-### Example 3 -- Minor beneficiaries (Division 6AA)
-
-Resolutions give grandchild G1 (age 9) $416 and grandchild G2 (age 12) $1,200, both eligible (unearned) income; trustee assessed under s 98(1) as they are under a legal disability.
-
-- G1: $416 sits in the $0-$416 band -> **tax nil** (assuming no other income).
-- G2: 66% x ($1,200 - $416) = 66% x $784 = **$517.44** (no other income, so no top-slice adjustment) -- a 43% average rate on a $1,200 entitlement.
-- Had G2 received $5,000: over $1,307, so 45% x THE WHOLE $5,000 = **$2,250** (plus Medicare levy where applicable; LITO cannot reduce tax on minors' unearned income).
-
-Distributing eligible income beyond $416 per minor is almost always pointless. Excepted persons (e.g. minors in full-time work, certain disabled minors) and excepted income (employment, testamentary trust income, compensation, deceased estate income) escape Div 6AA -- testamentary questions escalate (R-AU-TR-1).
-
-### Example 4 -- Family trust distribution tax
-
-FTE in force, test individual David. Trustee distributes $20,000 to David's cousin. Cousins are OUTSIDE the s 272-90 family group.
-
-FTDT = 47% x $20,000 = **$9,400**, payable by the trustee (directors of a corporate trustee jointly and severally liable), due 21 days after the distribution, non-deductible. The $20,000 is then excluded from the cousin's assessable income. There is no materiality threshold and no Commissioner discretion -- map the family group BEFORE every unusual distribution.
-
-### Example 5 -- No resolution, no default clause (s 99A)
-
-Deed requires a resolution by 30 June and names no default beneficiaries. The 2026-27 minute is signed 15 July 2027. Net income $150,000.
-
-No beneficiary was presently entitled at 30 June -> trustee assessed under s 99A: 47% x $150,000 = **$70,500** flat (no tax-free threshold). A default-beneficiary clause would have rescued present entitlement -- but check WHO defaults: minor default beneficiaries swap a 47% problem for a Div 6AA one. The s 99 concessional alternative is confined to deceased estates and other Commissioner-discretion cases -- escalate (R-AU-TR-1).
-
-### Example 6 -- s 100A red zone -> s 99A exposure
-
-Adult child at university (marginal rate ~nil) is made presently entitled to $100,000. Under a pre-existing family understanding the cash is paid to the parents' loan offset; the child never benefits. This is PCG 2022/2 red zone scenario 1 (entitlement gifted/lent to another party).
-
-If s 100A applies (TR 2022/4 elements: connection, benefit-to-another, tax-reduction purpose, not ordinary family/commercial dealing), the child's present entitlement is deemed never to have existed -> trustee assessed under s 99A: 47% x $100,000 = **$47,000**, and s 100A assessments are not sheltered by the standard amendment periods. Contrast the green zone: if the child had actually received and used the money, scenario 2 applies. *Guardian* confirms the agreement must exist at or before the entitlement is created; *BBlood* shows contrived dealings fail the ordinary-dealing exception. Escalate red-zone facts (R-AU-TR-5).
-
-## Section 5 -- Tier 1 rules
-
-### Rule 1 -- Division 6 architecture
+#### Rule 1 -- Division 6 architecture
 
 - **Division 6 architecture** — s 95 "net income" = the trust's taxable income computed as if the trustee were a resident taxpayer. "Income of the trust estate" (distributable/trust income) is a TRUST-LAW amount fixed by the deed. Beneficiaries presently entitled and not under a legal disability are assessed under s 97 on their share of net income; trustees are assessed under s 98 for presently entitled beneficiaries under a legal disability (e.g. minors) and non-residents; s 99A (or rarely s 99) taxes the trustee on anything nobody is presently entitled to. Div 6E carves streamed capital gains and franked distributions out of the Div 6 math so Subdivs 115-C and 207-B can tax them instead (no double count).  _(ITAA 1936 Div 6, ss 95, 97, 98, 99A; Div 6E; ITAA 1997 Subdivs 115-C, 207-B)_
 
-### Rule 2 -- Present entitlement by 30 June and trustee resolutions
+#### Rule 2 -- Present entitlement by 30 June and trustee resolutions
 
 - **Present entitlement and trustee resolutions** — Present entitlement = a vested, indefeasible, immediately demandable interest in trust income, existing by 11:59pm 30 June. It is created by the deed (default clauses), by trustee resolution, or both. The ATO does not require writing unless the deed does -- but an unwritten resolution is unprovable, so ALWAYS have a signed, dated minute before 30 June (or the deed's earlier deadline). Entitlements must identify beneficiary and share (percentages beat dollar figures; include a balance clause). An invalid or late resolution hands the income to the default beneficiaries, or failing that to s 99A. Backdating is fraud -- never assist it.  _(s 99A)_
 
-### Rule 3 -- Proportionate approach (Bamford)
+#### Rule 3 -- Proportionate approach (Bamford)
 
 - **Proportionate approach** — *FCT v Bamford* [2010] HCA 10: a beneficiary's assessable share = (beneficiary's share of TRUST income / total trust income) x s 95 NET income. Differences between the two amounts (depreciation clawbacks, non-deductibles, deed income clauses) change WHO pays tax, not how much income exists. Read the deed's income clause first: an "income equalisation" / s 95 clause aligns the amounts; a pure ordinary-income clause guarantees gaps in gain years.  _(*FCT v Bamford* [2010] HCA 10; s 95)_
 
-### Rule 4 -- s 99A trustee assessment
+#### Rule 4 -- s 99A trustee assessment
 
 - **s 99A trustee assessment** — Income to which no beneficiary is presently entitled (and no valid streaming applies) is assessed to the trustee at 45% + 2% Medicare levy = 47%, flat from the first dollar. s 99 (ordinary progressive rates) is available only where the Commissioner considers s 99A unreasonable -- in practice deceased estates and a few statutory trusts (escalate, R-AU-TR-1). Common causes: late/defective resolutions, distributing "income" the deed doesn't recognise, vesting-date breaches.  _(s 99A; s 99)_
 
-### Rule 5 -- Division 6AA minors' rates
+#### Rule 5 -- Division 6AA minors' rates
 
 Applies to "eligible taxable income" (unearned income, including discretionary trust distributions) of resident minors who are not excepted persons: $0-$416 nil; $417-$1,307 taxed at 66% of the excess over $416; over $1,307 the ENTIRE amount at 45% (cliff, not marginal). For the middle band, use the greater of that amount and the tax if eligible taxable income were the top slice of total taxable income at general rates. The ATO table is published to 2025-26: verify it before a 2026-27 calculation ([ATO: tax rates for under-18s](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-if-you-re-under-18-years-old)).
 
@@ -179,27 +151,27 @@ For non-resident minors, the verified 2024-25 and 2025-26 table is separate: $0 
 
 The trustee pays under s 98(1) while the minor is under a legal disability; the minor also returns the share with a credit for the trustee's tax if they must lodge. LITO cannot offset Div 6AA tax. Excepted income (employment, testamentary trusts, compensation, inheritances) is taxed at adult rates -- verify character before assuming.
 
-### Rule 6 -- Streaming capital gains (Subdiv 115-C)
+#### Rule 6 -- Streaming capital gains (Subdiv 115-C)
 
 - **Streaming capital gains** — A beneficiary is "specifically entitled" to a capital gain to the extent they have received, or can reasonably expect to receive, the financial benefit referable to the gain AND that entitlement is recorded in its character in the trust's accounts/records by the deadline: 30 June where the gain forms part of trust income, or 31 August (2 months after year end) where the trustee appoints trust CAPITAL. The deed must permit streaming. The specifically entitled beneficiary grosses up their attributable gain and applies their own discount/losses; unstreamed gains flow proportionately, and gains nobody is presently or specifically entitled to are assessed to the trustee (s 115-222) at 47%. You cannot create a specific entitlement after 30 June over amounts a default beneficiary already became presently entitled to.  _(ITAA 1997 Subdiv 115-C; s 115-222; s 115-228)_
 
-### Rule 7 -- Streaming franked distributions (Subdiv 207-B)
+#### Rule 7 -- Streaming franked distributions (Subdiv 207-B)
 
 - **Streaming franked distributions** — Franked distributions and their credits follow the beneficiary specifically entitled, recorded in the trust's records IN CHARACTER by 30 June -- no 31 August grace. Credits require the beneficiary/trustee to be a "qualified person" (45-day holding rule); for a discretionary (non-fixed) trust, beneficiaries generally CANNOT be qualified persons for credits > $5,000 unless a family trust election is in force. Small individual beneficiaries: the $5,000 franking-credit ceiling applies per taxpayer, not per trust.  _(ITAA 1997 Subdiv 207-B; s 207-58)_
 
-### Rule 8 -- FTE, IEE and family trust distribution tax
+#### Rule 8 -- FTE, IEE and family trust distribution tax
 
 - **FTE, IEE and FTDT** — An FTE (s 272-80 Sch 2F) makes the trust a "family trust" for: trust-loss testing (only the modified income injection test), franking-credit flow-through (Rule 7), company loss tracing, and trustee-beneficiary reporting exclusions. The election names a test individual; the family group (s 272-90) is roughly the test individual, spouse, lineal ancestors/descendants, siblings, nieces/nephews, their spouses, specified former family members such as a former spouse (s 272-90(2A)), family companies/trusts/partnerships with IEEs, and certain charities. An IEE (s 272-85) brings an entity into the group. THE PRICE: any conferral/distribution of income or capital outside the group triggers FTDT at 47% (Div 271), payable by the trustee -- directors of a corporate trustee jointly and severally (Sch 2F s 271-15(2)(b)) -- due 21 days after the distribution, non-deductible, with the amount excluded from the recipient's assessable income. Elections are effectively permanent: revocation/variation windows are narrow (escalate, R-AU-TR-7). Review the group EVERY year before signing resolutions.  _(s 272-80, s 272-90, s 272-85 Sch 2F; Div 271, s 271-15)_
 
-### Rule 9 -- s 100A reimbursement agreements
+#### Rule 9 -- s 100A reimbursement agreements
 
 - **s 100A reimbursement agreements** — **AUDIT FLASH POINT** s 100A strikes where a beneficiary's present entitlement arises from a "reimbursement agreement" -- someone other than the beneficiary gets the benefit, a purpose of the arrangement is that somebody pays less tax, and the dealing is not ordinary family or commercial dealing. Beneficiaries under a legal disability are outside it. Consequence: the entitlement is ignored and the trustee is assessed under s 99A at 47%, with no standard amendment-period shelter. Current framework: - **TR 2022/4** -- ATO's view of the elements (connection, benefit-to-another, purpose, ordinary-dealing exception). - **PCG 2022/2** risk zones: WHITE = arrangements in years ended before 1 July 2014 (no new compliance resources, limited exceptions); GREEN = documented low-risk scenarios (entitlement paid to and used by the beneficiary or their family; funds retained by the trustee on documented terms; TR 2022/4 ordinary-dealing examples) -- document how you qualify; RED = priority review/audit: entitlements gifted or lent back, income round-robined to the trust, unit-issue set-offs, share-of-net-income >> entitlement, loss beneficiaries outside the group, Taxpayer Alert arrangements (e.g. TA 2022/1 -- parents enjoying adult children's entitlements). - **Cases:** *Guardian AIT* ([2021] FCA 1619; [2023] FCAFC 3) -- no reimbursement agreement where none existed when the entitlement was created; Part IVA partially succeeded instead. *BBlood* ([2022] FCA 1112; upheld [2023] FCAFC 89; special leave refused 2024) -- s 100A applied to a contrived buy-back arrangement. - **Post-Bendel posture:** TR 2022/4 and PCG 2022/2 remain IN FORCE but under review; with the Div 7A route to UPEs closed, s 100A is the ATO's primary lever on trust entitlements that don't reach the named beneficiary. Expect s 100A questions wherever UPE balances age.  _(s 100A; TR 2022/4; PCG 2022/2; TA 2022/1; *Guardian AIT* [2021] FCA 1619, [2023] FCAFC 3; *BBlood* [2022] FCA 1112, [2023] FCAFC 89)_
 
-### Rule 10 -- UPEs to corporate beneficiaries post-Bendel
+#### Rule 10 -- UPEs to corporate beneficiaries post-Bendel
 
 - **UPEs to corporate beneficiaries post-Bendel** — *Bendel* [2026] HCA 18: a UPE owed to a corporate beneficiary is not "financial accommodation" and so not a Div 7A loan while the company stays PASSIVE. ATO DIS 26 June 2026 accepts this. Still live: (1) s 100A on the arrangement creating the UPE; (2) Subdiv EA (trust pays/lends to the company's shareholders while the UPE is unpaid); (3) any ACTIVE step -- conversion to a loan, promissory note, call for payment -- can create a real s 109D loan from that point; (4) the announced UPE/Div 7A legislative response (2018-19 Budget measure, still unenacted) and the 30% minimum trustee tax in Bills, not law (Rule 14). Full mechanics, guidance-status table and examples: **au-div7a skill, Rule 11** -- read it before touching any bucket-company structure.  _(*Bendel* [2026] HCA 18; ATO DIS 26 June 2026; Subdiv EA; s 109D)_
 
-### Rule 11 -- TFN withholding (closely held trusts)
+#### Rule 11 -- TFN withholding (closely held trusts)
 
 For TFN withholding, a closely held trust is a resident trust that is discretionary or meets the 20/75 test, unless an exclusion applies. The test includes up to 20 individuals holding, directly or indirectly for their own benefit, fixed entitlements to at least 75% of income or at least 75% of capital. Apply the prescribed grouping of an individual, relatives and nominees, and the discretionary-trustee rule. Excluded trusts include qualifying superannuation trusts, specified deceased estates, listed unit trusts and other statutory exclusions. For example, a resident fixed trust has 30 unrelated beneficial owners: 20 each hold 3.75% and ten each hold 2.5% of both income and capital. The largest 20 hold exactly 75%; the largest 19 hold only 71.25%. With no exclusion, it passes the inclusive 20/75 test. See [ATO: who the rules apply to](https://www.ato.gov.au/businesses-and-organisations/trusts/trusts-registration-and-reporting-obligations/closely-held-trusts/tfn-withholding-for-closely-held-trusts/who-the-rules-apply-to).
 
@@ -207,15 +179,15 @@ Beneficiaries within scope must quote their TFN before being paid or made presen
 
 From 1 July 2026 the quarterly TFN report is ABOLISHED (final report for April-June 2026 was due 31 July 2026); beneficiary TFNs are instead reported in the statement of distribution in the trust return (2027 return onward). Withholding obligations themselves are unchanged.
 
-### Rule 12 -- Trustee beneficiary statements and circular distributions (Div 6D)
+#### Rule 12 -- Trustee beneficiary statements and circular distributions (Div 6D)
 
 - **TB statements and circular distributions** — A closely held trust distributing a share of net income to a TRUSTEE beneficiary must make a TB statement in the return; failure = trustee beneficiary non-disclosure tax at 47% on the untaxed part. s 102UM imposes TBNT where a distribution ultimately circles back to the originating trust -- and since 1 July 2019 this catches FAMILY trusts too (an FTE does not immunise round-robins). Any loop pattern -> refuse and escalate (R-AU-TR-4).  _(Div 6D; s 102UM)_
 
-### Rule 13 -- Trust losses (Schedule 2F) -- overview only
+#### Rule 13 -- Trust losses (Schedule 2F) -- overview only
 
 - **Trust losses overview** — Carried-forward trust losses are deductible only if the trust passes the relevant tests: non-fixed trusts face the 50% stake test (where applicable), control test, pattern of distributions test, and income injection test; family trusts (FTE in force) face only a modified income injection test. This is the main practical reason FTEs exist. Do not compute recoupment from this skill -- escalate (R-AU-TR-6).  _(Schedule 2F ITAA 1936)_
 
-### Rule 14 -- 2026 reform landscape: what IS law vs what is only a BILL
+#### Rule 14 -- 2026 reform landscape: what IS law vs what is only a BILL
 
 Never present a Bill or announced measure as enacted, and never advise restructures around it -- note it, quantify nothing, escalate planning (T2-6).
 
@@ -233,37 +205,37 @@ Never present a Bill or announced measure as enacted, and never advise restructu
 | One-off excluded election trust (EET) election (Schedule 3; proposed Div 6F, ss 102UYA to 102UYJ ITAA 1936): for a trust existing on 1 July 2028, made in the first income year starting on or after that date (2028-29 for a standard year), with beneficiaries and shares nominated. The minimum tax does not apply while the conditions are met. A year departing from the nomination revokes the election: the trustee pays the top marginal rate plus Medicare levy on all net income that year, and the minimum tax applies afterwards. A trustee takes the Schedule 2 roll-over or the election, not both | **BILLS, NOT LAW** -- explanatory memorandum paras 3.5-3.10, 3.16; proposed s 102UYC(7) |
 | Further CGT adjustments to the Tax Reform No. 1 Act (Schedule 4), including exemptions from the 30% minimum rate on capital gains for genuine testamentary trusts, deceased estates, special disability trusts and certain minors | **BILLS, NOT LAW** -- the LAW rows above stand until amended. Explanatory memorandum paras 4.137-4.138 |
 
-## Section 6 -- Tier 2 catalogue
+### Section 6 -- Tier 2 catalogue
 
-### T2-1 -- Deed income clause vs s 95
+#### T2-1 -- Deed income clause vs s 95
 
 **Trigger:** deed not sighted, or income clause silent on capital gains/franking gross-up. **Issue:** streaming power and Bamford percentages both hang off the deed. **Action:** obtain and quote the clause; if the deed lacks streaming powers, streaming fails regardless of records.
 
-### T2-2 -- Disclaimers, variations and late "fixes"
+#### T2-2 -- Disclaimers, variations and late "fixes"
 
-**Trigger:** beneficiary wants to disclaim after year end, or trustee wants to "amend" a resolution. **Issue:** a disclaimer after year end, even if effective at trust law, does not undo a present entitlement that existed at 30 June: the beneficiary, including a default beneficiary, stays assessed under s 97 and the income does not move to the trustee under s 99A (*FCT v Carter* [2022] HCA 10). A beneficiary who has already received the benefit cannot disclaim it at all. A disclaimer also takes the arrangement out of the PCG 2022/2 green zone (para 32(c)). Amendments after 30 June cannot create present entitlement retrospectively. **Action:** escalate; document only.
+**Trigger:** beneficiary wants to disclaim after year end, or trustee wants to "amend" a resolution. **Issue:** a disclaimer after year end, even if effective at trust law, does not undo a present entitlement that existed at 30 June: the beneficiary, including a default beneficiary, stays assessed under s 97 and the income does not move to the trustee under s 99A ([*FCT v Carter* [2022] HCA 10, paras 19-27 and 33](https://www.hcourt.gov.au/sites/default/files/eresources/2022/HCA/10.pdf)). A beneficiary who has already accepted the benefit cannot disclaim it; validity under the general law requires specialist review. See the [ATO decision impact statement, footnote 14](https://www.ato.gov.au/law/view/pdf?DocId=LIT%2FICD%2FS62%2F2021%2F00001&filename=law%2Fview%2Fpdf%2Fdis%2Fdis_carter.pdf). A disclaimer also takes the arrangement out of the PCG 2022/2 green zone (para 32(c)). Amendments after 30 June cannot create present entitlement retrospectively. **Action:** escalate; document only.
 
-### T2-3 -- Bucket company with no cash movement
+#### T2-3 -- Bucket company with no cash movement
 
 **Trigger:** corporate beneficiary entitlements accrue year after year, never paid. **Issue:** passive UPEs are Div 7A-safe post-Bendel but are s 100A magnets and the company still returns the s 97 share -- tax without cash. **Action:** run the au-div7a UPE screen; confirm the company actually returned its shares of net income.
 
-### T2-4 -- Part IVA overlay
+#### T2-4 -- Part IVA overlay
 
 **Trigger:** arrangement survives s 100A but exists mainly to route income at lower rates (cf. *Guardian* round two). **Issue:** general anti-avoidance is a live fallback for the ATO. **Action:** flag dominant-purpose facts; escalate.
 
-### T2-5 -- Aged UPEs and the green-zone clock
+#### T2-5 -- Aged UPEs and the green-zone clock
 
 **Trigger:** individual-beneficiary entitlements retained by the trustee beyond 2 years, or undocumented retention terms. **Issue:** parts of the PCG 2022/2 green zone expressly exclude prolonged retention; documentation is a green-zone entry condition. **Action:** document lending/retention terms or escalate.
 
-### T2-6 -- Proposed 30% minimum trustee tax horizon
+#### T2-6 -- Proposed 30% minimum trustee tax horizon
 
 **Trigger:** structuring, FTE, or bucket-company decisions with effect past 1 July 2028. **Issue:** Bills, not law, would tax trustees at 30% with corporate beneficiaries denied the offset, and offer roll-over relief or a one-off election (Rule 14). **Action:** note on all forward-looking advice; escalate planning; never model it as enacted.
 
-### T2-7 -- Vesting date and appointor checks
+#### T2-7 -- Vesting date and appointor checks
 
 **Trigger:** old deed (pre-1990s), unclear appointor succession, or vesting date within 5 years. **Issue:** distributions after vesting are void; appointor gaps break resolutions. **Action:** flag for legal review.
 
-## Section 7 -- Excel working paper template
+### Section 7 -- Excel working paper template
 
 ```
 AUSTRALIA TRUST DISTRIBUTIONS -- WORKING PAPER
@@ -306,7 +278,7 @@ REVIEWER FLAGS
   [Tier 2 flags, refusals triggered, reform-horizon notes]
 ```
 
-## Section 8 -- Reading guide
+### Section 8 -- Reading guide
 
 1. Deed first, always: income clause, streaming powers, default beneficiaries, deadlines, vesting date. Every later step depends on it.
 2. Date-stamp the resolution before anything else -- a perfect resolution signed 1 July is a 47% problem.
@@ -316,19 +288,8 @@ REVIEWER FLAGS
 6. Minors: check the character of what they receive before assuming penalty rates (or assuming they don't apply).
 7. Label every 2026 reform item as LAW (Tax Reform No. 1 Act, from 1 July 2027) or BILL, NOT LAW (30% trustee minimum tax, proposed from 1 July 2028) -- never blur them.
 
-## Section 9 -- Onboarding fallback
 
-If the client provides only financial statements and a trial balance:
-
-1. Pull trust income and any "distributions" from equity/liability movements; list beneficiary credit balances as UPE candidates
-2. Build the resolution register with resolution date UNKNOWN flagged; request the signed minutes and the deed
-3. Recompute Bamford shares from stated percentages against net income per the return workpapers
-4. Screen every UPE for s 100A zone features; screen every beneficiary against the (unconfirmed) family group
-5. **Flag:** "Prepared from financial statements only. Deed, signed resolutions, streaming records, TFN evidence and FTE status not sighted. Present entitlement at 30 June unverified -- s 99A exposure unquantified. Reviewer must confirm before lodgment."
-
-## Section 10 -- Reference material
-
-### Key figures
+#### Key figures
 
 **Key figures**
 
@@ -344,25 +305,86 @@ If the client provides only financial statements and a trial balance:
 | CGT reform start (LAW) | 1 July 2027 (indexation + 30% minimum rate; trustee statements) |
 | Trustee minimum tax (Bills, not law) | 30% from 1 July 2028; carve-outs, roll-over relief and one-off election at Rule 14 |
 
-### Primary sources (verified 20 August 2026)
+## Worked cases
 
-**Primary sources**  _(Verified 20 August 2026)_
+### Section 4 -- Worked examples
 
-| Topic | Source |
-| --- | --- |
-| Division 6, 6AA, 6D, 6E, s 99A, s 100A | ITAA 1936 (current compilation, legislation.gov.au); ITAA 1997 Subdivs 115-C, 207-B |
-| Minor rates | ato.gov.au -- Tax rates if you're under 18 years old; Income Tax Rates Act 1986 |
-| Trustee resolutions & streaming deadlines | ato.gov.au -- Trustee resolutions checklist (QC 25912); Becoming specifically entitled |
-| Proportionate approach | *FCT v Bamford* [2010] HCA 10 |
-| s 100A | TR 2022/4; PCG 2022/2 (8 Dec 2022); *Guardian* [2023] FCAFC 3; *BBlood* [2022] FCA 1112, [2023] FCAFC 89; TA 2022/1 |
-| Bendel / UPEs | [2026] HCA 18 (10 June 2026); ATO decision impact statement 26 June 2026; au-div7a skill Rule 11 |
-| FTE / FTDT | ato.gov.au -- Family trusts (FTDT 47%, due 21 days, joint & several directors); Sch 2F ITAA 1936 ([s 271-15](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-271-15), [s 272-90](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-272-90)) |
-| Disclaimers | *FCT v Carter* [2022] HCA 10; [PCG 2022/2](https://www.ato.gov.au/law/view/document?docid=COG/PCG20222/NAT/ATO/00001) para 32(c) |
-| TFN withholding | ato.gov.au -- TFN withholding for closely held trusts: What trustees need to do (QC 23140, updated 16 July 2026); Changes to beneficiary TFN reporting (QC 107776, 14 July 2026) |
-| Circular distributions | s 102UM ITAA 1936; Treasury Laws Amendment (2019 Tax Integrity and Other Measures No. 1) Act 2019 |
-| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); ATO -- Reforming negative gearing and CGT (QC 107304, updated 29 June 2026); 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026; Tax Reform No. 3 Bill: [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) |
+#### Example 1 -- Proportionate approach (trust income vs s 95 net income)
 
-### Test suite
+Deed defines income as ordinary income. Trust income $100,000; s 95 net income $120,000 (non-deductible amounts and timing differences). Resolution: A 60%, B 40% of trust income.
+
+Bamford proportionate approach: each beneficiary is assessed on their PERCENTAGE of net income, not the dollars they were promised. A: 60% x $120,000 = **$72,000**. B: 40% x $120,000 = **$48,000**. The $20,000 gap is taxed even though nobody can bank it -- flag to the client.
+
+#### Example 2 -- Streaming a capital gain and a franked dividend
+
+2026-27 receipts: $80,000 gross capital gain (asset held > 12 months), $70,000 fully franked dividend (franking credit $70,000 x 30/70 = $30,000), $40,000 rent. Trustee validly streams: gain 100% to A (individual; capital appointment recorded 20 August 2027 -- inside 31 August), franked dividend 100% to C Pty Ltd (recorded by 30 June 2027), rent to B.
+
+- A (Subdiv 115-C): attributable gain $40,000 (post-discount share) grossed up x2 = $80,000 capital gain in A's own return; A applies A's own 50% discount (no losses) = **$40,000 assessable**. (From 1 July 2027 this discount mechanic changes -- Rule 14.)
+- C (Subdiv 207-B): includes $70,000 + $30,000 credit = $100,000; tax at 30% (bucket company is not a base rate entity on passive trust income) = $30,000 less $30,000 franking offset = **nil net**, franking account credited $30,000.
+- B (Div 6/6E): assessed on the $40,000 rent share.
+
+#### Example 3 -- Minor beneficiaries (Division 6AA)
+
+Resolutions give grandchild G1 (age 9) $416 and grandchild G2 (age 12) $1,200, both eligible (unearned) income; trustee assessed under s 98(1) as they are under a legal disability.
+
+- G1: $416 sits in the $0-$416 band -> **tax nil** (assuming no other income).
+- G2: 66% x ($1,200 - $416) = 66% x $784 = **$517.44** (no other income, so no top-slice adjustment) -- a 43% average rate on a $1,200 entitlement.
+- Had G2 received $5,000: over $1,307, so 45% x THE WHOLE $5,000 = **$2,250** (plus Medicare levy where applicable; LITO cannot reduce tax on minors' unearned income).
+
+Distributing eligible income beyond $416 per minor is almost always pointless. Excepted persons (e.g. minors in full-time work, certain disabled minors) and excepted income (employment, testamentary trust income, compensation, deceased estate income) escape Div 6AA -- testamentary questions escalate (R-AU-TR-1).
+
+#### Example 4 -- Family trust distribution tax
+
+FTE in force, test individual David. Trustee distributes $20,000 to David's cousin. Cousins are OUTSIDE the s 272-90 family group.
+
+FTDT = 47% x $20,000 = **$9,400**, payable by the trustee (directors of a corporate trustee jointly and severally liable), due 21 days after the distribution, non-deductible. The $20,000 is then excluded from the cousin's assessable income. There is no materiality threshold and no Commissioner discretion -- map the family group BEFORE every unusual distribution.
+
+#### Example 5 -- No resolution, no default clause (s 99A)
+
+Deed requires a resolution by 30 June and names no default beneficiaries. The 2026-27 minute is signed 15 July 2027. Net income $150,000.
+
+No beneficiary was presently entitled at 30 June -> trustee assessed under s 99A: 47% x $150,000 = **$70,500** flat (no tax-free threshold). A default-beneficiary clause would have rescued present entitlement -- but check WHO defaults: minor default beneficiaries swap a 47% problem for a Div 6AA one. The s 99 concessional alternative is confined to deceased estates and other Commissioner-discretion cases -- escalate (R-AU-TR-1).
+
+#### Example 6 -- s 100A red zone -> s 99A exposure
+
+Adult child at university (marginal rate ~nil) is made presently entitled to $100,000. Under a pre-existing family understanding the cash is paid to the parents' loan offset; the child never benefits. This is PCG 2022/2 red zone scenario 1 (entitlement gifted/lent to another party).
+
+If s 100A applies (TR 2022/4 elements: connection, benefit-to-another, tax-reduction purpose, not ordinary family/commercial dealing), the child's present entitlement is deemed never to have existed -> trustee assessed under s 99A: 47% x $100,000 = **$47,000**, and s 100A assessments are not sheltered by the standard amendment periods. Contrast the green zone: if the child had actually received and used the money, scenario 2 applies. *Guardian* confirms the agreement must exist at or before the entitlement is created; *BBlood* shows contrived dealings fail the ordinary-dealing exception. Escalate red-zone facts (R-AU-TR-5).
+
+## When to refuse or refer
+
+Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
+
+
+#### Prohibitions
+
+- NEVER backdate, or help reconstruct after 30 June, a trustee resolution
+- NEVER assume trust income equals s 95 net income without the deed
+- NEVER stream a capital gain recorded after 31 August or a franked distribution recorded after 30 June
+- NEVER apply adult rates to a minor's eligible trust income -- and never assume Div 6AA applies to excepted income
+- NEVER let an FTE trust distribute to an unmapped beneficiary without pricing FTDT at 47%
+- NEVER treat a passive UPE as a Div 7A loan post-Bendel -- and NEVER skip the s 100A / Subdiv EA screen
+- NEVER claim green-zone protection without documenting how the scenario conditions are met
+- NEVER present the proposed 30% minimum trustee tax (or any detail of the Bills) as law
+- NEVER compute trust loss recoupment, non-resident trustee assessments, or TBNT without escalating
+- NEVER present figures as definitive
+
+
+### Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+> Contributed by Ryan Duguid.
+
+
+
+## Completion checklist
+
+
+
+#### Test suite
 
 **Test 1:** Trust income $100,000, net income $120,000, 50/50 resolution. -> Each beneficiary assessed on $60,000.
 
@@ -386,26 +408,42 @@ If the client provides only financial statements and a trial balance:
 
 **Test 11:** No resolution by 30 June; the default beneficiary disclaims in September. -> Still assessed under s 97 on the 30 June entitlement (*Carter*); no s 99A assessment arises from the disclaimer.
 
-### Prohibitions
+## Sources
 
-- NEVER backdate, or help reconstruct after 30 June, a trustee resolution
-- NEVER assume trust income equals s 95 net income without the deed
-- NEVER stream a capital gain recorded after 31 August or a franked distribution recorded after 30 June
-- NEVER apply adult rates to a minor's eligible trust income -- and never assume Div 6AA applies to excepted income
-- NEVER let an FTE trust distribute to an unmapped beneficiary without pricing FTDT at 47%
-- NEVER treat a passive UPE as a Div 7A loan post-Bendel -- and NEVER skip the s 100A / Subdiv EA screen
-- NEVER claim green-zone protection without documenting how the scenario conditions are met
-- NEVER present the proposed 30% minimum trustee tax (or any detail of the Bills) as law
-- NEVER compute trust loss recoupment, non-resident trustee assessments, or TBNT without escalating
-- NEVER present figures as definitive
+| Source | URL | Read on |
+|---|---|---|
+| Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-if-you-re-under-18-years-old> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/trusts/trusts-registration-and-reporting-obligations/closely-held-trusts/tfn-withholding-for-closely-held-trusts/who-the-rules-apply-to> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/trusts/trusts-registration-and-reporting-obligations/closely-held-trusts/tfn-withholding-for-closely-held-trusts/what-trustees-need-to-do> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.hcourt.gov.au/sites/default/files/eresources/2022/HCA/10.pdf> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/pdf?DocId=LIT%2FICD%2FS62%2F2021%2F00001&filename=law%2Fview%2Fpdf%2Fdis%2Fdis_carter.pdf> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-271-15> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-272-90> | Not re-read for this format update; see retained provenance |
+| Retained citation | <https://www.ato.gov.au/law/view/document?docid=COG/PCG20222/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
 
-## Disclaimer
+### Section 10 -- Reference material
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+#### Primary sources (verified 20 August 2026)
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+**Primary sources**  _(Verified 20 August 2026)_
 
-> Contributed by Ryan Duguid.
+| Topic | Source |
+| --- | --- |
+| Division 6, 6AA, 6D, 6E, s 99A, s 100A | ITAA 1936 (current compilation, legislation.gov.au); ITAA 1997 Subdivs 115-C, 207-B |
+| Minor rates | ato.gov.au -- Tax rates if you're under 18 years old; Income Tax Rates Act 1986 |
+| Trustee resolutions & streaming deadlines | ato.gov.au -- Trustee resolutions checklist (QC 25912); Becoming specifically entitled |
+| Proportionate approach | *FCT v Bamford* [2010] HCA 10 |
+| s 100A | TR 2022/4; PCG 2022/2 (8 Dec 2022); *Guardian* [2023] FCAFC 3; *BBlood* [2022] FCA 1112, [2023] FCAFC 89; TA 2022/1 |
+| Bendel / UPEs | [2026] HCA 18 (10 June 2026); ATO decision impact statement 26 June 2026; au-div7a skill Rule 11 |
+| FTE / FTDT | ato.gov.au -- Family trusts (FTDT 47%, due 21 days, joint & several directors); Sch 2F ITAA 1936 ([s 271-15](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-271-15), [s 272-90](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/Sch2F-272-90)) |
+| Disclaimers | [*FCT v Carter* [2022] HCA 10](https://www.hcourt.gov.au/sites/default/files/eresources/2022/HCA/10.pdf); [ATO decision impact statement](https://www.ato.gov.au/law/view/pdf?DocId=LIT%2FICD%2FS62%2F2021%2F00001&filename=law%2Fview%2Fpdf%2Fdis%2Fdis_carter.pdf); [PCG 2022/2](https://www.ato.gov.au/law/view/document?docid=COG/PCG20222/NAT/ATO/00001) para 32(c) |
+| TFN withholding | ato.gov.au -- TFN withholding for closely held trusts: What trustees need to do (QC 23140, updated 16 July 2026); Changes to beneficiary TFN reporting (QC 107776, 14 July 2026) |
+| Circular distributions | s 102UM ITAA 1936; Treasury Laws Amendment (2019 Tax Integrity and Other Measures No. 1) Act 2019 |
+| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); ATO -- Reforming negative gearing and CGT (QC 107304, updated 29 June 2026); 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026; Tax Reform No. 3 Bill: [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) |
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
 
 <!-- openaccountants-cta-block -->
 
