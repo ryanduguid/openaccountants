@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-03T00:33:53+00:00",
+ "generated_at": "2026-11-03T00:47:54+00:00",
  "counts": {
-  "guides": 2021,
+  "guides": 2022,
   "jurisdictions": 296,
   "accountant_reviewed": 164
  },
@@ -17680,11 +17680,11 @@
    "jurisdiction": "PL",
    "category": "international",
    "tier": 2,
-   "verified_by": "pending",
+   "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "pl-income-tax",
@@ -17698,6 +17698,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "pl-small-company-financial-statements",
+   "path": "skills/international/poland/pl-small-company-financial-statements.md",
+   "name": "pl-small-company-financial-statements",
+   "jurisdiction": "PL",
+   "category": "financial-statements",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "pl-zus-contributions",

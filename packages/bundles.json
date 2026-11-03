@@ -4453,6 +4453,7 @@
     "pl-capital-gains.md",
     "pl-corporate-income-tax.md",
     "pl-income-tax.md",
+    "pl-small-company-financial-statements.md",
     "pl-zus-contributions.md",
     "poland-einvoice.md",
     "poland-vat-return.md",
@@ -4463,6 +4464,7 @@
     "corporate-income-tax-workflow-base.md",
     "einvoice-workflow-base.md",
     "eu-vat-directive.md",
+    "financial-statements-workflow-base.md",
     "foundation.md",
     "workflow-base.md"
    ]
