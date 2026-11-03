@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T23:31:47+00:00",
+ "generated_at": "2026-11-03T00:14:49+00:00",
  "counts": {
   "guides": 2019,
   "jurisdictions": 294,
@@ -9728,7 +9728,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "de-ustva-vat-return",
@@ -9793,7 +9793,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "germany-payroll",
@@ -9819,7 +9819,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "germany-to-switzerland-cross-border-tax",
@@ -9845,7 +9845,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "germany-vat-return",
@@ -11860,7 +11860,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "italy-bookkeeping",
@@ -11951,7 +11951,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "italy-transfer-pricing",
@@ -20596,7 +20596,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "se-social-contributions",
@@ -20648,7 +20648,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "sweden-payroll",
@@ -20661,7 +20661,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "sweden-vat-return",
