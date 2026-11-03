@@ -4,6 +4,8 @@ All notable changes to this repository, newest first, in the [Keep a Changelog](
 
 ## [Unreleased]
 
+- Make `scripts/check-coverage-claims.py` check, and `--write` rewrite, the `There are N Tier 2 guides among the N indexed guides.` sentence in `docs/QUALITY-TIERS.md`, which the headline check never read and which had fallen to 1,839 of 2,003 against the tree's 1,853 of 2,017. Correct the sentence and `llms-full.txt`, which embeds it.
+
 - Add a conditional selected-2025 New Caledonia one-part raw IRPP reference with exact lower-thousand income floor, marginal-scale examples and explicit source, input, household and final-assessment holds.
 
 - Add a conditional Faroe Islands municipal income tax reference with all 29 published 2026 municipal percentages, the income floor to a multiple of 100, the untaxed first 30,000 and exact raw examples. Relief, combined-tax coordination and actual-work acceptance remain held.
