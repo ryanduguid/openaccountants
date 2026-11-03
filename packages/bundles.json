@@ -4653,6 +4653,19 @@
     "workflow-base.md"
    ]
   },
+  "saint-barthelemy": {
+   "jurisdiction": "BL",
+   "name": "Saint Barthelemy",
+   "files": [
+    "intake.md",
+    "bl-cfae-legislative-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "saint-kitts-and-nevis": {
    "jurisdiction": "KN",
    "name": "Saint Kitts And Nevis",
@@ -9145,6 +9158,19 @@
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
     "vat-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "wallis-and-futuna": {
+   "jurisdiction": "WF",
+   "name": "Wallis And Futuna",
+   "files": [
+    "intake.md",
+    "wf-patente-registration-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
     "workflow-base.md"
    ]
   },

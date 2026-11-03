@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-03T00:14:49+00:00",
+ "generated_at": "2026-11-03T00:33:53+00:00",
  "counts": {
-  "guides": 2019,
-  "jurisdictions": 294,
+  "guides": 2021,
+  "jurisdictions": 296,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -18493,6 +18493,19 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "bl-cfae-legislative-reference",
+   "path": "skills/international/saint-barthelemy/bl-cfae-legislative-reference.md",
+   "name": "bl-cfae-legislative-reference",
+   "jurisdiction": "BL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "kn-social-security-reconciliation",
    "path": "skills/international/saint-kitts-and-nevis/kn-social-security-reconciliation.md",
    "name": "kn-social-security-reconciliation",
@@ -22885,6 +22898,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "wf-patente-registration-reference",
+   "path": "skills/international/wallis-and-futuna/wf-patente-registration-reference.md",
+   "name": "wf-patente-registration-reference",
+   "jurisdiction": "WF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2019",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "zambia-vat",
