@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T23:31:47+00:00",
+ "generated_at": "2026-11-02T23:55:44+00:00",
  "counts": {
   "guides": 2019,
   "jurisdictions": 294,
@@ -11860,7 +11860,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "italy-bookkeeping",
@@ -11951,7 +11951,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-31"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "italy-transfer-pricing",
