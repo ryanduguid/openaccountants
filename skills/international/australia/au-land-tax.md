@@ -225,7 +225,7 @@ The current [Land Tax Act 2002 (WA)](https://www.legislation.wa.gov.au/legislati
 | $5,000,001 to $11,000,000 | $66,550 + 2.0c per $1 above $5,000,000 |
 | $11,000,001 and over | $186,550 + 2.67c per $1 above $11,000,000 |
 
-These rates exclude any separately applicable Metropolitan Region Improvement Tax (MRIT). Taxable value for each parcel is the lesser of current unimproved value and 150% of the previous year's unimproved value. MRIT applies to relevant Perth metropolitan holdings: 0.14% of the aggregated taxable value above $300,000. Check the metropolitan land and ownership grouping separately; do not apply MRIT to every WA holding. See the RevenueWA assessment guidance above, re-read 3 November 2026.
+These rates exclude any separately applicable Metropolitan Region Improvement Tax (MRIT). For an eligible ordinary parcel, taxable value is the lesser of current unimproved value and 150% of the previous financial year's taxable value. The previous taxable value can already be capped; do not substitute previous unimproved value. Under Glossary clause 6, newly subdivided lots generally cannot use the cap, subject to the compulsory-acquisition subdivision exception and proportional rules. Where section 43A concessional value applied in the previous year, clause 6(4)(a) instead uses the specified earlier unimproved value. Confirm those special cases separately. See the current [Land Tax Assessment Act 2002, Glossary clause 6 and section 43A](https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_49123.htm) and [Land Tax Assessment Regulations 2003, regulation 12A](https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_45244.htm), read 3 November 2026. RevenueWA's general assessment webpage says previous unimproved value; that summary conflicts with the ordinary statutory input, so the statute governs this calculation. MRIT applies to relevant Perth metropolitan holdings: 0.14% of the aggregated taxable value above $300,000. Check the metropolitan land and ownership grouping separately; do not apply MRIT to every WA holding. See the RevenueWA assessment guidance above, re-read 3 November 2026.
 
 - **Foreign surcharge** — WA does not levy a foreign owner land tax surcharge.
 
@@ -391,7 +391,7 @@ For the assessment periods in section 4, before exemptions and separate surcharg
 
 These cases recompute the stated bands and categories for the Section 4 periods. The checker does not establish foreign status, trust classification, an exemption or any other legal eligibility. Each case assumes those facts have already been confirmed, excludes other holdings and concessions unless stated and is an estimate before authority-specific final rounding.
 
-For the VIC case, the general, trust and absentee amounts are alternative eligible categories; the qualifying PPR in Example 2 instead gives nil. For SA, $0.50 below is the calculated amount for $936,001: RevenueSA's below-$20 rule means no assessment is issued. For TAS FILTS, assume a qualifying post-1 July 2022 residential General Land acquisition, 50% foreign ownership and no exclusion. The ACT case assumes full-year ordinary liability; the unit uses the whole complex's residential AUV before its entitlement share. The QLD upper-scale case excludes the separately assessed foreign or absentee surcharge and does not resolve the cents qualification above.
+For the VIC case, the general, trust and absentee amounts are alternative eligible categories; the qualifying PPR in Example 2 instead gives nil. For SA, $0.50 below is the calculated amount for $936,001: RevenueSA's below-$20 rule means no assessment is issued. For TAS FILTS, assume a qualifying post-1 July 2022 residential General Land acquisition, 50% foreign ownership and no exclusion. The ACT case assumes full-year ordinary liability; the unit uses the whole complex's residential AUV before its entitlement share. Both WA cap cases assume the ordinary cap is available, with no relevant subdivision or section 43A exception and no other aggregated land. The first uses previous taxable value of $400,000; the repeated-cap case uses previous taxable value of $300,000 despite previous unimproved value of $400,000. This gives current taxable value $450,000 and ordinary tax $375, plus $210 MRIT only if the whole holding is subject to it. The QLD upper-scale case excludes the separately assessed foreign or absentee surcharge and does not resolve the cents qualification above.
 
 ```oa-check
 name: NSW portfolio and average
@@ -530,9 +530,9 @@ name: WA cap ordinary tax and metropolitan increment
 tolerance: 0.000001
 inputs:
   current_uv: 900000
-  previous_uv: 400000
+  previous_taxable_value: 400000
 steps:
-  - taxable_value: min(current_uv, previous_uv * 1.5)
+  - taxable_value: min(current_uv, previous_taxable_value * 1.5)
   - ordinary_tax: 300 + (taxable_value - 420000) * 0.0025
   - mrit_if_all_in_region: (taxable_value - 300000) * 0.0014
   - total_if_mrit_applies: ordinary_tax + mrit_if_all_in_region
@@ -541,6 +541,28 @@ expected:
   ordinary_tax: 750
   mrit_if_all_in_region: 420
   total_if_mrit_applies: 1170
+```
+
+```oa-check
+name: WA repeated-cap regression with distinct previous values
+tolerance: 0.000001
+inputs:
+  current_uv: 900000
+  previous_uv: 400000
+  previous_taxable_value: 300000
+steps:
+  - capped_value: previous_taxable_value * 1.5
+  - taxable_value: min(current_uv, capped_value)
+  - ordinary_tax: 300 + (taxable_value - 420000) * 0.0025
+  - mrit_if_all_in_region: (taxable_value - 300000) * 0.0014
+  - total_if_mrit_applies: ordinary_tax + mrit_if_all_in_region
+  - unimproved_input_difference: previous_uv - previous_taxable_value
+expected:
+  taxable_value: 450000
+  ordinary_tax: 375
+  mrit_if_all_in_region: 210
+  total_if_mrit_applies: 585
+  unimproved_input_difference: 100000
 ```
 
 ```oa-check
@@ -665,7 +687,9 @@ The following primary passages were read on 3 November 2026 for the targeted rat
 | SA scales, part-$100 increments and small amounts | <https://www.revenuesa.sa.gov.au/landtax/rates-and-thresholds> |
 | SA trust exceptions | <https://www.revenuesa.sa.gov.au/landtax/trusts> |
 | SA primary production | <https://revenuesa.sa.gov.au/landtax/exemption-waiver-relief/primary-production> |
-| WA assessment, cap, grouping and MRIT | <https://www.wa.gov.au/organisation/department-of-treasury-and-finance/land-tax-assessment> |
+| WA assessment, grouping and MRIT; cap wording conflict noted above | <https://www.wa.gov.au/organisation/department-of-treasury-and-finance/land-tax-assessment> |
+| WA statutory cap and subdivision exceptions | <https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_49123.htm> |
+| WA prescribed cap percentage, regulation 12A | <https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_45244.htm> |
 | WA continuing rate table, s 5 Table 11 | <https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_28122.htm> |
 | TAS continuing ordinary scale | <https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-2000-073> |
 | TAS ownership liability | <https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-2000-074> |
