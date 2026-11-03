@@ -25,6 +25,8 @@ What is checked, all against index.json and the tree:
   README.md, llms.txt,   the headline line, "**N Guides** across **N
   docs/QUALITY-TIERS.md  jurisdictions** · **N accountant-reviewed** · **N
                          named accountants**", figure by figure;
+  docs/QUALITY-TIERS.md  the sentence "There are N Tier 2 guides among the N
+                         indexed guides.", which repeats two table rows;
   PARTNERS.md            that it equals a fresh render from index.json and
                          docs/partners.json (scripts/build-partners.py), and
                          that every profile in docs/partners.json belongs to a
@@ -63,7 +65,8 @@ except (AttributeError, ValueError):
 # Every path is relative to the working directory, as CI runs the checker
 # from the repository root and the tests run it from a throwaway corpus.
 DOC = os.path.join('docs', 'COVERAGE.md')
-HEADLINE_FILES = ('README.md', 'llms.txt', os.path.join('docs', 'QUALITY-TIERS.md'))
+TIERS = os.path.join('docs', 'QUALITY-TIERS.md')
+HEADLINE_FILES = ('README.md', 'llms.txt', TIERS)
 PARTNERS = 'PARTNERS.md'
 PROFILES = os.path.join('docs', 'partners.json')
 
@@ -73,6 +76,7 @@ ROW = re.compile(r'^(\|\s*(.+?)\s*\|\s*\*\*)([\d,]+)(\*\*.*?\|\s*)$', re.M)
 PEOPLE = re.compile(r'(Distinct `reviewed_by` values \|\s*\*\*[\d,]+\*\*\s*\()(\d+)( people)')
 REVIEWED_IN = re.compile(r'(Accountant-reviewed guides exist in )([\d,]+)( of the )([\d,]+)( jurisdiction codes)')
 HEADLINE = re.compile(r'\*\*[\d,]+\s+Guides\*\*')
+TIER2 = re.compile(r'(There are )([\d,]+)( Tier 2 guides among the )([\d,]+)( indexed guides)')
 
 
 def normalise(name):
@@ -111,6 +115,7 @@ def figures(index):
         'people': len(people),
         'reviewed in': len({g['jurisdiction'] for g in guides if g.get('jurisdiction') and roster.reviewer_of(g)}),
         'headline': roster.headline(guides),
+        'tier 2': [table['`tier: 2` (source-cited draft)'], table['Guide files indexed']],
     }
 
 
@@ -138,7 +143,10 @@ def rewrite(path, text, want):
                                   lambda m: '**' + format(want['headline'][label], ',') + m.group(1), line)
                 lines[i] = line
                 break
-        return ''.join(lines)
+        text = ''.join(lines)
+    if path == TIERS.replace(os.sep, '/'):
+        text = TIER2.sub(lambda m: m.group(1) + format(want['tier 2'][0], ',') + m.group(3)
+                         + format(want['tier 2'][1], ',') + m.group(5), text)
     return text
 
 
@@ -180,6 +188,7 @@ def main(argv=None):
     index_integrity(problem, index)
     derived_table(problem, index)
     headline_claims(problem, index)
+    tier2_claim(problem, index)
     partners_fresh(problem, index)
     report.note('claims disagreeing with the tree: %d' % len(report.findings))
     return report.finish()
@@ -277,6 +286,29 @@ def headline_claims(problem, index):
             if claimed != n:
                 problem(doc, label, '%s: headline says %s %s, the tree has %s'
                         % (doc, format(claimed, ','), label, format(n, ',')), claimed=claimed, actual=n)
+
+
+def tier2_claim(problem, index):
+    """QUALITY-TIERS.md's "There are N Tier 2 guides among the N indexed guides."
+
+    It repeats two rows of the derived table in COVERAGE.md but sits outside
+    the headline line, so headline_claims() never read it and each new guide
+    left it behind.
+    """
+    doc = TIERS.replace(os.sep, '/')
+    if not os.path.exists(TIERS):
+        return  # headline_claims reports the missing document
+    m = TIER2.search(io.open(TIERS, encoding='utf-8').read())
+    if not m:
+        problem(doc, 'tier 2 guides', '%s: the "There are N Tier 2 guides among the N indexed guides." '
+                'sentence is missing' % doc)
+        return
+    claimed = [int(m.group(2).replace(',', '')), int(m.group(4).replace(',', ''))]
+    tree = figures(index)['tier 2']
+    if claimed != tree:
+        problem(doc, 'tier 2 guides', '%s: says %s Tier 2 guides among the %s indexed guides, the tree has %s '
+                'among %s' % (doc, format(claimed[0], ','), format(claimed[1], ','),
+                              format(tree[0], ','), format(tree[1], ',')), claimed=claimed, actual=tree)
 
 
 def partners_fresh(problem, index):

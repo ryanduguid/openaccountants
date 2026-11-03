@@ -4,6 +4,7 @@
 # it with: python3 scripts/check-expired-rules.py --update-baseline
 skills/federal/us-education-credits-8863.md::### 13.4 Pending IRS guidance to watch — snapshot dated November 2025, restated September 2026
 skills/federal/us-estate-gift-706-709.md::| ETG-12 | State estate or inheritance tax preparation | Refer to state-specific Tier 2 skill (not yet released) |
+skills/international/australia/au-div7a.md::Not yet confirmed: ATO ID 2012/77 is a retained estate referral reference; the attempted official route returned 404, so its current publication status was not established. It is not a basis
 skills/international/canada/pei/pe-tax-credits.md::When parameters are ambiguous or the 2025 PEI Finance bulletin has not yet been published in final form, apply these defaults:
 skills/international/germany/de-trade-tax.md::Not yet confirmed: complete 2025 law and amendment chain; municipal ordinances and every listed city rate; the inherited property reduction and filing/exemption statements; definitive classi
 skills/international/germany/germany-tax-optimization.md::Not yet confirmed: complete VZ 2026 source/amendment chain; inherited marginal-rate shortcuts and approximate savings; commuting, home-office/BFH, IAB/Sonderabschreibung, GWG, pension and so
