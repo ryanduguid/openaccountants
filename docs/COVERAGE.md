@@ -68,7 +68,7 @@ Regenerate this list with:
 python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
 ```
 
-The other guides carry `tax_year` 2025 (1,593), 2026 (330), or no year (77).
+The other guides carry `tax_year` 2025 (1,598), 2026 (316), or no year (77).
 
 > **Names on tier-2 guides.** 99 guides carry a named `reviewed_by` while
 > marked `tier: 2`. The name records corrections an accountant contributed
