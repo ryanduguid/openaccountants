@@ -217,8 +217,8 @@ engages an agent in April cannot assume the May date.
 
 **Published penalty unit history: apply the relevant statutory date rule**  _([ATO, Penalty units](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units))_
 
-| When the infringement occurred | Penalty unit  Source |
-| --- | ---  --- |
+| When the infringement occurred | Penalty unit |
+| --- | --- |
 | On or after 1 July 2026 | $364  [Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) |
 | 7 November 2024 to 30 June 2026 | $330  [Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) |
 | 1 July 2023 to 6 November 2024 | $313  [Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) |
@@ -233,8 +233,8 @@ Verify actual deferrals and approved-form receipt. [TAA-ADMIN2];
 
 **Entity size multiplier**  _([TAA 1953 (Cth) sch 1 s 286-80(3)–(4C)](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/SCH1-286-80))_
 
-| Applicable test | Multiplier | Maximum penalty if all 5 base units are $364, before remission  Source |
-| --- | --- | ---  --- |
+| Applicable test | Multiplier | Maximum penalty if all 5 base units are $364, before remission |
+| --- | --- | --- |
 | No increased multiplier applies | 1 | $1,820  [Source](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html); [Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) |
 | Medium withholder, or assessable income or current GST turnover above $1 million but below $20 million | 2 | $3,640  [Source](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html); [Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) |
 | Large withholder, or assessable income or current GST turnover of $20 million or more | 5 | $9,100  [Source](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html); [Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) |
@@ -297,8 +297,8 @@ verify section **284-15** and the actual branch. [TAA-ADMIN2]
 
 **Published GIC and SIC rates**  _([ATO, General interest charge rates](https://www.ato.gov.au/tax-rates-and-codes/general-interest-charge-rates); [ATO, Shortfall interest charge rates](https://www.ato.gov.au/tax-rates-and-codes/shortfall-interest-charge-rates))_
 
-| Quarter | GIC annual | GIC daily | SIC annual | SIC daily  Source |
-| --- | --- | --- | --- | ---  --- |
+| Quarter | GIC annual | GIC daily | SIC annual | SIC daily |
+| --- | --- | --- | --- | --- |
 | October to December 2026 | 11.51% | 0.03153425% | 7.51% | 0.02057534%  [Source](https://www.ato.gov.au/tax-rates-and-codes/general-interest-charge-rates); [Source](https://www.ato.gov.au/tax-rates-and-codes/shortfall-interest-charge-rates) |
 | July to September 2026 | 11.43% | 0.03131507% | 7.43% | 0.02035616%  [Source](https://www.ato.gov.au/tax-rates-and-codes/general-interest-charge-rates); [Source](https://www.ato.gov.au/tax-rates-and-codes/shortfall-interest-charge-rates) |
 | April to June 2026 | 10.96% | 0.03002740% | 6.96% | 0.01906849%  [Source](https://www.ato.gov.au/tax-rates-and-codes/general-interest-charge-rates); [Source](https://www.ato.gov.au/tax-rates-and-codes/shortfall-interest-charge-rates) |
@@ -793,6 +793,142 @@ is supporting work, not a completed return or permission to submit or pay.
    decision, reconcile the ATO account and diary remaining obligations and
    review dates. A draft, bank instruction or sent request is not acceptance.
 
+### Administrative routes and submission record
+
+Use the following published routes only after the authorised filer confirms
+identity, representation, the original document and the applicable time limit.
+This is a preparation checklist; it does not authorise this agent to enter
+identifiers, sign declarations, lodge anything or pay. The public instructions
+verify the menu names and information below, not every live screen or current
+PDF box. Unverified form fields remain **Needs Input** with the filer.
+
+#### Income-tax amendment
+
+1. Wait for the original return to be processed and check Section 10's actual
+   amendment route. An available online button does not prove eligibility.
+2. For an individual or sole trader, enter ATO online services through myGov,
+   choose **Manage tax returns**, then **Amend** beside the relevant income year.
+   Overwrite the relevant field with the corrected amount. Use **Personalise
+   return** for a new income, deduction or offset type and **Prepare return >
+   Add/Edit** for an additional record. Confirm the actual year's item number,
+   original amount, adjustment, corrected total and reason against the domain
+   guide. A registered agent can submit through PLS. [ATO-AMEND-HOW]
+3. For a company, partnership, trust or non-SMSF fund, the published alternatives
+   are SBR-enabled software, Online services for business, a registered agent
+   or a letter. Agents may use PLS or the agents' mail function for
+   non-individuals. The public page does not establish every live menu or
+   return label: obtain those before submission. A paper letter must identify
+   the taxpayer and year, changed item and description, adjustment and correct
+   total, any applicable claim-type code and reason, with supporting documents
+   and the required signed, dated declaration. Include the agent number where
+   applicable. Use the page's current lodgment address. When a company lodges
+   on its own behalf, the public officer signs; a director alone is insufficient.
+   An agent or legal personal representative follows the page's separate
+   signatory requirements, including the agent's taxpayer declaration. SMSFs
+   require a complete replacement annual return with **Yes at question 5**,
+   not a partial correction. [ATO-BUS-AMEND]
+4. The authorised filer checks the declaration and submits through the chosen
+   channel. Keep the submitted version, receipt/date and any correspondence.
+   Reconcile the resulting assessment, refund or additional amount, payment
+   reference and actual payment deadline with Section 8. Do not treat a draft
+   calculation or processing estimate as an assessment or a new due date.
+
+#### Objection
+
+1. Establish the actual reviewable decision, grounds and objection deadline,
+   including any required extension request. Remission thresholds in Section 8
+   do not establish every decision's objection right. [TAA-ADMIN2]
+2. Individuals and sole traders use ATO online services via myGov; businesses
+   use Online services for business via myID. The published path is **Tax >
+   Lodgments > Reports and forms > Lodge an objection**. Prepare everything
+   first: the online taxpayer form must be completed in one session and cannot
+   save progress. Tax agents use the **Practice level > Reports and forms >
+   Lodge an objection** path in Online services for agents. [ATO-OBJ-TAXPAYER];
+   [ATO-OBJ-AGENT]
+3. Supply contact details, the decision and relevant year/period, facts, grounds,
+   legal arguments and supporting documents. For another taxpayer, include
+   their identifying details and verify authority. The agent checks the
+   **Declaration** box, then **Submit**. Other authorised contacts cannot use
+   the online taxpayer route: use the applicable signed letter or paper form.
+   Published paper alternatives are **NAT 13471** for taxpayers and **NAT 13044**
+   for tax professionals; follow the current form's declaration and delivery
+   instructions. No PDF box number is inferred. [ATO-OBJ-DETAILS];
+   [ATO-OBJ-TAXPAYER]; [ATO-OBJ-AGENT]
+4. Retain the online receipt ID or evidence of paper delivery and the final
+   submitted copy. Agents supply requested further evidence through **Reports
+   and forms > Submit further information for lodged private ruling/objection**,
+   attach it, select **Declaration**, then **Submit**. Diary the decision and
+   its review rights. An objection does not itself suspend payment or recovery.
+   [ATO-OBJ-TAXPAYER]; [ATO-OBJ-AGENT]
+
+#### Voluntary disclosure
+
+1. Record whether and when an examination was notified for the relevant period.
+   Use Section 7's statutory timing and approved-form tests before calculating
+   any penalty reduction. Before notification, individuals may use an online
+   amendment; businesses may attach the appropriate disclosure to Secure mail;
+   agents must be linked to the taxpayer and use an approved electronic
+   amendment channel and the appropriate disclosure form. The relevant tax
+   type determines the form; a revised BAS or amendment is not automatically a
+   sufficient disclosure. [ATO-VD-HOW]
+2. For a shortfall, supply taxpayer/contact details, tax/payment/credit type,
+   periods, original item/label and description, amounts to adjust, sufficient
+   calculations and supporting facts, then the declaration. For a statement
+   without a shortfall, identify the statement, date/method and what was false
+   or misleading and give the corrected information and declaration. A list
+   of transactions without enough explanation is insufficient. Sign and date
+   a letter's prescribed declaration; an authorised contact also needs the
+   taxpayer's written declaration and must state their capacity. Use the
+   linked ATO declaration wording, not a paraphrase in the submitted document.
+   [ATO-VD-INFO]
+3. After notification, give the disclosure to the officer conducting the
+   review/audit rather than treating an ordinary amendment as the disclosure.
+   The published form is **NAT 75342**, with **Section A: Your details**,
+   **Section B: Return or statement details** and **Section C: Declaration**.
+   Explain questions **10 and 11** fully and identify supporting documents at
+   **question 13**, following the current form. Confirm the delivery method
+   with that officer and retain the completed form and attachments. Special
+   superannuation disclosure routes need their applicable domain procedure.
+   [ATO-VD-AUDIT]; [ATO-VD-HOW]
+4. Retain the actual delivery record and respond to information requests. An
+   accepted revision of an earlier activity statement does not produce a
+   notice of amended assessment where accepted in full. Otherwise reconcile
+   the assessment/notice and its tax, penalties, interest and payment date;
+   neither acceptance nor the desired reduction is guaranteed. [ATO-VD-PROCESS]
+
+#### Remission of GIC, SIC or FTL and other penalties
+
+1. Download the current **ATO GIC remission application form (XLSX)**,
+   **ATO SIC remission application form (PDF)** or **ATO FTL remission
+   application form (PDF)** from the ATO request page for each application.
+   Complete a separate form per taxpayer and charge type, covering multiple
+   accounts of that same type together. GIC must be submitted in Excel format.
+   The current form's mandatory fields must be checked by the filer; this guide
+   has not verified every workbook/PDF field. [ATO-REM-REQUEST]
+2. Explain the relevant event, dates, causal link to non-payment/non-lodgment,
+   mitigation and requested remission, with the account amounts/notices and
+   supporting evidence. GIC, SIC and penalty discretions differ: apply the
+   relevant policy rather than assuming hardship or a good record guarantees
+   remission. [ATO-REM-INTEREST]; [ATO-REM-PENALTY]
+3. Registered agents use **Practice mail** in Online services for agents;
+   businesses and sole traders with an ABN use **Secure mail** in the relevant
+   online service. Open a new message, choose the obligation's **Topic**, then
+   **Subject: Remission of general interest charge**, **Remission of shortfall
+   interest charge** or **Remission of failure to lodge penalty**. Attach the
+   completed form and evidence, select the declaration and **Send**. Use one
+   message per form. Individuals without that business route use the published
+   phone or mail alternatives. SIC phone requests have the page's specific
+   limits; other SIC requests must be in writing. [ATO-REM-REQUEST]
+4. For other penalties, first distinguish an assessed penalty objection from
+   remission. The written remission request identifies taxpayer/contact
+   details, the decision reference, penalty amount/date and reasons. Use
+   Online services for business/agents or the current postal instructions.
+   [ATO-REM-PENALTY]
+5. Keep the sent form/message, attachments and delivery record, reconcile the
+   account after the outcome and retain any written refusal and review rights.
+   Apply Section 8's separate penalty/SIC/GIC review routes. A pending request
+   does not by itself defer payment or stop GIC. [ATO-REM-REQUEST]
+
 ## Completion checklist
 
 ### Section 13 - Self-checks
@@ -818,43 +954,68 @@ current compilations listed below without unincorporated amendments.
 
 | Source and selected content | Official URL | Read on |
 | --- | --- | --- |
-| BAS cycles, dates, concessions and payment plans, updated 17 September 2026 | [ATO BAS due dates][Source](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas) | 2026-11-03 |
-| PAYG cycles, quarterly/monthly interaction and annual/2-instalment conditions, updated 3 March 2026 | [ATO PAYG due dates][Source](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due) | 2026-11-03 |
-| General business income-tax categories, updated 8 September 2025; retain its distinction from the current agent programme | [ATO business income-tax dates][Source](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax) | 2026-11-03 |
-| 2026-27 individual/trust dates, 5 June concession and separate payment rules, updated 1 July 2026 | [ATO individuals and trusts][Source](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/individuals-and-trusts) | 2026-11-03 |
-| 2026-27 company dates, payment column, NFSA and concession conditions, updated 1 July 2026 | [ATO companies and super funds][Source](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds) | 2026-11-03 |
-| Progressive partnership lodgment, SAP and return-not-required categories, updated 1 July 2026 | [ATO partnerships][Source](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/partnerships) | 2026-11-03 |
-| Nationwide business-day rule and 2026/2027 holiday tables, updated 1 July 2026 | [ATO weekends and holidays][Source](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/lodgment-and-payment-dates-on-weekends-or-public-holidays) | 2026-11-03 |
-| Employer FBT cycle, payment/lodgment, NAT 3094 and channels, updated 10 September 2026; currently links 2026 instructions | [ATO lodging and paying FBT][Source](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/fringe-benefits-tax/fbt-registration-lodgment-payment-and-reporting/lodging-your-fbt-return-and-paying) | 2026-11-03 |
-| Explicit 2027 FBT agent dates, role/client-list condition, updated 1 July 2026 | [ATO FBT agent programme][Source](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-by-obligation-type/fbt-return) | 2026-11-03 |
-| Penalty-unit history, updated 26 June 2026 | [ATO penalty units][Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) | 2026-11-03 |
-| FTL obligations, warning/non-imposition practice and exceptions | [ATO FTL][Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty) | 2026-11-03 |
-| Statement penalty categories and disclosure guidance | [ATO false statements][Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements) | 2026-11-03 |
-| Inadvertent-error relief conditions and exclusions, updated 22 June 2026 | [ATO penalty relief][Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-relief) | 2026-11-03 |
-| GIC account/interest outline | [ATO GIC][Source](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/interest-we-charge/general-interest-charge) | 2026-11-03 |
-| All 4 published 2026 quarterly GIC rates and daily displays | [ATO GIC rates][Source](https://www.ato.gov.au/tax-rates-and-codes/general-interest-charge-rates) | 2026-11-03 |
-| All 4 published 2026 quarterly SIC rates and daily displays | [ATO SIC rates][Source](https://www.ato.gov.au/tax-rates-and-codes/shortfall-interest-charge-rates) | 2026-11-03 |
-| Agent safe-harbour evidence and exclusions | [ATO safe harbour][Source](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/your-practice/tax-and-bas-agents/safe-harbour) | 2026-11-03 |
-| Amendment time-limit guidance, read alongside section 170 and application legislation | [ATO amendment periods][Source](https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments) | 2026-11-03 |
-| TAA compilation 227, effective 1 October 2026: 8AAC/8AAD/8AAG/8AAGA, 8AAZMB and selected administration provisions | [TAA volume 1][Source](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
-| Same compilation: selected Schedule 1 Divisions 155, 269, 280, 284, 286 and 298 | [TAA volume 2][Source](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html) | 2026-11-03 |
-| Same TAA compilation: section 355-72 permitted-disclosure referral boundary | [TAA volume 3][Source](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html) | 2026-11-03 |
-| ITAA 1997 compilation 268, effective 1 October 2026: 5-5/5-10, 20-20/25/30/35/40 and 26-5 | [ITAA 1997][Source](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
-| ITAA 1936 compilation 193, effective 1 October 2026: section 170 selected amendment routes | [ITAA 1936][Source](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html) | 2026-11-03 |
-| Act 135 of 2024 Schedule 3, commencement/application of conditional eligible-business self-amendment | [Self-amendment Act][Source](https://www.legislation.gov.au/C2024A00135/asmade/2024-12-10/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
-| Act 29 of 2025 Schedule 2, commencement/application of interest deduction denial | [Interest deduction Act][Source](https://www.legislation.gov.au/C2025A00029/asmade/2025-03-27/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
-| GST compilation 96, effective 1 January 2026: 29-10, 33-5, 93-5/10/15 | [GST Act][Source](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
-| Selected class/future-liability SIC remission conditions; current instrument | [Remedial determination][Source](https://www.legislation.gov.au/F2023L00956/asmade/2023-07-04/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
-| PS LA 2011/12 paragraphs 60-76: incurred events, deduction and recoupment | [GIC policy][Source](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201112%2FNAT%2FATO%2F00001) | 2026-11-03 |
-| PS LA 2006/8 paragraphs 72-78, 129-130 and 141: advance payments, SIC and GIC review distinctions | [Shortfall interest policy][Source](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS20068%2FNAT%2FATO%2F00001) | 2026-11-03 |
-| PS LA 2011/19 paragraphs 15-16 and FTL application practice | [FTL policy][Source](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201119%2FNAT%2FATO%2F00001) | 2026-11-03 |
-| PS LA 2011/15 paragraph 9 and paragraphs 25-44, 69-71: business days, suspension, requests and approved deferral consequences, including agent-assessed exceptions | [Deferral policy][Source](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201115%2FNAT%2FATO%2F00001) | 2026-11-03 |
-| PS LA 2011/18 paragraphs 57-61, Appendix C garnishee outline and Appendix D DPO outline | [Recovery policy][Source](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201118%2FNAT%2FATO%2F00001) | 2026-11-03 |
+| BAS cycles, dates, concessions and payment plans, updated 17 September 2026 | [ATO BAS due dates](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas) | 2026-11-03 |
+| PAYG cycles, quarterly/monthly interaction and annual/2-instalment conditions, updated 3 March 2026 | [ATO PAYG due dates](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due) | 2026-11-03 |
+| General business income-tax categories, updated 8 September 2025; retain its distinction from the current agent programme | [ATO business income-tax dates](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying/due-dates-by-topic/income-tax) | 2026-11-03 |
+| 2026-27 individual/trust dates, 5 June concession and separate payment rules, updated 1 July 2026 | [ATO individuals and trusts](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/individuals-and-trusts) | 2026-11-03 |
+| 2026-27 company dates, payment column, NFSA and concession conditions, updated 1 July 2026 | [ATO companies and super funds](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds) | 2026-11-03 |
+| Progressive partnership lodgment, SAP and return-not-required categories, updated 1 July 2026 | [ATO partnerships](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/partnerships) | 2026-11-03 |
+| Nationwide business-day rule and 2026/2027 holiday tables, updated 1 July 2026 | [ATO weekends and holidays](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/lodgment-and-payment-dates-on-weekends-or-public-holidays) | 2026-11-03 |
+| Employer FBT cycle, payment/lodgment, NAT 3094 and channels, updated 10 September 2026; currently links 2026 instructions | [ATO lodging and paying FBT](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/fringe-benefits-tax/fbt-registration-lodgment-payment-and-reporting/lodging-your-fbt-return-and-paying) | 2026-11-03 |
+| Explicit 2027 FBT agent dates, role/client-list condition, updated 1 July 2026 | [ATO FBT agent programme](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-by-obligation-type/fbt-return) | 2026-11-03 |
+| Penalty-unit history, updated 26 June 2026 | [ATO penalty units](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-units) | 2026-11-03 |
+| FTL obligations, warning/non-imposition practice and exceptions | [ATO FTL](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty) | 2026-11-03 |
+| Statement penalty categories and disclosure guidance | [ATO false statements](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements) | 2026-11-03 |
+| Inadvertent-error relief conditions and exclusions, updated 22 June 2026 | [ATO penalty relief](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalty-relief) | 2026-11-03 |
+| GIC account/interest outline | [ATO GIC](https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/interest-we-charge/general-interest-charge) | 2026-11-03 |
+| All 4 published 2026 quarterly GIC rates and daily displays | [ATO GIC rates](https://www.ato.gov.au/tax-rates-and-codes/general-interest-charge-rates) | 2026-11-03 |
+| All 4 published 2026 quarterly SIC rates and daily displays | [ATO SIC rates](https://www.ato.gov.au/tax-rates-and-codes/shortfall-interest-charge-rates) | 2026-11-03 |
+| Agent safe-harbour evidence and exclusions | [ATO safe harbour](https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/your-practice/tax-and-bas-agents/safe-harbour) | 2026-11-03 |
+| Amendment time-limit guidance, read alongside section 170 and application legislation | [ATO amendment periods](https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments) | 2026-11-03 |
+| TAA compilation 227, effective 1 October 2026: 8AAC/8AAD/8AAG/8AAGA, 8AAZMB and selected administration provisions | [TAA volume 1](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
+| Same compilation: selected Schedule 1 Divisions 155, 269, 280, 284, 286 and 298 | [TAA volume 2](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html) | 2026-11-03 |
+| Same TAA compilation: section 355-72 permitted-disclosure referral boundary | [TAA volume 3](https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html) | 2026-11-03 |
+| ITAA 1997 compilation 268, effective 1 October 2026: 5-5/5-10, 20-20/25/30/35/40 and 26-5 | [ITAA 1997](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
+| ITAA 1936 compilation 193, effective 1 October 2026: section 170 selected amendment routes | [ITAA 1936](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html) | 2026-11-03 |
+| Act 135 of 2024 Schedule 3, commencement/application of conditional eligible-business self-amendment | [Self-amendment Act](https://www.legislation.gov.au/C2024A00135/asmade/2024-12-10/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
+| Act 29 of 2025 Schedule 2, commencement/application of interest deduction denial | [Interest deduction Act](https://www.legislation.gov.au/C2025A00029/asmade/2025-03-27/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
+| GST compilation 96, effective 1 January 2026: 29-10, 33-5, 93-5/10/15 | [GST Act](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
+| Selected class/future-liability SIC remission conditions; current instrument | [Remedial determination](https://www.legislation.gov.au/F2023L00956/asmade/2023-07-04/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
+| PS LA 2011/12 paragraphs 60-76: incurred events, deduction and recoupment | [GIC policy](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201112%2FNAT%2FATO%2F00001) | 2026-11-03 |
+| PS LA 2006/8 paragraphs 72-78, 129-130 and 141: advance payments, SIC and GIC review distinctions | [Shortfall interest policy](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS20068%2FNAT%2FATO%2F00001) | 2026-11-03 |
+| PS LA 2011/19 paragraphs 15-16 and FTL application practice | [FTL policy](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201119%2FNAT%2FATO%2F00001) | 2026-11-03 |
+| PS LA 2011/15 paragraph 9 and paragraphs 25-44, 69-71: business days, suspension, requests and approved deferral consequences, including agent-assessed exceptions | [Deferral policy](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201115%2FNAT%2FATO%2F00001) | 2026-11-03 |
+| PS LA 2011/18 paragraphs 57-61, Appendix C garnishee outline and Appendix D DPO outline | [Recovery policy](https://www.ato.gov.au/law/view/print?DocID=PSR%2FPS201118%2FNAT%2FATO%2F00001) | 2026-11-03 |
+| Individual/sole-trader online amendment fields, PLS and paper/letter alternatives; updated 28 October 2026 | [ATO official instructions](https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/how-to-request-an-amendment-to-your-tax-return) | 2026-11-03 |
+| Business/SMSF amendment channels, letter particulars and signatories only; updated 21 May 2025. Generic review-period summary is not adopted over section 170 | [ATO official instructions](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/fix-a-mistake-or-amend-your-tax-return/request-an-amendment-to-a-business-or-super-tax-return) | 2026-11-03 |
+| Objection contact, decision, grounds and supporting particulars; published 24 June 2024 | [ATO official instructions](https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/object-to-a-decision/what-to-include-in-your-objection) | 2026-11-03 |
+| Taxpayer objection menus, one-session limit, NAT 13471, receipt and representative limits; updated 4 June 2026 | [ATO official instructions](https://www.ato.gov.au/forms-and-instructions/objection-form-for-taxpayers) | 2026-11-03 |
+| Agent objection menu, declaration, further-information channel and NAT 13044; updated 4 June 2026 | [ATO official instructions](https://www.ato.gov.au/forms-and-instructions/objection-form-for-tax-professionals) | 2026-11-03 |
+| Before/after examination disclosure channels and tax-type routes; updated 27 March 2026 | [ATO official instructions](https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-approved-form/how-to-make-a-voluntary-disclosure) | 2026-11-03 |
+| Shortfall/no-shortfall information and declaration requirements; updated 27 March 2026 | [ATO official instructions](https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-approved-form/information-we-require) | 2026-11-03 |
+| NAT 75342 sections A-C and questions 10/11/13; updated 13 June 2025; public instructions, not a full PDF-field inspection | [ATO official instructions](https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-if-you-re-under-review-or-audit) | 2026-11-03 |
+| Disclosure processing, sufficient information and accepted-BAS notice exception; updated 27 March 2026 | [ATO official instructions](https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-approved-form/how-we-process-your-voluntary-disclosure) | 2026-11-03 |
+| GIC/SIC/FTL forms, account grouping, mail topic/subject/declaration, channels and outcomes; updated 14 July 2026; download files not inspected | [ATO official instructions](https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/dispute-interest-or-penalties/remission-of-interest-charges/how-to-request-a-remission-of-interest-and-failure-to-lodge-penalties) | 2026-11-03 |
+| GIC/SIC remission evidence and distinct review routes; updated 22 January 2026; statutory deduction/recoupment qualifications in Section 8 retained | [ATO official instructions](https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/dispute-interest-or-penalties/remission-of-interest-charges) | 2026-11-03 |
+| Penalty objection/remission distinction, written particulars and outcome; updated 22 January 2026 | [ATO official instructions](https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/dispute-interest-or-penalties/remission-of-penalties) | 2026-11-03 |
 
 The public content API's older 2025-26 agent-programme PDF was also inspected
 for comparison. Its dates and 3-day notice-receipt convention are superseded
 for the selected 2026-27 programme by the live client-type pages above; do
 not use that PDF to confirm a current deadline.
+
+[ATO-AMEND-HOW]: https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/how-to-request-an-amendment-to-your-tax-return
+[ATO-BUS-AMEND]: https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/fix-a-mistake-or-amend-your-tax-return/request-an-amendment-to-a-business-or-super-tax-return
+[ATO-OBJ-DETAILS]: https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/object-to-a-decision/what-to-include-in-your-objection
+[ATO-OBJ-TAXPAYER]: https://www.ato.gov.au/forms-and-instructions/objection-form-for-taxpayers
+[ATO-OBJ-AGENT]: https://www.ato.gov.au/forms-and-instructions/objection-form-for-tax-professionals
+[ATO-VD-HOW]: https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-approved-form/how-to-make-a-voluntary-disclosure
+[ATO-VD-INFO]: https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-approved-form/information-we-require
+[ATO-VD-AUDIT]: https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-if-you-re-under-review-or-audit
+[ATO-VD-PROCESS]: https://www.ato.gov.au/forms-and-instructions/voluntary-disclosures-approved-form/how-we-process-your-voluntary-disclosure
+[ATO-REM-REQUEST]: https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/dispute-interest-or-penalties/remission-of-interest-charges/how-to-request-a-remission-of-interest-and-failure-to-lodge-penalties
+[ATO-REM-INTEREST]: https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/dispute-interest-or-penalties/remission-of-interest-charges
+[ATO-REM-PENALTY]: https://www.ato.gov.au/individuals-and-families/your-tax-return/if-you-disagree-with-an-ato-decision/dispute-interest-or-penalties/remission-of-penalties
 
 [ATO-BAS]: https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas
 [ATO-PAYG]: https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/when-are-payg-instalments-due
