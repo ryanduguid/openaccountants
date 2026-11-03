@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-03T00:47:54+00:00",
+ "generated_at": "2026-11-03T00:55:55+00:00",
  "counts": {
-  "guides": 2022,
-  "jurisdictions": 296,
+  "guides": 2032,
+  "jurisdictions": 302,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9354,6 +9354,19 @@
    "last_updated": "2026-10-30"
   },
   {
+   "slug": "tf-kerguelen-crozet-fishing-duty-reference",
+   "path": "skills/international/french-southern-territories/tf-kerguelen-crozet-fishing-duty-reference.md",
+   "name": "tf-kerguelen-crozet-fishing-duty-reference",
+   "jurisdiction": "TF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "ga-company-formation",
    "path": "skills/international/gabon/ga-company-formation.md",
    "name": "ga-company-formation",
@@ -10522,6 +10535,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-31"
+  },
+  {
+   "slug": "va-customs-fees-reference",
+   "path": "skills/international/holy-see/va-customs-fees-reference.md",
+   "name": "va-customs-fees-reference",
+   "jurisdiction": "VA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "hn-company-formation",
@@ -12955,6 +12981,19 @@
    "last_updated": "2026-07-21"
   },
   {
+   "slug": "ki-vat-reference",
+   "path": "skills/international/kiribati/ki-vat-reference.md",
+   "name": "ki-vat-reference",
+   "jurisdiction": "KI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "kosovo-income-tax",
    "path": "skills/international/kosovo/kosovo-income-tax.md",
    "name": "kosovo-income-tax",
@@ -14918,6 +14957,19 @@
    "last_updated": "2026-09-28"
   },
   {
+   "slug": "fm-national-tax-social-reference",
+   "path": "skills/international/micronesia/fm-national-tax-social-reference.md",
+   "name": "fm-national-tax-social-reference",
+   "jurisdiction": "FM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "md-company-formation",
    "path": "skills/international/moldova/md-company-formation.md",
    "name": "md-company-formation",
@@ -15659,6 +15711,19 @@
    "last_updated": "2026-10-04"
   },
   {
+   "slug": "nr-business-tax-charge-rate-reference",
+   "path": "skills/international/nauru/nr-business-tax-charge-rate-reference.md",
+   "name": "nr-business-tax-charge-rate-reference",
+   "jurisdiction": "NR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "nr-corporate-annual-return-reference",
    "path": "skills/international/nauru/nr-corporate-annual-return-reference.md",
    "name": "nr-corporate-annual-return-reference",
@@ -15670,6 +15735,32 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-27"
+  },
+  {
+   "slug": "nr-employment-services-charge-reference",
+   "path": "skills/international/nauru/nr-employment-services-charge-reference.md",
+   "name": "nr-employment-services-charge-reference",
+   "jurisdiction": "NR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "nr-tax-administration-reference",
+   "path": "skills/international/nauru/nr-tax-administration-reference.md",
+   "name": "nr-tax-administration-reference",
+   "jurisdiction": "NR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "nepal-corporate-tax",
@@ -17297,6 +17388,19 @@
    "last_updated": "2026-10-26"
   },
   {
+   "slug": "pw-pgst-charge-value-reference",
+   "path": "skills/international/palau/pw-pgst-charge-value-reference.md",
+   "name": "pw-pgst-charge-value-reference",
+   "jurisdiction": "PW",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "panama-income-tax",
    "path": "skills/international/panama/panama-income-tax.md",
    "name": "panama-income-tax",
@@ -17659,6 +17763,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-31"
+  },
+  {
+   "slug": "pn-landing-fee-passenger-levy-reference",
+   "path": "skills/international/pitcairn/pn-landing-fee-passenger-levy-reference.md",
+   "name": "pn-landing-fee-passenger-levy-reference",
+   "jurisdiction": "PN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "pl-capital-gains",
@@ -20402,6 +20519,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "ps-vat-legislative-reference",
+   "path": "skills/international/state-of-palestine/ps-vat-legislative-reference.md",
+   "name": "ps-vat-legislative-reference",
+   "jurisdiction": "PS",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "sd-company-formation",

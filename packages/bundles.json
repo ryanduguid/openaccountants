@@ -2388,6 +2388,19 @@
     "workflow-base.md"
    ]
   },
+  "french-southern-territories": {
+   "jurisdiction": "TF",
+   "name": "French Southern Territories",
+   "files": [
+    "intake.md",
+    "tf-kerguelen-crozet-fishing-duty-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "gabon": {
    "jurisdiction": "GA",
    "name": "Gabon",
@@ -2735,6 +2748,19 @@
    "files": [
     "intake.md",
     "hm-tax-scope-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
+  "holy-see": {
+   "jurisdiction": "VA",
+   "name": "Holy See",
+   "files": [
+    "intake.md",
+    "va-customs-fees-reference.md",
     "README.md"
    ],
    "shared": [
@@ -3243,6 +3269,20 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
+    "foundation.md",
+    "vat-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "kiribati": {
+   "jurisdiction": "KI",
+   "name": "Kiribati",
+   "files": [
+    "intake.md",
+    "ki-vat-reference.md",
+    "README.md"
+   ],
+   "shared": [
     "foundation.md",
     "vat-workflow-base.md",
     "workflow-base.md"
@@ -3772,6 +3812,22 @@
     "workflow-base.md"
    ]
   },
+  "micronesia": {
+   "jurisdiction": "FM",
+   "name": "Micronesia",
+   "files": [
+    "intake.md",
+    "fm-national-tax-social-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "moldova": {
    "jurisdiction": "MD",
    "name": "Moldova",
@@ -3972,7 +4028,10 @@
    "name": "Nauru",
    "files": [
     "intake.md",
+    "nr-business-tax-charge-rate-reference.md",
     "nr-corporate-annual-return-reference.md",
+    "nr-employment-services-charge-reference.md",
+    "nr-tax-administration-reference.md",
     "README.md"
    ],
    "shared": [
@@ -4333,6 +4392,7 @@
    "files": [
     "intake.md",
     "pw-corporate-records-annual-report-reference.md",
+    "pw-pgst-charge-value-reference.md",
     "README.md"
    ],
    "shared": [
@@ -4442,6 +4502,19 @@
     "foundation.md",
     "income-tax-workflow-base.md",
     "vat-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "pitcairn": {
+   "jurisdiction": "PN",
+   "name": "Pitcairn",
+   "files": [
+    "intake.md",
+    "pn-landing-fee-passenger-levy-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
     "workflow-base.md"
    ]
   },
@@ -5184,6 +5257,19 @@
    "shared": [
     "foundation.md",
     "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "state-of-palestine": {
+   "jurisdiction": "PS",
+   "name": "State Of Palestine",
+   "files": [
+    "intake.md",
+    "ps-vat-legislative-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
     "workflow-base.md"
    ]
   },

@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `pw-corporate-records-annual-report-reference.md`
+3. `pw-pgst-charge-value-reference.md`
 
 ## Shared files this package needs
 
