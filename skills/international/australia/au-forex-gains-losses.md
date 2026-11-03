@@ -76,7 +76,7 @@ Use a consistent quotation convention. A rate expressed as foreign currency per 
 | 4 | Amount paid compared with the proceeds of assuming the obligation at its statutory tax recognition time (ss 775-55 and 775-95). |
 | 5 | Amount paid compared with the forex entitlement base of the right, using the event's tax recognition rule (ss 775-60 and 775-90). |
 
-Only the component attributable to a currency exchange rate effect is a forex realisation gain or loss. Check non-arm's-length, constructive receipt/payment and set-off rules where relevant; the simple cases below do not certify those arrangements. Currency acquired through event 2 or 3 has the market value CGT cost base and reduced cost base specified by s 775-125. [ss 775-40 to 775-125](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_9/document_9.html), [ATO common transactions](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/common-forex-transactions).
+Only the component attributable to a currency exchange rate effect is a forex realisation gain or loss. Check non-arm's-length, constructive receipt/payment and set-off rules where relevant; the simple cases below do not certify those arrangements. For currency acquired through event 2 or 3, s 775-125 replaces the first element of both its CGT cost base and reduced cost base with market value when received; other allowable elements are not replaced. [ss 775-40 to 775-125](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_9/document_9.html), [ATO common transactions](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/foreign-exchange-gains-and-losses/common-forex-transactions).
 
 ### 4. Trace account rights and obligations
 
@@ -538,6 +538,27 @@ expected:
   closing: -15000
   gain: 3500
 ```
+### 15. Market value replaces only the first CGT element
+
+An event 2 receipt gives the taxpayer USD800 of currency with market value A$1,000 at 0.80 USD/AUD. This case varies the no-additional-cost default: assume a further A$20 has independently been established as an allowable additional element of both the CGT cost base and reduced cost base, with no double counting or other adjustment. Section 775-125 replaces only the first element with market value when received. Both complete bases are therefore A$1,020, rather than A$1,000. The checker verifies addition under those stipulated CGT eligibility facts; it does not establish whether an actual expense is allowable.
+
+```oa-check
+name: currency-first-cgt-element-only
+tolerance: 0.000001
+inputs:
+  usd_received: 800
+  receipt_rate: 0.8
+  other_allowable_element: 20
+steps:
+  - first_element: usd_received / receipt_rate
+  - total_cost_base: first_element + other_allowable_element
+  - total_reduced_cost_base: first_element + other_allowable_element
+expected:
+  first_element: 1000
+  total_cost_base: 1020
+  total_reduced_cost_base: 1020
+```
+
 ## When to refuse or refer
 
 Refer where Division 230 or functional currency applies, a stablecoin's legal character is unresolved, the right or obligation cannot be identified, or the actual election and event history cannot be substantiated. Options, forwards, shares, hedges, facility rollovers, traditional securities, non-arm's-length arrangements, constructive payments/set-off and detailed election entry/exit consequences need their complete statutory treatment and usually specialist review. This guide does not certify those computations.
