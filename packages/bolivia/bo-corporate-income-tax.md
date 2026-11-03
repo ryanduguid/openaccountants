@@ -16,7 +16,6 @@ category: international
 tax_year: 2026
 tax_year_notes: "Rules read as at 3 November 2026; December 2025 extension history is separately labelled. December 2026 closing figures and 2027 filing mechanics need later verification."
 tier: 2
-review_status: pending_review
 last_updated: 2026-11-03
 version: 0.3
 depends_on:
