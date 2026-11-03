@@ -11,18 +11,18 @@ description: >
   land tax, aggregation, thresholds and rates by state, surcharges, trusts,
   companies, exemptions, objections, GL treatment, and deductibility.
   ALWAYS read this skill before advising on Australian land tax.
-version: 1.5
+version: 1.6
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "NSW/VIC: 2026 land tax year; QLD/SA/WA/TAS/ACT: 2026-27; ownership and assessment dates vary by jurisdiction"
-last_updated: 2026-11-03
+last_updated: 2026-11-04
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Land Tax v1.5
+# AU Land Tax v1.6
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -308,8 +308,8 @@ There is no single national route. Decide first whether the land value or the as
 | VIC | Valuer-General Victoria decides; ordinary land-tax route through SRO's Land Valuation Objection Portal. Check the statutory route below | For the s 16(6A) route, 2 months after receiving the land tax assessment: s 18(c). Other routes have different triggers | SRO says the Commissioner cannot accept late land-value objections | Ordinary assessment objections: SRO must receive the objection within 60 days after service. The Commissioner may permit a late objection lodged within 5 years after service, with detailed written reasons. Valuation objections have separate rules. [SRO, valuations](https://sro.vic.gov.au/owning-property/land-tax/managing-your-land-tax/objections-and-refunds/object-site-or-capital-improved-valuation-your-land); [SRO, assessments](https://www.sro.vic.gov.au/owning-property/amendments-and-objections-your-land-tax-assessment); [Taxation Administration Act 1997 ss 99-100](https://content.legislation.vic.gov.au/sites/default/files/2025-11/97-40aa092-authorised.pdf) |
 | QLD | Valuer-General, against the valuation notice | 60 days from the valuation notice's issue date, not from the land tax notice | Accepted in some circumstances, within 1 year of the notice's issue date | QRO, within 60 days of receiving the notice; late position not read. [Queensland Government](https://www.qld.gov.au/environment/land/title/valuation/objections/lodge-objections/process); [QRO](https://qro.qld.gov.au/land-tax/assessment/object/) |
 | SA | Office of the Valuer-General, not RevenueSA | 60 days after the first Land Tax Assessment notice is served, unless already objected on another notice | Not stated on the page opened | Written objection to the Treasurer within 60 days of the assessment's date; the Treasurer may permit one up to 12 months after it, with reasons. [RevenueSA 2025-26 guide](https://www.revenuesa.sa.gov.au/resources/publications/guides-to-legislation/guide-to-legislation-land-tax2/2025-26-guide-to-legislation-land-tax/other-information/objections) |
-| WA | Valuer-General at Landgate | 60 days from the issue date on the land tax notice | Needs the Valuer-General's approval | RevenueWA, within 60 days after the assessment issues; apply in writing for an extension within 12 months after that date. [Landgate](https://www.landgate.wa.gov.au/valuations/valuations-for-rates-and-taxes/lodging-an-objection/); [RevenueWA](https://www.wa.gov.au/organisation/department-of-treasury-and-finance/revenuewa-objection-and-review-process) |
-| TAS | Office of the Valuer-General, which cannot hear land tax complaints | 60 days from receipt of the Notice of Valuation | May be reviewed as correspondence, without statutory rights of appeal to the Land Valuation Court | Commissioner of State Revenue, in writing with full grounds, within 60 days after service of the notice; the Commissioner may permit a late objection on written application with reasons. [Taxation Administration Act 1997 (Tas) ss 80, 82, 83](https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-1997-074); [Valuer-General form](https://nre.tas.gov.au/Documents/Objection-to-Valuation.pdf); [Valuer-General](https://nre.tas.gov.au/land-tasmania/office-of-the-valuer-general/objecting-to-a-statutory-valuation) |
+| WA | Valuer-General at Landgate | 60 days from the issue date on the land tax notice | Needs the Valuer-General's approval | RevenueWA, within 60 days after the assessment issues; apply in writing for an extension within 12 months after the date the objection was due. [Landgate](https://www.landgate.wa.gov.au/valuations/valuations-for-rates-and-taxes/lodging-an-objection/); [RevenueWA](https://www.wa.gov.au/organisation/department-of-treasury-and-finance/revenuewa-objection-and-review-process) |
+| TAS | Office of the Valuer-General, which cannot hear land tax complaints | 60 days from receipt of the Notice of Valuation | The Valuer-General may extend the 60-day period on a written request, which should include a statutory declaration; the Land Valuation Court may also extend it. Late forms may otherwise be treated as correspondence, without statutory appeal rights | Commissioner of State Revenue, in writing with full grounds, within 60 days after service of the notice; the Commissioner may permit a late objection on written application with reasons. [Taxation Administration Act 1997 (Tas) ss 80, 82, 83](https://www.legislation.tas.gov.au/view/whole/html/inforce/current/act-1997-074); [Valuer-General form](https://nre.tas.gov.au/Documents/Objection-to-Valuation.pdf); [Valuer-General](https://nre.tas.gov.au/land-tasmania/office-of-the-valuer-general/objecting-to-a-statutory-valuation) |
 | ACT | Lodge with the ACT Revenue Office through 'Your property valuation', or in writing to the Commissioner. For a unit in a residential unit property, the owners corporation must lodge for all unit owners | 60 days from receiving the valuation notice, not the land tax assessment. Commercial or rural owners who request further information within 28 days: 60 days from receiving it | Not accepted after the limit | ACT Revenue Office, within 60 days of receiving the notice; explain any delay. [ACT Revenue](https://www.revenue.act.gov.au/help-and-resources/object-to-an-assessment-or-decision) |
 | NT | No land tax | -- | -- | -- |
 
