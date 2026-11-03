@@ -1,0 +1,11 @@
+# Tokelau: historical source and monetary reference
+
+I added a Tier 2 historical reference to selected law-reception, currency, penalty-unit and transitional fine-conversion provisions. The guide is dated to the Interpretation Rules consolidation at 1 May 2016; it does not supply current tax rates or establish that any tax is absent.
+
+I read complete selected units in the Tokelau Act 1948, Legislation Act 2019, Income Tax Act 2007 Part Y, Interpretation Rules 2003 and the 2016 consolidation introduction. The guide's Sources table records their versions, selected units and read dates. Fresh Tokelau Act and Legislation Act captures were compared with the previously retained selected legal text on 4 November 2026 in Sydney. The legal text matched after whitespace normalisation; a changed navigation statement was corrected. A fresh Income Tax Act request failed, so its prior capture and read date remain. Four original Interpretation Rules page images were checked and the retained PDF hash matched.
+
+Both fictional executable examples preserve their six expected results. Reversing the 11 recorded authoring replacements restores the v0.2 parent exactly. The new reference follows the canonical method headings and retains the fork's metadata and exact closing CTA. Structural and independent historical content checks do not provide professional sign-off. The canonical source-host check flags legislation.govt.nz, which supplies New Zealand statutes directly relevant to Tokelau's territorial and law-reception boundaries; those sources are retained with that limit documented.
+
+Original certification, enacted language, later amendments, the applicable charging provisions and all actual requested-period obligations remain mandatory evidence holds. The official Act's secondary-legislation navigation did not yield its actual list through the attempted public captures, so no later-law or absence conclusion follows. Full current topic coverage, operational forms and procedures, taxpayer outputs, professional review and filing readiness remain unfinished.
+
+The local inventory work reuses the fixed project-scope filter: KP, IR, SY, RU, BY, MM and YE are excluded targets, with their published guides retained. Haiti remains in scope. Adding this reference increases guide presence only; it does not establish comprehensive Tokelau coverage.

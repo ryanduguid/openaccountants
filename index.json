@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-03T01:11:47+00:00",
+ "generated_at": "2026-11-03T17:07:21+00:00",
  "counts": {
-  "guides": 2033,
-  "jurisdictions": 302,
+  "guides": 2034,
+  "jurisdictions": 303,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -21442,6 +21442,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "tk-law-source-and-monetary-reference",
+   "path": "skills/international/tokelau/tk-law-source-and-monetary-reference.md",
+   "name": "tk-law-source-and-monetary-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2016",
+   "last_updated": "2026-11-04"
   },
   {
    "slug": "to-company-formation",

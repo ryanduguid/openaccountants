@@ -2,9 +2,11 @@
 
 Generated from `country-catalogue.json` and `index.json`. Regenerate with `python3 scripts/check-country-coverage.py --markdown > docs/COUNTRY-COVERAGE.md`.
 
-The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
+The catalogue contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-229 of 250 target areas have at least one indexed guide; 21 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+7 catalogue areas excluded by Ryan's fixed scope decision (31 October 2026): KP, IR, SY, RU, BY, MM and YE. Published guides remain in the inventory below; excluded areas are not missing coverage targets.
+
+240 of 243 target areas have at least one indexed guide; 3 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -39,7 +41,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BH | Bahrain | 6 | 1 |
 | BI | Burundi | 6 | 0 |
 | BJ | Benin | 6 | 0 |
-| BL | Saint Barthélemy | 0 | 0 |
+| BL | Saint Barthélemy | 1 | 0 |
 | BM | Bermuda | 7 | 0 |
 | BN | Brunei Darussalam | 7 | 0 |
 | BO | Bolivia (Plurinational State of) | 5 | 0 |
@@ -63,17 +65,17 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CM | Cameroon | 4 | 0 |
 | CN | China | 13 | 0 |
 | CO | Colombia | 7 | 0 |
-| CR | Costa Rica | 5 | 0 |
+| CR | Costa Rica | 6 | 0 |
 | CU | Cuba | 6 | 0 |
 | CV | Cabo Verde | 6 | 0 |
 | CW | Curaçao | 6 | 0 |
 | CX | Christmas Island | 4 | 0 |
 | CY | Cyprus | 6 | 5 |
 | CZ | Czechia | 7 | 0 |
-| DE | Germany | 22 | 0 |
+| DE | Germany | 23 | 0 |
 | DJ | Djibouti | 6 | 0 |
-| DK | Denmark | 4 | 0 |
-| DM | Dominica | 0 | 0 |
+| DK | Denmark | 6 | 0 |
+| DM | Dominica | 2 | 0 |
 | DO | Dominican Republic | 22 | 14 |
 | DZ | Algeria | 4 | 0 |
 | EC | Ecuador | 8 | 0 |
@@ -86,7 +88,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | FI | Finland | 7 | 0 |
 | FJ | Fiji | 6 | 0 |
 | FK | Falkland Islands (Malvinas) | 2 | 0 |
-| FM | Micronesia (Federated States of) | 0 | 0 |
+| FM | Micronesia (Federated States of) | 1 | 0 |
 | FO | Faroe Islands | 2 | 0 |
 | FR | France | 21 | 0 |
 | GA | Gabon | 5 | 0 |
@@ -112,7 +114,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | HM | Heard Island and McDonald Islands | 1 | 0 |
 | HN | Honduras | 7 | 0 |
 | HR | Croatia | 8 | 0 |
-| HT | Haiti | 0 | 0 |
+| HT | Haiti | 1 | 0 |
 | HU | Hungary | 4 | 0 |
 | ID | Indonesia | 13 | 8 |
 | IE | Ireland | 13 | 0 |
@@ -123,7 +125,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IQ | Iraq | 7 | 0 |
 | IR | Iran (Islamic Republic of) | 6 | 0 |
 | IS | Iceland | 8 | 0 |
-| IT | Italy | 15 | 0 |
+| IT | Italy | 16 | 0 |
 | JE | Jersey | 14 | 0 |
 | JM | Jamaica | 6 | 0 |
 | JO | Jordan | 6 | 0 |
@@ -131,8 +133,8 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | KE | Kenya | 13 | 0 |
 | KG | Kyrgyzstan | 6 | 0 |
 | KH | Cambodia | 6 | 0 |
-| KI | Kiribati | 0 | 0 |
-| KM | Comoros | 0 | 0 |
+| KI | Kiribati | 1 | 0 |
+| KM | Comoros | 1 | 0 |
 | KN | Saint Kitts and Nevis | 1 | 0 |
 | KP | Democratic People's Republic of Korea | 0 | 0 |
 | KR | Republic of Korea | 6 | 3 |
@@ -182,7 +184,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NL | Netherlands (Kingdom of the) | 19 | 0 |
 | NO | Norway | 8 | 0 |
 | NP | Nepal | 5 | 5 |
-| NR | Naoero | 1 | 0 |
+| NR | Naoero | 4 | 0 |
 | NU | Niue | 1 | 0 |
 | NZ | New Zealand | 9 | 0 |
 | OM | Oman | 6 | 0 |
@@ -192,13 +194,13 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PG | Papua New Guinea | 6 | 0 |
 | PH | Philippines | 7 | 0 |
 | PK | Pakistan | 19 | 4 |
-| PL | Poland | 6 | 0 |
+| PL | Poland | 8 | 0 |
 | PM | Saint Pierre and Miquelon | 1 | 0 |
-| PN | Pitcairn | 0 | 0 |
+| PN | Pitcairn | 1 | 0 |
 | PR | Puerto Rico | 2 | 0 |
-| PS | State of Palestine | 0 | 0 |
+| PS | State of Palestine | 1 | 0 |
 | PT | Portugal | 14 | 8 |
-| PW | Palau | 1 | 0 |
+| PW | Palau | 2 | 0 |
 | PY | Paraguay | 4 | 0 |
 | QA | Qatar | 6 | 0 |
 | RE | Réunion | 1 | 0 |
@@ -210,7 +212,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SB | Solomon Islands | 1 | 0 |
 | SC | Seychelles | 5 | 0 |
 | SD | Sudan | 6 | 0 |
-| SE | Sweden | 8 | 0 |
+| SE | Sweden | 10 | 0 |
 | SG | Singapore | 9 | 0 |
 | SH | Saint Helena | 1 | 0 |
 | SI | Slovenia | 8 | 0 |
@@ -224,16 +226,16 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SS | South Sudan | 6 | 0 |
 | ST | Sao Tome and Principe | 6 | 0 |
 | SV | El Salvador | 5 | 0 |
-| SX | Sint Maarten (Dutch part) | 0 | 0 |
+| SX | Sint Maarten (Dutch part) | 1 | 0 |
 | SY | Syrian Arab Republic | 0 | 0 |
 | SZ | Eswatini | 6 | 0 |
-| TC | Turks and Caicos Islands | 0 | 0 |
+| TC | Turks and Caicos Islands | 3 | 0 |
 | TD | Chad | 6 | 0 |
-| TF | French Southern Territories | 0 | 0 |
+| TF | French Southern Territories | 1 | 0 |
 | TG | Togo | 6 | 0 |
 | TH | Thailand | 7 | 0 |
 | TJ | Tajikistan | 6 | 0 |
-| TK | Tokelau | 0 | 0 |
+| TK | Tokelau | 1 | 0 |
 | TL | Timor-Leste | 6 | 0 |
 | TM | Turkmenistan | 6 | 0 |
 | TN | Tunisia | 7 | 0 |
@@ -249,14 +251,14 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | US | United States of America | 62 | 20 |
 | UY | Uruguay | 7 | 0 |
 | UZ | Uzbekistan | 8 | 0 |
-| VA | Holy See | 0 | 0 |
-| VC | Saint Vincent and the Grenadines | 0 | 0 |
+| VA | Holy See | 1 | 0 |
+| VC | Saint Vincent and the Grenadines | 1 | 0 |
 | VE | Venezuela (Bolivarian Republic of) | 5 | 5 |
 | VG | British Virgin Islands | 6 | 0 |
 | VI | United States Virgin Islands | 4 | 0 |
 | VN | Viet Nam | 7 | 0 |
 | VU | Vanuatu | 6 | 0 |
-| WF | Wallis and Futuna Islands | 0 | 0 |
+| WF | Wallis and Futuna Islands | 1 | 0 |
 | WS | Samoa | 6 | 0 |
 | XK | Kosovo | 5 | 0 |
 | YE | Yemen | 0 | 0 |
