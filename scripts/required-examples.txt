@@ -24,9 +24,13 @@ skills/international/australia/au-payg-instalments.md
 skills/international/australia/au-payroll-tax.md
 skills/international/australia/au-psi.md
 skills/international/australia/au-rates-2026-27.md
+skills/international/australia/au-rd-incentive.md
+skills/international/australia/au-rental-property.md
 skills/international/australia/au-small-business-cgt.md
+skills/international/australia/au-smsf.md
 skills/international/australia/au-sole-trader-schedule.md
 skills/international/australia/au-super-guarantee.md
+skills/international/australia/au-tpar.md
 skills/international/australia/au-trust-distributions.md
 skills/international/australia/australia-gst.md
 skills/international/australia/australia-payroll.md
