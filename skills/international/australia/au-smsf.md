@@ -7,6 +7,7 @@ jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 calculations; 2025-26 SAR instructions; selected source conditions and unresolved evidence stated below"
 last_updated: 2026-11-04
+review_status: pending_review
 depends_on:
   - workflow-base
 category: international
@@ -28,7 +29,7 @@ This guide prepares accounting, tax and compliance working papers for an Austral
 
 Annual member caps and general transfer-balance figures have one home in [au-rates-2026-27](au-rates-2026-27.md); member contribution rules and employer SG are in [au-super-guarantee](au-super-guarantee.md). Route the small-business CGT cap election to [au-small-business-cgt](au-small-business-cgt.md), general CGT ordering to [au-capital-gains](au-capital-gains.md), member return consequences to [au-individual-return](au-individual-return.md) and residence questions to [au-tax-residency](au-tax-residency.md). A sibling link is not proof that its facts have been verified for this engagement.
 
-**Scope boundary.** Do not recommend investments, products, pension commencement or commutation, contribution strategies, SMSF suitability or transaction structuring. This is this guide's hard scope limit. ASIC distinguishes licensed or authorised financial services from particular accounting, tax and other exemptions, subject to their conditions and warnings; the former specific accountants' exemption ended on 1 July 2016. Do not describe all SMSF services as requiring the practitioner personally to hold an AFSL. [ASIC INFO 216](https://asic.gov.au/regulatory-resources/financial-services/giving-financial-product-advice/accountants-and-advice/).
+**Scope boundary.** Do not recommend investments, products, pension commencement or commutation, contribution strategies, SMSF suitability or transaction structuring. This is this guide's hard scope limit. ASIC distinguishes licensed or authorised financial services from particular accounting, tax and other exemptions, subject to their conditions and warnings; the former specific accountants' exemption ended on 1 July 2016. Do not describe all SMSF services as requiring the practitioner personally to hold an AFSL. [ASIC INFO 216](https://www.asic.gov.au/for-finance-professionals/afs-licensees/apply-for-an-afs-licence/limited-financial-services/afs-licensing-requirements-for-accountants-who-provide-smsf-services).
 
 This is a Tier 2 source-cited draft in the ryanduguid fork. The legacy closing block is retained as required; it does not mean that the upstream website publishes or verifies this fork's changes or that a professional has signed off this version.
 
@@ -73,10 +74,10 @@ This is a Tier 2 source-cited draft in the ryanduguid fork. The legacy closing b
 | Concessional / non-concessional caps | Annual cap and bring-forward figures are linked rather than repeated; verify prior-year balances and history | [au-rates-2026-27](au-rates-2026-27.md), [ATO caps](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/contributions-caps) |
 | General / personal transfer balance cap | Annual general figure has one home; member's actual personal cap and account history govern | [au-rates-2026-27](au-rates-2026-27.md), [au-super-guarantee](au-super-guarantee.md) |
 | Pension minimums | Section 6.1 age table, balance, rounding and commencement conditions | [SIS Regulations Schedule 7](https://www.legislation.gov.au/F1996B00580/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
-| TBAR | Quarterly event reporting for all SMSFs, subject to event and special-authority deadlines | [ATO TBAR rules](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/event-based-reporting-for-smsfs) |
+| TBAR | Quarterly event reporting for all SMSFs, subject to event and special-authority deadlines | [ATO TBAR rules](https://www.ato.gov.au/forms-and-instructions/superannuation-transfer-balance-account-report-instructions/when-to-lodge) |
 | Existing LRBA checks | Section 7 safe-harbour terms, independent arm's-length evidence and application conditions; no structuring | [PCG 2016/5](https://www.ato.gov.au/law/view/document?docid=COG/PCG20165/NAT/ATO/00001), [s 67A](https://www.ato.gov.au/law/view/document?docid=PAC/19930078/67A) |
 | Division 296 | Fund-level earnings/attribution/reporting flag, not member-liability computation; section 5.3 | [ATO SMSF Division 296](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/about-division-296-tax-for-smsfs) |
-| Corporate trustee cost | Section 3.2 gives the current proprietary special-purpose annual-review fee and eligibility check; verify the actual statement and fee date | [ASIC special-purpose companies](https://asic.gov.au/for-business-and-companies/companies/company-annual-reviews/special-purpose-companies/) |
+| Corporate trustee cost | Section 3.2 gives the current proprietary special-purpose annual-review fee and eligibility check; verify the actual statement and fee date | [ASIC special-purpose companies](https://www.asic.gov.au/for-business-and-companies/companies/register-a-company/special-purpose-companies) |
 
 **Conservative factual defaults and source stops**
 
@@ -617,7 +618,7 @@ Stop the affected calculation or action when a required fact, source condition o
 
 ### Refusal catalogue
 
-**R-AU-SF-1: financial product and investment advice.** Refuse recommendations about investments, SMSF suitability, contribution strategy or whether to start/commute a pension. Message: 'This guide covers accounting, tax and compliance preparation only. Refer personal financial product advice to an appropriately licensed or authorised adviser.' This is a hard guide boundary; ASIC's exemptions and warnings remain conditional, and the former specific accountants' exemption ended on 1 July 2016. [ASIC INFO 216](https://asic.gov.au/regulatory-resources/financial-services/giving-financial-product-advice/accountants-and-advice/).
+**R-AU-SF-1: financial product and investment advice.** Refuse recommendations about investments, SMSF suitability, contribution strategy or whether to start/commute a pension. Message: 'This guide covers accounting, tax and compliance preparation only. Refer personal financial product advice to an appropriately licensed or authorised adviser.' This is a hard guide boundary; ASIC's exemptions and warnings remain conditional, and the former specific accountants' exemption ended on 1 July 2016. [ASIC INFO 216](https://www.asic.gov.au/for-finance-professionals/afs-licensees/apply-for-an-afs-licence/limited-financial-services/afs-licensing-requirements-for-accountants-who-provide-smsf-services).
 
 **R-AU-SF-2: in-specie/off-market valuation.** Refuse to invent the value of a contributed or transferred asset. Message: 'Obtain qualified market-value evidence and review the acquisition and contribution rules before recording the transfer.' Independence/valuation requirements depend on the asset and applicable rule; neither a related-party estimate nor a market value alone establishes s 66 compliance.
 
@@ -748,7 +749,7 @@ The rows record selected primary-source passages read on 4 November 2026, includ
 | Other super rates and thresholds / Australian Taxation Office; Selected relevant guidance/conditions | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/other-super-rates-and-thresholds> | 2026-11-04 |
 | Lodge SMSF annual returns / Australian Taxation Office; Selected relevant guidance/conditions | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/smsf-administration-and-reporting/lodge-smsf-annual-returns> | 2026-11-04 |
 | Companies and super funds / Australian Taxation Office; Selected relevant guidance/conditions | <https://www.ato.gov.au/tax-and-super-professionals/for-tax-professionals/prepare-and-lodge/registered-agent-lodgment-program/due-dates-for-tax-returns-by-client-type/companies-and-super-funds> | 2026-11-04 |
-| AFS licensing requirements for accountants who provide SMSF services / ASIC; Selected relevant guidance/conditions | <https://www.asic.gov.au/for-finance-professionals/afs-licensees/applying-for-and-managing-an-afs-licence/limited-financial-services/afs-licensing-requirements-for-accountants-who-provide-smsf-services> | 2026-11-04 |
+| AFS licensing requirements for accountants who provide SMSF services / ASIC; Selected relevant guidance/conditions | <https://www.asic.gov.au/for-finance-professionals/afs-licensees/apply-for-an-afs-licence/limited-financial-services/afs-licensing-requirements-for-accountants-who-provide-smsf-services> | 2026-11-04 |
 | Special purpose companies / ASIC; Special-purpose status/declaration only; fee verified separately in the current ASIC annual-review table | <https://www.asic.gov.au/for-business-and-companies/companies/register-a-company/special-purpose-companies> | 2026-11-04 |
 | Fines and penalties / ASIC; Selected relevant guidance/conditions | <https://www.asic.gov.au/penalties> | 2026-11-04 |
 | Check your SMSF is an Australian super fund / Australian Taxation Office; Selected relevant guidance/conditions | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/setting-up-an-smsf/check-your-fund-is-an-australian-super-fund> | 2026-11-04 |
