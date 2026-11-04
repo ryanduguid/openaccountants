@@ -256,6 +256,16 @@ class ExampleCliTests(unittest.TestCase):
                 result = self.run_checker(fenced() * count, "--require")
                 self.assertEqual(result.returncode, 0 if count == 2 else 1, result.stdout + result.stderr)
 
+    def test_require_reads_one_path_per_line_from_an_at_file(self):
+        listed = self.root / "scripts" / "required-examples.txt"
+        listed.write_text(self.guide.relative_to(self.root).as_posix() + "\n", encoding="utf-8")
+        for count in (1, 2):
+            with self.subTest(count=count):
+                self.guide.write_text(fenced() * count, encoding="utf-8")
+                result = self.invoke("--require", "@scripts/required-examples.txt")
+                self.assertEqual(result.returncode, 0 if count == 2 else 1, result.stdout + result.stderr)
+                self.assertIn(f"checked 1 files, {count} oa-check blocks", result.stdout)
+
     def test_malformed_and_mismatched_cases_exit_nonzero(self):
         for text in (fenced(CASE.split("expected:")[0]), "```oa-check\n" + CASE,
                      fenced(CASE.replace("tiles: 24", "tiles: 25")),
