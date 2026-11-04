@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T23:08:39+00:00",
+ "generated_at": "2026-11-04T00:02:53+00:00",
  "counts": {
   "guides": 2034,
   "jurisdictions": 302,
@@ -2578,7 +2578,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-deductions-offsets",
@@ -2604,7 +2604,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-employment-termination-payments",
@@ -2656,7 +2656,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-forex-gains-losses",
@@ -2669,7 +2669,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-gst-bas",
@@ -2695,7 +2695,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-individual-return",
@@ -2734,7 +2734,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-medicare-levy",
@@ -2760,7 +2760,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-not-for-profit",
@@ -2771,9 +2771,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": "pending_review",
+   "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-04"
   },
   {
    "slug": "au-partnerships",
@@ -2784,9 +2784,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": "pending_review",
+   "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-04"
   },
   {
    "slug": "au-payg-instalments",
@@ -2810,9 +2810,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": "pending_review",
+   "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-04"
   },
   {
    "slug": "au-psi",
@@ -2823,9 +2823,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": "pending_review",
+   "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-04"
   },
   {
    "slug": "au-rates-2026-27",
@@ -2968,7 +2968,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-03"
   },
   {
    "slug": "au-working-holiday-makers",
