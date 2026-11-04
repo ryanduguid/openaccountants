@@ -84,9 +84,12 @@ Ask only for missing facts, grouping substantive questions within its limits:
    and prior payee details apply? Is this an original report, omitted payee,
    amount amendment, payee-detail correction or non-lodgment advice?
 
-Never request or include bank details merely because the ATO may ask for them.
-Collect only what the authorised channel and engagement require. This guide
-needs no real client data for its examples or repository checks.
+Never request bank details merely because the ATO may ask for them. Collect
+only what the authorised channel and engagement require. For a v3.0.1 file,
+complete the optional payee telephone, BSB, account number and email fields
+where the payer already holds that data: the specification's optional-field
+rule says payers must complete such a field if the data is available. [S26]
+This guide needs no real client data for its examples or repository checks.
 
 ## Section 2 - Filing requirements
 
@@ -125,13 +128,13 @@ Lodge through supported SBR software, a file meeting the current TPAR
 specification, Online services for business, Online services for individuals
 and sole traders, or a registered tax/BAS agent's supported channel. Save the
 submitted report and receipt; a saved draft is not lodgment. Paper reports
-ceased to be accepted from 28 August 2025. The ATO's lodgment page describes
+are not accepted after 28 August 2025. The ATO's lodgment page describes
 saved drafts and History receipts. Verify the current navigation rather than
 assuming historical menu labels remain available. [S8]
 
 | Situation | Required route |
 | --- | --- |
-| Obligation does not arise | Document the tests and exclusions first. Where the ATO expects a report, submit non-lodgment advice through the supported online service; retain its reference and history. Advice can cover multiple years or an expected future cessation, but does not exempt a transaction that must be reported. [S11] |
+| Obligation does not arise | Document the tests and exclusions first. The ATO says non-lodgment advice can be submitted when no report is required, and should be lodged where no contractor payments for services and no grants to ABN holders were made. Submit it through the supported online service; retain its reference and history. Advice can cover multiple years or an expected future cessation, but does not exempt a transaction that must be reported. [S11] |
 | Gross, GST or no-ABN withholding amount is wrong | Lodge an amended TPAR for the affected payee through the supported software or online amendment form. Keep all other payee details exactly as originally reported so the amount amendment matches the original. Preserve the original and corrected amounts. [S12] |
 | Payee details are wrong, excluding amounts | Do not lodge an amount amendment merely to change identity/details. Send the ATO the old and correct details, reporting year and identifying payer information using the correction-message route on its amendment page. Agents use Practice mail; businesses use the specified secure-mail route. [S12] |
 | Payee omitted from original report | Lodge another TPAR containing the payer information and new payee(s). Do not resend the unaffected original payees as new records. [S12] |
@@ -152,7 +155,7 @@ values to stated hypothetical facts; they are not additional rate sources.
 | Business service exemption | Relevant receipts strictly less than 10% of relevant GST turnover, subject to the other-item and voluntary-choice conditions; equality is outside this exemption | [S3] section 5 |
 | Relevant GST turnover | Current GST turnover at period end if supplies have been made for at least 12 months; otherwise projected GST turnover within the GST Act meaning, including grouping. Section 188-20 uses the measurement month and next 11 months; ATO explanatory guidance describes the following full financial year. Hold an unreconciled projected-period decision | [S3] section 3; [S4] [S17] [S23] [S24] |
 | Construction threshold | 50% or more: current activity, current income or immediately preceding income; not prior activity. Other payer/payment conditions still apply | [S2] regulation 70(1), (4) |
-| No-ABN small supply exception | Total payments for the same supply at or below $75 excluding GST. Aggregate actual and proposed payments for that supply; do not split invoices or instalments to obtain the exception | [S9] [S18]; TAA Schedule 1 section 12-190(4)(b) |
+| No-ABN small supply exception | Total payments for the same supply at or below $75 excluding GST. Aggregate actual and proposed payments for that supply; do not split invoices or instalments to obtain the exception | [S9] [S18] [S21] [S27]; TAA Schedule 1 section 12-190(4)(b) sets $50 or the higher amount prescribed for GST Act section 29-80(1); GST Regulations 2019 section 29-80.01 prescribes $75 |
 | No-ABN withholding rate | Generally 47% of the payment where section 12-190 applies and no exception is established. The top rate is defined by regulation 5 and applied by regulation 38; verify the operative components for the payment date | [S2] [S19] |
 | Reported amounts | Whole dollars for reported gross including GST and withheld tax, GST and no-ABN withholding. Fixed-width file specification v3.0.1 sections 6.61 to 6.63 truncate cents in the aggregated record amounts. Each numeric field is 11 digits, right justified and zero filled; gross must be greater than zero, with zero permitted for GST and withholding. Verify other channels separately | [S7] [S26] |
 | FTL base | 1 penalty unit per 28 days or part overdue, capped at 5 units; apply the actual due date and assessment rules | [S13]; TAA Schedule 1 section 286-80 |
@@ -210,13 +213,18 @@ makes relevant payments in that year. A prior activity result alone does not
 create that income look-back. Record the measure supporting current activity;
 there is no invented universal headcount or hours proxy. [S2] [S5]
 
-Construction covers work on or in relation to buildings, structures, works,
-surfaces and sub-surfaces, including alteration, assembly, construction,
-demolition, design, excavation, installation, maintenance, project management,
-repair and site preparation. ATO examples include cabinet making, landscaping,
-surveying, architectural drafting, engineering and equipment hire with an
-operator. Maintenance/repair of tools and equipment and testing/tagging tools
-are distinguished from construction work. Dry equipment hire is a goods rental.
+Regulation 70(5) includes these activities performed on, or in relation to,
+any part of a building, structure, works, surface or subsurface: alteration,
+assembly, construction, demolition, design, destruction, dismantling, erection,
+excavation, finishing, improvement, installation, maintenance, management of
+building and construction services, modification, organisation of building
+and construction services, removal, repair and site preparation. ATO examples
+include cabinet making, landscaping, surveying, architectural drafting,
+engineering, project management and equipment hire with an operator. ATO
+guidance distinguishes maintenance/repair of tools and equipment and
+testing/tagging tools from construction work [S5]; regulation 70(5) itself
+lists maintenance and repair without that carve-out. Dry equipment hire is a
+goods rental.
 A hardware retailer arranging installation is not automatically primarily in
 construction; a separate installation entity must apply its own facts. Each
 principal and subcontractor tests its own obligation, rather than inheriting
@@ -238,8 +246,8 @@ supplier-statement status and an evidenced NANE indicator where required. [S10] 
 | Mixed goods and services | Include the whole qualifying payment where service is more than incidental. Goods-only and incidental-service supplies are excluded under the applicable rule; do not discard all mixed invoices. Retain the contract/invoice basis. [S2] [S6] [S10] |
 | Unpaid invoice at year end | Exclude from this year's cash extract and carry a link to the following year's payment. The invoice date alone does not allocate the year. [S6] |
 | Employees, voluntary-agreement and labour-hire payments | Exclude the applicable PAYG/STP payments from mandatory business TPAR reporting; route to the appropriate reporting obligation. Worker status and the actual arrangement need evidence. [S6] |
-| No ABN with withholding | First recognise the mandatory business reporting exclusion for Division 12 withholding. The ATO nevertheless permits the no-ABN annual information to be reported in either TPAR or the PAYG no-ABN annual report, once only. Record the expressly chosen annual route and reconcile gross, net and withheld separately. [S1] [S6] [S10] |
-| Foreign resident payment | Business exclusions include foreign resident withholding payments and overseas work described by the ATO. Verify source and withholding facts; government services have a distinct rule. [S6] [S10] |
+| No ABN with withholding | First recognise the mandatory business reporting exclusion for Division 12 withholding: section 396-55 items 11 to 14 paragraph (b) for the service categories, and regulation 70(3) for construction, which excludes a 'withholding payment' within ITAA 1997 section 995-1(1) paragraph (a), even if the amount is not withheld. The ATO nevertheless permits the no-ABN annual information to be reported in either TPAR or the PAYG no-ABN annual report, once only. Record the expressly chosen annual route and reconcile gross, net and withheld separately. [S1] [S2] [S6] [S10] [S28] |
+| Foreign resident payment | Business exclusions include foreign resident payments subject to PAYG foreign resident withholding and payments for work performed overseas. A foreign resident payment for work in Australia that is not subject to PAYG withholding is reportable. Verify source and withholding facts; government services have a distinct rule. [S6] [S10] |
 | Same consolidated or MEC group | Apply the relevant business exclusion with evidence of actual group membership. Do not confuse income tax consolidation with GST grouping used in the exemption calculation. [S1] [S2] [S6] |
 | Private or domestic project | Exclude a private owner's home payment from the business report under the applicable rule. Distinguish the business's service to a customer from the owner's personal expenditure. [S6] |
 | Government services | Include qualifying service payments and mixed payments subject to the government exemptions. Goods-only, incidental services, specified payment channels/transactions and other exclusions require the government source, not a business checklist. [S10] |
@@ -313,10 +321,11 @@ R-AU-TPAR-SOURCE. [S7] [S26]
 
 Keep contractor name, address, ABN, gross, GST and withholding records and use
 the ATO worksheet if software cannot produce the report. The ATO may request
-phone, email or bank details. An optional payee information statement can tell
-contractors what was reported in whole dollars; there is no general obligation
-to issue that statement for ordinary TPAR reporting. Keep the separate no-ABN
-payment-summary duty above. [S7] [S8]
+phone, email or bank details; a v3.0.1 file includes those the payer already
+holds, as described in the intake. An optional payee information statement can
+tell contractors what was reported in whole dollars; there is no general
+obligation to issue that statement for ordinary TPAR reporting. Keep the
+separate no-ABN payment-summary duty above. [S7] [S8] [S26]
 
 ### Step 6 - Prepare the 4 reviewer outputs
 
@@ -503,9 +512,10 @@ expected:
 Change only the relevant cleaning receipts to $50,000. The reconciled relevant
 GST turnover remains $600,000, giving 8.333333...%. For this example the
 transactions fall in no other section 396-55 item and Sparkle has not chosen
-to report them. The business service exemption therefore applies. Prepare
-non-lodgment advice if the ATO expects a report; do not lodge a nil report as
-an unexplained substitute. C's separate withholding, remittance and annual
+to report them. The business service exemption therefore applies. Sparkle may
+submit non-lodgment advice because no report is required. The ATO's 'should
+lodge' case, no contractor payments or grants, does not describe Sparkle, which
+paid contractors. Do not lodge a nil report as an unexplained substitute. C's separate withholding, remittance and annual
 information obligations still need their supported reporting route. The
 alternative does not remove that liability. [S3] [S11]
 
@@ -593,14 +603,17 @@ expected:
 #### Position 5 - Supplies began part way through the year
 
 An ABN security business began making supplies late in the report year. Relevant
-consideration received is $8,000; partial-year business income is $40,000. Its
-supported forecast is $200,000 for the following full financial year, but
-$80,000 for the measurement month and next 11 months. These are stipulated
+consideration received is $20,000; partial-year business income is $40,000. Its
+supported forecast is $205,000 for the following full financial year (July 2027
+to June 2028) and $195,000 for the measurement month and next 11 months (June
+2027 to May 2028). The windows share July 2027 to May 2028, so the forecasts
+imply June 2028 supplies $10,000 above June 2027. These are stipulated
 monthly-bridge totals, not established legal denominators. The alternative
-shares are 4% and 10%; dividing by partial-year income instead gives 20%.
-Assume relevant contractor payments and that the other-item and voluntary-choice
-conditions are met. The full-year forecast would fall below the exemption
-boundary; the other window would reach it and fail the strict less-than test.
+shares are 9.756...% and 10.256...%; dividing by partial-year income instead
+gives 50%. Assume relevant contractor payments and that the other-item and
+voluntary-choice conditions are met. The full-year forecast would fall below
+the exemption boundary; the other window would exceed it and fail the strict
+less-than test.
 Keep the exemption decision at Needs Input under R-AU-TPAR-SOURCE until the
 period conflict is reconciled. Do not choose a window to obtain a desired
 reporting result. A supported supply-start date and forecasts cannot settle
@@ -609,18 +622,20 @@ the legal-period question. [S3] [S4] [S17] [S24]
 ```oa-check
 name: Conflicting projected periods leave the exemption decision held
 inputs:
-  receipts: 8000
+  receipts: 20000
   partial_income: 40000
-  next_full_year: 200000
-  measurement_month_and_next_eleven: 80000
+  next_full_year: 205000
+  measurement_month_and_next_eleven: 195000
 steps:
   full_year_share: receipts / next_full_year * 100
   other_window_share: receipts / measurement_month_and_next_eleven * 100
   incorrect_income_share: receipts / partial_income * 100
+  june_increase: next_full_year - measurement_month_and_next_eleven
 expected:
-  full_year_share: 4
-  other_window_share: 10
-  incorrect_income_share: 20
+  full_year_share: 9.75609756
+  other_window_share: 10.25641026
+  incorrect_income_share: 50
+  june_increase: 10000
 ```
 
 #### Position 6 - Local government services and grants
@@ -744,15 +759,16 @@ expected:
 
 #### Position 9 - Aggregate before fixed-width file truncation
 
-Two supported payments to the same annual payee record have gross amounts
-$1,234.75 and $345.65, GST $112.25 and $31.42, and withheld amounts $10.90 and
-$11.80. These are hypothetical source facts for file conversion, not a
-withholding-rate calculation. The annual totals are gross $1,580.40, GST
-$143.67 and withheld $22.70. Under v3.0.1, export 1580, 143 and 22 in the
-respective zero-filled fields. Truncating each gross payment first would give
-1579 and understate the record by $1. Retain the source cents and all 3
-conversion differences. This example does not validate an SBR or online-form
-conversion or a complete lodgment file. [S26]
+Two supported payments to the same ABN-quoting, GST-registered payee have
+gross amounts $1,234.75 and $345.65, including GST of $112.25 and $31.42 shown
+on the invoices, with no withholding. These are hypothetical invoice facts for
+file conversion. The annual totals are gross $1,580.40, GST $143.67 and
+withheld $0. Under v3.0.1, export 1580 and 143 in the zero-filled gross and GST
+fields, and an all-zero withheld field, which the specification accepts.
+Truncating each gross payment first would give 1579 and understate the record
+by $1. Retain the source cents and both conversion differences. This example
+does not validate an SBR or online-form conversion or a complete lodgment
+file. [S26]
 
 ```oa-check
 name: Annual record amounts truncate after aggregation for the fixed width file
@@ -761,8 +777,8 @@ inputs:
   gross_b: 345.65
   gst_a: 112.25
   gst_b: 31.42
-  withheld_a: 10.90
-  withheld_b: 11.80
+  withheld_a: 0
+  withheld_b: 0
 steps:
   gross_total: gross_a + gross_b
   gst_total: gst_a + gst_b
@@ -773,19 +789,17 @@ steps:
   wrong_gross_field: floor(gross_a) + floor(gross_b)
   gross_cents_bridge: gross_total - gross_field
   gst_cents_bridge: gst_total - gst_field
-  withheld_cents_bridge: withheld_total - withheld_field
   wrong_gross_difference: gross_field - wrong_gross_field
 expected:
   gross_total: 1580.40
   gst_total: 143.67
-  withheld_total: 22.70
+  withheld_total: 0
   gross_field: 1580
   gst_field: 143
-  withheld_field: 22
+  withheld_field: 0
   wrong_gross_field: 1579
   gross_cents_bridge: 0.40
   gst_cents_bridge: 0.67
-  withheld_cents_bridge: 0.70
   wrong_gross_difference: 1
 ```
 
@@ -852,6 +866,8 @@ GST Act definitions and requested-period application for a live calculation.
 | [S24] GST Act section 188-20 | 4 November 2026: Selected projected-turnover period, exclusions and GST group provisions in subsections (1) and (2); no TPAR-specific period reconciliation was established. |
 | [S25] GST Act section 188-25 | 4 November 2026: Projected-turnover exclusions for capital assets, cessation and substantial permanent reduction. |
 | [S26] ATO TPAR electronic reporting specification v3.0.1 | 4 November 2026: Specification page marked Current, published/modified 8 June 2021. Selected general amount rules, record table 16, sections 6.61 to 6.66, 6.69 and section 9 amendments. The older non-amount-change statement does not displace the current [S12] details-correction procedure. No complete exporter, SBR/UI mapping or future-period availability was validated. |
+| [S27] A New Tax System (Goods and Services Tax) Regulations 2019 | 4 November 2026: Compilation F2025C01015, section 29-80.01 ($75 for GST Act subsection 29-80(1)), read with TAA Schedule 1 section 12-190(4)(b). |
+| [S28] ITAA 1997 section 995-1 | 4 November 2026: Paragraph (a) of the 'withholding payment' definition, used by regulation 70(3). |
 
 [S1]: https://www.legislation.gov.au/C1953A00001/latest/text "Taxation Administration Act 1953"
 [S2]: https://www.legislation.gov.au/F2017L01227/latest/text "Taxation Administration Regulations 2017"
@@ -879,6 +895,8 @@ GST Act definitions and requested-period application for a live calculation.
 [S24]: https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/188-20 "GST Act section 188-20"
 [S25]: https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/188-25 "GST Act section 188-25"
 [S26]: https://softwaredevelopers.ato.gov.au/sites/default/files/2021-06/Taxable_payments_annual_report_specification_v3.0.1.docx "ATO TPAR electronic reporting specification v3.0.1"
+[S27]: https://www.legislation.gov.au/F2019L00417/latest/text "A New Tax System (Goods and Services Tax) Regulations 2019"
+[S28]: https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1 "ITAA 1997 section 995-1"
 
 Retained provenance: the preceding guide recorded source checks on
 27 September 2026, with whole-dollar and weekend rules checked on
@@ -904,7 +922,9 @@ The examples and local repository checks do not supply those facts or sign-off.
   Add 10 executable arithmetic cases, intake, refusals, defaults, thresholds,
   reviewer outputs and selected source/read provenance. Hold the projected-period
   source conflict and document selected fixed-width aggregation/truncation rules.
-  Use the canonical fork CTA.
+  Use the canonical fork CTA. Second read: complete held optional v3.0.1 payee
+  fields, quote the non-lodgment advice trigger, add regulation 70(3), 70(5)
+  and GST Regulations pinpoints, and make the Position 5 and 9 inputs plausible.
 - v1.2, 2 November 2026: Retained structural update and source qualifications;
   prior recorded check dates are preserved above.
 
