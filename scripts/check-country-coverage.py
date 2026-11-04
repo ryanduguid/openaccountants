@@ -12,6 +12,8 @@ from oa_tools.roster import load_index, reviewer_of
 ROOT = Path(REPO_ROOT)
 CATALOGUE = ROOT / "docs" / "country-catalogue.json"
 REPORT = ROOT / "docs" / "COUNTRY-COVERAGE.md"
+# Ryan's fixed coverage scope, 31 October 2026; retain the published inventory.
+EXCLUDED_CODES = frozenset({"KP", "IR", "SY", "RU", "BY", "MM", "YE"})
 
 
 def coverage(catalogue, guides):
@@ -27,17 +29,21 @@ def coverage(catalogue, guides):
 
 
 def render(catalogue, rows):
-    present = sum(row["guide_count"] > 0 for row in rows)
+    target = [row for row in rows if row["code"] not in EXCLUDED_CODES]
+    present = sum(row["guide_count"] > 0 for row in target)
     out = [
         "# Country and territory coverage", "",
         "Generated from `country-catalogue.json` and `index.json`. Regenerate with "
         "`python3 scripts/check-country-coverage.py --markdown > docs/COUNTRY-COVERAGE.md`.", "",
-        "The target contains the country-or-area rows in the "
+        "The catalogue contains the country-or-area rows in the "
         f"[UN M49 table]({catalogue['source_url']}) captured on "
         f"{catalogue['retrieved_on']}, plus the repository's existing Taiwan and Kosovo "
         "jurisdictions. This is a guide inventory; it makes no determination about sovereignty.", "",
-        f"{present} of {len(rows)} target areas have at least one indexed guide; "
-        f"{len(rows) - present} have none. US states, cross-border labels and global "
+        f"{len(rows) - len(target)} catalogue areas excluded by Ryan's fixed scope "
+        "decision (31 October 2026): KP, IR, SY, RU, BY, MM and YE. Published guides "
+        "remain in the inventory below; excluded areas are not missing coverage targets.", "",
+        f"{present} of {len(target)} target areas have at least one indexed guide; "
+        f"{len(target) - present} have none. US states, cross-border labels and global "
         "workflow guides do not increase this country-and-territory count.", "",
         "A present guide does not establish comprehensive topic coverage, current law, "
         "primary-source verification or professional sign-off. Accountant-reviewed "
@@ -76,8 +82,10 @@ def main(argv=None):
             return 1
         print("Country coverage report matches the catalogue and index")
     else:
-        missing = [row for row in rows if not row["guide_count"]]
-        print(f"{len(rows) - len(missing)}/{len(rows)} target areas have guides; {len(missing)} missing")
+        target = [row for row in rows if row["code"] not in EXCLUDED_CODES]
+        missing = [row for row in target if not row["guide_count"]]
+        print(f"{len(target) - len(missing)}/{len(target)} target areas have guides; "
+              f"{len(missing)} missing; {len(rows) - len(target)} excluded by Ryan")
         for row in missing:
             print(f"{row['code']} {row['name']}")
     return 0
