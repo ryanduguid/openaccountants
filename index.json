@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T07:56:11+00:00",
+ "generated_at": "2026-11-04T08:10:35+00:00",
  "counts": {
   "guides": 2034,
   "jurisdictions": 302,
@@ -2851,7 +2851,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-04"
   },
   {
    "slug": "au-rental-property",
@@ -2955,7 +2955,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-02"
+   "last_updated": "2026-11-04"
   },
   {
    "slug": "au-trust-distributions",
