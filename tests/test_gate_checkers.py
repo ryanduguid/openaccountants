@@ -494,7 +494,11 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
             # "accountant-reviewed", as it does in the real files
             "README.md": "# Repo\n\nTax Guides, some accountant-reviewed.\n\n" + overrides.get("headline", correct) + "\n",
             "llms.txt": "# Repo\n\n" + overrides.get("llms", correct) + "\n",
-            "docs/QUALITY-TIERS.md": "# Tiers\n\n## Current inventory\n\n" + overrides.get("tiers", correct) + "\n",
+            "docs/QUALITY-TIERS.md": (
+                "# Tiers\n\n## Current inventory\n\n" + overrides.get("tiers", correct) + "\n\n"
+                "### Source-cited drafts (Tier 2)\n\n"
+                + overrides.get("tier2", "There are 1 Tier 2 guides among the 2 indexed guides.") + " The rest.\n"
+            ),
             "docs/partners.json": json.dumps(self.PROFILES),
             "PARTNERS.md": partners,
             "skills/international/zz/zz-vat.md": guide("zz-vat", "Body.\n"),
@@ -564,6 +568,7 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         self.write(self.corpus(**{
             "Guide files indexed": 3, "Distinct `reviewed_by` values": 7,
             "headline": drifted, "llms": drifted, "tiers": drifted,
+            "tier2": "There are 5 Tier 2 guides among the 1,009 indexed guides.",
             "reviewed_in": "Accountant-reviewed guides exist in 5 of the 9 jurisdiction codes;\n\n",
         }))
         self.assertEqual(self.run_checker(baseline=False).returncode, 1)
@@ -577,6 +582,19 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         for rel in ("docs/COVERAGE.md", "README.md", "llms.txt", "docs/QUALITY-TIERS.md"):
             self.assertEqual((self.root / rel).read_text(encoding="utf-8"), expected[rel], rel)
         self.assertEqual(self.run_checker("--write", baseline=False).stdout, "", "a second --write changed something")
+
+    def test_the_tier_2_sentence_is_checked_and_required(self) -> None:
+        self.write(self.corpus(tier2="There are 5 Tier 2 guides among the 9 indexed guides."))
+        code, document = self.run_json(baseline=False)
+        self.assertEqual(code, 1)
+        self.assertEqual([(f["path"], f["key"], f["detail"]) for f in document["findings"]],
+                         [("docs/QUALITY-TIERS.md", "tier 2 guides", {"claimed": [5, 9], "actual": [1, 2]})])
+
+        self.write(self.corpus(tier2="Tier 2 guides are source-cited drafts."))
+        code, document = self.run_json(baseline=False)
+        self.assertEqual(code, 1)
+        self.assertEqual([(f["path"], f["key"]) for f in document["findings"]],
+                         [("docs/QUALITY-TIERS.md", "tier 2 guides")])
 
     def test_missing_doc_is_a_finding(self) -> None:
         files = self.corpus()

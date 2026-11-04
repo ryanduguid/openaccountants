@@ -6,7 +6,10 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `nr-corporate-annual-return-reference.md`
+2. `nr-business-tax-charge-rate-reference.md`
+3. `nr-corporate-annual-return-reference.md`
+4. `nr-employment-services-charge-reference.md`
+5. `nr-tax-administration-reference.md`
 
 ## Shared files this package needs
 

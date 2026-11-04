@@ -3,7 +3,7 @@
 # here and on an entry that no longer reproduces. After fixing findings, regenerate
 # it with: python3 scripts/check-bracket-tables.py --update-baseline
 skills/international/andorra/ad-income-tax.md::| 24,001 -- 40,000 | 10% | Up to EUR 800 | EUR 800 on full EUR 16,000 band | EUR 800 | / | Above 40,000 | 10% | None | 10% × excess | EUR 800 + 10% × (income − 40,000) |
-skills/international/australia/au-not-for-profit.md::| $763-$915 | 25% on whole amount | 55% of excess over $416 | / | $916 and above | 25% on whole amount | 30% on whole amount |
+skills/international/australia/au-not-for-profit.md::| $763-$915 | 25% on the whole amount | 55% of excess over $416 | [Rates Act s 23(2), (6)](https / | $916 and above | 25% on the whole amount | 30% on the whole amount | [Rates Act s 23(2), (6)](
 skills/international/el-salvador/el-salvador-income-tax.md::cumulative: | 550.01 – 895.24 | USD 17.67 + 10% over 550.00 | / | 895.25 – 2,038.10 | USD 60.00 + 20% over 895.24 |
 skills/international/el-salvador/el-salvador-income-tax.md::cumulative: | II | 550.01 -- 895.24 | USD 17.67 + 10% on excess over 550.00 | USD 52.19 | / | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 | USD 288.57 |
 skills/international/el-salvador/el-salvador-payroll.md::cumulative: | II | 550.01 -- 895.24 | USD 17.67 + 10% on excess over 550.00 | / | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 |
@@ -26,6 +26,9 @@ skills/international/fiji/fj-payroll-social.md::| 500,001 -- 1,000,000 | $93,600
 skills/international/guatemala/guatemala-social-contributions.md::| Q60,000 | Q1,098.00 | Q48,000 | Q10,902.00 | Q545.10 (5%) | / | Q120,000 | Q2,196.00 | Q48,000 | Q69,804.00 | Q3,490.20 (5%) |
 skills/international/ivory-coast/ivory-coast-social-contributions.md::| XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 | / | XOF 5,000,000 | 3,375,000 (cap) | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 |
 skills/international/ivory-coast/ivory-coast-social-contributions.md::| XOF 500,000 | 500,000 | 31,500.00 | 38,500.00 | 6,562.50 (@3%) | 500 / 500 | / | XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 |
+skills/international/micronesia/fm-national-tax-social-reference.md::| $4,800 | `4,800 × 6% = 288.00` | `(4,800 - 1,000) × 6% = 228.00` | `288 - 228 = 60.00` https: / | $4,999 | `4,999 × 6% = 299.94` | `(4,999 - 1,000) × 6% = 239.94` | `299.94 - 239.94 = 60.00`
+skills/international/micronesia/fm-national-tax-social-reference.md::| $4,999 | `4,999 × 6% = 299.94` | `(4,999 - 1,000) × 6% = 239.94` | `299.94 - 239.94 = 60.00` / | Exactly $5,000 | `5,000 × 6% = 300.00` | `300.00`; no deduction, as $5,000 is 'or more' | `300
+skills/international/micronesia/fm-national-tax-social-reference.md::| $900 | `900 × 6% = 54.00` | nil; the deduction exceeds the wages (inference) | `54 - 0 = 54.00 / | $4,800 | `4,800 × 6% = 288.00` | `(4,800 - 1,000) × 6% = 228.00` | `288 - 228 = 60.00` https:
 skills/international/mozambique/mozambique-social-contributions.md::| 168,000.00 | 168,000 x 20% - 10,500 | 23,100.00 | / | 300,000.00 | 300,000 x 20% - 10,500 | 49,500.00 |
 skills/international/norway/no-social-contributions.md::| NOK 0 -- 208,050 | 22% | 0% | 10.9% | 32.9% | / | NOK 208,051 -- 292,850 | 22% | 1.7% | 10.9% | 34.6% |
 skills/international/norway/no-social-contributions.md::| NOK 208,051 -- 292,850 | 22% | 1.7% | 10.9% | 34.6% | / | NOK 292,851 -- 670,000 | 22% | 4.0% | 10.9% | 36.9% |
