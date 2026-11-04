@@ -6,16 +6,18 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `bolivia-income-tax.md`
-3. `bolivia-iva.md`
-4. `bolivia-payroll.md`
-5. `bolivia-social-contributions.md`
-6. `bolivia-tax-optimization.md`
+2. `bo-corporate-income-tax.md`
+3. `bolivia-income-tax.md`
+4. `bolivia-iva.md`
+5. `bolivia-payroll.md`
+6. `bolivia-social-contributions.md`
+7. `bolivia-tax-optimization.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)

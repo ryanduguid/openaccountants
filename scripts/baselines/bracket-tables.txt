@@ -3,7 +3,9 @@
 # here and on an entry that no longer reproduces. After fixing findings, regenerate
 # it with: python3 scripts/check-bracket-tables.py --update-baseline
 skills/international/andorra/ad-income-tax.md::| 24,001 -- 40,000 | 10% | Up to EUR 800 | EUR 800 on full EUR 16,000 band | EUR 800 | / | Above 40,000 | 10% | None | 10% × excess | EUR 800 + 10% × (income − 40,000) |
-skills/international/australia/au-not-for-profit.md::| $763-$915 | 25% on whole amount | 55% of excess over $416 | / | $916 and above | 25% on whole amount | 30% on whole amount |
+skills/international/australia/au-land-tax.md::cumulative: | $25,000 to < $50,000 | $82 + 0.375% above $25,000 | / | $50,000 to < $100,000 | $676 + 0.375% above $50,000 |
+skills/international/australia/au-land-tax.md::cumulative: | $50,000 to < $100,000 | $676 + 0.375% above $50,000 | / | $100,000 to < $250,000 | $1,338 + 0.375% above $100,000 |
+skills/international/australia/au-not-for-profit.md::| $763-$915 | 25% on the whole amount | 55% of excess over $416 | [Rates Act s 23(2), (6)](https / | $916 and above | 25% on the whole amount | 30% on the whole amount | [Rates Act s 23(2), (6)](
 skills/international/el-salvador/el-salvador-income-tax.md::cumulative: | 550.01 – 895.24 | USD 17.67 + 10% over 550.00 | / | 895.25 – 2,038.10 | USD 60.00 + 20% over 895.24 |
 skills/international/el-salvador/el-salvador-income-tax.md::cumulative: | II | 550.01 -- 895.24 | USD 17.67 + 10% on excess over 550.00 | USD 52.19 | / | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 | USD 288.57 |
 skills/international/el-salvador/el-salvador-payroll.md::cumulative: | II | 550.01 -- 895.24 | USD 17.67 + 10% on excess over 550.00 | / | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 |
