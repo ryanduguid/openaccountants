@@ -15,6 +15,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 last_updated: 2026-11-04
+review_status: pending_review
 depends_on:
   - australia-payroll
 category: payroll
