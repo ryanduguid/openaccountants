@@ -204,7 +204,7 @@ Every effective life above comes from the specified Table A asset class, not the
 | Eligible new build to rent developments begun after 7:30 pm on 9 May 2023 | 4% over 25 years rather than 40, subject to the active-development, ownership and approved-choice conditions. From 1 January 2025 the owner can choose the incentive on the approved form; not an automatic individual-landlord rate | https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-145 ; https://www.ato.gov.au/forms-and-instructions/rental-properties-2026/whats-new-in-the-rental-properties-guide |
 
 - **Base and timing.** Establish eligible construction expenditure, the expenditure area/pool, construction start and completion, qualifying current use and undeducted expenditure. Construction begins with the first construction-phase step, such as foundations; no deduction is available before completion. Land, plant, landscaping and other excluded costs are not automatically construction expenditure, and purchase price is not the deduction base. Obtain builder records or a supportable estimate from an appropriately qualified person. [Sections 43-10](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-10), [43-20](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-20), [43-30](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-30), [43-70](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-70) and [43-80](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-80). Apply the correct rate/use-day calculation and remaining-expenditure cap, not a blanket 2.5% to every property.
-- **Undeducted construction cost:** A new owner continues the annual deduction using the original eligible construction expenditure and remaining deduction period, subject to qualifying use and the remaining expenditure cap. For $400,000 of eligible 2.5% construction after ten full years, $300,000 remains and the full-year deduction continues at $10,000 for the remaining 30 years. (ITAA 1997 Div 43, ss 43-15 and 43-70.)
+- **Undeducted construction cost:** A new owner continues the annual deduction using the original eligible construction expenditure and remaining deduction period, subject to qualifying use and the remaining expenditure cap. Each deduction is the original expenditure x 2.5% x qualifying days in the income year / 365, so $400,000 of eligible 2.5% construction gives $10,000 for a 365-day year and $10,027.40 for a 366-day year until the undeducted expenditure runs out. (ITAA 1997 Div 43, ss 43-15, 43-70 and 43-215.)
 
 #### 2.7 Interest Deductibility
 
@@ -547,24 +547,29 @@ expected:
 
 ### 5. Successor's capital works deduction
 
-Retain the construction example: $400,000 eligible expenditure, completed and qualifying throughout, with a 2.5% rate and 10 full years of deductions already exhausted. Undeducted expenditure is **$300,000**. A successor with uninterrupted qualifying use continues at **$10,000 for each full year**, capped by remaining expenditure, for the remaining **30 years**. Applying 2.5% to $300,000 would wrongly give $7,500. Actual acquisitions, use days, destruction and prior deductions require the statutory calculation. [Division 43](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-15).
+Retain the construction example: $400,000 eligible expenditure, completed and qualifying throughout, at 2.5%. The deduction is expenditure x 2.5% x qualifying days / 365, with 365 as the divisor even in a leap year. Deductions for the 3,652 days from 1 July 2016 to 30 June 2026 total **$100,054.79**, leaving undeducted expenditure of **$299,945.21**. A successor with uninterrupted qualifying use continues on the original $400,000 base: **$10,000** for a 365-day year and **$10,027.40** for a 366-day year, capped by the undeducted expenditure. Applying 2.5% to the undeducted amount would wrongly give $7,498.63. Actual acquisitions, use days, destruction and prior deductions require the statutory calculation. [Division 43](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-15); [section 43-215](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/43-215).
 
 ```oa-check
 name: Capital works successor retains original expenditure base
 inputs:
   original_expenditure: 400000
   annual_rate: 0.025
-  elapsed_full_years: 10
+  divisor_days: 365
+  standard_year_days: 365
+  leap_year_days: 366
+  elapsed_qualifying_days: 3652
 steps:
-  full_year_deduction: original_expenditure * annual_rate
-  prior_deductions: full_year_deduction * elapsed_full_years
+  standard_year_deduction: original_expenditure * annual_rate * standard_year_days / divisor_days
+  leap_year_deduction: original_expenditure * annual_rate * leap_year_days / divisor_days
+  prior_deductions: original_expenditure * annual_rate * elapsed_qualifying_days / divisor_days
   remaining_expenditure: original_expenditure - prior_deductions
-  remaining_full_years: remaining_expenditure / full_year_deduction
+  wrong_rate_on_remaining: remaining_expenditure * annual_rate
 expected:
-  full_year_deduction: 10000
-  prior_deductions: 100000
-  remaining_expenditure: 300000
-  remaining_full_years: 30
+  standard_year_deduction: 10000
+  leap_year_deduction: 10027.40
+  prior_deductions: 100054.79
+  remaining_expenditure: 299945.21
+  wrong_rate_on_remaining: 7498.63
 ```
 
 ### 6. Borrowing expenditure in a part year, 2026-27
