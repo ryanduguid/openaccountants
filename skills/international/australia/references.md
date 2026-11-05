@@ -124,7 +124,7 @@ Not yet confirmed: A complete page-level source/read-date audit and independent 
 
 This guide is maintained in the
 [ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
-Check its quality tier, recorded review status and cited sources before use.
+Check its quality tier and cited sources before use.
 Choose a practitioner whose credentials and engagement scope you have verified.
 The links below are optional upstream services; they do not publish or verify
 this fork's changes.
