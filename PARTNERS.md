@@ -73,4 +73,4 @@ A guide becomes accountant-reviewed in this fork only when a named, licensed acc
 
 ## Notes recorded in docs/partners.json
 
-- **A licensed accountant (name withheld at their request):** Identified on upstream's public roster as Amir Pelinkovic, CPA, whose profile the link opens. The guides withhold the name at the reviewer's own request, so the row stands on the profile: do not add the name to their frontmatter.
+- **A licensed accountant (name withheld at their request):** The guides withhold the name at the reviewer's own request, so the row stands on the profile: do not add the name to their frontmatter.
