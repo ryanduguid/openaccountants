@@ -622,8 +622,9 @@ def check_index_fresh(errors):
         return
     with open(index_path, encoding="utf-8") as fh:
         committed = json.load(fh)
+    absent = object()
     for section in sorted(committed.keys() | fresh.keys()):
-        if committed.get(section) != fresh.get(section):
+        if committed.get(section, absent) != fresh.get(section, absent):
             errors.append(
                 f"index.json is stale (`{section}` differs) — regenerate with: "
                 "python3 scripts/build-index.py"

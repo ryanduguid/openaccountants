@@ -1,6 +1,6 @@
 {
   "format": "review-generated/1",
-  "paths": ["packages/**", "index.json", "PARTNERS.md", "llms-full.txt"],
+  "paths": ["packages/**", "PARTNERS.md", "llms-full.txt"],
   "except": ["packages/us-federal/**"],
   "build": [
     ["python", "scripts/build-packages.py"],
