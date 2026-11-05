@@ -15,7 +15,7 @@ version: 1.6
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "NSW/VIC: 2026 land tax year; QLD/SA/WA/TAS/ACT: 2026-27; ownership and assessment dates vary by jurisdiction"
-last_updated: 2026-11-04
+last_updated: 2026-11-05
 review_status: pending_review
 category: international
 tier: 2
@@ -94,7 +94,7 @@ Each row uses the latest year Section 4 sets out for that jurisdiction: NSW and 
 | --- | --- | --- | --- |
 | What triggers it | Owning land at assessment date | Buying/acquiring land | Owning/occupying property |
 | Frequency | Annual | One-off per transaction | Quarterly/annual |
-| Basis | Unimproved/site value | Dutiable value (price paid) | Unimproved or improved value (council choice) |
+| Basis | Unimproved/site value | Dutiable value (greater of consideration and unencumbered value) | Unimproved or improved value (council choice) |
 | Levied by | State revenue office | State revenue office | Local council |
 | Deductible against rental income | Yes (see Section 9) | No (forms part of the CGT cost base) | Yes |
 

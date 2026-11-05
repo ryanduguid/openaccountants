@@ -5,7 +5,7 @@ version: 1.9
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27; myTax 2026 instructions cover 2025-26; enacted 2027-28 provisions separately labelled"
-last_updated: 2026-11-04
+last_updated: 2026-11-05
 review_status: pending_review
 category: international
 tier: 2
@@ -142,7 +142,7 @@ Check the law and the asset's history for the requested period. An editing date 
 
 - First establish deductibility and apportion each expense for income-producing use; an expense label is not proof of a full deduction. Private ownership costs, capital work and periods failing the holiday/leisure test need separate treatment. Ordinary strata administration/maintenance contributions and a special capital levy are different. [ATO, Common property expenses](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/common-property-expenses).
 
-- **Borrowing expenses.** Loan establishment fees, lenders mortgage insurance, qualifying valuation fees and duty on the mortgage concern borrowing, rather than interest or transfer duty on the property. Under [s 25-25](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/25-25), use the shortest of the original contract period, actual borrowing-to-repayment period and **5 years**. For each year, divide remaining expenditure by days in the remaining loan period and multiply by that period's days in the year, then apply the income-producing proportion. A first part year is not automatically one fifth. Subsection (6)'s **$100 or less** immediate rule tests the aggregate qualifying expenditure, including the appropriate income-use proportion of mixed-purpose borrowing costs. Early repayment can change the remaining period. Keep the calculation and refinancing evidence.
+- **Borrowing expenses.** Loan establishment fees, lenders mortgage insurance, qualifying valuation fees and any duty on the mortgage (now abolished in every state and territory, so relevant only to earlier loans) concern borrowing, rather than interest or transfer duty on the property. Under [s 25-25](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/25-25), use the shortest of the original contract period, actual borrowing-to-repayment period and **5 years**. For each year, divide remaining expenditure by days in the remaining loan period and multiply by that period's days in the year, then apply the income-producing proportion. A first part year is not automatically one fifth. Subsection (6)'s **$100 or less** immediate rule tests the aggregate qualifying expenditure, including the appropriate income-use proportion of mixed-purpose borrowing costs. Early repayment can change the remaining period. Keep the calculation and refinancing evidence.
 
 #### 2.4 Repairs vs Improvements (TR 97/23)
 
