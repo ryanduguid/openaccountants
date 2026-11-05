@@ -4,7 +4,7 @@ description: "Utilizar este skill sempre que questões envolvam o regime do Resi
 version: 1.1
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-11-06
 review_status: pending_review
 depends_on:
   - pt-income-tax
@@ -510,7 +510,7 @@ Lista completa das ~80 CDT em vigor: Portal das Finanças → Acordos Internacio
 - **Data**: 2025 (ano fiscal de referência: 2025; declarações apresentadas em 2026).
 - **Validação pendente**: requer revisão por Contabilista Certificado inscrito na OCC ou advogado fiscalista registado na Ordem dos Advogados, com prática comprovada em fiscalidade internacional e regime RNH/IFICI.
 - **TBC (To Be Confirmed)**:
-  - ~~Prazo exato de submissão IFICI (15 janeiro vs 31 março)~~ **RESOLVIDO (setembro 2026):** o prazo é **15 de janeiro** do ano seguinte ao da inscrição como residente. O prazo de **15 de março** foi uma excepção transitória aplicável apenas a quem se tornou residente em **2025**. A data de 31 de março não corresponde a nenhum dos dois.
+  - ~~Prazo exato de submissão IFICI (15 janeiro vs 31 março)~~ **RESOLVIDO (setembro 2026):** o prazo é **15 de janeiro** do ano seguinte ao da inscrição como residente. O prazo de **15 de março** foi uma excepção transitória aplicável apenas a quem se tornou residente em **2024** (Portaria n.º 352/2024/1, art. 12.º). A data de 31 de março não corresponde a nenhum dos dois.
   - Texto final do art.º 236.º da Lei 82/2023 com alterações posteriores em OE 2025 (Lei n.º 45-A/2024).
   - Lista exaustiva de profissões abrangidas pela categoria 3 da Portaria 352/2024/1 (entidades RFAI / relevantes para a economia).
 
