@@ -14,29 +14,40 @@ subject it does not belong to: a rental form in a provisional-tax guide,
 a payroll form in a VAT guide. That is the shape the one confirmed
 instance took.
 
-## al
+## aland
 
 | Form | Guides |
 |---|---|
-| `Form 40` | `README`, `us-al-income-tax` |
+| `Form 17` | `ax-income-tax`, `references` |
 
-## ar
+## american-samoa
 
 | Form | Guides |
 |---|---|
-| `Form AR1000F` | `README`, `us-ar-income-tax` |
+| `FR-2025` | `as-medicare-ordinary-share-reference`, `as-oasdi-annual-wage-base-reference` |
 
 ## armenia
 
 | Form | Guides |
 |---|---|
-| `HO-165` | `armenia-income-tax`, `armenia-payroll` |
+| `HO-165` | `am-company-formation`, `am-corporate-income-tax`, `am-tax-overview`, `armenia-income-tax`, `armenia-payroll` |
+
+## australia
+
+| Form | Guides |
+|---|---|
+| `COVID-19` | `au-deductions-offsets`, `au-psi`, `au-rd-incentive` |
+| `IT2622` | `au-deceased-estates`, `au-rental-property` |
+| `ITAA36` | `au-fbt`, `au-lodgment-deadlines-penalties` |
+| `ITAA97` | `au-lodgment-deadlines-penalties`, `au-super-guarantee` |
+| `NAT0660` | `au-deceased-estates`, `au-trust-distributions` |
+| `SCH1` | `au-lodgment-deadlines-penalties`, `au-psi`, `australia-gst` |
 
 ## az
 
 | Form | Guides |
 |---|---|
-| `Form 140` | `README`, `us-az-income-tax`, `us-az-transaction-privilege-tax` |
+| `Form 140` | `us-az-income-tax`, `us-az-transaction-privilege-tax` |
 
 ## bangladesh
 
@@ -82,18 +93,18 @@ instance took.
 | Form | Guides |
 |---|---|
 | `CDTFA-401` | `us-ca-formation`, `us-ca-sales-tax` |
-| `Form 100` | `README`, `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
-| `Form 100S` | `README`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
+| `Form 100` | `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
+| `Form 100S` | `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
 | `Form 1065` | `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax` |
 | `Form 1120` | `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax` |
 | `Form 2553` | `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax` |
 | `Form 3522` | `us-ca-estimated-tax-540es`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
 | `Form 3536` | `us-ca-estimated-tax-540es`, `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-smllc-form-568` |
-| `Form 3853` | `README`, `us-ca-540-individual-return`, `us-ca-form-3853-coverage` |
+| `Form 3853` | `us-ca-540-individual-return`, `us-ca-form-3853-coverage` |
 | `Form 540` | `us-ca-540-individual-return`, `us-ca-form-3853-coverage`, `us-ca-llc-fee-and-tax`, `us-ca-payroll`, `us-ca-pte-elective-tax`, `us-ca-sales-tax` |
-| `Form 540-ES` | `README`, `us-ca-estimated-tax-540es`, `us-ca-llc-fee-and-tax`, `us-ca-payroll`, `us-ca-pte-elective-tax` |
+| `Form 540-ES` | `us-ca-estimated-tax-540es`, `us-ca-llc-fee-and-tax`, `us-ca-payroll`, `us-ca-pte-elective-tax` |
 | `Form 540NR` | `us-ca-540-individual-return`, `us-ca-formation`, `us-ca-pte-elective-tax` |
-| `Form 568` | `README`, `us-ca-540-individual-return`, `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
+| `Form 568` | `us-ca-540-individual-return`, `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
 | `Form 5805` | `us-ca-estimated-tax-540es`, `us-ca-payroll` |
 | `Form 8832` | `us-ca-formation`, `us-ca-llc-fee-and-tax` |
 | `Form DE` | `us-ca-formation`, `us-ca-payroll` |
@@ -120,7 +131,7 @@ instance took.
 | `ON428` | `on-individual-return`, `on-tax-credits` |
 | `ON479` | `on-individual-return`, `on-tax-credits` |
 | `PD7A` | `canada-payroll`, `nt-payroll-tax`, `qc-employer-contributions` |
-| `QPP2` | `ca-fed-cpp-ei`, `ca-fed-t1-return`, `qc-employer-contributions`, `qc-individual-return` |
+| `QPP2` | `qc-employer-contributions`, `qc-individual-return` |
 | `RL-1` | `canada-payroll`, `qc-employer-contributions`, `qc-individual-return` |
 | `TD1` | `canada-payroll`, `qc-employer-contributions` |
 | `TP-1` | `qc-corporate-tax-co17`, `qc-employer-contributions`, `qc-individual-return` |
@@ -128,12 +139,46 @@ instance took.
 | `YT428` | `yt-individual-return`, `yt-tax-credits` |
 | `YT479` | `yt-individual-return`, `yt-tax-credits` |
 
+## christmas-island
+
+| Form | Guides |
+|---|---|
+| `AMEND71` | `cx-income-tax`, `cx-super-guarantee`, `cx-tax-system` |
+| `AMEND86` | `cx-income-tax`, `cx-super-guarantee`, `cx-tax-system` |
+| `IT97` | `cx-income-tax`, `cx-tax-system` |
+
 ## co
 
 | Form | Guides |
 |---|---|
 | `Form 104` | `us-co-income-tax`, `us-co-retail-delivery-and-suts` |
-| `Form DR` | `README`, `us-co-income-tax`, `us-co-retail-delivery-and-suts` |
+| `Form DR` | `us-co-income-tax`, `us-co-retail-delivery-and-suts` |
+
+## cocos-keeling-islands
+
+| Form | Guides |
+|---|---|
+| `AMEND71` | `cc-income-tax`, `cc-super-guarantee`, `cc-tax-system` |
+| `AMEND86` | `cc-income-tax`, `cc-super-guarantee`, `cc-tax-system` |
+| `IT97` | `cc-income-tax`, `cc-tax-system` |
+
+## cook-islands
+
+| Form | Guides |
+|---|---|
+| `CL1` | `ck-company-registry-reporting`, `ck-company-tax-vat`, `ck-paye` |
+| `CL3` | `ck-company-tax-vat`, `ck-paye` |
+| `CL4` | `ck-company-tax-vat`, `ck-social-contributions` |
+| `CL5` | `ck-company-tax-vat`, `ck-social-contributions` |
+| `ITA97` | `ck-company-tax-vat`, `ck-paye` |
+| `SCH1` | `ck-company-registry-reporting`, `ck-company-tax-vat` |
+| `SCH2` | `ck-company-registry-reporting`, `ck-paye`, `ck-social-contributions` |
+
+## costa-rica
+
+| Form | Guides |
+|---|---|
+| `CP-11` | `costa-rica-corporate-income-tax`, `costa-rica-income-tax` |
 
 ## croatia
 
@@ -145,10 +190,10 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `DAC2` | `README`, `dac6-mdr-reportable-arrangements`, `fatca-crs-automatic-exchange` |
-| `DAC6` | `README`, `dac6-mdr-reportable-arrangements`, `eu-directives-cross-border`, `fatca-crs-automatic-exchange` |
+| `DAC2` | `dac6-mdr-reportable-arrangements`, `fatca-crs-automatic-exchange` |
+| `DAC6` | `dac6-mdr-reportable-arrangements`, `eu-directives-cross-border`, `fatca-crs-automatic-exchange` |
 | `DAC7` | `dac6-mdr-reportable-arrangements`, `digital-services-tax-matrix`, `eu-directives-cross-border` |
-| `DAC8` | `README`, `dac6-mdr-reportable-arrangements`, `eu-directives-cross-border`, `fatca-crs-automatic-exchange` |
+| `DAC8` | `dac6-mdr-reportable-arrangements`, `eu-directives-cross-border`, `fatca-crs-automatic-exchange` |
 | `EU-27` | `cbam-carbon-border-adjustment`, `eu-directives-cross-border`, `eu-social-security-coordination` |
 | `Form 1116` | `cross-border-tax-workflow-base`, `withholding-tax-matrix` |
 | `Form 8833` | `cross-border-tax-router`, `cross-border-tax-workflow-base`, `tax-controversy-map-apa` |
@@ -161,7 +206,14 @@ instance took.
 | Form | Guides |
 |---|---|
 | `CT-1040` | `us-ct-income-tax`, `us-ct-payroll` |
-| `Form CT-1040` | `README`, `us-ct-income-tax`, `us-ct-payroll` |
+| `Form CT-1040` | `us-ct-income-tax`, `us-ct-payroll` |
+
+## cuba
+
+| Form | Guides |
+|---|---|
+| `GOC-2021` | `cu-corporate-income-tax`, `cu-payroll-social`, `cu-tax-overview`, `cu-vat-gst` |
+| `GOC-2025` | `cu-corporate-income-tax`, `cu-payroll-social`, `cu-tax-overview`, `cu-vat-gst` |
 
 ## cyprus
 
@@ -170,27 +222,18 @@ instance took.
 | `TD1` | `cyprus-income-tax`, `cyprus-payroll`, `cyprus-social-contributions` |
 | `TD63` | `cyprus-income-tax`, `cyprus-payroll` |
 
-## dc
-
-| Form | Guides |
-|---|---|
-| `Form D-30` | `README`, `us-dc-income-tax` |
-| `Form D-40` | `README`, `us-dc-income-tax` |
-
 ## de
 
 | Form | Guides |
 |---|---|
 | `Form 1120` | `us-de-formation`, `us-de-franchise-tax-and-llc` |
-| `Form PIT-RES` | `README`, `us-de-income-tax` |
 
 ## dominican-republic
 
 | Form | Guides |
 |---|---|
-| `Form IR-1` | `do-tax-overview`, `dominican-republic-income-tax` |
-| `Form IR-2` | `do-corporate-income-tax`, `do-tax-overview` |
-| `Form IT-1` | `do-tax-overview`, `dominican-republic-income-tax`, `dominican-republic-itbis` |
+| `CA687` | `do-tax-overview`, `dominican-republic-income-tax` |
+| `Form IT-1` | `dominican-republic-income-tax`, `dominican-republic-itbis` |
 | `IR-1` | `do-tax-overview`, `dominican-republic-income-tax`, `dominican-republic-payroll` |
 | `IR-17` | `do-tax-treaties`, `do-withholding-tax`, `dominican-republic-income-tax` |
 | `IR-2` | `do-asset-tax`, `do-company-formation`, `do-corporate-income-tax`, `do-tax-overview`, `do-tax-registration`, `do-transfer-pricing`, `dominican-republic-income-tax` |
@@ -223,6 +266,12 @@ instance took.
 | `Form TSD` | `ee-company-formation`, `ee-corporate-income-tax`, `ee-tax-overview`, `estonia-income-tax`, `estonia-payroll`, `estonia-social-contributions` |
 | `TELE2` | `estonia-income-tax`, `estonia-vat-return` |
 
+## falkland-islands
+
+| Form | Guides |
+|---|---|
+| `TR1` | `fk-annual-employment-income`, `fk-retirement-pensions-weekly-reference` |
+
 ## federal
 
 | Form | Guides |
@@ -251,7 +300,6 @@ instance took.
 | `Form 1120-W` | `us-form-1120-c-corp`, `us-state-estimated-tax-safe-harbors-matrix` |
 | `Form 1128` | `us-form-1041-trust-and-estate-income`, `us-form-1120-c-corp` |
 | `Form 114` | `us-crypto-reporting`, `us-crypto-tax`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555` |
-| `Form 2106` | `us-form-1040-individual-return`, `us-sole-prop-bookkeeping` |
 | `Form 2210` | `us-form-1040-individual-return`, `us-quarterly-estimated-tax`, `us-secure-2-and-retirement-updates`, `us-state-estimated-tax-safe-harbors-matrix` |
 | `Form 2220` | `us-form-1120-c-corp`, `us-state-estimated-tax-safe-harbors-matrix` |
 | `Form 2350` | `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555` |
@@ -321,8 +369,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `CY2026` | `README`, `us-fl-sales-use-tax-surtax` |
-| `Form DR-15` | `README`, `us-fl-sales-use-tax` |
 | `Form DR-15DSS` | `us-fl-sales-use-tax`, `us-fl-sales-use-tax-surtax` |
 | `Form F-1120` | `us-fl-annual-report`, `us-fl-corporate-income-tax` |
 
@@ -347,10 +393,10 @@ instance took.
 | `Form 1040` | `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-income-tax` |
 | `Form 1120` | `us-ga-corporate-income-tax-returns-form-600`, `us-ga-formation`, `us-ga-net-worth-tax` |
 | `Form 2553` | `us-ga-formation`, `us-ga-net-worth-tax` |
-| `Form 500` | `README`, `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-income-tax`, `us-ga-individual-tax-return-form-500`, `us-ga-net-worth-tax`, `us-ga-payroll` |
+| `Form 500` | `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-income-tax`, `us-ga-individual-tax-return-form-500`, `us-ga-net-worth-tax`, `us-ga-payroll` |
 | `Form 500-ES` | `us-ga-estimated-tax-depth`, `us-ga-income-tax`, `us-ga-payroll` |
 | `Form 501` | `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth` |
-| `Form 600` | `README`, `us-ga-corporate-and-ptet`, `us-ga-corporate-income-tax-returns-form-600`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-net-worth-tax` |
+| `Form 600` | `us-ga-corporate-and-ptet`, `us-ga-corporate-income-tax-returns-form-600`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-net-worth-tax` |
 | `Form 600-UET` | `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth` |
 | `Form 600S` | `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-net-worth-tax`, `us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation` |
 | `Form 602-ES` | `us-ga-corporate-and-ptet`, `us-ga-net-worth-tax` |
@@ -366,6 +412,18 @@ instance took.
 | `MT940` | `de-income-tax`, `germany-bookkeeping` |
 | `UPTAB25` | `de-payroll`, `references` |
 
+## ghana
+
+| Form | Guides |
+|---|---|
+| `COVID-19` | `gh-tax-overview`, `ghana-vat` |
+
+## guam
+
+| Form | Guides |
+|---|---|
+| `FR-2025` | `gu-medicare-ordinary-share-reference`, `gu-oasdi-annual-wage-base-reference` |
+
 ## guatemala
 
 | Form | Guides |
@@ -374,19 +432,12 @@ instance took.
 | `CE2` | `guatemala-income-tax`, `guatemala-payroll` |
 | `SAT-1431` | `guatemala-income-tax`, `guatemala-payroll`, `guatemala-social-contributions` |
 
-## hi
-
-| Form | Guides |
-|---|---|
-| `Form N-11` | `README`, `us-hi-income-tax` |
-| `Form N-15` | `README`, `us-hi-income-tax` |
-| `Form N-30` | `README`, `us-hi-income-tax` |
-
 ## honduras
 
 | Form | Guides |
 |---|---|
 | `Form 102` | `honduras-income-tax`, `honduras-payroll`, `honduras-social-contributions` |
+| `Form 103` | `hn-company-formation`, `hn-corporate-income-tax`, `hn-tax-overview`, `honduras-income-tax` |
 
 ## hong-kong
 
@@ -394,21 +445,16 @@ instance took.
 |---|---|
 | `BIR60` | `hk-mpf`, `hk-salaries-tax`, `hk-tax-overview`, `hong-kong-tax` |
 
-## ia
-
-| Form | Guides |
-|---|---|
-| `Form IA` | `README`, `us-ia-income-tax` |
-
 ## il
 
 | Form | Guides |
 |---|---|
-| `Form IL-1040` | `us-il-income-tax`, `us-il-pprt` |
 | `Form IL-1040-ES` | `us-il-estimated-tax`, `us-il-income-tax` |
 | `Form IL-1120` | `us-il-income-tax`, `us-il-pprt` |
+| `Form IL-900-EW` | `us-il-payroll`, `us-il-sales-tax` |
 | `IL-1040` | `us-il-estimated-tax`, `us-il-income-tax`, `us-il-payroll`, `us-il-pprt` |
 | `IL-1120` | `us-il-income-tax`, `us-il-pprt` |
+| `IL-700` | `us-il-income-tax`, `us-il-payroll` |
 
 ## india
 
@@ -436,14 +482,11 @@ instance took.
 | `Form 1771` | `id-corporate-tax`, `id-formation`, `id-return-assembly`, `id-tax-optimization` |
 | `KEP-536` | `id-bookkeeping`, `id-income-tax` |
 | `PER-04` | `id-einvoice-coretax`, `id-withholding` |
-| `PER-11` | `id-einvoice-coretax`, `id-income-tax`, `indonesia-vat` |
 | `PER-16` | `id-einvoice-coretax`, `indonesia-vat` |
-| `PER-17` | `id-bookkeeping`, `id-freelance-intake`, `id-income-tax`, `id-tax-optimization` |
+| `PER-17` | `id-bookkeeping`, `id-freelance-intake`, `id-tax-optimization` |
 | `PER-2` | `id-einvoice-coretax`, `id-withholding` |
 | `PER-24` | `id-einvoice-coretax`, `id-freelance-intake` |
 | `PER-25` | `id-tax-optimization`, `id-withholding` |
-| `PER-6` | `id-income-tax`, `indonesia-vat` |
-| `PMK-112` | `id-einvoice-coretax`, `id-income-tax`, `indonesia-vat` |
 | `PMK-151` | `id-einvoice-coretax`, `indonesia-vat` |
 | `PMK-48` | `id-einvoice-coretax`, `indonesia-vat` |
 | `PPH21` | `id-payroll-pph21`, `references` |
@@ -479,6 +522,7 @@ instance took.
 | `Form TR1` | `ie-formation`, `ie-freelance-intake`, `ie-prsi-class-s` |
 | `Form TR2` | `ie-formation`, `ie-freelance-intake` |
 | `IT38` | `ie-cat`, `ie-return-assembly` |
+| `SW14` | `ie-payroll`, `ie-return-assembly` |
 | `TR1` | `ie-formation`, `ie-freelance-intake`, `ie-return-assembly` |
 | `TR2` | `ie-formation`, `ie-freelance-intake` |
 | `VAT3` | `ie-corporation-tax`, `ie-freelance-intake`, `ie-preliminary-tax`, `ie-return-assembly`, `ireland-vat-return` |
@@ -492,6 +536,29 @@ instance took.
 | `Form 1325` | `il-crypto-tax`, `references` |
 | `Form 135` | `il-employee-tax-refund`, `il-income-tax-returns` |
 | `Form 856` | `il-corporate-tax`, `il-income-tax-returns`, `il-tax-withholding` |
+
+## italy
+
+| Form | Guides |
+|---|---|
+| `RN62` | `it-estimated-tax`, `it-income-tax` |
+
+## jamaica
+
+| Form | Guides |
+|---|---|
+| `Form IT07` | `jm-corporate-income-tax`, `jm-tax-overview` |
+| `IT01` | `jm-income-tax`, `jm-tax-overview` |
+| `IT02` | `jm-corporate-income-tax`, `jm-tax-overview` |
+| `IT07` | `jm-corporate-income-tax`, `jm-tax-overview` |
+
+## jersey
+
+| Form | Guides |
+|---|---|
+| `RO-095` | `je-property-transactions`, `references` |
+| `RO-112` | `je-property-transactions`, `references` |
+| `RO-120` | `je-property-transactions`, `references` |
 
 ## kazakhstan
 
@@ -509,29 +576,12 @@ instance took.
 | `CR2` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
 | `CR8` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
 
-## ks
-
-| Form | Guides |
-|---|---|
-| `Form K-40` | `README`, `us-ks-income-tax` |
-
 ## ky
 
 | Form | Guides |
 |---|---|
-| `Form 720` | `README`, `us-ky-income-tax` |
-| `Form 725` | `README`, `us-ky-income-tax` |
-| `Form 740` | `README`, `us-ky-income-tax`, `us-ky-payroll` |
+| `Form 740` | `us-ky-income-tax`, `us-ky-payroll` |
 | `Form 740-ES` | `us-ky-income-tax`, `us-ky-payroll` |
-| `Form 740-NP` | `README`, `us-ky-income-tax` |
-
-## la
-
-| Form | Guides |
-|---|---|
-| `CIFT-620` | `README`, `us-la-income-tax` |
-| `Form IT-540` | `README`, `us-la-income-tax` |
-| `Form IT-540B` | `README`, `us-la-income-tax` |
 
 ## latvia
 
@@ -539,14 +589,24 @@ instance took.
 |---|---|
 | `TELE2` | `latvia-income-tax`, `latvia-vat-return` |
 
+## lithuania
+
+| Form | Guides |
+|---|---|
+| `IX-1007` | `lithuania-pit`, `lt-payroll-social`, `lt-tax-overview` |
+| `IX-675` | `lt-corporate-income-tax`, `lt-tax-overview` |
+| `IX-751` | `lithuania-vat-return`, `lt-tax-overview` |
+| `XV-285` | `lt-corporate-income-tax`, `lt-tax-overview` |
+| `XV-287` | `lithuania-vat-return`, `lt-tax-overview` |
+
 ## ma
 
 | Form | Guides |
 |---|---|
 | `Form 1-ES` | `us-ma-corporate-excise`, `us-ma-income-tax` |
-| `Form 1-NR/PY` | `README`, `us-ma-corporate-excise`, `us-ma-income-tax` |
+| `Form 1-NR/PY` | `us-ma-corporate-excise`, `us-ma-income-tax` |
 | `Form 1040` | `us-ma-income-tax`, `us-ma-payroll` |
-| `Form 355` | `README`, `us-ma-corporate-excise`, `us-ma-income-tax` |
+| `Form 355` | `us-ma-corporate-excise`, `us-ma-income-tax` |
 | `Form M-4` | `us-ma-corporate-excise`, `us-ma-payroll` |
 
 ## malaysia
@@ -582,17 +642,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form 500` | `README`, `us-md-income-tax` |
-| `Form 502` | `README`, `us-md-income-tax`, `us-md-payroll` |
-| `Form 505` | `README`, `us-md-income-tax` |
-| `Form 510` | `README`, `us-md-income-tax` |
-
-## me
-
-| Form | Guides |
-|---|---|
-| `Form 1040ME` | `README`, `us-me-income-tax` |
-| `Form 1120ME` | `README`, `us-me-income-tax` |
+| `Form 502` | `us-md-income-tax`, `us-md-payroll` |
 
 ## mi
 
@@ -604,7 +654,7 @@ instance took.
 | `Form 1065` | `us-mi-corporate-income-tax`, `us-mi-return-assembly` |
 | `Form 1120-S` | `us-mi-corporate-income-tax`, `us-mi-return-assembly` |
 | `Form 2210` | `us-mi-detroit-individual-return`, `us-mi-estimated-tax`, `us-mi-return-assembly` |
-| `Form 4884` | `README`, `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
+| `Form 4884` | `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
 | `Form 4913` | `us-mi-corporate-income-tax`, `us-mi-estimated-tax` |
 | `Form 5118` | `us-mi-detroit-individual-return`, `us-mi-return-assembly` |
 | `Form 5119` | `us-mi-detroit-individual-return`, `us-mi-return-assembly` |
@@ -614,7 +664,7 @@ instance took.
 | `Form 5323` | `us-mi-detroit-individual-return`, `us-mi-payroll` |
 | `Form 8829` | `us-mi-homestead-credit`, `us-mi-return-assembly` |
 | `Form D-1040` | `us-mi-detroit-individual-return`, `us-mi-payroll` |
-| `Form MI-1040` | `README`, `us-mi-corporate-income-tax`, `us-mi-homestead-credit`, `us-mi-income-tax`, `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
+| `Form MI-1040` | `us-mi-corporate-income-tax`, `us-mi-homestead-credit`, `us-mi-income-tax`, `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
 | `Form MI-1040CR` | `us-mi-detroit-individual-return`, `us-mi-homestead-credit` |
 | `Form MI-1040CR-7` | `us-mi-homestead-credit`, `us-mi-return-assembly` |
 | `Form MI-1040ES` | `us-mi-estimated-tax`, `us-mi-income-tax` |
@@ -626,19 +676,14 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form M1` | `README`, `us-mn-corporate-and-pte`, `us-mn-income-tax`, `us-mn-payroll` |
-| `Form M4` | `README`, `us-mn-corporate-and-pte`, `us-mn-income-tax` |
-| `Form M706` | `README`, `us-mn-income-tax` |
+| `Form M1` | `us-mn-corporate-and-pte`, `us-mn-income-tax`, `us-mn-payroll` |
+| `Form M4` | `us-mn-corporate-and-pte`, `us-mn-income-tax` |
 
 ## mo
 
 | Form | Guides |
 |---|---|
-| `Form MO-1040` | `README`, `us-mo-income-tax` |
-| `Form MO-1040P` | `README`, `us-mo-income-tax` |
-| `Form MO-1120` | `README`, `us-mo-income-tax` |
 | `MO-1040` | `us-mo-income-tax`, `us-mo-payroll` |
-| `MO-1120S` | `README`, `us-mo-income-tax` |
 
 ## moldova
 
@@ -654,20 +699,6 @@ instance took.
 |---|---|
 | `CA3` | `mc-company-formation`, `monaco-vat` |
 
-## ms
-
-| Form | Guides |
-|---|---|
-| `Form 80-105` | `README`, `us-ms-income-tax` |
-| `Form 80-205` | `README`, `us-ms-income-tax` |
-| `Form 83-100` | `README`, `us-ms-income-tax` |
-
-## mt
-
-| Form | Guides |
-|---|---|
-| `Form CIT` | `README`, `us-mt-income-tax` |
-
 ## nc
 
 | Form | Guides |
@@ -679,7 +710,7 @@ instance took.
 | `Form 1120-S` | `us-nc-corporate-tax`, `us-nc-return-assembly` |
 | `Form 2210` | `us-nc-estimated-tax`, `us-nc-return-assembly` |
 | `Form CD-429` | `us-nc-corporate-tax`, `us-nc-estimated-tax` |
-| `Form D-400` | `README`, `us-nc-bailey-settlement-retirement`, `us-nc-corporate-tax`, `us-nc-estimated-tax`, `us-nc-income-tax`, `us-nc-payroll`, `us-nc-return-assembly` |
+| `Form D-400` | `us-nc-bailey-settlement-retirement`, `us-nc-corporate-tax`, `us-nc-estimated-tax`, `us-nc-income-tax`, `us-nc-payroll`, `us-nc-return-assembly` |
 | `Form D-407` | `us-nc-estimated-tax`, `us-nc-income-tax` |
 | `Form D-422` | `us-nc-estimated-tax`, `us-nc-return-assembly` |
 | `Form NC-40` | `us-nc-estimated-tax`, `us-nc-income-tax`, `us-nc-return-assembly` |
@@ -697,7 +728,7 @@ instance took.
 | `Form 1040-ES` | `us-nd-estimated-tax`, `us-nd-return-assembly` |
 | `Form 1120-S` | `us-nd-corporate-tax`, `us-nd-return-assembly` |
 | `Form 2210` | `us-nd-estimated-tax`, `us-nd-return-assembly` |
-| `Form 306` | `README`, `us-nd-payroll`, `us-nd-return-assembly` |
+| `Form 306` | `us-nd-payroll`, `us-nd-return-assembly` |
 | `Form 307` | `us-nd-payroll`, `us-nd-return-assembly` |
 | `Form 38` | `us-nd-income-tax`, `us-nd-return-assembly` |
 | `Form 40` | `us-nd-corporate-tax`, `us-nd-income-tax`, `us-nd-return-assembly` |
@@ -705,16 +736,9 @@ instance took.
 | `Form 40-UT` | `us-nd-corporate-tax`, `us-nd-estimated-tax` |
 | `Form 58` | `us-nd-corporate-tax`, `us-nd-return-assembly` |
 | `Form 60` | `us-nd-corporate-tax`, `us-nd-return-assembly` |
-| `Form ND-1` | `README`, `us-nd-corporate-tax`, `us-nd-estimated-tax`, `us-nd-income-tax`, `us-nd-payroll`, `us-nd-return-assembly` |
+| `Form ND-1` | `us-nd-corporate-tax`, `us-nd-estimated-tax`, `us-nd-income-tax`, `us-nd-payroll`, `us-nd-return-assembly` |
 | `Form ND-1ES` | `us-nd-estimated-tax`, `us-nd-income-tax`, `us-nd-payroll`, `us-nd-return-assembly` |
 | `ND-1` | `us-nd-corporate-tax`, `us-nd-estimated-tax`, `us-nd-income-tax`, `us-nd-payroll`, `us-nd-return-assembly` |
-
-## ne
-
-| Form | Guides |
-|---|---|
-| `Form 1040N` | `README`, `us-ne-income-tax` |
-| `Form 1120N` | `README`, `us-ne-income-tax` |
 
 ## netherlands
 
@@ -728,6 +752,7 @@ instance took.
 | Form | Guides |
 |---|---|
 | `GST101A` | `new-zealand-gst`, `nz-gst-return` |
+| `IR1229` | `nz-capital-gains`, `nz-income-tax-ir3` |
 | `IR3` | `new-zealand-crypto-tax`, `nz-acc-levies`, `nz-income-tax-ir3`, `nz-provisional-tax` |
 
 ## nicaragua
@@ -751,17 +776,27 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form NJ-1040` | `README`, `us-nj-cbt-and-bait`, `us-nj-income-tax` |
+| `Form NJ-1040` | `us-nj-cbt-and-bait`, `us-nj-income-tax` |
 | `Form PTE-150` | `us-nj-cbt-and-bait`, `us-nj-payroll` |
 | `NJ-1040` | `us-nj-cbt-and-bait`, `us-nj-income-tax`, `us-nj-payroll` |
 | `PTE-100` | `us-nj-cbt-and-bait`, `us-nj-payroll` |
 | `PTE-150` | `us-nj-cbt-and-bait`, `us-nj-payroll` |
 
-## nm
+## norfolk-island
 
 | Form | Guides |
 |---|---|
-| `Form PIT-1` | `README`, `us-nm-income-tax` |
+| `ACT1` | `nf-company-administration`, `nf-employment-pay`, `nf-gst` |
+| `ACT2` | `nf-company-administration`, `nf-employment-pay`, `nf-gst` |
+| `ADMIN1` | `nf-return-filing`, `nf-tax-interest` |
+| `ITAA36` | `nf-foreign-income`, `nf-income-tax` |
+| `TAA2` | `nf-tax-records`, `nf-transfer-pricing` |
+
+## northern-mariana-islands
+
+| Form | Guides |
+|---|---|
+| `FR-2025` | `mp-medicare-ordinary-share-reference`, `mp-oasdi-annual-wage-base-reference` |
 
 ## nv
 
@@ -816,19 +851,13 @@ instance took.
 | Form | Guides |
 |---|---|
 | `Form CAT` | `us-oh-cat`, `us-oh-cat-tax` |
-| `Form IT` | `README`, `us-oh-income-tax`, `us-oh-payroll` |
-
-## ok
-
-| Form | Guides |
-|---|---|
-| `Form 511` | `README`, `us-ok-income-tax` |
+| `Form IT` | `us-oh-income-tax`, `us-oh-payroll` |
 
 ## or
 
 | Form | Guides |
 |---|---|
-| `Form OR-40` | `README`, `us-or-cat`, `us-or-income-tax` |
+| `Form OR-40` | `us-or-cat`, `us-or-income-tax` |
 | `OR-40` | `us-or-cat`, `us-or-income-tax` |
 
 ## orchestrator
@@ -897,7 +926,7 @@ instance took.
 | `CLGS-32` | `us-pa-local-eit`, `us-pa-payroll` |
 | `Form 941` | `us-pa-local-eit`, `us-pa-payroll` |
 | `Form CLGS-32-6` | `us-pa-local-eit`, `us-pa-payroll` |
-| `Form PA-40` | `README`, `us-pa-income-tax`, `us-pa-payroll` |
+| `Form PA-40` | `us-pa-income-tax`, `us-pa-payroll` |
 | `PA-40` | `us-pa-income-tax`, `us-pa-local-eit` |
 
 ## patterns
@@ -922,6 +951,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
+| `CIT-8` | `pl-corporate-income-tax`, `pl-income-tax`, `pl-small-company-financial-statements` |
 | `PIT-28` | `pl-income-tax`, `pl-zus-contributions` |
 | `PIT-36` | `pl-income-tax`, `pl-zus-contributions`, `poland-einvoice` |
 | `PIT-36L` | `pl-income-tax`, `pl-zus-contributions`, `poland-einvoice` |
@@ -932,12 +962,13 @@ instance took.
 | Form | Guides |
 |---|---|
 | `DAC8` | `portugal-crypto-tax`, `pt-return-assembly` |
+| `OE2026` | `portugal-crypto-tax`, `portugal-payroll`, `pt-income-tax` |
 
-## ri
+## puerto-rico
 
 | Form | Guides |
 |---|---|
-| `Form RI-1040` | `README`, `us-ri-income-tax` |
+| `FR-2025` | `pr-medicare-ordinary-share-reference`, `pr-oasdi-annual-wage-base-reference` |
 
 ## romania
 
@@ -950,7 +981,13 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form SC1040` | `README`, `us-sc-income-tax`, `us-sc-sales-tax` |
+| `Form SC1040` | `us-sc-income-tax`, `us-sc-sales-tax` |
+
+## senegal
+
+| Form | Guides |
+|---|---|
+| `CGI-2025` | `senegal-payroll`, `sn-company-formation`, `sn-corporate-income-tax`, `sn-tax-overview` |
 
 ## singapore
 
@@ -963,7 +1000,9 @@ instance took.
 | Form | Guides |
 |---|---|
 | `REK-1` | `slovenia-payroll`, `slovenia-social-contributions` |
-| `ZDDPO-2` | `si-corporate-income-tax`, `si-tax-overview`, `slovenia-vat-return` |
+| `ZAKO4687` | `si-corporate-income-tax`, `si-tax-overview`, `slovenia-payroll` |
+| `ZAKO4703` | `si-corporate-income-tax`, `si-tax-overview` |
+| `ZDDPO-2` | `si-corporate-income-tax`, `si-tax-overview`, `slovenia-payroll`, `slovenia-vat-return` |
 | `ZDDV-1` | `si-company-formation`, `si-tax-overview`, `slovenia-vat-return` |
 | `ZPIZ-2` | `slovenia-income-tax`, `slovenia-payroll`, `slovenia-social-contributions` |
 
@@ -981,7 +1020,6 @@ instance took.
 | `IRP6` | `za-income-tax`, `za-provisional-tax` |
 | `ITR14` | `south-africa-transfer-pricing`, `za-income-tax` |
 | `VAT201` | `south-africa-vat`, `za-vat-return` |
-| `VAT215` | `south-africa-vat`, `za-vat-return` |
 
 ## spain
 
@@ -994,13 +1032,14 @@ instance took.
 
 | Form | Guides |
 |---|---|
+| `INK2` | `se-corporate-income-tax`, `sweden-financial-statements` |
 | `OKQ8` | `se-income-tax`, `sweden-vat-return` |
 
 ## tanzania
 
 | Form | Guides |
 |---|---|
-| `FA2025` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
+| `FA2025` | `tanzania-tax-optimization`, `tanzania-withholding-tax` |
 | `Form ITX` | `tanzania-income-tax`, `tanzania-social-contributions` |
 
 ## templates
@@ -1024,7 +1063,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form PND` | `th-company-formation`, `th-corporate-income-tax`, `th-payroll-social`, `th-tax-overview` |
+| `Form PND` | `th-company-formation`, `th-payroll-social`, `th-tax-overview` |
 
 ## treaty-corridors
 
@@ -1035,6 +1074,18 @@ instance took.
 | `Form Required` | `americas-corridors`, `uk-major-partners` |
 | `NR301` | `americas-corridors`, `uk-major-partners` |
 | `NR302` | `americas-corridors`, `uk-major-partners` |
+
+## tunisia
+
+| Form | Guides |
+|---|---|
+| `LF2025` | `tn-corporate-income-tax`, `tn-income-tax`, `tn-payroll-social`, `tn-tax-overview` |
+
+## turks-and-caicos-islands
+
+| Form | Guides |
+|---|---|
+| `SHA256` | `tc-formation-and-business-licensing-reference`, `tc-sector-taxes-reference`, `tc-social-contributions-reference` |
 
 ## tx
 
@@ -1071,6 +1122,12 @@ instance took.
 | `SA302` | `uk-income-tax-sa100`, `uk-national-insurance`, `uk-payments-on-account`, `uk-student-loan-repayment` |
 | `SA303` | `uk-income-tax-sa100`, `uk-payments-on-account`, `uk-tax-optimization` |
 
+## united-states-virgin-islands
+
+| Form | Guides |
+|---|---|
+| `FR-2025` | `vi-medicare-ordinary-share-reference`, `vi-oasdi-annual-wage-base-reference` |
+
 ## uruguay
 
 | Form | Guides |
@@ -1084,19 +1141,12 @@ instance took.
 | `Form 1040` | `us-fbar-fatca-reporting`, `us-feie-ftc` |
 | `Form 8938` | `us-fbar-fatca-reporting`, `us-feie-ftc` |
 
-## ut
-
-| Form | Guides |
-|---|---|
-| `Form TC-20` | `README`, `us-ut-income-tax` |
-| `Form TC-40` | `README`, `us-ut-income-tax` |
-
 ## va
 
 | Form | Guides |
 |---|---|
 | `Form 500` | `us-va-corporate-tax-and-bpol`, `us-va-income-tax` |
-| `Form 760` | `README`, `us-va-corporate-tax-and-bpol`, `us-va-income-tax`, `us-va-payroll`, `us-va-sales-tax` |
+| `Form 760` | `us-va-corporate-tax-and-bpol`, `us-va-income-tax`, `us-va-payroll`, `us-va-sales-tax` |
 | `Form 763` | `us-va-corporate-tax-and-bpol`, `us-va-income-tax`, `us-va-payroll` |
 
 ## verticals
@@ -1104,19 +1154,6 @@ instance took.
 | Form | Guides |
 |---|---|
 | `IR35` | `construction-sector`, `freelance-developer` |
-
-## vt
-
-| Form | Guides |
-|---|---|
-| `Form CO-411` | `README`, `us-vt-income-tax` |
-| `Form IN-111` | `README`, `us-vt-income-tax` |
-
-## wv
-
-| Form | Guides |
-|---|---|
-| `Form IT-140` | `README`, `us-wv-income-tax` |
 
 ## zimbabwe
 
@@ -1127,4 +1164,4 @@ instance took.
 
 ---
 
-103 jurisdictions, 596 shared form identifiers.
+108 jurisdictions, 608 shared form identifiers.

@@ -51,7 +51,7 @@ Gross income − allowable expenses = trading profit. Apply basis period reform 
 Apply the personal allowance and income tax bands for the selected year from `uk-income-tax-sa100`, using the Scottish bands for a Scottish taxpayer. Compute Class 4 NIC at the selected year's rates and limits in `uk-national-insurance`. Class 2 has not been compulsory since 6 April 2024: it is treated as paid where profits reach the Small Profits Threshold, and below that it is a voluntary choice to protect the National Insurance record.
 
 ### Phase 5 — Payments on account
-If total tax + Class 4 NIC > £1,000 and < 80% was deducted at source: 50% due 31 January in-year, 50% due 31 July after year-end. Show the first payment on account for the next year.
+Take the threshold, the deducted-at-source test, the instalments and the due dates from `uk-payments-on-account`. Show the first payment on account for the next year.
 
 ### Phase 6 — Handoff
 Recommend review by a UK-qualified accountant (ACA/ACCA/CIOT). Route to: https://www.openaccountants.com
