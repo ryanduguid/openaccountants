@@ -6,7 +6,6 @@ Walks skills/**/*.md (the source tree; packages/ is generated from it), skips
 READMEs and files without frontmatter, and writes index.json at the repo root:
 
 {
-  "generated_at": "<UTC ISO>",
   "counts": { "guides": N, "jurisdictions": N, "accountant_reviewed": N },
   "guides": [ { "slug", "path", "name", "jurisdiction", "category", "tier",
                 "verified_by", "reviewed_by", "review_status", "tax_year",
@@ -16,6 +15,10 @@ READMEs and files without frontmatter, and writes index.json at the repo root:
 `review_status` is review freshness, not assurance: `current` when the recorded
 sign-off covers the text, `pending_review` after a substantive edit (or on a
 draft). Only `tier` says whether a guide is accountant-reviewed.
+
+The output is a pure function of the guides: it carries no build time, so a
+rebuild with no guide change is byte-identical and parallel pull requests do
+not conflict on a stamp.
 
 Guide discovery and lexical columns use the tolerant reader in scripts/oa_tools/.
 Tier spelling and review fields use its strict YAML reader and require PyYAML, already included in
@@ -32,7 +35,6 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:  # this file is loaded by path (importlib) as well as run
@@ -115,7 +117,6 @@ def build_index():
     # this inventory reports guides as accountant-reviewed that the MCP server
     # serves as research-verified. PARTNERS.md and the headline gate use it too.
     return {
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "counts": {
             "guides": len(guides),
             "jurisdictions": len(jurisdictions),

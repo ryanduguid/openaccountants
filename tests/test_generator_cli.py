@@ -6,6 +6,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 
 
@@ -173,14 +174,7 @@ class GeneratorCliTests(unittest.TestCase):
                     self.assertEqual(result.stdout, normal.stdout)
                     self.assertEqual(result.stderr, normal.stderr)
                     self.assertTrue(target.is_file())
-                    actual = target.read_bytes()
-                    if name == "build-index.py":
-                        before, after = json.loads(expected), json.loads(actual)
-                        before.pop("generated_at")
-                        after.pop("generated_at")
-                        self.assertEqual(after, before)
-                    else:
-                        self.assertEqual(actual, expected)
+                    self.assertEqual(target.read_bytes(), expected)
                     self.assertEqual((self.foreign / "index.json").read_bytes(), b"foreign inventory\n")
                     self.assertEqual((self.foreign / "docs/FORM-REGISTER.md").read_bytes(),
                                      b"foreign register\n")
@@ -201,14 +195,33 @@ class GeneratorCliTests(unittest.TestCase):
                         result = self.run_generator(name, argv, cwd)
                         self.assertEqual(result.returncode, 0, result.stderr)
                         self.assertTrue((cwd / path).is_file(), "explicit output missing")
-                        actual = (cwd / path).read_bytes()
-                        if name == "build-index.py":
-                            before, after = json.loads(expected), json.loads(actual)
-                            before.pop("generated_at")
-                            after.pop("generated_at")
-                            self.assertEqual(after, before)
-                        else:
-                            self.assertEqual(actual, expected)
+                        self.assertEqual((cwd / path).read_bytes(), expected)
+
+    def index_after_a_tick(self):
+        time.sleep(1.1)  # past one second, so a wall-clock field in the output would differ
+        result = self.run_generator("build-index.py", [])
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return (self.root / "index.json").read_bytes()
+
+    def test_index_rebuild_without_a_guide_change_is_byte_identical(self):
+        first = self.index_after_a_tick()
+        second = self.index_after_a_tick()
+        self.assertEqual(second, first)
+
+    def test_index_rebuilds_for_different_guides_merge_cleanly(self):
+        versions = {"base": self.index_after_a_tick()}
+        for name in ("first", "second"):
+            guide = self.root / "skills/international/example" / (name + ".md")
+            original = guide.read_bytes()
+            guide.write_bytes(original.replace(b"last_updated: 2026-10-07", b"last_updated: 2026-11-05"))
+            versions[name] = self.index_after_a_tick()
+            guide.write_bytes(original)
+        for name, data in versions.items():
+            (self.root / name).write_bytes(data)
+        merge = subprocess.run(["git", "merge-file", "-p", "first", "base", "second"],
+                               cwd=self.root, capture_output=True, timeout=30)
+        self.assertEqual(merge.returncode, 0, merge.stdout)
+        self.assertEqual(merge.stdout.count(b'"last_updated": "2026-11-05"'), 2)
 
     def test_missing_llms_input_preserves_existing_output(self):
         for missing in self.inputs:
