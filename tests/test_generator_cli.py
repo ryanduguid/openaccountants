@@ -204,7 +204,9 @@ class GeneratorCliTests(unittest.TestCase):
         return (self.root / "index.json").read_bytes()
 
     def test_index_rebuild_without_a_guide_change_is_byte_identical(self):
-        self.assertEqual(self.index_after_a_tick(), self.index_after_a_tick())
+        first = self.index_after_a_tick()
+        second = self.index_after_a_tick()
+        self.assertEqual(second, first)
 
     def test_index_rebuilds_for_different_guides_merge_cleanly(self):
         versions = {"base": self.index_after_a_tick()}
