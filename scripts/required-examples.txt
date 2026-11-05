@@ -29,6 +29,7 @@ skills/international/australia/au-rental-property.md
 skills/international/australia/au-small-business-cgt.md
 skills/international/australia/au-smsf.md
 skills/international/australia/au-sole-trader-schedule.md
+skills/international/australia/au-stamp-duty.md
 skills/international/australia/au-super-guarantee.md
 skills/international/australia/au-tpar.md
 skills/international/australia/au-trust-distributions.md
