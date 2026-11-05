@@ -6,6 +6,8 @@ All notable changes to this repository, newest first, in the [Keep a Changelog](
 
 - Remove `generated_at` from `index.json`, which nothing read: the stamp changed on every build, so a rebuild with no guide change dirtied the file and parallel pull requests conflicted on it. The index is now byte-reproducible, and `scripts/validate-guides.py` treats any extra top-level field as stale.
 
+- Stop 6 guided workflows restating figures their guides own: `uk-self-employed` no longer gives 9% Class 4 and compulsory Class 2, `uk-capital-gains` branches on the disposal date, `malta-freelancer` describes the TA22 regime and no longer routes provisional tax through FS5, and `portugal-self-employed` uses the quarterly relevant-income base. Each now points at guides that exist under those slugs. Correct the Florida verification workbook data for filing frequency, commercial rent, the collection allowance and the fourth corporate estimate. `south-africa-income-tax` and `us-schedule-c` point at their guides for limits, credits, SE tax and estimated tax, and `us-schedule-c` names guides that exist.
+
 - Make `scripts/check-coverage-claims.py` check, and `--write` rewrite, the `There are N Tier 2 guides among the N indexed guides.` sentence in `docs/QUALITY-TIERS.md`, which the headline check never read and which had fallen to 1,839 of 2,003 against the tree's 1,853 of 2,017. Correct the sentence and `llms-full.txt`, which embeds it.
 
 - Add a conditional selected-2025 New Caledonia one-part raw IRPP reference with exact lower-thousand income floor, marginal-scale examples and explicit source, input, household and final-assessment holds.

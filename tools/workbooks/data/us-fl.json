@@ -16,12 +16,12 @@
           ]
         },
         {
-          "section": "Filing frequency (by annual taxable sales)",
+          "section": "Filing frequency (assigned by the Department, by annual sales tax collections)",
           "rows": [
-            {"item": "≤ $1,000 / year", "value": "Annual (due January 20)", "ref": "FDOR Rule 12A-1.056, F.A.C."},
-            {"item": "$1,001 – $2,500 / year", "value": "Semiannual (due January 20 and July 20)", "ref": "FDOR Rule 12A-1.056, F.A.C."},
-            {"item": "$2,501 – $12,000 / year", "value": "Quarterly (due 1st–20th after quarter end)", "ref": "FDOR Rule 12A-1.056, F.A.C."},
-            {"item": "Over $12,000 / year", "value": "Monthly (due 1st–20th after month end)", "ref": "FDOR Rule 12A-1.056, F.A.C."},
+            {"item": "$100 or less / year", "value": "Annual (due January 20)", "ref": "§212.11(1)(c), F.S.; FDOR Filing Frequency Limits"},
+            {"item": "$101 – $500 / year", "value": "Semiannual (due January 20 and July 20)", "ref": "§212.11(1)(c), F.S.; FDOR Filing Frequency Limits"},
+            {"item": "$501 – $1,000 / year", "value": "Quarterly (due 1st–20th after quarter end)", "ref": "§212.11(1)(c), F.S.; FDOR Filing Frequency Limits"},
+            {"item": "More than $1,000 / year", "value": "Monthly (due 1st–20th after month end)", "ref": "§212.11(1)(c), F.S.; FDOR Filing Frequency Limits"},
             {"item": "Due date rule", "value": "1st–20th of month following the period; next business day if the 20th is a weekend/holiday", "ref": "FDOR"},
             {"item": "Zero returns", "value": "Must still file a return showing zero tax due even with no activity", "ref": "FDOR Rule 12A-1.056"}
           ]
@@ -31,7 +31,7 @@
           "rows": [
             {"item": "State sales tax", "value": "6.0%", "ref": "§212.05, F.S."},
             {"item": "State use tax", "value": "6.0%", "ref": "§212.06, F.S."},
-            {"item": "Commercial real property rent", "value": "5.5% (NOT 6%) plus applicable surtax", "ref": "§212.031, F.S."}
+            {"item": "Commercial real property rent", "value": "Repealed for rental or occupancy periods from Oct 1, 2025 (no state tax or surtax); 2.0% plus applicable surtax for periods Jun 1, 2024 – Sep 30, 2025, whenever paid; 4.5% plus applicable surtax for periods Dec 1, 2023 – May 31, 2024", "ref": "FDOR TIP 25A01-04; FDOR TIP 24A01-02; former §212.031, F.S."}
           ]
         },
         {
@@ -51,7 +51,7 @@
         {
           "section": "Collection allowance & brackets",
           "rows": [
-            {"item": "Collection allowance (vendor discount)", "value": "2.5% of first $1,200 of tax due, max $25 per period; DR-15 Line 9; forfeited if filed late", "ref": "§212.12(1), F.S."},
+            {"item": "Collection allowance (vendor discount)", "value": "2.5% of first $1,200 of tax due, max $30 per reporting location; only if the return is filed and the tax paid electronically and on time; DR-15 Line 11", "ref": "§212.12(1)(a), F.S.; FDOR DR-15N (R. 10/25)"},
             {"item": "Bracket system", "value": "Tax on partial dollars uses the FDOR bracket chart, not rounding", "ref": "§212.12(9), F.S."}
           ]
         },
@@ -154,8 +154,8 @@
         {
           "section": "Estimated tax",
           "rows": [
-            {"item": "Threshold", "value": "Quarterly estimates required if estimated Florida tax exceeds $2,500", "ref": "§220.34, F.S."},
-            {"item": "Installments (calendar year)", "value": "25% each on May 31, Jun 30, Sep 30, and Jan 31", "ref": "§220.34, F.S."},
+            {"item": "Threshold", "value": "Quarterly estimates required if estimated Florida tax exceeds $2,500", "ref": "FDOR F-1120ES instructions"},
+            {"item": "Installments (calendar year)", "value": "25% each on May 31, Jun 30, Sep 30, and Dec 31 (the last day of the tax year)", "ref": "§220.33, F.S.; FDOR F-1120ES instructions"},
             {"item": "Safe harbors", "value": "100% of prior-year tax, or 90% of current-year tax; underpayment penalty on F-2220", "ref": "§220.34(2), F.S."}
           ]
         },

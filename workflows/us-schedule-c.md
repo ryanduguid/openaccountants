@@ -28,10 +28,13 @@
 ## Skills to load
 
 From the US bundle:
-- `us-income-tax` — federal income tax rates, brackets, standard deduction
-- `us-self-employed` — Schedule C, SE tax, QBI deduction
-- `us-estimated-tax` — quarterly payment schedule, safe harbors
+- `us-form-1040-individual-return` — federal income tax rates, brackets, standard deduction
+- `us-schedule-c-and-se-computation` — Schedule C, SE tax
+- `us-qbi-deduction` — QBI deduction
+- `us-quarterly-estimated-tax` — quarterly payment schedule, safe harbors
 - State-specific skill if relevant
+
+Rates and thresholds in the phases below come from these guides. The hosted bundle does not carry them all: if one is not loaded, fetch it from `packages/_shared/` in this repository before computing, and never fall back on a remembered figure.
 
 ## 6-phase structure
 
@@ -42,13 +45,13 @@ Confirm: gross 1099/freelance income, business type (service, product, mixed), f
 Work through by category: advertising, car/truck (standard mileage vs actual), depreciation, insurance, legal/professional, meals (50%), office expense, rent/lease, supplies, travel, utilities, home office (Form 8829 or simplified method).
 
 ### Phase 3 — Net profit and SE tax
-Net profit = gross income − COGS − expenses. SE tax = net profit × 0.9235 × 15.3% (up to Social Security wage base). Deduct 50% of SE tax above the line.
+Net profit = gross income − COGS − expenses. Compute SE tax and its above-the-line deduction from `us-schedule-c-and-se-computation`.
 
 ### Phase 4 — Income tax and deductions
 Apply standard deduction (or itemized). Compute §199A QBI deduction (generally 20% of QBI, subject to W-2/UBIA limits for specified service trades or high-income taxpayers). Apply SE health insurance deduction, retirement contributions.
 
 ### Phase 5 — Estimated taxes
-Quarterly schedule: April 15, June 15, September 15, January 15. Safe harbor: pay 100% (110% if prior-year AGI > $150k) of prior-year tax, or 90% of current-year tax.
+Take the quarterly due dates and safe harbors for the year and filing status from `us-quarterly-estimated-tax`.
 
 ### Phase 6 — Handoff
 Recommend CPA/EA review, especially for multi-state, QBI phase-out, or SSTB classification questions. Route to: https://www.openaccountants.com
