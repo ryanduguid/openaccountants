@@ -14537,7 +14537,7 @@
    "reviewed_by": "Michael Cutajar, CPA (Malta)",
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "malta-tax-optimization",
@@ -14628,7 +14628,7 @@
    "reviewed_by": "Michael Cutajar, CPA (Malta)",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "mt-non-dom",
@@ -18060,7 +18060,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "pt-return-assembly",
@@ -18084,9 +18084,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Mário Jorge da costa Vale",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "pr-medicare-ordinary-share-reference",
@@ -22049,9 +22049,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "James Power",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "uk-crypto-tax",
@@ -24441,9 +24441,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Rob Hoffman",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "us-fl-sales-use-tax-surtax",
@@ -24467,9 +24467,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Rob Hoffman",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "us-fl-transient-rental-tax",

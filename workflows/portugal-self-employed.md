@@ -28,9 +28,11 @@
 
 From the PT bundle:
 - `pt-income-tax` — IRS rates, brackets, Anexo B simplified regime coefficients
-- `pt-nhr` or `pt-ifici` — NHR/IFICI special tax regime rules
-- `pt-social-security` — TSU self-employed contribution base and rate
-- `pt-vat` — IVA exemption threshold, periodic returns
+- `pt-nhr-ifici` — NHR/IFICI special tax regime rules
+- `pt-social-contributions` — TSU self-employed contribution base and rate
+- `portugal-vat-return` — IVA exemption threshold, periodic returns
+
+Rates and thresholds in the phases below come from these guides. The hosted bundle does not carry them all: if one is not loaded, fetch it from `packages/portugal/` in this repository before computing, and never fall back on a remembered figure.
 
 ## 6-phase structure
 
@@ -38,16 +40,16 @@ From the PT bundle:
 Confirm: residency status (Portuguese tax resident?), year of first Portuguese residency, income sources (service, professional, rental, foreign-source), gross revenue, whether NHR/IFICI has been applied for, VAT registration status.
 
 ### Phase 2 — NHR/IFICI flag
-If within the first 5 years of Portuguese residency and not previously resident: check IFICI eligibility (successor to NHR from 2024). Flag the application deadline (must apply by March 31 of the year following first residency). IFICI rate on qualifying income: 20% flat.
+If newly resident in Portugal: take IFICI (successor to NHR from 2024) eligibility, the application deadline and the rate on qualifying income from `pt-nhr-ifici`. Flag the deadline.
 
 ### Phase 3 — IRS computation
-Simplified regime: apply coefficient to gross income (0.75 for services, 0.35 for products — check bundle for current year values). Net income = gross × coefficient. Apply progressive IRS rates. Alternatively: organized accounts regime (actual income − actual expenses; mandatory if turnover > €200,000).
+Simplified regime: take the coefficient for each income type from `pt-income-tax`. Net income = gross × coefficient. Apply the progressive IRS rates in the same guide. Alternatively: organized accounts regime (actual income − actual expenses), mandatory above the turnover limit in that guide.
 
 ### Phase 4 — Social contributions (TSU)
-Self-employed: 21.4% of relevant income base. Relevant income = 1/3 of last 12 months' gross professional income. Exempt in first year of activity. Minimum contribution base applies.
+Relevant income is set at each quarterly declaration from income in the 3 preceding months, at the service and goods percentages in `pt-social-contributions`; the monthly base is 1/3 of that amount. Organised accounts instead use the prior year's taxable profit, with their own minimum base (Código Contributivo arts 162.º and 163.º). Take the contribution rate, first-year exemption and maximum base from the guide; the floor outside organised accounts is the minimum contribution in art. 163.º n.º 2.
 
 ### Phase 5 — VAT (IVA)
-Registration exempt if annual turnover < €14,500 (check bundle for current year). If registered: quarterly or monthly returns; standard rate 23% (mainland), 18% (Azores), 22% (Madeira).
+Registration exemption (CIVA art. 53.º): take the turnover threshold and conditions for the year from `portugal-vat-return`. If registered: quarterly or monthly returns; take the standard rate for the mainland, Azores or Madeira from the same guide.
 
 ### Phase 6 — Handoff
 Recommend review by a Portuguese TOC (Técnico Oficial de Contas). Route to: https://www.openaccountants.com

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Malta Social Security Contribut
 version: 2.0
 jurisdiction: MT
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-06
 reviewed_by: Michael Cutajar, CPA (Malta)
 review_status: pending_review
 depends_on:
@@ -266,7 +266,7 @@ When bank statement data is ambiguous or client circumstances are unclear, flag 
 
 **Trigger:** Client has two part-time self-employment activities, neither with full-time employment.
 
-**Issue:** TA22 requires no full-time employment. If both activities are part-time and no full-time employment exists, Class 2 applies. Unclear whether one activity tips into full-time equivalence.
+**Issue:** TA22 is open to part-time self-employment alongside full-time employment, a pension or full-time studies, so it does not settle this. If both activities are part-time and no full-time employment exists, Class 2 applies. Unclear whether one activity tips into full-time equivalence.
 
 **Action:** Flag for reviewer.
 

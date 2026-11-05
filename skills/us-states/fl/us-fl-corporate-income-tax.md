@@ -4,14 +4,16 @@ description: "Source-cited tax guide for US-FL: fl corporate income tax. Unverif
 jurisdiction: US-FL
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-06
 reviewed_by: Rob Hoffman
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 depends_on:
   - us-circular-230-disclosure
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # FL Corporate Income Tax
 
@@ -222,24 +224,24 @@ Florida has resisted the trend toward market-based sourcing for over a decade de
 - **Negligence penalty** — **10%** of the deficiency where any part of it is due to negligence or intentional disregard of the rules, but without intent to defraud.  _(s. 220.803(1), F.S.)_
 - **Fraud penalty** — 100% of the deficiency where any part of it is due to fraud. This is imposed **in lieu of** the negligence penalty, not in addition to it.  _(s. 220.803(2), F.S.)_
 
-## 8. Estimated Tax (s. 220.222 and 220.34, F.S.)
+## 8. Estimated Tax (ss. 220.33 and 220.34, F.S.)
 
 ### 8.1 When estimated payments are required
 
-- **Estimated payment threshold** — $2,500 USD (A corporation must make quarterly estimated payments if its estimated Florida tax liability for the year exceeds this amount. Below that threshold, no estimated payments are required and the full liability can be paid with the F-1120.)  _(s. 220.222, F.S.)_
+- **Estimated payment threshold** — $2,500 USD (A corporation must make quarterly estimated payments if its estimated Florida tax liability for the year exceeds this amount. Below that threshold, no estimated payments are required and the full liability can be paid with the F-1120.)  _(Form F-1120ES instructions)_
 
 ### 8.2 Installment due dates
 
-**Installment due dates**  _(s. 220.34, F.S.)_
+**Installment due dates**  _(s. 220.33, F.S.; Form F-1120ES instructions)_
 
 | Installment | Due date | % of total |
 | --- | --- | --- |
 | 1st | May 31 (last day of 5th month of tax year) | 25% |
 | 2nd | June 30 (last day of 6th month) | 25% |
 | 3rd | September 30 (last day of 9th month) | 25% |
-| 4th | January 31 of following year (last day of tax year + 1 month) | 25% |
+| 4th | December 31 (last day of tax year) | 25% |
 
-- **Fiscal-year substitution** — For fiscal-year filers, substitute the corresponding months of the fiscal year.
+- **Fiscal-year substitution** — For fiscal-year filers, substitute the corresponding months of the fiscal year. A June 30 year end pays by the last day of the 4th, 6th and 9th months and of the tax year.  _(Form F-1120ES instructions)_
 
 ### 8.3 Form
 
