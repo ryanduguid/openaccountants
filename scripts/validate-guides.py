@@ -24,8 +24,8 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      git history (hand-authored, no builder — a deletion is unrecoverable),
      unless it is a guide retired in favour of a skills/federal/ source of
      the same filename. Skipped when git / origin/main is unavailable.
-  5. ERROR if index.json is stale: regenerated index (ignoring generated_at)
-     must match the committed one. Fix with: python3 scripts/build-index.py
+  5. ERROR if index.json is stale: regenerated index must match the committed
+     one, every top-level field included. Fix with: python3 scripts/build-index.py
   6. ERROR if a deprecated inventory file reappears (skills/manifest.json,
      packages/manifest.json). index.json is the single canonical inventory;
      the old manifests had no consumers and were removed so they can't drift.
@@ -622,7 +622,7 @@ def check_index_fresh(errors):
         return
     with open(index_path, encoding="utf-8") as fh:
         committed = json.load(fh)
-    for section in ("counts", "guides"):
+    for section in sorted(committed.keys() | fresh.keys()):
         if committed.get(section) != fresh.get(section):
             errors.append(
                 f"index.json is stale (`{section}` differs) — regenerate with: "

@@ -59,19 +59,22 @@ class LocalOptimisationTests(unittest.TestCase):
                          [("first", "money", 100.0, 2025), ("first", "percent", 10.0, 2025),
                           ("second", "money", 100.0, 2025), ("second", "percent", 10.0, 2025)])
 
-    def test_index_freshness_reports_generation_failure_and_ignores_generation_time(self):
+    def test_index_freshness_reports_generation_failure_and_stray_fields(self):
         validator = load("direct_index_validator", "scripts/validate-guides.py")
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             builder = root / "builder.py"
             index = {"counts": {"guides": 1}, "guides": [{"slug": "synthetic"}]}
-            (root / "index.json").write_text(json.dumps({**index, "generated_at": "old"}))
-            builder.write_text("def build_index():\n    return " + repr({**index, "generated_at": "new"}))
+            (root / "index.json").write_text(json.dumps(index))
+            builder.write_text("def build_index():\n    return " + repr(index))
             with mock.patch.object(validator, "REPO_ROOT", folder), mock.patch.object(validator, "BUILD_INDEX", str(builder)), \
                     mock.patch.object(validator.subprocess, "run", side_effect=AssertionError("Unexpected child process")):
                 errors = []
                 validator.check_index_fresh(errors)
                 self.assertEqual(errors, [])
+                (root / "index.json").write_text(json.dumps({**index, "generated_at": "old"}))
+                validator.check_index_fresh(errors)
+                self.assertIn("`generated_at` differs", errors.pop())
                 builder.write_text("raise RuntimeError('synthetic failure')\n")
                 validator.check_index_fresh(errors)
                 self.assertIn("synthetic failure", errors[0])
