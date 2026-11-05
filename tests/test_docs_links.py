@@ -6,8 +6,8 @@ README rewrite had removed them (`#try-it-in-60-seconds`,
 `#are-you-an-accountant`), and nothing noticed: the file is the human
 quick-start and the first thing an agent reads after llms.txt, which embeds
 it. This test walks every relative link and `#anchor` in the root-level
-markdown, `docs/`, and the two README files the quick-start points at, and
-fails on a missing target. External URLs are not checked (no network).
+markdown, `docs/`, `workflows/` and the MCP README the quick-start points at,
+and fails on a missing target. External URLs are not checked (no network).
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ CHECKED = sorted(
         *REPO_ROOT.glob("*.md"),
         *(REPO_ROOT / "docs").rglob("*.md"),
         REPO_ROOT / "mcp" / "README.md",
-        REPO_ROOT / "workflows" / "README.md",
+        *(REPO_ROOT / "workflows").glob("*.md"),
         REPO_ROOT / ".github" / "PULL_REQUEST_TEMPLATE.md",
     }
 )
@@ -93,6 +93,9 @@ class DocsLinkTests(unittest.TestCase):
             rel = path.relative_to(REPO_ROOT)
             failures.extend(f"{rel} -> {problem}" for problem in broken_links(path))
         self.assertEqual(failures, [], "\n" + "\n".join(failures))
+
+    def test_every_workflow_is_walked(self) -> None:
+        self.assertLessEqual(set((REPO_ROOT / "workflows").glob("*.md")), set(CHECKED))
 
     def test_start_here_links_only_to_live_readme_headings(self) -> None:
         text = (REPO_ROOT / "START-HERE.md").read_text(encoding="utf-8")

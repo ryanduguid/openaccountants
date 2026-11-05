@@ -74,6 +74,13 @@ class FactCheckerTests(CheckerCase):
         }, root="federal")
         self.assertIn("1 jurisdictions, 1 shared form identifiers", output)
 
+    def test_form_register_does_not_count_a_readme_as_a_guide(self):
+        output = self.run_checker("build-form-register.py", {
+            "README.md": "File Form 1099-NEC.\n",
+            "issuance.md": "File Form 1099-NEC.\n",
+        }, root="federal")
+        self.assertIn("0 jurisdictions, 0 shared form identifiers", output)
+
     def test_registration_list_excludes_direct_taxes(self):
         output = self.run_checker("list-registration-thresholds.py", {
             "or/or-cat.md": "| CAT registration threshold | USD 750,000 |\n",

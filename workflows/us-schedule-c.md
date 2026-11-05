@@ -42,13 +42,13 @@ Rates and thresholds in the phases below come from these guides. The hosted bund
 Confirm: gross 1099/freelance income, business type (service, product, mixed), filing status (single, MFJ, HOH), state of residence, other income, prior-year tax liability (for safe harbor).
 
 ### Phase 2 — Schedule C — expenses
-Work through by category: advertising, car/truck (standard mileage vs actual), depreciation, insurance, legal/professional, meals (50%), office expense, rent/lease, supplies, travel, utilities, home office (Form 8829 or simplified method).
+Work through by category: advertising, car/truck (standard mileage vs actual), depreciation, insurance, legal/professional, meals (at the share in `us-schedule-c-and-se-computation`), office expense, rent/lease, supplies, travel, utilities, home office (Form 8829 or simplified method).
 
 ### Phase 3 — Net profit and SE tax
 Net profit = gross income − COGS − expenses. Compute SE tax and its above-the-line deduction from `us-schedule-c-and-se-computation`.
 
 ### Phase 4 — Income tax and deductions
-Apply standard deduction (or itemized). Compute §199A QBI deduction (generally 20% of QBI, subject to W-2/UBIA limits for specified service trades or high-income taxpayers). Apply SE health insurance deduction, retirement contributions.
+Apply standard deduction (or itemized). Compute the §199A QBI deduction from `us-qbi-deduction`, with its W-2/UBIA limits for specified service trades or high-income taxpayers. Apply SE health insurance deduction, retirement contributions.
 
 ### Phase 5 — Estimated taxes
 Take the quarterly due dates and safe harbors for the year and filing status from `us-quarterly-estimated-tax`.

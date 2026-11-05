@@ -12,7 +12,7 @@ import os, re, sys, collections
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
-from oa_tools.guides import markdown_files
+from oa_tools.guides import is_guide_filename, markdown_files
 from oa_tools.cli import generator_arguments
 from oa_tools.paths import REPO_ROOT
 
@@ -56,7 +56,7 @@ def main():
     jur = collections.defaultdict(lambda: collections.defaultdict(set))
     for p, source in markdown_files():
         parts = p.split(os.sep)
-        if len(parts) < 3:
+        if len(parts) < 3 or not is_guide_filename(parts[-1]):
             continue
         text = open(source, encoding='utf-8', errors='replace').read()
         for m in FORM.finditer(text):
