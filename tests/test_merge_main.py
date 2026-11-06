@@ -72,7 +72,7 @@ class MergeMainTests(unittest.TestCase):
             ".gitignore": "__pycache__/\n",
             "README.md": "# Repo\n\nA tagline.\n\n" + HEADLINE + "\n",
             "llms.txt": "# Repo\n\n" + HEADLINE + "\n",
-            "docs/QUALITY-TIERS.md": "# Tiers\n\n" + HEADLINE + "\n",
+            "docs/QUALITY-TIERS.md": "# Tiers\n\n" + HEADLINE + "\n\nThere are 0 Tier 2 guides among the 0 indexed guides.\n",
             "docs/COVERAGE.md": coverage,
             "docs/partners.json": "{}\n",
             "START-HERE.md": "Start here.\n",
@@ -135,6 +135,8 @@ class MergeMainTests(unittest.TestCase):
         for rel in ("README.md", "llms.txt", "docs/QUALITY-TIERS.md"):
             self.assertIn(f"**{guides} Guides** across **{guides} jurisdictions**",
                           (self.root / rel).read_text(encoding="utf-8"), rel)
+        self.assertIn(f"There are {guides} Tier 2 guides among the {guides} indexed guides.",
+                      (self.root / "docs/QUALITY-TIERS.md").read_text(encoding="utf-8"))
         self.assertIn(f"exist in 0 of the {guides} jurisdiction codes",
                       (self.root / "docs/COVERAGE.md").read_text(encoding="utf-8"))
         self.assertEqual(sorted(p.name for p in (self.root / "packages").iterdir()), codes)

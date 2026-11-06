@@ -4,15 +4,17 @@ description: Use this skill whenever asked about UK capital gains tax for indivi
 version: 2.1
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-06
 reviewed_by: James Power
-review_status: current
+review_status: pending_review
 depends_on:
   - uk-income-tax-sa100
 category: international
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # UK Capital Gains Sa108
 
@@ -145,7 +147,7 @@ Two structural changes apply from 6 April 2026 that materially shift planning fo
 
 ### 2.2 Rate Band Allocation
 
-- **Rate Band Allocation** — Unused basic rate band = £50,270 - taxable income (after personal allowance) If gain fits within unused basic rate band → basic rate CGT (18%) If gain exceeds unused basic rate band → split: 18% within band, 24% on excess
+- **Rate Band Allocation** — Unused basic rate band = max(0, £37,700 - taxable income (after personal allowance)). Gain at the basic rate (18%) = min(taxable gain, unused basic rate band). Any taxable gain above that is at the higher rate (24%), so taxable income of £37,700 or more leaves all of the taxable gain at 24%.
 
 CGT rates depend on where the gain falls relative to the basic rate band:
 

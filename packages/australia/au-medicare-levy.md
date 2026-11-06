@@ -4,7 +4,7 @@ description: Use this skill whenever asked about the Australian Medicare Levy, M
 version: 2.6
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-11-02
+last_updated: 2026-11-05
 review_status: pending_review
 category: international
 tier: 2
@@ -484,7 +484,7 @@ Action Required: Do not advise. Refer to qualified practitioner. Document gap.
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+This guide is maintained in the [ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants). Check its quality tier, recorded review status and cited primary sources for the requested period. The upstream website does not publish or verify this fork's changes.
 
 > Contributed by Ryan Duguid.
 
@@ -521,13 +521,15 @@ Not yet confirmed: A complete page-level source/read-date audit and independent 
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

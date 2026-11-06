@@ -6,16 +6,18 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `costa-rica-income-tax.md`
-3. `costa-rica-iva.md`
-4. `costa-rica-payroll.md`
-5. `costa-rica-social-contributions.md`
-6. `costa-rica-tax-optimization.md`
+2. `costa-rica-corporate-income-tax.md`
+3. `costa-rica-income-tax.md`
+4. `costa-rica-iva.md`
+5. `costa-rica-payroll.md`
+6. `costa-rica-social-contributions.md`
+7. `costa-rica-tax-optimization.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)

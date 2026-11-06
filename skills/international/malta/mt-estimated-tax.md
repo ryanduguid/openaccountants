@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Malta provisional tax (estimate
 version: 2.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-06
 reviewed_by: Michael Cutajar, CPA (Malta)
 review_status: pending_review
 depends_on:
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Malta (Republic of Malta) |
 | Tax | Income tax provisional payments (Provisional Tax / PT) |
-| Primary legislation | Income Tax Management Act, Chapter 372, Art. 44 et seq.; Provisional Tax Rules (S.L. 372.04) |
+| Primary legislation | Income Tax Management Act, Chapter 372, Art. 44 et seq.; Payment of Provisional Tax (P.T.) Rules (S.L. 372.18) |
 | Supporting legislation | Income Tax Act, Chapter 123, Art. 14 (deductions); Art. 50 (penalties) |
 | Authority | Commissioner for Revenue (CFR), Malta |
 | Portal | https://cfr.gov.mt (CFR Online Services) |
@@ -60,7 +60,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Required inputs
 
-**Minimum viable** -- the prior year assessed tax liability from the income tax return (the net tax payable after credits) OR the CFR-issued PT notice (Vorauszahlungsbescheid equivalent). One of these is mandatory.
+**Minimum viable** -- the prior year assessed tax liability from the income tax return (the net tax payable after credits) OR the CFR-issued PT notice. One of these is mandatory.
 
 **Recommended** -- current year of assessment, any PAYE or withholding tax deducted at source in the current year, the client's TIN.
 
