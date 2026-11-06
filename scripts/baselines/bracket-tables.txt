@@ -11,32 +11,23 @@ skills/international/el-salvador/el-salvador-income-tax.md::cumulative: | II | 5
 skills/international/el-salvador/el-salvador-payroll.md::cumulative: | II | 550.01 -- 895.24 | USD 17.67 + 10% on excess over 550.00 | / | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 |
 skills/international/el-salvador/el-salvador-social-contributions.md::cumulative: | 550.01 – 895.24 | USD 17.67 + 10% on excess over 550.00 [Decreto Ejecutivo 10/2025] | / | 895.25 – 2,038.10 | USD 60.00 + 20% on excess over 895.24 [secondary summary] |
 skills/international/el-salvador/el-salvador-social-contributions.md::cumulative: | 6,600.01 – 10,742.86 | USD 212.12 + 10% on excess over 6,600.00 [Decreto Ejecutivo 10/2025] | / | 10,742.87 – 24,457.14 | USD 720.00 + 20% on excess over 10,742.86 [Decreto Ejecutivo 10/2025]
-skills/international/fiji/fj-income-tax.md::| 270,001 -- 300,000 | 47,600 + 20% of excess over 270,000 | $53,600 | / | 300,001 -- 350,000 | 53,600 + 20% of excess over 300,000 | $63,600 |
-skills/international/fiji/fj-income-tax.md::| 300,001 -- 350,000 | 53,600 + 20% of excess over 300,000 | $63,600 | / | 350,001 -- 400,000 | 63,600 + 20% of excess over 350,000 | $73,600 |
-skills/international/fiji/fj-income-tax.md::| 350,001 -- 400,000 | 63,600 + 20% of excess over 350,000 | $73,600 | / | 400,001 -- 450,000 | 73,600 + 20% of excess over 400,000 | $83,600 |
-skills/international/fiji/fj-income-tax.md::| 400,001 -- 450,000 | 73,600 + 20% of excess over 400,000 | $83,600 | / | 450,001 -- 500,000 | 83,600 + 20% of excess over 450,000 | $93,600 |
-skills/international/fiji/fj-income-tax.md::| 450,001 -- 500,000 | 83,600 + 20% of excess over 450,000 | $93,600 | / | 500,001 -- 1,000,000 | 93,600 + 20% of excess over 500,000 | $193,600 |
-skills/international/fiji/fj-income-tax.md::| 50,001 -- 270,000 | 3,600 + 20% of excess over 50,000 | $47,600 | / | 270,001 -- 300,000 | 47,600 + 20% of excess over 270,000 | $53,600 |
-skills/international/fiji/fj-income-tax.md::| 500,001 -- 1,000,000 | 93,600 + 20% of excess over 500,000 | $193,600 | / | 1,000,001+ | 193,600 + 20% of excess over 1,000,000 | -- |
-skills/international/fiji/fj-payroll-social.md::| 270,001 -- 300,000 | $47,600 + 20% of excess over $270,000 | / | 300,001 -- 350,000 | $53,600 + 20% of excess over $300,000 |
-skills/international/fiji/fj-payroll-social.md::| 300,001 -- 350,000 | $53,600 + 20% of excess over $300,000 | / | 350,001 -- 400,000 | $63,600 + 20% of excess over $350,000 |
-skills/international/fiji/fj-payroll-social.md::| 350,001 -- 400,000 | $63,600 + 20% of excess over $350,000 | / | 400,001 -- 450,000 | $73,600 + 20% of excess over $400,000 |
-skills/international/fiji/fj-payroll-social.md::| 400,001 -- 450,000 | $73,600 + 20% of excess over $400,000 | / | 450,001 -- 500,000 | $83,600 + 20% of excess over $450,000 |
-skills/international/fiji/fj-payroll-social.md::| 450,001 -- 500,000 | $83,600 + 20% of excess over $450,000 | / | 500,001 -- 1,000,000 | $93,600 + 20% of excess over $500,000 |
-skills/international/fiji/fj-payroll-social.md::| 50,001 -- 270,000 | $3,600 + 20% of excess over $50,000 | / | 270,001 -- 300,000 | $47,600 + 20% of excess over $270,000 |
-skills/international/fiji/fj-payroll-social.md::| 500,001 -- 1,000,000 | $93,600 + 20% of excess over $500,000 | / | 1,000,001+ | $193,600 + 20% of excess over $1,000,000 |
-skills/international/guatemala/guatemala-social-contributions.md::| Q60,000 | Q1,098.00 | Q48,000 | Q10,902.00 | Q545.10 (5%) | / | Q120,000 | Q2,196.00 | Q48,000 | Q69,804.00 | Q3,490.20 (5%) |
-skills/international/ivory-coast/ivory-coast-social-contributions.md::| XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 | / | XOF 5,000,000 | 3,375,000 (cap) | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 |
-skills/international/ivory-coast/ivory-coast-social-contributions.md::| XOF 500,000 | 500,000 | 31,500.00 | 38,500.00 | 6,562.50 (@3%) | 500 / 500 | / | XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 |
+skills/international/guatemala/guatemala-social-contributions.md::| Q120,000 | Q5,796.00 | Q48,000 | Q66,204.00 | Q3,310.20 (5%) | / | Q360,000 | Q17,388.00 | Q48,000 | Q294,612.00 | Q14,730.60 (5%) |
+skills/international/guatemala/guatemala-social-contributions.md::| Q60,000 | Q2,898.00 | Q48,000 | Q9,102.00 | Q455.10 (5%) | / | Q120,000 | Q5,796.00 | Q48,000 | Q66,204.00 | Q3,310.20 (5%) |
+skills/international/ivory-coast/ivory-coast-social-contributions.md::| XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,125.00 (@3%) | 500 / 500 | / | XOF 5,000,000 | 3,375,000 (cap) | 212,625.00 | 259,875.00 | 6,125.00 (@3%) | 500 / 500 |
+skills/international/ivory-coast/ivory-coast-social-contributions.md::| XOF 500,000 | 500,000 | 31,500.00 | 38,500.00 | 6,125.00 (@3%) | 500 / 500 | / | XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,125.00 (@3%) | 500 / 500 |
 skills/international/micronesia/fm-national-tax-social-reference.md::| $4,800 | `4,800 × 6% = 288.00` | `(4,800 - 1,000) × 6% = 228.00` | `288 - 228 = 60.00` https: / | $4,999 | `4,999 × 6% = 299.94` | `(4,999 - 1,000) × 6% = 239.94` | `299.94 - 239.94 = 60.00`
 skills/international/micronesia/fm-national-tax-social-reference.md::| $4,999 | `4,999 × 6% = 299.94` | `(4,999 - 1,000) × 6% = 239.94` | `299.94 - 239.94 = 60.00` / | Exactly $5,000 | `5,000 × 6% = 300.00` | `300.00`; no deduction, as $5,000 is 'or more' | `300
 skills/international/micronesia/fm-national-tax-social-reference.md::| $900 | `900 × 6% = 54.00` | nil; the deduction exceeds the wages (inference) | `54 - 0 = 54.00 / | $4,800 | `4,800 × 6% = 288.00` | `(4,800 - 1,000) × 6% = 228.00` | `288 - 228 = 60.00` https:
 skills/international/mozambique/mozambique-social-contributions.md::| 168,000.00 | 168,000 x 20% - 10,500 | 23,100.00 | / | 300,000.00 | 300,000 x 20% - 10,500 | 49,500.00 |
-skills/international/norway/no-social-contributions.md::| NOK 0 -- 208,050 | 22% | 0% | 10.9% | 32.9% | / | NOK 208,051 -- 292,850 | 22% | 1.7% | 10.9% | 34.6% |
-skills/international/norway/no-social-contributions.md::| NOK 208,051 -- 292,850 | 22% | 1.7% | 10.9% | 34.6% | / | NOK 292,851 -- 670,000 | 22% | 4.0% | 10.9% | 36.9% |
-skills/international/norway/no-social-contributions.md::| NOK 292,851 -- 670,000 | 22% | 4.0% | 10.9% | 36.9% | / | NOK 670,001 -- 937,900 | 22% | 13.6% | 10.9% | 46.5% |
-skills/international/norway/no-social-contributions.md::| NOK 670,001 -- 937,900 | 22% | 13.6% | 10.9% | 46.5% | / | NOK 937,901 -- 1,350,000 | 22% | 16.6% | 10.9% | 49.5% |
-skills/international/norway/no-social-contributions.md::| NOK 937,901 -- 1,350,000 | 22% | 16.6% | 10.9% | 49.5% | / | Over NOK 1,350,000 | 22% | 17.6% | 10.9% | 50.5% |
+skills/international/norway/no-social-contributions.md::| NOK 0 -- 99,650 | 0% | 0% | / | NOK 99,651 -- 175,440 | 0% | 25% (phase-in) |
+skills/international/norway/no-social-contributions.md::| NOK 0 -- 99,650 | 22% | 0% | 0% | 22.0% | / | NOK 99,651 -- 176,684 | 22% | 0% | 25% (phase-in) | 47.0% |
+skills/international/norway/no-social-contributions.md::| NOK 176,685 -- 217,400 | 22% | 0% | 10.9% | 32.9% | / | NOK 217,401 -- 306,050 | 22% | 1.7% | 10.9% | 34.6% |
+skills/international/norway/no-social-contributions.md::| NOK 217,401 -- 306,050 | 22% | 1.7% | 10.9% | 34.6% | / | NOK 306,051 -- 697,150 | 22% | 4.0% | 10.9% | 36.9% |
+skills/international/norway/no-social-contributions.md::| NOK 306,051 -- 697,150 | 22% | 4.0% | 10.9% | 36.9% | / | NOK 697,151 -- 942,400 | 22% | 13.7% | 10.9% | 46.6% |
+skills/international/norway/no-social-contributions.md::| NOK 697,151 -- 942,400 | 22% | 13.7% | 10.9% | 46.6% | / | NOK 942,401 -- 1,410,750 | 22% | 16.7% | 10.9% | 49.6% |
+skills/international/norway/no-social-contributions.md::| NOK 942,401 -- 1,410,750 | 22% | 16.7% | 10.9% | 49.6% | / | Over NOK 1,410,750 | 22% | 17.7% | 10.9% | 50.6% |
+skills/international/norway/no-social-contributions.md::| NOK 99,651 -- 175,440 | 0% | 25% (phase-in) | / | NOK 175,441 -- 226,100 | 0% | 10.8% |
+skills/international/norway/no-social-contributions.md::| NOK 99,651 -- 176,684 | 22% | 0% | 25% (phase-in) | 47.0% | / | NOK 176,685 -- 217,400 | 22% | 0% | 10.9% | 32.9% |
 skills/international/slovenia/slovenia-income-tax.md::| Dividends | 25% flat, final | Separate from progressive scale (secondary summary, income-deter / | Interest | 25% flat, final | Bank deposit interest exempt up to EUR 1,000/year (EU institution
 skills/international/slovenia/slovenia-income-tax.md::| Interest | 25% flat, final | Bank deposit interest exempt up to EUR 1,000/year (EU institution / | Rental income | 25% flat, final | Cedular schedular tax (secondary summary, income-determinati
 skills/international/slovenia/slovenia-income-tax.md::| Rental income | 25% flat, final | Cedular schedular tax (secondary summary, income-determinati / | Capital gains -- held 0–5 yrs | 25% | Final tax by holding period (secondary summary) |

@@ -4,7 +4,7 @@ description: "Use this skill whenever asked to compute, classify, or review Indo
 jurisdiction: ID
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Direktorat Jenderal Pajak (DJP) — Directorate General of Taxes |
 | Filing portal | Coretax DJP (https://coretaxdjp.pajak.go.id) — replaced the legacy DJP Online / e-Bupot 23/26 desktop from 1 January 2025 |
 | Withholding slip | Bukti Pemotongan PPh (Bupot) — must be issued to the payee for every withholding |
-| Monthly payment deadline | 10th of the month following the tax point (kode billing via SSP) |
+| Monthly payment deadline | 15th of the month following the tax period (kode billing via SSP; PMK 81/2024 Art. 94(2), from 1 January 2025) |
 | Monthly return deadline | 20th of the month following the tax point (SPT Masa PPh Unifikasi via Coretax) |
 | Governing law | UU PPh No. 36/2008 as last amended by UU HPP No. 7/2021; PP 9/2021 (bond interest); PP 51/2008 jo. PP 9/2022 (construction services); PMK 141/PMK.03/2015 (services subject to PPh 23); PMK 34/PMK.010/2017 (land/building rental); PER-2/PJ/2024 (e-Bupot Unifikasi); P3B treaty network with ~70 countries |
 | Validated by | Pending — requires sign-off by a qualified Indonesian tax consultant (Konsultan Pajak bersertifikat) |
@@ -140,7 +140,7 @@ Refuse to compute withholding tax without ALL of the following:
 
 ### 3.6 Worked mini-example — PPh 23 on technical services
 
-PT ABC engages PT XYZ (resident, NPWP valid) for technical engineering. Invoice IDR 220,000,000 incl. PPN at the effective 11% (non-luxury service). PPN component IDR 21,801,802 (220M × 11/111); tax base IDR 198,198,198; PPh 23 at 2% = IDR 3,963,964; net to PT XYZ IDR 216,036,036. PT ABC deposits IDR 3,963,964 by the 10th of the next month and issues Bupot PPh 23. Without NPWP: 4% = IDR 7,927,928.
+PT ABC engages PT XYZ (resident, NPWP valid) for technical engineering. Invoice IDR 220,000,000 incl. PPN at the effective 11% (non-luxury service). PPN component IDR 21,801,802 (220M × 11/111); tax base IDR 198,198,198; PPh 23 at 2% = IDR 3,963,964; net to PT XYZ IDR 216,036,036. PT ABC deposits IDR 3,963,964 by the 15th of the next month and issues Bupot PPh 23. Without NPWP: 4% = IDR 7,927,928.
 
 ## Section 4 — PPh 26 (Pajak Penghasilan Pasal 26)
 
@@ -246,7 +246,7 @@ Hadiah penjualan to consumers (25%, PP 132/2000); pengalihan saham mitra modal v
 0. **Identify the transaction** — Identify the transaction — enter supplier NPWP/NIK (or passport for non-resident), gross amount, article (23/26/4(2)/15), and object code (kode objek pajak — e.g. 24-104-01 technical services, 27-100-99 foreign royalty).
 0. **System computes the tax** — System computes the tax — Coretax pre-populates the rate based on object code and NPWP status.
 0. **Generate the Bupot** — Generate the Bupot — system assigns a unique Nomor Bupot. The PDF is shareable with the recipient and serves as tax credit (non-final PPh 23) or tax receipt (PPh 26 / 4(2) Final).
-0. **Pay the tax** — Pay the tax — generate kode billing (ID Billing) and pay via bank/ATM/e-wallet by the 10th of the following month using SSP.
+0. **Pay the tax** — Pay the tax — generate kode billing (ID Billing) and pay via bank/ATM/e-wallet by the 15th of the following month using SSP (PMK 81/2024 Art. 94(2)).
 0. **File SPT Masa Unifikasi** — File SPT Masa Unifikasi — submit by the 20th of the following month, reconciling Bupot issued with SSP paid.
 
 ### 6.3 Bupot content
@@ -263,9 +263,9 @@ Hadiah penjualan to consumers (25%, PP 132/2000); pengalihan saham mitra modal v
 
 - **Tax point determination** — The withholding obligation arises at the earlier of: Date of cash payment, or Date the cost/expense is accrued (booked as biaya) in the payer's accounting records, or Date of the invoice from the supplier. In practice for accrual-basis companies, the tax point is often the invoice date.  _(Pasal 8 PMK 242/PMK.03/2014)_
 
-### 7.2 Payment deadline — 10th of the following month
+### 7.2 Payment deadline — 15th of the following month
 
-- **Payment deadline** — The tax must be paid via SSP (Surat Setoran Pajak) using a kode billing generated in Coretax, by the 10th of the month following the tax point. Late payment triggers interest under UU KUP Pasal 9 ayat (2a) at the monthly tariff set by PMK (typically ~1% per month, capped at 24 months).  _(UU KUP Pasal 9 ayat (2a))_
+- **Payment deadline** — The tax must be paid via SSP (Surat Setoran Pajak) using a kode billing generated in Coretax, by the 15th of the month following the tax period (PMK 81/2024 Art. 94(2), covering PPh 4(2), 15, 21, 22, 23 and 26; from 1 January 2025, replacing the 10th). Late payment after the 15th triggers interest under UU KUP Pasal 9 ayat (2a) at the monthly tariff set by PMK (typically ~1% per month, capped at 24 months).  _(PMK 81/2024 Art. 94(2); UU KUP Pasal 9 ayat (2a))_
 
 ### 7.3 Filing deadline — 20th of the following month
 
@@ -335,7 +335,7 @@ The general principle: withhold the higher rate when in doubt and let the recipi
 
 **Government Regulations (Peraturan Pemerintah).** PP 131/2000 jo. PP 123/2015 (bank deposit interest 20% Final); PP 132/2000 (lottery 25% Final); PP 14/1997 jo. PP 41/1994 (IDX shares 0.1% + 0.5% founder); PP 51/2008 jo. PP 9/2022 (construction services); PP 34/2016 (land/building transfer 2.5%, mention only); PP 9/2021 (bond interest 10% Final); PP 55/2022 (UMKM final 0.5%, out of scope — R-ID-WHT-8).
 
-**Ministerial Regulations (PMK).** PMK 141/PMK.03/2015 (62 services for PPh 23); PMK 34/PMK.010/2017 (rental of land/building 10%); PMK 242/PMK.03/2014 (PPh payment and tax point); PMK 14/PMK.03/2011 (BUT reinvestment to avoid BPT); PMK 60/PMK.03/2022 (PPN PMSE); PMK 81/PMK.03/2024 (late-payment interest tariff 2024–2025).
+**Ministerial Regulations (PMK).** PMK 141/PMK.03/2015 (62 services for PPh 23); PMK 34/PMK.010/2017 (rental of land/building 10%); PMK 242/PMK.03/2014 (PPh payment and tax point); PMK 14/PMK.03/2011 (BUT reinvestment to avoid BPT); PMK 60/PMK.03/2022 (PPN PMSE); PMK 81/PMK.03/2024 (Art. 94(2): payment by the 15th of the following month; late-payment interest tariff 2024–2025).
 
 **DJP Regulations (PER) and circulars.** PER-25/PJ/2018 as amended by PER-08/PJ/2019 (DGT-1/DGT-2); PER-2/PJ/2024 (e-Bupot Unifikasi via Coretax); PER-04/PJ/2017 and successors (kode objek pajak); SE-04/PJ/2017 (services performed abroad for an Indonesian payer); SE-53/PJ/2009 (reimbursements in PPh 23 base); SE-03/PJ.03/2024 (software / SaaS as royalty).
 

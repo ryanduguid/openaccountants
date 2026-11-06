@@ -1,11 +1,11 @@
 ---
 name: ae-corporate-tax
 description: "Use this skill whenever asked about UAE Corporate Tax for freelancers, sole establishments, or small businesses. Trigger on phrases like \"how much tax do I pay in UAE\", \"corporate tax UAE\", \"CT return\", \"FTA\", \"small business relief\", \"free zone tax\", \"qualifying free zone person\", \"AED 375,000\", \"9% tax\", \"taxable income UAE\", \"corporate tax registration\", \"UAE tax return\", \"self-employed tax UAE\", \"freelancer tax Dubai\", \"EmaraTax\", or any question about computing or filing UAE corporate tax. This skill covers the 0%/9% rate structure, small business relief (revenue under AED 3M), qualifying free zone person rules, deductible and non-deductible expenses, transfer pricing, registration requirements, and filing deadlines. Note: the UAE has NO personal income tax — self-employed individuals and sole establishments are subject to corporate tax. ALWAYS read this skill before touching any UAE corporate tax work."
-version: 2.0
+version: 2.1
 jurisdiction: AE
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -32,13 +32,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Condition | Requirement |
 | --- | --- |
-| Revenue threshold | <= AED 3,000,000 |
+| Revenue threshold | <= AED 3,000,000 in the current tax period **and in every previous tax period**; once revenue has exceeded AED 3,000,000 in any period, SBR can never be elected (Ministerial Decision 73 of 2023, Art. 2(1) and (3)) |
 | Must be Resident Person | Yes |
-| Not a QFZP | Cannot claim both |
+| Not a QFZP | Cannot claim both (Ministerial Decision 73 of 2023, Art. 3(2)) |
+| Not in an MNE Group | A Constituent Company of a Multinational Enterprises Group (Cabinet Decision 44 of 2020) cannot elect SBR (Ministerial Decision 73 of 2023, Art. 3(1)) |
 | Election required | YES — must actively elect on CT return |
 | Effect | Taxable income deemed nil; tax = AED 0 |
 | Loss carry-forward | NOT available in SBR year |
-| Valid period | Tax periods starting on or before 31 December 2026 |
+| Valid period | Tax periods starting on or after 1 June 2023 and ending on or before 31 December 2029 (Ministerial Decision 73 of 2023, Art. 2(2), as amended by Ministerial Decision 131 of 2026, issued 29 July 2026; before that amendment the end date was 31 December 2026) |
 
 ### Natural Person Threshold
 
@@ -89,7 +90,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Situation | Default Assumption |
 | --- | --- |
 | Business structure unknown | STOP — determines applicable rules |
-| SBR eligibility unclear | Check revenue <= AED 3M; election must be active |
+| SBR eligibility unclear | Check revenue <= AED 3M in this and every previous tax period, not QFZP, not in an MNE Group; election must be active |
 | Entertainment deduction | Apply 50% only |
 | Personal vs business expense | Reject personal; flag mixed-use for reviewer |
 | QFZP status uncertain | Do NOT apply 0% — flag for verification |
@@ -102,7 +103,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Flag | Threshold |
 | --- | --- |
-| Revenue > AED 3M | SBR not available |
+| Revenue > AED 3M in this or any previous tax period | SBR not available |
 | Revenue < AED 1M (natural person) | Not subject to CT |
 | SBR not elected despite eligibility | Tax calculated normally — alert client |
 | Entertainment fully deducted | Must cap at 50% |
@@ -340,8 +341,12 @@ TOTAL REVENUE                          ___________
 
 SECTION B — SBR ELIGIBILITY CHECK
 Revenue <= AED 3,000,000?              [ ] Yes  [ ] No
+Revenue <= AED 3,000,000 in every
+  previous tax period?                 [ ] Yes  [ ] No
 Resident Person?                       [ ] Yes  [ ] No
 Not QFZP?                              [ ] Yes  [ ] No
+Not in an MNE Group?                   [ ] Yes  [ ] No
+Tax period ends by 31 December 2029?   [ ] Yes  [ ] No
 SBR elected on return?                 [ ] Yes  [ ] No
 If YES to all: taxable income = nil, tax = AED 0
 
@@ -455,7 +460,7 @@ SECTION H — REVIEWER FLAGS
 > "Before computing UAE corporate tax, I need to confirm your business structure. Are you a licensed freelancer (with a freelance permit), a sole establishment, or a company (LLC, FZ-LLC, etc.)? Natural persons (freelancers without a trade licence) are only subject to CT if annual turnover exceeds AED 1,000,000. If you are an employee earning a salary, the UAE has no personal income tax and you have no CT obligation."
 
 **SBR eligibility:**
-> "If your annual revenue is AED 3,000,000 or less, you may be eligible for Small Business Relief, which would make your taxable income nil (zero tax). However, SBR must be actively elected on your CT return through EmaraTax — it is not automatic. Would you like to check SBR eligibility?"
+> "If your annual revenue is AED 3,000,000 or less, and it has never exceeded AED 3,000,000 in any previous tax period, you may be eligible for Small Business Relief, which would make your taxable income nil (zero tax). However, SBR must be actively elected on your CT return through EmaraTax — it is not automatic. Would you like to check SBR eligibility?"
 
 **Registration status:**
 > "Have you registered for corporate tax with the Federal Tax Authority? All UAE businesses (including sole establishments and free zone companies) must register on EmaraTax and obtain a Tax Registration Number (TRN). Late registration incurs a penalty of AED 10,000. If you have not yet registered, I recommend doing so immediately."

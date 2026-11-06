@@ -1,10 +1,10 @@
 ---
 name: fr-income-tax
 description: Use this skill whenever asked about French income tax for self-employed individuals (auto-entrepreneurs, micro-entrepreneurs, or professions libérales). Trigger on phrases like "impôt sur le revenu France", "déclaration 2042", "micro-entrepreneur", "auto-entrepreneur", "BNC", "BIC", "professions libérales France", "abattement forfaitaire", "Urssaf", "cotisations sociales", "régime micro", "régime réel", "IR France", "acomptes provisionnels", "Revenu fiscal de référence", "Crédit d'impôt", "BNP Paribas statement", "Qonto expense", "Shine business", "Stripe France", or any question about filing or computing French income tax for a self-employed individual. This skill covers progressive brackets (0--45%), micro-entrepreneur abattements, BNC/BIC regimes, social charges, tax credits, filing deadlines, and withholding (prélèvement à la source). ALWAYS read this skill before touching any French income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -31,19 +31,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Late May / early June (varies by département, online) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a French Expert-Comptable or Avocat Fiscaliste |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
-### Progressive Rate Table (2025 -- Tranches) [T1]
+### Progressive Rate Table (2025 Income -- Tranches) [T1]
 
-**Progressive Rate Table (2025 -- Tranches) [T1]**
+**Progressive Rate Table (2025 Income -- Tranches) [T1]**
 
 | Revenu net imposable (EUR/part) | Rate |
 | --- | --- |
-| 0 -- 11,497 | 0% |
-| 11,498 -- 29,315 | 11% |
-| 29,316 -- 83,823 | 30% |
-| 83,824 -- 180,294 | 41% |
-| Above 180,294 | 45% |
+| 0 -- 11,600 | 0% |
+| 11,601 -- 29,579 | 11% |
+| 29,580 -- 84,577 | 30% |
+| 84,578 -- 181,917 | 41% |
+| Above 181,917 | 45% |
+
+*Barème for income of 2025, declared in 2026 (LF 2026, art. 4; art. 197 CGI). Source: BOFiP, BOI-IR-LIQ-20-10 — https://bofip.impots.gouv.fr/bofip/2491-PGP.html*
 
 - **Quotient familial system** — France uses a family quotient system (quotient familial). Rates apply per "part" (share). A single person = 1 part; a married couple = 2 parts; each child = 0.5 additional part. Taxable income is divided by number of parts, rates applied, then multiplied back.
 - **Contribution Exceptionnelle sur les Hauts Revenus (CEHR)** — 3% on income between EUR 250,001--500,000 (single); 4% above EUR 500,000
@@ -60,14 +62,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Taxable income formula for micro-entrepreneurs** — Taxable income = Gross receipts x (100% - Abattement %). No actual expense deduction for micro-entrepreneurs.
 
-### Micro-Entrepreneur Revenue Thresholds (2025) [T1]
+### Micro-Entrepreneur Revenue Thresholds [T1]
 
-**Micro-Entrepreneur Revenue Thresholds (2025) [T1]**
+**Micro-Entrepreneur Revenue Thresholds [T1]**
 
-| Activity | Threshold for Micro Regime |
-| --- | --- |
-| Sales of goods | EUR 188,700 |
-| Services / professions libérales | EUR 77,700 |
+| Activity | 2025 | 2026 to 2028 |
+| --- | --- | --- |
+| Sales of goods | EUR 188,700 | EUR 203,100 |
+| Services / professions libérales | EUR 77,700 | EUR 83,600 |
+
+*Ceilings revised on 1 January 2026. Sources: Urssaf, 2026 : modification des seuils — https://www.autoentrepreneur.urssaf.fr/portail/accueil/sinformer-sur-le-statut/toutes-les-actualites/2026--modification-des-seuils-de.html; BOFiP, ACTU-2025-00127 — https://bofip.impots.gouv.fr/bofip/14765-PGP.html/ACTU-2025-00127*
 
 ### Conservative Defaults [T1]
 
@@ -232,7 +236,7 @@ Monthly "prélèvement à la source" (PAS) -- the monthly income tax prepayment 
 
 ### 5.2 BNC Régime Réel Simplifié (Déclaration 2035)
 
-- **Applicability and rules** — For professions libérales above EUR 77,700 or who opt out of micro: Declare actual receipts and actual expenses on Form 2035. Deductible expenses: rent, telecommunications (business %), travel, professional insurance, accounting fees, equipment depreciation, software. NOT deductible: personal expenses, income tax itself. Partial deductibility of social charges: Madelin health/provident contributions ARE deductible from BNC income.
+- **Applicability and rules** — For professions libérales above the micro-BNC ceiling (EUR 77,700 for 2023 to 2025; EUR 83,600 from 2026) or who opt out of micro: Declare actual receipts and actual expenses on Form 2035. Deductible expenses: rent, telecommunications (business %), travel, professional insurance, accounting fees, equipment depreciation, software. NOT deductible: personal expenses, income tax itself. Partial deductibility of social charges: Madelin health/provident contributions ARE deductible from BNC income.
 
 ### 5.3 Tax Computation Flow
 

@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Nigerian Companies Income Tax 
 jurisdiction: NG
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: Omolola Fasasi 
 review_status: current
 tier: 1
@@ -148,7 +148,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **MET applicability**: screen both the domestic turnover limb (₦50 billion or more) and the MNE limb in s.57(2). Resolve the currency discrepancy noted in the quick-reference section before concluding that a group falls outside scope. Check any regulations under s.57(4).
 - **Mechanism** — Mechanism: if the effective tax rate of the group's Nigerian operations falls below 15% after all credits, deductions, and incentives, a top-up tax brings the ETR to 15%. Pioneer status, free-trade-zone exemptions, and other tax holidays may be effectively neutralised within the MET scope.
 
-> **TBC — verify under NTA 2025 final implementing regulations:** the precise top-up mechanism (Domestic Top-up Tax / Qualified Domestic Minimum Top-up Tax — QDMTT), the Income Inclusion Rule (IIR), Undertaxed Payments Rule (UTPR) sequencing, and the carve-out / safe-harbour rules expected to mirror OECD model rules.
+> **Mechanism, from the Act (s 57(1)):** the effective tax rate is covered taxes as a percentage of net income. Covered taxes are companies income tax, petroleum profits tax and hydrocarbon tax paid or payable, the development levy and the priority sector tax credit. Net income is profit before tax in the audited financial statements, excluding franked investment income and unrealised gains or losses (for a life insurer, excluding policyholders' gross and investment income). Where the rate is below 15%, the company recomputes and pays an additional tax that brings it to 15%. Free zone enterprises are outside s 57(1)(a) for approved activities, except for sales into the customs territory and MNE constituent entities (s 57(3)). The Act contains no Income Inclusion Rule or Undertaxed Payments Rule. **Still open:** any regulations the Service issues under s 57(4), which may also raise the ₦50 billion threshold. [NTA 2025 s 57](https://nass.gov.ng/documents/download/11249)
 
 - **Conservative default** — Conservative default: if any group entity has consolidated revenue > €750M, flag MET as in scope and request the group's Pillar Two computation.
 
@@ -164,9 +164,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Disallowed items** — Capital expenditure (deduct via capital allowances, not as expenses); Domestic or private expenses; Sum recoverable under any insurance or contract of indemnity; Income tax itself, or any tax measured on profits; Penalties or fines for breach of law; Depreciation per accounts (replaced by capital allowances); Provisions for general reserves; Donations not on the Fifth Schedule; Expenses related to exempt income; Excess interest beyond the 30% EBITDA thin-cap limit (Section 13A of the Finance Act 2019 amendments / NTA 2025 equivalent).  _(CITA s.27 / NTA 2025)_
 
-### 3.9 Capital Allowances — Second Schedule CITA / Sixth Schedule NTA 2025
+### 3.9 Capital Allowances — Second Schedule CITA (to FY 2025) / First Schedule NTA 2025 (from 2026)
 
-**Capital allowance rates per asset class**  _(Second Schedule CITA / Sixth Schedule NTA 2025)_
+**Capital allowance rates per asset class, legacy CITA (accounting periods to 31 December 2025)**  _(Second Schedule CITA)_
 
 | Asset class | Initial allowance | Annual allowance |
 | --- | --- | --- |
@@ -181,10 +181,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Software | 50% | 25% |
 | Research & development | 95% | nil (full Year 1 for approved R&D) |
 
-> **TBC — verify under NTA 2025 Sixth Schedule final text** whether any rate has been revised. Conservative default: apply the legacy CITA Second Schedule rates pending confirmation.
+**Capital allowance rates from 1 January 2026**  _(NTA 2025 First Schedule, Part I, para 6 and Table I)_
+
+| Class | Annual rate | Qualifying capital expenditure |
+| --- | --- | --- |
+| 1 | 10% | Building, agricultural, mast, intangible assets, heavy transportation |
+| 2 | 20% | Plant, agricultural equipment, furniture and fittings, mining, other equipment |
+| 3 | 25% | Motor vehicles, software, other capital expenditure |
+
+Table I has no initial allowance. Paragraph 6(a) requires 1% of qualifying capital expenditure to be recorded as a notional amount until disposal, without changing the allowance claimable; paragraph 6(b) prorates a basis period of less than a year. For an asset that already received allowances under the repealed law, paragraph 23 limits the remaining years, or grants a single allowance for the residue. Do not use the legacy CITA rates above for periods from 1 January 2026. [NTA 2025 First Schedule, Part I](https://nass.gov.ng/documents/download/11249)
 
 **Restrictions:**
-- Capital allowances claimed in any year cannot reduce Total Profit below 1/3 of Assessable Profit for non-manufacturing companies (Section 31(2) CITA legacy). NTA 2025 — TBC whether this 2/3 cap is retained.
+- Capital allowances claimed in any year cannot reduce Total Profit below 1/3 of Assessable Profit for non-manufacturing companies (Section 31(2) CITA legacy). From 1 January 2026, NTA First Schedule Part I para 22 deducts the allowance from the remainder of assessable profits and carries any part not deducted forward until fully used; no fractional cap appears in the Act (text search of the National Assembly copy).
 - Unused capital allowances carry forward indefinitely.
 - Disposal triggers balancing charge / balancing allowance reconciliation.
 
@@ -224,7 +232,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **One-off investment allowance** — An additional 10% one-off investment allowance on plant and equipment in addition to normal capital allowances under Section 32 CITA (legacy).  _(Section 32 CITA)_
 
-> **TBC — verify under NTA 2025** whether retained.
+> **Not retained for periods from 1 January 2026.** The NTA's general capital allowance rules (First Schedule Part I) contain no investment allowance; the only investment allowance in the Act is the Petroleum Investment Allowance for upstream petroleum operations (First Schedule Part II). This rests on a text search of the National Assembly copy of the Act. Claim the 10% CITA s 32 allowance only for accounting periods to 31 December 2025.
 
 ### 4.5 Thin Capitalisation — 30% EBITDA
 
@@ -378,13 +386,13 @@ A valid **Taxpayer Identification Number (TIN)** issued by the Joint Tax Board /
 
 | Infraction | Sanction |
 | --- | --- |
-| Late filing of CIT return | ₦25,000 in first month + ₦5,000 each subsequent month (CITA / Finance Act updates) |
-| Late payment | **10% penalty** + interest at CBN MPR + 5% per annum (Section 32 FIRS Establishment Act 2007) |
-| Failure to deduct / remit WHT | 10% of WHT due + interest |
-| Incorrect return | Up to 100% of tax shortfall plus interest |
-| Tax evasion / fraud | Fine up to ₦20,000 or 3× tax sought to be evaded, plus imprisonment up to 3 years |
+| Late filing of CIT return | From 1 January 2026 (NTAA s 101, including a return that becomes late in 2026): **₦100,000 for the first month + ₦50,000 for each subsequent month**. Failures before 2026: ₦25,000 in first month + ₦5,000 each subsequent month (CITA / Finance Act updates) |
+| Late payment | From 1 January 2026 (NTAA s 65(1)): **10% of the tax payable** + interest at the CBN monetary policy rate plus a spread set by the Minister (naira); for foreign-currency tax, SOFR plus 10% or another spread set by the Minister. Before 2026: 10% penalty + interest at CBN MPR + 5% per annum (Section 32 FIRS Establishment Act 2007) |
+| Failure to deduct / remit WHT | From 1 January 2026: failure to deduct, 40% of the amount not deducted (NTAA s 105); failure to remit by the 21st of the following month, the amount + 10% a year + interest at the CBN monetary policy rate (s 107(1)). Before 2026: 10% of WHT due + interest |
+| Incorrect return | From 1 January 2026: knowingly filing an incomplete or inaccurate return attracts the s 101 penalty above; an untrue declaration or document attracts ₦1,000,000 plus the tax undercharged (NTAA s 124(1)(a)). Before 2026: up to 100% of tax shortfall plus interest |
+| Tax evasion / fraud | Before 2026: fine up to ₦20,000 or 3× tax sought to be evaded, plus imprisonment up to 3 years. From 1 January 2026, check the NTAA offence provisions; the general penalty where no specific one applies is ₦1,000,000 (s 127) |
 
-> **TBC — verify under NTA 2025 final implementing regulations** for any revisions to penalty quanta and interest mechanics.
+> The 2026 figures are from the Act itself ([NTAA 2025 ss 65, 101, 105, 107, 124 and 127](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)). **Still open:** the spread over the monetary policy rate, which the Minister determines under s 65(1)(b).
 
 ### 6.5 Tax Clearance Certificate (TCC)
 

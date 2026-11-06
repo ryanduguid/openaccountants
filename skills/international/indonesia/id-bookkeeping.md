@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Indonesian bookkeeping or tran
 jurisdiction: ID
 category: bookkeeping
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -32,7 +32,7 @@ This skill classifies money movements. It does NOT compute the tax. For PPh Oran
 | Tax year | Calendar year by default (1 January -- 31 December). A non-calendar fiscal year is allowed if used consistently and notified to DJP (Pasal 1 angka 8 UU KUP). |
 | Tax authority | Direktorat Jenderal Pajak (DJP), Ministry of Finance |
 | Filing portal | Coretax DJP (rolled out under PMK 81/PMK.03/2024). Replaces legacy e-Filing / e-SPT / DJP Online for SPT submission from 2025 onwards. |
-| Forms (individuals) | SPT 1770 (with business / freelance income); SPT 1770 S (employees + simple other income); SPT 1770 SS (turnover < IDR 60m). |
+| Forms (individuals) | One SPT Tahunan PPh Orang Pribadi in Coretax from tax year 2025 (PER-11/PJ/2025); business and freelance income goes in Lampiran 3. For tax year 2024 and earlier: SPT 1770 (with business / freelance income); SPT 1770 S (employees + simple other income); SPT 1770 SS (employees with gross income ≤ IDR 60m). The "SPT 1770 line" references below follow the legacy form; map them to the new attachments (see `id-income-tax` section 7.1). |
 | Forms (companies) | SPT 1771 (corporate income tax return, including Lampiran I -- profit calc). |
 | Pembukuan obligation | All badan (corporations). Individuals with gross turnover from business / freelance > IDR 4.8 billion in the preceding tax year (Pasal 28 ayat 1-2 UU KUP). |
 | Pencatatan + NPPN option | Individuals with turnover ≤ IDR 4.8b who notify DJP in writing within 3 months of the start of the tax year (Pasal 14 ayat 2 UU PPh). |

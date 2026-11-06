@@ -1,11 +1,11 @@
 ---
 name: mx-income-tax
 description: Use this skill whenever asked about Mexican individual income tax (ISR) for self-employed individuals (personas físicas con actividades empresariales y profesionales). Trigger on phrases like "how much tax do I pay in Mexico", "ISR", "Declaración Anual", "pagos provisionales", "actividades profesionales", "honorarios", "RESICO", "deducciones personales", "deducciones autorizadas", "retenciones", "RFC", "income tax return Mexico", "SAT", "CFDI honorarios", "comprobante fiscal", or any question about filing or computing income tax for a self-employed or freelance client in Mexico. This skill covers the Declaración Anual PF (Personas Físicas), pagos provisionales (monthly estimated payments), progressive ISR brackets, deducciones autorizadas and personales, retenciones on professional CFDI, and the RESICO regime. ALWAYS read this skill before touching any Mexican income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: MX
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,11 +29,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 590,796.00 | 1,127,926.84 | 110,842.74 | 30.00% |
 | 1,127,926.85 | 1,503,902.46 | 271,981.99 | 32.00% |
 | 1,503,902.47 | 4,511,707.37 | 392,294.17 | 34.00% |
-| Over 4,511,707.38 | — | 1,414,947.85 | 35.00% |
+| From 4,511,707.38 | — | 1,414,947.85 | 35.00% |
 
 - **ISR calculation formula** — ISR = Fixed Fee + (Gross Income − Lower Limit) × Rate
 
-Annual table is published by SAT each year. Monthly pagos provisionales use the monthly equivalent table. Always verify current-year SAT tables.
+### ISR Annual Brackets 2026 (Personas Físicas — Régimen General)
+
+**ISR Annual Brackets 2026 (ejercicio 2026; rates unchanged, limits and fixed fees updated)**  _(Anexo 8 RMF 2026, DOF 28 December 2025, section C.II; arts. 97 and 152 LISR)_
+
+| Lower Limit (MXN) | Upper Limit (MXN) | Fixed Fee | Rate on Excess |
+| --- | --- | --- | --- |
+| 0.01 | 10,135.11 | 0 | 1.92% |
+| 10,135.12 | 86,022.11 | 194.59 | 6.40% |
+| 86,022.12 | 151,176.19 | 5,051.37 | 10.88% |
+| 151,176.20 | 175,735.66 | 12,140.13 | 16.00% |
+| 175,735.67 | 210,403.69 | 16,069.64 | 17.92% |
+| 210,403.70 | 424,353.97 | 22,282.14 | 21.36% |
+| 424,353.98 | 668,840.14 | 67,981.92 | 23.52% |
+| 668,840.15 | 1,276,925.98 | 125,485.07 | 30.00% |
+| 1,276,925.99 | 1,702,567.97 | 307,910.81 | 32.00% |
+| 1,702,567.98 | 5,107,703.92 | 444,116.23 | 34.00% |
+| From 5,107,703.93 | — | 1,601,862.46 | 35.00% |
+
+Annual tables are published each year in Anexo 8 of the Resolución Miscelánea Fiscal: use the 2025 table for ejercicio 2025 and the 2026 table for ejercicio 2026. Pagos provisionales made during 2026 use the 2026 monthly tariffs in Anexo 8 RMF 2026. Always verify current-year SAT tables. Source opened 2026-11-01: https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rmf/anexos/Anexo-8-RMF-2026_DOF-28122025.pdf
 
 ### RESICO (Régimen Simplificado de Confianza) — Alternative
 
@@ -185,13 +203,13 @@ Before computing Mexican ISR, collect:
 | --- | --- | --- |
 | DP-01 | Gastos médicos, dentales, hospitalarios | No cap (require CFDI) |
 | DP-02 | Primas de seguros de gastos médicos | No cap (require CFDI) |
-| DP-03 | Gastos funerarios | Up to 1 UMA × 12 = ~MXN 38,220 |
+| DP-03 | Gastos funerarios | Up to 1 annual UMA: MXN 41,273.52 (2025); MXN 42,794.64 (2026) |
 | DP-04 | Donativos (donations to authorized entities) | Up to 7% of prior-year income |
 | DP-05 | Crédito hipotecario interest | Up to 1,500,000 UDIs |
 | DP-06 | Colegiaturas (education) | Capped by level: e.g., preparatoria MXN 14,200 |
 | DP-07 | Aportaciones voluntarias AFORE | Up to 10% of income, max 5 UMA annual |
 
-- **Total deducciones personales cap** — 15% of gross income OR 5 UMA anual (MXN ~159,200), whichever is lower
+- **Total deducciones personales cap** — 15% of gross income OR 5 UMA anual, whichever is lower. 5 annual UMA = MXN 206,367.60 for 2025 (annual UMA MXN 41,273.52) and MXN 213,973.20 for 2026 (annual UMA MXN 42,794.64, in force from 1 February 2026).  _(Art. 151 LISR; INEGI, UMA 2026)_
 
 ### Example 1 — BBVA México (CDMX, Marketing Consultant — Régimen General)
 
@@ -307,6 +325,8 @@ Deducciones: MXN 95,000
 Taxable: MXN 605,000
 
 ISR: MXN 110,842.74 + (MXN 605,000 − MXN 590,796) × 30% = MXN 110,842.74 + MXN 4,261.20 = **MXN 115,103.94**
+
+If the same figures arose in ejercicio 2026, the 2026 table gives: MXN 67,981.92 + (MXN 605,000 − MXN 424,353.98) × 23.52% = MXN 67,981.92 + MXN 42,487.94 = MXN 110,469.86.
 
 Foreign tax credit: If US withholding tax was paid, may credit against Mexican ISR (Art. 5 LISR). Flag for treaty review.
 

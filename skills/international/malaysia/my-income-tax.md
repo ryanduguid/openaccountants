@@ -1,10 +1,10 @@
 ---
 name: my-income-tax
 description: Use this skill whenever asked about Malaysia income tax for self-employed individuals or sole proprietors. Trigger on phrases like "Malaysia income tax", "LHDN", "Lembaga Hasil Dalam Negeri", "hasil.gov.my", "Form B", "Form BE", "Section 4(a)", "personal reliefs Malaysia", "chargeable income Malaysia", "tax deductions Malaysia", "Malaysian tax return", "e-Filing Malaysia", or any question about Malaysian income tax rates, filing, reliefs, or deductions for self-employed or business individuals. Covers progressive tax rates, business income, personal reliefs, deductions, and filing via e-Filing. ALWAYS read this skill before touching any Malaysia income tax work.
-version: 1.0
+version: 1.1
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # MY Income Tax
 
-## Malaysian Income Tax -- Self-Employed Skill v1.0
+## Malaysian Income Tax -- Self-Employed Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline -- self-employed | Form B: 30 June (e-Filing: 15 July) |
 | Validated by | Pending -- requires sign-off by a Malaysian tax agent |
 | Validation date | Pending |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Progressive Tax Rates -- Resident Individuals (YA 2025)
 
@@ -59,6 +59,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Non-Resident Tax Rate
 
 - **Non-resident tax rate** — Flat 30% on all Malaysian-sourced income (no personal reliefs or deductions available).  _(ITA 1967)_
+
+### Dividend Tax (from YA 2025)
+
+- **Dividend Tax** — From YA 2025, individual shareholders, resident and non-resident and including those holding shares through a nominee, pay 2% on chargeable income from dividends paid by Malaysian companies (listed or unlisted) above RM100,000 a year. Deduct RM100,000 from dividend statutory income; for example, RM2,500,000 of dividends gives dividend statutory income of RM2,400,000. A resident with other income splits chargeable income between dividends and other sources by the formula in Part BB, item B26 of the LHDN explanatory notes, and taxes the dividend part at 2% and the rest at the scale rates. Exemptions from Dividend Tax were not checked for this guide; confirm before filing.  _(ITA 1967, Schedule 1, Part XXII; Income Tax Rules (Determination of Individual Taxable Income Regarding Dividends) 2025 [P.U. (A) 148/2025]; LHDN, Explanatory Notes Form B YA 2025, items B8, B26 and B27: https://www.hasil.gov.my/wp-content/uploads/explanatorynotes_b2025_1.pdf)_
 
 ### Residency Test
 

@@ -5,7 +5,7 @@ version: 1.2
 jurisdiction: SE
 tax_year: 2026
 tax_year_notes: "2026 label retained; historical selected corporate-filing passage check does not requalify other payroll figures or operational outputs."
-last_updated: 2026-11-03
+last_updated: 2026-11-06
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -18,9 +18,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-**Limited 2026 draft.** The 2026 label is retained. The selected historical check of the corporate-return paragraph does not revalidate the other payroll rates, social-contribution conditions, benefits, pensions, sick-pay statements, immigration thresholds, approximate tax examples or monthly filing/payment dates. Hold actual payroll and filing outputs until every applicable item is separately qualified.
+**Limited 2026 draft.** The 2026 label is retained. The selected historical check of the corporate-return paragraph does not revalidate the other payroll rates, social-contribution conditions, benefits, pensions, sick-pay statements, immigration thresholds, approximate tax examples or monthly filing/payment dates. Hold actual payroll and filing outputs until every applicable item is separately qualified. The birth-year rows in the reduced-rate table cite Skatteverket, Belopp och procent 2026; that citation covers those two rows only.
 
-This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration; a source index does not qualify all figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
+This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration, except a row whose source column cites a primary source for that row. A source index does not qualify the other figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
 
 ## Scope
 
@@ -181,8 +181,8 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 
 | Category | Rate | Condition | Source or qualification |
 | --- | --- | --- | --- |
-| Employees aged 67+ at year start | 10.21% | Only ålderspensionsavgift | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| Born 1937 or earlier | 0% | No contributions at all | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| Born 1938–1958 (aged 67+ at the start of 2026) | 10.21% | Only ålderspensionsavgift | Skatteverket, Belopp och procent 2026 (https://www.skatteverket.se/foretag/skatterochavdrag/beloppochprocent/2026.106.1522bf3f19aea8075ba3294.html) |
+| Born 1937 or earlier | 0% | No contributions at all | Skatteverket, Belopp och procent 2026 (https://www.skatteverket.se/foretag/skatterochavdrag/beloppochprocent/2026.106.1522bf3f19aea8075ba3294.html) |
 | Youth (19-23) from 1 April 2026 | 20.81% | On salary up to SEK 25,000/month; full 31.42% above | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | R&D reduction | 10.21% | On portion of salary for qualifying R&D work (max 450,000 SEK/month per company) | unverified: retained statement; scoped source checks below do not qualify this whole row |
 
@@ -501,7 +501,7 @@ Swedish employers should provide a lönespecifikation (payslip) for each salary 
 
 ## Sources
 
-This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration; a source index does not qualify all figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
+This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration, except a row whose source column cites a primary source for that row. A source index does not qualify the other figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
 
 | Official source | Exact URL | Recorded check date and event | Retained reading extent and limits |
 |---|---|---|---|

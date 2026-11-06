@@ -5,7 +5,7 @@ version: "0.1"
 jurisdiction: US-MD
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -79,13 +79,13 @@ depends_on:
 
 ### County / Baltimore City piggyback tax rates (TY2025)
 
-**County / Baltimore City piggyback tax rates (TY2025)**
+**County / Baltimore City piggyback tax rates (TY2025)**  _(Comptroller of Maryland, Withholding Tax Facts 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/facts/Withholding-Tax-Facts-2025.pdf); Comptroller of Maryland Tax Alert, revised December 22, 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf))_
 
 | Jurisdiction | Rate | Type |
 | --- | --- | --- |
 | Baltimore City | 3.20% | Flat |
-| Allegany County | 3.20% | Flat |
-| Anne Arundel County | 2.25%–3.20% | Progressive |
+| Allegany County | 3.03% | Flat |
+| Anne Arundel County | 2.70% / 2.94% / 3.20% | Progressive |
 | Baltimore County | 3.20% | Flat |
 | Calvert County | 3.20% | Flat |
 | Caroline County | 3.20% | Flat |
@@ -104,11 +104,13 @@ depends_on:
 | Somerset County | 3.20% | Flat |
 | St. Mary's County | 3.20% | Flat |
 | Talbot County | 2.40% | Flat |
-| Washington County | 3.00% | Flat |
+| Washington County | 2.95% | Flat |
 | Wicomico County | 3.20% | Flat |
 | Worcester County | 2.25% | Flat |
 
-**Note:** Anne Arundel and Frederick counties use progressive local brackets. See Comptroller instructions for details.
+**Note:** Anne Arundel and Frederick counties use graduated local rates, by different methods. Anne Arundel taxes each band at its own rate (marginal). Anne Arundel (Single, MFS, Dependent): 2.70% to $50,000, 2.94% from $50,001 to $400,000, 3.20% above $400,000; (MFJ, HoH, QSS): 2.70% to $75,000, 2.94% from $75,001 to $480,000, 3.20% above $480,000. Frederick applies a single rate to the whole of Maryland taxable net income, chosen by the income level: (Single, MFS, Dependent) 2.25% where income is $25,000 or less, 2.75% where $25,001 to $50,000, 2.96% where $50,001 to $150,000 and 3.20% where $150,001 or more; (MFJ, HoH, QSS) 2.25% to $25,000, 2.75% from $25,001 to $100,000, 2.96% from $100,001 to $250,000 and 3.20% from $250,001. Do not compute Frederick slice by slice  _(Comptroller of Maryland, Withholding Tax Facts 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/facts/Withholding-Tax-Facts-2025.pdf))_. Dorchester's 3.30% applies retroactively to TY2025.
+
+**TY2026 changes:** Allegany County 3.20%; Kent County 3.30%. Other county rates are unchanged from TY2025.  _(Comptroller of Maryland Tax Alert, revised December 22, 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf); DLS, Local Income Tax Rates in Maryland, CY 2026 (https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf))_
 
 ### Standard deduction
 

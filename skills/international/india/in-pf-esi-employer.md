@@ -1,10 +1,10 @@
 ---
 name: in-pf-esi-employer
 description: Use this skill whenever asked about Indian EPF (Employees' Provident Fund), ESI (Employees' State Insurance), or employer social security obligations. Trigger on phrases like "PF contribution India", "EPF employer", "ESI contribution", "provident fund India", "PF admin charges", "EDLI", "EPS pension", "ECR filing", "PF return", "ESI threshold", "PF applicability", "12% PF", "employer PF obligation", or any question about computing, depositing, or filing EPF/ESI in India. This skill covers EPF contribution rates, EPS, EDLI, ESI rates and thresholds, applicability criteria, monthly filing (ECR), and compliance deadlines. ALWAYS read this skill before touching any Indian PF/ESI employer work.
-version: "1.0"
+version: "1.1"
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 reviewed_by: Mayur Deokar
 review_status: pending_review
 category: international
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # IN Pf Esi Employer
 
-## India EPF & ESI -- Employer Obligations Skill v1.0
+## India EPF & ESI -- Employer Obligations Skill v1.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Figures changed on 2026-10-31 for the EPF wage ceiling postdate that sign-off and await review.
 
@@ -28,12 +28,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax/Contribution | EPF (Provident Fund) + ESI (State Insurance) |
 | Currency | INR only |
 | Applicable period | FY 2025-26 (April 2025 -- March 2026); EPF wage ceiling as revised from 17 September 2026 (FY 2026-27) |
-| EPF legislation | Employees' Provident Funds and Miscellaneous Provisions Act, 1952 |
-| ESI legislation | Employees' State Insurance Act, 1948 |
+| EPF legislation | Code on Social Security, 2020, Chapter III, from 21 November 2025 (replacing the Employees' Provident Funds and Miscellaneous Provisions Act, 1952); see the transition note below |
+| ESI legislation | Code on Social Security, 2020, Chapter IV, from 21 November 2025 (replacing the Employees' State Insurance Act, 1948) |
 | Administering bodies | EPFO (Employees' Provident Fund Organisation); ESIC (ESI Corporation) |
 | Filing portal (EPF) | Unified Portal (unifiedportal-emp.epfindia.gov.in) |
 | Filing portal (ESI) | ESIC Portal (esic.gov.in) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
+
+**Labour codes transition.** The 4 labour codes, including the Code on Social Security, 2020, took effect on 21 November 2025 (PIB release 2192463). During the transition the relevant provisions of the old Acts and their rules, regulations, notifications and schemes (EPF Scheme 1952, EPS 1995, EDLI Scheme 1976, ESI regulations) stay in force until replaced, and old rules apply only so far as they are in line with the Codes (PIB release 2192463; Ministry of Labour and Employment, FAQs on Labour Codes, Q1). Section and paragraph references in this guide (for example EPF Act s 7Q and s 14B, ESI Act s 39) are to the old Acts and schemes and have not been mapped to the Code; check the Code provision before citing one in a notice or reply. The Codes' single definition of wages applies from 21 November 2025: where allowances and other payments, apart from basic pay, DA, retaining allowance, gratuity and retrenchment compensation, exceed 50% of total remuneration, the excess is added to wages (FAQs on Labour Codes, Q3, Q4 and Q7), so test the PF base against that rule. Secondary reports describe a new EPF Scheme 2026 notified on 29 June 2026; it was not read, so confirm current scheme paragraphs with EPFO.
 
 ### EPF Contribution Summary
 

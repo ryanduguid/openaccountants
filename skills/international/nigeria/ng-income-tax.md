@@ -1,10 +1,10 @@
 ---
 name: ng-income-tax
 description: "Use this skill whenever asked about Nigerian personal income tax for self-employed individuals (sole proprietors / freelancers). Trigger on phrases like \"Nigeria income tax\", \"PITA\", \"FIRS\", \"self-assessment Nigeria\", \"progressive tax Nigeria\", \"minimum tax Nigeria\", \"consolidated relief\", \"CRA Nigeria\", \"TIN Nigeria\", \"WHT Nigeria\", \"income tax Lagos\", \"income tax Abuja\", \"state IRS\", or any question about computing or filing income tax for a self-employed person in Nigeria. SUPERSEDED FOR TAX RULES — read ng-personal-income-tax.md instead, which is the canonical Nigerian personal income tax guide and treats this one as deprecated. This skill covers the repealed PITA regime that governed periods ending before 1 January 2026: progressive rates (7-24%), minimum tax (1% of gross income), consolidated relief allowance, capital allowances, withholding tax credits, self-assessment filing, and FIRS/state IRS requirements. From 1 January 2026 the Nigeria Tax Act 2025 applies instead, with a different band structure, no consolidated relief allowance and no minimum tax. Load this skill only for a period ending before 1 January 2026, or for its Nigerian bank-statement narration and transaction-pattern library, which remain valid."
-version: 2.0
+version: 2.1
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > _(Nigeria Tax Act 2025, s. 58 and Fourth Schedule, Official Gazette No. 117 of 26 June 2025 — https://nass.gov.ng/documents/download/11249)_
 
-## Nigerian Personal Income Tax — Self-Employed / Sole Proprietor (PITA) v2.0
+## Nigerian Personal Income Tax — Self-Employed / Sole Proprietor (PITA) v2.1
 
 ## Section 1 — Quick Reference
 
@@ -567,11 +567,13 @@ SECTION I — REVIEWER FLAGS
 
 | Offence | Penalty |
 | --- | --- |
-| Late filing | NGN 50,000 first month + NGN 25,000/subsequent month |
-| Late payment | 10% of tax due + interest at CBN MPR + spread |
-| Failure to keep records | NGN 50,000 fine |
+| Late filing | From 1 January 2026: NGN 100,000 for the first month + NGN 50,000 for each subsequent month (NTAA s 101). Before 2026: NGN 50,000 first month + NGN 25,000/subsequent month |
+| Late payment | 10% of tax payable + interest at the CBN monetary policy rate plus a spread set by the Minister (NTAA s 65(1)) |
+| Failure to keep records | From 1 January 2026: NGN 10,000 for a person other than a company, NGN 50,000 for a company (NTAA s 102). Before 2026: NGN 50,000 fine |
 | Incorrect return (without fraud) | Twice the difference |
-| Tax evasion | NGN 20,000 fine or 3 years imprisonment or both |
+| Tax evasion | Before 2026: NGN 20,000 fine or 3 years imprisonment or both. From 1 January 2026, check the NTAA offence provisions (general penalty NGN 1,000,000, s 127) |
+
+_([NTAA 2025 ss 65, 101, 102 and 127](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf))_
 
 ### Record Keeping
 

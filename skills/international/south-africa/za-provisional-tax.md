@@ -1,12 +1,12 @@
 ---
 name: za-provisional-tax
 description: Use this skill whenever asked about South African provisional tax (IRP6) for self-employed individuals. Trigger on phrases like "IRP6", "provisional tax", "SARS provisional", "estimated tax South Africa", "first provisional period", "second provisional period", "third provisional", "underestimation penalty", or any question about South African provisional tax obligations for self-employed persons. Covers first period (Aug 31), second period (Feb 28), voluntary third period (Sep 30), underestimation penalties, basic amount rules, and edge cases. ALWAYS read this skill before touching any South African provisional tax work.
-version: 2.0
+version: 2.1
 jurisdiction: ZA
 category: international
 tax_year: 2026
 tax_year_notes: "2026/27"
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: Werner Britz
 review_status: pending_review
 tier: 1
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # ZA Provisional Tax
 
-## South Africa Provisional Tax (IRP6) -- Self-Employed Skill v2.0
+## South Africa Provisional Tax (IRP6) -- Self-Employed Skill v2.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Werner Britz** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. On 2026-09-29 Test 1 was recomputed on SARS's published 2026/27 table (R44,118 + 26% above R245,100), which differs from the Budget-day figures the review recorded; `review_status` is `pending_review` until the reviewer confirms it.
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Underestimation threshold (<= R1,800,000) | 90% of actual AND >= basic amount |
 | Underestimation threshold (> R1,800,000) | 80% of actual (no safe harbour) |
 | Penalty rate | 20% of shortfall |
-| Interest rate (s89quat) | 10.25% p.a. from 2 March 2026 (on underpayment); 6.25% on overpayment refunds. Set quarterly by SARS by reference to repo rate. |
+| Interest rate (s89quat) | 10.50% p.a. from 1 September 2026 on underpayment (10.25% from 1 March to 31 August 2026; SARS Table 1, https://www.sars.gov.za/wp-content/uploads/Legal/Rates/Legal-Pub-IRT-01-Interest-Rates-Table-1.pdf); 6.50% from 1 September 2026 on overpayments (6.25% from 1 March to 31 August 2026; SARS Table 2, s 89quat(4), https://www.sars.gov.za/wp-content/uploads/Legal/Rates/Legal-Pub-IRT-02-Interest-Rates-Table-2.pdf). No fixed quarterly cycle: the rate follows changes in the PFMA s 80(1)(b) rate, so read the current tables. |
 | Tax threshold (under 65, 2026/27 year of assessment) | R99,000 (SARS, Rates of tax for individuals, 2027) |
 | Filing method | SARS eFiling (IRP6) |
 | Currency | ZAR only |
@@ -151,7 +151,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Interest on underpayment (s89quat)
 
-- **Interest rate on underpayment** — Rate 10.25% p.a. from 2 March 2026 (on underpayment); 6.25% on overpayment refunds. Set quarterly by SARS by reference to repo rate. Runs from period due date to payment date.
+- **Interest rate on underpayment** — Rate 10.50% p.a. from 1 September 2026 on underpayment (10.25% from 1 March to 31 August 2026; SARS Table 1, https://www.sars.gov.za/wp-content/uploads/Legal/Rates/Legal-Pub-IRT-01-Interest-Rates-Table-1.pdf); 6.50% from 1 September 2026 on overpayments (6.25% from 1 March to 31 August 2026; SARS Table 2, s 89quat(4), https://www.sars.gov.za/wp-content/uploads/Legal/Rates/Legal-Pub-IRT-02-Interest-Rates-Table-2.pdf). No fixed quarterly cycle: the rate follows changes in the PFMA s 80(1)(b) rate, so read the current tables. Runs from period due date to payment date.
 
 ## Section 7 -- Registration, filing, and payment calculation
 

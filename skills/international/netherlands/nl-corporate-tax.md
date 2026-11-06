@@ -1,10 +1,10 @@
 ---
 name: nl-corporate-tax
 description: Use this skill whenever asked about Dutch corporate income tax (vennootschapsbelasting / VPB) for BV entities. Trigger on phrases like "vennootschapsbelasting", "VPB aangifte", "corporate tax Netherlands", "BV belasting", "fiscal unity", "fiscale eenheid", "innovatiebox", "verliesverrekening", "carry forward losses", "DGA salary", "gebruikelijk loon", "deelnemingsvrijstelling", "participation exemption", "fiscal profit bridge", "commercial to fiscal result", "liquidatieverliesregeling", or any question about computing or filing corporate income tax for a Dutch BV or NV. Also trigger when preparing annual accounts-to-tax reconciliation, computing VPB liability, or advising on fiscal adjustments. This skill covers VPB rates, fiscal profit computation, loss relief, fiscal unity, the innovation box, participation exemption, DGA salary rules, filing deadlines, and penalties. ALWAYS read this skill before touching any Dutch corporate tax work.
-version: 1.0
+version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NL Corporate Tax
 
-## Netherlands Corporate Income Tax — Vennootschapsbelasting (VPB) v1.0
+## Netherlands Corporate Income Tax — Vennootschapsbelasting (VPB) v1.1
 
 > **Based on work by [John in 't Hout (@johnhout)](https://github.com/johnhout/knowledge-work-belastingzaken)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -220,7 +220,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
    - Bribes: 100% non-deductible
    - Excessive interest (earnings stripping): non-deductible portion
 3. Apply fiscal depreciation differences:
-   - Buildings: max depreciation to 100% WOZ value (own use) or 50% WOZ (investment)
+   - Buildings: depreciation stops at the bodemwaarde, 100% of WOZ value, for own-use and investment buildings alike
    - Goodwill: max 10% per year fiscally
 4. Apply participation exemption (if qualifying):
    - Remove dividends and gains from ≥5% participations
@@ -256,7 +256,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Asset | Fiscal Rule |
 | --- | --- |
 | Buildings (own use) | Depreciate to max 100% of WOZ value (bodemwaarde) |
-| Buildings (investment) | Depreciate to max 50% of WOZ value |
+| Buildings (investment) | Depreciate to max 100% of WOZ value (bodemwaarde) |
+
+Wet Vpb 1969 art. 8(1) applies Wet IB 2001 art. 3.30a(1) to (7); art. 3.30a(3) sets the bodemwaarde at the WOZ value with no own-use or investment split. Under a transitional rule the Belastingdienst states for income tax, a building taken into own use before 1 January 2024 and depreciated for less than 3 years may keep the former 50% floor until 3 years after first use; confirm the Vpb treatment. Sources: Belastingdienst, Afschrijving bedrijfspand — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/afschrijving/afschrijving_bedrijfspand; Wet IB 2001 — https://wetten.overheid.nl/BWBR0011353/2026-01-01; Wet Vpb 1969 — https://wetten.overheid.nl/BWBR0002672/2026-01-01
 | Goodwill | Max 10% per year (minimum 10-year life) |
 | Other intangibles | Based on useful economic life |
 | Tangible fixed assets | Based on economic life; no minimum |

@@ -1,10 +1,10 @@
 ---
 name: germany-payroll
 description: Use this skill whenever asked about German payroll processing for employees. Trigger on phrases like "German payroll", "Lohnsteuer", "Gehaltsabrechnung", "Brutto Netto Rechner", "Steuerklasse", "Sozialversicherung", "Arbeitnehmeranteil", "Arbeitgeberanteil", "Beitragsbemessungsgrenze", "payslip Germany", "Lohnabrechnung", "Nettolohn", "Solidaritätszuschlag", "Kirchensteuer", "Rentenversicherung", "Krankenversicherung", "Pflegeversicherung", "Arbeitslosenversicherung", "Minijob", "Midijob", "minimum wage Germany", "Mindestlohn", "Entgeltabrechnung", or any question about computing employee pay, withholding tax, or social contributions in Germany. This skill extends de-payroll.md with full payroll lifecycle coverage including mandatory benefits, payslip requirements, filing obligations, and employer cost analysis. ALWAYS read this skill before processing any German employee payroll.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Germany Payroll
 
-## Germany Payroll Skill v1.0
+## Germany Payroll Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | BMF PAP 2026 | Published 12.11.2025 by BMF |
 | Online calculator | [bmf-steuerrechner.de](https://www.bmf-steuerrechner.de) |
 | Validated by | Pending -- requires sign-off by a German Steuerberater |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Income Tax Withholding (Lohnsteuer)
 
@@ -150,7 +150,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- |
 | Umlage U1 (sick pay, < 30 employees) | 0.9% -- 4.1% (varies by Krankenkasse) | Gross up to KV-BBG |
 | Umlage U2 (maternity) | 0.19% -- 0.8% (varies) | Gross up to KV-BBG |
-| Insolvenzgeldumlage | 0.06% | Gross up to RV-BBG |
+| Insolvenzgeldumlage | 0.15% | Gross up to RV-BBG (SGB III § 360 — https://www.gesetze-im-internet.de/sgb_3/__360.html (0.15%; the footnoted lower rates by ordinance end with 2024)) |
 | Berufsgenossenschaft (accident insurance) | varies by industry (0.5% -- 10%+) | Gross (industry-specific ceiling) |
 
 ### Total Employer Cost Estimate (average employee, EUR 4,500/month gross)
@@ -160,9 +160,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Item | Amount |
 | --- | --- |
 | Employer SV (RV+KV+PV+AV) | ~EUR 953 |
-| Umlagen (U1+U2+Insolvenz) | ~EUR 50--70 |
+| Umlagen (U1+U2+Insolvenz) | ~EUR 56--227 for an employer in U1 (about EUR 15--43 without U1) (U1 0.9% to 4.1% and U2 0.19% to 0.8% by Krankenkasse, plus Insolvenzgeldumlage 0.15% = EUR 6.75) |
 | Berufsgenossenschaft | varies |
-| **Total employer add-on** | **~21--25% of gross** |
+| **Total employer add-on** | **~22--26% of gross (about 21.5--22% without U1), plus Berufsgenossenschaft** |
 
 ## Section 5 -- Minimum Wage and Overtime
 

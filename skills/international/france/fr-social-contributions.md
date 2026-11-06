@@ -1,10 +1,10 @@
 ---
 name: fr-social-contributions
 description: Use this skill whenever asked about French social contributions (cotisations sociales URSSAF) for self-employed individuals (travailleurs independants), including professions liberales and BNC taxpayers. Trigger on phrases like "cotisations URSSAF", "charges sociales independant", "CSG CRDS freelance France", "CIPAV retraite", "ACRE reduction", "social contributions France", "cotisations minimales", "prelevement URSSAF", "cotisations trimestrielles", or any question about French self-employed social security. Also trigger when classifying bank statement transactions showing URSSAF prelevements, CIPAV debits, or cotisations trimestrielles. ALWAYS read this skill before touching any French social contribution work.
-version: 2.0
+version: 2.1
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # FR Social Contributions
 
-## France Social Contributions (Cotisations URSSAF) -- Self-Employed Skill v2.0
+## France Social Contributions (Cotisations URSSAF) -- Self-Employed Skill v2.1
 
 ## Section 1 -- Quick reference
 
@@ -30,6 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting Legislation | CGI Art. 154 bis (deductibility); Decret n 2024-688 (assiette reform) |
 | Tax Authority | URSSAF |
 | PASS 2025 | EUR 47,100 |
+| PASS 2026 | EUR 48,060 (2026 rates: Section 5, Rule 1A) |
 | Maladie-maternite (IJ) | 0.50% up to 500% PASS |
 | Maladie-maternite (main) | Progressive: 0% to 6.50% |
 | Retraite de base (plafonnee, SSI) | 17.75% up to 1 PASS |
@@ -56,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown CIPAV vs SSI | Ask -- retraite complementaire rates differ |
 | Unknown income | Apply cotisations minimales |
 | Unknown ACRE eligibility | Do not apply ACRE without verification |
-| Unknown CSG/CRDS base method | Use current pre-reform method; flag for reviewer if 2025 regularisation |
+| Unknown CSG/CRDS base method | The reformed unified base (LFSS 2024 art. 18) and revised barème apply from the regularisation of 2025 cotisations (from April 2026) onward; this skill does not compute the reformed base, so flag for reviewer (T2-4) |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -221,6 +222,25 @@ Matches "URSSAF" + "ACRE" (pattern 3.1). First-year self-employed with ACRE exon
 | CSG | 9.20% | Income + mandatory cotisations |
 | CRDS | 0.50% | Income + mandatory cotisations |
 | Formation professionnelle | EUR 117.75 | Fixed (0.25% of PASS) |
+
+### Rule 1A -- 2026 cotisation rate table (SSI: artisans, commercants, PLNR, metropole)
+
+Urssaf applies the revised barème (decret n 2024-688 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049888566) together with the reformed base (LFSS 2024 art. 18, loi n 2023-1250 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000048668665) from April 2026, starting with the regularisation of 2025 cotisations.
+
+| Cotisation | Rate 2026 | Base / Plafond (PASS EUR 48,060) |
+| --- | --- | --- |
+| Maladie-maternite (IJ) | 0.50% | Up to 5 PASS (EUR 240,300) |
+| Maladie-maternite (main) | 0% below 20% PASS; progressive 0% to 8.50% between 20% and 300% PASS; 6.50% on income above 300% PASS (EUR 144,180) | Urssaf bands at 40%, 60%, 110% and 200% PASS |
+| Retraite de base (plafonnee) | 17.87% | Up to 1 PASS (EUR 48,060) |
+| Retraite de base (deplafonnee) | 0.72% | Income above 1 PASS |
+| Retraite complementaire (RCI T1) | 8.10% | Up to 1 PASS |
+| Retraite complementaire (RCI T2) | 9.10% | 1 PASS to 4 PASS (EUR 192,240) |
+| Invalidite-deces | 1.30% | Up to 1 PASS |
+| Allocations familiales | 0% below 110% PASS (EUR 52,866); progressive to 3.10% at 140% PASS (EUR 67,284); 3.10% above | Progressive |
+| CSG-CRDS | 9.70% combined | Revenus d'activite (reformed base) |
+| Formation professionnelle | 0.25% of PASS (EUR 120); 0.29% artisans (EUR 139); 0.34% for a commerçant or PLNR with conjoint collaborateur (EUR 163); artisans with a conjoint collaborateur: see the Urssaf table | Fixed |
+
+*Source: Urssaf, Taux de cotisations - Artisan, commercant et profession liberale non reglementee (updated 27 February 2026) — https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-ac-plnr.html*
 
 ### Rule 2 -- Maladie-maternite progressive scale
 

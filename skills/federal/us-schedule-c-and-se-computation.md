@@ -1,11 +1,11 @@
 ---
 name: us-schedule-c-and-se-computation
 description: Tier 2 content skill for computing Schedule C bottom line, Form 8829 home office (actual method), and Schedule SE self-employment tax for US sole proprietors and single-member LLCs disregarded for federal tax. Covers tax year 2025 with the 2025 Social Security wage base of $176,100, the 92.35% net SE earnings adjustment under IRC 1402(a)(12), the 12.4% OASDI rate, the 2.9% Medicare rate, and the 0.9% Additional Medicare Tax thresholds. Handles Schedule C Lines 1-32, the 280A home office gross income limitation and carryover, Form 8829 indirect expense allocation, the 1402 net SE earnings computation, the optional methods under 1402(a)(15) and 1402(l), the deductible half of SE tax under 164(f), and the at-risk indicators on Line 32. Consumes classified transactions from us-sole-prop-bookkeeping. Defers QBI, retirement, SE health insurance, and quarterly estimated tax to companion skills. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only. ALWAYS read this skill before computing Schedule C, SE tax, or home office deductions.
-version: 2.0
+version: 2.1
 jurisdiction: US
 category: federal
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -16,7 +16,7 @@ depends_on:
 
 # US Schedule C And SE Computation
 
-## US Schedule C and SE Computation Skill v2.0
+## US Schedule C and SE Computation Skill v2.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -48,7 +48,8 @@ Tax year: 2025. Currency date: April 2026.
 | OASDI (Social Security) rate | 12.4% | IRC 1401(a) |
 | Medicare rate | 2.9% | IRC 1401(b)(1) |
 | Combined SE tax rate | 15.3% | IRC 1401(a) + 1401(b)(1) |
-| Social Security wage base | $176,100 | SSA October 2024 announcement |
+| Social Security wage base (2025) | $176,100 | SSA October 2024 announcement |
+| Social Security wage base (2026; 2027) | $184,500; $192,300 | SSA, Contribution and Benefit Base; not for a 2025 return |
 | Additional Medicare Tax rate | 0.9% | IRC 1401(b)(2) |
 | Additional Medicare Tax threshold (single, HoH, QSS) | $200,000 | IRC 3101(b)(2)(C); NOT indexed |
 | Additional Medicare Tax threshold (MFJ) | $250,000 | IRC 3101(b)(2)(A); NOT indexed |

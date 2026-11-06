@@ -1,10 +1,10 @@
 ---
 name: de-payroll
 description: Use this skill whenever asked about German payroll tax (Lohnsteuer) computation for EMPLOYEES. Trigger on phrases like "Lohnsteuer", "Gehaltsabrechnung", "payslip Germany", "Steuerklasse", "Brutto Netto", "Solidaritaetszuschlag on wages", "Kirchensteuer on payroll", "Sozialversicherungsbeitraege employee", "Arbeitnehmeranteil", "Arbeitgeberanteil", "Beitragsbemessungsgrenze", "Lohnabrechnung", "Nettolohn", "payroll withholding Germany", "German wage tax", "Lohnsteuerklasse I II III IV V VI", or any question about computing employee payroll deductions in Germany. Covers Lohnsteuer (income tax withholding), Solidaritatszuschlag, Kirchensteuer, and all four branches of Sozialversicherung (RV, KV, PV, AV) from an employer/employee split perspective. This is SEPARATE from the self-employed income tax skill (de-income-tax.md). ALWAYS read this skill before computing any German employee payroll.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # DE Payroll
 
-## Germany Payroll Tax (Lohnsteuer) -- Employee Skill v1.0
+## Germany Payroll Tax (Lohnsteuer) -- Employee Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a German Steuerberater |
 | Validation date | Pending |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Grundfreibetrag and Tax Brackets (2025, from BMF PAP September 2025 revision)
 
@@ -48,6 +48,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 17,444 -- 68,480 | ~24% -- 42% | Progressive zone 2 (linear-progressive, formula below) |
 | 68,481 -- 277,825 | 42% | Proportionalzone (flat) |
 | 277,826+ | 45% | Reichensteuer |
+
+**2026 tariff (§ 32a Abs. 1 EStG from the 2026 assessment period)**
+
+| Taxable Income (EUR) | Rate | Zone |
+| --- | --- | --- |
+| 0 -- 12,348 | 0% | Grundfreibetrag |
+| 12,349 -- 17,799 | 14% -- ~24% | Progressive zone 1 |
+| 17,800 -- 69,878 | ~24% -- 42% | Progressive zone 2 |
+| 69,879 -- 277,825 | 42% | Proportionalzone |
+| 277,826+ | 45% | Reichensteuer |
+
+Source: § 32a EStG — https://www.gesetze-im-internet.de/estg/__32a.html. Use the 2025 table for 2025 pay periods and the 2026 table from January 2026.
 
 **Germany uses the BMF Programmablaufplan (PAP) formula, not simple bracket multiplication. The exact formula is in Section 3.**
 
@@ -129,6 +141,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | AV-BBG | EUR 8,050.00 | EUR 96,600 | Unemployment insurance |
 | JAEG (Versicherungspflichtgrenze) | EUR 6,150.00 | EUR 73,800 | Threshold above which employees may opt for PKV |
 
+**Beitragsbemessungsgrenzen 2026**
+
+| Ceiling | Monthly | Annual | Applies to |
+| --- | --- | --- | --- |
+| KV/PV-BBG | EUR 5,812.50 | EUR 69,750 | Health + Care insurance |
+| RV-BBG | EUR 8,450.00 | EUR 101,400 | Pension insurance (general, unified East and West; knappschaftliche RV EUR 10,400.00 / EUR 124,800) |
+| AV-BBG | EUR 8,450.00 | EUR 101,400 | Unemployment insurance |
+| JAEG (Versicherungspflichtgrenze) | EUR 6,450.00 | EUR 77,400 | Threshold above which employees may opt for PKV (EUR 69,750 for employees who on 31 December 2002 were exempt because their pay exceeded the then JAEG and had substitutive private health insurance, § 6 Abs. 7 SGB V) |
+
+Source: BMAS, Sozialversicherungsrechengrößen 2026 — https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2025/sozialversicherungsrechengroessen-2026.html
+
 - **Ceiling application rule** — Income above the BBG is not subject to contributions for that branch.  _(Beitragsbemessungsgrenzen (Contribution Ceilings, 2025))_
 
 ### Conservative Defaults
@@ -169,6 +192,7 @@ All values are annual. For monthly/weekly/daily payroll, the PAP annualises the 
 ### Formula (§32a EStG, 2025 PAP constants)
 
 - **UPTAB25 tariff formula** — Input: X = zu versteuerndes Einkommen (taxable income) in EUR, whole euros GFB = 12,096 Zone 0 -- Grundfreibetrag: If X < GFB + 1 (i.e., X <= 12,096): ST = 0 Zone 1 -- Progressive zone 1 (14% entry rate): If 12,097 <= X < 17,444: Y = (X - 12,096) / 10,000 RW = Y * 932.30 + 1,400 ST = floor(RW * Y) Zone 2 -- Progressive zone 2: If 17,444 <= X < 68,481: Y = (X - 17,443) / 10,000 RW = Y * 176.64 + 2,397 ST = floor(RW * Y + 1,015.13) Zone 3 -- Proportionalzone (42%): If 68,481 <= X < 277,826: ST = floor(X * 0.42 - 10,911.92) Zone 4 -- Reichensteuer (45%): If X >= 277,826: ST = floor(X * 0.45 - 19,246.67) Final: ST = ST * KZTAB (KZTAB = 2 for Steuerklasse III Splitting; KZTAB = 1 for all others)  _(§32a EStG, 2025 PAP constants; MarcelLehmann/Lohnsteuer Lohnsteuer2025.java)_
+- **2026 tariff formula (§ 32a Abs. 1 EStG, from the 2026 assessment period)** — X = taxable income rounded down to whole euros. X <= 12,348: ST = 0. 12,349 <= X <= 17,799: Y = (X - 12,348) / 10,000; ST = floor((914.51 * Y + 1,400) * Y). 17,800 <= X <= 69,878: Z = (X - 17,799) / 10,000; ST = floor((173.10 * Z + 2,397) * Z + 1,034.87). 69,879 <= X <= 277,825: ST = floor(0.42 * X - 11,135.63). X >= 277,826: ST = floor(0.45 * X - 19,470.38). Payroll for 2026 pay periods follows the BMF PAP 2026; check payroll results against it.  _(§ 32a EStG — https://www.gesetze-im-internet.de/estg/__32a.html)_
 
 ### Steuerklasse V/VI Special Method (MST5_6)
 
@@ -236,7 +260,7 @@ The PAP deducts a Vorsorgepauschale from gross income before computing Lohnsteue
 | --- | --- | --- |
 | Umlage U1 (sick pay, <30 employees) | 0.9%--4.1% (varies by Krankenkasse) | Gross up to KV-BBG |
 | Umlage U2 (maternity) | 0.19%--0.8% (varies) | Gross up to KV-BBG |
-| Insolvenzgeldumlage | 0.06% | Gross up to RV-BBG |
+| Insolvenzgeldumlage | 0.15% (2025 and 2026) | Gross up to RV-BBG (SGB III § 360 — https://www.gesetze-im-internet.de/sgb_3/__360.html (0.15%; the footnoted lower rates by ordinance end with 2024)) |
 | Berufsgenossenschaft (accident) | varies by industry (0.5%--10%+) | Gross (industry-specific ceiling) |
 
 ## Section 5 -- Worked Examples

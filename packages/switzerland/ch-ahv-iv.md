@@ -1,11 +1,11 @@
 ---
 name: ch-ahv-iv
 description: Use this skill whenever asked about Swiss AHV/IV (Alters- und Hinterlassenenversicherung / Invalidenversicherung) social contributions for self-employed individuals. Trigger on phrases like "AHV contributions", "Swiss social security self-employed", "AHV/IV/EO", "Beitragsverfügung", "sliding scale AHV", "Swiss self-employed insurance", or any question about social insurance obligations for a self-employed client in Switzerland. Covers the 5.371-10% sliding scale, EO, minimum contribution, and BVG voluntary pillar 2. ALWAYS read this skill before touching any Switzerland social contributions work.
-version: 2.0
+version: 2.1
 jurisdiction: CH
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-03
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -57,7 +57,7 @@ Before computing any AHV/IV figure, you MUST obtain:
 
 ### Prohibitions
 
-- **Prohibitions list** — NEVER determine self-employment status yourself -- only the Ausgleichskasse can confirm this; NEVER apply the full 10% rate to incomes below CHF 60,500 -- the sliding scale must be used; NEVER state there is a maximum cap on AHV/IV contributions -- there is no upper cap in Switzerland; NEVER ignore the CHF 530 minimum contribution -- it always applies regardless of income level; NEVER confuse the self-employed contribution (full rate) with the employee half-rate (5.00%); NEVER forget the Freibetrag (CHF 16,800) for persons past reference age; NEVER present AHV figures without noting that final settlement depends on the definitive tax assessment; NEVER ignore FAK cantonal obligations -- rates and rules vary by canton
+- **Prohibitions list** — NEVER determine self-employment status yourself -- only the Ausgleichskasse can confirm this; NEVER apply the full 10% rate to incomes below CHF 60,500 -- the sliding scale must be used; NEVER state there is a maximum cap on AHV/IV contributions -- there is no upper cap in Switzerland; NEVER ignore the CHF 530 minimum contribution -- it always applies regardless of income level; NEVER confuse the self-employed contribution (full rate) with the employee share of 5.3% (Section 4, Employees); NEVER forget the Freibetrag (CHF 16,800) for persons past reference age; NEVER present AHV figures without noting that final settlement depends on the definitive tax assessment; NEVER ignore FAK cantonal obligations -- rates and rules vary by canton
 
 ## Section 3 -- Contribution base
 
@@ -109,6 +109,17 @@ Before computing any AHV/IV figure, you MUST obtain:
 - **FAK (Familienausgleichskasse)** — Some cantons require self-employed to pay FAK contributions, typically 1-3%
 - **Administration costs (Verwaltungskosten)** — Typically 1-5% of contributions, charged by the Ausgleichskasse
 
+### Employees (employer payroll)
+
+This skill computes self-employed contributions. For employees, the employer deducts the employee share from gross pay and pays it with its own share to the Ausgleichskasse.
+
+| Contribution | Employee | Employer | Total | Ceiling |
+| --- | --- | --- | --- | --- |
+| AHV/IV/EO (AHV 8.7%, IV 1.4%, EO 0.5%) | 5.3% | 5.3% | 10.6% | None |
+| ALV (unemployment insurance) | 1.1% | 1.1% | 2.2% | CHF 148,200 a year per employment; nil above |
+
+- **Sources and status** — AHV/IV/EO rates: ahv-iv.ch Merkblatt 2.01, status 1 January 2026. ALV rate and ceiling: Merkblatt 2.08, status 1 January 2025; confirm the 2026 ceiling with the Ausgleichskasse. Administration costs are borne by the employer. Family allowance (FAK), accident insurance (UVG) and BVG contributions are additional and depend on the canton, insurer or pension fund.  _(https://www.ahv-iv.ch/p/2.01.d ; https://www.ahv-iv.ch/p/2.08.d)_
+
 ### Voluntary BVG (Pillar 2) and Pillar 3a
 
 **Voluntary BVG (Pillar 2) and Pillar 3a**
@@ -130,7 +141,7 @@ Self-employed persons are NOT obligatorily insured under BVG but may join volunt
 
 ### Step 5.2 -- Apply sliding scale or full rate
 
-- **Sliding scale / full rate application** — IF adjusted_income <= 9,800: annual_contribution = 514  (minimum) ELIF adjusted_income < 58,800: annual_contribution = adjusted_income x sliding_scale_rate  (from table) ELSE: annual_contribution = adjusted_income x 10.00%
+- **Sliding scale / full rate application** — IF adjusted_income < 10,100: annual_contribution = 530  (minimum) ELIF adjusted_income < 60,500: annual_contribution = adjusted_income x sliding_scale_rate  (from table) ELSE: annual_contribution = adjusted_income x 10.00%. Limits are those for 2025 and 2026 (Informationsstelle AHV/IV, Merkblatt 1.2025, Ziff. 2, and Merkblatt 2.02, Stand 1. Januar 2026). From 1 January 2027 the minimum rises to CHF 541 and the limits to CHF 10,300 and CHF 61,500 (BSV, Erläuterungen of 2 October 2026; the ordinance text is marked provisional).
 
 ### Step 5.3 -- Add FAK if applicable
 

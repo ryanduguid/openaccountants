@@ -1,10 +1,10 @@
 ---
 name: ng-vat-return
 description: "Archived Nigerian VAT guide retained for historical comparison and bank-narration examples. For Nigerian VAT registration, classification, input deductions, imported services, monthly returns or payment deadlines from 1 January 2026, read ng-vat.md. The old body contains superseded or incorrect thresholds, tax treatments and penalties, so do not execute its filing or calculation instructions. It is not a verified guide to an earlier period either; check the law for that period separately. Use this file only to trace an earlier working paper or review source examples after confirming treatment in the applicable current guide."
-version: 2.1
+version: 2.2
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > historical record and does not sign off current use. Amend its source
 > `skill_facts` before regenerating it.
 
-## Nigeria VAT Return -- Archived Self-Employed Skill v2.1
+## Nigeria VAT Return -- Archived Self-Employed Skill v2.2
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -218,13 +218,17 @@ Nil return must still be filed by the 21st. VAT payable = NGN 0.
 
 **5.5 Penalties (VATA s 16-18)**  _(VATA s 16-18)_
 
-| Offence | Penalty |
-| --- | --- |
-| Failure to register | NGN 50,000 first month + NGN 25,000 per subsequent month |
-| Late filing | 5% of tax due per month + NGN 50,000 |
-| Late payment | 5% of amount due + interest at CBN MPR |
-| Failure to issue VAT invoice | NGN 50,000 per offence |
-| Failure to collect VAT | 150% of uncollected amount + 5% interest per annum |
+These are the VATA penalties for periods before 1 January 2026. From that date the NTAA penalties apply:
+
+| Offence | Penalty (VATA, before 2026) | Penalty (NTAA 2025, from 1 January 2026) |
+| --- | --- | --- |
+| Failure to register | NGN 50,000 first month + NGN 25,000 per subsequent month | NGN 50,000 first month + NGN 25,000 per subsequent month (s 100(1)) |
+| Late filing | 5% of tax due per month + NGN 50,000 | NGN 100,000 first month + NGN 50,000 per subsequent month (s 101) |
+| Late payment | 5% of amount due + interest at CBN MPR | 10% of the tax payable + interest at the CBN monetary policy rate plus a spread set by the Minister (s 65(1)) |
+| Failure to issue VAT invoice | NGN 50,000 per offence | No specific penalty found in a text search of the Act; the general penalty is NGN 1,000,000 (s 127). Failing to process a taxable supply through the fiscalisation system: NGN 200,000 + 100% of the tax due + interest at the CBN monetary policy rate (s 104) |
+| Failure to collect VAT | 150% of uncollected amount + 5% interest per annum | 40% of the amount not collected (s 105) |
+
+_([NTAA 2025 ss 65, 100, 101, 104, 105 and 127](https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf))_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -357,6 +361,7 @@ ONBOARDING QUESTIONS -- NIGERIA VAT
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 2.2 | November 2026 | Penalties (5.5) shown under the NTAA 2025 from 1 January 2026 |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Nigerian bank formats; local payment patterns (Paystack, Flutterwave, OPay); worked examples |
 | 1.0 | 2025 | Initial version |
 

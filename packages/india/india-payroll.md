@@ -1,10 +1,10 @@
 ---
 name: india-payroll
 description: Use this skill whenever asked about Indian payroll processing, employee salary calculations, TDS on salary (Section 192), Provident Fund (PF/EPF), Employee State Insurance (ESI), employer cost calculations, CTC breakdowns, net-to-gross or gross-to-net conversions, Indian payslip structure, Form 24Q/Form 138 filings, or any question about computing wages, deductions, or employer obligations in India. Trigger on phrases like "Indian payroll", "TDS on salary", "PF contribution", "ESI contribution", "EPF", "CTC breakdown", "new tax regime India", "old tax regime", "Form 16", "Form 130", "salary structure India", "basic DA HRA", "professional tax", "gratuity", "bonus India", or "minimum wages India".
-version: 1.1
+version: 1.2
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 reviewed_by: Mayur Deokar
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # India Payroll
 
-## India Payroll Skill v1.1
+## India Payroll Skill v1.2
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Figures changed on 2026-10-31 for the EPF wage ceiling postdate that sign-off and await review.
 
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | INR (Indian Rupee) |
 | Payroll frequency | Monthly (typically paid last working day or 1st of next month) |
 | Tax year (Financial Year) | 1 April -- 31 March (FY 2025-26 = April 2025 to March 2026) |
-| Primary legislation | Income Tax Act 1961 (being replaced by IT Act 2025 from 1 April 2026); EPF & MP Act 1952; ESI Act 1948; Payment of Bonus Act 1965; Payment of Gratuity Act 1972; Code on Wages 2019 |
+| Primary legislation | Income Tax Act 1961 (being replaced by IT Act 2025 from 1 April 2026); Code on Social Security 2020 (PF, ESI and gratuity) and Code on Wages 2019 (wages and bonus), in force 21 November 2025, replacing the EPF & MP Act 1952, ESI Act 1948, Payment of Gratuity Act 1972 and Payment of Bonus Act 1965. Old schemes and rules continue until replaced, so far as consistent with the Codes; section numbers in this guide cite the old Acts (see `in-pf-esi-employer`, transition note) |
 | Tax authority | Central Board of Direct Taxes (CBDT) / Income Tax Department |
 | PF authority | Employees' Provident Fund Organisation (EPFO) |
 | ESI authority | Employees' State Insurance Corporation (ESIC) |
@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | TDS on salary | Progressive slab rates (new regime default) |
 | Minimum wage | State-specific (no single national minimum) |
 | Filing | TDS deposit by 7th; PF/ESI by 15th; Form 24Q/138 quarterly |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ## Section 2 -- Income Tax Withholding (TDS on Salary)
 
@@ -112,7 +112,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Employee contribution | 12% of Basic wages + Dearness Allowance (DA) |
 | Wage ceiling for PF | INR 25,000/month from 17 September 2026, INR 15,000 before (S.O. 5109(E), Gazette of India, 17 September 2026); contributions mandatory up to this; voluntary above. See `in-pf-esi-employer` for enrolment and the September 2026 split |
-| Minimum Basic + DA | Must be ≥ 50% of total remuneration (Labour Codes) |
+| Allowances above 50% | No minimum Basic + DA; allowances and other payments, apart from basic pay, DA, retaining allowance, gratuity and retrenchment compensation, above 50% of total remuneration are added back to wages for PF, ESI and gratuity (Ministry of Labour FAQs on Labour Codes, Q4 and Q7); the Codes do not require the salary to be restructured |
 | Applies to | Establishments with 20+ employees (10+ in notified sectors) |
 
 ### Employee State Insurance (ESI)
@@ -414,7 +414,7 @@ Tax calculation:
 
 ### India-Specific Payroll Considerations
 
-- **New Labour Codes**: The four codes (Wages, Social Security, Industrial Relations, OSH) became effective November 2025. Key impact: Basic + DA must be ≥ 50% of total remuneration, increasing PF/gratuity costs.
+- **New Labour Codes**: The four codes (Wages, Social Security, Industrial Relations, OSH) became effective 21 November 2025 (PIB release 2192463). Old rules and schemes continue until new ones are notified, only so far as they are in line with the Codes (Ministry of Labour FAQs on Labour Codes, Q1). Key impact: allowances and other payments, apart from basic pay, DA, retaining allowance, gratuity and retrenchment compensation, above 50% of total remuneration are added back to wages for PF, ESI and gratuity (Ministry of Labour FAQs on Labour Codes, Q4 and Q7); the Codes do not require the salary to be restructured, which can increase PF and gratuity costs.
 - **Dual tax regime**: Default is new regime (Section 115BAC). Employee must explicitly opt for old regime. Employer MUST compute TDS per new regime if no declaration received.
 - **State variations**: Minimum wages, Professional Tax rates, Shops & Establishments Act rules, and LWF contributions all vary by state. ALWAYS identify the employee's state of employment.
 - **PF wage ceiling**: Statutory ceiling is INR 25,000/month for mandatory PF from 17 September 2026 (S.O. 5109(E)); INR 15,000 before. Employees excluded until then with PF wages up to INR 25,000 must be enrolled from that date. Many employers contribute on actual Basic (above ceiling) voluntarily or per company policy.

@@ -1,10 +1,10 @@
 ---
 name: japan-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Japan. Trigger on phrases like "set up a company in Japan", "KK formation", "GK formation", "kabushiki kaisha", "godo kaisha", "法務局", "Legal Affairs Bureau", "Japanese company formation", "register a business Japan", "会社設立", "定款", "登録免許税", or any question about starting a business entity in Japan. Covers entity types (KK, GK, branch office), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Japanese company formation.
-version: 1.0
+version: 1.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Japan Formation
 
-## Japan Company Formation Skill v1.0
+## Japan Company Formation Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Companies Act (会社法); Commercial Registration Act (商業登記法) |
 | Typical formation time | 1--3 weeks |
 | Corporate tax rate | ~30--34% effective (national + local; varies by municipality and capital) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Entity Types Comparison
 
@@ -147,6 +147,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Obligation | Deadline | Authority |
 | --- | --- | --- |
 | Corporate tax return (法人税) | Within 2 months of fiscal year-end | National Tax Agency (税務署) |
+| Defence special corporate tax return (防衛特別法人税; 4% of base corporate tax less JPY 5,000,000 a year) | Within 2 months of fiscal year-end in principle, for fiscal years starting on or after 1 April 2026; required even if nil | National Tax Agency (税務署); source: https://www.e-tax.nta.go.jp/topics/2026/topics_20260417.htm |
 | Consumption tax return (消費税) | Within 2 months of fiscal year-end | Tax office |
 | Corporate inhabitant tax | Within 2 months of fiscal year-end | Prefectural/municipal tax office |
 | Withholding tax (源泉徴収) | 10th of following month (or semi-annual for small companies) | Tax office |

@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package an 
 jurisdiction: ID
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -509,10 +509,10 @@ The reviewer brief is a single markdown file the warranted reviewer (Konsultan P
 
 | Item | MAP | Due |
 |---|---|---|
-| PPh 21 (monthly) | 411121 | 10th of following month |
+| PPh 21 (monthly) | 411121 | 15th of following month (PMK 81/2024 Art. 94(2)) |
 | PPh 25 (monthly installment) | 411125/126 KJS 100 | 15th of following month |
 | UMKM Final 0.5% (if applicable) | 411128 | 15th of following month |
-| PPh 23 / 4(2) withheld | 411124 / 411128 | 10th of following month |
+| PPh 23 / 4(2) withheld | 411124 / 411128 | 15th of following month (PMK 81/2024 Art. 94(2)) |
 | SPT Masa PPN (if PKP) | 411211 | End of following month |
 
 ## Record retention
@@ -533,10 +533,10 @@ Records must be kept in Indonesia (Pasal 28 ayat 11) — offshore storage requir
 
 | Item | MAP | Due |
 | --- | --- | --- |
-| PPh 21 (monthly) | 411121 | 10th of following month |
+| PPh 21 (monthly) | 411121 | 15th of following month (PMK 81/2024 Art. 94(2)) |
 | PPh 25 (monthly installment) | 411125/126 KJS 100 | 15th of following month |
 | UMKM Final 0.5% (if applicable) | 411128 | 15th of following month |
-| PPh 23 / 4(2) withheld | 411124 / 411128 | 10th of following month |
+| PPh 23 / 4(2) withheld | 411124 / 411128 | 15th of following month (PMK 81/2024 Art. 94(2)) |
 | SPT Masa PPN (if PKP) | 411211 | End of following month |
 
 ## Section 9 — Final taxpayer action list

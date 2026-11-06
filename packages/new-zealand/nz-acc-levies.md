@@ -1,10 +1,10 @@
 ---
 name: nz-acc-levies
 description: Use this skill whenever asked about New Zealand ACC levies for self-employed individuals. Trigger on phrases like "ACC levy", "earner levy", "work levy", "CoverPlus", "CoverPlus Extra", "accident compensation", "ACC invoice", "classification unit", or any question about ACC obligations for sole traders in New Zealand. Covers earner levy, work levy by classification unit (CU), CoverPlus/CoverPlus Extra, maximum liable earnings, and payment schedules. ALWAYS read this skill before touching any NZ ACC work.
-version: 2.0
+version: 2.1
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 category: international
 tier: 2
@@ -27,11 +27,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing Portal | myACC for Business (myacc.acc.co.nz) |
 | Tax Year | 2025 (1 April 2025 -- 31 March 2026) |
 | Currency | NZD only |
-| Maximum Liable Earnings | $142,283 (approximate -- verify with ACC) |
+| Maximum Liable Earnings | $152,790 (2025/26); $156,641 (2026/27); $142,283 was the 2024/25 figure |
 | Contributor | Open Accountants Community |
 | Validated By | Pending -- requires sign-off by NZ chartered accountant |
 | Validation Date | Pending |
-| Skill Version | 2.0 |
+| Skill Version | 2.1 |
 | Confidence Coverage | Tier 1: earner levy rate, work levy computation, maximum liable earnings. Tier 2: CU selection, CoverPlus Extra, experience rating. Tier 3: claims management, dispute resolution, complex multi-business structures. |
 
 Read this whole section before computing anything.
@@ -40,7 +40,7 @@ Read this whole section before computing anything.
 
 | Levy | Who Pays | Rate |
 | --- | --- | --- |
-| Earner levy | All earners (including self-employed) | $1.67 per $100 (1.67%) |
+| Earner levy | All earners (including self-employed) | $1.67 per $100 (1.67%), GST inclusive; $1.75 per $100 from 1 April 2026 |
 | Work levy | Self-employed only | Varies by classification unit (CU) |
 | Working Safer levy | Self-employed | ~$0.08 per $100 |
 
@@ -58,6 +58,8 @@ Read this whole section before computing anything.
 
 These rates are illustrative. Actual rates must be verified at acc.co.nz or on the client's ACC invoice.
 
+Sources: Inland Revenue, earners' levy rates (rates include GST; maximum earnings $152,790 and maximum levy $2,551.59 for 2025/26; $156,641 and $2,741.22 for 2026/27), https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates ; ACC, minimum and maximum liable income for self-employed people ($49,365 to $152,790 for 2025/26; $50,501 to $156,641 for 2026/27), https://www.acc.co.nz/for-business/received-an-invoice/calculate-your-levies . ACC invoices show levy rates before GST and add GST, so the GST-exclusive earners' levy on an ACC invoice is the IRD rate divided by 1.15.
+
 **CoverPlus vs CoverPlus Extra**
 
 | Feature | CoverPlus (Default) | CoverPlus Extra |
@@ -72,7 +74,7 @@ These rates are illustrative. Actual rates must be verified at acc.co.nz or on t
 | --- | --- |
 | Unknown CU code | Flag for reviewer -- CU determines work levy rate |
 | Unknown CoverPlus option | CoverPlus (default) |
-| Unknown GST status | GST-registered (levies are GST-exclusive, GST added) |
+| Unknown GST status | GST-registered (ACC adds GST to every levy invoice; claim it only if registered) |
 | Unknown liable earnings | Use most recent IR3 figure |
 
 ## Section 2 -- Required inputs and refusal catalogue
@@ -117,7 +119,7 @@ This is the deterministic pre-classifier for bank statement entries related to A
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| ACC + GST component visible | GST INPUT CLAIM | ACC levies are GST-exclusive; GST added for registered persons; GST component claimable |
+| ACC + GST component visible | GST INPUT CLAIM | ACC levies are GST-exclusive; GST is on every CoverPlus invoice; GST component claimable if GST-registered |
 
 ### 3.4 IRD payments (income return triggers ACC)
 
@@ -136,13 +138,13 @@ This is the deterministic pre-classifier for bank statement entries related to A
 
 | Step | Action |
 | --- | --- |
-| 4.1 | Determine liable earnings = net self-employment income from IR3 |
-| 4.2 | Cap earnings at maximum liable earnings ($142,283) if applicable |
-| 4.3 | Earner levy = liable earnings x $1.67 / $100 |
+| 4.1 | Determine liable earnings = net self-employment income from IR3; a full-time earner (over 30 hours a week on average) below the minimum liable income ($49,365 for 2025/26; $50,501 for 2026/27) is levied on the minimum |
+| 4.2 | Cap earnings at maximum liable earnings ($152,790 for 2025/26; $156,641 for 2026/27) if applicable |
+| 4.3 | Earner levy = liable earnings x $1.67 / $100 (2025/26, GST inclusive; $1.75 for 2026/27) |
 | 4.4 | Work levy = liable earnings x work levy rate for CU / $100 |
 | 4.5 | Working Safer levy = liable earnings x $0.08 / $100 |
 | 4.6 | Total ACC levy = earner levy + work levy + Working Safer levy |
-| 4.7 | GST: levies are GST-exclusive; GST added if GST-registered |
+| 4.7 | GST: the earner levy rate in step 4.3 already includes GST; work and Working Safer levy rates are GST-exclusive; ACC adds GST whether or not the client is GST-registered; only a registered person can claim it |
 
 ### 4.2 CoverPlus (Default) (Tier 1)
 
@@ -173,7 +175,7 @@ This is the deterministic pre-classifier for bank statement entries related to A
 
 ### 6.1 GST treatment (Tier 1)
 
-- **GST treatment on ACC levies** — ACC levies are GST-exclusive. If the self-employed person is GST-registered, ACC adds GST to the invoice. The GST component is claimable as input tax on the GST return.
+- **GST treatment on ACC levies** — ACC levies are GST-exclusive. ACC's CoverPlus invoice shows the GST included, whether or not the self-employed person is GST-registered. A GST-registered person can claim the GST component as input tax on the GST return. Source: ACC, Understand your CoverPlus invoice, https://www.acc.co.nz/for-business/received-an-invoice/explaining-your-invoice/coverplus-invoice.
 
 ### 6.2 Income tax deductibility (Tier 1)
 
@@ -199,7 +201,7 @@ Resolution: Earner levy on total earnings (both sources combined, up to maximum)
 ### EC4 -- Earnings exceed maximum (Tier 1)
 
 Situation: Consultant earns $200,000 net self-employment income.
-Resolution: Levies calculated on $142,283 (maximum), not $200,000. Weekly compensation if injured is also capped.
+Resolution: Levies calculated on $152,790 (2025/26 maximum), not $200,000. Weekly compensation if injured is also capped.
 
 ### EC5 -- Client disputes CU classification (Tier 2)
 
@@ -242,22 +244,22 @@ Action Required: Do not advise. Refer to qualified NZ chartered accountant. Docu
 ### Test 1 -- Standard software consultant
 
 Input: CU 72100, liable earnings $120,000, work levy rate $0.08/100.
-Expected output: Earner levy: $2,004.00. Work levy: $96.00. Working Safer: $96.00. Total: ~$2,196.00 (excl. GST).
+Expected output (2025/26): Earner levy: $2,004.00 (GST inclusive). Work levy: $96.00 and Working Safer: $96.00 (excl. GST), plus GST $28.80. Invoice total: ~$2,224.80 incl. GST.
 
 ### Test 2 -- High earner hitting cap
 
-Input: CU 69200, liable earnings $200,000, maximum $142,283.
-Expected output: Capped at $142,283. Earner levy: $2,376.13. Work levy: $113.83. Working Safer: $113.83. Total: ~$2,603.79 (excl. GST).
+Input: CU 69200, liable earnings $200,000, 2025/26 maximum $152,790.
+Expected output: Capped at $152,790. Earner levy: $2,551.59 (GST inclusive). Work levy: $122.23 and Working Safer: $122.23 (excl. GST), plus GST $36.67. Invoice total: ~$2,832.72 incl. GST.
 
 ### Test 3 -- Builder (high-risk CU)
 
 Input: CU 41100, liable earnings $80,000, work levy rate $2.68/100.
-Expected output: Earner levy: $1,336.00. Work levy: $2,144.00. Working Safer: $64.00. Total: ~$3,544.00 (excl. GST).
+Expected output (2025/26): Earner levy: $1,336.00 (GST inclusive). Work levy: $2,144.00 and Working Safer: $64.00 (excl. GST), plus GST $331.20. Invoice total: ~$3,875.20 incl. GST.
 
 ### Test 4 -- Low-income first-year freelancer
 
-Input: CU 72100, liable earnings $25,000.
-Expected output: Earner levy: $417.50. Work levy: $20.00. Working Safer: $20.00. Total: ~$457.50 (excl. GST).
+Input: CU 72100, liable earnings $25,000, part-time (30 hours a week or less on average), 2025/26.
+Expected output: Earner levy: $417.50 (GST inclusive). Work levy: $20.00 and Working Safer: $20.00 (excl. GST), plus GST $6.00. Invoice total: ~$463.50 incl. GST. If full-time, levies are calculated on the $49,365 minimum instead.
 
 ## Section 10 -- Prohibitions and disclaimer
 
@@ -267,7 +269,7 @@ Expected output: Earner levy: $417.50. Work levy: $20.00. Working Safer: $20.00.
 - NEVER calculate levies on earnings above the maximum liable earnings cap
 - NEVER confuse CoverPlus (default, based on actual earnings) with CoverPlus Extra (agreed amount)
 - NEVER omit the earner levy -- it applies to ALL earners, not just self-employed
-- NEVER forget GST treatment -- ACC levies are GST-exclusive; GST is added for registered persons
+- NEVER forget GST treatment -- ACC levies are GST-exclusive; ACC adds GST to every invoice; only registered persons claim it
 - NEVER use a work levy rate without verifying it against the current ACC levy guidebook or invoice
 - NEVER present calculations as definitive -- always label as estimated and direct client to ACC or a qualified NZ chartered accountant
 

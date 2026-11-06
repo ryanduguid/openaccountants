@@ -1,10 +1,10 @@
 ---
 name: it-inps-contributions
 description: Use this skill whenever asked about Italian INPS social contributions for self-employed professionals (Gestione Separata). Trigger on phrases like "INPS contributions", "Gestione Separata", "contributi previdenziali", "aliquota INPS", "rivalsa 4%", "acconto saldo INPS", "minimale contributivo", "massimale INPS", "F24 contributi", "how much INPS do I pay", or any question about Italian freelance social security obligations. Also trigger when classifying bank statement transactions showing F24 INPS payments, Gestione Separata acconti/saldo debits, or Agenzia delle Entrate INPS-related debits. ALWAYS read this skill before touching any Italian social contribution work.
-version: 2.0
+version: 2.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -25,12 +25,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary Legislation | L. 335/1995 (Riforma Dini); L. 81/2017 (Jobs Act Autonomi) |
 | Supporting Legislation | TUIR Art. 10 (deductibility); D.P.R. 917/1986 Art. 54 |
 | Tax Authority | INPS (Istituto Nazionale della Previdenza Sociale) |
-| Rate Publisher | INPS (annual circular -- Circolare n. 27 del 30 gennaio 2025) |
+| Rate Publisher | INPS (annual circular -- Circolare n. 27 del 30 gennaio 2025; for 2026, Circolare n. 8 del 3 febbraio 2026) |
 | Currency | EUR only |
 | Aliquota (no other coverage) | 26.07% (25.00% IVS + 0.72% maternita + 0.35% ISCRO) |
 | Aliquota (with other coverage/pensioned) | 24.00% |
-| Massimale (income ceiling) | EUR 120,607 |
-| Minimale (full year credit) | EUR 18,555 |
+| Massimale (income ceiling) | EUR 120,607 (2025); EUR 122,295 (2026) |
+| Minimale (full year credit) | EUR 18,555 (2025); EUR 18,808 (2026) |
 | Rivalsa INPS | 4% (optional, charged to clients) |
 | Payment via | F24 (codici DPPI/DPP) through Modello Redditi PF |
 | Saldo + primo acconto | 30 June (or 30 July with 0.40% surcharge) |
@@ -194,11 +194,11 @@ Matches F24 + "RAVVEDIMENTO" + "DPPI". This is a late INPS acconto payment with 
 
 ### Rule 2 -- Computation formula
 
-- **INPS computation formula** — INPS base = Net professional income (Quadro RE or LM) + rivalsa 4% received INPS contribution = min(INPS_base, EUR 120,607) x aliquota  _(Rule 2 -- Computation formula)_
+- **INPS computation formula** — INPS base = Net professional income (Quadro RE or LM), which already includes rivalsa 4% received (do not add it again) INPS contribution = min(INPS_base, massimale) x aliquota, with massimale EUR 120,607 for 2025 and EUR 122,295 for 2026  _(Rule 2 -- Computation formula)_
 
 ### Rule 3 -- Massimale and minimale
 
-- **Massimale and minimale** — Massimale: EUR 120,607 -- no contributions on income above this. Minimale: EUR 18,555 -- income below this earns proportionally reduced pension credit months: months = floor(income / EUR 18,555 x 12). There is NO mandatory minimum contribution in Gestione Separata.  _(Rule 3 -- Massimale and minimale)_
+- **Massimale and minimale** — Massimale: EUR 120,607 for 2025, EUR 122,295 for 2026 (INPS circolare 8 of 3 February 2026) -- no contributions on income above this. Minimale: EUR 18,555 for 2025 (EUR 18,808 for 2026) -- income below this earns proportionally reduced pension credit months: months = floor(income / minimale of the year x 12). There is NO mandatory minimum contribution in Gestione Separata.  _(Rule 3 -- Massimale and minimale)_
 
 ### Rule 4 -- Rivalsa INPS 4%
 
@@ -344,8 +344,8 @@ If the client provides only a bank statement:
 | --- | --- |
 | Aliquota (no other coverage) | 26.07% |
 | Aliquota (with coverage/pensioned) | 24.00% |
-| Massimale | EUR 120,607 |
-| Minimale (full year credit) | EUR 18,555 |
+| Massimale | EUR 120,607 (2026: EUR 122,295) |
+| Minimale (full year credit) | EUR 18,555 (2026: EUR 18,808) |
 | Rivalsa | 4% (optional) |
 
 ### Casse professionali (all T3 -- escalate)
@@ -373,7 +373,7 @@ If the client provides only a bank statement:
 
 **Test 2:** Professionista with employment (altra gestione), freelance income EUR 30,000. -> Rate 24.00%. INPS: EUR 7,200.
 
-**Test 3:** Income EUR 150,000. -> Capped at EUR 120,607. INPS: EUR 31,442.24.
+**Test 3:** Income EUR 150,000. -> Capped at EUR 120,607 (2025). INPS: EUR 31,442.24. For 2026: capped at EUR 122,295; INPS: EUR 31,882.31.
 
 **Test 4:** Income EUR 0, partita IVA open. -> INPS: EUR 0. No minimale in Gestione Separata.
 

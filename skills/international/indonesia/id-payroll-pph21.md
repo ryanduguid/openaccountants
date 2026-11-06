@@ -1,10 +1,10 @@
 ---
 name: id-payroll-pph21
 description: Use this skill whenever asked to calculate, review, or advise on Indonesian payroll — PPh 21 (income tax withholding), BPJS Kesehatan (health insurance), BPJS Ketenagakerjaan (JHT, JP, JKK, JKM employment social security), biaya jabatan, or PTKP thresholds. Trigger on phrases like "PPh 21", "PPh Pasal 21", "pajak penghasilan", "BPJS", "gaji Indonesia", "payroll Indonesia", "potong pajak karyawan", "TER PPh 21", "PTKP", or any Indonesia employment income tax / social security request. ALWAYS read this skill before touching any Indonesia payroll or PPh 21 work.
-version: 1.0
+version: 1.1
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 reviewed_by: RILIA PUTRI
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # ID Payroll Pph21
 
-## Indonesia Payroll — PPh 21 & BPJS Contributions Skill v1.1
+## Indonesia Payroll — PPh 21 & BPJS Contributions Skill v1.2
 
 > **2025 changes summary (v1.1 refresh):** PPh 21 monthly withholding continues under the TER system (PP 58/2023, PMK 168/2023 — Categories A/B/C by PTKP, year-end reconciliation under Article 17 brackets). From **1 July 2024**, Indonesian-citizen employees use their **16-digit NIK as NPWP**; foreign-national employees keep the 15-digit NPWP. From **1 January 2025**, all PPh 21 filings — monthly **SPT Masa PPh 21 / e-Bupot Unifikasi** and the **1721-A1 / 1721-A2** annual slips — flow through **Coretax DJP** (the legacy DJP Online e-Bupot 21/26 desktop app is being retired). See `id-einvoice-coretax` for the Coretax workflow.
 
@@ -34,14 +34,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | Calendar year (1 Jan – 31 Dec) |
 | Current tax year | 2025 |
 | Tax authority | Direktorat Jenderal Pajak (DJP) — Directorate General of Taxes |
-| Return forms | SPT Tahunan PPh Orang Pribadi (1770/1770S/1770SS) |
+| Return forms | One SPT Tahunan PPh Orang Pribadi in Coretax from tax year 2025 (PER-11/PJ/2025); 1770/1770S/1770SS for tax year 2024 and earlier |
 | Monthly withholding | E-Bupot PPh 21/26 via DJP Online |
 | Filing deadline | 31 March (annual); 20th of following month (monthly E-Bupot) |
 | Governing law | UU PPh No. 36/2008, as amended by UU HPP No. 7/2021; PP 58/2023; PMK 168/2023 |
 | Source credit | `steevenz/id-payroll-calculator` (MIT) + `KejawenLab/PPH21` (MIT) + DJP / official regulations |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a qualified Indonesian tax consultant |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 — PPh 21 progressive tax brackets (Tarif Pasal 17 UU HPP)
 
@@ -146,11 +146,11 @@ Source: `steevenz/id-payroll-calculator` → `PayrollCalculator.php`.
 
 | Parameter | Value |
 | --- | --- |
-| Maximum wage basis | IDR 10,547,400/month (effective 1 March 2025) |
+| Maximum wage basis | IDR 11,086,300/month from 1 March 2026 (IDR 10,547,400 from 1 March 2025). The cap resets each March |
 
-- **JP contribution cap example** — When salary exceeds the wage ceiling, contributions are calculated on the ceiling amount, not actual salary. Example: for salary IDR 15,000,000, employer JP = 2% × 10,547,400 = IDR 210,948; employee JP = 1% × 10,547,400 = IDR 105,474.
+- **JP contribution cap example** — When salary exceeds the wage ceiling, contributions are calculated on the ceiling amount, not actual salary. Example (wage months from March 2026): for salary IDR 15,000,000, employer JP = 2% × 11,086,300 = IDR 221,726; employee JP = 1% × 11,086,300 = IDR 110,863.
 
-Source: `steevenz/id-payroll-calculator` → `PayrollCalculator.php` (cap logic at `7000000` in repo, now updated to IDR 10,547,400 per BPJS Ketenagakerjaan 2025 regulation).
+Source: 2026 cap as announced by BPJS Ketenagakerjaan (official X account @BPJSTKinfo, March 2026, read only as a search extract) and reported by Nexdigm (Legal500, 12 March 2026) as 10,547,400 × (1 + 5.11% GDP growth for 2025) = 11,086,372, rounded to 11,086,300. The BPJS circular itself was not sighted, so confirm the cap on the employer's BPJS bill. 2025 cap: BPJS letter B/91/022025 of 27 February 2025. `steevenz/id-payroll-calculator` → `PayrollCalculator.php` still has the original `7000000` cap.
 
 ### 6c — JKK (Jaminan Kecelakaan Kerja / Work Accident Insurance)
 
@@ -198,7 +198,7 @@ Source: BPJS Ketenagakerjaan, article of 17 December 2025 (0.3%, wholly the empl
 | --- | --- | --- | --- |
 | BPJS Kesehatan | 4.00% | 1.00% | 5.00% |
 | JHT | 3.70% | 2.00% | 5.70% |
-| JP (capped at IDR 10,547,400) | 2.00% | 1.00% | 3.00% |
+| JP (capped at IDR 11,086,300 from March 2026) | 2.00% | 1.00% | 3.00% |
 | JKK (varies by risk grade) | 0.24%–1.74% | — | 0.24%–1.74% |
 | JKM (see section 6d) | 0.30% | — | 0.30% |
 | **Total (using JKK grade 2)** | **10.54%** | **4.00%** | **14.54%** |
@@ -420,6 +420,13 @@ The `steevenz/id-payroll-calculator` supports three PPh 21 calculation methods:
 | GROSS | Pajak ditanggung karyawan | Employee bears the tax; PPh 21 deducted from salary |
 | GROSS-UP | Tunjangan pajak | Employer adds a tax allowance equal to the PPh 21 liability, then deducts it — net effect same as NETT but appears on payslip |
 
+### 11a — 2026 incentive: PPh 21 borne by the government (PMK 105/2025)
+
+- **Who qualifies** — Masa Pajak January to December 2026 (PMK 105/2025 Art. 2(3)). Employer: main business in footwear, textiles and apparel, furniture, leather and leather goods, or tourism, with a main KLU code listed in Lampiran A of PMK 105/2025 as recorded by DJP on 1 January 2026, or on the registration date for employers registered later (Art. 3). Employee: has an NPWP and/or an NIK integrated with DJP's system and receives no other government-borne PPh 21 incentive (Art. 4(2)(a), (c) and 4(3)(a), (c)). Permanent employees: fixed, regular gross pay (salary and fixed allowances, including in kind) of no more than IDR 10,000,000 in January 2026, or in the first month of work for staff who start in 2026 (Art. 4(2)(b), (4), (5)). Non-permanent employees: average pay of no more than IDR 500,000 a day if paid daily, weekly, by piece or lump sum, or no more than IDR 10,000,000 if paid monthly (Art. 4(3)(b)). Income already subject to final PPh is excluded (Art. 4(6)).
+- **How it works** — Compute PPh 21 as usual (TER, then the December recalculation). The employer pays that PPh 21 to the employee in cash with the wages, including where it gives a tax allowance or bears the tax; the cash is not taxable income (Art. 5(1), (2)). Issue the bukti potong as usual (Art. 5(3)). If the incentive given to a permanent employee over the year exceeds the annual PPh 21 due, the excess is not refunded to the employee (Art. 5(5)); an overpayment on SPT Masa PPh 21/26 that comes from the incentive cannot be refunded or carried forward (Art. 5(6)). Worked examples are in Lampiran B.
+- **Reporting** — Report the incentive in every SPT Masa PPh 21/26 for January to December 2026 (Art. 6(1), (2)). Returns and corrections count only if filed by 31 January 2027; otherwise the incentive is lost for all of January to December 2026 and the employer must pay the PPh 21 it withheld (Art. 6(4) to (6)).
+- **Check before applying** — Confirm the employer's main KLU code against Lampiran A. PMK 105/2025 was set on 29 December 2025 (https://jdih.kemenkeu.go.id/api/download/cb203b0c-bdc8-409d-bf9c-a71264d96f60/2025pmkeuangan105.pdf); later amendments were not checked.
+
 ## Section 12 — Filing guidance
 
 ### Who must file?
@@ -430,11 +437,10 @@ The `steevenz/id-payroll-calculator` supports three PPh 21 calculation methods:
 
 **Which form?**
 
-| Form | Who |
+| Tax year | Form |
 | --- | --- |
-| 1770SS | Single employer, gross income ≤ IDR 60,000,000/year |
-| 1770S | Single employer, gross income > IDR 60,000,000/year |
-| 1770 | Multiple income sources / business income |
+| 2025 onward | One SPT Tahunan PPh Orang Pribadi in Coretax for every individual (PER-11/PJ/2025 Art. 83; DJP, pajak.go.id/en/node/118455): a main form plus attachments. Every individual completes the asset and dependant parts of Lampiran 1; employment income and the bukti potong list also go in Lampiran 1 |
+| 2024 and earlier | 1770SS (single employer, gross income ≤ IDR 60,000,000/year); 1770S (single employer, gross income > IDR 60,000,000/year); 1770 (multiple income sources / business income) |
 
 ### Key dates
 
@@ -466,7 +472,7 @@ When in doubt:
 | PTKP status unclear | Use TK/0 (lowest PTKP = highest tax); flag for reviewer |
 | Company risk grade unknown | Use grade 2 (0.54%) as default; flag for confirmation |
 | Employee permanent status unclear | Treat as permanent (pegawai tetap); flag for reviewer |
-| Salary above JP cap | Cap JP contributions at IDR 10,547,400 wage basis |
+| Salary above JP cap | Cap JP contributions at the current wage basis (IDR 11,086,300 from March 2026); check the BPJS bill after each March reset |
 | TER category unclear | Use Category A (most conservative); flag for reviewer |
 | BPJS Kesehatan dependents > 5 | Add 1% deduction per extra dependent; confirm family count |
 | Bonus / THR month | Include in gross for TER calculation that month; December true-up will reconcile |
@@ -504,6 +510,7 @@ When in doubt:
 | PP 49/2023 (JKK and JKM reallocation) | https://jdih.djsn.go.id/assets/file/pp%20nomor%2049%20tahun%202023.pdf |
 | PP 6/2025 (JKP contribution) | https://jdih.kemenkeu.go.id/api/download/909a0028-c6d2-476b-8692-97a800fafe56/2025PP006.pdf |
 | PP 7/2025 (JKK rates and temporary relief) | https://jdih.kemenkeu.go.id/api/download/cdb7e0ef-fa1a-43f4-953e-792cecb57321/2025PP007.pdf |
+| PMK 105/2025 (PPh 21 borne by the government, 2026) | https://jdih.kemenkeu.go.id/api/download/cb203b0c-bdc8-409d-bf9c-a71264d96f60/2025pmkeuangan105.pdf |
 | PP 36/2025 (extends the relief to January 2026) | https://jdih.kemenkeu.go.id/api/download/3d30017a-5d30-4e12-94ed-db61581f754f/2025PP036.pdf |
 | BPJS Ketenagakerjaan contribution rates (17 December 2025) | https://www.bpjsketenagakerjaan.go.id/artikel/18913/artikel-berapa-besaran-iuran-jht%2C-jkk%2C-jkm%2Cjp-dan-jkp |
 | `steevenz/id-payroll-calculator` (MIT, 21★) | https://github.com/steevenz/id-payroll-calculator |

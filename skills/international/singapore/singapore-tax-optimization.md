@@ -1,11 +1,11 @@
 ---
 name: singapore-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Singapore taxpayers — individuals, sole proprietors, and small companies. Trigger on phrases like "reduce my tax Singapore", "tax planning", "personal reliefs", "SRS", "CPF", "sole proprietor vs company", "IRAS", "GST optimization", "capital allowances Singapore", "no capital gains tax", "tax residency", or any question about legally minimizing Singapore income tax. Covers entity selection, relief optimization, capital allowances, loss utilization, timing, GST planning, CPF/SRS strategies, and red lines. ALWAYS read this skill before giving Singapore tax optimization advice.
-version: 1.1
+version: 1.2
 jurisdiction: SG
 tax_year: 2026
 tax_year_notes: "YA 2026"
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -100,7 +100,7 @@ Singapore has no formal income-splitting or family trust regime comparable to Au
 | Spouse relief | S$2,000 | Spouse income ≤S$4,000/year; living together or maintained |
 | Qualifying child relief (QCR) | S$4,000/child | Child under 16, or full-time student/NS, income ≤S$4,000 |
 | Handicapped child relief | S$7,500/child | In lieu of QCR if child is handicapped |
-| Working mother's child relief (WMCR) | 15%/20%/25% of mother's earned income (1st/2nd/3rd+ child) | Mother must be married, divorced, or widowed. Combines with QCR up to S$50,000/child |
+| Working mother's child relief (WMCR) | Child born or adopted on or after 1 Jan 2024: S$8,000/S$10,000/S$12,000 (1st/2nd/3rd+ child). Earlier child: 15%/20%/25% of mother's earned income, unless the child became a Singapore Citizen only after 1 Jan 2024 (fixed amount applies) | Mother must be married, divorced, or widowed; child must be a Singapore Citizen. Combines with QCR up to S$50,000/child. Source: [IRAS WMCR](https://www.iras.gov.sg/taxes/individual-income-tax/employees/deductions-for-individuals/personal-reliefs-and-tax-rebates/working-mother's-child-relief-(wmcr)) |
 | Parent relief | S$9,000 (living together); S$5,500 (not living together) | Parent 55+, income ≤S$4,000, living in Singapore |
 | Handicapped parent relief | S$14,000 / S$10,000 | In lieu of parent relief |
 | Grandparent caregiver relief | S$3,000 | Working mother; grandparent/parent cares for child |

@@ -4,7 +4,7 @@ description: "What actually happens to your UK tax when you move to Dubai or Abu
 jurisdiction: GB
 category: international
 tax_year: 2025
-last_updated: 2026-08-03
+last_updated: 2026-11-01
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -187,8 +187,9 @@ return. This is why the entire planning burden of the corridor sits in Parts 1�
   taxed at 9%). The qualifying conditions — substance, audited accounts, de-minimis limits —
   are real; a free-zone licence alone is not a 0% guarantee.
 - **Small business relief**: elective relief treating you as having no taxable income while
-  revenue stays ≤ **AED 3m** — available for tax periods through **31 December 2026** (check
-  for extension beyond that).
+  revenue stays ≤ **AED 3m** in that and every earlier tax period — available for tax periods
+  ending on or before **31 December 2029** (Ministerial Decision 73 of 2023, as amended by
+  Ministerial Decision 131 of 2026; the end date was 31 December 2026 before that amendment).
 - **VAT — 5%**, mandatory registration at **AED 375,000** taxable turnover (voluntary from AED
   187,500). If you run a business, this arrives long before corporate tax does.
 - **The 15% domestic minimum top-up tax (Pillar Two)** applies from 2025 only to members of

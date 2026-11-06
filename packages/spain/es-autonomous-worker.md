@@ -1,10 +1,10 @@
 ---
 name: es-autonomous-worker
 description: Use this skill whenever asked about Spanish self-employed (autónomo) tax and social security obligations beyond IRPF computation. Trigger on phrases like "autonomo", "autónomo", "cuota de autonomos", "cuota seguridad social autonomo", "RETA", "tarifa plana", "alta autonomo", "baja autonomo", "cotizacion por ingresos reales", "obligaciones fiscales autonomo", "modelos autonomo", "Modelo 303", "Modelo 130", "Modelo 390", "Modelo 349", "calendario fiscal autonomo", "pluriactividad", "autonomo societario", "facturacion autonomo", "estimacion directa", "libro registro", "IGIC autonomo", "IPSI autonomo", "autonomo Canarias", "autonomo Ceuta Melilla", "cuanto paga un autonomo", or any question about the complete fiscal and social security picture for a self-employed worker in Spain. ALWAYS read this skill before advising on autónomo setup, ongoing obligations, or take-home pay calculations.
-version: 1.0
+version: 1.1
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - es-income-tax
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # ES Autonomous Worker
 
-## Spain Autónomo (Self-Employed Worker) Complete Obligations Skill v1.0
+## Spain Autónomo (Self-Employed Worker) Complete Obligations Skill v1.1
 
 > **Based on work by [Nambu89 (Impuestify)](https://github.com/Nambu89/Impuestify)** and **[Pau March (larenta)](https://github.com/paumrch/larenta)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -38,29 +38,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Since January 2023, self-employed workers pay Social Security (cuota de autónomos) based on actual income (rendimientos netos). The system has 15 brackets deployed gradually until 2032.
 
-### The 15 Contribution Brackets (Tramos) -- 2025
+### The 15 Contribution Brackets (Tramos) -- 2025 and 2026
 
-**The 15 Contribution Brackets (Tramos) -- 2025**
+**The 15 Contribution Brackets (Tramos) -- 2025 and 2026**  _(Orden PJC/297/2026 art. 18: minimum bases unchanged from 2025; https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296)_
 
-| Tramo | Net Monthly Income (EUR) | Minimum Contribution (EUR/month) |
-| --- | --- | --- |
-| 1 | ≤ 670 | 200 |
-| 2 | 670.01 - 900 | 250 |
-| 3 | 900.01 - 1,166.70 | 267 |
-| 4 | 1,166.71 - 1,300 | 291 |
-| 5 | 1,300.01 - 1,500 | 294 |
-| 6 | 1,500.01 - 1,700 | 294 |
-| 7 | 1,700.01 - 1,850 | 310 |
-| 8 | 1,850.01 - 2,030 | 315 |
-| 9 | 2,030.01 - 2,330 | 320 |
-| 10 | 2,330.01 - 2,760 | 330 |
-| 11 | 2,760.01 - 3,190 | 350 |
-| 12 | 3,190.01 - 3,620 | 370 |
-| 13 | 3,620.01 - 4,050 | 390 |
-| 14 | 4,050.01 - 6,000 | 400 |
-| 15 | > 6,000 | 530 |
+| Tramo | Net Monthly Income (EUR) | Minimum Base (EUR/month) | Minimum Contribution 2025 at 31.40% (EUR/month) | Minimum Contribution 2026 at 31.50% (EUR/month) |
+| --- | --- | --- | --- | --- |
+| 1 | ≤ 670 | 653.59 | 205.23 | 205.88 |
+| 2 | 670.01 - 900 | 718.95 | 225.75 | 226.47 |
+| 3 | 900.01 - under 1,166.70 | 849.67 | 266.80 | 267.65 |
+| 4 | 1,166.70 - 1,300 | 950.98 | 298.61 | 299.56 |
+| 5 | 1,300.01 - 1,500 | 960.78 | 301.68 | 302.65 |
+| 6 | 1,500.01 - 1,700 | 960.78 | 301.68 | 302.65 |
+| 7 | 1,700.01 - 1,850 | 1,143.79 | 359.15 | 360.29 |
+| 8 | 1,850.01 - 2,030 | 1,209.15 | 379.67 | 380.88 |
+| 9 | 2,030.01 - 2,330 | 1,274.51 | 400.20 | 401.47 |
+| 10 | 2,330.01 - 2,760 | 1,356.21 | 425.85 | 427.21 |
+| 11 | 2,760.01 - 3,190 | 1,437.91 | 451.50 | 452.94 |
+| 12 | 3,190.01 - 3,620 | 1,519.61 | 477.16 | 478.68 |
+| 13 | 3,620.01 - 4,050 | 1,601.31 | 502.81 | 504.41 |
+| 14 | 4,050.01 - 6,000 | 1,732.03 | 543.86 | 545.59 |
+| 15 | > 6,000 | 1,928.10 | 605.42 | 607.35 |
 
-- **Contribution rate** — 31.4% of chosen base de cotización (the contribution amounts above are the minimums -- workers can choose higher bases within their bracket for better future pensions)
+- **Contribution rate** — 31.40% of chosen base de cotización for 2025; 31.50% for 2026 (MEI rises from 0.80% to 0.90%). Maximum base EUR 4,909.50/month for 2025 and EUR 5,101.20/month for 2026 (the contribution amounts above are the minimums -- workers can choose higher bases within their bracket for better future pensions)
 
 ### How to Calculate Net Monthly Income (Rendimiento Neto)
 
@@ -190,20 +190,20 @@ Monthly:
   = Total factura:              EUR 3,630
   - Retención IRPF 15%:        EUR 450
   = Cobro efectivo:             EUR 3,180
-  - Cuota autónomos (Tramo 9): EUR 320
+  - Cuota autónomos (Tramo 9): EUR 400.20 (minimum base 1,274.51 x 31.40%, 2025)
   - Gastos deducibles:          EUR 200
-  = Neto mensual estimado:      EUR 2,660
+  = Neto mensual estimado:      EUR 2,579.80
 
 Annual:
   Facturación bruta:            EUR 36,000
   - Gastos deducibles:          EUR 2,400
-  - Cuota autónomos:            EUR 3,840
-  - Gastos difícil justificación: EUR 1,488 (5% × 29,760, < 2,000)
-  = Base imponible:             EUR 28,272
-  IRPF estimado (escala 2025):  ~EUR 5,600
-  Neto anual:                   EUR 36,000 - 5,600 - 3,840 - 2,400 = EUR 24,160
-  Neto mensual real:            EUR 2,013
-  % neto sobre facturación:     ~67%
+  - Cuota autónomos:            EUR 4,802.40 (400.20 x 12)
+  - Gastos difícil justificación: EUR 1,439.88 (5% × 28,797.60, < 2,000)
+  = Base imponible:             EUR 27,357.72
+  IRPF estimado (escala 2025):  ~EUR 5,318 (state scale x 2 as a proxy for the regional scale, less EUR 5,550 personal minimum; actual regional scales vary)
+  Neto anual:                   EUR 36,000 - 5,318 - 4,802.40 - 2,400 = EUR 23,479.60
+  Neto mensual real:            EUR 1,956.63
+  % neto sobre facturación:     ~65%
 
 **Note:** The monthly "neto" from cash flow differs from the annual real neto because retenciones are prepayments that may result in refund or additional payment at year-end.
 

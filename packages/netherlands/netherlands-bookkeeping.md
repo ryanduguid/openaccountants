@@ -1,10 +1,10 @@
 ---
 name: netherlands-bookkeeping
 description: Use this skill whenever asked about Dutch bookkeeping, chart of accounts, financial statements, RGS mapping, jaarrekening preparation, balance sheet or P&L format in the Netherlands. Trigger on phrases like "Dutch bookkeeping", "boekhouding", "grootboekrekening", "jaarrekening", "RGS", "chart of accounts Netherlands", "balans", "winst- en verliesrekening", "micro-entity Netherlands", "BW2 Title 9", "Dutch GAAP", "RJ guidelines", "small company accounts NL", "annual accounts Netherlands", or any question about recording transactions, financial reporting, or accounting standards for Dutch entities.
-version: 1.1
+version: 1.2
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-11-03
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -225,7 +225,7 @@ The RGS (Referentie GrootboekSchema) is not mandatory but is the de facto Dutch 
 | Low-value asset expensing | No statutory threshold | Practice: items < EUR 450 often expensed directly |
 | Real estate floor (bodemwaarde) | WOZ-value | Cannot depreciate below WOZ-value for tax |
 | Buildings (beleggingspand) | Max 100% WOZ-value | Investment property: cannot depreciate below 100% WOZ |
-| Buildings (own use) | Max 50% WOZ-value | Own-use property: floor is 50% of WOZ-value |
+| Buildings (own use) | Max 100% WOZ-value | Own-use property: floor is 100% of WOZ-value (Wet IB 2001 art. 3.30a(3), applied to Vpb by Wet Vpb 1969 art. 8(1)); a building taken into own use before 1 January 2024 and depreciated for less than 3 years may keep the former 50% floor until 3 years after first use (Belastingdienst, stated for income tax; confirm for Vpb) — https://wetten.overheid.nl/BWBR0011353/2026-01-01; https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/afschrijving/afschrijving_bedrijfspand |
 
 ### Depreciation Methods and Rates
 
@@ -233,7 +233,7 @@ The RGS (Referentie GrootboekSchema) is not mandatory but is the de facto Dutch 
 
 | Asset Type | Method | Common Tax Rate |
 | --- | --- | --- |
-| Buildings (own use) | Straight-line | 2-3% (floor: 50% WOZ) |
+| Buildings (own use) | Straight-line | 2-3% (floor: 100% WOZ) |
 | Buildings (investment) | Straight-line | 2-3% (floor: 100% WOZ) |
 | Machinery and equipment | Straight-line | 10-20% |
 | Office furniture/fittings | Straight-line | 20% |

@@ -1,11 +1,11 @@
 ---
 name: malaysia-sst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Malaysia Sales and Service Tax (SST) return (SST-02) for any client. Trigger on phrases like "Malaysia SST", "Sales Tax Malaysia", "Service Tax Malaysia", "SST-02", "MySST", "RMCD", or any request involving Malaysia SST. This is NOT a VAT — there is NO input tax credit. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Malaysia SST work.
-version: 2.0
+version: 2.1
 jurisdiction: MY
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-01
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: pending_review
 tier: 2
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Malaysia |
 | Tax type | Sales and Service Tax (SST) — NOT a VAT. No input tax credit. |
 | Sales Tax rate | 10% (standard); 5% (specific goods); specific rates (petroleum) |
-| Service Tax rate | 8% (standard, from 1 March 2024); 6% (retained: F&B, telecoms, parking, logistics) |
+| Service Tax rate | 8% (standard, from 1 March 2024); 6% (retained: F&B, telecoms, parking, logistics); 6% for rental or leasing from 1 January 2026 (Service Tax (Rate of Tax) (Amendment) Order 2026 [P.U. (A) 125/2026], as reported by KPMG: https://kpmg.com/my/en/insights/2026/03/6-percent-service-tax-rate-for-rental-or-leasing-services.html; gazette text not read) |
 | Exempt goods | Basic foodstuffs, live animals, certain agriculture, medical devices |
 | Return form | SST-02 (bimonthly for both Sales Tax and Service Tax) |
 | Filing portal | https://mysst.customs.gov.my (MySST) |
@@ -268,6 +268,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Sales Tax registration threshold** — RM 500,000 MYR (manufacturer turnover)
 - **Service Tax registration threshold — general** — RM 500,000 MYR
 - **Service Tax registration threshold — F&B** — RM 1,500,000 MYR
+- **Service Tax registration threshold — rental or leasing, and fee- or commission-based financial services** — RM 1,000,000 MYR, for the services added from 1 July 2025  _(Ministry of Finance press release, 27 June 2025: https://www.mof.gov.my/portal/en/news/press-release/revision-to-the-expanded-sales-tax-and-service-tax-take-into-account-public-and-industry-feedback)_
 
 ### 5.7 E-invoicing
 
@@ -301,7 +302,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 6.5 Service scope expansion (July 2025)
 
-- **Service scope expansion** — Default: check if newly prescribed. Question: "Confirm service type against expanded First Schedule."
+- **Service scope expansion** — Default: check if newly prescribed. Question: "Confirm service type against expanded First Schedule." Rental or leasing and fee- or commission-based financial services register at RM 1,000,000 (5.6). Rental or leasing is charged at 6% from 1 January 2026 under P.U. (A) 125/2026, deemed in operation from that date and replacing the interim 2% exemption, as reported by KPMG (https://kpmg.com/my/en/insights/2026/03/6-percent-service-tax-rate-for-rental-or-leasing-services.html). One summary (BDO) limited the cut to industrial rental before the order was gazetted; KPMG reports no such limit. Confirm the scope against the gazetted order before applying 6%.
 
 ### 6.6 E-invoicing compliance
 
@@ -344,6 +345,7 @@ Maybank, CIMB, Public Bank exports CSV/PDF with DD/MM/YYYY. MYR primary. Interna
 ### Change log
 
 - v2.0 (April 2026): Full rewrite to Malta v2.0 ten-section structure. Critical "no input credit" distinction emphasized throughout.
+- v2.1 (1 November 2026): Added the RM1,000,000 Service Tax threshold for rental or leasing and financial services, and the 6% rental or leasing rate from 1 January 2026 (scope to confirm against the gazetted order).
 
 ## Disclaimer
 

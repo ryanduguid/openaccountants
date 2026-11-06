@@ -1,10 +1,10 @@
 ---
 name: my-epf-socso
 description: Use this skill whenever asked about Malaysia EPF (KWSP), SOCSO (PERKESO), or EIS contributions. Trigger on phrases like "EPF Malaysia", "KWSP", "Kumpulan Wang Simpanan Pekerja", "SOCSO", "PERKESO", "EIS", "Employment Insurance System", "employer contribution Malaysia", "employee contribution Malaysia", "i-Saraan", "self-employed EPF", "social security Malaysia", or any question about mandatory employment contributions in Malaysia. Covers EPF rates, SOCSO rates, EIS rates, self-employed options, and registration. ALWAYS read this skill before advising on Malaysian employment contributions.
-version: 1.0
+version: 1.1
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-01
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: pending_review
 depends_on:
@@ -30,19 +30,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Authorities | KWSP (EPF), PERKESO (SOCSO), PERKESO (EIS) |
 | Validated by | Pending |
 | Validation date | Pending |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- EPF (Employees Provident Fund / KWSP)
 
 ### 2.1 EPF Contribution Rates -- Malaysian Citizens and Permanent Residents
 
-**EPF Contribution Rates -- Malaysian Citizens and Permanent Residents**
+**EPF Contribution Rates -- Malaysian Citizens and Permanent Residents**  _(EPF Act 1991, Third Schedule, Parts A, C and E, from October 2025 wages: https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution)_
 
 | Employee Category | Monthly Salary | Employee Rate | Employer Rate | Total |
 | --- | --- | --- | --- | --- |
 | Under 60 years | ≤RM5,000 | 11% | 13% | 24% |
 | Under 60 years | >RM5,000 | 11% | 12% | 23% |
-| Age 60 -- 75 | Any | 5.5% | 6.5% (≤RM5,000) / 6% (>RM5,000) | ~12% |
+| Malaysian citizen, age 60 -- 75 (Part E) | Any | 0% | 4% | 4% |
+| Permanent resident, or non-citizen registered before 1 August 1998, age 60 -- 75 (Part C) | ≤RM5,000 | 5.5% | 6.5% | 12% |
+| Permanent resident, or non-citizen registered before 1 August 1998, age 60 -- 75 (Part C) | >RM5,000 | 5.5% | 6% | 11.5% |
 | Age 75+ | Any | 0% | 0% | 0% |
 
 ### 2.2 EPF -- Foreign Employees (from 1 October 2025)

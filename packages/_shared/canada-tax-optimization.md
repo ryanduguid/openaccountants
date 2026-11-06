@@ -1,10 +1,10 @@
 ---
 name: canada-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Canadian taxpayers — individuals, sole proprietors, and small business owners (CCPCs). Trigger on phrases like "reduce my tax Canada", "tax planning", "RRSP vs TFSA", "salary vs dividends", "income splitting", "TOSI", "small business deduction", "LCGE", "capital gains inclusion", "CRA", or any question about structuring affairs to legally minimize Canadian tax. Covers entity selection, registered account optimization, deduction strategies, loss utilization, timing, GST/HST planning, CPP optimization, and red lines. ALWAYS read this skill before giving Canadian tax optimization advice.
-version: 1.0
+version: 1.1
 jurisdiction: CA
 tax_year: 2026
-last_updated: 2026-09-29
+last_updated: 2026-11-01
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Canada Tax Optimization
 
-## Canada — Tax Optimization Skill v1.0
+## Canada — Tax Optimization Skill v1.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -178,14 +178,14 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ### CPP Contributions (2026)
 
-- **CPP1** — 5.95% employee + 5.95% employer on pensionable earnings $3,500–$73,200 (max employee contribution ~$4,147)
-- **CPP2** — 4% employee + 4% employer on earnings $73,200–$81,200 (second ceiling)
+- **CPP1** — 5.95% employee + 5.95% employer on pensionable earnings $3,500–$74,600 (YMPE; max employee contribution $4,230.45)  _(CRA, CPP contribution rates, maximums and exemptions)_
+- **CPP2** — 4% employee + 4% employer on earnings $74,600–$85,000 (YAMPE, the second ceiling; max employee contribution $416.00)  _(CRA, CPP contribution rates, maximums and exemptions)_
 - **Self-employed CPP** — Self-employed pay both halves (11.9% CPP1 + 8% CPP2)
 - **CCPC owner-manager dividends only** — No CPP contributions → no CPP pension accrual. Trade-off: lower current cost vs lower retirement benefit
 
 ### EI Premiums
 
-- **Employees** — 1.64% on insurable earnings up to $65,700 (2026)
+- **Employees** — 1.63% on insurable earnings up to $68,900 (2026; maximum premium $1,123.07; 1.30% in Quebec)  _(CRA, EI premium rates and maximums)_
 - **Self-employed** — Can opt in for special benefits (maternity, sickness)
 - **CCPC dividends** — No EI — but also no EI eligibility
 

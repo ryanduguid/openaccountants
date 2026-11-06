@@ -1,10 +1,10 @@
 ---
 name: jp-incorporation
 description: Use this skill whenever asked about incorporating in Japan -- transitioning from sole proprietorship (個人事業主) to a corporation (法人). Trigger on phrases like "incorporation Japan", "法人成り", "会社設立", "should I incorporate", "法人化", "株式会社", "合同会社", "KK vs GK", "corporate tax vs income tax", "法人税", "when to incorporate", "法人成りのタイミング", "micro corporation", "マイクロ法人", "officer compensation", "役員報酬", "social insurance comparison", "社会保険", "個人事業 vs 法人", "定期同額給与", "consumption tax exemption reset", "消費税の免税リセット", or any question about whether, when, and how a Japanese sole proprietor should form a company. This skill covers tax burden comparison, breakeven analysis, corporate form selection, establishment procedures, filing deadlines, officer compensation strategy, and social insurance optimization. ALWAYS read this skill before advising on Japanese incorporation.
-version: 1.0
+version: 1.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-01
 review_status: pending_review
 depends_on:
   - jp-income-tax
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # JP Incorporation
 
-## Japan Incorporation (法人成り) -- Self-Employed Skill v1.0
+## Japan Incorporation (法人成り) -- Self-Employed Skill v1.1
 
 > **Based on work by [Kazuki Nagata (@kazukinagata)](https://github.com/kazukinagata/shinkoku)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax Authority | National Tax Agency (国税庁 NTA), Legal Affairs Bureau (法務局) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a Japanese 税理士 (Zeirishi) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 | Tax year basis | 2025 (令和7年) |
 
 ### Key Decision Thresholds
@@ -60,9 +60,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Resident tax (住民税) | 10% of taxable income + per-capita levy ~JPY 5,000 | Local Tax Act |
 | Enterprise tax (個人事業税) | 3%--5% on income over JPY 2,900,000 (deduction) | Local Tax Act Art. 72-49-17 |
 | National health insurance (国民健康保険) | Income-based + per-capita; cap ~JPY 1,090,000/year (2025) | Per municipality |
-| National pension (国民年金) | Flat JPY 17,510/month (JPY 210,120/year, 2025) | National Pension Act |
+| National pension (国民年金) | Flat JPY 17,510/month (JPY 210,120/year, FY2025); JPY 17,920/month (JPY 215,040/year, FY2026) | National Pension Act |
 
-Sources: NTA Tax Answer No. 2260 (the national rates) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm; 総務省, 個人住民税 (the 10% income levy and the per-capita levy: ¥4,000 plus the ¥1,000 forest environment tax) — https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html; 日本年金機構 国民年金の保険料 — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html.
+Sources: NTA Tax Answer No. 2260 (the national rates) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm; 総務省, 個人住民税 (the 10% income levy and the per-capita levy: ¥4,000 plus the ¥1,000 forest environment tax) — https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html; 日本年金機構 国民年金の保険料 — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html (FY2026: https://www.nenkin.go.jp/service/kokunen/hokenryo/hokenryo.html).
 
 - **Total formula (sole proprietor)** — Income tax + reconstruction surtax + resident tax + enterprise tax + NHI + national pension
 
@@ -75,6 +75,7 @@ Sources: NTA Tax Answer No. 2260 (the national rates) — https://www.nta.go.jp/
 | Corporate tax (法人税) -- income ≤ JPY 8M | 15% (reduced rate for SMEs) | Corporate Tax Act Art. 66; Special Measures Art. 42-3-2 |
 | Corporate tax -- income > JPY 8M | 23.2% | Corporate Tax Act Art. 66 |
 | Local corporate tax (地方法人税) | Corporate tax × 10.3% | Local Corporate Tax Act Art. 6 |
+| Defence special corporate tax (防衛特別法人税) | 4% × (base corporate tax (基準法人税額) − JPY 5,000,000 per year), for fiscal years starting on or after 1 April 2026; separate return required even if nil | 防衛財源確保法, as amended by 令和7年法律第13号 |
 | Corporate inhabitant tax (法人住民税) -- tax portion | Corporate tax × ~7% | Local Tax Act |
 | Corporate inhabitant tax -- per-capita (均等割) | JPY 70,000/year minimum (capital ≤ JPY 10M, ≤ 50 employees) | Local Tax Act |
 | Enterprise tax (法人事業税) | 3.5%--7.0% (progressive by income bracket) | Local Tax Act Art. 72-24-7 |
@@ -82,6 +83,8 @@ Sources: NTA Tax Answer No. 2260 (the national rates) — https://www.nta.go.jp/
 | Social insurance (健康保険 + 厚生年金) | ~28--30% of officer compensation (split employer/employee) | Health Insurance Act; Employees' Pension Insurance Act |
 
 Source: NTA Tax Answer No. 5759 法人税の税率 (15% on the first ¥8 million for corporations with capital of ¥100 million or less, 17% under its note 7 where the year's income exceeds ¥1 billion, for fiscal years beginning on or after 1 April 2025; 23.2% above ¥8 million) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5759.htm.
+
+Source for the defence special corporate tax: NTA, 2025 corporate tax amendment outline (kaisei_gaiyo2025, part E) — https://www.nta.go.jp/publication/pamph/hojin/kaisei_gaiyo2025/pdf/E.pdf; e-Tax notice (start date, nil returns, interim returns from fiscal years starting on or after 1 April 2027) — https://www.e-tax.nta.go.jp/topics/2026/topics_20260417.htm. The JPY 5,000,000 deduction means no defence tax is payable while base corporate tax is JPY 5,000,000 or less (for an SME at 15% and 23.2%, taxable income up to about JPY 24.4 million), so the simulations in Section 3, which keep corporate profit under JPY 8,000,000, are unaffected; the return is still required.
 
 - **Total formula (corporate)** — Corporate taxes + officer's personal income tax/resident tax + social insurance (both halves)
 
@@ -104,7 +107,7 @@ Source: 東京都主税局 法人事業税 (standard rates 3.5 / 5.3 / 7.0; Toky
 - Sole proprietor: blue return (JPY 650,000 deduction), single, no dependents
 - Corporation: capital JPY 1,000,000, single-person company, one officer
 - Social insurance: Kyokai Kenpo (Tokyo), under 40 (no nursing care insurance)
-- Officer compensation optimized to keep corporate profit under JPY 8,000,000
+- Officer compensation optimized to keep corporate profit under JPY 8,000,000 (defence special corporate tax is nil at these levels; see Section 2.2)
 - Consumption tax excluded (same for both)
 
 ### 3.1 Business Income JPY 5,000,000 -- Sole Proprietor Wins
@@ -401,6 +404,7 @@ Processing time: typically 1--2 weeks. Obtain certificate of registered matters 
 | Filing | Deadline | Notes |
 | --- | --- | --- |
 | Corporate establishment notice (法人設立届出書) | Within 2 months of establishment | Attach articles + registration certificate |
+| Defence special corporate tax return (防衛特別法人税確定申告書), annual | Within 2 months of fiscal year-end in principle, from fiscal years starting on or after 1 April 2026 | Required even if the tax is nil |
 | Blue return approval application (青色申告の承認申請書) | Within 3 months of establishment OR fiscal year end (whichever is earlier) | **Highest priority -- missing this means white return** |
 | Payroll office opening notice (給与支払事務所等の開設届出書) | Within 1 month | Required if paying officer compensation |
 | Special withholding payment approval (源泉所得税の納期の特例) | As soon as possible | Allows semi-annual withholding deposits (≤10 employees) |
