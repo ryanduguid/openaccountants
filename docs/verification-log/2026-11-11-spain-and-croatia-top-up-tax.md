@@ -1,0 +1,9 @@
+# Spain and Croatia top-up tax scope and filing
+
+Spain's state corporate guide gave the threshold amount without the lookback. Article 6(1) of [Ley 7/2024 in its 3 October 2026 version](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694&p=20261003&tn=1) gives the two-of-four test, includes turnover of excluded entities and requires period-length adjustment. Article 6(2)–(4) distinguishes the domestic top-up tax, the income inclusion rule and the undertaxed profits rule. Final provision 22 generally applies the latter to periods beginning from 31 December 2024 and gives the Article 28(3) branch the earlier 31 December 2023 start.
+
+[Royal Decree 252/2025](https://www.boe.es/buscar/act.php?id=BOE-A-2025-6598) and [Order HAC/1198/2025 as amended](https://www.boe.es/buscar/act.php?id=BOE-A-2025-21727&p=20260529&tn=1) distinguish Models 240, 241 and 242 and their ordinary and transitional filing windows. The transition rules use a separate window for periods ending before 31 March 2025 and a 30 June 2026 floor for Model 242. Payment is due with the self-assessment under Ley 7/2024 art 51. The Order's bank debit deadlines differ from the filing deadlines and require separate review for the taxpayer's period and method.
+
+Croatia's [NN 155/2023, arts 56(1) and 61](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_12_155_2362.html) expressly allows the earlier UTPR charge for the fiscal year beginning 31 December 2023 under the deferral condition. Article 10 of [NN 151/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_151_2260.html) amends the title and paragraphs (2) and (3) of Article 56. The date exception in paragraph (1) still applies to the stated period.
+
+The scoped review leaves foral laws, computation, safe harbours, actual exchange arrangements, filing and payment operations and local-accountant review open.
