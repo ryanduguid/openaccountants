@@ -5,7 +5,7 @@ jurisdiction: KY
 category: international
 tax_year: 2026
 last_updated: 2026-11-11
-version: 2.0
+version: 2.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -92,6 +92,17 @@ Use the exact code for the goods. These are examples from Schedule 1 of the
   or waive specified duties in Cayman Brac and Little Cayman.
   [Tariff Act, ss 3 and 6 and Schedule 2][tariff] ·
   [Customs Act, ss 46–52][cbc-act] · [CBC import relief][cbc-imports]
+- **Island concessions through 31 December 2030.** Cabinet announced a 15%
+  rate for building materials imported for use in Grand Cayman. It defines
+  them as materials permanently incorporated into construction, renovation or
+  restoration, with exclusions including trade tools, furnishings and appliances.
+  Cabinet also announced full duty waivers for qualifying building materials
+  and gasoline imported to Cayman Brac or Little Cayman and for the listed
+  household appliances imported to Cayman Brac. Verify the classification and
+  conditions with CBC before claiming relief. CBC requires importers to declare
+  an applicable waiver or conditional exemption and undertake to comply with its
+  terms. [Cabinet announcement, 14 January 2026][island-concessions] ·
+  [CBC entry instructions][cbc-entry]
 - **Other border charges.** Check package tax at first entry under s 51
   and Schedule 3, including the statutory port and other exceptions.
   Schedule 4 sets handling and storage charges. Schedule 5 sets inspection
@@ -151,7 +162,8 @@ regulations and Sister Islands relief before calculating the total.
 ## Review limits
 
 Checked on 11 November 2026. Detailed tariff classifications, current
-specialist concession and correction procedures, the commencement of the
+specialist concession and correction procedures, including the implementing
+terms and declaration codes for the island concessions, the commencement of the
 temporary import rate, the accommodation assessment interest rate and
 the full departure fee and export duty administration remain open.
 Local accountant review is pending.
@@ -166,6 +178,7 @@ Local accountant review is pending.
 [cbc-amend]: https://gov.ky/documents/35692/621965/Customs_and_Border_Control_Amendment_Act_2025_LG15_S1.pdf/48afb44c-3745-bea6-9f63-4e0810b46d97?t=1761504935759
 [cbc-start]: https://gov.ky/w/customs-and-border-control-amendment-act-2025-commencement-order-2025-lg34-s1
 [cbc-imports]: https://gov.ky/web/cbc/trade/imports
+[island-concessions]: https://gov.ky/w/cayman-brac-duty-concessions-extended
 [vehicle-order]: https://gov.ky/w/customs-tariff-amendment-of-schedules-order-2025-lg34-s3
 [tourist]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1964/1964-0168/1964-0168.pdf
 [tourism]: https://www.ourcayman.ky/en-us/business-in-tourism/how-to/how-to-pay-taxes
