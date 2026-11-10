@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Saint Kitts and Nevis special regimes](2026-11-11-saint-kitts-and-nevis-special-regimes.md) |
 | 2026-11-11 | [Saint Kitts and Nevis VAT, customs, property and formation](2026-11-11-saint-kitts-and-nevis-vat-customs-property-formation.md) |
 | 2026-11-11 | [Saint Kitts and Nevis income tax and payroll](2026-11-11-saint-kitts-and-nevis-income-and-payroll.md) |
 | 2026-11-11 | [British Virgin Islands income tax, payroll and company reporting](2026-11-11-bvi-income-payroll-and-reporting.md) |
