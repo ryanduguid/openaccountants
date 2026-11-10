@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-10 | [Bahamas National Insurance rates, ceilings and reporting](2026-11-10-bahamas-national-insurance.md) |
 | 2026-11-10 | [Bahamas domestic personal income tax scope](2026-11-10-bahamas-personal-income-tax.md) |
 | 2026-11-03 | [Bolivia: ordinary-company corporate income tax reference](2026-11-03-bolivia-corporate-reference.md) |
 | 2026-11-02 | [Australia: resident rate cases and minimum-wage timing](2026-11-02-australia-rates-worked-cases.md) |
