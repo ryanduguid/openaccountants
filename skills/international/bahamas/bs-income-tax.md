@@ -1,10 +1,12 @@
 ---
 name: bs-income-tax
-description: "Use this skill whenever asked about Bahamas tax obligations for individuals, self-employed persons, or sole traders. Trigger on phrases like \"do I pay income tax in the Bahamas\", \"NIB contributions\", \"National Insurance Board\", \"business licence fee\", \"VAT registration Bahamas\", \"real property tax Bahamas\", \"stamp duty Bahamas\", \"self-employed tax Bahamas\", \"payroll Bahamas\", or any question about tax filing or obligations for a person living or working in the Bahamas. Also trigger when computing NIB contribution amounts, preparing a business licence application, determining VAT registration thresholds, or advising on property taxes and stamp duty. This skill covers the full Bahamas tax reality: no personal income tax of any kind, NIB social contributions (the primary individual obligation), VAT, Business Licence, Real Property Tax, and Stamp Duty. ALWAYS read this skill before touching any Bahamas tax or compliance work."
+description: "Bahamas domestic personal income tax scope through 10 November 2026, with 2025 reference material on National Insurance Board contributions, payroll, VAT, Business Licence, Real Property Tax and Stamp Duty for individuals and sole traders."
 jurisdiction: BS
 category: international
 tax_year: 2025
+tax_year_notes: "Personal income tax scope checked through 10 November 2026. Figures and examples for other regimes retain their stated periods."
 last_updated: 2026-11-10
+version: 0.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,32 +21,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Commonwealth of The Bahamas |
-| Personal Income Tax | **NONE** -- The Bahamas levies no personal income tax of any kind |
+| Domestic personal income tax | None in the period checked through 10 November 2026 |
 | Currency | Bahamian Dollar (BSD), pegged 1:1 to USD |
-| Tax year | Calendar year (1 January -- 31 December) |
+| Personal income tax year | Inapplicable |
 | Primary individual obligation | National Insurance Board (NIB) contributions |
 | Revenue authority (VAT, Business Licence, RPT) | Department of Inland Revenue (DIR) |
 | NIB authority | National Insurance Board (nib-bahamas.com) |
 | Filing portal (VAT) | https://vat.revenue.gov.bs/ |
-| Annual income tax return | **Does not exist** -- no PIT return to file |
+| Bahamian personal income tax return | Inapplicable |
 | Validated by | Pending -- requires sign-off by a qualified Bahamian practitioner |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### There Is No Personal Income Tax
 
-The Bahamas has **no personal income tax** of any kind. This is not a low rate or a zero band -- the tax itself does not exist. Confirmed absent (Source: secondary practitioner summary, last reviewed 24 February 2026):
+The Ministry of Finance's June 2024 competent authority guidance records the absence of a domestic personal income tax. This position was checked through 10 November 2026 against the 2026-27 Budget Communication and the current legislation index. For resident and non-resident individuals, a Bahamian personal income tax base, bands, deductions, allowances and return are inapplicable. Check foreign tax and separate Bahamian reporting and contribution obligations for the facts and period concerned. [Ministry of Finance, Bahamas–Japan MAP guidance, ‘Scope of the MAP “Limitations”’](https://cdn.bahamas.gov.bs/tenant/tenantministryoffinance/documents/All%20Documents/BAHAMAS-JAPANMAPGUIDANCEDOCUMENT-20240718120503.pdf) · [2026-27 Budget Communication](https://bahamasbudget.gov.bs/media/filer_public/81/9d/819d8c82-6e4c-471e-bf84-2e0965620327/final_budget_communication_fiscal_year_20262027-_a_budget_that_build_on_progress_.pdf) · [Legislation index](https://laws.bahamas.gov.bs/cms/legislation/index/by-alphabetical.html)
 
-**Confirmed absent taxes**  _(secondary practitioner summary, last reviewed 24 February 2026)_
-
-| Tax | Status |
-| --- | --- |
-| Income tax on employment or self-employment income | Does not exist |
-| Capital gains tax | Does not exist |
-| Inheritance, estate, or gift tax | Does not exist |
-| Wealth or net worth tax | Does not exist |
-| Transfer taxes on securities | Does not exist |
-| Payroll income tax | Does not exist (NIB social contributions exist separately) |
+The NIB rates, calculations and examples below refer to their stated historical periods. The 2025 calculations use the rates and ceiling applicable from 1 July 2024 to 30 June 2026. Verify the applicable NIB schedule for later periods.
 
 ### NIB Contribution Rates (Effective 1 July 2024)
 
@@ -69,12 +62,12 @@ A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions 
 | Period | Weekly ceiling | Monthly ceiling |
 | --- | --- | --- |
 | Previous (to 30 Jun 2024) | BSD 740 | BSD 3,207 |
-| **Current (1 Jul 2024 -- 30 Jun 2026)** | **BSD 810** | **BSD 3,510** |
-| Upcoming (from 1 Jul 2026) | BSD 830 | BSD 3,597 |
+| **1 Jul 2024 to 30 Jun 2026** | **BSD 810** | **BSD 3,510** |
+| From 1 Jul 2026 | Verify with NIB | Verify with NIB |
 
 - **Earnings above ceiling and biennial adjustment** — Earnings above the weekly ceiling are not subject to NIB contributions. The ceiling is adjusted biennially based on the retail price index over the preceding two years plus 2%.  _(nib-bahamas.com/biennial-adjustments-to-pensions-grants-and-the-wage-ceiling)_
 
-### Maximum Weekly and Annual NIB Contributions at Current Ceiling (BSD 810/week)
+### Maximum Weekly and Annual NIB Contributions at the 2025 Ceiling (BSD 810/week)
 
 **Maximum weekly and annual NIB contributions**
 
@@ -121,7 +114,7 @@ A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions 
 
 | Ambiguity | Default |
 | --- | --- |
-| Client asks about income tax | State clearly: there is no personal income tax in the Bahamas |
+| Client asks about domestic personal income tax | Record the tax and its return as inapplicable for the checked period |
 | Unknown NIB registration status | STOP -- instruct client to register with NIB if self-employed and not yet registered |
 | Unknown business turnover (VAT threshold) | Assume VAT registration required; escalate to confirm |
 | Unknown property ownership | Skip RPT section; note it for reviewer |
@@ -141,11 +134,11 @@ A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions 
 
 ### Refusal Catalogue
 
-- **R-BS-1** — "The Bahamas levies no personal income tax. There is no tax return to file, no income to declare to a tax authority, and no income tax due. If you are asking about social contributions, see the NIB section. If you are a business paying corporate tax, this skill does not cover corporate tax -- escalate to a qualified Bahamian practitioner." (Client asks for a personal income tax computation.)
+- **R-BS-1** — For a domestic personal income tax computation, record the tax and its return as inapplicable for the checked period. Assess separate obligations for the person's circumstances.
 - **R-BS-2** — "The Bahamas has no capital gains tax. If you are selling real estate, stamp duty applies on the conveyance -- see Section 6. If you are selling securities, no transfer taxes apply." (Capital gains computation requested.)
 - **R-BS-3** — "There is no inheritance, estate, or gift tax in the Bahamas. Estate planning and probate costs are legal/probate fees, not taxes. Escalate to a Bahamian attorney for estate planning." (Inheritance or estate planning.)
-- **R-BS-4** — "This skill covers individuals and self-employed sole traders only. The Bahamas does not impose corporate income tax on profits, but companies face Business Licence fees, VAT registration obligations, and payroll NIB obligations. Escalate to a qualified Bahamian practitioner for company compliance." (Corporate / company tax.)
-- **R-BS-5** — "Non-residents and expatriates face the same absence of income tax. However, work permit requirements, specific benefit-in-kind rules, and social security totalization agreements may apply. For complex expatriate situations, escalate to a Bahamian HR compliance specialist." (Non-resident / expatriate complex situations.)
+- **R-BS-4** — For company tax, check whether the Domestic Minimum Top-Up Tax applies under ss 1, 4 and 5 of the Act. Check Business Licence, VAT and NIB separately. [Domestic Minimum Top-Up Tax Act, 2024](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2024/2024-0058/2024-0058_1.pdf)
+- **R-BS-5** — For a non-resident or expatriate, apply the domestic personal income tax position for the checked period and verify any foreign tax, separate reporting, social insurance and work permit obligations.
 - **R-BS-6** — "Client has outstanding NIB contributions, surcharges, or is subject to NIB enforcement. The 10% surcharge plus 1.5% compound monthly interest accumulates rapidly. Do not advise. Escalate to a Bahamian accountant or NIB-registered agent immediately." (NIB arrears or enforcement.)
 - **R-BS-7** — "From July 2025, businesses with less than 50% zero or reduced-rated supplies cannot claim VAT refunds. Escalate to a DIR-registered VAT practitioner." (VAT refund claims.)  _(Higgs & Johnson 2025 Tax Legislative Updates)_
 
@@ -195,9 +188,9 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 | --- | --- | --- | --- |
 | CLIENT PAYMENT, INVOICE PAYMENT, TRANSFER IN [client name] | Business revenue | Self-employment income | If VAT-registered, extract net |
 | ZELLE, PAYPAL TRANSFER, STRIPE PAYOUT, WIRE TRANSFER | Business revenue | Self-employment income | Confirm invoices match |
-| SALARY, PAYROLL [employer name], WAGES | Employment income | Not self-employment | Covered by employer NIB; no income tax |
-| RENTAL INCOME, RENT RECEIVED | Rental income | No income tax; RPT applies to the property | Report separately for Business Licence if above threshold |
-| BANK INTEREST, INTEREST EARNED | Investment income | No income tax |  |
+| SALARY, PAYROLL [employer name], WAGES | Employment income | Bahamian personal income tax inapplicable | Check employer NIB |
+| RENTAL INCOME, RENT RECEIVED | Rental income | Bahamian personal income tax inapplicable | Check Real Property Tax and Business Licence separately |
+| BANK INTEREST, INTEREST EARNED | Investment income | Bahamian personal income tax inapplicable | Check foreign tax and reporting where relevant |
 | GOVERNMENT GRANT, BAHAMAS INVEST GRANT | Check nature | Capital grants: exclude; revenue grants: include in Business Licence turnover |  |
 | NIB BENEFIT, MATERNITY BENEFIT, RETIREMENT PENSION | Benefit payment | Exclude from business analysis | Social benefit, not taxable income |
 
@@ -228,7 +221,7 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 | PERSONAL WITHDRAWAL, DRAWINGS, ATM (personal) | Drawings | NOT deductible | Owner drawings |
 | GROCERIES, SUPERMARKET, PERSONAL SHOPPING | Personal | NOT deductible |  |
 | FINE, COURT FINE, TRAFFIC VIOLATION | Fines | NOT deductible | Public policy |
-| INCOME TAX PAYMENT | N/A | There is no income tax | If seen, verify it is not a VAT, BL, or RPT payment |
+| INCOME TAX PAYMENT | Verify | Bahamian personal income tax is inapplicable | Confirm the tax, taxpayer and jurisdiction |
 
 ### 3.7 Exclusions (Neither Income nor Expense)
 
@@ -239,7 +232,7 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 | INTERNAL TRANSFER, OWN ACCOUNT | EXCLUDE | Between own accounts |
 | LOAN REPAYMENT, MORTGAGE PRINCIPAL | EXCLUDE | Loan principal is not an expense |
 | VAT PAYMENT, DIR VAT | EXCLUDE | VAT liability settlement |
-| PROVISIONAL TAX, ADVANCE TAX | N/A -- no income tax in Bahamas | If seen, classify carefully; may be VAT instalment |
+| PROVISIONAL TAX, ADVANCE TAX | Verify | Confirm the tax, taxpayer and jurisdiction |
 | STAMP DUTY PAYMENT | EXCLUDE from operating expenses | One-time property transaction cost, not recurring |
 
 ### 3.8 Bahamian Banks -- Statement Format Reference
@@ -268,7 +261,7 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 - Employer NIB: 6.65% × BSD 810 = BSD 53.87/week × 52 = **BSD 2,801/year**
 - Take-home: BSD 45,000 − BSD 1,958 = **BSD 43,042/year** (no income tax deducted)
 
-**Step 3 -- No other obligations:** No Business Licence (employed). No VAT (not in business). No income tax return to file.
+**Step 3 -- Filing scope:** The example concerns employment only. The Bahamian personal income tax return is inapplicable.
 
 **Summary:**
 ```
@@ -408,11 +401,11 @@ Income tax:               BSD 0
 
 ### 5.1 The Fundamental Rule -- No Personal Income Tax
 
-- **No personal income tax legislation** — There is no personal income tax legislation in the Bahamas. No individual is required to: File an annual income tax return with any authority; Declare employment or self-employment income to a tax collector; Pay tax on salary, professional fees, rental income, dividends, interest, or capital gains. The primary fiscal obligation for individuals is NIB contributions, which are social insurance premiums, not income tax.
+- **Domestic filing.** For the checked period, there is no Bahamian personal income tax return for employment or self-employment income. Apply the separate reporting rules for any business activity or foreign jurisdiction involved. [Ministry of Finance, Bahamas–Japan MAP guidance, ‘Scope of the MAP “Limitations”’](https://cdn.bahamas.gov.bs/tenant/tenantministryoffinance/documents/All%20Documents/BAHAMAS-JAPANMAPGUIDANCEDOCUMENT-20240718120503.pdf)
 
 ### 5.2 NIB Contribution Calculation Rules
 
-- **Employed individuals calculation steps** — 1. Determine weekly insurable wage: the lower of (a) actual weekly gross earnings or (b) the weekly ceiling (currently BSD 810). 2. Employee share: insurable wage × 4.65%. 3. Employer share: insurable wage × 6.65%. 4. Employer remits both shares monthly via C10 form by the 15th of the following month.
+- **Employed individuals calculation steps for 2025** — 1. Determine weekly insurable wage: the lower of (a) actual weekly gross earnings or (b) the weekly ceiling (BSD 810 in 2025). 2. Employee share: insurable wage × 4.65%. 3. Employer share: insurable wage × 6.65%. 4. Employer remits both shares monthly via C10 form by the 15th of the following month.
 - **Self-employed individuals calculation steps** — 1. Determine weekly insurable earnings: the lower of (a) actual weekly net self-employment earnings or (b) the weekly ceiling (BSD 810). 2. Self-employed rate: insurable earnings × 10.30% (covers both employee and employer shares). 3. Register using Form R1 within 10 working days of commencing self-employment. 4. Pay monthly by the 15th of the following month.  _(nib-bahamas.com/Registration)_
 - **Earnings above the weekly ceiling** — No NIB is payable on earnings above BSD 810/week. The ceiling applies per week, not per year.
 
@@ -508,11 +501,11 @@ Ten cash benefits are funded: Sickness, Maternity, Funeral, Retirement (Pensions
 | Business Licence late penalties | Penalties |
 | Personal living expenses | Not business-related |
 | Court fines, traffic violations | Public policy |
-| Income tax payments | There is no income tax; if a payment is seen, verify its nature |
+| Income tax payments | Confirm the tax, taxpayer and jurisdiction before classifying |
 
 ### 6.1 Home Office Deduction (Business Licence Cost Basis)
 
-There is no income tax deduction system in the Bahamas, but Business Licence fees are based on turnover (not profit), so home-office cost allocation is relevant for understanding profitability rather than for reducing a declared tax base.
+There is no Bahamian personal income tax deduction for home-office costs. For the turnover-based Business Licence calculation in this guide, use the applicable turnover rules and track home-office costs separately for profitability.
 
 For VAT-registered clients, the business-use proportion of home utilities may affect which input VAT is creditable.
 
@@ -675,7 +668,7 @@ If the client provides a bank statement but cannot answer onboarding questions i
 2. Mark all Tier 2 items as "PENDING -- reviewer must confirm"
 3. Apply conservative defaults (Section 1)
 4. Generate the working paper (Section 7) with clear flags
-5. Confirm immediately: "There is no personal income tax in the Bahamas. No income tax return is required."
+5. Confirm that Bahamian personal income tax and its return are inapplicable for the checked period. Identify any separate filing requirements.
 6. Present the following questions to the client:
 
 ```
@@ -704,7 +697,7 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 
 | Topic | Reference / Authority |
 | --- | --- |
-| No personal income tax | secondary practitioner summary (reviewed 24 Feb 2026); no enabling legislation exists |
+| Domestic personal income tax scope | [Ministry of Finance, Bahamas–Japan MAP guidance, ‘Scope of the MAP “Limitations”’](https://cdn.bahamas.gov.bs/tenant/tenantministryoffinance/documents/All%20Documents/BAHAMAS-JAPANMAPGUIDANCEDOCUMENT-20240718120503.pdf) |
 | NIB contribution rates | National Insurance Board -- nibrateincrease.com; nib-bahamas.com |
 | NIB insurable wage ceiling | nib-bahamas.com/2024-adjustments-to-the-insurable-wage-ceiling-pensions-and-grants/ |
 | NIB biennial review mechanism | nib-bahamas.com/biennial-adjustments-to-pensions-grants-and-the-wage-ceiling |
@@ -775,7 +768,7 @@ Expected: BSD 800 (4% × 20k) + BSD 1,800 (6% × 30k) + BSD 2,000 (8% × 25k) = 
 
 **Test 8 -- No income tax return.**
 Input: Any individual (employed or self-employed) asks if they need to file an income tax return in the Bahamas.
-Expected: No. There is no personal income tax and no tax return to file. The only individual compliance obligations are NIB (social contributions), Business Licence (if in business), and VAT (if turnover ≥ BSD 100,000).
+Expected: The Bahamian personal income tax return is inapplicable for the checked period. Verify separate obligations for the person's circumstances.
 
 **Test 9 -- Employer NIB (C10 Form).**
 Input: Employer with 2 employees, each earning BSD 700/week.
@@ -788,7 +781,7 @@ Expected: First BSD 300,000 exempt. Next BSD 150,000 at 0.625%: BSD 150,000 × 0
 ## PROHIBITIONS
 
 - NEVER compute, estimate, or imply that the Bahamas levies personal income tax on individuals
-- NEVER generate an income tax return or income declaration form for a Bahamian individual
+- NEVER generate a Bahamian personal income tax return
 - NEVER confuse NIB contributions (social insurance) with income tax -- they are separate systems with separate authorities
 - NEVER skip NIB compliance guidance -- it is the primary individual tax obligation and penalties accumulate rapidly
 - NEVER advise a self-employed client to start business without first addressing Business Licence and NIB registration

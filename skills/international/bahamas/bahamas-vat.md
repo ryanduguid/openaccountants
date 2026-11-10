@@ -1,7 +1,7 @@
 ---
 name: bahamas-vat
-description: Use this skill whenever asked to prepare, review, or classify transactions for a Bahamas VAT return for any client. Trigger on phrases like "Bahamas VAT", "DIR Bahamas", "Department of Inland Revenue Bahamas", or any request involving Bahamas VAT. The Bahamas has NO income tax — VAT is the primary tax. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Bahamas VAT work.
-version: 2.0
+description: Use this skill to prepare, review or classify transactions for a Bahamas VAT return. Trigger on "Bahamas VAT", "DIR Bahamas" or "Department of Inland Revenue Bahamas". Load alongside vat-workflow-base v0.1 or later.
+version: 2.1
 jurisdiction: BS
 category: international
 tax_year: 2025
@@ -31,7 +31,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing frequencies | Monthly (>BSD 5M), Bimonthly (BSD 400K–5M), Quarterly (BSD 100K–400K), Annual (voluntary) |
 | Deadline | 21st of the month following the period |
 | Registration threshold | BSD 100,000 mandatory; BSD 50,000 voluntary |
-| No income tax | The Bahamas has NO income tax of any kind |
 | Companion skill | vat-workflow-base v0.1 or later — MUST be loaded |
 | Validated by | Pending local practitioner validation |
 
@@ -131,9 +130,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| SALARY, WAGES | EXCLUDE | No income tax; outside VAT scope |
+| SALARY, WAGES | EXCLUDE | Employee services to an employer under employment. [Value Added Tax Act, s 3(6), 1 July 2024 reprint](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf) |
 | OWN TRANSFER, INTERNAL | EXCLUDE | Internal |
-| DIVIDEND | EXCLUDE | No income tax |
+| DIVIDEND | REVIEW | Verify the underlying payment and its VAT treatment before classifying |
 | CASH WITHDRAWAL | TIER 2 — ask | Default exclude |
 
 ## Section 4 — Worked examples
@@ -228,9 +227,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Reverse charge** — Non-resident services: self-assess 10%. Claim input if for taxable supplies.  _(5.8 Reverse charge)_
 
-### 5.9 No income tax — The Bahamas has no income tax. VAT is primary revenue source.
+### 5.9 Income tax scope
 
-- **No income tax** — The Bahamas has no income tax. VAT is primary revenue source.  _(5.9 No income tax)_
+Through 10 November 2026, Bahamian domestic personal income tax is inapplicable. The separate Domestic Minimum Top-Up Tax applies to Bahamian constituent entities of in-scope multinational groups. Determine VAT treatment under the VAT rules. [Bahamas–Japan MAP guidance, ‘Scope of the MAP “Limitations”’](https://cdn.bahamas.gov.bs/tenant/tenantministryoffinance/documents/All%20Documents/BAHAMAS-JAPANMAPGUIDANCEDOCUMENT-20240718120503.pdf) · [Domestic Minimum Top-Up Tax Act, 2024, ss 1 and 5](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2024/2024-0058/2024-0058_1.pdf)
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
@@ -296,7 +295,7 @@ CIBC FirstCaribbean and RBC exports CSV/PDF. BSD primary (= USD). Internal trans
 
 ### Known gaps
 
-1. Freeport refused. 2. Food 0% transition (April 2026) — verify current status. 3. No income tax confirmation must be stated clearly.
+1. Freeport refused. 2. Food 0% transition (April 2026) — verify current status.
 
 ### Change log
 
