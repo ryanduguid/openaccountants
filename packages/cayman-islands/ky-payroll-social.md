@@ -4,8 +4,8 @@ description: "Cayman Islands payroll and mandatory pension and health insurance 
 jurisdiction: KY
 category: payroll
 tax_year: 2026
-tax_year_notes: "Rules checked on 11 November 2026. The amended minimum wage and the 2026 public service pension rates apply from 1 January 2026. The new work permit fee schedule applies from 1 May 2026, subject to transitional rules."
-version: 1.0
+tax_year_notes: "Rules checked on 11 November 2026. The public service and parliamentary pension funding regulations published on 6 November 2026 are deemed in force from 1 January 2025. The amended minimum wage applies from 1 January 2026 and the work permit fee schedule from 1 May 2026, subject to transitional rules."
+version: 1.1
 last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
@@ -137,6 +137,15 @@ calculation with DLP before computing a contribution from business accounts.
 [National Pensions Act, s 3][pensions] ·
 [National Pensions (General) Regulations, reg 29(3)][pension-regs]
 
+The Department of Labour and Pensions lists pension plans. Follow the
+selected administrator's instructions for enrolment and payment. As checked
+in November 2026, the Chamber Pension Plan asks self-employed applicants to
+return a New Employer Application Form and Deed of Adherence to its
+Administrator. The plan publishes a monthly standing order and deposit slip
+payment options. Check that the amount paid covers the required contribution
+for the period, including any difference when earnings change.
+[DLP pension plan list][dlp-plans] · [Chamber Pension Plan enrolment and payments][chamber-plan]
+
 A qualifying housing withdrawal under ss 52B, 52BA or 52C triggers an extra
 3% of earnings from the month after the withdrawal cheque is issued, until
 the amount is repaid or the member reaches the normal entitlement age,
@@ -150,15 +159,59 @@ contributions are also available before normal pension entitlement.
 
 Apply the separate Public Service Pensions Act for eligible plan members.
 Section 17 sets a default member rate of 6% unless regulations prescribe
-another rate. Calculate deductions each pay period using the plan's definition
-of pensionable earnings. From 1 January 2026, SL 50 sets the employer's
-defined contribution rate at 6% plus a 0.4% normal cost contribution. The
-defined benefit schedule has separate employer-specific funding amounts.
-Employers remit the amounts under SL 50 monthly to the Administrator by the
-15th of the following month. Check scheme membership and the relevant
-statutory schedule before using either set of rates.
-[Public Service Pensions Act, ss 3, 17 and 27–28, 45–46][public-act] ·
+another rate. Deduct it each pay period. Under s 3, pensionable earnings for
+a full calendar month comprise basic salary or wages and acting and duty
+allowances. Government and Government company deductions go through the
+Accountant General monthly. A statutory authority sends its deductions to
+the Administrator monthly by the 15th of the month after they are due.
+[Public Service Pensions Act, ss 3, 17, 27–28 and 45–46][public-act]
+
+SL 49 of 2026 was published on 6 November 2026 and is deemed in force from
+1 January 2025, when it repeals the 2024 rates regulations. For defined
+contribution members, employers pay 6% plus a 0.4% normal cost contribution.
+The Administrator credits 6% of pensionable earnings to the member's employer
+contribution account. The 0.4% applies until superseded by the next funding
+actuarial valuation. For defined benefit members, use the applicable employer's
+rate and any fixed past service payment in reg 2. The Government pays 6% plus
+9.7% of pensionable earnings and CI$10.892 million annually in 12 equal
+instalments for past service. Under reg 4, employers remit the amounts in
+regs 2 and 3 to the Administrator monthly by the 15th of the month after
+they are due.
 [Public Service Pensions (Contribution Rates) Regulations, 2026, regs 1–5][public-rates]
+
+### Parliamentary and judicial plans
+
+For parliamentary plan participants, s 2 defines pensionable earnings as
+the basic salary paid for a full calendar month. Section 18 provides for
+6% participant deductions each pay period, subject to the statutory
+valuation mechanism. The Government pays them into the Fund monthly by the
+15th of the month after they are due and pays its contribution at the same time.
+Section 27 governs entry to the defined contribution part.
+[Parliamentary Pensions Act, ss 2, 18 and 27][parliament-act]
+
+SL 50 of 2026 was published on 6 November 2026 and is deemed in force from
+1 January 2025, when it repeals the 2024 rates regulations. Under reg 2,
+the Government pays 6% plus 60.9% of pensionable earnings for the defined
+benefit part, and CI$1.108 million annually in 12 equal monthly instalments
+for past service. Regulation 4 requires these reg 2 payments to the
+Administrator monthly by the 15th of the month after they are due. Under
+reg 3, the defined contribution participant pays 6% and the Government pays
+6% plus 0.4% normal cost. The Administrator allocates the participant's 6%
+and Government's 6% under reg 3(4). The 0.4% applies until superseded by the
+next funding actuarial valuation.
+[Parliamentary Pensions (Contribution Rates) Regulations, 2026, regs 1–5][parliament-rates]
+
+For eligible Judicial Pension Plan participants, the 2021 Revision of the
+Judges’ and Magistrates’ Emoluments and Allowances Order sets a 10% participant
+contribution for Judicial Service after 1 September 1997. Judicial Administration
+deducts it each pay period using the salary paid for the period as defined in
+the Second Schedule. The Government pays 20% of salary for active defined
+contribution participants. For defined benefit participants, use the rate in
+the latest actuarial valuation accepted by the Governor. Paragraph 12(4)–(5)
+sets the Government's payment deadline for that rate at 15 days from the
+next due date and charges interest at prime plus 2 percentage points for
+late payment.
+[Judges’ and Magistrates’ Emoluments and Allowances Order, para 5 and Second Schedule, paras 1, 10, 12, 27, 42 and 46][judicial-order]
 
 ## 4. Mandatory health cover and premium recovery
 
@@ -198,19 +251,26 @@ earlier. [Health Insurance Regulations, regs 6–7][health-regs] ·
 ## Review limits
 
 This guide covers the general 2026 employer payroll cycle and the cited
-mandatory contribution rules. The self-employed earnings calculation and
-special public pension regimes outside the ordinary Public Service Plan need
-further source verification. Local accountant review is pending.
+mandatory contribution rules. The self-employed earnings calculation, the
+latest approved judicial defined benefit funding rate, public service and
+parliamentary adjustments for amounts already remitted under the 2024
+schedules and the Administrator's current remittance procedures need
+further verification. Local accountant review is pending.
 
 [pensions]: https://www.procure.gov.ky/upimages/commonfiles/1751266504NationalPensionsAct2024Revision_1751266507.pdf
 [pension-regs]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/1998/1998-0003/1998-0003_2018%20Revision.pdf
 [age-order]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2016/2016-0066/2016-0066_SL%2066%20of%202016.pdf
 [cap-order]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2022/2022-0042/2022-0042.pdf
-[public-act]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1999/1999-0006/1999-0006_2023%20Revision.pdf
+[public-act]: https://www.pspb.ky/cdn/documents/pension-law/2026-04-06-07-33-13-Public-Service-Pensions-Act-2023-Revision.pdf
 [public-rates]: https://gov.ky/documents/35692/0/PublicServicePensions%28ContributionRates%29Regulations2026.pdf/db9226c7-d1f8-d616-724b-a2ddb73efc3a
+[parliament-act]: https://www.pspb.ky/upimages/pensionslaws/ParliamentaryPensio_1496332207.PDF
+[parliament-rates]: https://gov.ky/w/parliamentary-pensions-contribution-rates-regulations-2026-lg55-s2
+[judicial-order]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2005/2005-0003/2005-0003_2021%20Revision.pdf
 [labour]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1987/1987-0030/1987-0030_2021%20Revision.pdf
 [wage]: https://gov.ky/documents/43485/45951/Labour%28NationalMinimumBasicWage%29%28Amendment%29Order%2C2025_MADE.pdf/c898f82a-aefb-c72f-2e42-2ab50359665c
 [dlp]: https://gov.ky/web/dlp/frequently-asked-questions
+[dlp-plans]: https://gov.ky/web/dlp/pension-plans
+[chamber-plan]: https://www.chamberpension.ky/how-to-enrol
 [health]: https://hsa-cayman.imgix.net/images/HealthInsuranceAct_2021-Revision.pdf
 [health-regs]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/1997/1997-0011/1997-0011_2017%20Revision_g.pdf
 [health-2026]: https://gov.ky/w/health-insurance-amendment-act-2026-lg19-s1
