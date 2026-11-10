@@ -760,6 +760,31 @@ class GitBackedIntegrityTests(unittest.TestCase):
         self.assertEqual([], [f for f in findings if f.severity == "error"])
         self.assertIn("source-removal-migrated", codes(findings, "notice"))
 
+    def test_a_move_git_reports_as_delete_and_add_cannot_drop_review_status(self) -> None:
+        self.write_candidate(guide().replace("tier: 2\n", "tier: 2\nreview_status: pending_review\n"))
+        self.git("commit", "-qam", "record the review status")
+        base = self.git("rev-parse", "HEAD").strip()
+        destination = "skills/foundation/rewritten-synthetic-guide.md"
+        self._record_migration(
+            [{"from": self.path, "to": destination, "slug": "synthetic-guide", "replacement": "rewritten-synthetic-guide"}]
+        )
+        self.git("rm", "-q", self.path)
+        (self.repo / destination).parent.mkdir(parents=True, exist_ok=True)
+        (self.repo / destination).write_text(
+            guide(body="\n".join(f"Rewritten line {i} about something else entirely." for i in range(40))),
+            encoding="utf-8", newline="\n",
+        )
+        self.git("add", destination)
+        self.git("commit", "-m", "move, rewrite and drop review_status")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, count = sync_integrity.run_integrity_check(
+            self.repo, base, head, "audit", strict_metadata=True
+        )
+
+        self.assertEqual(2, count, "a deletion and an addition")
+        self.assertIn("review-status-removed", codes(findings, "error"))
+
     def test_a_deletion_covered_by_a_move_record_needs_the_destination_to_exist(self) -> None:
         self._record_migration(
             [{"from": self.path, "to": "skills/foundation/never-written.md", "slug": "synthetic-guide", "replacement": "x"}]
