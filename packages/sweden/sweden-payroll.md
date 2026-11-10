@@ -4,8 +4,8 @@ description: Use this skill whenever asked about Swedish payroll processing, emp
 version: 1.2
 jurisdiction: SE
 tax_year: 2026
-tax_year_notes: "2026 label retained; historical selected corporate-filing passage check does not requalify other payroll figures or operational outputs."
-last_updated: 2026-11-06
+tax_year_notes: "2026 label retained; the 2026-11-10 state income tax check and the historical selected corporate-filing passage check do not requalify other payroll figures or operational outputs."
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-**Limited 2026 draft.** The 2026 label is retained. The selected historical check of the corporate-return paragraph does not revalidate the other payroll rates, social-contribution conditions, benefits, pensions, sick-pay statements, immigration thresholds, approximate tax examples or monthly filing/payment dates. Hold actual payroll and filing outputs until every applicable item is separately qualified. The birth-year rows in the reduced-rate table cite Skatteverket, Belopp och procent 2026; that citation covers those two rows only.
+**Limited 2026 draft.** The 2026 label is retained. The selected historical check of the corporate-return paragraph does not revalidate the other payroll rates, social-contribution conditions, benefits, pensions, sick-pay statements, immigration thresholds, approximate tax examples or monthly filing/payment dates. Hold actual payroll and filing outputs until every applicable item is separately qualified. The birth-year rows in the reduced-rate table cite Skatteverket's business (företag) page, Belopp och procent 2026; that citation covers those two rows only. The 2 state income tax rows cite its private-person page of the same title; that citation covers the state rate, skiktgräns and brytpunkt only.
 
 This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration, except a row whose source column cites a primary source for that row. A source index does not qualify the other figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
 
@@ -76,7 +76,7 @@ Qualify inputs and scope; identify the independently established wage and benefi
 | Tax authority | Skatteverket (Swedish Tax Agency) | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Employee SS rate | 0% (no separate employee social security contribution) | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Employer SS rate | 31.42% of gross salary (arbetsgivaravgifter) | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| Income tax | Municipal ~32.38% average + State 20% above SEK 643,100/year | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| Income tax | Municipal ~32.38% average + State 20% on taxable earned income above SEK 643,000 (2026) | State rate and threshold: Skatteverket, Belopp och procent 2026, private persons (https://www.skatteverket.se/privat/skatter/beloppochprocent/2026.4.1522bf3f19aea8075ba21.html); municipal figure unverified: retained statement |
 | Minimum wage | No statutory minimum -- set by collective agreements (kollektivavtal) | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Filing | Monthly arbetsgivardeklaration by 12th of following month | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Skill version | 1.2 | unverified: retained statement; scoped source checks below do not qualify this whole row |
@@ -90,7 +90,7 @@ Qualify inputs and scope; identify the independently established wage and benefi
 | Component | Rate (2026) | Applies to | Source or qualification |
 | --- | --- | --- | --- |
 | Municipal tax (kommunalskatt) | ~28.93% -- 35.65% (average 32.38%) | All taxable income | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| State income tax (statlig inkomstskatt) | 20% | Annual income above SEK 643,100 | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| State income tax (statlig inkomstskatt) | 20% | Taxable earned income (beskattningsbar förvärvsinkomst) above the SEK 643,000 skiktgräns. Before the basic allowance (grundavdrag) the 2026 break point (brytpunkt) is SEK 660,400, or SEK 760,500 if aged 66 or over at the start of 2026 | Skatteverket, Belopp och procent 2026, private persons (https://www.skatteverket.se/privat/skatter/beloppochprocent/2026.4.1522bf3f19aea8075ba21.html) |
 | Church tax (kyrkoavgift) | ~1% -- 1.5% | Members of Swedish Church only | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Funeral fee (begravningsavgift) | ~0.25% | All taxpayers | unverified: retained statement; scoped source checks below do not qualify this whole row |
 
@@ -318,7 +318,7 @@ Employer cost:
 
 ```
 Gross monthly salary:                SEK 75,000
-Annual: SEK 900,000 (exceeds SEK 643,100 threshold)
+Annual: SEK 900,000 (above the 2026 break point of SEK 660,400 for those under 66, before the basic allowance)
 - Preliminary tax (~37%):           -SEK  ~27,750
 = Net salary:                        SEK ~47,250
 
@@ -509,6 +509,7 @@ This migration preserves retained research and does not perform a new law readin
 | Statutory time adjustment | https://data.riksdagen.se/dokumentstatus/sfs-1930-173.json | 2026-11-01: milestone records historical check completed | Complete retained text lines 1-85, including parallel section 2 versions and reproduced transitions; no actual case/filing calendar clearance. |
 | Legal-person filing guidance 2026.14 | https://www4.skatteverket.se/rattsligvagledning/edition/2026.14/325640.html | 2026-11-01: milestone records historical check completed | Complete retained body lines 1-157; entire electronic obligation, holiday adjustment and changed-year conditions only. |
 | Legal-person extension guidance 2026.14 | https://www4.skatteverket.se/rattsligvagledning/edition/2026.14/331359.html | 2026-11-01: milestone records historical check completed | Complete retained body lines 1-110; exceptional grounds/application conditions, not a granted extension. |
+| Private-person amounts and rates 2026 | https://www.skatteverket.se/privat/skatter/beloppochprocent/2026.4.1522bf3f19aea8075ba21.html | 2026-11-10: state income tax passages checked | Skiktgräns, statlig inkomstskatt for natural persons and brytpunkt passages only: skiktgräns SEK 643,000 on taxable earned income; brytpunkt SEK 660,400 (SEK 760,500 aged 66 or over) before the basic allowance; 20% rate. Not municipal rates or tax tables. |
 | Initial company-filing cohort schedule | https://www.skatteverket.se/foretagochorganisationer/inkomstdeklaration/deklareraforettaktiebolag.4.46ae6b26141980f1e2d1261.html | 2026-11-01: initial independent check, refined at 09:18:19.835Z | Retained lines 1-80, 113-161 and selected returned lines 81-112; dated cohort schedule is not a universal paper-return extension. |
 
 Not yet confirmed: all other inherited payroll figures, component rates, coverage/age/relief conditions, collective-agreement terms, immigration thresholds, pension/sick-pay/leave rules, estimates, monthly dates, penalties, actual tables/forms/schema and submission/payment workflow; complete current law and engagement facts; unknown original per-URL reading dates and professional clearance. Selected annual-company-filing checks do not qualify those other topics.
