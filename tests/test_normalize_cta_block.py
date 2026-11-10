@@ -21,7 +21,7 @@ def _load(name: str, filename: str):
 
 normalize_cta = _load("normalize_cta_block", "normalize-cta-block.py")
 
-from cta_block import CANONICAL_BLOCK, MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
+from cta_block import CANONICAL_BLOCK, LEGACY_BLOCKS, MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
 
 DATE = "2026-09-28"
 
@@ -241,6 +241,63 @@ class InvariantTests(unittest.TestCase):
         self.assertIn("last_updated: 2026-01-02", untouched)
         self.assertIn(f"last_updated: {DATE}", changed)
         self.assertIn(f"set last_updated: {DATE}", actions)
+
+
+def migrate(text: str):
+    return normalize_cta.normalize(text, "skills/international/malta/synthetic-guide.md", DATE, migrate=True)
+
+
+class MigrateTests(unittest.TestCase):
+    """--migrate replaces the retired upstream block, which 1,805 guides still
+    carried after the canonical text changed in October 2026 (#257)."""
+
+    def test_replaces_each_retired_block(self) -> None:
+        for legacy in LEGACY_BLOCKS:
+            with self.subTest(legacy=legacy):
+                new_text, actions, _ = migrate(FRONTMATTER + BODY + "\n" + legacy)
+
+                self.assertEqual(new_text, NORMAL_BUMPED)
+                self.assertIn("migrated the retired CTA block to the canonical text", actions)
+                self.assertIn(f"set last_updated: {DATE}", actions)
+
+    def test_line_wrapping_does_not_hide_a_retired_block(self) -> None:
+        rewrapped = LEGACY_BLOCKS[0].replace("who put\ntheir", "who put their")
+
+        self.assertEqual(migrate(FRONTMATTER + BODY + "\n" + rewrapped)[0], NORMAL_BUMPED)
+
+    def test_content_after_the_block_is_kept(self) -> None:
+        tail = "\n## Appendix\n\nText.\n"
+
+        new_text, _, _ = migrate(FRONTMATTER + BODY + "\n" + LEGACY_BLOCKS[0] + tail)
+
+        self.assertEqual(new_text, BUMPED + BODY + "\n" + CANONICAL_BLOCK + tail)
+
+    def test_a_duplicate_section_is_removed_and_the_kept_block_migrated(self) -> None:
+        new_text, actions, _ = migrate(FRONTMATTER + BODY + "\n" + OLD_SECTION + "\n" + LEGACY_BLOCKS[0])
+
+        self.assertEqual(new_text, NORMAL_BUMPED)
+        self.assertEqual(actions[:2], [
+            "removed the duplicate CTA section at line 19",
+            "migrated the retired CTA block to the canonical text",
+        ])
+
+    def test_other_wording_is_left_alone(self) -> None:
+        # A fork-edited block (australia/references.md drops "recorded review
+        # status") is not the retired one, so migration does not overwrite it.
+        edited = FRONTMATTER + BODY + "\n" + CANONICAL_BLOCK.replace("recorded review status and ", "")
+
+        self.assertEqual(migrate(edited), (edited, [], []))
+        self.assertEqual(migrate(NORMAL), (NORMAL, [], []))
+
+    def test_without_the_flag_the_retired_block_stays(self) -> None:
+        text = FRONTMATTER + BODY + "\n" + LEGACY_BLOCKS[0]
+
+        self.assertEqual(run(text), (text, [], []))
+
+    def test_is_idempotent(self) -> None:
+        once, _, _ = migrate(FRONTMATTER + BODY + "\n" + LEGACY_BLOCKS[1])
+
+        self.assertEqual(migrate(once), (once, [], []))
 
 
 if __name__ == "__main__":

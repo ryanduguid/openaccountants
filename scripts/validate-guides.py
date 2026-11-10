@@ -49,6 +49,9 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      cta_block.OPTIONAL_DIRS (templates, integrations) may omit the block.
      Repair with:
      python3 scripts/normalize-cta-block.py --apply
+     A block that carries the retired upstream wording (cta_block.LEGACY_BLOCKS)
+     is an ERROR too. Replace it with:
+     python3 scripts/normalize-cta-block.py --migrate --apply
 
 Checks 5, 7 and 8 are the derived-tree freshness checks. The derived trees
 have exactly one writer: whoever edits skills/ runs the generators (`make
@@ -84,7 +87,7 @@ if _HERE not in sys.path:  # the tests load this file by path
 
 from cta_block import MARKER as CTA_MARKER  # noqa: E402
 from cta_block import find_markers as cta_markers  # noqa: E402
-from cta_block import has_cta_link, is_cta_heading  # noqa: E402
+from cta_block import has_cta_link, is_cta_heading, is_legacy_block  # noqa: E402
 from cta_block import is_optional as cta_optional  # noqa: E402
 from oa_tools import guides, paths, roster  # noqa: E402
 from oa_tools.frontmatter import (  # noqa: E402
@@ -451,7 +454,7 @@ def check_cta_block(rel, text, errors):
                 f"published guide ({repair})"
             )
         return  # several markers are reported above; the normalizer keeps the last block
-    _, heading, end = markers[0]
+    marker, heading, end = markers[0]
     if heading is None:
         errors.append(
             f"{rel}: `{CTA_MARKER}` must directly introduce the \"Talk to a verified "
@@ -462,6 +465,11 @@ def check_cta_block(rel, text, errors):
         errors.append(
             f"{rel}: the \"Talk to a verified accountant\" section under `{CTA_MARKER}` "
             f"has no openaccountants.com or calendly.com link — not the stamped block ({repair})"
+        )
+    elif is_legacy_block("\n".join(lines[marker:end])):
+        errors.append(
+            f"{rel}: the CTA block carries the retired upstream wording "
+            "(run: python3 scripts/normalize-cta-block.py --migrate --apply)"
         )
 
 

@@ -27,7 +27,7 @@ def _load(name: str, filename: str):
 validate_guides = _load("validate_guides", "validate-guides.py")
 build_index = _load("build_index_for_validator_tests", "build-index.py")
 
-from cta_block import CANONICAL_BLOCK, MARKER as CTA_MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
+from cta_block import CANONICAL_BLOCK, LEGACY_BLOCKS, MARKER as CTA_MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
 
 
 #: A guide with everything but the closing CTA block — the shape 116 guides had.
@@ -615,6 +615,15 @@ class CtaBlockTests(_ValidatorCase):
 
         self.assertEqual(len(errors), 1, errors)
         self.assertIn("no openaccountants.com or calendly.com link", errors[0])
+
+    def test_the_retired_upstream_block_is_an_error(self) -> None:
+        for legacy in LEGACY_BLOCKS:
+            with self.subTest(legacy=legacy):
+                errors = self._check_guides({"skills/legacy.md": GOOD_WITHOUT_CTA + "\n" + legacy})
+
+                self.assertEqual(len(errors), 1, errors)
+                self.assertIn("retired upstream wording", errors[0])
+                self.assertIn("--migrate --apply", errors[0])
 
     def test_a_further_section_after_the_block_passes(self) -> None:
         # The retired packages/us-federal/ guides carried the marker, a blank

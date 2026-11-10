@@ -38,8 +38,8 @@ ANY_HEADING_RE = re.compile(r"^#{1,6}(?:[ \t]|$)", re.MULTILINE)
 #: stamped, so the normalizer leaves it alone and reports it.
 SECTION_LINK_RE = re.compile(r"calendly\.com|openaccountants\.com", re.IGNORECASE)
 
-#: The referral block for new and substantively edited guides. Existing stamped
-#: guides are migrated in reviewed batches.
+#: The referral block every guide carries. It replaced the upstream block in
+#: LEGACY_BLOCKS in October 2026 (#257).
 CANONICAL_BLOCK = """<!-- openaccountants-cta-block -->
 
 ---
@@ -60,6 +60,44 @@ this fork's changes.
 > financial advice. Verify figures against the cited primary sources or with a
 > licensed professional before relying on them.
 """
+
+_LEGACY_BLOCK = """<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network{separator} accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+"""
+
+#: The retired upstream block, with the 2 separators guides carried after
+#: "network". `normalize-cta-block.py --migrate` replaces it with
+#: CANONICAL_BLOCK and scripts/validate-guides.py rejects it.
+LEGACY_BLOCKS = tuple(_LEGACY_BLOCK.format(separator=separator) for separator in (" —", ":"))
+
+
+def _words(text: str) -> str:
+    return " ".join(text.split())
+
+
+_LEGACY_WORDS = frozenset(_words(block) for block in LEGACY_BLOCKS)
+
+
+def is_legacy_block(text: str) -> bool:
+    """Whether a marker block, from the marker to the end of its section, is
+    the retired upstream one. Line wrapping and blank lines are ignored."""
+    return _words(text) in _LEGACY_WORDS
+
 
 #: Directories whose guides may omit the block. (They must still not carry
 #: two.) The template directories hold scaffolding for new guides, not
