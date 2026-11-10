@@ -6,7 +6,7 @@ category: international
 tax_year: 2025
 tax_year_notes: "The rates in art. 35 are as amended by Loi de Finances n° 21/029 of 31 December 2021 and n° 22/071 of 28 December 2022; the threshold in art. 14 as amended by L.F. n° 14/002 of 31 January 2014 and n° 15/021 of 31 December 2015. The Code des Impôts consolidated to 2023 is the text read here."
 version: 0.1
-last_updated: 2026-09-10
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -210,13 +210,15 @@ adjustable that way: were not traced to a current arrêté.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

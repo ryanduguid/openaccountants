@@ -5,7 +5,7 @@ jurisdiction: GW
 category: international
 tax_year: 2025
 tax_year_notes: "Rates are those of Artigo 27º as given the wording of Lei nº 1/2021, art. 10º, in the DGCI's consolidated text (updated to 31-01-2021, with the LGT of 2022). Confirm against any later Lei do Orçamento before applying to a year after 2025."
-last_updated: 2026-09-10
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -176,13 +176,15 @@ superseded wording is struck through and each amending law is named in-line.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

@@ -3,7 +3,7 @@ name: kw-corporate-income-tax
 description: "Source-cited draft covering Kuwait corporate income tax. Explains the flat 15% charge reaching only foreign non-GCC corporate bodies, why wholly Kuwaiti or GCC-owned companies fall outside it, and why falling outside CIT does not by itself create Zakat, NLST or KFAS liability — each turns on legal form and listing, not ownership. Covers the Domestic Minimum Top-up Tax of 15% on groups over EUR 750 million in two of the four preceding years, from 1 January 2025, the 5% contract retention, filing deadlines and penalties. Use for Kuwait CIT, DMTT, Zakat, NLST, KFAS or GCC-ownership questions. Pending local-accountant review."
 jurisdiction: KW
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-11-10
 version: 1.2
 review_status: pending_review
 category: international
@@ -87,13 +87,15 @@ Kuwait's corporate income tax is unusual: a flat 15% applies only to foreign (no
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

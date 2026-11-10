@@ -3,7 +3,7 @@ name: ga-company-formation
 description: "Draft covering Gabon company formation and entity choice. Explains the SARL, the SA and the SAS under the OHADA uniform act read from the Journal Officiel: single-member formation, the 1,000,000 CFA franc SARL capital default and the national-derogation clause that can displace it, the 5,000 minimum nominal value of a part sociale, the ordinary 10,000,000 SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and where funds must be deposited. Use for incorporating in Gabon, choosing an entity, ANPI-Gabon registration or OHADA capital questions. Costs and timelines still rest on commercial sources; the patente cites the tariff in the 2025 Code Général des Impôts. Pending local-accountant review."
 jurisdiction: GA
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-11-10
 version: 1.3
 review_status: pending_review
 category: formation
@@ -51,13 +51,15 @@ National provisions must be checked separately for each member state.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a
