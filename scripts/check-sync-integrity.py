@@ -361,6 +361,22 @@ def version_label(value: tuple[int, ...] | None, raw: str | None) -> str:
     return ".".join(str(part) for part in value)
 
 
+def review_status_findings(path: str, before: Guide, after: Guide) -> list[Finding]:
+    """validate-guides.py accepts a guide without review_status, so only a
+    comparison can see the field go: #433 to #436 dropped it from 4 guides
+    with every check green."""
+    if "review_status" in before.fields and "review_status" not in after.fields:
+        return [
+            Finding(
+                "error",
+                "review-status-removed",
+                path,
+                "review_status was removed; keep the field and change its value instead",
+            )
+        ]
+    return []
+
+
 def compare_existing_guides(
     path: str,
     before_text: str,
@@ -443,6 +459,8 @@ def compare_existing_guides(
                 f"frontmatter version {after.version_text!r} is not numerically orderable",
             )
         )
+
+    findings.extend(review_status_findings(path, before, after))
 
     if before.heading_version is not None and after.heading_version is not None:
         if after.heading_version < before.heading_version:
@@ -871,6 +889,17 @@ def run_integrity_check(
                             f"source-guide move to {destination} recorded in {MIGRATIONS_PATH}",
                         )
                     )
+                    try:
+                        moved = parse_guide(destination_text, strict_yaml=False)
+                        original = parse_guide(before_text, strict_yaml=False)
+                    except ValueError:
+                        pass  # the destination's own addition reports a malformed guide
+                    else:
+                        findings.extend(
+                            review_status_findings(
+                                f"{change.before_path} -> {destination}", original, moved
+                            )
+                        )
                 else:
                     findings.append(
                         Finding(
