@@ -16,9 +16,12 @@ Social contributions coverage is partial.
 
 The CI$87,000 ordinary annual pension ceiling comes from s 3. DLP still uses the
 9-month rule and the consolidation records the 6-month amendment as
-uncommenced. The separate public service contribution regulations published
-6 November 2026 apply from 1 January 2026. [DLP guidance](https://gov.ky/web/dlp/frequently-asked-questions) ·
-[SL 50 of 2026](https://gov.ky/w/public-service-pensions-contribution-rates-regulations-2026-ex81-s1)
+uncommenced. [DLP guidance](https://gov.ky/web/dlp/frequently-asked-questions)
+
+The [pension funding follow-up](2026-11-11-cayman-public-pension-funding.md)
+corrects this entry's original instrument number and date. The public service
+instrument published on 6 November 2026 is SL 49 of 2026, deemed in force
+from 1 January 2025. [SL 49 of 2026, reg 1](https://gov.ky/w/public-service-pensions-contribution-rates-regulations-2026-lg55-s1)
 
 I verified the self-employed 10% rate, the annual cap and payments at least
 monthly on earnings since the last payment. Section 3 refers to a prescribed
