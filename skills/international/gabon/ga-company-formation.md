@@ -4,7 +4,7 @@ description: "Draft covering Gabon company formation and entity choice for 2025.
 jurisdiction: GA
 tax_year: 2025
 last_updated: 2026-11-11
-version: 1.4
+version: 1.5
 review_status: pending_review
 category: formation
 tier: 2
@@ -52,7 +52,33 @@ Gabon’s national capital rule above with the remaining uniform rules below.
 - **Beneficial ownership disclosure** — Ultimate beneficial owner (UBO) disclosure required at registration  _(OHADA / ANPI-Gabon registration requirements — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Annual accounts (OHADA SYSCOHADA)** — Prepare and file annual financial statements under the SYSCOHADA accounting framework  _(OHADA Uniform Act on Accounting Law (SYSCOHADA))_
 - **Annual tax compliance** — CIT return before 30 April with instalments on 30 November and 30 January, monthly VAT return by the 20th, payroll withholding paid within the first 15 days of the following month, and the patente instalment before 1 March  _(Code Général des Impôts 2025 (Gabon), arts. 20, 21, 96, 237 and 265 — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **Business license tax (patente)** — Annual fixed duty set by profession in the tariff annexed to the code: Tableau A fixed duties run from XAF 15,000 to 540,000, with per-unit duties for the Tableau B and C professions; companies and real-regime traders pay an instalment equal to the previous year's contribution before 1 March. Law 041/2025 replaces this from 2026 with 0.1% of the previous year's turnover, between XAF 150,000 and 10,000,000, paid before 1 March (RESEARCH GAP: 2026 text not read in the Journal Officiel)  _(Code Général des Impôts 2025 (Gabon), arts. 253, 265, 266 and the tariff under art. 271 — https://dgi.ga/document/code-general-des-impots-2025/)_; _(DGI, Contribution des patentes — https://dgi.ga/entreprises/impots-locaux/impots-geres-par-la-direction-generale-des-impots/)_; _(Deloitte, Loi de Finances pour 2026 — https://blog.avocats.deloitte.fr/gabon-les-principales-mesures-de-la-loi-de-finances-pour-2026/)_
+- **Business licence tax (patente), 2025** — Annual fixed duty set by profession in the tariff annexed to the code: Tableau A fixed duties run from XAF 15,000 to 540,000, with per-unit duties for the Tableau B and C professions; companies and real-regime traders pay an instalment equal to the previous year's contribution before 1 March.  _(Code Général des Impôts 2025 (Gabon), arts. 253, 265, 266 and the tariff under art. 271 — https://dgi.ga/document/code-general-des-impots-2025/)_
+
+## Patente provisions enacted for 2026
+
+Loi n°041/2025, signed on **29 December 2025** and published in
+**Journal Officiel n°96 Quater of 30 December 2025**, changes the patente
+for the **2026** guide comparison. Replacement article 252 covers persons
+carrying on a trade, industry or profession in Gabon, subject to the article
+254 exemptions. Replacement article 254(18) exempts newly created companies
+for their **first financial year**. Other exemptions and the precise scope
+of an activity require separate checks. [Replacement articles 252 and 254](https://journal-officiel.ga/22265-041-2025-/)
+
+Replacement article 265 uses the prior year's annual products or receipts,
+as defined by article 62 for minimum-tax purposes. It sets the patente at
+**0.1% of turnover excluding tax**, subject to a **CFA 150,000 minimum** and
+**CFA 10,000,000 maximum**. Article 265(3) requires self-declaration and full
+payment **before 1 March of the tax year**. Article 253 and articles 255
+to 258 are deleted. Later amendments, the full article 62 base and current
+filing procedures still need verification. [Replacement article 265](https://journal-officiel.ga/22265-041-2025-/)
+
+For example, an existing taxable company with a qualifying prior-year base
+of **CFA 200,000,000** has a patente of **CFA 200,000** at **0.1%**. A base
+of **CFA 50,000,000** produces **CFA 50,000** before the minimum, so the
+patente is **CFA 150,000**. A base of **CFA 20,000,000,000** produces
+**CFA 20,000,000** before the maximum, so the patente is **CFA 10,000,000**.
+These examples assume the activity is taxable and no exemption applies.
+[Replacement articles 254 and 265](https://journal-officiel.ga/22265-041-2025-/)
 
 ## National SARL capital example
 
