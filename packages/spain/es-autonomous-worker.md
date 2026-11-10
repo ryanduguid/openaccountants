@@ -1,10 +1,10 @@
 ---
 name: es-autonomous-worker
 description: Use this skill whenever asked about Spanish self-employed (autónomo) tax and social security obligations beyond IRPF computation. Trigger on phrases like "autonomo", "autónomo", "cuota de autonomos", "cuota seguridad social autonomo", "RETA", "tarifa plana", "alta autonomo", "baja autonomo", "cotizacion por ingresos reales", "obligaciones fiscales autonomo", "modelos autonomo", "Modelo 303", "Modelo 130", "Modelo 390", "Modelo 349", "calendario fiscal autonomo", "pluriactividad", "autonomo societario", "facturacion autonomo", "estimacion directa", "libro registro", "IGIC autonomo", "IPSI autonomo", "autonomo Canarias", "autonomo Ceuta Melilla", "cuanto paga un autonomo", or any question about the complete fiscal and social security picture for a self-employed worker in Spain. ALWAYS read this skill before advising on autónomo setup, ongoing obligations, or take-home pay calculations.
-version: 1.1
+version: 1.2
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 depends_on:
   - es-income-tax
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # ES Autonomous Worker
 
-## Spain Autónomo (Self-Employed Worker) Complete Obligations Skill v1.1
+## Spain Autónomo (Self-Employed Worker) Complete Obligations Skill v1.2
 
 > **Based on work by [Nambu89 (Impuestify)](https://github.com/Nambu89/Impuestify)** and **[Pau March (larenta)](https://github.com/paumrch/larenta)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | AEAT (tax) + Tesorería General de la Seguridad Social (TGSS) (social security) |
 | Key filing forms | Modelo 036/037 (census), Modelo 130 (quarterly IRPF), Modelo 303 (quarterly IVA), Modelo 100 (annual IRPF) |
 
-## Section 2 -- Cuota de Autónomos 2025: Cotización por Ingresos Reales
+## Section 2 -- Cuota de Autónomos 2025 and 2026
 
 Since January 2023, self-employed workers pay Social Security (cuota de autónomos) based on actual income (rendimientos netos). The system has 15 brackets deployed gradually until 2032.
 
@@ -64,43 +64,19 @@ Since January 2023, self-employed workers pay Social Security (cuota de autónom
 
 ### How to Calculate Net Monthly Income (Rendimiento Neto)
 
-- **Net monthly income calculation** — 1. Annual gross income (ingresos brutos) 2. MINUS deductible expenses (gastos deducibles) 3. MINUS 7% generic deduction (3% for autónomos societarios) 4. DIVIDE by 12 = Monthly net income (rendimiento neto mensual) (For autónomos persona física in estimación directa)
+Use [es-social-contributions, Rule 1](es-social-contributions.md#rule-1----net-income-formula-for-tranche-determination) to convert IRPF earnings to RETA net earnings. Direct estimation adds back the owner's contributions before the general expense deduction. Use the expected monthly average for provisional band selection.
 
 ### Key Rules
 
 - **6 changes per year** — You can change your contribution base up to 6 times annually to match income fluctuations
-- **Annual regularization** — After year-end, TGSS compares actual income vs. chosen base. Overpayments are refunded; underpayments are collected (second half of following year)
-- **Autónomos societarios minimum** — EUR 1,000/month base → EUR 314/month minimum contribution
+- **Annual regularisation** — TGSS determines the definitive contribution from the applicable earnings and periods. Rule 5 of the social contributions guide covers the initial reduction and extension.
+- **Autónomos societarios minimum** — Check the period and category under [es-social-contributions, Rule 6](es-social-contributions.md#rule-6----autonomo-societario-minimum).
 
 ## Section 3 -- Tarifa Plana (Flat Rate for New Autónomos)
 
-### Standard Tarifa Plana (DA 52ª LGSS, RDL 13/2022)
+Use [es-social-contributions, Rule 5](es-social-contributions.md#rule-5----tarifa-plana) for eligibility, application timing, extension and eligible company partners. The statutory EUR 80 base amount applies to 2023–2025 before MEI. For 2026, Importass shows EUR 88.64 including MEI. Reconcile the actual amount and period on the TGSS assessment.
 
-**Standard Tarifa Plana (DA 52ª LGSS, RDL 13/2022)**  _(DA 52ª LGSS, RDL 13/2022)_
-
-| Period | Monthly Contribution |
-| --- | --- |
-| Months 1-12 | EUR 80 |
-| Months 13-24 (if income < SMI) | Reduced rate (tramo-dependent) |
-
-### Requirements
-
-- **Not registered as autónomo previously** — Not registered as autónomo in the previous 2 years
-- **No prior tarifa plana benefit** — Not previously benefited from tarifa plana in the previous 3 years
-- **No outstanding debts** — No outstanding debts with Seguridad Social or Hacienda
-- **Not autónomo societario** — NOT autónomo societario (company administrators excluded)
-- **Must apply at registration** — Must apply at the moment of registration (alta)
-
-### Extended Tarifa Plana (24 months at EUR 80)
-
-- **Availability** — Available for: Workers with disability ≥ 33%; Victims of gender violence; Victims of terrorism
-
-### Important Notes
-
-- **Automatic request** — Request is automatic when registering (mark the box in Modelo TA.0521)
-- **No retroactive request** — Cannot be requested retroactively
-- **Compatible with pluriactividad** — Compatible with pluriactividad (working as both employed and self-employed)
-- **After tarifa plana ends** — After tarifa plana ends, the normal bracket system applies
+Check eligibility and the request at registration, plus any separate extension request. Review debt, overlapping relief and concurrent employment where relevant before applying the reduction.
 
 ## Section 4 -- Complete Fiscal Calendar for Autónomos
 
@@ -182,7 +158,9 @@ Since January 2023, self-employed workers pay Social Security (cuota de autónom
 
 - **Annual calculation formula** — Facturación bruta anual - Gastos deducibles anuales - Cuota autónomos anual - 5% gastos difícil justificación (max EUR 2,000, if simplificada) = Base imponible IRPF IRPF anual = Apply progressive brackets to base imponible Neto anual = Facturación bruta - IRPF - Cuota SS - Gastos
 
-### Worked Example: IT Freelancer, Madrid, EUR 3,000/month billing
+### Worked Example: 2025 IT Freelancer, Madrid, EUR 3,000/month billing
+
+Assume monthly RETA net earnings in band 10 and an assessed standard contribution at the minimum base. The annual illustration uses a stipulated EUR 5,318 IRPF liability. Compute the actual liability separately using the relevant state and regional rules.
 
 Monthly:
   Facturación bruta:            EUR 3,000
@@ -190,22 +168,20 @@ Monthly:
   = Total factura:              EUR 3,630
   - Retención IRPF 15%:        EUR 450
   = Cobro efectivo:             EUR 3,180
-  - Cuota autónomos (Tramo 9): EUR 400.20 (minimum base 1,274.51 x 31.40%, 2025)
+  - Cuota autónomos (Tramo 10): EUR 425.85 (minimum base 1,356.21 × 31.40%, 2025)
   - Gastos deducibles:          EUR 200
-  = Neto mensual estimado:      EUR 2,579.80
+  = Cash before IVA settlement: EUR 2,554.15
 
 Annual:
   Facturación bruta:            EUR 36,000
   - Gastos deducibles:          EUR 2,400
-  - Cuota autónomos:            EUR 4,802.40 (400.20 x 12)
-  - Gastos difícil justificación: EUR 1,439.88 (5% × 28,797.60, < 2,000)
-  = Base imponible:             EUR 27,357.72
-  IRPF estimado (escala 2025):  ~EUR 5,318 (state scale x 2 as a proxy for the regional scale, less EUR 5,550 personal minimum; actual regional scales vary)
-  Neto anual:                   EUR 36,000 - 5,318 - 4,802.40 - 2,400 = EUR 23,479.60
-  Neto mensual real:            EUR 1,956.63
-  % neto sobre facturación:     ~65%
+  - Cuota autónomos:            EUR 5,110.20 (425.85 × 12)
+  - Stipulated IRPF liability:  EUR 5,318.00
+  Neto anual:                   EUR 36,000 - 5,318 - 5,110.20 - 2,400 = EUR 23,171.80
+  Monthly average:              EUR 1,930.98
+  Net as a share of billings:    64.37%
 
-**Note:** The monthly "neto" from cash flow differs from the annual real neto because retenciones are prepayments that may result in refund or additional payment at year-end.
+Monthly cash includes IVA collected and is reduced by IRPF withholding. The annual calculation excludes IVA and uses the full stipulated IRPF liability.
 
 ## Section 7 -- Territorial Regime Classification
 
@@ -232,11 +208,11 @@ Annual:
 
 ### 8.2 Autónomo Societario
 
-- **Autónomo Societario** — Administrators/partners with ≥33% ownership who perform management; Must register in RETA; Minimum base: EUR 1,000/month (cuota mínima EUR 314/month); Cannot access tarifa plana; Deduction for generic expenses: 3% (not 7%); Their income comes as nómina from the company (rendimientos del trabajo), NOT business income
+- **Autónomo Societario** — Check the services and effective-control tests under [LGSS art. 305(2)(b) and (e)](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a305). Use Rules 1, 5 and 6 of the social contributions guide for the earnings calculation, reduced contribution and ordinary minimum base. Determine the IRPF treatment of each source of remuneration separately.
 
 ### 8.3 Autónomo Colaborador (Family Member)
 
-- **Autónomo Colaborador** — Spouse or family member (up to 2nd degree) working regularly in the business; Minimum base: SMI (EUR 1,000/month in 2025); Bonificación: 50% during first 18 months, 25% next 6 months; Does NOT file their own Modelo 130/303 -- works under the main autónomo's business
+- **Autónomo Colaborador** — Check the family category and the period-specific base under Rule 6 of the social contributions guide. Eligible new collaborating relatives receive a common-contingency contribution credit of 50% for 18 months and 25% for the next 6 months, measured against the minimum base of the first general income band. The rule requires 5 years out of the relevant regimes before registration. Check any tax filing obligations by activity. [Ley 20/2007, art. 35](https://www.boe.es/eli/es/l/2007/07/11/20/con/20260902)
 
 ### 8.4 Autónomo Económicamente Dependiente (TRADE)
 
@@ -328,24 +304,24 @@ Not all autónomos are obligated to file the annual Renta if their income is ver
 | Ambiguity | Default |
 | --- | --- |
 | Unknown estimation regime | Directa simplificada |
-| Unknown cuota autónomos | Calculate from bracket table using 60% of billing as proxy for net income |
-| Unknown tarifa plana eligibility | Not eligible (apply standard brackets) |
+| Unknown cuota autónomos | Obtain the TGSS assessment or calculate a provisional amount from the verified period, earnings and chosen base |
+| Unknown tarifa plana eligibility | Hold the contribution estimate and establish eligibility |
 | Unknown if new autónomo | NOT new (15% retención, not 7%) |
 | Unknown Sección IAE | Sección 2 (professional -- retención applies) |
 | Unknown business-use % | 0% for mixed-use items |
 | Unknown territory | Common territory with IVA 21% |
-| Unknown activity start date | Do not apply tarifa plana |
+| Unknown effective registration date | Hold the reduced contribution until the date is established |
 
 ## PROHIBITIONS
 
 - **Prohibition 1** — NEVER tell someone they can avoid paying cuota de autónomos if they are actively self-employed
-- **Prohibition 2** — NEVER apply tarifa plana to autónomos societarios
+- **Prohibition 2** — Verify Article 38 ter(9) status and the other eligibility conditions for a company partner
 - **Prohibition 3** — NEVER deduct client entertainment meals from IRPF
-- **Prohibition 4** — NEVER apply the 7% generic deduction to autónomos persona física (it's 7% for them, 3% for societarios -- don't mix these up)
+- **Prohibition 4** — Apply the RETA general expense deduction by statutory category and period under Rule 1 of the social contributions guide
 - **Prohibition 5** — NEVER confuse retenciones (tax prepayments) with expenses -- they are NOT deductible business expenses
 - **Prohibition 6** — NEVER apply IVA to an autónomo in Canarias (they use IGIC) or Ceuta/Melilla (IPSI)
 - **Prohibition 7** — NEVER forget that Modelo 130 is cumulative year-to-date (not just the quarter's income)
-- **Prohibition 8** — NEVER apply the EUR 80 tarifa plana beyond month 12 without verifying income < SMI
+- **Prohibition 8** — Before extending the reduced contribution, verify the request, the applicable amount and the annual SMI conditions for each affected calendar year
 - **Prohibition 9** — NEVER present cuota estimates as exact -- actual regularization happens the following year
 - **Prohibition 10** — NEVER advise on baja (deregistration) without noting that this affects future tarifa plana eligibility
 

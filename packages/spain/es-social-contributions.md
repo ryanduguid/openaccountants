@@ -1,10 +1,10 @@
 ---
 name: es-social-contributions
 description: Use this skill whenever asked about Spanish self-employed social contributions (cuota de autonomos / RETA). Trigger on phrases like "cuota autonomos", "RETA", "social contributions Spain", "autónomo contributions", "how much do I pay as autonomo", "tarifa plana", "cese de actividad", "regularizacion cuotas", "base de cotización", "TGSS direct debit", "cuota mensual", or any question about Spanish self-employed social security. Also trigger when classifying bank statement transactions showing TGSS direct debits, cuota autonomos debits, or Seguridad Social payments. ALWAYS read this skill before touching any Spanish social contributions work.
-version: 2.1
+version: 2.2
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -28,13 +28,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | EUR only |
 | Total contribution rate (2025) | 31.40% |
 | Total contribution rate (2026) | 31.50% (MEI 0.90%) |
-| Tarifa plana (new autonomos) | EUR 80/month (first 12 months) |
+| Ordinary tarifa plana | EUR 80/month before MEI in 2023–2025. For 2026, Importass shows EUR 88.64 including MEI. Reconcile the assessment under Rule 5. |
 | Payment frequency | Monthly (last business day of current month) |
 | Payment method | Domiciliacion bancaria (direct debit) -- mandatory |
 | 15 income tranches | Tranche 1 (<=EUR 670/mo) to Tranche 15 (>EUR 6,000/mo) |
 | Maximum base (2025) | EUR 4,909.50/month |
 | Maximum base (2026) | EUR 5,101.20/month |
-| Autonomo societario minimum | EUR 1,000.00/month |
+| Autonomo societario ordinary minimum base | Period and category specific. See Rule 6. |
 | Base change windows | 6 per year (Feb, Apr, Jun, Aug, Oct, Dec) |
 | Regularisation | Automatic after IRPF filing |
 | Contributor | Open Accountants |
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown persona fisica vs societario | Ask -- minimum base rules differ |
 | Unknown net income estimate | STOP -- income estimate required for tranche |
 | Unknown whether first-time autonomo | Ask -- tarifa plana eligibility |
-| Unknown 7% vs 3% deduction | Apply 7% (persona fisica default); 3% for societarios |
+| Unknown 7% vs 3% deduction | Establish the statutory category and days in RETA. See Rule 1. |
 
 ### Required inputs
 
@@ -106,7 +106,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| TGSS (amount ~EUR 80) | EXCLUDE -- tarifa plana cuota | Consistent EUR 80/month = tarifa plana |
+| TGSS with a verified reduced-contribution notice | EXCLUDE -- tarifa plana cuota | Match the payment to the TGSS assessment and contribution period. Use the amount only as a search clue. |
 
 ### 3.5 Tax authority (NOT RETA)
 
@@ -137,19 +137,19 @@ Six bank statement classifications for a hypothetical Spanish self-employed web 
 `30.04.2025 ; TGSS TESORERIA GENERAL ; ADEUDO ; CUOTA AUTONOMOS ABR 2025 ; -425.85 ; EUR`
 
 **Reasoning:**
-Matches "TGSS" + "CUOTA AUTONOMOS" (pattern 3.1). Amount EUR 425.85 = Tranche 10 minimum base (EUR 1,356.21) x 31.40%. Monthly RETA cuota for April 2025, debited on last business day of April. Exclude from VAT.
+Matches "TGSS" + "CUOTA AUTONOMOS" (pattern 3.1). The fictional April 2025 assessment confirms a base of EUR 1,356.21, the minimum for band 10. At 31.40% this gives EUR 425.85. Exclude from VAT.
 
 **Classification:** EXCLUDE -- RETA cuota. 100% deductible as gasto deducible in IRPF.
 
 ### Example 2 -- Tarifa plana cuota (new autonomo)
 
 **Input line:**
-`31.03.2025 ; TGSS ; ADEUDO ; CUOTA TARIFA PLANA MAR ; -80.00 ; EUR`
+`31.03.2026 ; TGSS ; ADEUDO ; CUOTA TARIFA PLANA MAR ; -88.64 ; EUR`
 
 **Reasoning:**
-Matches "TGSS" (pattern 3.1). Amount EUR 80.00 = tarifa plana flat rate. New autonomo in first 12 months. Covers all contingencies.
+The fictional March 2026 TGSS assessment identifies a full month in the initial reduced-contribution period and confirms the debit. Article 38 ter(1) covers common and occupational contingencies and exempts contributions for cessation of activity and vocational training. See Rule 5 for the MEI and the difference between the published total and the calculation.
 
-**Classification:** EXCLUDE -- tarifa plana RETA cuota. Deductible (EUR 80 x 12 = EUR 960/year).
+**Classification:** EXCLUDE -- tarifa plana RETA cuota. Verify the actual paid amounts and applicable tax treatment before deducting them.
 
 ### Example 3 -- Regularisation demand from TGSS
 
@@ -193,7 +193,7 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 
 ### Rule 1 -- Net income formula for tranche determination
 
-- **Net income formula** — Rendimientos netos = Ingresos computables - Gastos deducibles Rendimientos netos RETA = Rendimientos netos - 7% deduccion generica (3% for societarios) Monthly net = Rendimientos netos RETA / 12
+For direct estimation, add back the owner's Social Security contributions and payments to alternative mutual schemes to the activity's net IRPF earnings. Combine the applicable earnings across activities and apply the 7% general expense deduction. Use 3% for the specified company categories when the 90-day condition is met. The statute specifies separate inputs for objective estimation, attributed income and company earnings. Use the expected monthly average for provisional band selection and the applicable regularisable period for the final calculation. [LGSS art. 308(1)(a) and (c)](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a308)
 
 ### Rule 2 -- 2025 and 2026 tranche table (15 tranches)
 
@@ -224,7 +224,7 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 | 14 | 4,050.01-6,000.00 | 1,732.03 | 543.86 | 545.59 |
 | 15 | > 6,000.00 | 1,928.10 | 605.42 | 607.35 |
 
-- **2026 table** — Orden PJC/297/2026 art. 18 keeps these minimum bases and net-income bands for 2026, unchanged from Orden PJC/178/2025 art. 18.1 (it numbers the general table 1-12). Tranche 3 of the reduced table runs to under EUR 1,166.70 and the general table starts at EUR 1,166.70. Cuotas are minimum base x total rate.  _(Orden PJC/297/2026, arts 18 and 37: https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296)_
+- **Ordinary income tables** — The 2025 and 2026 schedules use the same minimum bases and bands. The reduced table ends below EUR 1,166.70 and the general table starts at EUR 1,166.70. The orders number the 12 general bands separately. The amounts above are minimum base × standard total rate, rounded to cents. Special floors and cover can change the assessment. [2025 order, arts 18 and 37](https://www.boe.es/eli/es/o/2025/02/25/pjc178) · [2026 order, arts 18 and 37](https://www.boe.es/eli/es/o/2026/03/30/pjc297)
 
 - **Maximum base** — Each tranche has its own maximum base (for example EUR 718.94 in tranche 1). The overall maximum, EUR 4,909.50/month (2025) and EUR 5,101.20/month (2026), applies only in tranches 14 and 15. Top cuota 2026 (tranches 14 and 15): 5,101.20 x 31.50% = EUR 1,606.88/month  _(Orden PJC/297/2026, arts 18 and 37)_
 
@@ -247,11 +247,18 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 
 ### Rule 5 -- Tarifa plana
 
-- **Tarifa plana rule** — EUR 80/month for first 12 months. Extendable 12 more months if first-year income < SMI. Eligibility: no RETA registration in prior 2 years (3 years if previously received tarifa plana). Must apply at time of alta.
+Article 38 ter covers initial registration or return after at least 2 years without registration. A person who used the reduction during their earlier period needs 3 years out of the regime. Request the reduction in the registration procedure. It starts on the effective registration date and runs through the next 12 complete calendar months. Importass also instructs applicants to be current with Social Security and tax authorities and to check which benefit applies if registered in several regimes. [Ley 20/2007, art. 38 ter(1), (3) and (4)](https://www.boe.es/eli/es/l/2007/07/11/20/con/20260902#a3-5) · [Importass guide](https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/trabajo%2Bautonomo/guia?changeLanguage=es)
+
+The ordinary extension covers the following 12 complete calendar months. Apply before it starts and declare expected annual net earnings below the annual minimum wage (SMI), EUR 17,094 for 2026. Test each calendar year covered by the extension. The initial period is exempt from regularisation. During the extension, the statute provides for regularisation in the affected year when earnings exceed the SMI. TGSS guidance also treats equality as loss of the extension for that year. Check the notice and the months affected. [Art. 38 ter(2), (3) and (6)](https://www.boe.es/eli/es/l/2007/07/11/20/con/20260902#a3-5) · [2026 SMI, RD 126/2026 art. 3](https://www.boe.es/eli/es/rd/2026/02/18/126) · [TGSS, Prórroga Tarifa Plana](https://www.seg-social.es/wps/portal/wss/internet/HerramientasWeb/9d2fd4f1-ab0f-42a6-8d10-2e74b378ee24/44b5f09d-6c25-4dcd-8210-c21700c67096?changeLanguage=es)
+
+Paragraph 9 includes qualifying partners in capital companies and worker-owned companies and worker-members of associated-work cooperatives. Check their statutory category and contribution regime. Paragraph 10 sets an initial period of 24 complete calendar months and a 36-month extension for people with disability of at least 33%, victims of gender violence and victims of terrorism. Paragraph 11 excludes the specified relatives up to the second degree and members of Catholic institutes of consecrated life in the stated regimes. [Art. 38 ter(9)–(11)](https://www.boe.es/eli/es/l/2007/07/11/20/con/20260902#a3-5)
+
+- **2023–2025 statutory amounts before MEI** — EUR 80 per month for the ordinary reduction. For eligible paragraph 10 cases, EUR 80 through the first 24 complete calendar months and EUR 160 from month 25 while the reduction continues. The provision assigns amounts from 2026 to each year's State Budget Act. [RDL 13/2022, transitional provision 5](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#dt-5)
+- **2026 administrative guidance** — Importass shows EUR 80 plus 0.90% MEI, totalling EUR 88.64 for the ordinary initial period. The 2026 order's general-table minimum for band 1 is EUR 950.98. Applying 0.90% to that base gives EUR 8.56, whilst Importass's total implies EUR 8.64. The basis for the difference and the statutory continuation of the reduced amount remain open. RDL 3/2026 art. 3(4) carries forward the ordinary income tables. Confirm the rate, base and total on the TGSS assessment, including for cross-year or special-category periods. [Importass guide](https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/trabajo%2Bautonomo/guia?changeLanguage=es) · [2026 order, art. 18](https://www.boe.es/eli/es/o/2026/03/30/pjc297) · [RDL 3/2026](https://www.boe.es/eli/es/rdl/2026/02/03/3/con)
 
 ### Rule 6 -- Autonomo societario minimum
 
-- **Autonomo societario minimum** — EUR 1,000/month regardless of tranche. Min cuota: ~EUR 314/month.
+Check ordinary provisional and definitive bases separately for the covered company and family categories. The 2025 order set a EUR 1,000 monthly floor once the 90-day condition was met. In 2026 the order allows the covered worker to retain the 2025 provisional base or apply the statutory group 7 minimum, EUR 1,424.40 for 2026. The definitive floor on regularisation follows LGSS art. 308(1)(c), rule 5, with the applicable 90-day condition. Use the TGSS notice for the worker's category and period. Check Article 38 ter separately for a reduced contribution. [2025 order, art. 18(4)](https://www.boe.es/eli/es/o/2025/02/25/pjc178) · [2026 order, arts 3 and 18(4)](https://www.boe.es/eli/es/o/2026/03/30/pjc297) · [LGSS art. 308](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a308)
 
 ### Rule 7 -- Payment schedule
 
@@ -272,8 +279,8 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 ### T2-1 -- Pluriactividad (simultaneous employment + RETA)
 
 **Trigger:** Client works as employee (Regimen General) and self-employed (RETA) simultaneously.
-**Issue:** Must pay into both regimes. Reduction in RETA base may apply if combined contributions exceed thresholds. Potential 50% refund of excess.
-**Action:** Flag for reviewer -- case-specific calculation required.
+**Issue:** For 2026, the refund is 50% of qualifying common-contingency contributions above EUR 17,323.68, limited to 50% of the RETA common-contingency contributions paid. Count the relevant employer and worker contributions from employment. TGSS pays after regularisation within the statutory timing, subject to calculation or data exceptions. [2026 order, art. 18(8)](https://www.boe.es/eli/es/o/2026/03/30/pjc297)
+**Action:** Check the calculation, actual assessment and any concurrent relief under Rule 5.
 
 ### T2-2 -- Autonomo over age 47
 
@@ -290,14 +297,14 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 ### T2-4 -- Mid-year alta (pro-rata)
 
 **Trigger:** Client registers mid-month.
-**Issue:** First month cuota pro-rated from date of alta. Tarifa plana runs from exact alta date, not first of month.
-**Action:** Confirm exact alta date.
+**Issue:** The reduction runs from the effective registration date. A mid-month activity start can have a different effective date, depending on the registration history and timing.
+**Action:** Confirm the effective date and first month's assessed amount. [Art. 38 ter(1)](https://www.boe.es/eli/es/l/2007/07/11/20/con/20260902#a3-5) · [Importass guide](https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/trabajo%2Bautonomo/guia?changeLanguage=es)
 
 ### T2-5 -- Tarifa plana extension rejected
 
-**Trigger:** First-year income exceeded SMI.
-**Issue:** Extension denied. From month 13, full tranche-based cuota applies.
-**Action:** Confirm income level and transition to full cuota.
+**Trigger:** Expected or actual annual net earnings reach or exceed the annual SMI in a calendar year of the extension.
+**Issue:** TGSS guidance includes earnings at equality in the regularisation of the affected year. See Rule 5.
+**Action:** Check the extension request, annual earnings, calendar-year overlap and assessment before selecting the contribution or adjustment.
 
 ## Section 7 -- Excel working paper template
 
@@ -310,6 +317,7 @@ INPUT DATA
   Type:                          [Persona fisica / Autonomo societario]
   Gross annual revenue:          EUR [____]
   Deductible expenses:           EUR [____]
+  Contributions to add back:     EUR [____]
   Net income before deduction:   EUR [____]
   Generic deduction (7%/3%):     EUR [____]
   Net income for RETA:           EUR [____]
@@ -325,8 +333,9 @@ CUOTA COMPUTATION
   Annual cuota (12 months):      EUR [____]
 
 OR TARIFA PLANA
-  Monthly cuota:                 EUR 80.00
-  Annual (12 months):            EUR 960.00
+  Verified period and instrument: [____]
+  TGSS decision and amount:       [____]
+  Total for covered payments:     EUR [____]
 
 REGULARISATION ESTIMATE
   Actual tranche (post-IRPF):    [____]
@@ -350,7 +359,7 @@ REVIEWER FLAGS
 - Description: "TGSS", "TESORERIA GENERAL", "SEGURIDAD SOCIAL", "CUOTA AUTONOMOS"
 - Timing: Last business day of each month (current month payment)
 - Amount: Consistent monthly amount (unless base changed)
-- Tarifa plana: exactly EUR 80.00
+- Reduced contribution: match the amount to the TGSS assessment and period
 
 **Regularisation payments:**
 - Description: "TGSS REGULARIZACION", "COMPLEMENTO CUOTAS"
@@ -364,8 +373,8 @@ REVIEWER FLAGS
 
 **Key identification tips:**
 1. RETA is MONTHLY, not quarterly -- look for consistent end-of-month debits
-2. EUR 80 monthly = tarifa plana (new autonomo)
-3. Amounts around EUR 200-600 = standard tranche cuotas
+2. Match possible reduced contributions to the relevant TGSS assessment.
+3. Check the contribution period, basis and chosen base on the assessment.
 4. AEAT debits are tax, not social security
 5. "REGIMEN GENERAL" debits are employer SS for employees, not the autonomo's RETA
 
@@ -374,33 +383,29 @@ REVIEWER FLAGS
 If the client provides only a bank statement:
 
 1. **Scan for TGSS debits** -- identify monthly pattern and amount
-2. **Identify tarifa plana** -- consistent EUR 80/month indicates new autonomo
-3. **Estimate tranche from cuota amount:**
-   - ~EUR 200 = Tranche 1
-   - ~EUR 300 = Tranche 4-6
-   - ~EUR 400-415 = Tranche 9-10
-   - ~EUR 530 = Tranche 14
-   - ~EUR 590 = Tranche 15
+2. **Identify possible tarifa plana** — obtain the TGSS assessment before confirming status or amount
+3. **Establish the tranche** — get the assessment, earnings and chosen base. Ordinary income bands permit overlapping base ranges.
 4. **Look for regularisation** -- large TGSS debit or credit mid-year
-5. **Flag:** "RETA tranche estimated from cuota amount on bank statement. Actual income and chosen base have not been independently verified. Reviewer must confirm before IRPF filing."
+5. **Flag missing records** — ask the reviewer to resolve any unmatched payment before filing.
 
 ## Section 10 -- Reference material
 
 ### Net income example
 
-**Net income example**
+**2025 net income example** — A full year under direct estimation, with EUR 4,800 of owner's contributions included in deductible expenses and no other adjustment under Rule 1.
 
 | Item | EUR |
 | --- | --- |
 | Gross annual revenue | 48,000 |
 | Deductible expenses | 12,000 |
-| Net before deduction | 36,000 |
-| 7% generic deduction | 2,520 |
-| Net for RETA | 33,480 |
-| Monthly | 2,790 |
-| Tranche | 11 (EUR 2,760.01-3,190.00) |
+| Net IRPF earnings | 36,000 |
+| Add back contributions | 4,800 |
+| 7% general expense deduction on 40,800 | 2,856 |
+| Net for RETA | 37,944 |
+| Monthly | 3,162 |
+| Tranche | 11 (over EUR 2,760 up to EUR 3,190) |
 | Min base | EUR 1,437.91 |
-| Min cuota | ~EUR 451/month |
+| Min cuota at 31.40% | EUR 451.50/month |
 
 ### Cese de actividad (cessation benefit)
 
@@ -412,26 +417,24 @@ If the client provides only a bank statement:
 
 ### Test suite
 
-Persona fisica, monthly net EUR 2,100. -> Tranche 9. Min base EUR 1,274.51. Cuota: EUR 400.20/month.
+In 2025, persona física with monthly RETA net earnings of EUR 2,100. Band 9 minimum base EUR 1,274.51 gives EUR 400.20/month.
 
-New autonomo, tarifa plana. -> EUR 80/month for 12 months.
+Use the fictional March 2026 assessment in Example 2 to reconcile EUR 88.64. A bank debit alone leaves the contribution type and period unverified.
 
-Societario, monthly net EUR 800. -> Societario minimum EUR 1,000. Cuota: EUR 314/month.
+In 2025, a covered company worker with monthly RETA net earnings of EUR 800 meets the 90-day condition and has standard cover. The EUR 1,000 floor gives EUR 314.00/month. For 2026, apply Rule 6.
 
-High earner, monthly net EUR 8,000. -> Tranche 15. Min base EUR 1,928.10. Cuota: EUR 605.42/month.
+In 2025, monthly RETA net earnings of EUR 8,000 fall in band 15. The EUR 1,928.10 minimum base gives EUR 605.42/month.
 
-Regularisation underpaid: chose Tranche 5 (EUR 960.78), actual Tranche 13 (EUR 1,601.31). -> Additional EUR 201.13/month = EUR 2,413.54/year.
+In a 2025 illustration with 12 identical regularisable months, a EUR 960.78 provisional base gives EUR 301.68/month. The EUR 1,601.31 definitive base gives EUR 502.81/month. The rounded monthly difference is EUR 201.13, or EUR 2,413.56 for 12 months.
 
-Regularisation overpaid: chose Tranche 10 (EUR 1,356.21), actual Tranche 3 (EUR 849.67). -> Refund EUR 158.95/month = EUR 1,907.45/year.
-
-Net income calc: EUR 60,000 gross, EUR 15,000 expenses. -> EUR 41,850 after 7%. Monthly EUR 3,487.50. Tranche 12. Min cuota EUR 477.16.
+In a 2025 illustration with 12 identical regularisable months, a EUR 1,356.21 provisional base gives EUR 425.85/month. If TGSS sets the definitive base at EUR 1,166.70, the maximum for reduced band 3, the illustrative contribution is EUR 366.34/month. The rounded difference is EUR 59.51, or EUR 714.12 for 12 months. Check the TGSS notice and any option to retain a higher base.
 
 Deductibility: paid EUR 4,800 cuotas. -> 100% deductible in IRPF.
 
 ### Prohibitions
 
 - NEVER compute without knowing persona fisica vs societario
-- NEVER use gross income for tranche -- always apply 7%/3% deduction first
+- Determine the band's net earnings under Rule 1.
 - NEVER tell client they can avoid RETA once registered
 - NEVER present tarifa plana as automatic -- must apply at alta
 - NEVER ignore regularisation
