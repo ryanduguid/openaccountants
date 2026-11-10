@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-10 | [Anguilla income tax scope and Social Security guidance](2026-11-10-anguilla-income-and-contributions.md) |
 | 2026-11-10 | [Domestic income tax scope in Bermuda and the Turks and Caicos Islands](2026-11-10-domestic-income-tax-scope.md) |
 | 2026-11-10 | [Cayman Islands property and equity transfer duties](2026-11-10-cayman-property-duties.md) |
 | 2026-11-10 | [Bahamas National Insurance rates, ceilings and reporting](2026-11-10-bahamas-national-insurance.md) |
