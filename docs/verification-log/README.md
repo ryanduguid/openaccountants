@@ -6,6 +6,8 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Laos reduced profit-tax rates under the revised Income Tax Law](2026-11-11-laos-reduced-profit-tax-rates.md) |
+| 2026-11-11 | [Laos enterprise social security contributions](2026-11-11-laos-enterprise-social-security.md) |
 | 2026-11-11 | [Turkmenistan VAT reporting and payment exceptions](2026-11-11-turkmenistan-vat-payment-exceptions.md) |
 | 2026-11-11 | [Turkmenistan youth-enterprise relief and corporate reporting](2026-11-11-turkmenistan-youth-relief-and-reporting.md) |
 | 2026-11-11 | [Turkmenistan enterprise registration and joint-stock reporting](2026-11-11-turkmenistan-enterprise-registration.md) |
