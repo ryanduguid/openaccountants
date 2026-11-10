@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Vanuatu ordinary income tax, rent tax and provident fund contributions](2026-11-11-vanuatu-income-rent-tax-and-vnpf.md) |
 | 2026-11-11 | [Jersey crypto-asset reporting from 1 January 2026](2026-11-11-jersey-carf-reporting.md) |
 | 2026-11-11 | [Montserrat customs, consumption tax and investment incentives](2026-11-11-montserrat-customs-and-incentives.md) |
 | 2026-11-11 | [Montserrat property tax, landholding and stamp duty](2026-11-11-montserrat-property-and-landholding.md) |
