@@ -11,7 +11,8 @@ verified accountant" section. The corpus drifted from that in two ways:
 - 116 guides carried no marker at all: 115 had no CTA, one had the new text
   without the marker line.
 
-This script repairs both, and nothing else:
+This script repairs both, with --migrate also replaces the retired block, and
+does nothing else:
 
 1. Every "Talk to a verified accountant" section that the marker does not
    introduce is removed. A section runs from its heading to the next heading,

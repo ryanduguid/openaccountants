@@ -4,6 +4,8 @@ All notable changes to this repository, newest first, in the [Keep a Changelog](
 
 ## [Unreleased]
 
+- Replace the retired upstream 'Talk to a verified accountant' block in 1,805 guides and `skills/us-states/README.md` with the canonical text in `scripts/cta_block.py`, which changed in October without the guides following. `scripts/normalize-cta-block.py --migrate` replaces only the retired wording, and `scripts/validate-guides.py` now rejects it.
+
 - Remove `generated_at` from `index.json`, which nothing read: the stamp changed on every build, so a rebuild with no guide change dirtied the file and parallel pull requests conflicted on it. The index is now byte-reproducible, and `scripts/validate-guides.py` treats any extra top-level field as stale.
 
 - Correct the guides the guided workflows point at against their primary sources: the unused basic rate band in `uk-capital-gains-sa108` (£37,700, not £50,270), the base, minimum and first-contribution rules in `pt-social-contributions` (Código Contributivo arts 162.º and 163.º), the filing bands, $30 collection allowance, DR-15 line numbers, $50 minimum penalty and commercial rent repeal in `us-fl-sales-use-tax`, the fourth installment in `us-fl-corporate-income-tax`, the transitional year in `pt-nhr-ifici`, the rules citation in `mt-estimated-tax` and the TA22 note in `malta-ssc`. The tier 1 guides among them await a new review.

@@ -27,7 +27,7 @@ def _load(name: str, filename: str):
 validate_guides = _load("validate_guides", "validate-guides.py")
 build_index = _load("build_index_for_validator_tests", "build-index.py")
 
-from cta_block import CANONICAL_BLOCK, LEGACY_BLOCKS, MARKER as CTA_MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
+from cta_block import CANONICAL_BLOCK, MARKER as CTA_MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
 
 
 #: A guide with everything but the closing CTA block — the shape 116 guides had.
@@ -56,6 +56,28 @@ different, and the rules in the skill may not match your specific facts.
 
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 """
+
+#: The retired upstream block as guides carried it: sl-corporate-income-tax.md
+#: with ':', 1,804 others with an em dash.
+RETIRED_CTA_BLOCK = """<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network: accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+"""
+RETIRED_CTA_BLOCKS = (RETIRED_CTA_BLOCK, RETIRED_CTA_BLOCK.replace("network:", "network —"))
 
 #: `depends_on: - x` is the shape the tolerant regex reader accepts and PyYAML
 #: rejects, and the one 681 generated files carried.
@@ -617,7 +639,7 @@ class CtaBlockTests(_ValidatorCase):
         self.assertIn("no openaccountants.com or calendly.com link", errors[0])
 
     def test_the_retired_upstream_block_is_an_error(self) -> None:
-        for legacy in LEGACY_BLOCKS:
+        for legacy in RETIRED_CTA_BLOCKS:
             with self.subTest(legacy=legacy):
                 errors = self._check_guides({"skills/legacy.md": GOOD_WITHOUT_CTA + "\n" + legacy})
 

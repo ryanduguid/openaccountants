@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import contextlib
 import importlib.util
+import io
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -21,7 +24,7 @@ def _load(name: str, filename: str):
 
 normalize_cta = _load("normalize_cta_block", "normalize-cta-block.py")
 
-from cta_block import CANONICAL_BLOCK, LEGACY_BLOCKS, MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
+from cta_block import CANONICAL_BLOCK, MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
 
 DATE = "2026-09-28"
 
@@ -60,6 +63,28 @@ We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
 """
+
+#: The retired upstream block as guides carried it: sl-corporate-income-tax.md
+#: with ':', 1,804 others with an em dash.
+RETIRED_BLOCK = """<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network: accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+"""
+RETIRED_BLOCKS = (RETIRED_BLOCK, RETIRED_BLOCK.replace("network:", "network —"))
 
 NORMAL = FRONTMATTER + BODY + "\n" + CANONICAL_BLOCK
 NORMAL_BUMPED = BUMPED + BODY + "\n" + CANONICAL_BLOCK
@@ -252,7 +277,7 @@ class MigrateTests(unittest.TestCase):
     carried after the canonical text changed in October 2026 (#257)."""
 
     def test_replaces_each_retired_block(self) -> None:
-        for legacy in LEGACY_BLOCKS:
+        for legacy in RETIRED_BLOCKS:
             with self.subTest(legacy=legacy):
                 new_text, actions, _ = migrate(FRONTMATTER + BODY + "\n" + legacy)
 
@@ -261,19 +286,19 @@ class MigrateTests(unittest.TestCase):
                 self.assertIn(f"set last_updated: {DATE}", actions)
 
     def test_line_wrapping_does_not_hide_a_retired_block(self) -> None:
-        rewrapped = LEGACY_BLOCKS[0].replace("who put\ntheir", "who put their")
+        rewrapped = RETIRED_BLOCKS[0].replace("who put\ntheir", "who put their")
 
         self.assertEqual(migrate(FRONTMATTER + BODY + "\n" + rewrapped)[0], NORMAL_BUMPED)
 
     def test_content_after_the_block_is_kept(self) -> None:
         tail = "\n## Appendix\n\nText.\n"
 
-        new_text, _, _ = migrate(FRONTMATTER + BODY + "\n" + LEGACY_BLOCKS[0] + tail)
+        new_text, _, _ = migrate(FRONTMATTER + BODY + "\n" + RETIRED_BLOCKS[0] + tail)
 
         self.assertEqual(new_text, BUMPED + BODY + "\n" + CANONICAL_BLOCK + tail)
 
     def test_a_duplicate_section_is_removed_and_the_kept_block_migrated(self) -> None:
-        new_text, actions, _ = migrate(FRONTMATTER + BODY + "\n" + OLD_SECTION + "\n" + LEGACY_BLOCKS[0])
+        new_text, actions, _ = migrate(FRONTMATTER + BODY + "\n" + OLD_SECTION + "\n" + RETIRED_BLOCKS[0])
 
         self.assertEqual(new_text, NORMAL_BUMPED)
         self.assertEqual(actions[:2], [
@@ -290,14 +315,26 @@ class MigrateTests(unittest.TestCase):
         self.assertEqual(migrate(NORMAL), (NORMAL, [], []))
 
     def test_without_the_flag_the_retired_block_stays(self) -> None:
-        text = FRONTMATTER + BODY + "\n" + LEGACY_BLOCKS[0]
+        text = FRONTMATTER + BODY + "\n" + RETIRED_BLOCKS[0]
 
         self.assertEqual(run(text), (text, [], []))
 
     def test_is_idempotent(self) -> None:
-        once, _, _ = migrate(FRONTMATTER + BODY + "\n" + LEGACY_BLOCKS[1])
+        once, _, _ = migrate(FRONTMATTER + BODY + "\n" + RETIRED_BLOCKS[1])
 
         self.assertEqual(migrate(once), (once, [], []))
+
+    def test_the_command_line_flag_migrates_and_counts(self) -> None:
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "synthetic-guide.md"
+            path.write_text(FRONTMATTER + BODY + "\n" + RETIRED_BLOCKS[1], encoding="utf-8")
+            output = io.StringIO()
+
+            with contextlib.redirect_stdout(output):
+                normalize_cta.main([str(path), "--migrate", "--apply", "--date", DATE, "--quiet"])
+
+            self.assertEqual(path.read_text(encoding="utf-8"), NORMAL_BUMPED)
+            self.assertIn("1 retired block(s) migrated", output.getvalue())
 
 
 if __name__ == "__main__":
