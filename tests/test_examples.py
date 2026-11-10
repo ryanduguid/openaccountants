@@ -290,5 +290,17 @@ class ExampleCliTests(unittest.TestCase):
                     self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
 
 
+class RequiredListTests(unittest.TestCase):
+    def test_every_guide_with_two_cases_is_required(self):
+        """`--require` protects only the listed guides; an unlisted guide could
+        lose every worked case with all checks green (#418, #423)."""
+        listed = set((ROOT / "scripts" / "required-examples.txt").read_text(encoding="utf-8").splitlines())
+        unlisted = [
+            rel for rel in checker.guide_files()
+            if rel not in listed and checker.check_file(ROOT / rel)[0] >= 2
+        ]
+        self.assertEqual(unlisted, [], "add these guides to scripts/required-examples.txt")
+
+
 if __name__ == "__main__":
     unittest.main()
