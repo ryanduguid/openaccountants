@@ -3,7 +3,7 @@ name: cg-company-formation
 description: "Source-cited draft: company formation & entity choice for Republic of Congo (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CG
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 version: 1.2
 review_status: pending_review
 category: formation
@@ -75,6 +75,37 @@ Company law in the Republic of Congo is governed by the OHADA Uniform Act on Com
 - **Incorporation timeline** — Roughly a few days to a few weeks via the Guichet Unique (approx — confirm)  _(Guichet Unique procedures)_
 - **Annual accounting compliance** — File the OHADA SYSCOHADA financial statements, certified by a chartered accountant where there is no statutory auditor, with the CIT return within four months of the close of the financial year (30 April for a 31 December year-end); the 20 May date applies to individuals' business-profit declarations; filing and payment are electronic for real-regime taxpayers  _(Loi n° 42-2025 du 31 décembre 2025 portant loi de finances pour 2026, Journal officiel édition spéciale n° 3-2026, CGI tome 1 arts 86 F, 94 B and 128 to 130 — https://sgg.cg/JO/2026/congo-jo-2026-3-2.pdf)_
 - **Statutory auditor (commissaire aux comptes)** — Mandatory for SA; required for SARL above OHADA size thresholds (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
+
+## Annual company reporting under the 2014 AUSCGIE
+
+The revised AUSCGIE took effect on **5 May 2014**. The following rules address
+annual SARL and SA decisions and commercial-company registry deposits.
+[OHADA company law register](https://www.ohada.org/droit-des-societes-commerciales-et-du-gie/)
+
+- **SARL annual meeting.** The annual ordinary general meeting must take place
+  within **6 months after the financial year closes**. The managers may ask the
+  competent court for an extension. [AUSCGIE, articles 347 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86)
+- **SA annual meeting.** The ordinary general meeting must take place at least
+  once a year, within **6 months after the financial year closes**, subject to
+  an extension by court decision. [AUSCGIE, article 548](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=133)
+- **Sole-member companies.** The sole shareholder of an SA takes the annual
+  ordinary decisions within **6 months after the financial year closes** and
+  records them in minutes kept in the company's archives. Article 347 applies
+  these sole-member decision rules to a SARL, with the exceptions it specifies.
+  [AUSCGIE, article 347](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86),
+  [articles 558 to 560](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=135)
+- **Deposit of annual accounts.** A commercial company must deposit the prior
+  year's annual financial statements with the RCCM in the state of its
+  registered office **within the month following approval** by the competent
+  body. If approval is refused, a copy of the refusal decision must be deposited
+  within the same period. [AUSCGIE, article 269, pages 65 and 66](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=65)
+
+For example, for a multi-member SARL with a **31 December 2025** year-end, the
+ordinary annual meeting is due by **30 June 2026**, subject to a court extension.
+Track the RCCM deposit deadline from the actual approval decision. Record the
+national tax-return deadline separately. The current registry filing method,
+fees, applicable accounting and audit rules and any sector-specific obligations
+still need verification. [AUSCGIE, articles 269 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
 
 <!-- openaccountants-cta-block -->
 

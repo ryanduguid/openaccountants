@@ -3,7 +3,7 @@ name: bf-company-formation
 description: "Source-cited draft covering Burkina Faso company formation and entity choice. Explains the SARL and the SA under the OHADA uniform act read from the Journal Officiel: single-member formation, freely fixed SARL capital under the 2016 national decree, the 5,000 FCFA minimum nominal value of a part sociale, the ordinary 10,000,000 FCFA SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and deposit of funds. Use for incorporating in Burkina Faso, choosing between a SARL and an SA, CEFORE registration or OHADA capital questions. Registration fees and timelines still rest on commercial sources. Pending local-accountant review."
 jurisdiction: BF
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 version: 1.2
 review_status: pending_review
 category: formation
@@ -43,6 +43,37 @@ FCFA 5,000 capital; the OHADA default is not its national minimum.
 - **Incorporation timeline** — Registration through CEFORE typically completed within a few days to a couple of weeks (approx — confirm)  _([CEFORE business registration procedures](https://www.usemultiplier.com/burkina-faso/company-registration))_
 - **Incorporation cost** — Government administrative registration fees under ~50 EUR; total professional/notary budget commonly 1,000–1,500 EUR (excluding share capital) (approx — confirm)  _([CEFORE business registration procedures](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso))_
 - **Core annual compliance** — Annual financial statements (SYSCOHADA), annual IS return, monthly TVA returns, IUTS and CNSS declarations, and renewal of business registrations  _(Code Général des Impôts (CGI); SYSCOHADA accounting framework)_
+
+## Annual company reporting under the 2014 AUSCGIE
+
+The revised AUSCGIE took effect on **5 May 2014**. The following rules address
+annual SARL and SA decisions and commercial-company registry deposits.
+[OHADA company law register](https://www.ohada.org/droit-des-societes-commerciales-et-du-gie/)
+
+- **SARL annual meeting.** The annual ordinary general meeting must take place
+  within **6 months after the financial year closes**. The managers may ask the
+  competent court for an extension. [AUSCGIE, articles 347 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86)
+- **SA annual meeting.** The ordinary general meeting must take place at least
+  once a year, within **6 months after the financial year closes**, subject to
+  an extension by court decision. [AUSCGIE, article 548](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=133)
+- **Sole-member companies.** The sole shareholder of an SA takes the annual
+  ordinary decisions within **6 months after the financial year closes** and
+  records them in minutes kept in the company's archives. Article 347 applies
+  these sole-member decision rules to a SARL, with the exceptions it specifies.
+  [AUSCGIE, article 347](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86),
+  [articles 558 to 560](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=135)
+- **Deposit of annual accounts.** A commercial company must deposit the prior
+  year's annual financial statements with the RCCM in the state of its
+  registered office **within the month following approval** by the competent
+  body. If approval is refused, a copy of the refusal decision must be deposited
+  within the same period. [AUSCGIE, article 269, pages 65 and 66](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=65)
+
+For example, for a multi-member SARL with a **31 December 2025** year-end, the
+ordinary annual meeting is due by **30 June 2026**, subject to a court extension.
+Track the RCCM deposit deadline from the actual approval decision. Record the
+national tax-return deadline separately. The current registry filing method,
+fees, applicable accounting and audit rules and any sector-specific obligations
+still need verification. [AUSCGIE, articles 269 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
 
 <!-- openaccountants-cta-block -->
 
