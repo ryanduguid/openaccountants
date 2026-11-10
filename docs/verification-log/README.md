@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Gabon national SARL capital and statutes](2026-11-11-gabon-national-sarl-capital.md) |
 | 2026-11-11 | [Senegal and Congo national SARL capital rules](2026-11-11-senegal-congo-national-sarl-capital.md) |
 | 2026-11-11 | [OHADA annual decisions and registry deposits](2026-11-11-ohada-annual-reporting-and-benin-capital.md) |
 | 2026-11-11 | [Armenia R&D salary withholding period and eligibility](2026-11-11-armenia-rd-salary-period.md) |
