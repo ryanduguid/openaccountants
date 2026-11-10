@@ -4,7 +4,7 @@ description: "Draft covering Gabon company formation and entity choice for 2025.
 jurisdiction: GA
 tax_year: 2025
 last_updated: 2026-11-11
-version: 1.5
+version: 1.6
 review_status: pending_review
 category: formation
 tier: 2
@@ -71,6 +71,13 @@ as defined by article 62 for minimum-tax purposes. It sets the patente at
 payment **before 1 March of the tax year**. Article 253 and articles 255
 to 258 are deleted. Later amendments, the full article 62 base and current
 filing procedures still need verification. [Replacement article 265](https://journal-officiel.ga/22265-041-2025-/)
+
+The printed article 62 reference needs clarification. In the DGI's **CGI
+2025** compilation, article 62 concerns securities-income exemptions,
+whilst articles 24 and 25 set out the IS minimum tax and its base. That
+compilation does not resolve the cross-reference in the **2026** law.
+Obtain an operative correction or tax-authority clarification before
+settling the full patente base. [CGI 2025, articles 24, 25 and 62](https://dgi.ga/document/code-general-des-impots-2025/)
 
 For example, an existing taxable company with a qualifying prior-year base
 of **CFA 200,000,000** has a patente of **CFA 200,000** at **0.1%**. A base
