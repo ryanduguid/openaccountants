@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Cayman Islands withholding and cross-border rules](2026-11-11-cayman-withholding-and-cross-border.md) |
 | 2026-11-11 | [Cayman Islands formation and reporting](2026-11-11-cayman-formation-and-reporting.md) |
 | 2026-11-11 | [Cayman Islands payroll and mandatory contributions](2026-11-11-cayman-payroll-and-contributions.md) |
 | 2026-11-11 | [Cayman Islands tax-system scope](2026-11-11-cayman-tax-system-scope.md) |

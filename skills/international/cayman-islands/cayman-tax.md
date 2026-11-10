@@ -1,7 +1,7 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 2.6
+version: 2.7
 jurisdiction: KY
 tax_year: 2026
 last_updated: 2026-11-11
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Property filings | Lands and Survey Department for land transfer stamp duty. The landholding corporation files its equity transfer return with the Minister responsible for Finance. See Section 5.2. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Cayman practitioner |
-| Skill version | 2.6 |
+| Skill version | 2.7 |
 
 ### Tax Landscape
 
@@ -71,7 +71,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Ambiguity | Default |
 | --- | --- |
 | Unknown duty rate | General merchandise (22%) |
-| Unknown economic substance | Assume relevant activity |
+| Unknown economic substance | Identify the entity and activity before applying the test |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -240,7 +240,26 @@ Check the statutory exclusions for distributions by personal representatives, ba
 
 ### 6.1 Economic Substance
 
-- Section 7 requires an annual notification from an entity. A relevant entity carrying on a relevant activity that must satisfy the economic substance test files its report within 12 months after its financial year end. See the [formation and reporting guide](ky-company-formation.md) for the separate filing routes. [Economic Substance Act (2026 Revision), ss 4 and 7](https://gov.ky/documents/35692/0/International%2BTax%2BCo-operation%2B%28Economic%2BSubstance%29%2BAct%2B%282026%2BRevision%29%2C.pdf/099118d2-c42f-65b8-6d98-cb5f43cd4ad9)
+Classify the entity and each activity under the Schedule. Relevant
+activities include banking, distribution and service centre, financing and
+leasing, fund management, headquarters, holding company, insurance,
+intellectual property and shipping business. Investment fund business is
+excluded from the activity definition. Check the statutory entity exclusions
+for domestic companies, local partnerships, investment funds and entities
+tax resident outside Cayman. A relevant entity that must meet the
+test generally conducts core income-generating activities in Cayman, is
+directed and managed there and has adequate expenditure, premises and
+personnel there for the activity. Pure equity holding companies have a
+reduced test. High-risk intellectual property businesses face a separate
+presumption and evidence requirement. [Economic Substance Act (2026
+Revision), s 4 and Schedule](https://gov.ky/w/international-tax-co-operation-economic-substance-act-2026-revision-lg7-s10)
+
+Section 7 requires an annual notification from an entity. A relevant entity
+that must satisfy the test files its report within 12 months after its
+financial year end. See the [formation and reporting guide](ky-company-formation.md#accounts-audits-and-tax-cooperation) for
+filing and the [cross-border
+guide](ky-corporate-income-tax.md#economic-substance-and-financial-account-information)
+for evidence of foreign tax residence. [Economic Substance Act, s 7](https://gov.ky/w/international-tax-co-operation-economic-substance-act-2026-revision-lg7-s10)
 
 ### 6.2 Duty Concessions
 
