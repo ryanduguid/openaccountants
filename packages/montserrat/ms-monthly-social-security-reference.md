@@ -7,7 +7,7 @@ jurisdiction: MS
 tax_year: 2026
 tax_year_notes: "Fictional 2026 full-month illustration only. Cap. 18.09 is consolidated at 1 January 2025, SRO 8/2022 supplies the selected 2026 schedule and the Fund's 2026 tables are corroboration. Complete later law, the statutory nearest-dollar construction, actual currency and operational contributions remain unestablished."
 tier: 2
-last_updated: 2026-10-26
+last_updated: 2026-11-11
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -18,6 +18,8 @@ depends_on:
 # Montserrat nominal monthly Social Security reference v0.1
 
 > **General reference only.** This Tier 2 draft illustrates nominal, unrounded arithmetic on expressly stipulated fictional premises. It establishes no actual contribution, lawful deduction, net wages, remittance, filing, benefit or complete country output. Every numerical share below remains nominal and unrounded, including whole-dollar examples. Guide presence and passing component checks do not establish comprehensive jurisdiction acceptance.
+
+The [company formation and reporting reference](references.md) covers dated registry, recordkeeping and annual-return rules for Montserrat.
 
 ## Scope and stop conditions
 

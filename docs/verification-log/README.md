@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Montserrat company formation and reporting](2026-11-11-montserrat-formation-reporting.md) |
 | 2026-11-11 | [Spain's reduced RETA contribution in 2025 and 2026](2026-11-11-spain-reta-reduced-contribution.md) |
 | 2026-11-11 | [Saint Kitts and Nevis special regimes](2026-11-11-saint-kitts-and-nevis-special-regimes.md) |
 | 2026-11-11 | [Saint Kitts and Nevis VAT, customs, property and formation](2026-11-11-saint-kitts-and-nevis-vat-customs-property-formation.md) |
