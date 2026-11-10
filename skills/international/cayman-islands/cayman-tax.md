@@ -1,7 +1,7 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 2.4
+version: 2.5
 jurisdiction: KY
 tax_year: 2026
 last_updated: 2026-11-11
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Property filings | Lands and Survey Department for land transfer stamp duty. The landholding corporation files its equity transfer return with the Minister responsible for Finance. See Section 5.2. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Cayman practitioner |
-| Skill version | 2.4 |
+| Skill version | 2.5 |
 
 ### Tax Landscape
 
@@ -135,7 +135,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Input:** Employee at KYD 60,000/year, non-Caymanian, age 30, employed continuously in Cayman for two years, not a household domestic. Assume a defined-contribution plan with a 5% employer share.
 
-**Classification:** No income tax. No payroll tax. Pension: KYD 6,000 (5%+5%). Health insurance: mandatory. Work permit: required, annual fee.
+**Classification:** No Cayman wage income tax withholding. The employer and employee each contribute KYD 3,000 to the pension plan. The employer arranges health cover and, if a work permit is required, pays the applicable permit fees. See [payroll and social contributions](ky-payroll-social.md) for the 2026 rules.
 
 ### Example 3 -- Hotel Tax
 
@@ -240,7 +240,7 @@ Check the statutory exclusions for distributions by personal representatives, ba
 
 ### 5.3 Pension and Health Insurance
 
-- **Pension and health insurance mandatory**: Enrolment runs from age 18 to the normal age of pension entitlement (65, subject to a qualifying election for 60 within the prescribed period). Required defined-contribution pension contributions total **10%** of earnings up to **CI$87,000**: 5% is an employer *floor* and a member limit without express consent, not a fixed 50/50 split: an employer paying more than 5% reduces the member's share correspondingly. Employees who are neither Caymanian nor permanent residents are excluded while working nine months or less, and household domestics qualify only on the same status condition. Additional voluntary contributions are permitted. Health insurance: the employer is liable for the **whole** premium and may recover **up to 50%** from the employee (100% for dependants' cover under s.8). High-risk employee recovery follows the separate s.7(ii) comparator. See `ky-payroll-social` for the full treatment  _(National Pensions Act (2024 Revision), ss.3, 25 and 47: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf; Health Insurance Act (2021 Revision), ss.7–8: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
+- The [2026 Cayman payroll guide](ky-payroll-social.md) covers enrolment, wages, permitted deductions, provider payments, work permit fees and reconciliation. Private pension contributions are generally based on earnings up to CI$87,000. Standard employee health premiums are paid to the insurer by the employer, with up to 50% recoverable from the employee. High-risk and dependant premiums have separate rules. [National Pensions Act, ss 3, 25 and 47–48](https://www.procure.gov.ky/upimages/commonfiles/1751266504NationalPensionsAct2024Revision_1751266507.pdf) · [Health Insurance Act, ss 5 and 7–8](https://hsa-cayman.imgix.net/images/HealthInsuranceAct_2021-Revision.pdf)
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 

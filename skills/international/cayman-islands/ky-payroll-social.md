@@ -1,12 +1,12 @@
 ---
 name: ky-payroll-social
-description: "Source-cited draft covering Cayman Islands payroll and mandatory private pension and health-insurance obligations for 2025. Explains the required defined-contribution total, employer floor, employee consent rule, pensionable-earnings cap, coverage exclusions, remittance timing and health-premium recovery. Distinguishes standard, high-risk and dependant insurance arrangements. Use for questions about Cayman payroll, pension contributions, employer health insurance, household domestic workers, pensionable earnings or contribution deadlines. Sources include the National Pensions Act and Health Insurance Act. Later commencement orders, current premium amounts and work-permit fees need confirmation. Pending local-accountant review."
+description: "Cayman Islands payroll and mandatory pension and health insurance for 2026. Covers employer setup, lawful deductions, payslips, remittance and reconciliation, pension eligibility and contributions, health premiums and the work permit fee rules from 1 May 2026. Use for Cayman payroll, self-employed contributions, pensionable earnings, dependant health cover or contribution deadlines. The self-employed earnings calculation still needs verification. Pending local accountant review."
 jurisdiction: KY
 category: payroll
-tax_year: 2025
-tax_year_notes: "Statutory text read here is the National Pensions Act (2024 Revision), revised as at 31 December 2023; the National Pensions (General) Regulations (2018 Revision); and the Health Insurance Act (2021 Revision), revised as at 31 December 2020. Later amendments and commencement orders have not been exhaustively checked."
-version: 0.2
-last_updated: 2026-11-10
+tax_year: 2026
+tax_year_notes: "Rules checked on 11 November 2026. The amended minimum wage and the 2026 public service pension rates apply from 1 January 2026. The new work permit fee schedule applies from 1 May 2026, subject to transitional rules."
+version: 1.0
+last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,138 +14,212 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cayman Islands Payroll & Social Contributions
 
-## 1. There is no income tax, and therefore no payroll tax
+## 1. Set up an employer payroll
 
-- **No PAYE / payroll income tax withholding**: there is no income tax, so
-  nothing is withheld from wages  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **No state social-security contribution**: there is no government
-  social-security or national-insurance payroll tax. The two mandatory employer
-  obligations below are **private** contracts the law compels: a pension plan and
-  a health insurance contract  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Wage tax.** Cayman has no domestic wage income tax or payroll tax, so
+  there is no Cayman PAYE registration, withholding, remittance or year-end
+  PAYE return. The workplace obligations below still apply.
+  [Government tax overview](https://cigarchives.gov.ky/economy) ·
+  [Cayman tax-system verification](https://github.com/ryanduguid/openaccountants/blob/31ff836cc57a44b6c29d978ea2afe64f0a4289ff/docs/verification-log/2026-11-11-cayman-tax-system-scope.md)
+- **Pension and health.** Register an employer plan with the Department of
+  Labour and Pensions (DLP) or join a registered multi-employer plan. Select
+  the plan in consultation with employees and enrol eligible workers from
+  the date they become pensionable. Arrange standard health cover through an
+  approved insurer and give each employee the insurer's name and address,
+  coverage date and policy number in writing within 15 days of starting.
+  [National Pensions Act, ss 4–6, 25 and 48][pensions] ·
+  [DLP employer guidance][dlp] · [Health Insurance Act, ss 5 and 11][health] ·
+  [Approved health insurers][hic]
+- **Terms of employment.** Give the employee a written statement of
+  employment conditions within 10 working days of entering the contract.
+  Section 6 exempts casual employees and household domestics from this duty.
+  [Labour Act, s 6][labour]
+- **Permission to work.** Verify the employee's right to work before their
+  first shift. If a permit is required, the employer applies through Workforce
+  Opportunities & Residency Cayman (WORC). The employer pays the permit and
+  application fees and any prescribed entry security. Section 67(3) prohibits
+  recovering these costs from the worker, including through payroll.
+  [Caymanian Protection Act, ss 56, 58 and 67–68][immigration] ·
+  [Act 14 of 2025, ss 27–28 and 32][immigration25]
+- **Work permit fees from 1 May 2026.** Use the applicable grant, renewal or
+  temporary permit items in Part 1 Category B and the occupation and
+  employer schedule in Part 2. The schedule separates island rates where
+  applicable. Part 3 sets a separate Cayman Enterprise City fee regime.
+  Section 67(1) also requires the identification card fee with the application.
+  Under s 83A, applications pending at commencement are generally determined
+  under the earlier rules, and existing valid permits run to expiry.
+  [Fees Regulations, SL 20 of 2026, regs 1–3 and Schedule][permit-fees] ·
+  [Gazette erratum E2 of 2026][erratum] ·
+  [Act 14 of 2025, ss 32 and 37][immigration25] ·
+  [Ministry commencement notice][commencement]
 
-## 2. Pensions: National Pensions Act (2024 Revision)
+## 2. Run, report and reconcile payroll
 
-- **Every employer must provide or contribute to a plan**: s.4(1) requires every
-  employer in the Islands to provide a pension plan, or contribute to one, for
-  every person it employs in the Islands, the plan being **defined benefit or
-  defined contribution at the employer's discretion**  _(National Pensions Act (2024 Revision), s.4(1): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **The total is 10%, but the split is a floor and a ceiling, not 50/50**: the
-  previous version said "generally split 5% employer / 5% employee". The Act sets
-  three separate rules: a member **may not be required, without express consent,
-  to contribute more than 5%** (s.47(3)(a)); an employer **may not contribute less
-  than 5%** (s.47(3)(b)); and where the employer contributes **more** than 5%, the
-  member contributes only such amount as, added to the employer's, **equals 10%**
-  (s.47(3)(c)). So 5/5 is the statutory default, **10% is the required defined-contribution total**, and
-  the employer may absorb more of it  _(National Pensions Act (2024 Revision), s.47(3)(a)–(c): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **Defined benefit plans work differently**: the member contributes the amount
-  stipulated in the actuarial report, limited to 5% of earnings up to the cap unless the member expressly consents to more; the
-  employer contributes an equal amount, **and makes good any shortfall** where the
-  plan is underfunded  _(National Pensions Act (2024 Revision), s.47(3)(d): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **The self-employed pay the whole 10% themselves**: and must either be a member
-  of an approved plan or contribute to an **individual pension entitlement
-  account** with an approved provider  _(National Pensions Act (2024 Revision), ss.25(3) and 47(2): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **The cap is CI$87,000, and it is in the Act itself**: s.3 defines *"year's
-  maximum pensionable earnings"* as *"earnings totalling in any year **eighty-seven
-  thousand dollars** or such other amount as may be prescribed by Order, made by
-  Cabinet, containing the amount and the period for which that amount applies"*  _(National Pensions Act (2024 Revision), s.3: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **The employer pays at the same time as the employee, and remits both**: the
-  member's contribution is payable at regular periods through the year and the
-  employer's **at the same time**; the employer deducts the member's part from
-  earnings and pays both **directly into the plan**  _(National Pensions Act (2024 Revision), s.47(4)–(5): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **Fifteen days after month end: for both halves**: regulation 29 requires
-  employee contributions withheld by payroll deduction to reach the plan *"within
-  fifteen days after the last day of the month in which the sum was received or
-  deducted"*, and **employer** contributions *"within fifteen days after the last
-  day of the month in which such contribution was due"*. The previous version gave
-  the deadline for the deducted half only  _(National Pensions (General) Regulations (2018 Revision), reg. 29: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/1998/1998-0003/1998-0003_2018%20Revision.pdf)_
-- **Penalty**: contravening the Act is an offence carrying a fine of **CI$10,000**
-  or **one year's imprisonment**, or both; on a conviction for failing to submit or
-  pay, the court may additionally assess the unpaid amount and order it paid to the
-  fund  _(National Pensions Act (2024 Revision), s.90(1)–(2): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
+1. Calculate gross wages for regular pay periods of at most 1 month. The
+   general minimum basic wage is CI$8.75 per hour from 1 January 2026.
+   The CI$6.56 cash rate applies to eligible service employees under an
+   approved gratuities scheme. Check the special rules for household
+   domestics and any exemptions before applying the general rate.
+   [Labour Act, ss 20–30][labour] · [SL 60 of 2025, paras 1–2][wage] ·
+   [DLP minimum wage guidance][dlp]
+2. Apply lawful deductions, including pension and health amounts calculated
+   below. Section 29 limits deductions and generally caps the total at one
+   third of gross money wages for the pay period, with specified loan and
+   advance exceptions. Give a written statement within 1 week of each wage
+   or gratuity payment, showing how the payment was made up and the amount
+   and nature of each deduction. Employers with 10 or more employees must
+   keep work accounts recording hours or piecework, leave and wages by pay
+   period, and keep each entry for at least 2 years.
+   [Labour Act, ss 29–33][labour]
+3. Remit both employee and employer pension amounts to the fund or approved
+   provider by the 15th of the month after the employee performs the work,
+   regardless of the pay date. The contributions must reach the plan by
+   close of business on that date. Standard health premiums are due to the
+   insurer on the first day of the month covered. Collect the employee's
+   share weekly or monthly. A service employer must report monthly gratuities
+   received and their distribution to DLP in the approved format within
+   6 weeks after month end.
+   [National Pensions Act, ss 47(4)–(5) and 48(1)–(3)][pensions] ·
+   [Health Insurance Regulations, reg 6(7)–(8)][health-regs] ·
+   [Labour Act, ss 34–38][labour]
+4. As a payroll control, reconcile the wage register and individual
+   year-to-date pension bases with remittances and the provider's receipts
+   and member statements. Reconcile the health invoice against the covered
+   roster, effective dates, dependants and permitted payroll recoveries.
+   Correct mismatches with the provider. The pension administrator must
+   pursue delinquent amounts immediately and report amounts still outstanding
+   on the statutory reporting timetable. The annual and semiannual pension
+   statements are administrator obligations.
+   [National Pensions Act, ss 22 and 48(4)–(9)][pensions] ·
+   [National Pensions (General) Regulations, reg 15][pension-regs] ·
+   [Health Insurance Act, ss 5, 7–11 and 15][health]
 
-### Who must be enrolled: and the two exclusions the guide missed
+## 3. National Pensions Act contributions
 
-- **Age 18 to the normal age of pension entitlement**: s.25(1). That age is
-  defined as **65**, except that a person who attains **60** may, within the time
-  prescribed by Order, **opt for a normal age of 60**. "18–65" is right as a
-  default and is not the whole rule  _(National Pensions Act (2024 Revision), ss.25(1) and 3: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **The nine-month exclusion is narrower than "non-Caymanian"**: s.25(2) relieves
-  the employer only for a person who **neither holds Caymanian status nor is a
-  permanent resident** *and* who has been working in the Islands for a **continuous
-  period of nine months or less**  _(National Pensions Act (2024 Revision), s.25(2)(a): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
-- **Household domestic workers** qualify for the s.25(2)(b) exclusion only on
-  the same non-Caymanian/non-permanent-resident status condition as s.25(2)(a).
-  It is not a blanket exclusion for all domestic workers.
-  [National Pensions Act (2024 Revision), s.25(2)](https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf).
-- **Two employers means two sets of contributions**: where an employee is employed
-  by more than one employer, **each** is liable to contribute for that employee  _(National Pensions Act (2024 Revision), s.25(4): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
+### Employee eligibility and earnings
 
-> The 2024 consolidation records the 2016 amendment reducing nine months to
-> six as not yet commenced. Later commencement orders were not exhaustively
-> checked. Confirm the applicable period before enrolling or excluding an employee.
-> _(National Pensions Act (2024 Revision), s.25(2)(a) and its footnote: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)_
+Enrol eligible employees from age 18 to their normal age of pension
+entitlement. The default is 65. Someone who turns 60 between 1 January 2017
+and 31 December 2029 inclusive may elect 60. A Caymanian under 23 in full-time
+education is outside the Act's employee definition. An employer need not
+contribute for a worker who holds neither Caymanian status nor permanent
+residence during the first 9 months of continuous work in the Islands, or
+while the worker is employed as a household domestic. The 2024 consolidation
+records the 2016 amendment to 6 months as uncommenced, and DLP's current
+guidance still uses 9 months. Each employer is liable where a member has
+multiple jobs. Membership may continue past the entitlement age with the
+employer's agreement where applicable. [National Pensions Act, ss 3, 25 and 47(8)(c)][pensions] ·
+[Entitlement Option Order, para 2][age-order] · [DLP guidance][dlp]
 
-> **A near-miss worth recording.** The **National Pensions (Maximum Pensionable
-> Earnings) Order, 2022** looks like the source of the CI$87,000 figure and is
-> not. It prorated the maximum to **CI$21,750** for **1 October to 31 December
-> 2022**: CI$87,000 annualised: and **expired on 31 December 2022**, providing
-> that the maximum *"shall immediately after the expiry of this Order be read and
-> construed as if it had never been amended"*. Citing that Order for a current cap
-> would cite a spent instrument. The live figure is in **s.3 of the Act**.
-> _(National Pensions (Maximum Pensionable Earnings) Order, 2022 (SL 42 of 2022), paras. 2–3: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2022/2022-0042/2022-0042_SL%2042%20of%202022.pdf)_
+Use monetary earnings from employment, including wages, salary, leave pay,
+fees, commissions, gratuities and the portion of a bonus above 20% of basic
+salary or wages for the period. Exclude severance, normal pension entitlement,
+long service recognition payments and health insurance premiums. Track the
+annual contribution base up to CI$87,000. The separate 2022 cap order applied
+only from October to December 2022. [National Pensions Act, ss 3 and 47][pensions] ·
+[2022 cap order, paras 2–3][cap-order]
 
-## 3. Health insurance: Health Insurance Act (2021 Revision)
+### Contribution amounts
 
-The previous version said the premium "is generally shared, with the employer
-paying at least 50% ((employer share approx: confirm))". The Act does not split a
-premium. It makes the employer liable for **all** of it and gives a **capped right
-of recovery**.
+| Arrangement | Ordinary required contribution |
+| --- | --- |
+| Defined contribution | 10% of capped earnings in total. The employer pays at least 5% and cannot recover its share. The employee pays the balance, up to 5% unless they expressly consent to more. |
+| Defined benefit | The employee amount follows the actuarial report, up to 5% of capped earnings unless they expressly consent to more. The employer matches the stipulated contribution and funds any shortfall. |
+| Self-employed | 10% of earnings up to the annual CI$87,000 limit, paid into an approved plan or individual pension entitlement account with an approved provider. Pay at least monthly, using earnings since the last contribution. |
 
-- **The employer is liable for the total cost**: s.7 makes an employer liable to
-  pay *"the total cost of the standard premium payable under any standard health
-  insurance contract effected in respect of an employee"*  _(Health Insurance Act (2021 Revision), s.7(a): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
-- **…and may recover up to half from the employee**: the employer *"shall be
-  entitled to recover directly from the employee or to deduct, from the salary,
-  wage or other remuneration"* an amount ***"not exceeding fifty per cent of the
-  premium so paid"***. So the employer's net share is **at least 50%**, but the
-  employer carries the whole payment obligation to the insurer and bears the
-  collection risk  _(Health Insurance Act (2021 Revision), s.7(i): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
-- **High-risk employees**: the employer pays the total premium. Section 7(ii)
-  permits recovery of the difference between that premium and the amount the
-  employer would have been liable to pay for the employee under a standard
-  contract if the employee were not high risk. The standard 50% recovery rule
-  must not be substituted for this comparator, nor does the provision mean the
-  employer necessarily bears the loading. [Health Insurance Act, s.7(b), (ii)](https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf).
-- **Dependants reverse the economics**: s.8 makes the employer liable for the
-  **total cost** of the standard contract for an employee's **dependants**, but
-  entitles it to deduct from that employee the **total cost** of the dependant
-  cover, **in addition to** the s.7 deduction. Dependant cover is therefore
-  employer-administered and, in principle, **fully employee-funded**. The previous
-  version did not mention dependants  _(Health Insurance Act (2021 Revision), s.8: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
-- **No underwriting on the standard contract**: except as permitted by regulations
-  prescribed under s.25, *"no underwriting is permitted under the standard health
-  insurance contract"*  _(Health Insurance Act (2021 Revision), s.5(15A): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
-- **Penalty**: failing to comply with the duty to insure under s.5(1) or (2) is an
-  offence: a fine of **CI$30,000** on summary conviction, **CI$40,000** on
-  conviction on indictment: three to four times the pension penalty  _(Health Insurance Act (2021 Revision), s.5(16): https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
+[National Pensions Act, ss 25(3), 47(2)–(5) and 47(9)][pensions] ·
+[National Pensions (General) Regulations, reg 29][pension-regs]
 
-## 4. Other employer costs
+For self-employment, s 3 refers to income calculated under regulations.
+Regulation 29(3) establishes the period but does not state how business receipts
+and expenses translate into the contribution base. Confirm the prescribed
+calculation with DLP before computing a contribution from business accounts.
+[National Pensions Act, s 3][pensions] ·
+[National Pensions (General) Regulations, reg 29(3)][pension-regs]
 
-- **Work-permit fees**: employers of non-Caymanian staff pay annual work-permit
-  fees that vary by occupation and sector. These are a payroll-related government
-  cost, **not a tax on wages** ((fee scale not verified against the current
-  Immigration fee regulations: reviewer to confirm))  _(Immigration (Transition) Act (Cayman Islands) (as described at [bizlatinhub.com](https://www.bizlatinhub.com/labour-law-in-the-cayman-islands/)))_
+A qualifying housing withdrawal under ss 52B, 52BA or 52C triggers an extra
+3% of earnings from the month after the withdrawal cheque is issued, until
+the amount is repaid or the member reaches the normal entitlement age,
+whichever comes first. An employee must notify the employer in writing so
+payroll deducts and remits the additional amount. A self-employed member pays
+it directly. The employer does not match it. Voluntary additional
+contributions are also available before normal pension entitlement.
+[National Pensions Act, ss 47(8)(d) and 52D][pensions]
 
-## Sources and review limits
+### Public service plans
 
-The pension and health-insurance rules were read from the National Pensions Act
-(2024 Revision), the National Pensions (General) Regulations (2018 Revision), the
-National Pensions (Maximum Pensionable Earnings) Order 2022 and the Health
-Insurance Act (2021 Revision), all as published on the Cayman Islands Legislation
-portal. Two things are left open: the **work-permit fee scale** in §4 is still
-carried from a secondary source, and the Health Insurance Regulations and the
-*Standard Health Insurance Fees* schedule (SL 72 of 2014) were **not** read, so the
-**amount** of a standard premium is not stated here: only who is liable for it.
+Apply the separate Public Service Pensions Act for eligible plan members.
+Section 17 sets a default member rate of 6% unless regulations prescribe
+another rate. Calculate deductions each pay period using the plan's definition
+of pensionable earnings. From 1 January 2026, SL 50 sets the employer's
+defined contribution rate at 6% plus a 0.4% normal cost contribution. The
+defined benefit schedule has separate employer-specific funding amounts.
+Employers remit the amounts under SL 50 monthly to the Administrator by the
+15th of the following month. Check scheme membership and the relevant
+statutory schedule before using either set of rates.
+[Public Service Pensions Act, ss 3, 17 and 27–28, 45–46][public-act] ·
+[Public Service Pensions (Contribution Rates) Regulations, 2026, regs 1–5][public-rates]
+
+## 4. Mandatory health cover and premium recovery
+
+The standard health insurance contract sets minimum cover. A resident
+generally needs cover for themselves and their statutory dependants unless
+covered through an employer or government route, or uninsurable. Self-employed
+residents, including partners in a partnership, arrange and pay for their own
+cover and that of applicable dependants through an approved insurer.
+Employers generally arrange cover for their employees and those employees'
+dependants, including qualifying dependent offspring and unemployed spouses
+or civil partners. With multiple jobs, the principal employer normally insures
+the worker and dependants. Use most weekly hours, or the earliest employer if
+hours are similar. Sections 5(6)–(15) govern coordination, the child employment
+exception and other eligibility conditions. [Health Insurance Act, ss 2, 4A and 5][health] ·
+[Health Insurance (Amendment) Act, 2026, ss 2–4][health-2026] · [HIC guidance][hic]
+
+| Cover | Employer liability and permitted recovery |
+| --- | --- |
+| Standard employee premium | Pay the whole premium. Recover up to 50% of the amount paid from the employee, including by deduction. |
+| High-risk employee premium | Pay the whole premium. Recovery uses the difference between that premium and the employer's liability for the corresponding standard cover under s 7(ii). Regulation 4 governs permitted insurer underwriting and loading. |
+| Employee's statutory dependants | Pay the whole standard premium for the cover effected under s 5(2). Section 8 allows recovery of the full dependant premium from the employee, in addition to any s 7 recovery. |
+
+[Health Insurance Act, ss 5(15A), 6–8][health] ·
+[Health Insurance Regulations, regs 4 and 6][health-regs]
+
+Use the approved insurer's premium for the policy and period. Regulation 6
+governs insurer premium adjustments. The standard health insurance fees
+schedule addresses charges for health services. Premiums are monthly and are
+not assessed as a percentage of earnings. For a mid-month start, the
+employer's liability begins on the first day of employment unless the previous
+employer's cover already applies for the month. If no new compulsory employer
+cover applies after termination, the former employee can continue cover at
+their own cost for up to 3 months from termination, or until re-employed if
+earlier. [Health Insurance Regulations, regs 6–7][health-regs] ·
+[Health Insurance Act, ss 15 and 18][health] · [HIC guidance][hic]
+
+## Review limits
+
+This guide covers the general 2026 employer payroll cycle and the cited
+mandatory contribution rules. The self-employed earnings calculation and
+special public pension regimes outside the ordinary Public Service Plan need
+further source verification. Local accountant review is pending.
+
+[pensions]: https://www.procure.gov.ky/upimages/commonfiles/1751266504NationalPensionsAct2024Revision_1751266507.pdf
+[pension-regs]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/1998/1998-0003/1998-0003_2018%20Revision.pdf
+[age-order]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2016/2016-0066/2016-0066_SL%2066%20of%202016.pdf
+[cap-order]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2022/2022-0042/2022-0042.pdf
+[public-act]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1999/1999-0006/1999-0006_2023%20Revision.pdf
+[public-rates]: https://gov.ky/documents/35692/0/PublicServicePensions%28ContributionRates%29Regulations2026.pdf/db9226c7-d1f8-d616-724b-a2ddb73efc3a
+[labour]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1987/1987-0030/1987-0030_2021%20Revision.pdf
+[wage]: https://gov.ky/documents/43485/45951/Labour%28NationalMinimumBasicWage%29%28Amendment%29Order%2C2025_MADE.pdf/c898f82a-aefb-c72f-2e42-2ab50359665c
+[dlp]: https://gov.ky/web/dlp/frequently-asked-questions
+[health]: https://hsa-cayman.imgix.net/images/HealthInsuranceAct_2021-Revision.pdf
+[health-regs]: https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/1997/1997-0011/1997-0011_2017%20Revision_g.pdf
+[health-2026]: https://gov.ky/w/health-insurance-amendment-act-2026-lg19-s1
+[hic]: https://gov.ky/web/dhrs/hic
+[immigration]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2018/2018-0033/2018-0033_2022%20Revision.pdf
+[immigration25]: https://gov.ky/w/immigration-transition-amendment-validation-act-2025-lg54-s2
+[permit-fees]: https://gov.ky/web/govky/w/caymanian-protection-fees-regulations-2026-lg23-s1
+[erratum]: https://gov.ky/documents/43485/45951/Notice%2Bof%2BErratum%2Bin%2Brespect%2Bof%2Bthe%2BCaymanian%2BProtection%2B%28Fees%29%2BRegulations%2C%2B2026.pdf/04e318b8-931a-07bb-e2d6-2cd69915708f
+[commencement]: https://gov.ky/w/caymanian-protection-act-and-regulations-officially-take-effect
 
 <!-- openaccountants-cta-block -->
 
