@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Saint Kitts and Nevis income tax and payroll](2026-11-11-saint-kitts-and-nevis-income-and-payroll.md) |
 | 2026-11-11 | [British Virgin Islands income tax, payroll and company reporting](2026-11-11-bvi-income-payroll-and-reporting.md) |
 | 2026-11-11 | [Cayman Islands public pension funding](2026-11-11-cayman-public-pension-funding.md) |
 | 2026-11-11 | [Cayman Islands property filings, appeals and concessions](2026-11-11-cayman-property-filings-and-concessions.md) |
