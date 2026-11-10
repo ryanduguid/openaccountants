@@ -1,10 +1,10 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 2.3
+version: 2.4
 jurisdiction: KY
 tax_year: 2026
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 category: international
 tier: 2
@@ -19,17 +19,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Field | Value |
 | --- | --- |
-| Country | Cayman Islands |
+| Territory | Grand Cayman, Cayman Brac and Little Cayman. [2026 tax-system scope](ky-tax-overview.md#tax-system-scope-in-2026) |
 | Tax | Import duties (primary), work permit fees, financial services fees, stamp duty, landholding share transfer tax, tourism tax |
-| Currency | KYD (1 KYD = ~1.22 USD) |
-| Tax year | N/A (no income tax) |
+| Currency | Cayman dollar (KYD or CI$). Check the conversion rule for the payment. [Monetary Authority Act, ss 22–25](https://www.cima.ky/upimages/lawsregulations/MonetaryAuthorityLaw2020Revision_1579789069_1599483258.pdf) |
+| Assessment period | No general domestic income tax assessment period. Check the period for the particular duty, licence or reporting obligation. [2026 tax-system scope](ky-tax-overview.md#tax-system-scope-in-2026) |
 | Primary legislation | Tax Concessions Act (Revised); Customs Tariff Act (Revised) |
-| Supporting legislation | Companies Act (Revised); Economic Substance Act, 2018 |
-| Tax authority | None dedicated -- Dept of Commerce and Investment; Customs and Border Control |
+| Supporting legislation | Companies Act (2026 Revision), Economic Substance Act (2026 Revision) |
+| Responsible authorities | Use the authority for the duty, fee or reporting regime. [2026 tax-system scope](ky-tax-overview.md#tax-system-scope-in-2026) |
 | Property filings | Lands and Survey Department for land transfer stamp duty. The landholding corporation files its equity transfer return with the Minister responsible for Finance. See Section 5.2. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Cayman practitioner |
-| Skill version | 2.3 |
+| Skill version | 2.4 |
 
 ### Tax Landscape
 
