@@ -3,7 +3,7 @@ name: ga-company-formation
 description: "Draft covering Gabon company formation and entity choice. Explains the SARL, the SA and the SAS under the OHADA uniform act read from the Journal Officiel: single-member formation, the 1,000,000 CFA franc SARL capital default and the national-derogation clause that can displace it, the 5,000 minimum nominal value of a part sociale, the ordinary 10,000,000 SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and where funds must be deposited. Use for incorporating in Gabon, choosing an entity, ANPI-Gabon registration or OHADA capital questions. Costs and timelines still rest on commercial sources; the patente cites the tariff in the 2025 Code Général des Impôts. Pending local-accountant review."
 jurisdiction: GA
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 version: 1.3
 review_status: pending_review
 category: formation
@@ -44,6 +44,37 @@ National provisions must be checked separately for each member state.
 - **Annual accounts (OHADA SYSCOHADA)** — Prepare and file annual financial statements under the SYSCOHADA accounting framework  _(OHADA Uniform Act on Accounting Law (SYSCOHADA))_
 - **Annual tax compliance** — CIT return before 30 April with instalments on 30 November and 30 January, monthly VAT return by the 20th, payroll withholding paid within the first 15 days of the following month, and the patente instalment before 1 March  _(Code Général des Impôts 2025 (Gabon), arts. 20, 21, 96, 237 and 265 — https://dgi.ga/document/code-general-des-impots-2025/)_
 - **Business license tax (patente)** — Annual fixed duty set by profession in the tariff annexed to the code: Tableau A fixed duties run from XAF 15,000 to 540,000, with per-unit duties for the Tableau B and C professions; companies and real-regime traders pay an instalment equal to the previous year's contribution before 1 March. Law 041/2025 replaces this from 2026 with 0.1% of the previous year's turnover, between XAF 150,000 and 10,000,000, paid before 1 March (RESEARCH GAP: 2026 text not read in the Journal Officiel)  _(Code Général des Impôts 2025 (Gabon), arts. 253, 265, 266 and the tariff under art. 271 — https://dgi.ga/document/code-general-des-impots-2025/)_; _(DGI, Contribution des patentes — https://dgi.ga/entreprises/impots-locaux/impots-geres-par-la-direction-generale-des-impots/)_; _(Deloitte, Loi de Finances pour 2026 — https://blog.avocats.deloitte.fr/gabon-les-principales-mesures-de-la-loi-de-finances-pour-2026/)_
+
+## Annual company reporting under the 2014 AUSCGIE
+
+The revised AUSCGIE took effect on **5 May 2014**. The following rules address
+annual SARL and SA decisions and commercial-company registry deposits.
+[OHADA company law register](https://www.ohada.org/droit-des-societes-commerciales-et-du-gie/)
+
+- **SARL annual meeting.** The annual ordinary general meeting must take place
+  within **6 months after the financial year closes**. The managers may ask the
+  competent court for an extension. [AUSCGIE, articles 347 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86)
+- **SA annual meeting.** The ordinary general meeting must take place at least
+  once a year, within **6 months after the financial year closes**, subject to
+  an extension by court decision. [AUSCGIE, article 548](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=133)
+- **Sole-member companies.** The sole shareholder of an SA takes the annual
+  ordinary decisions within **6 months after the financial year closes** and
+  records them in minutes kept in the company's archives. Article 347 applies
+  these sole-member decision rules to a SARL, with the exceptions it specifies.
+  [AUSCGIE, article 347](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86),
+  [articles 558 to 560](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=135)
+- **Deposit of annual accounts.** A commercial company must deposit the prior
+  year's annual financial statements with the RCCM in the state of its
+  registered office **within the month following approval** by the competent
+  body. If approval is refused, a copy of the refusal decision must be deposited
+  within the same period. [AUSCGIE, article 269, pages 65 and 66](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=65)
+
+For example, for a multi-member SARL with a **31 December 2025** year-end, the
+ordinary annual meeting is due by **30 June 2026**, subject to a court extension.
+Track the RCCM deposit deadline from the actual approval decision. Record the
+national tax-return deadline separately. The current registry filing method,
+fees, applicable accounting and audit rules and any sector-specific obligations
+still need verification. [AUSCGIE, articles 269 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
 
 <!-- openaccountants-cta-block -->
 
