@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Gabon (tax year 2025)
 jurisdiction: GA
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.2
+last_updated: 2026-11-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -31,7 +31,48 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **First CIT instalment** — One quarter of the tax paid for the previous year, due 30 November without notice; the company may reduce instalments by special declaration if it expects a lower liability  _(Code Général des Impôts 2025 (Gabon), art. 21 — https://dgi.ga/document/code-general-des-impots-2025/)_
 - **Second CIT instalment** — One third of the tax paid for the previous year, due 30 January  _(Code Général des Impôts 2025 (Gabon), art. 21 — https://dgi.ga/document/code-general-des-impots-2025/)_
 - **Final CIT balance** — Balance paid with the return by 30 April at the latest; tax paid above the amount due becomes a credit against later years  _(Code Général des Impôts 2025 (Gabon), arts. 21 and 21 bis — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **2026 finance law (Law 041/2025 of 29 December 2025)** — Raises the final levy on gains from share sales by non-resident shareholders from 20% to 25% and the withholding on rents from 5% to 10%, collected quarterly; e-invoicing becomes a condition of deductibility (RESEARCH GAP: the Journal Officiel text was not read; figures from a Deloitte summary)  _(Deloitte, Gabon : les principales mesures de la Loi de Finances pour 2026 — https://blog.avocats.deloitte.fr/gabon-les-principales-mesures-de-la-loi-de-finances-pour-2026/)_
+
+## Selected provisions enacted for 2026
+
+**Loi n°041/2025**, signed on **29 December 2025** and published in
+**Journal Officiel n°96 Quater of 30 December 2025**, amends the CGI through
+article 4. The provisions below describe that law's **2026** rules. The
+Gazette webpage's heading gives 30 December, whilst the signed closing text
+gives 29 December. Later amendments and implementation measures still need
+checking. [Official Gazette, articles 1 and 4](https://journal-officiel.ga/22265-041-2025-/)
+
+- **Share-transfer gains.** Replacement article 23(6) requires the Gabonese
+  company whose rights are transferred to collect the **25%** final levy on
+  the gains covered by article 7(2), and remit it to the tax collector within
+  **1 month of realisation**. Confirm article 7(2)'s scope for the transaction.
+  [Loi n°041/2025, replacement article 23(6)](https://journal-officiel.ga/22265-041-2025-/)
+- **Rental withholding.** Replacement article 178 bis imposes **10%** on
+  taxable rents under article 85 where the tenant is a legal person, a person
+  subject to business-profits tax recording the rent in their accounts, an
+  estate agency or property manager, the state, a local authority or a public
+  establishment. The withholding is inapplicable where the landlord is
+  subject to IS in Gabon. Withholdings for a calendar quarter must be remitted
+  within the **first 15 days of the following quarter**. Any withholding above
+  the tax due is refundable by the Treasury.
+  [Replacement article 178 bis](https://journal-officiel.ga/22265-041-2025-/)
+- **Deductible costs.** Replacement article 11 adds a normalised electronic
+  invoice condition alongside the other statutory deduction conditions.
+  It provides a **6-month** exception from promulgation for a document proving
+  payment of customs duties in place of that invoice. Later implementation
+  measures, extensions and transaction-specific entitlement remain open.
+  [Replacement article 11](https://journal-officiel.ga/22265-041-2025-/)
+- **Invoice obligation.** Article P 832 ter(1) requires normalised electronic
+  invoices for transactions by persons subject to IS, business-profits tax,
+  the final synthetic tax or VAT. Devices and enterprise invoicing systems
+  require tax-authority approval. The article leaves implementation details
+  to ministerial regulations, which still need verification.
+  [Article P 832 ter, paragraphs 1 to 3](https://journal-officiel.ga/22265-041-2025-/)
+
+For example, assume a covered tenant pays **CFA 3,000,000** of taxable rent
+to a landlord outside the IS exception during a calendar quarter. The
+article 178 bis withholding is **CFA 300,000** at **10%**, remitted within
+the first 15 days of the following quarter. This withholding is a prepayment
+against the landlord's liability. [Replacement article 178 bis](https://journal-officiel.ga/22265-041-2025-/)
 
 <!-- openaccountants-cta-block -->
 
