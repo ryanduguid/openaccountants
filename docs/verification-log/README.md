@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Montserrat customs, consumption tax and investment incentives](2026-11-11-montserrat-customs-and-incentives.md) |
 | 2026-11-11 | [Montserrat property tax, landholding and stamp duty](2026-11-11-montserrat-property-and-landholding.md) |
 | 2026-11-11 | [Montserrat income tax, PAYE and withholding](2026-11-11-montserrat-income-and-withholding.md) |
 | 2026-11-11 | [Montserrat company formation and reporting](2026-11-11-montserrat-formation-reporting.md) |
