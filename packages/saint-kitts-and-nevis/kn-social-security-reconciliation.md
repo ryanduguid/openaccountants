@@ -1,6 +1,6 @@
 ---
 name: kn-social-security-reconciliation
-version: 0.2
+version: 0.3
 description: Dated Saint Kitts and Nevis reference for ordinary personal income tax scope, corporate and unincorporated business tax, withholding, wage levies and monthly Social Security. Distinguishes statutory rates and bases from Inland Revenue and Board guidance. Retains the 2017 Social Security schedule and separate Board injury contribution profile without choosing an operative employer rate. Requires the universal and payroll workflow bases and a qualified local reviewer for live work.
 category: payroll
 jurisdiction: KN
@@ -16,6 +16,8 @@ depends_on:
 ---
 
 # Saint Kitts and Nevis income tax, payroll and Social Security
+
+The [country reference](references.md) covers VAT, customs, property and company formation, with separate rules and evidence limits for each obligation.
 
 > **General reference only.** This Tier 2 draft describes the dated tax and payroll rules below and compares selected Social Security source profiles. A qualified local reviewer must resolve the outstanding conditions before any actual deduction, recovery, payment or filing.
 
@@ -176,6 +178,8 @@ Industry, salary sacrifice, integration and island-specific exceptions still req
 2026-10-24, v0.1: two retained monthly source profiles, 24 worked/held positions and 12 held-case rows. Tier 2, pending_review and verified_by pending remain.
 
 2026-11-11, v0.2. Added dated income tax scope, business and withholding rules, wage levy, severance funding and minimum wage sources. Retained the original Social Security worked and held positions.
+
+2026-11-11, v0.3. Linked the VAT, imports, property and formation companion.
 
 This document is general reference material and does not constitute tax, legal or financial advice. A qualified professional in the relevant jurisdiction must establish applicable law, verify the facts and complete and sign off all required outputs before filing, paying or relying on a result.
 <!-- openaccountants-cta-block -->
