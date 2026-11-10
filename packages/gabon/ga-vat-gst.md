@@ -5,7 +5,7 @@ jurisdiction: GA
 category: international
 tax_year: 2025
 last_updated: 2026-11-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,16 +15,81 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## VAT position recorded for 2025
 
-- **Standard VAT rate** — 18% on all taxable operations other than those at the reduced or zero rates  _(Code Général des Impôts 2025 (Gabon), art. 221 — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **Reduced VAT rate** — 10% on the production and sale of the listed products (fishing equipment, outboard motors, car parts and axles, construction tiles, nails, raincoats, imported meat and poultry, imported table oils, sugar, imported groundnuts)  _(Code Général des Impôts 2025 (Gabon), art. 221 (2025 list) — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **Lower reduced VAT rate** — 5% on the listed products (Gabon-produced mineral water, detergent, reinforcing steel, desktop and laptop computers, canned vegetables and fruit, water and electricity on social and standard meters, cement)  _(Code Général des Impôts 2025 (Gabon), art. 221 (2025 list) — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **Zero-rated supplies** — 0% on exports, international transport, fuel bunkering and the maintenance and repair of aircraft and ships in international traffic  _(Code Général des Impôts 2025 (Gabon), art. 221 — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **VAT registration threshold** — Turnover excluding tax of XAF 60,000,000 or more (XAF 500,000,000 for forestry operators); a business stays registered for two years after falling below the threshold, and legal persons below it may opt in  _(Code Général des Impôts 2025 (Gabon), arts. 208 and 208 bis — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **VAT on construction / property sales** — 18%: construction works and property transactions by property professionals are taxable operations at the standard rate  _(Code Général des Impôts 2025 (Gabon), arts. 209 and 221 — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **VAT filing frequency** — Monthly return and payment by the 20th of the following month, filed with deductible and collected VAT schedules and marked NEANT when there were no transactions  _(Code Général des Impôts 2025 (Gabon), art. 237 — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **Reverse charge on imported services** — Services used or exploited in Gabon are taxable there; where the supplier has no permanent establishment or professional installation in Gabon, the Gabonese customer pays the VAT withheld at source on the supplier's behalf  _(Code Général des Impôts 2025 (Gabon), arts. 211 ter and 240 — https://dgi.ga/document/code-general-des-impots-2025/)_
-- **Special Solidarity Contribution (CSS)** — 1% of the price excluding VAT and CSS, charged by persons with annual turnover excluding tax of at least XAF 30,000,000 and paid monthly by the 20th with the VAT return; deductible for income tax; withheld by the customer for non-resident suppliers  _(Finance Law 2017 arts. 13, 14, 24 to 26, 29 and 32, reproduced in the uncodified texts annexed to the Code Général des Impôts 2025 — https://dgi.ga/document/code-general-des-impots-2025/)_; _(DGI, La contribution spéciale de solidarité — https://dgi.ga/imposition-des-personnes-morales/taxes-sur-le-chiffre-daffaires/la-contribution-speciale-de-solidarite-css/)_
-- **Excise duties** — Ad valorem 5% to 40% plus specific duties: local beer 22% and imported beer 25% (plus XAF 20 or 180 a litre), wines 22% to 40%, other alcoholic drinks 25% to 30%, sugary drinks 5%, tobacco 32% plus XAF 250 a pack, gambling 5%, perfumes and cosmetics 25%, caviar and foie gras 40%, salmon 30%, mobile telephony 5%  _(Code Général des Impôts 2025 (Gabon), art. 250 — https://dgi.ga/document/code-general-des-impots-2025/)_
+This section describes the DGI's **CGI 2025** compilation, whose header
+identifies amendments through Loi n°033/2024 of 30 December 2024. Selected
+provisions enacted for **2026** appear separately below. Later amendments
+and current administrative practice still need checking.
+[DGI, CGI 2025](https://dgi.ga/document/code-general-des-impots-2025/)
+
+- **Rates.** Article 221 sets **18%**, **10%**, **5%** and **0%** rates on a
+  base excluding VAT, for domestic and imported goods and services.
+  [Article 221](https://dgi.ga/document/code-general-des-impots-2025/)
+- **10% production and sales list.** Fishing equipment, outboard motors,
+  car parts and axles, construction tiles, nails, raincoats, imported meat
+  and poultry, imported table oils, sugar and imported groundnuts.
+  [Article 221](https://dgi.ga/document/code-general-des-impots-2025/)
+- **5% production and sales list.** Gabon-produced mineral water, detergent,
+  reinforcing steel, desktop and laptop office computers, canned dried and
+  green vegetables, canned fruit, water and electricity consumption on
+  social and standard meters and cement.
+  [Article 221](https://dgi.ga/document/code-general-des-impots-2025/)
+- **Zero rate.** Exports, international transport, fuel bunkering and
+  maintenance and repair of aircraft and ships used in international traffic.
+  [Article 221](https://dgi.ga/document/code-general-des-impots-2025/)
+- **Threshold and option.** VAT liability starts at annual turnover excluding
+  tax of **CFA 60,000,000**, or **CFA 500,000,000** for forestry operators.
+  A taxpayer falling below the threshold remains liable for **2 years**,
+  after which continued liability depends on an option. New or below-threshold
+  taxpayers may opt in if they are legal persons, make an express request,
+  have no VAT assessment or collection penalties within the limitation period
+  and provide solvency guarantees. The option can be withdrawn for established
+  non-compliance; implementation is left to a tax instruction.
+  [Articles 208 and 208 bis](https://dgi.ga/document/code-general-des-impots-2025/)
+- **Construction and property.** Article 209 includes construction works and
+  property transactions by property professionals in taxable operations.
+  Apply the **18%** standard rate where no reduced rate or exemption applies.
+  [Articles 209 to 210 and 221](https://dgi.ga/document/code-general-des-impots-2025/)
+- **Monthly filing.** Return and payment are due by the **20th of the
+  following month**, with detailed deductible and collected VAT schedules.
+  File a **NEANT** return if there were no transactions. Exporters must also
+  attach customs references for that month's exports.
+  [Article 237](https://dgi.ga/document/code-general-des-impots-2025/)
+- **Imported services.** Article 211 ter locates services, rights and rented
+  objects used or exploited in Gabon there. It gives further rules for
+  physically located services, intangibles and transport commissions.
+  For a liable non-resident without a Gabon permanent establishment or
+  permanent professional installation, the customer pays VAT withheld at
+  source for the supplier. Check the transaction's territoriality and
+  exemption before applying this rule.
+  [Articles 211 ter and 240](https://dgi.ga/document/code-general-des-impots-2025/)
+- **CSS charge.** The annexed 2017 Finance Law provisions set a **1%**
+  contribution spéciale de solidarité for covered persons with annual
+  turnover excluding tax of at least **CFA 30,000,000**. The base includes
+  consideration, subsidies, expenses and taxes, excluding VAT and CSS.
+  The contribution is rounded down to the nearest **CFA 1,000** where
+  applicable. Exemptions and special mining and petroleum exclusions require
+  checks against articles 17 and 24.
+  [Annexed 2017 Finance Law, articles 13 to 17 and 24 to 25](https://dgi.ga/document/code-general-des-impots-2025/)
+- **CSS collection.** Payment is due by the **20th of each month**, with
+  returns under the same conditions as VAT. Article 26 requires withholding
+  on payments by public bodies and state companies, and by a VAT-liable
+  customer for CSS invoiced to it. Article 29 requires the customer to pay
+  withheld CSS for a liable non-resident without a Gabon permanent
+  establishment or permanent professional installation. CSS paid is
+  deductible in calculating taxable IS profit or IRPP income.
+  [Annexed 2017 Finance Law, articles 26, 29, 30 and 32](https://dgi.ga/document/code-general-des-impots-2025/)
+- **Selected excise items.** Local beer attracts **22% plus CFA 20/litre**;
+  imported beer attracts **25% plus CFA 180/litre**. Tobacco attracts **32%
+  plus CFA 250/pack**. Gambling attracts **5% plus CFA 100,000 per operated
+  machine**. Perfumes and cosmetics attract **25%**, caviar and foie gras
+  **40%**, salmon **30%** and mobile telephone calls **5%**. Water is exempt.
+  Other drinks, specific duties and valuation bases need the full table.
+  [Article 250](https://dgi.ga/document/code-general-des-impots-2025/)
+
+For example, assume a taxable **2025** cement sale has a VAT-exclusive base
+of **CFA 1,000,000** and qualifies for article 221's **5%** rate. VAT is
+**CFA 50,000**. The separately labelled enacted **2026** example below uses
+the changed **10%** cement rate. [CGI 2025, article 221](https://dgi.ga/document/code-general-des-impots-2025/)
 
 ## Selected provisions enacted for 2026
 

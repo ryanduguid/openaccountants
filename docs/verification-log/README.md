@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Gabon overview and historical VAT reconciliation](2026-11-11-gabon-overview-vat-reconciliation.md) |
 | 2026-11-11 | [Gabon corporate tax reconciliation against CGI 2025](2026-11-11-gabon-cgi-2025-reconciliation.md) |
 | 2026-11-11 | [Gabon provisions enacted for 2026](2026-11-11-gabon-2026-finance-law.md) |
 | 2026-11-11 | [Gabon national SARL capital and statutes](2026-11-11-gabon-national-sarl-capital.md) |
