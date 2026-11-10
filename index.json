@@ -21816,8 +21816,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "tm-income-tax",
@@ -21855,8 +21855,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "tm-vat-gst",
@@ -21868,8 +21868,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "tc-formation-and-business-licensing-reference",
