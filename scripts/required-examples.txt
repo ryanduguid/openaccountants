@@ -36,6 +36,8 @@ skills/international/australia/au-trust-distributions.md
 skills/international/australia/australia-gst.md
 skills/international/australia/australia-payroll.md
 skills/international/australia/australia-tax-optimization.md
+skills/international/bahamas/bs-income-tax.md
+skills/international/bahamas/bs-payroll-social.md
 skills/international/bolivia/bo-corporate-income-tax.md
 skills/international/costa-rica/costa-rica-corporate-income-tax.md
 skills/international/denmark/dk-annual-reporting-reference.md

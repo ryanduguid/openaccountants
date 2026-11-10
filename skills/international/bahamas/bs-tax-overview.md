@@ -5,7 +5,7 @@ jurisdiction: BS
 category: international
 tax_year: 2025
 last_updated: 2026-11-10
-version: 1.5
+version: 1.6
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ The Bahamas raises revenue through VAT, customs and excise duties, Business Lice
 - **Capital gains tax** — None — there is no capital gains tax  _(a secondary summary (link removed))_
 - **Inheritance / estate / gift tax** — None — there is no inheritance, estate, or gift tax  _(a secondary summary (link removed))_
 - **Business licence renewal / return filing deadline** — Renew by 31 January; business licence tax payable by 31 March each year  _([Business Licence Act, 2023](https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
-- **Main payroll / social security remittance deadline** — National Insurance contributions due by the 15th of the month following the contribution month  _([National Insurance Act](https://www.nib-bahamas.com/about-nib/contributions/))_
+- **National Insurance remittance.** Employers generally pay both shares and file the monthly contribution statement by the 15th of the month following the month wages are paid. See `bs-payroll-social` for contribution classes, ceilings and exceptions. [Contributions Regulations, reg 26](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/1984/1984-0068/1984-0068_2.pdf)
 
 <!-- openaccountants-cta-block -->
 
