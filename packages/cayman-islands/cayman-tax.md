@@ -1,7 +1,7 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 2.7
+version: 2.8
 jurisdiction: KY
 tax_year: 2026
 last_updated: 2026-11-11
@@ -49,20 +49,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Financial Services Fees | Yes |
 | Stamp Duty | Yes, including transfers, leases and mortgages of Cayman land |
 | Landholding Share Transfer Tax | Yes, on taxable transfers of equity in landholding corporations |
-| Tourism Tax | Yes -- 13% hotel tax |
+| Tourist accommodation | Generally 13% on covered stays. Qualifying timeshare stays have a separate charge. [2026 guide](ky-vat-gst.md#tourist-accommodation-and-timeshares) |
 
 - **Tax Undertaking Certificate duration** — Up to 30 years from approval for an exempted company (Tax Concessions Act s 6(5)); up to 50 years for an exempted limited partnership (ELP Act s 38(3)), a limited liability company (LLC Act s 58(3)) or an exempted trust (Trusts Act s 81(2)). Undertakings are given to entities, not to individuals  _(Tax Concessions Act (2018 Revision), s 6(5) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1964/1964-0164/1964-0164_2018%20Revision.pdf ; Exempted Limited Partnership Act (2025 Revision), s 38(3) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2001/2001-0005/2001-0005_2025%20Revision.pdf ; Limited Liability Companies Act (2025 Revision), s 58(3) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2016/2016-0002/2016-0002_2025%20Revision.pdf ; Trusts Act (2021 Revision), s 81(2) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1967/1967-0006/1967-0006_2021%20Revision.pdf)_
 
-### Import Duty Rates
+### Import duty
 
-**Import Duty Rates**
-
-| Category | Rate |
-| --- | --- |
-| General merchandise | 22% -- 27% |
-| Food | 15% -- 22% |
-| Motor vehicles (standard) | 29.5% |
-| Luxury vehicles | 42% |
+Use the [2026 customs guide](ky-vat-gst.md#customs-duty) to classify each
+product, value the entry and identify any exemptions and separate charges.
 
 ### Conservative Defaults
 
@@ -70,7 +64,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown duty rate | General merchandise (22%) |
+| Unknown duty rate | Get the tariff code, entry date and evidence of any relief before calculating |
 | Unknown economic substance | Identify the entity and activity before applying the test |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
@@ -103,15 +97,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.2 Import Duty Categories
 
-**Import Duty Categories**
-
-| Category | Rate | Notes |
-| --- | --- | --- |
-| General merchandise | 22% | Most goods |
-| Food items | 15% -- 22% |  |
-| Motor vehicles (standard) | 29.5% |  |
-| Luxury vehicles | 42% |  |
-| Fuel | Specific rates | Per gallon |
+Use Schedule 1 for the code and rate and Schedule 6 for classification.
+Check Schedule 2 relief and Schedules 3–5 for package tax, handling,
+storage and other charges. [Customs Tariff Act (2026 Revision), ss 2–5](https://gov.ky/w/customs-tariff-act-2026-revision-lg5-s3)
 
 ### 3.3 Entity Registration Fees
 
@@ -121,9 +109,9 @@ The [formation and reporting guide](ky-company-formation.md) gives the current s
 
 ### Example 1 -- Import Duty
 
-**Input:** Office equipment KYD 10,000.
-
-**Computation:** Duty at 22%: KYD 2,200. No VAT. No sales tax.
+Wooden office furniture under code 9403.30.00 enters for home use in 2026.
+At a customs value of CI$10,000, import duty is CI$2,200 before any
+other border charges or relief. [2026 customs guide](ky-vat-gst.md#customs-duty)
 
 ### Example 2 -- Employment Obligations
 
@@ -131,11 +119,12 @@ The [formation and reporting guide](ky-company-formation.md) gives the current s
 
 **Classification:** No Cayman wage income tax withholding. The employer and employee each contribute KYD 3,000 to the pension plan. The employer arranges health cover and, if a work permit is required, pays the applicable permit fees. See [payroll and social contributions](ky-payroll-social.md) for the 2026 rules.
 
-### Example 3 -- Hotel Tax
+### Example 3 -- Tourist accommodation
 
-**Input:** Hotel room charges KYD 500.
-
-**Computation:** Tourism tax: 13% x KYD 500 = KYD 65.
+In 2026 a hotel charges a tourist CI$500 for a room. At 13%, the
+accommodation tax is CI$65. For a qualifying owner-occupied timeshare,
+1 occupied room across parts of 2 days instead attracts the equivalent
+of US$20. [Tourist Accommodation Act, ss 2–3](https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1964/1964-0168/1964-0168.pdf) · [2026 reporting and payment rules](ky-vat-gst.md#tourist-accommodation-and-timeshares)
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
