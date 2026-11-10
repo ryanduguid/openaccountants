@@ -1,11 +1,11 @@
 ---
 name: vg-tax-overview
-description: "Source-cited draft: tax overview for British Virgin Islands (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "British Virgin Islands tax overview, ordinary income tax, payroll tax, social contributions and the 2026 eTax filing route. Local accountant review pending."
 jurisdiction: VG
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+last_updated: 2026-11-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,24 +13,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # British Virgin Islands Tax Overview
 
-## British Virgin Islands Tax Overview
+## Income tax and payroll
 
-## The BVI tax system at a glance
+The Financial Services Commission's 2024 audited accounts describe ordinary personal and corporate income tax as zero-rated from 1 January 2005. The 2025 SIGTAS Validation Act names the Income Tax Ordinance (Cap. 206) and Payroll Taxes Act, 2004 separately. See the [corporate income tax guide](vg-corporate-income-tax.md) for the company exemption, earlier revenue entries and current gaps. [FSC 2024 annual report, note 20](https://www.bvifsc.vg/sites/default/files/annual_report_2024.pdf) · [2025 SIGTAS Validation Act, section 2](https://laws.gov.vg/sites/default/files/2025-10/Act%20No%2017%20of%202025-Miscellaneous%20Amendments%20%28SIGTAS%29%20%28Validation%29%20Act%2C%202025.pdf)
 
-The British Virgin Islands is a no-direct-tax jurisdiction: there is no personal income tax, no corporate income tax, no capital gains tax, no inheritance tax and no general VAT/GST. The principal direct tax on economic activity is Payroll Tax on remuneration, alongside Social Security and National Health Insurance contributions, stamp duty, land/house tax and customs duties.
+The Inland Revenue Department administers payroll, property, stamp duty, hotel accommodation and self-drive motor vehicle taxes and charges. The enhanced eTax portal launched on 2 November 2026 supports payroll declarations and tax payments, including property tax. The [payroll and social contributions guide](vg-payroll-social.md) distinguishes the tax from Social Security and National Health Insurance contributions. [Inland Revenue Department](https://gov.vg/inland-revenue-department) · [Ministry of Finance eTax release, 6 November 2026](https://www.gov.vg/news/ministry-finance-launches-enhanced-etax-portal-and-online-tax-payments)
 
-- **Standard tax/contribution year** — Calendar year (1 January to 31 December)  _(Payroll Taxes Act, 2004)_
-- **Official currency** — United States dollar (USD)  _(Currency Notes Act)_
-- **Tax authority (payroll, stamp, property)** — Inland Revenue Department, Government of the Virgin Islands  _([Payroll Taxes Act, 2004](https://bvi.gov.vg/content/payroll-tax))_
-- **Companies registry / financial services regulator** — BVI Financial Services Commission (Registry of Corporate Affairs)  _(BVI Business Companies Act, 2004)_
-- **Personal income tax** — None — 0% (no personal income tax levied)  _(Income Tax Act (rate reduced to nil))_
-- **Corporate income tax** — None — 0% (no corporate income tax levied)  _(Income Tax Act (rate reduced to nil))_
-- **Capital gains tax** — None — 0%  _(No capital gains tax statute in force)_
-- **VAT / GST** — None — the BVI has no value added tax or goods and services tax  _(No VAT/GST statute in force)_
-- **Headline Payroll Tax (the main direct tax)** — 10% (Class 1 employers) or 14% (Class 2 employers) of remuneration  _(Payroll Taxes Act, 2004)_
-- **Basis of taxation** — Not income-based; Payroll Tax applies to remuneration paid by employers/self-employed persons carrying on business in the BVI, regardless of residence  _(Payroll Taxes Act, 2004)_
-- **Main recurring filing deadline (Payroll Tax)** — Monthly — payroll tax return and payment due by the 21st day of the following month (approx — confirm)  _(Payroll Taxes Act, 2004)_
-- **Annual land and house tax due date** — Due annually by 1 September  _(Land and House Tax Act)_
+See the [VAT and customs guide](vg-vat-gst.md) for indirect taxes and the [company formation guide](vg-company-formation.md) for registry obligations. The British Virgin Islands uses the United States dollar.
 
 <!-- openaccountants-cta-block -->
 

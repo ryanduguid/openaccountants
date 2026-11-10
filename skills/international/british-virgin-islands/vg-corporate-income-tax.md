@@ -1,11 +1,11 @@
 ---
 name: vg-corporate-income-tax
-description: "Source-cited draft: corporate income tax for British Virgin Islands (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "British Virgin Islands corporate income tax, the BVI Business Companies Act exemption and assessment and minimum tax gaps. Local accountant review pending."
 jurisdiction: VG
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+last_updated: 2026-11-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,21 +13,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # British Virgin Islands Corporate Income Tax
 
-## Corporate income tax — none in the BVI
+## Ordinary income tax and company exemption
 
-- **Corporate income tax — none in the BVI** — The British Virgin Islands imposes no corporate income tax, no capital gains tax and no withholding taxes on outbound dividends, interest or royalties. BVI companies instead pay fixed annual government fees, Payroll Tax on local employees, and (where applicable) must meet economic substance and annual financial return obligations. Large multinational groups within scope of the OECD Pillar Two global minimum tax may face a 15% top-up tax under separate rules.
-- **Corporate income tax rate** — 0% (no corporate income tax is levied)  _(Income Tax Act (rate set to nil))_
-- **Corporate capital gains tax** — 0% (not taxed)  _(No capital gains tax statute in force)_
-- **Withholding tax on dividends** — 0% (no withholding tax on dividends paid to residents or non-residents)  _(Income Tax Act)_
-- **Withholding tax on interest** — 0% (no withholding tax on interest)  _(Income Tax Act)_
-- **Withholding tax on royalties** — 0% (no withholding tax on royalties)  _(Income Tax Act)_
-- **Corporate tax base** — None — no profits tax base exists; BVI companies are not taxed on income or gains  _(Income Tax Act)_
-- **Annual government fee — companies with up to 50,000 authorised shares** — US$550 per year USD  _(BVI Business Companies Act, 2004)_
-- **Annual government fee — companies with more than 50,000 authorised shares** — US$1,350 per year USD  _(BVI Business Companies Act, 2004)_
-- **Annual financial return filing deadline** — File with the registered agent within 9 months after the end of the company's financial year  _(BVI Business Companies Act (As Revised) and Business Companies (Financial Return) Order, 2023 (as described at [maples.com](https://maples.com/knowledge/bvi-annual-returns-and-economic-substance-filing-deadlines)))_
-- **Economic substance report deadline** — Report prescribed information to the registered agent within 6 months after the end of the relevant financial period  _(Economic Substance (Companies and Limited Partnerships) Act, 2018 (as described at [harneys.com](https://www.harneys.com/our-blogs/regulatory/bvi-economic-substance-reporting-changes-and-deadlines/)))_
-- **Global minimum tax (Pillar Two)** — In-scope multinational groups (consolidated revenue ≥ EUR 750m) may face a 15% global minimum top-up tax (approx — confirm BVI implementation status)  _(OECD/G20 GloBE Model Rules (Pillar Two))_
-- **Annual fee due dates** — Companies incorporated Jan–Jun: by 31 May; Jul–Dec: by 30 November (approx — confirm)  _(BVI Business Companies Act, 2004)_
+The Financial Services Commission's audited accounts for the year ended 31 December 2024 describe the ordinary personal and corporate income tax rates as zero from 1 January 2005, when payroll tax was introduced. In August 2025, section 2 of Act 17 of 2025 expressly listed the Income Tax Ordinance (Cap. 206) amongst the enactments under which specified administrative acts were validated. [FSC 2024 annual report, note 20](https://www.bvifsc.vg/sites/default/files/annual_report_2024.pdf) · [2025 SIGTAS Validation Act, section 2](https://laws.gov.vg/sites/default/files/2025-10/Act%20No%2017%20of%202025-Miscellaneous%20Amendments%20%28SIGTAS%29%20%28Validation%29%20Act%2C%202025.pdf)
+
+Section 242(1) of the BVI Business Companies Act exempts a company within section 3(1) from the Ordinance. It also exempts payments by that company, including dividends, interest, rent, royalties and compensation, and gains on its shares, debt obligations and other securities. This provision covers companies incorporated or continued under the Act and former Act companies re-registered under Schedule 2. Check other entity types and foreign withholding obligations separately. [2020 revised Act, sections 3 and 242](https://www.bvifsc.vg/sites/default/files/bvi_business_companies_act.pdf) · [Later amendments listed by the Attorney General](https://laws.gov.vg/laws/bvi-business-companies-act)
+
+Section 242 also contains estate and stamp duty exemptions for specified securities and transactions. The stamp duty exceptions in section 242(4) include transactions involving BVI land or the securities of a BVI land-owning company, including where a subsidiary has a BVI land interest. Check those exceptions before applying an exemption. [2020 revised Act, section 242(2)–(5)](https://www.bvifsc.vg/sites/default/files/bvi_business_companies_act.pdf)
+
+## Assessments, filings and minimum tax
+
+The 2026 estimates show US$61,745 in actual personal income tax revenue for 2024 and revised 2025 figures of US$37,017 for personal income tax and US$7,200 for corporate income tax. The 2026 estimates show dashes on both lines. The revenue table gives no basis for assigning the earlier amounts to particular assessment periods. Confirm any current return, assessment or collection obligation with Inland Revenue. The operative zero-rate text and the administrative provisions require further reconciliation. [2026 Detailed Budget Estimates, Inland Revenue revenue codes 411110 and 411210](https://gov.vg/sites/default/files/2026-04/2026_budget_estimates_final_b.pdf)
+
+The 2026 estimates discuss a domestic minimum tax as a conditional policy proposal. The enactment and commencement of a BVI minimum tax remain unconfirmed in this guide. A multinational group should check the laws of each jurisdiction that could impose a top-up tax. [2026 Detailed Budget Estimates, fiscal risks](https://gov.vg/sites/default/files/2026-04/2026_budget_estimates_final_b.pdf)
+
+For annual fees and financial returns, see the [company formation guide](vg-company-formation.md). For local remuneration, see [payroll and social contributions](vg-payroll-social.md).
 
 <!-- openaccountants-cta-block -->
 
