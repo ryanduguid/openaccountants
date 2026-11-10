@@ -444,6 +444,19 @@ def compare_existing_guides(
             )
         )
 
+    # validate-guides.py accepts a guide without review_status, so only a
+    # comparison can see the field go: #433 to #436 dropped it from 4 guides
+    # with every check green.
+    if "review_status" in before.fields and "review_status" not in after.fields:
+        findings.append(
+            Finding(
+                "error",
+                "review-status-removed",
+                path,
+                "review_status was removed; keep the field and change its value instead",
+            )
+        )
+
     if before.heading_version is not None and after.heading_version is not None:
         if after.heading_version < before.heading_version:
             findings.append(

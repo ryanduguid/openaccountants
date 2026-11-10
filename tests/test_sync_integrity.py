@@ -232,6 +232,23 @@ class GuideComparisonTests(unittest.TestCase):
         )
         self.assertIn("version-removed", codes(findings, "error"))
 
+    def test_review_status_cannot_be_removed(self) -> None:
+        def with_status(text: str, value: str) -> str:
+            return text.replace("tier: 2\n", f"tier: 2\nreview_status: {value}\n")
+
+        removed = self.compare(
+            with_status(guide(), "pending_review"),
+            guide(last_updated="2026-08-07", body="Updated body."),
+        )
+        self.assertIn("review-status-removed", codes(removed, "error"))
+        for before, after in (
+            (with_status(guide(), "pending_review"), with_status(guide(), "current")),
+            (guide(), with_status(guide(), "pending_review")),
+            (guide(), guide()),
+        ):
+            with self.subTest(before=before, after=after):
+                self.assertNotIn("review-status-removed", codes(self.compare(before, after)))
+
     def test_non_numeric_version_warns_but_uses_date_guard(self) -> None:
         findings = self.compare(
             guide(version="release-one", heading_version=None),
