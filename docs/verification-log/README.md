@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Thailand top-up tax scope, reporting and payment](2026-11-11-thailand-top-up-tax.md) |
 | 2026-11-11 | [Vanuatu financial account reporting and filing dates](2026-11-11-vanuatu-financial-account-reporting.md) |
 | 2026-11-11 | [Vanuatu VAT, local company incorporation and reporting](2026-11-11-vanuatu-vat-formation-and-reporting.md) |
 | 2026-11-11 | [Vanuatu ordinary income tax, rent tax and provident fund contributions](2026-11-11-vanuatu-income-rent-tax-and-vnpf.md) |
