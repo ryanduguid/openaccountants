@@ -1,11 +1,11 @@
 ---
 name: oman-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Oman VAT return for any client. Trigger on phrases like "prepare VAT return", "Oman VAT", "OTA return", or any request involving Oman VAT filing. Oman applies VAT at 5% under Royal Decree No. 121/2020, administered by the Oman Tax Authority (OTA). ALWAYS read this skill before touching any Oman VAT-related work.
-version: 2.0
+version: 2.1
 jurisdiction: OM
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -281,7 +281,7 @@ REVIEWER FLAG / ESCALATION REQUIRED
 
 - Corporate Income Tax: 15% (standard) — Income Tax Law, art. 112
 - Personal Income Tax: None in force; 5% above OMR 42,000 from 1 January 2028 (RD 56/2025)
-- Social insurance (Social Protection Fund, **not PASI** — PASI's pension provisions were repealed by RD 52/2023 art. IV): employer **14.5%**, employee **8%** for Omanis, across five branches; the RO 3,000/month ceiling covers only two of them. Non-Omanis: employer **9%** of basic wage to the savings system, replacing end-of-service gratuity. See `om-payroll-social`
+- Social insurance and the non-Omani provident scheme are outside VAT. See [`om-payroll-social`](om-payroll-social.md) for the contribution rates, wage ceiling and commencement dates.
 - Excise tax: tobacco 100%, energy drinks 100%, carbonated 50%, alcohol 100%, pork 100%
 
 ### Prohibitions
