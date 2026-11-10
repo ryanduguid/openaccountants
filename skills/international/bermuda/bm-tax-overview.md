@@ -5,7 +5,7 @@ jurisdiction: BM
 category: international
 tax_year: 2025
 last_updated: 2026-11-10
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Bermuda is a British Overseas Territory with no personal income tax, no corporate income tax on most companies, no capital gains tax and no VAT/sales tax. Government revenue comes primarily from payroll tax, customs import duties, and various fees. A new 15% corporate income tax applies only to large multinational enterprise (MNE) groups for tax years beginning on or after 1 January 2025.
 
 - **Currency** — Bermudian dollar (BMD), pegged 1:1 to the US dollar (USD)  _(Government of Bermuda — official currency, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Personal income tax** — None — Bermuda does not impose income tax on individuals  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Personal income tax.** Bermuda has no domestic personal income tax for individuals in 2026. Check payroll tax separately for remuneration from employment or self-employment. [Government of Bermuda, Types of taxes in Bermuda](https://www.gov.bm/articles/types-taxes-bermuda) · [Office of the Tax Commissioner, Payroll Tax](https://www.gov.bm/payroll-tax)
 - **Corporate income tax (general)** — None for most companies; a 15% corporate income tax applies from fiscal years beginning on or after 1 January 2025 only to Bermuda constituent entities of MNE groups with EUR 750 million or more of annual revenue  _(Corporate Income Tax Act 2023 (2023:35), Bermuda Laws Online, ss 4 and 11 — https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Corporate%20Income%20Tax%20Act%202023 ; Government of Bermuda, Bermuda Corporate Income Tax — https://www.gov.bm/cit)_
 - **Headline corporate income tax rate (in-scope MNEs)** — 15 percent  _(Corporate Income Tax Act 2023, https://www.gov.bm/CIT)_
 - **VAT / GST / sales tax** — None — Bermuda has no value-added tax, goods and services tax, or general sales tax  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
