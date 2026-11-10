@@ -17,21 +17,27 @@ category: international
 tax_year: 2018
 tax_year_notes: "The qualified DFSST compilation prints 31 March 2018. Administrative pages were read on 31 October 2026. The July 2026 notice concerns form distribution and reminders. Later statutory amendment and exemption chains remain unclosed."
 tier: 2
-last_updated: 2026-11-02
-version: 0.2
+last_updated: 2026-11-10
+version: 0.3
 review_status: pending_review
 verified_by: pending
 depends_on:
   - workflow-base
 ---
 
-# Turks and Caicos Islands: sector taxes reference v0.2
+# Turks and Caicos Islands: sector taxes reference v0.3
 
 > **General reference only.** This Tier 2 draft records selected source rules and administrative information. A qualified Turks and Caicos professional must establish the applicable law and review the complete position for the person's facts before reliance. No actual payable, return, payment instruction, exemption decision or deadline is accepted through this reference.
 
 ## Scope
 
 Historical DFSST statutory text revised 31 March 2018, selected sector-screening guidance and a July 2026 administrative form notice. Other sectors' complete statutory methods and all actual results remain Held. An index does not prove that a tax is absent or that the selected compilation is current.
+
+## Domestic income tax scope in 2026
+
+The Turks and Caicos Islands has no domestic personal or corporate income tax as at 10 November 2026. There is no calculation or return for either tax. The Ministry of Finance describes the absence of an income tax regime, and the territory's tax residence statement confirms that there are no domestic tax residence criteria. Inland Revenue's current revenue list and the Attorney General's annual indexes provide checks for later changes. [Ministry of Finance, CRS compliance guidance](https://gov.tc/ftie/images/docs/crs/Compliance%20for%20Financial%20Institutions.pdf) · [Territory's tax residence statement](https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/turks-caicosislands-residency.pdf) · [Inland Revenue, Revenue Streams](https://treasury.gov.tc/revenue/streams) · [Attorney General, Annual Laws](https://agc.gov.tc/agc/laws/annual)
+
+Check sector taxes, business licensing, National Insurance, National Health Insurance and reporting by entities separately. An individual or company can owe income tax under another country's law. The sector tax calculations below retain their own effective periods. [Inland Revenue, Revenue Streams](https://treasury.gov.tc/revenue/streams) · [Ministry of Finance, CRS compliance guidance](https://gov.tc/ftie/images/docs/crs/Compliance%20for%20Financial%20Institutions.pdf)
 
 ## Ask the client first
 

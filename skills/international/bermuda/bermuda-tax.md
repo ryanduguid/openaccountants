@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
-description: Use this skill whenever asked about Bermuda taxation, payroll tax, customs duties, or the absence of income tax and VAT in Bermuda. Trigger on phrases like "Bermuda tax", "Bermuda VAT", "Bermuda payroll tax", "Bermuda customs", or any request involving Bermuda tax compliance. Bermuda does NOT have income tax, capital gains tax, or VAT. Revenue is raised through payroll tax, customs duties, and various fees. ALWAYS read this skill before handling any Bermuda tax work.
-version: 2.1
+description: Use this skill for Bermuda taxation, including personal income tax scope, corporate income tax screening, payroll tax and customs duties.
+version: 2.2
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-10
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Bermuda |
-| Tax | Payroll tax (primary), customs duties, land tax, stamp duty, social insurance |
+| Tax | Payroll tax, corporate income tax for in-scope groups, customs duties, land tax, stamp duty, social insurance |
 | Currency | BMD (1:1 with USD) |
 | Tax year | Calendar year |
 | Primary legislation | Payroll Tax Act 1995 (as amended); Customs Tariff Act 1970 |
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Payroll tax quarterly (Apr 15, Jul 15, Oct 15, Jan 15); annual reconciliation March 15 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
-| Skill version | 2.1 |
+| Skill version | 2.2 |
 
 ### Tax Landscape Overview
 
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax Type | Status |
 | --- | --- |
 | Income Tax (personal) | None |
-| Income Tax (corporate) | None |
+| Income Tax (corporate) | Applies to Bermuda constituent entity groups within scope of the Corporate Income Tax Act 2023 |
 | Capital Gains Tax | None |
 | Value Added Tax (VAT) | None |
 | Sales Tax | None |
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Stamp Duty | Yes -- on real estate transfers |
 | Social Insurance | Yes -- contributory pension scheme |
 
-- **Tax Assurance Certificate guarantee** — Bermuda has a legislative guarantee (Tax Assurance Certificate) that no income, capital gains, or withholding taxes will be introduced before 2035.  _(Tax Assurance Act)_
+- **Corporate income tax and assurances.** The Corporate Income Tax Act 2023 applies to in-scope groups for fiscal years beginning on or after 1 January 2025. Section 51 subjects assurances issued before 1 January 2024 under the Exempted Undertakings Tax Protection Act 1966 to the corporate tax. Assurances issued from that date exclude the corporate tax. [Corporate Income Tax Act 2023, ss 4 and 51–53](https://www.cita.bm/assets/documents/2025-09-18-09-47-06-Corporate%20Income%20Tax%20Act%202023.pdf) · [Government of Bermuda, CIT](https://www.gov.bm/CIT)
 
 ### Payroll Tax Rates (Current)
 
@@ -96,7 +96,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal Catalogue
 
-- **R-BM-1** — Bermuda does not have income tax. If the question relates to income tax in another jurisdiction, use the appropriate country skill. (Income tax computation)  _(R-BM-1)_
+- **R-BM-1.** For a domestic personal income tax question, apply Section 5.1. Screen a company under the Bermuda corporate income tax guide. For foreign income tax, use the relevant country's guide.
 - **R-BM-2** — Bermuda does not have VAT or sales tax. No indirect tax return exists. (VAT/sales tax computation)  _(R-BM-2)_
 - **R-BM-3** — Economic substance requirements are too fact-sensitive. Escalate to a licensed Bermuda practitioner. (Economic substance detailed compliance)  _(R-BM-3)_
 - **R-BM-4** — Insurance companies have specialised regulatory and tax requirements. Escalate. (Insurance sector-specific rules)  _(R-BM-4)_
@@ -167,9 +167,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 **Input:** Self-employed person in Bermuda.
 
 **Classification:**
-- No income tax applies
-- Social insurance contributions required (BMD 63.10/week)
-- No payroll tax on self-employment income (payroll tax applies to employer-employee relationships only)
+- Bermuda domestic personal income tax does not apply.
+- Check contributory pension liability and the rate for the applicable period. [Department of Social Insurance](https://www.gov.bm/department/social-insurance)
+- Check self-employed payroll tax separately. Taxable remuneration can include amounts drawn for personal use. [Office of the Tax Commissioner, Payroll Tax](https://www.gov.bm/payroll-tax)
 
 ### Example 4 -- Real Estate Transfer
 
@@ -184,9 +184,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
-### 5.1 No Income Tax / No VAT Confirmation
+### 5.1 Personal and Corporate Income Tax Scope
 
-- **No income tax/VAT confirmation** — Bermuda has no personal income tax, no corporate income tax, no capital gains tax, no VAT, no sales tax, no withholding tax. Tax Assurance Certificate guarantees this until 2035.  _(Tax Assurance Act)_
+- **Domestic personal income tax.** Bermuda has no personal income tax in 2026. Payroll tax can still apply to employees, deemed employees and self-employed people. Use the corporate guide to screen a business that is part of a multinational group. [Government of Bermuda, Types of taxes in Bermuda](https://www.gov.bm/articles/types-taxes-bermuda) · [Office of the Tax Commissioner, Payroll Tax](https://www.gov.bm/payroll-tax) · [Government of Bermuda, CIT](https://www.gov.bm/CIT)
 
 ### 5.2 Payroll Tax Filing
 
@@ -298,7 +298,7 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 | Stamp duty | Stamp Duties Act 1976 |
 | Social insurance | Contributory Pensions Act 1970 |
 | Economic substance | Economic Substance Act 2018 |
-| Tax Assurance Certificate | Tax Assurance Act |
+| Tax assurance | Exempted Undertakings Tax Protection Act 1966, s 2, as amended by Corporate Income Tax Act 2023, s 51 |
 
 ### International Reporting
 
