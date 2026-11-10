@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Turkmenistan enterprise registration and joint-stock reporting](2026-11-11-turkmenistan-enterprise-registration.md) |
 | 2026-11-11 | [Oman social protection commencement and employer contributions](2026-11-11-oman-social-protection-commencement.md) |
 | 2026-11-11 | [Spain and Croatia top-up tax scope and filing](2026-11-11-spain-and-croatia-top-up-tax.md) |
 | 2026-11-11 | [Thailand top-up tax scope, reporting and payment](2026-11-11-thailand-top-up-tax.md) |
