@@ -1,10 +1,10 @@
 ---
 name: armenia-payroll
 description: "Source-cited draft for Armenian employee payroll, covering the general 20% personal income tax rate and the conditional 10% rate for qualifying high-technology research and development staff. Explains funded pension contributions, military stamp payments, health-insurance deductions, payment-date checks and monthly SRC remittances. Use for Armenia payroll, salary withholding, gross-to-net calculations, employer cost, payroll bank transactions or Excel working papers. Includes required eligibility evidence, calculation inputs, worked examples and refusal rules. Coverage starts in 2025; some contribution commencement dates and administrative rules remain on secondary sources. Pending review by an Armenian accountant."
-version: 0.3
+version: 0.4
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Armenia Payroll
 
-## Armenia Payroll Skill v0.3
+## Armenia Payroll Skill v0.4
 
 > **Source-cited draft, pending accountant review.** The PIT rates and R&D conditions below were checked against article 150 of the Armenian Tax Code on ARLIS. Other payroll amounts and administrative rules retain their existing sources and research gaps. Confirm those gaps before using a calculation for filing.
 
@@ -68,7 +68,11 @@ Every rule in this skill is tagged with a confidence tier:
 ## Section 2 -- Personal Income Tax (PIT) Withholding
 
 - **General salary rate:** 20% from 1 January 2023, with no personal allowance or progressive bands. The employer withholds and remits the tax. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
-- **Qualifying R&D salary:** Use **10%** for salary and equivalent payments to staff in Government-listed high-technology occupations engaged in scientific research or experimental development, including work for the employer's own needs, where that work meets the Government's criteria and has a positive opinion from the professional commission under article 121(2)(4). Foreign citizens and stateless persons without Armenian residence rights are excluded. Confirm the occupation, qualifying work, opinion and residence status for the payment period. If the opinion is revoked, recalculate under the general rules. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
+- **Qualifying R&D salary:** From **1 January 2025 to 31 December 2031**, use **10%** for qualifying salary and equivalent payments under article 150(1.1). Confirm the employee's occupation against Decision No. 353-N and the work against Decision No. 195-N. Qualifying scientific research or experimental development can include work for the employer's own needs and requires a positive opinion from the professional commission under article 121(2)(4). Verify that the approved programme lists the employee as exclusively performing its covered professional work and that the salary relates to that work. [Tax Code, art 150(1.1)](https://www.arlis.am/en/acts/230455/latest) · [Law HO-499-N, arts 7–8](https://www.arlis.am/hy/acts/201054) · [Decision No. 353-N](https://www.arlis.am/en/acts/204784) · [Decision No. 195-N, annex 4 cl 4](https://www.arlis.am/hy/acts/203841).
+
+**Salary period.** For an approved application, the ordinary starting point is the first day of the later of the application month and the month the work starts. For qualifying applications filed from 1 to 30 April 2025, use the first day of the month the work starts, with 1 January 2025 as the earliest date. If an application was returned and revised, confirm the applicable resubmission date. Apply the rule to salary calculated for the covered period. [Decision No. 195-N, cls 7(3) and 8 and annex 4 cl 6](https://www.arlis.am/hy/acts/203841).
+
+**Residence and review.** Foreign citizens without Armenian residence rights are excluded. For a stateless employee, obtain qualified confirmation of how the statutory exclusion applies before selecting the rate. If the positive opinion is annulled, recalculate under the general rules. [Tax Code, art 150(1.1)](https://www.arlis.am/en/acts/230455/latest).
 
 ### PIT formula
 
@@ -76,7 +80,7 @@ Select `pit_rate = 0.10` only when all R&D conditions are verified for the salar
 
 `PIT = gross employment income × pit_rate`
 
-Pension, stamp and health deductions do not reduce the PIT base. Residents' worldwide-income scope and non-residents' Armenian-source scope do not replace the R&D eligibility test. Foreign citizenship alone does not rule out 10%; the exclusion concerns foreign or stateless workers without Armenian residence rights. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
+Pension, stamp and health deductions do not reduce the PIT base. Residents' worldwide-income scope and non-residents' Armenian-source scope do not replace the R&D eligibility test. Apply the residence and review rule above before selecting the R&D rate. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
 
 The monthly payroll return and remittance are due by the 20th of the following month. _(secondary summary, Individual: Tax administration)_
 
@@ -361,7 +365,7 @@ Payment date on/after 25 Dec 2025 → two-band stamp + health insurance apply (C
 | T1-6 | Stamp / military duty was simplified effective **25 Dec 2025** to two bands: **AMD 1,000** for gross ≤ AMD 1,000,000 and **AMD 15,000** above. Through 24 Dec 2025 a **five-band** schedule applied (AMD 1,500 / 3,000 / 5,500 / 8,500 / 15,000). | secondary summary, Individual: Other taxes |
 | T1-7 | A mandatory **employee health-insurance contribution** starts **25 Dec 2025** for employees with gross over AMD 200,000: **AMD 4,800/month** for AMD 200,001--500,000 and **AMD 10,800/month** above AMD 500,000. | Vardanyan & Partners (armenian-lawyer.com) |
 | T1-8 | The tax year is the **calendar year**. Employees with only PIT-withheld salary generally need **not** file an annual return; the annual personal income declaration is for income **not** taxed at source. | secondary summary, Tax administration |
-| T1-9 | Apply the income-source rules and the separate R&D eligibility test in Section 2. Foreign or stateless workers without Armenian residence rights cannot use 10%. | [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest) |
+| T1-9 | Apply the income-source rules and the separate R&D eligibility test in Section 2. Check the salary period and residence conditions before selecting the R&D rate. | [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest) |
 | T1-10 | Employers and employees must each hold an **8-digit TIN**; entities register with the SRC via **e-register.am** within **15 days** of incorporation / commencing activity. | State Revenue Committee (src.am) |
 
 ### Context rates (for cross-skill reference; not payroll) [T1]
@@ -583,7 +587,7 @@ Unless stated otherwise, these tests use a worker confirmed to fall under the ge
 
 ### Test 11 -- Qualifying R&D salary
 
-**Input:** Gross AMD 600,000; all article 150(1.1) conditions verified for this payment, including the commission opinion and residence requirements; B13 = 0.10.
+**Input:** Gross AMD 600,000 for October 2026. All article 150(1.1) conditions verified for that month, including the commission opinion, its coverage dates and residence requirements. B13 = 0.10.
 **Expected:** PIT **60,000**. Using the same pension, stamp and health assumptions as Test 7 gives net **493,200** and total remittance **106,800**. Confirm the contribution timing gaps separately.
 
 ### Test 12 -- Excluded worker or unknown eligibility
