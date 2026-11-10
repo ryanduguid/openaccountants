@@ -14,7 +14,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026 periods. CGI 2023 read with LFR 2023, an unpromulgated copy of LF 2024, and the tax articles of LFR 2025 and LF 2026. LFR 2024 and LF 2025 were checked only in part. Later instruments and arrêtés were not established."
 tier: 2
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 version: 0.1
 review_status: pending_review
 verified_by: pending
@@ -236,13 +236,15 @@ Checked on 31 October 2026. [Code général des impôts 2023](https://justice.go
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

@@ -4,7 +4,7 @@ description: Use esta skill sempre que perguntarem sobre processamento de folha 
 version: 1.0
 jurisdiction: BR
 tax_year: 2026
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: Ariane Marrocos
 review_status: pending_review
 depends_on:
@@ -459,13 +459,15 @@ A versão mais atualizada e verificada desta skill é mantida em [openaccountant
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a
