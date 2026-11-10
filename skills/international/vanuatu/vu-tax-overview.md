@@ -1,11 +1,11 @@
 ---
 name: vu-tax-overview
-description: "Source-cited draft: tax overview for Vanuatu (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Vanuatu tax overview with dated updates to ordinary income tax, rent tax and VNPF. Other 2025 entries await reconciliation and local-accountant review."
 jurisdiction: VU
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+last_updated: 2026-11-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,17 +15,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## The Vanuatu tax system at a glance
 
-- **Overview of Vanuatu tax system** — Vanuatu is a long-standing low-tax jurisdiction with no personal income tax, no corporate income tax, no capital gains tax, and no inheritance or wealth tax. Government revenue is raised mainly through Value Added Tax (VAT), import duties, business licence fees, a rent tax on rental income, and other indirect levies.
+Vanuatu has no ordinary personal or corporate income tax. Its separate regimes include VAT, rent tax, business licensing and import duties. [Vanuatu Competent Authority guide, 20 August 2024](https://vanuatucustoms.gov.vu/images/Forms/VCA/VU_AEOI_Guide_v4.pdf), [Global Forum assessment, para 23, adopted 23 April 2026](https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-vanuatu-2026-second-round-supplementary-report_7a20b670/75b3bc85-en.pdf), [DCIR legislation index](https://vanuatucustoms.gov.vu/taxes-and-licensing/legislations)
 - **National currency** — Vanuatu vatu (VUV / VT)  _(Reserve Bank of Vanuatu Act)_
-- **Principal tax authority** — Department of Customs and Inland Revenue (DCIR)  _([Value Added Tax Act — https://customsinlandrevenue.gov.vu/taxes-and-licensing.html](https://customsinlandrevenue.gov.vu/taxes-and-licensing.html))_
-- **Personal income tax** — None — Vanuatu levies no tax on personal income, salaries or wages (approx — confirm)  _(Vanuatu tax legislation (no Income Tax Act in force) (as described at [globalcitizensolutions.com](https://www.globalcitizensolutions.com/vanuatu-taxes/)))_
-- **Corporate income tax** — None — no tax on company profits, dividends or capital gains  _([Vanuatu tax legislation (no corporate income tax statute) — https://www.globalcitizensolutions.com/vanuatu-taxes/](https://www.globalcitizensolutions.com/vanuatu-taxes/))_
-- **Capital gains, inheritance and wealth tax** — None  _([Vanuatu tax legislation — https://www.globalcitizensolutions.com/vanuatu-taxes/](https://www.globalcitizensolutions.com/vanuatu-taxes/))_
+- **Principal tax authority** — Department of Customs and Inland Revenue (DCIR). [DCIR legislation index](https://vanuatucustoms.gov.vu/taxes-and-licensing/legislations)
+- **Ordinary personal income tax** — No domestic charge, rate schedule or annual return. See the [personal income tax guide](vu-income-tax.md).
+- **Ordinary corporate income tax** — No domestic profits charge, rate schedule or annual return. See the [corporate income tax guide](vu-corporate-income-tax.md).
+- **Property and asset taxes** — Identify the transaction and regime separately. Property, estate and stamp duties await full reconciliation.
 - **Value Added Tax (VAT)** — Yes — standard rate 15%  _([Value Added Tax Act — https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html](https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html))_
-- **Rent tax on rental income** — 12.5% of gross rental income  _([Rent Tax Act — https://vanuatucustoms.gov.vu/taxes-and-licensing/taxes/rent-tax.html](https://vanuatucustoms.gov.vu/taxes-and-licensing/taxes/rent-tax.html))_
-- **Social security (provident fund)** — Vanuatu National Provident Fund (VNPF) — 8% total (4% employer + 4% employee) through 31 Dec 2025  _([National Provident Fund Act — https://www.vnpf.com.vu/employers.html](https://www.vnpf.com.vu/employers.html))_
+- **Rent tax** — 12.5% of the excess over VUV 200,000 for a natural person or of all chargeable rent for other persons, per 6-month period under the 2020 consolidation. Check the VAT exclusion. [Rent Taxation Act, ss 1 and 4 and Sch 1](https://vanuatucustoms.gov.vu/images/TAA/196_Rent_Taxation_Act_Consolidated_2020.pdf)
+- **Vanuatu National Provident Fund** — 4% each for employer and employee through December 2025. From January 2026 each pays 6% of covered remuneration. [VNPF commencement notice](https://www.vnpf.com.vu/news.html), [VNPF Act, s 25](https://www.vnpf.com.vu/uploads/9/5/0/5/95052148/vanuatu_national_provident_fund_consolidated_2026.pdf)
 - **Main recurring filing deadline (VAT)** — VAT return and payment due by the 27th of the month following the end of the taxable period  _([Value Added Tax Act — https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html](https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html))_
-- **Basis of taxation** — No residence-based income taxation — Vanuatu does not tax worldwide or local income of residents or non-residents; taxes are transaction/consumption based (approx — confirm)  _(Vanuatu tax legislation)_
+- **Other 2025 entries** — Confirm their operative periods and complete source chain before use. The ordinary income tax findings do not settle CRS, foreign tax or sector-specific obligations.
 
 <!-- openaccountants-cta-block -->
 

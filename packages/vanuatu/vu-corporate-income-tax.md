@@ -1,24 +1,25 @@
 ---
 name: vu-corporate-income-tax
-description: "Source-cited draft: corporate income tax for Vanuatu, tax year 2025 — there is none, and the international-company exemption in section 118 of the International Companies Act [CAP. 222] Consolidated Edition 2026 is read here from the VFSC's own text, including its two contradictory duration subsections. Pending local-accountant review."
+description: "Source-cited draft on Vanuatu's ordinary corporate income tax position, separate rent tax and the Cap 222 international-company exemption. Pending local-accountant review."
 jurisdiction: VU
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+last_updated: 2026-11-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Vanuatu Corporate Income Tax
+# Vanuatu corporate income tax
 
-## Company taxation
+## Ordinary corporate income tax
 
-Vanuatu imposes no corporate income tax. Companies pay no tax on profits, dividends or capital gains, and there is no general withholding tax on dividends, interest or royalties. Companies do remain liable for VAT (if registered), annual business licence fees, and rent tax where they earn rental income.
+Vanuatu has no ordinary domestic corporate income tax. An ordinary company income tax rate, profits base and annual income tax return therefore do not apply. Check VAT, business licences, rent tax and any specific regime separately. [Vanuatu Competent Authority guide, 20 August 2024](https://vanuatucustoms.gov.vu/images/Forms/VCA/VU_AEOI_Guide_v4.pdf), [Global Forum assessment, para 23, adopted 23 April 2026](https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-vanuatu-2026-second-round-supplementary-report_7a20b670/75b3bc85-en.pdf)
 
-- **Corporate income tax rate** — 0% (Vanuatu levies no tax on company profits)  _(Vanuatu tax legislation (no corporate income tax statute) — https://www.globalcitizensolutions.com/vanuatu-taxes/)_
-- **Corporate tax base** — Not applicable — no corporate income tax is assessed on profits  _(Vanuatu tax legislation)_
+## Separate company rent tax
+
+Schedule 1 applies 12.5% to all chargeable rent in the 6-month period where the taxpayer is a company. The natural-person threshold does not apply to that branch. Exclude rent to the extent it is subject to VAT and derived by a VAT-registered person, and establish whether exemptions or other adjustments apply. VUV 300,000 of chargeable rent with no special adjustment produces VUV 37,500. The period and filing rules are in the [personal income tax guide](vu-income-tax.md). [Rent Taxation Act, ss 1, 3–11A and Sch 1](https://vanuatucustoms.gov.vu/images/TAA/196_Rent_Taxation_Act_Consolidated_2020.pdf)
 
 ### The international-company exemption, read from the Act rather than from a summary
 
@@ -41,12 +42,9 @@ Vanuatu imposes no corporate income tax. Companies pay no tax on profits, divide
 > closing quotation mark**, an artefact of the amendment being pasted in. Neither is
 > resolved here.
 
-- **Withholding tax on dividends** — 0% (no withholding tax on dividends)  _(Vanuatu tax legislation — https://www.globalcitizensolutions.com/vanuatu-taxes/)_
-- **Withholding tax on interest** — 0% (no withholding tax on interest)  _(Vanuatu tax legislation — https://www.globalcitizensolutions.com/vanuatu-taxes/)_
-- **Withholding tax on royalties** — 0% (no withholding tax on royalties)  _(Vanuatu tax legislation — https://www.globalcitizensolutions.com/vanuatu-taxes/)_
-- **Rent tax on company rental income** — 12.5% (on all rental income, with no threshold exemption for companies)  _(Rent Tax Act — https://vanuatucustoms.gov.vu/taxes-and-licensing/taxes/rent-tax.html)_
-- **Corporate income tax return / filing deadline** — None — companies file no income tax return (VAT, business licence and rent tax filings apply separately)  _(Vanuatu tax legislation)_
-- **Record-keeping (international companies)** — International companies must keep accounting records but are not required to file financial reports with the DCIR  _(International Companies Act — https://www.vanuatuisland.org/how-to-navigate-vanuatus-tax-system-incentives-and-regulations)_
+## Checks and limits
+
+Establish the entity, regime, tax and period before applying a concession. The duration issue in Cap 222 s 118 needs resolution before a taxpayer relies on it. Separate withholding, cross-border treatment, international-company reporting and qualified review remain open.
 
 <!-- openaccountants-cta-block -->
 
