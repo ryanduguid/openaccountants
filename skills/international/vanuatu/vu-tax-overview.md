@@ -1,11 +1,11 @@
 ---
 name: vu-tax-overview
-description: "Vanuatu tax overview with dated updates to ordinary income tax, rent tax and VNPF. Other 2025 entries await reconciliation and local-accountant review."
+description: "Vanuatu tax overview with dated updates to ordinary income tax, rent tax, VNPF and VAT. Pending local-accountant review."
 jurisdiction: VU
 category: international
 tax_year: 2025
 last_updated: 2026-11-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,10 +21,10 @@ Vanuatu has no ordinary personal or corporate income tax. Its separate regimes i
 - **Ordinary personal income tax** — No domestic charge, rate schedule or annual return. See the [personal income tax guide](vu-income-tax.md).
 - **Ordinary corporate income tax** — No domestic profits charge, rate schedule or annual return. See the [corporate income tax guide](vu-corporate-income-tax.md).
 - **Property and asset taxes** — Identify the transaction and regime separately. Property, estate and stamp duties await full reconciliation.
-- **Value Added Tax (VAT)** — Yes — standard rate 15%  _([Value Added Tax Act — https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html](https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html))_
+- **Value Added Tax (VAT)** — Standard rate 15% in the 2020 consolidation and the DCIR guidance checked on 11 November 2026. [Value Added Tax Act, s 11](https://vanuatucustoms.gov.vu/images/Laws_Regulations/VAT/247_Value_Added_Tax_Consolidated_2020.pdf), [DCIR VAT guidance](https://vanuatucustoms.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html)
 - **Rent tax** — 12.5% of the excess over VUV 200,000 for a natural person or of all chargeable rent for other persons, per 6-month period under the 2020 consolidation. Check the VAT exclusion. [Rent Taxation Act, ss 1 and 4 and Sch 1](https://vanuatucustoms.gov.vu/images/TAA/196_Rent_Taxation_Act_Consolidated_2020.pdf)
 - **Vanuatu National Provident Fund** — 4% each for employer and employee through December 2025. From January 2026 each pays 6% of covered remuneration. [VNPF commencement notice](https://www.vnpf.com.vu/news.html), [VNPF Act, s 25](https://www.vnpf.com.vu/uploads/9/5/0/5/95052148/vanuatu_national_provident_fund_consolidated_2026.pdf)
-- **Main recurring filing deadline (VAT)** — VAT return and payment due by the 27th of the month following the end of the taxable period  _([Value Added Tax Act — https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html](https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html))_
+- **Ordinary VAT filing and payment** — Due on 5 January for periods ending 30 November and on the 27th of the following month for other periods. Use the next working day if the statutory date is a non-working day. See the [VAT guide](vu-vat-gst.md) for exceptions. [Value Added Tax Act, ss 16 and 20](https://vanuatucustoms.gov.vu/images/Laws_Regulations/VAT/247_Value_Added_Tax_Consolidated_2020.pdf)
 - **Other 2025 entries** — Confirm their operative periods and complete source chain before use. The ordinary income tax findings do not settle CRS, foreign tax or sector-specific obligations.
 
 <!-- openaccountants-cta-block -->
