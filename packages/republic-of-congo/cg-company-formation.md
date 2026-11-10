@@ -4,7 +4,7 @@ description: "Source-cited draft: company formation & entity choice for Republic
 jurisdiction: CG
 tax_year: 2025
 last_updated: 2026-11-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 category: formation
 tier: 2
@@ -15,51 +15,31 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Company formation under OHADA
 
-> **The uniform act has been read, and this guide did not match it.** the Republic of the Congo is
-> an **OHADA** member state, so its company law is the *Acte uniforme relatif au
-> droit des sociétés commerciales et du groupement d'intérêt économique* (AUSCGIE),
-> adopted at Ouagadougou on **30 January 2014** and published in the **Journal
-> Officiel de l'OHADA, numéro spécial du 4 février 2014**. What the Act actually
-> provides:
->
-> - **SARL capital — article 311.** *"**Sauf dispositions nationales contraires**,
->   le capital social doit être d'un million (1.000.000) de francs CFA au moins. Il
->   est divisé en parts sociales égales dont la valeur nominale ne peut être
->   inférieure à cinq mille (5.000) francs CFA."* So the uniform minimum **is**
->   1,000,000, the **5,000 is the minimum nominal value of one part sociale**, and
->   this is the **only** capital figure a member state may displace by its own law.
-> - **SARL pay-up — article 311-1.** Parts subscribed in full; those for
->   contributions in kind paid up in full; those for cash paid up on subscription to
->   **at least half**, balance within **two years** of RCCM registration.
-> - **SA capital — articles 387–389.** The **ordinary** minimum is **10,000,000**;
->   public offerings and regulated activities require separate capital checks, and
->   article 311's derogation wording does not appear here. Nominal value of shares
->   freely fixed by the statutes; capital **entirely subscribed before the statutes
->   are signed**; cash shares paid up **at least one quarter** on subscription,
->   balance within **three years** of RCCM registration.
-> - **Listed or public-offering companies — article 824.** Minimum **100,000,000**
->   where the securities are listed on a member state's exchange **or** offered
->   publicly for placement in one or more member states. Any interested party may
->   seek dissolution if it is not met.
-> - **One member is enough.** A SARL may be instituted by a single natural or legal
->   person (art. 309) and *"la société anonyme peut ne comprendre qu'un seul
->   actionnaire"* (art. 385).
->
->
-> **This is not a theoretical gap.** Burkina Faso has exercised the derogation:
-> article 1 of *Décret n°2016-314 of 3 May 2016* replaces article 3 of *Décret
-> n°2014-462* with a rule letting members fix SARL capital freely in the articles,
-> so the uniform 1,000,000 is **not** Burkina Faso's national minimum. Assume
-> nothing about any other member state without checking its own law —
-> [the decree](https://police.gov.bf/index.php/infos-utiles/textes-officiels/category/3-decrets?download=26:decret-capital-minimum).
->
-> [RESEARCH GAP — what is not settled is whether **the Republic of the Congo** has enacted contrary
-> national provisions under article 311. The uniform default is stated below as the
-> default it is; a reviewer with the national company legislation should confirm
-> whether it displaces the 1,000,000 figure.]
->
-> _(Acte uniforme relatif au droit des sociétés commerciales et du GIE, adopté le 30 janvier 2014 — Journal Officiel de l'OHADA, n° spécial du 4 février 2014: https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+For the **2025** guide period, the Republic of Congo's SARL capital rule is
+sourced to **Décret n°2017-41 of 28 March 2017**, published in **Journal officiel
+n°14-2017 of 6 April 2017**, pages 360 and 361. Article 4 lets members set the
+total capital freely in the statutes. Article 5 requires equal shares with a
+nominal value of at least **CFA 5,000**. Article 2 allows statutes made by private
+deed or notarial act and makes deposit of private-deed statutes in a notary's
+records optional. [Official Gazette, articles 2, 4 and 5](https://www.sgg.cg/JO/2017/congo-jo-2017-14.pdf#page=4)
 
+The revised OHADA AUSCGIE took effect on **5 May 2014**. A SARL may be
+formed by a single natural or legal person under article 309. An SA may have a
+single shareholder under article 385. [OHADA register](https://www.ohada.org/droit-des-societes-commerciales-et-du-gie/),
+[AUSCGIE, articles 309 and 385](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
+
+- **SARL subscription and pay-up.** Shares must be fully subscribed.
+  Contributions in kind must be fully paid. Cash shares must be paid at least
+  half on subscription, with the balance within **2 years of RCCM registration**.
+  [AUSCGIE, article 311-1](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=77)
+- **Ordinary SA capital and pay-up.** Article 387 sets an ordinary minimum of
+  **CFA 10,000,000**, with whole-number nominal share values freely fixed in the
+  statutes. Capital must be fully subscribed before the statutes are signed.
+  Cash shares must be paid at least one-quarter on subscription and the balance
+  within **3 years of RCCM registration**. Article 824 sets **CFA 100,000,000**
+  for securities listed on a member state's exchange or publicly offered for
+  placement in one or more member states. Regulated activities require separate
+  capital checks. [AUSCGIE, articles 387 to 389 and 824](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
 
 Company law in the Republic of Congo is governed by the OHADA Uniform Act on Commercial Companies. The most common vehicles are the SARL (limited liability company) and the SA (public limited company); incorporation runs through the Guichet Unique (one-stop business registration desk).
 
@@ -67,14 +47,21 @@ Company law in the Republic of Congo is governed by the OHADA Uniform Act on Com
 - **Société Anonyme (SA)** — Public limited company — used for larger businesses and regulated sectors  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 - **Société par Actions Simplifiée (SAS)** — Simplified joint-stock company with flexible governance, available under OHADA  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 - **Branch (succursale) of a foreign company** — Permitted but generally must be converted to a subsidiary within two years under OHADA rules (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
-- **Minimum share capital — SARL** — **1,000,000**. This row already had the mechanism right, and article 311 confirms it in terms: *"sauf dispositions nationales contraires"*. Each part sociale must be denominated at **5,000 or more** XAF  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **SARL capital.** Members fix total capital freely in the statutes. Equal shares must each have a nominal value of at least **CFA 5,000**. [Décret n°2017-41, articles 4 and 5](https://www.sgg.cg/JO/2017/congo-jo-2017-14.pdf#page=5)
 - **Minimum share capital — SA** — **10,000,000** for an ordinary SA (art. 387); regulated activities need their own capital check. The 100,000,000 is right but wider than "making a public offering": article 824 applies it to securities **listed on a member state's exchange** as well XAF  _(AUSCGIE 2014, arts. 387 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Registered office requirement** — A physical registered office address in Congo is mandatory; proof must be submitted  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
-- **Paid-up capital deposit** — Share capital must be deposited with an approved bank/notary before registration; deposit certificate forms part of the file  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
-- **Incorporation process** — Reserve name, notarise articles of association, deposit capital, register via the Guichet Unique, obtain tax ID (NIU) and trade register (RCCM) entry (approx — confirm)  _(OHADA Uniform Act; Guichet Unique procedures)_
+- **Paid-up capital deposit.** Article 6 requires immediate deposit by the founders with a bank or approved credit or microfinance institution, against receipt, in an account for the company in formation. Article 7 allows the founders or a notary of the registered-office district to record payment and deposit using the specified declarations. [Décret n°2017-41, articles 6 and 7](https://www.sgg.cg/JO/2017/congo-jo-2017-14.pdf#page=5)
+- **Form of SARL statutes.** A private deed or notarial act is permitted under article 2. Current registry procedures, document requirements and fees still need verification. [Décret n°2017-41, article 2](https://www.sgg.cg/JO/2017/congo-jo-2017-14.pdf#page=4)
 - **Incorporation timeline** — Roughly a few days to a few weeks via the Guichet Unique (approx — confirm)  _(Guichet Unique procedures)_
 - **Annual accounting compliance** — File the OHADA SYSCOHADA financial statements, certified by a chartered accountant where there is no statutory auditor, with the CIT return within four months of the close of the financial year (30 April for a 31 December year-end); the 20 May date applies to individuals' business-profit declarations; filing and payment are electronic for real-regime taxpayers  _(Loi n° 42-2025 du 31 décembre 2025 portant loi de finances pour 2026, Journal officiel édition spéciale n° 3-2026, CGI tome 1 arts 86 F, 94 B and 128 to 130 — https://sgg.cg/JO/2026/congo-jo-2026-3-2.pdf)_
 - **Statutory auditor (commissaire aux comptes)** — Mandatory for SA; required for SARL above OHADA size thresholds (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
+
+## National SARL capital example
+
+For the capital rule alone, **20 equal shares at CFA 5,000 each** give
+**CFA 100,000** total capital. This meets article 5's minimum nominal value,
+with the total fixed in the statutes under article 4. Subscription, pay-up and
+other formation obligations still apply. [Décret n°2017-41, articles 4 and 5](https://www.sgg.cg/JO/2017/congo-jo-2017-14.pdf#page=5)
 
 ## Annual company reporting under the 2014 AUSCGIE
 
