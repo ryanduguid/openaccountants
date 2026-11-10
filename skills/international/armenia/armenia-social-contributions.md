@@ -1,10 +1,10 @@
 ---
 name: armenia-social-contributions
 description: "Source-cited draft covering Armenian employee payroll withholding and social contributions from 2025. Explains the general 20% salary income tax rate, the conditional 10% rate for qualifying high-technology research and development staff, funded pension contributions, military stamp payments and health-insurance deductions. Use for Armenia payroll tax, salary withholding, net pay, pension caps, SRC remittances or payroll bank-statement classification. Includes eligibility evidence, required inputs, calculation rules, worked examples and a working-paper template. Individual-entrepreneur contributions and unresolved commencement or citizenship questions require separate review. Pending sign-off by an Armenian accountant."
-version: 0.3
+version: 0.4
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Armenia Social Contributions & Payroll Withholding
 
-## Armenia Social Contributions & Payroll Withholding Skill v0.3
+## Armenia Social Contributions & Payroll Withholding Skill v0.4
 
 ## Section 1 -- Quick reference
 
@@ -214,7 +214,11 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 The general rate is **20% from 1 January 2023**, with no personal allowance or progressive bands. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
 
-Use **10%** for salary and equivalent payments to staff in Government-listed high-technology occupations engaged in scientific research or experimental development, including work for the employer's own needs, where that work meets the Government's criteria and has a positive opinion from the professional commission under article 121(2)(4). Foreign citizens and stateless persons without Armenian residence rights are excluded. Confirm the occupation, qualifying work, opinion and residence status for the payment period. If the opinion is revoked, recalculate under the general rules. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
+From **1 January 2025 to 31 December 2031**, use **10%** for qualifying salary and equivalent payments under article 150(1.1). Confirm the employee's occupation against Decision No. 353-N and the work against Decision No. 195-N. Qualifying scientific research or experimental development can include work for the employer's own needs and requires a positive opinion from the professional commission under article 121(2)(4). Verify that the approved programme lists the employee as exclusively performing its covered professional work and that the salary relates to that work. [Tax Code, art 150(1.1)](https://www.arlis.am/en/acts/230455/latest) · [Law HO-499-N, arts 7–8](https://www.arlis.am/hy/acts/201054) · [Decision No. 353-N](https://www.arlis.am/en/acts/204784) · [Decision No. 195-N, annex 4 cl 4](https://www.arlis.am/hy/acts/203841).
+
+**Salary period.** For an approved application, the ordinary starting point is the first day of the later of the application month and the month the work starts. For qualifying applications filed from 1 to 30 April 2025, use the first day of the month the work starts, with 1 January 2025 as the earliest date. If an application was returned and revised, confirm the applicable resubmission date. Apply the rule to salary calculated for the covered period. [Decision No. 195-N, cls 7(3) and 8 and annex 4 cl 6](https://www.arlis.am/hy/acts/203841).
+
+**Residence and review.** Foreign citizens without Armenian residence rights are excluded. For a stateless employee, obtain qualified confirmation of how the statutory exclusion applies before selecting the rate. If the positive opinion is annulled, recalculate under the general rules. [Tax Code, art 150(1.1)](https://www.arlis.am/en/acts/230455/latest).
 
 Set `pit_rate = 0.10` for a salary payment meeting all of those conditions, or `pit_rate = 0.20` for one confirmed to use the general rule. Record the evidence and period. If eligibility is unresolved, stop the PIT and net-pay calculation for review. Identify separately any payments with different treatment before calculating.
 
@@ -445,7 +449,7 @@ Unless specified otherwise, each employee is confirmed to use the general 20% PI
 
 **Test 8:** Private-sector employer remittance for one AMD 300,000 employee (born 1990). → Employer social tax **0**; remits PIT 60,000 + pension 15,000 + military 1,000 + health 4,800 = AMD 80,800 to SRC by the 20th of the following month.
 
-**Test 9:** Gross AMD 600,000, all Rule 1 R&D conditions verified, including the opinion and residence requirements. PIT **60,000**. With the same contribution assumptions as Test 2: pension 35,000, military 1,000, health 10,800, total **106,800**, net **493,200**.
+**Test 9:** Gross AMD 600,000 for October 2026, all Rule 1 R&D conditions verified for that month, including the opinion, its coverage dates and residence requirements. PIT **60,000**. With the same contribution assumptions as Test 2: pension 35,000, military 1,000, health 10,800, total **106,800**, net **493,200**.
 
 **Test 10:** Same gross, but a foreign citizen without Armenian residence rights. The R&D exclusion applies: use 20%, PIT **120,000**. If the opinion or its coverage period is unresolved instead, stop the PIT and net-pay calculation for review.
 
