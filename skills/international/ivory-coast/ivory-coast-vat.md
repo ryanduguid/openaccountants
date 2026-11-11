@@ -1,11 +1,11 @@
 ---
 name: ivory-coast-vat
-description: Use this skill whenever asked to prepare, review, or classify transactions for a Cote d'Ivoire VAT (TVA) return. Trigger on phrases like "TVA Cote d'Ivoire", "DGI return". Standard rate 18%, reduced 9%. WAEMU member. ALWAYS read before handling Ivory Coast VAT work.
-version: 2.0
+description: Use this skill whenever asked to prepare, review, or classify transactions for a Cote d'Ivoire VAT (TVA) return. Trigger on phrases like "TVA Cote d'Ivoire", "DGI return". Standard rate 18%, reduced 9%. WAEMU member. ALWAYS read before handling Ivory Coast VAT work. Also includes a separate reference to annual company decisions and RCCM deposits under the original 2014 OHADA text. Later amendments and national procedures remain unverified. Applies to commercial companies, with SARL and SA annual meetings and sole-member decisions.
+version: 2.1
 jurisdiction: CI
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -146,6 +146,39 @@ Out of scope: BIC 25%, PAYE progressive, CNPS contributions.
 - NEVER treat WAEMU as intra-community
 - NEVER accept invoices without NCC
 - NEVER compute numbers -- engine handles arithmetic
+
+## Annual company reporting under the 2014 AUSCGIE
+
+Côte d’Ivoire is an OHADA member. This company-law reference is separate from the VAT workflow. It summarises selected provisions of the original 2014 AUSCGIE; later amendments have not been verified. Confirm the law applicable to the company’s actual period before using a deadline. [OHADA member states](https://www.ohada.org/les-etats-membres-de-lohada/)
+
+The revised AUSCGIE took effect on **5 May 2014**. The following rules address
+annual SARL and SA decisions and commercial-company registry deposits.
+[OHADA company law register](https://www.ohada.org/droit-des-societes-commerciales-et-du-gie/)
+
+- **SARL annual meeting.** The annual ordinary general meeting must take place
+  within **6 months after the financial year closes**. The managers may ask the
+  competent court for an extension. [AUSCGIE, articles 347 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86)
+- **SA annual meeting.** The ordinary general meeting must take place at least
+  once a year, within **6 months after the financial year closes**, subject to
+  an extension by court decision. [AUSCGIE, article 548](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=133)
+- **Sole-member companies.** The sole shareholder of an SA takes the annual
+  ordinary decisions within **6 months after the financial year closes** and
+  records them in minutes kept in the company's archives. Article 347 applies
+  these sole-member decision rules to a SARL, with the exceptions it specifies.
+  [AUSCGIE, article 347](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86),
+  [articles 558 to 560](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=135)
+- **Deposit of annual accounts.** A commercial company must deposit the prior
+  year's annual financial statements with the RCCM in the state of its
+  registered office **within the month following approval** by the competent
+  body. If approval is refused, a copy of the refusal decision must be deposited
+  within the same period. [AUSCGIE, article 269, pages 65 and 66](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=65)
+
+For example, for a multi-member SARL with a **31 December 2025** year-end, the
+ordinary annual meeting is due by **30 June 2026**, subject to a court extension.
+Track the RCCM deposit deadline from the actual approval decision. Record the
+national tax-return deadline separately. The current registry filing method,
+fees, applicable accounting and audit rules and any sector-specific obligations
+still need verification. [AUSCGIE, articles 269 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
 
 ## Disclaimer
 
