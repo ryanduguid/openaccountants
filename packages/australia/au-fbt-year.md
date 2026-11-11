@@ -13,7 +13,7 @@ version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027"
-last_updated: 2026-11-05
+last_updated: 2026-11-11
 review_status: pending_review
 category: international
 tier: 2
@@ -399,7 +399,7 @@ You must lodge **all** activity statements for the FBT year ending 31 March -- *
 | Reimbursement of an employee's actual expense | Check expense payment FBT and otherwise-deductible declarations | Item 23E where applicable, with supported reductions |
 | Ordinary fixed cash allowances | Employee assessable income; check PAYG withholding and STP. Classify LAFHA and kilometre-based car reimbursements separately | Payroll treatment for ordinary allowances; do not route them to item 23E |
 | Staff gifts, welfare, amenities | <$300 and infrequent per occasion? | Exempt (s 58P) or residual/property categories |
-| Loans to employees / directors' debit loans | Benchmark 8.27% vs rate charged; Div 7A first for shareholders (au-fbt T2-6) | Item 23 (loans) |
+| Loans to employees / directors' debit loans | Benchmark 8.62% (FBT year ended 31 March 2026) or 8.27% (year ending 31 March 2027) vs rate charged; Div 7A first for shareholders (au-fbt T2-6) | Item 23 (loans) |
 | FBT instalments reported/payable (BAS liability account) | Reconcile the year's liabilities net of variation credits to the ATO account; reconcile cash paid and unpaid debt separately | Item 20 |
 
 #### 7.2 FBT year-end checklist (April--June)

@@ -14,7 +14,7 @@ description: >
 jurisdiction: AU
 category: international
 tax_year: 2026
-last_updated: 2026-11-05
+last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -134,7 +134,7 @@ Only after classification, timing, overlap, exemptions and elections are resolve
 
 ### Stablecoins and other crypto assets
 
-For income years starting on or after 1 July 2021, s 995-1 excludes digital currency from foreign currency and adopts the GST Act meaning. TD 2014/25 records that amendment in paragraph 2 and applies to earlier income years. Its bitcoin conclusion must be read within that temporal and asset scope.
+For an income year that includes 1 July 2021 and later income years, s 995-1 excludes digital currency from foreign currency and adopts the GST Act meaning (Treasury Laws Amendment (2022 Measures No. 4) Act 2023 Sch 2 item 15(2)). TD 2014/25 records that amendment in paragraph 2 and applies to earlier income years. Its bitcoin conclusion must be read within that temporal and asset scope.
 
 GST Act s 195-1 defines digital currency through cumulative conditions: fungibility, use as consideration, public availability without substantial restrictions, the specified denomination test, value not depending on or derived from something else and no entitlement to a particular thing beyond an incidental holding/payment entitlement. It also excludes certain financial supplies. Read the full definition before applying the exclusion. [GST Act s 195-1](https://www.ato.gov.au/law/view/document?docid=PAC/19990055/195-1), [TD 2014/25](https://www.ato.gov.au/law/view/document?docid=TXD%2FTD201425%2FNAT%2FATO%2F00001).
 

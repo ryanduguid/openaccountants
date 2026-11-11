@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2034,
+  "guides": 2035,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -2525,7 +2525,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "au-capital-gains",
@@ -2606,6 +2606,19 @@
    "last_updated": "2026-11-03"
   },
   {
+   "slug": "au-dssp",
+   "path": "skills/international/australia/au-dssp.md",
+   "name": "au-dssp",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-11"
+  },
+  {
    "slug": "au-employment-termination-payments",
    "path": "skills/international/australia/au-employment-termination-payments.md",
    "name": "au-employment-termination-payments",
@@ -2629,7 +2642,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "au-fbt",
@@ -2668,7 +2681,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "au-gst-bas",
@@ -2707,7 +2720,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "au-land-tax",
@@ -2837,7 +2850,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "au-rd-incentive",
@@ -2928,7 +2941,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "au-tax-residency",
@@ -3032,7 +3045,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "australia-payroll",
@@ -3045,7 +3058,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "australia-tax-optimization",
@@ -23260,7 +23273,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "bd-freelance-intake",
