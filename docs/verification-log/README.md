@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Ghana corporate income, withholding and period scope](2026-11-11-ghana-corporate-income-withholding-and-period-scope.md) |
 | 2026-11-11 | [Ghana formation and reporting scope](2026-11-11-ghana-formation-and-reporting-scope.md) |
 | 2026-11-11 | [Ghana VAT Free Zone and imported-service scope](2026-11-11-ghana-vat-free-zone-and-imported-service-scope.md) |
 | 2026-11-11 | [Ghana VAT and pension source reconciliation](2026-11-11-ghana-vat-pension-reconciliation.md) |
