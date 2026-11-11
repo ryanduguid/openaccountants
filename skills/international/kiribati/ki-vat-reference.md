@@ -1,14 +1,14 @@
 ---
 name: ki-vat-reference
 description: >
-  Kiribati VAT reference for ordinary taxable businesses in 2026: rates, registration, exempt and zero-rated schedules, input apportionment, invoices, quarterly returns/payment, imports, non-residents, refunds, interest, penalties and worked figures. Includes attributed business/employer registration and PAYE/KPF administrative guidance with fee, contribution-base and deadline holds. Trigger on Kiribati VAT, form RET 020, Tax Division returns, business registration, PAYE or KPF. Refuses voluntary registration, gambling, foreign suppliers/platforms, going concern transfers and return lodgement with imported services. This source-cited draft awaits local professional review and does not establish filing readiness or complete operative law.
+  Kiribati VAT reference for ordinary taxable businesses in 2026: rates, registration, exemptions, input apportionment, invoices, quarterly returns/payment, imports, refunds, penalties and worked figures. Includes original foreign-investment fees, certificate reporting and transfers alongside attributed business/employer registration and PAYE/KPF guidance. Trigger on Kiribati VAT, RET 020, business registration, investment certificates, financial statements, PAYE or KPF. Refuses voluntary registration, gambling, foreign suppliers/platforms, going concern transfers and return lodgement with imported services. This source-cited draft awaits professional review and does not establish filing readiness, complete current law or an actual applicant's eligibility.
 jurisdiction: KI
 category: international
 tax_year: 2026
-tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established. Undated MTCIC/KPF administrative registration and employer guidance read 11 November 2026; statutory periods remain unverified."
+tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established. Undated MTCIC/KPF administrative registration and employer guidance read 11 November 2026; statutory periods remain unverified. Original investment Act 2018 bears assent 24 December 2018; its commencement notice and later chain are unverified. Regulations 2019 notice appoints 4 November 2019; later amendments and 2026 application are unverified."
 tier: 2
 last_updated: 2026-11-11
-version: 0.3
+version: 0.4
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -17,7 +17,7 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Kiribati VAT Reference, 2026 (v0.3)
+# Kiribati VAT Reference, 2026 (v0.4)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -491,7 +491,7 @@ A VAT registration does not establish that a business has completed its other re
 ### Foreign investment, company and business-name registration
 
 - **Foreign investment certificate:** MTCIC's guide, PDF page 2, and its [certificate page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/9-steps-to-starting-a-business) direct a foreign investor to the Investment Promotion Division before starting business. They list a signed application, name reservation, business plan, investor identity and bank references, police clearance for investors intending to reside locally and an environmental assessment where applicable. This is a preparation list, not confirmation of an applicant's eligibility or a complete immigration/environmental approval.
-- **Investment fee:** those sources quote non-refundable AUD500 for investment up to AUD25,000, AUD1,000 for AUD25,000 to AUD250,000 and AUD1,500 above AUD250,000. Exactly AUD25,000 appears in both of the first 2 bands: HOLD the payable fee at that boundary. They describe Registrar approval/rejection at AUD250,000 or below and Cabinet consideration above it, with a written appeal to the Foreign Investment Appeal Panel for a Registrar decision. The stated processing time of no more than 30 working days is an administrative estimate, not a verified statutory deadline or guarantee.
+- **Investment fee:** those sources quote non-refundable AUD500 for investment up to AUD25,000, AUD1,000 for AUD25,000 to AUD250,000 and AUD1,500 above AUD250,000. Exactly AUD25,000 appears in both of the first 2 administrative bands. The original 2019 statutory schedule below is unambiguous, but the currently payable fee remains held. They describe Registrar approval/rejection at AUD250,000 or below and Cabinet consideration above it, with a written appeal to the Foreign Investment Appeal Panel for a Registrar decision. The administrative processing summary must be read with the original Act's qualified 30-working-day and deferral provisions below; approval is not guaranteed.
 - **Company and business name:** the guide, PDF page 3, and [MTCIC's registration page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/7-big-things-a-start-up-must-have-to-succeed) direct registration to the Business and Companies Regulatory Division. The PDF's embedded table lists company applicant/name, registered office, shareholders, directors, secretary, share capital, Articles and identity/supporting documents, including a foreign investment certificate where applicable. Its business-name list covers applicant/name, place, nature and commencement of the business, with supporting identity and applicable certificates. This does not establish every legal form, minimum capital, director/secretary qualification or residence requirement.
 - **Company fees:** the PDF page 3 table quotes AUD50 registration plus AUD50 approval and a separate incorporation fee dependent on share capital. AUD100 is only the sum of the 2 specified components; the incorporation schedule and total are unknown. The business-name application fee is separately AUD100. The source's usual processing estimate of up to 3 days is not a legal deadline. These quoted administrative fees require confirmation for the application date.
 
@@ -556,8 +556,59 @@ tolerance: 0.000001
 
 ### Evidence still needed for this appendix
 
-Obtain original company, foreign-investment, KCCI, income-tax and KPF statutes with the complete operative amendment/commencement chains, requested-period eligibility, contribution bases/caps/exclusions, reliable payment and filing deadlines, current forms and fee schedules. Resolve the fee overlap, unknown incorporation amount, KCCI categories and licence-issuer mismatch. Full formation, payroll, social-contribution, financial-reporting, cross-border and property coverage remains incomplete. No topic is declared inapplicable from these administrative summaries. All existing VAT/RAA/amendment and filing holds remain.
+Obtain original company, KCCI, income-tax and KPF statutes and the complete operative amendment/commencement chains, including the investment-law gaps below, requested-period eligibility, contribution bases/caps/exclusions, reliable payment and filing deadlines, current forms and fee schedules. Confirm current investment fees, the unknown incorporation amount, KCCI categories and licence-issuer mismatch; the original 2019 investment fee boundary is explained below. Full formation, payroll, social-contribution, financial-reporting, cross-border and property coverage remains incomplete. No topic is declared inapplicable from these administrative summaries. All existing VAT/RAA/amendment and filing holds remain.
 
+
+## Foreign-investment law, fees and certificate conditions
+
+**Source-period limit:** the following explains selected provisions of the original [Foreign Investment Act 2018, No. 14 of 2018](https://mtcic.gov.ki/wp-content/plugins/download-attachments/includes/download.php?id=4375) and the government's referred [Foreign Investment Regulations 2019, No. 1 of 2019](https://files.cdn-files-a.com/uploads/10504502/normal_67e7e9d1423e3.pdf), read on 11 November 2026. The ministry's 23-page Act scan bears assent dated **24 December 2018**, but its commencement line is blank and section 2 requires a Minister's notice. That Act notice and the complete later amendment/order chain remain unverified. The regulations' own signed notice, PDF page 14, is dated and published **1 November 2019** and appoints **4 November 2019** for their commencement. It does not establish the Act's commencement. These are original-text components, not a consolidated 2026 opinion or authority to submit an application.
+
+### Investment approval and the 2 capital tests
+
+The original Act, sections 14-17, PDF pages 9-11, prohibits a foreign investor from investing without a valid certificate, provides an application to the Registrar with the prescribed form/fee and provides a Secretary-signed certificate identifying the investor, activity and applicable conditions. Determine the investor's status from section 3, PDF pages 4-5; incorporation in Kiribati alone does not settle the citizenship and direct/indirect ownership or control test.
+
+Sections 14(8) and 15 use **total capital input to the foreign investment**: at AUD250,000 or below, the Registrar may approve in consultation with the Secretary; above AUD250,000, the Registrar submits the application to Cabinet. Cabinet may approve with conditions, refuse with reasons or return it for further action. Section 14(3) says the Registrar *may* determine an application within 30 working days. Subsections (4)-(6) address specialist advice, responses within 10 working days and reasons for deferral before the 30-working-day period expires. Do not treat this as guaranteed approval or an unconditional processing deadline.
+
+Regulations 13-16, PDF page 2, prescribe Schedule 2 Form 1 for an application, Form 2 for a certificate and Schedule 3 fees; regulation 15 permits forms to be modified as directed by the Registrar. **Schedule 3's fee base is 'share capital or other capital'.** Do not assume it equals the Act's total-capital-input approval test without checking the facts.
+
+| Original 2019 Schedule 3 fee base | Application fee in AUD |
+| --- | --- |
+| Up to and including AUD25,000 | 500 |
+| Above AUD25,000 up to and including AUD250,000 | 1,000 |
+| Above AUD250,000 | 1,500 |
+
+Source: regulations Schedule 3, PDF page 13. The separately published [2019 application form](https://mtcic.gov.ki/wp-content/plugins/download-attachments/includes/download.php?id=3451), PDF page 8, has the same boundaries and amounts. Its declaration, PDF page 6, describes the fee as non-refundable and says that, when filed in hard copy, only a fully completed, original signed form with full payment will be processed. Confirm the current prescribed or modified form, fee and permitted submission route for the application date.
+
+**Conditional boundary examples under the original schedule:** a fee base of exactly AUD25,000 falls in the AUD500 band. Exactly AUD250,000 falls in the AUD1,000 band; AUD250,001 falls in the AUD1,500 band. If the separately established total capital input is AUD250,000, the original Act places approval with the Registrar in consultation with the Secretary; if it is AUD250,001, the Cabinet route applies. These illustrations resolve the original schedule's boundary wording, not the currently payable amount or an applicant's eligibility. The administrative start-up guide's overlapping AUD25,000 wording remains a recorded source defect.
+
+### Certificate duration, reporting and other registrations
+
+The original Act, sections 18-20, PDF page 11, makes a certificate valid from issue until termination of the approved business activity, subject to cancellation, and says it ceases to be valid if that activity does not commence within 1 year of issue. Commencement means activities appropriate to carrying out that particular business. This is distinct from the administrative guide's annual local operating-licence renewal.
+
+The original regulations' Schedule 2 Form 2, PDF pages 11-12, includes these certificate conditions:
+
+- Condition 2 calls for a yearly financial statement to the Registrar **within 60 days after the end of the enterprise's financial year**.
+- Condition 3 calls for 'bi-annual progress reports'. The source supplies no exact reporting dates or form here; do not invent a twice-yearly calendar or a 2-year interval.
+- Conditions 4, 6-11 address staying within approved activities, tax/VAT registration, licence/certificate conditions, relevant sector requirements, work permits, business/company registration before operation and further Registrar conditions. The tax-registration condition does not establish a VAT exemption or displace the VAT tests in this guide.
+- Condition 12 says the certificate is not transferable.
+
+Read the actual issued certificate and any modified form before treating those conditions as the enterprise's current obligations. Condition 5's employment wording and parenthetical minimum require clarification; no universal staffing number, contribution exception or immigration permission is inferred. The original Act's section 6(6), PDF page 8, instead concerns the **Registrar's** administration report within 2 months after financial year-end; it is not a substitute investor reporting deadline. General company annual returns, accounting standards, audit requirements and record-retention rules remain outstanding.
+
+### Sector eligibility and amendment controls
+
+Original Act sections 9-13, PDF pages 8-9, distinguish reserved activities, restricted activities subject to prescribed conditions and prohibited activities. Section 12 allows the Minister, after Cabinet consultation, to amend the lists by order. Section 13 addresses the effective date of a reservation and protection for a prior lawful investment. The regulations' rules 4-12 establish a submission/review process; they do not make an applicant's proposal an effective amendment.
+
+The ministry's [3-page Foreign Investment Guideline](https://mtcic.gov.ki/wp-content/plugins/download-attachments/includes/download.php?id=2207), also referred from the investment portal, is undated. Its restricted-list page assigns aluminium a local-joint-venture condition. In contrast, the original Act scan's Schedule 2, PDF page 19, leaves 'aluminium' at the foot of the page without an aligned condition. Do not silently repair the original layout from the guideline or treat a current sector classification as settled. Obtain the operative orders, a reliable schedule and Registrar confirmation of the particular activity and any grandfathering.
+
+### Transfers, changes and review rights
+
+Original Act section 26, PDF pages 13-14, permits investment-related transfers subject to Kiribati law. It includes profits, dividends, royalties, loan repayments, sale/liquidation proceeds and foreign personnel remuneration, with grounds to delay or prevent transfers including compliance with tax, social-security, retirement, compulsory-savings and severance obligations. This supplies no withholding rate, tax exemption, treaty entitlement or unconditional right to remit. Verify the payment's tax treatment and all other applicable controls separately.
+
+Original sections 16(3) and 28, PDF pages 11 and 15-16, provide written refusal grounds and review by the Investment Appeal Panel. A written review application must give reasons and be made within 3 months of the decision; section 28(5) specifies 14 working days for the Panel's decision after submission. The Act also addresses failure to decide, a prescribed review payment and further appeal to the High Court. Obtain current procedure, fees, service rules and advice on a clock where no decision has been issued.
+
+Sections 19 and 29, PDF pages 11 and 16, raise cancellation/offence risks for prohibited or restricted activities, changed activities, ownership/control changes and transfers. The original cancellation wording referring to a restricted activity requires reconciliation with section 10's conditional permission; no permitted restructuring route is assumed. Sections 32-33, PDF page 17, contain repeal and savings provisions for the earlier investment legislation. Preserve existing permits/contracts and establish the applicable transition before acting.
+
+**Still outstanding:** the Act's commencement notice, all later amendments and schedule orders, current fees/forms and issued-certificate conditions, authoritative sector/ownership classifications, reporting calendars and the remaining company, tax, payroll, social-contribution and property regimes. These selected original-law and certificate components add partial formation, reporting, cross-border and compliance evidence. They complete no whole topic and establish no inapplicability.
 
 ## Sources
 
