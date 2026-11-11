@@ -1,7 +1,7 @@
 ---
 name: ghana-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Ghana VAT return. VAT 15% + NHIL 2.5% + GETFund 2.5% = 20% effective. Act 1151 effective 1 Jan 2026 recouples levies. Flat rate scheme abolished. Withholding VAT at 7%. ALWAYS read before handling Ghana VAT work.
-version: 2.3
+version: 2.4
 jurisdiction: GH
 category: international
 tax_year: 2026
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Effective total | 20% |
 | COVID-19 HRL | ABOLISHED |
 | Flat Rate Scheme | ABOLISHED (Act 1151) |
-| Zero rate | 0% (exports, Free Zones supplies) |
+| Zero rate | Qualifying exports and qualifying goods supplied to Free Zone developers/enterprises; services to them are standard-rated under GRA guideline 14 |
 | Filing portal | https://taxpayersportal.ghana.gov.gh |
 | Authority | Ghana Revenue Authority (GRA) |
 | Currency | GHS (Ghana Cedi) |
@@ -76,7 +76,7 @@ Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund
 ## Section 5 -- Classification rules
 
 - **Levy stacking on same base** — From 1 January 2026, GRA reports 15% VAT + 2.5% NHIL + 2.5% GETFund on the same taxable base. Input deductions require a separate eligibility check; see Section 8. _(GRA, VAT reform guidance — https://gra.gov.gh/domestic-tax/tax-types/vat/)_
-- **Zero rate categories** — 0% (exports, Free Zones)  _(Act 1151)_
+- **Zero rating and Free Zones** — From 1 January 2026, Act 1151's Second Schedule covers goods supplied to a Free Zone developer or enterprise only with satisfactory documentation that its operations and acquisition procedure satisfy Act 504. A permit alone does not establish those conditions. GRA guideline 14 distinguishes these qualifying goods from services supplied to Free Zone developers or enterprises, which it treats as standard-rated. Export eligibility must also be checked separately. _(Act 1151, Second Schedule, goods clause (6), PDF p 80, and s 75; GRA Administrative Guideline GRA/AG/25/002, issued 31 December 2025, section 14, printed p 13 — https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf ; https://gra.gov.gh/wp-content/uploads/2026/01/VAT-Guidelines-for-VAT-ACT-1151.pdf)_
 - **Exempt categories** — Exempt: financial (margin-based), residential rental, medical, education, unprocessed foodstuffs, agricultural inputs, petroleum (separate levies).  _(Act 1151)_
 
 ## Section 6 -- VAT return form
@@ -85,7 +85,7 @@ The prescribed 2026 return and its box mapping have not been verified. GRA's imp
 
 ## Section 7 -- Reverse charge and withholding VAT
 
-- **Imported services** — GRA's 2026 guidance applies VAT 15%, NHIL 2.5% and GETFund 2.5% to imported services unless exempt under Act 1151 or its regulations. It says VAT-registered persons account for the levies on a monthly imported-services return. Establish liability and any exemption separately from input-deduction eligibility. Automatic full recovery or a net-zero result is not established; the statutory conditions remain under review. _(GRA, VAT reform guidance, checked 11 November 2026 — https://gra.gov.gh/domestic-tax/tax-types/vat/)_
+- **Imported-service scope** — From 1 January 2026, section 72 defines an import of services as a supply to a resident person by a non-resident, a resident's business carried on outside Ghana, a Free Zone developer or a Free Zone enterprise, to the extent used or consumed in Ghana other than to make taxable supplies. Apply that use test before calculating tax on an overseas invoice. GRA reports VAT 15%, NHIL 2.5% and GETFund 2.5% on liable imported services, subject to exemptions and the separate reporting rules. Liability and input-deduction eligibility are distinct checks. Mixed-use allocation, exact exemptions, digital/VACS rules and current forms remain under review; do not assume full recovery or net zero. _(Act 1151, ss 72 and 75, PDF pp 64 and 71; GRA reform guidance, checked 11 November 2026 — https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf ; https://gra.gov.gh/domestic-tax/tax-types/vat/)_
 - **Withholding VAT rate** — 7% of the taxable output value of standard-rated supplies, withheld by an appointed VAT withholding agent at the time of payment, with a Withholding VAT Credit Certificate issued to the supplier; the agent files and pays by the 15th of the following month, and a failure to withhold and remit costs the tax plus a 30% penalty. GRA's VAT Withholding page, written before the 2026 reform, describes the base as the taxable value inclusive of NHIL and GETFund; confirm the base for 2026 supplies with GRA  _(Value Added Tax Act, 2025 (Act 1151), ss 55 to 57 — https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf ; GRA, VAT Withholding — https://gra.gov.gh/domestic-tax/tax-types/vat-withholding/)_
 
 ## Section 8 -- Deductibility and blocked input
@@ -105,8 +105,8 @@ The prescribed 2026 return and its box mapping have not been verified. GRA's imp
 **EC1 -- SaaS.** Check whether the transaction is a taxable imported service, any exemption and the required return. Establish deduction eligibility separately; do not assume full recovery or net zero.
 **EC2 -- Former flat rate business.** Now standard 15% + levies.
 **EC3 -- Withholding VAT.** 7% of the taxable value of the supply (s 56), not 7% of the VAT.
-**EC4 -- Cocoa export.** Zero-rated. All input recoverable. Excess credit from exports is refundable where exports exceed 25% of total supplies for the period and the export proceeds have been repatriated (s 53(1)(b)); otherwise it is carried as a credit.
-**EC5 -- Free Zone supply.** Zero-rated with valid permit.
+**EC4 -- Cocoa export.** Verify export zero-rating conditions. Any input claim remains subject to deduction eligibility and restrictions. Excess credit from exports is refundable where exports exceed 25% of total supplies for the period and the export proceeds have been repatriated (s 53(1)(b)); otherwise it is carried as a credit.
+**EC5 -- Supply to a Free Zone developer/enterprise.** Qualifying goods require satisfactory evidence of compliant operations and acquisition procedure. GRA guideline 14 treats services to them as standard-rated; do not zero-rate services merely because the recipient has a permit.
 **EC6 -- Bad debt.** Deduction due when the debt is written off in the accounts and recovery action has proved futile (s 47); the Act sets no fixed waiting period.
 **EC7 -- Motor vehicle.** Blocked unless the business deals in or hires motor vehicles (s 50(1)).
 

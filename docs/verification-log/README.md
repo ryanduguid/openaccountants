@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-11 | [Ghana VAT Free Zone and imported-service scope](2026-11-11-ghana-vat-free-zone-and-imported-service-scope.md) |
 | 2026-11-11 | [Ghana VAT and pension source reconciliation](2026-11-11-ghana-vat-pension-reconciliation.md) |
 | 2026-11-11 | [Gabon payroll and social contribution reconciliation](2026-11-11-gabon-payroll-reconciliation.md) |
 | 2026-11-11 | [Gabon overview and historical VAT reconciliation](2026-11-11-gabon-overview-vat-reconciliation.md) |
