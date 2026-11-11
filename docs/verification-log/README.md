@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-12 | [Annual company reporting in Cameroon, Côte d’Ivoire and Comoros](2026-11-12-ohada-reporting-cameroon-cote-divoire-comoros.md) |
 | 2026-11-11 | [Kiribati KPF original amendments and employer-source conflicts](2026-11-11-kiribati-kpf-law-and-employer-conflicts.md) |
 | 2026-11-11 | [Kiribati foreign-investment law, fees and certificate conditions](2026-11-11-kiribati-foreign-investment-law.md) |
 | 2026-11-11 | [Kiribati business and employer registration scope](2026-11-11-kiribati-business-and-employer-registration.md) |

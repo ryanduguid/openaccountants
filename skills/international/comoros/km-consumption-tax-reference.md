@@ -1,21 +1,23 @@
 ---
 name: km-consumption-tax-reference
 description: >
-  Comoros taxe sur la consommation (TC) reference for a business in 2026. Gives
-  the 10% rate and the 0%, 3%, 5%, 7.5% and 25% exceptions, the KMF 20,000,000
-  turnover exemption and its importer limit, listed exemptions, territoriality,
-  chargeability, invoices, monthly returns before the 15th, customs prepayment,
-  interest, penalties and worked figures. Trigger on Comoros TC, CGI Art 149 or
-  Union des Comores consumption tax. Refuses box-level returns, refunds and an
-  assumed input credit, and holds the electronic filing route. This source-cited
-  draft awaits local professional review and is not filing readiness.
+  Comoros taxe sur la consommation (TC) for businesses in 2026: 10% standard
+  rate, 0%, 3%, 5%, 7.5% and 25% exceptions, KMF 20,000,000 turnover exemption
+  with importer limit, exemptions, territoriality, chargeability, invoices,
+  monthly returns before the 15th, customs prepayment, interest, penalties and
+  worked examples. Trigger on Comoros TC, Union des Comores or CGI Art 149.
+  Refuses box-level returns, refunds and assumed input credits; electronic
+  filing remains held. Includes separate annual company decisions and RCCM
+  deposits under the original 2014 OHADA text. Later amendments and national
+  procedures remain unverified. Source-cited draft pending local professional
+  review; no filing readiness.
 jurisdiction: KM
 category: international
 tax_year: 2026
 tax_year_notes: "2026 periods. CGI 2023 read with LFR 2023, an unpromulgated copy of LF 2024, and the tax articles of LFR 2025 and LF 2026. LFR 2024 and LF 2025 were checked only in part. Later instruments and arrêtés were not established."
 tier: 2
-last_updated: 2026-11-10
-version: 0.1
+last_updated: 2026-11-12
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -229,6 +231,39 @@ Tier 2 draft pending review by a Comorian adviser. It establishes no filing read
 ## Sources
 
 Checked on 31 October 2026. [Code général des impôts 2023](https://justice.gouv.km/wp-content/uploads/2025/03/comores-cgi-2023.pdf), Arts 41, 91, 130, 133 to 157, 205, L.23, L.41, L.95 to L.117, L.131 to L.136, L.157 and L.160, from OCR and the PDF text layer; the pages for these articles were not checked as images. [LFR 2023, Law 23-008/AU](https://finances.gouv.km/wp-content/uploads/2024/12/Decret_N%C2%B023-064PR_portant_Promulgation_de_la_loi_de_Finances_Rectificative_2023.pdf), Art 12 by page image. [LF 2024 text](https://www.wto.org/english/thewto_e/acc_e/com_e/WT_ACC_COM_50_LEG1.pdf), WTO accession document, adopted 27 November 2023, not a promulgated copy. [LF 2026, Law 25-020/AU](https://finances.gouv.km/wp-content/uploads/2026/01/Decret-N%C2%B026-003PR-du-16-jan-2026-portant-Prom-Loi-25-020AU-portant-Loi-de-Finan.pdf), pp 1 to 16, partly OCR. LFR 2025, Law 25-019/AU, pp 1 and 9, archive copy because the official link returned 404. Not found: the Comorian tax office's own site `dgi.gouv.km` failed DNS on 31 October 2026.
+
+## Annual company reporting under the 2014 AUSCGIE
+
+Comoros is an OHADA member. This company-law reference is separate from the consumption-tax workflow. It summarises selected provisions of the original 2014 AUSCGIE; later amendments have not been verified. Confirm the law applicable to the company’s actual period before using a deadline. [OHADA member states](https://www.ohada.org/les-etats-membres-de-lohada/)
+
+The revised AUSCGIE took effect on **5 May 2014**. The following rules address
+annual SARL and SA decisions and commercial-company registry deposits.
+[OHADA company law register](https://www.ohada.org/droit-des-societes-commerciales-et-du-gie/)
+
+- **SARL annual meeting.** The annual ordinary general meeting must take place
+  within **6 months after the financial year closes**. The managers may ask the
+  competent court for an extension. [AUSCGIE, articles 347 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86)
+- **SA annual meeting.** The ordinary general meeting must take place at least
+  once a year, within **6 months after the financial year closes**, subject to
+  an extension by court decision. [AUSCGIE, article 548](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=133)
+- **Sole-member companies.** The sole shareholder of an SA takes the annual
+  ordinary decisions within **6 months after the financial year closes** and
+  records them in minutes kept in the company's archives. Article 347 applies
+  these sole-member decision rules to a SARL, with the exceptions it specifies.
+  [AUSCGIE, article 347](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=86),
+  [articles 558 to 560](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=135)
+- **Deposit of annual accounts.** A commercial company must deposit the prior
+  year's annual financial statements with the RCCM in the state of its
+  registered office **within the month following approval** by the competent
+  body. If approval is refused, a copy of the refusal decision must be deposited
+  within the same period. [AUSCGIE, article 269, pages 65 and 66](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=65)
+
+For example, for a multi-member SARL with a **31 December 2025** year-end, the
+ordinary annual meeting is due by **30 June 2026**, subject to a court extension.
+Track the RCCM deposit deadline from the actual approval decision. Record the
+national tax-return deadline separately. The current registry filing method,
+fees, applicable accounting and audit rules and any sector-specific obligations
+still need verification. [AUSCGIE, articles 269 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
 
 <!-- openaccountants-cta-block -->
 
