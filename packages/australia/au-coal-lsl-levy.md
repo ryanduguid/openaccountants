@@ -13,7 +13,7 @@ category: payroll
 tax_year: 2026
 tax_year_notes: "2026-27"
 tier: 2
-last_updated: 2026-11-02
+last_updated: 2026-11-11
 version: 0.1
 review_status: pending_review
 verified_by: pending
@@ -136,7 +136,7 @@ For each employee reference and month record work status, hours worked per week,
 
 ### Step 7: Diarise lodgment and payment
 
-Diarise the return and payment for 28 days after month end (Collection Act ss 4, 5). The sections read set no weekend or public holiday rule; where the day falls on one, take the date from Coal LSL before relying on it. Coal LSL says returns are submitted through its Online Services and payment is by direct electronic funds transfer into the Fund, using the account details on the form. Do not set a fixed recurring payment: eligible wages move with hours, overtime, incentives and bonuses. Late payment attracts additional levy daily under s 7; reconcile any additional levy to Coal LSL's assessment rather than computing a day-count convention the Act does not state.
+Diarise the return and payment for 28 days after month end (Collection Act ss 4, 5). The sections read set no weekend or public holiday rule of their own. Where the last day is a Saturday, Sunday or holiday, *Acts Interpretation Act 1901* s 36(2) may let the thing be done on the next day that is not; confirm the date with Coal LSL before relying on it. Coal LSL says returns are submitted through its Online Services and payment is by direct electronic funds transfer into the Fund, using the account details on the form. Do not set a fixed recurring payment: eligible wages move with hours, overtime, incentives and bonuses. Late payment attracts additional levy daily under s 7; reconcile any additional levy to Coal LSL's assessment rather than computing a day-count convention the Act does not state.
 
 ### Step 8: Correct errors
 
@@ -261,7 +261,7 @@ If the instrument specified no quantifiable loading, s 3B(3)(b) would use the or
 
 ### Case 4: Return and payment dates
 
-For July 2026 the return must be made within 28 days after 31 July 2026, so by 28 August 2026, and the levy for July is payable at the end of that period (ss 4, 5). The workpaper diarises 28 August 2026 and notes that no weekend or holiday rule was found in the Act. A payment made on 4 September 2026 attracts additional levy under s 7 for each day it was unpaid; reconcile the amount to Coal LSL's assessment.
+For July 2026 the return must be made within 28 days after 31 July 2026, so by 28 August 2026, and the levy for July is payable at the end of that period (ss 4, 5). The workpaper diarises 28 August 2026, a Friday, so the question whether *Acts Interpretation Act 1901* s 36(2) moves the day does not arise. A payment made on 4 September 2026 attracts additional levy under s 7 for each day it was unpaid; reconcile the amount to Coal LSL's assessment.
 
 ### Case 5: A labour hire maintenance fitter
 
@@ -315,6 +315,7 @@ The reviewer attention threshold is **AUD 0**: every difference between levy com
 | Federal Register of Legislation API: Regulations title record (status, scheduled repeal 1 April 2028) | https://api.prod.legislation.gov.au/v1/titles('F2018L00217') | 2026-11-02 |
 | Coal Mining Industry (Long Service Leave) Payroll Levy Act 1992 (C2012C00097), ss 4-6, 8 | https://www.legislation.gov.au/C2004A04353/2012-01-01/2012-01-01/text/original/epub/OEBPS/document_1/document_1.html | 2026-11-02 |
 | Coal Mining Industry (Long Service Leave) Payroll Levy Collection Act 1992, compilation 12 (C2026C00364), ss 3, 3B, 4-10B, 13B, Schedule 1, endnotes | https://www.legislation.gov.au/C2004A04352/2026-09-01/2026-09-01/text/original/epub/OEBPS/document_1/document_1.html | 2026-11-02 |
+| *Acts Interpretation Act 1901*, compilation 39 (C2026C00117): s 36(2) | https://www.legislation.gov.au/C1901A00002/2026-03-28/2026-03-28/text/original/epub/OEBPS/document_1/document_1.html | 2026-11-11 |
 | Coal Mining Industry (Long Service Leave) Administration Act 1992, compilation 25 (C2026C00370), ss 4, 39B, 39BC, 39BD, 44, 45, 47, 49 | https://www.legislation.gov.au/C2004A04351/2026-09-01/2026-09-01/text/original/epub/OEBPS/document_1/document_1.html | 2026-11-02 |
 | Coal Mining Industry (Long Service Leave) Administration Regulations 2018 (F2018L00216, as made, the latest version), s 7 | https://www.legislation.gov.au/F2018L00216/2018-03-07/2018-03-07/text/original/epub/OEBPS/document_1/document_1.html | 2026-11-02 |
 | Federal Register of Legislation API: Administration Regulations title record (scheduled repeal 1 April 2028) | https://api.prod.legislation.gov.au/v1/titles('F2018L00216') | 2026-11-02 |

@@ -142,7 +142,7 @@ Bump the major version when a slug, a path under `skills/` or the `packages/` la
 
 ## Licensing of contributions
 
-This is a mixed-licence repository: software is **AGPL-3.0-only** and the Guides are under the source-available **OA Guide License** (see [LICENSING.md](LICENSING.md)). This fork does not collect a contributor licence agreement. By opening a pull request you confirm that the contribution is your own work or that you have the right to submit it, and you agree that it is licensed under the licence of the files it changes: AGPL-3.0-only for software, the OA Guide License for guides and their exports. You keep your copyright. [CLA.md](CLA.md) is the upstream project's agreement with Glimpse Ltd, kept for reference; it is not collected here and does not apply to contributions made to this fork.
+This is a mixed-licence repository: software is **AGPL-3.0-only** and the Guides are under the source-available **OA Guide License**, except the guides listed under FSL-1.1-ALv2 in [LICENSING.md](LICENSING.md#guides-under-fsl-11-alv2). This fork does not collect a contributor licence agreement. By opening a pull request you confirm that the contribution is your own work or that you have the right to submit it, and you agree that it is licensed under the licence of the files it changes: AGPL-3.0-only for software, the OA Guide License for guides and their exports. You keep your copyright. [CLA.md](CLA.md) is the upstream project's agreement with Glimpse Ltd, kept for reference; it is not collected here and does not apply to contributions made to this fork.
 
 ## Credit
 

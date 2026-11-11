@@ -14,7 +14,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27"
 tier: 2
-last_updated: 2026-11-02
+last_updated: 2026-11-11
 version: 0.1
 review_status: pending_review
 verified_by: pending
@@ -264,7 +264,7 @@ Change log: v0.1 (2 November 2026), first draft from Division 276 and ss 104-107
 
 ## Sources
 
-All read on 2 November 2026. The Federal Register page was read in the compilation files below; the ATO page was read through a Firecrawl scrape because ato.gov.au refused connections from this machine.
+All read on 2 November 2026; figures and dates rechecked against the same sources on 11 November 2026.
 
 | Source | URL | Read on |
 | --- | --- | --- |

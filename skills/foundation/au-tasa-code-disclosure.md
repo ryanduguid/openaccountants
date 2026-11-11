@@ -6,7 +6,7 @@ jurisdiction: AU
 category: foundation
 tax_year: 2026
 tax_year_notes: "Law as at 2 November 2026"
-last_updated: 2026-11-02
+last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
 verified_by: pending
@@ -107,9 +107,9 @@ APES 110 is published under licence from the International Federation of Account
 
 Legislation is cited to the authorised Federal Register of Legislation versions; read the exact current law there.
 
-Method adapted by its author from the TPB and APES 110 control sets (`src/guide/140-tpb-control-set.md`, `src/guide/150-apes-110-control-set.md`) and reference maps in ryanduguid/llm-tax-guardrails (commit 9daf087). This guide is licensed under FSL-1.1-ALv2, not the OA Guide License; see LICENSING.md.
+Method adapted by its author from the TPB and APES 110 control sets (`src/guide/140-tpb-control-set.md`, `src/guide/150-apes-110-control-set.md`) and reference maps in ryanduguid/DrDebits, formerly ryanduguid/llm-tax-guardrails (commit 9daf087). This guide is licensed under FSL-1.1-ALv2, not the OA Guide License; see LICENSING.md.
 
-Copyright 2026 Ryan Duguid. From github.com/ryanduguid/llm-tax-guardrails, FSL-1.1-ALv2. Copies and adaptations of this file must keep this notice.
+Copyright 2026 Ryan Duguid. From github.com/ryanduguid/DrDebits (formerly llm-tax-guardrails), FSL-1.1-ALv2. Copies and adaptations of this file must keep this notice.
 
 <!-- openaccountants-cta-block -->
 

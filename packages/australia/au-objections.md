@@ -15,7 +15,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27 (law as at 2 November 2026)"
 tier: 2
-last_updated: 2026-11-02
+last_updated: 2026-11-11
 version: 0.1
 review_status: pending_review
 depends_on:
@@ -74,7 +74,7 @@ Every figure below was read on 2 November 2026. 'TAA' means TAA compilation 227;
 | Private indirect tax ruling | Whichever ends last: 60 days after the ruling was made, or 4 years after the last day allowed for lodging the return for the assessment to which it relates | TAA s 14ZW(1AAC) |
 | Any other case | 60 days after notice of the decision is served | TAA s 14ZW(1)(c) |
 | When a posted notice counts as given (ATO practice) | Currently 7 business days from the date it was issued through Australia Post | ATO time limits page; *Acts Interpretation Act 1901* s 29 (posted service is taken to occur when the letter would be delivered in the ordinary course of post, unless the contrary is proved) |
-| Commissioner's decision period before the taxpayer can require one | 60 days after lodgement (or after the s 14ZX agreement), extended to 60 days after receipt of information requested within that period | TAA s 14ZYA(1) |
+| Commissioner's decision period before the taxpayer can require one | 60 days after lodgment (or after the s 14ZX agreement), extended to 60 days after receipt of information requested within that period | TAA s 14ZYA(1) |
 | Deemed disallowance | 60 days after the taxpayer gives notice requiring a decision | TAA s 14ZYA(3) |
 | Applying to the ART for review of an objection decision | Within 60 days after being served with notice of the decision | TAA s 14ZZC(1) |
 | Appeal to the Federal Court | Within 60 days after being served with notice of the decision | TAA s 14ZZN |
@@ -134,7 +134,7 @@ A pending ART review or court appeal does not affect the decision, and the amoun
 | Date a notice was given or served | Use the earliest date the evidence supports to set the period end; show the alternatives | The timing is `UNVERIFIED` |
 | Which s 170(1) item applies | Work to the 2-year period until the facts are confirmed | The 4-year period may be available |
 | Whether the period has ended | Prepare the s 14ZW(2) request in the alternative | The agent decides whether to lodge it |
-| A last day that falls on a weekend or holiday | Target the earlier calendar day; note the s 36(2) day | Holidays depend on the place of lodgement |
+| A last day that falls on a weekend or holiday | Target the earlier calendar day; note the s 36(2) day | Holidays depend on the place of lodgment |
 
 No default is permitted for the decision, its enabling provision, the grounds or the evidence. Return Needs Input for each.
 
@@ -167,7 +167,7 @@ expected:
   last_day_in_december: 13
 ```
 
-Day 60 is Sunday 13 December 2026, so s 36(2) allows lodgement on Monday 14 December 2026 if that day is not a holiday in the place of lodgement. The conservative default targets Friday 11 December. The same count applies to a Federal Court appeal (s 14ZZN).
+Day 60 is Sunday 13 December 2026, so s 36(2) allows lodgment on Monday 14 December 2026 if that day is not a holiday in the place of lodgment. The conservative default targets Friday 11 December. The same count applies to a Federal Court appeal (s 14ZZN).
 
 ### Case 2: A 50:50 arrangement for a disputed debt (2026-27)
 
@@ -276,7 +276,7 @@ Change log: v0.1 (2 November 2026), first draft from TAA Part IVC (compilation 2
 
 ## Sources
 
-All read on 2 November 2026. Federal Register texts were read in the compilation files below; ATO pages through the nodriver CLI over plain HTTP.
+All read on 2 November 2026; figures and dates rechecked against the same sources on 11 November 2026.
 
 | Source | URL | Read on |
 | --- | --- | --- |

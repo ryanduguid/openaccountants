@@ -14,7 +14,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27"
 tier: 2
-last_updated: 2026-11-02
+last_updated: 2026-11-11
 version: 0.1
 review_status: pending_review
 verified_by: pending
@@ -35,7 +35,7 @@ This guide prepares a draft private ruling application for a registered agent to
 
 **Not covered (routed elsewhere):**
 
-- Objections themselves, including lodgement periods, extensions of time and review or appeal: `au-objections`.
+- Objections themselves, including lodgment periods, extensions of time and review or appeal: `au-objections`.
 - Correcting a lodged return: `au-amending-individual-income-tax-return-period` for an individual; for a company, trust or fund, its own topic guide, or an objection against the assessment through `au-objections`.
 - Penalties, reasonable care and reasonably arguable positions: `au-lodgment-deadlines-penalties`.
 - The substantive tax answer to each question: the topic guide (for example `au-capital-gains`, `au-div7a` or `au-trust-distributions`).
@@ -238,7 +238,7 @@ Change log: v0.1 (2 November 2026), first draft from Divisions 357 and 359 of TA
 
 ## Sources
 
-All read on 2 November 2026. Federal Register pages were read in the compilation files below; the ATO pages were read through a Firecrawl scrape because ato.gov.au refused connections from this machine.
+All read on 2 November 2026; figures and dates rechecked against the same sources on 11 November 2026.
 
 | Source | URL | Read on |
 | --- | --- | --- |
@@ -247,7 +247,7 @@ All read on 2 November 2026. Federal Register pages were read in the compilation
 | ATO, Applying for a private ruling (last updated 8 October 2026): form or letter, all relevant information, no hypothetical rulings, substantial difference, online channels, lodge separately, returns still due | https://www.ato.gov.au/about-ato/ato-advice-and-guidance/ato-advice-products-rulings/early-engagement-for-advice/applying-for-a-private-ruling | 2 November 2026 |
 | ATO, How to complete the private ruling application form (QC100187, last updated 1 August 2025): Sections A to F, yes-or-no questions, facts, assumptions, reasoning, declaration | https://www.ato.gov.au/about-ato/ato-advice-and-guidance/ato-advice-products-rulings/early-engagement-for-advice/applying-for-a-private-ruling/reference-guide-for-private-rulings/how-to-complete-the-private-ruling-application-form | 2 November 2026 |
 
-Not yet confirmed: PS LA 2008/3 and the ATO's service standards for private rulings were not read for this draft; the objection lodgement period for a private ruling is left to `au-objections`. No accountant has reviewed this draft.
+Not yet confirmed: PS LA 2008/3 and the ATO's service standards for private rulings were not read for this draft; the objection lodgment period for a private ruling is left to `au-objections`. No accountant has reviewed this draft.
 
 Method adapted by its author from the `au-private-ruling-application` skill in ryanduguid/australian-accounting-skills (commit 3e110da). This guide is licensed under FSL-1.1-ALv2, not the OA Guide License; see LICENSING.md.
 

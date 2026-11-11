@@ -68,7 +68,7 @@ are Glimpse Ltd's own work, work-for-hire, or covered by an accepted
 
 The guides below were adapted by their author, Ryan Duguid, from his
 repositories `ryanduguid/australian-accounting-skills` and
-`ryanduguid/llm-tax-guardrails`, and remain under the Functional Source
+`ryanduguid/DrDebits` (formerly `ryanduguid/llm-tax-guardrails`), and remain under the Functional Source
 License, Version 1.1, ALv2 Future License
 ([`LICENSES/FSL-1.1-ALv2.txt`](LICENSES/FSL-1.1-ALv2.txt)), notwithstanding the
 general mapping above. That licence grants an additional Apache License 2.0
@@ -76,7 +76,10 @@ licence for each version from the second anniversary of the date it is made
 available. Their copies under `packages/`, and any of their text reproduced in
 the machine-readable exports, carry the same terms. Each guide states its
 licence in its `license` front matter and keeps its copyright notice at the end
-of its Sources section. `REUSE.toml` records the same paths.
+of its Sources section. `REUSE.toml` records the same paths. For the
+machine-readable exports, `REUSE.toml` records each file's licence as a whole,
+because REUSE cannot mark part of a file; this paragraph governs the text of
+these guides reproduced in them.
 
 - `skills/foundation/au-tasa-code-disclosure.md`
 - `skills/international/australia/au-coal-lsl-levy.md`

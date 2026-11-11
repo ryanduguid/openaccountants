@@ -14,7 +14,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27"
 tier: 2
-last_updated: 2026-11-06
+last_updated: 2026-11-11
 version: 0.1
 review_status: pending_review
 verified_by: pending
@@ -151,7 +151,7 @@ All facts and figures are hypothetical and set in the 2026-27 income year.
 
 ### Case 1: Isolated profit-making undertaking, one lot (TR 92/3; s 118-20)
 
-An individual with no development history buys a block for $600,000, subdivides it into 2 lots, builds a house on lot 2 and sells it; the evidence supports a profit-making purpose at acquisition and a commercial transaction, but no business. A valuer apportions 50% of the land to lot 2. Shared subdivision costs are $80,000; the house costs $450,000; selling costs are $30,000; lot 2 sells for $1,100,000. All amounts are GST-exclusive. For illustration the CGT cost base is assumed to hold the same elements.
+An individual with no development history buys a block for $600,000, subdivides it into 2 lots, builds a house on lot 2 and sells it; the evidence supports a profit-making purpose at acquisition and a commercial transaction, but no business. A valuer apportions 50% of the land to lot 2. Shared subdivision costs are $80,000; the house costs $450,000; selling costs are $30,000; lot 2 sells for $1,100,000. Proceeds are net of the GST payable on the sale (s 17-5) and costs are net of input tax credits the seller is entitled to (s 27-5): if lot 2 is a taxable supply at a contract price of $1,210,000 including GST, the GST is $110,000, which is 1/11 of the price and not 10% of it (GST Act ss 9-70, 9-75(1)), leaving the $1,100,000 used here. Whether the sale is taxable, GST at 1/11 of the price or under the margin scheme, and GST at settlement withholding are worked in `au-gst-property`. For illustration the CGT cost base is assumed to hold the same elements.
 
 ```oa-check
 name: Isolated profit-making undertaking net profit by lot with s 118-20 2026-27
@@ -182,7 +182,7 @@ The $280,000 net profit is ordinary income if characterisation (b) is adopted, a
 
 ### Case 2: Land already owned becomes trading stock (ss 70-30, 104-220)
 
-A company has held land as a long-term investment since 2015 (CGT cost base $400,000; its s 70-30(3) cost is also $400,000). In September 2026 it resolves to develop and sell 10 lots, and the evidence supports the start of a business dealing in land. A dated valuation puts the land at $1,000,000 just before it became trading stock. Development costs are $800,000 and all 10 lots sell in 2026-27 for $2,500,000 (GST-exclusive), so no lots are on hand at year end.
+A company has held land as a long-term investment since 2015 (CGT cost base $400,000; its s 70-30(3) cost is also $400,000). In September 2026 it resolves to develop and sell 10 lots, and the evidence supports the start of a business dealing in land. A dated valuation puts the land at $1,000,000 just before it became trading stock. Development costs are $800,000 and all 10 lots sell in 2026-27 for $2,500,000, so no lots are on hand at year end. Proceeds are net of the GST payable on the sales (s 17-5) and costs are net of input tax credits the company is entitled to (s 27-5). Whether the sales are taxable, GST at 1/11 of the price or under the margin scheme, and GST at settlement withholding are worked in `au-gst-property`.
 
 ```oa-check
 name: Land becoming trading stock s 70-30 election comparison 2026-27
@@ -307,6 +307,7 @@ The reviewer attention threshold is **AUD 0**: every characterisation, s 70-30 e
 | ITAA 1997 s 27-5 (input tax credits and decreasing adjustments) | https://www.ato.gov.au/law/view/document?DocID=PAC/19970038/27-5 | 2026-11-06 |
 | GST Act s 11-15 (meaning of creditable purpose) | https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/11-15 | 2026-11-06 |
 | GST Act s 40-65 (sales of residential premises) | https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/40-65 | 2026-11-06 |
+| GST Act ss 9-70, 9-75 (amount of GST; value of a taxable supply) | https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/9-75 | 2026-11-11 |
 
 Named in the sources but not read in this session: TR 97/11 (primary production business), MT 2006/1 (held by `au-gst-property`), TD 97/3 (subdivided land as separate assets) and s 25A ITAA 1936.
 

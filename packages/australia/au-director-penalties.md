@@ -15,7 +15,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27 (QE days from 1 July 2026; saved law for earlier quarters)"
 tier: 2
-last_updated: 2026-11-02
+last_updated: 2026-11-11
 version: 0.1
 review_status: pending_review
 depends_on:
@@ -45,7 +45,7 @@ This guide prepares the evidence on whether, and to what extent, a director or f
 ## Ask the client first
 
 1. ASIC records for the company: registration, each director's appointment and cessation dates, and each director's residential and business addresses on record over time.
-2. The company's ATO account and lodgement history by period: activity statements (PAYG withholding and GST), voluntary disclosure statements and SGC assessments for QE days from 1 July 2026, SG statements for quarters before then, Division 268 estimate notices, payments and credits.
+2. The company's ATO account and lodgment history by period: activity statements (PAYG withholding and GST), voluntary disclosure statements and SGC assessments for QE days from 1 July 2026, SG statements for quarters before then, Division 268 estimate notices, payments and credits.
 3. Each DPN: the date on it, the date it was posted or left, the address used, the liabilities and amounts listed, and whether a copy went to a registered tax agent.
 4. Any administrator, small business restructuring practitioner or liquidator appointment, with its date.
 5. Any instalment arrangement under Sch 1 s 255-15 covering the company's obligation.
@@ -81,7 +81,7 @@ For each company and period record: the obligation (PAYG withholding under Subdi
 
 ### Step 2: Classify the reporting timing for each liability
 
-For PAYG withholding and GST, record whether the amount was notified (under s 16-150 or s 389-5 for withholding) or the GST return lodged by the last day of the 3 months after the due day. For SGC, identify the QE day or quarter first. For a QE day from 1 July 2026, record the QE day, the due-day workings under s 269-10(3), whether a voluntary disclosure statement was lodged by the due day, the charge it discloses, the charge payable and the difference, as separate items. For an earlier quarter, apply the saved old law: record the SG statement due day and lodgement date. Record the classification and its source as an input for the director's advisers, not a conclusion.
+For PAYG withholding and GST, record whether the amount was notified (under s 16-150 or s 389-5 for withholding) or the GST return lodged by the last day of the 3 months after the due day. For SGC, identify the QE day or quarter first. For a QE day from 1 July 2026, record the QE day, the due-day workings under s 269-10(3), whether a voluntary disclosure statement was lodged by the due day, the charge it discloses, the charge payable and the difference, as separate items. For an earlier quarter, apply the saved old law: record the SG statement due day and lodgment date. Record the classification and its source as an input for the director's advisers, not a conclusion.
 
 ### Step 3: Build each director's timeline
 
@@ -264,7 +264,7 @@ Change log: v0.1 (2 November 2026), first draft from Division 269 of TAA Schedul
 
 ## Sources
 
-All read on 2 November 2026. Federal Register texts were read in the compilation files below; ATO pages through the nodriver CLI over plain HTTP.
+All read on 2 November 2026; figures and dates rechecked against the same sources on 11 November 2026.
 
 | Source | URL | Read on |
 | --- | --- | --- |
