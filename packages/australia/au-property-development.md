@@ -151,7 +151,7 @@ All facts and figures are hypothetical and set in the 2026-27 income year.
 
 ### Case 1: Isolated profit-making undertaking, one lot (TR 92/3; s 118-20)
 
-An individual with no development history buys a block for $600,000, subdivides it into 2 lots, builds a house on lot 2 and sells it; the evidence supports a profit-making purpose at acquisition and a commercial transaction, but no business. A valuer apportions 50% of the land to lot 2. Shared subdivision costs are $80,000; the house costs $450,000; selling costs are $30,000; lot 2 sells for $1,100,000. Proceeds are net of the GST payable on the sale (s 17-5) and costs are net of input tax credits the seller is entitled to (s 27-5): if lot 2 is a taxable supply at a contract price of $1,210,000 including GST, the GST is $110,000, which is 1/11 of the price and not 10% of it (GST Act ss 9-70, 9-75(1)), leaving the $1,100,000 used here. Whether the sale is taxable, GST at 1/11 of the price or under the margin scheme, and GST at settlement withholding are worked in `au-gst-property`. For illustration the CGT cost base is assumed to hold the same elements.
+An individual with no development history buys a block for $600,000, subdivides it into 2 lots, builds a house on lot 2 and sells it; the evidence supports a profit-making purpose at acquisition and a commercial transaction, but no business. A valuer apportions 50% of the land to lot 2. Shared subdivision costs are $80,000; the house costs $450,000; selling costs are $30,000; lot 2 sells for $1,100,000. Proceeds are net of the GST payable on the sale (s 17-5) and costs are net of input tax credits the seller is entitled to (s 27-5): if lot 2 is a taxable supply at a contract price of $1,210,000 including GST, the GST is $110,000, which is 1/11 of the price and not 10% of it (GST Act ss 9-70, 9-75(1)), leaving the $1,100,000 used here. Whether the sale is taxable, GST at 1/11 of the price or under the margin scheme, and GST at settlement withholding are worked in `au-gst-property`. For illustration the CGT cost base is assumed to hold the same elements; the capital proceeds are also $1,100,000, because s 116-20(5) disregards the net GST on the supply in working them out.
 
 ```oa-check
 name: Isolated profit-making undertaking net profit by lot with s 118-20 2026-27
@@ -308,10 +308,11 @@ The reviewer attention threshold is **AUD 0**: every characterisation, s 70-30 e
 | GST Act s 11-15 (meaning of creditable purpose) | https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/11-15 | 2026-11-06 |
 | GST Act s 40-65 (sales of residential premises) | https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/40-65 | 2026-11-06 |
 | GST Act ss 9-70, 9-75 (amount of GST; value of a taxable supply) | https://www.ato.gov.au/law/view/document?DocID=PAC/19990055/9-75 | 2026-11-11 |
+| ITAA 1997 s 116-20(5) (net GST disregarded in capital proceeds) | https://www.ato.gov.au/law/view/document?DocID=PAC/19970038/116-20 | 2026-11-11 |
 
 Named in the sources but not read in this session: TR 97/11 (primary production business), MT 2006/1 (held by `au-gst-property`), TD 97/3 (subdivided land as separate assets) and s 25A ITAA 1936.
 
-**Currency and revision.** Version 0.1, currency date 2 November 2026. Change log: v0.1 (2 November 2026) first draft from primary sources read that day; awaiting qualified Australian review.
+**Currency and revision.** Version 0.1, currency date 2 November 2026. Change log: v0.1 (2 November 2026) first draft from primary sources read that day; 6 November 2026 correction: registration alone does not make an amount GST-exclusive (ss 17-5, 27-5); 11 November 2026 correction: the worked cases restated net of GST under ss 17-5 and 27-5, with a 1/11 example under GST Act ss 9-70 and 9-75 and capital proceeds under s 116-20(5); awaiting qualified Australian review.
 
 Method adapted by its author from the `au-property-development-income` skill in ryanduguid/australian-accounting-skills (commit 3e110da). This guide is licensed under FSL-1.1-ALv2, not the OA Guide License; see LICENSING.md.
 
