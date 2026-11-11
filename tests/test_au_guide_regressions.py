@@ -169,14 +169,14 @@ class PortedAustralianPinsTest(unittest.TestCase):
     def test_cents_per_km_rates_and_caps(self) -> None:
         # ATO, Cents per kilometre method: 91c for 2026-27, 88c for 2025-26, 5,000 km.
         line = marked_line(self, AU / "australia-tax-optimization.md", "**Cents-per-km alternative**")
-        expected = {"2026-27": (Decimal("91"), Decimal("4550")), "2025-26": (Decimal("88"), Decimal("4400"))}
-        for year, (rate, cap) in expected.items():
+        expected = {"2026-27": Decimal("91"), "2025-26": Decimal("88")}
+        for year, rate in expected.items():
             with self.subTest(year=year):
                 match = assert_sentence(self, line, rf"For {year}[^:]*: ([\d.]+)c/km", r"max(?: 5,000 business km =)? \$([\d,]+)")
-                self.assertEqual(Decimal(match[1]), rate)
+                stated_rate = Decimal(match[1])
+                self.assertEqual(stated_rate, rate)
                 stated_cap = Decimal(re.search(rf"For {year}[^.]*?\$([\d,]+)", line)[1].replace(",", ""))
-                self.assertEqual(stated_cap, cap)
-                self.assertEqual(Decimal(5000) * rate / 100, cap)
+                self.assertEqual(stated_cap, Decimal(5000) * stated_rate / 100)
 
     def test_act_and_nt_payroll_tax_2026_27(self) -> None:
         # ACT Revenue Office, About payroll tax, Table 1; NT Treasury, Payroll tax rates and thresholds.
