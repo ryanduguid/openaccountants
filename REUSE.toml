@@ -30,6 +30,7 @@ path = [
   "skills/**",
   "packages/**",
   "workflows/**",
+  "calculators/**/rules.json",
   "index.json",
   "llms.txt",
   "llms-full.txt",
