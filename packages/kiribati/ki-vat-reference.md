@@ -1,14 +1,14 @@
 ---
 name: ki-vat-reference
 description: >
-  Kiribati VAT reference for ordinary taxable businesses in 2026: rates, registration, exemptions, input apportionment, invoices, quarterly returns/payment, imports, refunds, penalties and worked figures. Includes original foreign-investment fees, certificate reporting and transfers alongside attributed business/employer registration and PAYE/KPF guidance. Trigger on Kiribati VAT, RET 020, business registration, investment certificates, financial statements, PAYE or KPF. Refuses voluntary registration, gambling, foreign suppliers/platforms, going concern transfers and return lodgement with imported services. This source-cited draft awaits professional review and does not establish filing readiness, complete current law or an actual applicant's eligibility.
+  Kiribati VAT reference for ordinary taxable businesses in 2026: rates, registration, exemptions, input apportionment, invoices, quarterly returns/payment, imports, refunds, penalties and worked figures. Includes original foreign-investment fees, certificate reporting and transfers alongside attributed business/employer registration and PAYE/KPF guidance and selected company-information amendments. Trigger on Kiribati VAT, RET 020, business registration, investment certificates, financial statements, PAYE or KPF. Refuses voluntary registration, gambling, foreign suppliers/platforms, going concern transfers and return lodgement with imported services. This source-cited draft awaits professional review and does not establish filing readiness, complete current law or an actual applicant's eligibility.
 jurisdiction: KI
 category: international
 tax_year: 2026
-tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established. Undated MTCIC/KPF administrative registration and employer guidance read 11 November 2026; statutory periods remain unverified. Original investment Act 2018 bears assent 24 December 2018; its commencement notice and later chain are unverified. Regulations 2019 notice appoints 4 November 2019; later amendments and 2026 application are unverified. Original Provident Fund amendments 2012 and 2019 read as printed; exact commencement and complete operative chain remain unverified."
+tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established. Undated MTCIC/KPF administrative registration and employer guidance read 11 November 2026; statutory periods remain unverified. Original investment Act 2018 bears assent 24 December 2018; its commencement notice and later chain are unverified. Regulations 2019 notice appoints 4 November 2019; later amendments and 2026 application are unverified. Original Provident Fund amendments 2012 and 2019 read as printed; exact commencement and complete operative chain remain unverified. Data Protection Act 2025 selected amending text read with its 20 August 2026 commencement notice; principal Business Names/Companies Act context and the complete later chain remain unverified."
 tier: 2
-last_updated: 2026-11-11
-version: 0.5
+last_updated: 2026-11-12
+version: 0.6
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -17,7 +17,7 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Kiribati VAT Reference, 2026 (v0.5)
+# Kiribati VAT Reference, 2026 (v0.6)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -625,6 +625,25 @@ Original sections 16(3) and 28, PDF pages 11 and 15-16, provide written refusal 
 Sections 19 and 29, PDF pages 11 and 16, raise cancellation/offence risks for prohibited or restricted activities, changed activities, ownership/control changes and transfers. The original cancellation wording referring to a restricted activity requires reconciliation with section 10's conditional permission; no permitted restructuring route is assumed. Sections 32-33, PDF page 17, contain repeal and savings provisions for the earlier investment legislation. Preserve existing permits/contracts and establish the applicable transition before acting.
 
 **Still outstanding:** the Act's commencement notice, all later amendments and schedule orders, current fees/forms and issued-certificate conditions, authoritative sector/ownership classifications, reporting calendars and the remaining company, tax, payroll, social-contribution and property regimes. These selected original-law and certificate components add partial formation, reporting, cross-border and compliance evidence. They complete no whole topic and establish no inapplicability.
+
+## Selected data-protection amendments to business statutes
+
+This section records selected amending text in the [Data Protection Act 2025](https://www.mict.gov.ki/sites/default/files/publications/Data%20Protection%20Act%202025.pdf), not the complete company or business-name regime. The assented attachment, PDF page 3, bears a handwritten **18 September 2025** assent date. The Clerk's certificate on page 26 records passage on **18 August 2025** and publication by exhibition on **18 September 2025**. The Act-number field is blank, so no Act number is established here.
+
+### Commencement and the 2 selected amendments
+
+Section 2, PDF page 4, provides for commencement on a date appointed by ministerial notice. The [official commencement notice](https://www.president.gov.ki/images/Gazettes/2026/240826/Notice_of_Commencement_Data_Protection_Act.pdf), page 1, expressly exercises section 2 and appoints **20 August 2026** for the Act to come into force. Its signature date and publication by exhibition are also 20 August 2026. The assent and September 2025 publication dates are separate events.
+
+Section 34, PDF pages 19 and 20, supplies these selected amendments from that commencement:
+
+- **Business Names Act 2021, section 7(2):** section 34(2) adds a qualifier requiring compliance with the Data Protection Act 2025 to the end of that subsection. The attachment does not reproduce principal section 7(2); its full subject, operation and surrounding exceptions remain unverified.
+- **Companies Act 2021, section 160(b):** section 34(3) repeals and replaces that paragraph. The replacement addresses disclosure that would, or would be likely to, prejudice any other person's commercial position, whether or not that person supplied the information to the company, or constitute a violation of the Data Protection Act 2025. The principal section's opening words and surrounding provisions are not supplied. This amendment alone does not establish who may disclose, inspect, demand or withhold information, or a complete refusal or exemption procedure.
+
+The opening paragraph on PDF page 20 preserving individuals' Data Protection Act rights continues section 34(1)(g), which amends the Digital Government Act 2023. It is not part of either business-statute amendment above.
+
+**Example of the evidence boundary:** a company-information request dated 1 September 2026 falls after the appointed commencement. This reference identifies the selected amended wording but cannot decide the requester's entitlement or authorise withholding. Obtain the operative principal section, surrounding provisions, later amendments and facts before reaching that decision.
+
+**Still outstanding:** the complete Business Names Act and Companies Act context, later amendments and operative consolidation, the remaining Data Protection Act obligations and any applicable regulations, filing procedures and qualified local review. Selected pages were read; substantive PDF pages 5–18 were not reviewed. The earlier ministry Bill remains discovery evidence only. These components complete no whole reporting or compliance topic, establish no filing readiness and declare no topic inapplicable.
 
 ## Sources
 
