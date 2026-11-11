@@ -4,6 +4,8 @@ All notable changes to this repository, newest first, in the [Keep a Changelog](
 
 ## [Unreleased]
 
+- Add 10 Tier 2 Australian guides, each with checked worked cases: `au-coal-lsl-levy`, `au-director-penalties`, `au-employee-share-schemes`, `au-fuel-tax-credits`, `au-managed-funds-amit`, `au-objections`, `au-primary-production`, `au-private-rulings`, `au-property-development` and `au-restructure-rollovers`, plus the foundation note `au-tasa-code-disclosure`. These 11 files, and the package copies of the 10 guides, are licensed under FSL-1.1-ALv2 (see `LICENSING.md`).
+
 - Replace the retired upstream 'Talk to a verified accountant' block in 1,805 guides and `skills/us-states/README.md` with the canonical text in `scripts/cta_block.py`, which changed in October without the guides following. `scripts/normalize-cta-block.py --migrate` replaces only the retired wording, and `scripts/validate-guides.py` now rejects it.
 
 - Remove `generated_at` from `index.json`, which nothing read: the stamp changed on every build, so a rebuild with no guide change dirtied the file and parallel pull requests conflicted on it. The index is now byte-reproducible, and `scripts/validate-guides.py` treats any extra top-level field as stale.

@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2034,
+  "guides": 2045,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -1384,6 +1384,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "au-tasa-code-disclosure",
+   "path": "skills/foundation/au-tasa-code-disclosure.md",
+   "name": "au-tasa-code-disclosure",
+   "jurisdiction": "AU",
+   "category": "foundation",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "bookkeeping-workflow-base",
    "path": "skills/foundation/bookkeeping-workflow-base.md",
    "name": "bookkeeping-workflow-base",
@@ -2541,6 +2554,19 @@
    "last_updated": "2026-11-05"
   },
   {
+   "slug": "au-coal-lsl-levy",
+   "path": "skills/international/australia/au-coal-lsl-levy.md",
+   "name": "au-coal-lsl-levy",
+   "jurisdiction": "AU",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "au-company-tax",
    "path": "skills/international/australia/au-company-tax.md",
    "name": "au-company-tax",
@@ -2593,6 +2619,19 @@
    "last_updated": "2026-11-05"
   },
   {
+   "slug": "au-director-penalties",
+   "path": "skills/international/australia/au-director-penalties.md",
+   "name": "au-director-penalties",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "au-div7a",
    "path": "skills/international/australia/au-div7a.md",
    "name": "au-div7a",
@@ -2604,6 +2643,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-03"
+  },
+  {
+   "slug": "au-employee-share-schemes",
+   "path": "skills/international/australia/au-employee-share-schemes.md",
+   "name": "au-employee-share-schemes",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
   },
   {
    "slug": "au-employment-termination-payments",
@@ -2671,6 +2723,19 @@
    "last_updated": "2026-11-05"
   },
   {
+   "slug": "au-fuel-tax-credits",
+   "path": "skills/international/australia/au-fuel-tax-credits.md",
+   "name": "au-fuel-tax-credits",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-06"
+  },
+  {
    "slug": "au-gst-bas",
    "path": "skills/international/australia/au-gst-bas.md",
    "name": "au-gst-bas",
@@ -2736,6 +2801,19 @@
    "last_updated": "2026-11-03"
   },
   {
+   "slug": "au-managed-funds-amit",
+   "path": "skills/international/australia/au-managed-funds-amit.md",
+   "name": "au-managed-funds-amit",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "au-medicare-levy",
    "path": "skills/international/australia/au-medicare-levy.md",
    "name": "au-medicare-levy",
@@ -2775,6 +2853,19 @@
    "last_updated": "2026-11-05"
   },
   {
+   "slug": "au-objections",
+   "path": "skills/international/australia/au-objections.md",
+   "name": "au-objections",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
    "slug": "au-partnerships",
    "path": "skills/international/australia/au-partnerships.md",
    "name": "au-partnerships",
@@ -2812,6 +2903,45 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-05"
+  },
+  {
+   "slug": "au-primary-production",
+   "path": "skills/international/australia/au-primary-production.md",
+   "name": "au-primary-production",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "au-private-rulings",
+   "path": "skills/international/australia/au-private-rulings.md",
+   "name": "au-private-rulings",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "au-property-development",
+   "path": "skills/international/australia/au-property-development.md",
+   "name": "au-property-development",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-06"
   },
   {
    "slug": "au-psi",
@@ -2864,6 +2994,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-05"
+  },
+  {
+   "slug": "au-restructure-rollovers",
+   "path": "skills/international/australia/au-restructure-rollovers.md",
+   "name": "au-restructure-rollovers",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-11"
   },
   {
    "slug": "au-small-business-cgt",
