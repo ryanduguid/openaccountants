@@ -1,10 +1,10 @@
 ---
 name: td-company-formation
-description: "Source-cited draft for Chad company formation, entity choice and annual reporting. Covers existing 2025 formation references, selected annual decisions, RCCM deposits and audit appointments under the original 2014 AUSCGIE and selected accounting rules under the original 2017 AUDCIF, with its 2018 and 2019 commencement periods. Use for incorporation, SARL or SA compliance, annual accounts, normal accounting versus SMT, accounting records or reporting deadlines. Later amendments, complete accounting standards, sector rules, current audit eligibility, national procedures and fees remain outstanding. Pending qualified local review; these selected references do not establish complete reporting coverage or filing readiness."
+description: "Source-cited draft for Chad company formation, entity choice and annual reporting. Covers existing 2025 formation references, selected annual decisions, RCCM deposits and audit appointments under the original 2014 AUSCGIE, selected 2017 AUDCIF accounting rules and the original 2017 professional framework effective from 2018. Use for incorporation, SARL or SA compliance, annual accounts, audit standards, ethics or quality assurance. Later amendments, complete standards and tool editions, sector rules, current audit eligibility, national procedures and fees remain outstanding. Pending qualified local review; these selected references do not establish complete reporting coverage or filing readiness."
 jurisdiction: TD
 tax_year: 2025
 last_updated: 2026-11-12
-version: 1.3
+version: 1.4
 review_status: pending_review
 category: formation
 tier: 2
@@ -290,6 +290,78 @@ appointment and term, any court order and applicable national or sector
 requirements. Later law, detailed audit standards and procedures, professional
 registration and qualified local review remain outstanding. These selected
 appointment rules do not establish complete reporting coverage or filing readiness.
+
+## Selected professional framework under the 2017 OHADA Regulation
+
+This reference reads the signed 3-page facsimile of Regulation
+**01/2017/CM/OHADA**, adopted on **8 June 2017** and effective from
+**1 January 2018** under article 9. The facsimile is reproduced by
+OHADA.com, a secondary host. Authenticity and byte equality against an
+issuer copy and Gazette publication date have not been established. The
+issuer’s linked attachments could not be downloaded in this pass. Its
+publication notice corroborates the adoption date,
+commencement and broad scope. This does not establish later amendments,
+current tool editions or national professional eligibility.
+[Regulation, article 9, PDF page 3](https://www.ohada.com/uploads/actualite/3573/Reglement-n-012017CMOHADA-fr.pdf#page=3),
+[issuer’s notice](https://www.ohada.org/mise-en-ligne-du-reglement-portant-harmonisation-des-pratiques-des-professionnels-de-la-comptabilite-et-de-l-audit-dans-les-etats-membres-de-l-ohada/)
+
+### Audit standards and other professional engagements
+
+Articles 1 and 2 cover professional standards, practical guides, ethics and
+quality assurance across the member states. Article 2 expressly leaves the
+organisation and functioning of professional accountancy orders outside
+this Regulation. It does not replace national registration rules or establish
+that a particular practitioner may act.
+[Regulation, articles 1 and 2, PDF page 1](https://www.ohada.com/uploads/actualite/3573/Reglement-n-012017CMOHADA-fr.pdf#page=1)
+
+Article 3 requires professionals performing statutory or contractual audits
+in a member state to apply international auditing standards, called ISA and
+described in the original text as published by IFAC. The auditor must comply
+with the AUDCIF and all ISA relevant to the audit. For statutory auditors,
+the AUSCGIE’s additional requirements and application rules also apply.
+These performance requirements are separate from the legal-form tests that
+determine whether an auditor must be appointed.
+[Regulation, article 3, PDF pages 1 and 2](https://www.ohada.com/uploads/actualite/3573/Reglement-n-012017CMOHADA-fr.pdf#page=1)
+
+Article 4 establishes Tome 1 for audit and statutory audit. It does not
+replace reading the full relevant ISA, their application material and the
+state’s applicable legal and regulatory provisions. Article 5 establishes
+Tome 2 for other professional engagements, including accounts presentation,
+limited reviews, related services and assurance engagements. It also recalls
+additional AUSCGIE requirements where applicable. Its use does not replace
+reading the full relevant standards and application material.
+Do not classify every professional engagement as an ISA audit.
+[Regulation, articles 4 and 5, PDF page 2](https://www.ohada.com/uploads/actualite/3573/Reglement-n-012017CMOHADA-fr.pdf#page=2)
+
+### Ethics, quality assurance and tool versions
+
+Article 6 establishes an OHADA ethics code for contractual and statutory
+audit, other professional engagements and professional accountants working
+in enterprises and other organisations. It says the code draws on the IFAC
+ethics code and the AUSCGIE. That wording does not by itself establish
+automatic adoption of the latest international code or identify the current
+OHADA code edition.
+[Regulation, article 6, PDF pages 2 and 3](https://www.ohada.com/uploads/actualite/3573/Reglement-n-012017CMOHADA-fr.pdf#page=3)
+
+Article 7 requires the professional orders, individually or collectively,
+to establish a quality assurance mechanism addressing the ISA, relevant
+AUSCGIE duties and article 6 ethics rules. Professionals implement the
+system under the quality assurance manual. The Regulation does not supply
+a detailed inspection programme or verify its operation in a particular state.
+Article 8 provides for regular updating of the articles 4 to 7 tools by the
+Permanent Secretariat on the Commission’s recommendation. Obtain the
+applicable guides, code and manual and trace their versions before use.
+[Regulation, articles 7 and 8, PDF page 3](https://www.ohada.com/uploads/actualite/3573/Reglement-n-012017CMOHADA-fr.pdf#page=3)
+
+For a hypothetical engagement after 1 January 2018, a contractual audit
+falls within original article 3 even though it is not a statutory audit.
+A limited review is a different engagement addressed by article 5. First
+record the engagement type, territory, period, applicable full standards,
+additional statutory duties, professional registration and tool editions.
+This example does not establish current-law applicability or practitioner
+eligibility. Later law, complete standards and tools, national implementation
+and qualified local review remain outstanding. These selected provisions
+do not establish complete reporting coverage or audit readiness.
 
 <!-- openaccountants-cta-block -->
 

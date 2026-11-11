@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-12 | [Selected OHADA professional standards, ethics and quality assurance](2026-11-12-ohada-professional-framework.md) |
 | 2026-11-12 | [Selected OHADA statutory audit appointment rules](2026-11-12-ohada-statutory-audit-appointments.md) |
 | 2026-11-12 | [Selected OHADA accounting regimes, timetables and records](2026-11-12-ohada-accounting-regimes-records.md) |
 | 2026-11-12 | [Kiribati business-statute data-protection amendments](2026-11-12-kiribati-company-data-amendments.md) |
