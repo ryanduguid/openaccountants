@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-12 | [Selected OHADA accounting regimes, timetables and records](2026-11-12-ohada-accounting-regimes-records.md) |
 | 2026-11-12 | [Kiribati business-statute data-protection amendments](2026-11-12-kiribati-company-data-amendments.md) |
 | 2026-11-12 | [Annual company reporting in Cameroon, Côte d’Ivoire and Comoros](2026-11-12-ohada-reporting-cameroon-cote-divoire-comoros.md) |
 | 2026-11-11 | [Kiribati KPF original amendments and employer-source conflicts](2026-11-11-kiribati-kpf-law-and-employer-conflicts.md) |

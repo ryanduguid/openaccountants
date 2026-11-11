@@ -1,10 +1,10 @@
 ---
 name: bf-company-formation
-description: "Source-cited draft covering Burkina Faso company formation and entity choice. Explains the SARL and the SA under the OHADA uniform act read from the Journal Officiel: single-member formation, freely fixed SARL capital under the 2016 national decree, the 5,000 FCFA minimum nominal value of a part sociale, the ordinary 10,000,000 FCFA SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and deposit of funds. Use for incorporating in Burkina Faso, choosing between a SARL and an SA, CEFORE registration or OHADA capital questions. Registration fees and timelines still rest on commercial sources. Pending local-accountant review."
+description: "Source-cited draft for Burkina Faso company formation, entity choice and annual reporting. Covers existing 2025 formation references, selected annual decisions and RCCM deposits under the original 2014 AUSCGIE and selected accounting rules under the original 2017 AUDCIF, with its 2018 and 2019 commencement periods. Use for incorporation, SARL or SA compliance, annual accounts, normal accounting versus SMT, accounting records or reporting deadlines. Later amendments, complete accounting standards, sector rules, audit eligibility, national procedures and fees remain outstanding. Pending qualified local review; these selected references do not establish complete reporting coverage or filing readiness."
 jurisdiction: BF
 tax_year: 2025
-last_updated: 2026-11-11
-version: 1.2
+last_updated: 2026-11-12
+version: 1.3
 review_status: pending_review
 category: formation
 tier: 2
@@ -42,7 +42,7 @@ FCFA 5,000 capital; the OHADA default is not its national minimum.
 - **Beneficial ownership disclosure** — Founders must identify and declare ultimate beneficial owner (UBO) information at the point of CEFORE registration  _([CEFORE business registration procedures](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso))_
 - **Incorporation timeline** — Registration through CEFORE typically completed within a few days to a couple of weeks (approx — confirm)  _([CEFORE business registration procedures](https://www.usemultiplier.com/burkina-faso/company-registration))_
 - **Incorporation cost** — Government administrative registration fees under ~50 EUR; total professional/notary budget commonly 1,000–1,500 EUR (excluding share capital) (approx — confirm)  _([CEFORE business registration procedures](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso))_
-- **Core annual compliance** — Annual financial statements (SYSCOHADA), annual IS return, monthly TVA returns, IUTS and CNSS declarations, and renewal of business registrations  _(Code Général des Impôts (CGI); SYSCOHADA accounting framework)_
+- **Core annual compliance** — Annual financial statements under the applicable accounting regime (see the AUDCIF section below), annual IS return, monthly TVA returns, IUTS and CNSS declarations, and renewal of business registrations  _(Code Général des Impôts (CGI); SYSCOHADA accounting framework)_
 
 ## Annual company reporting under the 2014 AUSCGIE
 
@@ -74,6 +74,92 @@ Track the RCCM deposit deadline from the actual approval decision. Record the
 national tax-return deadline separately. The current registry filing method,
 fees, applicable accounting and audit rules and any sector-specific obligations
 still need verification. [AUSCGIE, articles 269 and 348](https://biblio.ohada.org/doc_num.php?explnum_id=3974)
+
+## Selected accounting rules under the 2017 AUDCIF
+
+This reference summarises selected provisions of the original AUDCIF adopted on
+26 January 2017. Article 113 expressly fixes commencement at **1 January 2018**
+for individual entity accounts and **1 January 2019** for consolidated accounts,
+combined accounts and IFRS statements. It also contains a general
+publication-based clause; the dates here come from its express commencement
+paragraph. Verify later amendments, accounting-standard updates and the rules
+for the entity's actual period before use.
+[AUDCIF, article 113, PDF page 53](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=53)
+
+### Scope and accounting regime
+
+Articles 1 and 2 impose accounting duties on entities within their scope,
+including commercial companies, and exclude entities governed by public
+accounting rules. Article 5 establishes SYSCOHADA but excludes credit
+institutions, microfinance institutions, financial-market participants, insurers
+and reinsurers, social security and welfare bodies and non-profit entities
+from that accounting system. Exclusion from SYSCOHADA does not by itself exempt
+an entity from the AUDCIF's accounting duties. Verify the applicable sector or
+non-profit framework separately.
+[AUDCIF, articles 1, 2 and 5, PDF pages 16 and 17](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=16)
+
+- **Normal system.** Article 11 makes the normal system the default, subject
+  to the size exception. Its annual statements comprise a balance sheet, income
+  statement, cash flow statement and notes.
+  [AUDCIF, articles 8, 11 and 26, PDF pages 18, 19 and 25](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=18)
+- **Minimal cash system (SMT).** Under article 13, small entities use SMT unless
+  they opt otherwise. Eligibility requires annual turnover excluding tax
+  **below CFA 60,000,000 for trading, CFA 40,000,000 for craft and similar
+  activities or CFA 30,000,000 for services**, or the equivalent in the member
+  state's legal currency. These are accounting thresholds, not tax-regime
+  thresholds. Check activity classification, any election and the applicable
+  local-currency equivalent before selecting SMT. Article 28 requires a balance
+  sheet, income statement and notes based on cash accounting, taking changes
+  in inventories, receivables and debts into account when material.
+  [AUDCIF, articles 13 and 28, PDF pages 20 and 25](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=20)
+- **Listed entities and public offerings.** Article 8 requires annual IFRS
+  statements in addition to the other annual statements for entities whose
+  securities are exchange-listed or which seek financing through a public
+  offering. The IFRS statements are for financial markets and do not determine
+  distributable profit. Group-accounting requirements need a separate assessment.
+  [AUDCIF, article 8, PDF pages 18 and 19](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=19)
+
+### Annual timetable and records
+
+Article 7 sets an ordinary **12-month calendar accounting year**, with specific
+first-year and liquidation exceptions. Article 23 requires annual statements to
+be drawn up (*arrêtés*) **within 4 months after year-end**, with that date
+mentioned whenever they are transmitted. This drawing-up date is distinct from
+shareholder approval, an RCCM deposit and a national tax-return deadline.
+[AUDCIF, articles 7 and 23, PDF pages 18 and 24](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=24)
+
+Under article 71, the governing or management bodies draw up an inventory,
+annual statements and a management report, with a social report where
+applicable. The management report covers the past year, prospects, liquidity
+and financing, and significant events after year-end up to its preparation.
+Where statutory auditors exist, the documents go to them **at least 45 days
+before the ordinary general meeting**. Article 70 addresses auditors appointed
+voluntarily or mandatorily; it does not establish that every entity must appoint
+one. Verify appointment duties and exemptions for the legal form and sector.
+[AUDCIF, articles 70 and 71, PDF pages 39 and 40](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=39)
+
+Article 16 requires an accounting procedures and organisation manual, updated
+periodically. Article 17 addresses the official language, legal currency,
+double-entry records, dated supporting documents and inventory controls.
+Article 19 lists the journal, general ledger, general trial balance and
+inventory book. SMT bookkeeping follows its own provisions in article 21.
+Article 24 requires accounting books or equivalent documents and supporting
+vouchers to be retained for **10 years**. It does not set the starting point
+for that period in its text; verify that point and any additional national
+retention rules before destroying records.
+[AUDCIF, articles 16 to 24, PDF pages 20 to 24](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=20)
+
+For an ordinary **31 December 2025** year-end, the article 23 drawing-up
+deadline gives **30 April 2026**. Record shareholder approval, any auditor
+communication and RCCM deposit as separate steps under their own rules.
+This example does not establish the national tax deadline.
+[AUDCIF, article 23](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=24)
+
+The complete SYSCOHADA annexes, subsequent standard-setting decisions, detailed
+recognition and measurement, group accounts, sector and non-profit frameworks,
+legal-form audit requirements, national submission procedures and fees, and
+qualified local review remain outstanding. These selected provisions do not
+establish complete reporting coverage or filing readiness.
 
 <!-- openaccountants-cta-block -->
 

@@ -1,7 +1,7 @@
 ---
 name: cameroon-vat
-description: Use this skill whenever asked to prepare, review, or classify transactions for a Cameroon VAT (TVA) return. Trigger on phrases like "TVA Cameroun", "DGI return", "declaration TVA". Cameroon applies TVA at 17.5% plus CAC municipal surcharge (10% of TVA = effective 19.25%). ALWAYS read this skill before touching any Cameroon VAT work. Also includes a separate reference to annual company decisions and RCCM deposits under the original 2014 OHADA text. Later amendments and national procedures remain unverified. Applies to commercial companies, with SARL and SA annual meetings and sole-member decisions.
-version: 2.1
+description: "Source-cited draft for Cameroon VAT (TVA) work, including the existing 2025 references to 17.5% TVA and the CAC surcharge of 10% of TVA, an effective 19.25%. Trigger on TVA Cameroun, DGI returns or transaction classification. Also covers selected annual company decisions and RCCM deposits under the original 2014 AUSCGIE and accounting regimes, statements, records and timetables under the original 2017 AUDCIF, with its 2018 and 2019 commencement periods. Later amendments, complete standards, sector rules, audit eligibility and national procedures remain open. Pending qualified local review; no complete reporting coverage or filing readiness."
+version: 2.2
 jurisdiction: CM
 category: international
 tax_year: 2025
@@ -248,6 +248,92 @@ still need verification. [AUSCGIE, articles 269 and 348](https://biblio.ohada.or
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+
+## Selected accounting rules under the 2017 AUDCIF
+
+This reference summarises selected provisions of the original AUDCIF adopted on
+26 January 2017. Article 113 expressly fixes commencement at **1 January 2018**
+for individual entity accounts and **1 January 2019** for consolidated accounts,
+combined accounts and IFRS statements. It also contains a general
+publication-based clause; the dates here come from its express commencement
+paragraph. Verify later amendments, accounting-standard updates and the rules
+for the entity's actual period before use.
+[AUDCIF, article 113, PDF page 53](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=53)
+
+### Scope and accounting regime
+
+Articles 1 and 2 impose accounting duties on entities within their scope,
+including commercial companies, and exclude entities governed by public
+accounting rules. Article 5 establishes SYSCOHADA but excludes credit
+institutions, microfinance institutions, financial-market participants, insurers
+and reinsurers, social security and welfare bodies and non-profit entities
+from that accounting system. Exclusion from SYSCOHADA does not by itself exempt
+an entity from the AUDCIF's accounting duties. Verify the applicable sector or
+non-profit framework separately.
+[AUDCIF, articles 1, 2 and 5, PDF pages 16 and 17](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=16)
+
+- **Normal system.** Article 11 makes the normal system the default, subject
+  to the size exception. Its annual statements comprise a balance sheet, income
+  statement, cash flow statement and notes.
+  [AUDCIF, articles 8, 11 and 26, PDF pages 18, 19 and 25](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=18)
+- **Minimal cash system (SMT).** Under article 13, small entities use SMT unless
+  they opt otherwise. Eligibility requires annual turnover excluding tax
+  **below CFA 60,000,000 for trading, CFA 40,000,000 for craft and similar
+  activities or CFA 30,000,000 for services**, or the equivalent in the member
+  state's legal currency. These are accounting thresholds, not tax-regime
+  thresholds. Check activity classification, any election and the applicable
+  local-currency equivalent before selecting SMT. Article 28 requires a balance
+  sheet, income statement and notes based on cash accounting, taking changes
+  in inventories, receivables and debts into account when material.
+  [AUDCIF, articles 13 and 28, PDF pages 20 and 25](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=20)
+- **Listed entities and public offerings.** Article 8 requires annual IFRS
+  statements in addition to the other annual statements for entities whose
+  securities are exchange-listed or which seek financing through a public
+  offering. The IFRS statements are for financial markets and do not determine
+  distributable profit. Group-accounting requirements need a separate assessment.
+  [AUDCIF, article 8, PDF pages 18 and 19](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=19)
+
+### Annual timetable and records
+
+Article 7 sets an ordinary **12-month calendar accounting year**, with specific
+first-year and liquidation exceptions. Article 23 requires annual statements to
+be drawn up (*arrêtés*) **within 4 months after year-end**, with that date
+mentioned whenever they are transmitted. This drawing-up date is distinct from
+shareholder approval, an RCCM deposit and a national tax-return deadline.
+[AUDCIF, articles 7 and 23, PDF pages 18 and 24](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=24)
+
+Under article 71, the governing or management bodies draw up an inventory,
+annual statements and a management report, with a social report where
+applicable. The management report covers the past year, prospects, liquidity
+and financing, and significant events after year-end up to its preparation.
+Where statutory auditors exist, the documents go to them **at least 45 days
+before the ordinary general meeting**. Article 70 addresses auditors appointed
+voluntarily or mandatorily; it does not establish that every entity must appoint
+one. Verify appointment duties and exemptions for the legal form and sector.
+[AUDCIF, articles 70 and 71, PDF pages 39 and 40](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=39)
+
+Article 16 requires an accounting procedures and organisation manual, updated
+periodically. Article 17 addresses the official language, legal currency,
+double-entry records, dated supporting documents and inventory controls.
+Article 19 lists the journal, general ledger, general trial balance and
+inventory book. SMT bookkeeping follows its own provisions in article 21.
+Article 24 requires accounting books or equivalent documents and supporting
+vouchers to be retained for **10 years**. It does not set the starting point
+for that period in its text; verify that point and any additional national
+retention rules before destroying records.
+[AUDCIF, articles 16 to 24, PDF pages 20 to 24](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=20)
+
+For an ordinary **31 December 2025** year-end, the article 23 drawing-up
+deadline gives **30 April 2026**. Record shareholder approval, any auditor
+communication and RCCM deposit as separate steps under their own rules.
+This example does not establish the national tax deadline.
+[AUDCIF, article 23](https://justice.sec.gouv.sn/wp-content/uploads/textes-reglements/OHADA/Acte-uniforme-relatif-droit-comptable-information-financiere-JAN-2017-JO.pdf#page=24)
+
+The complete SYSCOHADA annexes, subsequent standard-setting decisions, detailed
+recognition and measurement, group accounts, sector and non-profit frameworks,
+legal-form audit requirements, national submission procedures and fees, and
+qualified local review remain outstanding. These selected provisions do not
+establish complete reporting coverage or filing readiness.
 
 <!-- openaccountants-cta-block -->
 
