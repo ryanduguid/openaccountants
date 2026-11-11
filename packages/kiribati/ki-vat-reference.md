@@ -1,22 +1,14 @@
 ---
 name: ki-vat-reference
 description: >
-  Kiribati value added tax reference for an ordinary taxable business in 2026.
-  Gives the 12.5% and zero rates, the $100,000 registration test, exempt and
-  zero-rated schedules as amended, input tax apportionment, tax invoices,
-  quarterly returns and payment, imports, non-residents, refunds, interest,
-  penalties and worked figures. Trigger on Kiribati VAT, form RET 020 or Kiribati
-  Tax Division returns. Refuses voluntary registration, gambling, foreign suppliers
-  and platforms, going concern transfers and return lodgement with imported
-  services. This source-cited draft awaits local professional review and is not
-  filing readiness.
+  Kiribati VAT reference for ordinary taxable businesses in 2026: rates, registration, exempt and zero-rated schedules, input apportionment, invoices, quarterly returns/payment, imports, non-residents, refunds, interest, penalties and worked figures. Includes attributed business/employer registration and PAYE/KPF administrative guidance with fee, contribution-base and deadline holds. Trigger on Kiribati VAT, form RET 020, Tax Division returns, business registration, PAYE or KPF. Refuses voluntary registration, gambling, foreign suppliers/platforms, going concern transfers and return lodgement with imported services. This source-cited draft awaits local professional review and does not establish filing readiness or complete operative law.
 jurisdiction: KI
 category: international
 tax_year: 2026
-tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established."
+tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established. Undated MTCIC/KPF administrative registration and employer guidance read 11 November 2026; statutory periods remain unverified."
 tier: 2
-last_updated: 2026-11-02
-version: 0.2
+last_updated: 2026-11-11
+version: 0.3
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -25,7 +17,7 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Kiribati VAT Reference, 2026 (v0.2)
+# Kiribati VAT Reference, 2026 (v0.3)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -491,6 +483,81 @@ tolerance: 0.000001
 - **Slot 13, red flags:** no source. Use the base's general flags without a local figure.
 - **Slot 14, inputs:** sales and purchase records, tax invoices, bills of entry, withheld VAT records, prior period credit.
 - **Slot 15:** no source.
+
+## Business and employer registrations (administrative appendix)
+
+A VAT registration does not establish that a business has completed its other registrations. The Ministry of Tourism, Commerce, Industry and Cooperatives (MTCIC) publishes the sequence below in its [Foreign Investment Start-up Guide](https://files.cdn-files-a.com/uploads/10504502/normal_6809ff41a8000.pdf), linked from the [government investment portal](https://www.investinkiribati.mtcic.gov.ki/how-to-invest). The guide is undated. All 9 PDF pages and the selected government and Kiribati Provident Fund (KPF) pages were read on 11 November 2026. These are attributed administrative statements observed on that date; their underlying statutes, later amendments, commencement and current fee authority have not been established. A website copyright date is not an issue date. All VAT reading limits and refusals above continue to apply.
+
+### Foreign investment, company and business-name registration
+
+- **Foreign investment certificate:** MTCIC's guide, PDF page 2, and its [certificate page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/9-steps-to-starting-a-business) direct a foreign investor to the Investment Promotion Division before starting business. They list a signed application, name reservation, business plan, investor identity and bank references, police clearance for investors intending to reside locally and an environmental assessment where applicable. This is a preparation list, not confirmation of an applicant's eligibility or a complete immigration/environmental approval.
+- **Investment fee:** those sources quote non-refundable AUD500 for investment up to AUD25,000, AUD1,000 for AUD25,000 to AUD250,000 and AUD1,500 above AUD250,000. Exactly AUD25,000 appears in both of the first 2 bands: HOLD the payable fee at that boundary. They describe Registrar approval/rejection at AUD250,000 or below and Cabinet consideration above it, with a written appeal to the Foreign Investment Appeal Panel for a Registrar decision. The stated processing time of no more than 30 working days is an administrative estimate, not a verified statutory deadline or guarantee.
+- **Company and business name:** the guide, PDF page 3, and [MTCIC's registration page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/7-big-things-a-start-up-must-have-to-succeed) direct registration to the Business and Companies Regulatory Division. The PDF's embedded table lists company applicant/name, registered office, shareholders, directors, secretary, share capital, Articles and identity/supporting documents, including a foreign investment certificate where applicable. Its business-name list covers applicant/name, place, nature and commencement of the business, with supporting identity and applicable certificates. This does not establish every legal form, minimum capital, director/secretary qualification or residence requirement.
+- **Company fees:** the PDF page 3 table quotes AUD50 registration plus AUD50 approval and a separate incorporation fee dependent on share capital. AUD100 is only the sum of the 2 specified components; the incorporation schedule and total are unknown. The business-name application fee is separately AUD100. The source's usual processing estimate of up to 3 days is not a legal deadline. These quoted administrative fees require confirmation for the application date.
+
+### Chamber membership, tax registration and local licence
+
+The guide, PDF page 4, attributes KCCI membership for businesses registering a business name with MTCIC to the KCCI Act 2024 from **1 January 2025**, before applying for a local operational licence. It asks for the business-name certificate, membership application and fee. Quoted fees are AUD75 micro, AUD150 small, AUD300 medium, AUD400 large, AUD600 state-owned enterprise and AUD800 foreign investment business. HOLD category definitions, overlapping categories, renewal frequency and statutory fee authority. The source does not establish that these are annual charges or that every business falls into only one category. Its one-business-day processing statement is an estimate.
+
+For tax registration, the guide, PDF page 5, and [MTCIC's tax-registration page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/boost-your-income) direct individuals and companies to the MFED Tax Division for a TIN, with a confirmation letter identifying registered tax types. They describe a signed authorised application and identity/bank-confirmation attachments, no application fee and processing up to 3 days. Do not equate this with automatic VAT registration. Their VAT threshold shorthand 'within a tax year' does not replace the preceding statutory rolling/prospective 12-month tests.
+
+Those tax-registration sources describe employers collecting PAYE from employee income and remitting monthly **within 15 days after month-end**, with an **annual PAYE return within 3 months after year-end**. They mention monthly and annual prescribed forms but do not establish that a monthly return has the payment deadline. These are undated administrative positions, not verification of Income Tax Act 2023, its operative chain, the applicable tax year, wage base, bands, employee/residence scope, benefits, reliefs or penalties. HOLD a payroll calculation or filing-ready PAYE return until those points and current forms are established.
+
+The guide, PDF page 6, directs a foreign investor/company to the relevant licensing authority in **each jurisdiction of operation**, with annual renewal and fees depending on activity, category and turnover. It gives local council contacts. It quotes AUD5 for the form and AUD50 for failing to pay before the end of March; these are not established as universal or all-inclusive council charges. Obtain the relevant council's operative schedule, renewal date and variation requirements. The KPF passage's reference to an MTCIC operating licence differs from this local-licensing step; HOLD the correct issuer and prerequisite for the particular application.
+
+### Employer and employee KPF registration
+
+The guide, PDF page 8 (printed page 7), and [MTCIC's KPF registration page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/how-to-pick-a-name-for-your-startup) describe manual employer registration **within 10 days of starting business**, an employer number/certificate and employee registration **within 30 days of employment**. The listed application is free, with a usual one-day processing estimate. The PDF's earnings/month eligibility phrase is malformed; the website's monthly-income wording supplies no reliable threshold. HOLD who must register, statutory exceptions and the legal trigger for each clock.
+
+The [KPF FAQ](https://kpf.com.ki/index.php/fa/faq), answers 'If I am an employee, do I need to register?' and 'What is required when registered as member of the Fund?', describes employer-assisted registration with a signed form, birth certificate and 1 passport photo. Those FAQ answers supply no registration deadline; they do not independently authenticate MTCIC's 10-day or 30-day statements. Confirm the current official forms and secure submission route before an engagement.
+
+### KPF contributions, monthly reporting and unresolved due date
+
+MTCIC's guide, PDF page 8, attributes **7.5% employee plus 7.5% employer, 15% combined, to 2001** and says the employee portion is deducted whenever paid. The KPF FAQ's contribution-calculation answer corroborates the rates and employer remittance with a monthly detailed schedule. The FAQ says 'total earnings' and then illustrates 'Basic Salary/Wage'; HOLD allowances, overtime, bonuses, exclusions, ceilings and the operative statutory contribution base. The example below applies only to earnings already established as eligible, not to all gross pay.
+
+The sources conflict on payment timing: PDF page 8 says before the last day of the following month and also gives a 15-days-after-month-end parenthesis; MTCIC's webpage says by the 15th of the following month. The FAQ describes monthly remittance but supplies no exact due date. **HOLD the legally applicable due date.** The FAQ's late-payment answer quotes a 5% charge on total contributions due; statutory authority, commencement, recurrence, compounding and exceptions were not established. Do not calculate or accrue a penalty from that summary alone.
+
+**Fictional arithmetic illustration, not a payroll assessment:** for one pay with AUD120 of eligible earnings, employee 7.5% is AUD9 and employer 7.5% is AUD9, giving AUD18 for that pay. The FAQ's AUD36 monthly illustration assumes 2 such fortnightly pays and AUD240 eligible earnings. Aggregate the actual eligible pays for the calendar month. A month with 3 identical eligible pays would instead have AUD360 earnings and AUD54 combined contributions; a fortnightly payroll does not give exactly 2 pays in every month. No rounding rule or payment deadline is inferred.
+
+```oa-check
+name: KI KPF one eligible pay
+inputs:
+  eligible_earnings: 120
+  employee_rate: 0.075
+  employer_rate: 0.075
+steps:
+  - employee: eligible_earnings * employee_rate
+  - employer: eligible_earnings * employer_rate
+  - combined: employee + employer
+expected:
+  employee: 9
+  employer: 9
+  combined: 18
+tolerance: 0.000001
+```
+
+```oa-check
+name: KI KPF actual two or three eligible pays
+inputs:
+  per_pay_earnings: 120
+  combined_rate: 0.15
+steps:
+  - two_pay_earnings: per_pay_earnings * 2
+  - two_pay_contributions: two_pay_earnings * combined_rate
+  - three_pay_earnings: per_pay_earnings * 3
+  - three_pay_contributions: three_pay_earnings * combined_rate
+expected:
+  two_pay_earnings: 240
+  two_pay_contributions: 36
+  three_pay_earnings: 360
+  three_pay_contributions: 54
+tolerance: 0.000001
+```
+
+### Evidence still needed for this appendix
+
+Obtain original company, foreign-investment, KCCI, income-tax and KPF statutes with the complete operative amendment/commencement chains, requested-period eligibility, contribution bases/caps/exclusions, reliable payment and filing deadlines, current forms and fee schedules. Resolve the fee overlap, unknown incorporation amount, KCCI categories and licence-issuer mismatch. Full formation, payroll, social-contribution, financial-reporting, cross-border and property coverage remains incomplete. No topic is declared inapplicable from these administrative summaries. All existing VAT/RAA/amendment and filing holds remain.
+
 
 ## Sources
 
