@@ -1,10 +1,10 @@
 ---
 name: cg-company-formation
-description: "Source-cited draft for Republic of Congo company formation, entity choice and annual reporting. Covers existing 2025 formation references, selected annual decisions and RCCM deposits under the original 2014 AUSCGIE and selected accounting rules under the original 2017 AUDCIF, with its 2018 and 2019 commencement periods. Use for incorporation, SARL or SA compliance, annual accounts, normal accounting versus SMT, accounting records or reporting deadlines. Later amendments, complete accounting standards, sector rules, audit eligibility, national procedures and fees remain outstanding. Pending qualified local review; these selected references do not establish complete reporting coverage or filing readiness."
+description: "Source-cited draft for Republic of Congo company formation, entity choice and annual reporting. Covers existing 2025 formation references, selected annual decisions, RCCM deposits and audit appointments under the original 2014 AUSCGIE and selected accounting rules under the original 2017 AUDCIF, with its 2018 and 2019 commencement periods. Use for incorporation, SARL or SA compliance, annual accounts, normal accounting versus SMT, accounting records or reporting deadlines. Later amendments, complete accounting standards, sector rules, current audit eligibility, national procedures and fees remain outstanding. Pending qualified local review; these selected references do not establish complete reporting coverage or filing readiness."
 jurisdiction: CG
 tax_year: 2025
 last_updated: 2026-11-12
-version: 1.4
+version: 1.5
 review_status: pending_review
 category: formation
 tier: 2
@@ -54,7 +54,7 @@ Company law in the Republic of Congo is governed by the OHADA Uniform Act on Com
 - **Form of SARL statutes.** A private deed or notarial act is permitted under article 2. Current registry procedures, document requirements and fees still need verification. [Décret n°2017-41, article 2](https://www.sgg.cg/JO/2017/congo-jo-2017-14.pdf#page=4)
 - **Incorporation timeline** — Roughly a few days to a few weeks via the Guichet Unique (approx — confirm)  _(Guichet Unique procedures)_
 - **Annual accounting compliance** — File the annual financial statements under the applicable OHADA accounting regime (see the AUDCIF section below), certified by a chartered accountant where there is no statutory auditor, with the CIT return within four months of the close of the financial year (30 April for a 31 December year-end); the 20 May date applies to individuals' business-profit declarations; filing and payment are electronic for real-regime taxpayers  _(Loi n° 42-2025 du 31 décembre 2025 portant loi de finances pour 2026, Journal officiel édition spéciale n° 3-2026, CGI tome 1 arts 86 F, 94 B and 128 to 130 — https://sgg.cg/JO/2026/congo-jo-2026-3-2.pdf)_
-- **Statutory auditor (commissaire aux comptes)** — Mandatory for SA; required for SARL above OHADA size thresholds (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
+- **Statutory audit appointment**: see [the selected AUSCGIE audit rules below](#selected-statutory-audit-rules-under-the-2014-auscgie) for legal-form size tests, additional triggers, appointment terms and professional requirements.
 
 ## National SARL capital example
 
@@ -179,6 +179,104 @@ recognition and measurement, group accounts, sector and non-profit frameworks,
 legal-form audit requirements, national submission procedures and fees, and
 qualified local review remain outstanding. These selected provisions do not
 establish complete reporting coverage or filing readiness.
+
+## Selected statutory audit rules under the 2014 AUSCGIE
+
+This reference reads selected provisions of the original revised AUSCGIE,
+adopted on 30 January 2014 and effective from **5 May 2014**. Check later
+amendments, national professional rules, sector requirements and the entity’s
+actual period before applying them. These appointment tests are separate
+from the accounting-regime tests in the AUDCIF section.
+[AUSCGIE, article 920, PDF page 226](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=226)
+
+### SARL: size test, other appointments and term
+
+Under article 376, a SARL must appoint at least one statutory auditor if it
+meets at least 2 of these 3 conditions at financial year-end:
+
+- balance sheet total **above CFA 125,000,000**;
+- annual turnover **above CFA 250,000,000**;
+- permanent workforce **above 50 people**.
+
+Each test uses a strict excess: equality does not satisfy that condition.
+The article states annual turnover without specifying an excluding-tax basis
+in this passage. Do not import the AUDCIF’s SMT turnover definition. Verify
+the legal-currency treatment before using these CFA amounts in a non-CFA state.
+[AUSCGIE, article 376, PDF page 93](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=93)
+
+Article 376 also provides for the obligation to cease when the company has
+not met 2 conditions during the 2 financial years preceding expiry of the
+auditor’s term. A single below-threshold year does not establish that this
+rule applies. Other SARLs may appoint voluntarily, and holders of at least
+one tenth of the capital may ask a court to appoint an auditor. A size test
+that is not triggered therefore does not establish that no auditor is needed.
+[AUSCGIE, article 376](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=93)
+
+Article 379 sets a term of **3 financial years**, initially by holders of
+more than half the capital. If that majority is not obtained, and unless the
+statutes provide otherwise, appointment is by a majority of votes cast,
+regardless of the proportion of capital represented.
+[AUSCGIE, article 379, PDF page 94](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=94)
+
+### SA: mandatory appointment and different terms
+
+Article 694 provides for statutory audit in every SA. Article 702 requires
+one principal auditor and one substitute for an SA that does not make a
+public offering, and at least **2 principal auditors and 2 substitutes**
+for an SA that does. This is not the SARL size test.
+[AUSCGIE, articles 694 and 702, PDF pages 161 and 163](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=163)
+
+Under articles 703 to 705, the initial auditor and substitute are designated
+in the statutes or by the constitutive general meeting, with a term of
+**2 financial years**. Appointment during the company’s life is by the
+ordinary general meeting, with a term of **6 financial years**. Article 705
+links expiry to the meeting deciding on the relevant second or sixth year’s
+accounts. A replacement serves the predecessor’s remaining term under
+article 706. If the meeting omits renewal or replacement, article 709
+continues the mission until the next annual ordinary meeting unless the
+auditor expressly refuses. Check these rules before treating a term as lapsed.
+[AUSCGIE, articles 703 to 709, PDF pages 163 and 164](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=164)
+
+### SAS: size test and additional triggers
+
+Article 853-13 permits voluntary appointments and requires at least one
+auditor when 2 of the same 3 year-end size conditions above are met. It also
+requires an auditor for an SAS that controls one or more companies, or is
+controlled by one or more companies. Article 174 defines control as the
+effective holding of decision-making power. Do not treat a small SAS as
+exempt without checking those relationships. Article 853-13 includes the
+2-year pre-expiry cessation rule, a court-request route for holders of at
+least one tenth of the capital and certification by an auditor of the
+president’s statement of accounts for a capital increase by offsetting
+claims against the company when it has no auditor. Treat that transaction-specific
+certification separately from the ongoing appointment tests.
+[AUSCGIE, articles 174 and 853-13, PDF pages 45, 209 and 210](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=209)
+
+### Practitioner eligibility and a worked boundary
+
+Article 377 directs SARL selection to articles 694 onwards. Article 695
+requires registration with the professional order where one exists in the
+registered-office state. Article 696 provides a court-of-appeal list route
+where no order exists: experts must be registered beforehand on a list drawn
+up by a commission attached to a court of appeal in the state. Independence
+and incompatibilities must also be
+checked, including articles 378 and 697 to 700. These references do not
+verify a particular practitioner’s eligibility or the current national lists.
+[AUSCGIE, articles 377, 378 and 694 to 700, PDF pages 93 and 161 to 163](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=161)
+
+For a hypothetical SARL at a **31 December 2025** year-end, a balance-sheet
+total of **CFA 126,000,000**, annual turnover of **CFA 250,000,000** and a
+permanent workforce of **51** meet the balance-sheet and workforce conditions.
+The turnover condition is not met at equality. There are 2 qualifying
+conditions, so the original article 376 requires an auditor. This example
+does not establish later-law applicability, currency conversion or sector rules.
+[AUSCGIE, article 376](https://biblio.ohada.org/doc_num.php?explnum_id=3974#page=93)
+
+Record the legal form, year-end figures, control relationships, existing
+appointment and term, any court order and applicable national or sector
+requirements. Later law, detailed audit standards and procedures, professional
+registration and qualified local review remain outstanding. These selected
+appointment rules do not establish complete reporting coverage or filing readiness.
 
 <!-- openaccountants-cta-block -->
 
