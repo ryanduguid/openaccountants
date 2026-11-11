@@ -1,11 +1,11 @@
 ---
 name: ghana-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Ghana VAT return. VAT 15% + NHIL 2.5% + GETFund 2.5% = 20% effective. Act 1151 effective 1 Jan 2026 recouples levies. Flat rate scheme abolished. Withholding VAT at 7%. ALWAYS read before handling Ghana VAT work.
-version: 2.2
+version: 2.3
 jurisdiction: GH
 category: international
 tax_year: 2026
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -37,9 +37,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | VAT Act 2025 (Act 1151) |
 | Contributor | Open Accounting Skills Registry |
 | Validated by | Pending |
-| Last research update | October 2026 |
+| Last research update | Selected claims checked 11 November 2026; full statutory review pending |
 
-**Key change under Act 1151:** NHIL and GETFund recoupled -- now recoverable as input. COVID HRL abolished. Flat rate abolished.
+**Selected 2026 changes:** GRA reports NHIL and GETFund input deductions for VAT-registered taxpayers, subject to deduction eligibility. COVID HRL and the flat rate scheme are abolished from 1 January 2026. This does not establish full recovery on every purchase or imported service. _(GRA, VAT reform guidance and notice, checked 11 November 2026 — https://gra.gov.gh/domestic-tax/tax-types/vat/ ; https://gra.gov.gh/news/portfolio/notice-to-all-vat-registered-taxpayers/)_
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -61,7 +61,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | ECG, VRA | Domestic 20% | Electricity |
 | GHANA WATER | Domestic 20% | Water |
 | MTN GH, VODAFONE GH, AIRTEL-TIGO | Domestic 20% | Telecoms |
-| GOOGLE, MICROSOFT, AWS | Reverse charge 20% | Non-resident |
+| GOOGLE, MICROSOFT, AWS | Check imported-service liability | Verify the transaction, exemptions and deduction eligibility; the supplier name alone does not establish net tax |
 
 ## Section 4 -- Worked examples
 
@@ -71,33 +71,27 @@ GHS 10,000 net. VAT GHS 1,500 + NHIL GHS 250 + GETFund GHS 250 = total GHS 2,000
 
 ### Example 2 -- Withholding VAT
 
-Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund 500 = GHS 24K. Withholding = 7% of the GHS 20K taxable value = GHS 1,400. Supplier receives GHS 22,600 and a Withholding VAT Credit Certificate, and claims the GHS 1,400 credit (Box 20).
+Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund 500 = GHS 24K. Withholding = 7% of the GHS 20K taxable value = GHS 1,400. Supplier receives GHS 22,600 and a Withholding VAT Credit Certificate, and claims the GHS 1,400 credit.
 
 ## Section 5 -- Classification rules
 
-- **Levy stacking on same base** — 15% VAT + 2.5% NHIL + 2.5% GETFund on same base. Under Act 1151, all three recoverable as input.  _(Act 1151)_
+- **Levy stacking on same base** — From 1 January 2026, GRA reports 15% VAT + 2.5% NHIL + 2.5% GETFund on the same taxable base. Input deductions require a separate eligibility check; see Section 8. _(GRA, VAT reform guidance — https://gra.gov.gh/domestic-tax/tax-types/vat/)_
 - **Zero rate categories** — 0% (exports, Free Zones)  _(Act 1151)_
 - **Exempt categories** — Exempt: financial (margin-based), residential rental, medical, education, unprocessed foodstuffs, agricultural inputs, petroleum (separate levies).  _(Act 1151)_
 
 ## Section 6 -- VAT return form
 
-**VAT return form boxes**
-
-| Section | Boxes | Description |
-| --- | --- | --- |
-| Output | 1-8 | standard, zero-rated, exempt, total, output VAT, NHIL, GETFund, total output |
-| Input | 10-15 | local purchases, imports, total input VAT 15%, capital goods, overheads, resale |
-| Net | 16-21 | net VAT, net NHIL, net GETFund, credit b/f, withholding credits, net payable |
+The prescribed 2026 return and its box mapping have not been verified. GRA's imports page directs eligible import VAT to box 17, whilst the earlier draft placed imports in boxes 10 to 15. That conflict is unresolved; do not use the earlier mapping to file. GRA's reform guidance also specifies a separate monthly imported-services return. Check the current prescribed form and instructions before filing. _(GRA, VAT on Imports and Exports and VAT reform guidance, checked 11 November 2026 — https://gra.gov.gh/domestic-tax/tax-types/vat-on-imports-and-exports/ ; https://gra.gov.gh/domestic-tax/tax-types/vat/)_
 
 ## Section 7 -- Reverse charge and withholding VAT
 
-- **Reverse charge on non-resident services** — Reverse charge: non-resident services. Self-assess VAT 15% + NHIL 2.5% + GETFund 2.5%. Under Act 1151, all recoverable. Net zero.  _(Act 1151)_
+- **Imported services** — GRA's 2026 guidance applies VAT 15%, NHIL 2.5% and GETFund 2.5% to imported services unless exempt under Act 1151 or its regulations. It says VAT-registered persons account for the levies on a monthly imported-services return. Establish liability and any exemption separately from input-deduction eligibility. Automatic full recovery or a net-zero result is not established; the statutory conditions remain under review. _(GRA, VAT reform guidance, checked 11 November 2026 — https://gra.gov.gh/domestic-tax/tax-types/vat/)_
 - **Withholding VAT rate** — 7% of the taxable output value of standard-rated supplies, withheld by an appointed VAT withholding agent at the time of payment, with a Withholding VAT Credit Certificate issued to the supplier; the agent files and pays by the 15th of the following month, and a failure to withhold and remit costs the tax plus a 30% penalty. GRA's VAT Withholding page, written before the 2026 reform, describes the base as the taxable value inclusive of NHIL and GETFund; confirm the base for 2026 supplies with GRA  _(Value Added Tax Act, 2025 (Act 1151), ss 55 to 57 — https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf ; GRA, VAT Withholding — https://gra.gov.gh/domestic-tax/tax-types/vat-withholding/)_
 
 ## Section 8 -- Deductibility and blocked input
 
 - **Blocked input items** — No input tax on motor vehicles or vehicle spare parts unless the business deals in or hires motor vehicles or sells spare parts; on entertainment, including restaurant, meals and hotel expenses, unless the business provides entertainment; or on club, association or society subscriptions of a sporting, social or recreational nature. Mixed business and private use is restricted to the business part  _(Value Added Tax Act, 2025 (Act 1151), s 50 — https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf)_
-- **NHIL/GETFund recoverability under Act 1151** — Under Act 1151: NHIL and GETFund on inputs ARE recoverable.  _(Act 1151)_
+- **NHIL/GETFund input deductions** — GRA's 2026 reform guidance says VAT-registered taxpayers can claim NHIL and GETFund charged on purchases as input tax. That does not establish that every purchase or imported service is fully deductible. Registration, taxable use, evidence and applicable restrictions must be checked. For imports, GRA requires a valid customs entry, assessment notice and relevant tax invoices and limits recovery where supplies are exempt. Exact Act 1151 conditions and the current return remain under review. _(GRA, VAT reform guidance and VAT on Imports and Exports, checked 11 November 2026 — https://gra.gov.gh/domestic-tax/tax-types/vat/ ; https://gra.gov.gh/domestic-tax/tax-types/vat-on-imports-and-exports/)_
 - **Partial exemption** — Input tax directly attributable to taxable supplies is deductible; unattributable input tax is apportioned by the ratio of taxable to total supplies under the Fifth Schedule formula. Below 5% taxable supplies no input tax is deductible for the period; above 95% all of it is  _(Value Added Tax Act, 2025 (Act 1151), s 52 — https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf)_
 
 ## Section 9 -- Filing, deadlines, and penalties
@@ -108,7 +102,7 @@ Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- SaaS.** Reverse charge all three components. Net zero under Act 1151.
+**EC1 -- SaaS.** Check whether the transaction is a taxable imported service, any exemption and the required return. Establish deduction eligibility separately; do not assume full recovery or net zero.
 **EC2 -- Former flat rate business.** Now standard 15% + levies.
 **EC3 -- Withholding VAT.** 7% of the taxable value of the supply (s 56), not 7% of the VAT.
 **EC4 -- Cocoa export.** Zero-rated. All input recoverable. Excess credit from exports is refundable where exports exceed 25% of total supplies for the period and the export proceeds have been repatriated (s 53(1)(b)); otherwise it is carried as a credit.
@@ -117,8 +111,8 @@ Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund
 **EC7 -- Motor vehicle.** Blocked unless the business deals in or hires motor vehicles (s 50(1)).
 
 **Test 1** -- GHS 10K sale. VAT 1.5K, NHIL 250, GETFund 250. Total 2K.
-**Test 2** -- Local purchase GHS 2K + VAT 300 + NHIL 50 + GETFund 50. All recoverable under Act 1151.
-**Test 3** -- UK services GHS 5K. Self-assess 750+125+125. Claim all. Net zero.
+**Test 2** -- Local purchase GHS 2K + VAT 300 + NHIL 50 + GETFund 50. Charged tax and levies total GHS 400; the allowable input claim depends on deduction eligibility.
+**Test 3** -- If a GHS 5K imported service is taxable on the stated base, VAT 750 + NHIL 125 + GETFund 125 totals GHS 1,000. This arithmetic establishes neither liability nor an input credit. Check exemption, liability, reporting and deduction conditions; do not assume net zero.
 **Test 4** -- Export GHS 50K. Zero-rated.
 **Test 5** -- Flat rate transition. Now standard regime.
 **Test 6** -- Govt pays GHS 20K + VAT 3K. Withholding 7% of 20K = 1,400.
