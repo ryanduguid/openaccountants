@@ -149,6 +149,8 @@ class DividendSubstitutionSharePlanTest(unittest.TestCase):
         line = marked_line(self, AU / "au-dssp.md", "| Cost reconciliation, derived from those inputs |")
         parts = re.findall(r"(\d+) × \$([\d.]+) = \$([\d,]+)", line)
         self.assertEqual(len(parts), 2, "original and bonus shares each need a product")
+        self.assertEqual([Decimal(quantity) for quantity, _, _ in parts], [original, bonus])
+        self.assertEqual([Decimal(price) for _, price, _ in parts], [per_share, per_share])
         for quantity, price, amount in parts:
             self.assertEqual(Decimal(quantity) * Decimal(price), Decimal(amount.replace(",", "")))
         combined = Decimal(re.search(r"combined: \$([\d,]+)", line)[1].replace(",", ""))

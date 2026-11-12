@@ -90,11 +90,11 @@ All examples are fabricated. No real client data or Xero connection is used.
 
 The contract was adapted from Ryan Duguid's independently authored
 [div7a-loan-review](https://github.com/ryanduguid/australian-accounting/tree/main/packages/div7a-loan-review)
-at revision `55a037cd90fc29aa7ad5799b37c3c55066464f25`. This JavaScript implementation fits the
+at revision `55a037cd90fc29aa7ad5799b37c3c55066464f25`, licensed Apache-2.0 at that revision. This JavaScript implementation fits the
 existing embeddable calculator format without introducing a separate runtime or dependencies.
 The source engine's nearest-cent estimate is retained; the upward payment target is an additional
-precaution against a rounded-down estimate. Code: AGPL-3.0-only; figures and wording: OA Guide
-License v1.0, following this repository's licensing policy.
+precaution against a rounded-down estimate. Code and this README: AGPL-3.0-only;
+`rules.json`: OA Guide License v1.0, following this repository's licensing policy.
 
 General reference and computational support only. Obtain qualified professional review before
 filing, paying or relying on any result.

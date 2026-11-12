@@ -38,3 +38,20 @@ path = [
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Glimpse Ltd and Open Accountants contributors"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+# --- Ryan Duguid's calculator contribution; match the files' own notices ---
+[[annotations]]
+path = [
+  "calculators/au-div7a-repayment/index.mjs",
+  "calculators/au-div7a-repayment/index.test.mjs",
+  "calculators/au-div7a-repayment/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-div7a-repayment/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
