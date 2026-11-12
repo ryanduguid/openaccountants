@@ -6,7 +6,7 @@ description: >
   student-loan calculations, tailored certificates, recovery notices, child support
   and selected court-attachment calculations,
   the ACC earners' levy, selected KiwiSaver enrolment, base, notice and refund administration, employer contributions, ESCT,
-  payday filing, payment schedules and payroll records. Trigger on NZ payroll,
+  payday filing, selected correction/penalty rules, payment schedules and tax records. Trigger on NZ payroll,
   PAYE, payday filing, KiwiSaver employer contributions, ESCT and employer
   deductions. Distinguishes the electronic filing threshold from the large
   employer payment threshold. Requires actual pay dates, employee declarations
@@ -18,13 +18,13 @@ tax_year: 2026
 tax_year_notes: "Ordinary payroll paid 1 April 2026 to 31 March 2027; separate filing and payment rules checked 12 November 2026"
 tier: 2
 last_updated: 2026-11-12
-version: 0.5
+version: 0.6
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.5
+# New Zealand employer payroll v0.6
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -310,7 +310,53 @@ The [payment web page][S16] says 'more than' $500,000, leaving equality unclear;
 
 Reconcile PAYE, student loans, child support, employee KiwiSaver, net employer KiwiSaver and ESCT separately before making the combined **EMP** payment. Confirm the employer account, period and reference. Other arrears notices can require a separate payment process; do not assume every withheld amount belongs in ordinary employment information or the same payment. Filing an employment-information return does not itself pay the liability. [S12], [S13], [S16]
 
-Keep wagebook information, PAYE payment records, employee declarations and applicable Inland Revenue notices/certificates. [The PAYE records page][S17] identifies the required record types. This guide does not establish all employment-record retention periods, payslip obligations or employment-law records.
+### Correcting employment information
+
+Identify the employee, actual payday, original filed figures, correct figures and reason for the error before choosing a correction. In myIR, amend the relevant employment-information return; add or remove the employee where needed, then check and submit the amendment declaration. **Do not resubmit the entire original return.** A file accepted with a warning is not proof that employee details or amounts are correct. From 12 September 2026, employee-details (ED) files submitted in myIR show additional warnings, which must be acknowledged before submission but can be acknowledged without first correcting the details; gateway filing is unchanged. Resolve the underlying facts rather than treating acknowledgement as validation. [S51], [S52]
+
+The **2019 correction regulations**, consolidated as at 30 March 2026, distinguish these errors. Correct an error as soon as reasonably practicable after becoming aware of it; the notification routes below use regulation 10 and the Commissioner's applicable notification process. [S53]
+
+| Established error | Selected correction route and limit |
+|---|---|
+| Payroll overpayment under regulation 4, repaid or repayable under an agreement | Notify Inland Revenue or net the relevant excess gross pay, tax, employer KiwiSaver and ESCT amounts against later employment information. Treat an agreed repayable amount as repaid for this purpose. Commissioner permission is needed if netting would produce a negative reported amount. |
+| Agreement used for a correction, then breached without remedy within 2 months, or future compliance no longer expected | Revisit the correction. Regulation 4(5) requires an upwards adjustment for an established unrepaid PAYE income overpayment; amounts outside that definition use notification under 4(6). Do not leave a correction based on an agreement that has failed. |
+| Other incorrect PAYE income calculation under regulation 5, or income-tax/ACC calculation under regulation 6 | Notify Inland Revenue, net an excess against a later payday, or carry a shortfall only within the conditions below. Netting that produces a negative reported amount needs Commissioner permission. |
+| Independently miscalculated child support, employee/employer KiwiSaver, student loan or ESCT under regulation 7 | Notify Inland Revenue. Do not automatically use the later-payday income-tax/ACC shortfall route. Where the error arose from an incorrect income calculation, first distinguish regulations 4 and 5. |
+| Reporting-only error under regulation 8 | Notify Inland Revenue, even if the pay and deduction calculations were correct. |
+
+For the shortfall option in regulations 5(2)(c) and 6(2)(c), there must be a combined income-tax and ACC withholding shortfall **strictly less than 10%** of the employee's combined income-tax and ACC withholding for the later payday. Exclude amounts attributable to earlier paydays and to the correction itself from that comparison base. Equality at 10% does not qualify for this option; use an available notification route instead. The test is not 10% of gross wages, all deductions or the later total after adding the correction. [S53]
+
+Regulation 4 excludes an agreed and lawful reduction of a later PAYE income payment by the overpayment under 4(8). Benefit/grant and recoverable ACC overpayments have the distinct rule in 4(9)-(10). Establish the facts and the employee's lawful repayment arrangement before applying a method; this guide does not authorise recovery from wages. Regulation 11 excludes errors attributable to the employee's failure to comply with the notified-tax-code rules. Do not treat that exclusion as permission to retain an incorrect code. [S53]
+
+IRD's operational amendment page describes an ordinary **4-year** window from sending the original return and says older child-support amendments use IR344/contact with Inland Revenue. That is not an exhaustive account of the Commissioner's assessment powers. In the TAA copy dated 1 October 2026, section 108AC includes a student-loan exception where not amending would significantly adversely affect the borrower, as well as fraud/wilful-misleading exceptions; section 108AB deals separately with KiwiSaver increases. Section 108(1C) uses the end of the relevant return-provision period, and section 108B permits prescribed, timely waivers for listed bars. Section 113 is a Commissioner power, not an employer entitlement to make any old amendment. Refer older or exceptional cases for Inland Revenue's decision rather than automatically refusing or processing them. The general small-error thresholds in section 113A do **not** supply a PAYE shortcut: that section excludes ancillary taxes other than FBT. [S51], [S54], [S55], [S56], [S57], [S58], [S59]
+
+### Keeping tax records
+
+Keep wagebook information, PAYE payment records, IR330/IR330C declarations, tax-code/rate letters, relevant written agreements and exemption/tailored certificates. IR335 also lists KiwiSaver forms. Keep sufficient supporting records to explain the amounts filed and paid. [S17], [IR335, page 7][S13]
+
+For the business tax records within **TAA section 22**, the ordinary minimum runs for **7 years after the end of the income year** to which they relate. A notice issued before that period expires may extend retention by up to 3 years for an audit, investigation or intended audit/investigation. Keep records in English or te reo Māori unless another language is approved. Keep them in New Zealand unless the taxpayer or an approved provider has the relevant authorisation; offshore cloud storage is not automatically authorised. Check the authorisation's scope and conditions. Other employment, holiday-pay, privacy, KiwiSaver and litigation requirements may use different periods or require longer retention. This is not a deletion instruction or a complete employment-records schedule. [S60], [S61]
+
+### Filing penalties
+
+Late employment information and an unpaid deduction are separate defaults. For employment information, the selected rules in **TAA section 139A** and IRD's current guidance provide a warning process after a clean preceding 12 months, then a further late filing within the following 12 months can attract **$250 for the month**, regardless of the number of late payday filings in that month. Check the actual warning, filing history and penalty notice. Do not import the ordinary annual-return 30-day advance warning into payday filing. The EI late-filing penalty is due **30 days after the end of the month in which the information was required**, under section 142(1A). [S62], [S63], [S64], [S65]
+
+For non-electronic filing, first establish that electronic delivery was required and that no applicable exemption authorises another method. Section 139AA(4) sets the monthly maximum at the greater of **$250 or $1 per affected employee** whose information was not supplied in the prescribed format/manner during that month. Count the employees affected by that default, not automatically the employer's entire workforce. IR335 and the late-filing web summary abbreviate this as each person employed; the statutory affected-employee wording controls this distinction. Section 142G makes this EI penalty due 30 days after the end of the month in which the information was required. Do not multiply the monthly maximum by the number of offending payday returns. [S62], [S66], [S67]
+
+SPS19/04 is dated 30 May 2019. Its initial education stage was expressed as transitional while payday filing was new, so this guide does not promise another education-only default in 2026. Its historical statutory appendix is not the current consolidated Act. Check an actual penalty and any available reversal/remission with Inland Revenue. [S63]
+
+### Late payment and non-payment penalties
+
+For an established ordinary employer PAYE tax debt, **TAA section 139B** provides an initial **1%** charge on the unpaid tax the day after the due date and a further **4%** on the remaining tax-to-pay at the specified seventh-day point. The latter base includes unpaid late-payment penalties. Incremental **1% monthly** charges can then apply on the statutory dates; determine those dates under the section rather than assuming every month has the same number of days. Payments and statutory relief can alter the base or prevent a charge. The section's unpaid-tax definition excludes both late-payment penalties and the section 141ED non-payment penalty, while its tax-to-pay definition adds unpaid late-payment penalties. Do not compound all tax, penalties and interest together. [S68], [S69]
+
+The section 183F small-debt exemption is **$100 or less**, including exactly $100; IR335's 'less than $100' wording omits that equality. Its late-payment and interest limbs test the amount outstanding after the due date. The section's non-payment-penalty limb instead tests the unpaid amount on the day before the Commissioner's section 141ED(1)(b) notice. Those are different tests and dates. Do not infer a blanket lifetime exemption for an account that once had a $100 balance. [S70]
+
+A good payment history is not permission to invent a later due date: the section 139B grace process requires the Commissioner's notice and its conditions. Under **section 139BA**, a qualifying relief request before default leaves the 1% initial charge but can prevent the 4% charge; a request on or after default affects incremental penalties from the request. If relief is refused or the statutory response period expires, penalties may be reinstated retrospectively. An arrangement must be complied with; merely asking for relief does not cancel tax or interest. These selected ordinary PAYE rules do not establish child-support penalties or every EMP component's separate statutory treatment. [S68], [S69], [S71]
+
+**Section 141ED non-payment penalties** require the established statutory debt, filed employment information, non-payment and the Commissioner's warning/notice process. For the ordinary PAYE amount required under section RD 4(1), the first penalty date is the date of the Commissioner's notice itself and subsequent dates are at 1-month intervals under the section. The usual penalty is **10% of the required amount still unpaid on the day before the penalty date**. It is not 10% of the combined tax, late-payment penalties and interest. A variation or correction made from filing through the day before the penalty date changes the required-amount base. [S72]
+
+The rate for that penalty can reduce to **5%** when payment or a qualifying instalment arrangement occurs after the penalty date and before the day that is 1 month after it, subject to the prior-agreement condition. Negotiating an instalment arrangement, a compliant arrangement made before the penalty date and specified receivership/liquidation cases have separate exceptions. The aggregate section 141ED penalty is capped at **150% of the required amount unpaid when the first penalty was imposed**. Payments are applied to the non-payment penalty before the required amount. Check the actual notices, correction, payment allocation, arrangement dates and compliance before calculating; do not automatically apply this RD 4 rule to every student-loan, KiwiSaver, child-support or ESCT balance. Non-resident cross-border exceptions and those separate streams require further checks. [S72]
+
+Use the current Inland Revenue account and applicable interest rules/rates for any actual balance. This guide does not calculate use-of-money interest, collection costs, criminal or other shortfall penalties, or the complete remission regime. Under the selected **section 183A** reasonable-cause rule, Inland Revenue may remit listed penalties where its conditions are met, including correction as soon as practicable after a beyond-control event. Financial position alone is excluded as a reasonable-cause ground, and an agent's omission is not automatically an excuse. An application is not a favourable decision. Keep the decision and its conditions. [S73]
 
 ## Section 6 -- Conditional worked checks
 
@@ -1224,11 +1270,224 @@ expected:
   reconciled: 70
 ```
 
+**Case 47: repaid overpayment netted without negative figures.** Assume regulation 4 applies, repayment is established and each excess amount is supported. Later ordinary gross pay is $1,000 and its correctly calculated PAYE is $180; net the $300 excess gross and $90 excess PAYE from the earlier overpayment. This is an employment-information adjustment, not a new tax-rate calculation or authority to recover wages. [S53]
+
+```oa-check
+name: nz-2026-repaid-overpayment-netting
+tolerance: 0
+inputs:
+  later_gross: 1000
+  later_paye: 180
+  excess_gross: 300
+  excess_paye: 90
+steps:
+  reported_gross: later_gross - excess_gross
+  reported_paye: later_paye - excess_paye
+expected:
+  reported_gross: 700
+  reported_paye: 90
+```
+
+**Case 48: shortfall below the strict carry-forward limit.** Assume regulation 6 applies and the combined later income-tax/ACC withholding, excluding earlier amounts and the correction, is $100. A $9 shortfall is below the $10 limit, leaving a $1 margin. Only on those established facts is the later-payday option available. [S53]
+
+```oa-check
+name: nz-2026-correction-below-ten-percent
+tolerance: 0
+inputs:
+  later_withholding: 100
+  shortfall: 9
+steps:
+  limit: later_withholding * 0.10
+  margin: limit - shortfall
+  reported_withholding: later_withholding + shortfall
+expected:
+  limit: 10
+  margin: 1
+  reported_withholding: 109
+```
+
+**Case 49: equality fails the shortfall option.** On the same established $100 comparison base, a $10 shortfall reaches the limit. The zero margin means it is not strictly below 10%; use the available notification route, rather than treating equality as permission to carry forward. [S53]
+
+```oa-check
+name: nz-2026-correction-at-ten-percent
+tolerance: 0
+inputs:
+  later_withholding: 100
+  shortfall: 10
+steps:
+  limit: later_withholding * 0.10
+  margin: limit - shortfall
+expected:
+  limit: 10
+  margin: 0
+```
+
+**Case 50: affected employees below the filing minimum.** Assume electronic filing was required, no exemption applies and the monthly penalty is properly imposed. Of 500 employees, only 200 have employment information supplied in the wrong format. Section 139AA uses those 200 affected employees, subject to the $250 monthly maximum calculation floor, not $500 for all staff. [S66]
+
+```oa-check
+name: nz-2026-non-electronic-affected-below
+tolerance: 0
+inputs:
+  affected_employees: 200
+  per_employee: 1
+  minimum: 250
+steps:
+  employee_amount: affected_employees * per_employee
+  monthly_maximum: max(minimum, employee_amount)
+expected:
+  employee_amount: 200
+  monthly_maximum: 250
+```
+
+**Case 51: affected employees above the filing minimum.** On the same established liability conditions, 300 affected employees produce a $300 monthly maximum. Additional offending payday returns do not each create another monthly maximum. [S66]
+
+```oa-check
+name: nz-2026-non-electronic-affected-above
+tolerance: 0
+inputs:
+  affected_employees: 300
+  per_employee: 1
+  minimum: 250
+steps:
+  employee_amount: affected_employees * per_employee
+  monthly_maximum: max(minimum, employee_amount)
+expected:
+  employee_amount: 300
+  monthly_maximum: 300
+```
+
+**Case 52: sequential late-payment bases.** Assume $10,000 ordinary PAYE tax remains wholly unpaid at each relevant date, no exemption/grace/relief applies and a statutory monthly charge date has been established. Calculate the initial 1%, the further 4% including the unpaid initial charge and then a 1% incremental charge. Exclude interest and non-payment penalties from these balances. This example does not compute calendar dates. [S68]
+
+```oa-check
+name: nz-2026-late-payment-sequential-bases
+tolerance: 0
+inputs:
+  unpaid_tax: 10000
+steps:
+  first_penalty: unpaid_tax * 0.01
+  seventh_day_base: unpaid_tax + first_penalty
+  second_penalty: seventh_day_base * 0.04
+  monthly_base: seventh_day_base + second_penalty
+  monthly_penalty: monthly_base * 0.01
+  balance: monthly_base + monthly_penalty
+expected:
+  first_penalty: 100
+  seventh_day_base: 10100
+  second_penalty: 404
+  monthly_base: 10504
+  monthly_penalty: 105.04
+  balance: 10609.04
+```
+
+**Case 53: qualifying relief requested before default.** Assume an eligible pre-default section 139BA request, relief granted and its conditions maintained. For $10,000 unpaid tax, the initial 1% remains; the further 4% is not added in these circumstances. This does not waive interest or model refusal and retrospective reinstatement. [S71]
+
+```oa-check
+name: nz-2026-pre-default-relief-initial
+tolerance: 0
+inputs:
+  unpaid_tax: 10000
+steps:
+  initial_penalty: unpaid_tax * 0.01
+  tax_and_initial: unpaid_tax + initial_penalty
+expected:
+  initial_penalty: 100
+  tax_and_initial: 10100
+```
+
+**Case 54: non-payment uses unpaid required tax.** Assume section 141ED applies after the actual warning/notice process and $10,000 is the unpaid required amount on the day before the penalty date. Separate $504 late-payment penalties do not increase this 10% base. The resulting non-payment penalty is $1,000. [S72]
+
+```oa-check
+name: nz-2026-non-payment-separate-base
+tolerance: 0
+inputs:
+  unpaid_required: 10000
+  late_payment_penalties: 504
+steps:
+  non_payment_penalty: unpaid_required * 0.10
+  combined_excluding_interest: unpaid_required + late_payment_penalties + non_payment_penalty
+expected:
+  non_payment_penalty: 1000
+  combined_excluding_interest: 11504
+```
+
+**Case 55: timely settlement reduces that penalty.** Assume the section 141ED conditions for a reduction are satisfied, including settlement or a qualifying arrangement after the penalty date and before the day 1 month after it, with no disqualifying prior agreement. The $1,000 penalty on the same $10,000 required-amount base reduces to $500; the difference is not a reduction of tax or other charges. [S72]
+
+```oa-check
+name: nz-2026-non-payment-five-percent
+tolerance: 0
+inputs:
+  original_base: 10000
+steps:
+  original_penalty: original_base * 0.10
+  reduced_penalty: original_base * 0.05
+  reduction: original_penalty - reduced_penalty
+expected:
+  original_penalty: 1000
+  reduced_penalty: 500
+  reduction: 500
+```
+
+**Case 56: aggregate non-payment cap limits the next charge.** Assume the first-penalty unpaid required amount was $10,000 and unreduced prior section 141ED penalties total $14,900. The 150% cap leaves only $100 for a proposed $1,000 next charge. Check any real correction, reduction or allocation before using this cap history. [S72]
+
+```oa-check
+name: nz-2026-non-payment-aggregate-cap
+tolerance: 0
+inputs:
+  first_unpaid: 10000
+  prior_penalties: 14900
+  proposed_penalty: 1000
+steps:
+  cap: first_unpaid * 1.50
+  remaining: max(0, cap - prior_penalties)
+  next_penalty: min(proposed_penalty, remaining)
+  total_penalties: prior_penalties + next_penalty
+expected:
+  cap: 15000
+  remaining: 100
+  next_penalty: 100
+  total_penalties: 15000
+```
+
+**Case 57: payment pays the non-payment penalty first.** Assume $1,000 non-payment penalty and $10,000 required tax, with no competing allocations, other charges or rate reduction. Apply a $1,200 payment to the penalty first under section 141ED(5C); only $200 reduces the required tax. This isolated allocation example does not decide a live mixed-debt account. [S72]
+
+```oa-check
+name: nz-2026-non-payment-allocation
+tolerance: 0
+inputs:
+  penalty_due: 1000
+  tax_due: 10000
+  payment: 1200
+steps:
+  paid_to_penalty: min(payment, penalty_due)
+  paid_to_tax: min(tax_due, max(0, payment - paid_to_penalty))
+  remaining_tax: tax_due - paid_to_tax
+expected:
+  paid_to_penalty: 1000
+  paid_to_tax: 200
+  remaining_tax: 9800
+```
+
+**Case 58: correction before the penalty date changes the base.** Assume an accepted correction before the section 141ED penalty date reduces the required amount from $10,000 by $2,000 and nothing has been paid. The applicable ordinary 10% penalty uses the corrected $8,000 base, not the original filing. Actual notice, timing, correction and any exemption remain required inputs. [S72]
+
+```oa-check
+name: nz-2026-non-payment-corrected-base
+tolerance: 0
+inputs:
+  original_required: 10000
+  accepted_reduction: 2000
+steps:
+  corrected_required: original_required - accepted_reduction
+  penalty: corrected_required * 0.10
+expected:
+  corrected_required: 8000
+  penalty: 800
+```
+
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS, schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS, schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; employment-record requirements beyond selected tax retention; older/exceptional corrections, mixed EMP debt, current interest, other shortfall/criminal penalties and full remission/collection rules. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
-Sources checked 12 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. KS4's cover says April 2026. Selected KiwiSaver Act provisions use the current copy dated 1 April 2026. The verification log records the selected native/image page scope, the surviving legacy default and conflicting sample-letter/example wording. These checks do not claim full PDF or statute review.
+Sources checked 12 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. KS4's cover says April 2026. Selected KiwiSaver Act provisions use the current copy dated 1 April 2026. The verification log records the selected native/image page scope, the surviving legacy default and conflicting sample-letter/example wording. The selected correction regulations use the 30 March 2026 consolidation. Selected TAA record, assessment and penalty provisions use the 1 October 2026 copy. Its full-Act page flags unincorporated amendments; the selected amendment-impact check is recorded in the verification log. SPS19/04 is dated 30 May 2019. Current statutory wording controls the affected-employee penalty base and inclusive $100 exemption. These checks do not claim full PDF or statute review.
 
 [S1]: https://www.ird.govt.nz/deductions "Salary and wage deductions"
 [S2]: https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf?modified=20260401012317 "2026-27 payroll specification, selected sections"
@@ -1284,6 +1543,30 @@ Sources checked 12 November 2026. Selected District Court Act sections use the c
 [S48]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/LMS1569995/ "101S Revocation of rate reduction, current copy 1 April 2026"
 [S49]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM379032/ "KiwiSaver Act section 60, current copy 1 April 2026"
 [S50]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM1233474/ "KiwiSaver Act section 101D, current copy 1 April 2026"
+
+[S51]: https://www.ird.govt.nz/employing-staff/payday-filing/filing-employment-information-electronically/amend-an-employment-information-return "Amend employment information, updated 12 August 2025"
+[S52]: https://www.ird.govt.nz/updates/news-folder/2026/upcoming-employment-information-changes "Employment-information changes from 12 September 2026"
+[S53]: https://www.legislation.govt.nz/secondary-legislation/pco-drafted/2019/62/en/latest/ "Correction of Errors in Employment Income Information Regulations 2019, current copy 30 March 2026"
+[S54]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS835657/ "Tax Administration Act section 108AC, copy 1 October 2026"
+[S55]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS674865/ "Tax Administration Act section 108AB, copy 1 October 2026"
+[S56]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM354691/ "Tax Administration Act section 108, copy 1 October 2026"
+[S57]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM354915/ "Tax Administration Act section 108B, copy 1 October 2026"
+[S58]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM354948/ "Tax Administration Act section 113, copy 1 October 2026"
+[S59]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM2669326/ "Tax Administration Act section 113A, copy 1 October 2026"
+[S60]: https://www.ird.govt.nz/records "Keeping records, updated 14 May 2026"
+[S61]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM350462/ "Tax Administration Act section 22, copy 1 October 2026"
+[S62]: https://www.ird.govt.nz/managing-my-tax/penalties-and-interest/penalties-and-debt/late-filing-penalties "Late filing penalties, updated 17 November 2025"
+[S63]: https://www.taxtechnical.ird.govt.nz/standard-practice-statements/returns-and-debt-collection/sps-1904-late-filing-penalties "SPS19/04 Late filing penalties, 30 May 2019"
+[S64]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356114/ "Tax Administration Act section 139A, copy 1 October 2026"
+[S65]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356638/ "Tax Administration Act section 142, copy 1 October 2026"
+[S66]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356131/ "Tax Administration Act section 139AA, copy 1 October 2026"
+[S67]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356681/ "Tax Administration Act section 142G, copy 1 October 2026"
+[S68]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356138/ "Tax Administration Act section 139B, copy 1 October 2026"
+[S69]: https://ird.govt.nz/late-payment-penalties "Late payment penalties, updated 5 September 2024"
+[S70]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM358771/ "Tax Administration Act section 183F, copy 1 October 2026"
+[S71]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356156/ "Tax Administration Act section 139BA, copy 1 October 2026"
+[S72]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM1191236/ "Tax Administration Act section 141ED, copy 1 October 2026"
+[S73]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM358729/ "Tax Administration Act section 183A, copy 1 October 2026"
 
 <!-- openaccountants-cta-block -->
 
