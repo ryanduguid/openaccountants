@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-12 | [Andorra minimum-wage periods and CASS supplement limits](2026-11-12-andorra-minimum-wage-cass-supplement.md) |
 | 2026-11-12 | [Andorra payroll withholding and CASS workflow](2026-11-12-andorra-payroll-cass-workflow.md) |
 | 2026-11-12 | [Selected provisions in the retrieved OHADA Code](2026-11-12-ohada-code-practice-independence.md) |
 | 2026-11-12 | [Retrieved OHADA ethics and quality tools](2026-11-12-ohada-ethics-quality-tools.md) |

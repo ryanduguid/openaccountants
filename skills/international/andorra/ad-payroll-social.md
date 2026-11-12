@@ -4,8 +4,9 @@ description: Use this skill whenever asked about Andorra payroll processing for 
 jurisdiction: AD
 category: payroll
 tax_year: 2025
-tax_year_notes: "2025 figures; selected regulations applicable from 2024 and separately labelled 2026 CASS information. Actual-period amendments remain to be reconciled."
+tax_year_notes: "2025 examples; selected withholding regulations applicable from 2024, primary 2025/2026 minimum-wage periods and separately labelled July 2026 CASS information. Actual-period amendments and special-regime eligibility remain to be reconciled."
 last_updated: 2026-11-12
+version: 0.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,17 +27,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Income tax system | IRPF (Impost sobre la Renda de les Persones Físiques); use the applicable notified/calculated withholding percentage |
 | Tax authority | Departament de Tributs i de Fronteres (DTF) |
 | Social security authority | CASS (Caixa Andorrana de Seguretat Social) |
-| Key legislation | Llei 5/2014 (IRPF); Decret 596/2023 (IRPF regulation); Llei 17/2008 (CASS framework); Decret 4/2025 (minimum wage 2025); Decret 16/2025 (average salary 2025) |
+| Key legislation | Llei 5/2014 (IRPF); Decret 596/2023 (IRPF regulation); Llei 17/2008 (CASS framework); Decrets 4/2025, 8/2026 and 253/2026 (minimum-wage periods); Decret 16/2025 (average salary 2025) |
 | Filing portal | e-tramits.ad (IRPF); cass.ad (CASS) |
 | Official language | Catalan |
 | Validated by | Pending -- requires sign-off by a qualified Andorran tax adviser (assessor fiscal) |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 -- Income Tax Withholding (IRPF)
 
 Employment withholding is a payment on account of annual IRPF. Correct withholding does not itself exempt an employee from an annual return: the government FAQ includes residents with gross employment/property income of at least €24,000 amongst those required to file. See Section 9.4. [Government IRPF FAQ](https://www.e-tramits.ad/tramits/impostos/irpf).
 
-**Source and period boundary, checked 12 November 2026:** the selected IRPF provisions below are from Decret 596/2023, published on 2 January 2024, effective on publication and applicable to tax periods starting from 1 January 2024. The selected IRNR provisions are from Decret 594/2023 in the same issue. These captures do not establish that all later amendments have been reconciled. The guide remains a tier 2 draft pending professional review. The annual tax, deduction, savings, capital-gains, treaty and 2025 minimum-wage material outside this selected payroll reconciliation still needs actual-period primary-law checks; do not use it to infer a current payroll rate.
+**Source and period boundary, checked 12 November 2026:** the selected IRPF provisions below are from Decret 596/2023, published on 2 January 2024, effective on publication and applicable to tax periods starting from 1 January 2024. The selected IRNR provisions are from Decret 594/2023 in the same issue. These captures do not establish that all later amendments have been reconciled. The guide remains a tier 2 draft pending professional review. Annual tax, deduction, savings, capital-gains and treaty material still needs actual-period primary-law checks; do not use it to infer a current payroll rate. Section 5 separately reconciles the selected 2025/2026 minimum-wage decrees.
 
 ### 2.1 Statutory IRPF Rate Structure (Annual General Base)
 
@@ -151,26 +152,37 @@ The salaried contribution base is qualifying global remuneration, rather than ne
 
 [CASS salaried contribution guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions).
 
-**Separate 2026 Article 99 supplement, not a general employer contribution floor:** CASS's 2 February 2026 factsheet describes an employee-funded supplement for General Branch benefit rights where the aggregate monthly salaried contribution base is below the official minimum wage, €1,525.33 for 2026. For an eligible ordinary case, the supplement is 10% of the difference between that minimum and gross global salary. It is not 22%, and does not automatically increase the ordinary employer payroll base.
+### 4.5 Separate Article 99 Employee Supplement
 
-The factsheet excludes people affiliated to the specified special regimes, including qualifying students/high-performance athletes aged 25–30 and qualifying low-paid employees insured indirectly. Age or low pay alone does not establish an exception. Registration uses CASS-0087, effective from presentation until cancellation; monthly declaration/payment is online with a digital certificate on days 1–15 of the following month. A zero declaration is required when the salary reaches the minimum or the person is temporarily incapacitated for the entire month. All salaried jobs count together. For partial-month registration, partial-month incapacity or benefits in kind, obtain the actual amount from CASS rather than applying the simple difference formula.
+For General Branch benefit rights, Article 99 of Llei 17/2008 requires the global monthly contribution base to reach the official minimum, subject to the specified special regimes and regulatory conditions. The replacement text is in [Llei 18/2014, article 25](https://portaljuridicandorra.ad/L2014018). Under [the contribution/collection regulation, article 19](https://portaljuridicandorra.ad/DR20150527A), the employee declares and pays a separate supplement at **10% of the shortfall**, for the General Branch only. Aggregate all salaried jobs. A person entitled to General Branch benefits for a reason other than their salary contributions is not required to supplement under article 19(3). Confirm that entitlement before applying the exception.
 
-The factsheet explicitly says it is informational and has no legal validity; the published BOPA law controls. This selected 2026 information does not establish the supplement's rules or threshold for 2025 or another year. [CASS Article 99 informational factsheet, pages 1–2](https://www.cass.ad/sites/default/files/arxius/CASS_COMPLEMENT%20ART99%20ASS%20fitxa%2002-02-2026.pdf).
+This supplement does not automatically increase the employer's ordinary payroll base, is not a 22% charge and is not automatically deducted through the cash-pay worksheet. Confirm the employee's actual eligibility, affiliation and relevant month's threshold first.
+
+**Period-specific CASS instructions:** the [9 July 2026 informational factsheet, pages 1–2](https://www.cass.ad/sites/default/files/arxius/CASS_COMPLEMENT%20ART99%20ASS%20fitxa%2009-07-2026.pdf) uses **€1,568.67 from 1 July 2026**. Section 5 gives €1,525.33 for January–June 2026; do not use either amount for the whole year. The factsheet says:
+
+- Register using CASS-0087, effective from presentation until cancellation. Declare/pay online with a digital certificate on days 1–15 of the following month.
+- Make a zero declaration when salary reaches the minimum or temporary incapacity lasts the entire month. Aggregate all salaried jobs.
+- Ask CASS for the actual amount for partial-month registration, partial-month incapacity or benefits in kind rather than applying the simple shortfall formula.
+
+The factsheet expressly has **no legal validity**; published BOPA law controls. It identifies exceptions for people affiliated to the specified regimes, including qualifying students/high-performance athletes aged 25–30 and qualifying indirectly insured low-paid employees. Age or low pay alone does not establish eligibility.
+
+**Eligibility/source conflict:** [Llei 4/2022, final provision 6(15)](https://www.portaljuridicandorra.ad/L2022004_0) requires voluntary admission to the 25–30 regime, inability to register as indirectly insured, recognised studies or recognised high-performance-athlete status, no regular work and no self-employed activity. For article 224, [Llei 1/2024, final provision 4(10)](https://www.portaljuridicandorra.ad/L2024001_0) specifies part-time employment, indirect-insurance status and no concurrent economic/professional self-employed activity under article 19. Its reproduced eligibility paragraph omits the below-minimum wording present in its title. The [CASS web page](https://www.cass.ad/complement-de-salari) instead says these low-paid workers are **not** indirectly insured, contrary to the July factsheet. Do not resolve those discrepancies by silently changing a negation or granting an exemption. Obtain the applicable BOPA text and CASS confirmation of the person's regime before relying on article 224.
+
+The legal copies above establish selected provisions, not a complete amendment chain. Llei 18/2014's final provision 3 commences it on the first day of the month after 6 months from publication; Llei 4/2022 and Llei 1/2024 generally commence the day after publication, with specified exceptions. Their BOPA publication identities/dates and any relevant later corrections remain to be reconciled before determining an individual's actual-period entitlement.
 
 ## Section 5 -- Minimum Wage (Salari Mínim Interprofessional)
 
-**Minimum Wage 2025 Table**  _(Summit Advisors; Auge Legal & Fiscal)_
+The published decrees fix the following hourly amounts and monthly equivalents for a 40-hour week (hourly rate × 40 × 52 ÷ 12, rounded to cents). Financial effect can precede publication and legal commencement.
 
-| Metric | 2025 Figure |
-| --- | --- |
-| Hourly rate | €8.35 |
-| Monthly rate (40-hour week) | €1,447.33 |
-| Annual rate (×12) | €17,367.96 |
-| Effective date | 1 January 2025 |
-| Increase vs. 2024 | +5.2% |
-| Legal instrument | Decret 4/2025 |
+| Financial effect period | Hourly minimum | Monthly equivalent | Published BOPA instrument | Publication / commencement |
+| --- | --- | --- | --- | --- |
+| From 1 January 2025, for 2025 | €8.35 | €1,447.33 | [Decret 4/2025, sole article](https://www.bopa.ad/Documents/Detall?doc=GD_2025_01_15_12_19_56) | 16 January 2025 / 17 January 2025 |
+| 1 January–30 June 2026 | €8.80 | €1,525.33 | [Decret 8/2026, sole article](https://www.bopa.ad/Documents/Detall?doc=GD_2026_01_14_12_20_08) | 15 January 2026 / 16 January 2026 |
+| From 1 July 2026 | €9.05 | €1,568.67 | [Decret 253/2026, articles 1–3](https://www.bopa.ad/Documents/Detall?doc=GD_2026_07_02_14_45_22) | 8 July 2026 / 8 July 2026 |
 
-- **2026 minimum wage (for reference)** — €8.80/hour and €1,525.33/month effective 1 January 2026  _(Playroll)_
+Decret 253/2026 gives financial effect from 1 July, requires employers to adjust salaries below the new minimum and repeals the conflicting Decret 8/2026 amount from that effect date. Use its fixed €9.05 amount; do not substitute an unrounded percentage calculation. These are the selected instruments checked on 12 November 2026, not a guarantee against a later change.
+
+The 2025 example's €17,367.96 is 12 payments of the rounded €1,447.33 monthly equivalent. It is an arithmetic illustration, not a separately prescribed annual minimum. Confirm hours, the actual period and any other applicable labour rules before declaring compliance; a social-contribution supplement does not itself cure underpayment of wages.
 
 ## Section 6 -- Processing Inputs and Defaults
 
@@ -182,9 +194,9 @@ The factsheet explicitly says it is informational and has no legal validity; the
 | Tax residence and special regime | Confirm before choosing IRPF/IRNR treatment; no default residence assumption |
 | Personal deductions | Use the declarations and prescribed procedure; do not replace a notified rate with a guessed adjustment |
 | Pay frequency and currency | Confirm the actual payment period; the cash examples use monthly EUR pay |
-| Low-paid employee supplement | Assess separately under the applicable year's Article 99 rules, including aggregation and special-regime conditions |
+| Low-paid employee supplement | Assess separately under the applicable month's Article 99 rules, aggregate salaries, other benefit entitlement and confirmed special-regime conditions |
 
-Sources: [IRPF regulation, articles 24–27](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49), [CASS salaried guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions) and the separately labelled 2026 factsheet in Section 4.4.
+Sources: [IRPF regulation, articles 24–27](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49), [CASS salaried guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions) and the legal/factsheet sources and their limits in Sections 4.5 and 5.
 
 ## Section 7 -- Required Inputs
 
@@ -307,7 +319,7 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 
 These are cash-only arithmetic illustrations using equal monthly pay, separately assumed withholding percentages and a CASS contribution base equal to the stated gross. They do not derive a rate from salary, establish an actual DTF notice or cover in-kind benefits, treaty elections or an Article 99 supplement. The 2025 wage illustration does not establish a current minimum wage. Round each deduction/contribution to cents, then reconcile net pay.
 
-### Example 1 -- Minimum Wage Employee (Resident, No Personal Deductions)
+### Example 1 -- 2025 Minimum Wage Employee (Resident, No Personal Deductions)
 
 **Example 1 table**  _(Decret 4/2025)_
 
@@ -320,7 +332,7 @@ These are cash-only arithmetic illustrations using equal monthly pay, separately
 | Employer CASS (15.5%) | 1,447.33 × 15.5% | €224.34 |
 | **Total employer cost** | 1,447.33 + 224.34 | **€1,671.67** |
 
-**Profile:** Resident employee, single, no dependants, annual gross = €17,367.96 (minimum wage 2025: €1,447.33/month). *(Source: Decret 4/2025)*
+**Profile:** Resident employee, single, no dependants, illustrative annual cash gross = 12 × €1,447.33 = €17,367.96, using the rounded 2025 monthly equivalent in Section 5. This is not the 2026 minimum.
 
 ### Example 2 -- Mid-Range Salary (Resident, No Personal Deductions)
 
@@ -406,7 +418,7 @@ These processing checks do not promote the guide to accountant-reviewed tier 1.
 - Confirm the actual period, residence, income category and any special-regime election before choosing IRPF/IRNR treatment.
 - Obtain the applicable withholding percentage and effective month using Section 2.2 or the separately confirmed IRNR procedure. Do not substitute the retired salary bands or a blanket 7% cap.
 - Confirm CASS registration and the qualifying contribution base. Standard employee/employer rates are 6.5%/15.5%; the confirmed retirement-pension case uses 3%/7% General Branch only.
-- Distinguish actual cash pay, taxable employment income and the CASS base. Assess any employee-funded Article 99 supplement separately for its year.
+- Distinguish actual cash pay, taxable employment income and the CASS base. Assess any employee-funded Article 99 supplement separately for its month, confirmed eligibility and other General Branch benefit entitlement.
 - Declare and pay CASS-covered employment contributions and withholding in the monthly 1–15 window, retaining separate contribution/tax totals and payment evidence.
 - Check the actual-period minimum wage, benefits, termination treatment and any claimed special limit before approving the payroll.
 
@@ -422,13 +434,13 @@ These items involve judgement, incomplete research data, or complexity that requ
 | --- | --- |
 | Withholding notice, declarations or changed circumstances | Obtain the actual percentage, effective month and regularisation evidence; reconcile the requested period's amendments |
 | Proposed CASS ceiling or special base | Require the specific salaried-worker authority; no self-employed reference tier |
-| Low-paid or multiple-job employee | Reconcile applicable-year Article 99 law, aggregate salaries, affiliation/exceptions and any separately payable supplement |
+| Low-paid or multiple-job employee | Reconcile actual-month Article 99 law/threshold, aggregate salaries, other General Branch entitlement, affiliation and the unresolved article 224 source wording before any exemption or separate supplement |
 | Treaty or frontier/seasonal-worker claim | Verify residence, actual-period treaty/statute, election and withholding conditions; no general country list proves relief |
 | Benefits in kind or termination compensation | Reconcile tax and CASS classification/valuation separately with the relevant law |
 | Self-employed or mixed status | Keep employment payroll distinct from economic-activity obligations; no employee-rate inference from self-employed tiers |
 | Registration and online submission | Confirm current CASS affiliation steps, authenticated fields, approved DTF models and payment evidence; the published blank form is not an online walkthrough |
 | Annual close and recipient reporting | For IRPF apply Section 9.3's summary/certificate distinctions. For IRNR apply Section 3's quarterly recipient notices, certificate conditions and any ministry-requested annual summary; confirm actual campaign instructions |
-| Other guide material | Reconcile annual deductions, savings/capital gains, minimum-wage instruments, occupational coverage and IRPF/minimum-wage penalty provisions with primary law |
+| Other guide material | Reconcile annual deductions, savings/capital gains, later amendments, occupational coverage and IRPF/minimum-wage penalty provisions with primary law |
 
 The selected sources resolve several former gaps but do not complete actual-period law or practitioner sign-off.
 
@@ -471,7 +483,7 @@ FILING:
 [ ] IRPF annual summary/certificate: apply Section 9.3 and its CASS distinctions
 [ ] IRNR recipient notice: first 30 calendar days Apr/Jul/Oct/Jan for prior quarter
 [ ] IRNR certificate conditions and any requested annual summary: apply Section 3
-[ ] Any Article 99 supplement: separate applicable-year eligibility/return/payment
+[ ] Any Article 99 supplement: separate actual-month eligibility/threshold/return/payment
 ```
 
 Check: cash gross/CASS base €3,000, standard employee CASS €195 and employer CASS €465 give a CASS total of €660. With an assumed €40 tax deduction, net cash pay is €2,765 and the separate tax total is €40. The two obligations total €700; €700 is not the CASS contribution total.
@@ -538,7 +550,9 @@ Obtain separate evidence for personal declarations, treaty/special-regime claims
 | [Decret 594/2023](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_13_31_02) | Selected IRNR withholding/declaration rules; same publication issue; actual-period reconciliation remains |
 | Llei 17/2008, 3 October | Social security (CASS framework) |
 | Decret 16/2025 (29 January 2025) | Sets average global monthly salary at €2,560.99/month |
-| Decret 4/2025 | Minimum wage 2025 (+5.2% to €8.35/hour) |
+| Decrets 4/2025, 8/2026 and 253/2026 | Primary minimum-wage amounts, effect dates and commencement in Section 5 |
+| Llei 18/2014 article 25 and contribution/collection regulation article 19 | Article 99 supplement framework and employee formalities, subject to Section 4.5 limits |
+| Llei 4/2022 final provision 6(15); Llei 1/2024 final provision 4(10) | Selected special-regime qualification changes; article 224 wording conflict unresolved |
 
 ### Official Sources
 
@@ -552,7 +566,7 @@ Obtain separate evidence for personal declarations, treaty/special-regime claims
 | e-tramits IRPF forms | e-tramits.ad/tramits/ca/impostos/irpf/formularis |
 | Govern.ad IRPF FAQs | govern.ad/ca/l/4194272 |
 | Govern.ad IRNR | govern.ad/ca/tematiques/impostos-taxes-i-duana/impostos-en-andorra/impost-sobre-la-renda-dels-no-residents-fiscals-a-andorra |
-| Summit Advisors -- minimum wage 2025 | summitadvisors.ad/en/blog/2025-01-31-new-minimum-wage-in-andorra-for-2025-5-2-increase |
+| Primary minimum-wage decrees | [Government instrument index](https://www.govern.ad/fr/tematiques/ocupacio-i-treball/relacions-laborals-i-seguretat/salaris-i-festius); direct BOPA links in Section 5 |
 | Elysium Consulting -- CASS 2025 | elysiumconsultingfirm.com/en/publications/the-cass-in-andorra-contributions-coverage-and-key-facts-for-2025 |
 | Primary IRPF withholding procedure | [Decret 596/2023, articles 24–27](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49) |
 | Bloomberg Tax -- IRPF 2025 filing | news.bloombergtax.com/daily-tax-report-international/andorra-tax-agency-announces-2025-individual-income-tax-return-filing-deadline-releases-filing-guidance |
@@ -564,7 +578,7 @@ The former secondary-source country list is not an actual-period treaty check. V
 
 ## Section 18 -- Test Suite
 
-These arithmetic cases use the cash-only assumptions in Section 11 and an explicitly assumed applicable withholding rate. They test calculations after classification and rate confirmation, not legal eligibility or rate derivation. The amounts do not establish minimum-wage compliance or include any separate Article 99 supplement.
+Tests 1–6 use the cash-only assumptions in Section 11 and an explicitly assumed applicable withholding rate. They test calculations after classification and rate confirmation, not legal eligibility or rate derivation. Their amounts do not establish minimum-wage compliance or include any separate Article 99 supplement; Test 7 separately illustrates that conditional charge.
 
 **Test 1:** Employee, annual gross €20,000, resident, no deductions.
 - Assumed applicable withholding rate: 0%; not derived from annual salary
@@ -622,6 +636,15 @@ These arithmetic cases use the cash-only assumptions in Section 11 and an explic
 - Employer CASS: 13,333.33 × 15.5% = **€2,066.67**
 - Total employer cost: 13,333.33 + 2,066.67 = **€15,400.00**
 - Reconciliation: 11,533.33 + 933.33 + 866.67 = 13,333.33 ✓
+
+**Test 7: Article 99 period boundary, conditional arithmetic only.** Assume CASS has confirmed an eligible full-month employee case, aggregate salaried contribution base of €1,000, no other General Branch entitlement, no special-regime exemption, no incapacity, no benefits in kind and no partial month. This does not establish wage-law compliance or an actual person's eligibility.
+
+| Month | Confirmed monthly threshold | Separate employee supplement at 10% |
+| --- | --- | --- |
+| June 2026 | €1,525.33 | (1,525.33 − 1,000.00) × 10% = **€52.53** |
+| July 2026 | €1,568.67 | (1,568.67 − 1,000.00) × 10% = **€56.87** |
+
+Use Sections 4.5 and 5. Do not carry the June threshold into July, add employer contributions to this separate charge or treat it as an automatic payslip deduction. Missing eligibility evidence requires confirmation before calculation.
 
 ## PROHIBITIONS
 
