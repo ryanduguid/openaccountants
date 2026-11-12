@@ -2,13 +2,14 @@
 name: nz-employer-payroll
 description: >
   Use this guide for ordinary New Zealand employer payroll paid from 1 April
-  2026 to 31 March 2027. Covers ordinary PAYE and student-loan calculations,
+  2026 to 31 March 2027. Covers ordinary and selected extra-pay PAYE and
+  student-loan calculations, tailored certificates,
   the ACC earners' levy, KiwiSaver employee deductions and compulsory employer contributions, ESCT,
   payday filing, payment schedules and payroll records. Trigger on NZ payroll,
   PAYE, payday filing, KiwiSaver employer contributions, ESCT and employer
   deductions. Distinguishes the electronic filing threshold from the large
   employer payment threshold. Requires actual pay dates, employee declarations
-  and notices. Special payments, cross-border employment, leave entitlements
+  and notices. Unresolved special payments, cross-border employment, leave entitlements
   and employer ACC invoice calculations require separate checks.
 jurisdiction: NZ
 category: payroll
@@ -16,19 +17,19 @@ tax_year: 2026
 tax_year_notes: "Ordinary payroll paid 1 April 2026 to 31 March 2027; separate filing and payment rules checked 12 November 2026"
 tier: 2
 last_updated: 2026-11-12
-version: 0.2
+version: 0.3
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.2
+# New Zealand employer payroll v0.3
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
 ## Section 1 -- Scope and required inputs
 
-This guide covers ordinary salary and wages paid by a New Zealand employer in NZD during **1 April 2026 to 31 March 2027**. It provides selected tax, contribution and filing rules, not complete employment-law or whole-topic coverage. Start with [Inland Revenue's salary and wage deduction instructions][S1] and its [2026-27 payroll calculation specification][S2].
+This guide covers ordinary salary and wages and selected extra-pay calculations for a New Zealand employer in NZD during **1 April 2026 to 31 March 2027**. It provides selected tax, contribution and filing rules, not complete employment-law or whole-topic coverage. Start with [Inland Revenue's salary and wage deduction instructions][S1] and its [2026-27 payroll calculation specification][S2].
 
 Obtain the following before calculating:
 
@@ -39,7 +40,7 @@ Obtain the following before calculating:
 - For ESCT, employment start date, whether the employee worked for this employer throughout the preceding tax year and the relevant salary/wages plus gross employer superannuation contributions.
 - Annual PAYE and ESCT figures, any connected employers and the established filing and payment schedules. The $50,000 electronic filing test and $500,000 remittance test serve different purposes.
 
-An unknown classification, contribution base or notice is an input gap. Do not invent a resident tax code, a pension exemption or a flat PAYE percentage. Ordinary salary rules do not establish the treatment of contractors, non-residents, offshore employers, IR56 workers, benefits, termination/lump-sum payments or paid parental leave.
+An unknown classification, contribution base or notice is an input gap. Do not invent a resident tax code, a pension exemption or a flat PAYE percentage. Ordinary salary rules do not establish the treatment of contractors, non-residents, offshore employers, IR56 workers, benefits or paid parental leave. The selected extra-pay methods below require an established payment classification; they do not determine employment-law entitlements.
 
 ## Section 2 -- PAYE and the employee ACC levy
 
@@ -101,6 +102,60 @@ For the 2026-27 period, the specification's annual repayment threshold is **$24,
 For **M SL or ME SL**, drop gross period pay's cents, subtract the applicable period threshold and deduct **12% of a positive excess**, truncating the result to cents. The deduction is zero where there is no excess. For an ordinary **secondary SL code**, drop period cents and deduct **12% of that whole-dollar pay**, truncating to cents; there is **no second ordinary repayment threshold**. A valid special-deduction-rate certificate substitutes its specified percentage in the relevant algorithm. Keep the student-loan result separate from PAYE, and do not reduce taxable pay by it. [S2, sections 5.4 and 5.6][S2]
 
 Check the actual SL declaration and any repayment exemption, special rate or extra-deduction notice before using these ordinary rules. An unused primary-job threshold does not automatically transfer to a second job; apply for the appropriate special rate. Inland Revenue's [salary/wage student-loan page][S21] explains that distinction but labels its annual threshold as the **2026 tax year**; the dated 2026-27 specification supplies this guide's period-specific figures. Exemptions, recovery deductions and irregular or special payments need their own checks.
+
+### Tailored tax codes and student-loan certificates
+
+Use an actual Inland Revenue certificate covering the payday. Record its PAYE rate, separate student-loan rate, whether the loan threshold applies and each start/end date. For ordinary salary or wages, truncate period pay to whole dollars, multiply by the certificate's PAYE rate and truncate the deduction to cents. The quoted salary/wage PAYE rate already includes the 1.75% earners' levy; do not add it again. Calculate the loan deduction separately on the whole-dollar base: apply the certificate rate to positive income above the period threshold for main employment, or to every dollar for secondary employment, as the certificate directs. [S2, section 5.9, PDF pages 32–33][S2]
+
+A student-loan special deduction rate changes the loan calculation, not the PAYE tax code unless the certificate says so. It may allocate unused main-job threshold through a reduced secondary-job rate; the employer cannot invent that allocation. Follow each dated rate period. Do not backdate a special deduction rate or a repayment exemption. On expiry, follow the certificate's return-to-standard instructions. If a tailored PAYE certificate expires without a replacement or new declaration, revert to the previous IR330/IR330C code; if there was none, use ND until a valid declaration or certificate arrives. [S2, section 5.9.2, PDF pages 34–37][S2]
+
+A full-time student expecting income below the annual repayment threshold may qualify for a repayment deduction exemption even when an individual pay exceeds its threshold. Require the IRD exemption certificate, use its specified non-SL code only for its valid period and restore its instructed SL code when it ends. Student status alone does not authorise stopping deductions. A special loan rate does not absorb voluntary SLBOR deductions; keep them separate. IRD says it cancels SLCIR notices when granting an SDR: reconcile the actual notice trail rather than silently retaining or cancelling a recovery instruction yourself. [S2, sections 5.9.2–5.9.3][S2]
+
+### Extra pay: choose the calculation before choosing a rate
+
+Annual or special bonuses, cashed-up leave, back pay and redundancy/retiring payments can be extra pay. Overtime and regular payments are not automatically lump sums. First establish the payment's legal character, whether it relates to ending employment, the employee's code and any election for a higher rate. NSW, ND and tailored-code payments use their applicable special rate rather than the ordinary extra-pay rate table; CAE/EDW extra pay follows the primary-income method. This guide does not establish entitlement to a termination payment, ESS treatment or a contractor's schedular-payment treatment. [S22], [S23], [S24]
+
+For a **non-termination** extra payment under an ordinary primary or secondary code:
+
+1. Total regular PAYE income payments in the 4 weeks ending on the payment date, including that date but excluding all extra pays. Annualise by 13 for weekly, fortnightly or four-weekly payments and by 12 for monthly payments. An off-cycle extra payment still uses a window ending on its actual payment date. No regular payment in that window means a zero historical amount, not an assumed annual salary. Where only one prior pay period exists, use its pay amount annualised for its frequency. [S2, section 5.11][S2], [S22]
+2. For a secondary code, add the low threshold below to that annualised amount. Add zero for a primary code. Call this combined amount **B**. Add the extra pay **E** to B and truncate that grossed-up total to whole dollars **G** solely to select the tax band. Retain cents in E and B for the deduction and levy calculations. [S2, sections 5.11.1–5.11.2][S2]
+3. Select the income-tax rate below, or the employee's valid election for a higher permitted rate. Multiply the **whole extra payment**, with its cents, by that single rate. This is withholding on the extra pay, not a progressive allocation of the extra pay amongst annual bands. Do not truncate that tax component before adding the levy. [S2, section 5.11][S2], [S22]
+
+| Secondary code, with or without SL | Amount added to annualised income |
+|---|---:|
+| SB | $0 |
+| S | $15,601 |
+| SH | $53,501 |
+| ST | $78,101 |
+| SA | $180,001 |
+
+| Whole-dollar G | Income-tax rate, excluding ACC |
+|---|---:|
+| Up to $15,600 | 10.5% |
+| $15,601–$53,500 | 17.5% |
+| $53,501–$78,100 | 30% |
+| $78,101–$180,000 | 33% |
+| Above $180,000 | 39% |
+
+Sources: [S22], [S24] and [S2, section 5.11][S2]. The web tables explicitly include the first dollar of each band. Do not copy the specification's inconsistent 'greater than $15,601/$53,501/$78,101' wording and leave those boundary amounts unassigned. An employee can elect a higher 17.5%, 30%, 33% or 39% income-tax rate where applicable; establish the instruction before using it. [S2, section 5.11][S2]
+
+Calculate ACC separately. For an ordinary levy-liable extra payment, the levy base is the lesser of E and the positive amount remaining from **$156,641 minus B**. Multiply that base by **1.75%**. Thus a payment crossing the cap has levy only on the part below the cap; do not simply levy all or none because G crosses it. Redundancy payments, retiring allowances and ESS benefits are not liable for this earners' levy; establishing an ESS benefit's other treatment is outside this guide. Add the unrounded income-tax and levy components, then truncate the total to cents. These are the specified withholding calculations; they do not determine the employee's final multi-employer annual ACC position. [S2, sections 5.11–5.12][S2], [S22], [S24]
+
+For a tailored code, follow the certificate rather than the table. For a confirmed redundancy payment or retiring allowance, remove the earners' levy included in that rate and mark the earnings as not liable for ACC on the employment information. For example, a 24% certificate rate less the 2026-27 levy of 1.75 percentage points is **22.25%**. The specification's printed 22.58% example is an arithmetic error; do not use it. Resolve the actual certificate and payment classification before applying this adjustment. [S2, section 5.11, PDF pages 45 and 51][S2], [S22]
+
+### Extra pay when employment ends
+
+For payments arising from the end of employment, use the **last 2 paid regular pay periods before the period containing the extra payment**, excluding other extra pays. Skip unpaid periods and out-of-cycle payments. Do not annualise the current termination-period wage or automatically use the last 4 calendar weeks. Total the 2 paid periods and multiply by 26 for weekly, 13 for fortnightly, 6.5 for four-weekly or 6 for monthly pay. When those 2 periods have different frequencies, annualise each at its own frequency and average the 2 annual values. With only one earlier paid period, annualise that period at its frequency. If no prior period exists, resolve the applicable employee instruction and IRD method before calculating. [S2, section 5.12, PDF pages 55–64][S2], [S24]
+
+Add the secondary low threshold where applicable, then the extra payment, and use the same rate/levy steps above. Combine other extra pay paid together with termination extra pay for this calculation; do not calculate each under a different annualisation method. Keep each component's ACC character: a normal bonus does not become levy-exempt merely because it accompanies redundancy pay. These end-of-employment instructions apply to payments on or after 1 April 2025; the rates and levy amounts here are for 2026-27. [S2, section 5.12][S2], [S24]
+
+### Student loans, regular bonuses and reporting
+
+For primary M SL/ME SL extra pay, combine regular and extra taxable pay for the pay period, truncate that combined pay to whole dollars, subtract the period repayment threshold once and apply 12% to any positive excess, or the valid certificate rate. Truncate the loan deduction to cents. Do not give a second threshold if wages have already used it. When the extra pay is separate and total period pay cannot be established, apply the appropriate loan rate to the entire extra pay. Secondary SL extra pay has no ordinary threshold: truncate the relevant pay to whole dollars, apply 12% or the certificate rate and truncate to cents. Tailored codes follow the certificate's threshold instruction. Keep PAYE and loan deductions separate. [S2, sections 5.11–5.12][S2], [S23]
+
+Regular incentive/production bonuses paid with normal wages are included in normal period pay. For a monthly bonus covering several pay periods, calculate monthly PAYE on that month's wages with and without the bonus and deduct the difference. For a bonus covering several months, divide it by those months, calculate the difference between monthly PAYE with and without that monthly share, then multiply the difference by the number of months. Apply the corresponding loan method for an SL code. This is the regular-bonus method, not an annual/special lump-sum rate selection. [S2, section 5.13][S2]
+
+For an enrolled KiwiSaver employee, a confirmed redundancy payment is excluded from employee KiwiSaver deductions; do not assume the same exclusion for every other extra payment. Check the contribution base and notices separately. Report a lowest-rate extra payment using the low-rate indicator. For separate extra-pay reporting, file within 2 working days electronically or 10 working days on paper. IRD permits inclusion in the next regular electronic schedule only when reported before the relevant deduction-payment end date: month-end for monthly remitters, or the 15th/month-end for twice-monthly remitters. Record which permitted reporting route was used. [S23], [S2, section 5.11.3][S2]
 
 ## Section 3 -- KiwiSaver from 1 April 2026
 
@@ -346,13 +401,268 @@ expected:
   period_paye: 213.64
 ```
 
+**Case 10: main-job tailored certificate.** Assume a valid weekly certificate requires 20% PAYE including ACC and 8% loan deductions above $464. On $1,000.99, use the $1,000 whole-dollar base: **$200.00 PAYE** and a separate **$42.88 loan deduction**. [S2, section 5.9][S2]
+
+```oa-check
+name: nz-2026-stc-primary
+tolerance: 0
+inputs:
+  pay: 1000.99
+  paye_rate: 20
+  sl_rate: 8
+  threshold: 464
+steps:
+  base: floor(pay)
+  paye: floor(pct(base, paye_rate) * 100) / 100
+  loan: floor(pct(base - threshold, sl_rate) * 100) / 100
+expected:
+  paye: 200
+  loan: 42.88
+```
+
+**Case 11: secondary certificate has no threshold.** Assume a valid secondary certificate requires 18% PAYE including ACC and 8% loan deductions on every dollar. Weekly pay of $300.99 gives **$54.00 PAYE** and **$24.00 loan deductions** on $300. Do not subtract the primary $464 threshold. [S2, section 5.9][S2]
+
+```oa-check
+name: nz-2026-stc-secondary
+tolerance: 0
+inputs:
+  pay: 300.99
+  paye_rate: 18
+  sl_rate: 8
+steps:
+  base: floor(pay)
+  paye: floor(pct(base, paye_rate) * 100) / 100
+  loan: floor(pct(base, sl_rate) * 100) / 100
+expected:
+  paye: 54
+  loan: 24
+```
+
+**Case 12: one loan threshold for combined pay.** An M SL employee receives $400 regular weekly pay and $200.99 extra pay together. Combined pay truncates to $600; subtract $464 once. The total loan deduction for this pay is **$16.32**. No special certificate applies. [S2, section 5.11][S2], [S23]
+
+```oa-check
+name: nz-2026-extra-pay-single-sl-threshold
+tolerance: 0
+inputs:
+  wages: 400
+  extra: 200.99
+  threshold: 464
+  sl_rate: 12
+steps:
+  base: floor(wages + extra)
+  loan: floor(pct(base - threshold, sl_rate) * 100) / 100
+expected:
+  base: 600
+  loan: 16.32
+```
+
+**Case 13: bonus crosses the ACC cap.** An ordinary primary-code bonus of $30,000.56 follows $10,000 of regular payments in the relevant 4-week window. Annualised pay is $130,000; G is $160,000, selecting 33%. Only $26,641 of the bonus attracts 1.75% ACC. Retain $9,900.1848 tax and $466.2175 levy until the final cent truncation: **$10,366.40 PAYE**. The specification example prints $10,366.39 after prematurely shortening components; this case follows its explicit calculation sequence. [S2, section 5.11.1, PDF pages 47–48][S2], [S22]
+
+```oa-check
+name: nz-2026-bonus-crosses-acc-cap
+tolerance: 0
+inputs:
+  prior_four_weeks: 10000
+  extra: 30000.56
+  cap: 156641
+  tax_rate: 33
+  levy_rate: 1.75
+steps:
+  annual: prior_four_weeks * 13
+  grossed: floor(annual + extra)
+  levy_base: cap - annual
+  income_tax: pct(extra, tax_rate)
+  levy: pct(levy_base, levy_rate)
+  paye: floor((income_tax + levy) * 100) / 100
+expected:
+  annual: 130000
+  grossed: 160000
+  levy_base: 26641
+  paye: 10366.4
+```
+
+**Case 14: secondary threshold affects the cap.** An ST-code bonus of $40,000 follows $4,695 regular pay in the relevant 4 weeks. Annualised pay $61,035 plus the ST low threshold $78,101 gives B of $139,136 and G of $179,136. Tax is 33% of the bonus; ACC applies to only $17,505. Total PAYE is **$13,506.33**, leaving **$26,493.67** before other deductions. [S2, section 5.11.2, PDF pages 52–55][S2], [S22]
+
+```oa-check
+name: nz-2026-secondary-bonus-cap
+tolerance: 0
+inputs:
+  prior_four_weeks: 4695
+  low_threshold: 78101
+  extra: 40000
+  cap: 156641
+  tax_rate: 33
+  levy_rate: 1.75
+steps:
+  annual: prior_four_weeks * 13
+  base: annual + low_threshold
+  grossed: floor(base + extra)
+  levy_base: cap - base
+  paye: floor((pct(extra, tax_rate) + pct(levy_base, levy_rate)) * 100) / 100
+  net_before_other_deductions: extra - paye
+expected:
+  base: 139136
+  grossed: 179136
+  levy_base: 17505
+  paye: 13506.33
+  net_before_other_deductions: 26493.67
+```
+
+**Case 15: signing bonus before any regular payment.** An M-code employee receives a $10,000 levy-liable signing bonus with no earlier regular pay in the window and no higher-rate election. Annualised pay is zero, so the 10.5% income-tax rate and 1.75% levy give **$1,225.00 PAYE**. Set the low-rate extra-pay indicator. A future contractual salary is not substituted for historical payments. [S2, section 5.11.1, PDF page 49][S2], [S22]
+
+```oa-check
+name: nz-2026-signing-bonus-low-rate
+tolerance: 0
+inputs:
+  extra: 10000
+  tax_rate: 10.5
+  levy_rate: 1.75
+steps:
+  paye: floor((pct(extra, tax_rate) + pct(extra, levy_rate)) * 100) / 100
+expected:
+  paye: 1225
+```
+
+**Case 16: first dollar of a new extra-pay band.** With $52,000 annualised regular pay, a $1,500 primary bonus gives G of $53,500 and **$288.75 PAYE** at 17.5% plus levy. A $1,501 bonus gives G of $53,501 and **$476.56 PAYE** at 30% plus levy. The higher rate applies to the whole bonus, not just its last dollar. [S2, section 5.11][S2], [S22]
+
+```oa-check
+name: nz-2026-extra-pay-band-boundary
+tolerance: 0
+inputs:
+  annual: 52000
+  extra_lower: 1500
+  extra_upper: 1501
+  lower_rate: 17.5
+  upper_rate: 30
+  levy_rate: 1.75
+steps:
+  g_lower: floor(annual + extra_lower)
+  g_upper: floor(annual + extra_upper)
+  paye_lower: floor((pct(extra_lower, lower_rate) + pct(extra_lower, levy_rate)) * 100) / 100
+  paye_upper: floor((pct(extra_upper, upper_rate) + pct(extra_upper, levy_rate)) * 100) / 100
+expected:
+  g_lower: 53500
+  g_upper: 53501
+  paye_lower: 288.75
+  paye_upper: 476.56
+```
+
+**Case 17: termination skips unpaid and current periods.** The last 2 paid weekly periods before the termination period contain $550 and $650, with an intervening unpaid week. Ignore that unpaid week and the current $500 wage. A confirmed $1,000 redundancy payment gives annualised pay $31,200 and G $32,200: **$175.00 PAYE**, with no earners' levy on redundancy. [S2, section 5.12][S2], [S24]
+
+```oa-check
+name: nz-2026-termination-paid-periods
+tolerance: 0
+inputs:
+  paid_older: 550
+  paid_recent: 650
+  extra: 1000
+  tax_rate: 17.5
+steps:
+  annual: (paid_older + paid_recent) * 26
+  grossed: floor(annual + extra)
+  paye: floor(pct(extra, tax_rate) * 100) / 100
+expected:
+  annual: 31200
+  grossed: 32200
+  paye: 175
+```
+
+**Case 18: termination after a frequency change.** The last 2 paid periods before termination are $800 weekly and $1,720 fortnightly. Average their annualised values to get $43,160. A separate $1,000 levy-liable bonus paid because employment ends gives G of $44,160 and **$192.50 PAYE**. Assume no secondary code or higher-rate election. [S2, section 5.12, PDF page 64][S2], [S24]
+
+```oa-check
+name: nz-2026-termination-mixed-frequencies
+tolerance: 0
+inputs:
+  weekly: 800
+  fortnightly: 1720
+  extra: 1000
+  tax_rate: 17.5
+  levy_rate: 1.75
+steps:
+  annual: (weekly * 52 + fortnightly * 26) / 2
+  grossed: floor(annual + extra)
+  paye: floor((pct(extra, tax_rate) + pct(extra, levy_rate)) * 100) / 100
+expected:
+  annual: 43160
+  grossed: 44160
+  paye: 192.5
+```
+
+**Case 19: combined termination payments keep their levy character.** The last 2 paid monthly periods before termination are $5,500 and $7,600; ignore a later unpaid month and the current termination-period wage. A confirmed $15,000 redundancy payment and $500 ordinary bonus are paid together. Annualised pay is $78,600; G $94,100 selects 33% on all $15,500. Only the $500 bonus attracts ACC: total **$5,123.75 PAYE**, leaving **$10,376.25** before other deductions. [S2, section 5.12, PDF pages 62–63][S2], [S24]
+
+```oa-check
+name: nz-2026-combined-termination-extra-pay
+tolerance: 0
+inputs:
+  older_month: 7600
+  recent_month: 5500
+  redundancy: 15000
+  bonus: 500
+  tax_rate: 33
+  levy_rate: 1.75
+steps:
+  annual: (older_month + recent_month) * 6
+  extra: redundancy + bonus
+  grossed: floor(annual + extra)
+  paye: floor((pct(extra, tax_rate) + pct(bonus, levy_rate)) * 100) / 100
+  net_before_other_deductions: extra - paye
+expected:
+  annual: 78600
+  grossed: 94100
+  paye: 5123.75
+  net_before_other_deductions: 10376.25
+```
+
+**Case 20: remove the levy from a tailored redundancy rate.** Assume a valid 24% salary/wage certificate rate includes 1.75% ACC and the $1,000 payment is confirmed redundancy. The applicable rate excluding levy is **22.25%**, giving **$222.50**. Mark the earnings not liable for ACC. This is conditional arithmetic, not a determination that any actual payment qualifies. [S2, section 5.11][S2]
+
+```oa-check
+name: nz-2026-tailored-redundancy-levy-exclusion
+tolerance: 0
+inputs:
+  extra: 1000
+  certificate_rate: 24
+  levy_rate: 1.75
+steps:
+  rate_excluding_levy: certificate_rate - levy_rate
+  paye: floor(pct(extra, rate_excluding_levy) * 100) / 100
+expected:
+  rate_excluding_levy: 22.25
+  paye: 222.5
+```
+
+**Case 21: regular bonus covering 3 months.** An ordinary M-code employee earns $5,000 monthly and receives a $1,200 regular bonus covering 3 months. The $400 monthly share gives monthly PAYE of $1,066.17 on $5,400 versus $939.20 on $5,000, using the weekly-first truncation method above. The bonus PAYE is **$380.91**: 3 times the $126.97 monthly difference. Assume the same facts for the covered months and no SL code, tailored certificate or other adjustment. [S2, sections 5.1 and 5.13][S2]
+
+```oa-check
+name: nz-2026-regular-bonus-multiple-months
+tolerance: 0
+inputs:
+  monthly_wages: 5000
+  bonus: 1200
+  months: 3
+steps:
+  share: bonus / months
+  annual_base: floor(monthly_wages * 12)
+  annual_with: floor((monthly_wages + share) * 12)
+  tax_base: pct(annual_base, 30) - 7779.50
+  tax_with: pct(annual_with, 30) - 7779.50
+  weekly_base: floor(((tax_base + pct(annual_base, 1.75)) / 52) * 100) / 100
+  weekly_with: floor(((tax_with + pct(annual_with, 1.75)) / 52) * 100) / 100
+  paye_base: floor((weekly_base * 52 / 12) * 100) / 100
+  paye_with: floor((weekly_with * 52 / 12) * 100) / 100
+  bonus_paye: (paye_with - paye_base) * months
+expected:
+  paye_base: 939.2
+  paye_with: 1066.17
+  bonus_paye: 380.91
+```
+
 Before release also check an exactly $50,000 electronic-filing case, an exactly $500,000 large-employer case, the December 15 January exception and a pay period straddling 1 April. A temporary 3% employee rate does not by itself force the employer to reduce its rate.
 
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: special PAYE codes, tailored-code calculations and extra-pay rules; student-loan exemptions, recovery notices, irregular pays and attachment calculations; automatic-enrolment, opt-out and refund administration; full definitions of contribution bases; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, unresolved recovery notices, other irregular pays and attachment calculations; ESS, schedular payments and payment classification; automatic-enrolment, opt-out and refund administration; full definitions of contribution bases; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
-Sources checked 12 November 2026. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. Selected PDF pages were read as native text and images; this does not claim full review of either PDF or the complete statute.
+Sources checked 12 November 2026. Extra-pay examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. Selected PDF pages were read as native text and images; this does not claim full review of either PDF or the complete statute.
 
 [S1]: https://www.ird.govt.nz/deductions "Salary and wage deductions"
 [S2]: https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf?modified=20260401012317 "2026-27 payroll specification, selected sections"
@@ -376,6 +686,10 @@ Sources checked 12 November 2026. The technical specification is dated 24 March 
 [S19]: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/individual-tax-credits/independent-earner-tax-credit-ietc/getting-the-independent-earner-tax-credit-if-you-earn-salary-or-wages "ietc-salary"
 [S20]: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/about-tax-codes "about-tax-codes"
 [S21]: https://www.ird.govt.nz/repaying-my-student-loan-when-i-earn-salary-or-wages "student-loan-salary"
+
+[S22]: https://www.ird.govt.nz/calculate-lump-sum-paye "Non-termination lump-sum PAYE, updated 18 May 2026"
+[S23]: https://www.ird.govt.nz/employing-staff/payday-filing/non-standard-filing-of-employment-information/lump-sum-payments "Lump-sum deductions and reporting, updated 27 January 2026"
+[S24]: https://www.ird.govt.nz/employing-staff/payday-filing/non-standard-filing-of-employment-information/lump-sum-payments/calculate-paye-for-a-lump-sum-payment-end-of-employment "End-of-employment lump-sum PAYE, updated 20 April 2026"
 
 <!-- openaccountants-cta-block -->
 
