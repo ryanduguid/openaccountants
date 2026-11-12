@@ -703,10 +703,10 @@ inputs:
   recovery_rate: 0.05
   voluntary: 20
 steps:
-  whole: trunc(gross)
+  whole: floor(gross)
   base: max(0, whole - threshold)
-  ordinary: trunc(base * ordinary_rate, 2)
-  recovery: trunc(base * recovery_rate, 2)
+  ordinary: floor(base * ordinary_rate * 100) / 100
+  recovery: floor(base * recovery_rate * 100) / 100
   total: ordinary + recovery + voluntary
 expected:
   whole: 875
@@ -724,9 +724,9 @@ inputs:
   gross: 425.35
   threshold: 464
 steps:
-  base: max(0, trunc(gross) - threshold)
-  ordinary: trunc(base * 0.12, 2)
-  recovery: trunc(base * 0.05, 2)
+  base: max(0, floor(gross) - threshold)
+  ordinary: floor(base * 0.12 * 100) / 100
+  recovery: floor(base * 0.05 * 100) / 100
 expected:
   base: 0
   ordinary: 0
@@ -741,9 +741,9 @@ tolerance: 0
 inputs:
   gross: 300.99
 steps:
-  whole: trunc(gross)
-  ordinary: trunc(whole * 0.12, 2)
-  recovery: trunc(whole * 0.05, 2)
+  whole: floor(gross)
+  ordinary: floor(whole * 0.12 * 100) / 100
+  recovery: floor(whole * 0.05 * 100) / 100
   total: ordinary + recovery
 expected:
   ordinary: 36
@@ -761,9 +761,9 @@ inputs:
   threshold: 464
   notice_rate: 0.03
 steps:
-  base: max(0, trunc(gross) - threshold)
-  ordinary: trunc(base * 0.12, 2)
-  recovery: trunc(base * notice_rate, 2)
+  base: max(0, floor(gross) - threshold)
+  ordinary: floor(base * 0.12 * 100) / 100
+  recovery: floor(base * notice_rate * 100) / 100
   total: ordinary + recovery
 expected:
   ordinary: 52.32
@@ -781,7 +781,7 @@ inputs:
   threshold: 464
   remaining: 7
 steps:
-  calculated: trunc(max(0, trunc(gross) - threshold) * 0.05, 2)
+  calculated: floor(max(0, floor(gross) - threshold) * 0.05 * 100) / 100
   recovery: min(calculated, remaining)
   balance: remaining - recovery
 expected:
