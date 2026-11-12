@@ -4,7 +4,7 @@ description: "Source-cited draft for Benin company formation, entity choice and 
 jurisdiction: BJ
 tax_year: 2025
 last_updated: 2026-11-12
-version: 1.4
+version: 1.5
 review_status: pending_review
 category: formation
 tier: 2
@@ -339,6 +339,63 @@ This example does not establish current-law applicability or practitioner
 eligibility. Later law, complete standards and tools, national implementation
 and qualified local review remain outstanding. These selected provisions
 do not establish complete reporting coverage or audit readiness.
+
+## Retrieved OHADA ethics and quality tools
+
+**Evidence period:** issuer-hosted files retrieved on 12 November 2026,
+with their stated historical bases. The issuer's 7 March 2018 notice reports
+CNC adoption of the named professional tools on 8 December 2017. That
+notice does not identify the adopted files by hash. The current tools page
+links editable originals; retrieval does not establish that these bytes
+equal the adopted versions or remain operative for a later engagement.
+[OHADA adoption notice](https://www.ohada.org/mise-en-ligne-des-outils-d-harmonisation-des-pratiques-des-professionnels-de-la-comptabilite-et-de-l-audit/)
+[Issuer tools page](https://www.ohada.org/en/practical-tools-for-implementing-isa-standards/)
+
+### The retrieved Code's stated basis
+
+The retrieved Code's preamble identifies a May 2015 IESBA basis, including
+April 2015 changes applicable from April 2016. Footers say 'Version après
+atelier'. These labels do not establish final adoption or current OHADA
+applicability.
+[Issuer-hosted Code, preamble and footer, rendered page 5](https://www.ohada.org/wp-content/uploads/2020/10/OHADA-Code-de%CC%81thique-des-professionnels-de-la-comptabilite%CC%81-et-de-laudit.docx)
+
+Section 100 covers principles and their application in practice and
+business. Its 5 principles are integrity, objectivity, professional
+competence and due care, confidentiality and professional behaviour.
+Threats include self-interest, self-review, advocacy, familiarity and
+intimidation. It requires assessing threats and appropriate safeguards.
+If threats cannot be reduced acceptably, the professional must refuse
+or cease the service, or resign in the employed-professional case.
+[Code, section 100, rendered pages 6 and 7](https://www.ohada.org/wp-content/uploads/2020/10/OHADA-Code-de%CC%81thique-des-professionnels-de-la-comptabilite%CC%81-et-de-laudit.docx)
+
+Section 140 continues confidentiality after the relationship ends.
+Exceptions include legally permitted disclosure authorised by the client
+or employer, disclosure required by law and a professional duty or right
+to disclose. Verify the actual authority and recipient; this selected
+summary does not establish complete confidentiality or independence
+compliance.
+[Code, section 140, rendered pages 10 and 11](https://www.ohada.org/wp-content/uploads/2020/10/OHADA-Code-de%CC%81thique-des-professionnels-de-la-comptabilite%CC%81-et-de-laudit.docx)
+
+### Quality manual and remaining verification
+
+The retrieved quality manual is labelled January 2018. Its preamble
+describes a system based on ISA, ISA 220 and ISQC 1 and an institutional
+quality assurance arrangement proposed for implementation. These words
+do not establish that an order operates that arrangement, or identify
+the quality-management requirements applicable to a current engagement.
+The Parts 1 and 2 file ends with a Part 3 cover and a following page with
+no substantive text; the complete substantive Part 3 has not been
+verified here.
+[Issuer-hosted quality manual, cover, preamble and ending, rendered pages 1, 5, 37 and 38](https://www.ohada.org/wp-content/uploads/2020/10/OHADA-Manuel-Syste%CC%80me-Assurance-Qualite%CC%81-Partie-1-et-2.docx)
+
+Tomes 1 and 2 were also retrieved from the issuer's tools page.
+Their substantive provisions and applicable editions remain unverified
+in this addition. Obtain the complete standards, guides, code and quality
+manual applicable to the actual period, trace adoption and later
+amendments, and check national professional and sector rules. An issuer
+notice about cooperation or a meeting agenda cannot substitute for an
+adopted instrument. Qualified local review, actual professional eligibility
+and complete reporting coverage remain outstanding.
 
 <!-- openaccountants-cta-block -->
 
