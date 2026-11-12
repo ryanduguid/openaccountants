@@ -1045,8 +1045,8 @@ steps:
   total_pay: ordinary + overtime + bonus + commission + redundancy + accommodation
   kiwisaver_base: total_pay - redundancy - accommodation
   complying_base: kiwisaver_base - bonus - commission
-  kiwisaver_deduction: pct(kiwisaver_base, rate)
-  complying_deduction: pct(complying_base, rate)
+  kiwisaver_deduction: kiwisaver_base * rate
+  complying_deduction: complying_base * rate
 expected:
   total_pay: 1750
   kiwisaver_base: 1350
@@ -1064,7 +1064,7 @@ inputs:
   base: 1000
   rate: 0.04
 steps:
-  employee: pct(base, rate)
+  employee: base * rate
 expected:
   employee: 40
 ```
@@ -1078,7 +1078,7 @@ inputs:
   base: 1000
   rate: 0.035
 steps:
-  employee: pct(base, rate)
+  employee: base * rate
 expected:
   employee: 35
 ```
@@ -1094,8 +1094,8 @@ inputs:
   employer_rate: 0.035
   esct_rate: 0.175
 steps:
-  employee: pct(base, employee_rate)
-  employer_gross: pct(base, employer_rate)
+  employee: base * employee_rate
+  employer_gross: base * employer_rate
   esct: floor(floor(employer_gross) * esct_rate * 100) / 100
   employer_net: employer_gross - esct
 expected:
@@ -1115,7 +1115,7 @@ inputs:
   employer_rate: 0.03
   esct_rate: 0.175
 steps:
-  employer_gross: pct(base, employer_rate)
+  employer_gross: base * employer_rate
   esct: floor(floor(employer_gross) * esct_rate * 100) / 100
   employer_net: employer_gross - esct
 expected:
@@ -1135,9 +1135,9 @@ inputs:
   first_rate: 0.025
   second_rate: 0.01
 steps:
-  minimum: pct(base, minimum_rate)
-  first: pct(base, first_rate)
-  second: pct(base, second_rate)
+  minimum: base * minimum_rate
+  first: base * first_rate
+  second: base * second_rate
   total: first + second
   shortfall: max(0, minimum - total)
 expected:
@@ -1158,7 +1158,7 @@ inputs:
   contribution_rate: 0.035
   esct_rate: 0.3
 steps:
-  employer_gross: pct(usual_pay, contribution_rate)
+  employer_gross: usual_pay * contribution_rate
   esct_base: floor(employer_gross)
   esct: floor(esct_base * esct_rate * 100) / 100
   employer_net: employer_gross - esct
@@ -1266,10 +1266,6 @@ Sources checked 12 November 2026. Selected District Court Act sections use the c
 [S31]: https://www.taxtechnical.ird.govt.nz/standard-practice-statements/processing/sps-21-01 "SPS 21/01 issuer index, issued 12 April 2021"
 [S32]: https://www.taxtechnical.ird.govt.nz/-/media/project/ir/tt/pdfs/standard-practice-statements/processing/sps-21-01.pdf?modified=20210420044632 "SPS 21/01 Deduction notices, paragraphs 26–36, 12 April 2021"
 
-<!-- openaccountants-cta-block -->
-
----
-
 [S33]: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1---ir99/ks4/ks4.pdf?modified=20260129195326 "KS4 employer guide, cover April 2026, selected pages"
 [S34]: https://www.ird.govt.nz/kiwisaver/kiwisaver-for-employers/starting-employees-in-kiwisaver "Starting employees, updated 21 October 2026"
 [S35]: https://www.ird.govt.nz/kiwisaver/kiwisaver-for-employers/starting-employees-in-kiwisaver/auto-enrol-employees-into-kiwisaver "Automatic enrolment, updated 21 October 2026"
@@ -1288,6 +1284,10 @@ Sources checked 12 November 2026. Selected District Court Act sections use the c
 [S48]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/LMS1569995/ "101S Revocation of rate reduction, current copy 1 April 2026"
 [S49]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM379032/ "KiwiSaver Act section 60, current copy 1 April 2026"
 [S50]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM1233474/ "KiwiSaver Act section 101D, current copy 1 April 2026"
+
+<!-- openaccountants-cta-block -->
+
+---
 
 ## Talk to a verified accountant
 
