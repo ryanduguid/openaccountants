@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2046,
+  "guides": 2047,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -16279,7 +16279,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-12"
   },
   {
    "slug": "nz-capital-gains",
@@ -16293,6 +16293,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "nz-employer-payroll",
+   "path": "skills/international/new-zealand/nz-employer-payroll.md",
+   "name": "nz-employer-payroll",
+   "jurisdiction": "NZ",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-12"
   },
   {
    "slug": "nz-gst-return",

@@ -1,10 +1,10 @@
 ---
 name: nz-acc-levies
 description: Use this skill whenever asked about New Zealand ACC levies for self-employed individuals. Trigger on phrases like "ACC levy", "earner levy", "work levy", "CoverPlus", "CoverPlus Extra", "accident compensation", "ACC invoice", "classification unit", or any question about ACC obligations for sole traders in New Zealand. Covers earner levy, work levy by classification unit (CU), CoverPlus/CoverPlus Extra, maximum liable earnings, and payment schedules. ALWAYS read this skill before touching any NZ ACC work.
-version: 2.1
+version: 2.2
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-12
 review_status: pending_review
 category: international
 tier: 2
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated By | Pending -- requires sign-off by NZ chartered accountant |
 | Validation Date | Pending |
-| Skill Version | 2.1 |
+| Skill Version | 2.2 |
 | Confidence Coverage | Tier 1: earner levy rate, work levy computation, maximum liable earnings. Tier 2: CU selection, CoverPlus Extra, experience rating. Tier 3: claims management, dispute resolution, complex multi-business structures. |
 
 Read this whole section before computing anything.
@@ -41,8 +41,8 @@ Read this whole section before computing anything.
 | Levy | Who Pays | Rate |
 | --- | --- | --- |
 | Earner levy | All earners (including self-employed) | $1.67 per $100 (1.67%), GST inclusive; $1.75 per $100 from 1 April 2026 |
-| Work levy | Self-employed only | Varies by classification unit (CU) |
-| Working Safer levy | Self-employed | ~$0.08 per $100 |
+| Work levy | Self-employed and employers | Varies by classification unit (CU) |
+| Working Safer levy | Self-employed and employers | ~$0.08 per $100 |
 
 **Illustrative work levy rates by CU (2025/26)**
 
@@ -82,7 +82,7 @@ Sources: Inland Revenue, earners' levy rates (rates include GST; maximum earning
 ### Required inputs
 
 - **Required inputs before computing ACC levy** — Before computing any ACC levy figure, you MUST know: 1. Self-employment status -- sole trader, partner, or shareholder-employee 2. Classification unit (CU) code -- determines work levy rate 3. Liable earnings -- net self-employment income from IR3 or IR7 4. CoverPlus or CoverPlus Extra -- which cover option is in place 5. Whether any experience rating applies -- claims history adjustment 6. Tax year -- ACC invoices based on prior year's earnings
-- **PAYE employee only** — If the client is a PAYE employee only, STOP. Employer pays ACC levies for employees.
+- **PAYE employee only** — This self-employed workflow does not apply. The employee earners' levy comes from their income through PAYE; the employer's Work and Working Safer levies are separately invoiced. See [the employer payroll guide](nz-employer-payroll.md) and [ACC's explanation of levy responsibilities](https://www.acc.co.nz/for-business/understanding-levies-if-you-work-or-own-a-business).
 
 ### Refusal catalogue
 
