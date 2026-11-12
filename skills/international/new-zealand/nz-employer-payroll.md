@@ -3,7 +3,8 @@ name: nz-employer-payroll
 description: >
   Use this guide for ordinary New Zealand employer payroll paid from 1 April
   2026 to 31 March 2027. Covers ordinary and selected extra-pay PAYE and
-  student-loan calculations, tailored certificates,
+  student-loan calculations, tailored certificates, recovery notices, child support
+  and selected court-attachment calculations,
   the ACC earners' levy, KiwiSaver employee deductions and compulsory employer contributions, ESCT,
   payday filing, payment schedules and payroll records. Trigger on NZ payroll,
   PAYE, payday filing, KiwiSaver employer contributions, ESCT and employer
@@ -17,13 +18,13 @@ tax_year: 2026
 tax_year_notes: "Ordinary payroll paid 1 April 2026 to 31 March 2027; separate filing and payment rules checked 12 November 2026"
 tier: 2
 last_updated: 2026-11-12
-version: 0.3
+version: 0.4
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.3
+# New Zealand employer payroll v0.4
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -54,7 +55,7 @@ Use the official PAYE calculator or actual-period deduction tables linked from [
 
 Source: [Inland Revenue's earners' levy table][S5]. Apply the actual payroll calculation and its cap rules; this annual table is not an instruction to charge 1.75% on uncapped pay or to combine multiple employments without checking their treatment.
 
-Student-loan and child-support deductions need the actual code or notice and applicable calculation. Child-support deductions have a 40% net-after-tax protected-earnings limit; it does not cap every other deduction at 40%. Follow Inland Revenue's reporting instructions for any shortfall rather than automatically recovering it in a later pay. [S1]
+Student-loan and child-support deductions need the actual code or notice and applicable calculation. Ordinary employee child support is limited to 40% of gross salary/wages less the PAYE income-tax component, excluding ACC earners' levy from that tax component. It does not cap every other deduction at 40%. The notice, protected-earnings and shortfall methods are set out below. [S1], [S2, section 5.15][S2], [S13, PDF page 24][S13]
 
 The employee earners' levy comes from the employee's income through PAYE. The employer's **Work and Working Safer levies** are separately invoiced by ACC and require the business's classification, liable payroll and current invoice/rates. Do not add them as another generic employee deduction. This guide does not calculate those invoices. [ACC's explanation of levy responsibilities][S6] supports that distinction; use [S5] for the dated employee rate.
 
@@ -156,6 +157,38 @@ For primary M SL/ME SL extra pay, combine regular and extra taxable pay for the 
 Regular incentive/production bonuses paid with normal wages are included in normal period pay. For a monthly bonus covering several pay periods, calculate monthly PAYE on that month's wages with and without the bonus and deduct the difference. For a bonus covering several months, divide it by those months, calculate the difference between monthly PAYE with and without that monthly share, then multiply the difference by the number of months. Apply the corresponding loan method for an SL code. This is the regular-bonus method, not an annual/special lump-sum rate selection. [S2, section 5.13][S2]
 
 For an enrolled KiwiSaver employee, a confirmed redundancy payment is excluded from employee KiwiSaver deductions; do not assume the same exclusion for every other extra payment. Check the contribution base and notices separately. Report a lowest-rate extra payment using the low-rate indicator. For separate extra-pay reporting, file within 2 working days electronically or 10 working days on paper. IRD permits inclusion in the next regular electronic schedule only when reported before the relevant deduction-payment end date: month-end for monthly remitters, or the 15th/month-end for twice-monthly remitters. Record which permitted reporting route was used. [S23], [S2, section 5.11.3][S2]
+
+### Student-loan recovery and voluntary extra deductions
+
+Keep ordinary student-loan deductions, **SLCIR** recovery and **SLBOR** voluntary deductions separate. An IRD SLCIR notice states the amount to recover and the percentage to deduct until that amount has been reached. Use that notice, not an automatic extra 5% on every SL employee. For ordinary primary employment, the maximum recovery rate is **5% of gross pay above the pay-period repayment threshold**; for secondary employment it is **5% of gross pay without that threshold**. Truncate gross pay to whole dollars for this calculation and truncate the deduction to cents. For 2026-27 the weekly primary threshold is **$464**; use the corresponding period threshold already set out above. Do not recover more than the remaining amount required by the notice. [S2, section 3, PDF pages 9–10][S2], [S25]
+
+A voluntary SLBOR deduction uses the employee's actual requested amount or percentage. Report ordinary loan deductions, SLCIR and SLBOR in their respective employment-information fields. These are additional loan deductions, not PAYE income tax. Keep the notice balance, effective dates, actual deduction and any cancellation or certificate change together; an SDR and its cancellation trail require the separate checks above. [S2, sections 3 and 5.9.2][S2], [S13, PDF page 22][S13]
+
+### Employee child-support notices and protected earnings
+
+Use the actual employee deduction notice, its start/amend/stop date, pay frequency and amount. Do not start early. Ask IRD to correct an incorrect payday or frequency rather than silently converting the notice yourself. The employee cannot instruct the employer to start or stop these deductions. The contractor/schedular-payment notice has a different payment and employment-information route; the employee instructions here do not establish that route. [S2, section 5.15][S2], [S13, PDF page 23][S13]
+
+For the ordinary employee child-support calculation, let **G** be gross salary/wages, **P** PAYE including the employee ACC earners' levy and **A** that levy component. The protected-earnings calculation uses **N = G − (P − A)**, so its income-tax deduction excludes ACC. The normal maximum child-support deduction is **40% of N**: deduct the lesser of the notice amount and that capacity. The remaining 60% is protected for this purpose, not a guaranteed final take-home amount after student loans, ACC, KiwiSaver and other lawful deductions. Establish special payment bases separately; this formula does not resolve ESS or schedular payments. [S2, section 5.15.1, PDF pages 71–72][S2], [S13, PDF page 24 worked example][S13]
+
+Where protected earnings prevent the full deduction, report variation **P** and the amount actually deducted. Do not make up the difference in a later pay; IRD arranges it with the employee. Other variation codes are A for advance payment, D for previously deducted, S for a short unpaid absence preventing any deduction and O for other reasons. If employment has ceased, **C takes priority even when P would otherwise apply**; record the employee finish date as well. Include employee child support in employment information and pay it with the ordinary employer deductions. Protect the employee's child-support information. [S1], [S13, PDF pages 24–25][S13]
+
+### District Court attachment orders
+
+Identify the statute and actual order. **Section 157 of the District Court Act 2016** governs these court attachments; **section 157 of the Tax Administration Act 1994** below is a different notice. The court order specifies the earnings period, deduction amount or percentage and minimum earnings to retain. For an ordinary District Court attachment, the protected floor is the **higher of 60% of statutory net earnings and the actual order's minimum**. Use the PAYE income-tax component for the net-earnings base, with the ACC distinction above. Confirm which payments are salary/wages for the order: the statutory definition is broader than ordinary basic pay. [S27], [S28], [S29], [S2, section 5.15.2][S2]
+
+Section 157(3) requires the court attachment to be reduced or cancelled as necessary when it alone, or together with the listed other notices/orders, would take earnings below that floor. For a single ordinary court order with established prior deductions, its available capacity is **max(0, N − protected floor − applicable prior deductions)**; deduct the lesser of that capacity and the amount required by the order. Child support has priority. Section 157(2) also makes the ordinary court charge subject to the specified Family Proceedings/Summary Proceedings attachments and statutory deduction notices. Do not invent priority amongst competing orders or reduce a different statutory notice merely by applying this court formula; obtain the actual instruments and resolve their priority with the issuer/court or IRD. [S27], [S13, PDF page 23][S13]
+
+The specification's page 72 step 5 prints the full other-attachment amount even when it exceeds remaining capacity. That instruction conflicts with section 157(3)'s protection. Apply the statutory reduction instead of copying the printed branch. The worked checks below assume the stated order, base and prior deductions are already valid; they do not determine every competing-notice combination. [S27], [S2, PDF page 72][S2]
+
+### IRD tax-arrears notices
+
+A Tax Administration Act section 157 notice for salary/wage arrears is separate from a student-loan SLCIR recovery notice. Obtain its required amount, instalment period, initial notified debt, payment deadline, tax reference and any notified interest. For the ordinary statutory salary/wage ceiling, compare **10% per week of the debt due at the notice date** with **20% of gross salary/wages payable**. Take the lesser, then compare it with **$10 per week** and take the greater. For non-weekly pay, scale the weekly debt instalment and minimum to the pay period; the 20% limb already uses that period's actual gross pay. This is a ceiling, not an instruction to deduct it when the actual notice requires less. Limit the deduction to the amount actually payable and required under the notice. [S30, subsections (1)–(3)][S30], [S26], [S32, paragraphs 26–28][S32]
+
+IRD's SPS 21/01 says no extra deduction is required where weekly earnings are **less than $10**. It also addresses an employee request for a higher deduction. Follow the applicable notice and actual request; resolve an apparent conflict with IRD rather than creating a deduction that exceeds the wages available. The specification's page 75 flowchart shortcut of $10 when weekly gross is below $100 does not reproduce the general statutory formula: for example, 20% of $80 is $16. Other fixed-amount notices may be issued. [S32, paragraphs 27–28][S32], [S2, section 5.17][S2]
+
+Child-support arrears use a different notice and calculation, and child support takes priority over other tax arrears. Check that actual instrument separately; the ordinary employee child-support formula above does not establish all arrears or contractor cases. Do not merge different notices into one generic 40% cap. [S26], [S32, paragraphs 29–30][S32]
+
+Do not put these tax-arrears deductions in employment information or the SLCIR field. Pay them separately from PAYE using the employee's IRD number, tax type, period and amount. The general payroll instructions say by calendar month-end; the Act and SPS require payment within the time in the actual notice, so establish that deadline before processing. Notify the employee of the deduction and its purpose. The amount withheld is held in trust for the Crown. Keep the notice until the required amount is paid or IRD changes/revokes it in writing; the employee cannot cancel it. [S2, section 5.17][S2], [S26], [S30, subsections (1), (4), (6) and (8)][S30], [S32, paragraphs 33–36][S32]
 
 ## Section 3 -- KiwiSaver from 1 April 2026
 
@@ -658,11 +691,299 @@ expected:
 
 Before release also check an exactly $50,000 electronic-filing case, an exactly $500,000 large-employer case, the December 15 January exception and a pay period straddling 1 April. A temporary 3% employee rate does not by itself force the employer to reduce its rate.
 
+**Case 22: primary SLCIR and separate voluntary repayment.** Assume weekly M SL pay of $875.90, a valid 5% SLCIR notice with sufficient balance and a $20 SLBOR request. Whole-dollar gross is $875; ordinary SL is $49.32, SLCIR $20.55 and SLBOR $20, totalling $89.87. [S2, section 3][S2]
+
+```oa-check
+name: nz-2026-slcir-primary-separate
+tolerance: 0
+inputs:
+  gross: 875.9
+  threshold: 464
+  ordinary_rate: 0.12
+  recovery_rate: 0.05
+  voluntary: 20
+steps:
+  whole: floor(gross)
+  base: max(0, whole - threshold)
+  ordinary: floor(base * ordinary_rate * 100) / 100
+  recovery: floor(base * recovery_rate * 100) / 100
+  total: ordinary + recovery + voluntary
+expected:
+  whole: 875
+  ordinary: 49.32
+  recovery: 20.55
+  total: 89.87
+```
+
+**Case 23: primary recovery below the threshold.** Weekly M SL pay of $425.35 is below $464. Assume no different certificate: ordinary SL and SLCIR are zero. [S2, section 3][S2]
+
+```oa-check
+name: nz-2026-slcir-below-threshold
+tolerance: 0
+inputs:
+  gross: 425.35
+  threshold: 464
+steps:
+  base: max(0, floor(gross) - threshold)
+  ordinary: floor(base * 0.12 * 100) / 100
+  recovery: floor(base * 0.05 * 100) / 100
+expected:
+  base: 0
+  ordinary: 0
+  recovery: 0
+```
+
+**Case 24: secondary recovery has no ordinary threshold.** Assume $300.99 secondary SL pay and a valid 5% recovery notice with sufficient balance. On $300 whole-dollar gross, ordinary SL is $36 and SLCIR $15. [S2, section 3][S2]
+
+```oa-check
+name: nz-2026-slcir-secondary
+tolerance: 0
+inputs:
+  gross: 300.99
+steps:
+  whole: floor(gross)
+  ordinary: floor(whole * 0.12 * 100) / 100
+  recovery: floor(whole * 0.05 * 100) / 100
+  total: ordinary + recovery
+expected:
+  ordinary: 36
+  recovery: 15
+  total: 51
+```
+
+**Case 25: use the actual recovery percentage.** Assume weekly M SL pay of $900 and a valid notice requiring 3% above $464. Ordinary SL is $52.32 and recovery $13.08, not an assumed 5% deduction. [S2, section 3][S2]
+
+```oa-check
+name: nz-2026-slcir-actual-rate
+tolerance: 0
+inputs:
+  gross: 900
+  threshold: 464
+  notice_rate: 0.03
+steps:
+  base: max(0, floor(gross) - threshold)
+  ordinary: floor(base * 0.12 * 100) / 100
+  recovery: floor(base * notice_rate * 100) / 100
+  total: ordinary + recovery
+expected:
+  ordinary: 52.32
+  recovery: 13.08
+  total: 65.4
+```
+
+**Case 26: stop at the required recovery balance.** Assume the first case has only $7 left to recover under the notice. Deduct $7 SLCIR and reconcile the completed recovery amount; do not take $20.55. [S2, section 3][S2]
+
+```oa-check
+name: nz-2026-slcir-final-balance
+tolerance: 0
+inputs:
+  gross: 875.9
+  threshold: 464
+  remaining: 7
+steps:
+  calculated: floor(max(0, floor(gross) - threshold) * 0.05 * 100) / 100
+  recovery: min(calculated, remaining)
+  balance: remaining - recovery
+expected:
+  calculated: 20.55
+  recovery: 7
+  balance: 0
+```
+
+**Case 27: child support protects the tax-only net base.** Assume ordinary weekly pay $600, PAYE including ACC $94.50, its ACC component $10.50, a $230 employee child-support notice, ordinary SL $16.32 and an eligible 3.5% KiwiSaver deduction. N is $516 and child support is $206.40. Take-home after those stated deductions is $261.78; the 60% child-support protection is not a final take-home guarantee. [S13, PDF page 24][S13], [S8]
+
+```oa-check
+name: nz-2026-child-support-tax-only-base
+tolerance: 0
+inputs:
+  gross: 600
+  paye: 94.5
+  acc: 10.5
+  notice: 230
+  student: 16.32
+  kiwi_rate: 0.035
+steps:
+  income_tax: paye - acc
+  net_base: gross - income_tax
+  capacity: net_base * 0.40
+  support: min(notice, capacity)
+  kiwi: gross * kiwi_rate
+  takehome: gross - paye - support - student - kiwi
+expected:
+  net_base: 516
+  support: 206.4
+  kiwi: 21
+  takehome: 261.78
+```
+
+**Case 28: reduce the ordinary court attachment.** Assume N=$516, prior valid child support $120 and a single ordinary court order requesting $100 with no higher minimum. The remaining court capacity is $86.40, so the court deduction must be reduced. [S27]
+
+```oa-check
+name: nz-2026-court-residual-capacity
+tolerance: 0
+inputs:
+  net_base: 516
+  child_support: 120
+  requested: 100
+  notice_floor: 0
+steps:
+  floor: max(net_base * 0.60, notice_floor)
+  capacity: max(0, net_base - floor - child_support)
+  court: min(requested, capacity)
+expected:
+  floor: 309.6
+  capacity: 86.4
+  court: 86.4
+```
+
+**Case 29: the order can specify a higher protected minimum.** Assume N=$500, an actual court minimum of $400, prior valid child support $80 and an ordinary court request of $100. Court capacity is $20. [S27], [S28]
+
+```oa-check
+name: nz-2026-court-higher-minimum
+tolerance: 0
+inputs:
+  net_base: 500
+  notice_floor: 400
+  child_support: 80
+  requested: 100
+steps:
+  floor: max(net_base * 0.60, notice_floor)
+  capacity: max(0, net_base - floor - child_support)
+  court: min(requested, capacity)
+expected:
+  floor: 400
+  capacity: 20
+  court: 20
+```
+
+**Case 30: court capacity cannot be negative.** Assume N=$300 and a court-order minimum of $350. The ordinary court request of $100 reduces to zero, rather than producing a negative deduction. [S27]
+
+```oa-check
+name: nz-2026-court-zero-capacity
+tolerance: 0
+inputs:
+  net_base: 300
+  notice_floor: 350
+  requested: 100
+steps:
+  floor: max(net_base * 0.60, notice_floor)
+  capacity: max(0, net_base - floor)
+  court: min(requested, capacity)
+expected:
+  floor: 350
+  capacity: 0
+  court: 0
+```
+
+**Case 31: ordinary weekly arrears ceiling.** Assume a valid income-tax arrears notice with initial debt $3,000 requires the standard salary/wage formula, with sufficient balance. On weekly gross $900, the ceiling and required deduction are $180. This does not select the amount for a different actual notice. [S30], [S32, paragraph 28][S32]
+
+```oa-check
+name: nz-2026-arrears-weekly-ceiling
+tolerance: 0
+inputs:
+  initial_debt: 3000
+  gross: 900
+steps:
+  debt_limb: initial_debt * 0.10
+  wage_limb: gross * 0.20
+  ceiling: max(10, min(debt_limb, wage_limb))
+expected:
+  debt_limb: 300
+  wage_limb: 180
+  ceiling: 180
+```
+
+**Case 32: low pay does not automatically mean a $10 deduction.** Under the same assumed standard notice and sufficient balance, weekly gross $80 gives a $16 ceiling and deduction. Do not copy the specification flowchart shortcut. [S30], [S32, paragraphs 26–27][S32]
+
+```oa-check
+name: nz-2026-arrears-low-pay-sixteen
+tolerance: 0
+inputs:
+  initial_debt: 3000
+  gross: 80
+steps:
+  ceiling: max(10, min(initial_debt * 0.10, gross * 0.20))
+expected:
+  ceiling: 16
+```
+
+**Case 33: the weekly minimum limb.** Assume the standard notice, sufficient balance and weekly gross $30. The lesser percentage limb is $6, so the weekly minimum limb gives $10. [S30], [S32, paragraph 27.2][S32]
+
+```oa-check
+name: nz-2026-arrears-weekly-minimum
+tolerance: 0
+inputs:
+  initial_debt: 3000
+  gross: 30
+steps:
+  lesser: min(initial_debt * 0.10, gross * 0.20)
+  ceiling: max(10, lesser)
+expected:
+  lesser: 6
+  ceiling: 10
+```
+
+**Case 34: reconcile the remaining amount required.** Assume weekly gross $900 and a fixed arrears instalment of $40, but only $5 remains required under the actual notice and no further notified interest is due. The deduction is $5, not a fresh $40 or $180 ceiling. [S30, subsection (1)][S30]
+
+```oa-check
+name: nz-2026-arrears-final-amount
+tolerance: 0
+inputs:
+  gross: 900
+  initial_debt: 3000
+  notice: 40
+  remaining_required: 5
+steps:
+  ceiling: max(10, min(initial_debt * 0.10, gross * 0.20))
+  deduction: min(notice, ceiling, remaining_required, gross)
+expected:
+  ceiling: 180
+  deduction: 5
+```
+
+**Case 35: a ceiling does not replace a lower notice amount.** Assume weekly gross $900, initial debt $3,000 and a valid fixed notice requiring $40, with sufficient balance. The standard ceiling is $180; the actual required deduction remains $40. [S30, subsections (1)–(3)][S30]
+
+```oa-check
+name: nz-2026-arrears-actual-notice
+tolerance: 0
+inputs:
+  initial_debt: 3000
+  gross: 900
+  notice: 40
+steps:
+  ceiling: max(10, min(initial_debt * 0.10, gross * 0.20))
+  deduction: min(notice, ceiling)
+expected:
+  ceiling: 180
+  deduction: 40
+```
+
+**Case 36: scale weekly limbs once for fortnightly pay.** Assume fortnightly gross $1,800, initial debt $3,000 and the standard notice with sufficient balance. Scale the weekly debt limb and $10 minimum by 2; the 20% limb already applies to fortnightly gross. The ceiling is $360. [S32, paragraph 27.1][S32], [S30]
+
+```oa-check
+name: nz-2026-arrears-fortnightly
+tolerance: 0
+inputs:
+  initial_debt: 3000
+  gross: 1800
+  weeks: 2
+steps:
+  debt_limb: initial_debt * 0.10 * weeks
+  wage_limb: gross * 0.20
+  minimum: 10 * weeks
+  ceiling: max(minimum, min(debt_limb, wage_limb))
+expected:
+  debt_limb: 600
+  wage_limb: 360
+  minimum: 20
+  ceiling: 360
+```
+
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, unresolved recovery notices, other irregular pays and attachment calculations; ESS, schedular payments and payment classification; automatic-enrolment, opt-out and refund administration; full definitions of contribution bases; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS, schedular payments and payment classification; automatic-enrolment, opt-out and refund administration; full definitions of contribution bases; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
-Sources checked 12 November 2026. Extra-pay examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. Selected PDF pages were read as native text and images; this does not claim full review of either PDF or the complete statute.
+Sources checked 12 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. Selected PDF pages were read as native text and images; this does not claim full review of either PDF or the complete statute.
 
 [S1]: https://www.ird.govt.nz/deductions "Salary and wage deductions"
 [S2]: https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf?modified=20260401012317 "2026-27 payroll specification, selected sections"
@@ -690,6 +1011,15 @@ Sources checked 12 November 2026. Extra-pay examples are recalculated from the s
 [S22]: https://www.ird.govt.nz/calculate-lump-sum-paye "Non-termination lump-sum PAYE, updated 18 May 2026"
 [S23]: https://www.ird.govt.nz/employing-staff/payday-filing/non-standard-filing-of-employment-information/lump-sum-payments "Lump-sum deductions and reporting, updated 27 January 2026"
 [S24]: https://www.ird.govt.nz/employing-staff/payday-filing/non-standard-filing-of-employment-information/lump-sum-payments/calculate-paye-for-a-lump-sum-payment-end-of-employment "End-of-employment lump-sum PAYE, updated 20 April 2026"
+
+[S25]: https://www.ird.govt.nz/student-loans/living-in-new-zealand-with-a-student-loan/repaying-my-student-loan-when-i-earn-salary-or-wages/student-loan-underpayments "Student-loan underpayments, updated 3 April 2024; dated specification supplies 2026-27 period"
+[S26]: https://www.ird.govt.nz/employing-staff/deductions-from-income/deduction-notices-collecting-taxes-from-taxpayers-who-refuse-to-pay "IRD deduction notices, updated 16 April 2026"
+[S27]: https://www.legislation.govt.nz/act/public/2016/49/en/latest/sections/DLM6942502/ "District Court Act 2016, section 157, as at 17 February 2026"
+[S28]: https://www.legislation.govt.nz/act/public/2016/49/en/latest/sections/DLM6942500/ "District Court Act 2016, section 156, as at 17 February 2026"
+[S29]: https://www.legislation.govt.nz/act/public/2016/49/en/latest/sections/DLM6942492/ "District Court Act 2016, section 154, as at 17 February 2026"
+[S30]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356984/ "Tax Administration Act 1994, section 157, as at 1 October 2026"
+[S31]: https://www.taxtechnical.ird.govt.nz/standard-practice-statements/processing/sps-21-01 "SPS 21/01 issuer index, issued 12 April 2021"
+[S32]: https://www.taxtechnical.ird.govt.nz/-/media/project/ir/tt/pdfs/standard-practice-statements/processing/sps-21-01.pdf?modified=20210420044632 "SPS 21/01 Deduction notices, paragraphs 26–36, 12 April 2021"
 
 <!-- openaccountants-cta-block -->
 
