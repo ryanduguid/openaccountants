@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Andorra payroll processing for 
 jurisdiction: AD
 category: payroll
 tax_year: 2025
-last_updated: 2026-11-10
+tax_year_notes: "2025 figures; selected regulations applicable from 2024 and separately labelled 2026 CASS information. Actual-period amendments remain to be reconciled."
+last_updated: 2026-11-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,18 +23,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | EUR only |
 | Standard pay frequency | Monthly (most common) |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Income tax system | IRPF (Impost sobre la Renda de les Persones Físiques) -- progressive withholding by employer |
+| Income tax system | IRPF (Impost sobre la Renda de les Persones Físiques); use the applicable notified/calculated withholding percentage |
 | Tax authority | Departament de Tributs i de Fronteres (DTF) |
 | Social security authority | CASS (Caixa Andorrana de Seguretat Social) |
 | Key legislation | Llei 5/2014 (IRPF); Decret 596/2023 (IRPF regulation); Llei 17/2008 (CASS framework); Decret 4/2025 (minimum wage 2025); Decret 16/2025 (average salary 2025) |
 | Filing portal | e-tramits.ad (IRPF); cass.ad (CASS) |
 | Official language | Catalan |
 | Validated by | Pending -- requires sign-off by a qualified Andorran tax adviser (assessor fiscal) |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (IRPF)
 
-Employers must register as a **retenidor** (withholding agent) with the DTF and withhold IRPF monthly from employees' gross wages as a payment on account of the employee's final annual IRPF liability. The DTF operates an automatic regularisation system: employees with only employment income generally do not need to file a full annual return if withholding has been correctly applied. *(Source: Govern d'Andorra IRPF FAQs; Rivermate guide)*
+Employment withholding is a payment on account of annual IRPF. Correct withholding does not itself exempt an employee from an annual return: the government FAQ includes residents with gross employment/property income of at least €24,000 amongst those required to file. See Section 9.4. [Government IRPF FAQ](https://www.e-tramits.ad/tramits/impostos/irpf).
+
+**Source and period boundary, checked 12 November 2026:** the selected IRPF provisions below are from Decret 596/2023, published on 2 January 2024, effective on publication and applicable to tax periods starting from 1 January 2024. The selected IRNR provisions are from Decret 594/2023 in the same issue. These captures do not establish that all later amendments have been reconciled. The guide remains a tier 2 draft pending professional review. The annual tax, deduction, savings, capital-gains, treaty and 2025 minimum-wage material outside this selected payroll reconciliation still needs actual-period primary-law checks; do not use it to infer a current payroll rate.
 
 ### 2.1 Statutory IRPF Rate Structure (Annual General Base)
 
@@ -49,30 +52,22 @@ Employers must register as a **retenidor** (withholding agent) with the DTF and 
 
 **Important:** The 5% effective rate is not a literal bracket -- it results from a bonification mechanism. The statutory marginal rate is 10% throughout the taxable base; the bonification creates the stepped effective rate in practice.
 
-### 2.2 Employer Withholding Rate Table (Retencions)
+### 2.2 Employer Withholding Procedure (Retencions)
 
-- **Withholding rate maximum cap** — The actual withholding rates applied by employers to annual gross salary are graduated and significantly lower than the marginal statutory rates. The maximum withholding rate is 7%, even though the statutory marginal rate reaches 10%; the gap is reconciled at the annual IRPF filing.  _(Assessors Associats; Andorra Difusió report on 7% maximum withholding cap)_
+Do not select a withholding percentage from a generic salary-band table or impose a blanket 7% cap. Decret 596/2023 provides the following procedure:
 
-**Employer Withholding Rate Table**  _(Assessors Associats; Andorra Difusió report on 7% maximum withholding cap)_
-
-| Annual Gross Salary | Withholding Rate |
+| Income or circumstance | Procedure |
 | --- | --- |
-| €0 -- €27,000 | 0% |
-| €27,001 -- €30,000 | 0.5% |
-| €30,001 -- €40,000 | 1% |
-| €40,001 -- €50,000 | 2% |
-| €50,001 -- €60,000 | 3% |
-| €60,001 -- €70,000 | 4% |
-| €70,001 -- €80,000 | 4.5% |
-| €80,001 -- €90,000 | 5% |
-| €90,001 -- €100,000 | 5.5% |
-| €100,001 -- €120,000 | 6% |
-| €120,001 -- €150,000 | 6.5% |
-| Above €150,000 | 7% (maximum) |
+| Ordinary employment income subject to CASS contributions | The ministry determines the percentage separately for each payer and communicates it to CASS and the payer. Use the notified rate from the month in which it is communicated. Until the annual notice arrives, continue the rate for the last month of the preceding year |
+| Ordinary employment income outside CASS contribution obligations | The payer calculates the rate under articles 24 and 25 using projected fixed/variable remuneration, deductible expenses, reductions and relief. Article 27 governs this payer calculation |
+| Courses, conferences and similar specified teaching income, unless economic-activity income; specified notice/dismissal compensation | Article 24(2) specifies a fixed 10% rate. Classify the payment and any mandatory-compensation exemption before applying it |
+| Ministry lacks the remuneration data needed to calculate the rate | Article 24(3) specifies 10% |
+| Employee requests a higher percentage | Article 24(5) permits this; retain the request and applicable communication |
+| Circumstances change | Article 25 requires regularisation where the change exceeds 1 percentage point. Its recalculated rate is expressed to 2 decimals and may not exceed 10%; this is not a general 7% cap. CASS regularisation is quarterly |
 
-- **Monthly withholding computation** — Monthly withholding = (Annual gross salary × Withholding rate) ÷ 12  _(Assessors Associats)_
+For ordinary cash pay, withholding = actual gross employment income for the payment × applicable percentage. Annual gross ÷ 12 is a monthly amount only under an equal-pay assumption. A projection used to determine a rate does not replace actual taxable pay. In-kind income and payments on account require their own valuation and treatment.
 
-The DTF determines the applicable withholding percentage for each employee taking into account that employee's personal deductions (children, ascendants, mortgage relief). The table above represents the standard rates before personal deduction adjustments. Employees may request a higher withholding rate via Form 317.
+The annual tax summary in Section 2.1 is not a substitute for this procedure. Obtain the notified rate or evidence of a valid payer calculation, its effective month and the relevant employee declarations before processing. [Decret 596/2023, articles 24–27](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49).
 
 ### 2.3 IRPF Deductions Affecting Tax Base
 
@@ -106,28 +101,26 @@ The DTF determines the applicable withholding percentage for each employee takin
 
 ## Section 3 -- Non-Resident Income Tax (IRNR)
 
-Employers are responsible for deducting and remitting IRNR on behalf of non-resident employees working in Andorra. *(Source: Govern.ad IRNR page)*
+Determine non-residence, Andorran-source employment, exemptions, any treaty treatment and any elected frontier/seasonal-worker regime before choosing a rate. A blanket 10% rule for every non-resident employee is insufficient: articles 30–32 of Decret 594/2023 address elections and distinct withholding treatment for qualifying seasonal/frontier workers. The examples below assume a separately confirmed 10% rate; they do not establish eligibility or a general rate schedule.
 
-**IRNR Table**  _(Govern.ad IRNR page; Myexpatexperts tax calendar; Remotepeople)_
-
-| Item | Detail |
+| Withholding category | Filing and payment under article 24 |
 | --- | --- |
-| Rate | 10% flat on Andorran-source employment income |
-| Base | Gross employment income exercised in Andorra |
-| Dividends / interest paid to non-residents | Generally not subject to IRNR |
-| Filing frequency | Quarterly |
-| Quarterly deadlines | January, April, July, October (end of each quarter) |
-| Treaty relief | May apply for residents of Spain, France, Portugal, Luxembourg, Liechtenstein, Malta, Cyprus, Hungary, San Marino, UAE |
+| Employment income paid by CASS or subject to CASS contributions | Monthly declaration and payment to the finance ministry on days 1–15 of the following month; a joint CASS declaration may be used |
+| Other income subject to IRNR withholding | During the month after each calendar quarter, using the approved model. Article 24(1) also permits amounts relating to income accrued in the quarter's last month to be declared in the following quarter's liquidation period |
+
+Article 29(2) requires a withholding certificate when the invoice, receipt or equivalent document does not show the withholding, or when the recipient requests one. Article 29(3) separately requires payers to communicate the preceding quarter's withholding/payments on account to recipients during the first 30 calendar days of April, July, October and January. Article 24(4) allows the ministry to request an annual summary at the fourth-quarter payment deadline; do not substitute IRPF's annual certificate rule for these IRNR obligations.
+
+Article 27 preserves specified withholding exemptions, including applicable treaty relief, without necessarily removing declaration obligations. Do not treat a bank description or the employee's nationality as proof of tax treatment. Actual-period law, underlying statutory rates, treaty eligibility and the current approved forms still need confirmation. [Decret 594/2023, articles 24, 27 and 29–32](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_13_31_02).
 
 ## Section 4 -- CASS Social Security Contributions
 
 ### 4.1 Governing Framework
 
-- **CASS governing framework** — CASS (Caixa Andorrana de Seguretat Social) is the public social security body established under Llei 17/2008. The 2025 reference average global salary was set at €2,560.99/month by Decret 16/2025 (29 January 2025).  _(CASS official site; Elysium Consulting 2025 CASS guide)_
+CASS is the social security body under Llei 17/2008. Its salaried-worker guidance sets out the rates, contribution base, declaration obligations and surcharges selected below. Self-employed reference salaries and percentage tiers must not be imported into the ordinary employee contribution base. [CASS contributions, surcharges and sanctions](https://www.cass.ad/cotitzacions-recarrecs-sancions).
 
-### 4.2 Contribution Rates -- Standard Salaried Employees (2025)
+### 4.2 Contribution Rates -- Standard Salaried Employees
 
-**Standard Contribution Rates Table**  _(CASS official page cass.ad/cotitzacions-recarrecs-sancions; Elysium Consulting)_
+**Standard contribution rates**, as displayed in the [CASS salaried-worker guidance checked 12 November 2026](https://www.cass.ad/cotitzacions-recarrecs-sancions). Verify the requested period and any special regime before use.
 
 | Branch | Employee | Employer | Total |
 | --- | --- | --- | --- |
@@ -135,7 +128,7 @@ Employers are responsible for deducting and remitting IRNR on behalf of non-resi
 | Retirement Branch (retirement, widow/widower, survivor pensions) | 3.5% | 8.5% | 12.0% |
 | **TOTAL** | **6.5%** | **15.5%** | **22.0%** |
 
-**Special case -- employee already drawing a retirement pension**  _(CASS official page cass.ad/cotitzacions-recarrecs-sancions; Elysium Consulting)_
+**Special case: employee already receiving a retirement pension.** The same CASS guidance provides for General Branch contributions only.
 
 | Branch | Employee | Employer | Total |
 | --- | --- | --- | --- |
@@ -149,13 +142,20 @@ Employers are responsible for deducting and remitting IRNR on behalf of non-resi
 
 ### 4.4 Contribution Base
 
-- **Included in contribution base** — Regular salary, supplements, bonuses, benefits-in-kind (housing, meals, company car), indemnities.
-- **Excluded from contribution base** — Tips, company liberalities, meal/travel expense reimbursements, employer contributions to supplementary (occupational) pension plans.
-- **CASS contribution ceiling (self-employed, 2025)** — €3,520.36/month (137.5% of the average monthly salary)  _(CASS official pages; Elysium Consulting)_
+The salaried contribution base is qualifying global remuneration, rather than necessarily the cash paid into the employee's account.
 
-**Ceiling (plafó):** A formal government-set contribution ceiling exists under Llei 17/2008. The exact 2025 ceiling for salaried employees is **[RESEARCH GAP -- reviewer to confirm: contact CASS directly or check latest BOPA decree]**. For self-employed workers the 2025 ceiling is €3,520.36/month (137.5% of the average monthly salary). *(Source: CASS official pages; Elysium Consulting)*
+- Included items in the CASS guidance include salary supplements, bonuses, gratuities, monetary/non-monetary incentives, advantageous loans, private insurance, specified accommodation/meals/travel benefits, indemnities, settlements and other remuneration.
+- Exclusions include customer tips, employer liberalities, qualifying travel/subsistence/transport/accommodation expense reimbursements and financing/benefits of supplementary employer pension plans. A payment's label alone does not establish an exclusion.
+- Apply the relevant CASS rules to classify and value benefits and termination payments. Do not assume every reimbursement is excluded.
+- The selected sources do not establish an ordinary salaried contribution ceiling. They also do not prove that no special limit can exist. Do not apply the former self-employed €3,520.36/137.5% figure to employees; require authority for any proposed cap or special base.
 
-**Floor:** No explicit contribution floor for salaried workers confirmed in public sources. **[RESEARCH GAP -- reviewer to confirm with CASS]**
+[CASS salaried contribution guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions).
+
+**Separate 2026 Article 99 supplement, not a general employer contribution floor:** CASS's 2 February 2026 factsheet describes an employee-funded supplement for General Branch benefit rights where the aggregate monthly salaried contribution base is below the official minimum wage, €1,525.33 for 2026. For an eligible ordinary case, the supplement is 10% of the difference between that minimum and gross global salary. It is not 22%, and does not automatically increase the ordinary employer payroll base.
+
+The factsheet excludes people affiliated to the specified special regimes, including qualifying students/high-performance athletes aged 25–30 and qualifying low-paid employees insured indirectly. Age or low pay alone does not establish an exception. Registration uses CASS-0087, effective from presentation until cancellation; monthly declaration/payment is online with a digital certificate on days 1–15 of the following month. A zero declaration is required when the salary reaches the minimum or the person is temporarily incapacitated for the entire month. All salaried jobs count together. For partial-month registration, partial-month incapacity or benefits in kind, obtain the actual amount from CASS rather than applying the simple difference formula.
+
+The factsheet explicitly says it is informational and has no legal validity; the published BOPA law controls. This selected 2026 information does not establish the supplement's rules or threshold for 2025 or another year. [CASS Article 99 informational factsheet, pages 1–2](https://www.cass.ad/sites/default/files/arxius/CASS_COMPLEMENT%20ART99%20ASS%20fitxa%2002-02-2026.pdf).
 
 ## Section 5 -- Minimum Wage (Salari Mínim Interprofessional)
 
@@ -172,28 +172,27 @@ Employers are responsible for deducting and remitting IRNR on behalf of non-resi
 
 - **2026 minimum wage (for reference)** — €8.80/hour and €1,525.33/month effective 1 January 2026  _(Playroll)_
 
-## Section 6 -- Conservative Defaults
+## Section 6 -- Processing Inputs and Defaults
 
-**Conservative Defaults Table**
+| Parameter | Required treatment |
+| --- | --- |
+| IRPF withholding percentage | Obtain the applicable notified rate or evidenced payer calculation and its effective month; do not derive it from the retired salary bands |
+| Employee/employer CASS | Standard 6.5%/15.5% of the qualifying contribution base; 3%/7% General Branch only for the confirmed retirement-pension case |
+| Proposed CASS cap or special base | Require actual-period authority; do not use self-employed reference tiers |
+| Tax residence and special regime | Confirm before choosing IRPF/IRNR treatment; no default residence assumption |
+| Personal deductions | Use the declarations and prescribed procedure; do not replace a notified rate with a guessed adjustment |
+| Pay frequency and currency | Confirm the actual payment period; the cash examples use monthly EUR pay |
+| Low-paid employee supplement | Assess separately under the applicable year's Article 99 rules, including aggregation and special-regime conditions |
 
-| Parameter | Conservative Default | Basis |
-| --- | --- | --- |
-| IRPF withholding rate | Per withholding table based on annual gross salary; 0% if annual gross ≤€27,000 | Decret 596/2023; Assessors Associats |
-| Employee CASS | 6.5% of gross salary | CASS official; Llei 17/2008 |
-| Employer CASS | 15.5% of gross salary | CASS official; Llei 17/2008 |
-| CASS contribution ceiling (salaried) | [RESEARCH GAP -- apply contributions on full gross until ceiling confirmed with CASS] |  |
-| Tax residency status | Resident (apply IRPF rates) | Only override if non-residency is confirmed |
-| Personal deductions | None (standard: no adjustments) | Deductions require employee declaration |
-| Pay frequency | Monthly | Standard Andorran practice |
-| Currency | EUR | Only currency used in Andorra |
+Sources: [IRPF regulation, articles 24–27](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49), [CASS salaried guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions) and the separately labelled 2026 factsheet in Section 4.4.
 
 ## Section 7 -- Required Inputs
 
 Before computing Andorra payroll, you MUST have:
 
 1. **Employee tax residency status** -- resident (IRPF) or non-resident (IRNR)
-2. **Annual gross salary** -- to determine correct withholding rate band
-3. **Monthly gross salary** -- for computation of monthly amounts
+2. **Applicable year and remuneration projection** -- fixed/variable annual remuneration and declarations required by the prescribed rate-setting procedure
+3. **Actual period pay and qualifying bases** -- distinguish cash gross, taxable employment income, CASS contribution base, benefits and excluded reimbursements; obtain the applicable withholding percentage and its effective month
 4. **CASS registration status** -- confirm both employer and employee are registered
 5. **Personal deduction declarations** -- children, ascendants, mortgage if applicable (affects DTF-determined withholding rate)
 6. **Pension-drawing status** -- if employee is already receiving a retirement pension, different CASS rates apply
@@ -204,7 +203,7 @@ Before computing Andorra payroll, you MUST have:
 - **Unknown residency status** — Cannot determine whether IRPF or IRNR applies
 - **Salary in non-EUR currency** — Andorra uses EUR exclusively; flag if any other currency is mentioned
 - **Double-taxation treaty claim** — Treaty benefit cannot be applied without knowing employee's country of tax residence and the specific treaty provisions -- direct to qualified adviser
-- **CASS ceiling uncertainty** — If salary may exceed the (unconfirmed) CASS ceiling, output must be flagged as potentially overstated and marked [RESEARCH GAP]
+- **Unsupported cap or special-base claim** — Do not apply a proposed CASS limit without its actual-period authority; self-employed tiers are not an employee cap
 - **Benefits-in-kind valuation** — Housing, vehicles, and meal benefits require valuation -- do not guess
 - **Termination payments** — Indemnification amounts under Andorran labour law require legal advice before payroll treatment can be determined
 
@@ -241,73 +240,48 @@ This section enables recognition and classification of Andorra-specific payroll 
 
 ### 8.3 CASS-0031 Form Classification
 
-- **CASS-0031 form** — The CASS-0031 form ("Full de declaració de cotitzacions i retencions IRPF/IRNR") is a combined monthly declaration covering both CASS contributions and IRPF/IRNR withholdings. A single monthly payment/declaration to CASS covers both obligations for most employers.  _(CASS-0031 form page cass.ad/tramits/cass-0031)_
+The published blank CASS-0031 combines CASS contributions and IRPF/IRNR withholding in one declaration, with separate tax and social-contribution columns and totals. Page 2 assigns tax withholding to DTF and contributions to CASS. Do not combine them into one undifferentiated contribution total or assume that filing alone proves both payments. IRPF article 33 provides for the same payment method as CASS and, by default, the same direct-debit account, whilst allowing another account or method. The current authenticated online fields and actual payment instructions still need practitioner confirmation. [Published CASS-0031, pages 1–2](https://www.cass.ad/sites/default/files/tramits/cass-0031.pdf), [IRPF regulation, article 33](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49).
 
 ### 9.1 CASS Monthly Declaration (CASS-0031)
 
-**CASS Monthly Declaration Table**  _(CASS official CASS-0031 page; CASS contributions page)_
-
 | Item | Detail |
 | --- | --- |
-| Form | CASS-0031 "Full de declaració de cotitzacions i retencions IRPF/IRNR" |
-| Frequency | Monthly |
-| Deadline | 1st--15th of the month following the salary payment period |
-| Content | Employer CASS (15.5%), employee CASS (6.5%), IRPF/IRNR withholdings |
-| Who pays | Employer remits both shares (deducts employee 6.5% from wages, adds employer 15.5%) |
-| Portal | cass.ad |
+| Published form | CASS-0031, Full de declaració de cotitzacions i retencions IRPF/IRNR |
+| Frequency/window | Monthly declaration and payment on days 1–15 of the following month |
+| Contributions | Employer remits employee and employer shares of the qualifying base; apply the retirement-pension exception where appropriate |
+| Separate tax totals | Distinguish IRPF/IRNR withholding from CASS contributions and reconcile both obligations |
+| Submission | CASS guidance requires employers, including domestic employers, to use online services with a digital certificate. The published paper form is a reference, not proof of current online fields |
 
-### 9.2 IRPF Withholding Forms (Filed with DTF)
+[CASS guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions), [CASS-0031, pages 1–2](https://www.cass.ad/sites/default/files/tramits/cass-0031.pdf).
 
-**IRPF Withholding Forms Table**  _(e-tramits.ad IRPF forms page; Govern.ad forms)_
+### 9.2 Approved DTF Models and Communications
 
-| Form | Purpose |
+Use the approved model for the actual income category and procedure. This reconciliation confirms CASS-0031's published content, but does not authenticate the former guide's mappings of DTF forms 310/312/312-A/315/316/317/311/311-A/340/341. Do not rely on those numbers as operational directions without checking the current official model.
+
+For IRPF employment income subject to CASS contributions, articles 29 and 31 require payer communications including new-employment remuneration information; article 31 sets a 10-day period from the start of a new employment relationship. Article 29(3) excludes non-CASS employment income from that payer-communication obligation; its separate payer-calculation route remains in Section 2.2. This DTF communication is distinct from CASS affiliation/registration. [Decret 596/2023, articles 29 and 31](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49).
+
+### 9.3 IRPF Withholding, Annual Summary and Certificate
+
+| Obligation | Period/window in Decret 596/2023 |
 | --- | --- |
-| Form 310 | Self-assessment of withholdings on employment income NOT subject to CASS (e.g., some border-worker income) |
-| Form 312 | Self-assessment of withholdings on employment income subject to CASS obligations |
-| Form 312-A | Additional or late withholding self-assessments |
-| Form 315 | Communication of withholding data to individual employee |
-| Form 316 | Notification of changes in withholding amount |
-| Form 317 | Employee request for higher withholding percentage |
-| Form 311 | Annual withholding summary (non-CASS employment income) |
-| Form 311-A | Annex to Form 311 |
-| Form 340 | Self-assessment of withholdings on investment/movable capital income |
-| Form 341 | Annual summary of capital income withholdings |
+| CASS-covered employment withholding, article 33(1) | Monthly declaration and payment to the ministry on days 1–15 of the following month; the declaration may be joint with CASS |
+| Other employment withholding, article 33(2) | Quarterly declaration/payment during April, July, October and January for the preceding quarter. This selected provision does not prescribe the former guide's 20-day deadline |
+| Annual employment withholding summary, article 34 | For non-CASS income: 1–31 January of the following year. A separate summary is not required for CASS-covered income, for which the ministry obtains the monthly data |
+| Withholding certificate, article 35 | 1 January–31 March of the following year. For CASS-covered income, issuing it is mandatory only if expressly requested |
 
-Because CASS-0031 already captures the monthly IRPF remittance for most salaried employees (combined CASS + IRPF declaration), Forms 310/312 may apply primarily for out-of-CASS situations. **[RESEARCH GAP -- reviewer to confirm the exact interaction between CASS-0031 and the separate DTF forms for a typical Andorran employer]**
+The monthly/quarterly distinction follows the income's CASS obligation, not employer size or withholding volume. IRNR has its own article 24 procedure in Section 3. [Decret 596/2023, articles 33–35](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49).
 
-### 9.3 IRPF Withholding Payment Frequency and Deadlines
+### 9.4 Annual IRPF Return (Employee Level)
 
-**IRPF Withholding Payment Frequency Table**  _(Govern.ad IRPF consultation; multiple secondary sources consistently citing "20 days" deadline)_
+The government FAQ lists residents required to file as those with economic-activity income, gross employment/property income of at least €24,000, unwithheld movable-capital income exceeding €3,000 or capital gains/losses. Exempt income is excluded when assessing these conditions. Correct employment withholding does not remove these tests.
 
-| Item | Detail |
-| --- | --- |
-| Frequency | Monthly or quarterly, depending on employer size and total withholding volume |
-| Deadline | Within the first 20 days of the month following the withholding period |
-| Quarterly periods | April, July, October, January |
-| Annual employer summary deadline | [RESEARCH GAP -- described as end of February/March by secondary sources; verify exact date with DTF] |
+The published filing window is 1 April–30 September of the year following the income year, so the stated window for 2025 income is 1 April–30 September 2026. Check the actual campaign, approved model and access method before filing; this source review does not authenticate every former Form 300 annex mapping. [Government IRPF FAQ](https://www.e-tramits.ad/tramits/impostos/irpf).
 
-### 9.4 Annual IRPF Return (Employee-Level -- Form 300)
+### 9.5 Registration and New Hires
 
-**Annual IRPF Return Table**  _(e-tramits.ad IRPF portal; Bloomberg Tax; WIT Andorra)_
+CASS guidance requires employees to be insured from the start of employment. Missing registration does not remove the employer's contribution obligation. Confirm employer/employee affiliation and the current CASS registration procedure before processing. The former guide's specific 5-day new-hire deadline is not established by the sources selected here.
 
-| Item | Detail |
-| --- | --- |
-| Who must file | Residents with: income from economic activity; OR gross employment/property income ≥€24,000; OR unwithheld savings income ≥€3,000; OR any capital gain/loss |
-| Filing window | 1 April -- 30 September of the year following the income year |
-| For 2025 income | 1 April 2026 -- 30 September 2026 |
-| Method | Online (MIL credentials or electronic certificate) or in-person with prior appointment |
-| Main form | Form 300 (with annexes 300-A through 300-E) |
-
-### 9.5 Employer Registration Requirements
-
-**Employer Registration Requirements Table**  _(Elysium Consulting CASS 2025; Playroll EOR guide; e-tramits.ad IRPF portal)_
-
-| Registration | Timing | Authority |
-| --- | --- | --- |
-| CASS employer registration (obtain employer number) | Before employee's first day of work | CASS (cass.ad) |
-| New hire notification to CASS | Within 5 days of hire | CASS |
-| DTF retenidor (withholding agent) registration | Before paying any employment income subject to withholding | DTF (Baixada del Molí, 26, Andorra la Vella; +376 885 005; impostos@govern.ad) |
-| Andorran Company Registry (Registre de Comerç) | Before employing staff | Registre de Comerç |
+Keep CASS registration separate from the DTF's withholding-agent and remuneration-communication requirements. The 10-day DTF new-employment payer communication in articles 29 and 31 applies to the CASS-covered income described in Section 9.2; it is not a substitute CASS registration deadline. [CASS guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions), [IRPF regulation, articles 29 and 31](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49).
 
 ### 10.1 CASS Late Payment Surcharges
 
@@ -316,10 +290,10 @@ Because CASS-0031 already captures the monthly IRPF remittance for most salaried
 | Lateness | Surcharge |
 | --- | --- |
 | Up to 1 month late | 5% of unpaid amount |
-| 1 -- 6 months late | 10% of unpaid amount |
+| From 1 month and 1 day through 6 months late | 10% of unpaid amount |
 | More than 6 months late | 20% of unpaid amount |
 
-- **Serious CASS infractions** — Serious CASS infractions (administrative sanctions -- range 501--20,000 jubilation points): - Filing declarations more than 3 months late - Intentionally falsifying contribution data - Withholding employee contributions without remitting them to CASS
+The CASS page labels the 501–20,000 retirement-point range **very serious**; the serious range is 51–500 points and minor infractions carry a warning or 25–50 points. Do not convert points into euros without the applicable valuation or infer a sanction from lateness alone. Use the source's classification for the actual conduct. The surcharge table above is the regime labelled effective from 1 July 2022, not the older daily-rate text also present on the page. [CASS surcharges and sanctions](https://www.cass.ad/cotitzacions-recarrecs-sancions).
 
 ### 10.2 IRPF Penalties
 
@@ -331,6 +305,8 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 
 ## Section 11 -- Worked Examples
 
+These are cash-only arithmetic illustrations using equal monthly pay, separately assumed withholding percentages and a CASS contribution base equal to the stated gross. They do not derive a rate from salary, establish an actual DTF notice or cover in-kind benefits, treaty elections or an Article 99 supplement. The 2025 wage illustration does not establish a current minimum wage. Round each deduction/contribution to cents, then reconcile net pay.
+
 ### Example 1 -- Minimum Wage Employee (Resident, No Personal Deductions)
 
 **Example 1 table**  _(Decret 4/2025)_
@@ -339,7 +315,7 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 | --- | --- | --- |
 | Gross salary | Per Decret 4/2025 | €1,447.33 |
 | Employee CASS (6.5%) | 1,447.33 × 6.5% | −€94.08 |
-| IRPF withholding (0%) | Annual gross €17,368 < €27,000 threshold → 0% | €0.00 |
+| IRPF withholding (0%) | Assumed applicable rate 0%; not inferred from annual salary | €0.00 |
 | **Net pay to employee** | 1,447.33 − 94.08 | **€1,353.25** |
 | Employer CASS (15.5%) | 1,447.33 × 15.5% | €224.34 |
 | **Total employer cost** | 1,447.33 + 224.34 | **€1,671.67** |
@@ -354,7 +330,7 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 | --- | --- | --- |
 | Gross salary | 50,000 ÷ 12 | €4,166.67 |
 | Employee CASS (6.5%) | 4,166.67 × 6.5% | −€270.83 |
-| IRPF withholding (2%) | Annual €40,001--€50,000 band → 2%; (50,000 × 2%) ÷ 12 | −€83.33 |
+| IRPF withholding (2%) | Assumed applicable rate 2%; 4,166.67 × 2% | −€83.33 |
 | **Net pay to employee** | 4,166.67 − 270.83 − 83.33 | **€3,812.51** |
 | Employer CASS (15.5%) | 4,166.67 × 15.5% | €645.83 |
 | **Total employer cost** | 4,166.67 + 645.83 | **€4,812.50** |
@@ -369,14 +345,14 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 | --- | --- | --- |
 | Gross salary | 80,000 ÷ 12 | €6,666.67 |
 | Employee CASS (6.5%) | 6,666.67 × 6.5% | −€433.33 |
-| IRPF withholding (4.5%) | Annual €70,001--€80,000 band → 4.5%; (80,000 × 4.5%) ÷ 12 | −€300.00 |
+| IRPF withholding (4.5%) | Assumed applicable rate 4.5%; 6,666.67 × 4.5% | −€300.00 |
 | **Net pay to employee** | 6,666.67 − 433.33 − 300.00 | **€5,933.34** |
 | Employer CASS (15.5%) | 6,666.67 × 15.5% | €1,033.33 |
 | **Total employer cost** | 6,666.67 + 1,033.33 | **€7,700.00** |
 
 **Profile:** Resident employee, annual gross = €80,000. Monthly gross = €6,666.67.
 
-### Example 4 -- Lower-Mid Salary at Band Boundary (Resident, No Personal Deductions)
+### Example 4 -- Lower-Mid Salary (Resident, Assumed Withholding)
 
 **Example 4 table**
 
@@ -384,7 +360,7 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 | --- | --- | --- |
 | Gross salary | 30,000 ÷ 12 | €2,500.00 |
 | Employee CASS (6.5%) | 2,500.00 × 6.5% | −€162.50 |
-| IRPF withholding (0.5%) | Annual €27,001--€30,000 band → 0.5%; (30,000 × 0.5%) ÷ 12 | −€12.50 |
+| IRPF withholding (0.5%) | Assumed applicable rate 0.5%; 2,500.00 × 0.5% | −€12.50 |
 | **Net pay to employee** | 2,500.00 − 162.50 − 12.50 | **€2,325.00** |
 | Employer CASS (15.5%) | 2,500.00 × 15.5% | €387.50 |
 | **Total employer cost** | 2,500.00 + 387.50 | **€2,887.50** |
@@ -399,14 +375,14 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 | --- | --- | --- |
 | Gross salary | 36,000 ÷ 12 | €3,000.00 |
 | Employee CASS (6.5%) | 3,000.00 × 6.5% | −€195.00 |
-| IRNR withholding (10% flat) | 3,000.00 × 10% | −€300.00 |
+| IRNR withholding (assumed applicable 10%) | 3,000.00 × 10% | −€300.00 |
 | **Net pay to employee** | 3,000.00 − 195.00 − 300.00 | **€2,505.00** |
 | Employer CASS (15.5%) | 3,000.00 × 15.5% | €465.00 |
 | **Total employer cost** | 3,000.00 + 465.00 | **€3,465.00** |
 
-**Profile:** Non-resident employee, annual gross from Andorran employment = €36,000. Monthly gross = €3,000.00. No treaty relief (no confirmed treaty with country of residence).
+**Profile:** Non-resident employee, annual gross from Andorran employment = €36,000. Monthly gross = €3,000.00. Assume the classification, 10% withholding and absence of applicable relief have been separately confirmed; lack of treaty evidence alone does not establish no relief.
 
-**Note:** IRNR is filed quarterly (January, April, July, October). The employer remits the deducted IRNR to the DTF each quarter.
+**Filing note:** this assumed CASS-covered employment falls within the monthly 1–15 window in IRNR article 24(2), not the other-income quarterly route.
 
 ### Example 6 -- Employee Already Drawing Retirement Pension (Resident)
 
@@ -416,26 +392,25 @@ Specific penalty percentages for IRPF late filing or late withholding remittance
 | --- | --- | --- |
 | Gross salary | 24,000 ÷ 12 | €2,000.00 |
 | Employee CASS -- General Branch only (3.0%) | 2,000.00 × 3.0% | −€60.00 |
-| IRPF withholding (0%) | Annual gross €24,000 ≤ €27,000 threshold → 0% | €0.00 |
+| IRPF withholding (0%) | Assumed applicable rate 0%; not inferred from annual salary | €0.00 |
 | **Net pay to employee** | 2,000.00 − 60.00 | **€1,940.00** |
 | Employer CASS -- General Branch only (7.0%) | 2,000.00 × 7.0% | €140.00 |
 | **Total employer cost** | 2,000.00 + 140.00 | **€2,140.00** |
 
 **Profile:** Resident employee who is also receiving a CASS retirement pension, annual gross = €24,000. Monthly gross = €2,000.00.
 
-## Section 12 -- Tier 1 Rules (Always Apply)
+## Section 12 -- Mandatory Processing Checks
 
-These rules have no exceptions in standard Andorran payroll. Violating any of them constitutes a processing error.
+These processing checks do not promote the guide to accountant-reviewed tier 1.
 
-- **Register with CASS before first hire** — Employers must obtain a CASS employer number before the employee's first working day. New hires must be individually registered within 5 days of hire.  _(Llei 17/2008)_
-- **Register as retenidor with DTF before paying wages** — The DTF registration as withholding agent is mandatory before any employment income is paid.  _(Llei 5/2014)_
-- **Always deduct employee CASS at 6.5%** — For standard employees, 6.5% of gross salary is deducted from employee wages and remitted to CASS with the employer's 15.5% share via CASS-0031. Exception: employees drawing a retirement pension pay 3.0% (general branch only).
-- **Always add employer CASS at 15.5%** — Employer must contribute 15.5% of the employee's gross salary. This is an employer cost over and above the gross salary. Exception: employees drawing a retirement pension -- employer pays 7.0% only.
-- **File CASS-0031 monthly by the 15th** — The combined CASS contribution and IRPF/IRNR withholding declaration must be submitted to CASS by the 15th of the month following the salary period. Late payment triggers surcharges starting at 5%.
-- **Never pay below the minimum wage** — For 2025: €8.35/hour or €1,447.33/month for a standard 40-hour week.  _(Decret 4/2025)_
-- **Apply IRPF or IRNR -- never both** — Resident employees are subject to IRPF withholding (per the graduated table). Non-resident employees are subject to IRNR at 10% flat. Determine residency status before computing any withholding.
-- **Maximum IRPF withholding rate is 7%** — Even for very high earners, the employer withholding rate is capped at 7% (per Andorra Difusió / Assessors Associats). The gap between withheld and final statutory liability is settled via the annual IRPF return.  _(Andorra Difusió / Assessors Associats)_
-- **All amounts in EUR** — Andorra has no domestic currency; all payroll must be computed and paid in EUR.
+- Confirm the actual period, residence, income category and any special-regime election before choosing IRPF/IRNR treatment.
+- Obtain the applicable withholding percentage and effective month using Section 2.2 or the separately confirmed IRNR procedure. Do not substitute the retired salary bands or a blanket 7% cap.
+- Confirm CASS registration and the qualifying contribution base. Standard employee/employer rates are 6.5%/15.5%; the confirmed retirement-pension case uses 3%/7% General Branch only.
+- Distinguish actual cash pay, taxable employment income and the CASS base. Assess any employee-funded Article 99 supplement separately for its year.
+- Declare and pay CASS-covered employment contributions and withholding in the monthly 1–15 window, retaining separate contribution/tax totals and payment evidence.
+- Check the actual-period minimum wage, benefits, termination treatment and any claimed special limit before approving the payroll.
+
+Primary sources and their period limits are in Sections 2.2, 3, 4 and 9.
 
 ## Section 13 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -443,61 +418,63 @@ These items involve judgement, incomplete research data, or complexity that requ
 
 **Tier 2 Catalogue Table**
 
-| Situation | Issue | Action Required |
-| --- | --- | --- |
-| Employee claims personal deductions (children, ascendants, mortgage) | Deductions affect DTF-determined withholding rate; standard table above does not reflect these | Obtain signed employee declaration; submit deduction data to DTF to get adjusted withholding rate |
-| Salary exceeds possible CASS ceiling | Exact 2025 CASS contribution ceiling for salaried employees not confirmed in any reviewed public source | Contact CASS directly or check latest BOPA decree before computing on salaries that may be near the ceiling |
-| Double-taxation treaty relief claim | Employee is resident in Spain, France, Portugal, Luxembourg, Liechtenstein, Malta, Cyprus, Hungary, San Marino, or UAE | Review specific treaty provisions; do not apply treaty relief without written professional advice |
-| Benefits-in-kind (housing, vehicle, meals) | Must be included in CASS contribution base; IRPF valuation rules apply | Obtain market-value assessment; apply per DTF/CASS guidance on benefit valuation |
-| Termination/indemnification payments | May be partially or fully exempt from IRPF; CASS treatment depends on nature of payment | Consult Andorran labour and tax adviser before processing |
-| Self-employed / mixed-employment status | IRPF applies to employment income; economic activity income has separate rules | Do not commingle in payroll computation; separate income streams require separate IRPF declarations |
-| CASS contribution floor for salaried workers | Floor not confirmed in public sources reviewed | Verify with CASS |
-| Annual IRPF employer summary deadline | Secondary sources cite "end of February/March" -- exact date not confirmed | Verify exact deadline with DTF before processing year-end reconciliation |
-| IRPF penalty schedule | Specific penalty amounts/percentages not published in reviewed sources | Consult DTF or Llei 5/2014 sanction provisions directly |
-| CASS-0031 vs. separate DTF forms interaction | Precise workflow for simultaneous CASS and DTF filing needs local practitioner confirmation | Confirm with DTF and a local assessor fiscal before first payroll run |
+| Situation | Remaining check before reliance |
+| --- | --- |
+| Withholding notice, declarations or changed circumstances | Obtain the actual percentage, effective month and regularisation evidence; reconcile the requested period's amendments |
+| Proposed CASS ceiling or special base | Require the specific salaried-worker authority; no self-employed reference tier |
+| Low-paid or multiple-job employee | Reconcile applicable-year Article 99 law, aggregate salaries, affiliation/exceptions and any separately payable supplement |
+| Treaty or frontier/seasonal-worker claim | Verify residence, actual-period treaty/statute, election and withholding conditions; no general country list proves relief |
+| Benefits in kind or termination compensation | Reconcile tax and CASS classification/valuation separately with the relevant law |
+| Self-employed or mixed status | Keep employment payroll distinct from economic-activity obligations; no employee-rate inference from self-employed tiers |
+| Registration and online submission | Confirm current CASS affiliation steps, authenticated fields, approved DTF models and payment evidence; the published blank form is not an online walkthrough |
+| Annual close and recipient reporting | For IRPF apply Section 9.3's summary/certificate distinctions. For IRNR apply Section 3's quarterly recipient notices, certificate conditions and any ministry-requested annual summary; confirm actual campaign instructions |
+| Other guide material | Reconcile annual deductions, savings/capital gains, minimum-wage instruments, occupational coverage and IRPF/minimum-wage penalty provisions with primary law |
+
+The selected sources resolve several former gaps but do not complete actual-period law or practitioner sign-off.
 
 ## Section 14 -- Excel Working Paper Template
 
-Use the following structure when building a monthly payroll working paper. All values in EUR.
+Use this structure only for cash-only monthly payroll where taxable cash pay equals cash gross. Record benefits, excluded reimbursements, other deductions and separate supplements outside this simplified worksheet, with their own reconciliations.
 
 ```
 ANDORRA PAYROLL WORKING PAPER
-Month / Year: [MONTH YYYY]
-Employer CASS Number: [____________]
-DTF Retenidor Number: [____________]
+Period / Year: [MONTH YYYY]
+Employer CASS / DTF registration: [confirmed evidence]
 
-COLUMN HEADERS:
-A  Employee Name
-B  Employment Type (Resident / Non-Resident / Pension-drawing)
-C  Gross Monthly Salary (EUR)
-D  Annual Gross (=C×12 or actual annual if variable)
-E  Withholding Rate (from Section 2.2 table, or 10% IRNR if non-resident)
-F  Monthly IRPF/IRNR Withholding (=D×E/12)
-G  Employee CASS Rate (6.5% standard; 3.0% if pension-drawing)
-H  Employee CASS Deduction (=C×G)
-I  Net Pay to Employee (=C−F−H)
-J  Employer CASS Rate (15.5% standard; 7.0% if pension-drawing)
-K  Employer CASS Contribution (=C×J)
-L  Total Employer Cost (=C+K)
-M  Notes (treaty claim, deductions applied, CASS ceiling reached, etc.)
+A  Employee identifier
+B  Residence, tax category, pension/special-regime classification
+C  Actual cash gross this period (EUR)
+D  Remuneration projection / rate notice reference and effective month
+E  Applicable IRPF/IRNR percentage (confirmed under the relevant procedure)
+F  Period tax withholding (=C×E, rounded to cents)
+G  Employee CASS rate (6.5% standard; 3% confirmed retirement-pension case)
+H  Employee CASS (=N×G, rounded to cents)
+I  Net cash pay (=C−F−H; no other deductions in this simplified case)
+J  Employer CASS rate (15.5% standard; 7% confirmed retirement-pension case)
+K  Employer CASS (=N×J, rounded to cents)
+L  Cash payroll plus employer CASS (=C+K; other costs excluded)
+M  Source, classification, valuation and payment evidence
+N  Qualifying CASS contribution base (not automatically equal to C)
 
-TOTALS ROW:
-Sum Column C  = Total Gross Payroll
-Sum Column F  = Total IRPF/IRNR to remit to DTF (or via CASS-0031)
-Sum Column H  = Total Employee CASS (remitted via CASS-0031)
-Sum Column K  = Total Employer CASS (remitted via CASS-0031)
-Sum Column I  = Total Net Wages (bank transfer to employees)
-Sum Column L  = Total Employer Payroll Cost
+RECONCILIATION:
+Sum C = Sum I + Sum H + Sum F
+CASS contribution total = Sum H + Sum K
+Tax withholding total = Sum F
+Retain distinct CASS and DTF totals and evidence of both obligations.
+The published CASS-0031 contains separate tax/social totals.
+IRPF article 33 allows the same payment method/account as CASS by default;
+confirm the actual payment arrangement rather than assuming one transfer.
 
-RECONCILIATION CHECK:
-Total Gross (ΣC) = Total Net (ΣI) + Total Employee CASS (ΣH) + Total IRPF/IRNR (ΣF) ✓
-Total CASS-0031 Remittance = Total Employee CASS (ΣH) + Total Employer CASS (ΣK)
-
-FILING DEADLINES THIS MONTH:
-[ ] CASS-0031 submitted by 15th of following month (CASS)
-[ ] IRPF withholding remitted within 20 days of period end (DTF, if separate from CASS-0031)
-[ ] IRNR quarterly filing due? (January/April/July/October if non-resident employees)
+FILING:
+[ ] CASS contributions and CASS-covered IRPF/IRNR: days 1–15 next month
+[ ] Other withholding: apply the relevant quarterly procedure, not employer size
+[ ] IRPF annual summary/certificate: apply Section 9.3 and its CASS distinctions
+[ ] IRNR recipient notice: first 30 calendar days Apr/Jul/Oct/Jan for prior quarter
+[ ] IRNR certificate conditions and any requested annual summary: apply Section 3
+[ ] Any Article 99 supplement: separate applicable-year eligibility/return/payment
 ```
+
+Check: cash gross/CASS base €3,000, standard employee CASS €195 and employer CASS €465 give a CASS total of €660. With an assumed €40 tax deduction, net cash pay is €2,765 and the separate tax total is €40. The two obligations total €700; €700 is not the CASS contribution total.
 
 ## Section 15 -- Bank Statement / Terminology Reading Guide
 
@@ -519,7 +496,7 @@ FILING DEADLINES THIS MONTH:
 | Nòmina | Payslip / payroll |
 | Branca general | General branch (CASS health/disability coverage) |
 | Branca de jubilació | Retirement branch (CASS pension coverage) |
-| Plafó de cotització | Contribution ceiling (CASS cap) |
+| Base de cotització | Contribution base; do not infer a salaried cap from terminology |
 | Salari mínim interprofessional | National minimum wage |
 | Declaració de cotitzacions | Contributions declaration (CASS-0031) |
 | Bonificació | Bonification / tax relief |
@@ -542,22 +519,11 @@ FILING DEADLINES THIS MONTH:
 
 ## Section 16 -- Onboarding Fallback
 
-If you are asked to process Andorra payroll and any of the following conditions apply, stop and request clarification before computing:
+Return Needs Input before calculating if the actual period, residence/tax category, applicable withholding rate and effective month, actual pay, qualifying CASS base or registration evidence is missing. Confirm pension receipt rather than inferring it from age; the selected exception changes standard rates to 3% employee and 7% employer, not simply half the standard total.
 
-1. **Residency status unknown:** Ask whether the employee is an Andorran tax resident. IRPF rates and IRNR rates differ substantially.
+Obtain separate evidence for personal declarations, treaty/special-regime claims, benefits in kind, compensation and low-paid/multiple-job supplements. Identify the missing item and the applicable source condition; do not manufacture a salary-band rate or assume residence.
 
-2. **Salary figures missing:** Both monthly gross and annual gross are needed to identify the correct IRPF withholding rate band.
-
-3. **CASS registration not confirmed:** Ask whether the employer is registered with CASS and whether the employee has been individually registered. If not, payroll cannot legally begin.
-
-4. **Pension-drawing status unknown:** If the employee is of retirement age, ask whether they are already drawing a CASS pension, as this halves the CASS rate.
-
-5. **Treaty claim indicated:** If the employee mentions being resident in Spain, France, or any of the other treaty countries, pause and direct to a qualified adviser before applying any exemption.
-
-6. **Benefit-in-kind components:** If housing, vehicle, or meals are part of the package, flag that these must be valued and included in the CASS base before net pay can be computed.
-
-**Default response when blocked:**
-> "I need [missing item] before I can compute an accurate Andorra payroll. Andorra's IRPF withholding rates vary significantly by salary band and residency status, and CASS registration must be confirmed before the first payroll run. Please provide [specific item] or consult a qualified Andorran assessor fiscal."
+**Response template:** 'I need [specific missing evidence] for [period] before calculating this payroll. Please provide it or obtain confirmation from a qualified Andorran assessor fiscal.'
 
 ## Section 17 -- Reference Material
 
@@ -568,7 +534,8 @@ If you are asked to process Andorra payroll and any of the following conditions 
 | Instrument | Subject |
 | --- | --- |
 | Llei 5/2014 | Personal income tax (IRPF) -- principal act |
-| Decret 596/2023 (29 December 2023) | IRPF Regulation -- current withholding rules |
+| [Decret 596/2023](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49) | Selected IRPF rules published 2 January 2024, applicable to periods starting from 1 January 2024; later amendments not fully reconciled |
+| [Decret 594/2023](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_13_31_02) | Selected IRNR withholding/declaration rules; same publication issue; actual-period reconciliation remains |
 | Llei 17/2008, 3 October | Social security (CASS framework) |
 | Decret 16/2025 (29 January 2025) | Sets average global monthly salary at €2,560.99/month |
 | Decret 4/2025 | Minimum wage 2025 (+5.2% to €8.35/hour) |
@@ -587,20 +554,20 @@ If you are asked to process Andorra payroll and any of the following conditions 
 | Govern.ad IRNR | govern.ad/ca/tematiques/impostos-taxes-i-duana/impostos-en-andorra/impost-sobre-la-renda-dels-no-residents-fiscals-a-andorra |
 | Summit Advisors -- minimum wage 2025 | summitadvisors.ad/en/blog/2025-01-31-new-minimum-wage-in-andorra-for-2025-5-2-increase |
 | Elysium Consulting -- CASS 2025 | elysiumconsultingfirm.com/en/publications/the-cass-in-andorra-contributions-coverage-and-key-facts-for-2025 |
-| Assessors Associats -- withholding table | assessors-associats.com/la-declaracio-dirpf-a-andorra/ |
+| Primary IRPF withholding procedure | [Decret 596/2023, articles 24–27](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49) |
 | Bloomberg Tax -- IRPF 2025 filing | news.bloombergtax.com/daily-tax-report-international/andorra-tax-agency-announces-2025-individual-income-tax-return-filing-deadline-releases-filing-guidance |
 | WIT Andorra -- IRPF 2025 guide | wit.ad/en/irpf-andorra-2025-guide-deadlines-and-how-to-file-it/ |
 
-### Double Taxation Treaties (as of 2025)
+### Treaty Boundary
 
-Andorra has concluded income tax treaties with: Spain, France, Portugal, Luxembourg, Liechtenstein, Malta, Cyprus, Hungary, San Marino, and UAE. *(Source: Remotepeople)*
+The former secondary-source country list is not an actual-period treaty check. Verify the applicable treaty, entry into force, income article and employee eligibility before relief; this selected payroll reconciliation does not establish a current treaty inventory.
 
 ## Section 18 -- Test Suite
 
-All computations below were verified arithmetically before inclusion. Run these to validate any implementation of this skill.
+These arithmetic cases use the cash-only assumptions in Section 11 and an explicitly assumed applicable withholding rate. They test calculations after classification and rate confirmation, not legal eligibility or rate derivation. The amounts do not establish minimum-wage compliance or include any separate Article 99 supplement.
 
 **Test 1:** Employee, annual gross €20,000, resident, no deductions.
-- Annual gross €20,000 < €27,000 → Withholding rate 0%
+- Assumed applicable withholding rate: 0%; not derived from annual salary
 - Monthly gross: 20,000 ÷ 12 = €1,666.67
 - Monthly IRPF: €0.00
 - Employee CASS: 1,666.67 × 6.5% = €108.33
@@ -609,7 +576,7 @@ All computations below were verified arithmetically before inclusion. Run these 
 - Total employer cost: 1,666.67 + 258.33 = **€1,925.00**
 
 **Test 2:** Employee, annual gross €35,000, resident, no deductions.
-- Annual gross €35,000 falls in €30,001--€40,000 band → Withholding rate 1%
+- Assumed applicable withholding rate: 1%; not derived from annual salary
 - Monthly gross: 35,000 ÷ 12 = €2,916.67
 - Monthly IRPF: (35,000 × 1%) ÷ 12 = 350.00 ÷ 12 = **€29.17**
 - Employee CASS: 2,916.67 × 6.5% = **€189.58**
@@ -619,7 +586,7 @@ All computations below were verified arithmetically before inclusion. Run these 
 - Reconciliation: 2,697.92 + 29.17 + 189.58 = 2,916.67 ✓
 
 **Test 3:** Employee, annual gross €60,000, resident, no deductions.
-- Annual gross €60,000 falls in €50,001--€60,000 band → Withholding rate 3%
+- Assumed applicable withholding rate: 3%; not derived from annual salary
 - Monthly gross: 60,000 ÷ 12 = €5,000.00
 - Monthly IRPF: (60,000 × 3%) ÷ 12 = 1,800 ÷ 12 = **€150.00**
 - Employee CASS: 5,000.00 × 6.5% = **€325.00**
@@ -630,7 +597,7 @@ All computations below were verified arithmetically before inclusion. Run these 
 
 **Test 4:** Non-resident employee, annual gross €48,000.
 - Monthly gross: 48,000 ÷ 12 = €4,000.00
-- IRNR (10% flat): 4,000.00 × 10% = **€400.00**
+- Assumed applicable IRNR rate 10%: 4,000.00 × 10% = **€400.00**
 - Employee CASS: 4,000.00 × 6.5% = **€260.00**
 - Net pay: 4,000.00 − 400.00 − 260.00 = **€3,340.00**
 - Employer CASS: 4,000.00 × 15.5% = **€620.00**
@@ -639,42 +606,39 @@ All computations below were verified arithmetically before inclusion. Run these 
 
 **Test 5:** Pension-drawing employee, annual gross €18,000, resident.
 - Monthly gross: 18,000 ÷ 12 = €1,500.00
-- Annual gross €18,000 < €27,000 → IRPF withholding rate 0%
+- Assumed applicable withholding rate: 0%; not derived from annual salary
 - Employee CASS (general branch only, 3.0%): 1,500.00 × 3.0% = **€45.00**
 - Net pay: 1,500.00 − 0.00 − 45.00 = **€1,455.00**
 - Employer CASS (general branch only, 7.0%): 1,500.00 × 7.0% = **€105.00**
 - Total employer cost: 1,500.00 + 105.00 = **€1,605.00**
 - Reconciliation: 1,455.00 + 0.00 + 45.00 = 1,500.00 ✓
 
-**Test 6:** Employee, annual gross €160,000, resident (above maximum withholding band).
-- Annual gross €160,000 > €150,000 → Withholding rate 7% (maximum)
+**Test 6:** Employee, annual gross €160,000, resident, assumed applicable withholding rate 7%.
+- The assumed 7% is an input, not a statutory maximum or salary-band result
 - Monthly gross: 160,000 ÷ 12 = €13,333.33
 - Monthly IRPF: (160,000 × 7%) ÷ 12 = 11,200 ÷ 12 = **€933.33**
-- Employee CASS: 13,333.33 × 6.5% = **€866.67** [NOTE: subject to CASS ceiling -- see Section 4.4 RESEARCH GAP]
-- Net pay (before ceiling adjustment): 13,333.33 − 933.33 − 866.67 = **€11,533.33**
-- Employer CASS: 13,333.33 × 15.5% = **€2,066.67** [NOTE: subject to CASS ceiling]
-- Total employer cost (before ceiling adjustment): 13,333.33 + 2,066.67 = **€15,400.00**
+- Employee CASS: 13,333.33 × 6.5% = **€866.67**
+- Net pay: 13,333.33 − 933.33 − 866.67 = **€11,533.33**
+- Employer CASS: 13,333.33 × 15.5% = **€2,066.67**
+- Total employer cost: 13,333.33 + 2,066.67 = **€15,400.00**
 - Reconciliation: 11,533.33 + 933.33 + 866.67 = 13,333.33 ✓
 
 ## PROHIBITIONS
 
-- **Residency determination required** — NEVER process Andorra payroll without confirming the employee's tax residency status (resident → IRPF; non-resident → IRNR; never apply both)  _(PROHIBITIONS)_
-- **Employer CASS mandatory** — NEVER omit employer CASS (15.5%) -- it is a mandatory employer cost above and beyond gross salary  _(PROHIBITIONS)_
-- **Employee CASS mandatory** — NEVER omit employee CASS (6.5%) deduction from net pay  _(PROHIBITIONS)_
-- **IRPF withholding cap** — NEVER apply IRPF withholding rate above 7% even if the statutory marginal rate is 10% -- the cap is 7% at source; balance settles at annual filing  _(PROHIBITIONS)_
-- **Personal deductions require signed declaration** — NEVER assume an employee's personal deductions without a signed declaration -- use the standard withholding table and flag that deductions may adjust the rate  _(PROHIBITIONS)_
-- **Registration confirmation before payroll** — NEVER commence payroll before CASS employer registration and DTF retenidor registration are confirmed  _(PROHIBITIONS)_
-- **CASS-0031 deadline** — NEVER miss the CASS-0031 monthly deadline (15th of following month) -- late surcharges begin at 5%  _(PROHIBITIONS)_
-- **Minimum wage compliance** — NEVER pay below the statutory minimum wage: €8.35/hour or €1,447.33/month (2025, Decret 4/2025)  _(PROHIBITIONS; Decret 4/2025)_
-- **Treaty relief requires opinion** — NEVER apply treaty relief without a written professional opinion confirming eligibility and the specific treaty provisions  _(PROHIBITIONS)_
-- **CASS ceiling research gap flag** — NEVER compute CASS contributions on a high-salary employee without flagging the unconfirmed CASS contribution ceiling (RESEARCH GAP -- Section 4.4)  _(PROHIBITIONS)_
-- **Computations not definitive** — NEVER present payroll computations as definitive -- always label as estimated and direct to a qualified Andorran assessor fiscal for review  _(PROHIBITIONS)_
+- Do not calculate without confirmed actual-period tax classification, applicable withholding rate/effective month and qualifying CASS base.
+- Do not impose a blanket 7% IRPF cap, revive the retired salary bands or default an unknown employee to resident treatment.
+- Do not omit standard employee/employer CASS or ignore the confirmed retirement-pension exception.
+- Do not apply self-employed tiers as salaried caps or automatically uplift the employer base for the separate Article 99 supplement.
+- Do not use an annual projection in place of actual period pay, or use the cash-only worksheet for unvalued benefits and reimbursements.
+- Do not treat a joint declaration as proof that separate tax/contribution amounts were correctly paid, or use a blanket quarterly/20-day rule for CASS-covered payroll.
+- Do not infer treaty relief, personal deductions, special-regime eligibility or minimum-wage compliance without the necessary evidence.
+- Do not present this tier 2 draft or its calculations as professionally signed off.
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a qualified Andorran assessor fiscal) before implementation.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+This source-cited draft is maintained in the ryanduguid/openaccountants fork. Its editing date and selected-source checks do not establish complete actual-period verification or professional sign-off.
 
 <!-- openaccountants-cta-block -->
 

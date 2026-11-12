@@ -1,0 +1,13 @@
+# Andorra payroll withholding and CASS workflow
+
+12 November 2026. I reconciled selected primary provisions with the existing Andorra payroll guide. The guide remains tier 2 and pending qualified review. No guide count, published coverage figure or whole-topic verification changes.
+
+The published [IRPF regulation, Decret 596/2023](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_12_41_49), articles 24–27, contradicts the guide's generic salary-band table and blanket 7% withholding cap. The correction uses the notified or prescribed payer-calculated percentage, its effective month and actual payment amount. Worked examples retain their arithmetic with explicitly assumed percentages; they do not establish an employee's rate.
+
+Articles 29 and 31 distinguish CASS-covered payer remuneration communications. Articles 33–35 distinguish monthly CASS-covered withholding, other quarterly employment withholding, the non-CASS annual summary and certificate conditions. [IRNR Decret 594/2023](https://www.bopa.ad/Documents/Detall?doc=GD_2023_12_29_13_31_02), articles 24 and 29, separately governs remittance, recipient certificates and quarterly notices. Both regulations were published in issue 1 on 2 January 2024. The selected captures do not establish that every later amendment has been reconciled; the IRNR commencement paragraph also contains a literal corporate-tax title error, retained in the evidence.
+
+The [CASS guidance](https://www.cass.ad/cotitzacions-recarrecs-sancions) and published [CASS-0031, pages 1–2](https://www.cass.ad/sites/default/files/tramits/cass-0031.pdf) support separate contribution/tax totals, the monthly 1–15 window, standard and retirement-pension contribution rates, qualifying salaried remuneration and surcharge/sanction distinctions. Self-employed reference tiers do not establish a salaried cap.
+
+The separately labelled [2026 Article 99 factsheet, pages 1–2](https://www.cass.ad/sites/default/files/arxius/CASS_COMPLEMENT%20ART99%20ASS%20fitxa%2002-02-2026.pdf) describes an eligible employee-funded 10% supplement with aggregation, exceptions and special-case limits. It expressly has no legal validity; BOPA law controls. It does not automatically increase the employer's ordinary base or establish the 2025 threshold.
+
+All 4 PDF pages were read through native text and page images. A fresh independent source/diff review identified 2 workflow qualifications, which were corrected. Actual-period amendments, annual tax/deduction/capital-gain rules, treaties, minimum-wage instruments, current online models/payment arrangements and practitioner sign-off remain outstanding. Repository checks and canonical readback are recorded separately.
