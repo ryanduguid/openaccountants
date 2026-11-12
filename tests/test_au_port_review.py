@@ -20,7 +20,8 @@ class AustralianPortReviewTests(unittest.TestCase):
         # exception must not be widened to all vehicles at that weight.
         self.assertIn("4.5 tonnes or less travelling on a public road", step)
         self.assertIn("GVM over 4.5 tonnes, or 4.5 tonnes or more if acquired before 1 July 2006", text)
-        self.assertIn("| GVM unknown | No credit pending GVM evidence and, if exactly 4.5 tonnes, acquisition-date evidence; flag |", text)
+        self.assertIn("| GVM unknown | No credit for public road travel pending GVM evidence and, if exactly 4.5 tonnes, acquisition-date evidence; flag |", text)
+        self.assertIn("The same vehicle working off public roads", step)
 
     def test_ess_variant_states_and_sums_all_four_income_components(self):
         text = (AU / "au-employee-share-schemes.md").read_text(encoding="utf-8")

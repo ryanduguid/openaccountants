@@ -181,7 +181,7 @@ Credit errors may be offset against debit errors in working out the net figure (
 | Ambiguity | Default |
 |---|---|
 | Acquisition date unknown for fuel in a period with a rate change | Price at the lower of the rates in force in the period as an estimate; flag, and hold the line open until the dates are evidenced, because Step 6 requires the rate on each acquisition date |
-| GVM unknown | No credit pending GVM evidence and, if exactly 4.5 tonnes, acquisition-date evidence; flag |
+| GVM unknown | No credit for public road travel pending GVM evidence and, if exactly 4.5 tonnes, acquisition-date evidence; flag |
 | Manufacture date of a diesel vehicle used on public roads unknown | Treat as before 1 January 1996 without evidence of an environmental criterion; flag |
 | Road classification undocumented | Treat as a public road (lower heavy vehicle rate; nil for light vehicles); flag (R-AU-FTC-1) |
 | Small claimant status uncertain | Do not use PCG 2016/2 or PCG 2021/2; apportion and split by rate |
