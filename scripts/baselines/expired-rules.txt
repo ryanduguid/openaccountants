@@ -4,7 +4,11 @@
 # it with: python3 scripts/check-expired-rules.py --update-baseline
 skills/federal/us-education-credits-8863.md::### 13.4 Pending IRS guidance to watch — snapshot dated November 2025, restated September 2026
 skills/federal/us-estate-gift-706-709.md::| ETG-12 | State estate or inheritance tax preparation | Refer to state-specific Tier 2 skill (not yet released) |
+skills/international/australia/au-director-penalties.md::Not yet confirmed: PS LA 2011/18 Table 1 and the ATO page still describe SGC lockdown by reference to SG statements and the 'SGC due date'; for QE days from 1 July 2026 this guide follows th
 skills/international/australia/au-div7a.md::Not yet confirmed: ATO ID 2012/77 is a retained estate referral reference; the attempted official route returned 404, so its current publication status was not established. It is not a basis
+skills/international/australia/au-employee-share-schemes.md::Not yet confirmed: the rate of TFN withholding tax (ESS); the 2026-27 return labels for ESS amounts; the s 83A-315 valuation regulations; the Subdivision 130-B and Division 134 rules for exe
+skills/international/australia/au-managed-funds-amit.md::Not yet confirmed: the 2026-27 return labels for AMIT components; the member-level treatment of each tax offset type; and any amendment in the ITAA 1997 compilation from 1 December 2026. No
+skills/international/australia/au-private-rulings.md::Not yet confirmed: PS LA 2008/3 and the ATO's service standards for private rulings were not read for this draft; the objection lodgment period for a private ruling is left to `au-objections
 skills/international/canada/pei/pe-tax-credits.md::When parameters are ambiguous or the 2025 PEI Finance bulletin has not yet been published in final form, apply these defaults:
 skills/international/germany/de-trade-tax.md::Not yet confirmed: complete 2025 law and amendment chain; municipal ordinances and every listed city rate; the inherited property reduction and filing/exemption statements; definitive classi
 skills/international/germany/germany-tax-optimization.md::Not yet confirmed: complete VZ 2026 source/amendment chain; inherited marginal-rate shortcuts and approximate savings; commuting, home-office/BFH, IAB/Sonderabschreibung, GWG, pension and so

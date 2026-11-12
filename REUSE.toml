@@ -39,6 +39,36 @@ precedence = "override"
 SPDX-FileCopyrightText = "2026 Glimpse Ltd and Open Accountants contributors"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
 
+# --- Guides kept under their author's FSL-1.1-ALv2 (LICENSING.md, "Guides under FSL-1.1-ALv2") ---
+# This block overrides the earlier Guide-content block for these files.
+[[annotations]]
+path = [
+  "skills/foundation/au-tasa-code-disclosure.md",
+  "skills/international/australia/au-coal-lsl-levy.md",
+  "skills/international/australia/au-director-penalties.md",
+  "skills/international/australia/au-employee-share-schemes.md",
+  "skills/international/australia/au-fuel-tax-credits.md",
+  "skills/international/australia/au-managed-funds-amit.md",
+  "skills/international/australia/au-objections.md",
+  "skills/international/australia/au-primary-production.md",
+  "skills/international/australia/au-private-rulings.md",
+  "skills/international/australia/au-property-development.md",
+  "skills/international/australia/au-restructure-rollovers.md",
+  "packages/australia/au-coal-lsl-levy.md",
+  "packages/australia/au-director-penalties.md",
+  "packages/australia/au-employee-share-schemes.md",
+  "packages/australia/au-fuel-tax-credits.md",
+  "packages/australia/au-managed-funds-amit.md",
+  "packages/australia/au-objections.md",
+  "packages/australia/au-primary-production.md",
+  "packages/australia/au-private-rulings.md",
+  "packages/australia/au-property-development.md",
+  "packages/australia/au-restructure-rollovers.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "FSL-1.1-ALv2"
+
 # --- Ryan Duguid's calculator contribution; match the files' own notices ---
 [[annotations]]
 path = [
