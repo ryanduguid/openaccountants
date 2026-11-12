@@ -2,8 +2,8 @@
 name: nz-employer-payroll
 description: >
   Use this guide for ordinary New Zealand employer payroll paid from 1 April
-  2026 to 31 March 2027. Covers PAYE tax-code inputs, the ACC earners' levy,
-  KiwiSaver employee deductions and compulsory employer contributions, ESCT,
+  2026 to 31 March 2027. Covers ordinary PAYE and student-loan calculations,
+  the ACC earners' levy, KiwiSaver employee deductions and compulsory employer contributions, ESCT,
   payday filing, payment schedules and payroll records. Trigger on NZ payroll,
   PAYE, payday filing, KiwiSaver employer contributions, ESCT and employer
   deductions. Distinguishes the electronic filing threshold from the large
@@ -16,13 +16,13 @@ tax_year: 2026
 tax_year_notes: "Ordinary payroll paid 1 April 2026 to 31 March 2027; separate filing and payment rules checked 12 November 2026"
 tier: 2
 last_updated: 2026-11-12
-version: 0.1
+version: 0.2
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.1
+# New Zealand employer payroll v0.2
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -56,6 +56,51 @@ Source: [Inland Revenue's earners' levy table][S5]. Apply the actual payroll cal
 Student-loan and child-support deductions need the actual code or notice and applicable calculation. Child-support deductions have a 40% net-after-tax protected-earnings limit; it does not cap every other deduction at 40%. Follow Inland Revenue's reporting instructions for any shortfall rather than automatically recovering it in a later pay. [S1]
 
 The employee earners' levy comes from the employee's income through PAYE. The employer's **Work and Working Safer levies** are separately invoiced by ACC and require the business's classification, liable payroll and current invoice/rates. Do not add them as another generic employee deduction. This guide does not calculate those invoices. [ACC's explanation of levy responsibilities][S6] supports that distinction; use [S5] for the dated employee rate.
+
+### Ordinary M and ME calculations
+
+For regular positive salary or wages under **M, M SL, ME or ME SL**, use the sequence in [S2, sections 5.2-5.4][S2]. Confirm the declaration and notices first. The specification calls for 6 decimal places during calculations unless a stated truncation applies.
+
+1. Multiply taxable period pay **including cents** by 52 for weekly pay, 26 for fortnightly, 13 for every 4 weeks or 12 for monthly. Then drop the annual amount's cents to obtain whole-dollar annual income A. Do not drop period cents before annualising M/ME pay.
+2. Calculate annual income tax from the following table. Keep the result unrounded.
+
+| Whole-dollar annual income A | Annual income tax |
+|---|---|
+| $1 to $15,600 | A × 10.5% |
+| $15,601 to $53,500 | A × 17.5% − $1,092.00 |
+| $53,501 to $78,100 | A × 30% − $7,779.50 |
+| $78,101 to $180,000 | A × 33% − $10,122.50 |
+| Above $180,000 | A × 39% − $20,922.50 |
+
+3. Calculate the annual ACC component: **A × 1.75% where A < $156,641; otherwise $2,741.22**. Keep this component unrounded. Use the specification's stated maximum rather than multiplying the capped earnings and rounding independently.
+4. For M/M SL, add annual tax and ACC. For ME/ME SL, subtract the applicable annual IETC from that sum. On the whole-dollar A, the payroll IETC is $0 below $24,000; **$520 from $24,000 to $66,000 inclusive**; **$520 − 13% × (A − $66,000)** from $66,001 to $69,999; and $0 from $70,000. Keep the credit unrounded.
+5. Divide the annual total by **52**, then **truncate to cents**. For fortnightly, 4-weekly or monthly pay, multiply that already-truncated weekly amount by 52 and divide by 26, 13 or 12 respectively, then **truncate to cents again**. Dividing the annual total directly by 12 can give a different monthly deduction. This result is PAYE including ACC; student loans and other deductions remain separate.
+
+The payroll credit formula does not establish IETC eligibility. Check NZ tax residence, total annual income and the exclusion where the employee or partner is entitled to and receives Working for Families, and the exclusions for income-tested benefits, NZ Superannuation, Veteran's Pension and overseas equivalents. Entitlement is tested by whole months. Use ME/ME SL only under the appropriate declaration; a main job below $24,000 with total income in the eligible range may need a tailored code or year-end credit. A year-end assessment may correct too much or too little credit. [IETC eligibility][S18], [salary/wage instructions][S19]
+
+### Ordinary secondary codes and ND
+
+A secondary code is chosen using **estimated annual total income from all sources**, rather than the second job alone. Follow the employee's IR330 and any Inland Revenue direction. For ordinary liable salary/wages, [S2, section 5.6][S2] gives these standard deductions, each already including the 1.75% ACC levy:
+
+| Estimated annual total income | Secondary code, with SL where required | Standard PAYE including ACC |
+|---|---|---:|
+| Up to $15,600 | SB / SB SL | 12.25% |
+| $15,601 to $53,500 | S / S SL | 19.25% |
+| $53,501 to $78,100 | SH / SH SL | 31.75% |
+| $78,101 to $180,000 | ST / ST SL | 34.75% |
+| Above $180,000 | SA / SA SL | 40.75% |
+
+Drop period pay's cents **before** multiplying by the applicable standard secondary rate, then truncate the deduction to cents. The whole payment uses that code's flat rate; these are not progressive bands within the second job. Do not add ACC again or import the M/ME annualisation algorithm. [S2, sections 5.1 and 5.6][S2], [tax-code instructions][S20]
+
+For ordinary ND salary/wages, drop period cents, multiply by **46.75%** (45% tax plus 1.75% ACC) and truncate to cents. [S2, section 5.8][S2] These standard-code algorithms do not determine an individual's final annual ACC liability across multiple employments. Resolve a valid tailored tax code, levy adjustment or other exceptional instruction separately; do not remove ACC from a standard secondary or ND rate merely by applying the M-code cap formula.
+
+### Ordinary student-loan deductions
+
+For the 2026-27 period, the specification's annual repayment threshold is **$24,128**, with these primary-job period thresholds: weekly **$464**, fortnightly **$928**, every 4 weeks **$1,856** and monthly **$2,010.66**. Use the stated monthly amount rather than rounding it to $2,010.67. [S2, sections 2.2 and 5.4][S2]
+
+For **M SL or ME SL**, drop gross period pay's cents, subtract the applicable period threshold and deduct **12% of a positive excess**, truncating the result to cents. The deduction is zero where there is no excess. For an ordinary **secondary SL code**, drop period cents and deduct **12% of that whole-dollar pay**, truncating to cents; there is **no second ordinary repayment threshold**. A valid special-deduction-rate certificate substitutes its specified percentage in the relevant algorithm. Keep the student-loan result separate from PAYE, and do not reduce taxable pay by it. [S2, sections 5.4 and 5.6][S2]
+
+Check the actual SL declaration and any repayment exemption, special rate or extra-deduction notice before using these ordinary rules. An unused primary-job threshold does not automatically transfer to a second job; apply for the appropriate special rate. Inland Revenue's [salary/wage student-loan page][S21] explains that distinction but labels its annual threshold as the **2026 tax year**; the dated 2026-27 specification supplies this guide's period-specific figures. Exemptions, recovery deductions and irregular or special payments need their own checks.
 
 ## Section 3 -- KiwiSaver from 1 April 2026
 
@@ -132,7 +177,7 @@ Keep wagebook information, PAYE payment records, employee declarations and appli
 
 ## Section 6 -- Conditional worked checks
 
-These fictional cases assume membership, contribution bases and rates have already been established. They verify contribution arithmetic, not PAYE, eligibility or an actual person's liability. Both use the ordinary ESCT method, not an agreed PAYE alternative. Set tolerance to zero so a cent error fails.
+These fictional cases assume the stated code, eligibility, contribution base and notices have already been established. They check the selected contribution, PAYE and student-loan arithmetic, not an actual person's liability. Cases 1 and 2 use the ordinary ESCT method rather than an agreed PAYE alternative. Set tolerance to zero so a cent error fails.
 
 **Case 1: truncating a half-cent tax result.** Qualifying gross salary of $3,000 at 3.5% gives a $105.00 gross employer contribution. At a confirmed 17.5% ESCT rate, $18.375 truncates to **$18.37** and the fund receives **$86.63**.
 
@@ -172,11 +217,140 @@ expected:
   net_contribution: 168.47
 ```
 
+**Case 3: M monthly, annualise before dropping cents.** Confirmed ordinary M pay of $5,000.99 a month gives annual whole-dollar income $60,011. Annual tax is $10,223.80 and ACC is $1,050.1925. Weekly truncation gives $216.80, then monthly PAYE **$939.46**. Direct annual-to-monthly truncation would give $939.49 and skips the required weekly step. [S2, section 5.2][S2]
+
+```oa-check
+name: nz-2026-m-monthly-two-stage-truncation
+tolerance: 0
+inputs:
+  period_pay: 5000.99
+  pays: 12
+steps:
+  annual_income: floor(period_pay * pays)
+  annual_tax: pct(annual_income, 30) - 7779.50
+  annual_acc: pct(annual_income, 1.75)
+  weekly_paye: floor((annual_tax + annual_acc) / 52 * 100) / 100
+  period_paye: floor(weekly_paye * 52 / pays * 100) / 100
+expected:
+  annual_income: 60011
+  annual_tax: 10223.80
+  annual_acc: 1050.1925
+  weekly_paye: 216.80
+  period_paye: 939.46
+```
+
+**Case 4: M monthly with capped ACC.** Confirmed ordinary M pay of $15,000 a month annualises to $180,000. The annual ACC component is the stated **$2,741.22** maximum. PAYE including that component is **$4,334.89** a month. [S2, section 5.2][S2]
+
+```oa-check
+name: nz-2026-m-monthly-capped-acc
+tolerance: 0
+inputs:
+  period_pay: 15000
+  pays: 12
+  annual_acc_cap: 2741.22
+steps:
+  annual_income: floor(period_pay * pays)
+  annual_tax: pct(annual_income, 33) - 10122.50
+  weekly_paye: floor((annual_tax + annual_acc_cap) / 52 * 100) / 100
+  period_paye: floor(weekly_paye * 52 / pays * 100) / 100
+expected:
+  annual_income: 180000
+  annual_tax: 49277.50
+  weekly_paye: 1000.36
+  period_paye: 4334.89
+```
+
+**Case 5: ME weekly with IETC abatement.** An employee with a confirmed ME declaration and IETC eligibility earns $1,300 weekly. Annualised income is $67,600, so the payroll credit is **$312** after abatement. Weekly PAYE including ACC and that credit is **$257.14**. This example assumes eligibility; salary alone does not establish it. [S2, section 5.3][S2], [S18]
+
+```oa-check
+name: nz-2026-me-weekly-ietc-abatement
+tolerance: 0
+inputs:
+  period_pay: 1300
+  pays: 52
+steps:
+  annual_income: floor(period_pay * pays)
+  annual_tax: pct(annual_income, 30) - 7779.50
+  annual_acc: pct(annual_income, 1.75)
+  annual_credit: 520 - pct(annual_income - 66000, 13)
+  period_paye: floor((annual_tax + annual_acc - annual_credit) / 52 * 100) / 100
+expected:
+  annual_income: 67600
+  annual_tax: 12500.50
+  annual_acc: 1183
+  annual_credit: 312
+  period_paye: 257.14
+```
+
+**Case 6: primary monthly SL near the threshold.** Ordinary M SL monthly gross pay of $2,011.99 becomes $2,011 for the loan calculation. Subtracting the **$2,010.66** threshold leaves $0.34; 12% truncated to cents is **$0.04**. There is no exemption or special-rate notice in this example. [S2, section 5.4][S2]
+
+```oa-check
+name: nz-2026-primary-sl-monthly-threshold
+tolerance: 0
+inputs:
+  period_pay: 2011.99
+  threshold: 2010.66
+steps:
+  loan_pay: floor(period_pay)
+  loan_deduction: floor(pct(max(loan_pay - threshold, 0), 12) * 100) / 100
+expected:
+  loan_pay: 2011
+  loan_deduction: 0.04
+```
+
+**Case 7: primary weekly SL with no positive excess.** Ordinary M SL weekly pay of $464.99 becomes $464, matching the threshold, so the loan deduction is **$0.00**. [S2, section 5.4][S2]
+
+```oa-check
+name: nz-2026-primary-sl-weekly-no-excess
+tolerance: 0
+inputs:
+  period_pay: 464.99
+  threshold: 464
+steps:
+  loan_pay: floor(period_pay)
+  loan_deduction: floor(pct(max(loan_pay - threshold, 0), 12) * 100) / 100
+expected:
+  loan_pay: 464
+  loan_deduction: 0
+```
+
+**Case 8: secondary SH SL has no ordinary loan threshold.** An employee's declared total annual income is $75,000 and the confirmed code for this second job is SH SL. Ordinary weekly pay of $300.99 becomes $300 for these calculations. PAYE including ACC is **$95.25** and the separate loan deduction is **$36.00**. Being below the main-job weekly threshold does not make this secondary loan deduction zero. No special rate or exemption applies here. [S2, section 5.6][S2], [S21]
+
+```oa-check
+name: nz-2026-secondary-sh-sl-no-threshold
+tolerance: 0
+inputs:
+  period_pay: 300.99
+steps:
+  whole_pay: floor(period_pay)
+  period_paye: floor(pct(whole_pay, 31.75) * 100) / 100
+  loan_deduction: floor(pct(whole_pay, 12) * 100) / 100
+expected:
+  whole_pay: 300
+  period_paye: 95.25
+  loan_deduction: 36
+```
+
+**Case 9: ordinary ND includes ACC.** Without a completed declaration or superseding Inland Revenue instruction, ordinary ND pay of $457.89 becomes $457. The combined 46.75% deduction truncates to **$213.64**; adding ACC again overstates the deduction. [S2, section 5.8][S2]
+
+```oa-check
+name: nz-2026-nd-whole-dollar-pay
+tolerance: 0
+inputs:
+  period_pay: 457.89
+steps:
+  whole_pay: floor(period_pay)
+  period_paye: floor(pct(whole_pay, 46.75) * 100) / 100
+expected:
+  whole_pay: 457
+  period_paye: 213.64
+```
+
 Before release also check an exactly $50,000 electronic-filing case, an exactly $500,000 large-employer case, the December 15 January exception and a pay period straddling 1 April. A temporary 3% employee rate does not by itself force the employer to reduce its rate.
 
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: complete PAYE code algorithms and extra-pay rules; student-loan and attachment calculations; automatic-enrolment, opt-out and refund administration; full definitions of contribution bases; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes, tailored-code calculations and extra-pay rules; student-loan exemptions, recovery notices, irregular pays and attachment calculations; automatic-enrolment, opt-out and refund administration; full definitions of contribution bases; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
 Sources checked 12 November 2026. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. Selected PDF pages were read as native text and images; this does not claim full review of either PDF or the complete statute.
 
@@ -197,6 +371,11 @@ Sources checked 12 November 2026. The technical specification is dated 24 March 
 [S15]: https://www.ird.govt.nz/employing-staff/payday-filing/filing-employment-information-electronically "Electronic employment information"
 [S16]: https://www.ird.govt.nz/employing-staff/payday-filing/paying-deductions-to-inland-revenue "Paying deductions"
 [S17]: https://www.ird.govt.nz/employing-staff/deductions-from-income/paye-records "PAYE records"
+
+[S18]: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/individual-tax-credits/independent-earner-tax-credit-ietc "ietc-eligibility"
+[S19]: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/individual-tax-credits/independent-earner-tax-credit-ietc/getting-the-independent-earner-tax-credit-if-you-earn-salary-or-wages "ietc-salary"
+[S20]: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/about-tax-codes "about-tax-codes"
+[S21]: https://www.ird.govt.nz/repaying-my-student-loan-when-i-earn-salary-or-wages "student-loan-salary"
 
 <!-- openaccountants-cta-block -->
 
