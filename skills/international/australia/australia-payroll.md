@@ -15,7 +15,7 @@ version: 2.10
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-11-05
+last_updated: 2026-11-11
 review_status: pending_review
 category: payroll
 tier: 2
@@ -135,7 +135,7 @@ The SG formulas, contribution base, SG shortfall percentage and worked SG amount
 
 #### Superannuation Guarantee Charge (SGC) -- redesigned from 1 July 2026
 
-- **SGC redesign components** — For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components: - The final SG shortfall (12% of qualifying earnings unpaid under the general schedule) - Notional earnings (GIC-rate interest, compounding daily from the day after the deadline) - An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record) - Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached  _(SGAA ss 16B, 18D, 19A and 19B; SGAR regs 13A to 13D; [ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly))_
+- **SGC redesign components** — For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components: - The final SG shortfall (12% of qualifying earnings unpaid under the general schedule) - Notional earnings (GIC-rate interest, compounding daily from the day after the deadline) - An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 24-month record, counted from 1 July 2026 for QE days from 1 July 2026 to 30 June 2028 under SGAR reg 13C(3)) - Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached  _(SGAA ss 16B, 18D, 19A and 19B; SGAR regs 13A to 13D; [ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly))_
 - **SGC deductibility and penalties** — The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment penalty are not). Old-regime SGC for quarters before 1 July 2026 remains non-deductible. Unpaid SGC 28 days after assessment triggers a Notice to Pay, then a 25% or 50% late payment penalty. First-year ATO compliance approach, which does not remove liability: PCG 2026/1.  _([ATO, What happens if you don't pay super correctly](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly); [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super); [PCG 2026/1](https://www.ato.gov.au/law/view/document?docid=COG/PCG20261/NAT/ATO/00001) for the first-year approach)_
 
 ### Section 5 -- Employer On-costs
@@ -152,7 +152,7 @@ The SG formulas, contribution base, SG shortfall percentage and worked SG amount
 | --- | --- | --- |
 | NSW, 2024-25 to 2026-27 | $1,200,000 | 5.45%; apportion the threshold for interstate wages and part-year employment, with one threshold per group |
 | VIC, from 1 July 2025 | $1,000,000 ($900,000 in 2024-25) | 4.85%, or 1.2125% for qualifying regional employers; deduction phases out between $3m and $5m Australian wages. Combined surcharges of 1% above $10m and 2% above $100m national wages apply to the Victorian share above those thresholds |
-| QLD, current at 14 September 2026 | $1,300,000 | 4.75% where Australian taxable wages are at most $6.5m; 4.95% above $6.5m. Check grouping, deduction reduction, regional discount and mental health levy separately |
+| QLD, current at 11 November 2026 | $1,300,000 | 4.75% where Australian taxable wages are at most $6.5m; 4.95% above $6.5m. The deduction reduces by $1 for every $7 of Australian taxable wages above $1.3m and is nil at $10.4m. Check grouping, regional discount and mental health levy separately |
 | WA | $1,000,000 | 5.5%; the deduction falls by $2 for every $13 of Australian wages above $1m and is nil at $7.5m |
 | SA | $1,500,000 | 0% rising to 4.95% for Australian wages between $1.5m and $1.7m, then 4.95%; maximum deduction $600,000 |
 | TAS, 2026-27 | $1,250,000 | 4% for the $1.25m to $2m wage band; 6.1% above $2m. Use the state calculation for the applicable wage and deduction amounts |

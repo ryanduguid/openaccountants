@@ -30,6 +30,7 @@ path = [
   "skills/**",
   "packages/**",
   "workflows/**",
+  "calculators/**/rules.json",
   "index.json",
   "llms.txt",
   "llms-full.txt",
@@ -39,7 +40,7 @@ SPDX-FileCopyrightText = "2026 Glimpse Ltd and Open Accountants contributors"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
 
 # --- Guides kept under their author's FSL-1.1-ALv2 (LICENSING.md, "Guides under FSL-1.1-ALv2") ---
-# Listed last so this block overrides the Guide-content block for these files.
+# This block overrides the earlier Guide-content block for these files.
 [[annotations]]
 path = [
   "skills/foundation/au-tasa-code-disclosure.md",
@@ -67,3 +68,20 @@ path = [
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "FSL-1.1-ALv2"
+
+# --- Ryan Duguid's calculator contribution; match the files' own notices ---
+[[annotations]]
+path = [
+  "calculators/au-div7a-repayment/index.mjs",
+  "calculators/au-div7a-repayment/index.test.mjs",
+  "calculators/au-div7a-repayment/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-div7a-repayment/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"

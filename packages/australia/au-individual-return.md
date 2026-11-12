@@ -5,7 +5,7 @@ version: 2.8
 jurisdiction: AU
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-11-05
+last_updated: 2026-11-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -286,7 +286,7 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 
 - **2026-27 HELP repayment bands** — 2026-27: nil to $69,528; 15c over $69,528 to $129,717; $9,028 + 17c over $129,717 to $186,050; 10% of total repayment income from $186,051.  _([ATO, Study and training loan repayment thresholds and rates](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds))_
 - **Marginal basis (from 2025-26)** — From 2025-26 compulsory repayments are calculated on a marginal basis (only the income above the minimum repayment threshold), substituted by the Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025.  _(Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025)_
-- **Repayment income** — Repayment income = taxable income (excluding assessable First Home Super Saver released amounts) + reportable fringe benefits + net investment losses + reportable super contributions + exempt foreign employment income. HELP repayments are NOT deductible.  _(Higher Education Support Act 2003; [ATO, Repayment thresholds](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds))_
+- **Repayment income** — Repayment income = taxable income (excluding assessable First Home Super Saver released amounts) + reportable fringe benefits + net investment losses + reportable super contributions + exempt foreign employment income (s 23AF or 23AG exempt income less the non-capital losses and outgoings incurred in deriving it, not below zero). HELP repayments are NOT deductible.  _(Higher Education Support Act 2003 s 154-5; [ATO, Repayment thresholds](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds))_
 
 #### 5.6 Filing and Penalties [T1]
 

@@ -7,8 +7,8 @@ depending on whether a file is *software* or a *tax Guide*.
 
 | Files | Licence | Text |
 |-------|---------|------|
-| Software, tooling, docs, and project metadata — `mcp/`, `scripts/`, `tools/`, `plugins/`, `.claude-plugin/`, `docs/`, `.github/`, `Dockerfile`, and root config/meta files | **AGPL-3.0-only** | [`LICENSE`](LICENSE) / [`LICENSES/AGPL-3.0-only.txt`](LICENSES/AGPL-3.0-only.txt) |
-| Tax Guides and their machine-readable exports — `skills/`, `packages/`, `workflows/`, `index.json`, `llms.txt`, `llms-full.txt` | **OA Guide License** (source-available) | [`LICENSES/LicenseRef-OA-Guide-License-1.0.txt`](LICENSES/LicenseRef-OA-Guide-License-1.0.txt) |
+| Software, tooling, docs, and project metadata — `mcp/`, `scripts/`, `tools/`, `plugins/`, `.claude-plugin/`, `docs/`, `.github/`, `Dockerfile`, `calculators/**/*.mjs`, and root config/meta files | **AGPL-3.0-only** | [`LICENSE`](LICENSE) / [`LICENSES/AGPL-3.0-only.txt`](LICENSES/AGPL-3.0-only.txt) |
+| Tax Guides and their machine-readable exports — `skills/`, `packages/`, `workflows/`, `calculators/**/rules.json`, `index.json`, `llms.txt`, `llms-full.txt` | **OA Guide License** (source-available) | [`LICENSES/LicenseRef-OA-Guide-License-1.0.txt`](LICENSES/LicenseRef-OA-Guide-License-1.0.txt) |
 | The guides listed under [Guides under FSL-1.1-ALv2](#guides-under-fsl-11-alv2), with their copies under `packages/` | **FSL-1.1-ALv2** (source-available) | [`LICENSES/FSL-1.1-ALv2.txt`](LICENSES/FSL-1.1-ALv2.txt) |
 
 The machine-readable exports (`index.json`, `llms.txt`, `llms-full.txt`)
