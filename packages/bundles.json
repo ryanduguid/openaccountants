@@ -4136,6 +4136,7 @@
     "new-zealand-gst.md",
     "nz-acc-levies.md",
     "nz-capital-gains.md",
+    "nz-employer-payroll.md",
     "nz-gst-return.md",
     "nz-income-tax-ir3.md",
     "nz-provisional-tax.md",
@@ -4147,6 +4148,7 @@
     "crypto-tax-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
     "vat-workflow-base.md",
     "workflow-base.md"
    ]

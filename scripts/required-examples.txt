@@ -67,6 +67,7 @@ skills/international/micronesia/fm-national-tax-social-reference.md
 skills/international/nauru/nr-business-tax-charge-rate-reference.md
 skills/international/nauru/nr-employment-services-charge-reference.md
 skills/international/nauru/nr-tax-administration-reference.md
+skills/international/new-zealand/nz-employer-payroll.md
 skills/international/palau/pw-pgst-charge-value-reference.md
 skills/international/pitcairn/pn-landing-fee-passenger-levy-reference.md
 skills/international/poland/pl-corporate-income-tax.md
