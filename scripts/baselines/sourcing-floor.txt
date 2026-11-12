@@ -231,10 +231,6 @@ skills/international/burkina-faso/bf-social-contributions.md::rate table without
 skills/international/burkina-faso/bf-social-contributions.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Burkina Faso |
 skills/international/burkina-faso/bf-vat.md::rate list without a tax-authority or statute citation: - **Standard rate scope** — 18% standard on taxable supplies of goods and services in Burkina Faso _(CGI Art. 317)_ / - **Reduced rate on domestic air transport** — 10% percent (Domestic air transport only (transport aérien national)) _(CGI Art. 317, 319-6; Loi de Finances 2025)_
 skills/international/burkina-faso/bf-vat.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Burkina Faso |
-skills/international/cameroon/cameroon-vat.md::rate list without a tax-authority or statute citation: - Corporate IS: 33% (including 10% surcharge) / - PAYE (IRPP): progressive 10%-35%
-skills/international/cameroon/cameroon-vat.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Cameroon |
-skills/international/cameroon/cameroon-vat.md::rate table without a tax-authority or statute citation: | Pattern | Treatment | Notes | / | ENEO, SONATREL | Domestic 19.25% | Electricity |
-skills/international/cameroon/cameroon-vat.md::rate table without a tax-authority or statute citation: | Violation | Penalty | / | Late filing | 30% surcharge |
 skills/international/canada/alberta/ab-corporate-tax.md::rate list without a tax-authority or statute citation: - **Alberta SBD rate** — 2% (general rate of 8% minus SBD of 6%) / - **Federal SBD rate** — 9% (general rate of 15% minus federal SBD of 6%)
 skills/international/canada/alberta/ab-corporate-tax.md::rate list without a tax-authority or statute citation: - Alberta: 8% / - BC: 12%
 skills/international/canada/alberta/ab-corporate-tax.md::rate table without a tax-authority or statute citation: | Effective date | General rate | / | Before July 1, 2019 | 12% |

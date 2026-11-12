@@ -6,6 +6,12 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-12 | [Selected OHADA professional standards, ethics and quality assurance](2026-11-12-ohada-professional-framework.md) |
+| 2026-11-12 | [Selected OHADA statutory audit appointment rules](2026-11-12-ohada-statutory-audit-appointments.md) |
+| 2026-11-12 | [Selected OHADA accounting regimes, timetables and records](2026-11-12-ohada-accounting-regimes-records.md) |
+| 2026-11-12 | [Kiribati business-statute data-protection amendments](2026-11-12-kiribati-company-data-amendments.md) |
+| 2026-11-12 | [Annual company reporting in Cameroon, Côte d’Ivoire and Comoros](2026-11-12-ohada-reporting-cameroon-cote-divoire-comoros.md) |
+| 2026-11-11 | [Kiribati KPF original amendments and employer-source conflicts](2026-11-11-kiribati-kpf-law-and-employer-conflicts.md) |
 | 2026-11-11 | [Kiribati foreign-investment law, fees and certificate conditions](2026-11-11-kiribati-foreign-investment-law.md) |
 | 2026-11-11 | [Kiribati business and employer registration scope](2026-11-11-kiribati-business-and-employer-registration.md) |
 | 2026-11-11 | [Ghana overview and property source scope](2026-11-11-ghana-overview-and-property-scope.md) |
