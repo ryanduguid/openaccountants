@@ -6,7 +6,7 @@ jurisdiction: AU
 category: orchestrator
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-11-10
+last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -288,7 +288,7 @@ Specifically:
 
 ### Quarterly obligations for 2026-27:
 - BAS Q1 (Jul-Sep): lodge and pay by 28 October 2026
-- BAS Q2 (Oct-Dec): lodge and pay by 28 February 2027 (a Sunday, so Monday 1 March 2027)
+- BAS Q2 (Oct-Dec): lodge and pay by 28 February 2027 (a Sunday, and Monday 1 March is Labour Day in WA, so Tuesday 2 March 2027)
 - BAS Q3 (Jan-Mar): lodge and pay by 28 April 2027
 - BAS Q4 (Apr-Jun): lodge and pay by 28 July 2027
 
@@ -387,7 +387,7 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 - **Check AU8 -- Instant asset write-off threshold correct** — Assets under $20,000 (on correct GST basis) claimed as immediate deduction only by a small business using simplified depreciation; at or above the threshold that business uses the small business pool unless the asset is excluded; other traders and excluded assets use effective life.  _(Section 6 -- Self-checks)_
 - **Check AU9 -- Personal super deduction and ITR reconciliation** - Confirm the year-specific super reconciliation establishes the allowable deduction and notice status; the final ITR uses that validated deduction, and its affected income, tax, levy and PAYG figures have been recalculated by their producers and passed their checks. The reviewer brief records any notice action required before lodgement. An unresolved notice or reconciliation holds the dependent results and the complete filing package.  _(Section 6 -- Self-checks)_
 - **Check AU10 -- Tax rate table correct for residency** — Resident tax rates applied (including tax-free threshold of $18,200).  _(Section 6 -- Self-checks)_
-- **Check AU11 -- HELP compulsory repayment calculated from repayment income** — Repayment income = taxable income + net investment loss + reportable fringe benefits + reportable super + exempt foreign employment income. From 2025-26 the repayment is marginal: nil to $67,000, then 15c per $1 to $125,000, then $8,700 plus 17c per $1, capped at 10% of total repayment income above $179,285.  _(Section 6 -- Self-checks)_
+- **Check AU11 -- HELP compulsory repayment calculated from repayment income** — Repayment income = taxable income (excluding assessable First Home Super Saver released amounts) + net investment loss + reportable fringe benefits + reportable super + exempt foreign employment income (s 23AF or 23AG exempt income less the non-capital losses and outgoings incurred in deriving it, not below zero). From 2025-26 the repayment is marginal: nil to $67,000, then 15c per $1 to $125,000, then $8,700 plus 17c per $1, capped at 10% of total repayment income above $179,285.  _(Section 6 -- Self-checks)_
 - **Check AU12 -- Filing calendar is complete** — All deadlines for BAS, ITR, super, and PAYG instalments are listed with specific dates and amounts.  _(Section 6 -- Self-checks)_
 
 ## Sources

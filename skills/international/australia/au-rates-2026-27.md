@@ -5,7 +5,7 @@ version: "1.10"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 primary; 2025-26 retained for lodgment-season work"
-last_updated: 2026-11-05
+last_updated: 2026-11-11
 review_status: pending_review
 category: international
 tier: 2
@@ -63,7 +63,7 @@ Single-page lookup for the figures every other Australian guide relies on. Each 
 
 ### HELP/study loans (2025-26 onwards: marginal system)
 
-- **Repayment income definition** — Repayment income = taxable income (excluding any assessable First Home Super Saver released amounts) + reportable fringe benefits + reportable super + exempt foreign employment income + net investment losses.  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC16176)_
+- **Repayment income definition** — Repayment income = taxable income (excluding any assessable First Home Super Saver released amounts) + reportable fringe benefits + reportable super + exempt foreign employment income (s 23AF or 23AG exempt income less the non-capital losses and outgoings incurred in deriving it, not below zero) + net investment losses.  _(Higher Education Support Act 2003 s 154-5; Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC16176)_
 
 **Marginal repayment rates**  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC16176)_
 
