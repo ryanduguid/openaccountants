@@ -73,12 +73,14 @@ License, Version 1.1, ALv2 Future License
 ([`LICENSES/FSL-1.1-ALv2.txt`](LICENSES/FSL-1.1-ALv2.txt)), notwithstanding the
 general mapping above. That licence grants an additional Apache License 2.0
 licence for each version from the second anniversary of the date it is made
-available. Their copies under `packages/`, and any of their text reproduced in
+available. The source revisions cited in each guide, rather than the source
+repositories' current main branches, supply these licence terms.
+Their copies under `packages/`, and any of their text reproduced in
 the machine-readable exports, carry the same terms. Each guide states its
 licence in its `license` front matter and keeps its copyright notice at the end
 of its Sources section. `REUSE.toml` records the same paths. For the
 machine-readable exports, `REUSE.toml` records each file's licence as a whole,
-because REUSE cannot mark part of a file; this paragraph governs the text of
+because REUSE.toml annotations are file-level; this paragraph governs the text of
 these guides reproduced in them.
 
 - `skills/foundation/au-tasa-code-disclosure.md`

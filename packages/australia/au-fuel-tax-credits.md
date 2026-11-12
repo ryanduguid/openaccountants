@@ -14,7 +14,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27 (rates read 2 November 2026; 2025-26 liquid fuel rates kept for late claims)"
 tier: 2
-last_updated: 2026-11-06
+last_updated: 2026-11-12
 version: 0.1
 review_status: pending_review
 verified_by: pending
@@ -69,7 +69,7 @@ Only one entity can claim for the same fuel. Who 'acquired' the fuel is a questi
 
 ### Step 3: Classify each unit and each use
 
-1. **Light vehicles on public roads.** No credit for fuel to the extent it is for use in a vehicle with a GVM of 4.5 tonnes or less travelling on a public road ([s 41-20](https://www.ato.gov.au/law/view/document?docid=PAC/20060072/41-20)). The same vehicle working off public roads, for example on a farm or a mine site, can still be claimed at the 'all other business uses' rate ([ATO, QC44509](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/fuel-schemes/fuel-tax-credits-business/eligibility/ineligible-fuels-and-activities)).
+1. **Light vehicles on public roads.** No credit for fuel to the extent it is for use in a vehicle with a GVM of 4.5 tonnes or less travelling on a public road ([s 41-20](https://www.ato.gov.au/law/view/document?docid=PAC/20060072/41-20)), except a vehicle of exactly 4.5 tonnes acquired before 1 July 2006, which the ATO includes as a heavy vehicle ([PCG 2021/2 para 4](https://www.ato.gov.au/law/view/document?docid=COG/PCG20212/NAT/ATO/00001), read 12 November 2026). Establish the acquisition date before excluding an exactly 4.5-tonne vehicle. The same vehicle working off public roads, for example on a farm or a mine site, can still be claimed at the 'all other business uses' rate ([ATO, QC44509](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/fuel-schemes/fuel-tax-credits-business/eligibility/ineligible-fuels-and-activities)).
 2. **Environmental criteria.** No credit for fuel for a motor vehicle unless it was manufactured on or after 1 January 1996, is in an accredited audited maintenance program, meets Rule 147A of the Australian Vehicle Standards Rules 1999, or complies with an endorsed maintenance schedule ([s 41-25(1)](https://www.ato.gov.au/law/view/document?docid=PAC/20060072/41-25)). The test does not apply to a vehicle used in a primary production business primarily on an agricultural property, a vehicle not powered by a diesel engine, or a vehicle not used on a public road ([s 41-25(2)](https://www.ato.gov.au/law/view/document?docid=PAC/20060072/41-25)). A pre-1996 vehicle with a post-1996 replacement engine needs the engine conditions on the [ATO public roads page, QC44648](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/fuel-schemes/in-detail/heavy-vehicles/travelling-on-public-roads).
 3. **Public road or not.** A road accessible to the public and integrated into the public road network is a public road whoever owns or maintains it; roads solely within private property that serve the owner are not ([ATO, QC44648](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/fuel-schemes/in-detail/heavy-vehicles/travelling-on-public-roads); FTR 2008/1). Document the geography; do not assert it (R-AU-FTC-1).
 4. **Travelling or not.** Fuel used for travelling on a public road includes stopping or idling during the journey and running the vehicle's systems, including cabin air-conditioning and bus passenger air-conditioning (ATO, QC44648; FTD 2016/1). Movement of a vehicle doing road construction, maintenance or repair, such as a grader or bulldozer, is not travelling and takes the 'all other business uses' rate (same page). Fuel that powers auxiliary equipment of a heavy vehicle takes the 'all other business uses' rate ([ATO 2026-27 rates page, column heading](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/fuel-schemes/fuel-tax-credits-business/rates-business/from-1-july-2026-to-30-june-2027)).
@@ -181,7 +181,7 @@ Credit errors may be offset against debit errors in working out the net figure (
 | Ambiguity | Default |
 |---|---|
 | Acquisition date unknown for fuel in a period with a rate change | Price at the lower of the rates in force in the period as an estimate; flag, and hold the line open until the dates are evidenced, because Step 6 requires the rate on each acquisition date |
-| GVM unknown | Treat as 4.5 tonnes or less: no credit for public road travel; flag |
+| GVM unknown | No credit pending GVM evidence and, if exactly 4.5 tonnes, acquisition-date evidence; flag |
 | Manufacture date of a diesel vehicle used on public roads unknown | Treat as before 1 January 1996 without evidence of an environmental criterion; flag |
 | Road classification undocumented | Treat as a public road (lower heavy vehicle rate; nil for light vehicles); flag (R-AU-FTC-1) |
 | Small claimant status uncertain | Do not use PCG 2016/2 or PCG 2021/2; apportion and split by rate |

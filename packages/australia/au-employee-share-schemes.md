@@ -14,7 +14,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27"
 tier: 2
-last_updated: 2026-11-11
+last_updated: 2026-11-12
 version: 0.1
 review_status: pending_review
 verified_by: pending
@@ -200,7 +200,7 @@ expected:
 
 $1,000 is assessable in 2026-27 (ss 83A-25, 83A-35). For CGT the shares were acquired on 1 September 2026 for $2,000 (s 83A-30(1)), not for the nil paid.
 
-**Decision variant: the income test fails.** Same discount, but taxable income before the reduction is $172,000, reportable fringe benefits total $5,000 and reportable superannuation contributions $4,000. The test total is $181,000, which exceeds $180,000, so no reduction applies and the whole $2,000 is assessable. The test uses the sum of all four components; do not test taxable income alone.
+**Decision variant: the income test fails.** Same discount, but taxable income before the reduction is $172,000, reportable fringe benefits total $5,000, reportable superannuation contributions $4,000 and total net investment loss nil. The test total is $181,000, which exceeds $180,000, so no reduction applies and the whole $2,000 is assessable. The test uses the sum of all four components; do not test taxable income alone.
 
 ### Case 2: Deferred RSUs, with and without the 30-day rule (2026-27)
 
