@@ -59,8 +59,9 @@ no substantive or applicable-edition verification.
 The new section is identical across the 17 guides. Versions advance, generated
 packages match the source and other body text and CTA blocks are preserved.
 Existing descriptions already identify ethics and quality assurance and their
-remaining edition and eligibility gaps. Catalogue entries, published coverage
-figures and excluded guides remain unchanged. Existing national rates,
+remaining edition and eligibility gaps. Catalogue entries and excluded guides remain unchanged. With Ryan’s approval,
+the Australia inventory row is corrected from 48 to 60 to match the current
+index. This inventory correction does not verify topic completeness. Existing national rates,
 procedures and eligibility claims are not reverified by this addition.
 
 Obtain the complete standards, guides, code and quality manual for the actual

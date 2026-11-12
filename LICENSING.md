@@ -9,6 +9,7 @@ depending on whether a file is *software* or a *tax Guide*.
 |-------|---------|------|
 | Software, tooling, docs, and project metadata — `mcp/`, `scripts/`, `tools/`, `plugins/`, `.claude-plugin/`, `docs/`, `.github/`, `Dockerfile`, `calculators/**/*.mjs`, and root config/meta files | **AGPL-3.0-only** | [`LICENSE`](LICENSE) / [`LICENSES/AGPL-3.0-only.txt`](LICENSES/AGPL-3.0-only.txt) |
 | Tax Guides and their machine-readable exports — `skills/`, `packages/`, `workflows/`, `calculators/**/rules.json`, `index.json`, `llms.txt`, `llms-full.txt` | **OA Guide License** (source-available) | [`LICENSES/LicenseRef-OA-Guide-License-1.0.txt`](LICENSES/LicenseRef-OA-Guide-License-1.0.txt) |
+| The guides listed under [Guides under FSL-1.1-ALv2](#guides-under-fsl-11-alv2), with their copies under `packages/` | **FSL-1.1-ALv2** (source-available) | [`LICENSES/FSL-1.1-ALv2.txt`](LICENSES/FSL-1.1-ALv2.txt) |
 
 The machine-readable exports (`index.json`, `llms.txt`, `llms-full.txt`)
 reproduce the Guides, so they carry the **Guide License** — otherwise the Guide
@@ -58,9 +59,41 @@ under a copyleft licence (AGPL-3.0 / GPL-3.0), with attribution (see the
 `references.md` and provenance sections, e.g. Turkey, France, Poland, Brazil, and
 several Canadian provinces). Copyleft material cannot be relicensed: any Guide
 that contains or derives from it **remains under its original AGPL/GPL terms**,
-notwithstanding the general mapping above. The Guide License applies to the rest
-of the Guides, which are Glimpse Ltd's own work, work-for-hire, or covered by an
-accepted [CLA](CLA.md).
+notwithstanding the general mapping above. Apart from these and the guides under
+FSL-1.1-ALv2 below, the Guide License applies to the rest of the Guides, which
+are Glimpse Ltd's own work, work-for-hire, or covered by an accepted
+[CLA](CLA.md).
+
+## Guides under FSL-1.1-ALv2
+
+The guides below were adapted by their author, Ryan Duguid, from his
+repositories `ryanduguid/australian-accounting-skills` and
+`ryanduguid/DrDebits` (formerly `ryanduguid/llm-tax-guardrails`), and remain under the Functional Source
+License, Version 1.1, ALv2 Future License
+([`LICENSES/FSL-1.1-ALv2.txt`](LICENSES/FSL-1.1-ALv2.txt)), notwithstanding the
+general mapping above. That licence grants an additional Apache License 2.0
+licence for each version from the second anniversary of the date it is made
+available. The source revisions cited in each guide, rather than the source
+repositories' current main branches, supply these licence terms.
+Their copies under `packages/`, and any of their text reproduced in
+the machine-readable exports, carry the same terms. Each guide states its
+licence in its `license` front matter and keeps its copyright notice at the end
+of its Sources section. `REUSE.toml` records the same paths. For the
+machine-readable exports, `REUSE.toml` records each file's licence as a whole,
+because REUSE.toml annotations are file-level; this paragraph governs the text of
+these guides reproduced in them.
+
+- `skills/foundation/au-tasa-code-disclosure.md`
+- `skills/international/australia/au-coal-lsl-levy.md`
+- `skills/international/australia/au-director-penalties.md`
+- `skills/international/australia/au-employee-share-schemes.md`
+- `skills/international/australia/au-fuel-tax-credits.md`
+- `skills/international/australia/au-managed-funds-amit.md`
+- `skills/international/australia/au-objections.md`
+- `skills/international/australia/au-primary-production.md`
+- `skills/international/australia/au-private-rulings.md`
+- `skills/international/australia/au-property-development.md`
+- `skills/international/australia/au-restructure-rollovers.md`
 
 ## Effective date and prior releases
 
