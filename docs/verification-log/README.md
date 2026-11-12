@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-12 | [New Zealand deduction notices and protected earnings](2026-11-12-new-zealand-deduction-notices-protected-earnings.md) |
 | 2026-11-12 | [New Zealand tailored codes and extra-pay calculations](2026-11-12-new-zealand-tailored-codes-extra-pay.md) |
 | 2026-11-12 | [New Zealand ordinary PAYE and student-loan calculations](2026-11-12-new-zealand-ordinary-paye-student-loans.md) |
 | 2026-11-12 | [New Zealand 2026-27 employer payroll and contribution boundaries](2026-11-12-new-zealand-employer-payroll.md) |
