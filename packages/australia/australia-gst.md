@@ -5,7 +5,7 @@ version: 2.8
 jurisdiction: AU
 category: international
 tax_year: 2026
-last_updated: 2026-11-05
+last_updated: 2026-11-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -126,7 +126,7 @@ Infer the client profile from the data first. Only ask questions the data could 
 | G12 | G10 + G11 (derived) |
 | G13 | Purchases for making input taxed sales (no credit) |
 | G14 | Purchases with no GST in the price (from unregistered suppliers, GST-free) |
-| G15 | Estimated purchases for private use (no credit) |
+| G15 | Estimated purchases for private use or not income tax deductible (no credit; also included at G10 or G11) |
 | G16 | G13 + G14 + G15 (derived) |
 | G17 | G12 minus G16 (derived -- total creditable purchases) |
 | G18 | Adjustments on purchases (Division 19, Division 129) |
