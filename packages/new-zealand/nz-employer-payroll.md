@@ -5,7 +5,7 @@ description: >
   2026 to 31 March 2027. Covers ordinary and selected extra-pay PAYE and
   student-loan calculations, tailored certificates, recovery notices, child support
   and selected court-attachment calculations,
-  the ACC earners' levy, KiwiSaver employee deductions and compulsory employer contributions, ESCT,
+  the ACC earners' levy, selected KiwiSaver enrolment, base, notice and refund administration, employer contributions, ESCT,
   payday filing, payment schedules and payroll records. Trigger on NZ payroll,
   PAYE, payday filing, KiwiSaver employer contributions, ESCT and employer
   deductions. Distinguishes the electronic filing threshold from the large
@@ -18,13 +18,13 @@ tax_year: 2026
 tax_year_notes: "Ordinary payroll paid 1 April 2026 to 31 March 2027; separate filing and payment rules checked 12 November 2026"
 tier: 2
 last_updated: 2026-11-12
-version: 0.4
+version: 0.5
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.4
+# New Zealand employer payroll v0.5
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -192,23 +192,72 @@ Do not put these tax-arrears deductions in employment information or the SLCIR f
 
 ## Section 3 -- KiwiSaver from 1 April 2026
 
-The default employee deduction and minimum compulsory employer contribution increased from 3% to **3.5% for paydays on or after 1 April 2026**. Where a pay period straddles 1 April, the payday determines the rate for the whole payment. Existing employee elections of 4%, 6%, 8% or 10% remain available. Do not prorate the April change by days worked. [S7], [S8]
+For ordinary post-2009 default cases, the employee deduction and minimum compulsory employer contribution increased from 3% to **3.5% for paydays on or after 1 April 2026**. The payday determines the rate for the whole payment when a period straddles 1 April; do not prorate by days worked. A surviving historical 4% employee default is addressed below. Existing valid elections of 4%, 6%, 8% or 10% remain available. [S7], [S45, subsection (3B)][S45], [S50, subsection (4B)][S50]
 
-### Employee deductions
+### Establish membership and automatic-enrolment eligibility
 
-Use the employee's valid rate instruction, including KS2, a written request or an Inland Revenue rate-change notice, or the 3.5% default where deductions are required. The ordinary choices are **3.5%, 4%, 6%, 8% and 10%** of KiwiSaver gross salary or wages. A valid temporary rate reduction permits **3%** for its approved period of **3 to 12 months** and can be renewed. Apply the approved notice; do not substitute 3% merely because an employee asks informally. Savings suspensions and opt-outs require the appropriate evidence. [S7], [S8]
+Membership, automatic enrolment and compulsory employer-contribution eligibility are separate questions. For the ordinary case, establish that the person normally lives in New Zealand and is a citizen or entitled to remain indefinitely, and that the employer is within the Act. A temporary visitor, student or work permit does not establish indefinite entitlement. The State services overseas exception and other cross-border cases need their own checks. [S41], [KS4, PDF page 6][S33]
+
+Automatic enrolment ordinarily concerns a new employee aged **18 or older and under 65** at the start of employment, with a non-exempt employer and no applicable exception. It does not automatically enrol a 16- or 17-year-old. An under-18 person joins through a provider; an existing member supplies their membership and deduction information rather than being enrolled again. Membership can continue beyond 65 even where compulsory employer contributions cease. [S42], [S44], [KS4, PDF pages 6–11][S33]
+
+Check the exceptions before treating any new starter as automatically enrolled. A contract for no more than 28 continuous days is temporary for this purpose; count calendar days of employment, not shifts. If that employment continues, the temporary exclusion ends on day 29, described in section 12(2)(b) as the 28th day after employment started. Casual agricultural employment and qualifying irregular/intermittent employment with holiday pay have separate statutory tests. Section 14 also excludes existing members and specified situations such as private domestic service, election-day work and employment without required PAYE withholding. This is not an exhaustive classification checklist; resolve the actual section 12/14 exception, secondment or exempt-employer status first. [S43], [S44], [KS4, PDF page 7][S33]
+
+Give a person who is automatically enrolled the KiwiSaver information pack within **7 days** of starting. Collect the applicable KS2 deduction information and retain it; do not send KS2 to IRD. Give IRD the applicable new-employee KiwiSaver details using IR346K/myIR or payroll software no later than the first employment-information return is due. Coordinate this with the separate new-employee information deadline in Section 5. Start required deductions from the first payment for an automatically enrolled employee; for an existing member or an IRD direction, section 60 applies to payments calculated after the employer receives the relevant notice. Obtain a valid savings-suspension notice before omitting otherwise required deductions. [S34], [S35], [S49], [KS4, PDF pages 8–11][S33]
+
+### Employee rates, changes and temporary reductions
+
+Use the valid KS2, written rate instruction or IRD notice. The ordinary elected choices are **3.5%, 4%, 6%, 8% and 10%** of KiwiSaver gross salary or wages. Apply a valid change to the first payment calculated after receipt; ordinary changes must be at least **92 days** apart unless the employer agrees to a shorter interval. Do not backdate missed employee deductions when acting on IRD's start instruction. A possible employer-contribution arrears obligation is a separate question and is not cancelled by that employee-deduction instruction. [S8], [S45, subsections (2)–(4)][S45], [KS4, PDF page 14][S33]
+
+Do not assume every employee without a new election defaults to 3.5%. Section 64(1)(ab) retains a **4% default** where section 60(1)(a), (b) or (c) first applied to this employer in respect of this employee before 1 April 2009, subject to the statutory alternatives and any overriding election or valid temporary reduction. Section 64(1)(a) also preserves separate treatment for former section 66A transitional cases and certain pre-April-2013 2% elections. Check historical employment and rate records; the member's original joining date alone does not establish a legacy 4% case. The general IRD web/KS4 default summaries omit this surviving statutory limb. [S45, subsections (1)–(2)][S45], [S49]
+
+A valid IRD temporary rate reduction permits **3%**. The requested approval period must be **at least 92 days and no more than 1 year**; further reductions can follow. Use the actual approval's start/end dates and the notice for the relevant employer, rather than treating one employer's notification as an instruction for every job. Track expiry and any renewed approval. A person cannot use a temporary reduction whilst on a savings suspension. An informal request does not replace approval. [S39], [S46], [S47]
+
+An employee may revoke the temporary reduction for an employer and resume the applicable ordinary/default/elected rate. Using it for fewer than **92 days requires that employer's agreement**. Retain that agreement; a request alone does not prove consent. The payroll specification's PDF page 13 sample letter says a reduction cannot end in its first 3 months, but omits the statutory agreement exception. Follow section 101S and the consistent KS4 instruction rather than implementing an absolute ban. A later reduction for that employer requires a new application. [S48], [S39], [KS4, PDF page 18][S33]
+
+### Identify the contribution base
+
+Classify each payment before applying a rate. The following are selected ordinary inclusions/exclusions, not a complete ruling on an actual payment. [S38], [KS4, PDF page 12][S33], [S2, section 4.5][S2]
+
+| Payment already correctly classified | KiwiSaver gross salary or wages | Complying-fund gross base salary or wages |
+|---|---|---|
+| Ordinary salary, wages and overtime | Included | Included, subject to the fund's applicable definition |
+| Bonus and commission | Included | Excluded |
+| Redundancy payment | Excluded | Excluded |
+| Board/lodging, use of a house or an allowance instead | Excluded | Excluded |
+| Overseas accommodation/living-cost allowance or reimbursement within the stated exclusion | Excluded | Excluded |
+| Qualifying voluntary bonding payment or employee-share-scheme shares within the stated exclusion | Excluded | Excluded |
+
+Check the complying fund's trust deed for other excluded amounts. KiwiSaver also excludes the specified Fire and Emergency New Zealand volunteer honoraria. Keep evidence supporting an exclusion. These exclusions do not determine PAYE, FBT, ESS, employment-law or cross-border treatment. For a person contributing to both KiwiSaver and a complying fund, establish each employee deduction rate and its own base; do not silently reuse one base for both. [S38], [KS4, PDF pages 12 and 23][S33]
 
 ### Compulsory employer contributions
 
-The ordinary minimum is 3.5% of qualifying gross salary or wages for an eligible contributing member. From 1 April 2026, this includes eligible **16- and 17-year-old members**; the ordinary eligibility conditions include age 16 to under 65, membership of KiwiSaver or a complying fund, employee deductions and no disqualifying defined-benefit arrangement. Membership and employer-contribution eligibility do not mean every 16-year-old is automatically enrolled. Check the actual employee's circumstances. [S7], [S9]
+The ordinary minimum is 3.5% of qualifying gross salary or wages for an eligible contributing member. From 1 April 2026 this includes eligible **16- and 17-year-old members**. The ordinary conditions include age 16 to under 65, membership, required employee deductions and no disqualifying defined-benefit arrangement. Check the actual circumstances; membership alone does not establish liability. [S7], [S9]
 
-If an employee has an approved temporary 3% deduction rate, the employer **may choose** to reduce its matching contribution to 3%; it need not do so. Record the choice and any contract requiring more. Start and stop contributions under Inland Revenue's membership, opt-out and suspension instructions. Reaching 65 may end the statutory obligation, but an agreement or voluntary contribution can continue and ESCT may still apply. [S9]
+If an employee has an approved temporary 3% deduction rate, the employer **may choose** the 3% employer rate; it need not reduce its contribution. Record its choice and any contract requiring more. The statutory CEC rate is otherwise 3.5%. Reaching 65 may end the statutory obligation, but an agreement or voluntary contribution can continue and ESCT may still apply. Use the applicable stop instruction and evidence rather than assuming a birthday cancels all contractual obligations. [S9], [S50, subsection (4)][S50]
 
-Employer contributions are normally additional to salary or wages. An agreed total-remuneration arrangement needs a genuine agreement and must still satisfy minimum-wage requirements excluding the employer contribution. Do not reduce contracted pay automatically. Deduct ESCT from the gross employer contribution unless employer and employee have agreed to the separate PAYE treatment. The employee's own KiwiSaver deduction is not subject to ESCT. KiwiSaver employer contributions go through Inland Revenue; complying-fund contributions go directly to that fund. [S9], [S10]
+For a person contributing to both a KiwiSaver scheme and a complying fund, the ordinary employer minimum is shared between the funds, not an additional 3.5% minimum for each. Establish the relevant bases and agreed allocation. Do not deduct an unrelated superannuation contribution as an automatic credit: section 101D's other-contribution and hybrid-scheme offsets have detailed scheme, employment/agreement and vesting conditions. Their application remains an actual-case check here. [S9], [S50]
+
+Employer contributions are normally additional to salary or wages. An agreed total-remuneration arrangement needs a genuine agreement and must still satisfy minimum-wage requirements excluding the employer contribution. Do not reduce contracted pay automatically. Deduct ESCT from the gross employer contribution unless employer and employee have agreed to the separate PAYE treatment. The employee's own KiwiSaver deduction is not subject to ESCT. KiwiSaver employer contributions go through IRD; complying-fund contributions go directly to that fund. [S9], [S10]
 
 Check whether an agreed employer contribution is gross or net of ESCT. A promised net contribution requires grossing up under IR335's method before the ordinary ESCT calculation. Reconcile the promised net after the required truncation; do not treat a contractual net percentage as the gross statutory minimum. This guide does not work a contractual gross-up example. [IR335, page 27][S13]
 
-The announced 4% default from 1 April 2028 is a future change, not the rate for 2026-27 payroll. [S7]
+### Savings suspensions, ACC and leave
+
+Require a valid savings-suspension notice and track its dates. An unsupported statement that the employee is on a suspension does not justify stopping deductions. Apply IRD's restart instruction when it ends. A suspension ordinarily stops required employee deductions and compulsory employer contributions, but an agreement or voluntary employer contribution can continue; apply the appropriate ESCT or agreed PAYE treatment. Approval eligibility, including early hardship applications, is not determined here. [S8], [S9], [S2, section 4.1][S2], [KS4, PDF page 18][S33]
+
+If the employer continues paying under an ACC partnership programme or employer reimbursement agreement, continue employee KiwiSaver deductions unless a valid suspension applies; employer contributions in that situation are voluntary. When ACC pays weekly compensation directly, the employer can stop its own deductions and contributions. If the employer continues salary or wages during parental leave, continue required employee and employer contributions unless a valid suspension applies. This does not determine deductions from government parental-leave payments or leave entitlements. [S40], [S2, section 4.5.3][S2]
+
+Contributions normally stop on unpaid leave, but the employer may contribute voluntarily. IRD's current instructions permit including the contribution in employment information with **zero gross earnings**, or paying a lump sum through IRD after the employee returns. ESCT still applies unless the agreed salary/wages treatment applies. For a voluntary $52.50 contribution with an established 30% ESCT rate, the whole-dollar base is $52, tax is $15.60 and the fund receives $36.90. The specification's page 19 table wrongly switches its tax base to $45; use the current dedicated web example and Section 4's algorithm. [S40], [S2, section 4.5.4][S2]
+
+### Opt-outs and separate refund streams
+
+Only an automatically enrolled employee can use the ordinary opt-out process. A timely request is made on **days 14 to 56 inclusive** after starting employment, using KS10. Send the request/details to IRD and stop deductions/contributions under the valid opt-out instruction. A voluntary joiner or existing member cannot use KS10 merely because they started a new job. A qualifying later withdrawal or KS51 stop instruction is a separate process. [S36], [KS4, PDF page 18][S33]
+
+After day 56, IRD decides whether to accept a late request. Its stated window is up to 3 months **after IRD received the first contribution**, subject to its specified reasons; it is not a blanket 3-month extension from employment commencement. Continue employee deductions, employer contributions and ESCT until IRD's acceptance/stop instruction applies. Do not approve the late request yourself. [S37]
+
+Reconcile each stream before refunding. If employee deductions have not been filed and paid to IRD, the employer may refund them and report the amounts actually deducted/retained. If they have already been sent, IRD refunds the employee; avoid a second employer refund. Reconcile mixed or partly forwarded amounts with IRD before acting. Employer contributions already sent are refunded to the employer subject to amounts owing to IRD. **ESCT is a separate refund request**, using the applicable IR344 amendment/contact route; do not assume an automatic employer-contribution refund also refunds ESCT. Retain the accepted request, filing amendments, employee refund and employer/ESCT reconciliation. [S36], [S2, section 5.21.5][S2]
+
+The announced 4% ordinary default from 1 April 2028 is a future change, not the ordinary new-default rate for 2026-27 payroll. [S7]
 
 ## Section 4 -- ESCT rate and calculation
 
@@ -979,11 +1028,207 @@ expected:
   ceiling: 360
 ```
 
+**Case 37: different contribution bases.** Assume $1,000 ordinary wages, $50 overtime, $200 bonus, $100 commission, $300 redundancy and $100 accommodation all validly classified as above. At a stated 3.5% employee rate, the KiwiSaver base is $1,350 and the complying-fund base is $1,050. The complying fund has no additional deed exclusions. These are alternative base calculations, not an instruction to enrol in both funds. [S38], [S33]
+
+```oa-check
+name: nz-2026-kiwisaver-distinct-bases
+tolerance: 0
+inputs:
+  ordinary: 1000
+  overtime: 50
+  bonus: 200
+  commission: 100
+  redundancy: 300
+  accommodation: 100
+  rate: 0.035
+steps:
+  total_pay: ordinary + overtime + bonus + commission + redundancy + accommodation
+  kiwisaver_base: total_pay - redundancy - accommodation
+  complying_base: kiwisaver_base - bonus - commission
+  kiwisaver_deduction: pct(kiwisaver_base, rate)
+  complying_deduction: pct(complying_base, rate)
+expected:
+  total_pay: 1750
+  kiwisaver_base: 1350
+  complying_base: 1050
+  kiwisaver_deduction: 47.25
+  complying_deduction: 36.75
+```
+
+**Case 38: established historical default.** Assume records establish a surviving section 64(1)(ab) case for this employer/employee, with no overriding election or temporary reduction. The $1,000 KiwiSaver base produces a $40 employee deduction, not $35. The example does not infer eligibility from a joining date alone. [S45], [S49]
+
+```oa-check
+name: nz-2026-kiwisaver-legacy-default
+tolerance: 0
+inputs:
+  base: 1000
+  rate: 0.04
+steps:
+  employee: pct(base, rate)
+expected:
+  employee: 40
+```
+
+**Case 39: valid election overrides the legacy default.** For the same established historical case, assume the employer has received a valid election of 3.5% applying to this calculated payment. On a $1,000 base, deduct $35. [S45, subsections (2)–(3)][S45]
+
+```oa-check
+name: nz-2026-kiwisaver-legacy-election
+tolerance: 0
+inputs:
+  base: 1000
+  rate: 0.035
+steps:
+  employee: pct(base, rate)
+expected:
+  employee: 35
+```
+
+**Case 40: temporary reduction with unchanged employer rate.** Assume an approved 3% employee reduction applies and the employer retains 3.5%, with a shared $1,000 base and an established 17.5% ESCT rate. Employee $30, gross employer $35, ESCT $6.12 and net employer $28.88 remain separate amounts. [S9], [S50], [S12]
+
+```oa-check
+name: nz-2026-kiwisaver-trr-employer-unchanged
+tolerance: 0
+inputs:
+  base: 1000
+  employee_rate: 0.03
+  employer_rate: 0.035
+  esct_rate: 0.175
+steps:
+  employee: pct(base, employee_rate)
+  employer_gross: pct(base, employer_rate)
+  esct: floor(floor(employer_gross) * esct_rate * 100) / 100
+  employer_net: employer_gross - esct
+expected:
+  employee: 30
+  employer_gross: 35
+  esct: 6.12
+  employer_net: 28.88
+```
+
+**Case 41: employer chooses the permitted reduced rate.** Assume the same valid temporary reduction and base, but the employer chooses 3% and no agreement requires more. At 17.5% ESCT, gross employer $30 becomes $24.75 net after $5.25 ESCT. [S50], [S12]
+
+```oa-check
+name: nz-2026-kiwisaver-trr-employer-reduced
+tolerance: 0
+inputs:
+  base: 1000
+  employer_rate: 0.03
+  esct_rate: 0.175
+steps:
+  employer_gross: pct(base, employer_rate)
+  esct: floor(floor(employer_gross) * esct_rate * 100) / 100
+  employer_net: employer_gross - esct
+expected:
+  employer_gross: 30
+  esct: 5.25
+  employer_net: 24.75
+```
+
+**Case 42: shared employer minimum across 2 funds.** Assume both funds qualify, each relevant base is $1,000, the ordinary minimum is 3.5% and a valid allocation contributes 2.5% to one fund and 1% to the other. Gross contributions of $25 and $10 meet the $35 aggregate minimum. This does not establish the employee deduction rates or any legacy offset. [S9], [S50]
+
+```oa-check
+name: nz-2026-kiwisaver-two-fund-minimum
+tolerance: 0
+inputs:
+  base: 1000
+  minimum_rate: 0.035
+  first_rate: 0.025
+  second_rate: 0.01
+steps:
+  minimum: pct(base, minimum_rate)
+  first: pct(base, first_rate)
+  second: pct(base, second_rate)
+  total: first + second
+  shortfall: max(0, minimum - total)
+expected:
+  minimum: 35
+  first: 25
+  second: 10
+  total: 35
+  shortfall: 0
+```
+
+**Case 43: voluntary unpaid-leave contribution.** Assume zero actual wages, a voluntary employer contribution of 3.5% of usual weekly pay of $1,500 and an established 30% ESCT rate. The $52.50 contribution uses a $52 ESCT base, producing $15.60 tax and $36.90 net. Usual pay is not reported as actual gross earnings. [S40], [S12]
+
+```oa-check
+name: nz-2026-kiwisaver-unpaid-leave
+tolerance: 0
+inputs:
+  usual_pay: 1500
+  contribution_rate: 0.035
+  esct_rate: 0.3
+steps:
+  employer_gross: pct(usual_pay, contribution_rate)
+  esct_base: floor(employer_gross)
+  esct: floor(esct_base * esct_rate * 100) / 100
+  employer_net: employer_gross - esct
+expected:
+  employer_gross: 52.5
+  esct_base: 52
+  esct: 15.6
+  employer_net: 36.9
+```
+
+**Case 44: voluntary employer contribution during a suspension.** Assume an approved suspension stops required employee deductions and the employer voluntarily contributes $30. With an established 17.5% ESCT rate and no agreed PAYE treatment, tax is $5.25 and net employer contribution $24.75. Suspension does not make the voluntary contribution tax free. [S9], [S33], [S12]
+
+```oa-check
+name: nz-2026-kiwisaver-suspension-voluntary
+tolerance: 0
+inputs:
+  employer_gross: 30
+  esct_rate: 0.175
+steps:
+  esct: floor(floor(employer_gross) * esct_rate * 100) / 100
+  employer_net: employer_gross - esct
+expected:
+  esct: 5.25
+  employer_net: 24.75
+```
+
+**Case 45: unforwarded employee deductions refunded once.** Assume a valid timely opt-out and 2 employee deductions of $35 each, neither filed nor paid to IRD. An employer refund of $70 clears this employee-deduction balance. It does not give the employee the employer contribution or ESCT. [S36]
+
+```oa-check
+name: nz-2026-kiwisaver-optout-unforwarded
+tolerance: 0
+inputs:
+  first: 35
+  second: 35
+  refund: 70
+steps:
+  held: first + second
+  remaining: held - refund
+expected:
+  held: 70
+  remaining: 0
+```
+
+**Case 46: reconcile employer contribution and ESCT separately.** Assume an accepted opt-out and 2 previously remitted gross employer contributions of $35, each with $6.12 ESCT and $28.88 net to the fund. The employer-side gross total $70 reconciles to $57.76 fund contributions plus $12.24 ESCT. These are separate refund/amendment streams, subject to IRD processing and debts; they are not an employee refund and no automatic ESCT refund is assumed. [S36], [S12]
+
+```oa-check
+name: nz-2026-kiwisaver-optout-employer-streams
+tolerance: 0
+inputs:
+  count: 2
+  per_contribution: 35
+  per_esct: 6.12
+  per_net: 28.88
+steps:
+  gross_total: count * per_contribution
+  fund_total: count * per_net
+  esct_total: count * per_esct
+  reconciled: fund_total + esct_total
+expected:
+  gross_total: 70
+  fund_total: 57.76
+  esct_total: 12.24
+  reconciled: 70
+```
+
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS, schedular payments and payment classification; automatic-enrolment, opt-out and refund administration; full definitions of contribution bases; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS, schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; records retention and penalties. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
-Sources checked 12 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. Selected PDF pages were read as native text and images; this does not claim full review of either PDF or the complete statute.
+Sources checked 12 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. KS4's cover says April 2026. Selected KiwiSaver Act provisions use the current copy dated 1 April 2026. The verification log records the selected native/image page scope, the surviving legacy default and conflicting sample-letter/example wording. These checks do not claim full PDF or statute review.
 
 [S1]: https://www.ird.govt.nz/deductions "Salary and wage deductions"
 [S2]: https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf?modified=20260401012317 "2026-27 payroll specification, selected sections"
@@ -1024,6 +1269,25 @@ Sources checked 12 November 2026. Selected District Court Act sections use the c
 <!-- openaccountants-cta-block -->
 
 ---
+
+[S33]: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1---ir99/ks4/ks4.pdf?modified=20260129195326 "KS4 employer guide, cover April 2026, selected pages"
+[S34]: https://www.ird.govt.nz/kiwisaver/kiwisaver-for-employers/starting-employees-in-kiwisaver "Starting employees, updated 21 October 2026"
+[S35]: https://www.ird.govt.nz/kiwisaver/kiwisaver-for-employers/starting-employees-in-kiwisaver/auto-enrol-employees-into-kiwisaver "Automatic enrolment, updated 21 October 2026"
+[S36]: https://www.ird.govt.nz/kiwisaver/kiwisaver-employers/employees-who-want-to-opt-out-of-kiwisaver "Employee opt-outs, updated 28 July 2026"
+[S37]: https://www.ird.govt.nz/kiwisaver/kiwisaver-employers/employees-who-want-to-opt-out-of-kiwisaver/employees-who-opt-out-late-from-kiwisaver "Late opt-outs, updated 28 April 2021"
+[S38]: https://www.ird.govt.nz/kiwisaver/kiwisaver-employers/contributions-and-deductions/gross-pay-for-kiwisaver-and-complying-funds "KiwiSaver and complying-fund gross pay, updated 28 April 2021"
+[S39]: https://www.ird.govt.nz/kiwisaver/kiwisaver-individuals/making-changes-to-my-kiwisaver/changing-my-kiwisaver-contribution-rate/temporary-rate-reduction "Temporary rate reduction, updated 1 April 2026"
+[S40]: https://www.ird.govt.nz/kiwisaver/kiwisaver-employers/contributions-and-deductions/employees-with-special-circumstances "Special employee circumstances, updated 1 October 2026"
+[S41]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM378821/ "6 Application, current copy 1 April 2026"
+[S42]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM378830/ "10 Who automatic enrolment rules apply to, current copy 1 April 2026"
+[S43]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM378834/ "12 Temporary employment, current copy 1 April 2026"
+[S44]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM378843/ "14 Other situations when automatic enrolment rules do not apply, current copy 1 April 2026"
+[S45]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM379037/ "64 Contribution rate, current copy 1 April 2026"
+[S46]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/LMS1569986/ "101L How to apply for rate reduction, current copy 1 April 2026"
+[S47]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/LMS1569987/ "101M Grant of rate reduction, current copy 1 April 2026"
+[S48]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/LMS1569995/ "101S Revocation of rate reduction, current copy 1 April 2026"
+[S49]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM379032/ "KiwiSaver Act section 60, current copy 1 April 2026"
+[S50]: https://www.legislation.govt.nz/act/public/2006/40/en/latest/sections/DLM1233474/ "KiwiSaver Act section 101D, current copy 1 April 2026"
 
 ## Talk to a verified accountant
 
