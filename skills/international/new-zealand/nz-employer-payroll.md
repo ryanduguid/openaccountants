@@ -6,7 +6,7 @@ description: >
   student-loan calculations, tailored certificates, recovery notices, child support
   and selected court-attachment calculations,
   the ACC earners' levy, selected KiwiSaver enrolment, base, notice and refund administration, employer contributions, ESCT,
-  payday filing, selected correction/penalty rules, payment schedules and tax records. Trigger on NZ payroll,
+  selected employee share schemes, payday filing, selected correction/penalty rules, payment schedules and tax records. Trigger on NZ payroll,
   PAYE, payday filing, KiwiSaver employer contributions, ESCT and employer
   deductions. Distinguishes the electronic filing threshold from the large
   employer payment threshold. Requires actual pay dates, employee declarations
@@ -15,22 +15,22 @@ description: >
 jurisdiction: NZ
 category: payroll
 tax_year: 2026
-tax_year_notes: "Ordinary payroll paid 1 April 2026 to 31 March 2027; separate filing and payment rules checked 12 November 2026"
+tax_year_notes: "Payroll paid 1 April 2026 to 31 March 2027; selected ESS, filing and payment rules checked 13 November 2026"
 tier: 2
-last_updated: 2026-11-12
-version: 0.6
+last_updated: 2026-11-13
+version: 0.7
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.6
+# New Zealand employer payroll v0.7
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
 ## Section 1 -- Scope and required inputs
 
-This guide covers ordinary salary and wages and selected extra-pay calculations for a New Zealand employer in NZD during **1 April 2026 to 31 March 2027**. It provides selected tax, contribution and filing rules, not complete employment-law or whole-topic coverage. Start with [Inland Revenue's salary and wage deduction instructions][S1] and its [2026-27 payroll calculation specification][S2].
+This guide covers ordinary salary and wages, selected employee share schemes and selected extra-pay calculations for a New Zealand employer in NZD during **1 April 2026 to 31 March 2027**. It provides selected tax, contribution and filing rules, not complete employment-law or whole-topic coverage. Start with [Inland Revenue's salary and wage deduction instructions][S1] and its [2026-27 payroll calculation specification][S2].
 
 Obtain the following before calculating:
 
@@ -114,7 +114,7 @@ A full-time student expecting income below the annual repayment threshold may qu
 
 ### Extra pay: choose the calculation before choosing a rate
 
-Annual or special bonuses, cashed-up leave, back pay and redundancy/retiring payments can be extra pay. Overtime and regular payments are not automatically lump sums. First establish the payment's legal character, whether it relates to ending employment, the employee's code and any election for a higher rate. NSW, ND and tailored-code payments use their applicable special rate rather than the ordinary extra-pay rate table; CAE/EDW extra pay follows the primary-income method. This guide does not establish entitlement to a termination payment, ESS treatment or a contractor's schedular-payment treatment. [S22], [S23], [S24]
+Annual or special bonuses, cashed-up leave, back pay and redundancy/retiring payments can be extra pay. Overtime and regular payments are not automatically lump sums. First establish the payment's legal character, whether it relates to ending employment, the employee's code and any election for a higher rate. NSW, ND and tailored-code payments use their applicable special rate rather than the ordinary extra-pay rate table; CAE/EDW extra pay follows the primary-income method. This guide does not establish entitlement to a termination payment or a contractor's schedular-payment treatment. Use the separate selected ESS rules below for established employee cases. [S22], [S23], [S24]
 
 For a **non-termination** extra payment under an ordinary primary or secondary code:
 
@@ -140,7 +140,7 @@ For a **non-termination** extra payment under an ordinary primary or secondary c
 
 Sources: [S22], [S24] and [S2, section 5.11][S2]. The web tables explicitly include the first dollar of each band. Do not copy the specification's inconsistent 'greater than $15,601/$53,501/$78,101' wording and leave those boundary amounts unassigned. An employee can elect a higher 17.5%, 30%, 33% or 39% income-tax rate where applicable; establish the instruction before using it. [S2, section 5.11][S2]
 
-Calculate ACC separately. For an ordinary levy-liable extra payment, the levy base is the lesser of E and the positive amount remaining from **$156,641 minus B**. Multiply that base by **1.75%**. Thus a payment crossing the cap has levy only on the part below the cap; do not simply levy all or none because G crosses it. Redundancy payments, retiring allowances and ESS benefits are not liable for this earners' levy; establishing an ESS benefit's other treatment is outside this guide. Add the unrounded income-tax and levy components, then truncate the total to cents. These are the specified withholding calculations; they do not determine the employee's final multi-employer annual ACC position. [S2, sections 5.11–5.12][S2], [S22], [S24]
+Calculate ACC separately. For an ordinary levy-liable extra payment, the levy base is the lesser of E and the positive amount remaining from **$156,641 minus B**. Multiply that base by **1.75%**. Thus a payment crossing the cap has levy only on the part below the cap; do not simply levy all or none because G crosses it. Redundancy payments, retiring allowances and ESS benefits are not liable for this earners' levy; use the selected ESS rules below for the benefit's other treatment. Add the unrounded income-tax and levy components, then truncate the total to cents. These are the specified withholding calculations; they do not determine the employee's final multi-employer annual ACC position. [S2, sections 5.11–5.12][S2], [S22], [S24]
 
 For a tailored code, follow the certificate rather than the table. For a confirmed redundancy payment or retiring allowance, remove the earners' levy included in that rate and mark the earnings as not liable for ACC on the employment information. For example, a 24% certificate rate less the 2026-27 levy of 1.75 percentage points is **22.25%**. The specification's printed 22.58% example is an arithmetic error; do not use it. Resolve the actual certificate and payment classification before applying this adjustment. [S2, section 5.11, PDF pages 45 and 51][S2], [S22]
 
@@ -189,6 +189,49 @@ IRD's SPS 21/01 says no extra deduction is required where weekly earnings are **
 Child-support arrears use a different notice and calculation, and child support takes priority over other tax arrears. Check that actual instrument separately; the ordinary employee child-support formula above does not establish all arrears or contractor cases. Do not merge different notices into one generic 40% cap. [S26], [S32, paragraphs 29–30][S32]
 
 Do not put these tax-arrears deductions in employment information or the SLCIR field. Pay them separately from PAYE using the employee's IRD number, tax type, period and amount. The general payroll instructions say by calendar month-end; the Act and SPS require payment within the time in the actual notice, so establish that deadline before processing. Notify the employee of the deduction and its purpose. The amount withheld is held in trust for the Crown. Keep the notice until the required amount is paid or IRD changes/revokes it in writing; the employee cannot cancel it. [S2, section 5.17][S2], [S26], [S30, subsections (1), (4), (6) and (8)][S30], [S32, paragraphs 33–36][S32]
+
+### Employee share schemes: establish the benefit first
+
+These selected rules concern an established employee under a contract of service, with an ordinary New Zealand payroll code. Obtain the scheme and offer terms, employment connection, beneficiary and associate details, issue/transfer/vesting/cancellation dates, market values, consideration, any withholding election and the written funding agreement. An incentive labelled a share scheme is not enough. Section CE 7 requires an arrangement with a purpose or effect of issuing or transferring shares, connected to employment or service, and has exclusions for exempt ESS and the specified market-value arrangements. IS25/06 does not establish an independent contractor's or non-executive director's treatment. Section RD 7(1B), effective 21 February 2026, excludes its specified contractors and other statutory non-employees from extra pay. Resolve classification before applying this employee method. [S74], [S75], [S78], [S82]
+
+A scheme that always pays cash and never has a purpose or effect of issuing or transferring shares is ordinarily a phantom scheme with an ordinary cash bonus. A mixed cash/share award does not make its cash entitlement an ESS benefit automatically. For genuine cash settlement, establish that the payment is consideration for transfer or cancellation of shares or related rights and gives rise to a CE 2 benefit. Otherwise check the ordinary bonus rules, including ACC and KiwiSaver, separately. [IS25/06, paragraphs 5-13 and 38-48][S75]
+
+### ESS value, taxing date and 2026 deferred shares
+
+Determine the share scheme taxing date under CE 7B from the actual scheme conditions. It is ordinarily the earlier of qualifying beneficial ownership without the stated material risks/protections, or cancellation/transfer to a person outside the specified association. Subsection (2) ignores specified rights, including certain market-value transfer rights and immaterial risks. A vesting label or an ordinary disposal restriction alone does not establish the date. [S80]
+
+Under CE 2, calculate **share value − consideration paid + consideration received − previous income** using the statutory definitions. If transfer/cancellation triggers the taxing date, do not add a market value as share value to the consideration received. Consideration can be paid or payable; replacement-scheme consideration and historic previous income have specific limits. A positive amount is a benefit; a negative amount is dealt with as a deduction under CE 2(3), not automatically negative payroll or a refund. Valuation evidence, historic transitions, replacement schemes and foreign-service allocation require their own actual-case checks. [S79]
+
+For shares issued or transferred on or after **1 April 2026**, EA 4B can defer the taxing date to a qualifying liquidity event. The issuing company must be unlisted and outside a group containing a listed company. Designate qualifying shares **at issue or transfer** and notify **both** the Commissioner and the beneficiary within **20 days**, or by a later date allowed by the Commissioner. An unlisted-company description or a late internal designation does not establish eligibility. [S81], [S91]
+
+The liquidity date is generally the earliest relevant listing, sale/transfer to a person outside the specified association, or cancellation, including company cessation. If that event occurs during a restriction preventing disposal, use the restriction's end date. EA 4B(4)(c) excludes specified share-only exchanges into another qualifying unlisted company. Keep evidence for those conditions and exceptions rather than using every sale or group reorganisation as a trigger. The March 2026 IRD summary is shorter than the enacted conditions; it predates assent and is not an exhaustive eligibility test. [S81], [S83], [S91]
+
+### Withholding, student loans and funding
+
+| Established payment or benefit | Selected employee payroll treatment |
+|---|---|
+| Genuine cash-settled CE 2 ESS benefit | Withhold income tax using the applicable extra-pay method; deduct student loan where required. The employer cannot elect out of mandatory cash withholding. No ACC earners' levy or KiwiSaver deductions/employer contributions on the ESS benefit itself. |
+| Share-settled benefit | The employer can ordinarily choose whether to withhold. An offer or scheme term requiring withholding creates an irrevocable RD 7B obligation for that benefit/employee and replacement benefits. A valid election requires calculation, payment and timely employment-information disclosure. If withholding applies, use extra-pay income tax and any required student-loan deduction, with no ACC or KiwiSaver on the benefit itself. |
+| Share-settled benefit with no withholding | Report where required; the employee deals with income tax through their annual return and provisional tax if applicable. No withholding does not mean tax-free income. |
+| Separate employer payment to fund tax or student loan on a share benefit | This is separate extra pay, outside CE 2's ESS benefit value. Establish its income-tax, ACC, student-loan and KiwiSaver treatment independently; the ESS exemptions do not extend to it. |
+
+Sources: [S74], [IS25/06, paragraphs 5-13 and 103-125][S75], [S77], [S82], [IS25/07, paragraphs 35-71][S76], [S88]. The 2025 interpretation statements' illustrative rates are not the 2026-27 rate tables.
+
+Apply the selected extra-pay income-tax method above to the established ESS benefit using the **excluding-ACC** rate. For student loans, first establish the notified SL/TTC code or other required notice and any special deduction certificate. The ordinary primary-pay threshold is available only once in the pay period; secondary SL extra pay has no threshold. Use the complete-dollar and cent rules in the student-loan method above, rather than a universal percentage of every benefit. [S2], [S22], [S24], [S84], [S88]
+
+Document who funds each deduction. An employee-funded tax payment, agreed sale of their shares or agreed deduction from net salary does not itself give the employee an additional employer-funded benefit. An employer-funded payment does. For the latter, first calculate the income tax and any student-loan amount on the ESS benefit that the employer agreed to fund, then gross up that **additional payment**, not the share value. IS25/07 gives **gross additional payment = net funding required ÷ (1 − combined funded deduction rates)**. Include only deductions the employer funds, at their actual applicable rates and bases. Recheck the extra-pay band, ACC cap, loan threshold/certificate, KiwiSaver base/rate and statutory rounding after grossing up; a single flat divisor is insufficient if any boundary changes. Establish compulsory employer contributions and ESCT separately. An agreement to fund income tax alone does not fund the employee's student loan or KiwiSaver automatically. [IS25/07, paragraphs 47-67][S76]
+
+These rules do not authorise a wage deduction or share sale without the required agreement. For child-support or competing notices on an ESS benefit, obtain Inland Revenue's direction; do not extend the ordinary protected-earnings example automatically. [S74], [IS25/06, paragraph 19][S75]
+
+### ESS income, filing and payment dates
+
+Where CE 2(7)'s employment-information condition applies, CE 2(8)-(9) places income recognition on the **ESS deferral date, 20 days after the share scheme taxing date**. For qualifying employee deferred shares, first substitute the EA 4B liquidity date. A former employee's share benefit without withholding has the stated reporting exclusion and is ordinarily recognised on the taxing date, without this reporting-based deferral. [S79], [S80], [S85], [S86]
+
+Report the ESS benefit in its **employee share scheme earnings** field, also in the **earnings not liable for ACC earners' levy** field. Use the current tax code, not the retired ESS code. Show PAYE and student loan deducted. Keep an employer's separate tax-funding payment in **gross earnings**, outside the ESS field, with its own levy treatment. Do not treat the ESS reporting value as additional cash wages. [S76], [S85]
+
+TAA 23K permits payday reporting using the ESS deferral date or the specified twice-monthly method: deferral dates on the 1st-15th use the 15th; later dates use month end. File within **2 working days** electronically or **10 working days** under allowed paper filing from the applicable reporting day. Exempt ESS benefits are excluded from this reporting regime; establish exemption separately. Former-employee share benefits without withholding are excluded, but withheld benefits must be reported. A cash payment to a former employee is not automatically covered by the share-only operational exception. [S85], [S86]
+
+Filing and paying remain distinct. RD 6(3) supplies the deemed payment date for the elected non-cash benefit; RD 7B links the election to timely disclosure and RD 4 payment. For cash, RA 5(2) requires withholding when payment is made. Do not use an EI reporting concession as blanket authority to delay cash withholding or remittance. A separate funding payment uses its own actual payment facts; IS25/07's same-reporting-date example assumes aligned processing, rather than creating a universal ESS timing rule for the extra cash. Apply the established monthly/twice-monthly remittance schedule in Section 5 and reconcile the streams. Unusual differences between cancellation, cash payment, deferral and funding dates need a specific Inland Revenue/qualified review before processing. [S76], [S77], [S87], [S89], [S90]
 
 ## Section 3 -- KiwiSaver from 1 April 2026
 
@@ -1483,11 +1526,214 @@ expected:
   penalty: 800
 ```
 
+**Case 59: a positive share-settled benefit.** Assume an established CE 2 benefit with market value $24,000, consideration paid $6,000, no consideration received or historic previous income, valid withholding and a derived 33% extra-pay rate. The benefit is $18,000 and income-tax withholding is $5,940, with no ACC or KiwiSaver on that benefit. This does not verify the market valuation or taxing date. [S74], [S79]
+
+```oa-check
+name: nz-2026-ess-share-value
+tolerance: 0.001
+inputs:
+  share_value: 24000
+  consideration_paid: 6000
+  consideration_received: 0
+  previous_income: 0
+steps:
+  benefit: share_value - consideration_paid + consideration_received - previous_income
+  income_tax: benefit * 0.33
+expected:
+  benefit: 18000
+  income_tax: 5940
+```
+
+**Case 60: cancellation uses consideration received.** Assume cancellation triggers the taxing date, $15,000 is paid for the rights and $2,000 was paid for them, with no previous income. Share value in this formula is zero; do not add another $15,000 market value. At an established 33% extra-pay rate the $13,000 benefit has $4,290 income tax. [S75], [S79]
+
+```oa-check
+name: nz-2026-ess-cancellation-value
+tolerance: 0.001
+inputs:
+  share_value: 0
+  consideration_paid: 2000
+  consideration_received: 15000
+  previous_income: 0
+steps:
+  benefit: share_value - consideration_paid + consideration_received - previous_income
+  income_tax: benefit * 0.33
+expected:
+  benefit: 13000
+  income_tax: 4290
+```
+
+**Case 61: a negative formula is preserved for review.** Assume the statutory formula has share value $1,000, consideration paid $2,000 and no other items. The result is negative $1,000, within CE 2(3)'s deduction rule. This arithmetic does not authorise a negative employment-information payment, offset or payroll refund. [S79]
+
+```oa-check
+name: nz-2026-ess-negative-formula
+tolerance: 0.001
+inputs:
+  share_value: 1000
+  consideration_paid: 2000
+  consideration_received: 0
+  previous_income: 0
+steps:
+  formula_result: share_value - consideration_paid + consideration_received - previous_income
+expected:
+  formula_result: -1000
+```
+
+**Case 62: genuine cash settlement with the loan threshold already used.** Assume a $5,000 genuine cash-settled benefit, ordinary 30% extra-pay income-tax rate, required SL deductions and no remaining primary threshold or special certificate. Income tax is $1,500, student loan $600 and net cash $2,900. No ACC, employee KiwiSaver or employer KiwiSaver applies to this benefit. The classification is an input, not established by the calculation. [S74], [S75], [S84], [S88]
+
+```oa-check
+name: nz-2026-ess-cash-with-loan
+tolerance: 0.001
+inputs:
+  benefit: 5000
+steps:
+  income_tax: benefit * 0.30
+  student_loan: floor(benefit) * 0.12
+  net_cash: benefit - income_tax - student_loan
+expected:
+  income_tax: 1500
+  student_loan: 600
+  net_cash: 2900
+```
+
+**Case 63: employee-funded withholding creates no employer bonus.** Assume the same $5,000 value is provided in shares, with valid withholding, a 30% rate and SL on the full amount. The employee agrees to fund the $1,500 tax and $600 loan deduction from their own resources. Required funding is $2,100; it is not an additional employer-funded gross payment. No share sale, wage deduction or sufficient cash balance is proved here. [S74], [S76], [S77]
+
+```oa-check
+name: nz-2026-ess-employee-funded-withholding
+tolerance: 0.001
+inputs:
+  benefit: 5000
+steps:
+  income_tax: benefit * 0.30
+  student_loan: floor(benefit) * 0.12
+  employee_funding: income_tax + student_loan
+expected:
+  income_tax: 1500
+  student_loan: 600
+  employee_funding: 2100
+```
+
+**Case 64: primary student loan uses only the remaining threshold.** Assume a weekly M SL employee, ordinary pay $300, $464 threshold, no other extra pay or certificate and a $1,000 genuine cash ESS benefit in that pay period. Ordinary four-week pay of $1,200 gives annualised base $15,600, so the extra-pay income-tax rate is 17.5%. Only $164 of threshold remains for the ESS benefit. Income tax is $175, loan $100.32 and net benefit cash $724.68. The regular pay itself has no standard loan deduction. [S2], [S24], [S74], [S84], [S88]
+
+```oa-check
+name: nz-2026-ess-main-loan-remaining-threshold
+tolerance: 0.001
+inputs:
+  regular_pay: 300
+  weekly_threshold: 464
+  benefit: 1000
+steps:
+  remaining_threshold: max(0, weekly_threshold - regular_pay)
+  loan_base: floor(max(0, benefit - remaining_threshold))
+  student_loan: loan_base * 0.12
+  income_tax: benefit * 0.175
+  net_cash: benefit - income_tax - student_loan
+expected:
+  remaining_threshold: 164
+  loan_base: 836
+  student_loan: 100.32
+  income_tax: 175
+  net_cash: 724.68
+```
+
+**Case 65: secondary student loan has no threshold.** Assume an S SL employee with derived extra-pay income-tax rate 17.5%, a $1,000 genuine cash ESS benefit and no special certificate. Withhold $175 income tax and $120 loan, leaving $705. Do not subtract the primary weekly threshold from this secondary payment. [S2], [S24], [S74], [S84], [S88]
+
+```oa-check
+name: nz-2026-ess-secondary-loan-no-threshold
+tolerance: 0.001
+inputs:
+  benefit: 1000
+steps:
+  income_tax: benefit * 0.175
+  student_loan: floor(benefit) * 0.12
+  net_cash: benefit - income_tax - student_loan
+expected:
+  income_tax: 175
+  student_loan: 120
+  net_cash: 705
+```
+
+**Case 66: the funding payment attracts ACC.** Assume a $4,550 share benefit, valid withholding and an employer agreement to fund its tax and the tax/ACC on the additional payment. Annualised base is $60,000, so the benefit plus the $2,000 funding gross stays in the 30% band and below the ACC cap. There is no SL, KiwiSaver membership or employer contribution obligation. The ESS tax is $1,365. Grossing that funding amount up for 30% tax and 1.75% ACC gives $2,000, including $600 tax and $35 ACC, leaving $1,365 to fund the ESS tax. The benefit remains $4,550 in the ESS field; the $2,000 is separate gross earnings. [S2], [S24], [S74], [S76], [S85]
+
+```oa-check
+name: nz-2026-ess-funded-tax-acc-separate
+tolerance: 0.001
+inputs:
+  benefit: 4550
+  annualised_base: 60000
+steps:
+  ess_tax: benefit * 0.30
+  funding_gross: ess_tax / (1 - 0.30 - 0.0175)
+  funding_tax: funding_gross * 0.30
+  funding_acc: funding_gross * 0.0175
+  funding_net: funding_gross - funding_tax - funding_acc
+  rate_comparison_total: annualised_base + benefit + funding_gross
+expected:
+  ess_tax: 1365
+  funding_gross: 2000
+  funding_tax: 600
+  funding_acc: 35
+  funding_net: 1365
+  rate_comparison_total: 66550
+```
+
+**Case 67: funding income tax, loan and employee KiwiSaver.** Assume a $9,800 share benefit and valid withholding, annualised base $160,000, ordinary 33% income-tax rate, required 12% SL with the primary threshold already used and a valid 6% employee KiwiSaver instruction. The employer funds both benefit deductions and all applicable deductions on the additional payment. The $9,000 additional gross keeps the combined rate comparison at $178,800, within 33%; ACC is zero because the established annualised base already exceeds $156,641. ESS tax $3,234 plus loan $1,176 needs $4,410 funding. The additional gross has $2,970 tax, $1,080 loan and $540 employee KiwiSaver, leaving $4,410. A separately established 3.5% compulsory employer contribution on that additional gross is $315 before its own ESCT; none is due on the ESS benefit. [S2], [S24], [S74], [S76], [S88]
+
+```oa-check
+name: nz-2026-ess-all-deductions-funded
+tolerance: 0.001
+inputs:
+  benefit: 9800
+  annualised_base: 160000
+  employee_kiwisaver_rate: 0.06
+  employer_rate: 0.035
+steps:
+  ess_tax: benefit * 0.33
+  ess_loan: floor(benefit) * 0.12
+  net_funding: ess_tax + ess_loan
+  funding_gross: net_funding / (1 - 0.33 - 0.12 - employee_kiwisaver_rate)
+  funding_tax: funding_gross * 0.33
+  funding_loan: floor(funding_gross) * 0.12
+  employee_kiwisaver: funding_gross * employee_kiwisaver_rate
+  funding_net: funding_gross - funding_tax - funding_loan - employee_kiwisaver
+  employer_gross: funding_gross * employer_rate
+  rate_comparison_total: annualised_base + benefit + funding_gross
+expected:
+  ess_tax: 3234
+  ess_loan: 1176
+  net_funding: 4410
+  funding_gross: 9000
+  funding_tax: 2970
+  funding_loan: 1080
+  employee_kiwisaver: 540
+  funding_net: 4410
+  employer_gross: 315
+  rate_comparison_total: 178800
+```
+
+**Case 68: tax-only funding above the ACC cap.** Assume annualised base $200,000, an established $6,100 share benefit, valid withholding and an employer agreement to fund all income tax. There is no SL or KiwiSaver obligation and no ACC on the additional payment at this established base. The 39% benefit tax is $2,379; a separate gross payment of $3,900 has $1,521 tax and leaves $2,379. The gross-up applies to the funding payment, not to $6,100 of share value. [S2], [S24], [S74], [S76]
+
+```oa-check
+name: nz-2026-ess-tax-only-above-acc-cap
+tolerance: 0.001
+inputs:
+  benefit: 6100
+steps:
+  ess_tax: benefit * 0.39
+  funding_gross: ess_tax / (1 - 0.39)
+  funding_tax: funding_gross * 0.39
+  funding_net: funding_gross - funding_tax
+expected:
+  ess_tax: 2379
+  funding_gross: 3900
+  funding_tax: 1521
+  funding_net: 2379
+```
+
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS, schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; employment-record requirements beyond selected tax retention; older/exceptional corrections, mixed EMP debt, current interest, other shortfall/criminal penalties and full remission/collection rules. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS exemption eligibility, historic transitions, difficult valuations, replacement schemes and classification beyond the selected employee methods; schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; employment-record requirements beyond selected tax retention; older/exceptional corrections, mixed EMP debt, current interest, other shortfall/criminal penalties and full remission/collection rules. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
-Sources checked 12 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. KS4's cover says April 2026. Selected KiwiSaver Act provisions use the current copy dated 1 April 2026. The verification log records the selected native/image page scope, the surviving legacy default and conflicting sample-letter/example wording. The selected correction regulations use the 30 March 2026 consolidation. Selected TAA record, assessment and penalty provisions use the 1 October 2026 copy. Its full-Act page flags unincorporated amendments; the selected amendment-impact check is recorded in the verification log. SPS19/04 is dated 30 May 2019. Current statutory wording controls the affected-employee penalty base and inclusive $100 exemption. These checks do not claim full PDF or statute review.
+Inherited sources checked 12 November 2026; selected ESS sources checked 13 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. KS4's cover says April 2026. Selected KiwiSaver Act provisions use the current copy dated 1 April 2026. The verification log records the selected native/image page scope, the surviving legacy default and conflicting sample-letter/example wording. The selected correction regulations use the 30 March 2026 consolidation. Selected TAA record, assessment and penalty provisions use the 1 October 2026 copy. Its full-Act page flags unincorporated amendments; the selected amendment-impact check is recorded in the verification log. SPS19/04 is dated 30 May 2019. Current statutory wording controls the affected-employee penalty base and inclusive $100 exemption. These checks do not claim full PDF or statute review.
 
 [S1]: https://www.ird.govt.nz/deductions "Salary and wage deductions"
 [S2]: https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf?modified=20260401012317 "2026-27 payroll specification, selected sections"
@@ -1567,6 +1813,25 @@ Sources checked 12 November 2026. Selected District Court Act sections use the c
 [S71]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM356156/ "Tax Administration Act section 139BA, copy 1 October 2026"
 [S72]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM1191236/ "Tax Administration Act section 141ED, copy 1 October 2026"
 [S73]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM358729/ "Tax Administration Act section 183A, copy 1 October 2026"
+
+[S74]: https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/employee-share-schemes/deducting-tax-on-ess-benefits "IRD ESS withholding, updated 28 October 2026"
+[S75]: https://www.taxtechnical.ird.govt.nz/-/media/project/ir/tt/pdfs/interpretation-statements/2025/is-25-06.pdf?modified=20250331012659 "IS25/06, 31 March 2025; selected paragraphs, employee scope"
+[S76]: https://www.taxtechnical.ird.govt.nz/-/media/project/ir/tt/pdfs/interpretation-statements/2025/is-25-07.pdf?modified=20250331012754 "IS25/07, 31 March 2025; selected funding/reporting paragraphs"
+[S77]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM7269557/ "Income Tax Act RD7B, copy 4 September 2026"
+[S78]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1512798/ "Income Tax Act CE7, copy 4 September 2026"
+[S79]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1512781/ "Income Tax Act CE2, copy 4 September 2026"
+[S80]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS92763/ "Income Tax Act CE7B, copy 4 September 2026"
+[S81]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS1593301/ "Income Tax Act EA4B, copy 4 September 2026"
+[S82]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1519952/ "Income Tax Act RD7, copy 4 September 2026"
+[S83]: https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/employee-share-schemes/ess-rules/tax-on-employee-deferred-shares "IRD employee deferred shares, updated 16 March 2026; qualify by enacted law"
+[S84]: https://www.ird.govt.nz/employing-staff/payday-filing/non-standard-filing-of-employment-information/lump-sum-payments "IRD lump sum payments, updated 27 January 2026"
+[S85]: https://www.ird.govt.nz/employing-staff/payday-filing/non-standard-filing-of-employment-information/employee-share-scheme-benefits "IRD ESS employment information, updated 28 October 2026"
+[S86]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS191845/ "Tax Administration Act23K, copy 1 October 2026"
+[S87]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1519950/ "Income Tax Act RD6, copy 4 September 2026"
+[S88]: https://www.legislation.govt.nz/act/public/2011/62/en/latest/ "Student Loan Scheme Act2011 s4 and ss36-37, copy 1 April 2026"
+[S89]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1519944/ "Income Tax Act RD4, copy 4 September 2026"
+[S90]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1519735/ "Income Tax Act RA5, copy 4 September 2026"
+[S91]: https://www.legislation.govt.nz/act/public/2026/8/en/latest/ "2026 No8 sections2,10,51,114; selected commencement and application"
 
 <!-- openaccountants-cta-block -->
 

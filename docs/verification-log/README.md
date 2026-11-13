@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-13 | [New Zealand employee share schemes, funding and timing](2026-11-13-new-zealand-employee-share-schemes.md) |
 | 2026-11-12 | [New Zealand payroll records, corrections and penalty boundaries](2026-11-12-new-zealand-payroll-records-corrections-penalties.md) |
 | 2026-11-12 | [New Zealand KiwiSaver administration and source qualifications](2026-11-12-new-zealand-kiwisaver-administration.md) |
 | 2026-11-12 | [New Zealand deduction notices and protected earnings](2026-11-12-new-zealand-deduction-notices-protected-earnings.md) |
