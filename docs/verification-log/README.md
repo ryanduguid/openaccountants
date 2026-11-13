@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-13 | [New Zealand company incorporation and register annual return](2026-11-13-new-zealand-company-register-core.md) |
 | 2026-11-13 | [New Zealand ordinary company income tax and 2026 IR4](2026-11-13-new-zealand-company-ir4.md) |
 | 2026-11-13 | [New Zealand GST registration, timing and return boxes](2026-11-13-new-zealand-gst-core.md) |
 | 2026-11-13 | [New Zealand annual IR3 reconciliation and standard provisional handoff](2026-11-13-new-zealand-annual-ir3-provisional.md) |

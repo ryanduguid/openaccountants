@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2048,
+  "guides": 2049,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -16300,6 +16300,19 @@
    "name": "nz-company-income-tax-ir4",
    "jurisdiction": "NZ",
    "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-13"
+  },
+  {
+   "slug": "nz-company-register-core",
+   "path": "skills/international/new-zealand/nz-company-register-core.md",
+   "name": "nz-company-register-core",
+   "jurisdiction": "NZ",
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
