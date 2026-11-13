@@ -10,17 +10,19 @@
 3. `new-zealand-gst.md`
 4. `nz-acc-levies.md`
 5. `nz-capital-gains.md`
-6. `nz-employer-payroll.md`
-7. `nz-gst-return.md`
-8. `nz-income-tax-ir3.md`
-9. `nz-provisional-tax.md`
-10. `nz-tax-residency.md`
-11. `references.md`
+6. `nz-company-income-tax-ir4.md`
+7. `nz-employer-payroll.md`
+8. `nz-gst-return.md`
+9. `nz-income-tax-ir3.md`
+10. `nz-provisional-tax.md`
+11. `nz-tax-residency.md`
+12. `references.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)

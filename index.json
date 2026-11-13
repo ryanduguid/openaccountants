@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2047,
+  "guides": 2048,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -16293,6 +16293,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "nz-company-income-tax-ir4",
+   "path": "skills/international/new-zealand/nz-company-income-tax-ir4.md",
+   "name": "nz-company-income-tax-ir4",
+   "jurisdiction": "NZ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-13"
   },
   {
    "slug": "nz-employer-payroll",
