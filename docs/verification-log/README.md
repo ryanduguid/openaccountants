@@ -13,6 +13,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | 2026-11-13 | [New Zealand ordinary company income tax and 2026 IR4](2026-11-13-new-zealand-company-ir4.md) |
 | 2026-11-13 | [New Zealand GST registration, timing and return boxes](2026-11-13-new-zealand-gst-core.md) |
 | 2026-11-13 | [New Zealand annual IR3 reconciliation and standard provisional handoff](2026-11-13-new-zealand-annual-ir3-provisional.md) |
+| 2026-11-13 | [New Zealand exempt ESS share and trustee meanings](2026-11-13-new-zealand-exempt-ess-share-trustee.md) |
 | 2026-11-13 | [New Zealand exempt employee share scheme conditions and disclosure](2026-11-13-new-zealand-exempt-employee-share-schemes.md) |
 | 2026-11-13 | [New Zealand CAE and EDW eligibility correction](2026-11-13-new-zealand-cae-edw-eligibility.md) |
 | 2026-11-13 | [New Zealand ordinary NSW, CAE and EDW payroll methods](2026-11-13-new-zealand-ordinary-special-codes.md) |

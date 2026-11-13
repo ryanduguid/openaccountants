@@ -18,13 +18,13 @@ tax_year: 2026
 tax_year_notes: "Payroll paid 1 April 2026 to 31 March 2027; selected ordinary special-code, ESS, filing and payment rules checked 13 November 2026"
 tier: 2
 last_updated: 2026-11-13
-version: 1.0
+version: 1.1
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v1.0
+# New Zealand employer payroll v1.1
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -231,13 +231,14 @@ For offers made **on or after 1 April 2025**, the increased limits apply for the
 
 | Condition | Required scheme provision or established input |
 |---|---|
+| Meaning of share | For CW 26C, CW 26F defines share, for a company whose shares are made available under an exempt ESS, as a **fully paid ordinary share** that **ranks equally with, and has the same designation as, an existing ordinary voting share** in the company. A partly paid share is not a share for CW 26C. Establish the offered shares' terms and designation. [S112] |
 | Price and annual amounts | Shares must be available for no more than market value at purchase/subscription. Shares purchased/subscribed for by the employee or a trustee for them have market value of no more than **$7,500 in a year**. That market value less the employee's spending on the shares is no more than **$3,000 in a year**. Aggregate the relevant purchases, rather than testing each grant in isolation. [S101, subsection (2)][S101] |
 | Meaning of year | YA 1 defines year as a **12-month period**. Establish the relevant period for the arrangement and its purchases; do not assume a fresh allowance on 1 April merely because the separate annual return uses a tax year. [S98], [S101] |
 | Market value | CW 26DB imports YA 1 market value (a)/(b): a quoted share/option ordinarily uses the middle market quotation for the same terms, subject to the fair-reflection qualification; an unquoted one uses the arm's-length willing-purchaser amount, with a commercially acceptable, fair and reasonable valuation method. Appropriate income, cash-flow or asset methods may be relevant. CW 26DB also permits the **5-day volume weighted average price**, another Commissioner-accepted method or a comparable method for quoted shares/options. This guide does not establish an actual valuation or recognised-exchange status. [S98], [S103] |
 | Employee and ownership | CW 26D requires employment by the company. It excludes a non-employed director, a company/other body and a person who, with any associated person, holds **10% or more** of issued capital. Exactly 10% is excluded. Establish association and the relevant holdings; an employee's own holding below 10% is insufficient evidence. [S102] |
 | Equal participation | A full-time permanent employee receiving an offer must be eligible on an equal basis with **90% or more of other full-time permanent employees whose offers are not subject to foreign security disclosure rules**. If the arrangement applies to part-time employees or seasonal workers, apply the same statutory test separately to that class. Establish the actual comparison pool, foreign-disclosure qualification and equal terms, rather than using an unqualified whole-workforce percentage. [S101, subsection (3)(a)–(c)][S101] |
 | Minimum spending/service | A required minimum spend must be no more than **$1,000 in a year**; this limits the required minimum, not an employee's voluntary spending. Any service requirement must be no more than **3 years** of full-time work, or an accumulated equivalent for other employees. [S101, subsection (3)(d)–(e)][S101] |
-| Trust dividends | If a trust holds shares for an employee, the trustee must pay dividends directly to the employee and the dividends must be treated as derived by that employee. Exemption of the scheme benefit does not establish exemption of dividends. [S101, subsection (3B)][S101] |
+| Trust dividends | If a trust holds shares for an employee, the trustee must pay dividends directly to the employee and the dividends must be treated as derived by that employee. For CW 26C, CW 26G defines trustee as a group of persons appointed to administer an exempt ESS of a company that employs an employee, and to hold shares under that scheme on trust for the employee during any period of restriction described in CW 26C(7). Exemption of the scheme benefit does not establish exemption of dividends. [S101, subsection (3B)][S101], [S113] |
 
 #### Financing, hardship, restrictions and exit
 
@@ -1913,7 +1914,7 @@ expected:
   net_pay: 808.49
 ```
 
-**Case 75: modern exempt ESS at both amount limits.** Assume a qualifying post-1 April 2025 offer in the current income year, an established relevant 12-month cap period, market value of $7,500 and voluntary employee spending of $4,500 across all purchases in that period. The discount is $3,000, with no headroom in either limit. A qualifying interest/charge-free $4,500 loan over 36 equal monthly payments is $125 a month before any statutory leave suspension. Assume every other scheme and receipt condition is satisfied; these amounts alone do not prove exemption. [S101], [S107]
+**Case 75: modern exempt ESS at both amount limits.** Assume a qualifying post-1 April 2025 offer in the current income year, an established relevant 12-month cap period, market value of $7,500 and voluntary employee spending of $4,500 across all purchases in that period. The discount is $3,000, with no headroom in either limit. A qualifying interest/charge-free $4,500 loan over 36 monthly payments is $125 a month before any statutory leave suspension, assuming equal payments; CW 26C(4)(d) requires regular instalments of a month or less, not equal ones. Assume every other scheme and receipt condition is satisfied; these amounts alone do not prove exemption. [S101], [S107]
 
 ```oa-check
 name: nz-2026-exempt-ess-exact-limits
@@ -2209,6 +2210,8 @@ Inherited sources checked 12 November 2026; selected ESS sources checked 13 Nove
 [S109]: https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/exempt-employee-share-schemes/report-employee-shares-under-exempt-ess "IRD annual exempt ESS reporting, updated 22 October 2026"
 [S110]: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1200---ir1299/ir1211/ir1211.pdf?modified=20261022002436 "IR1211 initial exempt ESS notification, October 2026, page1"
 [S111]: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1200---ir1299/ir1212/ir1212.pdf?modified=20261022002438 "IR1212 annual exempt ESS return, October 2026, page1"
+[S112]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS32498/ "Income Tax Act CW26F, copy 4 September 2026"
+[S113]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS32500/ "Income Tax Act CW26G, copy 4 September 2026"
 
 <!-- openaccountants-cta-block -->
 
