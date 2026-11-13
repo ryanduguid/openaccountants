@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2049,
+  "guides": 2050,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -16293,6 +16293,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "nz-company-capital-records-core",
+   "path": "skills/international/new-zealand/nz-company-capital-records-core.md",
+   "name": "nz-company-capital-records-core",
+   "jurisdiction": "NZ",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-14"
   },
   {
    "slug": "nz-company-income-tax-ir4",

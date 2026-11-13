@@ -10,14 +10,15 @@
 3. `new-zealand-gst.md`
 4. `nz-acc-levies.md`
 5. `nz-capital-gains.md`
-6. `nz-company-income-tax-ir4.md`
-7. `nz-company-register-core.md`
-8. `nz-employer-payroll.md`
-9. `nz-gst-return.md`
-10. `nz-income-tax-ir3.md`
-11. `nz-provisional-tax.md`
-12. `nz-tax-residency.md`
-13. `references.md`
+6. `nz-company-capital-records-core.md`
+7. `nz-company-income-tax-ir4.md`
+8. `nz-company-register-core.md`
+9. `nz-employer-payroll.md`
+10. `nz-gst-return.md`
+11. `nz-income-tax-ir3.md`
+12. `nz-provisional-tax.md`
+13. `nz-tax-residency.md`
+14. `references.md`
 
 ## Shared files this package needs
 
