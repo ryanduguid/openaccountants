@@ -11,14 +11,15 @@
 4. `nz-acc-levies.md`
 5. `nz-capital-gains.md`
 6. `nz-company-capital-records-core.md`
-7. `nz-company-income-tax-ir4.md`
-8. `nz-company-register-core.md`
-9. `nz-employer-payroll.md`
-10. `nz-gst-return.md`
-11. `nz-income-tax-ir3.md`
-12. `nz-provisional-tax.md`
-13. `nz-tax-residency.md`
-14. `references.md`
+7. `nz-company-financial-reporting-core.md`
+8. `nz-company-income-tax-ir4.md`
+9. `nz-company-register-core.md`
+10. `nz-employer-payroll.md`
+11. `nz-gst-return.md`
+12. `nz-income-tax-ir3.md`
+13. `nz-provisional-tax.md`
+14. `nz-tax-residency.md`
+15. `references.md`
 
 ## Shared files this package needs
 
@@ -27,6 +28,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)

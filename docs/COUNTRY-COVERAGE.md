@@ -186,7 +186,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NP | Nepal | 5 | 5 |
 | NR | Naoero | 4 | 0 |
 | NU | Niue | 1 | 0 |
-| NZ | New Zealand | 13 | 0 |
+| NZ | New Zealand | 14 | 0 |
 | OM | Oman | 6 | 0 |
 | PA | Panama | 4 | 0 |
 | PE | Peru | 7 | 4 |

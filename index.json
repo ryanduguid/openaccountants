@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2050,
+  "guides": 2051,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -16300,6 +16300,19 @@
    "name": "nz-company-capital-records-core",
    "jurisdiction": "NZ",
    "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-14"
+  },
+  {
+   "slug": "nz-company-financial-reporting-core",
+   "path": "skills/international/new-zealand/nz-company-financial-reporting-core.md",
+   "name": "nz-company-financial-reporting-core",
+   "jurisdiction": "NZ",
+   "category": "financial-statements",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,

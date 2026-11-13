@@ -69,6 +69,7 @@ skills/international/nauru/nr-employment-services-charge-reference.md
 skills/international/nauru/nr-tax-administration-reference.md
 skills/international/new-zealand/new-zealand-gst.md
 skills/international/new-zealand/nz-company-capital-records-core.md
+skills/international/new-zealand/nz-company-financial-reporting-core.md
 skills/international/new-zealand/nz-company-income-tax-ir4.md
 skills/international/new-zealand/nz-company-register-core.md
 skills/international/new-zealand/nz-employer-payroll.md
