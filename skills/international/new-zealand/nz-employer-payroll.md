@@ -18,13 +18,13 @@ tax_year: 2026
 tax_year_notes: "Payroll paid 1 April 2026 to 31 March 2027; selected ordinary special-code, ESS, filing and payment rules checked 13 November 2026"
 tier: 2
 last_updated: 2026-11-13
-version: 0.9
+version: 1.0
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.9
+# New Zealand employer payroll v1.0
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -218,6 +218,46 @@ Do not put these tax-arrears deductions in employment information or the SLCIR f
 These selected rules concern an established employee under a contract of service, with an ordinary New Zealand payroll code. Obtain the scheme and offer terms, employment connection, beneficiary and associate details, issue/transfer/vesting/cancellation dates, market values, consideration, any withholding election and the written funding agreement. An incentive labelled a share scheme is not enough. Section CE 7 requires an arrangement with a purpose or effect of issuing or transferring shares, connected to employment or service, and has exclusions for exempt ESS and the specified market-value arrangements. IS25/06 does not establish an independent contractor's or non-executive director's treatment. Section RD 7(1B), effective 21 February 2026, excludes its specified contractors and other statutory non-employees from extra pay. Resolve classification before applying this employee method. [S74], [S75], [S78], [S82]
 
 A scheme that always pays cash and never has a purpose or effect of issuing or transferring shares is ordinarily a phantom scheme with an ordinary cash bonus. A mixed cash/share award does not make its cash entitlement an ESS benefit automatically. For genuine cash settlement, establish that the payment is consideration for transfer or cancellation of shares or related rights and gives rise to a CE 2 benefit. Otherwise check the ordinary bonus rules, including ACC and KiwiSaver, separately. [IS25/06, paragraphs 5-13 and 38-48][S75]
+
+### Exempt ESS: establish the scheme before excluding payroll
+
+An amount derived from an exempt ESS is exempt income under CW 26B. CW 26C has 2 routes: a scheme with the Commissioner's approval under former DC 12 before its 2018 repeal, or the modern notified arrangement described below. A legacy approval, an IRD receipt or meeting the dollar limits alone does not establish every applicable condition. Keep the approval or notification, complete scheme terms, offer dates, employee/associate evidence, valuations, payments and annual returns. Actual legacy approvals and their continuing effect require separate review. [S100], [S101]
+
+For the modern route, the Commissioner must have been notified under TAA 63B(1), the arrangement must meet CW 26C(2)–(9) and the Commissioner must have **received all forms due** under TAA 63B(2) and (3). Check receipt as well as submission. These provisions do not, by themselves, settle the timing or retrospective effect of a missed form or a later cure; obtain a specific determination before treating a non-compliant scheme as exempt or reclassifying earlier payroll. [S101], [S106]
+
+#### Purchase, value and participation conditions
+
+For offers made **on or after 1 April 2025**, the increased limits apply for the **2025–26 and later income years**. A later purchase under an earlier offer does not establish that these limits apply. Section 27 of 2025 No 9 increased the share-value limit from $5,000 to **$7,500** and the discount limit from $2,000 to **$3,000**; earlier offers and other historical transitions need their own check. [S107, sections 2(34) and 27][S107]
+
+| Condition | Required scheme provision or established input |
+|---|---|
+| Price and annual amounts | Shares must be available for no more than market value at purchase/subscription. Shares purchased/subscribed for by the employee or a trustee for them have market value of no more than **$7,500 in a year**. That market value less the employee's spending on the shares is no more than **$3,000 in a year**. Aggregate the relevant purchases, rather than testing each grant in isolation. [S101, subsection (2)][S101] |
+| Meaning of year | YA 1 defines year as a **12-month period**. Establish the relevant period for the arrangement and its purchases; do not assume a fresh allowance on 1 April merely because the separate annual return uses a tax year. [S98], [S101] |
+| Market value | CW 26DB imports YA 1 market value (a)/(b): a quoted share/option ordinarily uses the middle market quotation for the same terms, subject to the fair-reflection qualification; an unquoted one uses the arm's-length willing-purchaser amount, with a commercially acceptable, fair and reasonable valuation method. Appropriate income, cash-flow or asset methods may be relevant. CW 26DB also permits the **5-day volume weighted average price**, another Commissioner-accepted method or a comparable method for quoted shares/options. This guide does not establish an actual valuation or recognised-exchange status. [S98], [S103] |
+| Employee and ownership | CW 26D requires employment by the company. It excludes a non-employed director, a company/other body and a person who, with any associated person, holds **10% or more** of issued capital. Exactly 10% is excluded. Establish association and the relevant holdings; an employee's own holding below 10% is insufficient evidence. [S102] |
+| Equal participation | A full-time permanent employee receiving an offer must be eligible on an equal basis with **90% or more of other full-time permanent employees whose offers are not subject to foreign security disclosure rules**. If the arrangement applies to part-time employees or seasonal workers, apply the same statutory test separately to that class. Establish the actual comparison pool, foreign-disclosure qualification and equal terms, rather than using an unqualified whole-workforce percentage. [S101, subsection (3)(a)–(c)][S101] |
+| Minimum spending/service | A required minimum spend must be no more than **$1,000 in a year**; this limits the required minimum, not an employee's voluntary spending. Any service requirement must be no more than **3 years** of full-time work, or an accumulated equivalent for other employees. [S101, subsection (3)(d)–(e)][S101] |
+| Trust dividends | If a trust holds shares for an employee, the trustee must pay dividends directly to the employee and the dividends must be treated as derived by that employee. Exemption of the scheme benefit does not establish exemption of dividends. [S101, subsection (3B)][S101] |
+
+#### Financing, hardship, restrictions and exit
+
+Where the employee must buy shares for **more than nominal consideration**, the arrangement must make a loan for their cost available or permit regular instalments at intervals of a month or less. Any purchase loan must be free of interest **and other charges**. Loans/regular instalments have terms of **36–60 months**. Loan repayments must be monthly or more frequent, with early repayment in full or part at the employee's discretion. For unpaid or parental leave lasting **more than a month**, regular instalments are suspended whilst on leave and the loan term is extended as appropriate; the direct-instalment alternative is also subject to that suspension provision. Keep this statutory extension qualification when testing the ordinary 60-month limit. [S101, subsection (4)][S101]
+
+If continued participation causes or may cause serious hardship, the arrangement must provide, **with the employee's agreement**, for payment terms to be varied or withdrawal with a **market-value** buyback on the withdrawal day, subject to repayment of the outstanding loan. Ordinary withdrawal instead requires **1 month's notice** and buyback at the **lesser of market value on that day and the employee's cost**, again subject to the outstanding loan. Do not use the hardship price merely because an employee wants to leave. [S101, subsections (5)–(6)][S101]
+
+For shares acquired below market value, the restriction period prohibits disposal except a takeover or similar share reorganisation. Its length is the **shorter** of (a) **3 years from acquisition or the loan repayment period, whichever is longer**, and (b) the period until employment ends with the employer, or the same-group employer following a transfer. A group transfer alone is not the stated employment-end event. For market-value acquisitions, the restriction is **no longer than** the shorter of that statutory period and an arrangement restriction ending on or after all loan repayment obligations cease. Preserve that separate market-value branch rather than imposing the discounted-share period on every purchase. [S101, subsection (7)][S101]
+
+At restriction end, a subsection (8) scheme may provide transfer if needed or, at the employee's choice, buyback at the lesser of cost and then market value. If the scheme does not use that option, subsection (8B) requires that choice for a current employee but requires the lesser-value buyback for someone no longer employed. Subsection (9) overrides both where employment ends through **death, accident, sickness, redundancy or retirement at normal retiring age**: transfer to the former employee/estate as appropriate or, if the employee chooses, the lesser-value buyback. Do not presume every resignation receives that protected-exit treatment. [S101]
+
+CW 26E defines normal retiring age as no less than **60**, with a **55** minimum for its specified female employee whose pre-**1 April 1978** employment contract entitles her to earlier retirement. It also allows an earlier age the Commissioner considers reasonable for the employment/business/occupation. Require the relevant contractual or Commissioner basis; an employee's chosen retirement date alone does not establish it. [S104]
+
+#### Employer deductions and separate annual disclosure
+
+DV 28 denies a party to an exempt ESS a deduction for related expenditure/loss, **except to the extent incurred in establishing or managing the scheme**. That exception removes this particular denial; it does not, by itself, establish positive deduction entitlement under all other rules. Keep acquisition/funding costs separate from evidenced establishment/management costs. [S105], [S99]
+
+Notify Inland Revenue using **IR1211**. The October 2026 blank form requests the registered company name, company IRD number and a signed declaration that the arrangement meets CW 26C(2)–(9). The current IRD process sends that form to its published exempt-ESS address. TAA 63B(1) does not state a fixed 20-day initial deadline; do not import the separate deferred-share deadline. [S106], [S108], [S110]
+
+For each tax year, provide the prescribed annual return **on or before 31 May following that tax year's end**. The October 2026 **IR1212** records the company, period start/end, **total value of shares granted, total employee contributions and number of employee recipients**. Reconcile those aggregates to individual scheme records and retain receipt evidence. The form's aggregate fields do not replace each employee's value/discount eligibility tests. IRD excludes exempt ESS benefits from ordinary employment information; use this separate disclosure process once exemption is established. An annual form submitted but not received is not sufficient evidence of the statutory receipt condition. [S101], [S106], [S109], [S111], [S85]
 
 ### ESS value, taxing date and 2026 deferred shares
 
@@ -1873,9 +1913,180 @@ expected:
   net_pay: 808.49
 ```
 
+**Case 75: modern exempt ESS at both amount limits.** Assume a qualifying post-1 April 2025 offer in the current income year, an established relevant 12-month cap period, market value of $7,500 and voluntary employee spending of $4,500 across all purchases in that period. The discount is $3,000, with no headroom in either limit. A qualifying interest/charge-free $4,500 loan over 36 equal monthly payments is $125 a month before any statutory leave suspension. Assume every other scheme and receipt condition is satisfied; these amounts alone do not prove exemption. [S101], [S107]
+
+```oa-check
+name: nz-2026-exempt-ess-exact-limits
+tolerance: 0
+inputs:
+  market_value: 7500
+  employee_cost: 4500
+  value_limit: 7500
+  discount_limit: 3000
+  loan_months: 36
+steps:
+  discount: market_value - employee_cost
+  value_headroom: value_limit - market_value
+  discount_headroom: discount_limit - discount
+  monthly_payment: employee_cost / loan_months
+expected:
+  discount: 3000
+  value_headroom: 0
+  discount_headroom: 0
+  monthly_payment: 125
+```
+
+**Case 76: share-value limit exceeded by a cent.** Under the same modern offer/period assumptions, total share value is $7,500.01 and employee cost is $4,500.01. The $3,000 discount meets its limit, but share value exceeds its separate limit by $0.01. Do not accept the arrangement on the discount test alone. The tax consequences of failed exemption require separate review. [S101], [S107]
+
+```oa-check
+name: nz-2026-exempt-ess-value-excess
+tolerance: 0
+inputs:
+  market_value: 7500.01
+  employee_cost: 4500.01
+  value_limit: 7500
+steps:
+  discount: market_value - employee_cost
+  value_excess: market_value - value_limit
+expected:
+  discount: 3000
+  value_excess: 0.01
+```
+
+**Case 77: discount limit exceeded by a cent.** Under the same modern offer/period assumptions, total share value is $7,500 and employee cost is $4,499.99. Value meets its limit, but the $3,000.01 discount exceeds its separate limit by $0.01. Do not treat the value test as sufficient. [S101], [S107]
+
+```oa-check
+name: nz-2026-exempt-ess-discount-excess
+tolerance: 0
+inputs:
+  market_value: 7500
+  employee_cost: 4499.99
+  discount_limit: 3000
+steps:
+  discount: market_value - employee_cost
+  discount_excess: discount - discount_limit
+expected:
+  discount: 3000.01
+  discount_excess: 0.01
+```
+
+**Case 78: associated holdings reach the exclusion.** Assume the employee holds 8% and a separately established associated person holds 2% of issued capital, without overlap. The combined holding is exactly 10%, so CW 26D excludes this person. This calculation does not establish association or ownership facts. [S102]
+
+```oa-check
+name: nz-2026-exempt-ess-associated-holding
+tolerance: 0
+inputs:
+  employee_percent: 8
+  associate_percent: 2
+  exclusion_percent: 10
+steps:
+  combined_percent: employee_percent + associate_percent
+  margin_to_exclusion: exclusion_percent - combined_percent
+expected:
+  combined_percent: 10
+  margin_to_exclusion: 0
+```
+
+**Case 79: statutory equal-participation pool.** For a particular full-time permanent offeree, assume the legally established pool of other full-time permanent employees is 110, of whom 10 have offers subject to foreign security disclosure rules. Of the remaining 100, 90 are eligible on an equal basis. That is exactly 90%. This conditional pool calculation does not prove the scheme-wide test for every offeree or the separate part-time/seasonal tests. [S101]
+
+```oa-check
+name: nz-2026-exempt-ess-other-employee-pool
+tolerance: 0
+inputs:
+  other_employees: 110
+  foreign_disclosure: 10
+  equal_eligible: 90
+steps:
+  comparison_pool: other_employees - foreign_disclosure
+  eligible_percent: equal_eligible / comparison_pool * 100
+expected:
+  comparison_pool: 100
+  eligible_percent: 90
+```
+
+**Case 80: discounted shares and actual group employment end.** Assume discounted shares, a 48-month loan repayment period and actual employment ending 24 months after acquisition, including any same-group employment following transfer. The restriction is the shorter of 48 months (the longer of 36 and 48) and 24 months, hence 24 months. The applicable exit/transfer/buyback rule still needs separate application. [S101, subsections (7)–(9)][S101]
+
+```oa-check
+name: nz-2026-exempt-ess-employment-end-restriction
+tolerance: 0
+inputs:
+  three_year_months: 36
+  loan_period_months: 48
+  employment_end_months: 24
+steps:
+  longer_period: max(three_year_months, loan_period_months)
+  restriction_months: min(longer_period, employment_end_months)
+expected:
+  longer_period: 48
+  restriction_months: 24
+```
+
+**Case 81: early repayment does not remove the 3-year limb.** Assume discounted shares, a 36-month loan paid off voluntarily after 12 months, continuing qualifying employment until month 60 and no other exception. Even using the actual 12-month repayment period, the longer-of test retains 36 months; restriction ends at month 36 on these facts. This does not determine the effect of leave extensions or different loan terms. [S101]
+
+```oa-check
+name: nz-2026-exempt-ess-early-repayment
+tolerance: 0
+inputs:
+  three_year_months: 36
+  actual_repayment_months: 12
+  employment_end_months: 60
+steps:
+  longer_period: max(three_year_months, actual_repayment_months)
+  restriction_months: min(longer_period, employment_end_months)
+expected:
+  longer_period: 36
+  restriction_months: 36
+```
+
+**Case 82: ordinary and qualifying hardship withdrawal prices.** Assume employee cost of $4,500, withdrawal-day market value of $6,000 and a $1,000 outstanding loan. An ordinary withdrawal with the required notice gives a $4,500 buyback and $3,500 after loan repayment. A separately established serious-hardship withdrawal with the employee agreement required by subsection (5) gives a $6,000 buyback and $5,000 after repayment. These are alternative established cases, not an employee election to claim the higher price without hardship. [S101]
+
+```oa-check
+name: nz-2026-exempt-ess-withdrawal-prices
+tolerance: 0
+inputs:
+  employee_cost: 4500
+  market_value: 6000
+  loan_balance: 1000
+steps:
+  ordinary_price: min(employee_cost, market_value)
+  ordinary_after_loan: ordinary_price - loan_balance
+  hardship_price: market_value
+  hardship_after_loan: hardship_price - loan_balance
+expected:
+  ordinary_price: 4500
+  ordinary_after_loan: 3500
+  hardship_price: 6000
+  hardship_after_loan: 5000
+```
+
+**Case 83: annual exempt scheme aggregates.** Assume 3 distinct employee recipients in the established tax-year reporting period, shares granted with total values of $7,500, $5,000 and $3,000, and respective employee contributions of $4,500, $3,000 and $1,000. IR1212 reports $15,500 share value, $8,500 contributions and 3 recipients. The $7,000 aggregate difference is a reconciliation amount, not a per-person discount allowance or an ordinary EI amount. Assume all individual eligibility and other scheme conditions have been independently established. [S106], [S111]
+
+```oa-check
+name: nz-2026-exempt-ess-annual-aggregates
+tolerance: 0
+inputs:
+  shares_a: 7500
+  shares_b: 5000
+  shares_c: 3000
+  contributions_a: 4500
+  contributions_b: 3000
+  contributions_c: 1000
+  distinct_recipients: 3
+steps:
+  shares_total: shares_a + shares_b + shares_c
+  contributions_total: contributions_a + contributions_b + contributions_c
+  aggregate_difference: shares_total - contributions_total
+  recipient_count: distinct_recipients
+expected:
+  shares_total: 15500
+  contributions_total: 8500
+  aggregate_difference: 7000
+  recipient_count: 3
+```
+
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: special PAYE codes beyond the selected ordinary NSW/CAE/EDW, certificate and extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS exemption eligibility, historic transitions, difficult valuations, replacement schemes and classification beyond the selected employee methods; schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; employment-record requirements beyond selected tax retention; older/exceptional corrections, mixed EMP debt, current interest, other shortfall/criminal penalties and full remission/collection rules. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes beyond the selected ordinary NSW/CAE/EDW, certificate and extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; actual ESS scheme eligibility and receipt failures, legacy approvals and historic transitions, difficult valuations, replacement schemes and classification beyond the selected employee methods; schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; employment-record requirements beyond selected tax retention; older/exceptional corrections, mixed EMP debt, current interest, other shortfall/criminal penalties and full remission/collection rules. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
 Inherited sources checked 12 November 2026; selected ESS sources checked 13 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. KS4's cover says April 2026. Selected KiwiSaver Act provisions use the current copy dated 1 April 2026. The verification log records the selected native/image page scope, the surviving legacy default and conflicting sample-letter/example wording. The selected correction regulations use the 30 March 2026 consolidation. Selected TAA record, assessment and penalty provisions use the 1 October 2026 copy. Its full-Act page flags unincorporated amendments; the selected amendment-impact check is recorded in the verification log. SPS19/04 is dated 30 May 2019. Current statutory wording controls the affected-employee penalty base and inclusive $100 exemption. These checks do not claim full PDF or statute review.
 
@@ -1983,7 +2194,21 @@ Inherited sources checked 12 November 2026; selected ESS sources checked 13 Nove
 [S95]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM1253915/ "Tax Administration Act 24E, copy 1 October 2026"
 [S96]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS193078/ "Tax Administration Act 24D, copy 1 October 2026"
 [S97]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS195590/ "Tax Administration Act Schedule 5 Part A clauses 1-4/rows 7-9 and Part B clause 3, copy 1 October 2026"
-[S98]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1520575/ "Income Tax Act YA 1 selected worker definitions, copy 4 September 2026"
+[S98]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1520575/ "Income Tax Act YA 1 selected worker, market value and year definitions, copy 4 September 2026"
+
+[S99]: https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/exempt-employee-share-schemes "IRD exempt employee share schemes, updated 13 November 2026; statutory qualifications apply"
+[S100]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS32342/ "Income Tax Act CW26B, copy 4 September 2026"
+[S101]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS32492/ "Income Tax Act CW26C, copy 4 September 2026"
+[S102]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS32494/ "Income Tax Act CW26D, copy 4 September 2026"
+[S103]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS328941/ "Income Tax Act CW26DB, copy 4 September 2026"
+[S104]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS32496/ "Income Tax Act CW26E, copy 4 September 2026"
+[S105]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/LMS33459/ "Income Tax Act DV28, copy 4 September 2026"
+[S106]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS32667/ "Tax Administration Act63B, copy 1 October 2026"
+[S107]: https://www.legislation.govt.nz/act/public/2025/9/en/latest/ "2025 No9 sections2(34) and27, offer-date application of exempt ESS limits"
+[S108]: https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/exempt-employee-share-schemes/report-exempt-ess "IRD initial exempt ESS notification, updated 22 October 2026"
+[S109]: https://www.ird.govt.nz/employing-staff/deductions-from-other-payments/exempt-employee-share-schemes/report-employee-shares-under-exempt-ess "IRD annual exempt ESS reporting, updated 22 October 2026"
+[S110]: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1200---ir1299/ir1211/ir1211.pdf?modified=20261022002436 "IR1211 initial exempt ESS notification, October 2026, page1"
+[S111]: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1200---ir1299/ir1212/ir1212.pdf?modified=20261022002438 "IR1212 annual exempt ESS return, October 2026, page1"
 
 <!-- openaccountants-cta-block -->
 
