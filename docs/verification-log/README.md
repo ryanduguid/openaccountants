@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-14 | [New Zealand company cash dividends and resident withholding](2026-11-14-new-zealand-company-dividend-rwt-core.md) |
 | 2026-11-14 | [New Zealand company reporting, audit and annual reports](2026-11-14-new-zealand-company-reporting-core.md) |
 | 2026-11-14 | [New Zealand company capital, records and shareholder decisions](2026-11-14-new-zealand-company-capital-records.md) |
 | 2026-11-13 | [New Zealand company incorporation and register annual return](2026-11-13-new-zealand-company-register-core.md) |

@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2051,
+  "guides": 2052,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -16305,6 +16305,19 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
+   "last_updated": "2026-11-14"
+  },
+  {
+   "slug": "nz-company-dividend-rwt-core",
+   "path": "skills/international/new-zealand/nz-company-dividend-rwt-core.md",
+   "name": "nz-company-dividend-rwt-core",
+   "jurisdiction": "NZ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2027",
    "last_updated": "2026-11-14"
   },
   {
