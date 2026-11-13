@@ -18,6 +18,8 @@ Seven executable synthetic blocks carry 20 expected values. Independent exact-de
 
 Independent source review preserved OB 61(6)'s Commissioner-allowed later declaration exception and section 22AAB's own record-extension power, including broader audit/investigation grounds. Both qualifications were rechecked against captured clauses. Workflow review repaired the change log and exact practitioner-checklist integration; the guide also consolidates figures and expressly defines no-default/T3 holds. All universal/corporate country slots, outputs, checks and refusals remain binding. The inherited undefined excessive-ambiguity refusal is a configuration hold when applicable, not an invented code.
 
+The section 22(2)(k) memorandum-account/attached-credit clock follows the relevant tax or income-year end as applicable; an ICA tax year is kept separate from the company income year. Section 25P's evidenced operative electronic-delivery exemption and section 25Q's prescribed non-electronic route do not remove reporting or payment duties. The amendment description identifies repeal of CW 39(3)'s trust-income exclusion, rather than repeal of the local-authority exemption; CD 4(1)(b) supplies the CD 22–37 exclusion cross-reference. These corrections are bound to the retained primary clauses.
+
 The 2026 IR4JG covers 2025-26 and does not establish 2026-27 annual filing or further-income-tax dates. Native PDF extraction is not whole-document visual assurance. No findings rely on the retained empty or unprocessed rotated pages.
 
 No actual taxpayer facts, legally authorised distribution, live workflow trial, authenticated filing, statement delivery or payment was assessed. This is not accountant sign-off or whole-topic completion.
