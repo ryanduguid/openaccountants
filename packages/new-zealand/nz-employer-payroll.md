@@ -15,16 +15,16 @@ description: >
 jurisdiction: NZ
 category: payroll
 tax_year: 2026
-tax_year_notes: "Payroll paid 1 April 2026 to 31 March 2027; selected ESS, filing and payment rules checked 13 November 2026"
+tax_year_notes: "Payroll paid 1 April 2026 to 31 March 2027; selected ordinary special-code, ESS, filing and payment rules checked 13 November 2026"
 tier: 2
 last_updated: 2026-11-13
-version: 0.7
+version: 0.8
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.7
+# New Zealand employer payroll v0.8
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -45,7 +45,7 @@ An unknown classification, contribution base or notice is an input gap. Do not i
 
 ## Section 2 -- PAYE and the employee ACC levy
 
-Use the employee's IR330 code and any applicable Inland Revenue instruction. [Inland Revenue][S1] requires **ND at 45% plus the applicable ACC earners' levy** when no completed tax-code declaration is supplied. Do not use a zero rate or guess a standard code. Contractor schedular payments use a separate IR330C process; they are not automatically salary payroll. [S1], [S4]
+Use the employee's IR330 code and any applicable Inland Revenue instruction, subject to the first-month RSE exception and other statutory exceptions explained below. For ordinary employees outside those exceptions, [Inland Revenue][S1] requires **ND at 45% plus the applicable ACC earners' levy** when no completed tax-code declaration is supplied. Do not use a zero rate or guess a standard code. Contractor schedular payments use a separate IR330C process; they are not automatically salary payroll. [S1], [S4]
 
 Use the official PAYE calculator or actual-period deduction tables linked from [the salary/wage deductions page][S1], with the correct payday, tax code and pay frequency. PAYE calculation includes ACC earners' levy where applicable. **Do not add another ACC levy to a PAYE result that already includes it.** Annual income-tax brackets alone do not reproduce every payroll code, frequency, levy cap or rounding rule. [S1], [S2]
 
@@ -95,6 +95,29 @@ A secondary code is chosen using **estimated annual total income from all source
 Drop period pay's cents **before** multiplying by the applicable standard secondary rate, then truncate the deduction to cents. The whole payment uses that code's flat rate; these are not progressive bands within the second job. Do not add ACC again or import the M/ME annualisation algorithm. [S2, sections 5.1 and 5.6][S2], [tax-code instructions][S20]
 
 For ordinary ND salary/wages, drop period cents, multiply by **46.75%** (45% tax plus 1.75% ACC) and truncate to cents. [S2, section 5.8][S2] These standard-code algorithms do not determine an individual's final annual ACC liability across multiple employments. Resolve a valid tailored tax code, levy adjustment or other exceptional instruction separately; do not remove ACC from a standard secondary or ND rate merely by applying the M-code cap formula.
+
+### Ordinary NSW, CAE and EDW calculations
+
+Establish the worker's qualifying employment before using a flat code. Inland Revenue's [tax-code instructions][S92], updated 30 April 2026, distinguish these cases:
+
+| Code | Employment covered by the instructions |
+|---|---|
+| NSW | Recognised seasonal workers and holders of a work visa as foreign crew of a vessel fishing New Zealand waters. |
+| CAE | Only casual agricultural work: seasonal work on a day-to-day basis for up to 3 months, with no other income during that time. This includes shearers and shearing shed-hands. |
+| EDW | Temporary general-election work during the 2-week advance-voting period and election day. For election work outside that period, choose the appropriate ordinary IR330 code. |
+
+The **first month of an RSE worker's period of employment in New Zealand** has a specific statutory exception. Schedule 5 Part B clause 3 supplies NSW, and sections 24B(1)(c), 24C(2)(b) and 24E(1)(c) recognise that exception to ordinary notification and non-notified treatment. It is not a general first-month exception for every foreign worker. After that first month, the ordinary tax-code notification rules apply. NSW can continue for qualifying employment with proper notification; month-end alone does not require a different code. For an ordinary worker outside section 24D, if the required name, IRD number and tax code have not been notified, no applicable Commissioner-provided code applies and the first-month exception has ended, use ND until the notification requirement is met. Resolve any Commissioner correction, changed circumstances or entitlement-ending notice under Schedule 5 Part A clauses 2-4. [S93], [S94], [S95], [S96], [S97], [S2, section 5.5][S2]
+
+For established **ordinary** pay under these codes during 1 April 2026 to 31 March 2027, use [S2, sections 5.5 and 5.7, PDF pages 26-27 and 30][S2]:
+
+1. Identify ordinary taxable pay for the period, including taxable allowances. Keep non-taxable allowances and separately classified extra pay out of that ordinary base.
+2. Drop the ordinary base's cents to obtain whole-dollar pay. For example, $457.89 becomes $457. Do not annualise it using the M/ME method.
+3. For NSW, multiply that whole-dollar pay by **12.25%**: 10.5% income tax plus 1.75% ACC. For CAE or EDW, multiply by **19.25%**: 17.5% income tax plus 1.75% ACC.
+4. **Truncate the combined deduction to cents.** Do not round it to the nearest cent or add ACC again. Deduct it from actual cash pay, retaining that pay's cents. Calculate other applicable deductions and separately classified payments under their own rules.
+
+These methods do not establish the worker's final annual ACC liability across employments or an exceptional levy adjustment. Do not import the M-code cap formula into them without an applicable instruction. The worked cases below use ordinary amounts below the standard period caps and assume no exceptional notice or adjustment. Donations, unusual pay, negative corrections and final ACC reconciliation require separate checks. [S2], [S5]
+
+**Do not make ordinary student-loan repayment deductions from pay correctly using CAE, EDW or NSW.** IR335 expressly lists those codes as exclusions. A valid NSW employment-information line cannot contain KiwiSaver or student-loan deductions; the specification identifies these non-resident workers as ineligible for KiwiSaver and permits child support where applicable. CAE or EDW alone does not establish a KiwiSaver exemption: apply the separately established membership, contribution and notice rules in Section 3. A code exclusion does not decide the person's wider loan liability. [S13, PDF page 20][S13], [S2, section 5.5][S2]
 
 ### Ordinary student-loan deductions
 
@@ -1729,9 +1752,130 @@ expected:
   funding_net: 2379
 ```
 
+**Case 69: NSW ordinary pay with cents.** Assume a valid NSW code, $457.89 weekly ordinary taxable pay, no exceptional levy adjustment and no other deduction. Whole-dollar pay is $457; $55.9825 truncates to $55.98 PAYE, leaving $401.91 of actual pay. [S2], [S13], [S92]
+
+```oa-check
+name: nz-2026-nsw-ordinary-fractional
+tolerance: 0
+inputs:
+  gross_pay: 457.89
+steps:
+  whole_dollar_pay: floor(gross_pay)
+  untruncated_paye: whole_dollar_pay * 0.1225
+  paye: floor(untruncated_paye * 100) / 100
+  net_pay: gross_pay - paye
+expected:
+  whole_dollar_pay: 457
+  untruncated_paye: 55.9825
+  paye: 55.98
+  net_pay: 401.91
+```
+
+**Case 70: NSW fortnightly flat calculation.** Assume a valid NSW code and $2,000.99 fortnightly ordinary taxable pay with no other deduction or exceptional adjustment. Apply the same flat method to $2,000; do not annualise or multiply a weekly deduction. PAYE is $245 and ordinary net pay is $1,755.99. [S2], [S13], [S92]
+
+```oa-check
+name: nz-2026-nsw-fortnightly-flat
+tolerance: 0
+inputs:
+  gross_pay: 2000.99
+steps:
+  whole_dollar_pay: floor(gross_pay)
+  untruncated_paye: whole_dollar_pay * 0.1225
+  paye: floor(untruncated_paye * 100) / 100
+  net_pay: gross_pay - paye
+expected:
+  whole_dollar_pay: 2000
+  untruncated_paye: 245
+  paye: 245
+  net_pay: 1755.99
+```
+
+**Case 71: RSE first-month NSW exception.** Assume the worker is within the statutory first month of an established RSE period of employment, has not yet supplied IR330 and is entitled to the clause 3 NSW exception. On $1,000.99 ordinary weekly pay, PAYE is $122.50 and net pay before any other deduction is $878.49. The arithmetic assumes the exception; it does not establish its start or end date. [S2], [S94], [S95], [S97]
+
+```oa-check
+name: nz-2026-rse-first-month-nsw
+tolerance: 0
+inputs:
+  gross_pay: 1000.99
+steps:
+  whole_dollar_pay: floor(gross_pay)
+  untruncated_paye: whole_dollar_pay * 0.1225
+  paye: floor(untruncated_paye * 100) / 100
+  net_pay: gross_pay - paye
+expected:
+  whole_dollar_pay: 1000
+  untruncated_paye: 122.5
+  paye: 122.5
+  net_pay: 878.49
+```
+
+**Case 72: ND after the RSE exception ends.** Assume that first-month exception has ended, the ordinary section 24E non-notified conditions are established, no applicable Commissioner code exists and the worker still has not supplied the required notification. On $1,000.99 ordinary weekly pay, the ND method gives $467.50 PAYE and $533.49 before other deductions. A properly notified continuing NSW worker would not use this case. [S2], [S95], [S97]
+
+```oa-check
+name: nz-2026-rse-post-exception-nd
+tolerance: 0
+inputs:
+  gross_pay: 1000.99
+steps:
+  whole_dollar_pay: floor(gross_pay)
+  untruncated_paye: whole_dollar_pay * 0.4675
+  paye: floor(untruncated_paye * 100) / 100
+  net_pay: gross_pay - paye
+expected:
+  whole_dollar_pay: 1000
+  untruncated_paye: 467.5
+  paye: 467.5
+  net_pay: 533.49
+```
+
+**Case 73: CAE ordinary allowances and separate extra pay.** Assume valid CAE employment, $400.37 ordinary wages, $57.52 taxable allowances, $20 non-taxable allowances and a separately classified $100 extra payment. Ordinary taxable pay is $457.89, truncated to $457; ordinary PAYE is $87.97. The ordinary cash component is $477.89, leaving $389.92 before any other deduction. The $100 extra pay and its deductions must be calculated separately and are excluded from this result; assume no KiwiSaver contribution is due on these established facts. [S2], [S13], [S92]
+
+```oa-check
+name: nz-2026-cae-ordinary-allowance-base
+tolerance: 0
+inputs:
+  wages: 400.37
+  taxable_allowance: 57.52
+  non_taxable_allowance: 20
+  separate_extra_pay: 100
+steps:
+  ordinary_taxable_pay: wages + taxable_allowance
+  whole_dollar_pay: floor(ordinary_taxable_pay)
+  untruncated_paye: whole_dollar_pay * 0.1925
+  paye: floor(untruncated_paye * 100) / 100
+  ordinary_cash: ordinary_taxable_pay + non_taxable_allowance
+  ordinary_net: ordinary_cash - paye
+expected:
+  ordinary_taxable_pay: 457.89
+  whole_dollar_pay: 457
+  untruncated_paye: 87.9725
+  paye: 87.97
+  ordinary_cash: 477.89
+  ordinary_net: 389.92
+```
+
+**Case 74: EDW ordinary pay.** Assume qualifying election work within the permitted period, a valid EDW code, $1,000.99 ordinary weekly pay, no KiwiSaver contribution due on the established facts and no other deduction or exceptional adjustment. Whole-dollar pay is $1,000, PAYE is $192.50 and net pay is $808.49. Work outside the qualifying election period needs the appropriate ordinary declaration. [S2], [S13], [S92]
+
+```oa-check
+name: nz-2026-edw-ordinary-flat
+tolerance: 0
+inputs:
+  gross_pay: 1000.99
+steps:
+  whole_dollar_pay: floor(gross_pay)
+  untruncated_paye: whole_dollar_pay * 0.1925
+  paye: floor(untruncated_paye * 100) / 100
+  net_pay: gross_pay - paye
+expected:
+  whole_dollar_pay: 1000
+  untruncated_paye: 192.5
+  paye: 192.5
+  net_pay: 808.49
+```
+
 ## Section 7 -- Limits and sources
 
-Still requiring separate actual-case checks: special PAYE codes beyond the selected certificate/extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS exemption eligibility, historic transitions, difficult valuations, replacement schemes and classification beyond the selected employee methods; schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; employment-record requirements beyond selected tax retention; older/exceptional corrections, mixed EMP debt, current interest, other shortfall/criminal penalties and full remission/collection rules. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
+Still requiring separate actual-case checks: special PAYE codes beyond the selected ordinary NSW/CAE/EDW, certificate and extra-pay methods; exemption eligibility, recovery notices beyond the selected methods, other irregular pays and unresolved competing-notice/attachment cases; ESS exemption eligibility, historic transitions, difficult valuations, replacement schemes and classification beyond the selected employee methods; schedular payments and payment classification; enrolment exceptions and mixed/late refund cases beyond the selected administration; historical-rate evidence, contribution classifications and legacy scheme offsets; cross-border employment and treaty/social-security questions; FBT; leave, holiday pay, minimum wage and termination entitlements; employer ACC invoices; employment-record requirements beyond selected tax retention; older/exceptional corrections, mixed EMP debt, current interest, other shortfall/criminal penalties and full remission/collection rules. No whole payroll, social-contribution or compliance topic is certified complete by this guide. It remains tier 2 and pending qualified review.
 
 Inherited sources checked 12 November 2026; selected ESS sources checked 13 November 2026. Selected District Court Act sections use the current copy dated 17 February 2026; Tax Administration Act section 157 uses the current copy dated 1 October 2026. SPS 21/01 is dated 12 April 2021 and remains linked by IRD's arrears page updated 16 April 2026. Extra-pay and deduction examples are recalculated from the stated rules; known inconsistent printed examples and boundary wording are recorded in the verification log. The technical specification is dated 24 March 2026, version 1.0, and expressly covers 1 April 2026 to 31 March 2027. IR335's cover says September 2026. KS4's cover says April 2026. Selected KiwiSaver Act provisions use the current copy dated 1 April 2026. The verification log records the selected native/image page scope, the surviving legacy default and conflicting sample-letter/example wording. The selected correction regulations use the 30 March 2026 consolidation. Selected TAA record, assessment and penalty provisions use the 1 October 2026 copy. Its full-Act page flags unincorporated amendments; the selected amendment-impact check is recorded in the verification log. SPS19/04 is dated 30 May 2019. Current statutory wording controls the affected-employee penalty base and inclusive $100 exemption. These checks do not claim full PDF or statute review.
 
@@ -1832,6 +1976,13 @@ Inherited sources checked 12 November 2026; selected ESS sources checked 13 Nove
 [S89]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1519944/ "Income Tax Act RD4, copy 4 September 2026"
 [S90]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1519735/ "Income Tax Act RA5, copy 4 September 2026"
 [S91]: https://www.legislation.govt.nz/act/public/2026/8/en/latest/ "2026 No8 sections2,10,51,114; selected commencement and application"
+
+[S92]: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/what-tax-code-should-i-use "IRD tax-code eligibility, updated 30 April 2026; includes collapsed sections"
+[S93]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM1252632/ "Tax Administration Act 24B, copy 1 October 2026"
+[S94]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM1253911/ "Tax Administration Act 24C, copy 1 October 2026"
+[S95]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM1253915/ "Tax Administration Act 24E, copy 1 October 2026"
+[S96]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS193078/ "Tax Administration Act 24D, copy 1 October 2026"
+[S97]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS195590/ "Tax Administration Act Schedule 5 Part A clauses 1-4/rows 7-9 and Part B clause 3, copy 1 October 2026"
 
 <!-- openaccountants-cta-block -->
 
