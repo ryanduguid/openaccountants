@@ -18,13 +18,13 @@ tax_year: 2026
 tax_year_notes: "Payroll paid 1 April 2026 to 31 March 2027; selected ordinary special-code, ESS, filing and payment rules checked 13 November 2026"
 tier: 2
 last_updated: 2026-11-13
-version: 0.8
+version: 0.9
 verified_by: pending
 review_status: pending_review
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand employer payroll v0.8
+# New Zealand employer payroll v0.9
 
 > **General reference only.** This is a source-cited draft awaiting qualified review. Confirm the employee's facts and the rules for the actual payday before filing, paying or relying on a calculation.
 
@@ -103,8 +103,8 @@ Establish the worker's qualifying employment before using a flat code. Inland Re
 | Code | Employment covered by the instructions |
 |---|---|
 | NSW | Recognised seasonal workers and holders of a work visa as foreign crew of a vessel fishing New Zealand waters. |
-| CAE | Only casual agricultural work: seasonal work on a day-to-day basis for up to 3 months, with no other income during that time. This includes shearers and shearing shed-hands. |
-| EDW | Temporary general-election work during the 2-week advance-voting period and election day. For election work outside that period, choose the appropriate ordinary IR330 code. |
+| CAE | YA 1 defines a casual agricultural employee as one of 3 categories. A **casual agricultural worker** is engaged day to day for no more than 3 months as a casual seasonal worker, exclusively for seasonal agricultural, horticultural, market gardening, nursery, orchard or tobacco farming work, or work the Commissioner considers similar. A **shearer** shears sheep other than in their own business and is not permanently employed on the premises where the shearing shed is. A **shearing shed-hand** is employed in or about the shed other than in their own business and is not a shearer, wool classer or person permanently employed on those premises. The 3-month limit applies only to casual agricultural workers. Inland Revenue's tax-code page also says these workers earn no other income in that time; YA 1 does not state that condition. [S98], [S92] IR335 keeps CAE for a shearer's ordinary farm work when shearing is not possible and for a farmer's part-time shearing for another farmer, but treats a normal farm employee's shearing wages as ordinary pay, not CAE. [S13, PDF page 57][S13] |
+| EDW | YA 1 requires that the person is engaged, as an electoral official, interpreter, usher or otherwise, for an election or poll held under or subject to the Electoral Act 1993 or the Local Electoral Act 2001, or held simultaneously with and in the same premises as one; is paid by the authority controlling it; and is paid exclusively for work immediately before, on or immediately after its voting days. Qualifying local elections and polls are included; pay from anyone else, such as a party or candidate, is not. [S98] For a general election, Inland Revenue's tax-code page limits EDW to the 2-week advance-voting period and election day, and directs election work outside that period to the appropriate ordinary IR330 code. IR335 describes casual work immediately before, on or after polling day. [S92], [S13, PDF page 51][S13] |
 
 The **first month of an RSE worker's period of employment in New Zealand** has a specific statutory exception. Schedule 5 Part B clause 3 supplies NSW, and sections 24B(1)(c), 24C(2)(b) and 24E(1)(c) recognise that exception to ordinary notification and non-notified treatment. It is not a general first-month exception for every foreign worker. After that first month, the ordinary tax-code notification rules apply. NSW can continue for qualifying employment with proper notification; month-end alone does not require a different code. For an ordinary worker outside section 24D, if the required name, IRD number and tax code have not been notified, no applicable Commissioner-provided code applies and the first-month exception has ended, use ND until the notification requirement is met. Resolve any Commissioner correction, changed circumstances or entitlement-ending notice under Schedule 5 Part A clauses 2-4. [S93], [S94], [S95], [S96], [S97], [S2, section 5.5][S2]
 
@@ -1983,6 +1983,7 @@ Inherited sources checked 12 November 2026; selected ESS sources checked 13 Nove
 [S95]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/DLM1253915/ "Tax Administration Act 24E, copy 1 October 2026"
 [S96]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS193078/ "Tax Administration Act 24D, copy 1 October 2026"
 [S97]: https://www.legislation.govt.nz/act/public/1994/166/en/latest/sections/LMS195590/ "Tax Administration Act Schedule 5 Part A clauses 1-4/rows 7-9 and Part B clause 3, copy 1 October 2026"
+[S98]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/sections/DLM1520575/ "Income Tax Act YA 1 selected worker definitions, copy 4 September 2026"
 
 <!-- openaccountants-cta-block -->
 
