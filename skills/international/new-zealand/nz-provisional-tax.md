@@ -1,11 +1,13 @@
 ---
 name: nz-provisional-tax
-description: Use this skill whenever asked about New Zealand provisional tax for individuals, companies, contractors, sole traders, and small businesses. Trigger on phrases like "provisional tax", "RIT", "residual income tax", "standard option", "standard uplift", "estimation method", "AIM", "ratio option", "use of money interest", "UOMI", "provisional tax instalment", or any question about provisional tax obligations in New Zealand. Covers the $5,000 RIT threshold, standard option 105%/110% uplift rules, estimation, AIM, ratio-option routing, March balance-date instalments, 6-monthly GST two-instalment cases, and current UOMI rate handling. ALWAYS read this skill before touching any NZ provisional tax work.
-version: 2.0
+description: Work through New Zealand’s 2026-27 standard provisional tax option for established resident individuals with a 31 March balance date. Use preceding-year residual income tax, return-filing dates and legal extensions to select 105% or 110% at each instalment. Distinguish the ordinary 3-instalment schedule from the 2 dates for 6-monthly GST, recalculate after filing and keep earlier liabilities separate from actual payments and arrears. Covers provisional tax, standard uplift, late returns, residual income tax, GST frequency and the annual IR3 handoff. Route new-business exceptions, reassessments, changing cycles, other methods and interest or penalty calculations for separate review.
+version: 2.1
 jurisdiction: NZ
-tax_year: 2025
-last_updated: 2026-11-10
+tax_year: 2027
+tax_year_notes: "2026-27 standard provisional tax; 2025-26 annual IR3 handoff"
+last_updated: 2026-11-13
 review_status: pending_review
+verified_by: pending
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -13,314 +15,310 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# NZ Provisional Tax
-
-## Section 1 -- Quick reference
+# New Zealand standard provisional tax
 
-**Quick reference field table**  _(https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option)_
+## Scope and annual-return handoff
 
-| Field | Value |
-| --- | --- |
-| Country | New Zealand |
-| Tax | Provisional income tax |
-| Primary legislation | Income Tax Act 2007 (ITA 2007), Part RC |
-| Supporting legislation | Tax Administration Act 1994 (TAA 1994), ss 120A-120Q (UOMI) |
-| Authority | Inland Revenue (IR / Te Tari Taake) |
-| Portal | myIR (myir.ird.govt.nz) |
-| Currency | NZD only |
-| Threshold | RIT (residual income tax) must exceed $5,000 to trigger obligation |
-| Default method | Standard option: previous-year RIT + 5% (105%) if filed by the instalment; otherwise two-years-ago RIT + 10% (110%) until recalculated |
-| Alternative methods | Estimation method, AIM (Accounting Income Method), and ratio option where available |
-| Standard balance date | 31 March |
-| Standard dates | 28 August, 15 January, and 7 May for standard/estimation; next working day if a date falls on a weekend or public holiday |
-| 6-monthly GST dates | Usually two instalments for a 31 March balance date: 28 October and 7 May |
-| Contributor | Open Accountants Community |
-| Validated by | Pending -- requires sign-off by NZ Chartered Accountant (CA) |
-| Validation date | July 2026 source refresh |
+This is a bounded **2026-27 standard-method workflow** for an established full-year resident individual with a 31 March balance date and an unchanged GST filing cycle. The supported calculations below require **a 2026 income-tax return to be required** and **2025 and 2026 RIT each above $5,000**. If no preceding-year return is required, stop: RC 6(4)(a) specifies a different basis, which this workflow does not calculate. It does not calculate initial/new-business liability, reassessments, changed balance/GST cycles, estimation, AIM, ratio, pooling, UOMI or penalties. Those cases require their own supported calculation. The calculation stop below also excludes unresolved 3-instalment remainder allocations. [S1][S1] [S2, RC 3,5,6,9,13,14][S2]
 
-**Standard instalment schedule (31 March balance date)**  _(https://www.ird.govt.nz/income-tax/provisional-tax/paying-your-provisional-tax/payment-dates-for-provisional-tax)_
+RIT comes from the annual [IR3 reconciliation](nz-income-tax-ir3.md). It is income tax after the applicable credit ordering, before provisional payments. It is not the remaining terminal balance and does not include ACC levies. Under RC 3(3), preceding-year RIT of **$5,000 or less**, including exactly $5,000, gives no obligation to pay provisional tax for the current year under that rule; voluntary elections and initial-liability/interest cases are separate. Do not assume everyone who earns self-employment income must pay. [S2, RC 3][S2] [S3, pp 44–45,51–52][S3]
 
-| Instalment | Due date | Amount |
-| --- | --- | --- |
-| 1st | 28 August | 1/3 of standard-option amount (105% or 110%, as applicable) |
-| 2nd | 15 January | 1/3 of standard-option amount (105% or 110%, as applicable) |
-| 3rd | 7 May | 1/3 of standard-option amount (105% or 110%, as applicable) |
-| 6-monthly GST / qualifying two-instalment case | 28 October and 7 May | 1/2 of standard-option amount each |
+Before calculating 2026-27 instalments, retain the following.
 
-**Conservative defaults**  _(https://www.ird.govt.nz/income-tax/provisional-tax/paying-your-provisional-tax/payment-dates-for-provisional-tax)_
+| Evidence | Required detail |
+| ---| ---|
+| Method and period | Standard method, 31 March balance date and established-taxpayer status |
+| RIT history | 2026 RIT and 2025 RIT, each from its assessment/return; document any required expected 2026 RIT |
+| Filing status | Confirmation that a 2026 return is required, its legal due date/extension and actual filing date |
+| GST | Actual fixed filing frequency, not a bank-narration inference |
+| Liabilities | Properly calculated earlier instalment liabilities and their original bases |
+| Payments | Actual payments/credits allocated to 2026-27, recorded separately from liabilities |
 
-| Ambiguity | Default |
-| --- | --- |
-| Method unclear | Use standard option and check 105% vs 110%, GST filing frequency, and UOMI exposure |
-| RIT threshold borderline | If exactly $5,000, no provisional tax (must EXCEED $5,000) |
-| Balance date non-standard | Use IR's due-date calculator / provisional tax calendar; dates differ for non-31 March balance dates |
-| Tax agent EOT / 6-monthly GST | May change to two instalments (commonly 28 October and 7 May) -- confirm in myIR or the IR calendar |
-| First year with no prior RIT | No compulsory provisional tax from prior-year RIT; voluntary payments may be sensible for cash flow |
+A preceding-year return that is not required, or an unresolved return obligation, RIT amount, filing date, extension, payment allocation or earlier liability stops the affected calculation. Do not invent a 110% basis because a return is late or assume an accountant engagement establishes an extension.
 
-## Section 2 -- Required inputs and refusal catalogue
+## Instalment dates and filing timing
 
-### Required inputs
+For this ordinary scope, EOT alone does not change the instalment count. The exceptions in RC 13/14 include specific initial-liability and older-RIT-at-most $5,000 circumstances; those are outside this algorithm and must be reviewed before choosing a schedule. [S2, RC 9,13,14][S2]
 
-- **Minimum viable** — previous-year RIT, whether that return has been filed by the instalment date, any two-years-ago RIT fallback, balance date, GST filing frequency, and chosen method (standard option, estimation, AIM, or ratio).  _(https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option)_
-- **Recommended** — balance date, tax agent status (EOT), GST registration status, current year income trend.
-- **Ideal** — complete prior year tax return, IR assessment, myIR statement, current year P&L if estimating.
-- **Refusal policy if minimum is missing** — HARD STOP. Without prior-year RIT and filing-status timing, the standard option cannot be computed. If the previous-year return is not filed by the relevant instalment, two-years-ago RIT may be needed for the 110% fallback. If estimating, current-year projections are needed.  _(https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option)_
+| Confirmed schedule | 2026-27 instalments | Statutory columns |
+| ---| ---| ---|
+| Standard, not 6-monthly GST | 28 August 2026; 15 January 2027; 7 May 2027 | B/D/F |
+| Standard, 6-monthly GST | 28 October 2026; 7 May 2027 | C/F |
+
+The March row of Schedule 3 maps these columns to the stated dates. Weekend/public-holiday payment dates move to the next working day under IRD’s rule; electronic payments on provincial anniversary days have their own treatment. RC 5(3B) also treats a preceding return filed on the first working day after a nonworking instalment date as filed on that instalment date for the 110% test. Confirm the actual account dates in myIR. [S2, RC 5(3B),9][S2] [S4, Schedule 3 part A][S4] [S5][S5]
+
+## Select 105% or 110% for each instalment
+
+Within the confirmed required-return scope, start with **105% of 2026 RIT**. Use **110% of 2025 RIT** at an instalment only when **all** RC 5(3) conditions hold: the 2026 return is required, is not due on or before that date under section 37 or an extension, remains unfiled by that date and the instalment is **not final F**. Truncate the selected uplifted annual amount to whole dollars under RC 5(4B). [S2, RC 5(2)–(4B)][S2]
 
-### Refusal catalogue
-
-- **R-NZ-PT-1 -- Pooling arrangements** — Trigger: client uses provisional tax pooling. Message: "Tax pooling arrangements have specific rules outside this skill."  _(R-NZ-PT-1)_
-- **R-NZ-PT-2 -- Multi-entity structures** — Trigger: complex multi-entity group. Message: "Multi-entity provisional tax allocation is outside this skill."  _(R-NZ-PT-2)_
-- **R-NZ-PT-3 -- Non-resident provisional tax** — Trigger: non-resident client. Message: "Non-resident provisional tax is outside this skill."  _(R-NZ-PT-3)_
-
-## Section 3 -- Payment pattern library
-
-This is the deterministic pre-classifier for bank statement transactions. When a debit matches a pattern below, classify it as a provisional tax payment.
-
-### 3.1 Inland Revenue provisional tax debits
-
-**Inland Revenue provisional tax debits**
-
-| Pattern | Treatment | Notes |
-| --- | --- | --- |
-| IRD, INLAND REVENUE, IR PAYMENT | Provisional tax payment | Match with Aug/Jan/May timing |
-| PROVISIONAL TAX, PROV TAX | Provisional tax payment | Explicit description |
-| MYIR PAYMENT | Provisional tax payment | Online payment via myIR |
-| TERMINAL TAX | NOT provisional tax | Year-end balance -- flag separately |
-
-### 3.2 Timing-based identification
-
-**Timing-based identification**
-
-| Debit date range | Likely instalment | Confidence |
-| --- | --- | --- |
-| 20 August -- 5 September | 1st instalment (28 Aug) | High if IR payee |
-| 8 January -- 20 January | 2nd instalment (15 Jan) | High |
-| 1 May -- 14 May | 3rd instalment (7 May) | High |
-| January -- February (following year) | Terminal tax | Flag separately |
-
-### 3.3 Related but NOT provisional tax
-
-**Related but NOT provisional tax**
-
-| Pattern | Treatment | Notes |
-| --- | --- | --- |
-| GST, GOODS AND SERVICES TAX | EXCLUDE | GST payment |
-| ACC LEVY | EXCLUDE | Accident Compensation levy |
-| STUDENT LOAN | EXCLUDE | Student loan repayment |
-| KIWISAVER | EXCLUDE | Retirement savings |
-| CHILD SUPPORT, IR CHILD | EXCLUDE | Child support via IR |
-| PENALTIES AND INTEREST IR | EXCLUDE | Penalty/interest charge |
-| TERMINAL TAX | Flag separately | Year-end balance, not provisional |
-
-### 3.4 Tax agent EOT identification
-
-- **Tax agent EOT identification** — If the client uses a tax agent with extension of time, or is registered for GST and files 6-monthly, instalment dates can shift. Common two-instalment pattern for a 31 March balance date: 28 October and 7 May, each 50% of the standard-option amount. Confirm in myIR or IR's provisional tax calendar.  _(https://www.ird.govt.nz/income-tax/provisional-tax/paying-your-provisional-tax/payment-dates-for-provisional-tax)_
-
-## Section 4 -- Worked examples
-
-### Example 1 -- Standard uplift, three instalments
-
-**Example 1 instalment table**
-
-| Instalment | Due date | Amount |
-| --- | --- | --- |
-| 1st | 28 August | $5,250 |
-| 2nd | 15 January | $5,250 |
-| 3rd | 7 May | $5,250 |
-| **Total** |  | **$15,750** |
-
-**Input:** Prior year RIT = $15,000. Standard uplift. 31 March balance date.
-
-(Calculation: $15,000 x 105% = $15,750. Each instalment = $15,750 / 3 = $5,250.)
-
-### Example 2 -- Below threshold
-
-**Input:** Prior year RIT = $4,800.
-
-**Output:** RIT does not exceed $5,000. No provisional tax required. Client pays terminal tax only.
-
-### Example 3 -- Estimation method
-
-**Input:** Prior year RIT = $25,000. Estimated current year RIT = $12,000.
-
-**Output:** Standard option at 105% would require $26,250 if the previous-year return was filed by the instalment date. Estimation method: pay $12,000 / 3 = $4,000 per instalment. Warning: if actual RIT > $12,000, UOMI applies from instalment dates.
-
-### Example 4 -- Tax agent EOT (two instalments)
-
-**Example 4 instalment table**
-
-| Instalment | Due date | Amount |
-| --- | --- | --- |
-| 1st | 28 October | $26,250 |
-| 2nd | 7 May | $26,250 |
-
-**Input:** Prior year RIT = $50,000. Tax agent with EOT.
-
-(Calculation: $50,000 x 105% = $52,500. Two instalments of $26,250.)
-
-### Example 5 -- Bank statement classification
-
-**Input line:** `28.08.2025 ; IRD PROVISIONAL TAX ; DEBIT ; -5,250.00 ; NZD`
-
-**Classification:** Provisional tax, 1st instalment 2025/26. Tax payment -- not a deductible expense.
-
-## Section 5 -- Computation rules
-
-### 5.1 RIT threshold
-
-- **RIT threshold formula** — RIT = income_tax_assessed - PAYE_credits - RWT_credits - other_withholding if RIT > 5,000: provisional tax required if RIT <= 5,000: no provisional tax (terminal tax only)
-- **First-year exemption** — no provisional tax in the first year of earning income giving rise to RIT.
-
-### 5.2 Standard uplift method
-
-- **Standard option formula** — provisional_tax = prior_year_RIT x 105% each_instalment = provisional_tax / number_of_instalments (3 standard, 2 with EOT)  _(https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option)_
-- **Safe harbour** — if standard-option instalments are paid on time and in full, UOMI exposure is reduced. Do not state there is blanket immunity: late or short payments can attract interest, and if actual RIT is $60,000 or more, UOMI can apply from the day after the final instalment on the difference between actual RIT and provisional tax paid.  _(https://www.ird.govt.nz/managing-my-tax/penalties-and-interest/interest-on-overpayments-and-underpayments)_
-
-### 5.3 Estimation method
-
-- **Estimation method formula** — provisional_tax = estimated_current_year_RIT each_instalment = provisional_tax / number_of_instalments
-- **Risk** — UOMI is calculated by comparing provisional tax paid with actual RIT. Under estimation, underpayments can be charged from each instalment date; the client can re-estimate at an instalment date.  _(https://www.ird.govt.nz/managing-my-tax/penalties-and-interest/interest-on-overpayments-and-underpayments)_
-
-### 5.4 AIM method
-
-- **AIM method** — Tax calculated each period based on actual accounting income via AIM-capable software. AIM aligns with GST return periods; no UOMI is charged or paid if AIM statements and payments are correct and on time. Requires gross income under $5,000,000.  _(https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option)_
-
-### 5.5 Terminal tax
-
-- **Terminal tax formula** — terminal_tax = actual_RIT - provisional_tax_paid
-- **Terminal tax due date** — Due 7 February (without EOT) or 7 April (with EOT).
-
-## Section 6 -- Penalties and interest
-
-### 6.1 Use of Money Interest (UOMI)
-
-**UOMI rate table**  _(https://www.ird.govt.nz/managing-my-tax/penalties-and-interest/interest-on-overpayments-and-underpayments)_
-
-| Effective from | IR charges on underpayments | IR pays on overpayments |
-| --- | --- | --- |
-| 16 January 2026 | 8.97% | 2.25% |
-| 8 May 2025 | 9.89% | 3.27% |
-| 16 January 2025 | 10.88% | 4.30% |
-
-### 6.2 UOMI exposure by method
-
-**UOMI exposure by method**  _(https://www.ird.govt.nz/managing-my-tax/penalties-and-interest/interest-on-overpayments-and-underpayments)_
-
-| Method | UOMI exposure |
-| --- | --- |
-| Standard option, actual RIT under $60,000, required instalments paid full/on time | Generally no UOMI before terminal-tax timing |
-| Standard option, actual RIT $60,000 or more | UOMI can apply from the day after the final instalment on the difference between actual RIT and provisional tax paid |
-| Estimation | UOMI can apply from each instalment date if the estimate is too low |
-| AIM (correct and on time) | No UOMI charged or paid |
-| Ratio option (paid on time) | No UOMI charged or paid on provisional tax |
-
-### 6.3 Late payment penalties
-
-**Late payment penalties**
-
-| Offence | Penalty |
-| --- | --- |
-| Late payment | 1% initial + 4% if still unpaid after 7 days |
-| Late IR3 filing | $250 (may increase) |
-| Shortfall from deliberate understatement | 20-150% |
-
-## Section 7 -- Method selection guidance
-
-**Method selection guidance table**  _(https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option)_
-
-| Situation | Recommended method | Rationale |
-| --- | --- | --- |
-| Income stable or growing | Standard option | Predictable uplift; check 105% vs 110%, the $60,000 RIT rule, and due-date timing |
-| Income dropping significantly | Estimation | Lower cash outflow, but UOMI and shortfall-penalty risk if too low |
-| Irregular/seasonal income | AIM or ratio option | Pay closer to actual trading pattern; confirm eligibility and software/GST setup |
-| First year of business | No compulsory provisional tax from prior-year RIT | Voluntary payments accepted; plan for terminal tax cash flow |
-
-Flag estimation method for reviewer whenever recommended.
-
-## Section 8 -- Edge cases
-
-No provisional tax obligation. Terminal tax due 7 February following year-end. May voluntarily pay to avoid large lump sum.
-
-Standard option at 105% = $31,500 but expected RIT = $10,000. Use estimation method ($10,000/3 per instalment). UOMI risk if actual exceeds estimate.
-
-RIT = total tax minus PAYE credits. If RIT > $5,000, provisional tax on RIT amount.
-
-Instalment dates shift. 30 September balance date: instalments 28 February, 15 July, 7 November.
-
-No provisional tax. Must EXCEED $5,000.
-
-First-year freelancer may make voluntary payments. UOMI overpayment interest may apply.
-
-The 7 May instalment falls AFTER the 31 March year-end. This is correct by design.
-
-## Section 9 -- Self-checks
-
-Before delivering output, verify:
-
-- [ ] RIT threshold ($5,000) confirmed -- must exceed, not equal
-- [ ] Method selected (standard uplift, estimation, AIM)
-- [ ] Uplift factor is 105% or 110% as applicable
-- [ ] Correct number of instalments (3 standard, 2 with EOT)
-- [ ] All instalment dates correct for the balance date
-- [ ] UOMI exposure noted for estimation method
-- [ ] Safe harbour benefit noted for standard uplift
-- [ ] First-year exemption checked
-- [ ] Terminal tax due date included
-- [ ] Output labelled as estimated until NZ CA confirms
-
-### Test 1 -- Standard uplift
-
-**Input:** Prior year RIT = $15,000. 31 March balance date.
-**Expected:** $15,750 total. 3 x $5,250. Dates: 28 Aug, 15 Jan, 7 May.
-
-### Test 2 -- Below threshold
-
-**Input:** Prior year RIT = $4,800.
-**Expected:** No provisional tax.
-
-### Test 3 -- Estimation method
-
-**Input:** Prior year RIT = $25,000. Estimated current = $12,000.
-**Expected:** $4,000 per instalment. UOMI warning.
-
-### Test 4 -- Tax agent EOT
-
-**Input:** Prior year RIT = $50,000.
-**Expected:** $52,500 total. 2 x $26,250. Dates: 28 Oct, 7 May.
-
-### Test 5 -- First year
-
-**Input:** New freelancer, no prior RIT.
-**Expected:** No provisional tax. Terminal tax by 7 Feb.
-
-### Test 6 -- RIT exactly $5,000
-
-**Input:** Prior year RIT = $5,000.
-**Expected:** No provisional tax (must exceed $5,000).
-
-### Test 7 -- Mixed PAYE and SE
-
-**Input:** PAYE salary $60,000. SE $20,000. RIT = $6,000.
-**Expected:** Provisional tax on $6,000 RIT. Uplift: $6,300 / 3 = $2,100.
-
-## Section 10 -- Test suite
+| Situation in this ordinary scope | Basis |
+| ---| ---|
+| 2026 return filed on/before relevant date | 105% of 2026 RIT |
+| No filing extension, return late | 105% of 2026 RIT; filing failure needs separate action |
+| Valid extension, return not yet due and unfiled at an earlier date | 110% of 2025 RIT |
+| Return filed between dates | Keep earlier liabilities at their original proper basis; use 105% for the current/later dates |
+| Final F, even if 2026 return still unfiled | 105% of 2026 RIT, using a documented expectation if the amount is not yet filed |
+
+The final F use of expected **2026** RIT is distinct from the optional RC 10(5)–(6) final calculation using expected **2027** RIT of at least $60,000. This guide does not select or calculate that election. An unresolved preceding-year expectation prevents a result. [S1][S1] [S2, RC 10(5)–(6)][S2]
+
+Assessments, amendments, Commissioner determinations and their timing can alter the basis under RC 5(7)/RC 6. Route them for review rather than replacing an earlier instalment with whichever RIT number is most recent. [S2, RC 5(7),6][S2]
+
+## Calculate liabilities, then reconcile cash
+
+For each instalment, RC 10 uses the applicable uplifted annual amount, instalment ordinal and total number of instalments, less earlier **provisional-tax liabilities**. RC 9/10 require whole-dollar truncation. Keep the original liability schedule even where a payment was missed. [S2, RC 9(2),(13),10(2)–(3),(7)][S2]
+
+**Calculation stop before preparing a 3-instalment schedule.** If any applicable uplifted whole-dollar annual amount leaves a remainder of 2 when divided by 3, this workflow does not determine the instalment allocation. RC 9(2) puts an indivisible difference in the final instalment, whilst RC 10’s cumulative formula with truncation can move $1 to the second date. The retained IRD explanation uses a remainder-1 example and does not distinguish those readings. Confirm the amounts through myIR or qualified review, with the discrepancy resolved, before preparing that schedule. This conservative stop also applies after a change of basis; those interactions have not been resolved. [S2, RC 9(2),10][S2] [S9, printed pp 140–143][S9]
+
+For the supported cases below, let U be the applicable uplifted annual amount truncated to whole dollars, k the current instalment number and n the confirmed total instalments. Calculate (U × k ÷ n) minus the sum of properly calculated earlier liabilities, then truncate that result to whole dollars. The examples use nonnegative results, so floor gives the same result as truncation. An unchanged-basis schedule with a remainder of 0 or 1 when divided by 3, or the ordinary 2-instalment schedule, does not present the conflicting allocation above. Recheck the stop whenever filing changes U. [S2, RC 5(4B),9(13),10(2)–(3),(7)][S2] [S9, printed pp 141–143][S9]
+
+Maintain 2 separate schedules. The liability schedule records what fell due on each date and the basis used. The payment schedule records actual allocated cash/credits and outstanding amounts. The amount needed to clear cumulative liabilities can include prior arrears; it is not necessarily the current instalment liability. IRD’s worked web examples subtract amounts paid, which gives the same current liability when the prior liabilities were fully paid. Do not extend that shorthand to an unpaid/partly paid case. [S2, RC 10(3)(d)][S2] [S6][S6]
+
+A negative raw current instalment, overpayment or disputed allocation needs a supported credit/assessment reconciliation. Do not silently clamp it to zero, issue a refund instruction or rewrite earlier liabilities. Late/short payments also need their own UOMI and penalty review; completing this schedule establishes no interest immunity.
+
+## Worked examples and executable self-checks
+
+All examples are synthetic and assume the stated scope/filing/GST evidence. 2025 means the year ending 31 March 2025; 2026 means 31 March 2026. All uplifted annual amounts and instalment liabilities are whole dollars. Their dates and selected branches require the evidence above; arithmetic checks do not establish those facts.
+
+### Case 1: filed return, 105%, 3 instalments
+
+The 2026 return is filed before 28 August 2026. Confirmed 2026 RIT is $15,000. GST is not 6-monthly. Uplifted provisional tax is $15,750 and each of the 3 liabilities is $5,250.
+
+```oa-check
+name: nz-2027-standard-filed-three
+tolerance: 0
+inputs:
+  prior_rit: 15000
+steps:
+  annual_amount: floor(prior_rit * 1.05)
+  first: floor(annual_amount / 3)
+  second: floor(annual_amount * 2 / 3 - first)
+  final: annual_amount - first - second
+expected:
+  annual_amount: 15750
+  first: 5250
+  second: 5250
+  final: 5250
+```
+
+### Case 2: lawful extension, return filed between instalments 1 and 2
+
+2025 RIT is $20,000. The 2026 return is required but not legally due and is still unfiled at the first date. The first liability uses 110%. The return is filed before the second date with 2026 RIT $15,000, so the remaining calculation uses 105% of that preceding-year RIT. Liabilities are $7,333, $3,167 and $5,250. The first liability is not retrospectively changed.
+
+```oa-check
+name: nz-2027-standard-filed-after-first
+tolerance: 0
+inputs:
+  older_rit: 20000
+  prior_rit: 15000
+steps:
+  older_uplift: floor(older_rit * 1.10)
+  first: floor(older_uplift / 3)
+  prior_uplift: floor(prior_rit * 1.05)
+  second: floor(prior_uplift * 2 / 3 - first)
+  final: prior_uplift - first - second
+expected:
+  older_uplift: 22000
+  first: 7333
+  prior_uplift: 15750
+  second: 3167
+  final: 5250
+```
+
+### Case 3: return filed after the second date
+
+The same 2025/2026 RIT amounts apply. The legal extension and unfiled conditions hold at the first 2 dates. The return is filed before final instalment F. Earlier 110% liabilities total $14,666; the final 105% liability is $1,084.
+
+```oa-check
+name: nz-2027-standard-filed-after-second
+tolerance: 0
+inputs:
+  older_rit: 20000
+  prior_rit: 15000
+steps:
+  older_uplift: floor(older_rit * 1.10)
+  first: floor(older_uplift / 3)
+  second: floor(older_uplift * 2 / 3 - first)
+  prior_uplift: floor(prior_rit * 1.05)
+  final: prior_uplift - first - second
+expected:
+  older_uplift: 22000
+  first: 7333
+  second: 7333
+  prior_uplift: 15750
+  final: 1084
+```
+
+### Case 4: 6-monthly GST, 2 instalments
+
+For an established standard-method taxpayer with confirmed 6-monthly GST filing and 2026 RIT $15,000, the schedule is C/F, 28 October 2026 and 7 May 2027. The 2026 return is filed before C. Both liabilities are $7,875. Having an extension alone would not select this schedule.
+
+```oa-check
+name: nz-2027-standard-six-monthly-gst
+tolerance: 0
+inputs:
+  prior_rit: 15000
+steps:
+  annual_amount: floor(prior_rit * 1.05)
+  first: floor(annual_amount / 2)
+  final: annual_amount - first
+expected:
+  annual_amount: 15750
+  first: 7875
+  final: 7875
+```
+
+### Case 5: unpaid earlier liability, separate arrears
+
+Use Case 2, but the first $7,333 liability remains unpaid. The second liability remains $3,167. The amount needed to cover both liabilities is $10,500 before interest or penalties. Subtracting the first actual payment of zero from the cumulative target gives that combined amount, not a new instalment liability of $10,500.
+
+```oa-check
+name: nz-2027-standard-unpaid-prior-liability
+tolerance: 0
+inputs:
+  annual_amount: 15750
+  first_liability: 7333
+  first_payment: 0
+steps:
+  second_liability: floor(annual_amount * 2 / 3 - first_liability)
+  prior_arrears: first_liability - first_payment
+  cumulative_shortfall: first_liability + second_liability - first_payment
+expected:
+  second_liability: 3167
+  prior_arrears: 7333
+  cumulative_shortfall: 10500
+```
+
+### Case 6: no extension, unfiled return
+
+2026 RIT is a documented expectation of $15,000; 2025 RIT is $20,000. The 2026 return remains unfiled, but it was due 7 July 2026 and no extension applies. 110% is not selected. The first ordinary liability uses 105%, giving $5,250. Resolve the filing failure separately and mark the RIT estimate as provisional.
+
+```oa-check
+name: nz-2027-standard-late-without-extension
+tolerance: 0
+inputs:
+  expected_prior_rit: 15000
+steps:
+  annual_amount: floor(expected_prior_rit * 1.05)
+  first: floor(annual_amount / 3)
+expected:
+  annual_amount: 15750
+  first: 5250
+```
+
+### Case 7: final F uses expected preceding-year RIT
+
+At F, the 2026 return remains unfiled. Documented expected 2026 RIT is $17,000. Earlier valid 110% liabilities were $7,333 each. The final instalment uses 105% of expected 2026 RIT, giving $3,184. This is not an estimate of 2027 RIT and not the separate optional final-instalment election.
+
+```oa-check
+name: nz-2027-standard-final-unfiled-prior-year
+tolerance: 0
+inputs:
+  expected_prior_rit: 17000
+  first_liability: 7333
+  second_liability: 7333
+steps:
+  annual_amount: floor(expected_prior_rit * 1.05)
+  final: annual_amount - first_liability - second_liability
+expected:
+  annual_amount: 17850
+  final: 3184
+```
+
+### Case 8: annual and instalment whole-dollar truncation
+
+The 2026 return was filed before the first date with RIT $15,001.50. 105% is $15,751.575 before whole-dollar truncation, so the annual amount is $15,751. The 3 liabilities are $5,250, $5,250 and $5,251. Do not round the uplifted amount up.
+
+```oa-check
+name: nz-2027-standard-two-stage-whole-dollar
+tolerance: 0
+inputs:
+  prior_rit: 15001.5
+steps:
+  annual_amount: floor(prior_rit * 1.05)
+  first: floor(annual_amount / 3)
+  second: floor(annual_amount * 2 / 3 - first)
+  final: annual_amount - first - second
+expected:
+  annual_amount: 15751
+  first: 5250
+  second: 5250
+  final: 5251
+```
+
+
+### Case 9: unresolved remainder, no liability schedule
+
+For an unchanged annual amount of $15,752 and 3 instalments, the two readings allocate $5,250/$5,250/$5,252 or $5,250/$5,251/$5,251. Both total $15,752, but $1 falls due on different dates. This diagnostic is not a verified payment schedule. Apply the calculation stop before choosing either result.
+
+```oa-check
+name: nz-2027-standard-remainder-two-stop
+tolerance: 0
+inputs:
+  annual_amount: 15752
+steps:
+  first: floor(annual_amount / 3)
+  equal_second: floor(annual_amount / 3)
+  equal_final: annual_amount - first - equal_second
+  cumulative_second: floor(annual_amount * 2 / 3 - first)
+  cumulative_final: annual_amount - first - cumulative_second
+  timing_difference: cumulative_second - equal_second
+expected:
+  first: 5250
+  equal_second: 5250
+  equal_final: 5252
+  cumulative_second: 5251
+  cumulative_final: 5251
+  timing_difference: 1
+```
+
+### Case 10: 2 instalments, odd annual amount
+
+The filed 2026 return has RIT $15,001.50 and the confirmed schedule is 6-monthly GST. The whole-dollar uplift is $15,751. The first liability is $7,875 and the final balance is $7,876. The 3-instalment remainder conflict does not arise.
+
+```oa-check
+name: nz-2027-standard-two-instalment-remainder
+tolerance: 0
+inputs:
+  prior_rit: 15001.5
+steps:
+  annual_amount: floor(prior_rit * 1.05)
+  first: floor(annual_amount / 2)
+  final: annual_amount - first
+expected:
+  annual_amount: 15751
+  first: 7875
+  final: 7876
+```
+
+## Terminal tax and other routes
+
+Use the annual IR3 worksheet to reconcile RIT less provisional payments for the correct year; do not subtract payments for a different year merely because they were made in the same bank-statement period. Q36B is before any Q37 early payment discount or separate assessments/offsets. The annual companion records the separate review needed before a final payable/refundable amount. [S3, pp 44–45,47–49][S3]
+
+For 2025-26 ordinary terminal tax, RA 13/Schedule 3 give nominal 7 February 2027 or 7 April 2027 where the qualifying tax-agent link/section 37(4) extension applies. Merely having an agent is insufficient. The nominal 7 February 2027 date is a Sunday and 8 February is the observed Waitangi public holiday, so the next-working-day payment date is **9 February 2027**. Confirm myIR and any special account circumstances. [S2, RA 13][S2] [S4, Schedule 3][S4] [S5][S5] [S7][S7] [S8][S8]
+
+This guide supplies no unsourced penalty table, UOMI rate or automatic first-year exemption. An initial provisional liability or low older-year RIT can need different instalments or interest treatment even when this standard algorithm is unavailable. Obtain the applicable RC 3/9/13/14 and interest-rule review. [S2][S2] [S3, pp 51–52][S3]
+
+## Sources and verification limits
+
+Checked 13 November 2026 against the following primary pages and selected legislation. ITA operative captures are version 4 September 2026; TAA is version 1 October 2026. The dated [verification entry](../../../docs/verification-log/2026-11-13-new-zealand-annual-ir3-provisional.md) records currentness checks, source conflicts and calculation limits. Tier 2/pending status remains.
+
+[S1]: https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option
+[S2]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/parts/DLM1519723/
+[S3]: https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1---ir99/ir3g/ir3g-2026.pdf?modified=20260821041603
+[S4]: https://www.legislation.govt.nz/act/public/2007/97/en/latest/parts/DLM1523173/#DLM1523249
+[S5]: https://www.ird.govt.nz/managing-my-tax/make-a-payment/when-to-pay
+[S6]: https://www.ird.govt.nz/income-tax/provisional-tax/provisional-tax-options/standard-option/work-out-provisional-tax-using-the-standard-option
+[S7]: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/what-happens-at-the-end-of-the-tax-year/income-tax-assessments/refunds-and-tax-bills
+[S8]: https://www.govt.nz/browse/work/public-holidays-and-work/public-holidays-and-anniversary-dates/
+[S9]: https://www.taxtechnical.ird.govt.nz/-/media/project/ir/tt/pdfs/new-legislation/act-articles/2020-no-5.pdf?modified=20200824234854
 
 ## Prohibitions
 
-- NEVER require provisional tax when prior year RIT is $5,000 or less
-- NEVER state that standard-option payments eliminate all UOMI without checking late/short payments, terminal-tax timing, and the $60,000 actual RIT rule
-- NEVER recommend estimation method without flagging UOMI risk
-- NEVER apply 105% blindly when filing status requires the 110% two-years-ago RIT fallback
-- NEVER confuse RIT with total income tax -- RIT is after deducting PAYE and other credits
-- NEVER apply provisional tax in the first year of earning SE income (unless voluntary)
-- NEVER ignore the 3rd instalment date falling after year-end
-- NEVER present calculations as definitive -- direct to IR or NZ CA
+Do not use 105% for every unfiled-return case, select 110% merely because filing is late, turn EOT alone into a 2-instalment schedule, subtract cash when the formula requires prior liabilities or treat ACC as part of RIT. Do not use this ordinary algorithm for its excluded exceptions.
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a New Zealand Chartered Accountant or equivalent licensed practitioner) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+General reference and conditional computation only. A qualified NZ practitioner must verify the facts, applicable rules, instalments and account allocation before filing or acting. No practitioner sign-off is recorded.
 
 <!-- openaccountants-cta-block -->
 
