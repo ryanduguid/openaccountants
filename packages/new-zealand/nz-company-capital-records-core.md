@@ -112,7 +112,7 @@ The register annual return is separate from the annual shareholder meeting, stat
 
 Section 120(5) dispenses with calling/holding the annual meeting only if all 3 conditions are satisfied: nothing is required to be done at it; the board resolves that relying on the exception serves the company's interests, having regard to shareholders' opportunity to discuss, comment or ask questions; and the constitution does not require it. Separately, section 122(4) dispenses with an annual meeting if everything required there, by resolution or otherwise, is done through resolutions complying with section 122(2)/(3). Section 120(5) does not limit that route. One signed resolution does not prove all required annual business has been completed. [Section 120][S120], [section 122][S122].
 
-For an actual meeting, section 124 applies Schedule 1, except matters the Schedule expressly lets the constitution regulate. Clause 2 requires written notice at least 10 working days beforehand to every shareholder entitled to notice, every director and an auditor. Include sufficiently detailed business, the special-resolution text, any sections 207I/207J resolution text and applicable section 110 rights. The Schedule also governs waiver/irregularity, quorum, proxies, polls, postal votes, electronic participation and minutes. Verify those provisions and the constitution before counting a meeting result. Subject to its exceptions and the constitution, clause 4 requires a quorum able to exercise a majority of votes on the business; clause 12, subject to the constitution, removes the voting right on an unpaid share at a shareholder meeting other than an interest-group meeting. Do not infer eligibility from the total share count alone. [Section 124][S124], [Schedule 1][SCH1].
+For an actual meeting, section 124 applies Schedule 1, except matters the Schedule expressly lets the constitution regulate. Clause 2 requires written notice at least 10 working days beforehand to every shareholder entitled to notice, every director and an auditor. Include sufficiently detailed business, the special-resolution text, any sections 207I/207J resolution text and applicable section 110 rights. The Schedule also governs waiver/irregularity, quorum, proxies, polls, postal votes, electronic participation and minutes. Verify those provisions and the constitution before counting a meeting result. Subject to its exceptions and the constitution, clause 4 requires a quorum able to exercise a majority of votes on the business; clause 12, subject to the constitution, removes the voting right on a share where a sum due to the company in respect of that share remains unpaid, at a shareholder meeting other than an interest-group meeting. Consideration payable later does not remove that right merely because the share is not fully paid. Do not infer eligibility from the total share count alone. [Section 124][S124], [Schedule 1][SCH1].
 
 | Decision route | Threshold and denominator |
 | --- | --- |
@@ -271,6 +271,28 @@ tolerance: 0
 
 Two of 4 eligible shareholders sign with 96 of 100 eligible votes. The 50% headcount fails the general section 122 route despite 96% voting support. The special sections 207I/207J written mechanism uses the 95% eligible-votes test, but only if that particular statutory resolution and all its underlying company, constitution and timing conditions are independently established. They are unresolved in this case; do not infer an audit opt-out. [Section 122][S122], [sections 207I/207J][S207I], [section 207J][S207J].
 
+
+A higher constitutional percentage also applies to both general written-resolution tests. In a separate verified case, 4 of 5 eligible holders sign with 90 of 100 eligible votes, but the constitution requires 90%. Voting support meets that percentage; headcount is only 80%, a 10-percentage-point shortfall, so the general written resolution fails. Do not apply the default 75% headcount to this constitution. [Section 122][S122].
+
+```oa-check
+name: nz-resolution-higher-constitution
+inputs:
+  eligible_heads: 5
+  signing_heads: 4
+  eligible_votes: 100
+  signing_votes: 90
+  constitutional_percent: 90
+steps:
+  heads_percent: signing_heads / eligible_heads * 100
+  votes_percent: signing_votes / eligible_votes * 100
+  heads_shortfall: constitutional_percent - heads_percent
+expected:
+  heads_percent: 80
+  votes_percent: 90
+  heads_shortfall: 10
+tolerance: 0
+```
+
 ### Case 12: meeting votes cast use another denominator
 
 For a professionally verified quorate meeting and valid poll, an ordinary resolution has 45 votes for and 35 against; another 20 eligible votes are not cast. The 45/80 majority is 56.25%, so the stated ordinary threshold is met, subject to the Act and constitution. It is not 45/100 and this result cannot be imported into a section 122 written resolution. The case assumes notice, quorum, eligibility, proxy/poll rules and any higher applicable approval have already been cleared. [Section 105][S105], [Schedule 1][SCH1].
@@ -313,6 +335,32 @@ steps:
 expected:
   inspection_working_days: 6
   remaining_parcel: 70
+tolerance: 0
+```
+
+### Case 15: consideration not yet due leaves the holder eligible
+
+Five otherwise eligible shareholders each hold one voting share. One shareholder's consideration is contractually payable later and no sum due to the company in respect of that share remains unpaid. The constitution does not remove the right. Three other holders sign a general written resolution and no higher constitutional percentage applies. All 5 shareholders and votes remain eligible: both tests are 3/5, or 60%, so the resolution fails. The share being not fully paid is insufficient to exclude its holder. Incorrectly excluding that holder would produce 3/4, or 75%, on both tests and a false pass. This is a comparison of the stated populations, not an independent validation of an actual contract or eligibility decision. [Schedule 1, clause 12][SCH1], [section 122][S122].
+
+```oa-check
+name: nz-resolution-consideration-not-yet-due
+inputs:
+  eligible_heads: 5
+  eligible_votes: 5
+  signing_heads: 3
+  signing_votes: 3
+  wrongly_excluded_heads: 1
+  wrongly_excluded_votes: 1
+steps:
+  correct_heads_percent: signing_heads / eligible_heads * 100
+  correct_votes_percent: signing_votes / eligible_votes * 100
+  wrong_heads_percent: signing_heads / (eligible_heads - wrongly_excluded_heads) * 100
+  wrong_votes_percent: signing_votes / (eligible_votes - wrongly_excluded_votes) * 100
+expected:
+  correct_heads_percent: 60
+  correct_votes_percent: 60
+  wrong_heads_percent: 75
+  wrong_votes_percent: 75
 tolerance: 0
 ```
 
