@@ -4136,6 +4136,7 @@
     "new-zealand-gst.md",
     "nz-acc-levies.md",
     "nz-capital-gains.md",
+    "nz-company-income-tax-ir4.md",
     "nz-employer-payroll.md",
     "nz-gst-return.md",
     "nz-income-tax-ir3.md",
@@ -4145,6 +4146,7 @@
     "README.md"
    ],
    "shared": [
+    "corporate-income-tax-workflow-base.md",
     "crypto-tax-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
