@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-14 | [Cayman holding-company economic substance classifications](2026-11-14-cayman-holding-company-es.md) |
 | 2026-11-14 | [New Zealand company imputation account and IR4J reconciliation](2026-11-14-new-zealand-company-ica-ir4j.md) |
 | 2026-11-14 | [New Zealand company cash dividends and resident withholding](2026-11-14-new-zealand-company-dividend-rwt-core.md) |
 | 2026-11-14 | [New Zealand company reporting, audit and annual reports](2026-11-14-new-zealand-company-reporting-core.md) |

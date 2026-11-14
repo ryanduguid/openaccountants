@@ -1,13 +1,15 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 2.9
+version: 3.0
 jurisdiction: KY
 tax_year: 2026
-last_updated: 2026-11-11
+last_updated: 2026-11-14
 review_status: pending_review
 category: international
 tier: 2
+depends_on:
+  - workflow-base
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -29,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Property filings | Lands and Survey Department for land transfer stamp duty. The landholding corporation files its equity transfer return with the Minister responsible for Finance. See Section 5.2. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Cayman practitioner |
-| Skill version | 2.9 |
+| Skill version | 3.0 |
 
 ### Tax Landscape
 
@@ -79,8 +81,9 @@ product, value the entry and identify any exemptions and separate charges.
 
 - **R-KY-1 -- Income tax** — Cayman Islands has no income tax.
 - **R-KY-2 -- VAT/sales tax** — Cayman Islands has no VAT or sales tax.
-- **R-KY-3 -- Economic substance detail** — Escalate to specialist.
+- **R-KY-3 -- ES work outside the selected Section 6.1 reference classifications and manual controls.** Trigger for a request to resolve the held partnership filing limb, unsupported historical application, other detailed ES branches, current portal procedures or a filing. Verbatim output: `R-KY-3: This ES request exceeds the selected verified classification scope. Obtain the applicable primary authority and a qualified Cayman specialist's review before proceeding.` Supported Section 6.1 reference classifications may proceed through the workflow; an unknown fact within that scope is Needs Input, with the affected conclusion held.
 - **R-KY-4 -- CRS/FATCA reporting** — Escalate to specialist.
+- **R-KY-ES-REVIEW -- No qualified reviewer.** Trigger when the requester will not obtain qualified review and asks to rely on the result as final. Verbatim output: `R-KY-ES-REVIEW: A qualified Cayman reviewer must check this work before reliance or filing. I cannot provide final assurance without that review.`
 
 ## Section 3 -- Compliance Pattern Library
 
@@ -251,26 +254,187 @@ Check the statutory exclusions for distributions by personal representatives, ba
 
 ### 6.1 Economic Substance
 
-Classify the entity and each activity under the Schedule. Relevant
-activities include banking, distribution and service centre, financing and
-leasing, fund management, headquarters, holding company, insurance,
-intellectual property and shipping business. Investment fund business is
-excluded from the activity definition. Check the statutory entity exclusions
-for domestic companies, local partnerships, investment funds and entities
-tax resident outside Cayman. A relevant entity that must meet the
-test generally conducts core income-generating activities in Cayman, is
-directed and managed there and has adequate expenditure, premises and
-personnel there for the activity. Pure equity holding companies have a
-reduced test. High-risk intellectual property businesses face a separate
-presumption and evidence requirement. [Economic Substance Act (2026
-Revision), s 4 and Schedule](https://gov.ky/w/international-tax-co-operation-economic-substance-act-2026-revision-lg7-s10)
+Establish the entity's legal form, exclusions, each relevant activity and its
+gross relevant income for the financial year before choosing the economic
+substance (ES) test. The selected holding-company cases below use the
+Economic Substance Act (2026 Revision), revised as at 31 December 2025, and
+DITC Guidance v3.2 (July 2022), including its partnership appendix, checked
+against the official resources listing on 14 November 2026. Confirm the law
+and guidance applicable to a different period. [Act, s 4 and
+Schedule][ky-es-act] · [DITC resources][ky-es-resources]
 
-Section 7 requires an annual notification from an entity. A relevant entity
-that must satisfy the test files its report within 12 months after its
-financial year end. See the [formation and reporting guide](ky-company-formation.md#accounts-audits-and-tax-cooperation) for
-filing and the [cross-border
-guide](ky-corporate-income-tax.md#economic-substance-and-financial-account-information)
-for evidence of foreign tax residence. [Economic Substance Act, s 7](https://gov.ky/w/international-tax-co-operation-economic-substance-act-2026-revision-lg7-s10)
+Relevant activities include banking, distribution and service centre,
+financing and leasing, fund management, headquarters, holding company,
+insurance, intellectual property and shipping business. Investment fund
+business is excluded from that activity definition. Check the separate
+relevant-entity exclusions for domestic companies, local partnerships,
+investment funds and entities tax resident outside Cayman. Domestic and
+local status require their statutory conditions; ownership alone does not
+establish an exclusion. Check the investment-fund definition for an
+intermediary structure before treating an operating investment as excluded.
+[Act, Schedule, pp 22–25][ky-es-act]
+
+#### Holding-company classification and evidence
+
+The statutory pure equity holding definition requires an entity to hold
+only equity participations in other entities and earn only dividends and
+capital gains. Apply the guidance's incidental-activity treatment on its
+stated facts. Equity participation includes a right to share in an entity's
+profits; debt and other non-equity investments do not qualify. A trust,
+general partner or service provider holding assets for another person must
+be assessed on its own assets, income and activities. [Act, Schedule,
+pp 23–25][ky-es-act] · [Guidance, Schedule F.1 and F.3, pp 67–68][ky-es-guidance]
+
+The current relevant-entity and pure equity definitions include qualifying
+partnership classes. Read the main guidance's company terminology subject
+to its partnership appendix. Check legal form, registration and all
+exclusions before applying the reduced test. [Act, Schedule,
+pp 24–25 and paragraph (2), p 27][ky-es-act] · [Guidance, Appendix A.3(b)
+and (e), pp 87–88][ky-es-guidance]
+
+Keep the following in the ES working paper, alongside the universal
+workflow's intake, source records and review trail:
+
+- Legal form, registration, group structure, financial year and evidence for
+  each claimed exclusion, including any foreign tax residence claim.
+- Asset and ownership records, equity rights, lending arrangements and
+  brokerage or custody contracts showing what the entity itself owns.
+- All activities and income streams, with gross relevant income reconciled
+  to the books under the applicable accounting standards. A loss or absence
+  of cash receipts does not establish absence of gross relevant income.
+- Applicable company filings and their completion evidence, Cayman service
+  agreements, the functions actually performed, human resources and
+  premises available for the level and complexity of the holding business.
+
+Missing ownership, activity, income or adequacy evidence makes the affected
+classification or test conclusion **Needs Input**. Identify the missing
+record; do not treat an unsubstantiated reduced-test claim as compliance.
+[Act, ss 4(5), 7 and Schedule definition of relevant income][ky-es-act] ·
+[Guidance, II.D, III.A.3 and Schedule F.2][ky-es-guidance]
+
+#### Which test applies
+
+The ordinary test requires the relevant core income-generating activities,
+appropriate direction and management in Cayman, and adequate Cayman
+expenditure, physical presence and qualified personnel having regard to
+the relevant income. Where more than one relevant activity is carried on,
+assess each activity. High-risk intellectual property business has a
+separate presumption and evidence requirements. [Act, s 4(1)–(4), (7)–(8)
+and Schedule][ky-es-act]
+
+For a relevant entity whose only relevant activity is pure equity holding
+business, s 4(5) instead requires confirmation of both:
+
+1. Compliance with all applicable filing requirements under the Companies
+   Act (2026 Revision).
+2. Adequate Cayman human resources and premises for holding and managing
+   the equity participations.
+
+DITC says this reduced test does not require direction and management in
+Cayman. An engaged registered-office provider may provide adequate
+resources, depending on how the business operates and its complexity.
+A registered address or service invoice alone does not establish that
+adequacy. Record the services and resources actually available; the cited
+holding-company guidance gives no fixed employee or premises safe harbour.
+[Act, s 4(5)][ky-es-act] · [Guidance, Schedule F.2, p 67][ky-es-guidance]
+
+**Partnership filing hold:** the appendix confirms that qualifying
+partnerships can access the reduced test, whilst s 4(5)(a) still refers to
+applicable Companies Act filings. The sources reviewed here do not
+establish a substituted Partnership Act filing limb. Record the supported
+classification and available evidence, but mark the final reduced-test
+compliance conclusion **Needs Input** until that filing-limb application is
+resolved for the legal form. Do not invent an equivalent filing rule or
+exclude partnerships merely because the main guidance uses company
+terminology. Historical commencement questions for pre-existing
+partnerships also require separate period-specific verification.
+[Act, s 4(5) and Schedule][ky-es-act] · [Guidance, partnership appendix,
+pp 86–88][ky-es-guidance]
+
+#### Five manual classification checks
+
+These hypothetical controls state expected classifications and remaining
+evidence requirements. They are manual checks, not executed filing or
+compliance tests. Establish the relevant-entity gates and all activities
+for each case before using its result.
+
+| Facts | Expected classification and test | Evidence and surviving duties |
+| --- | --- | --- |
+| A relevant company directly holds subsidiary equity, receives dividends into an interest-bearing bank account and uses that account only for those receipts and its expenses. It has no other activity. | On the guidance's stated facts, incidental bank interest preserves pure equity holding classification. Apply the reduced test. | Establish ownership and the limited bank-account use, applicable filings and adequate Cayman resources. ES notification and an ES return remain required. [Guidance F.3(a), pp 67–68][ky-es-guidance] |
+| An entity holds equity together with an interest-bearing bond, debt investment, government security or property interest. | These additional investments take it outside the guidance's pure equity holding definition. Establish whether another relevant activity applies before selecting the ordinary test. | Check every activity separately. The financing and leasing definition requires a business providing credit for consideration and excludes financial leasing of land or interests in land. Preserve notification duties; determine return and test duties from the established activities. [Act, s 4 and Schedule][ky-es-act] · [Guidance F.1, p 67][ky-es-guidance] |
+| A relevant entity's only asset is a contractual claim against a broker; the broker holds the account's underlying equities. | On those precise ownership facts, the guidance says it is not carrying on holding company business. The reduced holding-company test does not apply. | Keep the brokerage and ownership documents. This result does not classify every nominee or custody arrangement. ES notification remains required; check other activities before concluding on an ES return or another test. [Guidance F.3(b), p 68][ky-es-guidance] |
+| A relevant entity directly holds equity for its own account and receives dividends or capital gains, with passive collection or more active management of those holdings. | Passive collection can be relevant activity. Active holding management alone does not create a separate statutory holding-company test. Recheck the actual assets, income and any additional activity. | Assess adequacy against the operations and complexity. Do not assume passive status removes the reduced test or that a service provider guarantees compliance. Keep notification and applicable reporting duties separate. [Act, s 4(5), (8)][ky-es-act] · [Guidance II.C.1, III.A.3 and F.1–2][ky-es-guidance] |
+| A relevant entity continues its holding activity but the accounting records establish no gross relevant income for the financial year. | DITC Guidance III.A.1 says a relevant entity with no relevant income need not meet the ES test for that period. Attribute that treatment to the guidance. | Notification and reporting survive; the guidance describes a return akin to a nil return. Verify the gross-income reconciliation. Zero profit or zero cash receipts alone is insufficient, and no current portal selection is established here. [Act, Schedule definition of relevant income][ky-es-act] · [Guidance II.D and III.A.1, pp 15 and 17][ky-es-guidance] |
+
+#### Notification, reporting and output holds
+
+Section 7 requires an entity's annual notification, with supporting evidence
+reasonably required by the Authority, at the time and in the form and
+manner it specifies. A relevant entity required to satisfy the test reports
+within 12 months after its financial year end. DITC's no-relevant-income
+treatment retains notification and reporting, so do not infer a reporting
+exemption from that test treatment. [Act, s 7(1)–(4)][ky-es-act] ·
+[Guidance III.A.1 and IV.A–B][ky-es-guidance]
+
+Output the entity/exclusion decision, activity classification, gross
+relevant-income reconciliation, applicable test, evidence for each limb and
+the separate notification/return obligations. Mark each unresolved item
+**Needs Input**. Current ES notification and return screens, submission
+fields, general-partner return non-duplication procedures and historic
+commencement disputes are outside this section's verified scope. Confirm
+the Authority's current instructions before submission; the guidance's
+prospective portal wording does not establish a present filing procedure.
+[Guidance, partnership appendix, p 86][ky-es-guidance]
+
+See the [formation and reporting guide](ky-company-formation.md#accounts-audits-and-tax-cooperation)
+for the wider filing context and the [cross-border guide](ky-corporate-income-tax.md#economic-substance-and-financial-account-information)
+for evidence of foreign tax residence.
+
+#### ES workflow controls
+
+For the selected classification task, retain the universal workflow's
+profile confirmation, refusal checks, source conditions and all 4 outputs:
+working paper, reviewer brief, action list and review checklist. Check
+R-KY-3 and R-KY-ES-REVIEW before substantive work. If a refusal fires,
+follow the base's refusal trace and stop that engagement. Section 6.1
+supplies a selected classification path; the other country sections do not
+establish a complete return or engagement workflow on their own. Load the
+relevant topical guides and verify their scope before operational use.
+
+Use the evidence groups above as the ES additions to the structured intake.
+Also confirm the requested output, the financial year and the reviewer's
+credentials and engagement scope. Combine overlapping questions with the
+base intake. Do not ask for real taxpayer data to demonstrate the manual
+cases.
+
+| Unresolved input | Treatment within the selected scope |
+| --- | --- |
+| Legal form, exclusion or ownership | Hold the affected entity or holding-company classification as Needs Input; obtain registration, rights and ownership evidence. |
+| Other assets, activities or income | Hold the test selection until the full asset/activity and gross-income reconciliation is available. |
+| Claimed absence of relevant income | Keep the no-income test treatment unresolved until the books support it; retain notification/reporting work. |
+| Filing-limb or resource adequacy evidence | Hold the compliance conclusion; a supported classification does not establish test satisfaction. |
+
+**Reviewer attention policy:** flag every ES classification, exclusion,
+test-selection and compliance conclusion for review, including a case with
+no identified cash impact. There is no monetary threshold below which this
+review is waived. This is a workflow policy, not a statutory threshold.
+Record any uncalculated cash impact as uncalculated; do not turn it into
+zero tax or a penalty estimate.
+
+Add an ES decision row for each activity to the working paper. Record the
+financial year, legal form, exclusion evidence, ownership facts, gross
+relevant income, classification, selected test, each limb's evidence,
+primary provision and period, notification/return obligations, unresolved
+items and reviewer decision. Carry each held item and required document
+into the action list. Add the 5 manual case results, T2 judgements and
+Needs Input items to the reviewer brief, with a source and reason for each.
+Use the ES items in the Review Checklist Items section below for both
+self-check and reviewer delivery. Do not replace the base's checks or
+sign-off with these additions.
+
+[ky-es-act]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2018/2018-0045/2018-0045_2026%20Revision.pdf
+[ky-es-guidance]: https://www.ditc.ky/wp-content/uploads/Economic-Substance-Guidance.pdf
+[ky-es-resources]: https://www.ditc.ky/es/es-legislation-resources/
 
 ### 6.2 Duty Concessions
 
@@ -339,11 +503,42 @@ ONBOARDING QUESTIONS -- CAYMAN ISLANDS
 | Tax concessions | Tax Concessions Act (Revised) |
 | Customs duties | Customs Tariff Act (Revised) |
 | Companies | Companies Act (Revised) |
-| Economic substance | Economic Substance Act, 2018 |
+| Economic substance | [Economic Substance Act (2026 Revision)][ky-es-act] and [DITC Guidance v3.2 (July 2022), including partnership appendix][ky-es-guidance]; selected holding-company scope in Section 6.1 |
 | Pensions | National Pensions Act |
 | Health insurance | Health Insurance Act |
 | Stamp duty | Stamp Duty Act |
 | Tourism tax | Tourism Accommodation Tax |
+
+## Review Checklist Items
+
+For the selected Section 6.1 ES path, add these to the base's self-checks
+and reviewer checklist:
+
+- Confirm the period, legal form, all relevant activities and evidence for
+  each exclusion. Match direct ownership or broker-claim facts to the
+  selected classification; do not generalise the examples.
+- Reconcile gross relevant income to the books, separately from profit and
+  cash receipts. Preserve the guidance attribution and continuing
+  notification/reporting duties in a no-income case.
+- Check the selected test and each limb's evidence, including actual Cayman
+  resources. Retain the partnership filing-limb hold and all other Needs
+  Input items; no final compliance conclusion may bypass them.
+- Manually compare all 5 hypothetical cases with their expected results and
+  cited provisions. Record any departure and its cause. These controls do
+  not establish an executed taxpayer workflow.
+- Confirm that all 4 universal outputs, refusal traces where applicable,
+  review flags and action items are present and internally consistent.
+  Obtain qualified review before reliance; current submission procedures
+  remain outside this verified path.
+
+## Change log
+
+- **3.0, 14 November 2026:** expand selected ES holding-company
+  classifications using the 2026 Act and DITC Guidance v3.2 with its
+  partnership appendix; add 5 manual controls, source holds and universal
+  workflow additions. Update the ES reference and remove the obsolete
+  upstream verified-version claim. Other country figures were not
+  re-verified by this ES pass.
 
 ## PROHIBITIONS
 
@@ -359,8 +554,6 @@ ONBOARDING QUESTIONS -- CAYMAN ISLANDS
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 <!-- openaccountants-cta-block -->
 
