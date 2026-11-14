@@ -299,6 +299,20 @@
     "workflow-base.md"
    ]
   },
+  "antarctica": {
+   "jurisdiction": "AQ",
+   "name": "Antarctica",
+   "files": [
+    "intake.md",
+    "aq-us-antarctic-employment-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "us-circular-230-disclosure.md",
+    "workflow-base.md"
+   ]
+  },
   "antigua-and-barbuda": {
    "jurisdiction": "AG",
    "name": "Antigua And Barbuda",
