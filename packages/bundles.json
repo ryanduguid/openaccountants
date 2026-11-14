@@ -706,6 +706,7 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
+    "corporate-income-tax-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
     "workflow-base.md"

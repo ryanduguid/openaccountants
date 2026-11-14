@@ -1,13 +1,15 @@
 ---
 name: bermuda-tax
 description: Use this skill for Bermuda taxation, including personal income tax scope, corporate income tax screening, payroll tax and customs duties.
-version: 2.2
+version: 2.3
 jurisdiction: BM
 tax_year: 2026
-last_updated: 2026-11-10
+last_updated: 2026-11-14
 review_status: pending_review
 category: international
 tier: 2
+depends_on:
+  - workflow-base
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
@@ -21,16 +23,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Bermuda |
 | Tax | Payroll tax, corporate income tax for in-scope groups, customs duties, land tax, stamp duty, social insurance |
-| Currency | BMD (1:1 with USD) |
-| Tax year | Calendar year |
-| Primary legislation | Payroll Tax Act 1995 (as amended); Customs Tariff Act 1970 |
+| Currency | BMD; statutory BMD 1 = USD 1, subject to the transaction qualifications in [tax overview](bm-tax-overview.md#currency-and-periods) |
+| Tax year | CIT: statutory UPE fiscal year; payroll reference: 1 April 2026 to 31 March 2027; other taxes have their own periods. See [tax overview](bm-tax-overview.md). |
+| Primary legislation | Corporate Income Tax Act 2023 (including listed amendments through 2026:25); Payroll Tax Act 1995; Customs Tariff Act 1970. See source and period limits in [tax overview](bm-tax-overview.md). |
 | Supporting legislation | Companies Act 1981; Land Tax Act 1967; Stamp Duties Act 1976 |
-| Tax authority | Office of the Tax Commissioner |
-| Filing portal | https://www.gov.bm (Government of Bermuda). ⚠ The `www.tax.gov.bm` address previously given here **does not resolve**, and no `taxcommissioner.gov.bm` host resolves either — the exact filing path has not been re-established |
-| Filing deadline | Payroll tax quarterly (Apr 15, Jul 15, Oct 15, Jan 15); annual reconciliation March 15 |
+| Tax authority | CITA for CIT; OTC, Customs, Social Insurance and other bodies for their separate charges. See [authority map](bm-tax-overview.md#tax-landscape-and-responsible-bodies). |
+| Filing portal | [CITA Online overview](https://www.cita.bm/overview-cita-online) links to https://online.cita.bm/ for corporate tax. For payroll, start at the [official payroll page](https://www.gov.bm/articles/payroll-tax), which links www.etax.gov.bm; secure sign-in/submission is untested. Other charges use their own authority routes. |
+| Filing deadline | Tax and period specific. The official payroll page states payment on 15 January, 15 April, 15 July and 15 October. The former 15 March annual reconciliation remains unverified. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
-| Skill version | 2.2 |
+| Skill version | 2.3 |
+
+**Verification boundary, 14 November 2026.** The system orientation below is reconciled only to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The retained payroll, social insurance, customs, land and stamp-duty tables, defaults, deadlines and numerical examples are not reconciled to current law by this update. Any calculation using those figures is **Needs Input** until its topic-specific evidence is checked. Tier 2/pending review remains.
 
 ### Tax Landscape Overview
 
@@ -38,21 +42,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Tax Type | Status |
 | --- | --- |
-| Income Tax (personal) | None |
-| Income Tax (corporate) | Applies to Bermuda constituent entity groups within scope of the Corporate Income Tax Act 2023 |
-| Capital Gains Tax | None |
-| Value Added Tax (VAT) | None |
-| Sales Tax | None |
-| Withholding Tax | None |
-| Payroll Tax | Yes -- primary revenue source |
+| Income Tax (personal) | No domestic personal income tax for individuals; separate payroll and other taxes remain. [Source and limits](bm-income-tax.md). |
+| Income Tax (corporate) | Conditional 15% group charge; apply the complete [CIT screening](bm-tax-overview.md#corporate-income-tax-screening), including lookback, entity/election and limited-footprint conditions. |
+| Capital Gains Tax | Prior absence claim remains a primary-evidence gap. Do not infer zero or inapplicability; see [open claims](bm-tax-overview.md#claims-still-requiring-evidence). |
+| Value Added Tax (VAT) | Prior absence claim remains a primary-evidence gap. Do not infer zero or inapplicability; see [open claims](bm-tax-overview.md#claims-still-requiring-evidence). |
+| Sales Tax | Prior absence claim remains a primary-evidence gap. Do not infer zero or inapplicability; see [open claims](bm-tax-overview.md#claims-still-requiring-evidence). |
+| Withholding Tax | Prior absence claim remains a primary-evidence gap. Do not infer zero or inapplicability; see [open claims](bm-tax-overview.md#claims-still-requiring-evidence). |
+| Payroll Tax | Yes; current revenue descriptions must also include CIT. See [tax overview](bm-tax-overview.md). |
 | Customs Duties | Yes -- on imports |
 | Land Tax | Yes -- on property |
 | Stamp Duty | Yes -- on real estate transfers |
 | Social Insurance | Yes -- contributory pension scheme |
 
-- **Corporate income tax and assurances.** The Corporate Income Tax Act 2023 applies to in-scope groups for fiscal years beginning on or after 1 January 2025. Section 51 subjects assurances issued before 1 January 2024 under the Exempted Undertakings Tax Protection Act 1966 to the corporate tax. Assurances issued from that date exclude the corporate tax. [Corporate Income Tax Act 2023, ss 4 and 51–53](https://www.cita.bm/assets/documents/2025-09-18-09-47-06-Corporate%20Income%20Tax%20Act%202023.pdf) · [Government of Bermuda, CIT](https://www.gov.bm/CIT)
+- **Corporate income tax and assurances.** The Corporate Income Tax Act 2023 applies to in-scope groups for fiscal years beginning on or after 1 January 2025. Section 51 subjects assurances issued before 1 January 2024 under the Exempted Undertakings Tax Protection Act 1966 to the corporate tax. Assurances issued from that date exclude the corporate tax. [Corporate Income Tax Act 2023, ss 4 and 51–53](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf) · [Government of Bermuda, CIT](https://www.gov.bm/CIT)
 
-### Payroll Tax Rates (Current)
+### Payroll Tax Rates (Retained, Unreconciled)
 
 **Employer Rate Tier**
 
@@ -90,14 +94,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Required Inputs
 
-- **Minimum viable inputs** — Minimum viable -- employer payroll records for the quarter, number of employees, and total remuneration paid.
-- **Recommended inputs** — Recommended -- breakdown of remuneration by employee, employer classification (exempted undertaking vs local), prior quarter returns.
-- **Ideal inputs** — Ideal -- complete payroll system export, benefits-in-kind valuations, employer registration documents, prior annual reconciliation.
+- **Minimum viable inputs:** identify the tax/question, entity or individual and relevant period before choosing a path. For CIT screening obtain the UPE/group and Bermuda entity identity, fiscal dates, consolidated revenue history and any scope/election claims; missing facts are **Needs Input**. For payroll obtain remuneration records, employee information and employer classification.
+- **Recommended inputs:** for CIT, all 4 preceding UPE consolidated statements, ownership/consolidation, entity-location and election evidence and s 13 footprint facts/anchor. For payroll, remuneration breakdown, class/concession evidence and prior-quarter returns.
+- **Ideal inputs:** source/version and effective-period register, restructuring history, governing election/assurance documents and unresolved-topic list. Detailed CIT calculations and any s 13 endpoint affected by the source tension remain **Needs Input**; see [system screening](bm-tax-overview.md#corporate-income-tax-screening).
 
 ### Refusal Catalogue
 
 - **R-BM-1.** For a domestic personal income tax question, apply Section 5.1. Screen a company under the Bermuda corporate income tax guide. For foreign income tax, use the relevant country's guide.
-- **R-BM-2** — Bermuda does not have VAT or sales tax. No indirect tax return exists. (VAT/sales tax computation)  _(R-BM-2)_
+- **R-BM-2.** A current primary-source basis for the inherited no-VAT/GST/general-sales-tax claim remains missing. Mark a VAT determination **Needs Input**; do not invent a VAT rate or declare it inapplicable from this gap. Customs and sector charges have separate rules and returns, so this is not a refusal of all indirect-tax work. See [tax overview](bm-tax-overview.md).
 - **R-BM-3** — Economic substance requirements are too fact-sensitive. Escalate to a licensed Bermuda practitioner. (Economic substance detailed compliance)  _(R-BM-3)_
 - **R-BM-4** — Insurance companies have specialised regulatory and tax requirements. Escalate. (Insurance sector-specific rules)  _(R-BM-4)_
 
@@ -160,7 +164,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 **Computation:**
 - Customs duty at applicable rate (general merchandise ~22.25%)
 - Duty: BMD 5,000 x 22.25% = BMD 1,112.50
-- No VAT. No sales tax.
+- VAT/general-sales-tax absence remains **Research Gap / Needs Input**; do not infer either conclusion from this customs illustration.
 
 ### Example 3 -- Self-Employed Individual
 
@@ -190,7 +194,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.2 Payroll Tax Filing
 
-- **Payroll tax filing schedule** — Filing frequency: quarterly. Q1 deadline: April 15. Q2: July 15. Q3: October 15. Q4: January 15. Annual reconciliation: March 15 following year-end. Method: electronic. ⚠ **Not via `tax.gov.bm`** — that host does not resolve; start from https://www.gov.bm.  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026 ; Government of Bermuda, Payroll Tax page (Office of the Tax Commissioner) — https://www.gov.bm/payroll-tax)_
+- **Payroll tax filing and payment.** The [official payroll page](https://www.gov.bm/articles/payroll-tax), checked on 14 November 2026, states payment on 15 January, 15 April, 15 July and 15 October. All exempted companies and companies with annual remuneration greater than BMD 200,000 must submit online; the page links www.etax.gov.bm. Start from that official page. The destination’s secure sign-in/submission workflow is untested; the prior 15 March annual-reconciliation date remains **Research Gap / Needs Input**. Do not apply these dates to a CIT fiscal year.
 
 ### 5.3 Land Tax
 
@@ -237,7 +241,16 @@ C. CUSTOMS DUTIES (if applicable)
   C2. Duty rate                                    ___________
   C3. Total duty                                   ___________
 
+D. CIT SCREENING (orientation only; no liability computation)
+  D1. Taxpayer/entity and UPE/group                 ___________
+  D2. Fiscal period and 4-year revenue history      ___________
+  D3. Entity/ownership/election/assurance evidence   ___________
+  D4. Limited-footprint facts, anchor and conflict  ___________
+  D5. Result, sources, Needs Input and next topic   ___________
+
 REVIEWER FLAGS:
+  [ ] CIT scope/elections/period and s 13 endpoint hold checked?
+  [ ] Unknown tax absence kept distinct from zero/inapplicable?
   [ ] Employer classification confirmed?
   [ ] Payroll tax cap checked (BMD 1M/person)?
   [ ] Concession eligibility confirmed?
@@ -268,6 +281,8 @@ REVIEWER FLAGS:
 | INSURANCE PREMIUM | May be exempt financial service |
 
 ## Section 9 -- Onboarding Fallback
+
+First identify the tax/question, taxpayer/entity and period. If CIT is relevant, obtain the group/UPE, 4-year consolidated revenue history, ownership/location, election/assurance and footprint evidence required by [system screening](bm-tax-overview.md#corporate-income-tax-screening). Do not use the payroll-only questions below as a CIT intake. Output an orientation memo, screening working paper, Needs Input list and reviewer checklist; detailed other-topic calculations remain held.
 
 ```
 ONBOARDING QUESTIONS -- BERMUDA TAX
@@ -302,14 +317,14 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 
 ### International Reporting
 
-Bermuda has a specific arrangement with the US regarding insurance. No general double taxation treaties.
+Bermuda has double-taxation agreements: the [Government’s 22 April 2026 Bahrain announcement](https://www.gov.bm/news/bermuda-signs-amendment-double-taxation-agreement-kingdom-bahrain) records a protocol signed 17 April 2026 to the 2010 DTA. Signature does not prove commencement. The US insurance convention has subject-specific terms and reservations, including foreign-insurer premium excise tax; it does not establish a general exemption. Use the [treaty and reporting distinctions](bm-tax-overview.md#treaties-and-international-reporting), check current instruments and periods and keep case-specific relief **Needs Input** until verified.
 
 ## PROHIBITIONS
 
-- NEVER state that Bermuda has income tax -- it does not
-- NEVER state that Bermuda has VAT or sales tax -- it does not
-- NEVER apply VAT calculations to Bermuda transactions
-- NEVER apply income tax calculations to Bermuda entities
+- NEVER use the absence of domestic personal income tax to deny conditional corporate income tax; apply the current group/entity/period screening.
+- NEVER turn the unresolved VAT/GST/general-sales-tax evidence gap into a verified absence or a zero rate.
+- NEVER apply unsupported VAT calculations; identify customs and sector charges separately.
+- NEVER compute a corporate liability without verified scope, fiscal period, elections, current tax base and credit rules; a Bermuda entity is not categorically exempt.
 - NEVER ignore payroll tax obligations (primary compliance requirement)
 - NEVER assume payroll tax rates without confirming current Budget rates
 - NEVER guess economic substance requirements -- escalate to practitioner
@@ -319,7 +334,7 @@ Bermuda has a specific arrangement with the US regarding insurance. No general d
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+This fork’s canonical guide and recorded quality tier appear below. This source reconciliation is not practitioner sign-off.
 
 <!-- openaccountants-cta-block -->
 
