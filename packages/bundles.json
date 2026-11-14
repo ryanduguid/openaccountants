@@ -5534,6 +5534,19 @@
     "workflow-base.md"
    ]
   },
+  "tokelau": {
+   "jurisdiction": "TK",
+   "name": "Tokelau",
+   "files": [
+    "intake.md",
+    "tk-law-source-and-monetary-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "tonga": {
    "jurisdiction": "TO",
    "name": "Tonga",

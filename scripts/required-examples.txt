@@ -90,6 +90,7 @@ skills/international/sweden/se-income-tax.md
 skills/international/sweden/sweden-bookkeeping.md
 skills/international/sweden/sweden-financial-statements.md
 skills/international/sweden/sweden-payroll.md
+skills/international/tokelau/tk-law-source-and-monetary-reference.md
 skills/international/turks-and-caicos-islands/tc-formation-and-business-licensing-reference.md
 skills/international/turks-and-caicos-islands/tc-sector-taxes-reference.md
 skills/international/turks-and-caicos-islands/tc-social-contributions-reference.md

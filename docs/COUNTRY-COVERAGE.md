@@ -6,7 +6,7 @@ The catalogue contains the country-or-area rows in the [UN M49 table](https://un
 
 7 catalogue areas excluded by Ryan's fixed scope decision (31 October 2026): KP, IR, SY, RU, BY, MM and YE. Published guides remain in the inventory below; excluded areas are not missing coverage targets.
 
-239 of 243 target areas have at least one indexed guide; 4 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+240 of 243 target areas have at least one indexed guide; 3 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -235,7 +235,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TG | Togo | 6 | 0 |
 | TH | Thailand | 7 | 0 |
 | TJ | Tajikistan | 6 | 0 |
-| TK | Tokelau | 0 | 0 |
+| TK | Tokelau | 1 | 0 |
 | TL | Timor-Leste | 6 | 0 |
 | TM | Turkmenistan | 6 | 0 |
 | TN | Tunisia | 7 | 0 |

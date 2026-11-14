@@ -88,6 +88,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | 2026-11-10 | [Cayman Islands property and equity transfer duties](2026-11-10-cayman-property-duties.md) |
 | 2026-11-10 | [Bahamas National Insurance rates, ceilings and reporting](2026-11-10-bahamas-national-insurance.md) |
 | 2026-11-10 | [Bahamas domestic personal income tax scope](2026-11-10-bahamas-personal-income-tax.md) |
+| 2026-11-04 | [Tokelau: historical source and monetary reference](2026-11-04-tokelau-historical-source-reference.md) |
 | 2026-11-03 | [Bolivia: ordinary-company corporate income tax reference](2026-11-03-bolivia-corporate-reference.md) |
 | 2026-11-02 | [Australia: resident rate cases and minimum-wage timing](2026-11-02-australia-rates-worked-cases.md) |
 | 2026-10-31 | [IO, UM and HM: conditional territorial source references](2026-10-31-absent-territory-scope-references.md) |
