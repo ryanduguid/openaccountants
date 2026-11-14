@@ -26,14 +26,14 @@ depends_on:
 
 # Antarctica: US employee pay, sourcing and the foreign earned income exclusion v0.4
 
-**Tier 2 source-cited draft, pending professional review.** This reference covers one question: how United States federal income tax law treats a US citizen employee's pay for work in Antarctica. It is not a complete Antarctic tax guide, because there is no Antarctic tax system for it to describe.
+**Tier 2 source-cited draft, pending professional review.** This reference covers one question: how United States federal income tax law treats a US citizen employee's pay for work in Antarctica. It describes no Antarctic tax law: none was found in the sources read, and none is relied on.
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What applies in Antarctica, in short
 
-- **No Antarctic tax law is relied on here.** The Antarctic Treaty freezes territorial claims (Article IV) and contains no tax provision. Whether a person working in Antarctica owes tax, and to whom, depends on the law of each state that taxes them (for example by citizenship, residence or the employer's location) and on any law a claimant state applies to its claimed sector. This guide does not decide any state's claim or any non-US tax.
-- **For a US citizen, Antarctic pay stays within US tax.** The IRS states that a US citizen living abroad is 'subject to the same U.S. income tax laws that apply to U.S. citizens and resident aliens living in the United States'. Antarctica is not a 'foreign country' for the foreign earned income exclusion, so Antarctic pay cannot be excluded under it, whatever the exclusion amount ($132,900 for 2026).
+- **No Antarctic tax law is relied on here.** The Antarctic Treaty freezes territorial claims (Article IV); this guide relies on no tax rule from the Treaty or from any Antarctic authority. Whether a person working in Antarctica owes tax, and to whom, depends on the law of each state that taxes them (for example by citizenship, residence or the employer's location) and on any law a claimant state applies to its claimed sector. This guide does not decide any state's claim or any non-US tax.
+- **For a US citizen, Antarctic pay cannot be excluded as foreign earned income.** Antarctica is not a 'foreign country' for the foreign earned income exclusion, so that exclusion does not reach pay for work there.
 - **Antarctic days do not count towards the 330-day test.** Time on an Antarctic station is not time in a foreign country.
 - **Antarctic service income is generally US source.** The Code treats any activity conducted in Antarctica as a 'space or ocean activity', and that income of a US person is US source, except to the extent it is attributable to functions, resources or risks in a foreign country.
 - **Why:** each rule turns on the US definition of a foreign country (territory under another government's sovereignty), and the US does not treat Antarctica as such. Section 863(d) names Antarctica expressly; the IRS instructions exclude 'the Antarctic region' from 'foreign country' in terms.
@@ -98,7 +98,7 @@ Gross income sourcing is not the whole taxable income calculation. Paragraph (c)
 | Income from a genuine foreign-country service period in the same year | The Antarctic bar does not decide that separate income | Apply a complete foreign earned income, tax home, qualifying period and election method; this guide computes no exclusion |
 | Transport, or services directly related to the use of a vessel or aircraft | Section 863(c) transportation rules may apply instead | Refer the exact transaction and itinerary; do not apply an automatic 50% rule |
 | International communications or natural-deposit activity | Statutory and regulatory exceptions need separate analysis | Refer; no source or relief result from this worksheet |
-| Activity whose location in Antarctica is uncertain (ice shelf, sea ice, vessel offshore) | The regulation does not define Antarctica's boundary; the Treaty's area south of 60° South latitude (Article VI) is a treaty rule, not a US tax definition | Refer the location question before applying either the Antarctic or the international-water reading |
+| Activity whose location in Antarctica is uncertain (ice shelf, sea ice, vessel offshore) | The sections read (sections 863 and 911, 1.863-8 and 1.911-2) give no boundary for Antarctica; the Treaty's area south of 60° South latitude (Article VI) is a treaty rule, not a US tax definition | Refer the location question before applying either the Antarctic or the international-water reading |
 | Mixed services, subcontracting, self-employment, corporate or partnership income | The simple employee assumptions no longer settle source | Qualify section 1.863-8(a)-(e), the definitions and the allocation evidence |
 | Another state's tax, or law a claimant state applies to its sector | This US worksheet does not decide that law | Apply that state's separately qualified law, keeping the Treaty's Article IV limits |
 
@@ -174,7 +174,7 @@ The return, elections, forms, deadlines, extensions, payments, withholding, pena
 | S4 | [26 CFR 1.863-8, official CFR revised 1 April 2025](https://www.govinfo.gov/content/pkg/CFR-2025-title26-vol11/xml/CFR-2025-title26-vol11-sec1-863-8.xml) | 2026-11-14 | Paragraphs (a)-(h); examples read but not relied on for these facts. Matched sentence for sentence against eCFR current to 2026-11-12. |
 | S5 | [26 CFR 1.911-2, official CFR revised 1 April 2025](https://www.govinfo.gov/content/pkg/CFR-2025-title26-vol12/xml/CFR-2025-title26-vol12-sec1-911-2.xml) | 2026-11-14 | Paragraphs (b)-(h). Matched against eCFR current to 2026-11-12. The statute's later combat-zone wording in section 911(d)(3) governs over the older regulation text. |
 | S6 | [IRS, Instructions for Form 2555 (2026)](https://www.irs.gov/instructions/i2555), page last reviewed or updated 5 November 2026 | 2026-11-14 | What's New, General Information (foreign country), tax home test and Physical Presence Test. |
-| S7 | [The Antarctic Treaty, Antarctic Treaty Secretariat](https://documents.ats.aq/keydocs/vol_1/vol1_2_AT_Antarctic_Treaty_e.pdf) | 2026-11-14 | Articles IV, VI and VIII; full text checked for tax provisions (none). |
+| S7 | [The Antarctic Treaty, Antarctic Treaty Secretariat](https://documents.ats.aq/keydocs/vol_1/vol1_2_AT_Antarctic_Treaty_e.pdf) | 2026-11-14 | Articles IV, VI and VIII only. |
 
 **Not yet confirmed:** the complete later regulatory and effective-date chain after the 1 April 2025 edition; suitability for a specific 2026 tax position; any other state's tax law or sector law; actual residence, source allocations, deductions, elections, deadlines, payroll, payments, penalties, interest, foreign tax relief, professional sign-off and filing readiness. This guide has no accountant approval.
 
