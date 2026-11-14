@@ -6,7 +6,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "Administration checked through 14 November 2026; use the group fiscal year and operative law. Retained detailed tax-base examples remain unverified."
 last_updated: 2026-11-14
-version: 1.5
+version: 1.6
 review_status: pending_review
 tier: 2
 depends_on:
@@ -28,10 +28,51 @@ Apply the [current system screening](bm-tax-overview.md#corporate-income-tax-scr
 - **Outside the charge:** determine in-scope group and Bermuda constituent-entity/group status before concluding that s 4 does not charge CIT. This is not proof of the absence of every other tax or foreign-country liability. [CIT Act, ss 4 and 8–15A](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf)
 - **CIT tax base:** ss 5–6 and 20–46 govern the detailed income, loss and adjustment computation. The retained summary of an 80% loss limitation is not an unconditional rule: current s 6(8) contains a separate shock-loss mechanism. The detailed computation and its evidence remain **Needs Input**; do not apply 15% directly to book income. [CIT Act](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf)
 - **Shared workflow boundary:** the corporate workflow base supplies controls, not Bermuda law. The EUR 750 million threshold does not itself authorise a Bermuda GloBE top-up calculation: General Guidance v2 states that GloBE rules are not incorporated by reference unless expressly stated. Establish each applicable domestic or foreign Pillar Two rule separately. The base’s sector refusals still apply; screening a non-corporate entity under the Act does not permit its computation through a corporation-only workflow. Detailed computation remains **Needs Input** under the boundary above. [General Guidance v2, p 5](https://www.cita.bm/assets/documents/2026-11-13-13-18-25-CIT%20Guidance%20Notes%20(General)%20V2.pdf)
-- **Economic Transition Adjustment (ETA)** — A Bermuda Constituent Entity included in a group in its first fiscal year beginning on or after 1 January 2025 adjusts taxable income for the fair value of its assets and liabilities (excluding goodwill) at 30 September 2023, with the adjustments capped at 80% of the relevant amount and intangibles amortised over the first ten fiscal years  _(Corporate Income Tax Act 2023 (2023:35), Bermuda Laws Online, s 33 — https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Corporate%20Income%20Tax%20Act%202023)_
+- **Economic Transition Adjustment (ETA):** apply the conditional eligibility, limits and zero-adjustment controls in the [ETA section](#economic-transition-adjustment-controls). Valuations and actual computations remain **Needs Input**. [CIT Act, s 33][act]
 - **Entity exclusions and elections:** apply s 10’s defined excluded-entity categories and subsidiary ownership/activity conditions; investment funds and real-estate vehicles are not all automatically excluded. Section 9(2)(b)’s under-80%-by-value exclusion is subject to election. Sections 9(4) and 10(4) identify five-year elections; current ss 49(6) and 49A contain revocation provisions. Check the facts and election history. [CIT Act, ss 2, 9–10, 49 and 49A](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf)
 - **Dividend withholding:** the prior 0%/none claim remains a current primary-evidence gap. Do not use it as a verified rate. [Evidence boundary](bm-tax-overview.md#claims-still-requiring-evidence)
 - **Interest and royalty withholding:** each prior 0%/none claim remains a current primary-evidence gap. Keep the categories separate and do not output zero. [Evidence boundary](bm-tax-overview.md#claims-still-requiring-evidence)
+## Economic transition adjustment controls
+
+This section supports the stated controls under [CIT Act s 33][act], checked through 14 November 2026. It does not establish an asset valuation, an actual ETA amount, an opening loss balance or a taxpayer result. Use the law governing the relevant period; s 33(9) was inserted by Act 2025:29 with an operative date of 11 December 2025. The currently linked [General Guidance v2][eta-guidance] contains the illustration tension below, which remains unresolved.
+
+### Establish eligibility and the relevant values
+
+- Under s 33(1), the BCE must be included in a BCE Group during its first fiscal year beginning on or after 1 January 2025 and must have been a Bermuda Tax Resident Entity or Bermuda Permanent Establishment on 30 September 2023 had the Act applied then. Establish those facts before using a fair-value adjustment.
+- Section 33(2) replaces the relevant, statutorily adjusted carrying values with fair values at **30 September 2023** for its specified assets and liabilities. The asset or liability must have been recognised, or would have been recognised had the specified financial statements been prepared, **as of 30 September 2023**. Do not substitute present values, sale proceeds or an unadjusted balance-sheet amount without tracing the required accounting basis.
+- For each identifiable intangible **owned by the BCE on 30 September 2023**, apply the separate s 33(3) rule. Its annual adjustment concerns each of the BCE's first **10 fiscal years beginning on or after 1 January 2025**, to the extent the asset is held at the end of that fiscal year. A disposal, including a partial disposal, requires the separate s 33(3)(b) calculation using the disposed portion and prior adjustments; do not continue the annual amount unchanged. Actual amounts and signs remain **Needs Input** until verified.
+- Section 33(4) allows no ETA for **goodwill**. Do not include goodwill within the identifiable-intangible route.
+- Sections 33(6) and (7) address delayed application where the first-year obstacle was the group's revenue/international-presence conditions or s 13. They do not automatically restart a new 10-year intangible period on entry. Preserve the unresolved s 13 exemption-endpoint hold in the system guide rather than assigning an entry date from the guidance illustration.
+- The Filing BCE may elect under s 33(8) that the section does not apply. Establish the actual election and its scope. I-101's election index identifies E28; the form label does not itself establish that an election was made. Do not assume an opt-out simply to obtain the simplified return route.
+
+### Apply the conditional limit and zero-adjustment rules
+
+The **80% restriction is conditional**, not a universal cap on all ETA. Section 33(5) applies where the BCE has positive taxable income, determined under s 20 **before** s 33 and s 29 adjustments, and the s 33(2)/(3) adjustments would reduce that amount by more than 80%. The allowed reduction is then limited to 80% of that amount. The excess enters the BCE's **net taxable loss for the immediately succeeding fiscal year** under s 6(2)(b)(i); do not describe it as simply lost or as an immediately payable credit. I-101 section 4.2.4 links the nondeductible portion to the loss schedule. This does not verify the return workbook or an opening-loss reconstruction.
+
+Section 33(9) separately makes the relevant adjustment **zero** where:
+
+1. An asset's s 33(2)(a) carrying value exceeds its s 33(2)(b) fair value.
+2. For a liability, the absolute value of the s 33(2)(b) fair value exceeds the absolute value of its s 33(2)(a) carrying value.
+3. For an identifiable intangible, its s 33(3)(a)(ii) carrying value exceeds its s 33(3)(a)(i) fair value.
+
+Apply the correct provision and governing period before assigning a direction or amount. A zero adjustment under s 33(9) does not mean the asset, liability or transaction is absent from the ordinary tax-base computation.
+
+### Hold the conflicting illustration and actual computations
+
+The current General Guidance v2, pages 36–37, gives an investment carrying value of 5,000 and fair value of 4,800, then illustrates a positive 200 ETA on a later sale. Current s 33(9)(a) states a zero adjustment for the direction in which carrying value exceeds fair value. The illustration also assumes a future entry date under s 13, whose endpoint is already held. This check has not reconciled the illustration's period, opening-loss treatment and amendment application with the current statute. Do not copy that 200 adjustment or its entry date into a verified result. Obtain the governing historical instruments and a supported reconciliation or Agency clarification; meanwhile the affected example and computation are **Needs Input**. The current publication of an illustration does not resolve those questions by itself.
+
+### Hypothetical manual controls
+
+These are source/text controls, not executed model, taxpayer or workbook tests. Assume the governing version and all eligibility, value, election and allocation facts are verified where a control depends on them.
+
+- With a positive pre-s 33/pre-s 29 amount of 100 and an otherwise permitted ETA reduction of 75 or exactly 80, the s 33(5) more-than-80% trigger is not met. If the otherwise permitted reduction is 90, the restriction permits 80 and places the excess 10 in the immediately succeeding year's net taxable loss. These abstract units do not validate currency conversion, the underlying ETA or a loss balance.
+- A taxable loss before these adjustments does not satisfy the positive-income condition in s 33(5). Do not mechanically apply the same 80%-of-positive-income calculation.
+- An asset carrying value exceeding its fair value requires the applicable s 33(9)(a) zero-adjustment check; do not adopt the guidance illustration's positive 200 without resolving the stated conflict. Check the distinct absolute-value direction for liabilities.
+- Goodwill has no ETA under s 33(4). An identifiable intangible held at fiscal-year end uses its separate annual rule; a partial disposal requires a new disposed-portion analysis.
+- A later in-scope year does not by itself begin a fresh 10-year intangible period or settle the s 13 endpoint. An unverified election cannot establish either ETA opt-out or simplified-return eligibility.
+
+Return a source/period table, eligibility and election findings, valuation/adjustment inputs, the applicable limit/zero controls and an explicit unresolved-items list. Keep detailed valuations, insurance-contract methods, disposal amounts, foreign-exchange effects, opening-loss interactions and taxpayer-specific computation **Needs Input** until separately verified.
+
 ## CIT registration, filing and payment
 
 ### Scope, period and inputs
@@ -123,6 +164,8 @@ Return a source/period register, scope and Filing BCE evidence, separate payment
 [i102]: https://www.cita.bm//assets/images/files/Form%20I-102_Instructions%20for%20the%20Simplified%20CIT%20Return%20Schedules%20(July%202026).pdf
 [calendar]: https://www.cita.bm//assets/images/files/Filing%20&%20Payment%20Deadlines%2005.06.2026.pdf
 [advisory]: https://www.cita.bm/news/cita-online-upcoming-filing-deadline
+
+[eta-guidance]: https://www.cita.bm/assets/documents/2026-11-13-13-18-25-CIT%20Guidance%20Notes%20(General)%20V2.pdf
 
 <!-- openaccountants-cta-block -->
 
