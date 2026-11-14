@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
 description: Use this skill for Bermuda taxation, including personal income tax scope, corporate income tax screening, payroll tax and customs duties.
-version: 2.4
+version: 2.5
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-14
@@ -29,11 +29,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Companies Act 1981; Land Tax Act 1967; Stamp Duties Act 1976 |
 | Tax authority | CITA for CIT; OTC, Customs, Social Insurance and other bodies for their separate charges. See [authority map](bm-tax-overview.md#tax-landscape-and-responsible-bodies). |
 | Filing portal | [CITA Online overview](https://www.cita.bm/overview-cita-online) links to https://online.cita.bm/ for corporate tax. For payroll, start at the [official payroll page](https://www.gov.bm/articles/payroll-tax), which links www.etax.gov.bm; secure sign-in/submission is untested. Other charges use their own authority routes. |
-| Filing deadline | Tax and period specific. The official payroll page states payment on 15 January, 15 April, 15 July and 15 October. The former 15 March annual reconciliation remains unverified. |
+| Filing deadline | Tax and period specific. Ordinary payroll returns are due within 15 days after the period closes, with payment on furnishing the return unless another time applies. Check individual notices, written permissions and the separate deducted-employee-tax clock; see [payroll procedure](bm-payroll-social.md#returns-payment-and-electronic-filing). The former 15 March reconciliation remains unverified. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
 
-**Verification boundary, 14 November 2026.** The system orientation below is reconciled only to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The retained payroll, social insurance, customs, land and stamp-duty tables, defaults, deadlines and numerical examples are not reconciled to current law by this update. Any calculation using those figures is **Needs Input** until its topic-specific evidence is checked. Tier 2/pending review remains.
+**Verification boundary, 14 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The retained social insurance, customs, land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled. A calculation using their figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
 
 ### Tax Landscape Overview
 
@@ -55,28 +55,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Corporate income tax and assurances.** The Corporate Income Tax Act 2023 applies to in-scope groups for fiscal years beginning on or after 1 January 2025. Section 51 subjects assurances issued before 1 January 2024 under the Exempted Undertakings Tax Protection Act 1966 to the corporate tax. Assurances issued from that date exclude the corporate tax. [Corporate Income Tax Act 2023, ss 4 and 51–53](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf) · [Government of Bermuda, CIT](https://www.gov.bm/CIT)
 
-### Payroll Tax Rates (Retained, Unreconciled)
+### Payroll Rates and Classification Controls
 
-**Employer Rate Tier**
+Use the [payroll guide](bm-payroll-social.md#employer-rates-and-effective-periods) for the 2026-27 employer classes, employee marginal slices and source conflicts. With ordinary class eligibility established, Class BB rates are 2% from BMD 200,000 through BMD 350,000, 4.75% above BMD 350,000 through BMD 500,000, 7% above BMD 500,000 through BMD 1,000,000 and 9.5% above BMD 1,000,000. Below BMD 200,000, Class B(f) is 0.5% for April-June and July-September 2026, then 1% for October-December 2026 and subsequent periods under [Act 2026:31 s 2](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2026/Payroll%20Tax%20Rates%20Amendment%20Act%202026). Do not prorate September at its operative date.
 
-| Employer Rate Tier | Employer Rate |
-| --- | --- |
-| Up to BMD 200,000 annual payroll | Reduced rate (concession) |
-| BMD 200,001 -- 350,000 | Intermediate rate |
-| BMD 350,001 -- 500,000 | Standard rate |
-| Above BMD 500,000 | Standard rate (10.25%) |
+Employee rates apply to separate annual remuneration slices: first BMD 48,000 at 0.25%, next BMD 48,000 at 7.75%, next BMD 104,000 at 10.75%, next BMD 300,000 at 11.5% and next BMD 500,000 at 12.5%. [Rates Act s 3A](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Rates%20Act%201995) expressly rejects applying the top reached band to all remuneration.
 
-**Employee Income Tier**
-
-| Employee Income Tier | Employee Rate |
-| --- | --- |
-| Up to BMD 48,000 | 0.50% |
-| BMD 48,001 -- 96,000 | 9.25% |
-| BMD 96,001 -- 200,000 | 10.00% |
-| BMD 200,001 -- 500,000 | 11.50% |
-| BMD 500,001 -- 1,000,000 | 12.50% |
-
-- **Payroll tax cap** — BMD 1,000,000 per person per year of taxable remuneration  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026 ; Government of Bermuda, Payroll Tax page (Office of the Tax Commissioner) — https://www.gov.bm/payroll-tax)_
+[Payroll Act s 3(3)-(4)](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Act%201995) disregards remuneration above BMD 1,000,000 per annum for the stated charges. Missing class, remuneration, annualisation or cap-allocation facts prevent a complete amount. No universal annual-payroll measurement, pay-period annualisation or cent-rounding method is supplied here.
 
 ### Conservative Defaults
 
@@ -84,8 +69,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown employer classification | Standard rate |
-| Unknown employee income tier | Highest applicable rate |
+| Unknown employer classification | **Needs Input**: establish the statutory class and period; no rate fallback. |
+| Unknown employee pay history or annualisation | **Needs Input**: establish the marginal slices, cap history and pay-period method. |
 | Unknown customs duty category | General merchandise rate (22.25%) |
 | Unknown land tax ARV band | Higher rate band |
 
@@ -93,7 +78,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Required Inputs
 
-- **Minimum viable inputs:** identify the tax/question, entity or individual and relevant period before choosing a path. For CIT screening obtain the UPE/group and Bermuda entity identity, fiscal dates, consolidated revenue history and any scope/election claims; missing facts are **Needs Input**. For payroll obtain remuneration records, employee information and employer classification.
+- **Minimum viable inputs:** identify the tax/question, entity or individual and relevant period before choosing a path. For CIT screening obtain the UPE/group and Bermuda entity identity, fiscal dates, consolidated revenue history and any scope/election claims; missing facts are **Needs Input**. For payroll obtain the tax period, remuneration records, employee/deemed-employee information, statutory class, verified annual-payroll basis, cap history and applicable relief/notices; missing facts prevent an amount.
 - **Recommended inputs:** for CIT, all 4 preceding UPE consolidated statements, ownership/consolidation, entity-location and election evidence and s 13 footprint facts/anchor. For payroll, remuneration breakdown, class/concession evidence and prior-quarter returns.
 - **Ideal inputs:** source/version and effective-period register, restructuring history, governing election/assurance documents and unresolved-topic list. Detailed CIT calculations and any s 13 endpoint affected by the source tension remain **Needs Input**; see [system screening](bm-tax-overview.md#corporate-income-tax-screening).
 
@@ -114,12 +99,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| SALARY, WAGES, BONUS, COMMISSION | Payroll tax base | Include in taxable remuneration |
-| BENEFITS IN KIND, HOUSING ALLOWANCE | Payroll tax base | Include -- benefits are taxable remuneration |
-| PENSION CONTRIBUTION (employer) | Check | May be excluded from payroll tax base |
-| REIMBURSEMENT (business expense) | EXCLUDE | Not remuneration if properly documented |
-| CONTRACTOR PAYMENT | Check | If truly independent contractor, not payroll tax |
-| DIRECTOR FEE | Payroll tax base | Include |
+| SALARY, WAGES, BONUS, COMMISSION | Check statutory remuneration | Payroll Act ss 3-7 determine scope, employee/deemed-employee status and remuneration; a transaction label alone is insufficient. |
+| BENEFITS IN KIND, HOUSING ALLOWANCE | Check inclusion and exceptions | Section 7(1) includes cash and noncash benefits, subject to the Act and specific s 7(2) exclusions. |
+| PENSION CONTRIBUTION (employer) | Check the precise scheme | Section 7(2)(a) excludes the stated statutory or approved-scheme payments; do not exclude every pension payment by label. |
+| REIMBURSEMENT (business expense) | Needs classification | Documentation alone does not establish an exclusion. Check whether the payment is remuneration and whether a statutory exception applies. |
+| CONTRACTOR PAYMENT | Check the statutory role | Verify employee, deemed-employee or self-employed status under ss 4-6 and 14; the contractor label alone does not remove payroll obligations. |
+| DIRECTOR FEE | Check statutory remuneration | A fee can be within s 7(1); determine the service connection, recipient role and applicable exclusions. |
+
+See [Payroll Tax Act 1995](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Act%201995) and the [payroll remuneration controls](bm-payroll-social.md#employee-bands-remuneration-and-relief). Missing facts remain **Needs Input**. These controls do not establish a complete benefits valuation or payroll computation.
 
 ### 3.2 Customs Duty Categories
 
@@ -148,15 +135,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 4 -- Worked Examples
 
-### Example 1 -- Payroll Tax for Standard Employer
+### Example 1 -- Payroll Tax with Missing Classification
 
-**Input:** Employer with annual payroll BMD 600,000, 10 employees. Class not specified.
+**Hypothetical input:** Employer with annual payroll BMD 600,000 and 10 employees. Class, tax-period remuneration and employee pay histories are not supplied.
 
-**Computation:**
-- Employer pays payroll tax at standard rate (10.25% on total payroll)
-- Employer payroll tax: BMD 600,000 x 10.25% = BMD 61,500
-- Employee portion: deducted from each employee's pay at applicable tier rate
-- File quarterly
+**Expected control:** **Needs Input**, with no tax amount. Establish the statutory class, period and taxable remuneration before selecting a rate. Annual payroll alone does not establish the period's tax base. The standard employer rate is not a fallback for missing classification, and employee tax requires its own marginal-band and pay-history method. Obtain applicable relief and written notices before using ordinary quarterly dates. See the [payroll controls](bm-payroll-social.md#manual-boundary-controls-and-remaining-work).
+
+This is a manual rule example, not an executed payroll, taxpayer, consuming-model or workbook result.
 
 ### Example 2 -- Import of Goods
 
@@ -195,7 +180,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.2 Payroll Tax Filing
 
-- **Payroll tax filing and payment.** The [official payroll page](https://www.gov.bm/articles/payroll-tax), checked on 14 November 2026, states payment on 15 January, 15 April, 15 July and 15 October. All exempted companies and companies with annual remuneration greater than BMD 200,000 must submit online; the page links www.etax.gov.bm. Start from that official page. The destination’s secure sign-in/submission workflow is untested; the prior 15 March annual-reconciliation date remains **Research Gap / Needs Input**. Do not apply these dates to a CIT fiscal year.
+- **Payroll tax filing and payment:** use the [qualified payroll procedure](bm-payroll-social.md#returns-payment-and-electronic-filing). Ordinary quarterly returns are due within 15 days after period end, with payment when furnishing the return unless another time applies; check individual written permissions, return notices, payment variations and the separate Payroll Act s 19(5) deducted-employee-tax clock. The official pages differ on the online-filing boundary at BMD 200,000 and the covered taxpayer descriptions. Obtain current clarification for an affected case and do not infer an exemption at exactly BMD 200,000. Start from the [official payroll page](https://www.gov.bm/articles/payroll-tax), which links www.etax.gov.bm. Secure sign-in and submission are untested; the former 15 March annual-reconciliation date remains **Research Gap / Needs Input**. Do not apply payroll dates to a CIT fiscal year.
 
 ### 5.3 Land Tax
 
@@ -213,7 +198,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 6.2 Exempt Company Payroll
 
-- **Exempt company payroll treatment** — Exempted company status under the Companies Act does not exempt an employer from payroll tax: all exempt undertakings pay the 9.75% employer portion from 1 April 2026 and must file online  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026)_
+- **Exempt company payroll treatment:** establish the payroll-specific exempt-undertaking classification under [Payroll Act s 2(3)-(6)](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Act%201995), including its exclusions and Commissioner directions. The standard rate is 9.75% under Rates Act s 3; s 10 excludes statutory exempt undertakings from ordinary prescribed-class substitution. Separate employee-specific relief and filing requirements still need checking. Companies Act exempted status alone is not the complete test. See the [payroll guide](bm-payroll-social.md).
 
 ### 6.3 Economic Substance
 
@@ -275,7 +260,7 @@ REVIEWER FLAGS:
 
 | Term | Classification Hint |
 | --- | --- |
-| PAYROLL, SALARY | Remuneration -- payroll tax applies |
+| PAYROLL, SALARY | Check statutory scope, recipient role, service connection, remuneration and exclusions before deciding payroll tax. |
 | CUSTOMS, DUTY | Import duty payment |
 | LAND TAX | Property tax payment |
 | PENSION, CONTRIBUTORY | Social insurance contribution |
@@ -307,7 +292,7 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 
 | Topic | Reference |
 | --- | --- |
-| Payroll tax rates | Payroll Tax Act 1995 (as amended); annual Budget |
+| Payroll tax rates | Payroll Tax Act 1995 and Payroll Tax Rates Act 1995, read with applicable enacted amendments and their period clauses. |
 | Payroll tax cap | Payroll Tax Act 1995 |
 | Customs duties | Customs Tariff Act 1970 |
 | Land tax | Land Tax Act 1967 |
@@ -327,7 +312,7 @@ Bermuda has double-taxation agreements: the [Government’s 22 April 2026 Bahrai
 - NEVER apply unsupported VAT calculations; identify customs and sector charges separately.
 - NEVER compute a corporate liability without verified scope, fiscal period, elections, current tax base and credit rules; a Bermuda entity is not categorically exempt.
 - NEVER ignore payroll tax obligations (primary compliance requirement)
-- NEVER assume payroll tax rates without confirming current Budget rates
+- NEVER assume payroll tax rates without checking the Rates Act, applicable enacted amendments, classification and tax period
 - NEVER guess economic substance requirements -- escalate to practitioner
 - NEVER present calculations as definitive -- always label as estimated
 
