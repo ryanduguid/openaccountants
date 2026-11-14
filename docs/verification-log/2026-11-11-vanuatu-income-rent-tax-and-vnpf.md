@@ -1,0 +1,22 @@
+# Vanuatu ordinary income tax, rent tax and provident fund contributions
+
+I checked the Vanuatu [income tax](../../skills/international/vanuatu/vu-income-tax.md), [corporate income tax](../../skills/international/vanuatu/vu-corporate-income-tax.md), [tax overview](../../skills/international/vanuatu/vu-tax-overview.md) and [payroll](../../skills/international/vanuatu/vu-payroll-social.md) guides on 11 November 2026.
+
+The [Vanuatu Competent Authority guide](https://vanuatucustoms.gov.vu/images/Forms/VCA/VU_AEOI_Guide_v4.pdf), current as at 20 August 2024, and the [Global Forum assessment](https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-vanuatu-2026-second-round-supplementary-report_7a20b670/75b3bc85-en.pdf), adopted 23 April 2026, establish the absence of ordinary domestic personal and corporate income tax. The guides separate this from rent tax and reporting.
+
+The 2020 consolidation of the [Rent Taxation Act, Cap 196](https://vanuatucustoms.gov.vu/images/TAA/196_Rent_Taxation_Act_Consolidated_2020.pdf) and the [DCIR taxpayer guide](https://vanuatucustoms.gov.vu/images/Brochures/IRD/eng/Rent_Tax_Guide.pdf) give 12.5%, which differs from the investment agency's 15% summary. I recalculated VUV 12,500 for a natural person and VUV 37,500 for a company from VUV 300,000 of chargeable rent for one 6-month period with no special adjustment. The VAT exclusion applies only to the relevant rent of a registered person. The dates in the guides are unadjusted. The [DCIR's 2025 calendar](https://vanuatucustoms.gov.vu/images/public_notice/VAT%20and%20Non-Tax%20Due%20Dates.pdf) gives 30 June and 29 December for those 2 periods. Section 2 of [Act 7 of 2019](https://vanuatucustoms.gov.vu/images/TAA/Rent_Taxation_Amendment_Act_No_7_of_2019.pdf) sets commencement of the substituted return and payment provisions on 1 January 2020.
+
+I checked ss 1, 22–26, 30 and 46–47 against the [2026 VNPF Act consolidation](https://www.vnpf.com.vu/uploads/9/5/0/5/95052148/vanuatu_national_provident_fund_consolidated_2026.pdf) and compared the [2021 consolidation](https://www.vnpf.com.vu/uploads/9/5/0/5/95052148/vnpf_act_%5Bcap_189%5D_amended.pdf) with the [Fund's commencement notice](https://www.vnpf.com.vu/news.html). The January 2026 rate applies to contributions for that month, payable in February. It does not apply to arrears for months through December 2025. At the VUV 3,000 floor for one employer, the January 2026 contribution is VUV 180 each for the employer and employee. The Act specifies a surcharge on the unpaid contributions and a separate small-amount rule.
+
+| Capture | SHA-256 |
+| --- | --- |
+| [dcir-aeoi-guide-v4.pdf](https://vanuatucustoms.gov.vu/images/Forms/VCA/VU_AEOI_Guide_v4.pdf) | `4561515f1115893757082c651432695a693a467792d5ce4644b3ba6751b60a27` |
+| [cap-196-2020.pdf](https://vanuatucustoms.gov.vu/images/TAA/196_Rent_Taxation_Act_Consolidated_2020.pdf) | `6af414dbb4b74a94e695f498c781ab1c2b405d297569e82743a58b5b601207fd` |
+| [rent-tax-amendment-2019.pdf](https://vanuatucustoms.gov.vu/images/TAA/Rent_Taxation_Amendment_Act_No_7_of_2019.pdf) | `fea72929a3d7398bdac156476f4c3d2145179896120b4f6f12e2fc12c0d4fa43` |
+| [global-forum-vanuatu-2026.pdf](https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-vanuatu-2026-second-round-supplementary-report_7a20b670/75b3bc85-en.pdf) | `cc2df468a4131792bf010bdeb83dd9888720155676cfa0c999171ffd4a78823d` |
+| [vnpf-act-2026.pdf](https://www.vnpf.com.vu/uploads/9/5/0/5/95052148/vanuatu_national_provident_fund_consolidated_2026.pdf) | `5b86eaded090ec5d14e862976f48d77553a6a1d66e77270e7fa7e2fe15bdb589` |
+| [vnpf-act-2021.pdf](https://www.vnpf.com.vu/uploads/9/5/0/5/95052148/vnpf_act_%5Bcap_189%5D_amended.pdf) | `2af2a298a242dd387c192e0c1a041ae77b7d38be7bb39c7f3931756660ad42c3` |
+| [vnpf-notice.html](https://www.vnpf.com.vu/news.html) | `76a4d491d7465c267c7f211ed42204d1053373b80c0b74ff81d1ac2d94922833` |
+| [dcir-due-dates-2025.pdf](https://vanuatucustoms.gov.vu/images/public_notice/VAT%20and%20Non-Tax%20Due%20Dates.pdf) | `1ab4985a03b051c6c52a45d450dc6f85958656a9f7b24fab7db37fba4419c53e` |
+
+Later Gazette instruments, rent tax exceptions and penalties, full payroll and VNPF cases, current filing procedures and qualified review remain open. The passed 2026 International Companies bill does not settle the Cap 222 s 118 duration issue. The Gazette Act and operative date were not located.

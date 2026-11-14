@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 jurisdiction: ID
 category: formation
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: RILIA PUTRI
 review_status: pending_review
 tier: 2
@@ -82,7 +82,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Key features
 
-- **UD key features** — - Owner must be WNI (Indonesian citizen). - No notarial deed required to form. Optional notarised statement (Surat Keterangan Usaha) from the local kelurahan/kecamatan is still common practice. - NPWP: the owner uses their **personal NPWP (NPWP Orang Pribadi)**; the business is not a separate taxpayer. - NIB (Nomor Induk Berusaha / Business Identification Number) can still be obtained via OSS by selecting "Perseorangan" -- this is now the modern way to formalise a UD. - Tax: profits taxed as personal income under PPh Orang Pribadi at progressive rates (5% / 15% / 25% / 30% / 35% per UU 7/2021 / HPP Law brackets for 2025). - MSME final-tax regime (PP 55/2022 successor to PP 23/2018): individual MSME with gross turnover up to IDR 4.8 billion may elect 0.5% final tax for a limited window (typically 7 years for Orang Pribadi from registration). Effective only on first IDR 500,000,000 of gross turnover per year under the HPP Law amendment for individuals.  _(UU 7/2021 / HPP Law; PP 55/2022 successor to PP 23/2018)_
+- **UD key features** — - Owner must be WNI (Indonesian citizen). - No notarial deed required to form. Optional notarised statement (Surat Keterangan Usaha) from the local kelurahan/kecamatan is still common practice. - NPWP: the owner uses their **personal NPWP (NPWP Orang Pribadi)**; the business is not a separate taxpayer. - NIB (Nomor Induk Berusaha / Business Identification Number) can still be obtained via OSS by selecting "Perseorangan" -- this is now the modern way to formalise a UD. - Tax: profits taxed as personal income under PPh Orang Pribadi at progressive rates (5% / 15% / 25% / 30% / 35% per UU 7/2021 / HPP Law brackets for 2025). - MSME final-tax regime (PP 55/2022 successor to PP 23/2018): individual MSME with gross turnover up to IDR 4.8 billion may elect 0.5% final tax with no time limit since PP 20/2026 (22 April 2026; the old 7-year Orang Pribadi window applied to tax year 2025). Effective only on first IDR 500,000,000 of gross turnover per year under the HPP Law amendment for individuals.  _(UU 7/2021 / HPP Law; PP 55/2022 successor to PP 23/2018)_
 
 ### When to use
 
@@ -144,7 +144,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Tax
 
-- **PT tax** — PPh Badan 22% (UU 7/2021). 50% rate reduction on the portion of taxable income up to IDR 4.8B if gross turnover does not exceed IDR 50B (Pasal 31E UU PPh). Eligible MSME PTs may use PP 55/2022 final-tax regime at 0.5% on turnover up to IDR 4.8B for a limited window (3 years for PT from registration), after which they revert to standard PPh Badan.  _(UU 7/2021; Pasal 31E UU PPh; PP 55/2022)_
+- **PT tax** — PPh Badan 22% (UU 7/2021). 50% rate reduction on the portion of taxable income up to IDR 4.8B if gross turnover does not exceed IDR 50B (Pasal 31E UU PPh). A PT registered before 22 April 2026 may use the PP 55/2022 final-tax regime at 0.5% on turnover up to IDR 4.8B until its 3-year window from registration ends, then reverts to standard PPh Badan; a PT registered from 22 April 2026 cannot use it (PP 20/2026).  _(UU 7/2021; Pasal 31E UU PPh; PP 55/2022 as amended by PP 20/2026; DJP release on PP 20/2026: https://www.pajak.go.id/id/siaran-pers/kanwil-djp-jakarta-timur-sosialisasikan-pp-nomor-20-tahun-2026-bagi-umkm)_
 
 ## Section 7 -- PT Perorangan (Single-Founder Micro/Small PT)
 
@@ -232,7 +232,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Entity | Income tax regime | Statutory rate | Final MSME option (PP 55/2022) | Reporting form |
 | --- | --- | --- | --- | --- |
-| UD / Orang Pribadi | PPh Orang Pribadi (progressive) | 5% / 15% / 25% / 30% / 35% on bands per UU 7/2021 | 0.5% final on turnover up to IDR 4.8B (first IDR 500M tax-free for Orang Pribadi); 7-year window for tax year 2025 (PP 55/2022 Art. 59), no time limit from 22 April 2026 (PP 20/2026, counting the spouse's turnover and any PT Perorangan founded) | SPT Tahunan PPh OP (1770 / 1770S / 1770SS) |
+| UD / Orang Pribadi | PPh Orang Pribadi (progressive) | 5% / 15% / 25% / 30% / 35% on bands per UU 7/2021 | 0.5% final on turnover up to IDR 4.8B (first IDR 500M tax-free for Orang Pribadi); 7-year window for tax year 2025 (PP 55/2022 Art. 59), no time limit from 22 April 2026 (PP 20/2026, counting the spouse's turnover and any PT Perorangan founded) | SPT Tahunan PPh OP (one form from tax year 2025, PER-11/PJ/2025; 1770 / 1770S / 1770SS to 2024) |
 | CV | PPh Badan (CV treated as Badan) | 22% | For tax year 2025: 0.5% final on turnover up to IDR 4.8B with a 4-year window (PP 55/2022 Art. 59). From 22 April 2026 not available to a newly registered CV (PP 20/2026); one registered earlier keeps the regime until its 4-year window ends | SPT Tahunan PPh Badan (1771) |
 | PT (standard) | PPh Badan | 22%; 50% reduction on portion of taxable income up to IDR 4.8B if turnover ≤ IDR 50B (Pasal 31E) | For tax year 2025: 0.5% final on turnover up to IDR 4.8B with a 3-year window (PP 55/2022 Art. 59). From 22 April 2026 not available to a newly registered PT (PP 20/2026); one registered earlier keeps the regime until its 3-year window ends | SPT Tahunan PPh Badan (1771) |
 | PT Perorangan | PPh Badan | 22% | 0.5% final on turnover up to IDR 4.8B; 3-year window for tax year 2025 (PP 55/2022 Art. 59), no time limit from 22 April 2026 (PP 20/2026) | SPT Tahunan PPh Badan (1771) |
@@ -274,7 +274,7 @@ Since 2021, business licensing is centralised through **OSS RBA** at **oss.go.id
 
 ### Option B -- PT Perorangan
 
-- **Option B calculation** — Establishment via AHU portal -- no notaris. Capital agreed: IDR 50,000,000 (illustrative). Tax: PPh Badan 22%, eligible for PP 55/2022 final 0.5% for 3 years. Estimated final tax: 0.5% × 900M = **IDR 4,500,000**. After 3 years, PPh Badan 22% with Pasal 31E 50% reduction on profits up to IDR 4.8B.  _(PP 55/2022; Pasal 31E)_
+- **Option B calculation** — Establishment via AHU portal -- no notaris. Capital agreed: IDR 50,000,000 (illustrative). Tax: PPh Badan 22%, eligible for PP 55/2022 final 0.5% with no time limit while the combined turnover test is met (PP 20/2026). Estimated final tax: 0.5% × 900M = **IDR 4,500,000**. If it leaves the regime, PPh Badan 22% with Pasal 31E 50% reduction on profits up to IDR 4.8B.  _(PP 55/2022 as amended by PP 20/2026; Pasal 31E)_
 
 ### Recommendation
 
@@ -316,13 +316,15 @@ The most up-to-date version is maintained at [openaccountants.com](https://opena
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

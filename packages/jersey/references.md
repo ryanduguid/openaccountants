@@ -18,7 +18,7 @@ Every row is partial. A sourced overview or bounded example does not close the o
 | Formation/reporting | Ordinary incorporation procedure, selected final 2026 fees, statutory small-hours/status rules, annual confirmation and retained accounts/audit/substance checks | Complete entity catalogue/capital/licensing, disputed fee category, direct data-protection rules, regulated and partnership reporting |
 | Cross-border/withholding | Article 118B categories, landlord collection, treaty relief procedure | Dividend deduction detail, treaty-specific benefits, transfer pricing |
 | Capital/property | Ordinary and temporary 2026 transfer bands, selected borrowing/lease charges, EPTT control/valuation and statements, probate duty and recovery distinctions; published 2026 annual parish/island-wide rates, role/use and assessment/demand procedures | Original annual-rate decisions for every parish, complete assessment/revaluation and rounding, complete income/GST interactions, specialist reliefs, disputed methods/authority and operational outputs |
-| Digital assets | Published crypto classification, sterling/GST valuation and CARF boundary | Staking/DeFi/tokens, complete trading analysis and enacted reporting detail |
+| Digital assets | Published crypto classification, sterling/GST valuation and enacted CARF scope, due diligence, notification, return and record rules | Staking/DeFi/tokens, complete trading analysis, current CARF and CRS filing, penalties and licensing |
 | Compliance | Ordinary income-tax return/penalty categories, personal abatements, corrections, assessment/waiver appeals and payment surcharge conditions; distinct registry calendars | Complete personal instalment formula, delegated provisions, enforcement/court procedures and all other regimes |
 
 ## Source register
@@ -158,6 +158,7 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 | S18.13 | [St Ouen 2026 rate minutes: PDF bytes (draft)](https://stouen.je/wp-content/uploads/sites/10/2026/08/20260729-Minutes-Parish-Assembly-Rates-Assembly-29.07.26.pdf) | `3f531581b496b10a3b7eb85bd6c81deef35cab3eb9b98d750b17730c7fad4b11` |
 | S18.14 | [St Peter 2026 rate minutes: PDF bytes](https://stpeter.je/wp-content/uploads/sites/11/2026/09/Parish-Assembly-Minutes-20-07-2026.pdf) | `d5994fee410d4a657f377c9463270e5907ba7f50eaf2ace0915b72dd903ed898` |
 | S18.15 | [St Saviour 2026 rate minutes: PDF bytes](https://stsaviour.je/wp-content/uploads/sites/2/2026/09/Budget-Assembly-16.07.2026-5.pdf) | `c02227cf32786a0a6b41ae6c9a41ed6719ac407b8a1f6e5615cfe59967c0666f` |
+| S19.01 | [Jersey CARF Regulations 2025, consolidation from 1 January 2026](https://www.jerseylaw.je/laws/current/ro_96_2025) | `64fd15237b556ea367a559349c0171e9910b94497a97b56b5238b9a477d86c30` |
 
 ## Material source decisions
 
@@ -205,6 +206,8 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 - Employer registration, ordinary reporting, summaries and estimates retain their distinct statutory conditions. Article 20 annual company filing requires application, qualifying ownership by each relevant employee and Comptroller agreement. Article 41BB notices specify payment at least fifteen days after notice and a separate service-based appeal period; the guidance says pay immediately. No unverified annual-payment calendar or enforcement route is inferred.
 
 ## Period and verification limits
+
+S19.01 is the 1 January 2026 consolidation of R&O.96/2025, checked on 11 November 2026. The provider return and partner-jurisdiction due diligence notification have separate conditions and a 30 June deadline after the relevant calendar year. The guidance page retains conditional implementation language. Use the enacted text and check current forms, jurisdiction lists, reporting treatment and penalties for the case.
 
 S17 LTT/Stamp/EPTT consolidations apply from 1 January 2026, Probate Law from 12 June 2026 and its Forms Order from 27 October 2023. Both transaction Statements Orders apply from 1 January 2023. Only selected operative sections were inspected; the Stamp judicial-fee corpus and Probate Law were not read in full. Stamp duty’s higher replacement applies to duty payable in 2026; no future-year extension is inferred.
 

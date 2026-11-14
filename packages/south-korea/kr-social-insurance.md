@@ -2,15 +2,15 @@
 name: kr-social-insurance
 description: >
   Use this skill whenever asked about South Korean social insurance contributions for self-employed persons. Trigger on phrases like "National Pension Korea", "NPS self-employed", "Korean health insurance", "NHIS self-employed", "long-term care insurance Korea", "Korean social insurance", "4 major insurances Korea", or any question about social insurance obligations for a self-employed client in South Korea. This skill covers National Pension (NPS), National Health Insurance (NHIS), Long-Term Care Insurance, Employment Insurance, and Industrial Accident Insurance as they apply to self-employed individuals. ALWAYS read this skill before touching any Korean social insurance-related work.
-version: 2.0
+version: 2.1
 jurisdiction: KR
 tax_year: 2025
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 category: international
 ---
 
-# South Korea Social Insurance Contributions -- Self-Employed Skill v2.0
+# South Korea Social Insurance Contributions -- Self-Employed Skill v2.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -30,26 +30,31 @@ Read this whole section before computing anything.
 | Contributor | Open Accountants |
 | Validated By | Pending -- licensed Korean practitioner sign-off required |
 | Validation Date | Pending |
-| Skill Version | 2.0 |
+| Skill Version | 2.1 |
 | Confidence Coverage | Tier 1: NPS rate/ceiling, NHIS rate, LTCI rate, payment schedule, tax deductibility. Tier 2: NHIS property-based assessment, income reclassification, voluntary employment insurance. Tier 3: disability exemptions, international social security agreements, arrears disputes. |
 
-**NPS key figures (2025):**
+**NPS key figures (2025 and 2026):**
 
 | Item | Value |
 |---|---|
-| Total contribution rate | 9.0% of monthly income |
-| Self-employed share | 9.0% (full amount, no employer) |
+| Total contribution rate (2025) | 9.0% of monthly income |
+| Total contribution rate (2026) | 9.5% of monthly income |
+| Self-employed share | Full rate (9.0% in 2025, 9.5% in 2026; no employer) |
 | Monthly income floor (Jan-Jun 2025) | KRW 390,000 |
 | Monthly income ceiling (Jan-Jun 2025) | KRW 6,170,000 |
 | Monthly income floor (Jul 2025-Jun 2026) | KRW 400,000 |
 | Monthly income ceiling (Jul 2025-Jun 2026) | KRW 6,370,000 |
-| From 2026 | Rate increases to 9.5%, rising 0.5%/year to 13.0% by 2033 |
+| Monthly income floor (Jul 2026-Jun 2027) | KRW 410,000 |
+| Monthly income ceiling (Jul 2026-Jun 2027) | KRW 6,590,000 |
+| After 2026 | Rate rises 0.5 percentage points a year to 13.0% by 2033 |
+
+Source for 2026: NPS contribution guidance, https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0038M0.do (2026 floor, ceiling and worked example of KRW 100,700 on KRW 1,060,000 = 9.5%; read 31 October 2026).
 
 **Four major social insurances overview:**
 
 | Insurance | Applies to Self-Employed? | Self-Employed Pays |
 |---|---|---|
-| National Pension (NPS) | YES -- mandatory ages 18-59 | Full 9% |
+| National Pension (NPS) | YES -- mandatory ages 18-59 | Full rate (9% in 2025; 9.5% in 2026) |
 | National Health Insurance (NHIS) | YES -- mandatory for all residents | Full contribution (income + property based) |
 | Long-Term Care Insurance (LTCI) | YES -- add-on to NHIS | 12.95% of NHIS premium |
 | Employment Insurance | NO (voluntary opt-in available) | N/A unless enrolled |
@@ -76,7 +81,7 @@ Read this whole section before computing anything.
 
 | Ambiguity | Default |
 |---|---|
-| Unknown monthly income | Use NPS floor (KRW 400,000 from Jul 2025) |
+| Unknown monthly income | Use NPS floor (KRW 400,000 Jul 2025-Jun 2026; KRW 410,000 from Jul 2026) |
 | Unknown NHIS property/vehicle data | Flag for reviewer -- cannot compute without data |
 | Unknown employment status | Treat as self-employed (community insured) |
 | Unknown age for NPS | Assume mandatory (age 18-59) |
@@ -150,21 +155,25 @@ This is the deterministic pre-classifier for bank statement entries related to s
 
 Legislation: National Pension Act
 
-Self-employed pay the full 9%. There is no employer to share the burden. Income is self-reported to NPS. NPS may adjust based on tax return data.
+Self-employed pay the full rate (9% in 2025, 9.5% in 2026). There is no employer to share the burden. Income is self-reported to NPS. NPS may adjust based on tax return data.
 
 Ages 18 to 59 are mandatory. Persons aged 60-64 may voluntarily continue. Exemptions (for no income, students, military) must be applied for -- they are not automatic.
 
 ### 4.2 NPS computation (Tier 1)
 
 ```
-Monthly NPS = clamp(reported_monthly_income, floor, ceiling) x 9%
+Monthly NPS = clamp(reported_monthly_income, floor, ceiling) x rate (9% in 2025; 9.5% in 2026)
 ```
 
 | Example Monthly Income | Period | NPS Base | Monthly NPS |
 |---|---|---|---|
-| KRW 3,000,000 | Jul 2025+ | KRW 3,000,000 | KRW 270,000 |
-| KRW 8,000,000 | Jul 2025+ | KRW 6,370,000 (capped) | KRW 573,300 |
-| KRW 300,000 | Jul 2025+ | KRW 400,000 (floor) | KRW 36,000 |
+| KRW 3,000,000 | Jul-Dec 2025 | KRW 3,000,000 | KRW 270,000 |
+| KRW 8,000,000 | Jul-Dec 2025 | KRW 6,370,000 (capped) | KRW 573,300 |
+| KRW 300,000 | Jul-Dec 2025 | KRW 400,000 (floor) | KRW 36,000 |
+| KRW 8,000,000 | Jan-Jun 2026 | KRW 6,370,000 (capped) | KRW 605,150 |
+| KRW 3,000,000 | Jul 2026+ | KRW 3,000,000 | KRW 285,000 |
+| KRW 8,000,000 | Jul 2026+ | KRW 6,590,000 (capped) | KRW 626,050 |
+| KRW 300,000 | Jul 2026+ | KRW 410,000 (floor) | KRW 38,950 |
 
 ### 4.3 NHIS computation -- community insured (Tier 2)
 
@@ -295,15 +304,15 @@ Action Required: Do not advise. Refer to licensed Korean practitioner. Document 
 ## Section 9 -- Test suite
 
 ### Test 1 -- Standard self-employed, income KRW 3,000,000/month
-Input: Age 35, monthly income KRW 3,000,000, period Jul 2025+.
+Input: Age 35, monthly income KRW 3,000,000, period Jul-Dec 2025.
 Expected output: NPS = KRW 3,000,000 x 9% = KRW 270,000/month. NHIS = requires property/vehicle data (flag Tier 2). LTCI = NHIS premium x 12.95%.
 
 ### Test 2 -- Income above NPS ceiling
-Input: Age 40, monthly income KRW 8,000,000, period Jul 2025+.
+Input: Age 40, monthly income KRW 8,000,000, period Jul-Dec 2025.
 Expected output: NPS base capped at KRW 6,370,000. NPS = KRW 573,300/month.
 
 ### Test 3 -- Income below NPS floor
-Input: Age 25, monthly income KRW 300,000, period Jul 2025+.
+Input: Age 25, monthly income KRW 300,000, period Jul-Dec 2025.
 Expected output: NPS base raised to floor KRW 400,000. NPS = KRW 36,000/month. Client may apply for exemption.
 
 ### Test 4 -- Age 60, NPS cessation
@@ -326,6 +335,14 @@ Expected output: Jan-Jun: NPS base = KRW 6,170,000 (capped). NPS = KRW 555,300/m
 Input: NHIS monthly premium = KRW 350,000.
 Expected output: LTCI = KRW 350,000 x 12.95% = KRW 45,325/month. Total health insurance = KRW 395,325/month.
 
+### Test 9 -- 2026 rate and July 2026 ceiling
+Input: Age 40, monthly income KRW 8,000,000, full year 2026.
+Expected output: Jan-Jun: NPS base = KRW 6,370,000 (capped). NPS = KRW 6,370,000 x 9.5% = KRW 605,150/month. Jul-Dec: NPS base = KRW 6,590,000 (capped). NPS = KRW 6,590,000 x 9.5% = KRW 626,050/month.
+
+### Test 10 -- Income below the July 2026 floor
+Input: Age 25, monthly income KRW 300,000, period Jul 2026+.
+Expected output: NPS base raised to floor KRW 410,000. NPS = KRW 410,000 x 9.5% = KRW 38,950/month. Client may apply for exemption.
+
 ---
 
 ## Section 10 -- Prohibitions and disclaimer
@@ -333,7 +350,7 @@ Expected output: LTCI = KRW 350,000 x 12.95% = KRW 45,325/month. Total health in
 ### Prohibitions
 
 - NEVER compute NPS without knowing the client's monthly reported income
-- NEVER apply the employee NPS rate (4.5%) to a self-employed person -- self-employed pay the full 9%
+- NEVER apply the employee NPS rate (4.5% in 2025, 4.75% in 2026) to a self-employed person -- self-employed pay the full rate (9% in 2025, 9.5% in 2026)
 - NEVER compute NHIS for a self-employed person using only the 7.09% rate -- the community insured calculation requires income, property, and vehicle data
 - NEVER tell a client that employment insurance or industrial accident insurance is mandatory for self-employed -- it is voluntary (with limited exceptions)
 - NEVER ignore the NPS ceiling change that occurs every July
@@ -355,13 +372,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

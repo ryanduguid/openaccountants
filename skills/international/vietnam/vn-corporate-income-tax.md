@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Vietnam (tax year 202
 jurisdiction: VN
 category: international
 tax_year: 2025
-last_updated: 2026-10-11
-version: 1.2
+last_updated: 2026-11-10
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,6 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate income tax rates
 
+- **CIT exemption - total annual revenue of VND 1 billion or less** — From the 2026 tax period, the income of an enterprise or organisation established under Vietnamese law with total annual revenue of VND 1 billion or less is exempt from CIT. Revenue means sales and services revenue (before revenue deductions), financial income and other income on the prior year's CIT finalisation, annualised where the prior year was shorter than 12 months. A new enterprise expecting VND 1 billion or less makes no provisional payments and, if actual revenue exceeds VND 1 billion, files and finalises without late-payment interest. The exemption does not apply to a subsidiary or associated company whose associated enterprise does not itself qualify. Above VND 1 billion the 15% band below applies  _(Law on Corporate Income Tax No. 67/2025/QH15, art. 4.14a, added by Law No. 09/2026/QH16, art. 3 (in force from 1 January 2026, art. 5.2): https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/5/09-qh.signed.pdf; Decree 320/2025/NĐ-CP, art. 4.15, added by Decree 141/2026/NĐ-CP, art. 2 (in force from 1 January 2026, art. 3; transitional rules in art. 4.2 and 4.3): https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/141-ndcp.signed.pdf)_
 - **Standard CIT rate** — 20%; 15% for enterprises with total annual revenue up to VND 3 billion and 17% from over VND 3 billion to VND 50 billion, measured on the preceding period's revenue  _(Law on Corporate Income Tax No. 67/2025/QH15 (in force 1 October 2025, applying from the 2025 tax period), art. 10 — https://thuvienphapluat.vn/van-ban/Doanh-nghiep/Law-67-2025-QH15-on-Corporate-Income-Tax-664714.aspx)_
 - **Reduced rate - revenue not exceeding VND 3 billion** — 15%  _(Law No. 67/2025/QH15; [Vietnamese Government, policy portal](https://xaydungchinhsach.chinhphu.vn/thue-suat-thue-thu-nhap-doanh-nghiep-moi-ap-dung-tu-1-10-2025-119250730082233732.htm))_
 - **Reduced rate - revenue over VND 3 billion to VND 50 billion** — 17%  _(Law No. 67/2025/QH15; [Vietnamese Government, policy portal](https://xaydungchinhsach.chinhphu.vn/thue-suat-thue-thu-nhap-doanh-nghiep-moi-ap-dung-tu-1-10-2025-119250730082233732.htm))_
@@ -47,13 +48,15 @@ Vietnam taxes cross-border payments to foreign parties mainly through the Foreig
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

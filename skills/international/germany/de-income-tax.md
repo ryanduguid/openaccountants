@@ -2,18 +2,18 @@
 name: de-income-tax
 description: >
   Use this skill whenever asked about German income tax (Einkommensteuer) for self-employed individuals (Freiberufler or Gewerbetreibende). Trigger on phrases like "how much tax do I pay in Germany", "Einkommensteuer", "Einkommensteuererklarung", "Anlage S", "Anlage G", "Anlage EUR", "Freiberufler tax", "Gewerbetreibende", "Solidaritatszuschlag", "Kirchensteuer", "Vorauszahlungen", "Betriebsausgaben", "AfA", "Abschreibung", "hausliches Arbeitszimmer", "Fahrtkosten", "Bewirtungskosten", "Grundfreibetrag", or any question about filing or computing income tax for a self-employed client in Germany. Covers Einkommensteuer progressive rates, Solidaritatszuschlag, Kirchensteuer, Anlage S/G/EUR structure, allowable Betriebsausgaben, AfA depreciation, home office, vehicle expenses, quarterly Vorauszahlungen, Gewerbesteuer credit, and interaction with Umsatzsteuer. ALWAYS read this skill before touching any German income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: DE
 tax_year: 2025
 tier: 2
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 category: international
 depends_on:
   - income-tax-workflow-base
 verified_by: pending
 ---
 
-# Germany Income Tax (Einkommensteuer) -- Self-Employed Skill v2.0
+# Germany Income Tax (Einkommensteuer) -- Self-Employed Skill v2.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -35,7 +35,7 @@ verified_by: pending
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a German Steuerberater |
 | Validation date | Pending |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Tax Rate Brackets (2025)
 
@@ -46,6 +46,18 @@ verified_by: pending
 | 17,444 -- 68,480 | 24% -- 42% | Progressive zone 2 (linear-progressive) |
 | 68,481 -- 277,825 | 42% | Proportionalzone (flat) |
 | 277,826+ | 45% | Reichensteuer (top income tax bracket, §32a(1) no. 5 EStG) |
+
+### Tax Rate Brackets (2026)
+
+| Taxable Income (EUR) | Rate | Notes |
+|---|---|---|
+| 0 -- 12,348 | 0% | Grundfreibetrag: tax 0 |
+| 12,349 -- 17,799 | 14% -- 24% | (914.51 × y + 1,400) × y, y = (zvE − 12,348) / 10,000 |
+| 17,800 -- 69,878 | 24% -- 42% | (173.10 × z + 2,397) × z + 1,034.87, z = (zvE − 17,799) / 10,000 |
+| 69,879 -- 277,825 | 42% | 0.42 × zvE − 11,135.63 |
+| 277,826+ | 45% | 0.45 × zvE − 19,470.38 |
+
+Round zvE down to whole euros before applying the formula, and round the resulting tax down to whole euros (§ 32a Abs. 1 Sätze 1 and 6 EStG).
 
 Source: § 32a Abs. 1 EStG in the version for the 2025 assessment period (Steuerfortentwicklungsgesetz of 23 December 2024, BGBl. 2024 I Nr. 449); the consolidated text at https://www.gesetze-im-internet.de/estg/__32a.html shows the 2026 tariff (Grundfreibetrag EUR 12,348; zone limits EUR 17,799, 69,878 and 277,825).
 
@@ -588,13 +600,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

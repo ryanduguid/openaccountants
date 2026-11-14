@@ -1,11 +1,11 @@
 ---
 name: south-korea-vat
-description: Use this skill whenever asked to prepare, review, or classify transactions for a South Korea VAT return (부가가치세 신고서) for any business operator. Trigger on phrases like "prepare Korean VAT return", "Korean VAT", "HomeTax filing", "e-tax invoice", "전자세금계산서", "부가가치세", or any request involving South Korea VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete South Korea VAT classification rules, return form mappings, deductibility rules, reverse charge treatment, simplified taxation thresholds, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any South Korea VAT-related work.
-version: 2.0
+description: Use this skill whenever asked to prepare, review, or classify transactions for a South Korea VAT return (부가가치세 신고서) for any business operator. Trigger on phrases like "prepare Korean VAT return", "Korean VAT", "HomeTax filing", "e-tax invoice", "전자세금계산서", "부가가치세", or any request involving South Korea VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete South Korea VAT classification rules, return form mappings, deductibility rules, proxy payment (대리납부) on imported services, simplified taxation thresholds, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any South Korea VAT-related work.
+version: 2.1
 jurisdiction: KR
 category: international
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 reviewed_by: Yeong Min Lee
 review_status: pending_review
 tier: 1
@@ -29,13 +29,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | https://hometax.go.kr (HomeTax / 홈택스) |
 | Authority | National Tax Service (국세청, NTS) |
 | Currency | KRW (Korean Won) |
-| Filing frequency | Semi-annual with quarterly preliminary returns (general taxpayer); annual, with a July 25 exception (simplified taxpayer) |
+| Filing frequency | Semi-annual (general taxpayer), with quarterly preliminary returns only for corporations whose prior-period supply value was KRW 150M or more; other general taxpayers pay an NTS-notified 50% instalment (예정고지); annual, with a July 25 exception (simplified taxpayer) |
 | E-invoice requirement | 전자세금계산서 (e-tax invoice) mandatory for all corporations and individual taxpayers with revenue >= KRW 80M |
 | Primary legislation | VAT Act (부가가치세법, as amended); VAT Act Enforcement Decree (시행령); Framework Act on National Taxes (국세기본법) |
 | Contributor | Open Accounting Skills Registry |
 | Validated by | Deep research verification, April 2026 |
 | Validation date | April 2026 |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 Read this whole section before classifying anything.
 
@@ -71,10 +71,12 @@ Read this whole section before classifying anything.
 
 | Period | Type | Covers | Deadline |
 | --- | --- | --- | --- |
-| Period 1 Preliminary | Preliminary return | Jan 1 - Mar 31 | April 25 |
+| Period 1 Preliminary | Preliminary return (corporations at or above KRW 150M; see note) | Jan 1 - Mar 31 | April 25 |
 | Period 1 Final | Confirmed return | Jan 1 - Jun 30 | July 25 |
-| Period 2 Preliminary | Preliminary return | Jul 1 - Sep 30 | October 25 |
+| Period 2 Preliminary | Preliminary return (corporations at or above KRW 150M; see note) | Jul 1 - Sep 30 | October 25 |
 | Period 2 Final | Confirmed return | Jul 1 - Dec 31 | January 25 (following year) |
+
+Preliminary returns are required only of corporations whose supply value for the preceding taxable period was KRW 150M or more. Individual general taxpayers and corporations below KRW 150M have no preliminary filing duty: NTS issues a notice (예정고지서, April and October) for 50% of the preceding period's tax, which is credited at the final return. No notice is issued where the amount is under KRW 500,000 or the taxpayer converted from simplified to general at the start of the taxable period. A notified taxpayer may file a preliminary return instead where business is suspended or results have deteriorated, or to claim an early refund; the notice is then cancelled. Source: NTS guidance: https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2273&cntntsId=7694.
 
 **Filing deadlines -- simplified taxpayer**
 
@@ -96,7 +98,7 @@ Source: NTS guidance: https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId
 | Unknown business-use proportion (vehicle, phone) | 0% recovery |
 | Unknown blocked-input status (entertainment, personal, vehicle) | Blocked |
 | Unknown whether transaction is in scope | In scope at 10% |
-| Unknown foreign SaaS billing entity | Reverse charge from non-resident |
+| Unknown foreign SaaS billing entity | Non-resident supplier; Art. 52 proxy payment only for exempt or non-deductible use |
 | Unknown whether e-tax invoice exists | Not deductible (no invoice = no credit) |
 
 **Red flag thresholds**
@@ -237,26 +239,26 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | 술집, BAR, 호프, 노래방 | Default BLOCK | Same |
 | 슈퍼마켓, 마트 (personal provisioning) | Default BLOCK | Unless hospitality/catering business |
 
-### 3.8 SaaS -- foreign suppliers (reverse charge)
+### 3.8 SaaS -- foreign suppliers (proxy payment, Article 52)
 
-- **Reverse charge on foreign SaaS** — Korean businesses receiving services from non-residents self-assess VAT at 10% under Article 52 (reverse charge / 대리납부). Both output and input VAT reported; net effect zero for fully taxable businesses.  _(Article 52)_
+- **Proxy payment (대리납부) on foreign SaaS** — A buyer of services from a foreign supplier (국외사업자: a non-resident or foreign corporation without a Korean place of business, or one with a Korean place of business that supplies the service unconnected with it, in the cases set by Presidential Decree) must withhold 10% VAT when paying, unless it uses the service in its taxable business. Services whose input tax is not deductible under Article 39 stay within proxy payment. A taxable business using the service for its taxable supplies, with deductible input, has no Article 52 entry: record the expense with no VAT line. Proxy payment applies to exempt business use (면세사업) and non-deductible use (for example entertainment or non-business use); see Section 5.7.  _([VAT Act Art. 52(1)-(2)](https://www.law.go.kr/법령/부가가치세법/제52조))_
 
 **SaaS suppliers table**
 
 | Pattern | Billing entity | Treatment | Notes |
 | --- | --- | --- | --- |
-| GOOGLE (Ads, Workspace, Cloud) | Google Asia Pacific Pte Ltd (SG) or Google LLC (US) | Reverse charge 10% | Self-assess output + input. Net zero if fully taxable. |
-| MICROSOFT (365, Azure) | Microsoft Corp (US) or regional entity | Reverse charge 10% | Same |
-| ADOBE | Adobe Inc (US) | Reverse charge 10% | Same |
-| META, FACEBOOK ADS | Meta Platforms Inc (US) | Reverse charge 10% | Same |
-| AWS, AMAZON WEB SERVICES | Amazon Web Services Inc (US) | Reverse charge 10% | Same |
-| SLACK, NOTION, FIGMA | US entities | Reverse charge 10% | Same |
-| ANTHROPIC, OPENAI, CHATGPT | US entities | Reverse charge 10% | Same |
-| ZOOM | Zoom Video Communications Inc (US) | Reverse charge 10% | Same |
-| ATLASSIAN (Jira, Confluence) | Atlassian Pty Ltd (AU) or US entity | Reverse charge 10% | Same |
-| GITHUB | GitHub Inc (US) | Reverse charge 10% | Same |
+| GOOGLE (Ads, Workspace, Cloud) | Google Asia Pacific Pte Ltd (SG) or Google LLC (US) | Art. 52 test | No VAT entry if used in a taxable business with deductible input. 10% proxy payment if used in exempt business or non-deductible. |
+| MICROSOFT (365, Azure) | Microsoft Corp (US) or regional entity | Art. 52 test | Same |
+| ADOBE | Adobe Inc (US) | Art. 52 test | Same |
+| META, FACEBOOK ADS | Meta Platforms Inc (US) | Art. 52 test | Same |
+| AWS, AMAZON WEB SERVICES | Amazon Web Services Inc (US) | Art. 52 test | Same |
+| SLACK, NOTION, FIGMA | US entities | Art. 52 test | Same |
+| ANTHROPIC, OPENAI, CHATGPT | US entities | Art. 52 test | Same |
+| ZOOM | Zoom Video Communications Inc (US) | Art. 52 test | Same |
+| ATLASSIAN (Jira, Confluence) | Atlassian Pty Ltd (AU) or US entity | Art. 52 test | Same |
+| GITHUB | GitHub Inc (US) | Art. 52 test | Same |
 
-**Note:** For B2C digital services, non-resident providers (Netflix, Spotify, Apple) register under the simplified registration scheme (Article 53-2) and collect VAT directly from Korean consumers. B2B clients receiving from these providers still self-assess under reverse charge.
+**Note:** For B2C digital services, non-resident providers (Netflix, Spotify, Apple) register under the simplified registration scheme (Article 53-2) and collect VAT directly from Korean consumers. Business buyers apply the Article 52 test above: no entry for taxable use with deductible input; proxy payment for exempt or non-deductible use.
 
 ### 3.9 Payment processors
 
@@ -268,7 +270,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | KG이니시스, INICIS | EXCLUDE (exempt) | Same |
 | NHN한국사이버결제, KCP | EXCLUDE (exempt) | Same |
 | PAYPAL (transaction fees) | EXCLUDE (exempt) | Payment processing, financial service |
-| STRIPE (transaction fees) | EXCLUDE (exempt) or reverse charge | If billed from US: imported financial service. Transaction fees may be exempt. |
+| STRIPE (transaction fees) | EXCLUDE (exempt) or Art. 52 test | If billed from US: imported financial service. Transaction fees may be exempt. |
 
 ### 3.10 Professional services (Korea)
 
@@ -340,19 +342,19 @@ IT consulting services to US company earning foreign currency. Zero-rated under 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2026.04.10 | ACME CORP (US) | +10,800,000 | +10,800,000 | 0 | 0% | 2 / 10 | Y | Verify service qualifies as foreign currency earning |
 
-### Example 3 -- Reverse charge on imported SaaS (US provider)
+### Example 3 -- Imported SaaS used in a taxable business (US provider, no proxy payment)
 
 **Input line:**
 `2026.04.15 ; NOTION LABS INC ; 출금 ; Monthly subscription ; USD 16 ; KRW 21,600`
 
 **Reasoning:**
-Notion Labs Inc is US entity. No Korean VAT charged. Reverse charge under Article 52. Self-assess output VAT KRW 2,160 (10% of KRW 21,600). Claim input VAT KRW 2,160. Net effect zero for fully taxable business.
+Notion Labs Inc is a US entity with no Korean place of business. No Korean VAT charged. The consultant uses the subscription in a taxable business and its input tax is not blocked by Article 39, so Article 52(1) excludes it from proxy payment. Record the expense with no VAT entry. If the buyer were an exempt business (면세사업자) or the use non-deductible, it would withhold KRW 2,160 (10% of KRW 21,600) under Article 52 and pay it with a 대리납부신고서, with no input credit.
 
 **Output table**
 
 | Date | Counterparty | Gross | Net | VAT (output) | VAT (input) | Rate | Line | Default? | Question? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026.04.15 | NOTION LABS INC | -21,600 | -21,600 | +2,160 | -2,160 | 10% | Reverse charge adj. | N | -- |
+| 2026.04.15 | NOTION LABS INC | -21,600 | -21,600 | 0 | 0 | -- | No VAT entry (Art. 52 excluded) | N | -- |
 
 ### Example 4 -- Entertainment expense, input blocked
 
@@ -420,9 +422,9 @@ Office supplies purchased with corporate credit card. No e-tax invoice obtained.
 
 - **Blocked input VAT categories** — Entertainment of any kind (접대비) -- absolute block, Art. 39(1)4. Non-business passenger vehicles (비영업용 소형승용차) including purchase, lease, fuel, repair, insurance -- Art. 39(1)5. Exceptions for vehicles: taxi, rental car operators, driving schools, freight transport, vehicle sales/repair, hearse. Non-business expenses -- Art. 39(1)1. Purchases without proper tax invoice -- Art. 39(1)2. Land acquisition costs -- Art. 39(1)6. Input tax on exempt supplies -- Art. 39(1)7. Pre-registration expenses beyond 20-day lookback -- Art. 39(1)8. Blocked categories override partial exemption. Check blocked status FIRST.  _(Article 39)_
 
-### 5.7 Reverse charge on imported services (Article 52)
+### 5.7 Proxy payment on imported services (Article 52)
 
-- **Reverse charge imported services** — Korean business receives services from non-resident with no Korean PE: self-assess VAT at 10%. Report as both output tax (additional) and input tax (deductible). Net effect zero for fully taxable businesses. File and pay via HomeTax by the 25th of the month following quarter end. If business makes exempt supplies, reverse charge input tax is subject to partial apportionment.  _(Article 52)_
+- **Proxy payment (대리납부) on imported services** — Applies when a buyer receives services from a 국외사업자 (a non-resident or foreign corporation with no Korean place of business, or one whose Korean place of business is not connected with the supply, in the cases set by Presidential Decree) and uses them in exempt business, or their input tax is not deductible under Article 39. The buyer withholds 10% VAT when paying, files a 대리납부신고서 and pays by the preliminary or final return deadline (Art. 52(2), applying Art. 48(2) and 49(2)). Services used in a taxable business with deductible input are excluded: no output or input entry. For mixed taxable and exempt use, confirm the apportionment rule in the Enforcement Decree before filing.  _([VAT Act Art. 52(1)-(2)](https://www.law.go.kr/법령/부가가치세법/제52조))_
 
 ### 5.8 Simplified taxpayer regime (Articles 61-68)
 
@@ -454,7 +456,7 @@ Office supplies purchased with corporate credit card. No e-tax invoice obtained.
 
 ### 6.3 Ambiguous SaaS billing entity
 
-*Pattern:* Google, Microsoft, Adobe, Meta, Amazon where billing entity unclear. *Default:* reverse charge from non-resident. *Question:* "Can you check the invoice? I need the legal entity name and whether Korean VAT was charged."
+*Pattern:* Google, Microsoft, Adobe, Meta, Amazon where billing entity unclear. *Default:* non-resident supplier; apply the Article 52 test (Section 3.8). *Question:* "Can you check the invoice? I need the legal entity name and whether Korean VAT was charged."
 
 ### 6.4 Round-number incoming transfers from owner-named counterparties
 
@@ -585,7 +587,7 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 
 ### 9.10 Cross-border digital services
 
-- **Cross-border digital services inference** — *Inference rule:* SaaS debits to foreign names. *Fallback question:* "Do you subscribe to foreign digital services (SaaS, cloud)? (Reverse charge may apply.)"
+- **Cross-border digital services inference** — *Inference rule:* SaaS debits to foreign names. *Fallback question:* "Do you subscribe to foreign digital services (SaaS, cloud)? (Article 52 proxy payment applies if used in exempt business or non-deductible.)"
 
 ## Section 10 -- Reference material
 
@@ -613,10 +615,11 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 
 ### Change log
 
+- **v2.1 (November 2026):** Preliminary returns limited to corporations at or above KRW 150M, with 예정고지 for other general taxpayers (Section 1). Article 52 proxy payment limited to exempt or non-deductible use (Sections 3.8 and 5.7, Example 3).
 - **v2.0 (April 2026):** Full rewrite to Malta v2.0 structure. Quick reference at top (Section 1) with 10% rate, semi-annual filing, e-tax invoice requirements, and conservative defaults. Supplier pattern library restructured as literal lookup tables (Section 3) with Korean vendors. Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue added (Section 6). Excel template specification added (Section 7). Korean bank statement reading guide (거래내역) added (Section 8). Onboarding fallback with inference rules (Section 9).
 - **v1.0 (April 2026):** Previous version with full monolithic structure.
 
-### Self-check (v2.0)
+### Self-check (v2.1)
 
 1. Quick reference at top with 10% rate and e-tax invoice requirements: yes (Section 1).
 2. Semi-annual filing with quarterly preliminary returns explicit: yes (Section 1).
@@ -630,11 +633,11 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 10. Onboarding as fallback with inference rules: yes (Section 9, 10 items).
 11. Entertainment hard-block (접대비, Art. 39(1)4) explicit: yes (Section 5.6, Example 4).
 12. Vehicle hard-block (비영업용 소형승용차, Art. 39(1)5) explicit: yes (Section 5.6, Example 5).
-13. Reverse charge on imported services (Art. 52) explicit: yes (Section 5.7, Example 3).
+13. Proxy payment on imported services (Art. 52) explicit: yes (Section 3.8, Section 5.7, Example 3).
 14. Credit card input deduction without e-tax invoice (Line 14) explicit: yes (Section 5.5, Example 6).
 15. Refusal catalogue present: yes (Section 2, R-KR-1 through R-KR-6).
 
-## End of South Korea VAT Return Skill v2.0
+## End of South Korea VAT Return Skill v2.1
 
 ## Disclaimer
 
@@ -648,13 +651,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

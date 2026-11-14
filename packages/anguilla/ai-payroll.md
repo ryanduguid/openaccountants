@@ -17,8 +17,8 @@ category: payroll
 tax_year: 2022
 tax_year_notes: "Unofficial consolidation as at 31 December 2022; operative law requires verification"
 tier: 2
-last_updated: 2026-10-12
-version: 0.3
+last_updated: 2026-11-10
+version: 0.4
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -32,6 +32,8 @@ depends_on:
 Establish the operative law, employment classification, monthly remuneration and employer status before calculating Universal Social Levy (USL). This companion covers an ordinary monthly employer/employee case and the supported statutory branches. Load `workflow-base` for the procedure, four outputs, questions and universal refusals. A qualified professional reviews each position before filing or payment.
 
 Self-employed USL, Social Security contributions, non-monthly conversion, concurrent employments, disputed worker status, benefit valuation, assessments, penalties, appeals and cross-border employment need their complete applicable sources. A salary label or company-director title does not alone resolve every classification. Keep employer and employee liabilities separate.
+
+Use the [Anguilla source register](references.md#social-security-contribution-guidance) for separate 2026 Social Security Board guidance. The register also records ordinary income tax scope and the tax residence programme. The USL examples below retain their 31 December 2022 source period.
 
 ## Period coverage and source currency
 

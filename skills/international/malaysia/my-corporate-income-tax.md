@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Malaysia (tax year 20
 jurisdiction: MY
 category: international
 tax_year: 2025
-last_updated: 2026-10-11
-version: 1.2
+last_updated: 2026-11-10
+version: 1.3
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: pending_review
 tier: 2
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Resident SME rate — chargeable income above RM600,000** — 24%  _(Income Tax Act 1967, Schedule 1)_
 - **SME eligibility criteria** — Resident company with paid-up ordinary share capital of RM2.5 million or less at the start of the basis period AND gross business income not exceeding RM50 million (plus shareholding/group conditions)  _(Income Tax Act 1967, Schedule 1 / Paragraph 2A-2D, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Tax base** — Income accruing in or derived from Malaysia (territorial); foreign-source income generally exempt unless specifically taxable  _(Income Tax Act 1967, Section 3)_
-- **Dividend taxation (corporate level)** — Single-tier system — dividends paid by Malaysian companies are not taxed again in the shareholder's hands and carry no withholding tax  _(Income Tax Act 1967)_
+- **Dividend taxation (corporate level)** — Single-tier system — dividends paid by Malaysian companies are paid from profits already taxed at company level and carry no withholding tax. From YA 2025, individual shareholders (resident and non-resident) pay Dividend Tax of 2% on dividend income above RM100,000 a year; see `my-income-tax`  _(Income Tax Act 1967; Schedule 1, Part XXII and P.U. (A) 148/2025, per LHDN, Explanatory Notes Form B YA 2025, item B8: https://www.hasil.gov.my/wp-content/uploads/explanatorynotes_b2025_1.pdf)_
 - **Domestic top-up tax (QDMTT) under Pillar Two** — 15% minimum effective rate for in-scope multinational groups, financial years on or after 1 January 2025  _(Income Tax Act 1967 (Finance Act / Multinational Top-up Tax provisions))_
 
 ## Withholding tax and corporate filing
@@ -43,13 +43,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

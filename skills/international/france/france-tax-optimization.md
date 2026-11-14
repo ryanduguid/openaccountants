@@ -1,10 +1,10 @@
 ---
 name: france-tax-optimization
 description: Use this skill whenever asked about reducing tax in France, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in France. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "payer moins d'impôts", "optimisation fiscale", "réduire ses impôts", "défiscalisation". ALWAYS read this skill before advising on any French tax optimization strategy.
-version: 1.0
+version: 1.1
 jurisdiction: FR
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -27,17 +27,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
 | Filing deadline | Typically May-June of the following year (varies by département and filing method) |
 
-### Income Tax Rates 2026 (Barème progressif)
+### Income Tax Rates for 2025 Income, Taxed in 2026 (Barème progressif)
 
-**Income Tax Rates 2026 (Barème progressif)**
+**Income Tax Rates for 2025 Income, Taxed in 2026 (Barème progressif)**
 
 | Tranche | Taxable income per part (EUR) | Rate |
 | --- | --- | --- |
-| 1 | 0 -- 11,497 | 0% |
-| 2 | 11,498 -- 29,315 | 11% |
-| 3 | 29,316 -- 83,823 | 30% |
-| 4 | 83,824 -- 180,294 | 41% |
-| 5 | 180,295+ | 45% |
+| 1 | 0 -- 11,600 | 0% |
+| 2 | 11,601 -- 29,579 | 11% |
+| 3 | 29,580 -- 84,577 | 30% |
+| 4 | 84,578 -- 181,917 | 41% |
+| 5 | 181,918+ | 45% |
+
+*Barème for income of 2025, taxed in 2026 (LF 2026, art. 4; art. 197 CGI). The 11,497 / 29,315 / 83,823 / 180,294 limits are the barème for 2024 income. Source: BOFiP, BOI-IR-LIQ-20-10 — https://bofip.impots.gouv.fr/bofip/2491-PGP.html*
 
 Income is divided by the number of parts (quotient familial): 1 per adult, 0.5 per dependent child (1 for the 3rd child onwards). This mechanism itself is a powerful income-splitting tool.
 
@@ -49,10 +51,12 @@ Income is divided by the number of parts (quotient familial): 1 per adult, 0.5 p
 
 | Factor | Micro-Entreprise (micro-BIC / micro-BNC) | Régime Réel |
 | --- | --- | --- |
-| Turnover ceiling (2026) | EUR 77,700 (services/BNC) / EUR 188,700 (goods/BIC) | No limit |
+| Turnover ceiling (2026 to 2028) | EUR 83,600 (services/BNC) / EUR 203,100 (goods/BIC); EUR 77,700 / EUR 188,700 for 2025 | No limit |
 | Taxation method | Flat abatement: 34% (BNC) or 50% (BIC services) or 71% (BIC goods) | Actual expenses deducted |
 | When to choose réel | When actual deductible expenses exceed the flat abatement | Always compare before choosing |
 | Social contributions | Based on turnover (micro) vs net profit (réel) | Réel may be lower if expenses are high |
+
+*Micro ceilings revised on 1 January 2026 for 2026 to 2028. Sources: Urssaf, 2026 : modification des seuils — https://www.autoentrepreneur.urssaf.fr/portail/accueil/sinformer-sur-le-statut/toutes-les-actualites/2026--modification-des-seuils-de.html; BOFiP, ACTU-2025-00127 — https://bofip.impots.gouv.fr/bofip/14765-PGP.html/ACTU-2025-00127*
 
 - **Legislation** — CGI Art. 50-0 (micro-BIC), Art. 102 ter (micro-BNC)  _(CGI Art. 50-0, Art. 102 ter)_
 
@@ -337,13 +341,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

@@ -4,8 +4,8 @@ description: "Use this skill whenever asked about Irish Corporation Tax for a re
 jurisdiction: IE
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-11-10
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # IE Corporation Tax
 
-## Ireland — Corporation Tax — Skill v1.1
+## Ireland — Corporation Tax — Skill v1.2
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
@@ -33,15 +33,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Recent Finance Acts | Finance (No. 2) Act 2023 (Pillar Two introduction; R&D credit 25% → 30%); Finance Act 2024 (R&D first-instalment threshold €50,000 → €75,000); **Finance Act 2025 (R&D credit 30% → 35%, threshold → €87,500)** |
 | **Trading rate** | **12.5%** of trading income — **Section 21 TCA 1997** |
 | **Non-trading rate** | **25%** of passive (non-trading) income — **Section 21A TCA 1997** |
-| **Capital gains rate (companies)** | 33% on chargeable gains (Section 28 TCA) |
+| **Capital gains rate (companies)** | 33% on chargeable gains (Section 28 TCA). Budget 2027 reduces the Section 28(3) standard CGT rate to 31% from 7 October 2026 (Finance (No. 2) Bill 2026, not confirmed enacted at 1 November 2026); confirm whether the Section 78 company computation follows before applying 31% to company gains — https://www.gov.ie/en/department-of-finance/press-releases/department-of-finance-publishes-finance-bill-no2-2026/ |
 | **Close-company surcharge** | 20% on undistributed investment / rental income; 15% on undistributed professional service income (Sections 440, 441 TCA) |
 | **Pillar Two — IIR / QDMTT** | Effective minimum tax **15%** for MNEs with consolidated revenue **> €750M** for at least 2 of the previous 4 financial years — Part 4A TCA 1997 (inserted by Finance (No. 2) Act 2023); effective for fiscal years beginning on or after 31 December 2023 |
 | **Pillar Two — UTPR** | Undertaxed Profits Rule, effective for fiscal years beginning on or after 31 December 2024 |
-| **R&D Tax Credit** | **35%** for accounting periods beginning on or after 1 January 2026 (Finance Act 2025); **30%** for periods commencing on or after 1 January 2024 — Section 766 TCA; refundable in 3 instalments, or in full in the first instalment where the claim does not exceed **€87,500** |
+| **R&D Tax Credit** | **35%** for accounting periods with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026 (Finance Act 2025; Revenue, TDM 29-02-03 — https://www.revenue.ie/en/tax-professionals/tdm/income-tax-capital-gains-tax-corporation-tax/part-29/29-02-03.pdf); **30%** for periods commencing on or after 1 January 2024 — TCA ss 766C(1) and 766D(1), as amended by Finance Act 2025; refundable in 3 instalments, or in full in the first instalment where the claim does not exceed **€87,500** |
 | **Knowledge Development Box (KDB)** | Effective rate **10%** (12.5% on profits after a 20% deduction) on qualifying IP-derived income — Section 769G-R TCA; extended to accounting periods beginning before 1 January 2027 (Finance Act 2022) |
 | **Group relief threshold** | **75%** ownership (effective beneficial); Sections 411–429 TCA |
 | **Loss relief** | Trading losses: 1-year carry-back (Section 396A); indefinite carry-forward against same trade (Section 396) |
-| **Preliminary tax (large companies)** | 50% of current year OR 100% of prior year, in 2 instalments (large company = CT liability > €200,000 in preceding period) |
+| **Preliminary tax (large companies)** | 2 instalments where the accounting period exceeds 7 months: first by the 23rd of month 6, 50% of the prior period's CT or 45% of the current period's; second by the 23rd of month 11, bringing the total to 90% of the current period's CT. A period of under 7 months pays 90% in one instalment. The 100% prior-year option is for small companies only (large company = CT liability > €200,000 in preceding period). Source: Revenue, When is preliminary CT due? — https://www.revenue.ie/en/companies-and-charities/corporation-tax-for-companies/corporation-tax-payment-and-filing/when-is-preliminary-ct-due.aspx |
 | **Preliminary tax (small companies)** | 90% of current year OR 100% of prior year, in 1 instalment |
 | **Preliminary tax due date** | 23rd day of the month preceding the last month of the accounting period (large: also a first instalment in month 6) |
 | **Annual return** | **Form CT1** filed via **Revenue Online Service (ROS)** |
@@ -225,7 +225,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 R&D Tax Credit — Section 766 TCA
 
-- **R&D credit rate** — **35%** of qualifying R&D expenditure for accounting periods **beginning on or after 1 January 2026** (Finance Act 2025). **30%** for periods commencing on or after 1 January 2024, raised from 25% by Finance (No. 2) Act 2023 — this line previously attributed that increase to Finance Act 2024 and stopped there. The rate has moved twice in three years, so read it off the accounting period rather than from memory  _(Section 766 TCA; Finance (No. 2) Act 2023; Finance Act 2025)_
+- **R&D credit rate** — **35%** of qualifying R&D expenditure for accounting periods **with a specified return date on or after 23 September 2027, in general periods ending on or after 31 December 2026** (Finance Act 2025). **30%** for periods commencing on or after 1 January 2024, raised from 25% by Finance (No. 2) Act 2023 — this line previously attributed that increase to Finance Act 2024 and stopped there. The rate has moved twice in three years, so read it off the accounting period rather than from memory  _(TCA ss 766C(1) and 766D(1); Finance (No. 2) Act 2023; Finance Act 2025)_
 - **Qualifying expenditure** — - Salaries of R&D staff (apportioned to qualifying time). - Consumables used in R&D. - Plant and machinery used wholly and exclusively for R&D (capital allowances accelerated where used in R&D). - Subcontracted R&D (Section 766(1)(b)(vii)) capped at 15% of in-house R&D spend or €100,000 (whichever greater). - Outsourced to a third-level institution capped at 5% of in-house spend.  _(Section 766(1)(b)(vii) TCA)_
 - **Qualifying activity** — Must satisfy the Frascati Manual definition (systematic, investigative, creative, novel, uncertain). Must be in a "field of science or technology" (Section 766(1)(a)). Software development qualifies where it meets the technological-uncertainty test (Revenue R&D Guidelines).  _(Section 766(1)(a) TCA)_
 - **Refundability — Section 766C** — The credit can be (i) offset against CT of the claim period, (ii) carried forward, or (iii) paid as a cash refund in 3 instalments over 33 months: - Instalment 1: Greater of €75,000 (FA 2024 raised threshold) or 50% of the credit — payable on filing. - Instalment 2: 60% of the remaining balance — 12 months later. - Instalment 3: Final balance — 24 months later.  _(Section 766C TCA)_
@@ -440,7 +440,7 @@ Total liability                              57,000
 
 - **Small company definition** — CT liability ≤ €200,000 in prior accounting period. EUR  _(Sections 958–959 TCA)_
 - **Small company preliminary tax** — Single instalment = lower of (a) 90% of current-year CT or (b) 100% of prior-year CT. Due: 23rd day of the month preceding the last month of the accounting period (i.e., for a 31 December year-end → 23 November).  _(Sections 958–959 TCA)_
-- **Large company preliminary tax** — First instalment = 50% of prior-year CT (or 45% of current-year CT) — due in month 6 (i.e., 23rd day of the 6th month of the accounting period; 23 June for a calendar-year company). Second instalment = top-up to bring total to lower of 90% of current-year or 100% of prior-year — due in month 11 (23rd day of month 11; 23 November).  _(Sections 958–959 TCA)_
+- **Large company preliminary tax** — First instalment = 50% of prior-year CT (or 45% of current-year CT) — due in month 6 (i.e., 23rd day of the 6th month of the accounting period; 23 June for a calendar-year company). Second instalment = top-up to bring the total to 90% of current-year CT (the 100% prior-year option is not available to large companies) — due in month 11 (23rd day of month 11; 23 November). Where the accounting period is under 7 months, 90% is paid in one instalment.  _(Sections 958–959 TCA)_
 - **Final balance** — Due on filing of the CT1 within 9 months of the accounting period end (23rd day of that 9th month for ROS users).  _(Sections 958–959 TCA)_
 
 ### 7.4 Filing Deadlines
@@ -611,13 +611,15 @@ This skill and its outputs are for informational and computational purposes only
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

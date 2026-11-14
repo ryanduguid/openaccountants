@@ -1,10 +1,10 @@
 ---
 name: nl-income-tax
 description: Use this skill whenever asked about Netherlands income tax for self-employed individuals (zzp'ers, eenmanszaak). Trigger on phrases like "aangifte inkomstenbelasting", "income tax return Netherlands", "zelfstandigenaftrek", "startersaftrek", "MKB-winstvrijstelling", "urencriterium", "Box 1 income", "Box 3 wealth tax", "heffingskortingen", "arbeidskorting", "KIA investment deduction", "self-employed tax Netherlands", "winst uit onderneming", or any question about filing or computing income tax for a Dutch zzp'er or eenmanszaak. Also trigger when preparing or reviewing an aangifte IB, computing deductible expenses, or advising on voorlopige aanslagen. This skill covers Box 1 progressive rates, entrepreneur deductions, capital allowances, tax credits, Box 3 savings/investment income, filing deadlines, and penalties. ALWAYS read this skill before touching any Dutch income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NL Income Tax
 
-## Netherlands Income Tax -- Zzp'er / Eenmanszaak (IB) v2.0
+## Netherlands Income Tax -- Zzp'er / Eenmanszaak (IB) v2.1
 
 ## Section 1 -- Quick Reference
 
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 1 May of the following year (standard); 1 September with accountant extension |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a qualified Dutch belastingadviseur or AA/RA accountant |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Box 1 Rates 2025 (Inkomen uit werk en woning) [T1]
 
@@ -45,6 +45,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 38,442 -- 76,817 | 37.48% | Above AOW threshold component |
 | Over 76,817 | 49.50% | Top rate |
 
+**Box 1 Rates 2026**
+
+| Taxable Income (EUR) | Rate | Notes |
+| --- | --- | --- |
+| 0 -- 38,883 | 35.75% | Includes national insurance (volksverzekeringen) for those below AOW age |
+| 38,884 -- 78,426 | 37.56% | |
+| Over 78,426 | 49.50% | Top rate |
+
+Source (2026): Belastingdienst, Voorlopige aanslag 2026: gebruikte tarieven en heffingskortingen — https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen
+
 - **AOW-gerechtigden bracket rate** — AOW-gerechtigden (state pension age, born before 1 January 1958): First bracket rate is lower (~19.17%) because they do not pay AOW premium. Confirm DOB before applying rates.
 - **Box 1 tax formula** — Tax = cumulative tax for lower bracket + (income - lower bracket threshold) x marginal rate
 
@@ -54,7 +64,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Deduction | Amount 2025 | Condition |
 | --- | --- | --- |
-| Zelfstandigenaftrek | EUR 2,470 | Must meet urencriterium (>=1,225 hours/year in business) |
+| Zelfstandigenaftrek | EUR 2,470 (2026: EUR 1,200) | Must meet urencriterium (>=1,225 hours/year in business); 2026 benefit limited to 37.56% (Belastingdienst — https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026) |
 | Startersaftrek | EUR 2,123 (additional) | First 3 years of business; combined max EUR 4,593 for year 1-3 |
 | MKB-winstvrijstelling | 12.7% of profit after other deductions | No urencriterium required -- applies to ALL entrepreneurs |
 
@@ -66,7 +76,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Credit | Amount 2025 | Notes |
 | --- | --- | --- |
-| Algemene heffingskorting | Up to EUR 3,068 (phases out above EUR 24,813) | General tax credit; reduces to EUR 0 at ~EUR 76,817 |
+| Algemene heffingskorting | Up to EUR 3,068 (phases out above EUR 28,406 at 6.337%; 2026: EUR 3,115 above EUR 29,736 at 6.398%) | General tax credit; reduces to EUR 0 from EUR 76,818 (2026: EUR 78,427) |
 | Arbeidskorting | Up to EUR 5,174 (phases out above EUR 43,071) | Employment/work credit; phases out at higher incomes |
 | Inkomensafhankelijke combinatiekorting | Up to EUR 2,950 | For working parents with child < 12; urencriterium must be met |
 
@@ -112,7 +122,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **R-NL-1** — No hour log available. "Cannot confirm urencriterium. Zelfstandigenaftrek is at risk without a contemporaneous hour log. Proceed without zelfstandigenaftrek and flag for client to provide evidence."
 - **R-NL-2** — Client is BV director (DGA), not zzp. "This skill covers eenmanszaak/zzp only. BV/DGA tax is fundamentally different -- escalate to a belastingadviseur."
-- **R-NL-3** — Box 3 assets > EUR 57,000 per person. "Box 3 return required. Do not estimate Box 3 tax without a full asset breakdown -- escalate."
+- **R-NL-3** — Box 3 assets > EUR 57,684 per person (2025; EUR 59,357 in 2026). "Box 3 tax may be due; confirm the filing position. Do not estimate Box 3 tax without a full asset breakdown -- escalate."
 - **R-NL-4** — Foreign income or foreign employer. "Double-tax treaty analysis required. Stop income tax computation and escalate."
 - **R-NL-5** — Revenue ex-BTW vs incl-BTW unclear. "Income tax is computed on amounts ex-BTW. Do not mix inclusive and exclusive figures. Clarify before proceeding."
 
@@ -296,7 +306,7 @@ Classification: Business revenue EUR 90,000 (ex-BTW). RED FLAG: single client > 
 
 ### 6.3 Box 3 Wealth Tax
 
-- **Box 3 wealth tax rule** — Box 3 rate/return computation is contested in courts (Hoge Raad Kerst-arrest). Compute at current statutory rates: savings ~1.44%, investments ~5.88%, Box 3 tax rate 36%. Heffingvrij vermogen EUR 57,000 per person (EUR 114,000 for fiscal partners). Note litigation uncertainty.
+- **Box 3 wealth tax rule** — Box 3 rate/return computation is contested in courts (Hoge Raad Kerst-arrest). Compute at the statutory rates for the year: 2025 bank 1.37%, other assets 5.88%, debts 2.70%; 2026 bank 1.28%, other assets 6.00%, debts 2.70% (2026 bank and debt rates provisional); Box 3 tax rate 36%. Heffingvrij vermogen EUR 57,684 per person in 2025 and EUR 59,357 in 2026 (EUR 118,714 for fiscal partners in 2026). Sources: Belastingdienst — https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2025; https://www.belastingdienst.nl/wps/wcm/connect/nl/voorlopige-aanslag/content/voorlopige-aanslag-tarieven-en-heffingskortingen. Note litigation uncertainty.
 
 ### 6.4 Company Car (Auto van de Zaak)
 
@@ -366,7 +376,7 @@ IB balance due / (refund)              ___________
 
 SECTION G -- BOX 3 (if applicable)
 Assets on 1 January (incl. bank saldo) ___________
-Less: heffingvrij vermogen EUR 57,000  (___________)
+Less: heffingvrij vermogen EUR 57,684 (2025) / EUR 59,357 (2026)  (___________)
 Grondslag Box 3                        ___________
 Fictitious return (see rates by class) ___________
 Box 3 tax @ 36%                        ___________
@@ -513,13 +523,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

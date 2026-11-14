@@ -4,15 +4,17 @@ description: Use this skill whenever asked about UK capital gains tax for indivi
 version: 2.1
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: James Power
-review_status: current
+review_status: pending_review
 depends_on:
   - uk-income-tax-sa100
 category: international
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # UK Capital Gains Sa108
 
@@ -145,7 +147,7 @@ Two structural changes apply from 6 April 2026 that materially shift planning fo
 
 ### 2.2 Rate Band Allocation
 
-- **Rate Band Allocation** — Unused basic rate band = £50,270 - taxable income (after personal allowance) If gain fits within unused basic rate band → basic rate CGT (18%) If gain exceeds unused basic rate band → split: 18% within band, 24% on excess
+- **Rate Band Allocation** — Unused basic rate band = max(0, £37,700 - taxable income (after personal allowance)). Gain at the basic rate (18%) = min(taxable gain, unused basic rate band). Any taxable gain above that is at the higher rate (24%), so taxable income of £37,700 or more leaves all of the taxable gain at 24%.
 
 CGT rates depend on where the gain falls relative to the basic rate band:
 
@@ -476,13 +478,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

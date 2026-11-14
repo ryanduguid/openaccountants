@@ -1,10 +1,10 @@
 ---
 name: japan-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Japanese taxpayers — individuals, sole proprietors (kojin jigyō), and small corporations (KK/GK). Trigger on phrases like "reduce my tax Japan", "tax planning", "blue return", "ao-iro shinkoku", "furusato nozei", "iDeCo", "NISA", "sole proprietor vs corporation", "shakai hoken", "social insurance optimization", "consumption tax", or any question about legally minimizing Japanese income tax. Covers entity selection, blue return optimization, deductions, capital allowances, loss utilization, timing, consumption tax, social insurance, and red lines. ALWAYS read this skill before giving Japanese tax optimization advice.
-version: 1.0
+version: 1.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -156,6 +156,7 @@ Add residence tax (~10%) and reconstruction surtax (2.1% of income tax, through 
 | Exemption threshold | Taxable sales ≤¥10 million in base period (2 years prior) → exempt (免税事業者). But qualified invoice issuer registration waives exemption |
 | Qualified Invoice System (インボイス制度) | From 1 Oct 2023. Registered businesses issue qualified invoices; buyers generally need these for full input tax credits, apart from book-only cases in NTA Tax Answer No. 6496, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6496.htm (a declining transitional credit applies to purchases from non-registered suppliers until 30 Sep 2031). Non-registered sellers lose B2B competitiveness |
 | Special 20% accommodation | Small businesses newly registered as invoice issuers: may use actual sales tax × 20% as payable amount (effectively 80% relief). Covers taxable periods that include any day from 1 October 2023 to 30 September 2026, subject to status conditions such as base-period and specified-period sales of ¥10m or less (NTA Tax Answer No. 6498, https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA Invoice Q&A 問115, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/115.pdf) |
+| Special 30% accommodation (3割特例) | Sole proprietors who became taxable by registering as invoice issuers may pay output tax × 30% for the 2027 and 2028 taxable periods, if base-period (2 years before) and specified-period taxable sales are ¥10m or less and no excluded case applies (for example a shortened taxable period, taxable status from inheritance or from buying high-value assets; NTA Invoice Q&A 問115-2). Corporations cannot use it (NTA invoice-system review page, https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice-review/index.htm) |
 | Simplified tax system (簡易課税) | Businesses with base-period sales ≤¥50m can elect simplified method: deemed purchase ratio by industry (40%–90%) applied to sales tax. Reduces compliance and often reduces tax for service businesses |
 | Input tax credit | Standard method: claim consumption tax on business purchases. Requires qualified invoices from suppliers |
 | Timing of registration | Voluntary registration creates consumption tax obligations. If primarily B2C (consumers), staying exempt avoids 10% burden on sales |
@@ -169,7 +170,7 @@ Add residence tax (~10%) and reconstruction surtax (2.1% of income tax, through 
 | System | Coverage | Who | Cost |
 | --- | --- | --- | --- |
 | National Health Insurance (NHI, 国民健康保険) | Health only | Sole proprietors, freelancers | Income-based; varies by municipality. Capped at ¥1,090,000 a household in FY2025 (¥1,130,000 from FY2026), 国民健康保険法施行令 art. 29-7 — https://laws.e-gov.go.jp/law/333CO0000000362 |
-| National Pension (国民年金) | Basic pension | Self-employed | Flat ¥17,510/month (FY2025, 日本年金機構 国民年金の保険料 — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html; ¥16,980 was the FY2024 amount). Voluntary add-on: National Pension Fund |
+| National Pension (国民年金) | Basic pension | Self-employed | Flat ¥17,510/month (FY2025, 日本年金機構 国民年金の保険料 — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html; ¥16,980 was the FY2024 amount); ¥17,920/month for FY2026 (https://www.nenkin.go.jp/service/kokunen/hokenryo/hokenryo.html). Voluntary add-on: National Pension Fund |
 | Shakai Hoken (厚生年金 + 健保) | Health + pension | Employees, company directors | ~30% of standard monthly salary (split employer/employee). No cap on health portion after ¥1,390,000 standard salary |
 
 ### Optimization Strategies
@@ -280,13 +281,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

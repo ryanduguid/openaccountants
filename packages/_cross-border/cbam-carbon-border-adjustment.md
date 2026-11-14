@@ -1,10 +1,10 @@
 ---
 name: cbam-carbon-border-adjustment
 description: "Use this skill whenever an EU importer (declarant), an indirect customs representative, or a non-EU producer asks about the EU Carbon Border Adjustment Mechanism. Trigger on phrases like \"CBAM\", \"carbon border adjustment\", \"CBAM certificates\", \"embedded emissions\", \"default values\", \"verified emissions\", \"CN code 7208\", \"CN code 28080000\", \"fertiliser CBAM\", \"cement CBAM\", \"aluminium CBAM\", \"hydrogen CBAM\", \"electricity CBAM\", \"iron and steel CBAM\", \"quarterly CBAM report\", \"CBAM declarant\", \"CBAM authorised declarant\", or any request to assess CBAM scope, compute embedded emissions, prepare the quarterly report (transitional period) or annual CBAM declaration (definitive period from 2026). Covers Regulation (EU) 2023/956, Implementing Regulation (EU) 2023/1773 (transitional period reporting), the Default Values Implementing Regulation and the Commission's 2025 sectoral guidance. Does NOT cover: emissions trading system (EU ETS), domestic carbon taxes (UK CBAM, Australia Safeguard Mechanism, California CCA), customs tariff / preference rules, or product origin determination. ALWAYS read this skill before computing CBAM exposure or preparing a CBAM report."
-version: 0.1
+version: 0.2
 jurisdiction: EU-27
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - cross-border-workflow-base
@@ -22,9 +22,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Regulation (EU) 2023/956** of 10 May 2023 establishing the CBAM.
 - **Implementing Regulation (EU) 2023/1773** of 17 August 2023 on reporting obligations during the transitional period (1 October 2023 – 31 December 2025).
 - **Definitive period rules** entering into force 1 January 2026 (financial liability via CBAM certificates plus annual CBAM declaration).
+- **Regulation (EU) 2025/2083** of 8 October 2025 (the CBAM simplification 'Omnibus'), published in the Official Journal on 17 October 2025 and in force from 20 October 2025; its single mass-based threshold (new Article 2a) and the annual-declaration rules apply from 1 January 2026.
 - **Default values** and verified-emissions methodologies as published by the Commission.
 
-**Tax year coverage.** Current for **calendar 2025** (transitional reporting) and the **early definitive period 2026**, reflecting the **Omnibus simplification proposal of February 2025** which introduced a small-importer de minimis (50 tonnes/year per declarant) and clarified default-value usage.
+**Tax year coverage.** Current for **calendar 2025** (transitional reporting) and the **early definitive period 2026**, reflecting **Regulation (EU) 2025/2083** (the Omnibus simplification, proposed February 2025 and enacted 8 October 2025), which removed the EUR 150 consignment exemption from 20 October 2025 and introduced a single mass-based threshold of 50 tonnes a year per importer from 1 January 2026 and clarified default-value usage.
 
 **The reviewer is the customer of this output.** CBAM emissions data flows from production-site engineering records, customs classifications, and external verification. Every output must be reviewed by a credentialed practitioner (customs broker, EU import lawyer, or accredited verifier under Implementing Regulation (EU) 2018/2067) before submission.
 
@@ -40,7 +41,7 @@ This skill covers:
   - **Electricity** — CN code 2716 00 00 (only cross-border supplies)
   - **Hydrogen** — CN code 2804 10 00
 - **Embedded emissions** computation: direct, indirect (where applicable), default values, verified actual values.
-- **Quarterly transitional reports** (Q3 2023 → Q4 2025) and **annual CBAM declaration** (from 2026, due 31 May for prior calendar year).
+- **Quarterly transitional reports** (Q3 2023 → Q4 2025) and **annual CBAM declaration** (from 2026, due 30 September for the prior calendar year).
 - **CBAM certificates** — purchase, sale-back, surrender (definitive period).
 - **Adjustment for carbon price paid in country of origin**.
 - **Authorised CBAM declarant** application and obligations.
@@ -64,7 +65,8 @@ This skill does NOT cover:
 | 31 January 2025 | Quarterly report (Q4 2024) due |
 | 1 January 2026 | Definitive period begins; financial liability via certificates |
 | 31 January 2026 | Final quarterly transitional report (Q4 2025) due |
-| 31 May 2027 | First annual CBAM declaration (for 2026) due, with certificate surrender |
+| 1 February 2027 | Article 20(1), (3), (4) and (5) (sale of CBAM certificates) apply |
+| 30 September 2027 | First annual CBAM declaration (for 2026) due, with certificate surrender |
 | Phased ETS free allocation phaseout | 2026: 97.5% free → reduces to 0% by 2034 (annual schedule in Article 36) |
 
 ## Section 3 — Filing requirements
@@ -77,8 +79,8 @@ This skill does NOT cover:
 
 ### Definitive period (from 1 January 2026)
 
-- **[T1] Only an Authorised CBAM Declarant can import CBAM goods** — Only an Authorised CBAM Declarant can import CBAM goods. Application via the national Competent Authority of the importer's Member State. Approval requires: No serious or repeated infringements of customs, tax, or market abuse rules; Financial standing; Established in the Member State.  _(Regulation (EU) 2023/956)_
-- **Annual CBAM declaration contents** — Annual CBAM declaration due 31 May for the prior calendar year, containing: Total quantity imported per CN code per country of origin; Total embedded emissions (verified by accredited verifier, except where default values used); Total CBAM certificates to be surrendered; Carbon price paid in country of origin.  _(Regulation (EU) 2023/956)_
+- **[T1] Only an Authorised CBAM Declarant can import CBAM goods** — Only an Authorised CBAM Declarant can import CBAM goods, unless the importer is exempt under the 50-tonne de minimis rule (Article 2a; Section 5.2). An importer established in a Member State applies before importing (Article 5(1)); an importer within the de minimis exemption applies once it expects to exceed the threshold (Article 5(1b)), and must not import further goods without the status once a competent authority decides it has exceeded it. An indirect customs representative must hold the status before importing and acts as declarant even where the importer is exempt (Article 5(1a)). Application via the national Competent Authority of the importer's Member State. Approval requires: No serious or repeated infringements of customs, tax, or market abuse rules; Financial standing; Established in the Member State.  _(Regulation (EU) 2023/956, Articles 2a and 5 as amended by Regulation (EU) 2025/2083 of 8 October 2025, OJ L, 2025/2083, 17.10.2025, in force 20 October 2025 (https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng))_
+- **Annual CBAM declaration contents** — Annual CBAM declaration due 30 September for the prior calendar year (first by 30 September 2027 for 2026; Article 6(1) as replaced by Regulation (EU) 2025/2083), containing: Total quantity imported per CN code per country of origin; Total embedded emissions (verified by accredited verifier, except where default values used); Total CBAM certificates to be surrendered; Carbon price paid in country of origin.  _(Regulation (EU) 2023/956)_
 - **Certificate purchase** — Declarant buys CBAM certificates at the weekly average price of EU ETS auctions, on the Common Central Platform managed by a designated entity (likely the European Energy Exchange).  _(Regulation (EU) 2023/956)_
 - **Certificate surrender** — Certificate surrender: equal to embedded emissions × applicable factor (reflecting any ETS free allocation phasing).  _(Article 31 / Annex II)_
 
@@ -119,9 +121,9 @@ This skill does NOT cover:
 
 - **Indirect emissions scope** — Currently in scope for: cement, fertilisers, electricity, hydrogen. Out of scope (transitional + early definitive period) for: iron and steel, aluminium. The Commission's 2025 review will reassess scope inclusion.
 
-### 5.2 De minimis exemption (Article 2(3) and Omnibus 2025)
+### 5.2 De minimis exemption (Article 2a, Regulation (EU) 2025/2083)
 
-- **[T1] De minimis exemption** — Originally: shipments ≤ EUR 150 in value exempt. Omnibus 2025 (proposed): 50-tonne annual de minimis per importer. Confirm the as-enacted text before relying.  _(Article 2(3) and Omnibus 2025)_
+- **[T1] De minimis exemption** — From 1 January 2026 a single mass-based threshold applies: an importer whose imports of CBAM goods total no more than 50 tonnes net mass in a calendar year is exempt and declares the exemption in each customs declaration (Article 2a(1)). Imports of electricity or hydrogen are outside the exemption (Article 2a(4)). Article 2a applies from 1 January 2026. Track cumulative tonnage through the year: once an importer exceeds 50 tonnes, all obligations apply to all goods imported in that calendar year, including those imported before the threshold was crossed (Article 2a(2)). The amending Regulation replaced Article 2(3), which held the EUR 150 consignment exemption, with effect from its entry into force on 20 October 2025, since Article 2(3) is not among the provisions deferred to 1 January 2026. Imports of 20 October to 31 December 2025 below EUR 150 may therefore fall into the Q4 2025 transitional report; confirm against the Commission's transitional-period guidance before omitting them.  _(Regulation (EU) 2025/2083 of 8 October 2025, OJ L, 2025/2083, 17.10.2025, in force 20 October 2025 (https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng); EY Global Tax News 2025-2136; Mayer Brown, October 2025)_
 
 ### 5.3 Re-imports of EU-originating goods
 
@@ -137,7 +139,7 @@ This skill does NOT cover:
 
 ### 5.6 Common Central Platform certificate handling
 
-- **Certificate account handling** — Authorised CBAM Declarants maintain a certificate account. Up to 1/3 of certificates held at the end of each quarter may be sold back at original price (mitigates price volatility). Certificates not surrendered by 31 May of the year following the import year are cancelled.
+- **Certificate account handling** — Authorised CBAM Declarants maintain a certificate account. Excess certificates may be repurchased on a request made by 31 October of the surrender year, limited to the number the declarant had to buy under Article 22(2) in the calendar year of purchase; certificates bought for 2026 emissions may be repurchased only in 2027. On 1 November each year the Commission cancels, without compensation, certificates bought in the year before the previous calendar year that remain on the account  _(Articles 23 and 24 as amended by Regulation (EU) 2025/2083 of 8 October 2025, OJ L, 2025/2083, 17.10.2025, in force 20 October 2025 (https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng))_.
 
 ### 5.7 Penalty exposure
 
@@ -178,7 +180,7 @@ Before delivering output, verify:
 
 - [ ] CN code matched to Annex I CBAM scope list (8-digit precision where required).
 - [ ] Country of origin not on Annex III exemption list.
-- [ ] Authorised CBAM Declarant status confirmed for definitive-period imports.
+- [ ] Authorised CBAM Declarant status confirmed for definitive-period imports, or the Article 2a 50-tonne exemption documented with a cumulative tonnage tracker.
 - [ ] Installation identification documented with operator-provided data.
 - [ ] Embedded emissions methodology hierarchy applied (verified actual → defaults within cap).
 - [ ] Default-value usage tracked at ≤ 20% of weight per declarant per quarter from Q4 2024.
@@ -210,13 +212,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

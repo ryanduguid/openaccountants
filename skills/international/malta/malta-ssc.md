@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Malta Social Security Contribut
 version: 2.0
 jurisdiction: MT
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 reviewed_by: Michael Cutajar, CPA (Malta)
 review_status: pending_review
 depends_on:
@@ -266,7 +266,7 @@ When bank statement data is ambiguous or client circumstances are unclear, flag 
 
 **Trigger:** Client has two part-time self-employment activities, neither with full-time employment.
 
-**Issue:** TA22 requires no full-time employment. If both activities are part-time and no full-time employment exists, Class 2 applies. Unclear whether one activity tips into full-time equivalence.
+**Issue:** TA22 is open to part-time self-employment alongside full-time employment, a pension or full-time studies, so it does not settle this. If both activities are part-time and no full-time employment exists, Class 2 applies. Unclear whether one activity tips into full-time equivalence.
 
 **Action:** Flag for reviewer.
 
@@ -458,13 +458,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

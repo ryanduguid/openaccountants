@@ -1,12 +1,12 @@
 ---
 name: uk-tax-optimization
 description: Use this skill whenever asked about reducing tax in the UK, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in the UK. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pay less tax", "tax-efficient", "tax minimization", "how to lower my tax bill". ALWAYS read this skill before advising on any UK tax optimization strategy.
-version: 1.1
+version: 1.2
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: James Power
-review_status: current
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 1
@@ -15,8 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Tax Optimization
 
-## UK Tax Optimization -- Self-Employed Skill v1.1
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+## UK Tax Optimization -- Self-Employed Skill v1.2
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Example 2 in Section 12 was corrected on 2026-11-01, after that sign-off, and awaits review.
 
 ## Section 1 -- Quick Reference
 
@@ -297,13 +297,31 @@ Sources: GOV.UK, Venture capital schemes: tax relief for investors — https://w
 
 **Example 2 -- Incorporation (Profits £60,000, Single, No Other Income)**
 
-| Item | Sole trader | Ltd (£12,570 salary + £47,430 dividends) |
+Assumptions: taxpayer in England, Wales or Northern Ireland (rUK rates; Scottish rates differ); 12-month accounting period with no associated companies, so the 19% small profits rate applies (taxable profit £50,000 or less; 19% in both FY2025 and FY2026); all post-tax profit paid out as dividends; no Employment Allowance (a company whose only employee is a director cannot claim it); no other income. Class 2 is voluntary from 6 April 2024, so the sole trader pays Class 4 only. Company side: salary £12,570, employer NIC 15% × (£12,570 − £5,000) = £1,135.50, taxable profit £60,000 − £12,570 − £1,135.50 = £46,294.50, dividends £46,294.50 − £8,795.96 = £37,498.54, of which £500 is covered by the dividend allowance.
+
+**2025-26** (dividend basic rate 8.75%)
+
+| Item | Sole trader | Ltd (£12,570 salary + £37,498.54 dividends) |
 | --- | --- | --- |
-| Income tax | £11,432 | ~£4,620 |
-| NIC (Class 2 + 4 / Employer) | ~£3,350 | ~£1,046 (employer NIC on salary) |
-| Corporation tax | -- | ~£11,858 (25% on £47,430) |
-| **Total tax + NIC** | **~£14,782** | **~£17,524** |
-| Net benefit | Sole trader cheaper at £60,000 | Incorporation better when profits retained or exceed ~£75,000 |
+| Income tax | £11,432 | £3,237.37 (8.75% × £36,998.54 dividends) |
+| NIC (Class 4 / Employer) | £2,456.60 (6% × £37,700 + 2% × £9,730) | £1,135.50 (employer NIC on salary) |
+| Corporation tax | -- | £8,795.96 (19% on £46,294.50) |
+| **Total tax + NIC** | **£13,888.60** | **£13,168.83** |
+| Net benefit | -- | Company route about £720 cheaper at £60,000 |
+
+**2026-27** (dividend basic rate 10.75%)
+
+| Item | Sole trader | Ltd (£12,570 salary + £37,498.54 dividends) |
+| --- | --- | --- |
+| Income tax | £11,432 | £3,977.34 (10.75% × £36,998.54 dividends) |
+| NIC (Class 4 / Employer) | £2,456.60 | £1,135.50 (employer NIC on salary) |
+| Corporation tax | -- | £8,795.96 (19% on £46,294.50) |
+| **Total tax + NIC** | **£13,888.60** | **£13,908.80** |
+| Net benefit | Sole trader about £20 cheaper: roughly break-even at £60,000 | -- |
+
+Profit retained in the company is not taxed as a dividend until paid out, which favours incorporation; rerun the comparison at the client's own figures.
+
+Sources: GOV.UK, Corporation Tax rates — https://www.gov.uk/corporation-tax-rates; National Insurance rates and allowances — https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions; Income Tax rates and allowances (dividend rates) — https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past.
 
 ### Example 3 -- AIA on Equipment Purchase (£20,000)
 
@@ -344,13 +362,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

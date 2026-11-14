@@ -1,10 +1,10 @@
 ---
 name: ivory-coast-social-contributions
 description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) social security contributions (CNPS) for employers and salaried employees. Trigger on phrases like "CNPS contributions", "cotisations sociales Côte d'Ivoire", "Ivory Coast social security", "retraite CNPS", "prestations familiales", "accident du travail rate", "CMU contribution", "how much CNPS do I pay", "employer social charges Ivory Coast", "assiette plafonnée", "plafond CNPS", or any question about Ivorian social-contribution obligations. Also trigger when classifying bank-statement or payroll transactions that relate to CNPS débits, cotisations sociales, or CMU payments from Ivorian banks (SGCI, BICICI, Ecobank, NSIA, Coris). Also trigger when preparing a DISA/DASC annual declaration or a monthly/quarterly appel de cotisations where contribution ceilings and rates are relevant. This skill covers pension (vieillesse) rates and the XOF 3,375,000 ceiling, family benefits, maternity, work-injury bands, CMU, the SMIG floor, declaration periodicity, penalties, registration, payment patterns, and edge cases. ALWAYS read this skill before touching any CNPS-related work.
-version: 0.1
+version: 0.2
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Côte d'Ivoire (Ivory Coast) Social Contributions (CNPS) -- Employer & Employee
 
-## Côte d'Ivoire (Ivory Coast) Social Contributions (CNPS) -- Employer & Employee Skill v0.1
+## Côte d'Ivoire (Ivory Coast) Social Contributions (CNPS) -- Employer & Employee Skill v0.2
 
 ## Section 1 -- Quick reference
 
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Family benefits (prestations familiales)** — 5% employer only
 - **Maternity (assurance maternité)** — 0.75% employer only
 - **Work injury (AT/MP)** — 2%–5% employer only, by sector risk category
-- **PF / Maternity / AT-MP monthly ceiling** — XOF 75,000 (floor = ceiling at the SMIG)
+- **PF / Maternity / AT-MP monthly ceiling** — XOF 70,000 (XOF 840,000 a year), below the XOF 75,000 SMIG floor, so these branches are always computed on 70,000  _(CNPS, Employeur, 'Les Salaires Plafonds': 840 000 F par an (70 000 FCFA par mois) pour les prestations familiales, l'assurance maternité, les accidents du travail, https://www.cnps.ci/employeur; CLEISS, taux au 1er janvier 2025, https://www.cleiss.fr/docs/cotisations/cotedivoire.html)_
 - **CMU (Couverture Maladie Universelle, health)** — XOF 500/month employee + XOF 500/month employer, per person (flat, no % base)
 - **Payment frequency** — Monthly if ≥20 employees; quarterly if <20 employees
 - **Payment deadline** — Within the first 15 days following the month/quarter ended
@@ -58,7 +58,7 @@ Pending
 | Family benefits (prestations familiales) | 5% employer only |
 | Maternity (assurance maternité) | 0.75% employer only |
 | Work injury (AT/MP) | 2%–5% employer only, by sector risk category |
-| PF / Maternity / AT-MP monthly ceiling | XOF 75,000 (floor = ceiling at the SMIG) |
+| PF / Maternity / AT-MP monthly ceiling | XOF 70,000 (below the XOF 75,000 SMIG floor; CNPS employer page; CLEISS 2025) |
 | CMU (Couverture Maladie Universelle, health) | XOF 500/month employee + XOF 500/month employer, per person (flat, no % base) |
 | Payment frequency | Monthly if ≥20 employees; quarterly if <20 employees |
 | Payment deadline | Within the first 15 days following the month/quarter ended |
@@ -72,9 +72,9 @@ Pending
 | Branch | Employee | Employer | Total | Monthly ceiling (assiette max) |
 | --- | --- | --- | --- | --- |
 | Assurance Vieillesse (pension/retraite) | 6.3% | 7.7% | 14% | XOF 3,375,000 |
-| Prestations Familiales (family benefits) | — | 5% | 5% | XOF 75,000 |
-| Assurance Maternité (maternity) | — | 0.75% | 0.75% | XOF 75,000 |
-| Accidents du Travail / Maladies Pro. (work injury) | — | 2%–5% | 2%–5% | XOF 75,000 |
+| Prestations Familiales (family benefits) | — | 5% | 5% | XOF 70,000 |
+| Assurance Maternité (maternity) | — | 0.75% | 0.75% | XOF 70,000 |
+| Accidents du Travail / Maladies Pro. (work injury) | — | 2%–5% | 2%–5% | XOF 70,000 |
 | CMU (health, flat per capita) | XOF 500/mo | XOF 500/mo | XOF 1,000/mo | flat per person, no % base |
 
 **Conservative defaults**
@@ -83,7 +83,7 @@ Pending
 | --- | --- |
 | Unknown AT/MP risk category | Use 2% (lowest band); flag for reviewer to confirm employer's assigned category |
 | Unknown headcount (monthly vs quarterly) | Assume <20 → quarterly; flag to confirm |
-| Salary below SMIG (XOF 75,000) | Apply the SMIG floor (plancher) to ALL branches; do not contribute on the lower figure |
+| Salary below SMIG (XOF 75,000) | Apply the SMIG floor (plancher) to the pension base; PF/Maternité/AT-MP use the XOF 70,000 ceiling; do not contribute on the lower figure |
 | Pension ceiling in any source citing 1,647,315 or 2,700,000 | REJECT — use XOF 3,375,000 (current since 1 Jan 2023) |
 | Unknown number of CMU dependants | Compute CMU on the employee only (500 + 500); flag to confirm covered persons |
 | Benefits-in-kind / indemnities | Include in the assiette (art. 23) UNLESS they are genuine expense reimbursements |
@@ -172,62 +172,62 @@ Six classifications and computations for a hypothetical Ivorian SME employer in 
 
 **Input:** Gross monthly salary = XOF 75,000. AT/MP = 3%.
 
-**Reasoning:** Salary equals the SMIG, so floor = base for all branches; pension base is also 75,000 (well below the 3,375,000 ceiling).
+**Reasoning:** Salary equals the SMIG floor, so the pension base is 75,000 (well below the 3,375,000 ceiling). PF/Maternité/AT-MP are capped at 70,000.
 
 **Example 1 breakdown table**
 
 | Branch | Base | Rate | Employee | Employer |
 | --- | --- | --- | --- | --- |
 | Vieillesse | 75,000 | 6.3% / 7.7% | 4,725.00 | 5,775.00 |
-| Prestations familiales | 75,000 | 5% | — | 3,750.00 |
-| Maternité | 75,000 | 0.75% | — | 562.50 |
-| AT/MP | 75,000 | 3% | — | 2,250.00 |
+| Prestations familiales | 70,000 (cap) | 5% | — | 3,500.00 |
+| Maternité | 70,000 (cap) | 0.75% | — | 525.00 |
+| AT/MP | 70,000 (cap) | 3% | — | 2,100.00 |
 | CMU | flat | 500/500 | 500.00 | 500.00 |
-| **Total** |  |  | **5,225.00** | **12,837.50** |
+| **Total** |  |  | **5,225.00** | **12,400.00** |
 
-Employer % load on the 75,000 base (excl. flat CMU) = 7.7 + 5 + 0.75 + 3 = 16.45% → 12,337.50, plus CMU 500 = 12,837.50. Reconciles.
+Employer load (excl. flat CMU): pension 7.7% × 75,000 = 5,775.00; PF, maternity and AT/MP together 70,000 × 8.75% = 6,125.00; subtotal 11,900.00, plus CMU 500 = 12,400.00. Reconciles.
 
-**Classification:** EXCLUDE from TVA. Employer total 12,837.50 is a deductible payroll cost; employee 5,225.00 withheld from gross.
+**Classification:** EXCLUDE from TVA. Employer total 12,400.00 is a deductible payroll cost; employee 5,225.00 withheld from gross.
 
 ### Example 2 — Mid-range salary, below pension ceiling (XOF 500,000/month)
 
 **Input:** Gross monthly salary = XOF 500,000. AT/MP = 3%.
 
-**Reasoning:** 500,000 is above the SMIG floor and below the 3,375,000 pension ceiling, so pension applies to the full 500,000. PF/Maternité/AT-MP are capped at 75,000.
+**Reasoning:** 500,000 is above the SMIG floor and below the 3,375,000 pension ceiling, so pension applies to the full 500,000. PF/Maternité/AT-MP are capped at 70,000.
 
 **Example 2 breakdown table**
 
 | Branch | Base | Rate | Employee | Employer |
 | --- | --- | --- | --- | --- |
 | Vieillesse | 500,000 | 6.3% / 7.7% | 31,500.00 | 38,500.00 |
-| Prestations familiales | 75,000 (cap) | 5% | — | 3,750.00 |
-| Maternité | 75,000 (cap) | 0.75% | — | 562.50 |
-| AT/MP | 75,000 (cap) | 3% | — | 2,250.00 |
+| Prestations familiales | 70,000 (cap) | 5% | — | 3,500.00 |
+| Maternité | 70,000 (cap) | 0.75% | — | 525.00 |
+| AT/MP | 70,000 (cap) | 3% | — | 2,100.00 |
 | CMU | flat | 500/500 | 500.00 | 500.00 |
-| **Total** |  |  | **32,000.00** | **45,562.50** |
+| **Total** |  |  | **32,000.00** | **45,125.00** |
 
-**Classification:** EXCLUDE from TVA. Employer 45,562.50 deductible; employee 32,000.00 withheld.
+**Classification:** EXCLUDE from TVA. Employer 45,125.00 deductible; employee 32,000.00 withheld.
 
 ### Example 3 — High earner above the pension ceiling (XOF 5,000,000/month)
 
 **Input:** Gross monthly salary = XOF 5,000,000. AT/MP = 3%.
 
-**Reasoning:** Salary exceeds the pension ceiling, so the pension base is capped at XOF 3,375,000. PF/Maternité/AT-MP remain capped at 75,000.
+**Reasoning:** Salary exceeds the pension ceiling, so the pension base is capped at XOF 3,375,000. PF/Maternité/AT-MP remain capped at 70,000.
 
 **Example 3 breakdown table**
 
 | Branch | Base | Rate | Employee | Employer |
 | --- | --- | --- | --- | --- |
 | Vieillesse | 3,375,000 (cap) | 6.3% / 7.7% | 212,625.00 | 259,875.00 |
-| Prestations familiales | 75,000 (cap) | 5% | — | 3,750.00 |
-| Maternité | 75,000 (cap) | 0.75% | — | 562.50 |
-| AT/MP | 75,000 (cap) | 3% | — | 2,250.00 |
+| Prestations familiales | 70,000 (cap) | 5% | — | 3,500.00 |
+| Maternité | 70,000 (cap) | 0.75% | — | 525.00 |
+| AT/MP | 70,000 (cap) | 3% | — | 2,100.00 |
 | CMU | flat | 500/500 | 500.00 | 500.00 |
-| **Total** |  |  | **213,125.00** | **266,937.50** |
+| **Total** |  |  | **213,125.00** | **266,500.00** |
 
 Pension cap check: 3,375,000 × 6.3% = 212,625.00; × 7.7% = 259,875.00. Reconciles. Note: had a source used the wrong 1,647,315 ceiling, employee pension would be only 103,780.85 — materially understated. Use 3,375,000.
 
-**Classification:** EXCLUDE from TVA. Employer 266,937.50 deductible; employee 213,125.00 withheld.
+**Classification:** EXCLUDE from TVA. Employer 266,500.00 deductible; employee 213,125.00 withheld.
 
 ### Example 4 — DGI/ITS débit (NOT a CNPS contribution)
 
@@ -242,20 +242,20 @@ Pension cap check: 3,375,000 × 6.3% = 212,625.00; × 7.7% = 259,875.00. Reconci
 
 **Input:** Gross monthly salary = XOF 200,000. AT/MP = 2% (Category 1, low risk).
 
-**Reasoning:** Above SMIG floor, below pension ceiling. Pension on full 200,000; other branches capped at 75,000 at the 2% AT/MP rate.
+**Reasoning:** Above SMIG floor, below pension ceiling. Pension on full 200,000; other branches capped at 70,000 at the 2% AT/MP rate.
 
 **Example 5 breakdown table**
 
 | Branch | Base | Rate | Employee | Employer |
 | --- | --- | --- | --- | --- |
 | Vieillesse | 200,000 | 6.3% / 7.7% | 12,600.00 | 15,400.00 |
-| Prestations familiales | 75,000 (cap) | 5% | — | 3,750.00 |
-| Maternité | 75,000 (cap) | 0.75% | — | 562.50 |
-| AT/MP | 75,000 (cap) | 2% | — | 1,500.00 |
+| Prestations familiales | 70,000 (cap) | 5% | — | 3,500.00 |
+| Maternité | 70,000 (cap) | 0.75% | — | 525.00 |
+| AT/MP | 70,000 (cap) | 2% | — | 1,400.00 |
 | CMU | flat | 500/500 | 500.00 | 500.00 |
-| **Total** |  |  | **13,100.00** | **21,712.50** |
+| **Total** |  |  | **13,100.00** | **21,325.00** |
 
-**Classification:** EXCLUDE from TVA. Employer 21,712.50 deductible; employee 13,100.00 withheld.
+**Classification:** EXCLUDE from TVA. Employer 21,325.00 deductible; employee 13,100.00 withheld.
 
 ### Example 6 — Ambiguous CNPS lump-sum (arrears or penalty)
 
@@ -272,7 +272,7 @@ These rules apply when payroll/bank data is clear and all required inputs are av
 
 ### Rule 1 — Branch formulas (per employee, per month)
 
-- **Branch formulas** — floor          = XOF 75,000                       (SMIG plancher, all branches) pension_base   = clamp(gross_salary, 75,000, 3,375,000) other_base     = clamp(gross_salary, 75,000, 75,000) = 75,000   (PF / Maternité / AT-MP capped at SMIG) Pension EE     = pension_base × 6.3% Pension ER     = pension_base × 7.7% Family (PF)    = 75,000 × 5%          (employer only) Maternity      = 75,000 × 0.75%       (employer only) AT/MP          = 75,000 × rate        (employer only; rate 2%–5% by risk category) CMU EE         = XOF 500 per covered person   (flat) CMU ER         = XOF 500 per covered person   (flat)
+- **Branch formulas** — floor          = XOF 75,000                       (SMIG plancher, pension base) pension_base   = clamp(gross_salary, 75,000, 3,375,000) other_base     = 70,000   (PF / Maternité / AT-MP ceiling 70,000 is below the 75,000 floor) Pension EE     = pension_base × 6.3% Pension ER     = pension_base × 7.7% Family (PF)    = 70,000 × 5%          (employer only) Maternity      = 70,000 × 0.75%       (employer only) AT/MP          = 70,000 × rate        (employer only; rate 2%–5% by risk category) CMU EE         = XOF 500 per covered person   (flat) CMU ER         = XOF 500 per covered person   (flat)
 
 ### Rule 2 — Pension ceiling is XOF 3,375,000
 
@@ -321,7 +321,7 @@ When payroll data is ambiguous or circumstances are unclear, flag these situatio
 
 ### T2-1 — AT/MP category uncertainty
 
-- **T2-1** — Trigger: The employer's work-injury risk category is unknown or disputed. Issue: The rate swings from 2% to 5% — a 3-point spread on the 75,000 base (XOF 1,500 vs 3,750/employee/month). Action: Use 2% as a conservative placeholder, label it, and flag for reviewer to confirm the CNPS-assigned category.
+- **T2-1** — Trigger: The employer's work-injury risk category is unknown or disputed. Issue: The rate swings from 2% to 5% — a 3-point spread on the 70,000 base (XOF 1,400 vs 3,500/employee/month). Action: Use 2% as a conservative placeholder, label it, and flag for reviewer to confirm the CNPS-assigned category.
 
 ### T2-2 — Headcount near the 20-employee threshold
 
@@ -366,7 +366,7 @@ CLAMPS
   SMIG floor (plancher):              XOF 75,000
   Pension ceiling (45 × SMIG):        XOF 3,375,000
   Pension base = clamp(assiette,75k,3,375k): XOF [____]
-  Other-branch base (= 75,000):       XOF 75,000
+  Other-branch base (ceiling):        XOF 70,000
 
 COMPUTATION                         Employee      Employer
   Vieillesse 6.3% / 7.7%            XOF [____]    XOF [____]
@@ -422,8 +422,8 @@ If the employer provides only a bank statement and no payroll detail:
 1. **Scan for CNPS débits** — identify all outgoing payments matching Section 3 patterns.
 2. **Sum contributions paid** — total all CNPS and CMU débits in the period.
 3. **Reverse-engineer roughly:**
-   - Employer load on the first XOF 75,000 per employee ≈ 16.45%–18.45% (7.7% pension + 5% PF + 0.75% maternity + 2%–5% AT/MP) plus flat CMU.
-   - Above 75,000 (up to 3,375,000), only the 7.7% employer / 6.3% employee pension continues.
+   - Employer load ≈ 7.7% pension on the pension base (minimum 75,000) plus 7.75%–10.75% (5% PF + 0.75% maternity + 2%–5% AT/MP) on XOF 70,000, plus flat CMU.
+   - Above the 70,000 ceiling (up to 3,375,000), only the 7.7% employer / 6.3% employee pension continues.
 4. **Flag for reviewer:** "CNPS classification derived from bank-statement amounts only. AT/MP category, headcount basis, and per-employee assiette have not been independently verified. Reviewer must confirm against the CNPS appel before filing the DISA/DASC."
 
 ## Section 10 -- Reference material
@@ -432,15 +432,15 @@ If the employer provides only a bank statement and no payroll detail:
 
 **Calculation examples table**
 
-| Gross monthly salary | Pension base | Pension EE (6.3%) | Pension ER (7.7%) | Employer other branches (5% + 0.75% + AT%) on 75,000 | CMU (EE/ER) |
+| Gross monthly salary | Pension base | Pension EE (6.3%) | Pension ER (7.7%) | Employer other branches (5% + 0.75% + AT%) on 70,000 | CMU (EE/ER) |
 | --- | --- | --- | --- | --- | --- |
-| XOF 75,000 | 75,000 | 4,725.00 | 5,775.00 | 6,562.50 (@3%) | 500 / 500 |
-| XOF 200,000 | 200,000 | 12,600.00 | 15,400.00 | 5,812.50 (@2%) | 500 / 500 |
-| XOF 500,000 | 500,000 | 31,500.00 | 38,500.00 | 6,562.50 (@3%) | 500 / 500 |
-| XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 |
-| XOF 5,000,000 | 3,375,000 (cap) | 212,625.00 | 259,875.00 | 6,562.50 (@3%) | 500 / 500 |
+| XOF 75,000 | 75,000 | 4,725.00 | 5,775.00 | 6,125.00 (@3%) | 500 / 500 |
+| XOF 200,000 | 200,000 | 12,600.00 | 15,400.00 | 5,425.00 (@2%) | 500 / 500 |
+| XOF 500,000 | 500,000 | 31,500.00 | 38,500.00 | 6,125.00 (@3%) | 500 / 500 |
+| XOF 3,375,000 | 3,375,000 | 212,625.00 | 259,875.00 | 6,125.00 (@3%) | 500 / 500 |
+| XOF 5,000,000 | 3,375,000 (cap) | 212,625.00 | 259,875.00 | 6,125.00 (@3%) | 500 / 500 |
 
-"Other branches" at 3% = 75,000 × (5% + 0.75% + 3%) = 75,000 × 8.75% = 6,562.50. At 2% = 75,000 × 7.75% = 5,812.50. Reconciles.
+"Other branches" at 3% = 70,000 × (5% + 0.75% + 3%) = 70,000 × 8.75% = 6,125.00. At 2% = 70,000 × 7.75% = 5,425.00. Reconciles.
 
 ### Self-employed (RSTI) — out of scope, for awareness only
 
@@ -464,13 +464,13 @@ If the employer provides only a bank statement and no payroll detail:
 
 ### Test suite
 
-**Test 1:** Gross XOF 75,000, AT/MP 3%. → Pension EE 4,725.00 / ER 5,775.00; PF 3,750.00; Maternité 562.50; AT/MP 2,250.00; CMU 500/500. Employee total 5,225.00; Employer total 12,837.50.
+**Test 1:** Gross XOF 75,000, AT/MP 3%. → Pension EE 4,725.00 / ER 5,775.00; PF 3,500.00; Maternité 525.00; AT/MP 2,100.00; CMU 500/500. Employee total 5,225.00; Employer total 12,400.00.
 
-**Test 2:** Gross XOF 500,000, AT/MP 3%. → Pension EE 31,500.00 / ER 38,500.00; PF 3,750.00; Maternité 562.50; AT/MP 2,250.00; CMU 500/500. Employee total 32,000.00; Employer total 45,562.50.
+**Test 2:** Gross XOF 500,000, AT/MP 3%. → Pension EE 31,500.00 / ER 38,500.00; PF 3,500.00; Maternité 525.00; AT/MP 2,100.00; CMU 500/500. Employee total 32,000.00; Employer total 45,125.00.
 
-**Test 3:** Gross XOF 5,000,000, AT/MP 3%. → Pension base capped at 3,375,000 → EE 212,625.00 / ER 259,875.00; PF 3,750.00; Maternité 562.50; AT/MP 2,250.00; CMU 500/500. Employee total 213,125.00; Employer total 266,937.50.
+**Test 3:** Gross XOF 5,000,000, AT/MP 3%. → Pension base capped at 3,375,000 → EE 212,625.00 / ER 259,875.00; PF 3,500.00; Maternité 525.00; AT/MP 2,100.00; CMU 500/500. Employee total 213,125.00; Employer total 266,500.00.
 
-**Test 4:** Gross XOF 200,000, AT/MP 2%. → Pension EE 12,600.00 / ER 15,400.00; PF 3,750.00; Maternité 562.50; AT/MP 1,500.00; CMU 500/500. Employee total 13,100.00; Employer total 21,712.50.
+**Test 4:** Gross XOF 200,000, AT/MP 2%. → Pension EE 12,600.00 / ER 15,400.00; PF 3,500.00; Maternité 525.00; AT/MP 1,400.00; CMU 500/500. Employee total 13,100.00; Employer total 21,325.00.
 
 **Test 5:** Gross XOF 50,000 (below SMIG). → Apply floor 75,000. Same as Test 1. Never contribute on 50,000.
 
@@ -486,7 +486,7 @@ If the employer provides only a bank statement and no payroll detail:
 
 - NEVER use the XOF 1,647,315 or 2,700,000 pension ceiling — the current ceiling is XOF 3,375,000.
 - NEVER contribute on a salary below the XOF 75,000 SMIG floor — always apply the floor.
-- NEVER apply the pension ceiling (3,375,000) to PF/Maternité/AT-MP — those are capped at 75,000.
+- NEVER apply the pension ceiling (3,375,000) to PF/Maternité/AT-MP — those are capped at 70,000.
 - NEVER deduct family benefits, maternity, or AT/MP from the employee — they are employer-only.
 - NEVER compute CMU as a percentage — it is flat XOF 500 + 500 per covered person.
 - NEVER invent the AT/MP risk category — use the employer's CNPS-assigned rate; default 2% and flag.
@@ -506,13 +506,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

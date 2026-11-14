@@ -4,8 +4,8 @@ description: Tier 2 US federal content skill for preparing Form 1120 — the US 
 jurisdiction: US
 category: federal
 tax_year: 2025
-version: 1.2
-last_updated: 2026-10-04
+version: 1.3
+last_updated: 2026-11-10
 reviewed_by: Christopher Aryee, CPA
 review_status: pending_review
 tier: 1
@@ -96,21 +96,22 @@ Because the rate is flat, the long-standing income-shifting strategies (paying b
 | --- | --- |
 | December 31, 2025 (calendar year) | **April 15, 2026** |
 | January 31, 2026 (fiscal) | May 15, 2026 |
-| June 30, 2026 (fiscal) | October 15, 2026 |
+| June 30, 2026 (fiscal; tax year beginning July 1, 2025) | September 15, 2026 |
+| June 30, 2027 (fiscal; tax year beginning July 1, 2026) | October 15, 2027 |
 
-- **Special rule for fiscal years ending June 30** — For tax years beginning before January 1, 2026, a fiscal-year C-corporation with a June 30 year-end has historically used a September 15 due date (15th day of 3rd month). This special rule for June 30 year-ends was scheduled to phase in to the new 4th-month rule for years beginning after December 31, 2025. A June 30, 2026 year-end (i.e., tax year beginning July 1, 2025) is the first year for which the new October 15 due date applies. Confirm against current IRS instructions for the year of filing.  _(IRC §6072(b))_
+- **Special rule for fiscal years ending June 30** — For tax years beginning before January 1, 2026, a C corporation with a June 30 year-end must file by the 15th day of the 3rd month after year-end (September 15). The general 4th-month rule applies to June 30 year-ends only for tax years beginning after December 31, 2025. A June 30, 2026 year-end (tax year beginning July 1, 2025) is therefore still due **September 15, 2026**; the first October 15 due date is for a June 30, 2027 year-end (tax year beginning July 1, 2026), due October 15, 2027. A short tax year ending at any time in June is treated as ending June 30. Confirm against current IRS instructions for the year of filing.  _(IRC §6072(b); Instructions for Form 1120 (2025), When To File)_
 - **Weekend/holiday rule** — If the due date falls on a Saturday, Sunday, or legal holiday, the return is timely if filed on the next business day.  _(IRC §7503)_
 
 ### 4.2 Extension — Form 7004
 
 - **Automatic 6-month extension** — A corporation may obtain an automatic 6-month extension to file Form 1120 by filing Form 7004 (Application for Automatic Extension of Time To File Certain Business Income Tax, Information, and Other Returns) on or before the original due date.  _(Form 7004)_
 
-**Extended due date table**  _(Form 7004)_
+**Extended due date table**  _(Form 7004; Instructions for Form 7004 (Rev. December 2025))_
 
 | Tax year-end | Original due | Extended due |
 | --- | --- | --- |
 | December 31, 2025 | April 15, 2026 | **October 15, 2026** |
-| June 30, 2026 | October 15, 2026 | **April 15, 2027** |
+| June 30, 2026 | September 15, 2026 | **April 15, 2027** (automatic 7-month extension for June 30 year-ends in tax years beginning before January 1, 2026) |
 
 - **Extension extends filing time only, not payment time** — Critical caveat: Form 7004 extends the time to FILE, not the time to PAY. The corporation must pay the full estimated balance due by the original due date to avoid the §6651(a)(2) late-payment penalty (0.5% per month, max 25%) and §6601 interest. If Form 7004 is filed but no payment is made and a balance is owed, the extension is still valid for filing-penalty purposes, but late-payment penalty and interest accrue from the original due date. Form 7004 requires: Estimated total tax liability for the year (Line 6); Total payments and credits already made (Line 7); Balance due to be paid with the extension (Line 8). The IRS does not require a reason; the extension is automatic if Form 7004 is properly completed and filed timely.  _(IRC §6651(a)(2); IRC §6601)_
 
@@ -328,25 +329,26 @@ Even though there was a $1M NOL fully covering the $800k income, only $640k coul
 - Business interest income = $50,000
 - Floor plan financing = $0
 
-**ATI computation (EBIT-based, 2025):**
-- Start with taxable income before interest = $5,000,000
-- Add back: business interest expense ($1,800,000) — yes
-- Add back: NOL deduction — yes
-- Add back: §250 deduction — yes
-- Do NOT add back depreciation/amortization (post-2021 rule).
-- ATI = $5,000,000 + $1,800,000 = $6,800,000 (assume no NOL or §250)
+**ATI computation (EBITDA-based, 2025):**
+- Tentative taxable income (Form 8990 line 6, computed as if §163(j) did not apply) = $5,000,000 − $1,800,000 interest = $3,200,000
+- Add back: business interest expense ($1,800,000) (line 8)
+- Add back: depreciation ($1,500,000) (line 11; restored for tax years beginning after 2024)
+- Add back: NOL deduction and §250 deduction (assume none)
+- Subtract: business interest income ($50,000) (line 18; assumes the $5,000,000 includes it)
+- ATI = $3,200,000 + $1,800,000 + $1,500,000 − $50,000 = $6,450,000
 
 **Limit:**
-- 30% × $6,800,000 = $2,040,000
-- Plus business interest income $50,000 = $2,090,000
+- 30% × $6,450,000 = $1,935,000
+- Plus business interest income $50,000 = $1,985,000
 
 **Result:**
-- Business interest of $1,800,000 ≤ $2,090,000 limit → fully deductible.
+- Business interest of $1,800,000 ≤ $1,985,000 limit → fully deductible.  _(IRC §163(j)(8); OBBBA §70303; Instructions for Form 8990 (2025))_
 
 **Alternative (tight scenario):**
 - If business interest = $2,500,000:
-- Deductible = $50,000 (interest income) + $2,040,000 (30% × ATI) = $2,090,000
-- Disallowed and carried forward = $2,500,000 − $2,090,000 = $410,000
+- ATI is unchanged at $6,450,000, because the interest is added back in full
+- Deductible = $50,000 (interest income) + $1,935,000 (30% × ATI) = $1,985,000
+- Disallowed and carried forward = $2,500,000 − $1,985,000 = $515,000
 
 ## 10. §174 R&D capitalization
 
@@ -799,7 +801,7 @@ This skill provides a structured walkthrough for preparing Form 1120 for tax yea
 
 1. Confirm the 2025 Form 1120 and instructions as released by the IRS in late 2025 / early 2026 (changes from the 2024 form possible).
 2. Confirm the 2025 Rev. Proc. inflation adjustments (small-business threshold, §6651 minimum penalty, §6655 large-corp threshold).
-3. Confirm no late-2025 or early-2026 legislation altered §174, §163(j), §250 sunset, or CAMT thresholds. Watch for the routinely-proposed (and routinely-stalled) R&D restoration / EBITDA restoration / bonus depreciation extension package.
+3. Confirm no late-2025 or early-2026 legislation altered §174, §163(j), §250 sunset, or CAMT thresholds. OBBBA has already restored domestic research expensing, the EBITDA base for §163(j) and 100% bonus depreciation (OBBBA §§70301-70303); apply those rules as described in this skill.
 4. Confirm the corporation's state filings — this skill addresses federal only.
 5. For any item flagged "refer out" (consolidated returns, foreign subsidiaries, BEAT, R&D, FTC, CAMT mechanics, stock buyback excise), engage the specialized skill or specialist.
 
@@ -813,13 +815,15 @@ This skill provides a structured walkthrough for preparing Form 1120 for tax yea
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

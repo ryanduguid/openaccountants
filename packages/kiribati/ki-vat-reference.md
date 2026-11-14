@@ -1,22 +1,14 @@
 ---
 name: ki-vat-reference
 description: >
-  Kiribati value added tax reference for an ordinary taxable business in 2026.
-  Gives the 12.5% and zero rates, the $100,000 registration test, exempt and
-  zero-rated schedules as amended, input tax apportionment, tax invoices,
-  quarterly returns and payment, imports, non-residents, refunds, interest,
-  penalties and worked figures. Trigger on Kiribati VAT, form RET 020 or Kiribati
-  Tax Division returns. Refuses voluntary registration, gambling, foreign suppliers
-  and platforms, going concern transfers and return lodgement with imported
-  services. This source-cited draft awaits local professional review and is not
-  filing readiness.
+  Kiribati VAT reference for ordinary taxable businesses in 2026: rates, registration, exemptions, input apportionment, invoices, quarterly returns/payment, imports, refunds, penalties and worked figures. Includes original foreign-investment fees, certificate reporting and transfers alongside attributed business/employer registration and PAYE/KPF guidance and selected company-information amendments. Trigger on Kiribati VAT, RET 020, business registration, investment certificates, financial statements, PAYE or KPF. Refuses voluntary registration, gambling, foreign suppliers/platforms, going concern transfers and return lodgement with imported services. This source-cited draft awaits professional review and does not establish filing readiness, complete current law or an actual applicant's eligibility.
 jurisdiction: KI
 category: international
 tax_year: 2026
-tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established."
+tax_year_notes: "2026 VAT periods. Act 14/2013 read with VAT Regulations 2014, Exempt Supplies Regulations 2016, VAT (Amendment) Act 2025 and Third Schedule Regulations 2025, the last 2 from 1 January 2026. Amending instruments from 2014 to 2024 other than those regulations are neither found nor excluded. Regulations called for by the 2025 Act not found. Revenue Administration Act 2013 read as enacted; commencement date and later amendments not established. Undated MTCIC/KPF administrative registration and employer guidance read 11 November 2026; statutory periods remain unverified. Original investment Act 2018 bears assent 24 December 2018; its commencement notice and later chain are unverified. Regulations 2019 notice appoints 4 November 2019; later amendments and 2026 application are unverified. Original Provident Fund amendments 2012 and 2019 read as printed; exact commencement and complete operative chain remain unverified. Data Protection Act 2025 selected amending text read with its 20 August 2026 commencement notice; principal Business Names/Companies Act context and the complete later chain remain unverified."
 tier: 2
-last_updated: 2026-11-02
-version: 0.2
+last_updated: 2026-11-12
+version: 0.6
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -25,7 +17,7 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Kiribati VAT Reference, 2026 (v0.2)
+# Kiribati VAT Reference, 2026 (v0.6)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -491,6 +483,167 @@ tolerance: 0.000001
 - **Slot 13, red flags:** no source. Use the base's general flags without a local figure.
 - **Slot 14, inputs:** sales and purchase records, tax invoices, bills of entry, withheld VAT records, prior period credit.
 - **Slot 15:** no source.
+
+## Business and employer registrations (administrative appendix)
+
+A VAT registration does not establish that a business has completed its other registrations. The Ministry of Tourism, Commerce, Industry and Cooperatives (MTCIC) publishes the sequence below in its [Foreign Investment Start-up Guide](https://files.cdn-files-a.com/uploads/10504502/normal_6809ff41a8000.pdf), linked from the [government investment portal](https://www.investinkiribati.mtcic.gov.ki/how-to-invest). The guide is undated. All 9 PDF pages and the selected government and Kiribati Provident Fund (KPF) pages were read on 11 November 2026. These are attributed administrative statements observed on that date; their underlying statutes, later amendments, commencement and current fee authority have not been established. A website copyright date is not an issue date. All VAT reading limits and refusals above continue to apply.
+
+### Foreign investment, company and business-name registration
+
+- **Foreign investment certificate:** MTCIC's guide, PDF page 2, and its [certificate page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/9-steps-to-starting-a-business) direct a foreign investor to the Investment Promotion Division before starting business. They list a signed application, name reservation, business plan, investor identity and bank references, police clearance for investors intending to reside locally and an environmental assessment where applicable. This is a preparation list, not confirmation of an applicant's eligibility or a complete immigration/environmental approval.
+- **Investment fee:** those sources quote non-refundable AUD500 for investment up to AUD25,000, AUD1,000 for AUD25,000 to AUD250,000 and AUD1,500 above AUD250,000. Exactly AUD25,000 appears in both of the first 2 administrative bands. The original 2019 statutory schedule below is unambiguous, but the currently payable fee remains held. They describe Registrar approval/rejection at AUD250,000 or below and Cabinet consideration above it, with a written appeal to the Foreign Investment Appeal Panel for a Registrar decision. The administrative processing summary must be read with the original Act's qualified 30-working-day and deferral provisions below; approval is not guaranteed.
+- **Company and business name:** the guide, PDF page 3, and [MTCIC's registration page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/7-big-things-a-start-up-must-have-to-succeed) direct registration to the Business and Companies Regulatory Division. The PDF's embedded table lists company applicant/name, registered office, shareholders, directors, secretary, share capital, Articles and identity/supporting documents, including a foreign investment certificate where applicable. Its business-name list covers applicant/name, place, nature and commencement of the business, with supporting identity and applicable certificates. This does not establish every legal form, minimum capital, director/secretary qualification or residence requirement.
+- **Company fees:** the PDF page 3 table quotes AUD50 registration plus AUD50 approval and a separate incorporation fee dependent on share capital. AUD100 is only the sum of the 2 specified components; the incorporation schedule and total are unknown. The business-name application fee is separately AUD100. The source's usual processing estimate of up to 3 days is not a legal deadline. These quoted administrative fees require confirmation for the application date.
+
+### Chamber membership, tax registration and local licence
+
+The guide, PDF page 4, attributes KCCI membership for businesses registering a business name with MTCIC to the KCCI Act 2024 from **1 January 2025**, before applying for a local operational licence. It asks for the business-name certificate, membership application and fee. Quoted fees are AUD75 micro, AUD150 small, AUD300 medium, AUD400 large, AUD600 state-owned enterprise and AUD800 foreign investment business. HOLD category definitions, overlapping categories, renewal frequency and statutory fee authority. The source does not establish that these are annual charges or that every business falls into only one category. Its one-business-day processing statement is an estimate.
+
+For tax registration, the guide, PDF page 5, and [MTCIC's tax-registration page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/boost-your-income) direct individuals and companies to the MFED Tax Division for a TIN, with a confirmation letter identifying registered tax types. They describe a signed authorised application and identity/bank-confirmation attachments, no application fee and processing up to 3 days. Do not equate this with automatic VAT registration. Their VAT threshold shorthand 'within a tax year' does not replace the preceding statutory rolling/prospective 12-month tests.
+
+Those tax-registration sources describe employers collecting PAYE from employee income and remitting monthly **within 15 days after month-end**, with an **annual PAYE return within 3 months after year-end**. They mention monthly and annual prescribed forms but do not establish that a monthly return has the payment deadline. These are undated administrative positions, not verification of Income Tax Act 2023, its operative chain, the applicable tax year, wage base, bands, employee/residence scope, benefits, reliefs or penalties. HOLD a payroll calculation or filing-ready PAYE return until those points and current forms are established.
+
+The guide, PDF page 6, directs a foreign investor/company to the relevant licensing authority in **each jurisdiction of operation**, with annual renewal and fees depending on activity, category and turnover. It gives local council contacts. It quotes AUD5 for the form and AUD50 for failing to pay before the end of March; these are not established as universal or all-inclusive council charges. Obtain the relevant council's operative schedule, renewal date and variation requirements. The KPF passage's reference to an MTCIC operating licence differs from this local-licensing step; HOLD the correct issuer and prerequisite for the particular application.
+
+### Employer and employee KPF registration
+
+The guide, PDF page 8 (printed page 7), and [MTCIC's KPF registration page](https://www.investinkiribati.mtcic.gov.ki/step-by-step-guide-to-starting-a-business/how-to-pick-a-name-for-your-startup) describe manual employer registration **within 10 days of starting business**, an employer number/certificate and employee registration **within 30 days of employment**. The listed application is free, with a usual one-day processing estimate. The PDF's earnings/month eligibility phrase is malformed; the website's monthly-income wording supplies no reliable threshold. These remain the ministry's attributed administrative statements; the KPF sources below do not establish the statutory employer-registration clock.
+
+KPF's own undated [Employer page](https://kpf.com.ki/index.php/contact/employer), read on 11 November 2026, describes submitting an employer form by email or at its office and receiving a remittance/submission reference number. It names the ministry and island council in its certified business-licence requirement. This adds a submission option to MTCIC's manual-registration description; it does not settle the correct licence issuer, every prerequisite or a secure submission channel.
+
+KPF's [Manage account page](https://kpf.com.ki/index.php/contact/definition-of-employer), read on the same date, says that when a person **not already a Fund member** becomes an employee, the employer should register the person and forward the appropriate form **within 14 days of employment commencing**. This conflicts with MTCIC's 30-day statement. **HOLD the legally applicable registration trigger, deadline and exceptions.** The 14-day employee statement does not authenticate a 10-day employer-registration deadline.
+
+The [KPF FAQ](https://kpf.com.ki/index.php/fa/faq), answers 'If I am an employee, do I need to register?' and 'What is required when registered as member of the Fund?', describes employer-assisted registration with a signed form, birth certificate and 1 passport photo, without a registration deadline. KPF's [Register Employee page](https://kpf.com.ki/index.php/contact/employer-contribution), read on 11 November 2026, describes an employee-completed, employer-countersigned form, a certified birth certificate and 1 passport photo. Its references to I-Kiribati citizens and different employment/service-contract arrangements do not settle statutory nationality exceptions or make every independent contractor an employee. Confirm eligibility, the current form and a secure submission route before an engagement. The reviewed pages' form/manual links did not establish a usable public download; no portal or filing capability was validated.
+
+### KPF contributions, monthly reporting and unresolved due date
+
+MTCIC's guide, PDF page 8, attributes **7.5% employee plus 7.5% employer, 15% combined, to 2001** and says the employee portion is deducted whenever paid. The KPF FAQ's contribution-calculation answer corroborates the rates and employer remittance with a monthly detailed schedule. The FAQ says 'total earnings' and then illustrates 'Basic Salary/Wage'; KPF's Manage account page instead describes deductions from **basic wages**. These administrative descriptions do not resolve the lawful contribution base. HOLD allowances, overtime, bonuses, exclusions, ceilings and the operative statutory rule. The example below applies only to earnings already established as eligible.
+
+The sources conflict on payment timing: PDF page 8 says before the last day of the following month and also gives a 15-days-after-month-end parenthesis; MTCIC's webpage says by the 15th of the following month. KPF's Manage account page says contributions must reach KPF **no later than the 15th of the following month**. This corroborates KPF's administrative position but does not resolve the PDF conflict or authenticate the statutory deadline. The FAQ describes monthly remittance without an exact due date. **HOLD the legally applicable due date.** The FAQ's late-payment answer quotes a 5% charge on total contributions due; statutory authority, commencement, recurrence, compounding and exceptions were not established. Do not calculate or accrue a penalty from that summary alone.
+
+KPF's Employer page describes a monthly schedule identifying employee names, KPF account numbers and contribution amounts, signed by the employer or an authorised accountable person. Manage account also asks employers to update business information, quote their reference number on contributions and retain employee records. The pages establish no statutory retention period. Current forms, lawful filing/payment rules and actual submission capability remain held.
+
+**Fictional arithmetic illustration, not a payroll assessment:** for one pay with AUD120 of eligible earnings, employee 7.5% is AUD9 and employer 7.5% is AUD9, giving AUD18 for that pay. The FAQ's AUD36 monthly illustration assumes 2 such fortnightly pays and AUD240 eligible earnings. Aggregate the actual eligible pays for the calendar month. A month with 3 identical eligible pays would instead have AUD360 earnings and AUD54 combined contributions; a fortnightly payroll does not give exactly 2 pays in every month. No rounding rule or payment deadline is inferred.
+
+```oa-check
+name: KI KPF one eligible pay
+inputs:
+  eligible_earnings: 120
+  employee_rate: 0.075
+  employer_rate: 0.075
+steps:
+  - employee: eligible_earnings * employee_rate
+  - employer: eligible_earnings * employer_rate
+  - combined: employee + employer
+expected:
+  employee: 9
+  employer: 9
+  combined: 18
+tolerance: 0.000001
+```
+
+```oa-check
+name: KI KPF actual two or three eligible pays
+inputs:
+  per_pay_earnings: 120
+  combined_rate: 0.15
+steps:
+  - two_pay_earnings: per_pay_earnings * 2
+  - two_pay_contributions: two_pay_earnings * combined_rate
+  - three_pay_earnings: per_pay_earnings * 3
+  - three_pay_contributions: three_pay_earnings * combined_rate
+expected:
+  two_pay_earnings: 240
+  two_pay_contributions: 36
+  three_pay_earnings: 360
+  three_pay_contributions: 54
+tolerance: 0.000001
+```
+
+### Selected original KPF amendments and period limits
+
+The original [Provident Fund (Amendment) Act 2012, No. 3 of 2012](https://kiribati.gov.ki/sites/default/files/Provident%20Fund%20%28Amendment%29%20Act%202012.pdf), PDF page 1, bears assent dated **11 October 2012**. Its commencement field supplies no exact day or month. The original [Provident Fund Ordinance (Amendment) Act 2019, No. 5 of 2019](https://www.president.gov.ki/presidentgovki/wp-content/uploads/2019/10/Gazettes-Acts-of-2019.pdf), Gazette PDF page 58, bears handwritten assent dated **18 September 2019** and a commencement field showing only 2019. Its Clerk's certificate, page 60, records parliamentary passage on **26 August 2019**, leaving publication day and month blank. These selected original texts were read on 11 November 2026. Exact commencement, the principal Ordinance and the complete later operative chain remain unverified; assent or inclusion in the Gazette is not proof here of a particular commencement date.
+
+Section 2 of the 2012 Act adds section 20(1)(f): the member must have been without employment for **more than 6 months**, the Board must consider that the member suffers financial hardship and it may approve an amount sufficient to alleviate that hardship. The memorandum's 'at least six months' differs at the boundary; retain the operative 'more than' test. Under that original clause alone, exactly 6 months fails the duration limb, and a longer period still requires the Board's hardship assessment and discretionary approval. No automatic right to the full balance or current withdrawal eligibility follows from this isolated amendment.
+
+Section 3 of the 2012 Act inserts section 28A, restricting alteration of a Board-approved payout without the member's consent or, after death, the specified nominee's or court-appointed person's consent. The rule is subject to Parts VIA and VIB and section 28. The source's Part VIA heading and Part VI insertion sentence differ; the principal text, current scope and procedure still require reconciliation.
+
+Section 3 of the 2019 Act replaces the Ordinance's definition of financial year with **1 April to 31 March in the following year**. Its memorandum, page 59, concerns KPF's accounts and submission to the Kiribati Audit Office. This does not establish an employer's enterprise financial year, a payroll remittance deadline or a particular KPF accounts-filing deadline. The investment certificate's enterprise-year reporting condition below remains a separate question for the actual certificate and enterprise.
+
+### Evidence still needed for this appendix
+
+Obtain the principal company, KCCI, income-tax and KPF statutes and the complete operative amendment/commencement chains, including the investment-law gaps below. Reconcile KPF's 14-day employee-registration statement with MTCIC's 30 days, the employer-registration trigger, submission routes, eligibility and contribution bases/caps/exclusions. Establish lawful filing/payment and retention rules, current forms and fee schedules. The isolated 2012 and 2019 KPF amendments do not settle those current obligations. Confirm investment fees, the unknown incorporation amount, KCCI categories and licence-issuer mismatch; the original 2019 investment fee boundary is explained below. Full formation, payroll, social-contribution, financial-reporting, cross-border and property coverage remains incomplete. No topic is declared inapplicable from these sources. All existing VAT/RAA/amendment and filing holds remain.
+
+
+## Foreign-investment law, fees and certificate conditions
+
+**Source-period limit:** the following explains selected provisions of the original [Foreign Investment Act 2018, No. 14 of 2018](https://mtcic.gov.ki/wp-content/plugins/download-attachments/includes/download.php?id=4375) and the government's referred [Foreign Investment Regulations 2019, No. 1 of 2019](https://files.cdn-files-a.com/uploads/10504502/normal_67e7e9d1423e3.pdf), read on 11 November 2026. The ministry's 23-page Act scan bears assent dated **24 December 2018**, but its commencement line is blank and section 2 requires a Minister's notice. That Act notice and the complete later amendment/order chain remain unverified. The regulations' own signed notice, PDF page 14, is dated and published **1 November 2019** and appoints **4 November 2019** for their commencement. It does not establish the Act's commencement. These are original-text components, not a consolidated 2026 opinion or authority to submit an application.
+
+### Investment approval and the 2 capital tests
+
+The original Act, sections 14-17, PDF pages 9-11, prohibits a foreign investor from investing without a valid certificate, provides an application to the Registrar with the prescribed form/fee and provides a Secretary-signed certificate identifying the investor, activity and applicable conditions. Determine the investor's status from section 3, PDF pages 4-5; incorporation in Kiribati alone does not settle the citizenship and direct/indirect ownership or control test.
+
+Sections 14(8) and 15 use **total capital input to the foreign investment**: at AUD250,000 or below, the Registrar may approve in consultation with the Secretary; above AUD250,000, the Registrar submits the application to Cabinet. Cabinet may approve with conditions, refuse with reasons or return it for further action. Section 14(3) says the Registrar *may* determine an application within 30 working days. Subsections (4)-(6) address specialist advice, responses within 10 working days and reasons for deferral before the 30-working-day period expires. Do not treat this as guaranteed approval or an unconditional processing deadline.
+
+Regulations 13-16, PDF page 2, prescribe Schedule 2 Form 1 for an application, Form 2 for a certificate and Schedule 3 fees; regulation 15 permits forms to be modified as directed by the Registrar. **Schedule 3's fee base is 'share capital or other capital'.** Do not assume it equals the Act's total-capital-input approval test without checking the facts.
+
+| Original 2019 Schedule 3 fee base | Application fee in AUD |
+| --- | --- |
+| Up to and including AUD25,000 | 500 |
+| Above AUD25,000 up to and including AUD250,000 | 1,000 |
+| Above AUD250,000 | 1,500 |
+
+Source: regulations Schedule 3, PDF page 13. The separately published [2019 application form](https://mtcic.gov.ki/wp-content/plugins/download-attachments/includes/download.php?id=3451), PDF page 8, has the same boundaries and amounts. Its declaration, PDF page 6, describes the fee as non-refundable and says that, when filed in hard copy, only a fully completed, original signed form with full payment will be processed. Confirm the current prescribed or modified form, fee and permitted submission route for the application date.
+
+**Conditional boundary examples under the original schedule:** a fee base of exactly AUD25,000 falls in the AUD500 band. Exactly AUD250,000 falls in the AUD1,000 band; AUD250,001 falls in the AUD1,500 band. If the separately established total capital input is AUD250,000, the original Act places approval with the Registrar in consultation with the Secretary; if it is AUD250,001, the Cabinet route applies. These illustrations resolve the original schedule's boundary wording, not the currently payable amount or an applicant's eligibility. The administrative start-up guide's overlapping AUD25,000 wording remains a recorded source defect.
+
+### Certificate duration, reporting and other registrations
+
+The original Act, sections 18-20, PDF page 11, makes a certificate valid from issue until termination of the approved business activity, subject to cancellation, and says it ceases to be valid if that activity does not commence within 1 year of issue. Commencement means activities appropriate to carrying out that particular business. This is distinct from the administrative guide's annual local operating-licence renewal.
+
+The original regulations' Schedule 2 Form 2, PDF pages 11-12, includes these certificate conditions:
+
+- Condition 2 calls for a yearly financial statement to the Registrar **within 60 days after the end of the enterprise's financial year**.
+- Condition 3 calls for 'bi-annual progress reports'. The source supplies no exact reporting dates or form here; do not invent a twice-yearly calendar or a 2-year interval.
+- Conditions 4, 6-11 address staying within approved activities, tax/VAT registration, licence/certificate conditions, relevant sector requirements, work permits, business/company registration before operation and further Registrar conditions. The tax-registration condition does not establish a VAT exemption or displace the VAT tests in this guide.
+- Condition 12 says the certificate is not transferable.
+
+Read the actual issued certificate and any modified form before treating those conditions as the enterprise's current obligations. Condition 5's employment wording and parenthetical minimum require clarification; no universal staffing number, contribution exception or immigration permission is inferred. The original Act's section 6(6), PDF page 8, instead concerns the **Registrar's** administration report within 2 months after financial year-end; it is not a substitute investor reporting deadline. General company annual returns, accounting standards, audit requirements and record-retention rules remain outstanding.
+
+### Sector eligibility and amendment controls
+
+Original Act sections 9-13, PDF pages 8-9, distinguish reserved activities, restricted activities subject to prescribed conditions and prohibited activities. Section 12 allows the Minister, after Cabinet consultation, to amend the lists by order. Section 13 addresses the effective date of a reservation and protection for a prior lawful investment. The regulations' rules 4-12 establish a submission/review process; they do not make an applicant's proposal an effective amendment.
+
+The ministry's [3-page Foreign Investment Guideline](https://mtcic.gov.ki/wp-content/plugins/download-attachments/includes/download.php?id=2207), also referred from the investment portal, is undated. Its restricted-list page assigns aluminium a local-joint-venture condition. In contrast, the original Act scan's Schedule 2, PDF page 19, leaves 'aluminium' at the foot of the page without an aligned condition. Do not silently repair the original layout from the guideline or treat a current sector classification as settled. Obtain the operative orders, a reliable schedule and Registrar confirmation of the particular activity and any grandfathering.
+
+### Transfers, changes and review rights
+
+Original Act section 26, PDF pages 13-14, permits investment-related transfers subject to Kiribati law. It includes profits, dividends, royalties, loan repayments, sale/liquidation proceeds and foreign personnel remuneration, with grounds to delay or prevent transfers including compliance with tax, social-security, retirement, compulsory-savings and severance obligations. This supplies no withholding rate, tax exemption, treaty entitlement or unconditional right to remit. Verify the payment's tax treatment and all other applicable controls separately.
+
+Original sections 16(3) and 28, PDF pages 11 and 15-16, provide written refusal grounds and review by the Investment Appeal Panel. A written review application must give reasons and be made within 3 months of the decision; section 28(5) specifies 14 working days for the Panel's decision after submission. The Act also addresses failure to decide, a prescribed review payment and further appeal to the High Court. Obtain current procedure, fees, service rules and advice on a clock where no decision has been issued.
+
+Sections 19 and 29, PDF pages 11 and 16, raise cancellation/offence risks for prohibited or restricted activities, changed activities, ownership/control changes and transfers. The original cancellation wording referring to a restricted activity requires reconciliation with section 10's conditional permission; no permitted restructuring route is assumed. Sections 32-33, PDF page 17, contain repeal and savings provisions for the earlier investment legislation. Preserve existing permits/contracts and establish the applicable transition before acting.
+
+**Still outstanding:** the Act's commencement notice, all later amendments and schedule orders, current fees/forms and issued-certificate conditions, authoritative sector/ownership classifications, reporting calendars and the remaining company, tax, payroll, social-contribution and property regimes. These selected original-law and certificate components add partial formation, reporting, cross-border and compliance evidence. They complete no whole topic and establish no inapplicability.
+
+## Selected data-protection amendments to business statutes
+
+This section records selected amending text in the [Data Protection Act 2025](https://www.mict.gov.ki/sites/default/files/publications/Data%20Protection%20Act%202025.pdf), not the complete company or business-name regime. The assented attachment, PDF page 3, bears a handwritten **18 September 2025** assent date. The Clerk's certificate on page 26 records passage on **18 August 2025** and publication by exhibition on **18 September 2025**. The Act-number field is blank, so no Act number is established here.
+
+### Commencement and the 2 selected amendments
+
+Section 2, PDF page 4, provides for commencement on a date appointed by ministerial notice. The [official commencement notice](https://www.president.gov.ki/images/Gazettes/2026/240826/Notice_of_Commencement_Data_Protection_Act.pdf), page 1, expressly exercises section 2 and appoints **20 August 2026** for the Act to come into force. Its signature date and publication by exhibition are also 20 August 2026. The assent and September 2025 publication dates are separate events.
+
+Section 34, PDF pages 19 and 20, supplies these selected amendments from that commencement:
+
+- **Business Names Act 2021, section 7(2):** section 34(2) adds a qualifier requiring compliance with the Data Protection Act 2025 to the end of that subsection. The attachment does not reproduce principal section 7(2); its full subject, operation and surrounding exceptions remain unverified.
+- **Companies Act 2021, section 160(b):** section 34(3) repeals and replaces that paragraph. The replacement addresses disclosure that would, or would be likely to, prejudice any other person's commercial position, whether or not that person supplied the information to the company, or constitute a violation of the Data Protection Act 2025. The principal section's opening words and surrounding provisions are not supplied. This amendment alone does not establish who may disclose, inspect, demand or withhold information, or a complete refusal or exemption procedure.
+
+The opening paragraph on PDF page 20 preserving individuals' Data Protection Act rights continues section 34(1)(g), which amends the Digital Government Act 2023. It is not part of either business-statute amendment above.
+
+**Example of the evidence boundary:** a company-information request dated 1 September 2026 falls after the appointed commencement. This reference identifies the selected amended wording but cannot decide the requester's entitlement or authorise withholding. Obtain the operative principal section, surrounding provisions, later amendments and facts before reaching that decision.
+
+**Still outstanding:** the complete Business Names Act and Companies Act context, later amendments and operative consolidation, the remaining Data Protection Act obligations and any applicable regulations, filing procedures and qualified local review. Selected pages were read; substantive PDF pages 5–18 were not reviewed. The earlier ministry Bill remains discovery evidence only. These components complete no whole reporting or compliance topic, establish no filing readiness and declare no topic inapplicable.
 
 ## Sources
 

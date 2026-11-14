@@ -1,10 +1,10 @@
 ---
 name: india-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Indian taxpayers — salaried individuals, self-employed professionals, and business owners. Trigger on phrases like "reduce my tax India", "tax planning", "80C", "80D", "old vs new regime", "HRA", "NPS", "Section 24", "presumptive taxation", "capital gains", "GST input credit", or any question about legally minimizing Indian income tax. Covers regime selection, deduction optimization, capital allowances, loss set-off, timing, GST planning, social security, and red lines. ALWAYS read this skill before giving Indian tax optimization advice.
-version: 1.0
+version: 1.1
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # India Tax Optimization
 
-## India — Tax Optimization Skill v1.0
+## India — Tax Optimization Skill v1.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Central Board of Direct Taxes (CBDT); Income Tax Department |
 | Filing deadline | 31 July (individuals without audit); 31 October (businesses requiring audit) |
 | Individual top rate | 30% + 4% health & education cess = 31.2% (old regime); surcharge up to 25% on high incomes |
-| Corporate tax (domestic, new manufacturing) | 15% + cess (s 115BAB) |
+| Corporate tax (domestic, new manufacturing) | 15% + surcharge + cess (s 115BAB): only companies set up on or after 1 October 2019 that began manufacturing by 31 March 2024; closed to new companies; companies formed now may instead opt for 22% under s 115BAA (from tax year 2026-27, s 200 of the Income-tax Act 2025) by giving up specified deductions and filing the option by the return due date; otherwise the regular company rates apply |
 | Corporate tax (domestic, general) | 22% + cess (s 115BAA) or 25%/30% under regular provisions |
 | GST rates | 0%, 5%, 18%, and 40% for sin/luxury goods (two-slab structure from 22 September 2025; the former 12% and 28% slabs were abolished). Special rates remain for a few items, e.g. 3% on gold |
 
@@ -282,8 +282,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | April | New FY begins. Choose tax regime with employer (Form 12BBA). Start SIP in ELSS/PPF. Review salary structure with HR |
 | May–June | Advance tax 1st instalment due 15 June (15%). Declare HRA, LTA with employer. Submit investment declaration |
 | July 31 | ITR filing deadline (non-audit individuals). Prior-year return must be filed to carry forward losses |
-| September | Advance tax 2nd instalment due 15 Sept (45%). Mid-year investment review |
-| October 31 | Audit report filing deadline (businesses). Review capital gains position |
+| September | Advance tax 2nd instalment due 15 Sept (45%). Tax audit report due 30 September (one month before the return due date, s 44AB). Mid-year investment review |
+| October 31 | Return due date for businesses whose accounts must be audited. For AY 2026-27, CBDT Circular 7/2026 extended these returns (sl. no. 2 of the table below Explanation 2 to s 139(1)) from 31 October to 21 November 2026, and the audit report with them to 21 October 2026. Check for notified extensions each year. Review capital gains position |
 | November | Execute LTCG harvesting strategy. Review medical expenses for 80D |
 | December | Advance tax 3rd instalment due 15 Dec (75%). Final push on 80C investments |
 | January–February | Collect rent receipts, medical bills, donation receipts. HRA landlord PAN confirmation |
@@ -330,13 +330,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

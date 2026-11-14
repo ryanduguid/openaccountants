@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing a Nigeria
 jurisdiction: NG
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -114,13 +114,13 @@ The "small company" definition has shifted twice. Use the rule in force for the 
 - **FA 2019 → FY 2025** — Turnover ≤ N25m  _(FA 2019 s.16)_
 - **NTA 2025 (FY starting on/after 1 Jan 2026)** — Turnover ≤ N100m AND fixed assets ≤ N250m  _(NTA 2025)_
 - **Filing obligation for small companies** — Route `ng-cit` for all RCs. Small companies still file (CIT-nil return) — they do not escape the filing obligation.
-- **Minimum tax** — Historically applied at 0.5% of gross turnover where computed tax was lower; NTA 2025 retains a development-levy-style backstop for large companies. Reviewer to confirm for the specific period.
+- **Minimum tax** — Periods to 31 December 2025: CITA s 33 minimum tax of 0.5% of gross turnover where computed tax was lower. From 1 January 2026: a company in an MNE group (aggregate group turnover of at least 750 million; the currency printed in the Act is disputed, see `ng-cit`) or with turnover of ₦50 billion or more must top its effective tax rate up to 15% (NTA s 57); small companies pay 0% CIT and no development levy (ss 56 and 59). Route `ng-cit` §3.5 and §3.11. [NTA 2025 ss 56, 57 and 59](https://nass.gov.ng/documents/download/11249)
 
-### 4.4 PIT computation gate — PITA Sixth Schedule
+### 4.4 PIT computation gate — PITA Sixth Schedule (years of assessment to 2025)
 
 - **Progressive PIT rates** — 7% / 11% / 15% / 19% / 21% / 24% on bands stacked from N300,000 to > N3,200,000.  _(PITA Sixth Schedule)_
 - **Consolidated Relief Allowance (CRA)** — CRA = max(N200,000, 1% × gross income) + 20% × gross income  _(PITA Sixth Schedule)_
-- **Minimum tax (PIT)** — 1% of gross income where computed PIT after CRA and reliefs would be lower  _(PITA Sixth Schedule)_
+- **Minimum tax (PIT)** — 1% of gross income where computed PIT after CRA and reliefs would be lower, for years to 2025 only; for 2026 route `ng-personal-income-tax` (NTA s 58 and Fourth Schedule)  _(PITA Sixth Schedule)_
 - **Routing** — Route `ng-personal-income-tax` for the computation; defer state-specific filing portal nuances to that skill.
 
 ### 4.5 VAT gate — NTAA 2025 from 1 January 2026; VATA as amended by FA 2019 / FA 2020 / FA 2023 before that
@@ -494,13 +494,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

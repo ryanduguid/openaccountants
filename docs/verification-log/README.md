@@ -6,7 +6,90 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-14 | [Bermuda CIT registration, filing and payment controls](2026-11-14-bermuda-cit-filing-payment.md) |
+| 2026-11-14 | [Bermuda tax-system screening and evidence boundaries](2026-11-14-bermuda-tax-system-screening.md) |
+| 2026-11-14 | [Cayman economic substance notification and return procedures](2026-11-14-cayman-es-filing-procedures.md) |
+| 2026-11-14 | [Cayman holding-company economic substance classifications](2026-11-14-cayman-holding-company-es.md) |
+| 2026-11-14 | [New Zealand company imputation account and IR4J reconciliation](2026-11-14-new-zealand-company-ica-ir4j.md) |
+| 2026-11-14 | [New Zealand company cash dividends and resident withholding](2026-11-14-new-zealand-company-dividend-rwt-core.md) |
+| 2026-11-14 | [New Zealand company reporting, audit and annual reports](2026-11-14-new-zealand-company-reporting-core.md) |
+| 2026-11-14 | [New Zealand company capital, records and shareholder decisions](2026-11-14-new-zealand-company-capital-records.md) |
+| 2026-11-13 | [New Zealand company incorporation and register annual return](2026-11-13-new-zealand-company-register-core.md) |
+| 2026-11-13 | [New Zealand ordinary company income tax and 2026 IR4](2026-11-13-new-zealand-company-ir4.md) |
+| 2026-11-13 | [New Zealand GST registration, timing and return boxes](2026-11-13-new-zealand-gst-core.md) |
+| 2026-11-13 | [New Zealand annual IR3 reconciliation and standard provisional handoff](2026-11-13-new-zealand-annual-ir3-provisional.md) |
+| 2026-11-13 | [New Zealand exempt ESS share and trustee meanings](2026-11-13-new-zealand-exempt-ess-share-trustee.md) |
+| 2026-11-13 | [New Zealand exempt employee share scheme conditions and disclosure](2026-11-13-new-zealand-exempt-employee-share-schemes.md) |
+| 2026-11-13 | [New Zealand CAE and EDW eligibility correction](2026-11-13-new-zealand-cae-edw-eligibility.md) |
+| 2026-11-13 | [New Zealand ordinary NSW, CAE and EDW payroll methods](2026-11-13-new-zealand-ordinary-special-codes.md) |
+| 2026-11-13 | [New Zealand employee share schemes, funding and timing](2026-11-13-new-zealand-employee-share-schemes.md) |
+| 2026-11-12 | [New Zealand payroll records, corrections and penalty boundaries](2026-11-12-new-zealand-payroll-records-corrections-penalties.md) |
+| 2026-11-12 | [New Zealand KiwiSaver administration and source qualifications](2026-11-12-new-zealand-kiwisaver-administration.md) |
+| 2026-11-12 | [New Zealand deduction notices and protected earnings](2026-11-12-new-zealand-deduction-notices-protected-earnings.md) |
+| 2026-11-12 | [New Zealand tailored codes and extra-pay calculations](2026-11-12-new-zealand-tailored-codes-extra-pay.md) |
+| 2026-11-12 | [New Zealand ordinary PAYE and student-loan calculations](2026-11-12-new-zealand-ordinary-paye-student-loans.md) |
+| 2026-11-12 | [New Zealand 2026-27 employer payroll and contribution boundaries](2026-11-12-new-zealand-employer-payroll.md) |
+| 2026-11-12 | [Andorra minimum-wage periods and CASS supplement limits](2026-11-12-andorra-minimum-wage-cass-supplement.md) |
+| 2026-11-12 | [Andorra payroll withholding and CASS workflow](2026-11-12-andorra-payroll-cass-workflow.md) |
+| 2026-11-12 | [Selected provisions in the retrieved OHADA Code](2026-11-12-ohada-code-practice-independence.md) |
+| 2026-11-12 | [Retrieved OHADA ethics and quality tools](2026-11-12-ohada-ethics-quality-tools.md) |
+| 2026-11-12 | [Selected OHADA professional standards, ethics and quality assurance](2026-11-12-ohada-professional-framework.md) |
+| 2026-11-12 | [Selected OHADA statutory audit appointment rules](2026-11-12-ohada-statutory-audit-appointments.md) |
+| 2026-11-12 | [Selected OHADA accounting regimes, timetables and records](2026-11-12-ohada-accounting-regimes-records.md) |
+| 2026-11-12 | [Kiribati business-statute data-protection amendments](2026-11-12-kiribati-company-data-amendments.md) |
+| 2026-11-12 | [Annual company reporting in Cameroon, Côte d’Ivoire and Comoros](2026-11-12-ohada-reporting-cameroon-cote-divoire-comoros.md) |
+| 2026-11-11 | [Kiribati KPF original amendments and employer-source conflicts](2026-11-11-kiribati-kpf-law-and-employer-conflicts.md) |
+| 2026-11-11 | [Kiribati foreign-investment law, fees and certificate conditions](2026-11-11-kiribati-foreign-investment-law.md) |
+| 2026-11-11 | [Kiribati business and employer registration scope](2026-11-11-kiribati-business-and-employer-registration.md) |
+| 2026-11-11 | [Ghana overview and property source scope](2026-11-11-ghana-overview-and-property-scope.md) |
+| 2026-11-11 | [Ghana corporate income, withholding and period scope](2026-11-11-ghana-corporate-income-withholding-and-period-scope.md) |
+| 2026-11-11 | [Ghana formation and reporting scope](2026-11-11-ghana-formation-and-reporting-scope.md) |
+| 2026-11-11 | [Ghana VAT Free Zone and imported-service scope](2026-11-11-ghana-vat-free-zone-and-imported-service-scope.md) |
+| 2026-11-11 | [Ghana VAT and pension source reconciliation](2026-11-11-ghana-vat-pension-reconciliation.md) |
+| 2026-11-11 | [Gabon payroll and social contribution reconciliation](2026-11-11-gabon-payroll-reconciliation.md) |
+| 2026-11-11 | [Gabon overview and historical VAT reconciliation](2026-11-11-gabon-overview-vat-reconciliation.md) |
+| 2026-11-11 | [Gabon corporate tax reconciliation against CGI 2025](2026-11-11-gabon-cgi-2025-reconciliation.md) |
+| 2026-11-11 | [Gabon provisions enacted for 2026](2026-11-11-gabon-2026-finance-law.md) |
+| 2026-11-11 | [Gabon national SARL capital and statutes](2026-11-11-gabon-national-sarl-capital.md) |
+| 2026-11-11 | [Senegal and Congo national SARL capital rules](2026-11-11-senegal-congo-national-sarl-capital.md) |
+| 2026-11-11 | [OHADA annual decisions and registry deposits](2026-11-11-ohada-annual-reporting-and-benin-capital.md) |
+| 2026-11-11 | [Armenia R&D salary withholding period and eligibility](2026-11-11-armenia-rd-salary-period.md) |
+| 2026-11-11 | [Laos reduced profit-tax rates under the revised Income Tax Law](2026-11-11-laos-reduced-profit-tax-rates.md) |
+| 2026-11-11 | [Laos enterprise social security contributions](2026-11-11-laos-enterprise-social-security.md) |
+| 2026-11-11 | [Turkmenistan VAT reporting and payment exceptions](2026-11-11-turkmenistan-vat-payment-exceptions.md) |
+| 2026-11-11 | [Turkmenistan youth-enterprise relief and corporate reporting](2026-11-11-turkmenistan-youth-relief-and-reporting.md) |
+| 2026-11-11 | [Turkmenistan enterprise registration and joint-stock reporting](2026-11-11-turkmenistan-enterprise-registration.md) |
+| 2026-11-11 | [Oman social protection commencement and employer contributions](2026-11-11-oman-social-protection-commencement.md) |
+| 2026-11-11 | [Spain and Croatia top-up tax scope and filing](2026-11-11-spain-and-croatia-top-up-tax.md) |
+| 2026-11-11 | [Thailand top-up tax scope, reporting and payment](2026-11-11-thailand-top-up-tax.md) |
+| 2026-11-11 | [Vanuatu financial account reporting and filing dates](2026-11-11-vanuatu-financial-account-reporting.md) |
+| 2026-11-11 | [Vanuatu VAT, local company incorporation and reporting](2026-11-11-vanuatu-vat-formation-and-reporting.md) |
+| 2026-11-11 | [Vanuatu ordinary income tax, rent tax and provident fund contributions](2026-11-11-vanuatu-income-rent-tax-and-vnpf.md) |
+| 2026-11-11 | [Jersey crypto-asset reporting from 1 January 2026](2026-11-11-jersey-carf-reporting.md) |
+| 2026-11-11 | [Montserrat customs, consumption tax and investment incentives](2026-11-11-montserrat-customs-and-incentives.md) |
+| 2026-11-11 | [Montserrat property tax, landholding and stamp duty](2026-11-11-montserrat-property-and-landholding.md) |
+| 2026-11-11 | [Montserrat income tax, PAYE and withholding](2026-11-11-montserrat-income-and-withholding.md) |
+| 2026-11-11 | [Montserrat company formation and reporting](2026-11-11-montserrat-formation-reporting.md) |
+| 2026-11-11 | [Spain's reduced RETA contribution in 2025 and 2026](2026-11-11-spain-reta-reduced-contribution.md) |
+| 2026-11-11 | [Saint Kitts and Nevis special regimes](2026-11-11-saint-kitts-and-nevis-special-regimes.md) |
+| 2026-11-11 | [Saint Kitts and Nevis VAT, customs, property and formation](2026-11-11-saint-kitts-and-nevis-vat-customs-property-formation.md) |
+| 2026-11-11 | [Saint Kitts and Nevis income tax and payroll](2026-11-11-saint-kitts-and-nevis-income-and-payroll.md) |
+| 2026-11-11 | [British Virgin Islands income tax, payroll and company reporting](2026-11-11-bvi-income-payroll-and-reporting.md) |
+| 2026-11-11 | [Cayman Islands public pension funding](2026-11-11-cayman-public-pension-funding.md) |
+| 2026-11-11 | [Cayman Islands property filings, appeals and concessions](2026-11-11-cayman-property-filings-and-concessions.md) |
+| 2026-11-11 | [Cayman Islands customs and visitor charges](2026-11-11-cayman-customs-and-visitor-charges.md) |
+| 2026-11-11 | [Cayman Islands withholding and cross-border rules](2026-11-11-cayman-withholding-and-cross-border.md) |
+| 2026-11-11 | [Cayman Islands formation and reporting](2026-11-11-cayman-formation-and-reporting.md) |
+| 2026-11-11 | [Cayman Islands payroll and mandatory contributions](2026-11-11-cayman-payroll-and-contributions.md) |
+| 2026-11-11 | [Cayman Islands tax-system scope](2026-11-11-cayman-tax-system-scope.md) |
+| 2026-11-11 | [Niue registration, licensing and ownership notices](2026-11-11-niue-registration-and-ownership.md) |
+| 2026-11-10 | [Anguilla income tax scope and Social Security guidance](2026-11-10-anguilla-income-and-contributions.md) |
+| 2026-11-10 | [Domestic income tax scope in Bermuda and the Turks and Caicos Islands](2026-11-10-domestic-income-tax-scope.md) |
+| 2026-11-10 | [Cayman Islands property and equity transfer duties](2026-11-10-cayman-property-duties.md) |
+| 2026-11-10 | [Bahamas National Insurance rates, ceilings and reporting](2026-11-10-bahamas-national-insurance.md) |
+| 2026-11-10 | [Bahamas domestic personal income tax scope](2026-11-10-bahamas-personal-income-tax.md) |
 | 2026-11-04 | [Tokelau: historical source and monetary reference](2026-11-04-tokelau-historical-source-reference.md) |
+| 2026-11-03 | [Bolivia: ordinary-company corporate income tax reference](2026-11-03-bolivia-corporate-reference.md) |
 | 2026-11-02 | [Australia: resident rate cases and minimum-wage timing](2026-11-02-australia-rates-worked-cases.md) |
 | 2026-10-31 | [IO, UM and HM: conditional territorial source references](2026-10-31-absent-territory-scope-references.md) |
 | 2026-10-30 | [Saint-Martin: conditional individual investment reference](2026-10-30-saint-martin-individual-investment-reference.md) |

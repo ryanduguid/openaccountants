@@ -1,10 +1,10 @@
 ---
 name: no-income-tax
 description: Use this skill whenever asked about Norwegian income tax for self-employed individuals (enkeltpersonforetak). Trigger on phrases like "Norwegian tax", "trinnskatt", "alminnelig inntekt", "personfradrag", "skattemelding", "RF-1175", "naeringsoppgave", "enkeltpersonforetak", "self-employed tax Norway", or any question about filing or computing income tax for a Norwegian self-employed client. Covers alminnelig inntekt (22%), trinnskatt (5 brackets), personfradrag, naeringsinntekt computation, deductible expenses, filing deadlines, and penalties. ALWAYS read this skill before touching any Norwegian income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: "NO"
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Norway (Kongeriket Norge) |
-| Tax | Alminnelig inntekt (22%) + Trinnskatt (5 brackets) + Trygdeavgift (11.0% for self-employed) |
+| Tax | Alminnelig inntekt (22%) + Trinnskatt (5 brackets) + Trygdeavgift (10.9% for self-employed in 2025; 10.8% in 2026) |
 | Currency | NOK only |
 | Tax year | Calendar year |
 | Primary legislation | Skatteloven; Skatteforvaltningsloven |
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by Norwegian statsautorisert or registrert revisor |
 | Validation date | Pending |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Alminnelig Inntekt (General Income Tax)
 
@@ -63,13 +63,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Trygdeavgift (National Insurance)**
 
-| Income Type | Rate |
-| --- | --- |
-| Naeringsinntekt (self-employment) | 11.0% |
-| Lonnsinntekt (employment) | 7.9% |
-| Pensjonsinntekt (pension) | 5.1% |
+| Income Type | Rate (2025) | Rate (2026) |
+| --- | --- | --- |
+| Naeringsinntekt (self-employment) | 10.9% | 10.8% |
+| Lonnsinntekt (employment) | 7.7% | 7.6% |
+| Pensjonsinntekt (pension) | 5.1% | 5.1% |
 
-- **Trygdeavgift lower threshold** — ~NOK 69,650 NOK
+- **Trygdeavgift lower threshold** — NOK 99,650 (2025 and 2026); contributions never exceed 25% of personinntekt above it.  _(Skatteetaten, national insurance contributions, 2025 and 2026 (https://www.skatteetaten.no/en/rates/national-insurance-contributions/))_
 
 ### Key Form
 
@@ -301,7 +301,7 @@ Underskudd (losses) carry forward with no time limit. Reduces alminnelig inntekt
 
 ### 5.4 Trygdeavgift
 
-- **Trygdeavgift rule** — 11.0% on personinntekt from naeringsinntekt. Lower threshold ~NOK 69,650.
+- **Trygdeavgift rule** — 10.9% (2025; 10.8% in 2026) on personinntekt from naeringsinntekt. Lower threshold NOK 99,650.  _(Skatteetaten, national insurance contributions, 2025 and 2026 (https://www.skatteetaten.no/en/rates/national-insurance-contributions/))_
 
 ### 5.5 Minstefradrag -- NOT for Self-Employed
 
@@ -429,7 +429,7 @@ D. TAX COMPUTATION
   D1. Alminnelig inntekt (C - personfradrag)       ___________
   D2. x 22%                                        ___________
   D3. Trinnskatt (on personinntekt)                ___________
-  D4. Trygdeavgift (11.0% on personinntekt)       ___________
+  D4. Trygdeavgift (10.9% on personinntekt, 2025) ___________
   D5. Total tax                                    ___________
   D6. Less: Forskuddsskatt paid                    ___________
   D7. Restskatt / tilgode                          ___________
@@ -440,7 +440,7 @@ REVIEWER FLAGS:
   [ ] Business form confirmed?
   [ ] Minstefradrag NOT applied to næringsinntekt?
   [ ] Trinnskatt on personinntekt (not alminnelig)?
-  [ ] Trygdeavgift at 11.0% (not 7.9%)?
+  [ ] Trygdeavgift at 10.9% for 2025 (not the 7.7% wage rate)?
   [ ] Vehicle method confirmed?
   [ ] Home office arrangement confirmed?
   [ ] Items over NOK 15,000 in saldogrupper?
@@ -517,7 +517,7 @@ ONBOARDING QUESTIONS -- NORWAY INCOME TAX
 
 **Test 1 -- Mid-range income.**
 Input: Enkeltpersonforetak, gross NOK 800,000, expenses NOK 200,000.
-Expected: Næringsinntekt NOK 600,000. Alminnelig = (600,000 - 108,550) x 22%. Trinnskatt spans Trinn 1-2. Trygdeavgift 11.0%.
+Expected: Næringsinntekt NOK 600,000. Alminnelig = (600,000 - 108,550) x 22%. Trinnskatt spans Trinn 1-2. Trygdeavgift 10.9%.
 
 **Test 2 -- High income, upper trinnskatt.**
 Input: Næringsinntekt NOK 1,200,000.
@@ -543,7 +543,7 @@ Expected: Alminnelig base NOK 250,000. Trinnskatt/trygdeavgift on NOK 400,000.
 
 - NEVER apply minstefradrag to naeringsinntekt
 - NEVER apply trinnskatt to alminnelig inntekt -- it applies to personinntekt
-- NEVER use 7.9% trygdeavgift for naeringsinntekt -- correct rate is 11.0%
+- NEVER use the wage rate (7.7% in 2025) for naeringsinntekt -- correct rate is 10.9% for 2025 (10.8% for 2026)
 - NEVER include MVA in taxable revenue
 - NEVER allow capital items over NOK 15,000 (life 3+ years) as direct expense
 - NEVER deduct income tax or trygdeavgift as business expense
@@ -563,13 +563,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

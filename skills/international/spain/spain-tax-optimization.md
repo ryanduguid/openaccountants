@@ -1,10 +1,10 @@
 ---
 name: spain-tax-optimization
 description: Use this skill whenever asked about reducing tax in Spain, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals (autónomos) in Spain. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pagar menos impuestos", "optimización fiscal", "ahorrar en impuestos", "deducciones IRPF", "autónomo fiscal". ALWAYS read this skill before advising on any Spanish tax optimization strategy.
-version: 1.0
+version: 1.2
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Spain Tax Optimization
 
-## Spain Tax Optimization -- Self-Employed (Autónomo) Skill v1.0
+## Spain Tax Optimization -- Self-Employed (Autónomo) Skill v1.2
 
 ## Section 1 -- Quick Reference
 
@@ -52,8 +52,8 @@ Autonomous community (CCAA) rates vary. Madrid has the lowest combined rates; Ca
 
 | Factor | Autónomo (Persona Física) | Sociedad Limitada (SL) |
 | --- | --- | --- |
-| Top marginal rate | 47-54% (IRPF + CCAA) | 25% Impuesto sobre Sociedades (IS); 23% for first EUR 50,000 if turnover < EUR 1m |
-| Extraction | N/A | Salary (deductible, taxed as income) + dividends (19-28% withholding) |
+| Top marginal rate | 47-54% (IRPF + CCAA) | 25% Impuesto sobre Sociedades (IS). Previous period's turnover (INCN) < EUR 1m (microempresa): periods starting in 2025, 21% on the first EUR 50,000 and 22% on the rest; 2026, 19% and 21%; 2027 onwards, 17% and 20%, unless another art. 29 rate applies; the EUR 50,000 band is prorated for periods shorter than a year (LIS art. 29.1 and DT 44ª; see es-corporate-tax) |
+| Extraction | N/A | Salary (deductible, taxed as income) + dividends (19% withholding, LIRPF art. 101.4; taxed in the savings scale at 19-30%) |
 | When to incorporate | When net profits consistently exceed ~EUR 40,000-50,000 | Requires notarial deed, compliance costs, annual accounts |
 
 - **Legislation** — Ley 27/2014 del Impuesto sobre Sociedades; Ley del IRPF Art. 25-26  _(Ley 27/2014 del Impuesto sobre Sociedades; Ley del IRPF Art. 25-26)_
@@ -89,7 +89,7 @@ Most autónomos use EDS. The automatic 5% provisión (up to EUR 2,000) is often 
 
 | Deduction | Legislation | Notes |
 | --- | --- | --- |
-| Cuota de autónomos (RETA) | IRPF Art. 28; LGSS | Fully deductible social security contributions. EUR 200-530/month depending on income bracket (2026 progressive system). |
+| Cuota de autónomos (RETA) | IRPF Art. 28 and LGSS art. 308 | Check deductible contributions and the relevant period. Use [es-social-contributions](es-social-contributions.md) for the contribution computation. |
 | Provisión gastos difícil justificación | IRPF Art. 30.2.4ª | 5% of rendimientos netos, max EUR 2,000/year. Automatic in EDS -- no receipts needed. |
 | Suministros del hogar (home utilities) | IRPF Art. 30.2.5ª.c) | 30% of the proportional share of home costs (electricity, water, gas, internet) attributable to the workspace. Calculation: (workspace m² ÷ total m²) × 30% × annual cost. |
 | Gastos de manutención (meals while traveling) | IRPF Art. 30.2.5ª.a) | EUR 26.67/day (Spain) / EUR 48.08/day (abroad) for meals. Must be on business travel, paid electronically, and at commercial establishment. |
@@ -180,21 +180,7 @@ In the start-up phase, maximize deductible expenses to create losses. These offs
 
 ### Progressive Cuota de Autónomos (from 2023, phased through 2025)
 
-From 2025/2026, autónomo contributions are based on real net income brackets:
-
-**Progressive Cuota de Autónomos table**
-
-| Net monthly income (EUR) | Approximate monthly cuota (2025) |
-| --- | --- |
-| ≤ 670 | ~EUR 200 |
-| 671 -- 900 | ~EUR 220 |
-| 901 -- 1,166.70 | ~EUR 260 |
-| 1,166.71 -- 1,300 | ~EUR 290 |
-| 1,300 -- 1,500 | ~EUR 350 |
-| 1,500 -- 1,700 | ~EUR 370 |
-| 1,700 -- 1,850 | ~EUR 390 |
-| 1,850 -- 2,030 | ~EUR 400 |
-| > 4,050 | ~EUR 530 |
+Use the [2025 and 2026 income bands](es-social-contributions.md#rule-2----2025-and-2026-tranche-table-15-tranches) and the applicable contribution base and cover. Check the chosen base and any special floor before estimating a saving.
 
 ### Optimization Strategies
 
@@ -202,11 +188,11 @@ From 2025/2026, autónomo contributions are based on real net income brackets:
 
 | Strategy | Detail |
 | --- | --- |
-| Tarifa plana (flat rate) | New autónomos: EUR 80/month for first 12 months (extendable to 24 months if income remains below minimum wage). |
-| Income bracket management | The progressive system means lower reported income = lower cuota. But this reduces future pension. |
-| Regularización anual | RETA contributions are regularized annually based on actual income reported in IRPF. Overpayments are refunded, underpayments are billed. |
-| Cese de actividad (unemployment) | Autónomos contribute to the cese de actividad fund. This provides unemployment-like benefits for 2-12 months. Ensure it is correctly configured. |
-| Pluriactividad (dual activity) | If simultaneously employed (régimen general) and autónomo (RETA), you may be entitled to a refund of excess contributions if combined bases exceed the contribution ceiling. Apply via Modelo 190. |
+| Tarifa plana (reduced contribution) | Check eligibility, the contribution period and the applicable amount under [es-social-contributions, Rule 5](es-social-contributions.md#rule-5----tarifa-plana). Use the TGSS assessment for the amount actually due. |
+| Change in expected earnings | Reassess the provisional contribution base when the earnings forecast changes. Check the definitive base and any adjustment after regularisation. |
+| Regularización anual | Check the earnings and months TGSS regularises. Article 38 ter exempts the initial reduced period and applies a separate test to the extension. |
+| Cese de actividad (cessation of activity) | Check the worker's actual cover. The ordinary reduced-contribution period under art. 38 ter(1) carries an exemption from this contribution. |
+| Pluriactividad (dual activity) | Check the 2026 common-contingency refund under [es-social-contributions](es-social-contributions.md#t2-1----pluriactividad-simultaneous-employment--reta) and any separate relief election. |
 
 ## Section 9 -- Investment & Retirement
 
@@ -244,7 +230,7 @@ From 2025/2026, autónomo contributions are based on real net income brackets:
 | 6,001 -- 50,000 | 21% |
 | 50,001 -- 200,000 | 23% |
 | 200,001 -- 300,000 | 27% |
-| 300,001+ | 28% |
+| 300,001+ | 30% (from 1 January 2025; LIRPF arts 66 and 76) |
 
 **Strategy:** Time realization of capital gains across tax years to stay in lower brackets. Use the EUR 6,000 @ 19% band each year.
 
@@ -259,7 +245,7 @@ From 2025/2026, autónomo contributions are based on real net income brackets:
 | Economía sumergida | Undeclared income is criminal if > EUR 120,000/year (Art. 305 Código Penal). Prison sentences of 1-5 years. |
 | Factura falsa | Issuing or using false invoices: criminal under Art. 310 CP (1-5 years) and Art. 305 CP. |
 | Anti-wash rule | Cannot deduct capital losses if the same or substantially similar securities are repurchased within 2 months (Ley IRPF Art. 33.5.f). |
-| Tarifa plana abuse | Re-registering as a new autónomo to re-claim the tarifa plana after a short cessation period. AEAT monitors gaps < 2-3 years. |
+| Repeat registration | Check the actual time out of the regime and prior use of the reduction before treating a new registration as eligible. See [es-social-contributions, Rule 5](es-social-contributions.md#rule-5----tarifa-plana). |
 | Vinculación (related party transactions) | Transactions between autónomo and own SL (or family SL) must be at arm's length. Art. 18 Ley IS. |
 | CCAA deduction eligibility | Autonomous community deductions require actual residence in that community. Moving solely for tax benefits (particularly to Madrid) is scrutinized if not genuine. |
 
@@ -269,7 +255,8 @@ From 2025/2026, autónomo contributions are based on real net income brackets:
 
 | Month | Action |
 | --- | --- |
-| January | Review prior year's income and expenses. Apply for tarifa plana if new autónomo. File Modelo 303 (Q4 IVA) + Modelo 130 (Q4 IRPF pago fraccionado). |
+| At registration | Request the reduced contribution if eligible. Check any separate extension request before its start. |
+| January | Review prior year's income and expenses. File Modelo 303 (Q4 IVA) + Modelo 130 (Q4 IRPF pago fraccionado). |
 | February | Gather facturas, bank statements, cuotas autónomos records. |
 | March | File Modelo 347 (annual third-party transactions > EUR 3,005.06). Review plan de pensiones capacity. |
 | April | **Renta campaign opens** (~first week). File Modelo 303 + Modelo 130 for Q1. Compare declaración conjunta vs individual if married. |
@@ -327,14 +314,9 @@ From 2025/2026, autónomo contributions are based on real net income brackets:
 | --- | --- |
 | Tax saving at 37% | **EUR 740/year** |
 
-### Example 6 -- Tarifa Plana (First 12 Months)
+### Example 6 -- 2026 Reduced-Contribution Comparison
 
-**Example 6 table**
-
-| Standard cuota (income ~EUR 1,300/month) | ~EUR 290/month |
-| --- | --- |
-| Tarifa plana | EUR 80/month |
-| **Annual saving** | **EUR 2,520** |
+For one fictional full month in 2026, the TGSS assessment confirms EUR 88.64 for the initial reduced period. For ordinary earnings of EUR 1,200 per month and standard cover at the minimum base, the comparison amount is EUR 950.98 × 31.50% = EUR 299.56. The illustrative contribution difference is EUR 210.92 for that month. For a real case, use the assessed amount and verify the period and any effect on IRPF deductions separately. [2026 order, arts 18 and 37](https://www.boe.es/eli/es/o/2026/03/30/pjc297) · [RETA Rule 5](es-social-contributions.md#rule-5----tarifa-plana)
 
 ### Example 7 -- Startup Investment (EUR 20,000 in Nueva Creación)
 
@@ -356,13 +338,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

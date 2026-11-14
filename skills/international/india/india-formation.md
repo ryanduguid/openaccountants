@@ -1,10 +1,10 @@
 ---
 name: india-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in India. Trigger on phrases like "set up a company in India", "Pvt Ltd India", "private limited company India", "MCA registration", "SPICe+", "Indian company formation", "register a business India", "OPC India", "LLP India", "ROC filing", "DIN", "DSC", or any question about starting a business entity in India. Covers entity types (Pvt Ltd, OPC, LLP, public), registration process via SPICe+, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Indian company formation.
-version: 1.0
+version: 1.1
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # India Formation
 
-## India Company Formation Skill v1.0
+## India Company Formation Skill v1.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -31,9 +31,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Company registrar | Ministry of Corporate Affairs (MCA) / Registrar of Companies (ROC) -- mca.gov.in |
 | Key legislation | Companies Act, 2013; LLP Act, 2008 |
 | Typical formation time | 7--15 working days (SPICe+ online) |
-| Corporate tax rate | 22% + surcharge + cess (~25.17% effective, s 115BAA); 15% + surcharge + cess (~17.16% effective, s 115BAB) for new manufacturing companies set up on or after 1 October 2019 |
+| Corporate tax rate | 22% + surcharge + cess (~25.17% effective, s 115BAA); 15% + surcharge + cess (~17.16% effective, s 115BAB) only for manufacturing companies set up and registered on or after 1 October 2019 that began manufacturing by 31 March 2024; a company formed now cannot qualify. The 22% rate is an option, not automatic: companies formed now may instead opt for 22% under s 115BAA (from tax year 2026-27, s 200 of the Income-tax Act 2025) by giving up specified deductions and filing the option by the return due date; otherwise the regular company rates apply |
 | Small company (Companies Act s 2(85)) | A private company with paid-up capital ≤ ₹10 crore and turnover ≤ ₹100 crore (thresholds effective 1 December 2025; ₹4 crore and ₹40 crore applied from 15 September 2022 until then). Never a small company, whatever its size: a public company, a holding or subsidiary company, a section 8 company, or a company governed by a special Act (s 2(85) and its proviso). Reliefs: no cash flow statement, CARO 2020 and auditor rotation do not apply, abridged annual return MGT-7A |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Entity Types Comparison
 
@@ -224,13 +224,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

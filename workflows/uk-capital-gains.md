@@ -1,5 +1,7 @@
 # UK Capital Gains Tax Workflow
 
+> This revision includes changes made after the recorded verification and awaits a new verification.
+
 **MCP prompt name:** `uk-capital-gains`
 **Bundle:** `GET https://www.openaccountants.com/api/bundle/GB`
 
@@ -21,7 +23,7 @@
 
 - SA108 working paper with section 104 pool reconstruction
 - 30-day and bed-and-breakfast matching rule application
-- Rate band split (CGT interacts with income tax bands — remaining basic-rate band determines whether 18% or 24% residential property rate / 10% or 20% other assets rate applies)
+- Rate band split (CGT interacts with income tax bands — remaining basic-rate band determines whether the lower or higher rate in `uk-capital-gains-sa108` applies, by asset type and disposal date)
 - Business Asset Disposal Relief (BADR) analysis (if a business or qualifying shares)
 - Annual Exempt Amount application
 - 60-day residential property reporting obligation flag
@@ -29,9 +31,11 @@
 ## Skills to load
 
 From the GB bundle:
-- `uk-capital-gains` — CGT rates, annual exempt amount, identification rules, BADR
-- `uk-income-tax` — income tax bands (needed for rate-band split)
+- `uk-capital-gains-sa108` — CGT rates, annual exempt amount, identification rules, BADR
+- `uk-income-tax-sa100` — income tax bands (needed for rate-band split)
 - `uk-crypto-tax` — if crypto is involved (section 104 pool for tokens)
+
+Rates and thresholds in the phases below come from these guides. The hosted bundle does not carry them all: if one is not loaded, fetch it from `packages/uk/` in this repository before computing, and never fall back on a remembered figure.
 
 ## 6-phase structure
 
@@ -48,7 +52,7 @@ Apply in this order:
 Proceeds − allowable cost − incidental costs of acquisition and disposal = gain. For residential property: apply letting relief and private residence relief if applicable.
 
 ### Phase 4 — Rate and band
-Gains (after Annual Exempt Amount) are added on top of income. The portion that falls within the basic-rate band: 18% (residential property) or 10% (other assets). Above basic-rate band: 24% (residential property) or 20% (other assets). BADR rate: 10% (subject to £1 million lifetime limit).
+Gains (after Annual Exempt Amount) are added on top of income. The portion within the basic-rate band takes the lower rate; the portion above it takes the higher rate. Branch on the disposal date: take the rates for the asset type, and the BADR rate and lifetime limit, from `uk-capital-gains-sa108`. The other-assets rates changed on 30 October 2024 and the BADR rate changed on 6 April 2025 and 6 April 2026, so one fixed set of rates is wrong.
 
 ### Phase 5 — Reporting obligation
 60-day residential property reporting: if a UK residential property is sold by a UK resident, the gain must be reported and the tax paid within 60 days of completion via HMRC's online service (UK Property Account) — regardless of whether the taxpayer normally files a Self Assessment return.
@@ -58,4 +62,4 @@ CGT, especially for property and business assets, is highly fact-specific. Recom
 
 ## Verifier
 
-Verified by James Power — [openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
+For the revision of 2026-06-09 (commit 47b8f2fa): Verified by James Power — [openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)

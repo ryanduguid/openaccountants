@@ -1,10 +1,10 @@
 ---
 name: pk-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package a Pakistani annual tax return. Trigger on phrases like "Pakistan tax return assembly", "FBR IRIS final filing", "year-end Pakistan", "ATL filing", "Section 114 return", "assemble Pakistan return", "finalize PK return", "Pakistan working paper", or "IRIS filing package". This is the capstone orchestrator that pulls together outputs from pk-income-tax, pk-corporate-tax, pk-withholding-tax, pk-sales-tax-federal, pk-sales-tax-services, pk-payroll-eobi, pk-cgt, and pk-formation into a single unified working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line IRIS working paper, generates PSID payment instructions for FBR e-payment via designated banks, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing a Pakistani tax return.
-version: 0.1
+version: 0.2
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-10-18
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - pk-freelance-intake
@@ -169,7 +169,7 @@ The capstone runs in seven phases. Each phase reads upstream output, runs reconc
 | Tax deducted at source (sections 149–158, 231 series) | pk-withholding-tax | Adjustable against final liability |
 | Advance tax paid under section 147 | pk-income-tax / pk-corporate-tax (quarterly instalments) | Adjustable |
 | Tax credit on charitable donations (section 61) | pk-income-tax | Subject to limits |
-| Investment tax credit / pension fund credit (section 63 historic — now largely repealed; verify) | pk-income-tax | TBC — verify under Finance Act 2025 |
+| Investment tax credit / pension fund credit (section 63 historic — now largely repealed; verify) | pk-income-tax | TBC — verify under the Finance Act governing the tax year being computed |
 | Foreign tax credit (section 103) | pk-income-tax | Capped at PK tax on foreign source income |
 
 ### 3.5 Phase 5 — Cross-skill reconciliation
@@ -476,22 +476,22 @@ ATL implication:
 
 ### 9.2 Super tax bands (Section 4C)
 
-Section 4C super tax applies to high-income persons and certain sectors. Finance Act 2025 may have restructured the bands. The pk-corporate-tax and pk-income-tax skills hold the current rate table. Confirm at computation time. Typical bands historically:
+Section 4C super tax applies to high-income persons and certain sectors. The pk-corporate-tax skill holds the full rate table (§4.1). The rate for the band the Section 4C income falls in applies to the **whole** income, not slice by slice. Use the column for the tax year being computed.
 
-**Super tax bands table**
+**Super tax bands table**  _(Division IIB, Part I, First Schedule, ITO 2001, as substituted by [Finance Act 2025, Gazette pp. 302-305](https://download1.fbr.gov.pk/Docs/2025629106147620FInanceAct2025.pdf) and [Finance Act 2026, Gazette pp. 581 and 587](https://download1.fbr.gov.pk/Docs/20266291261044366FinanceAct2026.pdf))_
 
-| Income band | Super tax rate |
-| --- | --- |
-| Up to Rs 150 million | 0% |
-| Rs 150–200 million | 1% |
-| Rs 200–250 million | 2% |
-| Rs 250–300 million | 3% |
-| Rs 300–350 million | 4% |
-| Rs 350–400 million | 6% |
-| Rs 400–500 million | 8% |
-| Above Rs 500 million | 10% |
+| Income band | TY 2022-23 to TY 2024-25 | TY 2025-26 |
+| --- | --- | --- |
+| Up to Rs 150 million | 0% | 0% |
+| Rs 150–200 million | 1% | 1% |
+| Rs 200–250 million | 2% | 1.5% |
+| Rs 250–300 million | 3% | 2.5% |
+| Rs 300–350 million | 4% | 3.5% |
+| Rs 350–400 million | 6% | 5.5% |
+| Rs 400–500 million | 8% | 7.5% |
+| Above Rs 500 million | 10% | 10% |
 
-**TBC — verify against Finance Act 2025 because bands and rates may have shifted.**
+**TY 2026-27 onwards (Finance Act 2026):** 10% of the income for banking companies, Fifth Schedule Part I (petroleum) income and fertiliser sellers with income above Rs 150 million; 8% of the income for any other person with income above Rs 500 million; nil otherwise. Clause (104B), Part IV, Second Schedule exempts a person whose realised export proceeds exceed 80% of turnover. FBR's explanatory circular on the start year was not read; confirm it before applying the new table to a TY 2025-26 return.
 
 ### 9.3 Surcharge thresholds
 
@@ -769,13 +769,15 @@ If context is exhausted, preserve supported calculations and evidence for resump
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

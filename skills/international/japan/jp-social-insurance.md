@@ -1,10 +1,10 @@
 ---
 name: jp-social-insurance
 description: Use this skill whenever asked about Japanese National Health Insurance (NHI) or National Pension for self-employed individuals. Trigger on phrases like "NHI", "kokumin kenko hoken", "kokumin nenkin", "national pension Japan", "health insurance freelancer Japan", "social insurance self-employed Japan", or any question about NHI premiums, pension contributions, or social insurance obligations for sole proprietors in Japan. Covers NHI income-based calculation, National Pension fixed monthly amount, payment schedules, and reduction/exemption rules. ALWAYS read this skill before touching any Japanese social insurance work.
-version: 2.0
+version: 2.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 review_status: pending_review
 category: international
 tier: 2
@@ -29,15 +29,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated By | Pending -- requires sign-off by a Japanese tax accountant or social insurance labour consultant |
 | Validation Date | Pending |
-| Skill Version | 2.0 |
+| Skill Version | 2.1 |
 | Confidence Coverage | Tier 1: National Pension fixed amount, NHI component structure, payment schedules, caps. Tier 2: NHI municipal rate variations, reduction eligibility, partial-year calculations. Tier 3: disability pension, survivors pension, voluntary additional pension. |
 
-**National Pension (FY 2025)**
+**National Pension (FY 2025 and FY 2026)**
 
 | Item | Amount |
 | --- | --- |
-| Monthly premium | JPY 17,510 |
-| Annual total | JPY 210,120 |
+| Monthly premium (FY 2025) | JPY 17,510 |
+| Annual total (FY 2025) | JPY 210,120 |
+| Monthly premium (FY 2026, April 2026 -- March 2027) | JPY 17,920 |
+| Annual total (FY 2026) | JPY 215,040 |
 | Category 1 insured | Self-employed, freelancers, students, unemployed aged 20-59 |
 | Tax treatment | Fully deductible as social insurance premium deduction |
 
@@ -147,7 +149,7 @@ This is the deterministic pre-classifier for bank statement entries related to s
 
 ### 4.1 Category 1 insured (Tier 1)
 
-- **Category 1 insured definition** — Self-employed individuals, freelancers, students, and unemployed aged 20-59 are Category 1 insured. Monthly premium for FY 2025: JPY 17,510. Annual total: JPY 210,120.  _(National Pension Act, Art. 87)_
+- **Category 1 insured definition** — Self-employed individuals, freelancers, students, and unemployed aged 20-59 are Category 1 insured. Monthly premium for FY 2025: JPY 17,510 (annual JPY 210,120); for FY 2026: JPY 17,920 (annual JPY 215,040).  _(National Pension Act, Art. 87)_
 
 ### 4.2 Payment methods and discounts (Tier 1)
 
@@ -161,7 +163,7 @@ This is the deterministic pre-classifier for bank statement entries related to s
 | 2-year advance | ~4% |
 | Bank transfer (early debit) | Slight additional discount |
 
-Source: 日本年金機構 国民年金の保険料 (the FY2025 premium of JPY 17,510 a month and the advance-payment discounts) — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html.
+Source: 日本年金機構 国民年金の保険料 (the FY2025 premium of JPY 17,510 a month and the advance-payment discounts) — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html; FY2026 premium of JPY 17,920 a month (令和8年度) — https://www.nenkin.go.jp/service/kokunen/hokenryo/hokenryo.html.
 
 ### 4.3 Tax deductibility (Tier 1)
 
@@ -301,7 +303,7 @@ Action Required: Do not advise. Refer to qualified professional. Document gap.
 ### Test 1 -- Standard freelancer, mid-range income (Tokyo 23 Wards illustrative)
 
 Input: Age 35, single, prior-year income JPY 5,000,000, no other household NHI members.
-Expected output: NHI taxable income = 5,000,000 - 430,000 = JPY 4,570,000. Medical: ~JPY 369,769. Support: ~JPY 124,994. Long-term care: N/A (under 40). Total NHI: ~JPY 494,763. Pension: JPY 210,120. Total: ~JPY 704,883.
+Expected output: NHI taxable income = 5,000,000 - 430,000 = JPY 4,570,000. Medical: ~JPY 369,769. Support: ~JPY 124,994. Long-term care: N/A (under 40). Total NHI: ~JPY 494,763. Pension: JPY 210,120 (FY 2025). Total: ~JPY 704,883. For FY 2026, pension is JPY 215,040, but NHI must be recomputed with the ward's FY 2026 rates (including the new child and childcare support component), so no FY 2026 total is given.
 
 ### Test 2 -- Low-income freelancer qualifying for 70% reduction
 
@@ -311,12 +313,12 @@ Expected output: NHI taxable income = JPY 0. Income-based = JPY 0. 70% reduction
 ### Test 3 -- High earner hitting caps
 
 Input: Age 45, single, prior-year income JPY 20,000,000.
-Expected output: Medical capped at JPY 650,000. Support capped at JPY 240,000. Long-term care capped at JPY 170,000. Total NHI: JPY 1,060,000. Pension: JPY 210,120. Total: JPY 1,270,120.
+Expected output: For FY 2025: Medical capped at JPY 660,000. Support capped at JPY 260,000. Long-term care capped at JPY 170,000. Total NHI: JPY 1,090,000 (the caps table above). Pension: JPY 210,120 (FY 2025). Total: JPY 1,300,120. For FY 2026: Medical capped at JPY 670,000, Support JPY 260,000, Long-term care JPY 170,000 and child and childcare support JPY 30,000, so total NHI JPY 1,130,000 (国民健康保険法施行令 art. 29-7, current text: https://laws.e-gov.go.jp/law/333CO0000000362). With pension of JPY 215,040, total: JPY 1,345,040.
 
 ### Test 4 -- Mid-year registration
 
 Input: Age 30, registers residency in July (9 months).
-Expected output: NHI prorated x 9/12. Pension: JPY 17,510 x 9 = JPY 157,590.
+Expected output: NHI prorated x 9/12. Pension: JPY 17,510 x 9 = JPY 157,590 (FY 2025); JPY 17,920 x 9 = JPY 161,280 (FY 2026).
 
 ## Section 10 -- Prohibitions and disclaimer
 
@@ -336,13 +338,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

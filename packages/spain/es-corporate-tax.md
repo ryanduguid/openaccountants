@@ -1,10 +1,10 @@
 ---
 name: es-corporate-tax
 description: Use this skill whenever asked about Spanish corporate income tax (Impuesto sobre Sociedades, IS), Modelo 200, Modelo 202 (pagos fraccionados), corporate tax rates in Spain, SL tax obligations, company formation tax, deducciones empresariales, bases imponibles negativas (BINs), reserva de capitalizacion, reserva de nivelacion, or foral corporate tax. Trigger on phrases like "Impuesto de Sociedades", "Modelo 200", "Modelo 202", "IS Spain", "corporate tax Spain", "tipo gravamen sociedades", "SL taxes", "nueva creacion", "empresa reducida dimension", "microempresa fiscal", "BINs", "compensacion perdidas sociedad", "pago fraccionado empresa", "ZEC Canarias", "bonificacion Ceuta Melilla sociedades", "I+D deduccion sociedades", "donativos sociedad", "resultado contable", or any question about computing or filing corporate income tax in Spain. ALWAYS read this skill before touching any Spanish corporate tax work.
-version: 1.0
+version: 1.2
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # ES Corporate Tax
 
-## Spain Corporate Income Tax (Impuesto sobre Sociedades) Skill v1.0
+## Spain Corporate Income Tax (Impuesto sobre Sociedades) Skill v1.2
 
 > **Based on work by [Nambu89 (Impuestify)](https://github.com/Nambu89/Impuestify)** and **[Pau March (larenta)](https://github.com/paumrch/larenta)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -59,60 +59,33 @@ para los grupos multinacionales y los grupos nacionales de gran magnitud, un
 Impuesto sobre el margen de intereses y comisiones de determinadas entidades
 financieras y un Impuesto sobre los líquidos para cigarrillos electrónicos…»*
 
-**The commencement date is not the date it takes effect from — check both**
+**Effective dates and scope**
 
-| | Date | Source |
+- Ley 7/2024 entered into force on 22 December 2024 and generally applies to tax periods beginning on or after 31 December 2023. The undertaxed profits rule (UTPR) generally applies to periods beginning on or after 31 December 2024. The earlier date applies to the Article 28(3) case where the ultimate parent is in an EU Member State that elected to defer the income inclusion and undertaxed profits rules under Article 50 of Directive (EU) 2022/2523. [Ley 7/2024, art 28(3) and final provision 22](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694&p=20261003&tn=1)
+- The general scope test covers a Spanish constituent entity of a multinational or large domestic group whose consolidated net turnover, including excluded entities, reaches EUR 750 million or more in at least 2 of the 4 tax periods immediately preceding the period under review. The measure uses the ultimate parent's consolidated financial statements. Adjust the threshold proportionally for any tested period longer or shorter than 12 months. [Ley 7/2024, art 6(1)](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694&p=20261003&tn=1)
+- The top-up percentage is the positive difference between the 15% minimum and the applicable jurisdiction's effective tax rate. [Ley 7/2024, arts 5(43), 22 and 23](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694&p=20261003&tn=1)
+
+| Charge | General application |
+| --- | --- |
+| Domestic top-up tax (*Impuesto Complementario nacional*) | Spanish constituent entities of groups in scope where the Spanish effective rate is below the minimum |
+| Primary top-up tax (*Impuesto Complementario primario*) | Income inclusion rule for eligible Spanish parent entities in relation to low-taxed foreign constituent entities |
+| Secondary top-up tax (*Impuesto Complementario secundario*) | UTPR for the share allocated to Spain under the statutory conditions |
+
+[Ley 7/2024, arts 6(2)–(4), 27–29 and 32–36](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694&p=20261003&tn=1)
+
+**State filing and payment**
+
+| Form | Ordinary period | Transition |
 | --- | --- | --- |
-| Entrada en vigor | **22 December 2024** | BOE record, BOE-A-2024-26694 |
-| Takes effect for tax periods beginning on or after | **31 December 2023** | Disposición final 22ª |
-| …except the *regla de beneficios insuficientemente gravados* (UTPR), for periods beginning on or after | **31 December 2024** | Disposición final 22ª |
+| Modelo 240, notification of who files the information return | Before the final 3 months of the applicable information-return filing period. One notification can cover the group's Spanish constituent entities if it includes the required details. | For periods ending before 31 March 2025, within the 2 months before 30 June 2026 |
+| Modelo 241, top-up tax information return | By the last day of month 15 after the tax period ends | For the transition period, within the 2 months before the last day of month 18 after period end. For periods ending before 31 March 2025, within the 2 months before 30 June 2026 |
+| Modelo 242, self-assessment and payment | Within 25 calendar days after the end of month 15 following the tax period. Pay when filing. | Within 25 calendar days after the end of month 18 following the transition period. No filing before 30 June 2026. If the 25-day window would begin earlier, count it from that date |
 
-- **So the Act reaches back behind its own entry into force.** A period beginning
-  in, say, January 2024 closed before Ley 7/2024 was in force and is still within
-  scope. Reading only the *entrada en vigor* date gives the wrong answer  _(Ley 7/2024, disp. final 22ª)_
+[Ley 7/2024, arts 47 and 50–51 and transitional provision 5](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694&p=20261003&tn=1) · [Royal Decree 252/2025, arts 18 and 32 and transitional provision 3](https://www.boe.es/buscar/act.php?id=BOE-A-2025-6598) · [Order HAC/1198/2025, arts 2, 4, 9, 13 and 15 and transitional provisions 1–2](https://www.boe.es/buscar/act.php?id=BOE-A-2025-21727&p=20260529&tn=1)
 
-**Scope and rate**
+For the state regime, the qualifying foreign filing rules in Article 47 can relieve local Modelo 241 filing. Check the actual filer, the effective exchange arrangements and any additional information Spain requires. Modelo 240 and any Modelo 242 obligation must be considered separately. [Ley 7/2024, arts 6(5), 47(2)–(5) and 50–51](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694&p=20261003&tn=1)
 
-- **Who** — *grupos multinacionales* **and *grupos nacionales de gran magnitud***.
-  A wholly Spanish group of sufficient size is in scope; this is not a
-  multinational-only charge  _(Ley 7/2024, título I)_
-- **Threshold** — consolidated net turnover (*importe neto de la cifra de negocios
-  consolidado*) of **EUR 750 million or more**  _(Ley 7/2024, preámbulo and ámbito de aplicación)_
-- **Rate** — the top-up for a jurisdiction is the **positive difference between the
-  15% minimum rate and the effective rate computed at jurisdictional level**. It is
-  not a flat 15% charge on profit: *«la diferencia positiva entre el tipo impositivo
-  mínimo del 15 por ciento y el tipo impositivo efectivo calculado a nivel
-  jurisdiccional»*  _(Ley 7/2024, título VIII, caps. I–II)_
-
-**Three modalities — and the first is the one that reaches a Spanish entity**
-
-The Act itself explains the architecture: *«La configuración del Impuesto
-Complementario se sustenta sobre tres modalidades, las dos primeras responden a la
-regla de inclusión de rentas y la tercera a la regla de beneficios
-insuficientemente gravados.»*
-
-| Modality | Rule | Reaches |
-| --- | --- | --- |
-| **Complementario nacional** | Income inclusion rule | Income of constituent entities of in-scope groups **that are located in Spanish territory** |
-| **Complementario primario** | Income inclusion rule | Income of constituent entities outside Spain, charged to the Spanish parent |
-| **Complementario secundario** | Undertaxed profits rule (UTPR) | The residual, and only from periods beginning on or after 31 Dec 2024 |
-
-- **Do not reduce this to "Spain transposed the IIR".** The *nacional* modality is
-  what reaches a Spanish subsidiary of a foreign-parented group, and it turns on the
-  entity being located in Spain — not on where the parent sits.
-
-**Foral territories have their own instruments — the table below does not cover them**
-
-The Foral Territories rate table in this section is about the *Impuesto sobre
-Sociedades* only. The Impuesto Complementario has separate foral norms, including
-**Ley Foral 18/2025, de 22 de diciembre** (Navarra, BOE-A-2026-3911). A foral-domiciled
-group needs its own territory's instrument, not Ley 7/2024.
-
-**Not read for this guide** — the **Reglamento**, approved by *Real Decreto 252/2025,
-de 1 de abril* (BOE-A-2025-6598), and the foral norms. Filing, reporting and the
-detailed safe-harbour conditions are in those, not here. The consolidated Ley was
-last updated 25 July 2025 and has been modified twice since enactment, so read the
-consolidated text rather than the version published on 21 December 2024.
+This section covers the state regime. Foral territories have their own instruments, including Navarra's [Ley Foral 18/2025](https://www.boe.es/buscar/doc.php?id=BOE-A-2026-3911). Confirm the applicable territorial rules, electronic filing procedure and payment method before filing. Check the detailed computation and safe-harbour conditions separately.
 
 ### Common Territory (Territorio Común) -- Ley 7/2024
 
@@ -158,6 +131,19 @@ consolidated text rather than the version published on 21 December 2024.
 | Ceuta/Melilla | 25% with 50% bonificación on qualifying income | Income generated in Ceuta/Melilla |
 | Cooperativas fiscalmente protegidas | 20% | Ley 20/1990 |
 | Cooperativas especialmente protegidas | 20% + 50% bonificación cuota | Art. 34.2 Ley 20/1990 |
+
+### Payments to Non-Residents (IRNR Withholding)
+
+**Domestic rates on payments to non-residents without a permanent establishment**  _(TRLIRNR, RDLeg 5/2004, arts 25.1 and 31.2: https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527)_
+
+| Payment | Rate | Reference |
+| --- | --- | --- |
+| Dividends | 19% | Art. 25.1.f).1.º |
+| Interest | 19% | Art. 25.1.f).2.º |
+| Gains on transfers of assets | 19% | Art. 25.1.f).3.º |
+| Royalties (cánones) and other income taxed at the general rate | 24% general; 19% for residents of an EU or EEA state with effective exchange of tax information | Art. 25.1.a) |
+
+The payer withholds the amount of the tax due under these rates or the applicable tax treaty (art. 31.2). No withholding applies to income exempt under art. 14 or a treaty (art. 31.4.a). Check the treaty rate before withholding.
 
 ## Section 3 -- Liquidation Pipeline (Modelo 200)
 
@@ -382,13 +368,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

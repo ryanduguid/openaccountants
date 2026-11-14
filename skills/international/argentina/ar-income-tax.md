@@ -2,36 +2,36 @@
 name: ar-income-tax
 description: >
   Use this skill whenever asked about Argentine income tax (Impuesto a las Ganancias) for self-employed individuals (autónomos / profesionales independientes). Trigger on phrases like "Ganancias", "impuesto a las ganancias", "autónomo Argentina", "monotributo vs responsable inscripto", "cuarta categoría", "deducciones personales", "ganancia no imponible", "bienes personales", "DDJJ Ganancias", "ARCA", "AFIP", "CUIT", "income tax Argentina", "anticipos ganancias", or any question about filing or computing income tax for a self-employed client in Argentina. This skill covers progressive rates (5-35%), personal deductions (ganancia no imponible, cargas de familia, deducción especial), Bienes Personales interaction, advance payments (anticipos), percepciones as credits, and ARCA filing. ALWAYS read this skill before touching any Argentine income tax work.
-version: 2.1
+version: 2.2
 jurisdiction: AR
 category: international
 tier: 2
-last_updated: 2026-10-04
+last_updated: 2026-11-10
 ---
 
-# Argentine Income Tax — Autónomo / Profesional Independiente (Ganancias) v2.1
+# Argentine Income Tax — Autónomo / Profesional Independiente (Ganancias) v2.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick Reference
 
-### Progressive Tax Scale — Statutory base amounts, fiscal year 2024 (art. 94)
+### Progressive Tax Scale — fiscal year 2025 (art. 94, ARCA annual scale)
 
-WARNING: Argentina adjusts these thresholds semi-annually (January and July) by the IPC (Consumer Price Index). You MUST verify the current semester's thresholds with ARCA before applying. The amounts below are the statutory base amounts for fiscal year 2024.
+WARNING: Argentina adjusts these thresholds semi-annually (January and July) by the IPC (Consumer Price Index). You MUST verify the current semester's thresholds with ARCA before applying. The amounts below are ARCA's indexed art. 94 scale for the 2025 annual period.
 
 | Ganancia Neta Imponible Acumulada (ARS) | Rate | Cumulative Fixed Amount |
 |---|---|---|
-| 0 -- 1,200,000 | 5% | -- |
-| 1,200,000 -- 2,400,000 | 9% | 60,000 |
-| 2,400,000 -- 3,600,000 | 12% | 168,000 |
-| 3,600,000 -- 5,400,000 | 15% | 312,000 |
-| 5,400,000 -- 10,800,000 | 19% | 582,000 |
-| 10,800,000 -- 16,200,000 | 23% | 1,608,000 |
-| 16,200,000 -- 24,300,000 | 27% | 2,850,000 |
-| 24,300,000 -- 36,450,000 | 31% | 5,037,000 |
-| 36,450,000+ | 35% | 8,803,500 |
+| 0 -- 1,749,901.45 | 5% | -- |
+| 1,749,901.45 -- 3,499,802.89 | 9% | 87,495.07 |
+| 3,499,802.89 -- 5,249,704.34 | 12% | 244,986.20 |
+| 5,249,704.34 -- 7,874,556.52 | 15% | 454,974.38 |
+| 7,874,556.52 -- 15,749,113.04 | 19% | 848,702.20 |
+| 15,749,113.04 -- 23,623,669.56 | 23% | 2,344,867.94 |
+| 23,623,669.56 -- 35,435,504.34 | 27% | 4,156,015.94 |
+| 35,435,504.34 -- 53,153,256.52 | 31% | 7,345,211.33 |
+| 53,153,256.52+ | 35% | 12,837,714.51 |
 
-Statutory base amounts for fiscal year 2024 under art. 94 as substituted by Ley 27.743 (InfoLEG, https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm). They were adjusted once in September 2024 and are indexed every January and July from fiscal year 2025 by the INDEC consumer price index, so take the thresholds for a given year from the table ARCA publishes. The table this guide carried until October 2026 did not scale consistently from these amounts.
+ARCA, art. 94 scale for the 2025 annual period, indexed by the INDEC IPC under art. 73 of Ley 27.743 (https://www.afip.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/declaracion-jurada/documentos/Tabla-Art-94-LIG-liquidacion-anual-y-final-2025.pdf, opened 2026-11-01). For 2026, ARCA's January to June scale is higher again (second bracket from ARS 2,000,030.09; top bracket from ARS 60,750,913.96): use ARCA's annual table for 2026 once published. The statutory base amounts for fiscal year 2024 are those in art. 94 as substituted by Ley 27.743 (InfoLEG, https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm). They were adjusted once in September 2024 and are indexed every January and July from fiscal year 2025 by the INDEC consumer price index, so take the thresholds for a given year from the table ARCA publishes. The table this guide carried until October 2026 did not scale consistently from these amounts.
 
 Formula: Tax = Cumulative Fixed Amount + (Ganancia Neta Imponible - Lower Limit) x Rate
 
@@ -254,7 +254,8 @@ Less deducciones personales:
   Deducción especial (2.5x): ARS  9,790,671
   Total personal:            ARS 13,706,939
 Ganancia neta imponible:     ARS  6,913,061
-Tax (apply scale):           ~ARS 1,012,000
+Tax (2025 scale):            ARS 704,477.88
+                             (454,974.38 + (6,913,061 - 5,249,704.34) x 15%)
 Less anticipos + retenciones + percepciones
 ```
 
@@ -272,7 +273,7 @@ Personal deductions: GNI + DE (2.5x) + cónyuge + 2 hijos = ARS 13,706,939 + ARS
 
 Ganancia neta imponible: ARS 35,000,000 - 8,000,000 - 3,000,000 - 21,115,364 = ARS 2,884,636
 
-Tax: bracket 1,750,027–3,500,053 at 9% = ARS 87,501 + (2,884,636 - 1,750,027) x 9% = ARS 87,501 + ARS 102,115 = ARS 189,616
+Tax (2025 scale): bracket 1,749,901.45–3,499,802.89 at 9% = ARS 87,495.07 + (2,884,636 - 1,749,901.45) x 9% = ARS 87,495.07 + ARS 102,126.11 = ARS 189,621.18
 
 Flag: Verify spouse income is below GNI. Verify Bienes Personales.
 
@@ -547,13 +548,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

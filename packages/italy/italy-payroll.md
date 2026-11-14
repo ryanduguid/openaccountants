@@ -1,10 +1,10 @@
 ---
 name: italy-payroll
 description: Use this skill whenever asked about Italian payroll processing for employees. Trigger on phrases like "Italian payroll", "busta paga", "cedolino", "IRPEF ritenuta", "ritenuta d'acconto dipendenti", "INPS contributi", "contributi previdenziali", "TFR", "trattamento di fine rapporto", "CU certificazione unica", "F24", "tredicesima", "quattordicesima", "stipendio netto Italia", "brutto netto Italia", "Agenzia delle Entrate", "addizionale regionale", "addizionale comunale", "CCNL minimum wage", "ferie maturate", "malattia INPS", "maternità INPS", or any question about computing employee pay, income tax withholding, or social contributions in Italy. This skill covers IRPEF withholding, INPS contributions (employee and employer), TFR, mandatory benefits, busta paga (payslip) requirements, CU/F24 filing, and employer cost analysis. ALWAYS read this skill before processing any Italian employee payroll.
-version: 1.0
+version: 1.1
 jurisdiction: IT
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Italy Payroll
 
-## Italy Payroll Skill v1.0
+## Italy Payroll Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | INPS contribution ceiling (2026) | EUR 122,295/year (per maximale L. 335/1995) |
 | Online tools | Agenzia delle Entrate -- modello F24 telematico |
 | Validated by | Pending -- requires sign-off by an Italian commercialista |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Income Tax Withholding (IRPEF)
 
@@ -61,9 +61,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Income Range (EUR) | Detrazione (Employment Deduction) |
 | --- | --- |
 | Up to 8,500 (no tax area) | IRPEF = 0 (deduction fully offsets tax) |
-| 8,501 -- 15,000 | EUR 1,955 (maximum) |
-| 15,001 -- 50,000 | Decreasing progressively; minimum EUR 690 |
-| Above 50,000 | EUR 690 fixed |
+| 8,501 -- 15,000 | EUR 1,955 (not less than EUR 690; not less than EUR 1,380 for fixed-term contracts) |
+| 15,001 -- 28,000 | EUR 1,910 + 1,190 x [(28,000 - income) / 13,000] |
+| 28,001 -- 50,000 | EUR 1,910 x [(50,000 - income) / 22,000] |
+| Above 50,000 | Nil (nessuna detrazione) |
+
+The EUR 690 floor applies only up to EUR 15,000. For income over EUR 25,000 up to EUR 35,000 the deduction rises by EUR 65 (TUIR art. 13, c. 1.1); other provisions of art. 13 still apply.  _(TUIR art. 13, c. 1 and 1.1; Agenzia delle Entrate, Circolare 4/E of 16 May 2025)_
 
 ### Addizionali IRPEF (Regional and Municipal Surcharges)
 
@@ -85,7 +88,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contribution | Employee Rate | Base | Notes |
 | --- | --- | --- | --- |
 | IVS (Invalidità, Vecchiaia, Superstiti) | 9.19% | Up to INPS ceiling | General rate for industry/commerce employees |
-| IVS above ceiling | 9.19% continues but only employer pays excess | Above EUR 122,295/year | For post-1996 first-insured (L. 335/95) |
+| IVS additional 1% (aliquota aggiuntiva) | 1% | Pay above EUR 56,224/year (EUR 4,685/month), 2026 | D.L. 384/1992 art. 3-ter; the statute ties it to schemes whose employee rate is below 10%, and INPS circolare 6 of 30 January 2026 puts it 'a carico del lavoratore' (borne by the employee) |
+| IVS above massimale | Nil | Above EUR 122,295/year (2026) | Massimale of the contribution base for workers first insured from 1 January 1996 or who opt into the contributory system (L. 335/1995 art. 2, c. 18): no IVS on the excess |
 | Fondo di garanzia TFR | -- | -- | No employee share |
 | CIG (Cassa Integrazione Guadagni) | -- | -- | Employer-only for most sectors |
 | CIGS (for companies > 15 employees) | -- | -- | Employer-only |
@@ -143,7 +147,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Commerce / services | ~28--30% |
 | Dirigenti | ~33--35% |
 
-- **Application of rates and IVS above massimale** — These rates apply on gross salary without ceiling for most components. IVS above the massimale: employer pays an additional ~1% on amounts exceeding EUR 122,295 (no employee share above ceiling).
+- **Application of rates and IVS above massimale** — These rates apply on gross salary without ceiling for most components. For workers subject to the massimale, no IVS is due on pay above EUR 122,295 (2026), from either party. The additional 1% (D.L. 384/1992 art. 3-ter) applies above EUR 56,224 a year, not above the massimale; see Section 3.  _(INPS, Lavoratori dipendenti: limite minimo di retribuzione giornaliera 2026)_
 
 ## Section 5 -- Minimum Wage and Overtime
 
@@ -382,13 +386,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

@@ -1,10 +1,10 @@
 ---
 name: vietnam-pit
 description: Use this skill whenever asked about Vietnam personal income tax (thuế thu nhập cá nhân / TNCN) for resident individuals, self-employed persons, or sole proprietors. Trigger on phrases like "thuế TNCN", "Vietnam income tax", "thuế thu nhập cá nhân", "giảm trừ gia cảnh", "biểu thuế lũy tiến", "progressive tax Vietnam", "personal deduction Vietnam", "dependent deduction Vietnam", "PIT Vietnam", or any question about computing or filing personal income tax in Vietnam. Covers the 2026 five-bracket progressive rate schedule (Luật số 109/2025/QH15), personal and dependent deductions, and filing obligations. ALWAYS read this skill before touching any Vietnam PIT work.
-version: 1.0
+version: 1.1
 jurisdiction: VN
 tax_year: 2026
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Vietnam Pit
 
-## Vietnam Personal Income Tax (Thuế Thu Nhập Cá Nhân / TNCN) v1.0
+## Vietnam Personal Income Tax (Thuế Thu Nhập Cá Nhân / TNCN) v1.1
 
 ## Section 1 — Quick Reference
 
@@ -30,10 +30,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | Luật số 109/2025/QH15, amended by Luật số 09/2026/QH16 (in force 01/07/2026; residents' employment and business income from the 2026 tax period, art. 29); Luật Thuế Thu Nhập Cá Nhân No. 04/2007/QH12 (amended) for earlier periods |
 | Tax authority | Tổng cục Thuế (General Department of Taxation — GDT) |
 | Filing portal | etax.gdt.gov.vn / thuedientu.gdt.gov.vn |
-| Filing deadline | Annual finalisation: 31 March of following year |
+| Filing deadline | Annual finalisation: employers, 31 March of the following year; individuals with salary or wage income finalising directly, last day of the 4th month (30 April) of the following year; business income, see Section 5 (Section 6) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Vietnam-licensed tax agent (đại lý thuế) or CPA |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 — Progressive Tax Brackets (Biểu Thuế Lũy Tiến Từng Phần) — 2026
 
@@ -124,9 +124,9 @@ From the 2026 tax period, Vietnam moved from a 7-bracket to a **5-bracket** prog
 | Capital gains (chuyển nhượng vốn) | 20% on gains | Or 0.1% of transfer value for listed securities |
 | Securities transfer | 0.1% of sale proceeds | Regardless of gain/loss |
 | Real estate transfer (chuyển nhượng bất động sản) | 2% of transfer price | No deduction of cost basis |
-| Royalties, franchises | 5% above VND 10,000,000 per contract |  |
-| Lottery / prizes (trúng thưởng) | 10% above VND 10,000,000 |  |
-| Inheritance / gifts | 10% above VND 10,000,000 |  |
+| Royalties, franchises | 5% above VND 20,000,000 per contract | VND 10,000,000 for income paid before 01/07/2026 (Luật số 109/2025/QH15, arts 16, 17 and 29.1) |
+| Lottery / prizes (trúng thưởng) | 10% above VND 20,000,000 per prize | VND 10,000,000 for prizes paid before 01/07/2026 (Luật số 109/2025/QH15, arts 15 and 29.1) |
+| Inheritance / gifts | 10% above VND 20,000,000 per receipt | VND 10,000,000 for receipts before 01/07/2026 (Luật số 109/2025/QH15, arts 18 and 29.1) |
 
 ### Business income of resident individuals and household businesses (tax period 2026 onwards)
 
@@ -168,12 +168,12 @@ Luật số 109/2025/QH15, art. 7 governs this income from the 2026 tax period (
 
 ### Annual finalisation (Quyết Toán Thuế)
 
-**Annual finalisation table**
+**Annual finalisation table**  _(Luật Quản lý Thuế No. 38/2019/QH14, art. 44.2(a) and (b): https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/07/38.signed.pdf. From 01/07/2026, Luật Quản lý thuế số 108/2025/QH15 leaves filing deadlines to the Government (art. 12.8) and Nghị định 252/2026/NĐ-CP sets them; that decree was not read for this guide; a secondary report places the 4th-month deadline for individuals with salary or wage income finalising directly in its art. 10.5, so confirm the deadlines for the 2026 tax period before filing)_
 
 | Who | Deadline | Notes |
 | --- | --- | --- |
-| Employers (on behalf of employees) | 31 March of following year | File form 05/QTT-TNCN |
-| Individuals self-filing | 31 March of following year | File form 02/QTT-TNCN |
+| Employers (on behalf of employees) | 31 March of following year (last day of the 3rd month) | File form 05/QTT-TNCN |
+| Individuals with salary or wage income finalising directly | Last day of the 4th month of the following year (30 April; moved to the next working day if it is a holiday) | File form 02/QTT-TNCN. Business income of individuals and household businesses: annual finalisation by 31 March (Section 5) |
 | Individuals with single employer, no additional income | May authorise employer to finalise | No separate filing needed |
 
 ### When individual must self-file
@@ -373,7 +373,7 @@ The taxpayer may choose either method at this revenue level. Choosing the income
 - [ ] Insurance contribution caps applied correctly?
 - [ ] All income sources identified and categorised?
 - [ ] Withholding reconciled against annual liability?
-- [ ] Filing deadline (31 March) noted?
+- [ ] Filing deadline noted (employer 31 March; salary or wage self-filer last day of the 4th month; business income 31 March)?
 
 ## Section 13 — Changelog
 
@@ -383,6 +383,7 @@ The taxpayer may choose either method at this revenue level. Choosing the income
 | --- | --- | --- |
 | 1.0 | May 2026 | Initial release with 2026 five-bracket system per Luật số 109/2025/QH15 |
 | 1.0 | 31 October 2026 | Corrected brackets 2 and 3 to 10% and 20%; replaced the business income section; recomputed the examples with current insurance caps |
+| 1.1 | 1 November 2026 | Corrected the self-filer finalisation deadline to the last day of the 4th month; raised the royalty, franchise, prize and inheritance thresholds to VND 20,000,000 from 01/07/2026 |
 
 ## Prohibitions
 
@@ -400,13 +401,15 @@ The most up-to-date version is maintained at openaccountants.com.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

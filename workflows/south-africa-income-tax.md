@@ -1,5 +1,7 @@
 # South Africa Income Tax Workflow
 
+> This revision includes changes made after the recorded verification and awaits a new verification.
+
 **MCP prompt name:** `south-africa-income-tax`
 **Bundle:** `GET https://www.openaccountants.com/api/bundle/ZA`
 
@@ -21,7 +23,7 @@
 - Provisional tax schedule (IRP6 — February and August payments)
 - CGT computation (if assets were disposed of)
 - Medical tax credits (main member + dependants)
-- Retirement annuity (RA) deduction (27.5% of greater of remuneration or taxable income, capped at R350,000)
+- Retirement annuity (RA) deduction, at the limits in `za-income-tax`
 - Travel allowance computation (actual cost vs SARS table)
 
 ## Skills to load
@@ -32,6 +34,8 @@ From the ZA bundle:
 - `za-vat-return` — VAT (if registered)
 - `south-africa-vat` — VAT registration threshold and rules
 
+Rates and thresholds in the phases below come from these guides. The hosted bundle does not carry them all: if one is not loaded, fetch it from `packages/south-africa/` in this repository before computing, and never fall back on a remembered figure.
+
 ## 6-phase structure
 
 ### Phase 1 — Intake
@@ -41,19 +45,19 @@ Confirm: income sources (salary, freelance, rental, investment), tax year (SARS 
 Salary/remuneration, freelance/business income, rental income, investment income (interest, dividends). Apply exempt amounts (interest exemption, dividend withholding tax treatment).
 
 ### Phase 3 — Deductions
-RA contributions, pension/provident fund contributions, travel allowance (log book vs SARS table), home office (if qualifying conditions met), medical scheme fees tax credit (MSFTC) — R364/month main member, R246/month each dependant (2024 values; check bundle for current year).
+RA contributions, pension/provident fund contributions, travel allowance (log book vs SARS table), home office (if qualifying conditions met), medical scheme fees tax credit (MSFTC) at the year's monthly amounts in `za-income-tax`.
 
 ### Phase 4 — Tax computation
-Apply SARS tax tables. Subtract primary, secondary, and tertiary rebates based on age. Subtract MSFTC. Check if additional medical tax credit applies (qualifying medical expenses > 7.5% of taxable income, for those under 65 not on medical scheme).
+Apply SARS tax tables. Subtract primary, secondary, and tertiary rebates based on age. Subtract MSFTC. Check whether the additional medical expenses credit applies, on the conditions in `za-income-tax`.
 
 ### Phase 5 — Provisional tax
-If taxable income includes non-employment income > R30,000: two IRP6 payments required. First period: by 31 August (based on 50% of estimated full-year liability). Second period: by 28 February (balance of estimated full-year liability). Third voluntary payment available by 30 September.
+Apply the provisional taxpayer test in `za-provisional-tax`. If the taxpayer is one: take the IRP6 periods, due dates, estimate basis and voluntary third payment from the same guide.
 
 ### Phase 6 — Handoff
 Recommend review by a SAICA/SAIPA member. Route to: https://www.openaccountants.com
 
 ## Verifier
 
-Verified by **Werner Britz CA(SA)** — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
+For the revision of 2026-06-09 (commit 47b8f2fa): Verified by **Werner Britz CA(SA)** — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
 
 Skills signed off by Werner are Tier 1 (accountant-verified). Use the MCP server or bundle API to access the verified versions.

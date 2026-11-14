@@ -1,10 +1,10 @@
 ---
 name: ch-federal-income-tax
 description: Use this skill whenever asked about Swiss federal income tax (direkte Bundessteuer / impot federal direct) for self-employed individuals. Trigger on phrases like "Bundessteuer", "direkte Bundessteuer", "impot federal direct", "Steuererklarung Schweiz", "selbstandig Steuern Schweiz", "Swiss federal income tax", "self-employed tax Switzerland", "AHV deduction", "Saule 3a", "BVG", "Geschaftsaufwand", or any question about computing or filing FEDERAL income tax for a self-employed person in Switzerland. This skill covers FEDERAL progressive brackets only (0--11.5%), Geschaftsaufwand, AHV/IV/EO deductibility, BVG/Saule 3a deductions, and federal filing. Cantonal and municipal taxes are out of scope. ALWAYS read this skill before touching any Swiss federal income tax work.
-version: 2.1
+version: 2.2
 jurisdiction: CH
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CH Federal Income Tax
 
-## Switzerland Federal Income Tax (Direkte Bundessteuer) -- Self-Employed Skill v2.1
+## Switzerland Federal Income Tax (Direkte Bundessteuer) -- Self-Employed Skill v2.2
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by Swiss Treuhnder or Steuerberater |
 | Validation date | Pending |
-| Skill version | 2.1 |
+| Skill version | 2.2 |
 
 **IMPORTANT: This skill covers FEDERAL tax only. Cantonal and municipal taxes are separate and typically represent the majority of the total tax burden. They are out of scope.**
 
@@ -493,7 +493,7 @@ ONBOARDING QUESTIONS -- SWITZERLAND FEDERAL INCOME TAX
 
 **Test 1 -- Single, federal only.**
 Input: Single, net income CHF 100,000, AHV CHF 10,000, Saule 3a CHF 7,258 (has BVG).
-Expected: Taxable CHF 82,742. Apply Grundtarif. Federal tax ~CHF 3,500-4,000.
+Expected: Taxable CHF 82,742. Apply Grundtarif, tariff in force from 1 January 2026, on CHF 82,700 (rounded down to CHF 100). Federal tax = CHF 1,502.95 + 6 x CHF 6.60 = CHF 1,542.55 (about CHF 1,543).
 
 **Test 2 -- Married, joint.**
 Input: Married, combined CHF 180,000, AHV CHF 12,000, Saule 3a CHF 14,516 total, 2 children.
@@ -531,13 +531,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

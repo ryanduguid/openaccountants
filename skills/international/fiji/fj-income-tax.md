@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Fiji income tax for self-employ
 jurisdiction: FJ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Fiji (Republic of Fiji) |
-| Tax | Personal Income Tax (PIT) + Social Responsibility Tax (SRT) + Environment & Climate Adaptation Levy (ECAL) |
+| Tax | Personal Income Tax (PIT); SRT is integrated into the PIT brackets from 2024 and ECAL on income is not charged |
 | Currency | Fijian Dollar (FJD / $) only |
 | Tax year | Calendar year (1 January -- 31 December) |
 | Residency test | Domicile in Fiji, OR present 183+ days in any 12-month period |
@@ -35,52 +35,35 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Validation date | Pending |
 | Skill version | 0.1 |
 
-### Resident Individual Income Tax Bands (Year of Assessment 2022 Onwards — current for 2025)
+### Resident Individual Income Tax Bands (Tax Year 2024 Onwards — current for 2025)
 
-**Resident Individual Income Tax Bands**  _(Source: FRCS Tax Rates page (table header "Year of Assessment 2022 Onwards") — https://frcs.org.fj/tax-rates-and-codes/ ; FRCS Personal Income Tax page — https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/)_
+**Resident Individual Income Tax Bands**  _(Source: FRCS Tax Rates page (resident table "Tax Year 2024", "from the 2024 tax year onwards"; SRT row "Till 31st December 2023") — https://frcs.org.fj/tax-rates-and-codes/ ; FRCS public notice "New Pay As You Earn (PAYE) Structure" (SRT integrated into the PAYE brackets from 1 January 2024; 2024 template excludes SRT and ECAL) — https://frcs.org.fj/public-notice/customer-service-new-pay-as-you-earn-paye-structure/)_
 
 | Chargeable income (FJD) | Income tax | Cumulative tax at top |
 | --- | --- | --- |
 | 0 -- 30,000 | Nil (tax-free threshold) | $0 |
 | 30,001 -- 50,000 | 18% of excess over 30,000 | $3,600 |
 | 50,001 -- 270,000 | 3,600 + 20% of excess over 50,000 | $47,600 |
-| 270,001 -- 300,000 | 47,600 + 20% of excess over 270,000 | $53,600 |
-| 300,001 -- 350,000 | 53,600 + 20% of excess over 300,000 | $63,600 |
-| 350,001 -- 400,000 | 63,600 + 20% of excess over 350,000 | $73,600 |
-| 400,001 -- 450,000 | 73,600 + 20% of excess over 400,000 | $83,600 |
-| 450,001 -- 500,000 | 83,600 + 20% of excess over 450,000 | $93,600 |
-| 500,001 -- 1,000,000 | 93,600 + 20% of excess over 500,000 | $193,600 |
-| 1,000,001+ | 193,600 + 20% of excess over 1,000,000 | -- |
+| 270,001 -- 300,000 | 47,600 + 33% of excess over 270,000 | $57,500 |
+| 300,001 -- 350,000 | 57,500 + 34% of excess over 300,000 | $74,500 |
+| 350,001 -- 400,000 | 74,500 + 35% of excess over 350,000 | $92,000 |
+| 400,001 -- 450,000 | 92,000 + 36% of excess over 400,000 | $110,000 |
+| 450,001 -- 500,000 | 110,000 + 37% of excess over 450,000 | $128,500 |
+| 500,001 -- 1,000,000 | 128,500 + 38% of excess over 500,000 | $318,500 |
+| 1,000,001+ | 318,500 + 39% of excess over 1,000,000 | -- |
 
-- **Effective marginal rate** — Effective marginal income-tax rate is a flat 20% on all chargeable income above $50,000. SRT and ECAL (below) add further tax above $270,000.  _(FRCS Tax Rates page — https://frcs.org.fj/tax-rates-and-codes/)_
+- **Marginal rates** — 20% from $50,001 to $270,000, then 33% rising to 39% above $1,000,000. These are income-tax rates: there is no separate SRT or ECAL charge on top for 2024 onwards.  _(Source: FRCS Tax Rates page (resident table "Tax Year 2024", "from the 2024 tax year onwards"; SRT row "Till 31st December 2023") — https://frcs.org.fj/tax-rates-and-codes/ ; FRCS public notice "New Pay As You Earn (PAYE) Structure" (SRT integrated into the PAYE brackets from 1 January 2024; 2024 template excludes SRT and ECAL) — https://frcs.org.fj/public-notice/customer-service-new-pay-as-you-earn-paye-structure/)_
 
-### Social Responsibility Tax (SRT) — additional tax on chargeable income above FJD 270,000
+### Social Responsibility Tax (SRT) and ECAL on income — not charged separately from 2024
 
-SRT applies ONLY to the portion of chargeable income exceeding $270,000.
+- **SRT integrated into income tax** — From 1 January 2024 SRT is integrated into the income tax brackets above $270,000, with what FRCS calls a 5% reduction. FRCS's SRT rate table ends with tax year 2023 ("Till 31st December 2023"). Do not compute SRT on top of the table above.  _(Source: FRCS Tax Rates page (resident table "Tax Year 2024", "from the 2024 tax year onwards"; SRT row "Till 31st December 2023") — https://frcs.org.fj/tax-rates-and-codes/ ; FRCS public notice "New Pay As You Earn (PAYE) Structure" (SRT integrated into the PAYE brackets from 1 January 2024; 2024 template excludes SRT and ECAL) — https://frcs.org.fj/public-notice/customer-service-new-pay-as-you-earn-paye-structure/)_
+- **ECAL on personal income** — Not charged for 2024 onwards. FRCS's last income table with an ECAL column is Year of Assessment 2020 and 2021 (5% of excess over $270,000); the 2024 PAYE template excludes SRT and ECAL. Pre-2024 SRT and ECAL on income are in the FRCS historical tables and are out of scope here.  _(Source: FRCS Tax Rates page (resident table "Tax Year 2024", "from the 2024 tax year onwards"; SRT row "Till 31st December 2023") — https://frcs.org.fj/tax-rates-and-codes/ ; FRCS public notice "New Pay As You Earn (PAYE) Structure" (SRT integrated into the PAYE brackets from 1 January 2024; 2024 template excludes SRT and ECAL) — https://frcs.org.fj/public-notice/customer-service-new-pay-as-you-earn-paye-structure/)_
 
-**SRT table**  _(Source: FRCS Tax Rates page (SRT column) — https://frcs.org.fj/tax-rates-and-codes/ ; FRCS SRT overview — https://frcs.org.fj/our-services/taxation/individuals/social-responsibility-tax-srt/)_
-
-| Chargeable income (FJD) | SRT | Cumulative SRT at top |
-| --- | --- | --- |
-| 270,001 -- 300,000 | 18% of excess over 270,000 | $5,400 |
-| 300,001 -- 350,000 | 5,400 + 19% of excess over 300,000 | $14,900 |
-| 350,001 -- 400,000 | 14,900 + 20% of excess over 350,000 | $24,900 |
-| 400,001 -- 450,000 | 24,900 + 21% of excess over 400,000 | $35,400 |
-| 450,001 -- 500,000 | 35,400 + 22% of excess over 450,000 | $46,400 |
-| 500,001 -- 1,000,000 | 46,400 + 23% of excess over 500,000 | $161,400 |
-| 1,000,001+ | 161,400 + 24% of excess over 1,000,000 | -- |
-
-[RESEARCH GAP — reviewer to confirm] First SRT band (270,001–300,000): FRCS current tax-rates summary shows 18%, while a superseded FRCS 2020/2021 PAYE PDF showed 13% for that band (the 2024 budget restructured SRT). The 18% figure from the current FRCS tax-rates page is treated as authoritative for 2025 here; confirm against the live FRCS PAYE/SRT/ECAL table before publishing/filing.
-
-### Environment & Climate Adaptation Levy (ECAL) on income
-
-- **ECAL on personal income** — flat 5% of chargeable income exceeding $270,000 (reduced from 10% to 5%). Applies above the $270,000 threshold across all higher bands.  _(Source: FRCS 2020/2021 PAYE PDF (each ECAL row "5% of excess over 270,000") — https://www.frcs.org.fj/wp-content/uploads/2020/10/2020-2021-PAYE-Final-Tax.pdf ; reduction 10%→5% confirmed via FRCS SRT page — https://frcs.org.fj/our-services/taxation/individuals/social-responsibility-tax-srt/)_
-
-Note: ECAL also applies separately as a 5% levy on prescribed services (a consumption levy distinct from the income levy) — out of scope for this personal income tax skill.
+Note: ECAL also applies separately as a levy on prescribed services (a consumption levy distinct from the income levy) — out of scope for this personal income tax skill.
 
 ### Non-Resident Individuals
 
-- **Non-resident flat rate** — Flat 20% on Fiji-sourced chargeable income from the first dollar — no tax-free threshold.  _(Source: FRCS Personal Income Tax page — https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/)_
+- **Non-resident rate** — Flat 20% on Fiji-sourced chargeable income from the first dollar up to $270,000 — no tax-free threshold. Above $270,000 the 2024 non-resident table applies: $54,000 + 33% of excess over $270,000, rising to $324,900 + 39% of excess over $1,000,000 (FRCS Tax Rates page).  _(Source: FRCS Personal Income Tax page — https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/)_
 
 ### FNPF — Fiji National Provident Fund (mandatory social security / pension)
 
@@ -120,7 +103,7 @@ Component check: 8% (employee) + 10% (employer) = 18% total ✓. Contributions c
 | Ambiguity | Default |
 | --- | --- |
 | Unknown residency status | STOP — do not apply a rate table without confirming resident vs non-resident |
-| Unknown whether income exceeds $270,000 | Assume below until confirmed; apply SRT/ECAL only when confirmed above |
+| Unknown whether income exceeds $270,000 | Assume below until confirmed; apply the 33% to 39% bands only when confirmed above |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
 | Unknown expense category | Not deductible |
 | Unknown VAT registration | Not registered (turnover under $100,000) |
@@ -141,12 +124,12 @@ Refusal if minimum is missing -- SOFT WARN. No bank statement at all = hard stop
 
 ### Refusal Catalogue
 
-- **R-FJ-1** — Residency status unknown. "Residency determines whether the tax-free threshold and progressive bands apply (resident) or a flat 20% from the first dollar applies (non-resident). This skill cannot compute tax without confirming residency. Please confirm before proceeding."
+- **R-FJ-1** — Residency status unknown. "Residency determines whether the tax-free threshold and progressive bands apply (resident) or 20% from the first dollar up to $270,000, then 33% to 39%, applies (non-resident). This skill cannot compute tax without confirming residency. Please confirm before proceeding."
 - **R-FJ-2** — Companies / partnerships. "This skill covers individuals and sole traders only. Companies (25% CIT) and partnerships file separate returns. Escalate to a Fiji-licensed practitioner."
-- **R-FJ-3** — High earners above FJD 270,000. "Chargeable income above $270,000 triggers SRT and ECAL in addition to income tax, and the first SRT band rate is currently unconfirmed in this skill. Flag for reviewer before computing — do not finalise SRT/ECAL without confirming the live FRCS table."
+- **R-FJ-3** — High earners above FJD 270,000. "Chargeable income above $270,000 falls in the 33% to 39% income tax bands (SRT is integrated into these bands from 2024 and is not charged on top). Flag for reviewer before finalising."
 - **R-FJ-4** — Capital gains / asset disposals. "Capital Gains Tax (10%) computations require specialised analysis. Out of scope. Escalate to a Fiji-licensed practitioner."
 - **R-FJ-5** — Arrears / enforcement. "Client has outstanding tax arrears or is subject to FRCS debt management action. Late-payment penalty (25%) plus 5% per month interest is severe. Do not advise. Escalate to a Fiji-licensed practitioner immediately."
-- **R-FJ-6** — VAT return requested. "This skill covers income tax (PIT/SRT/ECAL) only. Fiji VAT (15%, threshold FJD 100,000) is a separate workflow."
+- **R-FJ-6** — VAT return requested. "This skill covers income tax (PIT) only. Fiji VAT (15%, threshold FJD 100,000) is a separate workflow."
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -319,7 +302,7 @@ Classification: FNPF deduction = $240.00. Not a business expense.
 Input: Resident sole trader. Net business profit (chargeable income) = $25,000.
 
 Reasoning:
-$25,000 is below the $30,000 tax-free threshold, so income tax = Nil. No SRT or ECAL (income well below $270,000). FNPF/VAT separate.
+$25,000 is below the $30,000 tax-free threshold, so income tax = Nil. Income well below $270,000. FNPF/VAT separate.
 
 Classification: Income tax due = $0.00 (within tax-free threshold).
 
@@ -328,7 +311,7 @@ Classification: Income tax due = $0.00 (within tax-free threshold).
 Input: Resident sole trader. Chargeable income = $80,000.
 
 Reasoning:
-$80,000 falls in the 50,001–270,000 band. Tax = 3,600 + 20% × (80,000 − 50,000) = 3,600 + 20% × 30,000 = 3,600 + 6,000 = $9,600. No SRT/ECAL (below $270,000).
+$80,000 falls in the 50,001–270,000 band. Tax = 3,600 + 20% × (80,000 − 50,000) = 3,600 + 20% × 30,000 = 3,600 + 6,000 = $9,600. Below $270,000, so the 33% to 39% bands do not apply.
 
 Classification: Income tax = $9,600.00.
 
@@ -358,7 +341,7 @@ Classification: Income tax = $8,000.00.
 | Status | Basis | Threshold | Rate |
 | --- | --- | --- | --- |
 | Resident | Worldwide income | $30,000 tax-free | Progressive (see Section 1) |
-| Non-resident | Fiji-sourced only | None | Flat 20% from first dollar |
+| Non-resident | Fiji-sourced only | None | 20% from first dollar to $270,000; 33% to 39% above (2024 non-resident table) |
 
 ### 5.4 Capital vs Revenue
 
@@ -381,16 +364,9 @@ Classification: Income tax = $8,000.00.
 | Capital expenditure | Depreciated, not expensed |
 | Drawings / personal withdrawals | Not an expense |
 
-### 5.7 SRT and ECAL (Income above FJD 270,000)
+### 5.7 Income above FJD 270,000 (SRT and ECAL)
 
-**SRT and ECAL**  _(Source: FRCS SRT page — https://frcs.org.fj/our-services/taxation/individuals/social-responsibility-tax-srt/)_
-
-| Tax | Applies to | Computation |
-| --- | --- | --- |
-| SRT | Chargeable income > $270,000 | See SRT table, Section 1 (first band rate flagged as RESEARCH GAP) |
-| ECAL | Chargeable income > $270,000 | Flat 5% of excess over $270,000 |
-
-- **SRT/ECAL additional and flag** — These are ADDITIONAL to income tax. Flag any client with chargeable income above $270,000 for the reviewer (R-FJ-3).  _(Source: FRCS SRT page — https://frcs.org.fj/our-services/taxation/individuals/social-responsibility-tax-srt/)_
+- **No separate SRT or ECAL from 2024** — Chargeable income above $270,000 is taxed in the 33% to 39% income tax bands in Section 1, which integrate SRT. Do not add SRT or ECAL on income. Flag any client with chargeable income above $270,000 for the reviewer (R-FJ-3).  _(Source: FRCS Tax Rates page (resident table "Tax Year 2024", "from the 2024 tax year onwards"; SRT row "Till 31st December 2023") — https://frcs.org.fj/tax-rates-and-codes/ ; FRCS public notice "New Pay As You Earn (PAYE) Structure" (SRT integrated into the PAYE brackets from 1 January 2024; 2024 template excludes SRT and ECAL) — https://frcs.org.fj/public-notice/customer-service-new-pay-as-you-earn-paye-structure/)_
 
 ### 5.8 VAT Interaction
 
@@ -443,9 +419,9 @@ Classification: Income tax = $8,000.00.
 
 - **Capital Item Depreciation Rate** — Fiji depreciation/wear-and-tear rates not extracted in research ([RESEARCH GAP]). Reviewer must apply the correct FRCS rate per asset class before any depreciation deduction.
 
-### 6.6 SRT / ECAL High-Earner Computation
+### 6.6 High-Earner Computation (above FJD 270,000)
 
-- **SRT / ECAL High-Earner Computation** — Any chargeable income above $270,000 triggers SRT and ECAL. First SRT band rate unconfirmed ([RESEARCH GAP] — 18% vs 13%). Flag for reviewer to confirm against the live FRCS PAYE/SRT/ECAL table.
+- **High-Earner Computation** — Chargeable income above $270,000 uses the 33% to 39% income tax bands (Section 1); SRT is integrated into those bands from 2024 and ECAL on income is not charged. Flag for reviewer before finalising.
 
 ### 6.7 Provisional Tax Instalments
 
@@ -497,11 +473,9 @@ E. DEDUCTIONS FROM TOTAL INCOME
 F. CHARGEABLE INCOME (C + D4 - E3)                   ___________
 
 G. TAX COMPUTATION (pass to deterministic engine)
-  G1. Income tax (resident bands / 20% non-resident) ___________
-  G2. SRT (if chargeable income > 270,000)           ___________
-  G3. ECAL 5% (if chargeable income > 270,000)       ___________
-  G4. Less: provisional tax paid                     ___________
-  G5. Tax due / refund                               ___________
+  G1. Income tax (resident / non-resident 2024 bands) ___________
+  G2. Less: provisional tax paid                     ___________
+  G3. Tax due / refund                               ___________
 
 REVIEWER FLAGS:
   [ ] Residency status confirmed?
@@ -511,7 +485,7 @@ REVIEWER FLAGS:
   [ ] Phone/internet business % confirmed?
   [ ] Depreciation rates confirmed (RESEARCH GAP)?
   [ ] FNPF deduction confirmed?
-  [ ] Chargeable income > $270,000? (SRT/ECAL + first-band RESEARCH GAP)
+  [ ] Chargeable income > $270,000? (33% to 39% bands; no separate SRT/ECAL)
   [ ] Provisional tax schedule confirmed (RESEARCH GAP)?
   [ ] Entertainment/personal excluded?
   [ ] Capital items depreciated (not expensed)?
@@ -541,8 +515,8 @@ REVIEWER FLAGS:
 | TFR / Transfer | Transfer | Check direction for income/expense |
 | FNPF | Fiji National Provident Fund | Pension contribution (deduction) |
 | FRCS | Fiji Revenue & Customs Service | Tax authority — tax payments not deductible |
-| ECAL | Environment & Climate Adaptation Levy | Income levy (>$270k) or service levy |
-| SRT | Social Responsibility Tax | High-earner surcharge (>$270k) |
+| ECAL | Environment & Climate Adaptation Levy | Service levy (income levy not charged from 2024) |
+| SRT | Social Responsibility Tax | Former high-earner surcharge (>$270k), integrated into income tax from 2024 |
 | VAT | Value Added Tax (15%) | Exclude collected VAT from income |
 | EFL | Energy Fiji Limited | Electricity (utility expense) |
 | WAF | Water Authority of Fiji | Water (utility expense) |
@@ -558,7 +532,7 @@ If the client provides a bank statement but cannot answer onboarding questions i
 5. Present the following questions to the client:
 
 ONBOARDING QUESTIONS -- FIJI INCOME TAX
-1. Residency: resident (worldwide income, $30k tax-free) or non-resident (Fiji-source, flat 20%)?
+1. Residency: resident (worldwide income, $30k tax-free) or non-resident (Fiji-source, 20% from the first dollar to $270,000, 33% to 39% above)?
 2. Taxpayer type: sole trader only, employment + business income (PIT "B"), or wage earner?
 3. VAT registration: registered? Annual gross turnover above or below FJD 100,000?
 4. Home office: dedicated room or shared space? If dedicated, what % of floor area?
@@ -568,7 +542,7 @@ ONBOARDING QUESTIONS -- FIJI INCOME TAX
 8. Provisional tax: total amount paid in the tax year?
 9. Any other income (employment, rental, dividends, interest)?
 10. Any capital assets purchased during the year (with cost)?
-11. Is chargeable income expected to exceed FJD 270,000? (triggers SRT + ECAL)
+11. Is chargeable income expected to exceed FJD 270,000? (33% to 39% bands apply)
 
 ## Section 10 -- Reference Material
 
@@ -580,8 +554,8 @@ ONBOARDING QUESTIONS -- FIJI INCOME TAX
 | --- | --- |
 | Income tax rates (residents) | FRCS Tax Rates — https://frcs.org.fj/tax-rates-and-codes/ |
 | Personal income tax / residency | FRCS PIT page — https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/ |
-| Social Responsibility Tax | FRCS SRT page — https://frcs.org.fj/our-services/taxation/individuals/social-responsibility-tax-srt/ |
-| ECAL on income | FRCS 2020/2021 PAYE PDF — https://www.frcs.org.fj/wp-content/uploads/2020/10/2020-2021-PAYE-Final-Tax.pdf |
+| SRT integrated into PAYE brackets from 2024 | FRCS public notice — https://frcs.org.fj/public-notice/customer-service-new-pay-as-you-earn-paye-structure/ |
+| ECAL on income (2020 and 2021 only, historical) | FRCS 2020/2021 PAYE PDF — https://www.frcs.org.fj/wp-content/uploads/2020/10/2020-2021-PAYE-Final-Tax.pdf |
 | FNPF contributions | FNPF Employers — https://myfnpf.com.fj/employers/ |
 | FNPF voluntary cap (FJD 250,000) | FNPF — https://myfnpf.com.fj/2025/02/19/fnpf-reverts-to-old-voluntary-and-additional-contribution-limit/ |
 | VAT (15%, $100k threshold) | FRCS VAT Guide — https://www.frcs.org.fj/wp-content/uploads/2023/11/VAT-Guide-01.11.2-Online-version.pdf |
@@ -603,7 +577,7 @@ ONBOARDING QUESTIONS -- FIJI INCOME TAX
 
 ### RESEARCH GAPS — Reviewer Must Confirm Before Publishing
 
-1. First SRT band rate (270,001–300,000): FRCS summary shows 18%; superseded 2020/21 PDF showed 13%. Confirm against live FRCS PAYE/SRT/ECAL table.
+1. Resolved 1 November 2026: SRT is integrated into the 2024 income tax bands and ECAL on income is not charged (FRCS Tax Rates page and PAYE structure notice). The amending Income Tax regulation itself was not read.
 2. FNPF compulsory contribution wage ceiling: not confirmed on FNPF's official site — state as none/unconfirmed.
 3. Provisional tax instalment rate/schedule: pull exact figures from the FRCS Provisional Tax page.
 4. Depreciation / wear-and-tear rates (Income Tax Act 2015): not extracted; do not apply a rate without confirmation.
@@ -613,7 +587,7 @@ ONBOARDING QUESTIONS -- FIJI INCOME TAX
 
 Test 1 -- Resident, within tax-free threshold.
 Input: Resident, chargeable income $25,000.
-Expected: Income tax = $0.00 (below $30,000 threshold). No SRT/ECAL.
+Expected: Income tax = $0.00 (below $30,000 threshold).
 
 Test 2 -- Resident, lower band.
 Input: Resident, chargeable income $45,000.
@@ -621,11 +595,11 @@ Expected: 18% × (45,000 − 30,000) = 18% × 15,000 = $2,700.00.
 
 Test 3 -- Resident, mid band.
 Input: Resident, chargeable income $80,000.
-Expected: 3,600 + 20% × (80,000 − 50,000) = 3,600 + 6,000 = $9,600.00. No SRT/ECAL.
+Expected: 3,600 + 20% × (80,000 − 50,000) = 3,600 + 6,000 = $9,600.00.
 
 Test 4 -- Resident, top of the flat-20% range.
 Input: Resident, chargeable income $270,000.
-Expected: 3,600 + 20% × (270,000 − 50,000) = 3,600 + 44,000 = $47,600.00. No SRT/ECAL (not above $270,000).
+Expected: 3,600 + 20% × (270,000 − 50,000) = 3,600 + 44,000 = $47,600.00. The 33% band starts only above $270,000.
 
 Test 5 -- Non-resident.
 Input: Non-resident, Fiji-sourced chargeable income $40,000.
@@ -639,15 +613,15 @@ Test 7 -- FNPF employee contribution.
 Input: Gross monthly wage $3,000, employee FNPF 8%.
 Expected: FNPF deduction = $240.00 (8% × 3,000). Employer adds 10% = $300.00; total 18% = $540.00.
 
-Test 8 -- High earner (escalation).
+Test 8 -- High earner (reviewer flag).
 Input: Resident, chargeable income $400,000.
-Expected: STOP / flag for reviewer (R-FJ-3) — SRT and ECAL apply above $270,000 and the first SRT band rate is a RESEARCH GAP. Do not finalise without confirming the live FRCS table.
+Expected: 74,500 + 35% × (400,000 − 350,000) = 74,500 + 17,500 = $92,000.00. No SRT or ECAL on top. Flag for reviewer (R-FJ-3).
 
 ## PROHIBITIONS
 
 - NEVER apply a rate table without confirming residency status (resident vs non-resident)
 - NEVER apply the $30,000 tax-free threshold to a non-resident
-- NEVER finalise SRT or ECAL without confirming the live FRCS table (first SRT band is a RESEARCH GAP)
+- NEVER add SRT or ECAL on income on top of the 2024 income tax bands
 - NEVER apply a depreciation rate to a capital item without reviewer confirmation (rates are a RESEARCH GAP)
 - NEVER allow entertainment or personal expenses as a deduction
 - NEVER allow income tax itself as a deduction
@@ -670,13 +644,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

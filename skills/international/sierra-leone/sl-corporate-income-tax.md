@@ -6,7 +6,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "Rates move between years and the year matters. The resident company rate is 25% up to and including the 2025 year of assessment and 30% under the Finance Act 2026, which is deemed to come into operation from 1 January 2026. Statutory text read here is the Income Tax Act 2000 as amended to Finance Act 2017 (the NRA's consolidation) together with the Finance Acts 2024, 2025 and 2026 as separate instruments."
 version: 0.1
-last_updated: 2026-09-10
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -155,13 +155,15 @@ Local-accountant review is pending.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network: accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

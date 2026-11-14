@@ -6,7 +6,7 @@ category: international
 tax_year: 2025
 tax_year_notes: "Lesotho's year of assessment runs 1 April to 31 March; the RSL's current employment-income guide is labelled 2025-26. The statutory text read here is the Income Tax Act 1993 as consolidated by RSL to 1 April 2012: the most recent consolidation RSL publishes. Amendments after that date could not be read: see the currency note in §1."
 version: 0.1
-last_updated: 2026-09-10
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -229,13 +229,15 @@ the rate table, a conflict recorded in §2 rather than resolved.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

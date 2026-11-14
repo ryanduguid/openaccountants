@@ -6,7 +6,7 @@ jurisdiction: SE
 category: international
 tax_year: 2025
 tax_year_notes: "Historical 2025 PIT label with separately labelled mixed-year legacy content; selected AB-refusal source correction only. Not a current 2026 PIT qualification."
-last_updated: 2026-11-03
+last_updated: 2026-11-06
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-**Historical and mixed-period reference.** The inherited PIT label is tax year 2025, with some separately labelled 2026 comparisons. This is not a current 2026 PIT computation guide. The selected November 2026 AB-rate refusal check does not revalidate the inherited sole-trader rates, deductions, credits, NE field mapping, default assumptions or deadlines. Their legal and actual-fact checks remain HOLD.
+**Historical and mixed-period reference.** The inherited PIT label is tax year 2025, with some separately labelled 2026 comparisons. This is not a current 2026 PIT computation guide. The selected November 2026 AB-rate refusal check does not revalidate the inherited sole-trader rates, deductions, credits, NE field mapping, default assumptions or deadlines. Their legal and actual-fact checks remain HOLD. The 31 October 2026 audit corrections kept below are the F-skatt due dates, the egenavgifter birth-year rates, the moms exemption threshold, the räntefördelning rates and the matching worked example. Those passages cite their sources and do not clear the other inherited figures.
 
-This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration; a source index does not qualify all figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
+This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration, except a row whose source column cites a primary source for that row. A source index does not qualify the other figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
 
 ## Scope
 
@@ -97,10 +97,10 @@ Confirm scope, period and inputs before classification. Reconcile evidence and t
 | Return form | Inkomstdeklaration 1 with NE-bilaga (business income attachment) | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Filing deadline (digital) | 2 May of the following year | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Filing deadline (via ombud) | 16 June | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| F-skatt instalments | 12th of each month | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| F-skatt instalments | 12th of each month (17th in January and August; moved to the next weekday when it falls on a weekend) | SFL kap. 55 |
 | Kommunalskatt (municipal + regional) | Average 32.41% (range 28.98%--35.30%) | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Statlig inkomstskatt (state tax) | 20% on taxable earned income above SEK 625,800 (under 66); SEK 733,200 (66+) | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| Egenavgifter (self-employment contributions) | 28.97% (full); 10.21% (age 66+) | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| Egenavgifter (self-employment contributions) | 28.97% (full, born 1959 or later); 10.21% (born 1938–1958, income years 2025 and 2026); nil (born 1937 or earlier) | SAL; birth-year rates for 2026 also in Skatteverket, Belopp och procent 2026 (https://www.skatteverket.se/foretag/skatterochavdrag/beloppochprocent/2026.106.1522bf3f19aea8075ba3294.html) |
 | Grundavdrag (basic deduction) | SEK 17,300--45,300 (under 66); up to SEK 86,500 (66+) | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Jobbskatteavdrag | Tax credit reducing kommunalskatt; approximately SEK 44,000--46,000 for average earners | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | Contributor | Open Accountants Community | unverified: retained statement; scoped source checks below do not qualify this whole row |
@@ -308,7 +308,7 @@ This is the deterministic pre-classifier for income tax purposes. When a transac
 
 #### 5.2 Egenavgifter and schablonavdrag
 
-- **Egenavgifter and schablonavdrag**  -  Egenavgifter = 28.97% of net business profit (10.21% for age 66+). Since egenavgifter are calculated on the profit they reduce, apply schablonavdrag of 25% as preliminary deduction from net business profit. Actual egenavgifter reconciled on the return.  _(SAL)_
+- **Egenavgifter and schablonavdrag**  -  Egenavgifter = 28.97% of net business profit (10.21% if born 1938–1958, for income years 2025 and 2026; nil if born 1937 or earlier). Since egenavgifter are calculated on the profit they reduce, apply schablonavdrag of 25% as preliminary deduction from net business profit. Actual egenavgifter reconciled on the return.  _(SAL; Skatteverket, Belopp och procent 2026)_
 - **Schablonavdrag computation**  -  (1) Net profit before egenavgifter = X. (2) Schablonavdrag = X x 25% = Y. (3) Taxable business income = X - Y. (4) Actual egenavgifter computed on final adjusted base.  _(SAL)_
 
 #### 5.3 Statlig inkomstskatt
@@ -341,11 +341,11 @@ This is the deterministic pre-classifier for income tax purposes. When a transac
 
 #### 5.10 Moms interaction
 
-- **Moms interaction**  -  Moms collected on sales: NOT income (exclude from R1). Input moms recovered: NOT an expense (exclude from costs). Non-deductible moms (e.g., representation): IS an expense. Non-momsregistrerad (under SEK 80,000 turnover): no moms separation needed, gross = net.  _(ML)_
+- **Moms interaction**  -  Moms collected on sales: NOT income (exclude from R1). Input moms recovered: NOT an expense (exclude from costs). Non-deductible moms (e.g., representation): IS an expense. Non-momsregistrerad (momsbefrielse: turnover of at most SEK 120,000 in the year and in each of the 2 preceding years, from 1 January 2025; SEK 80,000 before): no moms separation needed, gross = net.  _(ML; Skatteverket, Höjd omsättningsgräns för moms)_
 
 #### 5.11 F-skatt
 
-- **F-skatt**  -  All self-employed must register for F-skatt. Monthly instalments due 12th of each month. Without F-skatt, clients paying the individual must pay arbetsgivaravgifter.  _(SFL kap. 55)_
+- **F-skatt**  -  All self-employed must register for F-skatt. Monthly instalments due 12th of each month, except January and August, when they are due the 17th (moved to the next weekday when that falls on a weekend). Without F-skatt, clients paying the individual must pay arbetsgivaravgifter.  _(SFL kap. 55)_
 
 #### 5.12 Loss carry-forward
 
@@ -500,7 +500,7 @@ Apply all 4 retained scope refusals and the operational hold. Do not answer a 20
 
 #### 6.3 Räntefördelning
 
-- **Räntefördelning**  -  Why ambiguous: Positive räntefördelning reclassifies business income as capital income (30% tax). Requires net business assets > SEK 50,000. Rate: 2.96% (statslåneräntan + 6pp). Default: Do not apply without reviewer confirmation. Question: "What were your net business assets at the start of the income year?"
+- **Räntefördelning**  -  Why ambiguous: Positive räntefördelning reclassifies business income as capital income (30% tax). Rate (statslåneräntan + 6pp): 7.96% for income year 2025; 8.55% for 2026. For income years beginning on or after 1 January 2025 a capital base above zero suffices; the condition that it exceed SEK 50,000 applied only to earlier years. The negative rate (statslåneräntan + 1pp) is 2.96% for 2025 and 3.55% for 2026.  _(Skatteverket, Räntefördelning; Belopp och procent 2026)_ Default: Do not apply without reviewer confirmation. Question: "What were your net business assets at the start of the income year?"
 
 #### 6.4 Mixed-use phone/internet
 
@@ -578,7 +578,7 @@ The inherited portal/form references are leads only. Verify the actual period, N
 
 ## Sources
 
-This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration; a source index does not qualify all figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
+This migration preserves retained research and does not perform a new law reading. Only the limited source-checked companion passages identified below carry their historical qualification. Every inherited table row is explicitly unverified in this migration, except a row whose source column cites a primary source for that row. A source index does not qualify the other figures on a row. Do not supply missing facts, rates, deductions or deadlines from memory. Upstream links and inherited footer descriptions do not certify this fork's version or contents.
 
 | Official source | Exact URL | Recorded check date and event | Retained reading extent and limits |
 |---|---|---|---|
@@ -616,7 +616,7 @@ Input: Momsregistrerad client reports SEK 1,250,000 gross receipts including 25%
 Expected: NE R1 = SEK 1,000,000. Exclude SEK 250,000 moms.
 
 Input: Net business assets SEK 500,000. Business income SEK 400,000.
-Expected: Räntefördelningsbelopp = SEK 14,800 (500,000 x 2.96%). Reclassified to capital income (30% tax). Taxable business income = SEK 385,200.
+Expected: Räntefördelningsbelopp = SEK 39,800 (500,000 x 7.96%, income year 2025). Reclassified to capital income (30% tax). Taxable business income = SEK 360,200. For 2026: SEK 42,750 (500,000 x 8.55%) and SEK 357,250.
 
 #### Edge case registry
 

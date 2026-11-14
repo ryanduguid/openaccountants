@@ -1,10 +1,10 @@
 ---
 name: china-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a China VAT (增值税 / VAT) return, handle Golden Tax System (金税系统) compliance, classify transactions for Chinese VAT purposes, or advise on VAT registration and filing in China. Trigger on phrases like "增值税", "VAT return China", "增值税申报", "增值税专用发票", "金税系统", "一般纳税人", "小规模纳税人", or any China VAT request. ALWAYS read this skill before touching any China VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -25,9 +25,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | 增值税 (Zēngzhíshuì / Value Added Tax) |
 | Currency | CNY (Renminbi 人民币 / RMB) only |
 | Tax year | Calendar year (January–December) |
-| Standard rate | 13% (goods, processing, repair, leasing of tangible assets) |
-| Reduced rate 9% | Agricultural products, utilities, transport, construction, real estate, postal |
-| Reduced rate 6% | Financial services, modern services (IT, consulting, R&D), telecom, consumer services |
+| Standard rate | 13% (goods including electricity, processing, repair, leasing of tangible assets) |
+| Reduced rate 9% | Agricultural products, tap water, heating, gas (not electricity, which is 13%), transport, basic telecom, construction, real estate, postal (VAT Law Art. 10(2)) |
+| Reduced rate 6% | Financial services, modern services (IT, consulting, R&D), value-added telecom, consumer services (VAT Law Art. 10(3)) |
 | Zero rate | Exports of goods and services (出口零税率) |
 | Small taxpayer rate | 3% (小规模纳税人); 1 January 2026 to 31 December 2027: reduced to 1% for all taxable transactions except selling or leasing immovable property and transferring land use rights (MOF and STA Announcement 2026 No. 10, Part 3(3) item 6); 2% and 1.5% special cases at section 5.7 |
 | Small taxpayer exemption (起征点) | 1 January 2026 to 31 December 2027: sales below CNY 100,000 a month, CNY 300,000 a quarter or CNY 1,000 per transaction or day are exempt; once sales reach the threshold, VAT is due on all sales for the period (VAT Law Art. 23; Announcement 2026 No. 10, Part 1) |
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | e-Invoice | 电子发票 (全面推行 — fully rolled out; paper invoices being phased out) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a China-licensed 注册税务师 (CTA) or 注册会计师 (CPA) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key return form lines (增值税申报表)
 
@@ -157,15 +157,15 @@ Match by case-insensitive substring on counterparty name or transaction referenc
 
 | Pattern | Treatment | Rate | Notes |
 | --- | --- | --- | --- |
-| 国家电网, STATE GRID, 国网 | Input 9% | 9% | Electricity — reduced rate |
-| 南方电网, CSG, 南网 | Input 9% | 9% | Electricity — reduced rate |
+| 国家电网, STATE GRID, 国网 | Input 13% | 13% | Electricity: standard rate; electricity is not in the 9% list (VAT Law Art. 10(1), (2)) |
+| 南方电网, CSG, 南网 | Input 13% | 13% | Electricity: standard rate; electricity is not in the 9% list (VAT Law Art. 10(1), (2)) |
 | 中国石油, CNPC, 中石油, PETROCHINA | Input 9%/13% | 9%/13% | Gas distribution 9%; crude/refined 13% |
 | 中国石化, SINOPEC, 中石化 | Input 13% | 13% | Fuel — standard rate |
 | 城市燃气, 天然气公司 | Input 9% | 9% | Gas — reduced rate |
 | 自来水, 供水公司 | Input 9% | 9% | Water — reduced rate |
-| 中国移动, CHINA MOBILE, 移动通信 | Input 6% | 6% | Telecom — modern services rate |
-| 中国联通, CHINA UNICOM | Input 6% | 6% | Telecom — modern services rate |
-| 中国电信, CHINA TELECOM | Input 6% | 6% | Telecom — modern services rate |
+| 中国移动, CHINA MOBILE, 移动通信 | Input 9%/6% | 9%/6% | Basic telecom (基础电信: voice calls, bandwidth leasing) 9%; value-added telecom (增值电信: SMS/MMS, internet access, data services) 6% (VAT Law Art. 10(2), (3)). Use the rate on each invoice line |
+| 中国联通, CHINA UNICOM | Input 9%/6% | 9%/6% | Basic telecom (基础电信: voice calls, bandwidth leasing) 9%; value-added telecom (增值电信: SMS/MMS, internet access, data services) 6% (VAT Law Art. 10(2), (3)). Use the rate on each invoice line |
+| 中国电信, CHINA TELECOM | Input 9%/6% | 9%/6% | Basic telecom (基础电信: voice calls, bandwidth leasing) 9%; value-added telecom (增值电信: SMS/MMS, internet access, data services) 6% (VAT Law Art. 10(2), (3)). Use the rate on each invoice line |
 
 ### 3.5 Transport and logistics (taxable)
 
@@ -314,11 +314,11 @@ Payroll payment. Wages and salaries are outside VAT scope entirely — not a sup
 
 ### 5.2 Reduced rate 9%
 
-- **Reduced rate 9%** — 9% (Agricultural products (农产品), tap water, heating, cooling, gas, coal (household), books/newspapers, animal feed, agricultural machinery, fertilizer; transport services; postal services; construction and real estate.)  _(增值税税率 Schedule; 财税[2016]36号 附件1)_
+- **Reduced rate 9%** — 9% (Agricultural products (农产品), tap water, heating, cooling, gas, coal (household), books/newspapers, animal feed, agricultural machinery, fertilizer; transport services; postal services; basic telecom services (基础电信); construction and real estate. Electricity is not on this list and is taxed at 13%.)  _(VAT Law (增值税法) Article 10(2); 财税[2016]36号 附件1)_
 
 ### 5.3 Reduced rate 6%
 
-- **Reduced rate 6%** — 6% (Financial services (金融服务), modern services (现代服务: IT, consulting, R&D, advertising, design, logistics support), telecom services, life services (生活服务: catering, accommodation, tourism, entertainment, consumer services).)  _(财税[2016]36号)_
+- **Reduced rate 6%** — 6% (Financial services (金融服务), modern services (现代服务: IT, consulting, R&D, advertising, design, logistics support), value-added telecom services (增值电信), life services (生活服务: catering, accommodation, tourism, entertainment, consumer services).)  _(VAT Law (增值税法) Article 10(3); 财税[2016]36号)_
 
 ### 5.4 Zero rate — exports
 
@@ -480,7 +480,7 @@ CHINA VAT ONBOARDING — MINIMUM QUESTIONS
 | Topic | Reference |
 | --- | --- |
 | VAT Law | 增值税法 (effective 2026) / 增值税暂行条例 (Provisional Regulations) |
-| VAT rates | 财税[2016]36号; 财税[2018]32号 (rate reductions) |
+| VAT rates | 增值税法 Article 10 (13%, 9% and 6% lists; text at https://www.gz.gov.cn/zwgk/zdly/jsjf/zzsyhzczt/content/post_10088685.html); 财税[2016]36号; 财税[2018]32号 (rate reductions) |
 | Exemptions | 增值税法 Article 13 |
 | Input credit rules | 增值税法 Article 14; 财税[2016]36号 附件1 |
 | Export zero-rating | 增值税法 Article 2(3); 财税[2012]196号 |
@@ -513,6 +513,7 @@ CHINA VAT ONBOARDING — MINIMUM QUESTIONS
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, no inline tier tags |
 | 2.0 | 31 October 2026 | Small-scale threshold, exemption and 1% rate corrected against the 2026 VAT instruments |
+| 2.1 | 1 November 2026 | Electricity moved to 13% and telecom split into basic 9% and value-added 6% (VAT Law Art. 10) |
 
 ## Prohibitions
 
@@ -535,13 +536,15 @@ The most up-to-date version is maintained at openaccountants.com.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

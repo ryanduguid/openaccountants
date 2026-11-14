@@ -1,10 +1,10 @@
 ---
 name: jp-income-tax
 description: Use this skill whenever asked about Japanese income tax for self-employed individuals filing a final tax return (確定申告 Kakutei Shinkoku). Trigger on phrases like "how much tax do I pay in Japan", "kakutei shinkoku", "確定申告", "blue return", "青色申告", "white return", "白色申告", "business income Japan", "事業所得", "necessary expenses", "必要経費", "basic deduction", "基礎控除", "reconstruction tax", "resident tax", "住民税", "self-employed tax Japan", "e-Tax", "Rakuten Bank", "Japan Post Bank", "freee Japan", "Misoca", or any question about filing or computing income tax for a self-employed individual in Japan. This skill covers progressive brackets (5%-45%), blue vs white return, special deductions, reconstruction surtax, resident tax, necessary expenses, social insurance, and filing deadlines. ALWAYS read this skill before touching any Japan income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # JP Income Tax
 
-## Japan Income Tax (確定申告) -- Self-Employed Skill v2.0
+## Japan Income Tax (確定申告) -- Self-Employed Skill v2.1
 
 ## Section 1 -- Quick Reference
 
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 15 March of the following year |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a Japanese 税理士 (Zeirishi) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### National Income Tax Rate Table (2025) [T1]
 
@@ -278,7 +278,7 @@ Restaurant meal JPY 48,000. If this was a client entertainment dinner (接待交
 
 | Deduction | Amount (2025) |
 | --- | --- |
-| Basic deduction (基礎控除) | JPY 580,000 (standard); temporary enhancement for income ≤ JPY 6,550,000 -- see below |
+| Basic deduction (基礎控除) | JPY 580,000 (2025 standard; JPY 620,000 for 2026 and 2027); enhancement for income ≤ JPY 6,550,000 -- see below |
 | Social insurance (社会保険料控除) | Full amount paid (national pension + health insurance) |
 | Small enterprise mutual aid (小規模企業共済) | Full amount paid |
 | iDeCo contributions | Full amount paid |
@@ -286,19 +286,19 @@ Restaurant meal JPY 48,000. If this was a client entertainment dinner (接待交
 | Spouse deduction (配偶者控除) | Up to JPY 380,000 (if spouse income ≤ JPY 480,000) |
 | Dependent deduction (扶養控除) | JPY 380,000--630,000 per dependent |
 
-**2025 Temporary Enhanced Basic Deduction**
+**Enhanced Basic Deduction (2025; 2026 and 2027)**
 
-| Total Income (合計所得金額) | Basic Deduction (2025) |
-| --- | --- |
-| Up to JPY 1,320,000 | JPY 950,000 |
-| JPY 1,320,001 -- 3,360,000 | JPY 880,000 |
-| JPY 3,360,001 -- 4,890,000 | JPY 680,000 |
-| JPY 4,890,001 -- 6,550,000 | JPY 630,000 |
-| JPY 6,550,001 -- 23,500,000 | JPY 580,000 |
-| JPY 23,500,001 -- 24,000,000 | JPY 480,000 |
-| JPY 24,000,001 -- 24,500,000 | JPY 320,000 |
-| JPY 24,500,001 -- 25,000,000 | JPY 160,000 |
-| Above JPY 25,000,000 | JPY 0 |
+| Total Income (合計所得金額) | Basic Deduction (2025) | Basic Deduction (2026 and 2027) |
+| --- | --- | --- |
+| Up to JPY 1,320,000 | JPY 950,000 | JPY 1,040,000 |
+| JPY 1,320,001 -- 3,360,000 | JPY 880,000 | JPY 1,040,000 |
+| JPY 3,360,001 -- 4,890,000 | JPY 680,000 | JPY 1,040,000 |
+| JPY 4,890,001 -- 6,550,000 | JPY 630,000 | JPY 670,000 |
+| JPY 6,550,001 -- 23,500,000 | JPY 580,000 | JPY 620,000 |
+| JPY 23,500,001 -- 24,000,000 | JPY 480,000 | JPY 480,000 |
+| JPY 24,000,001 -- 24,500,000 | JPY 320,000 | JPY 320,000 |
+| JPY 24,500,001 -- 25,000,000 | JPY 160,000 | JPY 160,000 |
+| Above JPY 25,000,000 | JPY 0 | JPY 0 |
 
 Source: NTA Tax Answer No. 1199 基礎控除: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm. These are the 2025 (令和7年分) amounts for residents. For 2026 and 2027 the same page gives JPY 1,040,000 up to JPY 4,890,000, JPY 670,000 to JPY 6,550,000 and JPY 620,000 to JPY 23,500,000, with the same taper above that; the 2026 rule takes effect on 1 December 2026 (see the page's notes). From 2028: JPY 990,000 up to JPY 1,320,000 and JPY 620,000 to JPY 23,500,000.
 
@@ -509,6 +509,7 @@ ONBOARDING QUESTIONS -- JAPAN INCOME TAX (確定申告)
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 2.1 | November 2026 | Basic deduction column for 2026 and 2027 (NTA No. 1199) |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Japanese bank format guide; local platform patterns; worked examples |
 | 1.0 | 2025 | Initial version |
 
@@ -545,13 +546,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

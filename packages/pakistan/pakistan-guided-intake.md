@@ -1,10 +1,10 @@
 ---
 name: pk-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with their Pakistan taxes AND mentions freelancing, self-employment, sole proprietorship, IT exports, or being a business individual in Pakistan. Trigger on phrases like "help me with my Pakistan taxes", "I'm a freelancer in Pakistan", "I export IT services", "file my FBR return", "I'm self-employed in Pakistan". This is the REQUIRED entry point for the Pakistan self-employed workflow — downstream skills (pk-it-export-tax, pk-income-tax, pk-social-contributions, pakistan-sales-tax, pk-return-assembly) depend on it. Upload-first; Pakistan-resident individuals only.
-version: 1.3
+version: 1.4
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-11-10
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Freelance Intake
 
-## Pakistan — Freelance / SME Intake — Skill v1.3
+## Pakistan — Freelance / SME Intake — Skill v1.4
 
 > **How to read every "TBC — verify against Finance Act 2025" marker in this
 > guide: as naming the wrong Act.**
@@ -54,8 +54,8 @@ Entity?
        +-- Individual / AOP
        |        |
        |        +-- PSEB-registered IT/ITES exporter with foreign-currency receipts via banking channel?
-       |        |        -> YES (Clause 133, Pt I, 2nd Sch / s.154A SBP procedure) -> 0.25% / 1% final
-       |        |                tax on export proceeds — verify FA 2025 current rate (TBC)
+       |        |        -> YES (s.154A; 1st Sch Pt III Div IVA) -> 0.25% final tax on export
+       |        |                proceeds to tax year 2029 (PSEB-registered); 1% in any other case
        |        +-- Salary > 50% of taxable income? -> Salaried slab (s.12, 1st Sch Pt I Div I)
        |        +-- Otherwise -> Business / non-salaried slab (1st Sch Pt I Div I)
        |        +-- AOP -> Separate slab schedule (1st Sch Pt I Div I, AOP rates)
@@ -121,9 +121,9 @@ All references to **ITO 2001** = Income Tax Ordinance 2001 as amended through Fi
 
 Entity unclear → route `pk-formation`. Listed/public companies, banking companies, insurance, oil & gas, and groups with consolidated reporting → out of scope; refuse.
 
-### 4.3 PSEB IT-export gate — Clause 133, Part I, Second Schedule, ITO 2001 (export-of-IT-services regime, TBC for FA 2025)
+### 4.3 PSEB IT-export gate — s.154A and First Schedule Part III Division IVA, ITO 2001 (export-of-IT-services regime, 0.25% to tax year 2029)
 
-- **PSEB IT-export final tax** — If individual / AOP / Pvt Ltd is a PSEB-registered IT or ITES exporter AND export proceeds are received in convertible foreign exchange through the normal banking channel (SBP procedure / s.154A withholding regime): Historically 0.25% final tax on export proceeds for PSEB-registered exporters; 1% for non-PSEB but otherwise compliant; verify FA 2025 current rate (TBC). Final tax — not adjustable against other income. Local-Pakistan income outside the IT-export stream remains under normal regime.  _(Clause 133, Pt I, 2nd Sch, ITO 2001; s.154A)_
+- **PSEB IT-export final tax** — If individual / AOP / Pvt Ltd is a PSEB-registered IT or ITES exporter AND export proceeds are received in convertible foreign exchange through the normal banking channel (SBP procedure / s.154A withholding regime): 0.25% of export proceeds for PSEB-registered exporters for tax years 2024 up to tax year 2029 (Finance Act 2026 substituted 2029 for 2026); 1% of proceeds in any other case. Final tax once the s.154A conditions are met — not adjustable against other income. Local-Pakistan income outside the IT-export stream remains under normal regime.  _(s.154A ITO 2001; [ITO 2001 as amended up to 30 June 2026, First Schedule Part III Division IVA](https://download1.fbr.gov.pk/Docs/2026724177725705IncomeTaxOrdinanace2001.pdf); [Finance Act 2026, Gazette p. 584](https://download1.fbr.gov.pk/Docs/20266291261044366FinanceAct2026.pdf))_
 - **Strict requirements** — PSEB registration current, separate ledger of export proceeds, PRC / Encashment Certificate from bank, foreign-currency receipts via banking channel only (cash / crypto / hawala receipts are disqualified).  _(Clause 133, Pt I, 2nd Sch, ITO 2001; s.154A)_
 
 Route `pk-income-tax` (for non-export income) + flag IT-export final-tax regime in the package. Software developers earning USD from Upwork / Fiverr / direct foreign clients almost always qualify — confirm PSEB registration and bank-channel compliance.
@@ -400,7 +400,7 @@ When uncertain, prefer the safer (higher-tax / stricter-compliance) outcome and 
 | Bookkeeping inadequate | Default to "records insufficient" → flag; reviewer to remediate before filing |
 | IRIS access unknown | Assume not active; flag for onboarding |
 | Capital vs revenue expense unclear | Capitalise + depreciate per ITR 2002; flag |
-| FA 2025 rate / threshold ambiguity | Use FA 2024 rate + flag (TBC) for reviewer to confirm |
+| Finance Act rate / threshold ambiguity | Use the Act governing the tax year being computed (see the table at the top of this guide) + flag (TBC) for reviewer to confirm |
 
 ## Section 8 — Refusal handling
 
@@ -451,7 +451,7 @@ Downstream skills (via pk-return-assembly):
 - `pk-sales-tax-services` — SRB / PRA / KPRA / BRA / ICT-FBR; provincial portals; origin vs destination rules.
 - `pk-payroll-eobi` — EOBI Act 1976; provincial social security (SESSI / PESSI / SI KP / BESSI); s.149 monthly salary WHT; provincial professional tax.
 - `pk-formation` — NTN registration on IRIS; SECP incorporation (Pvt Ltd / SMC); partnership / AOP deed; PSEB registration.
-- `pk-cgt` — s.37 immovable property gains; s.37A securities gains; crypto / virtual-asset treatment (verify FA 2025 — TBC).
+- `pk-cgt` — s.37 immovable property gains; s.37A securities gains; crypto / virtual-asset treatment (verify under the Finance Act governing the tax year — TBC).
 - `pk-return-assembly` — final orchestrator (IRIS forms 114(I) / 116 / 32A, working paper, reviewer brief, action list, ATL reinstatement plan if applicable).
 
 ## Section 12 — Sources
@@ -510,13 +510,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

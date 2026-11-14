@@ -1,10 +1,12 @@
 ---
 name: bs-income-tax
-description: "Use this skill whenever asked about Bahamas tax obligations for individuals, self-employed persons, or sole traders. Trigger on phrases like \"do I pay income tax in the Bahamas\", \"NIB contributions\", \"National Insurance Board\", \"business licence fee\", \"VAT registration Bahamas\", \"real property tax Bahamas\", \"stamp duty Bahamas\", \"self-employed tax Bahamas\", \"payroll Bahamas\", or any question about tax filing or obligations for a person living or working in the Bahamas. Also trigger when computing NIB contribution amounts, preparing a business licence application, determining VAT registration thresholds, or advising on property taxes and stamp duty. This skill covers the full Bahamas tax reality: no personal income tax of any kind, NIB social contributions (the primary individual obligation), VAT, Business Licence, Real Property Tax, and Stamp Duty. ALWAYS read this skill before touching any Bahamas tax or compliance work."
+description: "Bahamas domestic personal income tax scope through 10 November 2026, with National Insurance references and 2025 examples for individuals and sole traders."
 jurisdiction: BS
 category: international
 tax_year: 2025
-last_updated: 2026-10-11
+tax_year_notes: "Personal income tax scope and the July 2026 National Insurance ceiling checked through 10 November 2026. Worked examples use the 2025 schedule."
+last_updated: 2026-11-10
+version: 0.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,73 +21,76 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Commonwealth of The Bahamas |
-| Personal Income Tax | **NONE** -- The Bahamas levies no personal income tax of any kind |
+| Domestic personal income tax | None in the period checked through 10 November 2026 |
 | Currency | Bahamian Dollar (BSD), pegged 1:1 to USD |
-| Tax year | Calendar year (1 January -- 31 December) |
+| Personal income tax year | Inapplicable |
 | Primary individual obligation | National Insurance Board (NIB) contributions |
 | Revenue authority (VAT, Business Licence, RPT) | Department of Inland Revenue (DIR) |
 | NIB authority | National Insurance Board (nib-bahamas.com) |
 | Filing portal (VAT) | https://vat.revenue.gov.bs/ |
-| Annual income tax return | **Does not exist** -- no PIT return to file |
+| Bahamian personal income tax return | Inapplicable |
 | Validated by | Pending -- requires sign-off by a qualified Bahamian practitioner |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.3 |
 
 ### There Is No Personal Income Tax
 
-The Bahamas has **no personal income tax** of any kind. This is not a low rate or a zero band -- the tax itself does not exist. Confirmed absent (Source: secondary practitioner summary, last reviewed 24 February 2026):
+The Ministry of Finance's June 2024 competent authority guidance records the absence of a domestic personal income tax. This position was checked through 10 November 2026 against the 2026-27 Budget Communication and the current legislation index. For resident and non-resident individuals, a Bahamian personal income tax base, bands, deductions, allowances and return are inapplicable. Check foreign tax and separate Bahamian reporting and contribution obligations for the facts and period concerned. [Ministry of Finance, Bahamas–Japan MAP guidance, ‘Scope of the MAP “Limitations”’](https://cdn.bahamas.gov.bs/tenant/tenantministryoffinance/documents/All%20Documents/BAHAMAS-JAPANMAPGUIDANCEDOCUMENT-20240718120503.pdf) · [2026-27 Budget Communication](https://bahamasbudget.gov.bs/media/filer_public/81/9d/819d8c82-6e4c-471e-bf84-2e0965620327/final_budget_communication_fiscal_year_20262027-_a_budget_that_build_on_progress_.pdf) · [Legislation index](https://laws.bahamas.gov.bs/cms/legislation/index/by-alphabetical.html)
 
-**Confirmed absent taxes**  _(secondary practitioner summary, last reviewed 24 February 2026)_
-
-| Tax | Status |
-| --- | --- |
-| Income tax on employment or self-employment income | Does not exist |
-| Capital gains tax | Does not exist |
-| Inheritance, estate, or gift tax | Does not exist |
-| Wealth or net worth tax | Does not exist |
-| Transfer taxes on securities | Does not exist |
-| Payroll income tax | Does not exist (NIB social contributions exist separately) |
+The examples use the 2025 NIB schedule. See `bs-payroll-social` for the July 2026 ceiling and weekly transition, worker classes and filing requirements.
 
 ### NIB Contribution Rates (Effective 1 July 2024)
 
-A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions Branch fund sustainability. (Source: nibrateincrease.com)
-
-**NIB contribution rates**  _(nibrateincrease.com)_
+The ordinary contribution rates changed on 1 July 2024. Check the separate contribution classes before applying these rates to pensioners, people aged 65 or older, summer workers or qualifying gratuities. [S.I. 37 of 2024, regs 1, 4–7 and 9](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2024/2024-0037S/2024-0037S.pdf) · [NIB rates sheet](https://www.nib-bahamas.com/UserFiles/HTMLEditor/Contribution-Rates-and-Insurable-Ceilings-2024.pdf)
 
 | Category | Rate from 1 Jul 2024 | Previous rate |
 | --- | --- | --- |
 | Employee | **4.65%** | 3.9% |
 | Employer | **6.65%** | 5.9% |
 | Combined (employee + employer) | **11.30%** | 9.8% |
-| Self-employed | **10.30%** | 8.8% |
+| Ordinary self-employed, under 65 and without retirement benefit | **10.30%** | 8.8% |
 | Voluntarily insured | **6.50%** | 5.0% |
 
 ### NIB Insurable Wage Ceiling
 
-(Source: NIB 2024 Adjustments -- nib-bahamas.com/2024-adjustments-to-the-insurable-wage-ceiling-pensions-and-grants/)
-
-**NIB insurable wage ceiling**  _(nib-bahamas.com/2024-adjustments-to-the-insurable-wage-ceiling-pensions-and-grants/)_
-
 | Period | Weekly ceiling | Monthly ceiling |
 | --- | --- | --- |
 | Previous (to 30 Jun 2024) | BSD 740 | BSD 3,207 |
-| **Current (1 Jul 2024 -- 30 Jun 2026)** | **BSD 810** | **BSD 3,510** |
-| Upcoming (from 1 Jul 2026) | BSD 830 | BSD 3,597 |
+| July 2024 schedule through June 2026 | BSD 810 | BSD 3,510 |
+| From 1 July 2026 | BSD 830 | BSD 3,597 |
 
-- **Earnings above ceiling and biennial adjustment** — Earnings above the weekly ceiling are not subject to NIB contributions. The ceiling is adjusted biennially based on the retail price index over the preceding two years plus 2%.  _(nib-bahamas.com/biennial-adjustments-to-pensions-grants-and-the-wage-ceiling)_
+For weekly payroll the BSD 810 ceiling applies to the week beginning 29 June 2026. Use BSD 830 from the week beginning 6 July. Regulation 52 provides for the biennial ceiling adjustment. [NIB July 2026 notice](https://www.nib-bahamas.com/uploads/2026_biennial_adjustments_f9ad1d917d.pdf) · [Contributions Regulations, reg 52](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/1984/1984-0068/1984-0068_2.pdf)
 
-### Maximum Weekly and Annual NIB Contributions at Current Ceiling (BSD 810/week)
+### Maximum Weekly and Annual NIB Contributions at the 2025 Ceiling (BSD 810/week)
 
-**Maximum weekly and annual NIB contributions**
+These figures show unrounded weekly rate products and illustrative totals over 52 equal contribution weeks. Confirm the NIB rounding and reporting method for a payment.
 
-| Party | Rate | Weekly max | Annual max (52 weeks) |
+| Party | Rate | Unrounded weekly amount | 52-week illustration |
 | --- | --- | --- | --- |
-| Employee | 4.65% | BSD 37.67 | BSD 1,958 |
-| Employer | 6.65% | BSD 53.87 | BSD 2,801 |
-| Combined (employee + employer) | 11.30% | BSD 91.53 | BSD 4,760 |
-| Self-employed (full both shares) | 10.30% | BSD 83.43 | BSD 4,338 |
+| Employee | 4.65% | BSD 37.665 | BSD 1,958.58 |
+| Employer | 6.65% | BSD 53.865 | BSD 2,800.98 |
+| Combined (employee + employer) | 11.30% | BSD 91.53 | BSD 4,759.56 |
+| Ordinary self-employed | 10.30% | BSD 83.43 | BSD 4,338.36 |
 
-*Arithmetic check: 37.67 + 53.87 = BSD 91.53/week combined. 91.53 × 52 = BSD 4,759.56 ≈ BSD 4,760. Self-employed: 810 × 10.30% = BSD 83.43/week × 52 = BSD 4,338.36.*
+```oa-check
+name: BS unrounded 2025 ordinary contributions at the weekly ceiling
+inputs:
+  ceiling: 810
+  employee_rate: 4.65
+  employer_rate: 6.65
+  self_employed_rate: 10.3
+  weeks: 52
+steps:
+  - employee_weekly: pct(ceiling, employee_rate)
+  - employer_weekly: pct(ceiling, employer_rate)
+  - combined_annual: (employee_weekly + employer_weekly) * weeks
+  - self_employed_annual: pct(ceiling, self_employed_rate) * weeks
+expected:
+  employee_weekly: 37.665
+  employer_weekly: 53.865
+  combined_annual: 4759.56
+  self_employed_annual: 4338.36
+```
 
 ### VAT Rates (as of 1 September 2025)
 
@@ -121,7 +126,7 @@ A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions 
 
 | Ambiguity | Default |
 | --- | --- |
-| Client asks about income tax | State clearly: there is no personal income tax in the Bahamas |
+| Client asks about domestic personal income tax | Record the tax and its return as inapplicable for the checked period |
 | Unknown NIB registration status | STOP -- instruct client to register with NIB if self-employed and not yet registered |
 | Unknown business turnover (VAT threshold) | Assume VAT registration required; escalate to confirm |
 | Unknown property ownership | Skip RPT section; note it for reviewer |
@@ -141,12 +146,12 @@ A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions 
 
 ### Refusal Catalogue
 
-- **R-BS-1** — "The Bahamas levies no personal income tax. There is no tax return to file, no income to declare to a tax authority, and no income tax due. If you are asking about social contributions, see the NIB section. If you are a business paying corporate tax, this skill does not cover corporate tax -- escalate to a qualified Bahamian practitioner." (Client asks for a personal income tax computation.)
+- **R-BS-1** — For a domestic personal income tax computation, record the tax and its return as inapplicable for the checked period. Assess separate obligations for the person's circumstances.
 - **R-BS-2** — "The Bahamas has no capital gains tax. If you are selling real estate, stamp duty applies on the conveyance -- see Section 6. If you are selling securities, no transfer taxes apply." (Capital gains computation requested.)
 - **R-BS-3** — "There is no inheritance, estate, or gift tax in the Bahamas. Estate planning and probate costs are legal/probate fees, not taxes. Escalate to a Bahamian attorney for estate planning." (Inheritance or estate planning.)
-- **R-BS-4** — "This skill covers individuals and self-employed sole traders only. The Bahamas does not impose corporate income tax on profits, but companies face Business Licence fees, VAT registration obligations, and payroll NIB obligations. Escalate to a qualified Bahamian practitioner for company compliance." (Corporate / company tax.)
-- **R-BS-5** — "Non-residents and expatriates face the same absence of income tax. However, work permit requirements, specific benefit-in-kind rules, and social security totalization agreements may apply. For complex expatriate situations, escalate to a Bahamian HR compliance specialist." (Non-resident / expatriate complex situations.)
-- **R-BS-6** — "Client has outstanding NIB contributions, surcharges, or is subject to NIB enforcement. The 10% surcharge plus 1.5% compound monthly interest accumulates rapidly. Do not advise. Escalate to a Bahamian accountant or NIB-registered agent immediately." (NIB arrears or enforcement.)
+- **R-BS-4** — For company tax, check whether the Domestic Minimum Top-Up Tax applies under ss 1, 4 and 5 of the Act. Check Business Licence, VAT and NIB separately. [Domestic Minimum Top-Up Tax Act, 2024](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2024/2024-0058/2024-0058_1.pdf)
+- **R-BS-5** — For a non-resident or expatriate, apply the domestic personal income tax position for the checked period and verify any foreign tax, separate reporting, social insurance and work permit obligations.
+- **R-BS-6** — For NIB arrears or enforcement, obtain the Board's statement and refer the case for qualified review. See `bs-payroll-social` for the statutory interest and waiver provisions.
 - **R-BS-7** — "From July 2025, businesses with less than 50% zero or reduced-rated supplies cannot claim VAT refunds. Escalate to a DIR-registered VAT practitioner." (VAT refund claims.)  _(Higgs & Johnson 2025 Tax Legislative Updates)_
 
 ## Section 3 -- Transaction Pattern Library
@@ -195,9 +200,9 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 | --- | --- | --- | --- |
 | CLIENT PAYMENT, INVOICE PAYMENT, TRANSFER IN [client name] | Business revenue | Self-employment income | If VAT-registered, extract net |
 | ZELLE, PAYPAL TRANSFER, STRIPE PAYOUT, WIRE TRANSFER | Business revenue | Self-employment income | Confirm invoices match |
-| SALARY, PAYROLL [employer name], WAGES | Employment income | Not self-employment | Covered by employer NIB; no income tax |
-| RENTAL INCOME, RENT RECEIVED | Rental income | No income tax; RPT applies to the property | Report separately for Business Licence if above threshold |
-| BANK INTEREST, INTEREST EARNED | Investment income | No income tax |  |
+| SALARY, PAYROLL [employer name], WAGES | Employment income | Bahamian personal income tax inapplicable | Check employer NIB |
+| RENTAL INCOME, RENT RECEIVED | Rental income | Bahamian personal income tax inapplicable | Check Real Property Tax and Business Licence separately |
+| BANK INTEREST, INTEREST EARNED | Investment income | Bahamian personal income tax inapplicable | Check foreign tax and reporting where relevant |
 | GOVERNMENT GRANT, BAHAMAS INVEST GRANT | Check nature | Capital grants: exclude; revenue grants: include in Business Licence turnover |  |
 | NIB BENEFIT, MATERNITY BENEFIT, RETIREMENT PENSION | Benefit payment | Exclude from business analysis | Social benefit, not taxable income |
 
@@ -228,7 +233,7 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 | PERSONAL WITHDRAWAL, DRAWINGS, ATM (personal) | Drawings | NOT deductible | Owner drawings |
 | GROCERIES, SUPERMARKET, PERSONAL SHOPPING | Personal | NOT deductible |  |
 | FINE, COURT FINE, TRAFFIC VIOLATION | Fines | NOT deductible | Public policy |
-| INCOME TAX PAYMENT | N/A | There is no income tax | If seen, verify it is not a VAT, BL, or RPT payment |
+| INCOME TAX PAYMENT | Verify | Bahamian personal income tax is inapplicable | Confirm the tax, taxpayer and jurisdiction |
 
 ### 3.7 Exclusions (Neither Income nor Expense)
 
@@ -239,7 +244,7 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 | INTERNAL TRANSFER, OWN ACCOUNT | EXCLUDE | Between own accounts |
 | LOAN REPAYMENT, MORTGAGE PRINCIPAL | EXCLUDE | Loan principal is not an expense |
 | VAT PAYMENT, DIR VAT | EXCLUDE | VAT liability settlement |
-| PROVISIONAL TAX, ADVANCE TAX | N/A -- no income tax in Bahamas | If seen, classify carefully; may be VAT instalment |
+| PROVISIONAL TAX, ADVANCE TAX | Verify | Confirm the tax, taxpayer and jurisdiction |
 | STAMP DUTY PAYMENT | EXCLUDE from operating expenses | One-time property transaction cost, not recurring |
 
 ### 3.8 Bahamian Banks -- Statement Format Reference
@@ -257,38 +262,37 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 
 ### Example 1 -- Employed Individual, Annual Salary BSD 45,000
 
-**Scenario:** Maria is employed full-time at a Nassau hotel. Annual salary BSD 45,000.
+**Scenario:** Maria is an ordinary employee paid weekly for 52 weeks in 2025. Annual basic salary BSD 45,000.
 
 **Step 1 -- Personal income tax:** BSD 0. No personal income tax exists in the Bahamas.
 
 **Step 2 -- NIB contributions:**
 - Weekly salary: 45,000 ÷ 52 = BSD 865.38 -- ABOVE the weekly ceiling of BSD 810
 - Insurable wage = ceiling: BSD 810/week
-- Employee NIB: 4.65% × BSD 810 = BSD 37.67/week × 52 = **BSD 1,958/year**
-- Employer NIB: 6.65% × BSD 810 = BSD 53.87/week × 52 = **BSD 2,801/year**
-- Take-home: BSD 45,000 − BSD 1,958 = **BSD 43,042/year** (no income tax deducted)
+- Employee NIB before per-payroll rounding: 4.65% × BSD 810 × 52 = **BSD 1,958.58**
+- Employer NIB before per-payroll rounding: 6.65% × BSD 810 × 52 = **BSD 2,800.98**
+- Pay after the illustrated employee contribution: BSD 45,000 − BSD 1,958.58 = **BSD 43,041.42**
 
-**Step 3 -- No other obligations:** No Business Licence (employed). No VAT (not in business). No income tax return to file.
+**Step 3 -- Filing scope:** The example concerns employment only. The Bahamian personal income tax return is inapplicable.
 
 **Summary:**
 ```
 Annual salary:            BSD 45,000
-Less: Employee NIB:       BSD (1,958)
-Net take-home:            BSD 43,042
+Less: Employee NIB:       BSD (1,958.58)
+Pay after employee NIB:   BSD 43,041.42
 Income tax:               BSD 0
 ```
 
 ### Example 2 -- Self-Employed Freelancer, Annual Revenue BSD 30,000
 
-**Scenario:** James is a self-employed web developer. Annual revenue BSD 30,000. Below VAT threshold.
+**Scenario:** James is a continuing self-employed web developer under 65 without retirement benefit in 2025. Current annual revenue is BSD 30,000. Assume qualifying prior-year self-employment income of BSD 30,000 and 52 equal contribution weeks for the NIB illustration.
 
 **Step 1 -- Personal income tax:** BSD 0.
 
 **Step 2 -- NIB contributions (self-employed rate 10.30%):**
-- Weekly earnings: 30,000 ÷ 52 = BSD 576.92/week -- BELOW the ceiling of BSD 810
-- Insurable wage = actual earnings: BSD 576.92/week
+- Illustrative weekly income is about BSD 576.92, below the BSD 810 ceiling.
 - Annual NIB: 10.30% × BSD 30,000 = **BSD 3,090/year**
-- Monthly NIB payment (due 15th of following month): 3,090 ÷ 12 = **BSD 257.50/month**
+- For payment, reconcile the applicable contribution weeks and amount with NIB.
 
 **Step 3 -- Business Licence:**
 - Turnover ≤ BSD 50,000: flat fee **BSD 100**
@@ -304,20 +308,18 @@ Annual revenue:           BSD 30,000
 NIB (10.30%):             BSD (3,090)
 Business Licence fee:     BSD (100)
 Income tax:               BSD 0
-Approximate net:          BSD 26,810
+Balance before expenses:  BSD 26,810
 ```
 
 ### Example 3 -- Self-Employed at NIB Ceiling, BSD 60,000 Revenue
 
-**Scenario:** Sandra is a self-employed accountant, revenue BSD 60,000/year.
+**Scenario:** Sandra is a continuing self-employed accountant under 65 without retirement benefit in 2025. Current annual revenue is BSD 60,000. Assume qualifying prior-year self-employment income of BSD 52,000 and 52 equal contribution weeks.
 
 **Step 1 -- Personal income tax:** BSD 0.
 
 **Step 2 -- NIB contributions:**
-- Weekly earnings: 60,000 ÷ 52 = BSD 1,153.85/week -- ABOVE ceiling of BSD 810
-- Insurable wage = ceiling: BSD 810/week
-- Annual NIB: 10.30% × BSD 810 × 52 = 10.30% × BSD 42,120 = **BSD 4,338/year**
-- Earnings above ceiling (BSD 1,153.85 − BSD 810 = BSD 343.85/week) attract NO additional NIB
+- Illustrative weekly income of BSD 1,000 exceeds the BSD 810 ceiling.
+- Annual NIB: 10.30% × BSD 810 × 52 = **BSD 4,338.36**.
 
 **Step 3 -- Business Licence:**
 - Turnover BSD 60,000 (in band BSD 50,001 -- BSD 500,000): 0.50% × BSD 60,000 = **BSD 300**
@@ -327,15 +329,15 @@ Approximate net:          BSD 26,810
 **Summary:**
 ```
 Annual revenue:           BSD 60,000
-NIB (at ceiling):         BSD (4,338)
+NIB (at ceiling):         BSD (4,338.36)
 Business Licence fee:     BSD (300)
 Income tax:               BSD 0
-Approximate net:          BSD 55,362
+Balance before expenses:  BSD 55,361.64
 ```
 
 ### Example 4 -- VAT-Registered Consultant, BSD 180,000 Revenue
 
-**Scenario:** David is a self-employed management consultant, revenue BSD 180,000/year including VAT charged at 10%. VAT registered.
+**Scenario:** David is a continuing self-employed management consultant in 2025, with revenue BSD 180,000/year including VAT charged at 10%. VAT registered.
 
 **Step 1 -- Revenue (net of VAT):**
 - BSD 180,000 includes 10% VAT. Net revenue = BSD 180,000 ÷ 1.10 = **BSD 163,636**
@@ -344,8 +346,8 @@ Approximate net:          BSD 55,362
 **Step 2 -- Personal income tax:** BSD 0.
 
 **Step 3 -- NIB:**
-- Weekly net earnings: 163,636 ÷ 52 = BSD 3,146 -- ABOVE ceiling
-- NIB = 10.30% × BSD 810 × 52 = **BSD 4,338/year**
+- Assume David is under 65 without retirement benefit and his qualifying prior-year income exceeds the weekly ceiling throughout 52 illustrative contribution weeks.
+- NIB = 10.30% × BSD 810 × 52 = **BSD 4,338.36**.
 
 **Step 4 -- Business Licence:**
 - Turnover BSD 163,636 (band BSD 50,001 -- BSD 500,000): 0.50% × BSD 163,636 = **BSD 818**
@@ -361,7 +363,7 @@ Approximate net:          BSD 55,362
 Gross revenue invoiced:   BSD 180,000
 Less: VAT collected:      BSD (16,364)
 Net business revenue:     BSD 163,636
-NIB (at ceiling):         BSD (4,338)
+NIB (at ceiling):         BSD (4,338.36)
 Business Licence fee:     BSD (818)
 Income tax:               BSD 0
 ```
@@ -391,30 +393,48 @@ Income tax:               BSD 0
 
 ### Example 6 -- Employer Payroll NIB (3 Employees)
 
-**Scenario:** Small business with 3 employees, all earning BSD 600/week.
+**Scenario:** Small business with 3 ordinary employees in 2025, each paid BSD 600 in insurable basic wages per week.
 
 **NIB per employee per week:**
 - Employee share: 4.65% × BSD 600 = BSD 27.90
 - Employer share: 6.65% × BSD 600 = BSD 39.90
 - Combined per employee: BSD 67.80/week
 
-**NIB for all 3 employees per month (52/12 = 4.3333 weeks):**
-- Total employee NIB: BSD 27.90 × 3 × 52/12 = BSD 362.70/month
-- Total employer NIB: BSD 39.90 × 3 × 52/12 = BSD 518.70/month
-- **Total monthly NIB (C10 form): BSD 881.40**
-- Due: **15th of the following month** via C10 form
+**C10 totals for all 3 employees**
 
-*BSD 600/week is below the BSD 810 ceiling, so full earnings are insurable. Arithmetic: 27.90 + 39.90 = BSD 67.80/employee/week. 67.80 × 3 = BSD 203.40/week, and 203.40 × 52/12 = BSD 881.40/month — which reconciles with the two lines above, 362.70 + 518.70 = 881.40 ✓*
+| Mondays in month | Employee shares | Employer shares | Combined |
+| --- | ---: | ---: | ---: |
+| 4 | BSD 334.80 | BSD 478.80 | BSD 813.60 |
+| 5 | BSD 418.50 | BSD 598.50 | BSD 1,017.00 |
+
+The monthly statement counts the actual contribution weeks. The usual payment deadline is the 15th of the following month. [NIB C10(A) instructions, point 6](https://www.nib-bahamas.com/wp-content/uploads/2025/05/C10-A-INSTRUCTIONS-FOR-COMPLETING-C10-A-FORM-Revised-August-2015.pdf) · [Contributions Regulations, reg 26](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/1984/1984-0068/1984-0068_2.pdf)
+
+```oa-check
+name: BS C10 ordinary weekly payroll with four and five contribution weeks
+inputs:
+  insurable_wages: 600
+  employees: 3
+  employee_rate: 4.65
+  employer_rate: 6.65
+steps:
+  - employee_weekly: pct(insurable_wages, employee_rate) * employees
+  - employer_weekly: pct(insurable_wages, employer_rate) * employees
+  - four_mondays_total: (employee_weekly + employer_weekly) * 4
+  - five_mondays_total: (employee_weekly + employer_weekly) * 5
+expected:
+  employee_weekly: 83.70
+  employer_weekly: 119.70
+  four_mondays_total: 813.60
+  five_mondays_total: 1017.00
+```
 
 ### 5.1 The Fundamental Rule -- No Personal Income Tax
 
-- **No personal income tax legislation** — There is no personal income tax legislation in the Bahamas. No individual is required to: File an annual income tax return with any authority; Declare employment or self-employment income to a tax collector; Pay tax on salary, professional fees, rental income, dividends, interest, or capital gains. The primary fiscal obligation for individuals is NIB contributions, which are social insurance premiums, not income tax.
+- **Domestic filing.** For the checked period, there is no Bahamian personal income tax return for employment or self-employment income. Apply the separate reporting rules for any business activity or foreign jurisdiction involved. [Ministry of Finance, Bahamas–Japan MAP guidance, ‘Scope of the MAP “Limitations”’](https://cdn.bahamas.gov.bs/tenant/tenantministryoffinance/documents/All%20Documents/BAHAMAS-JAPANMAPGUIDANCEDOCUMENT-20240718120503.pdf)
 
 ### 5.2 NIB Contribution Calculation Rules
 
-- **Employed individuals calculation steps** — 1. Determine weekly insurable wage: the lower of (a) actual weekly gross earnings or (b) the weekly ceiling (currently BSD 810). 2. Employee share: insurable wage × 4.65%. 3. Employer share: insurable wage × 6.65%. 4. Employer remits both shares monthly via C10 form by the 15th of the following month.
-- **Self-employed individuals calculation steps** — 1. Determine weekly insurable earnings: the lower of (a) actual weekly net self-employment earnings or (b) the weekly ceiling (BSD 810). 2. Self-employed rate: insurable earnings × 10.30% (covers both employee and employer shares). 3. Register using Form R1 within 10 working days of commencing self-employment. 4. Pay monthly by the 15th of the following month.  _(nib-bahamas.com/Registration)_
-- **Earnings above the weekly ceiling** — No NIB is payable on earnings above BSD 810/week. The ceiling applies per week, not per year.
+Use `bs-payroll-social` to confirm the class, insurable wage or income, contribution period, ceiling and remittance. For ordinary continuing self-employment, use qualifying prior-year profit under reg 30 and the First Schedule. Gross turnover and current-period cash receipts belong to separate calculations. [Contributions Regulations, regs 2 and 30 and First Schedule](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/1984/1984-0068/1984-0068_2.pdf)
 
 ### 5.3 NIB Benefits Funded by Contributions
 
@@ -508,11 +528,11 @@ Ten cash benefits are funded: Sickness, Maternity, Funeral, Retirement (Pensions
 | Business Licence late penalties | Penalties |
 | Personal living expenses | Not business-related |
 | Court fines, traffic violations | Public policy |
-| Income tax payments | There is no income tax; if a payment is seen, verify its nature |
+| Income tax payments | Confirm the tax, taxpayer and jurisdiction before classifying |
 
 ### 6.1 Home Office Deduction (Business Licence Cost Basis)
 
-There is no income tax deduction system in the Bahamas, but Business Licence fees are based on turnover (not profit), so home-office cost allocation is relevant for understanding profitability rather than for reducing a declared tax base.
+There is no Bahamian personal income tax deduction for home-office costs. For the turnover-based Business Licence calculation in this guide, use the applicable turnover rules and track home-office costs separately for profitability.
 
 For VAT-registered clients, the business-use proportion of home utilities may affect which input VAT is creditable.
 
@@ -536,7 +556,7 @@ Before advising a client, confirm:
 - Are contributions current? (check with NIB directly)
 - Is the client voluntarily insured (if not employed or self-employed in the traditional sense)?
 
-Arrears with NIB accumulate rapidly (10% surcharge + 1.5%/month compound). If arrears are suspected, escalate immediately.
+For arrears, verify the Board's statement and the applicable interest rate, dates and waiver with a qualified practitioner. [National Insurance Act, s 55](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/1972/1972-0021/1972-0021.pdf) · [Act 27 of 2024, s 6](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2024/2024-0027A/2024-0027A.pdf)
 
 ### 6.4 VAT Input Tax Apportionment (Mixed-Use Businesses)
 
@@ -574,15 +594,14 @@ A. PERSONAL INCOME TAX
 
 B. NIB CONTRIBUTIONS
    B1. Employment type:    Employed / Self-Employed / Voluntary
-   B2. Annual gross earnings / net self-employment earnings:    BSD ___________
-   B3. Weekly earnings:    BSD ___________
-   B4. Weekly insurable wage (lesser of B3 and BSD 810 ceiling):    BSD ___________
-   B5. Rate: Employed-employee 4.65% / Self-employed 10.30%:    ___%
-   B6. Annual NIB contribution:    BSD ___________
-      (= B4 × B5 × 52 weeks)
-   B7. Monthly NIB payment (B6 ÷ 12):    BSD ___________
-   B8. Payment due date: 15th of each following month    [ ]
-   B9. Employer NIB (if applicable, 6.65% × B4 × 52):    BSD ___________
+   B2. Class and insurable wage or self-employment income basis: ___________
+   B3. Contribution weeks or months and applicable ceiling:    ___________
+   B4. Insurable wages or income by period:    BSD ___________
+   B5. Applicable rate by period and class:    ___%
+   B6. Contribution for periods covered:    BSD ___________
+   B7. Monthly statement total based on actual periods:    BSD ___________
+   B8. Payment deadline and any exception:    ___________
+   B9. Employer contributions for periods covered:    BSD ___________
 
 C. BUSINESS LICENCE (Self-Employed / Sole Traders Only)
    C1. Annual gross turnover:    BSD ___________
@@ -675,7 +694,7 @@ If the client provides a bank statement but cannot answer onboarding questions i
 2. Mark all Tier 2 items as "PENDING -- reviewer must confirm"
 3. Apply conservative defaults (Section 1)
 4. Generate the working paper (Section 7) with clear flags
-5. Confirm immediately: "There is no personal income tax in the Bahamas. No income tax return is required."
+5. Confirm that Bahamian personal income tax and its return are inapplicable for the checked period. Identify any separate filing requirements.
 6. Present the following questions to the client:
 
 ```
@@ -704,12 +723,11 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 
 | Topic | Reference / Authority |
 | --- | --- |
-| No personal income tax | secondary practitioner summary (reviewed 24 Feb 2026); no enabling legislation exists |
-| NIB contribution rates | National Insurance Board -- nibrateincrease.com; nib-bahamas.com |
-| NIB insurable wage ceiling | nib-bahamas.com/2024-adjustments-to-the-insurable-wage-ceiling-pensions-and-grants/ |
-| NIB biennial review mechanism | nib-bahamas.com/biennial-adjustments-to-pensions-grants-and-the-wage-ceiling |
-| NIB registration (Form R1) | nib-bahamas.com/Registration |
-| NIB employer obligations (C10) | Workzoom Bahamas Payroll NIB Compliance Guide; NIB Contributions FAQ |
+| Domestic personal income tax scope | [Ministry of Finance, Bahamas–Japan MAP guidance, ‘Scope of the MAP “Limitations”’](https://cdn.bahamas.gov.bs/tenant/tenantministryoffinance/documents/All%20Documents/BAHAMAS-JAPANMAPGUIDANCEDOCUMENT-20240718120503.pdf) |
+| NIB rates and worker classes | [S.I. 37 of 2024](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2024/2024-0037S/2024-0037S.pdf) · [NIB rates sheet](https://www.nib-bahamas.com/UserFiles/HTMLEditor/Contribution-Rates-and-Insurable-Ceilings-2024.pdf) |
+| NIB wage ceiling and review mechanism | [NIB July 2026 notice](https://www.nib-bahamas.com/uploads/2026_biennial_adjustments_f9ad1d917d.pdf) · [Contributions Regulations, reg 52](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/1984/1984-0068/1984-0068_2.pdf) |
+| NIB registration (Form R1) | [NIB employer guidance](https://www.nib-bahamas.com/_m1758/Employers) |
+| NIB employer statements | [C10(A) instructions](https://www.nib-bahamas.com/wp-content/uploads/2025/05/C10-A-INSTRUCTIONS-FOR-COMPLETING-C10-A-FORM-Revised-August-2015.pdf) · [NIB portals](https://www.nib-bahamas.com/portals) |
 | VAT rates and administration | Inland Revenue -- inlandrevenue.finance.gov.bs/value-added-tax/about-vat/ |
 | VAT reduced rate (5%, from Sep 2025) | PM Davis announcement -- bahamas.gov.bs; Higgs & Johnson 2025 |
 | VAT registration thresholds | inlandrevenue.finance.gov.bs/value-added-tax/faqs/ |
@@ -730,8 +748,7 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 
 | Obligation | Penalty |
 | --- | --- |
-| NIB late payment | 10% surcharge + 1.5% compound interest/month (Source: NIB Contributions FAQ) |
-| NIB failure to register (employer) | Fines up to BSD 5,000 + prosecution (Source: Workzoom; Higgs & Johnson) |
+| NIB arrears | Annual compound interest at the prime rate, subject to regulations and any other prescribed rate and date. Verify any waiver and the Board's calculation. [National Insurance Act, s 55](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/1972/1972-0021/1972-0021.pdf) · [Act 27 of 2024, s 6](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2024/2024-0027A/2024-0027A.pdf) |
 | VAT late filing | BSD 100 fixed + 10% of unpaid tax (Source: Inland Revenue VAT Fines) |
 | VAT monthly interest | 1.5% per month on outstanding balance |
 | VAT late registration | Retroactive back-tax + penalties imposed by DIR |
@@ -745,20 +762,20 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 ### Test Suite
 
 **Test 1 -- Employee, salary at ceiling.**
-Input: Employed, weekly salary BSD 950 (above BSD 810 ceiling).
-Expected: Insurable wage = BSD 810/week. Employee NIB = 4.65% × BSD 810 = BSD 37.67/week = BSD 1,958/year. No income tax. Take-home ≈ BSD 950 × 52 − BSD 1,958 = BSD 49,400 − BSD 1,958 = BSD 47,442/year.
+Input: Ordinary employee paid BSD 950 weekly for 52 weeks in 2025.
+Expected: BSD 810 weekly ceiling. Before per-payroll rounding, employee NIB is 4.65% × BSD 810 × 52 = BSD 1,958.58. Pay after this contribution is BSD 49,400 − BSD 1,958.58 = BSD 47,441.42.
 
 **Test 2 -- Employee, salary below ceiling.**
-Input: Employed, weekly salary BSD 500 (below BSD 810 ceiling).
+Input: Ordinary employee paid BSD 500 in insurable basic wages weekly for 52 weeks in 2025.
 Expected: Insurable wage = BSD 500/week. Employee NIB = 4.65% × BSD 500 = BSD 23.25/week = BSD 1,209/year. Employer NIB = 6.65% × BSD 500 = BSD 33.25/week = BSD 1,729/year. No income tax.
 
 **Test 3 -- Self-employed, below ceiling.**
-Input: Self-employed, annual net earnings BSD 25,000.
-Expected: Weekly = BSD 480.77 (below BSD 810). Annual NIB = 10.30% × BSD 25,000 = BSD 2,575. Monthly payment = BSD 214.58. Business Licence: BSD 100 flat (below BSD 50k). No income tax.
+Input: Continuing self-employed person under 65 without retirement benefit, with BSD 25,000 in qualifying prior-year income, split evenly across 52 illustrative contribution weeks in 2025.
+Expected: About BSD 480.77 per week, below the BSD 810 ceiling. The illustrative annual NIB total before payment rounding is 10.30% × BSD 25,000 = BSD 2,575.
 
 **Test 4 -- Self-employed, above ceiling.**
-Input: Self-employed, annual net earnings BSD 100,000.
-Expected: Weekly = BSD 1,923 (above BSD 810). Insurable = BSD 810/week. Annual NIB = 10.30% × BSD 810 × 52 = BSD 4,338. Business Licence: 0.50% × BSD 100,000 = BSD 500. No income tax.
+Input: Continuing self-employed person under 65 without retirement benefit, with qualifying prior-year income above the weekly ceiling for all 52 illustrative contribution weeks in 2025.
+Expected: Annual NIB = 10.30% × BSD 810 × 52 = BSD 4,338.36.
 
 **Test 5 -- VAT registration threshold.**
 Input: Self-employed, annual taxable supplies BSD 95,000.
@@ -775,11 +792,11 @@ Expected: BSD 800 (4% × 20k) + BSD 1,800 (6% × 30k) + BSD 2,000 (8% × 25k) = 
 
 **Test 8 -- No income tax return.**
 Input: Any individual (employed or self-employed) asks if they need to file an income tax return in the Bahamas.
-Expected: No. There is no personal income tax and no tax return to file. The only individual compliance obligations are NIB (social contributions), Business Licence (if in business), and VAT (if turnover ≥ BSD 100,000).
+Expected: The Bahamian personal income tax return is inapplicable for the checked period. Verify separate obligations for the person's circumstances.
 
 **Test 9 -- Employer NIB (C10 Form).**
-Input: Employer with 2 employees, each earning BSD 700/week.
-Expected: BSD 700 < BSD 810 ceiling; full earnings are insurable. Per employee/week: employee 4.65% × 700 = BSD 32.55; employer 6.65% × 700 = BSD 46.55. Combined per employee: BSD 79.10/week. For 2 employees monthly ≈ BSD 79.10 × 2 × 4.333 = BSD 685.78 ≈ BSD 686/month. Due 15th of following month via C10 form.
+Input: Employer with 2 ordinary weekly paid employees in 2025, each on BSD 700 in insurable basic wages per week.
+Expected: Per employee per week, the employee share is BSD 32.55 and the employer share is BSD 46.55. Combined C10 total is BSD 632.80 for a 4-Monday month and BSD 791.00 for a 5-Monday month.
 
 **Test 10 -- RPT, owner-occupied property.**
 Input: Owner-occupied residential property, assessed value BSD 450,000.
@@ -788,7 +805,7 @@ Expected: First BSD 300,000 exempt. Next BSD 150,000 at 0.625%: BSD 150,000 × 0
 ## PROHIBITIONS
 
 - NEVER compute, estimate, or imply that the Bahamas levies personal income tax on individuals
-- NEVER generate an income tax return or income declaration form for a Bahamian individual
+- NEVER generate a Bahamian personal income tax return
 - NEVER confuse NIB contributions (social insurance) with income tax -- they are separate systems with separate authorities
 - NEVER skip NIB compliance guidance -- it is the primary individual tax obligation and penalties accumulate rapidly
 - NEVER advise a self-employed client to start business without first addressing Business Licence and NIB registration
@@ -810,13 +827,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

@@ -7,8 +7,9 @@ OpenAccountants scripts/check-examples.py at commit
 
 Run without paths to check every source guide. --require additionally requires
 at least 2 cases in every selected file; use explicit paths for a migrated
-scope. Paths are relative to the caller's working directory or absolute and
-must resolve to Markdown source guides inside this checkout's skills/ tree.
+scope, or @FILE to read one path per line (CI uses
+@scripts/required-examples.txt). Paths are relative to the caller's working
+directory or absolute and must resolve to Markdown source guides inside this checkout's skills/ tree.
 Symlink targets must stay inside that tree. No cases is otherwise allowed in
 guides not yet migrated.
 
@@ -221,7 +222,7 @@ def check_file(path):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__, fromfile_prefix_chars="@")
     parser.add_argument("paths", nargs="*")
     parser.add_argument("--require", action="store_true", help="require at least 2 cases per selected file")
     args = parser.parse_args(argv)

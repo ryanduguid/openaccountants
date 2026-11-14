@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Indonesian tax planning, regim
 jurisdiction: ID
 category: tax-optimization
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 reviewed_by: RILIA PUTRI
 review_status: pending_review
 tier: 2
@@ -154,7 +154,7 @@ The actual table covers ~1,500 KLU codes across 3 city tiers (Jakarta + 9 major 
 | --- | --- | --- | --- |
 | Orang Pribadi (OP) -- sole trader | UU PPh (no separate entity law -- registered via NPWP only) | Unlimited personal liability | Personal PPh (regimes in Section 3) |
 | PT Perorangan (single-shareholder micro/small PT) | UU 11/2020 (Cipta Kerja), PP 8/2021 | Limited liability | Corporate PPh per Pasal 17(2a) UU PPh -- 22% standard, or UMKM Final 0.5% if eligible (no time limit for PT Perorangan since PP 20/2026) |
-| PT (Perseroan Terbatas) -- standard limited company | UU 40/2007 | Limited liability | Corporate PPh 22%; UMKM Final 0.5% for max 3 years if turnover ≤ 4.8B |
+| PT (Perseroan Terbatas) -- standard limited company | UU 40/2007 | Limited liability | Corporate PPh 22%; UMKM Final 0.5% if turnover ≤ 4.8B only for a PT registered before 22 April 2026, until its 3-year window ends (PP 20/2026) |
 
 ### 4.2 Tax + administrative cost trade-off
 
@@ -319,7 +319,7 @@ Indonesian social security comes in two branches:
 | JKK (work accident) | 0.24% -- 1.74% by risk grade (PP 7/2025 Art. 4(1); BPJS Ketenagakerjaan, 17 December 2025; grade 2, e.g. retail and hospitality, 0.54%, of which 0.14% funds JKP under PP 6/2025) | 0 | None |
 | JKM (death) | 0.30% (BPJS Ketenagakerjaan, 17 December 2025; PP 6/2025 funds JKP without JKM, but PP 49/2023 Art. 18A has no repeal found and no BPJS bill was sighted, so confirm on the employer's statement) | 0 | None |
 | JHT (old age) | 3.7% | 2% | None |
-| JP (pension) | 2% | 1% | **IDR ~10,547,400/month** (2025; adjusted annually -- TBC against latest Permenaker) |
+| JP (pension) | 2% | 1% | **IDR 11,086,300/month** from March 2026 as reported; the BPJS circular was not sighted, so confirm on the BPJS bill (IDR 10,547,400 from March 2025; reset each March by BPJS Ketenagakerjaan; see `id-payroll-pph21` section 6b) |
 
 - **Planning note on JP cap and deductibility** — Structuring founder compensation so fixed monthly wage sits just above the JP cap maximises pension coverage with no further JP cost. Employer BPJS deductible under Pasal 6(1)(c); employee parts reduce PPh 21 base. A self-employed OP without employees usually only pays BPJS Kesehatan PBPU.  _(Pasal 6(1)(c))_
 
@@ -479,13 +479,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

@@ -3,7 +3,7 @@ name: dj-company-formation
 description: "Company-formation research gap for Djibouti. The former guide relied on OHADA company and accounting rules even though Djibouti is not an OHADA member state. Those operative instructions have been withdrawn pending verification of national law. Use this file when an incorporation, SARL, shareholder-limit, minimum-capital, registration or accounting-framework question would otherwise select the old guide. Obtain the applicable Code de commerce, registry requirements and any relevant free-zone rules before advising. Commercial links remain research leads and do not establish statutory requirements. Pending review by a qualified professional familiar with Djibouti law."
 jurisdiction: DJ
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-11-10
 version: 1.1
 review_status: pending_review
 category: formation
@@ -39,13 +39,15 @@ Do not substitute an OHADA default for an unverified Djibouti rule.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

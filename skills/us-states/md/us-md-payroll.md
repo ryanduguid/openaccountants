@@ -1,10 +1,10 @@
 ---
 name: us-md-payroll
-description: Tier 2 Maryland content skill for employer payroll compliance covering tax year 2025. Includes the MD PIT brackets up to 5.75% state plus county tax 2.25-3.20% (effective combined 4.25-8.95%), MW507 state W-4, MW-506 quarterly withholding, MD SUI wage base $8,500 with rates 0.30-7.50%, the 24-county + Baltimore City local tax structure (highest counties Howard/Montgomery/PG/Baltimore City at 3.20%), Maryland Healthy Working Families Act (Sick & Safe Leave 1 hour per 30 hours), reciprocal agreements with DC/PA/VA/WV exempting non-residents, and ABC contractor classification test.
+description: Tier 2 Maryland content skill for employer payroll compliance covering tax year 2025. Includes the MD PIT brackets up to 6.50% state plus county tax 2.25-3.30% for 2025 (effective combined top rate 8.75-9.80%), MW507 state W-4, MW-506 quarterly withholding, MD SUI wage base $8,500 with rates 0.30-7.50%, the 24-county + Baltimore City local tax structure (highest county Dorchester at 3.30% for 2025; Dorchester and Kent at 3.30% for 2026), Maryland Healthy Working Families Act (Sick & Safe Leave 1 hour per 30 hours), reciprocal agreements with DC/PA/VA/WV exempting non-residents, and ABC contractor classification test.
 jurisdiction: US-MD
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -52,7 +52,9 @@ Maryland imposes a graduated state income tax under Tax-General §10-105. The st
 | $100,000 | $125,000 | 5.00% |
 | $125,000 | $150,000 | 5.25% |
 | $150,000 | $250,000 | 5.50% |
-| $250,000 | — | 5.75% |
+| $250,000 | $500,000 | 5.75% |
+| $500,000 | $1,000,000 | 6.25% |
+| $1,000,000 | — | 6.50% |
 
 ### Married Filing Jointly, Head of Household, Qualifying Surviving Spouse
 
@@ -67,7 +69,11 @@ Maryland imposes a graduated state income tax under Tax-General §10-105. The st
 | $150,000 | $175,000 | 5.00% |
 | $175,000 | $225,000 | 5.25% |
 | $225,000 | $300,000 | 5.50% |
-| $300,000 | — | 5.75% |
+| $300,000 | $600,000 | 5.75% |
+| $600,000 | $1,200,000 | 6.25% |
+| $1,200,000 | — | 6.50% |
+
+The 6.25% and 6.50% brackets apply for tax years beginning after December 31, 2024.  _(Comptroller of Maryland, Withholding Tax Facts 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/facts/Withholding-Tax-Facts-2025.pdf), Tax Rate Schedules I and II; Comptroller of Maryland Tax Alert, revised December 22, 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf))_
 
 ## 2. Maryland State Personal Income Tax Brackets (2025)
 
@@ -77,39 +83,40 @@ Maryland imposes a graduated state income tax under Tax-General §10-105. The st
 
 Maryland is unusual among US states in that the "local" income tax is administered through the state withholding system and is mandatory in every jurisdiction. Every Maryland resident pays a local tax to one of 24 counties or to Baltimore City, in addition to the state tax. The rate is set annually by each county council and certified to the Comptroller. The local tax piggybacks on the same taxable income base used for the state tax.
 
-### County / Baltimore City Tax Rates for 2025
+### County / Baltimore City Tax Rates for 2025 and 2026
 
-**County / Baltimore City Tax Rates for 2025**  _(certified county rates 2025)_
+**County / Baltimore City Tax Rates for 2025 and 2026**  _(Comptroller of Maryland, Withholding Tax Facts 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/facts/Withholding-Tax-Facts-2025.pdf); Comptroller of Maryland Tax Alert, revised December 22, 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf); DLS, Local Income Tax Rates in Maryland, CY 2026 (https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf))_
 
-| Jurisdiction | 2025 rate | Effective combined top rate (state 5.75% + local) |
-| --- | --- | --- |
-| Allegany County | 3.05% | 8.80% |
-| Anne Arundel County | 2.81% (graduated; top rate) | 8.56% |
-| Baltimore City | 3.20% | 8.95% |
-| Baltimore County | 3.20% | 8.95% |
-| Calvert County | 3.00% | 8.75% |
-| Caroline County | 3.20% | 8.95% |
-| Carroll County | 3.03% | 8.78% |
-| Cecil County | 2.80% | 8.55% |
-| Charles County | 3.03% | 8.78% |
-| Dorchester County | 3.20% | 8.95% |
-| Frederick County | 2.96% (graduated; top rate) | 8.71% |
-| Garrett County | 2.65% | 8.40% |
-| Harford County | 3.06% | 8.81% |
-| Howard County | 3.20% | 8.95% |
-| Kent County | 3.20% | 8.95% |
-| Montgomery County | 3.20% | 8.95% |
-| Prince George's County | 3.20% | 8.95% |
-| Queen Anne's County | 3.20% | 8.95% |
-| St. Mary's County | 3.10% | 8.85% |
-| Somerset County | 3.20% | 8.95% |
-| Talbot County | 2.40% | 8.15% |
-| Washington County | 2.95% | 8.70% |
-| Wicomico County | 3.20% | 8.95% |
-| Worcester County | 2.25% | 8.00% |
-| Nonresident rate (special) | 2.25% (statutory; in lieu of county tax for out-of-state residents working in MD) | 8.00% |
+| Jurisdiction | 2025 rate | Effective combined top rate 2025 (state 6.50% + top local) | 2026 rate |
+| --- | --- | --- | --- |
+| Allegany County | 3.03% | 9.53% | 3.20% |
+| Anne Arundel County | 2.70% / 2.94% / 3.20% (graduated) | 9.70% | graduated |
+| Baltimore City | 3.20% | 9.70% | 3.20% |
+| Baltimore County | 3.20% | 9.70% | 3.20% |
+| Calvert County | 3.20% | 9.70% | 3.20% |
+| Caroline County | 3.20% | 9.70% | 3.20% |
+| Carroll County | 3.03% | 9.53% | 3.03% |
+| Cecil County | 2.74% | 9.24% | 2.74% |
+| Charles County | 3.03% | 9.53% | 3.03% |
+| Dorchester County | 3.30% (retroactive for 2025) | 9.80% | 3.30% |
+| Frederick County | 2.25% / 2.75% / 2.96% / 3.20% (graduated) | 9.70% | graduated |
+| Garrett County | 2.65% | 9.15% | 2.65% |
+| Harford County | 3.06% | 9.56% | 3.06% |
+| Howard County | 3.20% | 9.70% | 3.20% |
+| Kent County | 3.20% | 9.70% | 3.30% |
+| Montgomery County | 3.20% | 9.70% | 3.20% |
+| Prince George's County | 3.20% | 9.70% | 3.20% |
+| Queen Anne's County | 3.20% | 9.70% | 3.20% |
+| St. Mary's County | 3.20% | 9.70% | 3.20% |
+| Somerset County | 3.20% | 9.70% | 3.20% |
+| Talbot County | 2.40% | 8.90% | 2.40% |
+| Washington County | 2.95% | 9.45% | 2.95% |
+| Wicomico County | 3.20% | 9.70% | 3.20% |
+| Worcester County | 2.25% | 8.75% | 2.25% |
+| Nonresident rate (special) | 2.25% (statutory; in lieu of county tax for out-of-state residents working in MD) | 8.75% | 2.25% |
 
-- **Lowest/highest county rates and graduated brackets** — The lowest county rate is Worcester at 2.25%; the highest county rates are 3.20% (Howard, Montgomery, Prince George's, Baltimore City, Baltimore County, Caroline, Dorchester, Kent, Queen Anne's, Somerset, Wicomico). Anne Arundel County and Frederick County adopted graduated local brackets; for withholding purposes the top marginal local rate is used unless the employee provides the lower-bracket certification on the MW507 worksheet.  _(MW507 worksheet)_
+- **Graduated county brackets (2025)** — Anne Arundel taxes each band of income at its own rate (marginal): 2.70% of Maryland taxable net income to $50,000, 2.94% from $50,001 to $400,000 and 3.20% above $400,000 (Single, MFS, Dependent); 2.70% to $75,000, 2.94% from $75,001 to $480,000 and 3.20% above $480,000 (MFJ, HoH, QSS). Frederick applies a single rate to the whole of Maryland taxable net income, chosen by the income level: (Single, MFS, Dependent) 2.25% where income is $25,000 or less, 2.75% where $25,001 to $50,000, 2.96% where $50,001 to $150,000 and 3.20% where $150,001 or more; (MFJ, HoH, QSS) 2.25% to $25,000, 2.75% from $25,001 to $100,000, 2.96% from $100,001 to $250,000 and 3.20% from $250,001. Do not compute Frederick slice by slice.  _(Comptroller of Maryland, Withholding Tax Facts 2025 (https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/facts/Withholding-Tax-Facts-2025.pdf))_
+- **Lowest/highest county rates and graduated brackets** — For 2025 the lowest county rate is Worcester at 2.25% and the highest is Dorchester at 3.30% (raised retroactively from 3.20%); for 2026, Allegany rises to 3.20% and Kent to 3.30%. The Comptroller's withholding tables group local rates into brackets (2.25%, 2.40%, 2.65%, 2.75%, 3.00%, 3.05%, 3.10%, 3.20% and 3.30% for 2025): use the table equal to or next above the actual local rate. Anne Arundel County and Frederick County adopted graduated local brackets; for withholding purposes the top marginal local rate is used unless the employee provides the lower-bracket certification on the MW507 worksheet.  _(MW507 worksheet)_
 
 ### Special Nonresident Tax
 
@@ -377,13 +384,15 @@ Before delivering a Maryland payroll computation or compliance memo to a reviewe
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

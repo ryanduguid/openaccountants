@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Malta provisional tax (estimate
 version: 2.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 reviewed_by: Michael Cutajar, CPA (Malta)
 review_status: pending_review
 depends_on:
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Malta (Republic of Malta) |
 | Tax | Income tax provisional payments (Provisional Tax / PT) |
-| Primary legislation | Income Tax Management Act, Chapter 372, Art. 44 et seq.; Provisional Tax Rules (S.L. 372.04) |
+| Primary legislation | Income Tax Management Act, Chapter 372, Art. 44 et seq.; Payment of Provisional Tax (P.T.) Rules (S.L. 372.18) |
 | Supporting legislation | Income Tax Act, Chapter 123, Art. 14 (deductions); Art. 50 (penalties) |
 | Authority | Commissioner for Revenue (CFR), Malta |
 | Portal | https://cfr.gov.mt (CFR Online Services) |
@@ -60,7 +60,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Required inputs
 
-**Minimum viable** -- the prior year assessed tax liability from the income tax return (the net tax payable after credits) OR the CFR-issued PT notice (Vorauszahlungsbescheid equivalent). One of these is mandatory.
+**Minimum viable** -- the prior year assessed tax liability from the income tax return (the net tax payable after credits) OR the CFR-issued PT notice. One of these is mandatory.
 
 **Recommended** -- current year of assessment, any PAYE or withholding tax deducted at source in the current year, the client's TIN.
 
@@ -302,13 +302,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

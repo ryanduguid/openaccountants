@@ -28,7 +28,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AR | Argentina | 9 | 3 |
 | AS | American Samoa | 2 | 0 |
 | AT | Austria | 6 | 0 |
-| AU | Australia | 48 | 0 |
+| AU | Australia | 60 | 0 |
 | AW | Aruba | 1 | 0 |
 | AX | Åland Islands | 2 | 0 |
 | AZ | Azerbaijan | 8 | 0 |
@@ -44,7 +44,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BL | Saint Barthélemy | 1 | 0 |
 | BM | Bermuda | 7 | 0 |
 | BN | Brunei Darussalam | 7 | 0 |
-| BO | Bolivia (Plurinational State of) | 5 | 0 |
+| BO | Bolivia (Plurinational State of) | 6 | 0 |
 | BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |
 | BR | Brazil | 13 | 8 |
 | BS | Bahamas | 6 | 0 |
@@ -186,7 +186,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NP | Nepal | 5 | 5 |
 | NR | Naoero | 4 | 0 |
 | NU | Niue | 1 | 0 |
-| NZ | New Zealand | 9 | 0 |
+| NZ | New Zealand | 16 | 0 |
 | OM | Oman | 6 | 0 |
 | PA | Panama | 4 | 0 |
 | PE | Peru | 7 | 4 |

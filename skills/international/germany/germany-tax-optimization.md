@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Germany, tax pl
 version: 1.2
 jurisdiction: DE
 tax_year: 2026
-last_updated: 2026-11-03
+last_updated: 2026-11-06
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -139,9 +139,9 @@ Confirm taxpayer and assessment year; income categories and taxable bases for ea
 
 | Feature | Detail | Source or qualification |
 | --- | --- | --- |
-| Deduction limit | 100% of contributions deductible (since 2023). Max EUR 29,344 (single) / EUR 58,688 (joint) for 2026. | unverified: inherited figure or assumption; professional/source qualification required |
+| Deduction limit | 100% of contributions deductible (since 2023). Max EUR 30,826 (single) / EUR 61,652 (joint) for 2026: the maximum knappschaftliche pension contribution, 24.7% × EUR 124,800, rounded up (EUR 29,344 / EUR 58,688 in 2025). | § 10 Abs. 3 EStG (https://www.gesetze-im-internet.de/estg/__10.html); RV-Beitragssatz 2026 (https://www.gesetze-im-internet.de/rvbeitrsbek_2026/----.html); BBG 2026 (https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2025/sozialversicherungsrechengroessen-2026.html) |
 | Tax treatment in retirement | Taxed as income, but typically at lower marginal rate. | Retained context; see scope and source limits |
-| Strategy | The primary pension vehicle for Freiberufler and Gewerbetreibende. Contributions reduce taxable income EUR-for-EUR up to the limit. At 42% marginal rate, EUR 29,344 contribution = EUR 12,325 tax saving. | unverified: inherited figure or assumption; professional/source qualification required |
+| Strategy | The primary pension vehicle for Freiberufler and Gewerbetreibende. Contributions reduce taxable income EUR-for-EUR up to the limit. At 42% marginal rate, EUR 30,826 contribution = EUR 12,947 tax saving. | Derived from the deduction-limit ceiling: EUR 30,826 × 42% = EUR 12,946.92, shown as EUR 12,947. Ceiling sources are in the row above. |
 
 #### Riester-Rente -- §10a EStG
 

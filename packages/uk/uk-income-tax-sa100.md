@@ -1,11 +1,11 @@
 ---
 name: uk-income-tax-sa100
 description: Use this skill whenever asked about UK income tax for individuals filing SA100 Self Assessment. Trigger on phrases like "income tax UK", "SA100", "personal allowance", "tax bands", "tax computation", "marriage allowance", "savings allowance", "dividend allowance", "Scottish tax rates", "payments on account", "tax reducers", "tax relief", "April 2026", "2026-27", "Autumn Budget 2025", "income tax bands frozen 2027-28", or any question about computing a UK individual's income tax liability. Covers personal allowance (including taper), income tax bands for rUK and Scotland, marriage allowance, savings and dividend allowances, tax reducers, the final tax computation, payments on account, and the Autumn Budget 2025 changes from April 2026. ALWAYS read this skill before touching any UK income tax return work.
-version: 2.2
+version: 2.3
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2024-25, 2025-26 and 2026-27; 2026-27 reconciled to Finance Act 2026 (c. 11)"
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 reviewed_by: James Power
 review_status: pending_review
 depends_on:
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Income Tax Sa100
 
-## UK Income Tax (SA100) -- Individual Tax Computation Skill v2.2
+## UK Income Tax (SA100) -- Individual Tax Computation Skill v2.3
 
 This skill covers **three tax years in parallel**:
 
@@ -27,7 +27,7 @@ This skill covers **three tax years in parallel**:
 - **Current year:** 2025-26 (6 April 2025 -- 5 April 2026) -- filed by 31 January 2027
 - **From 6 April 2026:** 2026-27 (6 April 2026 -- 5 April 2027) -- filed by 31 January 2028
 
-All headline income tax rates and thresholds are **frozen through 2027-28**. The Autumn Budget 2025 announced targeted rate increases on investment income, but they do **not** all start together: **dividends** rise from 6 April 2026, while **savings** and **property** income rise from 6 April **2027** -- see Section 1.5.
+The Personal Allowance (GBP 12,570) and the basic rate limit (GBP 37,700, so a GBP 50,270 higher rate threshold) are **frozen to 5 April 2031 (through 2030-31)**; the Scottish Parliament sets Scottish rates and limits. The Autumn Budget 2025 announced targeted rate increases on investment income, but they do **not** all start together: **dividends** rise from 6 April 2026, while **savings** and **property** income rise from 6 April **2027** -- see Section 1.5.
 
 ## Rates and thresholds: review pending
 
@@ -83,9 +83,9 @@ All headline income tax rates and thresholds are **frozen through 2027-28**. The
 | Validated by | Verified by James Power on 2026-06-03 |
 | Skill version | 2.2 |
 
-### 1.0 Three-Year Comparison -- Headline rUK Bands (FROZEN through 2027-28) [T1]
+### 1.0 Three-Year Comparison -- Headline rUK Bands (Personal Allowance and basic rate limit FROZEN through 2030-31) [T1]
 
-**1.0 Three-Year Comparison -- Headline rUK Bands (FROZEN through 2027-28) [T1]**
+**1.0 Three-Year Comparison -- Headline rUK Bands (Personal Allowance and basic rate limit FROZEN through 2030-31) [T1]**
 
 | Item | 2024-25 | 2025-26 | 2026-27 |
 | --- | --- | --- | --- |
@@ -96,7 +96,7 @@ All headline income tax rates and thresholds are **frozen through 2027-28**. The
 | PA taper threshold | GBP 100,000 | GBP 100,000 | GBP 100,000 (frozen) |
 | PA fully withdrawn at | GBP 125,140 | GBP 125,140 | GBP 125,140 (frozen) |
 
-**Source:** Personal allowance and higher rate threshold freeze extended to 5 April 2028 (Finance (No. 2) Act 2023 s.5; Autumn Budget 2025 confirmed no further extension at this stage, but the freeze through 2027-28 remains in force).
+**Source:** Personal allowance and basic rate limit frozen to 5 April 2031: Finance Act 2021 s.5, extended from 2027-28 to 2030-31 by Finance Act 2026 s.10 (https://www.legislation.gov.uk/ukpga/2026/11/section/10), following Autumn Budget 2025 (https://www.gov.uk/government/publications/maintaining-income-tax-and-equivalent-national-insurance-contributions-thresholds-until-5-april-2031).
 
 ### 1.1 Income Tax Bands -- England, Wales, Northern Ireland (rUK) -- 2024-25 [T1]
 
@@ -131,7 +131,7 @@ All headline income tax rates and thresholds are **frozen through 2027-28**. The
 | Higher rate | GBP 50,271 -- 125,140 | 40% |
 | Additional rate | Over GBP 125,140 | 45% |
 
-Headline rates and thresholds are **unchanged** from 2025-26 -- the freeze continues through 2027-28. Autumn Budget 2025 changes are confined to investment income (see Section 1.5).
+Headline rates and thresholds are **unchanged** from 2025-26. The Personal Allowance and basic rate limit stay frozen through 2030-31 (FA 2026 s 10); rates are set each year. Autumn Budget 2025 changes are confined to investment income (see Section 1.5).
 
 ### 1.4 Scottish Income Tax Bands [T1]
 
@@ -211,7 +211,7 @@ The Autumn Budget 2025 changes take effect in two stages. **Dividends** rise fro
 - **Dividend rates** -- confirmed 2pp uplift on ordinary and upper rates from 6 April 2026. See companion skill `uk-dividends` for the detailed dividend computation, the GBP 500 allowance interaction, and worked examples.
 - **Savings income and property income** -- the Autumn Budget 2025 rates are **22% / 42% / 47%**, and they apply **from 6 April 2027**, a year after the dividend change. They are specific, not "expected", and the additional rate does move (to 47%). For **2026-27** savings and property income is taxed at the ordinary **20% / 40% / 45%**: compute it, do not hold it open. Applying 22/42/47 to a 2026-27 return overstates the liability at every band.
 - **HICBC** -- the GBP 60,000 starting / GBP 80,000 full claw-back tapered threshold introduced from 2024-25 remains in force for 2026-27 (no further reform announced).
-- **All other bands frozen** -- Personal Allowance (GBP 12,570), basic rate threshold (GBP 50,270), additional rate threshold (GBP 125,140), and PA taper threshold (GBP 100,000) are all frozen through 2027-28.
+- **Other thresholds** -- Personal Allowance (GBP 12,570) and basic rate threshold (GBP 50,270) are frozen through 2030-31 (FA 2021 s 5 as extended by FA 2026 s 10). The additional rate threshold (GBP 125,140) and the PA taper threshold (GBP 100,000) are fixed sums with no indexation in ITA 2007 (s 21 indexes only the basic rate limit and the starting rate limit for savings; s 57 does not list the s 35(2) taper limit).
 
 ### Key Allowances and Thresholds [T1]
 
@@ -425,7 +425,7 @@ Input: Scottish taxpayer. Employment GBP 50,000. Bank interest GBP 3,000.
 
 ### 5.2 Personal Allowance [T1]
 
-- **Personal allowance** — GBP 12,570 across all three years (2024-25, 2025-26, 2026-27 -- frozen through 2027-28). Tapers at GBP 1 for every GBP 2 above GBP 100,000 adjusted net income. Fully withdrawn at GBP 125,140. Effective 60% marginal rate in taper zone. Adjusted net income = Total income - gross pension contributions - grossed-up Gift Aid.  _(ITA 2007, s35)_
+- **Personal allowance** — GBP 12,570 across all three years (2024-25, 2025-26, 2026-27 -- frozen through 2030-31). Tapers at GBP 1 for every GBP 2 above GBP 100,000 adjusted net income. Fully withdrawn at GBP 125,140. Effective 60% marginal rate in taper zone. Adjusted net income = Total income - gross pension contributions - grossed-up Gift Aid.  _(ITA 2007, s35)_
 
 ### 5.3 Savings Allowance and Starting Rate [T1]
 
@@ -605,7 +605,7 @@ ONBOARDING QUESTIONS -- UK INCOME TAX (SA100)
 | Dividend rates, 2026-27 onwards (10.75% / 35.75% / 39.35%) | Finance Act 2026, s.4 — Royal Assent 18 March 2026, in force from 6 April 2026 |
 | Savings rates, **2027-28** onwards (22% / 42% / 47%) | Finance Act 2026, s.5 — enacted, but commencing 6 April 2027. Not a 2026-27 change |
 | Separate property income rates, **2027-28** onwards (22% / 42% / 47%) | Finance Act 2026, ss.6-7 — enacted, commencing 6 April 2027. See uk-rental-sa105 |
-| Threshold freeze through 2027-28 | Finance (No. 2) Act 2023, s.5 |
+| Threshold freeze through 2030-31 (to 5 April 2031) | Finance Act 2021, s.5, as extended by Finance Act 2026, s.10 |
 | Marriage allowance | ITA 2007, s55B |
 | Scottish rates | Scotland Act 2016 |
 | Pension relief | FA 2004, ss 188-195 |
@@ -634,13 +634,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

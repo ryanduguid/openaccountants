@@ -4,14 +4,16 @@ description: "Florida Sales and Use Tax return (Form DR-15) for self-employed in
 jurisdiction: US-FL
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 reviewed_by: Rob Hoffman
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 depends_on:
   - us-circular-230-disclosure
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # FL Sales Use Tax
 
@@ -47,7 +49,7 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 - Communications services tax (Form DR-700016)
 - Solid waste fees, lead-acid battery fees, tire fees
 - Transient rental taxes (tourist development tax)
-- Sales tax on commercial real property leases beyond basic classification
+- Sales tax on commercial real property leases for periods through September 2025, beyond basic classification
 - Marketplace provider obligations (Amazon, Etsy platform responsibilities)
 - Multi-state sales tax nexus analysis
 
@@ -59,14 +61,14 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 
 ### Filing frequency
 
-**Filing frequency**  _(FDOR Rule 12A-1.056, F.A.C.)_
+**Filing frequency**  _(§212.11(1)(c), F.S.; FDOR Filing Frequency Limits)_
 
-| Annual taxable sales | Filing frequency | Source |
+| Annual sales tax collections | Filing frequency | Source |
 | --- | --- | --- |
-| $1,000 or less per year | Annual (due January 20) | FDOR Rule 12A-1.056, F.A.C. |
-| $1,001 -- $2,500 per year | Semiannual (due January 20 and July 20) | FDOR Rule 12A-1.056, F.A.C. |
-| $2,501 -- $12,000 per year | Quarterly (due 1st/20th after quarter end) | FDOR Rule 12A-1.056, F.A.C. |
-| Over $12,000 per year | Monthly (due 1st/20th after month end) | FDOR Rule 12A-1.056, F.A.C. |
+| $100 or less | Annual (due January 20) | §212.11(1)(c), F.S.; FDOR Filing Frequency Limits |
+| $101 -- $500 | Semiannual (due January 20 and July 20) | §212.11(1)(c), F.S.; FDOR Filing Frequency Limits |
+| $501 -- $1,000 | Quarterly (due 1st/20th after quarter end) | §212.11(1)(c), F.S.; FDOR Filing Frequency Limits |
+| More than $1,000 | Monthly (due 1st/20th after month end) | §212.11(1)(c), F.S.; FDOR Filing Frequency Limits |
 
 - **Due date** — The 1st through the 20th of the month following the reporting period. If the 20th falls on a Saturday, Sunday, or state/federal holiday, the due date is the next business day.  _(FDOR Rule 12A-1.056, F.A.C.)_
 - **Electronic filing requirement** — Required for all dealers remitting $20,000+ in tax during the prior state fiscal year (July 1 -- June 30). All other dealers may file electronically or by paper.  _(§213.755, F.S.)_
@@ -102,13 +104,13 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 
 ### Collection allowance (vendor discount)
 
-**Collection allowance (vendor discount)**  _(§212.12(1), F.S.)_
+**Collection allowance (vendor discount)**  _(§212.12(1)(a), F.S.; Form DR-15N)_
 
 | Item | Amount | Source |
 | --- | --- | --- |
-| Collection allowance | 2.5% of first $1,200 in tax due (max $25/month or equivalent per period) | §212.12(1), F.S. |
+| Collection allowance | 2.5% of first $1,200 of tax due, max $30 per reporting location, only if the return is filed and the tax paid electronically and on time | §212.12(1)(a), F.S.; Form DR-15N |
 
-- **Collection allowance application** — The collection allowance is a compensation to the dealer for collecting and remitting sales tax. It is applied as a deduction on Line 9 of Form DR-15. The allowance is forfeited if the return is filed late.  _(§212.12(1), F.S.)_
+- **Collection allowance application** — The collection allowance is a compensation to the dealer for collecting and remitting sales tax. It is deducted on Line 11 of Form DR-15. No allowance is due if the return or payment is late or made by a method other than electronic means.  _(§212.12(1)(a), F.S.; Form DR-15N)_
 
 ### Bracket system for tax on partial dollars
 
@@ -120,41 +122,43 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 
 - **Transaction classification** — For each sale during the reporting period, determine: 1. **Taxable or exempt?** See Section 5 for exemptions. 2. **Location of delivery.** Determines which county surtax applies. 3. **Single transaction amount.** Surtax applies only to the first $5,000 of each transaction.  _(Section 5)_
 
-### Step 2: Compute gross sales (DR-15 Line 1)
+### Step 2: Compute gross sales (DR-15 Line A, Column 1)
 
-- **Gross sales (Line 1)** — Sum of all sales (taxable and exempt) during the reporting period.  _(Form DR-15)_
+- **Gross sales (Line A, Column 1)** — Sum of all sales (taxable and exempt) during the reporting period.  _(Form DR-15)_
 
-### Step 3: Compute exempt sales (DR-15 Line 2)
+### Step 3: Compute exempt sales (DR-15 Line A, Column 2)
 
-- **Exempt sales (Line 2)** — Sum of all exempt sales (see Section 5). Subtract from Line 1.  _(Form DR-15)_
+- **Exempt sales (Line A, Column 2)** — Sum of all exempt sales (see Section 5). Subtract from Column 1.  _(Form DR-15)_
 
-### Step 4: Compute taxable amount (DR-15 Line 3)
+### Step 4: Compute taxable amount (DR-15 Line A, Column 3)
 
-- **Taxable amount (Line 3)** — Line 1 minus Line 2 = taxable amount.  _(Form DR-15)_
+- **Taxable amount (Line A, Column 3)** — Column 1 minus Column 2 = taxable amount.  _(Form DR-15)_
 
-### Step 5: Compute state sales tax (DR-15 Line 4)
+### Step 5: Compute state sales tax (DR-15 Line A, Column 4)
 
-- **State sales tax (Line 4)** — Taxable amount x 6.0% = state sales tax due.  _(Form DR-15)_
+- **State sales tax (Line A, Column 4)** — Taxable amount x 6.0% = state sales tax due.  _(Form DR-15)_
 
-### Step 6: Compute discretionary sales surtax (DR-15 Line 5)
+### Step 6: Compute discretionary sales surtax (included in DR-15 Line A, Column 4)
 
-- **Discretionary sales surtax (Line 5)** — For each county where sales were delivered: - Identify the applicable surtax rate from DR-15DSS. - Apply surtax to the first $5,000 of each individual taxable transaction in that county. - Sum all surtax amounts.  _(Form DR-15)_
+- **Discretionary sales surtax (included in Column 4; total on Line 15(d))** — For each county where sales were delivered: - Identify the applicable surtax rate from DR-15DSS. - Apply surtax to the first $5,000 of each individual taxable transaction in that county. - Sum all surtax amounts.  _(Form DR-15)_
 
-### Step 7: Compute use tax (DR-15 Line 6)
+### Step 7: Compute use tax (DR-15 Line B)
 
-- **Use tax (Line 6)** — For purchases where the seller did not collect Florida sales tax: - Apply 6.0% state rate + applicable county surtax rate. - Include purchases from out-of-state sellers, internet purchases, and items removed from exempt inventory for personal use.  _(Form DR-15)_
+- **Use tax (Line B)** — For purchases where the seller did not collect Florida sales tax: - Apply 6.0% state rate + applicable county surtax rate. - Include purchases from out-of-state sellers, internet purchases, and items removed from exempt inventory for personal use.  _(Form DR-15)_
 
-### Step 8: Compute gross tax (DR-15 Line 7)
+### Step 8: Compute gross tax (DR-15 Line 5)
 
-- **Gross tax (Line 7)** — Line 4 + Line 5 + Line 6 = gross tax.  _(Form DR-15)_
+- **Gross tax (Line 5)** — Add Column 4 on Lines A to E, less any amount on Line C(a), = total amount of tax due.  _(Form DR-15N)_
 
-### Step 9: Apply lawful deductions (DR-15 Lines 8-9)
+### Step 9: Apply lawful deductions (DR-15 Line 6)
 
-- **Lawful deductions (Lines 8-9)** — - Line 8: Credit memo adjustments for returned merchandise. - Line 9: Collection allowance (2.5% of first $1,200 of tax due, max $25). Forfeited if late.  _(Form DR-15)_
+- **Lawful deductions (Line 6)** — Allowable deductions, including tax refunded to customers for returned goods or allowances for damaged merchandise. Department credit memos go on Line 8, with estimated tax paid.  _(Form DR-15N)_
 
-### Step 10: Compute net tax due (DR-15 Line 10)
+### Step 10: Compute net tax due and the amount due with the return (DR-15 Lines 7-14)
 
-- **Net tax due (Line 10)** — Line 7 minus Line 8 minus Line 9 = net tax due.  _(Form DR-15)_
+- **Net tax due (Line 7)** — Line 5 minus Line 6 = net tax due.  _(Form DR-15N)_
+- **Amount due (Line 10)** — Line 7 minus Line 8 plus Line 9 = amount due.  _(Form DR-15N)_
+- **Collection allowance (Line 11)** — 2.5% of first $1,200 of tax due, max $30 per reporting location, only if the return is filed and the tax paid electronically and on time. Line 10 minus Line 11 = amount due with return (Line 14). On a late return or payment, Line 14 is Line 10 plus Lines 12 and 13.  _(Form DR-15N)_
 
 ### Step 11: Apply penalty and interest if late
 
@@ -165,7 +169,7 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 | Penalty (1-30 days late) | 10% of tax due | §213.235, F.S. |
 | Penalty (over 30 days late) | 10% of tax due + additional penalties | §213.235, F.S. |
 | Interest | Floating rate per §213.235, F.S. (updated annually) | §213.235, F.S. |
-| Minimum penalty | None stated | §213.235, F.S. |
+| Minimum penalty | $50, even on a late return with no tax due | Form DR-15N, Line 12 |
 
 ## Section 5 -- Edge cases and special rules
 
@@ -193,7 +197,7 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 
 ### E-5: Commercial rent
 
-- **Commercial real property rent rate** — Rental of commercial real property is subject to the 5.5% state rate (NOT 6%) plus applicable surtax. This is a separate line on DR-15 and uses a different rate.  _(§212.031, F.S.)_
+- **Commercial real property rent** — The state sales tax on commercial rentals is repealed for rental or occupancy periods beginning on or after October 1, 2025: no state tax or surtax applies. Periods through September 2025 stay taxable whenever paid, at 2.0% plus applicable surtax for June 1, 2024 -- September 30, 2025 and 4.5% plus applicable surtax for December 1, 2023 -- May 31, 2024. Transient rentals and parking, boat docking and aircraft storage spaces stay taxable.  _(FDOR TIP 25A01-04; FDOR TIP 24A01-02)_
 
 ### E-6: Zero returns
 
@@ -203,8 +207,8 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 
 ### Test 1: Basic monthly return
 
-**Input:** Sole proprietor, Broward County. Gross sales: $15,000. All taxable, all delivered in Broward. No exempt sales.
-**Expected:** State tax: $15,000 x 6% = $900. Surtax: $15,000 x 1% = $150 (all items under $5,000). Gross tax: $1,050. Collection allowance: $1,050 x 2.5% = $26.25, capped at $25. Net tax: $1,025.
+**Input:** Sole proprietor, Broward County. Gross sales: $15,000. All taxable, all delivered in Broward. No exempt sales. Filed and paid electronically and on time.
+**Expected:** State tax: $15,000 x 6% = $900. Surtax: $15,000 x 1% = $150 (all items under $5,000). Gross tax: $1,050. Collection allowance: $1,050 x 2.5% = $26.25, under the $30 cap. Amount due with return: $1,023.75.
 
 ### Test 2: Mixed county sales
 
@@ -230,8 +234,8 @@ This is a Tier 2 content skill that loads on top of `us-tax-workflow-base`. It c
 
 - **P-1:** Do NOT accept a resale certificate (DR-13) without verifying it is properly completed and the buyer is a registered dealer.
 - **P-2:** Do NOT apply the surtax to amounts exceeding $5,000 per individual item in a transaction.
-- **P-3:** Do NOT claim the collection allowance on a late-filed return.
-- **P-4:** Do NOT charge the 6% rate on commercial real property rent; the rate is 5.5%.
+- **P-3:** Do NOT claim the collection allowance on a late return, or one not filed and paid electronically.
+- **P-4:** Do NOT charge sales tax on commercial real property rent for periods from October 1, 2025; earlier periods keep the rate in E-5.
 - **P-5:** Do NOT classify all software as taxable -- custom software is exempt.
 - **P-6:** Do NOT assume digital goods are taxable in Florida. As of 2025, they generally are not.
 
@@ -242,11 +246,11 @@ Before delivering output, verify:
 - [ ] All transactions classified as taxable or exempt with statutory basis
 - [ ] Correct surtax rate applied for each delivery county (verified against current DR-15DSS)
 - [ ] Surtax cap of $5,000 per item applied correctly
-- [ ] Collection allowance computed correctly and not claimed on late returns
+- [ ] Collection allowance computed correctly and claimed only on electronic, on-time returns
 - [ ] Use tax included for out-of-state purchases where no FL tax was collected
 - [ ] Filing frequency matches annual tax liability threshold
 - [ ] Zero return filed if no activity (not skipped)
-- [ ] Commercial rent at 5.5% (not 6%)
+- [ ] Commercial rent untaxed from October 1, 2025; earlier periods at the E-5 rate
 - [ ] Reviewer brief includes any classification uncertainties
 
 ## Section 9 -- Disclaimer
@@ -261,13 +265,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

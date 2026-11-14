@@ -5,7 +5,7 @@ version: 1.3
 jurisdiction: IT
 tax_year: 2025
 tax_year_notes: "Historical 2025 frontmatter retained. Inherited body mixes 2025 and 2026 assertions; 2026 updates and actual-year eligibility remain subject to the stated source and professional holds."
-last_updated: 2026-11-03
+last_updated: 2026-11-06
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 
 
-**Review boundary (1 November 2026):** this revision corrects loss-category routing, the conditions for start-up loss relief, excess forfettario contributions and the anti-abuse penalty claim. Other figures and planning strategies in this mixed 2025/2026 guide have not been revalidated by this revision. Actual relief, liability and filing readiness remain pending professional review.
+**Review boundary (1 November 2026):** this revision corrects loss-category routing, the conditions for start-up loss relief, excess forfettario contributions and the anti-abuse penalty claim. The 31 October 2026 audit corrections kept in the rates section are the 2026 IRPEF bands and the EUR 200,000 neutralisation, the 2025 IRES premiale note, domestic withholding on payments to non-residents, and the 2026 artigiani and commercianti contribution figures. Other figures and planning strategies in this mixed 2025/2026 guide have not been revalidated by this revision. Actual relief, liability and filing readiness remain pending professional review.
 
 Retained statements marked unverified require source and professional review before any actual calculation, recommendation, filing or payment. Historical section numbers remain to preserve cross-references. Hypothetical checks below establish arithmetic under supplied assumptions only.
 
@@ -126,9 +126,11 @@ The inherited rates and example estimates appear with their original context bel
 
 | Taxable income (EUR) | Rate | Source or qualification |
 | --- | --- | --- |
-| 0 -- 28,000 | 23% | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| 28,001 -- 50,000 | 35% (2025 rate; reduced to 33% from 2026) | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| 50,001+ | 43% | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| 0 -- 28,000 | 23% | Agenzia delle Entrate, Aliquote e calcolo dell'Irpef (https://www.agenziaentrate.gov.it/portale/aliquote-e-calcolo-dell-irpef7) |
+| 28,001 -- 50,000 | 33% (35% for 2025) | Agenzia delle Entrate, Aliquote e calcolo dell'Irpef (https://www.agenziaentrate.gov.it/portale/aliquote-e-calcolo-dell-irpef7) |
+| 50,001+ | 43% (tax EUR 13,700 + 43% of the excess over EUR 50,000) | Agenzia delle Entrate, Aliquote e calcolo dell'Irpef (https://www.agenziaentrate.gov.it/portale/aliquote-e-calcolo-dell-irpef7). EUR 13,700 is 23% of EUR 28,000 plus 33% of the next EUR 22,000. |
+
+Above EUR 200,000 of reddito complessivo, the benefit of the 33% rate is neutralised (L. 199/2025, art. 1, commi 3-4)  _(Agenzia delle Entrate, Aliquote e calcolo dell'Irpef: https://www.agenziaentrate.gov.it/portale/aliquote-e-calcolo-dell-irpef7)_
 
 - **Addizionali**  -  Plus addizionale regionale (0.9-3.33% depending on region) and addizionale comunale (0-0.9%).
 
@@ -158,9 +160,21 @@ For a professional (BNC) with EUR 60,000 revenue and actual expenses of EUR 10,0
 
 | Factor | Ditta Individuale | SRL | Source or qualification |
 | --- | --- | --- | --- |
-| Top tax rate | 43% IRPEF + addizionali | 24% IRES + 3.9% IRAP = ~28% | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| Top tax rate | 43% IRPEF + addizionali | 24% IRES + 3.9% IRAP = ~28% (conditional 20% IRES for 2025: see note below) | IRES premiale: L. 207/2024, art. 1, commi 436-444, as described in the Agenzia delle Entrate Redditi SC 2026 instructions. Confirm the conditions before applying the 20% rate. |
 | Extraction costs | N/A | Dividends: 26% withholding on distributed profits | unverified: retained statement; scoped source checks below do not qualify this whole row |
 | When to incorporate | When profits consistently exceed EUR 50,000 and can be retained | Requires notarial deed, annual accounts, compliance costs | unverified: retained statement; scoped source checks below do not qualify this whole row |
+
+For the tax period following the one in progress at 31 December 2024 (2025 for calendar-year companies), IRES is reduced by 4 points to 20% ('IRES premiale') for companies meeting the conditions of L. 207/2024, art. 1, commi 436-444. Confirm the conditions before applying it; no later year was confirmed  _(Agenzia delle Entrate, Redditi SC 2026 instructions)_.
+
+**Withholding on payments to non-residents (domestic rates, 2026)**  _(D.P.R. 600/1973 arts 25, 26 and 27; D.L. 66/2014 art. 3, c. 1)_
+
+| Payment | Rate | Reference | Source or qualification |
+| --- | --- | --- | --- |
+| Dividends | 26% (1.20% to companies subject to corporate tax in, and resident in, a listed EU or EEA state) | Art. 27, c. 3 and 3-ter; the 27% in art. 27, c. 3 is read as 26% under D.L. 66/2014 art. 3 | D.P.R. 600/1973 arts 25, 26 and 27; D.L. 66/2014 art. 3, c. 1 |
+| Interest and other capital income | 26%, unless an exemption or a different rate applies (D.L. 66/2014 art. 3, c. 2 lists exceptions) | Art. 26, c. 5; D.L. 66/2014 art. 3 | D.P.R. 600/1973 arts 25, 26 and 27; D.L. 66/2014 art. 3, c. 1 |
+| Royalties | 30% on the taxable portion of the amount | Art. 25, c. 4 | D.P.R. 600/1973 arts 25, 26 and 27; D.L. 66/2014 art. 3, c. 1 |
+
+Treaty rates and EU directive exemptions can reduce these; check them before withholding. Normattiva shows arts 25 to 27 of D.P.R. 600/1973 abrogated with effect from 1 January 2027 by D.Lgs. 33/2025 (as amended by D.L. 200/2025); recheck the references from 2027.
 
 #### Impresa Familiare (Family Business)
 
@@ -285,7 +299,7 @@ Record the loss's origin, income category, tax period, amount and prior use. For
 | Category | Contribution rate (2025/2026) | Base | Source or qualification |
 | --- | --- | --- | --- |
 | Gestione Separata (professionals without cassa) | 26.07% (without other coverage) / 24% (with other coverage) | Net income | unverified: retained statement; scoped source checks below do not qualify this whole row |
-| Artigiani/Commercianti | ~24% up to EUR 55,448; 25% above | Minimum income EUR 18,415 → minimum contribution ~EUR 4,427 | unverified: retained statement; scoped source checks below do not qualify this whole row |
+| Artigiani/Commercianti | 2026: 24% (artigiani) or 24.48% (commercianti) up to EUR 56,224; 25% or 25.48% above | 2026 minimum income EUR 18,808 → minimum contribution about EUR 4,514 (artigiani) or EUR 4,604 (commercianti), before any fixed maternity amount | INPS circolare 14 of 9 February 2026 |
 | Casse professionali (regulated professions) | Varies by cassa (Inarcassa, Cassa Forense, etc.) | Varies | unverified: retained statement; scoped source checks below do not qualify this whole row |
 
 #### Optimization Strategies

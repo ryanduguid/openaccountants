@@ -3,7 +3,7 @@ name: cv-company-formation
 description: "Source-cited draft covering Cape Verde company formation and entity choice. Explains the Lda, the SA and the one-member Lda, the absence of any minimum share capital, the indirect floors on quota and share nominal values, cash pay-up and deferral limits, legal reserves and the statutory-audit thresholds. Use for incorporating in Cape Verde, choosing between an Lda and an SA, Cape Verde share capital or pay-up questions, or when a source cites the repealed Código das Empresas Comerciais. Statutory rules cite the Código das Sociedades Comerciais in the Boletim Oficial, read with its 2019 rectification. Notary and registration fees still need primary-source confirmation. Pending local-accountant review."
 jurisdiction: CV
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-11-10
 version: 1.2
 review_status: pending_review
 category: formation
@@ -66,13 +66,15 @@ the same treatment from the tax side.]
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

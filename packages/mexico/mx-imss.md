@@ -1,10 +1,10 @@
 ---
 name: mx-imss
 description: Use this skill whenever asked about Mexican IMSS social security for self-employed individuals. Trigger on phrases like "IMSS", "seguro social Mexico", "regimen voluntario", "incorporacion voluntaria", "IMSS freelancer", "aseguramiento voluntario", "Modalidad 40", or any question about voluntary IMSS enrollment, contribution calculation, or benefits for self-employed persons in Mexico. Covers voluntary inscription (Modalidad 40, regimen voluntario), contribution bases, health/maternity/retirement/disability benefits, and tax deductibility. ALWAYS read this skill before touching any Mexican IMSS work.
-version: 2.0
+version: 2.1
 jurisdiction: MX
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -37,11 +37,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **UMA Reference Values**
 
-| Item | Approximate Value |
-| --- | --- |
-| Daily UMA | MXN 113.14 |
-| Monthly UMA | MXN 3,439.46 |
-| Annual UMA | MXN 41,273.52 |
+| Item | 2025 value | 2026 value (from 1 February 2026) |
+| --- | --- | --- |
+| Daily UMA | MXN 113.14 | MXN 117.31 |
+| Monthly UMA | MXN 3,439.46 | MXN 3,566.22 |
+| Annual UMA | MXN 41,273.52 | MXN 42,794.64 |
+
+Source for 2026: INEGI, UMA 2026 (https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/uma/uma2026.pdf). The examples below use the 2025 values.
 
 ### IMSS Five Branches of Insurance
 
@@ -63,7 +65,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- | --- |
 | IVRO (Art. 13) | Self-employed, freelancers | All 5 branches | Total contribution approx. 31-33% of chosen base |
 | Seguro de Salud para la Familia (Art. 240) | Any non-covered person | Health only | Fixed annual cost by age bracket; NO pension |
-| Modalidad 40 (Art. 218) | Former employees with 52+ prior weeks | Pension only (Retiro, CEAV, Invalidez y Vida, plus Gastos Medicos para Pensionados) | Total approx. 13.347% of chosen base for 2025 (rising annually to 2030); max 25 UMA |
+| Modalidad 40 (Art. 218) | Former employees with 52+ prior weeks | Pension only (Retiro, CEAV, Invalidez y Vida, plus Gastos Medicos para Pensionados) | Total approx. 13.347% of chosen base for 2025 and 14.438% for 2026, at the top CEAV tier (rising annually to 2030); max 25 UMA |
 
 ### Conservative Defaults
 
@@ -103,7 +105,7 @@ This is the deterministic pre-classifier for bank statement lines related to IMS
 | --- | --- | --- | --- |
 | IMSS CUOTA OBRERO PATRONAL / IMSS PAGO | IMSS contribution | EXCLUDE from business expenses | Personal social security -- ISR deduction (Art. 151) |
 | IMSS REGIMEN VOLUNTARIO / IMSS IVRO | IVRO contribution | EXCLUDE from business expenses | Personal deduction for ISR |
-| IMSS MODALIDAD 40 / IMSS MOD 40 | Modalidad 40 payment | EXCLUDE from business expenses | Personal deduction for ISR |
+| IMSS MODALIDAD 40 / IMSS MOD 40 | Modalidad 40 payment | EXCLUDE from business expenses | ISR deductibility not confirmed (see Example 2) |
 | IMSS SEGURO SALUD FAMILIA / IMSS SSF | Family health insurance | EXCLUDE from business expenses | Medical expense deduction (limited) |
 | INFONAVIT / INFONAVIT PAGO | Housing contribution | EXCLUDE | Not IMSS; separate programme |
 
@@ -135,7 +137,7 @@ IVRO at 1 UMA daily (approx. MXN 113.14/day). Monthly base approx. MXN 3,439.46.
 **Reasoning:**
 Eligible for Modalidad 40 (has 52+ weeks, within 5-year window). Daily base: approx. MXN 1,131.40. Monthly base: approx. MXN 34,394.60. Rate: approx. 13.347% (2025). Monthly cost: approx. MXN 4,591. Covers pension only -- NO health coverage.
 
-**Classification:** Modalidad 40 contribution MXN 3,465/month. Deductible for ISR. Client needs separate health coverage.
+**Classification:** Modalidad 40 contribution approx. MXN 4,591/month (2025). ISR deductibility not confirmed: Modalidad 40 cuotas are paid to IMSS and are not among the AFORE and retirement-plan contributions listed in LISR Art. 151, fracción V; do not deduct them without confirming against the official LISR text. Client needs separate health coverage.
 
 ### Example 3 -- Seguro de Salud para la Familia
 
@@ -151,9 +153,9 @@ Annual cost per person based on age brackets. Adults (19-39): approx. 7.5% of an
 **Input:** High earner wanting maximum pension. 500 weeks prior contributions. Chose 25 UMA daily.
 
 **Reasoning:**
-Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN 85,987/month. Monthly cost: approx. 13.347% = MXN 11,477. Maximum pension accumulation strategy.
+Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN 85,987/month. Monthly cost: approx. 13.347% = MXN 11,477. Maximum pension accumulation strategy. For 2026 (UMA MXN 117.31 from 1 February 2026): 25 UMA = MXN 2,932.75/day = approx. MXN 89,155.60/month; at approx. 14.438%, monthly cost approx. MXN 12,872.
 
-**Classification:** Modalidad 40 contribution MXN 8,663/month. Maximum pension strategy. Flag for reviewer to assess long-term pension impact.
+**Classification:** Modalidad 40 contribution approx. MXN 11,477/month (2025; approx. MXN 12,872 for 2026). Maximum pension strategy. Flag for reviewer to assess long-term pension impact.
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
@@ -170,7 +172,7 @@ Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN
 | Enfermedades y Maternidad (cash) | approx. 1.00% |
 | Invalidez y Vida | approx. 2.375% |
 | Retiro | 2.00% |
-| Cesantia en Edad Avanzada y Vejez | approx. 4.375% (increasing under 2020 reform) |
+| Cesantia en Edad Avanzada y Vejez | Employee 1.125% plus an employer rate tiered by base salary under the 2020 reform (3.150% at 1.0 SM up to 6.422% at 4.01+ UMA in 2025, and up to 7.513% in 2026; see the schedule in §5.2) |
 | Guarderias | 1.00% |
 | Riesgos de Trabajo | approx. 0.54% (office/low-risk average) |
 | **Approximate total** | **approx. 31-33%** |
@@ -182,10 +184,25 @@ Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN
 | Component | Rate |
 | --- | --- |
 | Retiro | 2.000% |
-| Cesantia en Edad Avanzada y Vejez (CEAV) | 7.547% at 4.01+ UMA (employer 6.422% + employee 1.125%); the employer portion is tiered from 5.307% and rises annually to 2030 under the 2020 pension reform |
+| Cesantia en Edad Avanzada y Vejez (CEAV) | At 4.01+ UMA: 7.547% in 2025 (employer 6.422% + employee 1.125%) and 8.638% in 2026 (employer 7.513% + employee 1.125%). The employer portion is tiered by base salary, from 3.150% at 1.0 SM, and rises annually to 2030 (schedule below) |
 | Invalidez y Vida | 2.375% |
 | Gastos Medicos para Pensionados | 1.425% |
-| **Total** | **approx. 13.347%** (2025, at the top CEAV tier) |
+| **Total** | **approx. 13.347%** (2025) and **approx. 14.438%** (2026), at the top CEAV tier |
+
+**Employer CEAV rate by base salary, 2023 to 2030**  _(LSS Art. 168, fracción II, as amended by the decree published in the DOF on 16 December 2020, Transitorio Segundo)_
+
+| Base salary | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1.0 SM | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% | 3.150% |
+| 1.01 SM to 1.50 UMA | 3.281% | 3.413% | 3.544% | 3.676% | 3.807% | 3.939% | 4.070% | 4.202% |
+| 1.51 to 2.00 UMA | 3.575% | 4.000% | 4.426% | 4.851% | 5.276% | 5.701% | 6.126% | 6.552% |
+| 2.01 to 2.50 UMA | 3.751% | 4.353% | 4.954% | 5.556% | 6.157% | 6.759% | 7.360% | 7.962% |
+| 2.51 to 3.00 UMA | 3.869% | 4.588% | 5.307% | 6.026% | 6.745% | 7.464% | 8.183% | 8.902% |
+| 3.01 to 3.50 UMA | 3.953% | 4.756% | 5.559% | 6.361% | 7.164% | 7.967% | 8.770% | 9.573% |
+| 3.51 to 4.00 UMA | 4.016% | 4.882% | 5.747% | 6.613% | 7.479% | 8.345% | 9.211% | 10.077% |
+| 4.01 UMA and above | 4.241% | 5.331% | 6.422% | 7.513% | 8.603% | 9.694% | 10.784% | 11.875% |
+
+SM = salario mínimo. Source opened 2026-11-01: https://www.dof.gob.mx/nota_detalle.php?codigo=5607729&fecha=16/12/2020 (table image https://dof.gob.mx/imagenes_diarios/2020/12/16/MAT/shcp11_Cimg_858340.png).
 
 - **Modalidad 40 maximum base** — 25 UMA daily UMA  _(LSS Art. 218)_
 
@@ -209,7 +226,7 @@ Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN
 | Contribution Type | Deductible? |
 | --- | --- |
 | IVRO contributions | Yes -- social security contribution deduction |
-| Modalidad 40 | Yes -- deductible for ISR |
+| Modalidad 40 | Not confirmed -- not among the AFORE and retirement-plan contributions in Art. 151, fracción V; confirm before deducting (see Example 2) |
 | Seguro de Salud para la Familia | Yes -- medical expense deduction (limited) |
 
 ### 5.5 Eligibility Rules
@@ -351,7 +368,8 @@ ONBOARDING QUESTIONS -- MEXICO IMSS SELF-EMPLOYED
 | Contribution rates | LSS Art. 106, 147, 168, 211 |
 | ISR deductibility | Ley del ISR Art. 151 |
 | UMA usage | Decreto DOF 27/01/2016 |
-| 2020 pension reform | Reforma LSS 2020 (Cesantia rates) |
+| 2020 pension reform | Reforma LSS 2020 (Cesantia rates): decree in the DOF of 16 December 2020, Transitorio Segundo |
+| UMA 2026 | INEGI, UMA 2026 (in force from 1 February 2026) |
 
 ### Known Gaps / Out of Scope
 
@@ -403,13 +421,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

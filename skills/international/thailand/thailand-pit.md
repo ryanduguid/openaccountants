@@ -1,10 +1,10 @@
 ---
 name: thailand-pit
 description: Use this skill whenever asked to prepare, review, or classify transactions for Thailand Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา), PND.90/91 filing, or advise on Thai PIT deductions and credits. Trigger on phrases like "ภาษีเงินได้บุคคลธรรมดา", "Thai income tax", "PND.90", "PND.91", "ภ.ง.ด.90", "ภ.ง.ด.91", or any Thailand personal tax request. ALWAYS read this skill before touching any Thailand PIT work.
-version: 1.1
+version: 1.2
 jurisdiction: TH
-tax_year: 2024
-last_updated: 2026-10-18
+tax_year: 2025
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Thailand Pit
 
-## Thailand Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา) Skill v1.1
+## Thailand Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา) Skill v1.2
 
 ## Section 1 — Quick reference
 
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | ภาษีเงินได้บุคคลธรรมดา (Personal Income Tax — PIT) |
 | Currency | THB (Thai Baht / บาท) |
 | Tax year | Calendar year (1 Jan – 31 Dec); Thai year = Gregorian + 543 |
-| Current tax year | พ.ศ. 2567 (2024 CE) |
+| Current tax year | พ.ศ. 2569 (2026 CE) is in progress; the latest year filed is พ.ศ. 2568 (2025 CE), returns due by 31 March 2026 on paper. Figures in this guide are for 2025 unless marked 2026 (RD, ภ.ง.ด.90 instructions for 2568: https://www.rd.go.th/fileadmin/tax_pdf/pit/2568/Ins90_241268.pdf) |
 | Tax authority | กรมสรรพากร Revenue Department (RD) |
 | Return forms | ภ.ง.ด.91 (salary only) / ภ.ง.ด.90 (all income types) |
 | Filing portal | https://efiling.rd.go.th |
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Source credit | `ratanon97/ThaiTaxCalculator` (TH-2567.json) + `anurat/laravel-thai-tax` (MIT) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Thai-licensed CPA or tax consultant |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ## Section 2 — Progressive tax brackets (อัตราภาษีก้าวหน้า)
 
@@ -89,7 +89,7 @@ Tax is computed on **Net Taxable Income** (เงินได้สุทธิ)
 | Provident Fund (PVD / กองทุนสำรองเลี้ยงชีพ) | 15% of salary | — |
 | Gov. Pension Fund (กบข.) | 15% of salary | Government employees |
 | RMF (กองทุนรวมเพื่อการเลี้ยงชีพ) | 30% of income | — |
-| SSF (กองทุนรวมเพื่อการออม) | 30% of income, max 200,000 | — |
+| SSF (กองทุนรวมเพื่อการออม) | Not in the RD's 2025 deduction list | Do not claim for 2025 purchases unless a current deduction is confirmed; for Thai ESG see Section 7 |
 | Pension life insurance (ประกันบำนาญ) | 15% of income, max 200,000 | — |
 | National Savings Fund (กอช.) | max 30,000 | — |
 
@@ -103,7 +103,7 @@ Tax is computed on **Net Taxable Income** (เงินได้สุทธิ)
 | Spouse life insurance | 10,000 | Spouse has no income |
 | Health insurance (ประกันสุขภาพ) | 25,000 | Combined with life insurance ≤ 100,000 |
 | Parent health insurance | 15,000 | Parent income < 30,000/yr |
-| Social security (ประกันสังคม) | 9,000 | 750/month max |
+| Social security (ประกันสังคม) | Actual contributions paid | 2025: max 750/month (9,000/yr) on the THB 15,000 wage ceiling. 2026: max 875/month (10,500/yr) on the THB 17,500 ceiling from 1 January 2026, less where the temporary 3% regional rate applied (see `th-payroll-social`). Spouse's contributions deductible if the marriage lasted the whole year (RD 2568 instructions, item 12) |
 
 ## Section 7 — Other deductions
 
@@ -112,7 +112,9 @@ Tax is computed on **Net Taxable Income** (เงินได้สุทธิ)
 | Deduction | Limit (THB) | Notes |
 | --- | --- | --- |
 | Home loan interest (ดอกเบี้ยบ้าน) | 100,000 | Purchase/build residence |
-| Easy E-Receipt (ช้อปดีมีคืน) | 50,000 | Requires e-Tax Invoice; temporary stimulus |
+| Easy E-Receipt 2.0 (2025) | 50,000 | Purchases 16 January to 28 February 2025 only, with an e-Tax Invoice or e-Receipt: up to 30,000 on any goods or services, plus up to 20,000 on OTOP goods and purchases from registered community or social enterprises (RD 2568 instructions, item 17). Not a standing deduction; check whether a scheme exists for 2026 |
+| Thai ESG fund units | 30% of assessable income, max 300,000 for units bought 1 January 2024 to 31 December 2026 (max 100,000 otherwise) | Units bought 2024 to 2026 held at least 5 years; otherwise held at least 8 years (RD 2568 instructions, items 18.1 to 18.3) |
+| Thai ESGX fund units | 30% of assessable income, max 300,000 | Units bought within 2 months of the fund's first offer and by 30 June 2025, held at least 5 years (RD 2568 instructions, item 19) |
 
 ## Section 8 — Donations (เงินบริจาค)
 
@@ -132,7 +134,7 @@ Deducted after all other deductions.
 
 ## Section 10 — Worked example
 
-**Scenario:** Salaried employee, annual income 1,200,000 THB, single, no children, pays into PVD 10% of salary, has social security, life insurance 50,000.
+**Scenario (2025 tax year):** Salaried employee, annual income 1,200,000 THB, single, no children, pays into PVD 10% of salary, has social security, life insurance 50,000.
 
 **Worked example — net taxable income computation**
 
@@ -160,6 +162,8 @@ Tax computation on 861,000:
 | **Total tax** |  |  | **87,200** |
 
 If withholding tax paid during the year was 95,000 → refund of **7,800 THB**.
+
+**Same facts in 2026:** social security is 875 × 12 = 10,500, so net taxable income is 859,500. Tax: 7,500 + 20,000 + 37,500 + (109,500 × 20% = 21,900) = **86,900**; with 95,000 withheld, refund of **8,100 THB**.
 
 ## Section 11 — Filing guidance
 
@@ -245,13 +249,15 @@ When in doubt:
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

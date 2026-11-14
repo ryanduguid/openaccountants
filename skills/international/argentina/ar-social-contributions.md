@@ -1,11 +1,11 @@
 ---
 name: ar-social-contributions
 description: Use this skill whenever asked about Argentine self-employed social contributions (aportes autónomos). Trigger on phrases like "aportes autónomos", "categoría autónomos", "jubilación autónomos", "PAMI autónomos", "cuánto pago de autónomo", "contribuciones SIPA", or any question about Argentine social security obligations for self-employed individuals. Covers Categories I-V, retirement (SIPA), PAMI (INSSJP), and obra social contributions, monthly fixed amounts, VEP payment, and edge cases. ALWAYS read this skill before touching any Argentine social contribution work.
-version: 2.0
+version: 2.1
 jurisdiction: AR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-11-10
 reviewed_by: Maria Valeria Benvenuti
 review_status: current
 tier: 1
@@ -14,7 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AR Social Contributions
 
-## Argentina Social Contributions (Aportes Autónomos) -- Self-Employed Skill v2.0
+## Argentina Social Contributions (Aportes Autónomos) -- Self-Employed Skill v2.1
+
+> **Scope:** autónomo contributions only. Employer contributions and employee contributions withheld on salaries are not covered by this or any other Argentina guide; see `ar-tax-overview` for the employer rates ARCA states, and refer employer payroll to a local adviser.
 
 ## Section 1 -- Quick reference
 
@@ -240,13 +242,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

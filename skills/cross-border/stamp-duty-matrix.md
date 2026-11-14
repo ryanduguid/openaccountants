@@ -4,7 +4,7 @@ description: Use this skill whenever an attorney, transaction lawyer, or in-hous
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - cross-border-workflow-base
@@ -156,7 +156,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Hong Kong** | Stamp duty on share transfers | 0.10% buyer + 0.10% seller (reduced from 0.13%, November 2023) |
 | **Singapore** | Stamp duty on share transfers | 0.2% of consideration (BSD subset for share transfers; ACD applies for residential property-rich entities) |
 | **Singapore — ACD** | Additional conveyance duty | Up to 65% on acquisition of significant equity interests in property-rich entities |
-| **Australia** | Stamp duty on share transfers | Abolished federally 2002; state-level mostly abolished for shares but landholder/property-rich rules apply (each state) |
+| **Australia** | Stamp duty on share transfers | Direct transfers of shares and units are no longer dutiable in any state or territory, on retained revenue-office verification; landholder rules apply (see `au-stamp-duty`) |
 | **New Zealand** | No stamp duty on shares | n/a |
 | **India** | Indian Stamp Act (federal stamp on securities since 2020; state stamp on instruments) | 0.005% on equity issuance and transfer; 0.015% on equity delivery-based; state-specific for other instruments |
 | **Japan** | Stamp duty on contracts and securities | Document-based (Stamp Tax Law, fixed amounts by document type); no FTT on share transfers |
@@ -274,13 +274,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

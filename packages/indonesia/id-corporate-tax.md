@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Indonesian corporate income ta
 jurisdiction: ID
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -98,7 +98,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Small-company facility scope** — Companies with annual gross turnover (peredaran bruto) up to IDR 50,000,000,000 receive a 50% reduction of the 22% rate applied to the slice of taxable income proportional to the first IDR 4,800,000,000 of gross turnover. Effective rate on the facility slice: 11%.  _(Pasal 31E UU 36/2008 (unchanged by UU HPP); SE-66/PJ/2010)_
 - **Pasal 31E formula** — Turnover ≤ IDR 4.8B:         PPh Badan = 11% × PKP IDR 4.8B < Turnover ≤ 50B:   Facility slice    = (4.8B / Turnover) × PKP Non-facility slice = PKP − Facility slice PPh Badan          = 11% × Facility + 22% × Non-facility Turnover > IDR 50B:           PPh Badan = 22% × PKP   (no facility)  _(Pasal 31E UU 36/2008 (unchanged by UU HPP); SE-66/PJ/2010)_
 - **Important** — Pasal 31E applies automatically — not a discretionary election. Computed for each fiscal year independently. A company that exits the IDR 50B band loses the facility for that year.  _(Pasal 31E UU 36/2008 (unchanged by UU HPP); SE-66/PJ/2010)_
-- **Interaction with PPh Final UMKM 0.5%** — Cannot stack — taxpayer elects one regime or the other. PPh Final UMKM is covered in `id-pph-final-umkm` and is time-limited for PTs (3 years under PP 55/2022). After expiry the PT defaults to standard PPh Badan with Pasal 31E available where eligible.  _(PP 55/2022)_
+- **Interaction with PPh Final UMKM 0.5%** — Cannot stack — taxpayer elects one regime or the other. PPh Final UMKM is covered in `id-pph-final-umkm`. Since PP 20/2026 (in force 22 April 2026) an ordinary PT registered from that date cannot use it; one registered earlier keeps it only until its 3-year PP 55/2022 window ends; a PT Perorangan has no time limit. Outside the regime the PT uses standard PPh Badan with Pasal 31E available where eligible.  _(PP 55/2022 as amended by PP 20/2026)_
 
 ### 3.3 Listed-Company Reduction — Pasal 17(2b)
 
@@ -442,13 +442,15 @@ This skill and its outputs are for informational and computational purposes only
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

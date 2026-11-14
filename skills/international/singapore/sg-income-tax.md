@@ -1,10 +1,10 @@
 ---
 name: sg-income-tax
 description: Use this skill whenever asked about Singapore income tax for self-employed individuals. Trigger on phrases like "how much tax do I pay in Singapore", "Form B", "Form B1", "IRAS income tax", "trade income", "capital allowances Singapore", "personal reliefs", "tax residence 183 days", "Section 10(1)(a)", "CPF self-employed", "self-employed tax Singapore", "myTax Portal", "DBS Bank statement", "OCBC income", "PayNow transfer", "Stripe Singapore", or any question about filing or computing income tax for a Singapore sole proprietor or freelancer. This skill covers progressive rates (0--24%), trade income computation, capital allowances (Section 19/19A), approved deductions, personal reliefs, CPF MediSave, tax residence rules, filing deadlines, and penalties. ALWAYS read this skill before touching any Singapore income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: SG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 18 April of the YA (e.g., 18 April 2026 for YA 2026) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by an Accredited Tax Adviser (Singapore) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Progressive Rate Table -- YA 2026 (Income Earned 2025) [T1]
 
@@ -311,7 +311,7 @@ Petrol purchased at Shell station SGD 120. The taxpayer drives a private car (S-
 
 ### 6.5 Working Mother's Child Relief (WMCR)
 
-- **WMCR rule** — WMCR is available only to working mothers (citizens or PRs). The relief is 15%/20%/25% of earned income for 1st/2nd/3rd+ children. Combined QCR + WMCR capped at SGD 50,000 per child.
+- **WMCR rule** — WMCR is available only to working mothers who are married, divorced or widowed, for a child who is a Singapore Citizen and meets the QCR conditions. From YA 2025, for a Singaporean child born or adopted on or after 1 January 2024, the relief is a fixed SGD 8,000/10,000/12,000 for the 1st/2nd/3rd+ child. For a child born or adopted before 1 January 2024, it is 15%/20%/25% of the mother's earned income, unless the child became a Singapore Citizen only after 1 January 2024, in which case the fixed amount applies. Combined QCR + WMCR capped at SGD 50,000 per child. _(Source: [IRAS WMCR](https://www.iras.gov.sg/taxes/individual-income-tax/employees/deductions-for-individuals/personal-reliefs-and-tax-rebates/working-mother's-child-relief-(wmcr)))_
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -471,6 +471,7 @@ ONBOARDING QUESTIONS -- SINGAPORE INCOME TAX
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 2.1 | November 2026 | WMCR: fixed-amount relief for children born or adopted on or after 1 January 2024 (YA 2025 onwards) |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; Singapore bank formats; local platform patterns (PayNow, Stripe SG, Shopee); worked examples |
 | 1.0 | 2025 | Initial version |
 
@@ -507,13 +508,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

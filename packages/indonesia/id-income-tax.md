@@ -1,10 +1,10 @@
 ---
 name: id-income-tax
 description: Use this skill whenever asked about Indonesian individual income tax — PPh Orang Pribadi. Trigger on phrases like "PPh OP", "pajak penghasilan orang pribadi", "how much income tax do I pay in Indonesia", "Indonesian tax brackets", "PTKP", "penghasilan tidak kena pajak", "NPWP", "non-NPWP surcharge", "SPT Tahunan 1770", "UU HPP", "IDR income tax", or any question about computing or filing personal income tax for an Indonesian resident or on Indonesia-source income. Covers the UU HPP Art. 17 progressive brackets (5% / 15% / 25% / 30% / 35%), PTKP by family status, the Art. 21(5a) non-NPWP surcharge, PKP rounding, and annual return filing. ALWAYS read this skill before touching any Indonesian personal income tax work.
-version: "0.1"
+version: "0.2"
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: RILIA PUTRI
 review_status: current
 category: international
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Indonesia Individual Income Tax (PPh Orang Pribadi)
 
-## Indonesia Individual Income Tax — PPh Orang Pribadi Skill v1.0
+## Indonesia Individual Income Tax — PPh Orang Pribadi Skill v1.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **RILIA PUTRI** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | NPWP format | NIK 16-digit (effective 1 July 2024 per PMK 112/2022 for Indonesian citizens) |
 | Validated by | Pending — requires sign-off by a registered Indonesian Konsultan Pajak |
 | Validation date | Verified by RILIA PUTRI (11.D43411) on 2026-06-03 |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Article 17 Progressive Brackets (UU HPP, effective 2022+)
 
@@ -83,9 +83,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Form | Who files | Notes |
 | --- | --- | --- |
-| 1770 | Individuals with business income or pekerjaan bebas (self-employed professionals) | Required for the scope of this skill |
-| 1770 S | Employees with annual gross income > IDR 60,000,000 from one or more employers (no business income) | Out of scope — see `id-payroll-pph21` |
-| 1770 SS | Employees with annual gross income ≤ IDR 60,000,000, one employer, no business income | Out of scope — see `id-payroll-pph21` |
+| SPT Tahunan PPh Orang Pribadi (single form, tax year 2025 onward) | Every individual (PER-11/PJ/2025 Art. 83); business and pekerjaan bebas income goes in Lampiran 3 | Required for the scope of this skill; employee-only returns are out of scope — see `id-payroll-pph21` |
+| 1770 (tax year 2024 and earlier) | Individuals with business income or pekerjaan bebas (self-employed professionals) | Legacy form |
+| 1770 S (tax year 2024 and earlier) | Employees with annual gross income > IDR 60,000,000 from one or more employers (no business income) | Legacy; out of scope |
+| 1770 SS (tax year 2024 and earlier) | Employees with annual gross income ≤ IDR 60,000,000, one employer, no business income | Legacy; out of scope |
 
 ### Conservative Defaults
 
@@ -117,10 +118,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **R-ID-IT-1** — PTKP status unknown. "PTKP family status drives the entire tax computation. Cannot compute without confirmation of marital status, number of dependents, and (if married) whether spouse income is combined or separate. Please confirm before proceeding."
 - **R-ID-IT-2** — UMKM Final 0.5% regime client. "If the client has elected the UMKM Final 0.5% regime under PP 55/2022 and remains within the eligibility window, route to `id-pph-final-umkm`. This skill covers progressive PPh OP only."
-- **R-ID-IT-3** — Employee-only client (no business income). "Pure employees file SPT 1770S or 1770SS based on PPh 21 withholding. Use `id-payroll-pph21` for withholding computation and the appropriate employee-return guidance. This skill covers individuals with business income or pekerjaan bebas."
+- **R-ID-IT-3** — Employee-only client (no business income). "Pure employees file the single SPT Tahunan PPh OP from tax year 2025 (1770S or 1770SS for 2024 and earlier) based on PPh 21 withholding. Use `id-payroll-pph21` for withholding computation and the appropriate employee-return guidance. This skill covers individuals with business income or pekerjaan bebas."
 - **R-ID-IT-4** — Corporate (PPh Badan) return. "PT, CV, koperasi, yayasan and other entities file SPT 1771 under different rules. Out of scope. Escalate to a corporate tax practitioner."
 - **R-ID-IT-5** — Partial-year resident or dual-resident. "Dual residency, mid-year migration, and split-year computations require treaty analysis. Out of scope. Escalate to a registered Konsultan Pajak."
-- **R-ID-IT-6** — Property / capital gains / final-tax categories. "Land and building transfers (PPh Final 2.5%), share disposals on IDX, government securities interest, lottery, and other PPh Final categories are reported separately on Form 1770 but not computed here. Flag for reviewer."
+- **R-ID-IT-6** — Property / capital gains / final-tax categories. "Land and building transfers (PPh Final 2.5%), share disposals on IDX, government securities interest, lottery, and other PPh Final categories are reported separately on the annual return (Lampiran 2 from tax year 2025) but not computed here. Flag for reviewer."
 - **R-ID-IT-7** — Arrears, audit, or STP/SKP enforcement. "Outstanding tax assessments (SKP/STP), ongoing audit (pemeriksaan), or objection (keberatan) proceedings carry penalty interest (currently published monthly by the Minister of Finance) and may have suspensive effects. Do not advise. Escalate immediately."
 - **R-ID-IT-8** — VAT (PPN) return requested. "This skill covers PPh OP only. For PPN preparation use `indonesia-vat`."
 - **R-ID-IT-9** — Payroll withholding for employees of the taxpayer. "Use `id-payroll-pph21` for PPh 21 and BPJS on employees. This skill handles only the taxpayer's own annual return."
@@ -254,9 +255,12 @@ For any specific filing, the reviewer must extract the exact percentage for the 
 
 | Form | Business income? | Employment income | Other income | Notes |
 | --- | --- | --- | --- | --- |
-| 1770 | Yes (business or pekerjaan bebas) | May coexist | May coexist | **Default for this skill** |
-| 1770 S | No | Yes, > IDR 60M gross | May include investment, rental | Out of scope |
-| 1770 SS | No | Yes, ≤ IDR 60M, single employer | None | Out of scope |
+| SPT Tahunan PPh OP (tax year 2025 onward) | Any | Any | Any | **Default for this skill**: one form for every individual (PER-11/PJ/2025) |
+| 1770 (to tax year 2024) | Yes (business or pekerjaan bebas) | May coexist | May coexist | Legacy form |
+| 1770 S (to tax year 2024) | No | Yes, > IDR 60M gross | May include investment, rental | Legacy; out of scope |
+| 1770 SS (to tax year 2024) | No | Yes, ≤ IDR 60M, single employer | None | Legacy; out of scope |
+
+From tax year 2025 the return is one main form with 5 attachments (PER-11/PJ/2025 Art. 83 and Lampiran G, as summarised by DDTC News; the regulation text was not read): Lampiran 1 (year-end assets and debts, dependants, net domestic employment income, list of bukti potong); Lampiran 2 (income under final PPh, non-taxable income, net foreign income); Lampiran 3 (business and pekerjaan bebas: 3A-1 to 3A-3 financial-statement reconciliation for trading, services and manufacturing, 3A-4 net income from records under NPPN, 3B gross turnover recap, 3C fiscal depreciation and amortisation, 3D specific expenses); Lampiran 4 (next year's PPh 25 and the taxpayer's and spouse's PPh payable); Lampiran 5 (loss compensation and deductions). Every individual completes Lampiran 1 Part A (assets) and Part C (dependants); the main-form answers decide the rest (for example 3B Part A for UMKM Final 0.5% users). Sections 7.2 and 7.3 describe the legacy 1770 layout; map its content to these attachments.
 
 ### 7.2 Form 1770 structure (high level)
 
@@ -273,7 +277,7 @@ For any specific filing, the reviewer must extract the exact percentage for the 
 | Lampiran III | — | Income subject to PPh Final and tax-exempt income (informational) |
 | Lampiran IV | — | Asset (harta) and liability (kewajiban) at year-end, dependents (tanggungan) |
 
-All four lampiran plus the induk are mandatory for 1770. Coretax DJP renders the form as an electronic flow; SPT submitted via Coretax must still reconcile to the legacy 1770 box structure.
+For tax year 2024 and earlier, all four lampiran plus the induk were mandatory for 1770. From tax year 2025 Coretax uses the single form described in 7.1.
 
 ### 7.3 Asset and liability disclosure (Lampiran IV)
 
@@ -357,7 +361,7 @@ Pembukuan would have been ~IDR 7,500,000 cheaper. The choice is not just about r
 
 ### 10.1 Coretax DJP
 
-- **Coretax DJP filing** — From tax year 2025 onward, the SPT Tahunan PPh OP is filed through Coretax DJP (https://coretaxdjp.pajak.go.id), which replaced the legacy DJP Online / e-Filing flow. Authentication uses NPWP/NIK + password + token (2FA via registered email or authenticator app). Key Coretax workflow steps: 1. Login → "Layanan Wajib Pajak" → "SPT Tahunan". 2. Select tax year and form (1770 for this skill). 3. Pre-population: Coretax pulls bukti potong from e-Bupot Unifikasi, e-Bupot 21/26, and PPh 25 records. Reviewer must reconcile against client's records. 4. Complete Lampiran I → II → III → IV → Induk in order. 5. Generate PPh 29 kode billing if payable. Pay via authorised channel (bank, post office, virtual account, fintech). 6. Submit SPT. Receive BPE (Bukti Penerimaan Elektronik) — keep as proof of filing.
+- **Coretax DJP filing** — From tax year 2025 onward, the SPT Tahunan PPh OP is filed through Coretax DJP (https://coretaxdjp.pajak.go.id), which replaced the legacy DJP Online / e-Filing flow. Authentication uses NPWP/NIK + password + token (2FA via registered email or authenticator app). Key Coretax workflow steps: 1. Login → "Layanan Wajib Pajak" → "SPT Tahunan". 2. Select the tax year; from tax year 2025 there is one individual return (PER-11/PJ/2025), with attachments driven by the main-form answers (section 7.1). 3. Pre-population: Coretax pulls bukti potong from e-Bupot Unifikasi, e-Bupot 21/26, and PPh 25 records. Reviewer must reconcile against client's records. 4. Complete the attachments the main form calls for, then the main form. 5. Generate PPh 29 kode billing if payable. Pay via authorised channel (bank, post office, virtual account, fintech). 6. Submit SPT. Receive BPE (Bukti Penerimaan Elektronik) — keep as proof of filing.
 
 ### 10.2 Deadlines
 
@@ -365,7 +369,7 @@ Pembukuan would have been ~IDR 7,500,000 cheaper. The choice is not just about r
 
 | Item | Deadline | Source |
 | --- | --- | --- |
-| SPT Tahunan PPh OP (1770/1770S/1770SS) | 31 March of following year | UU KUP Art. 3(3)(b) |
+| SPT Tahunan PPh OP (single form from tax year 2025; 1770/1770S/1770SS to 2024) | 31 March of following year | UU KUP Art. 3(3)(b) |
 | PPh 29 payment | Before SPT is filed (i.e. by 31 March) | UU KUP Art. 9(2)(c) |
 | PPh 25 monthly instalment payment | 15th of following month | PMK 242/PMK.03/2014 |
 | PPh 25 monthly reporting (where required) | Automatic via payment system |  |
@@ -405,7 +409,7 @@ The MoF interest rate is published monthly and depends on the type of breach (be
 | Bukti potong missing | Do not claim credit; flag and request from payer | Anti-double-credit |
 | Carry-forward loss in NPPN year | Disallow | NPPN is final-deemed, no loss carry |
 | Married couple — combined vs separate election unclear | Separate (TK/* each) | Cannot impose combined election without affirmative spouse consent |
-| 1770 vs 1770S — borderline (small side-gig) | Use 1770 if any pekerjaan bebas income exists | Captures business income properly |
+| 1770 vs 1770S — borderline (small side-gig), tax year 2024 and earlier only | Use 1770 if any pekerjaan bebas income exists | Captures business income properly |
 
 ## Section 12 — Sources
 
@@ -458,7 +462,7 @@ The MoF interest rate is published monthly and depends on the type of breach (be
 - NEVER include UMKM-Final income in the Article 17 progressive computation (it is already taxed finally).
 - NEVER round PKP up — UU PPh Art. 17(4) requires rounding down to IDR 1,000.
 - NEVER allow carry-forward loss in an NPPN year.
-- NEVER omit Lampiran IV asset and liability disclosure on Form 1770.
+- NEVER omit the asset and liability disclosure (Lampiran 1 from tax year 2025; Lampiran IV on Form 1770 before).
 - NEVER treat the NIK-as-NPWP transition as optional for Indonesian citizens post-1 July 2024.
 - NEVER present a refund (PPh 28A) without flagging the audit-on-restitution risk.
 - NEVER invent or guess an NPPN coefficient — if unsure, mark "TBC — verify with Indonesian accountant" and stop.
@@ -476,13 +480,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

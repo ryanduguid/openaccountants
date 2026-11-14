@@ -1,10 +1,10 @@
 ---
 name: bvi-tax
-description: Use this skill whenever asked about British Virgin Islands (BVI) taxation, payroll tax, or the absence of income tax and VAT. Trigger on phrases like "BVI tax", "British Virgin Islands tax", "BVI VAT", "BVI payroll tax", or any request involving BVI tax compliance. BVI does NOT have income tax, capital gains tax, or VAT. The primary tax is payroll tax. ALWAYS read this skill before handling any BVI tax work.
-version: 2.0
+description: British Virgin Islands tax reference for payroll, ordinary income tax, social contributions, customs and business company obligations. Read the linked guides for the applicable period.
+version: 2.1
 jurisdiction: VG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-11
 review_status: pending_review
 category: international
 tier: 2
@@ -26,11 +26,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | Payroll Taxes Act, 2004 (as amended); Customs Management and Duties Act |
 | Supporting legislation | BVI Business Companies Act, 2004; Economic Substance Act, 2018 |
 | Tax authority | Inland Revenue Department (IRD) |
-| Filing portal | https://www.bvi.gov.vg/departments/inland-revenue-department |
-| Filing deadline | Payroll tax monthly by 15th; annual reconciliation March 31 |
+| Filing portal | [eTax](https://efiling.gov.vg/) from 2 November 2026. [Ministry of Finance release](https://www.gov.vg/news/ministry-finance-launches-enhanced-etax-portal-and-online-tax-payments) |
+| Filing deadline | See the [payroll guide](vg-payroll-social.md) for the monthly and annual rules and their effective periods. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed BVI practitioner |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Tax Landscape
 
@@ -38,21 +38,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Tax Type | Status |
 | --- | --- |
-| Income Tax (personal/corporate) | None |
-| Capital Gains Tax | None |
+| Ordinary income tax | Zero-rated from 1 January 2005 according to the FSC. See the [income tax guide](vg-corporate-income-tax.md) for the retained Ordinance and company exemption. |
+| Gains on BVI business company securities | Section 242 exempts these gains from the Income Tax Ordinance. See the [income tax guide](vg-corporate-income-tax.md). |
 | VAT / Sales Tax | None |
-| Withholding Tax | None |
+| BVI business company payments | Section 242 exempts payments by companies within its scope from the Income Tax Ordinance. Check foreign withholding separately. |
 | Payroll Tax | Yes |
 | Customs Duties | Yes |
 | Property Tax | Yes |
-| Social Security (SSB) | Yes -- 9% total (4.5% each) |
-| National Health Insurance (NHI) | Yes -- 7.5% total (3.75% each) |
+| Social Security (SSB) | Private sector 4% employee and 4.5% employer. See the [Social Security Board](https://www.vissb.vg/contributions/) for other categories. |
+| National Health Insurance (NHI) | For employees, 3.75% each for employer and employee. See the [contributions guide](vg-payroll-social.md). |
 
 ### Payroll Tax Rates
 
-- **Class 1 payroll tax rate** — Employer 2% + Employee 8% = 10% (<=7 employees, payroll <=USD 150,000, revenue <=USD 300,000)
-- **Class 2 payroll tax rate** — Employer 6% + Employee 8% = 14% (all others)
-- **Employee exemption** — 10,000 USD (first USD 10,000 annual remuneration exempt)
+See the [payroll guide](vg-payroll-social.md) for the class rates, employer liability, employee deductions and the annual exemption.
 
 ### Conservative Defaults
 
@@ -60,7 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown employer class | Class 2 |
+| Unknown employer class | Confirm the class with Inland Revenue before calculating the liability. |
 | Unknown duty rate | General merchandise |
 | Unknown economic substance | Assume relevant activity applies |
 
@@ -76,7 +74,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal Catalogue
 
-- **R-VG-1 -- Income tax** — BVI has no income tax.  _(R-VG-1)_
+- **R-VG-1 — Income tax** — Check the [ordinary zero rate and company exemption](vg-corporate-income-tax.md). Confirm the applicable entity, period and any earlier assessment or top-up tax before giving a conclusion.
 - **R-VG-2 -- VAT/sales tax** — BVI has no VAT or sales tax.  _(R-VG-2)_
 - **R-VG-3 -- Economic substance detail** — Escalate to specialist.  _(R-VG-3)_
 - **R-VG-4 -- CRS/FATCA compliance** — Escalate to specialist.  _(R-VG-4)_
@@ -91,9 +89,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- |
 | SALARY, WAGES, BONUS, COMMISSION | Payroll tax base | Include in taxable remuneration |
 | BENEFITS IN KIND | Payroll tax base | Include |
-| CONTRACTOR (independent) | Not payroll tax | Verify independence |
-| SSB CONTRIBUTION | Social security | 4.5% employer + 4.5% employee |
-| NHI CONTRIBUTION | Health insurance | 3.75% + 3.75% |
+| CONTRACTOR | Check status | Determine whether the person is an employee, deemed employee or self-employed. |
+| SSB CONTRIBUTION | Social Security | Private sector 4% employee and 4.5% employer. [Social Security Board](https://www.vissb.vg/contributions/) |
+| NHI CONTRIBUTION | Health insurance | For employees, 3.75% each. See the [contributions guide](vg-payroll-social.md). |
 
 ### 3.2 Customs Duty Categories
 
@@ -108,26 +106,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.3 BVI BC Annual Fees
 
-**BVI BC Annual Fees**
-
-| Authorized Shares | Annual Fee (USD) |
-| --- | --- |
-| Up to 50,000 (no par) | 450 |
-| 50,001+ | 1,200 |
+See the [company formation guide](vg-company-formation.md) for the fee categories and annual due dates.
 
 ## Section 4 -- Worked Examples
 
 ### Example 1 -- Payroll Tax (Class 2)
 
-**Input:** Monthly payroll USD 50,000, 10 employees.
-
-**Computation:** Employer payroll tax: 6% x USD 50,000 = USD 3,000/month. Employee: 8% on remuneration above USD 10,000 annual exemption. Plus SSB 4.5% each + NHI 3.75% each.
-
+If Inland Revenue confirms a Class 2 employer has US$50,000 of taxable remuneration after applying the exemption, the total at 14% is US$7,000. Apply any permitted recovery from employees to their individual taxable amounts. Calculate Social Security and NHI separately. [Payroll and social contributions](vg-payroll-social.md)
 ### Example 2 -- BVI BC Annual Obligations
 
 **Input:** BVI BC with 10,000 no-par shares, no employees.
 
-**Classification:** Annual fee USD 450. No income tax. No payroll tax. Economic substance filing if conducting relevant activities.
+**Classification:** Check the [annual fee and financial return](vg-company-formation.md) and the [section 242 exemption](vg-corporate-income-tax.md). Check whether there is any deemed remuneration and whether economic substance reporting applies.
 
 ### Example 3 -- Import Duty
 
@@ -137,18 +127,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
-### 5.1 No Income Tax / No VAT
+### 5.1 Ordinary Income Tax and VAT
 
-- **No income tax / no VAT** — No personal/corporate income tax, no capital gains tax, no VAT/sales tax, no withholding tax, no estate tax.
+- See [corporate income tax](vg-corporate-income-tax.md) for the ordinary zero rate and section 242 exemption. See the [VAT and customs guide](vg-vat-gst.md) for indirect taxes.
 
 ### 5.2 Payroll Tax Filing
 
-- **Payroll tax filing deadlines and penalties** — Monthly by 15th. Annual reconciliation March 31. Late filing: USD 50/day. Late payment: 1.5%/month.
+- See the [payroll guide](vg-payroll-social.md) for the 2007 change to monthly filing, the annual return and the 2026 eTax route.
 
 ### 5.3 Social Security and NHI
 
-- **SSB and NHI rates** — SSB: 4.5% employer + 4.5% employee. NHI: 3.75% + 3.75%.
-
+- See the [payroll guide](vg-payroll-social.md) for the different contribution categories and earnings caps.
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Payroll Tax Exemptions
@@ -227,9 +216,9 @@ ONBOARDING QUESTIONS -- BVI TAX
 
 ## PROHIBITIONS
 
-- NEVER state BVI has income tax -- it does not
+- Confirm the applicable income tax period, entity and provision before applying the ordinary zero rate or a company exemption.
 - NEVER state BVI has VAT or sales tax -- it does not
-- NEVER apply income tax or VAT calculations to BVI transactions
+- Check the relevant guide before calculating a tax on a BVI transaction.
 - NEVER ignore payroll tax obligations
 - NEVER confuse government fees with taxes
 - NEVER ignore economic substance requirements
@@ -248,13 +237,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

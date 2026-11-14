@@ -1,11 +1,11 @@
 ---
 name: br-income-tax
 description: "Use esta skill sempre que for solicitado sobre o imposto de renda brasileiro para pessoas físicas autônomas (autônomos / profissionais liberais). Ative com frases como \"quanto de imposto eu pago no Brasil\", \"DIRPF\", \"IRPF\", \"Carnê-Leão\", \"livro caixa\", \"imposto de renda\", \"CPF\", \"declaração de imposto de renda Brasil\", \"despesas dedutíveis Brasil\", \"imposto autônomo Brasil\", \"desconto simplificado\", \"INSS autônomo\", \"pró-labore\", \"DAS MEI\", ou qualquer pergunta sobre apuração ou cálculo de imposto de renda para um cliente autônomo ou freelancer no Brasil. Esta skill cobre a DIRPF anual, os pagamentos mensais estimados via Carnê-Leão, as faixas progressivas do IRPF, livro caixa, deduções permitidas, desconto simplificado (20%), limites obrigatórios de entrega da declaração, contribuições ao INSS e penalidades. SEMPRE leia esta skill antes de tratar qualquer trabalho de imposto de renda brasileiro. Trigger also on: \"how much tax do I pay in Brazil\", \"DIRPF\", \"IRPF\", \"Carnê-Leão\", \"livro caixa\", \"income tax return Brazil\", \"deductible expenses Brazil\", \"self-employed tax Brazil\", \"INSS autônomo\"."
-version: 2.0
+version: 2.2
 jurisdiction: BR
 category: international
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 reviewed_by: Ariane Marrocos
 review_status: pending_review
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # BR Income Tax
 
-## Brasil — Imposto de Renda (IRPF e IRPJ) — Skill v2.1
+## Brasil — Imposto de Renda (IRPF e IRPJ) — Skill v2.2
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Reforma tributária 2026 — impacto no IR
 
-A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui apenas os tributos sobre o consumo (PIS, Cofins, ICMS, ISS, IPI) por CBS+IBS. **O IRPF e o IRPJ permanecem inalterados** estruturalmente — alíquotas, faixas, deduções, prazos, regimes (Lucro Real/Presumido/Arbitrado) seguem como hoje. Cuidado apenas com a interação contábil: créditos de CBS/IBS aparecem no resultado e podem alterar lucro contábil → lucro tributável.
+A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui apenas os tributos sobre o consumo (PIS, Cofins, ICMS, ISS, IPI) por CBS+IBS. **Essa reforma do consumo não altera o IRPF nem o IRPJ.** Outras leis, porém, alteraram o imposto de renda a partir de 2026: a Lei 15.270/2025 (redução do IRPF, tributação mínima das altas rendas e IRRF sobre lucros e dividendos) e a LC 224/2025 (acréscimo nos percentuais de presunção do lucro presumido acima de R$ 5.000.000,00 de receita bruta anual, CSLL de instituições financeiras e IRRF de 17,5% sobre JCP); ver as seções abaixo. Cuidado apenas com a interação contábil: créditos de CBS/IBS aparecem no resultado e podem alterar lucro contábil → lucro tributável.
 
 ### Faixas do IRPF 2025 (ano-calendário janeiro–dezembro 2025)
 
@@ -37,7 +37,19 @@ A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui 
 | Acima de 55.976,16 | 27,5% | 10.853,78 |
 
 - **Fórmula (anual)** — Imposto = (renda tributável × alíquota) − dedução
-- **Ano-calendário 2026 (DIRPF 2027)** — A tabela progressiva mantém-se, mas a Lei nº 15.270/2025 (art. 11-A da Lei nº 9.250/1995) reduz o imposto anual de modo a zerá-lo para rendimentos tributáveis até R$ 60.000,00 e, entre R$ 60.000,01 e R$ 88.200,00, em R$ 8.429,73 − (0,095575 × rendimentos tributáveis sujeitos ao ajuste anual), decrescente até zero; institui ainda a tributação mínima das altas rendas (ver 'Lucros e dividendos a partir de janeiro de 2026'). Não aplicar estas reduções ao ano-calendário 2025.
+- **Ano-calendário 2026 (DIRPF 2027)** — A tabela anual muda para a tabela abaixo (isenção até R$ 29.145,60; dedução da faixa de 27,5% de R$ 10.904,66; limite anual do desconto simplificado de R$ 17.640,00). Além disso, a Lei nº 15.270/2025 (art. 11-A da Lei nº 9.250/1995) reduz o imposto anual de modo a zerá-lo para rendimentos tributáveis até R$ 60.000,00 e, entre R$ 60.000,01 e R$ 88.200,00, em R$ 8.429,73 − (0,095575 × rendimentos tributáveis sujeitos ao ajuste anual), decrescente até zero; institui ainda a tributação mínima das altas rendas (ver 'Lucros e dividendos a partir de janeiro de 2026'). Não aplicar estas reduções ao ano-calendário 2025.
+
+**Tabela anual do ano-calendário 2026 (DIRPF 2027; Receita Federal, tabelas de 2026, a partir do exercício 2027)**
+
+| Faixa de renda anual tributável (BRL) | Alíquota | Dedução (Anual) |
+| --- | --- | --- |
+| Até 29.145,60 | Isento | 0 |
+| 29.145,61 – 33.919,80 | 7,5% | 2.185,92 |
+| 33.919,81 – 45.012,60 | 15% | 4.729,91 |
+| 45.012,61 – 55.976,16 | 22,5% | 8.105,85 |
+| Acima de 55.976,16 | 27,5% | 10.904,66 |
+
+Fonte aberta em 2026-11-01: https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026
 
 **Faixas mensais do Carnê-Leão** (dividir os limites anuais por 12; tabela mensal específica é publicada pela Receita Federal a cada ano — sempre confirmar a tabela mensal vigente do Carnê-Leão).
 
@@ -60,14 +72,27 @@ Fontes abertas em 2026-10-31: Lei 15.270/2025, publicação original (Senado): h
 
 - **IRPJ** — 15% sobre o lucro tributável, mais adicional de 10% sobre a parcela do lucro que ultrapassar R$ 240.000 anuais (R$ 20.000/mês)  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
 - **Lucro Real** — apuração pelo lucro contábil ajustado por adições/exclusões; obrigatório para receita > R$ 78 milhões/ano e para determinadas atividades  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
-- **Lucro Presumido** — base presumida sobre receita bruta (percentuais de 1,6% a 32% conforme atividade); opcional para receita ≤ R$ 78 milhões/ano  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
+- **Lucro Presumido** — base presumida sobre receita bruta (percentuais de 1,6% a 32% conforme atividade); opcional para receita ≤ R$ 78 milhões/ano. Desde 2026, acréscimo de 10% (dez por cento) nos percentuais de presunção do IRPJ e da CSLL, aplicado só sobre a parcela da receita bruta total que exceda R$ 5.000.000,00 no ano-calendário (limite proporcional a cada período de apuração, com ajuste nos períodos seguintes, e acréscimo proporcional às receitas de cada atividade). Pelo art. 14 da LC 224/2025, produz efeitos desde 1º/01/2026 para o IRPJ e desde 1º/04/2026 para a CSLL, sujeita à anterioridade nonagesimal; confirmar no Decreto 12.808/2025.  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017; LC 224/2025, arts. 4º, §§ 4º, VII, e 5º, e 14; Decreto 12.808/2025, art. 12)_
+- **CSLL** — 9% para as pessoas jurídicas em geral. Alíquotas maiores para seguradoras e instituições financeiras (15% ou 20%); desde 1º/04/2026, a LC 224/2025 fixou 12% (15% a partir de 2028) para instituições de pagamento e outras PJs do art. 3º, II-B, e 17,5% (20% a partir de 2028) para as do art. 3º, II-C.  _(Lei 7.689/1988, art. 3º, na redação da LC 224/2025, art. 7º)_
 - **Lucro Arbitrado** — aplicado quando a escrituração é imprestável ou ausente; bases majoradas  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
 
-Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
+Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017; LC 224/2025 (texto aberto em 2026-11-01: https://legis.senado.leg.br/norma/41886467/publicacao/41889674); Lei 7.689/1988, art. 3º (texto consolidado: https://legis.senado.leg.br/norma/549565).
+
+### IRRF sobre pagamentos a não residentes (principais alíquotas)
+
+| Rendimento pago ao exterior | IRRF | Fonte |
+| --- | --- | --- |
+| Lucros e dividendos | 10%, em qualquer valor, desde janeiro de 2026 | Ver 'Lucros e dividendos a partir de janeiro de 2026' |
+| Juros sobre o capital próprio (JCP) | 17,5% desde 1º/01/2026 (antes, 15%) | Lei 9.249/1995, art. 9º, § 2º, na redação da LC 224/2025, art. 8º; LC 224/2025, art. 14, III |
+| Serviços técnicos, assistência técnica e royalties de qualquer natureza | 15% | MP 2.159-70/2001, art. 3º |
+| Demais rendimentos do trabalho e da prestação de serviços | 25% | Receita Federal, tabelas de 2026, 'Remessas ao exterior' |
+| Demais rendimentos de fontes situadas no Brasil | 15% | Receita Federal, tabelas de 2026, 'Remessas ao exterior' |
+
+- **Antes de aplicar** — Verificar tratado para evitar a dupla tributação, alíquota majorada para beneficiário em país com tributação favorecida (exceto dividendos, já tratados acima), CIDE sobre royalties e serviços técnicos e o enquadramento do rendimento. Texto da MP 2.159-70/2001 aberto em 2026-11-01: https://legis.senado.leg.br/norma/558979
 
 ### Desconto Simplificado
 
-- **Desconto simplificado** — O contribuinte pode optar pelo desconto simplificado em vez das deduções via livro caixa: Dedução: 20% da renda bruta, limitada a BRL 16.754,34 por ano; Não exige comprovantes; Não pode ser combinado com as deduções do livro caixa; Vantajoso quando as despesas reais < 20% do bruto
+- **Desconto simplificado** — O contribuinte pode optar pelo desconto simplificado em vez das deduções via livro caixa: Dedução: 20% da renda bruta, limitada a BRL 16.754,34 por ano no ano-calendário 2025 (BRL 17.640,00 no ano-calendário 2026); Não exige comprovantes; Não pode ser combinado com as deduções do livro caixa; Vantajoso quando as despesas reais < 20% do bruto
 
 ### Livro Caixa (dedução das despesas reais)
 
@@ -77,9 +102,9 @@ Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 
 **Contribuições ao INSS para autônomos**
 
-| Tipo de contribuinte | Alíquota | Teto (2025) |
+| Tipo de contribuinte | Alíquota | Contribuição máxima |
 | --- | --- | --- |
-| Autônomo (contribuinte individual) | 20% | BRL 908,46/mês (teto INSS: BRL 7.786,02 × 11,67%) |
+| Autônomo (contribuinte individual) | 20% | BRL 1.631,48/mês em 2025 (20% × teto BRL 8.157,41); BRL 1.695,11/mês em 2026 (20% × teto BRL 8.475,55). Ver `br-inss` |
 | Empregador retendo do autônomo | 20% (empregador) | Sobre cada pagamento |
 | Microempreendedor Individual (MEI) | DAS fixo ~BRL 75/mês | Regime separado |
 
@@ -277,7 +302,7 @@ Receita bruta total: BRL 156.000
 (−) livro caixa: BRL 44.600
 Tributável: BRL 111.400
 
-IRPF: BRL 111.400 × 27,5% − BRL 10.740,98 = BRL 30.635 − BRL 10.740,98 = **BRL 19.894,02**
+IRPF: BRL 111.400 × 27,5% − BRL 10.853,78 = BRL 30.635 − BRL 10.853,78 = **BRL 19.781,22**
 (−) IRRF: BRL 1.800 e pagamentos de Carnê-Leão
 
 Alerta de alta renda: BRL 156.000 brutos → verificar se todos os Carnê-Leão mensais sobre renda PF foram pagos; penalidade se em atraso.
@@ -335,7 +360,7 @@ Bruto: BRL 72.000 — observação: BRL 72.000 < limite MEI BRL 81.000. Se Ferna
 Se confirmada como autônoma: prosseguir. INSS: BRL 14.400 (20% × BRL 72.000 — estimativa simplificada; o valor real depende do teto mensal). Desconto simplificado: BRL 14.400 vs. 20% (teto BRL 14.400 — igual). Despesas reais ~BRL 6.000. Usar simplificado (BRL 14.400 > BRL 6.000).
 
 Tributável: BRL 72.000 − BRL 14.400 = BRL 57.600
-IRPF: BRL 57.600 × 27,5% − BRL 10.740,98 = BRL 15.840 − BRL 10.740,98 = **BRL 5.099,02**
+IRPF: BRL 57.600 × 27,5% − BRL 10.853,78 = BRL 15.840 − BRL 10.853,78 = **BRL 4.986,22**
 
 ## Seção 5 — Regras Tier 1 (aplicar diretamente)
 
@@ -473,17 +498,19 @@ SEÇÃO F — ALERTAS PARA O REVISOR
 
 - **Lista de legislação** — RIR/2018 (Regulamento do Imposto de Renda) — Decreto 9.580/2018; Lei 7.713/1988 — rendimentos isentos de IRPF; Lei 9.250/1995 — alterações da legislação do IRPF; Lei 9.249/1995 — alíquotas de IRPJ e CSLL; Lei 15.270/2025 (lucros e dividendos, tributação mínima das altas rendas); Lei 9.430/1996 — apuração trimestral de IRPJ e demais ajustes; IN RFB 1.700/2017 — determinação e apuração do IRPJ e CSLL; IN RFB 2.178/2024 — regras do Carnê-Leão e DIRPF para o ano-calendário 2024; Instrução Normativa RFB 1.888/2019 — reporte de criptoativos; EC 132/2023, LC 214/2025, LC 227/2026 — reforma tributária (consumo); IR não é afetado estruturalmente
 
-### Calendário de entrega e pagamento 2025 (ano-base 2024)
+### Calendário de entrega e pagamento 2026 (ano-base 2025)
 
-**Calendário de entrega e pagamento 2025 (ano-base 2024)**
+**Calendário de entrega e pagamento 2026 (ano-base 2025)**  _(Receita Federal, notícia de 16/03/2026; IN RFB 2.312/2026)_
+
+Regra: o prazo final da DIRPF é o último dia útil de maio do ano seguinte ao ano-calendário. Para o ano-calendário 2026 (DIRPF 2027), confirmar as datas na instrução normativa anual.
 
 | Prazo | Evento |
 | --- | --- |
 | Último dia útil de cada mês | DARF de Carnê-Leão referente aos recebimentos do mês anterior |
-| 28 de fevereiro de 2025 | Clientes PJ devem emitir Comprovantes de Rendimentos |
-| 31 de março de 2025 | Abertura da entrega da DIRPF 2025 (ano-base 2024) |
-| 30 de maio de 2025 | Prazo final da entrega da DIRPF 2025 |
-| 30 de maio de 2025 | 1ª parcela do saldo de IRPF (ou pagamento único com desconto) |
+| Último dia útil de fevereiro de 2026 | Clientes PJ devem emitir Comprovantes de Rendimentos |
+| 23 de março de 2026 | Abertura da entrega da DIRPF 2026 (ano-base 2025) |
+| 29 de maio de 2026 | Prazo final da entrega da DIRPF 2026 |
+| 29 de maio de 2026 | 1ª quota do saldo de IRPF (ou quota única) |
 
 ### Referências úteis
 
@@ -504,13 +531,15 @@ A versão mais atualizada e verificada desta skill é mantida em [openaccountant
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

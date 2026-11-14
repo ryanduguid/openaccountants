@@ -1,11 +1,11 @@
 ---
 name: italy-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Italian VAT return (Liquidazione IVA Periodica / LIPE) for a self-employed individual or small business under the regime ordinario in Italy. Trigger on phrases like "prepare LIPE", "Italian VAT return", "Liquidazione IVA", "IVA italiana", "classify transactions for Italian VAT", or any request involving Italy VAT filing. This skill covers Italy only, regime ordinario (monthly or quarterly LIPE). Regime forfettario, regime dei minimi, split payment, margin schemes, and VAT groups are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Italian VAT work.
-version: 2.1
+version: 2.2
 jurisdiction: IT
 category: international
 tax_year: 2025
-last_updated: 2026-10-15
+last_updated: 2026-11-10
 depends_on:
   - vat-workflow-base
   - eu-vat-directive
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > **No claim about that jurisdiction's regime is made here**; this is a pointer only.
 
 
-## Italy VAT Return Skill (LIPE / Liquidazione IVA Periodica) v2.1
+## Italy VAT Return Skill (LIPE / Liquidazione IVA Periodica) v2.2
 
 ## Section 1 — Quick reference
 
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | https://www.agenziaentrate.gov.it (Fatture e Corrispettivi / Fisconline) |
 | Authority | Agenzia delle Entrate |
 | Currency | EUR only |
-| Filing frequencies | Monthly (turnover > €800,000 services / €800,000 goods in prior year); Quarterly (below thresholds, with 1% interest surcharge); Annual (Dichiarazione IVA by 30 April) |
+| Filing frequencies | Monthly (prior-year turnover > €500,000 for services businesses and professionals / > €800,000 for other activities; Agenzia delle Entrate, Come pagare l'IVA); Quarterly (at or below the thresholds, with 1% interest surcharge); Annual (Dichiarazione IVA by 30 April) |
 | Deadline | LIPE: last day of 2nd month after quarter end (Q1 by 31 May, Q2 by 16 Sept, Q3 by 30 Nov, Q4 by 28 Feb); monthly: 16th of following month for payment |
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Companion skill (Tier 2, EU directive) | **eu-vat-directive v0.1 or later — MUST be loaded** |
@@ -642,7 +642,7 @@ Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these I
 
 ### Validation status
 
-This skill is v2.1, written in April 2026 to align with the three-tier OpenAccountants architecture.
+This skill is v2.2. It was written in April 2026 to align with the three-tier OpenAccountants architecture and updated in November 2026.
 
 ### Sources
 
@@ -676,6 +676,7 @@ This skill is v2.1, written in April 2026 to align with the three-tier OpenAccou
 
 ### Change log
 
+- **v2.2 (November 2026):** Quarterly limit for services corrected to €500,000.
 - **v2.1 (April 2026):** Full rewrite to Malta v2.1 structure. 10 sections. Country-specific supplier pattern library.
 - **v1.0:** Initial skill.
 
@@ -697,7 +698,7 @@ This skill is v2.1, written in April 2026 to align with the three-tier OpenAccou
 14. Non-EU SaaS autofattura: yes (Example 1).
 15. Domestic reverse charge flagged: yes (Section 6.14).
 
-## End of Italy VAT Return Skill v2.1
+## End of Italy VAT Return Skill v2.2
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later AND `eu-vat-directive` v0.1 or later.
 
@@ -713,13 +714,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

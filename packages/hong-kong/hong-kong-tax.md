@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Hong Kong taxation, whether VAT
 jurisdiction: HK
 category: international
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accounting Skills Registry |
 | Validated By | Pending — requires validation by a licensed Hong Kong CPA or tax representative |
 | Validation Date | Pending |
-| Skill Version | 1.1 |
+| Skill Version | 1.2 |
 | Confidence Coverage | Tier 1: absence of VAT/GST, profits tax rates, salaries tax rates, property tax rate. Tier 2: source of income determination, offshore claims. Tier 3: complex cross-border structures, transfer pricing, advance rulings. |
 
 ## Confidence Tier Definitions
@@ -81,7 +81,7 @@ A GST proposal was considered in 2006 (Consultation Paper on Tax Reform) but was
 | --- | --- | --- |
 | Profits Tax (利得稅) | 8.25% on first HKD 2,000,000; 16.5% thereafter (corporations) | IRO s.14, s.14A |
 | Profits Tax (unincorporated) | 7.5% on first HKD 2,000,000; 15% thereafter | IRO s.14, s.14A |
-| Salaries Tax (薪俸稅) | Progressive rates: 2%, 6%, 10%, 14%, 17%; capped at standard rate 15% | IRO s.8, s.12, Schedule 2 |
+| Salaries Tax (薪俸稅) | Progressive rates: 2%, 6%, 10%, 14%, 17%; capped at standard rates of 15% on the first HKD 5,000,000 of net income and 16% on the remainder (2024/25 onwards) | IRO s.8, s.12, Schedule 2 |
 | Property Tax (物業稅) | 15% on net assessable value (80% of rental income after statutory deduction) | IRO s.5, s.5B |
 
 ### Territorial Principle [T1]
@@ -173,22 +173,24 @@ Sources: IRD Circular Letter on the Block Extension Scheme for 2025/26 (19 March
 | Next HKD 50,000 | 14% |
 | Remainder | 17% |
 
-- **Standard Rate Cap** — Total salaries tax cannot exceed 15% of net assessable income (before personal allowances). The taxpayer pays the LOWER of progressive rate tax or standard rate tax.
+- **Standard Rate Cap** — Total salaries tax cannot exceed tax at the standard rates on net income (before personal allowances): 15% on the first HKD 5,000,000 and 16% on the remainder (2024/25 onwards). The taxpayer pays the LOWER of progressive rate tax or standard rate tax. Source: GovHK, salaries tax rates: https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/salariesrates.htm
 
-### Personal Allowances (2024/25)
+### Personal Allowances (2024/25 to 2026/27)
 
 **Personal Allowances**
 
-| Allowance | Amount (HKD) |
-| --- | --- |
-| Basic Personal Allowance | 132,000 |
-| Married Person's Allowance | 264,000 |
-| Child Allowance (per child) | 130,000 |
-| Child Allowance (year of birth, additional) | 130,000 |
-| Dependent Parent/Grandparent (aged 55-59) | 25,000 each |
-| Dependent Parent/Grandparent (aged 60+) | 50,000 each |
-| Single Parent Allowance | 132,000 |
-| Disabled Dependant Allowance | 75,000 each |
+| Allowance | 2024/25 and 2025/26 (HKD) | From 2026/27 (HKD) |
+| --- | --- | --- |
+| Basic Personal Allowance | 132,000 | 145,000 |
+| Married Person's Allowance | 264,000 | 290,000 |
+| Child Allowance (per child) | 130,000 | 140,000 |
+| Child Allowance (newborn, additional) | 130,000 (year of birth) | 140,000 in each of the first 2 years (children born on or after 1 April 2025) |
+| Dependent Parent/Grandparent (aged 55-59) | 25,000 each | 27,500 each |
+| Dependent Parent/Grandparent (aged 60+) | 50,000 each | 55,000 each |
+| Single Parent Allowance | 132,000 | 145,000 |
+| Disabled Dependant Allowance | 75,000 each | 75,000 each (no change announced) |
+
+The 2026/27 increases and the 2025/26 tax reduction (100%, ceiling HKD 3,000) were passed on 13 May 2026 and gazetted on 22 May 2026. Source: IRD, 2026-27 Budget FAQ: https://www.ird.gov.hk/eng/faq/budget2026_27.htm
 
 ### Salaries Tax Deductions [T1]
 
@@ -200,7 +202,7 @@ Sources: IRD Circular Letter on the Block Extension Scheme for 2025/26 (19 March
 | Home loan interest | HKD 100,000 per year (max 20 years) | IRO s.26E |
 | Mandatory Provident Fund (MPF) contributions | HKD 18,000 per year | IRO s.12(1)(f) |
 | Approved charitable donations | 35% of assessable income | IRO s.26C |
-| Elderly residential care expenses | HKD 100,000 per year | IRO s.26D |
+| Elderly residential care expenses | HKD 100,000 per year (HKD 110,000 from 2026/27) | IRO s.26D |
 | Voluntary health insurance (VHIS) premiums | HKD 8,000 per insured person | IRO s.26P |
 | Qualifying annuity premiums and MPF voluntary contributions | HKD 60,000 combined | IRO s.26N, 26Q |
 | Domestic rent deduction | HKD 100,000 per year | IRO s.26R |
@@ -237,14 +239,14 @@ Sources: IRD Circular Letter on the Block Extension Scheme for 2025/26 (19 March
 
 | Transaction | Rate | Legislation |
 | --- | --- | --- |
-| Stock transfers | 0.13% of consideration (each side) | Stamp Duty Ordinance Cap. 117 |
+| Stock transfers | 0.1% of consideration (each side) from 17 November 2023 (previously 0.13%) | Stamp Duty Ordinance Cap. 117 |
 | Sale/purchase of immovable property (Scale 2) | Progressive: 1.5% to 4.25% | Cap. 117, Head 1(1) |
-| Special Stamp Duty (SSD) — resale within 36 months | 10-20% | Cap. 117, s.29CA |
-| Buyer's Stamp Duty (BSD) — non-permanent residents and companies | 15% (suspended in Feb 2024 Budget) | Cap. 117 |
-| New Residential Stamp Duty (NRSD) | Suspended from 28 Feb 2024 | Cap. 117 |
+| Special Stamp Duty (SSD) — resale within 36 months | Not charged on residential instruments executed on or after 28 Feb 2024; 10-20% for earlier instruments | Cap. 117, s.29CA |
+| Buyer's Stamp Duty (BSD) — non-permanent residents and companies | Not charged on residential instruments executed on or after 28 Feb 2024; 15% for earlier instruments | Cap. 117 |
+| New Residential Stamp Duty (NRSD) | Not charged on residential instruments executed on or after 28 Feb 2024 | Cap. 117 |
 | Lease agreements | 0.25-1% of annual rent | Cap. 117, Head 1(2) |
 
-**Note:** BSD and NRSD were suspended effective 28 February 2024 as part of property market support measures. Verify current status for any transaction.
+**Note:** SSD, BSD and NRSD are not charged on residential property instruments executed on or after 28 February 2024; they still apply to instruments executed before that date. Sources: IRD, https://www.ird.gov.hk/eng/ppr/archives/24022808.htm and https://www.ird.gov.hk/eng/faq/ssd.htm ; stock duty rate: https://www.info.gov.hk/gia/general/202311/15/P2023111500359.htm
 
 ### Hotel Accommodation Tax (HAT) [T1]
 
@@ -386,7 +388,7 @@ Action Required: Do not classify. Refer to licensed CPA/tax representative. Docu
 ### Test 5 -- Salaries Tax, Standard Rate Cap
 
 **Input:** Employee with net assessable income HKD 2,000,000 (after deductions), single, no dependants.
-**Expected output:** Progressive tax would be: 50,000 x 2% + 50,000 x 6% + 50,000 x 10% + 50,000 x 14% + 1,800,000 x 17% = 1,000 + 3,000 + 5,000 + 7,000 + 306,000 = HKD 322,000. Standard rate: (2,000,000 - 132,000 basic allowance) x 15% = HKD 280,200. Pay lower = HKD 280,200.
+**Expected output (2024/25 or 2025/26 allowances):** Net chargeable income = 2,000,000 - 132,000 basic allowance = HKD 1,868,000. Progressive tax: 50,000 x 2% + 50,000 x 6% + 50,000 x 10% + 50,000 x 14% + 1,668,000 x 17% = 1,000 + 3,000 + 5,000 + 7,000 + 283,560 = HKD 299,560. Standard rate (no allowances): 2,000,000 x 15% = HKD 300,000. Pay lower = HKD 299,560, before any tax reduction for the year.
 
 ## PROHIBITIONS [T1]
 
@@ -410,13 +412,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

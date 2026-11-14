@@ -1,10 +1,10 @@
 ---
 name: pk-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Pakistan. Trigger on phrases like \"Pakistan company formation\", \"SECP registration\", \"Pvt Ltd Pakistan\", \"AOP Pakistan\", \"PSEB IT registration\", \"Pakistan sole proprietor\", \"SMC-Pvt Pakistan\", \"incorporate Pakistan\", \"register company Pakistan\", \"FBR NTN\", \"STRN\", \"Companies Act 2017\", or any question about choosing or registering a Pakistani entity. Covers entity comparison (Sole Proprietorship, AOP / Partnership, Single Member Company SMC-Pvt, Private Limited Pvt Ltd, Public Limited PLC, NPO), SECP eServices portal registration steps, FBR NTN and STRN tax registration, sector-specific licensing (SBP for banking and fintech, PTA for telecom, NEPRA for power, SECP for capital markets), the **critical PSEB (Pakistan Software Export Board) registration** that unlocks the 0.25% / 1% concessional final tax on IT and IT-enabled services exports, and tax treatment by entity type. Out of scope: immigration / work visa / POC / NICOP sponsorship, bank account opening procedures (high-level only), full corporate governance and shareholders' agreement drafting, deep sector-specific regulatory licensing beyond signposting, and listing on the PSX. ALWAYS read this skill before advising on Pakistani entity formation."
-version: 1.1
+version: 1.2
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: Ibrar Ali
 review_status: pending_review
 depends_on:
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Formation
 
-## Pakistan — Business Formation & Entity Selection — Skill v1.1
+## Pakistan — Business Formation & Entity Selection — Skill v1.2
 
 > **How to read every "TBC — verify against Finance Act 2025" marker in this
 > guide: as naming the wrong Act.**
@@ -750,7 +750,7 @@ Pvt Ltd requires 2 members and 2 directors. For a true solo founder, the SMC-Pvt
 
 Portals: **ezfile.secp.gov.pk** (SECP), **iris.fbr.gov.pk** (FBR), **pseb.org.pk** (PSEB), **stza.gov.pk** (STZA), **sbp.org.pk** (SBP), **boi.gov.pk** (BOI), **sindhrevenue.gov.pk** (SRB), **pra.punjab.gov.pk** (PRA), **kpra.gov.pk** (KPRA), **bra.gob.pk** (BRA).
 
-Where a specific monetary threshold, slab rate, or sectoral capital floor is uncertain at the time of advice, mark as **TBC** and verify against the current **Finance Act 2025** schedule, the latest **SBP / SECP / PTA / NEPRA / DRAP circular**, and any **SRO** amendment in force before relying on it. The PSEB 0.25% / 1% rates and dividend treatment in particular have been reviewed at every recent Federal Budget and may shift in 2026.
+Where a specific monetary threshold, slab rate, or sectoral capital floor is uncertain at the time of advice, mark as **TBC** and verify against the schedule of the Finance Act governing the tax year (**Finance Act 2026** for TY 2026-27), the latest **SBP / SECP / PTA / NEPRA / DRAP circular**, and any **SRO** amendment in force before relying on it. Finance Act 2026 extended the PSEB 0.25% rate on IT and IT-enabled export proceeds to tax year 2029 (1% in any other case); dividend treatment is reviewed at each Federal Budget. [Finance Act 2026, Gazette p. 584](https://download1.fbr.gov.pk/Docs/20266291261044366FinanceAct2026.pdf)
 
 ## Disclaimer
 
@@ -764,13 +764,15 @@ The most up-to-date version is maintained at [openaccountants.com](https://opena
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

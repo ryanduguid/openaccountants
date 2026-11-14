@@ -1,10 +1,10 @@
 ---
 name: emerging-market-corridors
 description: "version: 1.0"
-version: 1.1
+version: 1.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-10-11
+last_updated: 2026-11-10
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -129,14 +129,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 1. **Capital gains history:** Pre-2016, capital gains on Indian shares by Mauritius residents were exempt from Indian tax (taxable only in Mauritius, which imposed 0% on foreign-source gains). This created massive treaty shopping. The 2016 Protocol introduced source-country taxation at 50% of India's domestic rate (grandfathered for investments made before April 2017; full domestic rate from April 2019).
 
-2. **2024 Protocol (signed 7 March 2024):** Introduces Principal Purpose Test (PPT) aligned with MLI. Awaiting ratification/notification by both countries. Once effective, treaty benefits will be denied if one of the principal purposes of an arrangement is to obtain treaty benefits.
+2. **2024 Protocol (signed 7 March 2024):** Introduces the Principal Purpose Test (PPT) aligned with the MLI and amends the preamble against treaty shopping. **In force from 10 August 2026**; India notified it by S.O. 5611(E) dated 13 October 2026. A treaty benefit is denied where obtaining it was one of the principal purposes of an arrangement or transaction, unless granting it accords with the object and purpose of the relevant provisions. The PPT takes effect from the Protocol's entry into force (Protocol Article 3(2)), and CBDT Circular No. 1 of 2025 says a bilaterally inserted PPT applies from the date the amending protocol enters into force. Treat it as applying to treaty benefits claimed for income arising on or after 10 August 2026, including income from structures set up earlier: Khaitan's summary ('transactions undertaken on or after 10 August 2026') is narrower, but Khaitan also advises investors to review existing structures. Under the same Circular, the grandfathering of capital gains on shares acquired before 1 April 2017 stays outside the PPT and is governed by the treaty's own provisions, which continue to apply. **Check for every claim for income arising on or after that date:** document the commercial purpose and Mauritius substance of the arrangement before applying any treaty rate in this table. Source: Khaitan & Co ERGO, 15 October 2026 (https://www.khaitanco.com/sites/default/files/2026-10/Ergo_Protocol%20to%20India-Mauritius%20DTAA%20Notified_15102026.pdf), citing Notification S.O. 5611(E) dated 13 October 2026; the notification itself (incometaxindia.gov.in, Notification No. 135/2026) returned HTTP 403. Circular No. 1 of 2025 content per EY India tax alert, 'CBDT issues guidance on application of Principal Purpose Test', January 2025 (https://www.ey.com/content/dam/ey-unified-site/ey-com/en-in/alerts-hub/2025/01/cbdt-issues-guidance-on-application-of-principal-purpose-test.pdf); the Circular on incometaxindia.gov.in returned HTTP 403.
 
 3. **LOB clause:** Mauritius-resident companies must satisfy LOB conditions including expenditure, substance, and no-round-tripping requirements.
 
 4. **Interest rate of 7.5%** is notably lower than most India treaties (typically 10-15%).
 
 5. India domestic WHT: dividends 20%, interest 20%, royalties/FTS 10%. India requires Form 10F (Form 41 from 2026) + TRC + LOB declaration.
-**Last verified:** May 2026
+**Last verified:** May 2026 (2024 Protocol status updated 1 November 2026)
 
 ## Turkey → Germany
 
@@ -294,13 +294,15 @@ This skill and its outputs are provided for informational and computational purp
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

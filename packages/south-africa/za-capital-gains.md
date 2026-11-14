@@ -1,10 +1,11 @@
 ---
 name: za-capital-gains
-description: "South Africa capital gains tax: 40% inclusion rate for individuals, annual exclusion R40,000, primary residence exclusion, small business disposal relief, death exclusion. Trigger on: \"South Africa CGT\", \"capital gains South Africa\", \"SARS capital gains\", \"CGT inclusion rate South Africa\", \"sell shares South Africa\", \"SA primary residence exemption\", \"R40,000 CGT exclusion\", \"Schedule 8 South Africa\"."
-version: 1.0
+description: "South Africa capital gains tax: 40% inclusion rate for individuals, annual exclusion R50,000 from 2026/27 (R40,000 before), primary residence exclusion, small business disposal relief, death exclusion. Trigger on: \"South Africa CGT\", \"capital gains South Africa\", \"SARS capital gains\", \"CGT inclusion rate South Africa\", \"sell shares South Africa\", \"SA primary residence exemption\", \"R40,000 CGT exclusion\", \"Schedule 8 South Africa\"."
+version: 1.1
 jurisdiction: ZA
-tax_year: 2025
-last_updated: 2026-09-29
+tax_year: 2026
+tax_year_notes: "2026/27 (year of assessment 1 March 2026 to 28 February 2027); 2025/26 figures shown for comparison"
+last_updated: 2026-11-10
 reviewed_by: Werner Britz
 review_status: pending_review
 category: international
@@ -25,9 +26,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Inclusion rate (individuals) | **40%** of net capital gain included in taxable income |
 | Inclusion rate (companies) | 80% |
 | Inclusion rate (trusts) | 80% (special trusts: 40%) |
-| Annual exclusion | **R40,000** per year (individual) |
-| Death exclusion | R300,000 in the year of death |
-| Primary residence exclusion | First R2,000,000 of gain exempt |
+| Annual exclusion | **R50,000** per year (individual) for 2026/27; R40,000 for 2025/26 |
+| Death exclusion | R440,000 in the year of death for 2026/27; R300,000 for 2025/26 |
+| Primary residence exclusion | First R3,000,000 of gain exempt for 2026/27; R2,000,000 for 2025/26 |
+| Small business exclusion (age 55+) | R2,700,000, business market value up to R15,000,000, for 2026/27; R1,800,000 and R10,000,000 for 2025/26 |
 | Top effective CGT rate (individuals) | ~18% (40% inclusion × 45% top marginal rate) |
 | Legislation | 8th Schedule to the Income Tax Act 58 of 1962 |
 | Form | IT12 (individual tax return), Schedule 8 |
@@ -35,9 +37,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Inclusion rate (individuals)** — 40% of net capital gain included in taxable income
 - **Inclusion rate (companies)** — 80%
 - **Inclusion rate (trusts)** — 80% (special trusts: 40%)
-- **Annual exclusion** — R40,000 per year (individual)
-- **Death exclusion** — R300,000 in the year of death
-- **Primary residence exclusion** — First R2,000,000 of gain exempt
+- **Annual exclusion** — R50,000 per year (individual) for 2026/27; R40,000 for 2025/26
+- **Death exclusion** — R440,000 in the year of death for 2026/27; R300,000 for 2025/26
+- **Primary residence exclusion** — First R3,000,000 of gain exempt for 2026/27; R2,000,000 for 2025/26
+- **Small business exclusion (age 55+)** — R2,700,000, business market value up to R15,000,000, for 2026/27; R1,800,000 and R10,000,000 for 2025/26
+- **Year of the figures** — SARS's CGT page gives the higher exclusions as the changes announced on 25 February 2026 (Budget 2026); the inclusion rates are unchanged. This guide applies them to the 2026/27 year of assessment (1 March 2026 to 28 February 2027) and the earlier figures to years ending on or before 28 February 2026. SARS's page does not state each change's commencement: confirm it in the amending Act before applying a new figure to a disposal near 1 March 2026.  _(SARS, Capital Gains Tax (CGT) rates, updated 26 February 2026, https://www.sars.gov.za/tax-rates/income-tax/capital-gains-tax-cgt/)_
 - **Top effective CGT rate (individuals)** — ~18% (40% inclusion × 45% top marginal rate)
 - **Legislation** — 8th Schedule to the Income Tax Act 58 of 1962
 - **Form** — IT12 (individual tax return), Schedule 8
@@ -48,21 +52,21 @@ Capital gains are not taxed at a separate rate. Instead, a percentage of the gai
 (the "inclusion rate") is added to taxable income and taxed at the taxpayer's
 marginal income tax rate.
 
-- **CGT calculation formula** — Net capital gain = Capital gains − Capital losses − Annual exclusion (R40,000) Taxable portion = Net capital gain × 40% (individuals) Tax = Taxable portion × marginal income tax rate (up to 45%) Maximum effective rate = 40% × 45% = 18%
+- **CGT calculation formula** — Net capital gain = Capital gains − Capital losses − Annual exclusion (R50,000 for 2026/27; R40,000 for 2025/26) Taxable portion = Net capital gain × 40% (individuals) Tax = Taxable portion × marginal income tax rate (up to 45%) Maximum effective rate = 40% × 45% = 18%
 
 ## Annual exclusion
 
-- **Annual exclusion** — Every individual receives a R40,000 annual capital gains exclusion — the first R40,000 of net gains each year is tax-free.
-- **Year of death exclusion** — In the year of death: R300,000 exclusion applies instead.
+- **Annual exclusion** — Every individual receives an annual capital gains exclusion — the first R50,000 of net gains each year is tax-free for 2026/27 (R40,000 for 2025/26).  _(SARS, Capital Gains Tax (CGT) rates, updated 26 February 2026, https://www.sars.gov.za/tax-rates/income-tax/capital-gains-tax-cgt/)_
+- **Year of death exclusion** — In the year of death: R440,000 exclusion applies instead for 2026/27 (R300,000 for 2025/26).
 
 ## Primary residence exclusion
 
-- **Primary residence exclusion amount** — Gain from disposal of a primary residence is excluded up to R2,000,000.
+- **Primary residence exclusion amount** — Gain from disposal of a primary residence is excluded up to R3,000,000 for 2026/27 (R2,000,000 for 2025/26).
 - **Conditions for primary residence exclusion** — The property must have been the individual's primary residence during ownership; Only one primary residence per person (and per married couple/civil union); Property must be in South Africa; If the property is partly used for business, the exclusion is apportioned
 
 ## Small business disposal relief
 
-- **Small business disposal relief** — Where a person aged 55+ disposes of an asset used in a small business (market value < R10,000,000) in contemplation of retirement, a R1,800,000 lifetime exclusion applies (separate from the annual exclusion).
+- **Small business disposal relief** — Where a person aged 55+ disposes of an asset used in a small business (market value not exceeding R15,000,000 for 2026/27; R10,000,000 for 2025/26) in contemplation of retirement, a lifetime exclusion of R2,700,000 for 2026/27 (R1,800,000 for 2025/26) applies (separate from the annual exclusion).
 
 ## Capital losses
 
@@ -79,6 +83,7 @@ marginal income tax rate.
 
 - Income Tax Act 58 of 1962, Eighth Schedule
 - SARS: sars.gov.za/types-of-tax/capital-gains-tax/
+- SARS, Capital Gains Tax (CGT) rates, updated 26 February 2026, https://www.sars.gov.za/tax-rates/income-tax/capital-gains-tax-cgt/
 
 > Working paper only. The valuation date election for pre-October 2001 assets requires
 > specific analysis. Have a qualified South African CA(SA) or tax practitioner review.
@@ -89,13 +94,15 @@ marginal income tax rate.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

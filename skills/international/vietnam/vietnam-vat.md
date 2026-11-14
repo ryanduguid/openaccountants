@@ -5,7 +5,7 @@ version: 2.0
 jurisdiction: VN
 tax_year: 2026
 tax_year_notes: "The 8% reduced rate runs from 1 July 2025 to 31 December 2026. No extension was found as at 31 October 2026. From 1 January 2027, unless extended, supplies shown at 8% return to 10%."
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -103,7 +103,7 @@ Supplies at 8% are also listed on Form 01, Annex III of Decree 174/2025/ND-CP, f
 ### Refusal catalogue
 
 - **R-VN-1 — Direct method taxpayers (phương pháp trực tiếp)** — "Direct method taxpayers pay VAT on the value-added margin, not on gross output minus gross input. They cannot claim input credits in the same way. Confirm the calculation method before proceeding. This skill primarily covers the deduction method."
-- **R-VN-2 — Businesses below VND 1 billion** — "A household or individual business with annual revenue of VND 1 billion or less pays no VAT (from 1 January 2026). An enterprise below VND 1 billion still pays VAT, by the direct method unless it opts into the deduction method. Confirm the business type and method before proceeding."
+- **R-VN-2 — Businesses below VND 1 billion** — "A household or individual business with annual revenue of VND 1 billion or less pays no VAT (from 1 January 2026). An enterprise below VND 1 billion still pays VAT, by the direct method unless it opts into the deduction method; its exemption is from CIT, not VAT (Law 67/2025/QH15, art. 4.14a, added by Law 09/2026/QH16; see `vn-corporate-income-tax`). Confirm the business type and method before proceeding."
 - **R-VN-3 — Partial exemption proration** — "If the business makes both taxable and exempt supplies, input VAT must be apportioned. Apportionment requires the taxable/total revenue ratio for the year. Out of scope without full-year data — escalate."
 - **R-VN-4 — Real estate and construction** — "Real estate development and construction have special VAT treatment for housing and land. Out of scope — escalate to a licensed tax agent."
 - **R-VN-5 — Foreign contractor withholding tax (FCT)** — "Foreign contractors providing services in Vietnam are subject to Foreign Contractor Tax (FCT = CIT + VAT withholding). FCT is different from the regular GTGT return. Out of scope."
@@ -555,13 +555,15 @@ The most up-to-date version is maintained at openaccountants.com.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

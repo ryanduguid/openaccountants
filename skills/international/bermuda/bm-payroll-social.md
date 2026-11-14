@@ -4,14 +4,16 @@ description: "Source-cited draft: payroll & social contributions for Bermuda (ta
 jurisdiction: BM
 category: payroll
 tax_year: 2026
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-11-14
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Bermuda Payroll & Social Contributions
+
+**System reconciliation boundary, 14 November 2026.** The payment-date/public-link correction below is supported by the current official payroll page. The retained detailed rates, class boundaries, remuneration rules and contributions have not been fully reconciled in this system update, including differences from the general tax guide. Treat a calculation or social-insurance remittance decision using these unreconciled details as **Needs Input** until its topic-specific review is complete. Use the [tax overview](bm-tax-overview.md) for authorities, periods and remaining source gaps.
 
 ## Payroll tax
 
@@ -24,11 +26,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Employee portion — Band 1 (first BMD 48,000)** — 0.25% on the first BMD 48,000 of annual remuneration for 1 April 2026 to 31 March 2027  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026)_
 - **Employee portion — Band 2** — 7.75% on remuneration from BMD 48,001 to 96,000  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026)_
 - **Employee portion — band structure** — Progressive (marginal) across five bands up to the BMD 1,000,000 cap: 0.25% to BMD 48,000; 7.75% to 96,000; 10.75% to 200,000; 11.50% to 500,000; 12.50% to 1,000,000  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026)_
-- **Payroll tax filing & payment frequency** — Quarterly returns and payment to the Office of the Tax Commissioner, due 15 April, 15 July, 15 October and 15 January (a 15-day grace period after each quarter end); exempted companies and employers with annual remuneration above BMD 200,000 must file online at etax.gov.bm  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026 ; Government of Bermuda, Payroll Tax page (Office of the Tax Commissioner) — https://www.gov.bm/payroll-tax)_
+- **Payroll payment dates and online route:** the [official payroll page](https://www.gov.bm/articles/payroll-tax), checked on 14 November 2026, states payment on 15 January, 15 April, 15 July and 15 October. It requires all exempted companies and companies with annual remuneration greater than BMD 200,000 to submit online and links www.etax.gov.bm. Start from that official page; secure sign-in, the actual return/submission workflow and successful filing are untested. The former 15 March annual-reconciliation claim in companion text is unverified. Do not infer filing mechanics or a grace-period entitlement beyond the source’s statement.
 - **Social insurance (contributory pension) total contribution** — BMD 75.30 per week (combined employer + employee)  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
 - **Social insurance split** — Employer pays 50% (BMD 37.65/week) and employee pays 50% (BMD 37.65/week) for workers aged 16-64  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
 - **Social insurance — employees aged 65+** — Only the employer portion is due; no employee contribution  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
-- **Social insurance remittance deadline** — Employer billed monthly; payment due by the last Friday of that month  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
+- **Social insurance remittance deadline:** the inherited monthly/last-Friday claim is **Needs Input**. The cited [Social Insurance landing page](https://www.gov.bm/department/social-insurance) identifies the administrator but does not reconcile this procedure. Verify the applicable remittance rule and period before giving a deadline.
 - **Occupational (private) pension contribution** — Mandatory for Bermudians/spouses under the National Pension Scheme; typically 5% employer + 5% employee of pensionable earnings (approx — confirm current rate)  _(National Pension Scheme (Occupational Pensions) Act 1998 (https://www.gov.bm/bermuda-pension))_
 
 <!-- openaccountants-cta-block -->
@@ -37,13 +39,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

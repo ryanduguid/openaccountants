@@ -1,0 +1,29 @@
+# New Zealand ordinary company income tax and 2026 IR4
+
+Checked on 13 November 2026. This is the first ordinary resident-company IR4 working-paper guide in the New Zealand pack. It covers the standard income year 1 April 2025 to 31 March 2026 and a confirmed 31 March balance date. It remains tier 2 with pending review. It establishes neither complete company/reporting coverage nor practitioner sign-off.
+
+## Computation and form controls
+
+The guide bridges evidenced accounting profit to tax income, keeps separately returned income out of business income, deducts eligible donations once and permits only independently established available losses. A current excess of deductions produces a reported loss and zero statutory net income/basic tax. The ordinary 28% rate is conditional on exclusion from the special basic-rate clauses. The annual rates Act expressly adopts the basic rates for 2025-26; the later current consolidation alone does not establish that year’s rate.
+
+The 2026 form controls income aggregation, ordered foreign/imputation/withholding credits, signed residual income tax and the separate subtraction of actual provisional payments. Domestic interest is gross, with allowed withholding separate. Dividend income includes attached credits; the combined credit ceiling applies per dividend and the imputation/RWT allocation must be established before using the form fields. Excess imputation can produce a potential tax-loss adjustment, not refundable withholding or an automatically available carried-forward loss. An indicated overpayment remains subject to the imputation credit account and refund conditions.
+
+The guide identifies IR10/accounts, shareholder and annual imputation handoffs. Full ICA calculations, loss continuity/grouping, special companies, foreign/property treatments, statutory reporting/audit thresholds, Companies Office obligations and full provisional-tax methods remain outside this core. Missing evidence stops a filing-ready conclusion. No numerical defaults replace facts. The companion universal and corporate workflow contracts remain mandatory.
+
+## Primary evidence and currentness
+
+- [2026 IR4 form](https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1---ir99/ir4/ir4-2026.pdf?modified=20260331185611), 7 pages: native text extracted, selected pages read and pages 3–4 visually inspected. SHA256 1fdb5481c3f35bd8e1a18915a9ce6152620c0cfc3dbd81c5f93580fd57f1dc87.
+
+- [IR4GU, April 2026](https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir1---ir99/ir4gu/ir4gu-2026.pdf?modified=20260331185400), 53 pages: selected filing, income, credit, loss, refund and handoff instructions read; page 14 visually inspected. Native extraction recorded complex layout, without encoding/OCR flags. The whole guide was not substantively reviewed. SHA256 7bbf26a2dfb06c61302de444d6d1b56cafb35392cabe0e5c6f3c4f766ebff1ce.
+
+- [Income Tax Act 2007 core provisions](https://www.legislation.govt.nz/act/public/2007/97/en/latest/parts/DLM1512313/): selected BB 1 and BC 4–6; [Schedule 1 Part A clause 2](https://www.legislation.govt.nz/act/public/2007/97/en/latest/parts/DLM1523173/#DLM1523192) and [Taxation (Annual Rates for 2025–26, Compliance Simplification, and Remedial Measures) Act 2026, section 3](https://www.legislation.govt.nz/act/public/2026/8/en/latest/). The operative ITA consolidation is dated 4 September 2026. The live Versions warning lists 13 instruments; its exact URL set matched retained captures, all 13 hashes were checked and an independent selected-provision review found no amendment to the adopted core/rate provisions. This is a scoped currentness screen, not a whole-Act review or proof of Part I loss availability.
+
+- IRD public guidance on [IR4 filing](https://www.ird.govt.nz/ir4), [company rates](https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/tax-rates-for-businesses) and [non-active companies](https://www.ird.govt.nz/roles/companies/non-active-companies) was captured on 13 November 2026. The [financial-reporting page](https://www.ird.govt.nz/managing-my-tax/record-keeping/financial-reporting-for-companies/financial-reporting-requirements-for-companies) supports the reporting boundary only; its numerical thresholds were not adopted. No logged-in portal was used.
+
+- Retained issuer captures of the [payment-day rule](https://www.ird.govt.nz/managing-my-tax/make-a-payment/when-to-pay) and [2027 public holidays](https://www.govt.nz/browse/work/public-holidays-and-work/public-holidays-and-anniversary-dates/) were reused with exact hash readback. The nominal 7 February 2027 terminal date falls on Sunday and the observed holiday is Monday 8 February, deriving Tuesday 9 February under that rule. Actual myIR dates, extensions and special dates still need confirmation. Company provisional methods are not inferred from the individual-only guide.
+
+## Worked checks and limits
+
+Nine conditional executable cases cover the profit bridge, separate interest, current loss/withholding, excess imputation, the per-dividend credit ceiling, no duplicate credits, donations once, an active zero-income company and independently available losses. The focused repository checker passed all 9 blocks. An independent PowerShell System.Decimal calculation matched all 45 expected values, without using the checker or its step expressions. A fresh read-only review found no actionable contradiction within the stated scope.
+
+These checks accept classification, entitlement and allowed amounts as inputs. All worked amounts are whole dollars; this update does not establish fractional-cent tax or return-field rounding. It does not test a live return, spreadsheet artifact, LLM upload or professional sign-off. Broader NZ company and reporting work remains open.

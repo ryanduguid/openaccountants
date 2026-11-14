@@ -1,11 +1,11 @@
 ---
 name: saudi-arabia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Saudi Arabia VAT return for any client. Trigger on phrases like "prepare VAT return", "Saudi VAT", "ZATCA return", "KSA VAT", "fill in VAT return", "Fatoorah", "e-invoicing Saudi", or any request involving Saudi Arabia VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers KSA only and only standard VAT-registered persons. VAT groups, profit margin schemes, partial exemption with significant exempt supplies, oil & gas sector special rules, and designated zone goods movement classifications are all in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any KSA VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: SA
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -472,7 +472,7 @@ Each rule states the legal source and the field mapping. Apply silently if the d
 
 ### 5.12 Penalty amnesty
 
-- **Penalty amnesty** — ZATCA penalty cancellation initiative extended to 30 June 2026. Covers late registration, late filing, late payment, and correction penalties. Requires: taxpayer registered, all returns submitted, full principal tax paid.
+- **Penalty amnesty** — ZATCA's Cancellation of Fines and Exemption of Financial Penalties Initiative was extended for 6 months from 1 July 2026 and ends on **31 December 2026**. Covers late registration, late filing and late payment penalties, and VAT return correction fines. Requires: taxpayer registered, all outstanding returns submitted, full principal tax paid (an instalment plan requested whilst the initiative is in effect, with every instalment paid on time, also qualifies). **Excluded:** penalties on any return that falls due after 30 June 2026 (ZATCA says any further extension will not cover them either), tax evasion penalties, fines under VAT Law Art. 45, and fines already paid before the initiative's effective date.  _(ZATCA, 29 June 2026, https://zatca.gov.sa/en/MediaCenter/News/Pages/Cancellation-of-fines-Dec-2026.aspx)_
 
 ### 5.13 Sales — domestic standard
 
@@ -701,6 +701,7 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structu
 
 ### Change log
 
+- **v2.1 (November 2026):** Penalty amnesty (Section 5.12) updated to the extension ending 31 December 2026, with its exclusions.
 - **v2.0 (April 2026):** Full rewrite to align with Malta v2.0 structure. Quick reference with field table, e-invoicing phases summary, and conservative defaults at top (Section 1). Supplier pattern library with Saudi vendors (Al Rajhi, SNB, Riyad Bank, STC, Mobily, SEC, SWCC, Panda/Carrefour, Jarir, SAUDIA, ZATCA) in Section 3. Six worked examples (Section 4). Compressed Tier 1 rules (Section 5). Tier 2 catalogue (Section 6). Excel working paper (Section 7). Saudi bank statement guide with Al Rajhi/SNB formats, SADAD/Mada patterns, Arabic descriptions (Section 8). Onboarding fallback (Section 9). References (Section 10).
 - **v1.1 (April 2026):** Updated with April 2025 IR amendments, penalty amnesty extension, e-invoicing wave 24.
 - **v1.0 (April 2026):** Initial standalone skill covering VAT Law, field mappings, reverse charge, blocked categories, e-invoicing, registration, penalties.
@@ -743,13 +744,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

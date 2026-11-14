@@ -1,10 +1,10 @@
 ---
 name: italy-financial-statements
 description: Use this skill when preparing, reviewing, or advising on annual financial statements (bilancio d'esercizio) for an Italian company. Trigger on phrases like "bilancio", "deposito bilancio", "Camera di Commercio", "Registro delle Imprese", "XBRL Italy", "codice civile 2423", "bilancio abbreviato", "micro imprese", "OIC", "revisione legale", "collegio sindacale", "nota integrativa", or any question about preparing and filing statutory accounts under Italian civil code. Covers OIC standards, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
-version: 1.0
+version: 1.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - financial-statements-workflow-base
@@ -85,7 +85,7 @@ Effective for financial years beginning on or after 1 January 2024 (D.Lgs. 125/2
 | 4 | Ratei e risconti (Accruals/prepayments) | OIC 18; strict time-proportion basis |
 | 5 | Svalutazione crediti (Bad debts) | OIC 15; specific + portfolio-based allowance |
 | 6 | Rimanenze (Inventory) | OIC 13; lower of cost (FIFO/LIFO/weighted average) and realisable value |
-| 7 | Imposte differite (Deferred tax) | OIC 25; temporary differences; IRES 24% + IRAP 3.9% |
+| 7 | Imposte differite (Deferred tax) | OIC 25; temporary differences; IRES 24% + IRAP 3.9%, at the rates expected for the year the differences reverse under the tax law in force at the balance sheet date, or the rates in force at that date where the law sets none (OIC 25). The 20% 'IRES premiale' applies only to the tax period following the one in progress at 31 December 2024 (2025 for calendar-year companies) if the conditions of L. 207/2024, art. 1, commi 436-444 are met; confirm before using it |
 | 8 | Operazioni in valuta estera (FX) | OIC 26; monetary items at closing rate; unrealised gains to reserve |
 | 9 | Leasing (locazione finanziaria) | OIC: off-balance sheet (operating method) — unlike IFRS 16 |
 | 10 | Rivalutazioni (Revaluations) | Only if permitted by specific law (legge di rivalutazione) |
@@ -260,13 +260,15 @@ This skill and its outputs are provided for informational and computational purp
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

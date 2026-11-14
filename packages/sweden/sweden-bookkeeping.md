@@ -5,7 +5,7 @@ version: 1.7
 jurisdiction: SE
 tax_year: 2026
 tax_year_notes: "2026 BAS and selected accounting rules for financial years beginning after 31 December 2025; the extended-first-year selector is stated below. Earlier 2025 tax shortcuts are withdrawn from operative use pending qualification."
-last_updated: 2026-11-03
+last_updated: 2026-11-06
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -657,6 +657,8 @@ These selected rules do not establish eligibility or a complete fund calculation
 ### Tax and other-domain handoffs
 
 For AB tax, load `se-corporate-income-tax` only with its base, applicable source/period qualification and professional review. That companion remains a draft; this reference does not confer sign-off or clear its filing/payment holds. `se-income-tax` concerns sole traders, not an AB. VAT, payroll, social contributions, invoicing and financial statements need their own qualified companions and complete outputs. A code containing a rate, or a profit from the bookkeeping case, does not supply any tax base, rate, return or election. The historical shortcuts withdrawn below stay unavailable until separately qualified.
+
+Non-resident dividend withholding belongs in `se-corporate-income-tax`, which states the domestic kupongskatt rule in Kupongskattelag (1970:624) 4 and 5 §§ and the recipient, permanent-establishment and treaty conditions. Interest and royalty withholding stays unqualified there: confirm the payment, the recipient and any permanent establishment with Skatteverket before applying a rate.
 
 ### When to refuse or refer
 

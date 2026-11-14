@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Thailand (tax year 2025) — 
 jurisdiction: TH
 category: international
 tax_year: 2025
-last_updated: 2026-10-11
-version: 1.3
+last_updated: 2026-11-11
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -30,8 +30,8 @@ Thailand taxes income under the Revenue Code, administered by the Revenue Depart
 - **Does Thailand have VAT?** — Yes — VAT applies at a standard rate of 7%  _(Revenue Code (Revenue Department English translation), s. 80 (10% statutory rate, reducible by Royal Decree) — https://www.rd.go.th/english/37732.html)_
 - **Annual personal income tax return deadline** — On or before the last day of March following the tax year (s. 56); e-filing is typically extended by about 8 days  _(Revenue Code (Revenue Department English translation), s. 56 — https://www.rd.go.th/english/37749.html#section56)_
 - **Annual corporate income tax return deadline** — Within 150 days of the accounting period end (Form PND.50)  _(Revenue Code (Revenue Department English translation), s. 68 — https://www.rd.go.th/english/37764.html#section68)_
-- **Top-up tax — the instrument and its dates** — *Emergency Decree on Top-up Tax, B.E. 2567 (2024)*, approved by Cabinet **11 December 2024** and promulgated in the Royal Gazette **26 December 2024**. It applies to large MNE groups with consolidated financial statement revenues of **at least EUR 750 million**, for **accounting periods commencing on or after 1 January 2025**. Filing is through a fully electronic system  _([Revenue Department, News No. 6/2025](https://www.rd.go.th/fileadmin/user_upload/news/2567eng/englishnews_6_2025.pdf))_
-- **Top-up tax — the scope rules were still draft a year in** — On **30 December 2025** the Cabinet approved **in principle** four draft instruments of secondary legislation prescribing which MNE groups are subject to the charge and how income, expenses and covered taxes are adjusted in computing it. Confirm their current status before relying on a scope conclusion. See `th-corporate-income-tax` for the full treatment  _([Revenue Department, News No. 5/2026](https://www.rd.go.th/fileadmin/user_upload/news/2568eng/englishnews_5_2026.pdf))_
+- **Top-up tax.** The Emergency Decree on Top-up Tax, B.E. 2567 (2024), applies for accounting periods beginning on or after 1 January 2025. The general test for a Thai constituent entity uses its multinational group's consolidated revenue, with a threshold of at least the Thai-currency equivalent of EUR 750 million in at least 2 of the 4 preceding accounting periods. Separate exclusion rules apply. [Emergency Decree, ss 2 and 26–27](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf)
+- **Top-up tax filing.** The notification, GloBE Information Return and any return with tax payable have separate requirements. They are ordinarily due within 15 months of the relevant accounting period end, extended to 18 months for the first period in scope. See [Thailand Corporate Income Tax](th-corporate-income-tax.md) for the period-end rules, foreign filing conditions and the 2026 decree on excluded entities. [Emergency Decree, ss 53–58](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf) · [Royal Decree, ss 2–5](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/dctut.pdf)
 
 <!-- openaccountants-cta-block -->
 
@@ -39,13 +39,15 @@ Thailand taxes income under the Revenue Code, administered by the Revenue Depart
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

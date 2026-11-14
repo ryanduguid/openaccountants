@@ -1,10 +1,10 @@
 ---
 name: saudi-einvoice
 description: Use this skill whenever asked about Saudi Arabia e-invoicing, ZATCA FATOORA platform, Phase 1 generation, Phase 2 integration, e-invoice clearance, e-invoice reporting, ZATCA API, UBL 2.1 XML for Saudi invoices, cryptographic stamp, QR code TLV encoding, ECDSA signing, CSID certificate, onboarding OTP, Simplified vs Standard tax invoice, B2B clearance, B2C reporting, or any question about generating, submitting, or troubleshooting Saudi e-invoices. Also trigger when advising on ZATCA compliance waves, XML structure, digital signature requirements, or integration architecture. ALWAYS read this skill before touching any Saudi e-invoice work.
-version: 1.0
+version: 1.1
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: Mehran Habib
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Saudi Einvoice
 
-## Saudi Arabia ZATCA E-Invoice (FATOORA) Skill v1.0
+## Saudi Arabia ZATCA E-Invoice (FATOORA) Skill v1.1
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-06 Mehran Habib checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Cryptographic Standard | ECDSA secp256k1 digital signature |
 | Phase 1 (Generation) | Mandatory from 4 December 2021 (all VAT-registered taxpayers) |
 | Phase 2 (Integration) | Rolling waves from 1 January 2023, based on revenue thresholds |
-| Current Status | Phase 2 waves ongoing through 2026; smaller thresholds being added progressively |
+| Current Status | Phase 2 waves ongoing: Wave 24 (VAT-subject revenue over SAR 375,000) integrates by 30 June 2026 and Wave 25 (over SAR 187,500) by 1 February 2027; ZATCA notifies each targeted taxpayer directly at least six months before its integration date |
 | Portal | fatoora.zatca.gov.sa |
 
 ### Phase 2 Integration Waves
@@ -53,7 +53,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Wave 7 | 1 June 2024 | > SAR 50 million |
 | Wave 8 | 1 October 2024 | > SAR 40 million |
 | Wave 9 | 1 December 2024 | > SAR 30 million |
-| Wave 10+ | 2025-2026 | Progressively lower thresholds |
+| Waves 10 to 23 | Per each ZATCA wave notice | Successively lower thresholds; not listed here, check the ZATCA wave notices |
+| Wave 24 | Integrate by 30 June 2026 | VAT-subject revenue > SAR 375,000 in 2022, 2023 or 2024 ([ZATCA](https://zatca.gov.sa/en/Pages/news-1426.aspx)) |
+| Wave 25 | Integrate by 1 February 2027 | VAT-subject revenue > SAR 187,500 in 2022, 2023, 2024 or 2025 ([ZATCA news](https://www.zatca.gov.sa/en/MediaCenter/News/Pages/default.aspx)) |
+
+A taxpayer whose revenue exceeded a wave's threshold in any of the listed years is a target of that wave. The binding integration date is the one in ZATCA's direct notification to the taxpayer; ZATCA notifies each wave at least six months before its integration date.
 
 ## Section 2 -- Mandate Scope
 
@@ -343,13 +347,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

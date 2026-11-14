@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Thailand (tax year 20
 jurisdiction: TH
 category: international
 tax_year: 2025
-last_updated: 2026-10-11
-version: 1.3
+last_updated: 2026-11-11
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -36,43 +36,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Annual CIT return deadline (PND.50)** — Within 150 days from the last day of the accounting period, with payment (s. 68)  _(Revenue Code (Revenue Department English translation), s. 68 — https://www.rd.go.th/english/37764.html#section68)_
 - **Half-year CIT return (PND.51)** — Within 2 months from the last day of the first six months of the accounting period, paying half the tax on the estimated annual net profit; listed companies, banks and finance companies pay on actual half-year profit (s. 67 bis)  _(Revenue Code (Revenue Department English translation), s. 67 bis — https://www.rd.go.th/english/37764.html#section67bis)_
 
-## Top-up tax — a second charge, in force since accounting periods beginning 1 January 2025
+## Top-up tax for multinational groups
 
-`th-tax-overview.md` carried this and the file a reader opens for Thai corporate
-tax did not. The facts below come from the **Revenue Department's own English
-news releases**, not from a commercial summary.
+- **Start date and revenue test.** The Emergency Decree on Top-up Tax, B.E. 2567 (2024), was published on 26 December 2024 and took effect on 1 January 2025. It applies for accounting periods beginning on or after that date. A Thai constituent entity is generally in scope if its multinational group had revenue of at least the Thai-currency equivalent of EUR 750 million in the ultimate parent's consolidated financial statements in at least 2 of the 4 accounting periods immediately preceding the period under review. Prorate the threshold for a period other than 12 months. Check the rules applicable to any group restructuring. [Emergency Decree, ss 2 and 26](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf) · [Revenue Department, News No. 6/2025](https://www.rd.go.th/fileadmin/user_upload/news/2567eng/englishnews_6_2025.pdf)
+- **Excluded entities.** Section 27 lists categories subject to qualifying conditions, including government entities, pension funds and investment funds that are ultimate parents. The Royal Decree on excluded constituent entities, B.E. 2569 (2026), adds an exclusion for entities owned by qualifying entities under s 27(1)–(6), with a carve-out for pension services entities as owners. It entered into force on 8 August 2026 and applies when determining liability for accounting periods starting on or after 1 January 2025. Check the Director-General's published characteristics and any election before applying the exclusion. [Emergency Decree, s 27](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf) · [Royal Decree, ss 2–5](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/dctut.pdf) · [Director-General's notices](https://www.rd.go.th/68005.html)
 
-- **The instrument** — *Emergency Decree on Top-up Tax, B.E. 2567 (2024)*. The
-  Revenue Department proposed it through the Ministry of Finance; the Cabinet
-  approved it on **11 December 2024** and it was **promulgated in the Royal Gazette
-  on 26 December 2024**  _(Revenue Department, News No. 6/2025, 27 December 2024 — https://www.rd.go.th/fileadmin/user_upload/news/2567eng/englishnews_6_2025.pdf)_
-- **Who it applies to** — Large multinational enterprise (MNE) groups with
-  **consolidated financial statement revenues of at least EUR 750 million**  _(Revenue Department, News No. 6/2025)_
-- **From when** — **Accounting periods commencing on or after 1 January 2025**  _(Revenue Department, News No. 6/2025; confirmed again in News No. 5/2026)_
-- **Filing** — Through a **fully electronic system**. The Revenue Department's
-  enquiry address for the charge is `topuptax@rd.go.th`  _(Revenue Department, News No. 6/2025)_
-- **The detailed scope rules were still in draft a year after the charge began** —
-  On **30 December 2025** the Cabinet approved **in principle** four draft
-  instruments of secondary legislation under the Emergency Decree, prescribing the
-  rules for **determining which MNE groups are subject to the Top-up Tax** and for
-  **adjusting income, expenses and covered taxes** in computing it. They are drawn
-  from the OECD GloBE Model Rules, Commentary and Administrative Guidance. So the
-  charge has applied since 1 January 2025 while the instruments fixing its precise
-  scope and computation were still draft — **check their current status before
-  relying on any scope conclusion**  _(Revenue Department, News No. 5/2026, 30 December 2025 — https://www.rd.go.th/fileadmin/user_upload/news/2568eng/englishnews_5_2026.pdf)_
+### Reporting and payment
 
-> **What has not been read, and why.** The text of the Emergency Decree itself has
-> **not** been read for this guide. Everything above is the Revenue Department's own
-> English account of it. The Royal Gazette (`ratchakitcha.soc.go.th`) sits behind a
-> Cloudflare interstitial that does **not** clear even for a browser that waits the
-> challenge out, and `krisdika.go.th` — the Council of State's law database — serves
-> a **self-signed certificate**, so neither was fetched with verification left on.
->
-> **Deliberately not stated:** Oman, Kuwait and the Netherlands each express the
-> EUR 750 million threshold as *at least two of the four immediately preceding*
-> periods. The Revenue Department's release states the threshold **without** that
-> qualification, and the decree has not been read, so the two-of-four wording is
-> **not** asserted for Thailand. It is the first thing to check in the decree.
+- **Notification and information return.** Section 54 requires information identifying the ultimate parent and the entity filing the GloBE Information Return (GIR), amongst other particulars. Section 55 separately requires the GIR. Both ordinarily fall due within 15 months of the last day of the ultimate parent's accounting period. A Thai constituent entity of the same group can file on behalf of another if it completes the relevant filing and identifies the delegating entity and its taxpayer identification number. [Emergency Decree, ss 53–55](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf)
+- **Foreign filing of the GIR.** Section 56 exempts a Thai constituent entity from local GIR filing if the ultimate parent or its designated constituent entity has filed the GIR in its country and an agreement for automatic exchange of GIR information between the competent authorities of that country and Thailand is effective for the relevant period. Check the exchange relationship for that period and handle the s 54 notification separately. [Emergency Decree, ss 54–56](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf)
+- **Top-up tax return and payment.** A Thai constituent entity with top-up tax payable must file and pay within 15 months of the last day of the ultimate parent's accounting period. For a joint venture or joint-venture subsidiary liable under s 52, use the period end of the relevant joint venture or the joint venture deemed to be the ultimate parent. [Emergency Decree, s 57](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf)
+- **First period in scope.** Section 58 extends the s 54 notification, s 55 GIR and s 57 tax return deadlines to 18 months for the group's first accounting period in scope. For a group's first in-scope period ending 31 December 2025, the extended deadline for these filings is 30 June 2027. Pay any top-up tax due when filing the return. [Emergency Decree, ss 57–58](https://www.rd.go.th/fileadmin/user_upload/kormor/newlaw/prk2567.pdf)
+
+The Revenue Department announced electronic filing. Check its current forms, filing instructions and applicable secondary rules, including any rules for instalments under s 57. [Revenue Department, News No. 6/2025](https://www.rd.go.th/fileadmin/user_upload/news/2567eng/englishnews_6_2025.pdf) · [Top-up tax legislation index](https://www.rd.go.th/68020.html)
 
 <!-- openaccountants-cta-block -->
 
@@ -80,13 +56,15 @@ news releases**, not from a commercial summary.
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

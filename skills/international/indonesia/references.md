@@ -3,8 +3,8 @@ name: indonesia-references
 jurisdiction: ID
 category: international
 tier: 2
-last_updated: 2026-09-28
-version: 1.0
+last_updated: 2026-11-10
+version: 1.1
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
 
@@ -26,13 +26,13 @@ description: Primary source references and related open-source projects for this
 | Direktorat Jenderal Pajak (DJP) | https://www.pajak.go.id | PPh 21 progressive brackets per UU HPP No. 7/2021 |
 | PP 58/2023 | https://peraturan.bpk.go.id/Details/266564/pp-no-58-tahun-2023 | TER (Tarif Efektif Rata-rata) categories and rate tables |
 | PMK 168/2023 | https://jdih.kemenkeu.go.id | TER implementation rules for monthly withholding |
-| BPJS Ketenagakerjaan | https://www.bpjsketenagakerjaan.go.id | JP wage ceiling IDR 10,547,400 (March 2025), JKP program details |
+| BPJS Ketenagakerjaan | https://www.bpjsketenagakerjaan.go.id | JP wage ceiling IDR 10,547,400 from March 2025; IDR 11,086,300 from March 2026 is reported (BPJS X post seen as a search extract; Nexdigm) but the BPJS circular was not sighted, so confirm on the employer's BPJS bill; JKP program details |
 | BPJS Kesehatan | https://www.bpjs-kesehatan.go.id | Health insurance contribution rates and wage cap IDR 12,000,000 |
 
 ## Notes
 
 - The `steevenz/id-payroll-calculator` repo uses pre-HPP tax brackets (first bracket 0–50M, no 35% bracket). The skill file uses the current UU HPP brackets (first bracket 0–60M, includes 35% bracket above 5B).
-- The JP wage ceiling in the repo code (IDR 7,000,000) is outdated. The skill file uses the 2025 ceiling of IDR 10,547,400.
+- The JP wage ceiling in the repo code (IDR 7,000,000) is outdated. The skill file uses the reported ceiling of IDR 11,086,300 from March 2026, which resets each March; the BPJS circular was not sighted (see `id-payroll-pph21` section 6b).
 - TER tables were sourced from PP 58/2023 Annex as published on official DJP and tax portal sites, not from the repos (which predate the TER scheme).
 
 <!-- openaccountants-cta-block -->
@@ -41,13 +41,15 @@ description: Primary source references and related open-source projects for this
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

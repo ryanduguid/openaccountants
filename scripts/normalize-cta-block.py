@@ -11,7 +11,8 @@ verified accountant" section. The corpus drifted from that in two ways:
 - 116 guides carried no marker at all: 115 had no CTA, one had the new text
   without the marker line.
 
-This script repairs both, and nothing else:
+This script repairs both, with --migrate also replaces the retired block, and
+does nothing else:
 
 1. Every "Talk to a verified accountant" section that the marker does not
    introduce is removed. A section runs from its heading to the next heading,
@@ -25,7 +26,10 @@ This script repairs both, and nothing else:
    horizontal rule is folded into the block's own), unless it lives in one of
    the exempt directories listed in scripts/cta_block.py (the template
    directories and skills/integrations/).
-4. `last_updated` is set to --date (default: today, UTC) on every guide whose
+4. With --migrate, a kept block that carries the retired upstream wording
+   (cta_block.LEGACY_BLOCKS) is replaced with the canonical block. Any other
+   wording is left alone.
+5. `last_updated` is set to --date (default: today, UTC) on every guide whose
    body changed, because scripts/check-sync-integrity.py --strict-metadata
    fails a body change that advances neither the date nor the version.
 
@@ -39,6 +43,7 @@ same reading of the marker (cta_block.find_markers).
 Usage:
     python3 scripts/normalize-cta-block.py            # dry run over skills/
     python3 scripts/normalize-cta-block.py --apply    # write the changes
+    python3 scripts/normalize-cta-block.py --migrate --apply  # also replace the retired block
     python3 scripts/normalize-cta-block.py --apply --date 2026-09-28 skills/international/malta
 """
 
@@ -60,6 +65,7 @@ from cta_block import (  # noqa: E402
     find_markers,
     has_cta_link,
     is_cta_heading,
+    is_legacy_block,
     is_optional,
     section_end,
 )
@@ -91,6 +97,7 @@ def normalize(
     rel: str = "skills/guide.md",
     date: str | None = None,
     optional: bool | None = None,
+    migrate: bool = False,
 ) -> tuple[str, list[str], list[str]]:
     """Return (new_text, actions, skipped) for one guide.
 
@@ -145,6 +152,15 @@ def normalize(
         actions.append(note)
     actions.reverse()
 
+    if migrate and keep is not None:
+        # The removals above moved the kept block; it is still the last one.
+        marker_index, _, end = [entry for entry in find_markers(lines) if entry[1] is not None][-1]
+        while end > marker_index and lines[end - 1].strip() == "":
+            end -= 1  # keep the blank lines that close the block
+        if is_legacy_block("\n".join(lines[marker_index:end])):
+            lines[marker_index:end] = CANONICAL_BLOCK.rstrip("\n").split("\n")
+            actions.append("migrated the retired CTA block to the canonical text")
+
     if keep is None and not optional:
         _strip_trailing_blank(lines)
         if lines and lines[-1].strip() == "---":
@@ -193,19 +209,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--apply", action="store_true", help="write changes (default: dry run)")
     parser.add_argument("--date", default=None, metavar="YYYY-MM-DD",
                         help="last_updated stamp for changed guides (default: today, UTC)")
+    parser.add_argument("--migrate", action="store_true",
+                        help="also replace a block carrying the retired upstream wording with the canonical one")
     parser.add_argument("--quiet", action="store_true", help="print the summary only")
     args = parser.parse_args(argv)
 
     if args.date and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", args.date):
         parser.error("--date must be YYYY-MM-DD")
 
-    scanned = changed = removed = appended = 0
+    scanned = changed = removed = appended = migrated = 0
     skipped_all: list[str] = []
     for path in guide_paths(args.paths):
         rel = repo_relative(path)
         with open(path, encoding="utf-8") as fh:
             text = fh.read()
-        new_text, actions, skipped = normalize(text, rel, args.date)
+        new_text, actions, skipped = normalize(text, rel, args.date, migrate=args.migrate)
         skipped_all.extend(skipped)
         if not text.startswith("---"):
             continue
@@ -215,6 +233,7 @@ def main(argv: list[str] | None = None) -> int:
         changed += 1
         removed += sum(1 for a in actions if a.startswith("removed"))
         appended += sum(1 for a in actions if a.startswith("appended"))
+        migrated += sum(1 for a in actions if a.startswith("migrated"))
         if not args.quiet:
             print(f"{'CHANGED' if args.apply else 'WOULD CHANGE'} {rel}: {'; '.join(actions)}")
         if args.apply:
@@ -226,7 +245,7 @@ def main(argv: list[str] | None = None) -> int:
     mode = "APPLIED" if args.apply else "DRY RUN"
     print(f"{mode} — {scanned} guides scanned, {changed} {'changed' if args.apply else 'would change'}: "
           f"{removed} duplicate CTA section(s)/marker(s) removed, {appended} marker block(s) appended, "
-          f"{len(skipped_all)} section(s) skipped")
+          f"{migrated} retired block(s) migrated, {len(skipped_all)} section(s) skipped")
     return 0
 
 

@@ -256,6 +256,16 @@ class ExampleCliTests(unittest.TestCase):
                 result = self.run_checker(fenced() * count, "--require")
                 self.assertEqual(result.returncode, 0 if count == 2 else 1, result.stdout + result.stderr)
 
+    def test_require_reads_one_path_per_line_from_an_at_file(self):
+        listed = self.root / "scripts" / "required-examples.txt"
+        listed.write_text(self.guide.relative_to(self.root).as_posix() + "\n", encoding="utf-8")
+        for count in (1, 2):
+            with self.subTest(count=count):
+                self.guide.write_text(fenced() * count, encoding="utf-8")
+                result = self.invoke("--require", "@scripts/required-examples.txt")
+                self.assertEqual(result.returncode, 0 if count == 2 else 1, result.stdout + result.stderr)
+                self.assertIn(f"checked 1 files, {count} oa-check blocks", result.stdout)
+
     def test_malformed_and_mismatched_cases_exit_nonzero(self):
         for text in (fenced(CASE.split("expected:")[0]), "```oa-check\n" + CASE,
                      fenced(CASE.replace("tiles: 24", "tiles: 25")),
@@ -278,6 +288,18 @@ class ExampleCliTests(unittest.TestCase):
                 with self.subTest(opening=opening, required=bool(args)):
                     result = self.run_checker(prefix + alternative, *args)
                     self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+
+
+class RequiredListTests(unittest.TestCase):
+    def test_every_guide_with_two_cases_is_required(self):
+        """`--require` protects only the listed guides; an unlisted guide could
+        lose every worked case with all checks green (#418, #423)."""
+        listed = set((ROOT / "scripts" / "required-examples.txt").read_text(encoding="utf-8").splitlines())
+        unlisted = [
+            rel for rel in checker.guide_files()
+            if rel not in listed and checker.check_file(ROOT / rel)[0] >= 2
+        ]
+        self.assertEqual(unlisted, [], "add these guides to scripts/required-examples.txt")
 
 
 if __name__ == "__main__":

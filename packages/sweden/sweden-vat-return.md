@@ -1,11 +1,11 @@
 ---
 name: sweden-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Swedish VAT return (momsdeklaration) for a self-employed individual or small business in Sweden. Trigger on phrases like "prepare VAT return", "do the Swedish VAT", "momsdeklaration", "moms", "skattedeklaration", or any request involving Swedish VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Sweden only and only standard-registered businesses. VAT groups, fiscal representatives, and flat-rate schemes are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Swedish VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: SE
 category: international
 tax_year: 2025
-last_updated: 2026-10-31
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Sweden VAT Return
 
-## Sweden VAT Return Skill (Momsdeklaration) v2.0
+## Sweden VAT Return Skill (Momsdeklaration) v2.1
 
 ## Section 1 — Quick reference
 
@@ -31,8 +31,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | https://www.skatteverket.se (Mina sidor) |
 | Authority | Skatteverket (Swedish Tax Agency) |
 | Currency | SEK only |
-| Filing frequencies | Monthly (turnover > SEK 40M); Quarterly (SEK 1M–40M); Annual (< SEK 1M) |
-| Deadline | Monthly: 12th of second month after period (26th for Dec); Quarterly: 12th of second month after quarter; Annual: part of the income tax return |
+| Filing frequencies | VAT taxable base (beskattningsunderlag, excluding intra-EU acquisitions and imports) above SEK 40M: monthly only. Up to SEK 40M: quarterly or monthly. Up to SEK 1M: also annual (beskattningsår) |
+| Deadline | Above SEK 40M: 26th of the month after the period (27 December for the November period). Up to SEK 40M, monthly: 12th of the second month after the period (17th in January and August), or the 26th of the following month if Skatteverket so decides on request (SFL 26 kap. 28 §). Quarterly: 12th of the second month after the quarter (17th in August). Annual, sole traders without EU trade: 12 May of the following year (26 June with byråanstånd); with EU trade: 26 February. A deadline on a Saturday, Sunday, public holiday, Midsummer Eve, Christmas Eve or New Year's Eve moves to the next weekday (Lag (1930:173) 2 §)  _(Skatteverket, När ska jag deklarera moms?)_ |
+| VAT exemption (momsbefrielse) | Annual turnover in Sweden (årsomsättning inom landet) of at most SEK 120,000 in the calendar year and in each of the 2 preceding calendar years (ML 18 kap. 4 §) (from 1 January 2025; SEK 80,000 before). Exemption is optional; above the limit, registration is required  _(Skatteverket, Höjd omsättningsgräns för moms; Registrera ditt företag för moms)_ |
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Companion skill (Tier 2, EU directive) | **eu-vat-directive v0.1 or later — MUST be loaded** |
 | Contributor | Open Accountants |
@@ -635,6 +636,7 @@ v2.0, rewritten April 2026. Awaiting validation by auktoriserad revisor or godk�
 
 ### Change log
 
+- **v2.1 (November 2026):** Filing deadlines by turnover band; SEK 120,000 exemption threshold.
 - **v2.0 (April 2026):** Full rewrite to three-tier OpenAccountants architecture.
 - **v1.0 (April 2026):** Initial draft. Standalone monolithic document.
 
@@ -665,13 +667,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

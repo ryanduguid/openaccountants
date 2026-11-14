@@ -1,13 +1,13 @@
 ---
 name: nu-company-reporting
-version: 0.1
+version: 0.2
 description: Bounded reference for reviewers assessing annual company law reporting for an already registered ordinary Niue private share company using unchanged Schedule 2 model rules. Covers allocated annual return months, incorporation year treatment, records, selected financial statement and shareholder reporting requirements, meeting conditions and audit demand boundaries. Use for questions about Form 10, company records or annual reporting. Requires the universal and company formation workflow bases. Holds incomplete operative law, other rules, audit waivers, actual calendars, tax, beneficial ownership and all complete formation, financial statements or filing outputs until the required evidence and contracts are satisfied.
 category: formation
 jurisdiction: NU
 tax_year: 2026
 tax_year_notes: Hypothetical review reference only. The selected 2019 consolidation and public registry material checked on 2026-10-24 do not certify the complete operative law or an actual 2026 filing.
 tier: 2
-last_updated: 2026-10-24
+last_updated: 2026-11-11
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -20,6 +20,8 @@ depends_on:
 > **General reference only.** This is a bounded Tier 2 draft for professional review. It does not authorise formation, a financial statement, tax result, fee payment or filing. Guide presence, source preparation and component checks do not establish comprehensive jurisdiction acceptance.
 
 ## Scope, rules and source gate
+
+See the [Niue source register](references.md) for dated company registration, business licensing, overseas return and separate tax ownership notification sources.
 
 Load both mandatory bases in full. Retain all 4 universal outputs and 18 checks, all 5 formation outputs and 10 checks, all mandatory country slots and every loaded refusal. This is a selected ongoing-compliance companion, not a complete formation or financial reporting system. A conditional reference example does not waive an engagement's source, profile, factual, reviewer or execution gates.
 

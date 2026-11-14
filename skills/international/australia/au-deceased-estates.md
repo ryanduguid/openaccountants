@@ -9,24 +9,28 @@ description: >
   2019/5, CGT event K3, super death benefits via the estate, testamentary trusts, and
   losses that die with the deceased. Trigger on "deceased estate", "date of death
   return", "executor tax", "inherited property CGT".
-version: 1.3
+version: 1.4
+depends_on:
+  - workflow-base
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-11-02
+last_updated: 2026-11-03
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Deceased Estates -- Date-of-Death Returns, Estate Trust Returns & Death CGT Skill v1.3
+# Australia Deceased Estates -- Date-of-Death Returns, Estate Trust Returns & Death CGT Skill v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-> **Law-change context (three live fronts, verified 11 October 2026; the Bills in item 3 checked 31 October 2026).** (1) The enacted individual rate cut (16% -> 15% from 1 July 2026, -> 14% from 1 July 2027) flows into date-of-death returns and the first-3-years concessional estate rates for 2026-27; the ATO's published year-4+ compressed bands are current only to 2025-26 -- see Rule 5. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount is replaced by cost base indexation plus a 30% minimum rate on capital gains, and pre-CGT (pre-20 September 1985) status ends after 30 June 2027 -- this is LAW and interacts with Div 128 legatee cost bases (Rule 14). (3) The proposed 30% minimum tax on discretionary trusts from 1 July 2028 CARVES OUT deceased estates and, subject to conditions, testamentary trusts -- NOT LAW. Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026 (Rule 13). Verify all three before relying.
+Prepare separate date-of-death and deceased estate working papers for Australian resident files, including administration, present entitlement, current estate rates, inherited asset cost bases, dwelling exemptions, K3 screening and lump sum super death benefits. Use `workflow-base` for intake, confirmation, refusals and all 4 outputs. Legal administration, contested distributions, foreign estate computations, super income streams and future reform implementation need the escalation described below.
+
+**Period coverage:** 2025-26 returns and 2026-27 working papers, checked 3 November 2026. The current ITAA 1936 compilation is C2026C00454, ITAA 1997 is C2026C00471 and Rates Act is C2026C00300. Rule 5 distinguishes each year's rates. Earlier years require their historical law and forms. Future 2027-28 CGT transition and proposed trust minimum tax are separate holds under Rules 13 and 14, not assumptions in these calculations. A 2026 form is not approval to lodge a 2026-27 return on it. Tier 2 and `pending_review` remain: source checks and arithmetic do not replace qualified Australian sign-off.
 
 ## Ask the client first
 
@@ -34,11 +38,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 #### Required inputs
 
-**Minimum viable** -- death certificate date, the will (or intestacy position), probate/letters of administration status and date, income records straddling death, prior-year lodgment history, asset schedule with acquisition dates and cost bases, beneficiary list with residency/age.
+Ask these 6 material questions once, then confirm the inferred profile:
 
-**Recommended** -- ATO deceased estate data package (3 years of returns, income data, NOAs, debts, super accounts), estate bank statements by administration stage, dwelling occupancy history, super fund death benefit statements with component breakdown, distribution history.
+1. What is the documented death date, deceased's residency history, return year and outstanding lodgment/assessment history?
+2. Who manages the estate, under which will/intestacy and grant documents, with what recorded ATO authority and new agent appointment?
+3. When were debts, expenses and legacies paid or provided for, residue ascertained and interim distributions made? Supply accounts and the solicitor's administration timeline.
+4. What income and expenses straddle death, and what are the assets' acquisition dates, cost bases/reduced cost bases, death-date values, ownership types, dwelling use and proposed sale/transmission dates?
+5. Who is entitled to each amount or asset, with what age, legal disability, tax residency at the relevant time, occupation rights and testamentary asset provenance?
+6. Which super fund payments are made or expected, to whom, with what component statement, tax dependency evidence, nomination/fund decision and withholding? Identify disputes, business continuation and solvency concerns.
 
-**Ideal** -- solicitor's administration timeline (debts paid/provided for), evidence of the date administration completed, valuations at date of death (pre-CGT assets and main residence), BDBN documents, testamentary trust deed with asset provenance trace.
+Minimum evidence is sufficient to settle the affected facts, not merely a completed questionnaire. Request the ATO data package, estate bank records, dated valuations, occupancy/election records, fund statements and relevant trust terms where needed. If records are incomplete, build the source inventory and missing-input register; calculate only independent amounts supported by evidence.
 
 #### Refusal catalogue
 
@@ -48,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **R-AU-DE-3 -- Super death benefit disputes.** *Trigger:* contested trustee discretion, claim-staking objections, AFCA complaints, BDBN validity challenges. *Message:* "Death benefit payment disputes are superannuation law and fund-rules territory. Out of scope beyond the tax treatment of whatever is ultimately paid. Escalate."
 
-**R-AU-DE-4 -- Foreign estates and non-resident parties beyond flagging.** *Trigger:* non-resident deceased, foreign LPR, estate administered offshore, Australian beneficiary of a FOREIGN estate (s 99B exposure), treaty questions. *Message:* "This skill only FLAGS non-resident issues (K3, trustee assessment under s 98, s 99B on foreign-estate distributions). Computation and treaty analysis are out of scope. Escalate before any distribution."
+**R-AU-DE-4 -- Foreign estates and cross-border work.** *Trigger:* non-resident deceased, foreign LPR, offshore administration, s 99B, treaty or foreign beneficiary assessment beyond the documented K3 screen for an Australian resident deceased. *Message:* 'This guide supplies only the resident deceased’s K3 screen on established facts. Foreign estate, treaty and other cross-border computations need a qualified cross-border adviser before distribution.'
 
 **R-AU-DE-5 -- Insolvent estates.** *Trigger:* estate liabilities exceed assets, Part XI Bankruptcy Act administration, creditor priority questions. *Message:* "Insolvent estate administration has its own priority and personal-liability regime for the LPR. Out of scope. Escalate to an insolvency practitioner and estates lawyer."
 
@@ -64,8 +73,6 @@ If engaged mid-administration with a shoebox:
 4. Register assets with acquisition dates, cost bases, DOD market values (pre-CGT and dwelling), and destination beneficiary + residency
 5. **Flag:** "Prepared without sighting the will/grant/administration records as noted. Stage of administration, present entitlement, estate-year count, K3 screening and the s 118-195 window are unverified. Reviewer must confirm before lodgment or distribution."
 
----
-
 ## The method, step by step
 
 ### Section 1 -- Quick reference
@@ -78,13 +85,12 @@ If engaged mid-administration with a shoebox:
 | Primary Legislation | ITAA 1936 Part III Div 6 (ss 95-99A), s 101A, Div 6AA & s 102AG; ITAA 1997 Div 128, Subdiv 118-B (s 118-195), s 104-215 (CGT event K3), Div 302 |
 | Tax Authority | Australian Taxation Office (ATO) |
 | Income Year | 2026-27 (1 July 2026 -- 30 June 2027); lodgment season for 2025-26 |
-| Date-of-death (final) return | 1 July to date of death; FULL tax-free threshold (not pro-rated); Medicare levy applies as for a normal individual year; paper form or via appointed tax agent -- never myTax |
+| Date-of-death (final) return | 1 July to date of death; full threshold for an otherwise eligible resident deceased, not prorated merely for death; assess Medicare exemptions and other adjustments; paper or appointed agent, never the deceased's myTax |
 | If no final return needed | Non-lodgment advice marked 'DECEASED' + date of death |
 | Estate trust returns | LPR/executor is "trustee" (s 6(1) ITAA 1936); estate needs its OWN TFN; first income year = day after death to 30 June |
-| Estate years 1-3 (s 99) | Resident individual rates WITH full $18,200 tax-free threshold; NO Medicare levy; no LITO; eligible franking offsets may apply |
-| Estate year 4+ (s 99) | Compressed bands -- threshold collapses to $416 (2025-26: $417-$611 at 50% of excess; $612-$45,000 at $97.76 + 16% of excess over $611, whole amount taxed from $0 once over $611) |
+| Estate trustee rates | Use the single period-specific table in Section 3.2, after establishing residence, assessment section, entitlement and the statutory death-date test |
 | Death and CGT | NOT a CGT event where the asset passes to the LPR or a beneficiary (Div 128 rollover); K3 override for exempt entities, super funds and foreign-resident beneficiaries |
-| Inherited main residence | Full exemption if contract settles within 2 years of death (s 118-195); PCG 2019/5 automatic safe harbour extension up to 18 months |
+| Inherited main residence | s 118-195 requires the asset/use, taxpayer and timing/occupation conditions. PCG 2019/5 is a conditional compliance safe harbour, not a blanket extension |
 | Super death benefit via LPR | Fund withholds NIL; trustee taxed on the share expected to benefit non-dependants at up to 15% (taxed element) / 30% (untaxed) with NO Medicare levy |
 | Losses | Carried-forward revenue AND capital losses die with the deceased -- no transfer to the estate or beneficiaries |
 | Contributor | Open Accountants |
@@ -94,16 +100,17 @@ If engaged mid-administration with a shoebox:
 
 | Ambiguity | Default |
 |---|---|
-| Probate status unknown | Treat administration as INCOMPLETE -- no present entitlement; trustee assessed |
-| Administration completion date unverified | Assume not complete; s 99 trustee assessment, not beneficiary returns |
-| Which estate income year unclear | Count income years from the day after death (a part-year counts as year 1); assume year 4+ compressed bands until the count is proven |
-| Beneficiary residency unknown | Assume foreign resident -- screen every in-specie asset for CGT event K3 and trustee assessment exposure |
-| Dwelling's status at death unknown | Assume NOT the deceased's main residence and NOT pre-CGT -- no s 118-195 exemption until evidenced |
-| 2-year window missed, extension claimed | Assume PCG 2019/5 conditions NOT met until each of the 5 conditions is documented |
-| Super death benefit recipient's dependancy unknown | Assume NON-dependant for tax purposes (adult child default) -- 15%/30% exposure |
-| Asset history unsighted | Assume post-CGT asset at the deceased's (unknown) cost base -- obtain records before computing anything |
-| Testamentary trust asset provenance unknown | Assume s 102AG(2AA) NOT satisfied -- minors' penalty rates until will-derivation is traced |
-| Pre-death income received post-death | Income of the ESTATE (s 101A), not the final return |
+| Probate/ATO authority unknown | Record authority as unverified; use ATO's limited-information pathway if appropriate. Do not assert authority or rule out every return/refund |
+| Administration completion date unverified | Hold entitlement and allocation totals pending the administration accounts and legal evidence |
+| Estate year or death date unclear | Hold the rate calculation; obtain the death date, count actual periods and apply the statutory date test |
+| Beneficiary residency unknown | Flag possible K3/s 98 exposure and hold classification, rather than deeming foreign residency |
+| Dwelling or acquisition history unknown | Hold exemption, cost base and dependent CGT; obtain use history, dates and valuations |
+| Missed 2-year window, extension asserted | Hold the exemption until all safe-harbour conditions or an actual discretion decision are documented |
+| Super dependency/components unknown | Hold Div 302 allocation and dependent totals; list the missing fund statement and dependency evidence |
+| Testamentary asset provenance unknown | Hold minor-income treatment and totals; trace each source before applying adult or Div 6AA rates |
+| Pre-death work paid after death | Test derivation and s 101A conditions/exceptions; avoid double counting. Receipt date alone does not settle the return |
+
+Record every provisional treatment, reason, missing document, cash effect versus alternatives (or 'not quantifiable') and reviewer decision in the defaults register. These holds preserve evidence; they do not establish a more adverse factual assumption.
 
 ### Section 3 -- Administration timeline and estate-year decision tables
 
@@ -111,37 +118,51 @@ If engaged mid-administration with a shoebox:
 
 | Stage | Facts | Present entitlement? | Assessed to | Rate |
 |---|---|---|---|---|
-| 0. Death | Final individual return, 1 July to date of death | n/a | Deceased (LPR lodges) | Individual rates, full threshold, Medicare levy |
-| 1. Initial (to grant of probate/LoA) | Debts unquantified; *Whiting*: no beneficiary can be presently entitled | NO | Trustee, s 99 | Estate rates (3.2) |
-| 2. Intermediate (grant to residue ascertained) | Trustee MAY pay interim distributions if remainder clearly covers liabilities | Only to amounts ACTUALLY PAID to (or applied for) a beneficiary | Beneficiary s 97 (or trustee s 98 for minors/non-residents) on paid amounts; trustee s 99 on the rest | Beneficiary marginal / estate rates |
-| 3. Final (debts paid or provided for; residue ascertained) | Administration complete -- even if transfers not yet executed | YES -- residuary beneficiaries presently entitled | Beneficiaries s 97; trustee s 98 for legal-disability/non-resident beneficiaries | Beneficiary marginal rates |
-| Completion-year practice | Administration completes mid-year | ATO practice (IT 2622 paras 17-19) | Beneficiaries assessed on their share of the FULL year's net income; OR apportion (pre-completion income to trustee, post-completion to beneficiaries) if actual derivation is evidenced AND apportionment is requested | Mixed |
+| 0. Death | Final individual return, 1 July to death | n/a | Deceased, through the proper representative pathway | Actual individual eligibility, rates, offsets and Medicare |
+| 1. Initial (to grant of probate/LoA) | Debts unquantified; *Whiting*: residue not yet ascertained | Ordinarily no present entitlement to residue; test any qualifying interim income payment separately | Trustee under the established provision: s 99 only if s 99A does not apply; separate special deemed amounts | Applicable assessment provision and statutory date tests in 3.2 |
+| 2. Intermediate (grant to residue ascertained) | Trustee may pay interim income if the remainder clearly covers liabilities; distinguish capital advances | Qualifying income actually paid to or applied on behalf of a beneficiary under IT 2622 para 14; preserve statutory deemed no-entitlement amounts | Applicable s 97/98 beneficiary treatment; retained income under the established s 99/99A provision; special amounts separately | Actual beneficiary eligibility or applicable trustee rate, not a cash-distribution shortcut |
+| 3. Final (debts paid or provided for; residue ascertained) | Administration complete, even if transfers are not yet executed | Residuary beneficiaries ordinarily presently entitled; test special statutory treatment separately | Applicable s 97/98 treatment; preserve amounts deemed to have no beneficiary presently entitled | Actual beneficiary eligibility and applicable assessment provision |
+| Completion-year practice | Administration completes mid-year | IT 2622 paras 21–23 | Full-year practice or requested apportionment using actual administration accounts, preserving qualifying prior interim payments and special statutory amounts; see Rule 4 | Reconcile each allocation; do not allocate by days |
 
-#### 3.2 Estate trustee rates (s 99), no present entitlement
+#### 3.2 Period-specific estate figures
 
-| Estate income year | Rates |
-|---|---|
-| Years 1-3 (year 1 = day after death to 30 June) | Resident individual rates + FULL $18,200 threshold; NO Medicare levy; no LITO; eligible franking offsets may apply; applied for in the first trust return; cannot be extended past year 3 |
-| Year 4 onwards (2024-25 and 2025-26 published table) | $0-$416 nil; $417-$611 50% of excess over $416; $612-$45,000 $97.76 + 16% of excess over $611 (once over $611 the WHOLE amount is effectively taxed at 16%); $45,001-$135,000 $7,200 + 30%; $135,001-$190,000 $34,200 + 37%; $190,001+ $54,550 + 45%. NO Medicare levy |
-| Year 4 onwards, 2026-27 | 16% -> 15% rate cut is LAW; ATO has not yet republished the compressed band boundaries (the $611/$97.76 shade-in constants derive from the 16% rate and will change) -- verify QC 49909 before lodging any 2026-27 estate return |
+For a resident estate trustee assessed under s 99 on ordinary taxable net income with no beneficiary presently entitled, establish the relevant income portion and year first. Amounts below are AUD; N means whole-dollar net income subject to this assessment. Special income, beneficiary assessments, tax offsets and integrity rules need separate treatment. These figures do not determine who is assessed.
 
-The year-4+ compression is deliberate anti-prolongation policy: parking income in a long-running estate stops being concessional after three years, so there is no rate incentive to leave administration open. s 99A (47% flat) is the default for trusts generally; resident deceased estates get s 99 treatment in practice unless property has been injected into the estate or the Commissioner otherwise considers s 99A appropriate (s 99A(2) factors).
+| Position | 2025-26 | 2026-27 | Primary source |
+|---|---|---|---|
+| Death less than 3 years before year end, qualifying resident s 99 assessment | Resident individual scale with full $18,200 threshold | Resident individual scale with full $18,200 threshold | [Rates Act s 12(6), Sch 10 Pt I cl 1 and Sch 7 Pt I](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Later resident s 99 assessment, N up to $416 | Nil | Nil | [s 14(1)](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Later resident s 99 assessment, shading band | N $417–$611: 50% × (N − $416) | N $417–$594: 50% × (N − $416) | [s 14(2)-(3)](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Later resident s 99 assessment, above shading band to $45,000 | 16% × N | 15% × N | [Sch 10 Pt I cl 2, Sch 7 Pt I](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Later resident s 99 assessment, $45,001–$135,000 | $7,200 + 30% × (N − $45,000) | $6,750 + 30% × (N − $45,000) | [same provisions](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Later resident s 99 assessment, $135,001–$190,000 | $34,200 + 37% × (N − $135,000) | $33,750 + 37% × (N − $135,000) | [same provisions](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| Later resident s 99 assessment, above $190,000 | $54,550 + 45% × (N − $190,000) | $54,100 + 45% × (N − $190,000) | [same provisions](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| s 99A income tax rate | 45% | 45% | [s 12(9)](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) |
+| s 99/99A assessment of a deceased estate | No Medicare levy; no LITO under s 99 | Same | [ITAA 1936 s 251S(1)(c)](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_4/document_4.html); [ATO estate rates](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/tax-rates-deceased-estate) |
+| Inherited dwelling timing limb | Ownership interest ends within 2 years, or an allowed longer period; all other eligibility conditions still apply | Same | [s 118-195](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html) |
+| PCG 2019/5 safe harbour extension | At most 18 additional months, only if all para 11 conditions hold | Same | [PCG 2019/5 paras 8–13](https://www.ato.gov.au/law/view/document?docid=COG/PCG20195/NAT/ATO/00001) |
+| Non-dependant super lump sum taxable component | Income tax capped at 15% taxed element / 30% untaxed element; tax-free component NANE | Same | [ss 302-140/145](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_6/document_6.html) |
+| Fund withholding on death benefit to estate trustee | Nil; retain provision for final estate tax | Same | [Schedule 12](https://www.ato.gov.au/tax-rates-and-codes/schedule-12-tax-table-for-superannuation-lump-sums) |
+
+The 2026-27 later-estate scale is derived from the current statute, not a newly published ATO table. Section 14(3) rounds down $416 × 50% / (50% − the lowest Sch 7 Pt I rate): floor(208 / 0.35) = $594. The 2025-26 limit is floor(208 / 0.34) = $611. The ATO estate page still publishes the later-year table only through 2025-26. Retain both sources and this derivation; do not reuse its old constants for 2026-27.
+
+The first estate period normally runs from the day after death to the next 30 June. Count actual periods and independently apply the statutory death-date condition, especially a 30 June death. Apply for the concessional treatment in the first estate return. It cannot be extended beyond its statutory period. Material changes, injected assets or other s 99A factors require review. Section 99 applies only where s 99A does not; the Commissioner’s opinion under s 99A(2), with the factors in (3)/(3A), is not an unconditional exemption for every estate. [ITAA 1936 ss 99/99A](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html).
 
 #### 3.3 First-90-days checklist (LPR tax workflow)
 
 | Step | Detail |
 |---|---|
-| Notify the ATO of the death | Australian Death Notification Service or ATO notification form; the deceased's agent links are SEVERED on death -- the former tax agent has no authority |
-| Establish authority | Grant of probate / letters of administration -> become the "authorised LPR" on ATO records; an executor WITHOUT a grant is not an authorised LPR |
+| Notify the ATO of the death | Use the current ATO notification process and supporting documents; recorded death removes former agent access. Reappoint through the documented estate pathway |
+| Establish authority | Record the Australian grant/reseal and ATO status for unrestricted authorised LPR access. Without it, use the limited-information/return pathway described in Rule 3; do not fabricate authority |
 | Get the data package | 3 years of returns, income/investment data, NOAs, statement of account, ATO debts, super accounts, current-year payroll -- issued to the authorised LPR or their appointed agent |
 | Estate TFN | Apply for a NEW TFN for the estate trust; never lodge trust returns under the deceased's TFN |
 | Final return | Lodge if tax was withheld, taxable income exceeded the threshold, or returns were lodged/outstanding in prior years; else non-lodgment advice marked 'DECEASED' + date of death; paper form headed 'LEGAL REPRESENTATIVE OF [name] (DECEASED)' |
 | Outstanding prior years | Lodge any outstanding pre-death returns |
-| Provide for tax before distributing | The LPR is personally liable (up to the value of estate assets) for tax not provided for -- PCG 2018/4 sets out the ATO's practical liability approach and notification/waiting safe harbour |
+| Provide for tax before distributing | Keep a provision for both taxpayers and contingent K3/super liabilities. Assess notice and personal exposure under PCG 2018/4, rather than treating a wait as universal immunity |
 
 ---
 
-### Section 5 -- Tier 1 rules
+### Section 5 -- Position rules
 
 #### Rule 1 -- Two taxpayers from the date of death
 
@@ -149,61 +170,61 @@ Death splits the file: (1) the deceased's FINAL individual return, 1 July to the
 
 #### Rule 2 -- The final return mechanics
 
-Lodgment is required if the deceased had tax withheld, taxable income above the threshold, or a lodgment history/outstanding returns; otherwise send a non-lodgment advice with 'DECEASED' and the date of death. The authorised LPR (grant in hand, recorded on ATO systems after notification) lodges on PAPER headed 'LEGAL REPRESENTATIVE OF [name] (DECEASED)' -- myTax/myGov cannot be used, though an appointed tax agent can lodge online. The FULL tax-free threshold applies with no pro-rating, the Medicare levy and full-year low-income levy thresholds apply as for any individual year (see au-medicare-levy), and study loans get a final assessed repayment with the balance of the debt cancelled. Refunds and franking credit refunds are released only to the authorised LPR. The LPR must provide for tax before distributing or becomes personally liable up to the value of estate assets (PCG 2018/4).
+Test the final return requirement using withheld tax, taxable income and outstanding/prior return history; lodge non-lodgment advice where appropriate, with DECEASED and the death date. Notify ATO and record who manages the affairs first. ATO usually receives the return from the authorised LPR, but it also assesses returns lodged without that status and determines their treatment. Use paper or a properly appointed tax agent, never the deceased’s myTax/myGov. The full threshold is not prorated merely for death; separately establish residency and other eligibility. Medicare levy, exemption days and surcharge require the actual deceased/dependant circumstances, cover and labels M1/M2. Study loans receive a final assessed repayment; remaining debt is cancelled. An authorised LPR’s refund can be released; without one, ATO considers release against its evidence and policies. Do not promise or categorically prohibit a refund. [ATO final return](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-a-final-tax-return-for-the-deceased-person); see the filing steps below.
 
 #### Rule 3 -- Access, authority and the data package
 
-Death severs all pre-death agent authorisations. Sequence: notify the ATO -> obtain the grant -> be recorded as authorised LPR -> (optionally) appoint an agent with a declaration -> request/receive the deceased estate data package (3 years of returns, income and investment extracts, NOAs, account statement, ATO debts, super accounts, current-year payroll). Without a grant the ATO discloses only what its risk settings allow -- an executor without probate is NOT an authorised LPR. If neither probate nor letters of administration are granted within 6 months of death, with or without a will, the Commissioner may determine the person's outstanding tax-related liabilities and recover them from the estate ([TAA 1953 Sch 1 s 260-145](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/Sch1-260-145)). The ATO's final return page describes this for intestate estates.
+Pre-death authorisations cease on death; the former agent loses ATO access when death is recorded. Obtain and record the appropriate Australian grant or reseal for unrestricted authorised LPR access, appoint a new representative and make the required declaration. The authorised LPR or nominated representative may request the ATO package: previous 3 years of returns, income/investment data and assessments, account/debt/super information and other available data. An executor without probate is not an authorised LPR, but ATO may provide limited information and manage returns/refunds depending on the evidence. Small-estate grant exceptions do not confer full ATO access. Foreign grants alone are not sufficient. [ATO representative authority](https://www.ato.gov.au/individuals-and-families/deceased-estates/who-can-represent-a-deceased-estate); [information access](https://www.ato.gov.au/individuals-and-families/deceased-estates/accessing-a-deceased-person-s-tax-and-super-information). The earlier s 260-145 unadministered-estate recovery reference is retained in Sources as a separate statutory verification hold; it is not an authority shortcut.
 
 #### Rule 4 -- Present entitlement through the stages (IT 2622)
 
-*FCT v Whiting* (1943) 68 CLR 199: no beneficiary can be presently entitled to estate income until administration is complete (debts, funeral and testamentary expenses, legacies paid or provided for and the residue ascertained -- actual transfers can lag). Consequences by stage per the Section 3.1 table: initial stage -> trustee s 99 on everything; intermediate stage -> amounts the executor ACTUALLY PAYS to or applies for beneficiaries are deemed presently entitled (IT 2622 para 14) and assessed to them (s 97) or via the trustee for minors/non-residents (s 98), the balance staying with the trustee; once residue is ascertained -> full present entitlement. In the completion YEAR, ATO practice assesses beneficiaries on their share of the whole year's net income, unless actual pre/post-completion derivation is evidenced and apportionment is requested (income to the completion date then stays with the trustee). Minors' shares via s 98 use ADULT rates -- Div 6AA does not touch deceased-estate income, and the trustee can claim the beneficiary's offsets; Medicare levy applies to those s 98 assessments (unlike s 99 assessments on the estate itself).
+Use the administration accounts and legal position, not a probate date alone. Initial administration normally gives no present entitlement. In the intermediate stage, IT 2622 para 14 recognises income actually paid/applied for a beneficiary where the executor can establish it is not needed for debts; a capital advance alone is not enough. Once debts, expenses and legacies are paid/provided for and residue is ascertained, actual asset transfers can remain outstanding without preventing entitlement. Determine entitlement at 30 June. The normal completion-year approach assesses the beneficiary’s share of the whole year’s net income; paras 21–23 allow requested apportionment supported by actual pre/post completion income accounts, not time alone, retaining earlier qualifying payments. Distinguish s 97 beneficiary assessments, s 98 trustee assessments for relevant legal disability/non-resident shares and s 99/99A retained income. Do not override s 101A/302 deemed no-entitlement amounts. For minors, test s 102AG rather than asserting every estate amount is excepted; s 98 Medicare and offsets depend on the beneficiary’s facts. [IT 2622 paras 7–23](https://www.ato.gov.au/law/view/document?docid=ITR/IT2622/NAT/ATO/00001); [ss 95–99A, 101A and 102AG](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html).
 
 #### Rule 5 -- s 99 rates: three concessional years, then compression
 
-Apply for the concessional rate in the estate's FIRST trust return: resident individual rates with the full threshold for the first three income years (the short period to the first 30 June counts as year 1), no Medicare levy, no LITO, no extension beyond year 3, and the concession can be lost on material changes to the estate's circumstances (e.g. assets injected -- also a s 99A(2) trigger). From year 4 the published bands compress (Section 3.2): $416 nil band, 50% shade-in to $611, then $97.76 + 16% to $45,000 with the whole amount effectively at 16% once over $611, then the ordinary 30/37/45 brackets -- still no Medicare levy. **2026-27 caution:** the 15% second rate is law and mechanically shifts the shade-in constants; the ATO table (QC 49909) is published only to 2025-26 as at 20 August 2026 -- re-verify before lodging 2026-27.
+Apply the Section 3.2 scale only after documenting the assessment section, residence, relevant income and death-date test. The concession is normally described as the first 3 estate income years; a short period counts, and the statutory date condition still governs boundary cases. Later estate income is not taxed using the full individual threshold. ATO’s old published table is historical support, not authority to retain its 16% constants in 2026-27. The statutory s 99A rate is 45%; adding Medicare to make 47% is wrong for a s 99/99A deceased estate assessment. Beneficiary s 98 assessments need separate analysis.
 
-For a section 99 estate assessment, eligible imputation credits can offset tax liability. Include the corresponding dividend gross-up in assessable income and test franking-credit eligibility. For example, $30,000 taxable income already including the gross-up produces $1,888 tax at the 2025-26 year-2 rates; an eligible $600 franking offset reduces that to $1,288. This does not give the estate LITO or establish refundability of every excess credit. (ITAA 1936 s 99; ITAA 1997 Subdiv 207-B and s 67-25; LITO is confined to individuals under ITAA 1936 s 159N.)
+For s 99 estate income, eligible franking credits may offset tax after the dividend gross-up and eligibility tests. This does not create LITO or prove every excess credit refundable. Keep the tax calculation, credits, withholding and any refund separate. Example 2 uses the actual 2026-27 estate rates. [ITAA 1936 s 99](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html); ITAA 1997 Subdiv 207-B and s 67-25; [ATO estate rates](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/tax-rates-deceased-estate).
 
 #### Rule 6 -- Death is not a CGT event (Div 128)
 
-Any capital gain or loss on death is disregarded where the asset passes to the LPR or to a beneficiary (ss 128-10, 128-15, 128-20 -- passing under the will, intestacy, appropriation or deed of arrangement). Cost base to the LPR/beneficiary (s 128-15(4)): pre-CGT asset of the deceased -> market value at date of death; post-CGT asset -> the deceased's cost base at death; two market-value overrides -- the deceased's main residence just before death (not then income-producing, passing after 20 August 1996, not as surviving joint tenant) and assets passing to a special disability trust. The beneficiary adds LPR-incurred costs (conveyancing, probate-defence legal costs) to their own cost base (s 128-15(5)). Assets the LPR SELLS instead of transmitting do not pass -- the estate returns that gain normally. Discount clock (s 115-30(1) item 4): the inheritor is deemed to have acquired a post-CGT asset when the DECEASED acquired it, and a pre-CGT asset at the date of death -- so shares the deceased held 10 years are discount-eligible on day one in the beneficiary's hands.
+Division 128 disregards relevant gains/losses arising on death and on an LPR passing an asset to a beneficiary, subject to K3 and other exceptions. Section 128-20 defines passing under will/intestacy, appropriation or a qualifying deed; an LPR’s sale under a power of sale is excluded. Under s 128-15(4), ordinary post-CGT assets inherit separate cost base/reduced cost base, pre-CGT assets generally reset to death-date market value, and the table contains specific rules for trading stock, qualifying main residences, foreign deceased/non-TAP assets and special disability trusts. A main residence reset requires no income-producing use just before death and no excluded foreign residency; historical transitional rules and joint tenants differ. Section 128-15(5) carries only expenditure the LPR could legally include, not every probate/legal cost. General administration legal costs are ordinarily not deductible and only qualifying costs enter a cost base. For the discount clock, post-CGT assets use the deceased’s acquisition time under s 115-30 items 3/4, even where an eligible dwelling has a death-date valuation reset; pre-CGT assets use death under items 5/6. Other discount conditions still apply. [Div 128](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_4/document_4.html); [s 115-30](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html); [ATO LPR legal costs](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/deductibility-of-legal-personal-representative-legal-costs).
 
 #### Rule 7 -- Inherited main residence and the 2-year window (s 118-195)
 
-Full exemption for a dwelling that was (a) the deceased's pre-CGT asset, or (b) their main residence just before death and not then income-producing, IF EITHER the ownership interest ends (contract settles) within 2 years of death -- post-death renting is irrelevant under this limb -- OR from death the dwelling was the main residence of the deceased's spouse, a person with a right to occupy under the will, or the disposing beneficiary. The right to occupy must be granted by the terms of the will itself: the ATO's [draft TD 2026/D1](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001) (released for comment in 2026, replacing three withdrawn ATO IDs) treats a right given by the trustee under a broad discretion, or by a later deed or agreement among the beneficiaries, as outside this limb. Failing both limbs, s 118-200 gives a days-based partial exemption. The Commissioner can extend the 2 years; PCG 2019/5 makes extensions up to 18 months AUTOMATIC where all five safe-harbour conditions hold (Example 4), with discretionary requests beyond it. Foreign-resident overlays kill the exemption: a deceased who was a foreign resident more than 6 years at death (no life event) had no main-residence status to inherit, and a beneficiary selling while a long-term foreign resident loses their period too -- flag and escalate (R-AU-DE-4, au-nonresident-cgt).
+Section 118-195 first requires an individual beneficiary or estate trustee, an eligible interest and no excluded foreign resident deceased. The deceased must have acquired pre-CGT, or acquired post-CGT with the dwelling their main residence and not income-producing just before death. Also satisfy either disposal within 2 years/allowed longer period or the continuous qualifying occupation limb: spouse not permanently separated, qualifying will occupier or disposing beneficiary. The ownership interest normally ends on settlement, separately from the contract-date CGT event. Post-death rent does not itself defeat the timing limb. Apply the statutory foreign resident, income-use and transitional overlays; mixed residence, chained inheritances, absence choices and life interests need review. If full exemption fails, calculate the applicable partial exemption under ss 118-190/192/200/205 using the actual acquisition/use facts; do not automatically tax either all or none of the raw gain. [ss 118-190–205](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html). TD 2026/D1 remains a draft preliminary view on express occupation rights under the will; its discussion of broad trustee discretions and later agreements is not final law. Obtain legal review of the actual clause. [Draft TD](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001). PCG 2019/5 permits reliance as if a longer period had been allowed only when all 5 para 11 conditions hold; it is a compliance safe harbour, not an automatic extension for every delayed sale. Outside it, seek an actual discretion decision; retain the request, decision and supporting chronology. [PCG 2019/5](https://www.ato.gov.au/law/view/document?docid=COG/PCG20195/NAT/ATO/00001).
 
 #### Rule 8 -- CGT event K3 (s 104-215): the Div 128 override
 
 **AUDIT FLASH POINT**
 
-K3 happens when a CGT asset of the deceased passes to a beneficiary who, when it passes, is an exempt entity, the trustee of a complying superannuation entity, or a foreign resident. Foreign-resident limb: only if the deceased was an Australian resident just before death AND the asset is NOT taxable Australian property in the beneficiary's hands (TAP -- Australian real property, mining interests, land-rich entity stakes -- stays in the Australian net, so rollover applies instead). The event time is JUST BEFORE death: gain = market value at death less cost base, returned in the deceased's DATE-OF-DEATH return, discount-eligible, and able to absorb the deceased's otherwise-dying capital losses. Pre-CGT assets: disregarded (s 104-215(5)); testamentary gifts to deductible gift recipients: s 118-60 exception. Because "passing" may occur years after lodgment, K3 routinely forces an AMENDMENT of the final return -- screen beneficiary residency at day one, not at transfer (Conservative defaults).
+Screen at intake and again at actual passing. K3 concerns an asset owned just before death passing to an exempt entity, complying super entity trustee or foreign resident. For the foreign limb, the deceased must have been Australian resident immediately before death and the asset must not be TAP in the beneficiary’s hands. Listing shares on ASX does not settle the land-rich/ownership or other TAP tests. The event is just before death: gain uses death-date market value minus cost base; loss uses reduced cost base. Include any resulting net capital gain in the deceased’s final return, applying actual loss and discount eligibility. Pre-CGT gains/losses are disregarded under s 104-215(5), and s 118-60 has a conditional philanthropic testamentary-gift exception. Do not treat every gift to an exempt entity as exempt. A later passing can reveal a final-return amendment; establish available amendment powers and dates rather than assuming unlimited time. [s 104-215](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html); see au-capital-gains, au-nonresident-cgt and au-amending-individual-income-tax-return-period.
 
 #### Rule 9 -- Super death benefits: dependant status and the estate route
 
-Superannuation is NOT will property: it is paid under the fund's rules and SIS law, by trustee discretion or a binding death benefit nomination (a BDBN binds the FUND trustee and can be lapsing -- validity disputes go to R-AU-DE-3). Tax dependant (s 302-195: spouse/former spouse, child under 18, interdependency, actual financial dependant) -> lump sum entirely tax-free. Non-dependant (typically an independent adult child) -> lump sum only: tax-free component NANE; taxable component taxed element at max 15%, untaxed element at max 30%, PLUS 2% Medicare levy when paid directly. Paid to the LPR instead: the fund withholds nothing (Schedule 12), the benefit is statutorily income with no present entitlement, and the trustee is assessed under s 101A(3)/s 302-10 as if paid to those who benefit or may be expected to benefit -- tax-dependant shares tax-free, non-dependant shares at the 15%/30% caps WITHOUT Medicare levy ([s 251S(1)(c) ITAA 1936](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/251S); Example 6). Some commentary adds the 2% levy for a non-dependant taking through an estate, so confirm the point before relying on the difference. Commentary also describes the trustee withholding the tax from the beneficiary's payment and remitting it to the ATO: hold back the tax before distributing. Keep death benefits out of the s 99 rate analysis: Div 302 rates apply to them specifically.
+The fund’s governing rules, nomination and lawful decision determine whether a benefit is paid directly or to the estate; super does not enter the will merely because the will mentions it. Obtain the statement and distinguish lump sum from income stream. For tax dependency, s 302-195 includes spouse/former spouse, child under 18, interdependency under s 302-200, other actual dependency and the special line-of-duty lump sum rule. An adult child is not automatically a tax non-dependant; SIS eligibility and tax dependency differ. A dependant lump sum is NANE under s 302-60. For a non-dependant lump sum, s 302-140 excludes the tax-free component and s 302-145 includes the taxable component with offsets capping income tax at the Section 3.2 rates. Calculate ordinary tax and applicable offsets first; the cap is not a universal flat final rate. Direct recipients need their actual Medicare/surcharge circumstances. [Div 302](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_6/document_6.html). For an estate receipt, s 302-10 allocates according to who has benefited or may be expected to benefit, treating it as income to which no beneficiary is presently entitled; s 101A(3) includes relevant assessable amounts in estate income. The fund withholds nil under current Schedule 12, but the estate must reserve and pay its assessed tax. Section 251S(1)(c) excludes deceased-estate s 99/99A assessments from Medicare. Distinguish that exclusion from s 98 beneficiary assessments, and distinguish all withholding from final assessment. Example 6 states the assumptions for its comparison.
 
 #### Rule 10 -- Unfinished business: s 101A, franking refunds, dying losses
 
-(1) Amounts received AFTER death that would have been the deceased's assessable income if received in life (final wages, director's fees, trail commissions, pre-death invoices) are assessable income of the ESTATE (s 101A(1)), not the final return -- and death-benefit ETPs and super paid to the LPR fall in s 101A(3). (2) The final return still claims the deceased's franking offsets, and excess credits are refunded to the LPR -- lodge for the refund even where income is trivial. (3) Carried-forward losses DIE with the deceased: revenue losses and net capital losses cannot transfer to the estate or beneficiaries. Last chance to use them is the final return -- pre-death disposals and K3 gains can absorb capital losses (Example 5); nothing else can. Never model estate income as sheltered by the deceased's losses.
+Section 101A(1) includes an amount received by the estate trustee that would have been assessable to the deceased if received in life, deemed income with no beneficiary presently entitled. Check the derivation basis and avoid including a previously derived amount twice. Subsections(2)–(4) address unused leave, relevant Division 82/302 amounts and farm management deposits. Do not allocate every later salary payment, dividend or invoice by its bank date alone. Reconcile payer statements and payment character. Final-return franking offsets and refunds depend on eligibility and authority procedures. The deceased’s revenue/net capital losses do not become estate or beneficiary losses; eligible final-return gains may use available losses in the proper order, but estate gains cannot. [s 101A](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html); [ATO final return](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-a-final-tax-return-for-the-deceased-person).
 
 #### Rule 11 -- Testamentary trusts: Div 6AA excepted income and s 102AG(2AA)
 
 **AUDIT FLASH POINT**
 
-Income of a trust that resulted from a will, codicil, intestacy or court order (s 102AG(2)(a)(i)) is EXCEPTED trust income: minor beneficiaries are taxed at ordinary adult rates with the full threshold instead of Div 6AA penalty rates -- the core testamentary-trust advantage. The s 102AG(2AA) integrity rule (from 1 July 2019) confines this to income derived from property transferred FROM the deceased estate (or accumulations of it, and property representing successive reinvestment/proceeds of it). Assets injected from outside -- gifts from relatives, borrowings, a related discretionary trust "topping up" the TT -- generate ORDINARY (penalty-rate) income for minors. Trace asset provenance before applying adult rates; apportion where the corpus is mixed. Note also s 102AG(2)(d)(ii) excepted income for property transferred directly to a minor from a deceased estate outside any trust.
+A will or intestacy label alone does not make every amount excepted trust income. Under s 102AG(2)(a)/(2AA), trace income to property transferred from the deceased estate for the beneficiary and qualifying accumulations/reinvestments. Check arm’s-length and agreement limitations in (3)–(5), other excepted categories in (2), and actual beneficiary circumstances before applying Div 6AA. Outside injections or borrowing are not automatically will-derived; trace and apportion rather than assuming the whole trust eligible or ineligible. Paragraph(2)(d) concerns trustee investment of qualifying devolved property and is not a blanket rule for a minor’s direct receipts. Mixed corpus, indirect tracing and super proceeds trusts require review. [s 102AG](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html).
 
 #### Rule 12 -- LPR liability and estate distributions discipline
 
-Before interim or final distributions: quantify final-return tax, estate tax by year, K3 exposure, super benefit tax at trustee level, and any pre-death ATO debts from the data package. The authorised LPR is liable for the deceased's tax up to the value of estate assets, and personally exposed where assets are distributed leaving tax unprovided for -- PCG 2018/4 describes when the ATO treats an LPR as having notice. Interim distributions also flip present entitlement on the amounts paid (Rule 4), changing who is assessed -- document stage, date and amount for every payment out.
+Before distributions, provide for deceased and estate tax, existing debts, K3, super and unresolved assessments. ATO keeps deceased and estate tax accounts separately but may offset credits against liabilities of the general estate. Personal exposure depends on the LPR’s legal position, notice and assets held/that should have been held; a shortfall does not automatically make the LPR personally liable for all debts. PCG 2018/4 concerns eligible less complex estates and pre-death liabilities, not every estate or post-death tax. Its tests include a grant, the 4-year business/discretionary-trust/SMSF history, permitted asset classes, value below $10 million and disallowed recipients. Reasonable handling of outstanding returns, the 6-month notice condition and separately disclosed material irregularities must all be considered. Six months alone is no universal clearance. [PCG 2018/4](https://www.ato.gov.au/law/view/document?docid=COG/PCG20184/NAT/ATO/00001); [ATO finalisation](https://www.ato.gov.au/individuals-and-families/deceased-estates/confirming-tax-obligations-are-complete). Record the basis before distributing and refer insolvency, legal liability and disputes.
 
 #### Rule 13 -- Proposed 30% trustee minimum tax: the testamentary carve-out
 
-The 30% minimum tax on the net income of discretionary trusts from 1 July 2028, payable by the trustee, carves out deceased estates and, subject to conditions about the trust's assets and beneficiaries, testamentary trusts. Treasury Laws Amendment (Tax Reform No. 3) Bill 2026 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bill 2026: introduced 14 October 2026, passed the House 29 October 2026, referred to the Senate Economics Legislation Committee (report due 13 November 2026); not law at 31 October 2026. [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf), paras 1.18, 1.22, 1.36-1.39. Schedule 4 of the same Bill would also exempt gains in deceased estates and genuine testamentary trusts from the 30% minimum rate on capital gains, subject to integrity rules (paras 4.137-4.157). NOT LAW: never model it, never restructure around it, and treat carve-out design as unstable (R-AU-DE-6 for planning requests). See au-trust-distributions Rule 14 for the full landscape table.
+**Not yet confirmed for current use:** the earlier guide recorded the Tax Reform No.3 and Income Tax Rates Amendment (Minimum Tax on Discretionary Trusts) Bills as un-enacted at 31 October 2026, with proposed deceased estate/testamentary exceptions. Their current parliamentary status, text, carve-outs and application have not been verified in this pass; the APH search route was unavailable to the research tool. Retain the [APH bill reference](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554) and [earlier explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) as historical references. Do not model a proposed minimum, assume a carve-out or restructure from those dated statements. Verify the enacted text and commencement before later-period work; R-AU-DE-6 still applies.
 
 #### Rule 14 -- 1 July 2027 CGT reform interaction (LAW)
 
-Tax Reform No. 1 Act 2026 (Assent 26 June 2026): from 1 July 2027, for gains accruing after that date, the 50% discount for individuals and trusts is replaced by cost base indexation plus a 30% minimum rate, and pre-CGT status ends after 30 June 2027. Deceased-estate flow-ons to flag on every file: (a) the market-value-at-death uplift for a deceased's pre-CGT assets (s 128-15(4) item 4) only works its old magic while pre-CGT status exists -- deaths after the transition sit under the new regime; (b) the inherited discount clock (Rule 6) matters differently once discounts give way to indexation; (c) estates holding assets across 1 July 2027 need the valuations and records the transitional rules in ss 112-155 to 112-185 rely on, and estate trustees pick up the new obligations to categorise capital gains and issue beneficiary statements (au-trust-distributions Rule 14). Detailed ATO guidance is still emerging -- verify before advising on any post-June-2027 death or estate disposal.
+**Later-period hold:** the earlier guide identified the enacted Tax Reform No. 1 Act 2026 and future CGT changes. This current-period correction does not verify the full post-June 2027 transition, estate asset categories, indexation/minimum-tax allocations, pre-CGT treatment or beneficiary reporting. Retain acquisition, death-date and transition valuation records; use the separately sourced future-law section of au-capital-gains and the actual amending Act/application provisions before calculating a later event. Do not replace the transition with a blanket assertion that every old gain loses its discount or that all pre-CGT treatment ends identically. Mark affected future calculations `Needs Input` until the operative period and rules are checked.
 
 ---
 
@@ -215,7 +236,7 @@ Tax Reform No. 1 Act 2026 (Assent 26 June 2026): from 1 July 2027, for gains acc
 
 #### T2-2 -- Dwelling occupied by spouse or right-to-occupy beneficiary
 
-**Trigger:** widow/widower stays in the home; will grants occupation rights; life interests. **Issue:** s 118-195 occupation limb can fully exempt WITHOUT the 2-year clock, but life and equitable interests have their own CGT rules and can also ground a PCG 2019/5 circumstance. **Action:** document occupier identity and the will clause granting the right (a trustee-discretion or deed-of-arrangement right does not qualify under draft TD 2026/D1); escalate life-interest structures (legal + TR 2006/14 territory).
+**Trigger:** a spouse or another permitted occupier remains in the home. **Action:** verify the whole occupation period, separation status, will clause, statutory conditions and draft status. A qualifying occupation limb may operate beyond 2 years; a later deed/discretion does not establish it merely by being labelled a right to occupy. Life interests and their CGT treatment require legal and specialist tax review.
 
 #### T2-3 -- Estate sells vs transmits
 
@@ -231,7 +252,7 @@ Tax Reform No. 1 Act 2026 (Assent 26 June 2026): from 1 July 2027, for gains acc
 
 #### T2-6 -- Superannuation proceeds trusts
 
-**Trigger:** will directs super death benefits into a separate trust for minors. **Issue:** excepted-income status for the minors turns on s 102AG conditions tracking who could benefit (tax dependants) and asset provenance (2AA). **Action:** confirm trust terms mirror the excepted categories before applying adult rates; escalate drafting (R-AU-DE-6).
+**Trigger:** super proceeds enter a trust for minors. **Action:** trace the actual source and test the applicable s 102AG category, beneficiary conditions, arm’s-length rules and accumulations. Tax dependency under Div 302 and excepted income under Div 6AA are separate tests. Do not assume one establishes the other; escalate drafting and mixed sources.
 
 #### T2-7 -- Amendment traps on the final return
 
@@ -252,20 +273,27 @@ FINAL RETURN (1 July - DOD)
   beneficiaries, MV at DOD - cost base): AUD [____]
   C/f revenue losses used (last chance): AUD [____]
   C/f capital losses used (last chance): AUD [____]
-  Tax + full-year Medicare levy:         AUD [____]
-  Franking offsets (refundable):         AUD [____]
+  Tax after actual residency/offset tests: AUD [____]
+  Medicare after exemptions/reductions:   AUD [____]
+  Eligible franking offsets:             AUD [____]; refundability checked [Y/N]
   Lodged: [paper/agent]  'DECEASED' annotation: [Y/N]
 
 ESTATE TRUST RETURNS (per year since DOD)
   Estate income year number:             [1/2/3/4+]
   Administration stage at 30 June:       [initial/intermediate/final]
-  Interim distributions PAID:            AUD [____] -> beneficiary s 97/98
-  Balance no present entitlement:        AUD [____] -> trustee s 99
-  Rate basis: [Y1-3 individual+threshold, no ML / Y4+ compressed]
-  Tax: AUD [____]   (NO Medicare levy on s 99)
-  s 101A receipts (pre-death income):    AUD [____]
-  Super death benefit via LPR: taxed element AUD [____] x 15%,
-  untaxed AUD [____] x 30%, tax-dependant share NANE, NO ML
+  Qualifying interim income paid/applied: AUD [____]; s 97/98 tests [____]
+  Capital advances excluded from above:   AUD [____]
+  Special deemed no-entitlement amounts:  AUD [____]; provision [____]
+  Trustee retained net income:            AUD [____]; established s 99/99A [____]
+  Statutory death-date condition/result:  [____]; applicable rate/year [____]
+  Trustee tax: AUD [____]; no Medicare for deceased-estate s 99/99A
+  Beneficiary s 98 Medicare tests/result: [____]
+  s 101A derivation/exceptions checked:    AUD [____]; allocation [____]
+  Super via LPR: tax-free AUD [____]; taxed AUD [____]; untaxed AUD [____]
+  Expected dependant/non-dependant shares and evidence: [____]
+  Ordinary tax AUD [____]; applicable cap offsets AUD [____]
+  Final super-related assessment AUD [____]; withholding AUD [____]
+  Apply Rule 9; do not substitute component x15%/30% for final tax
 
 ASSET REGISTER (per asset)
   Pre/post-CGT for deceased: [____]  Cost base at DOD / MV at DOD: [____]
@@ -283,68 +311,247 @@ REVIEWER FLAGS
 ### Section 8 -- Reading guide
 
 1. Date of death first: it splits every number into final-return vs estate, fixes the estate-year count, and starts the 2-year dwelling clock.
-2. Authority second: grant status decides who may lodge, who gets the data package, and whether anyone is an "authorised LPR" at all.
-3. Stage third (IT 2622): initial/intermediate/final determines present entitlement -- and therefore whether s 97, s 98 or s 99 carries each dollar.
-4. Count estate years honestly: the part-year to the first 30 June is year 1; year 4 pricing is a cliff (Example 3).
+2. Authority second: document grant and ATO status, full or limited access, and the proper return/refund pathway.
+3. Administration stage informs present entitlement. Establish the applicable s 97/98/99/99A assessment and preserve amounts with special statutory deemed no-entitlement treatment before allocating each dollar.
+4. Count estate years honestly: the part-year to the first 30 June is year 1. Separately test the statutory death-date condition and assessment provision before selecting rates (Example 3 and Section 3.2).
 5. Screen every asset for K3 at day one -- beneficiary residency at PASSING is what counts, and the charge lands in the final return.
 6. Never let the 2-year dwelling window expire silently: diarise it at engagement, and document PCG 2019/5 conditions contemporaneously.
-7. Label reform items correctly: 15% rate flow-through (LAW, 2026-27), 1 July 2027 CGT changes (LAW), 30% trustee minimum tax with testamentary carve-out (BILLS, NOT LAW).
+7. Keep current rates separate from later CGT transition and unverified proposed minimum-tax provisions. Rules 13/14 are explicit later-period holds.
 
 ---
 
 
-#### Key figures (2025-26 -- the year being lodged)
+Period-specific estate figures have one home in Section 3.2. Use au-income-tax for the individual scale, au-medicare-levy for individual levy/exemption rules and au-capital-gains for loss/discount ordering; confirm the requested year.
 
-| Item | Value |
+## Boundary and exception table
+
+| Fact or boundary | Treatment and evidence needed |
 |---|---|
-| Final return threshold / Medicare levy | Full $18,200 threshold, no pro-rating; Medicare levy at 2% with full-year low-income thresholds |
-| Estate years 1-3 (s 99) | Individual rates + $18,200 threshold; NO Medicare levy; no LITO; eligible franking offsets may apply |
-| Estate year 4+ bands (2024-25/2025-26) | $0-$416 nil; $417-$611 50% of excess; $612-$45,000 $97.76 + 16% over $611 (whole amount at 16% once over $611); then $7,200+30% / $34,200+37% ($135k) / $54,550+45% ($190k) |
-| 2026-27 flow-through | 15% second rate is LAW; year-4+ boundaries not yet republished by ATO -- verify QC 49909 |
-| Inherited dwelling window | 2 years from death to settlement; PCG 2019/5 automatic extension <= 18 months if all 5 conditions met |
-| Super death benefit (non-dependant) | Taxed element 15%, untaxed 30%; + 2% Medicare direct, NO Medicare via LPR; tax dependant: lump sum tax-free |
-| K3 measurement | MV at death − cost base, in the deceased's final return; pre-CGT disregarded; DGR gifts excepted (s 118-60) |
-| Losses at death | Revenue and capital carry-forwards lapse -- usable only in/for the final return |
+| Missing material fact | Mark the affected classification and dependent totals `Needs Input`; request evidence. A provisional exposure range is not a return position |
+| Unknown estate stage or residency | Preserve alternatives in the reviewer brief; do not invent s 99, s 99A, s 98, foreign residency or present entitlement |
+| Death on 30 June or year-count boundary | Record the actual periods and test the Rates Act's 'died less than 3 years before the end of the year' condition. Do not substitute a label such as 'year 3' for the statutory date test |
+| Interim payment | Distinguish income paid/applied from a capital advance; apply IT 2622 para 14 only where its conditions hold. s 101A/302 deemed no-entitlement amounts remain separate |
+| Property sold within 2 years | The timing limb does not remove the deceased's asset/use and excluded-foreign-resident conditions in s 118-195 |
+| Occupation after death | Confirm the qualifying occupier and entire period. TD 2026/D1 remains a draft preliminary view; legal interpretation and life interests need review |
+| Fund withholding versus assessment | Record both separately. The withholding table does not determine final tax, dependency or the lawful recipient |
+| Foreign beneficiary or injected assets | Recheck the actual asset, passing date, TAP status and statutory integrity conditions; escalate the affected work |
 
 ## Worked cases
 
-### Section 4 -- Worked examples (2025-26 rates -- the year being lodged)
+These are hypothetical AUD working papers, not client data. Each case fixes its own period and eligibility facts. The executable blocks check arithmetic; they do not establish the stipulated facts, a legal entitlement or a complete return. Compute final tax only where the case supplies all relevant assumptions.
 
-#### Example 1 -- Final return: part-year income, full threshold, franking refund
+### Example 1: 2025-26 final return, full threshold and franking
 
-Leo died 31 October 2025. Salary to date of death $48,000 (PAYG withheld $9,000); fully franked dividend $1,400 (franking credit $600) paid 15 October 2025. Taxable income = 48,000 + 1,400 + 600 = **$50,000**.
+Leo, an Australian resident throughout 2025-26, died on 31 October 2025. Salary derived to death is $48,000, with $9,000 PAYG withholding. An eligible fully franked dividend paid before death is $1,400 plus a $600 franking credit. Assume no deductions, other income, other offsets, study-loan liability or Medicare surcharge, and a full ordinary 2% Medicare levy after checking exemptions and dependants. Taxable income is $50,000. The 2025-26 individual scale produces $5,788; LITO is $250. After levy and the franking offset, liability is $5,938 and the withholding credit gives a $3,062 refund. ATO's authority/refund procedures still apply. Death alone does not prorate the otherwise available full resident threshold. Use au-income-tax and au-medicare-levy for those individual rules.
 
-Tax at 2025-26 resident rates with the FULL threshold (never pro-rated for a part year): 16% x (45,000 − 18,200) = $4,288; + 30% x (50,000 − 45,000) = $1,500 -> $5,788. LITO applies (this is an ordinary individual return, unlike the estate assessments in Rule 4): $325 − 1.5% x (50,000 − 45,000) = $250, so $5,538. Medicare levy 2% x 50,000 = $1,000. Less franking offset $600 (refundable in a final return). Net $5,938; withheld $9,000 -> **refund $3,062**, released to the authorised LPR. Four months of income against a full-year threshold and withholding scales makes a refund the normal outcome -- lodge even when marginal. The November salary run and any dividends paid after 31 October are NOT in this return: they are estate income (Rule 10).
+```oa-check
+name: 2025-26 final return with eligible credits
+inputs:
+  salary: 48000
+  dividend: 1400
+  franking_credit: 600
+  withheld: 9000
+steps:
+  taxable_income: salary + dividend + franking_credit
+  basic_tax: (45000 - 18200) * 0.16 + (taxable_income - 45000) * 0.30
+  lito: 325 - (taxable_income - 45000) * 0.015
+  medicare: taxable_income * 0.02
+  liability: basic_tax - lito + medicare - franking_credit
+  refund: withheld - liability
+expected:
+  taxable_income: 50000
+  basic_tax: 5788
+  lito: 250
+  medicare: 1000
+  liability: 5938
+  refund: 3062
+```
 
-#### Example 2 -- Estate year 2: s 99 concessional assessment
+A November receipt is not allocated by its bank date alone. Reconcile derivation and s 101A, including its exceptions; an amount already included in the final return is not taxed again merely because collected later.
 
-Leo's estate (year 1 was 1 November 2025 - 30 June 2026) derives net income of $30,000 in 2026-27 (year 2); administration incomplete, nothing paid out. No beneficiary is presently entitled -> trustee assessed under s 99 at individual rates with the full threshold and NO Medicare levy. At 2025-26 rates: 16% x (30,000 − 18,200) = **$1,888.00**. (For the actual 2026-27 assessment the enacted 15% rate gives 15% x 11,800 = $1,770.00 -- confirm the ATO 2026-27 tables at lodgment.) No LITO: a living individual on $30,000 would pay less after offsets; estates get rates and threshold only.
+### Example 2: actual 2026-27 estate year 2
 
-#### Example 3 -- Estate year 5: compressed bands and the anti-prolongation cliff
+Leo's estate first period was 1 November 2025 to 30 June 2026. For 2026-27, it is a resident s 99 estate, death was less than 3 years before year end, administration remains incomplete, no qualifying income was paid/applied to beneficiaries and no special s 101A/302 amount is included. Ordinary taxable net income is $30,000, already including any dividend gross-up. Assume an eligible $600 franking offset, no other credits and no s 99A integrity issue. Basic tax is $1,770, with no estate LITO or Medicare levy; after the credit, $1,170 remains. The same income under the 2025-26 first-period scale would produce $1,888 before credits, a historical comparison only.
 
-Same estate still open in year 5 with $30,000 net income (2025-26 published bands): $97.76 + 16% x (30,000 − 611) = 97.76 + 4,702.24 = **$4,800.00** -- exactly 16% of the whole amount, because once income exceeds $611 the nil and 50% bands wash out. The identical income in year 2 cost $1,888. Prolonging administration past year 3 cost $2,912 on this income alone. (At $500 of income the tax is 50% x (500 − 416) = **$42.00** -- the compressed bands only shelter trivial amounts.)
+```oa-check
+name: 2026-27 estate year 2 with franking offset
+inputs:
+  net_income: 30000
+  threshold: 18200
+  franking_credit: 600
+steps:
+  basic_tax_2026: (net_income - threshold) * 0.15
+  liability_2026: basic_tax_2026 - franking_credit
+  basic_tax_2025_comparison: (net_income - threshold) * 0.16
+  rate_difference: basic_tax_2025_comparison - basic_tax_2026
+expected:
+  basic_tax_2026: 1770
+  liability_2026: 1170
+  basic_tax_2025_comparison: 1888
+  rate_difference: 118
+```
 
-#### Example 4 -- Inherited dwelling: month 20 vs month 30
+### Example 3: 2026-27 estate year 5 and shading boundaries
 
-Nina died 1 September 2024. Her home (acquired 2001, main residence, never income-producing) passes to her son Marco, who rents it out. Cost base = market value at death, $900,000 (s 128-15(4) item 3). Sale proceeds $1,000,000 less $20,000 selling costs; gain **$80,000**.
+A separate resident estate's deceased died on 12 August 2022. Its year 5 is 2026-27 and death was not less than 3 years before year end. Assume s 99 applies, no present entitlement, ordinary taxable net income of $30,000 and no offsets. Tax is $4,500. Compare $1,770 for the same income under the qualifying earlier-estate scale, before any franking credit: difference $2,730. The old 2025-26 later-estate scale would give $4,800, not the current result.
 
-- **Contract settles May 2026 (month 20):** within 2 years of death -> s 118-195 FULL exemption. Renting during the window is irrelevant -- the 2-year disposal limb ignores post-death use. Tax **nil**.
-- **Settles March 2027 (month 30), no eligible occupant, no extension:** full exemption fails; with nobody in s 118-195 occupation, the post-death period is non-exempt and the partial-exemption formula (s 118-200) leaves the whole $80,000 taxable. Marco's discount clock runs from Nina's 2001 acquisition (s 115-30) -> 50% discount -> $40,000 assessable; at a 37% + 2% marginal stack that is **$15,600**.
-- **PCG 2019/5 rescue:** if >12 months of the first 2 years was consumed by a listed circumstance (will challenge, life/equitable interest, estate complexity, settlement collapse beyond control, COVID restrictions), the dwelling was listed as soon as practicable, settlement occurred within 12 months of listing, none of the disqualifying factors (waiting out the market, refurbishment for price, inconvenience, unexplained executor inactivity) materially contributed, and the extension needed is <= 18 months -- the extension is AUTOMATIC and no application is made; retain the evidence. Outside the safe harbour: written discretionary request to the Commissioner.
+For separate whole-dollar shading illustrations, N=$416 gives nil, N=$500 gives $42, N=$594 gives $89 and N=$595 gives $89.25. The last crosses the statutory rounded phase-out limit. Determine assessment rounding separately; these are unrounded scale calculations.
 
-#### Example 5 -- CGT event K3: shares to a non-resident daughter
+```oa-check
+name: 2026-27 later estate scale and shading comparison
+inputs:
+  net_income: 30000
+  nil_limit: 416
+steps:
+  later_tax_2026: net_income * 0.15
+  early_tax_2026: (net_income - 18200) * 0.15
+  estate_scale_difference: later_tax_2026 - early_tax_2026
+  later_tax_2025_comparison: net_income * 0.16
+  phaseout_2026: floor(nil_limit * 0.50 / (0.50 - 0.15))
+  at_nil_limit: max(0, nil_limit - nil_limit) * 0.50
+  at_500: (500 - nil_limit) * 0.50
+  at_594: (594 - nil_limit) * 0.50
+  at_595: 595 * 0.15
+expected:
+  later_tax_2026: 4500
+  early_tax_2026: 1770
+  estate_scale_difference: 2730
+  later_tax_2025_comparison: 4800
+  phaseout_2026: 594
+  at_nil_limit: 0
+  at_500: 42
+  at_594: 89
+  at_595: 89.25
+```
 
-Iris (Australian resident) dies holding ASX shares: market value at death $300,000, cost base $120,000, held since 2015. Her will leaves them to her daughter in London (foreign resident). Listed shares are not taxable Australian property in the daughter's hands -> **CGT event K3** (s 104-215): the event happens JUST BEFORE death, and the $180,000 gain goes in **Iris's date-of-death return** -- the estate does not pay it, the final return does. Iris's $10,000 carried-forward capital losses (which would otherwise die -- Rule 11) absorb first: (180,000 − 10,000) x 50% discount = **$85,000 net capital gain** in the final return. If the shares pass years later when administration completes, the final return must be AMENDED. Contrast: same shares to her resident son -> no CGT event, rollover at $120,000 cost base with the 2015 acquisition date. If the asset were Australian real property (TAP), K3 would NOT happen -- rollover applies and Australia taxes the foreign beneficiary on eventual sale. Pre-CGT assets: any K3 gain is disregarded (s 104-215(5)). Which beneficiary takes which asset is will-drafting territory -- flag, never advise (R-AU-DE-1).
+### Example 4: inherited pre-CGT dwelling, month 20 versus month 30
 
-#### Example 6 -- Super death benefit: adult child direct vs via the estate
+Nina acquired her dwelling in 1980 and died on 1 September 2024. She was Australian resident and not an excluded foreign resident. The whole interest passes to Marco, an Australian resident individual. Death-date market value and the inherited first cost-base element are $900,000 under s 128-15(4) item 4. Marco rents it throughout the post-death period; no qualifying occupier, other exemption, later cost-base adjustment or capital loss exists. In each alternative, proceeds are $1,000,000 and eligible selling costs $20,000.
 
-Ken dies with $500,000 super: tax-free component nil, taxable component all taxed element. Sole beneficiary is his financially independent adult daughter (SIS dependant as his child, but NOT a tax dependant).
+- Settlement in May 2026 is within 2 years. The stipulated pre-CGT asset and taxpayer conditions satisfy s 118-195; the $80,000 raw gain is disregarded despite post-death rent.
+- Settlement in March 2027 is outside 2 years. Assume no extension or safe harbour. Under s 118-200 the denominator starts at death for this pre-CGT asset, and all those days are non-main-residence days: the ratio is 1. The $80,000 gain remains before losses/discount. Marco satisfies the 12-month discount period measured from death and the other current discount conditions, so the resulting net capital gain is $40,000. His final income tax is not supplied; it depends on his complete return.
 
-- **Paid directly by the fund:** 15% + 2% Medicare levy on the taxed element = 17% x 500,000 = **$85,000**.
-- **Paid to the LPR and distributed under the will:** the fund withholds NIL (Schedule 12). The trustee is assessed (s 101A(3) ITAA 1936 with s 302-10 ITAA 1997) on the amount to the extent a NON-dependant benefits or may be expected to benefit, at the same component caps but with **no Medicare levy** (s 251S(1)(c) excludes a s 99 or s 99A assessment of a deceased person's trust estate): 15% x 500,000 = **$75,000**. Saving **$10,000**.
-- Had the recipient been his spouse (tax dependant), the lump sum would be tax-free either way. A death benefit received by the estate is statutorily income to which NO beneficiary is presently entitled -- it never flows out pre-tax. Routing choices (BDBN to the LPR vs direct) sit in super-fund law and estate planning: a BDBN is a direction to the FUND trustee, not will property -- flag, and send disputes to R-AU-DE-3.
+```oa-check
+name: inherited pre-CGT home timing comparison before July 2027
+inputs:
+  proceeds: 1000000
+  inherited_value: 900000
+  selling_costs: 20000
+steps:
+  raw_gain: proceeds - inherited_value - selling_costs
+  within_window_gain: raw_gain * 0
+  outside_window_gain: raw_gain * 1
+  outside_window_net_gain: outside_window_gain * 0.50
+  assessable_gain_difference: outside_window_net_gain - within_window_gain
+expected:
+  raw_gain: 80000
+  within_window_gain: 0
+  outside_window_gain: 80000
+  outside_window_net_gain: 40000
+  assessable_gain_difference: 40000
+```
 
----
+For a delay potentially covered by PCG 2019/5, document all para 11 conditions: over 12 months of the first 2 years spent addressing para 12 circumstances; prompt listing and active sale after resolution; settlement within 12 months of listing; para 13 adverse factors immaterial; additional period no more than 18 months. Qualifying circumstances include will/ownership challenges, a will life/equitable interest, estate complexity, an uncontrollable failed/delayed settlement or specified COVID restrictions. Waiting for prices, refurbishment for price, inconvenience and unexplained inactivity can defeat the safe harbour when material. It is a conditional compliance approach; outside it, obtain a discretion decision. It does not cure another missing s 118-195 condition.
+
+### Example 5: resident deceased's K3 gain and loss ordering
+
+Iris, resident throughout the relevant period, dies in 2026-27 with post-CGT shares acquired in 2015. The interest passes to her foreign resident daughter. Stipulate that ownership, asset and land-rich tests establish the shares are not TAP in the daughter's hands, no s 118-60 exception applies and there is no other relevant gain/loss. ASX listing alone would not prove that conclusion. Death-date market value is $300,000 and cost base $120,000. K3 occurs immediately before death, producing $180,000. Apply an eligible $10,000 carried-forward capital loss before the available 50% discount: final-return net capital gain $85,000. This is not the estate's tax liability.
+
+```oa-check
+name: K3 final return loss before discount
+inputs:
+  market_value: 300000
+  cost_base: 120000
+  carried_loss: 10000
+steps:
+  capital_gain: market_value - cost_base
+  loss_used: min(capital_gain, carried_loss)
+  after_losses: capital_gain - loss_used
+  net_capital_gain: after_losses * 0.50
+expected:
+  capital_gain: 180000
+  loss_used: 10000
+  after_losses: 170000
+  net_capital_gain: 85000
+```
+
+A resident son receiving the same shares under a qualifying passing generally receives the cost base under Div 128 and the deceased's discount acquisition time; a later disposal still requires its own calculation. Australian real property is TAP, so it does not satisfy K3's foreign-resident limb. A K3 loss uses reduced cost base, not the gain's cost base. Recheck residency at actual passing and the final-return amendment powers if discovered later.
+
+### Example 6: super death benefit caps and a fully stipulated comparison
+
+Ken's death benefit is a $500,000 complying-fund lump sum, all taxable taxed element, no tax-free/untaxed component. His financially independent adult daughter has no interdependency or other tax dependency and the line-of-duty exception does not apply. For the direct alternative, she is resident all 2026-27, provides her TFN, has no other income, deductions, offsets or study loan and has a full 2% Medicare levy, no exemption/reduction and no surcharge. For the estate alternative, the resident s 99 estate qualifies for the earlier-estate scale, has no other income, deductions or credits and the whole benefit is expected to benefit that daughter. The fund's lawful payment decision is stipulated separately for each alternative; a will cannot itself select the recipient.
+
+The ordinary 2026-27 income tax on $500,000 is $190,870. Section 302-145's offset reduces that to the $75,000 cap. The stipulated direct Medicare levy adds $10,000, giving $85,000 before crediting withholding. For the estate, s 251S(1)(c) excludes levy on this s 99 assessment, so final income tax is $75,000. The fund withholds $85,000 in the stated direct TFN scenario under Schedule 12 and nil to the estate; the latter still reserves $75,000 for assessment. The $10,000 difference belongs to these assumptions, not every adult-child payment. Lower income, dependency, other components, offsets, residence or Medicare facts can change it. Check legal, fund and estate consequences before recommending a route.
+
+```oa-check
+name: 2026-27 taxed-element super cap and Medicare comparison
+inputs:
+  taxed_element: 500000
+steps:
+  ordinary_tax: (45000 - 18200) * 0.15 + (135000 - 45000) * 0.30 + (190000 - 135000) * 0.37 + (taxed_element - 190000) * 0.45
+  income_tax_cap: taxed_element * 0.15
+  super_offset: max(0, ordinary_tax - income_tax_cap)
+  capped_income_tax: ordinary_tax - super_offset
+  direct_medicare: taxed_element * 0.02
+  direct_liability: capped_income_tax + direct_medicare
+  estate_liability: capped_income_tax
+  direct_withholding: taxed_element * 0.17
+  estate_withholding: taxed_element * 0
+  tax_difference: direct_liability - estate_liability
+expected:
+  ordinary_tax: 190870
+  income_tax_cap: 75000
+  super_offset: 115870
+  capped_income_tax: 75000
+  direct_medicare: 10000
+  direct_liability: 85000
+  estate_liability: 75000
+  direct_withholding: 85000
+  estate_withholding: 0
+  tax_difference: 10000
+```
+
+### Example 7: minor's traced income, scale comparison before offsets
+
+A 14-year-old prescribed person who is not an excepted person has $20,000 of 2026-27 trust income. Alternative A is verified excepted income under s 102AG from qualifying will-derived assets, with no non-arm's-length/agreement limitation. Alternative B is verified non-excepted income from an outside injection, with no other exception. The adult scale gives $270 before beneficiary offsets and any levy; the Div 6AA eligible-income scale gives $9,000 before other adjustments. The $8,730 scale difference is not the final tax payable. Determine s 98/s 97 assessment, actual offsets, mixed income and Medicare separately. An outside transfer may satisfy another excepted category, so its source alone is not enough to assume Alternative B.
+
+```oa-check
+name: 2026-27 excepted and non-excepted minor income scales
+inputs:
+  income: 20000
+steps:
+  excepted_basic_tax: (income - 18200) * 0.15
+  nonexcepted_basic_tax: income * 0.45
+  scale_difference: nonexcepted_basic_tax - excepted_basic_tax
+expected:
+  excepted_basic_tax: 270
+  nonexcepted_basic_tax: 9000
+  scale_difference: 8730
+```
+
+### Example 8: actual completion-year apportionment
+
+In a resident estate's completion year, actual accounts establish $12,000 ordinary income before completion and $8,000 after it, with the same amounts of trust net income, no deductions or special s 101A/302 amounts. Before completion, the executor validly paid $2,000 of the first amount as income for a beneficiary under IT 2622 para 14. The adult resident beneficiary is presently entitled at 30 June. Executor and beneficiary request the supported para 21–23 apportionment. The trustee portion is $10,000 and the beneficiary portion $10,000, including the earlier $2,000 payment. These sum to the actual $20,000; do not allocate by elapsed days or assess the earlier payment twice. Without the supported requested alternative, the normal year-end entitlement approach must be considered for the whole year. This case allocates income, not final tax.
+
+```oa-check
+name: requested completion-year apportionment with interim income
+inputs:
+  before_completion: 12000
+  after_completion: 8000
+  qualifying_interim_income: 2000
+steps:
+  trustee_portion: before_completion - qualifying_interim_income
+  beneficiary_portion: after_completion + qualifying_interim_income
+  allocated_total: trustee_portion + beneficiary_portion
+  source_total: before_completion + after_completion
+  reconciliation: allocated_total - source_total
+expected:
+  trustee_portion: 10000
+  beneficiary_portion: 10000
+  allocated_total: 20000
+  source_total: 20000
+  reconciliation: 0
+```
 
 ## When to refuse or refer
 
@@ -354,16 +561,16 @@ Stop the affected calculation or action where a fact, source condition or scope 
 #### Prohibitions
 
 - NEVER lodge a final return via myTax, or without the DECEASED/LPR annotations
-- NEVER pro-rate the tax-free threshold in a date-of-death return
-- NEVER apply Medicare levy to a s 99 deceased-estate trustee assessment -- and never skip it in the final return or s 98 beneficiary assessments
+- NEVER prorate the final-return tax-free threshold merely because of death; check actual residency and any applicable part-year residency rule
+- NEVER charge Medicare on a deceased-estate s 99/99A assessment; test actual liability, exemptions and reductions for the final return and any s 98 beneficiary assessment
 - NEVER use the deceased's TFN for estate trust returns, or treat the former agent's authority as surviving death
-- NEVER treat beneficiaries as presently entitled during administration beyond amounts actually paid to them
-- NEVER apply years 1-3 concessional rates from year 4, or assume the estate-year count without the date of death
+- NEVER infer present entitlement from a capital advance or all cash distributions; test qualifying income paid to or applied on behalf of beneficiaries, actual completion and statutory deemed no-entitlement amounts
+- NEVER select estate rates from the year label alone; establish the assessment provision, actual death-date condition, requested income year and applicable scale
 - NEVER apply the deceased's carried-forward losses to estate income
 - NEVER skip the K3 screen because "death is not a CGT event" -- check every beneficiary's residency and each asset's TAP status
 - NEVER assume a missed 2-year window is fatal (PCG 2019/5) or that an extension is available without evidencing the conditions
 - NEVER treat super as will property, or apply Div 302 rates without the fund's component breakdown
-- NEVER apply adult rates to testamentary trust income for minors without tracing s 102AG(2AA) asset provenance
+- NEVER apply adult rates to minor income without establishing the applicable excepted-person or excepted-income category and its conditions; apply s 102AG(2AA) provenance tracing when relying on s 102AG(2)(a), and test other claimed categories separately
 - NEVER present the proposed 30% trustee minimum tax (or its testamentary carve-out design) as law
 - NEVER present figures as definitive
 
@@ -374,67 +581,81 @@ Stop the affected calculation or action where a fact, source condition or scope 
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+This fork’s current version is in its repository. Upstream hosted services do not establish that this fork’s changes are published or professionally reviewed. Check the recorded tier, review status, sources and period before use.
 
+
+
+## Filing and payment
+
+1. **Establish the authorised pathway.** Notify ATO of the death and estate manager using its current form. The online route requires the supporting-document Australia Post interview; the postal route requires certified copies. Record grant/reseal, will/intestacy documents and what ATO has actually accepted. Without authorised LPR status, request the limited pathway rather than using the deceased's credentials. Reappoint any agent and make the required declaration. [ATO notification](https://www.ato.gov.au/individuals-and-families/deceased-estates/notifying-us-of-a-death-and-who-will-manage-the-estate).
+2. **Separate identities and periods.** Use the deceased's TFN for final/prior individual returns and an estate trust TFN for estate returns. Apply through ABR for TFN only if no business, or the appropriate TFN/new ABN route if an authorised LPR continues the business. NAT3236 is the paper TFN alternative. A separate continuing testamentary trust is not registered as the deceased estate. [ATO registration and returns](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/registering-a-deceased-estate-trust-and-lodging-trust-returns).
+3. **Prepare the final return.** For the required year, use the current Individual tax return paper form or appointed tax agent. ATO instructs DECEASED ESTATE at the top, LEGAL REPRESENTATIVE OF [name] DECEASED as the name, the future-return question No and the representative's own signature on behalf of the deceased. Map derived income, eligible expenses, CGT/K3, offsets, PAYG credits and the death date. Verify Medicare M1 exemption days at V/W and M2 cover/exemption details at A where relevant. Keep the authority and assessment/refund evidence. If no return is required, give the death-marked non-lodgment advice. [ATO final return](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-a-final-tax-return-for-the-deceased-person).
+4. **Determine each estate return requirement.** For the first 3 periods ATO requires a return if net income exceeds the individual threshold, a beneficiary is presently entitled or a beneficiary is non-resident. For year 4 onwards, any income including capital gains requires a return; a voluntary return can claim eligible credits. Advise ATO when no further estate returns are needed. These lodgment rules do not settle rate eligibility at a statutory date boundary. Reconcile trustee retained income, beneficiary shares and deemed no-entitlement amounts with the fund/payer statements and actual administration accounts. [ATO registration and returns](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/registering-a-deceased-estate-trust-and-lodging-trust-returns).
+5. **Map the actual trust form and year.** The 2026 return is NAT0660. Use Type of trust D for a deceased estate, with the deceased's name and death date where required; a separate testamentary trust uses type E. Appendix 8 maps franked dividends/credits to item 12 L/M, non-dependant super taxed/untaxed elements to item 13 V/W, net capital gain to item 21 A and trust-law income to item 57 A (zero if a loss). Item 58 records beneficiary distributions and retained net income with no beneficiary presently entitled; its label V is the assessment calculation code. Verify the actual code in Appendix 12 and the software before completing it: no code is confirmed here. Record any separate rate request and attach required schedules. Confirm every field against the actual form/software. The paper estate route and authorised agent route are documented by ATO; verify any SBR product's supported year and estate permissions before using it. [2026 instructions](https://www.ato.gov.au/forms-and-instructions/trust-tax-return-2026-instructions); [Appendix 8](https://www.ato.gov.au/forms-and-instructions/trust-tax-return-2026-instructions/appendixes-for-the-trust-tax-return/appendixes-1-to-10/appendix-8-instructions-to-trustees-of-deceased-estates). The approved 2027 form, field mapping and software acceptance are not confirmed here: do not file 2026-27 calculations on a 2026 form.
+6. **Confirm due dates and submission.** Obtain the actual final/prior/estate return deadlines from ATO or the appointed agent's applicable lodgment program; do not invent one deadline from the death date. Obtain extensions where needed. The 2026 trust instructions allow paper, registered agent or supported SBR. For paper they specify AUSTRALIAN TAXATION OFFICE, GPO BOX 9845, then the nearest capital city's name/postcode; confirm the current address before mailing and do not send payment there. Record authorisation, return receipt, schedules, ATO assessment and any rejected submission. No lodgment is authorised by merely preparing these workpapers. [2026 lodging/payment](https://www.ato.gov.au/forms-and-instructions/trust-tax-return-2026-instructions/how-to-lodge-and-pay-the-trust-tax-return-2026).
+7. **Pay and reconcile separately.** For a timely trust return, trustee tax is due on the later of 21 days after its lodgment due date and 21 days after receipt of assessment; for a late/missing return, the instructions say 21 days after the lodgment due date. Check the actual notice, payment account and valid PRN, arrange authorised payment by the deadline and reconcile it to the ATO account. Final individual tax uses its own notice and account. Account for any offset of general-estate credits, retain enough cash before distributions and do not confuse nil fund withholding with nil tax. [2026 lodging/payment](https://www.ato.gov.au/forms-and-instructions/trust-tax-return-2026-instructions/how-to-lodge-and-pay-the-trust-tax-return-2026).
+8. **Close only after reconciliation.** Finalise required prior/final/estate returns, business statements, tax debts, refunds and disclosed irregularities, notify no further returns and cancel business registrations when appropriate. Provide beneficiary statements with the correct income/share, credits and trustee tax paid. Retain the evidence supporting any PCG 2018/4 position and keep later K3/amendment matters open. [ATO finalisation](https://www.ato.gov.au/individuals-and-families/deceased-estates/confirming-tax-obligations-are-complete).
 
 
 ## Completion checklist
 
+### Required outputs and reviewer attention
 
+Deliver all 4 workflow-base outputs together: the formula-based Excel working paper, Markdown reviewer brief, action list and review checklist. For this guide the workbook adds separate final-return and estate-year schedules, administration/entitlement allocation, CGT asset and dwelling schedules, super components/beneficiary allocation and a cash provision/reconciliation. Preserve the universal transaction fields A–L or document a complete column map; record sources, exclusions, default reasons and reviewer flags. Recalculate using an available supported tool and inspect errors before calling the workbook complete. If recalculation or an approved form is unavailable, mark delivery incomplete rather than asserting a filing-ready result.
 
-#### Test suite
+The reviewer brief identifies both taxpayers and periods, authority, actual income allocation, assessment section, statutory rate-date test, calculations, credits, withholding, notices, deadlines and cash reserved. List every refusal and unresolved assumption in cash-impact order, with a quantified comparison or an explicit inability to quantify. The action list separates client and reviewer actions: give each unresolved hold an action, responsible party, deadline if any, established cash impact or inability to quantify and reviewer-brief reference. Present it in the response and save it in the reviewer brief. Use the structured question form at the workflow-base ambiguity checkpoints to request only missing material facts from the 6-question intake; it does not replace the action list. The review checklist has a signature/decision section; qualified professional approval is required before filing or acting.
 
-**Test 1:** Died 31 October 2025; income to date of death $50,000 including a $600 franking credit. Using Example 1's 2025-26 rates and assumed $1,000 Medicare levy: $5,788 tax - $250 LITO + $1,000 levy - $600 franking offset = $5,938. With $9,000 withheld, the refund is $3,062. The tax-free threshold is not prorated; assess any Medicare exemption separately.
+Internal workflow policy, not a statutory safe harbour: flag any unresolved potential tax difference of $1,000 or more, and obtain a valuation/evidence check for each asset of $100,000 or more. Always flag unquantifiable material exposure, uncertain authority, residency, entitlement, dependency/provenance, a deadline, K3, a disputed will/fund decision or a later-law hold, regardless of amount. These attention thresholds never authorise an unsupported lower-value position.
 
-**Test 2:** Estate year 2, $30,000, no present entitlement. -> s 99 at individual rates: $1,888 (2025-26), no Medicare levy, no LITO.
+### Review Checklist Items
 
-**Test 3:** Estate year 5, $30,000. -> $97.76 + 16% x $29,389 = $4,800.00; whole amount effectively at 16%.
+- [ ] Confirm the loaded workflow-base, scope, 6 material intake facts, inferred profile and all refusals.
+- [ ] Identify death date, tax residency, legal/ATO authority, separate TFNs, years and approved filing pathway.
+- [ ] Reconcile every income/expense source across the deceased and estate without omission or double counting; check s 101A exceptions.
+- [ ] Establish administration stages and actual entitlement/payment evidence, including year-end and any requested supported apportionment.
+- [ ] Establish s 97/98/99/99A treatment and the statutory death-date test; choose the actual year scale, offsets and Medicare treatment.
+- [ ] Keep cost base/reduced cost base, valuations, passing versus sale, joint ownership, K3 and amendment powers separate.
+- [ ] Test every dwelling exemption condition, qualifying occupation, settlement date, partial formula and any documented safe harbour/discretion.
+- [ ] Verify super components, lawful recipient, dependency and expected beneficiaries; distinguish withholding, capped income tax and Medicare.
+- [ ] Trace minor-income sources and all applicable exceptions/integrity limits; do not infer eligibility from a trust label.
+- [ ] Resolve or hold source conflicts, unknown facts, historic/future law and form/software acceptance; carry holds into all dependent totals.
+- [ ] Tie return and beneficiary amounts to workpapers, current form items, actual due dates, notices, payment references and distribution provisions.
+- [ ] Recompute the 8 hypothetical cases and inspect the executable checker result; reconcile all 4 engagement outputs and obtain qualified sign-off.
 
-**Test 4:** Estate year 5, $500. -> 50% x (500 − 416) = $42.00.
+### Revision record
 
-**Test 5:** MR dwelling, MV at DOD $900k, settles month 20 after renting throughout. -> Fully exempt (2-year limb ignores use).
-
-**Test 6:** Same dwelling settles month 30, vacant, no safe-harbour circumstance. -> No full exemption; gain over MV-at-DOD cost base taxable (discount from deceased's acquisition date).
-
-**Test 7:** Post-CGT shares (MV $300k, CB $120k) pass to foreign-resident daughter. -> K3: $180k gain just before death, in the FINAL return; resident son instead -> rollover at $120k.
-
-**Test 8:** Australian-resident deceased's pre-CGT overseas beach house (not taxable Australian property) passes to foreign-resident nephew. -> K3 gain disregarded (s 104-215(5)); nephew's cost base = MV at DOD. An Australian beach house would be taxable Australian property, so K3 would not happen (Rule 8); the cost base result is the same.
-
-**Test 9:** $500k taxed-element super to adult child: direct $85,000 (17%); via LPR $75,000 (15%, no ML: s 251S(1)(c)).
-
-**Test 10:** Deceased's $40k carried-forward capital loss; estate sells shares at a $40k gain in year 2. -> Loss CANNOT offset -- it died with the deceased; estate pays s 99 tax on the gain.
-
-**Test 11:** Minor receives $20,000 testamentary trust income from will-derived assets. -> Adult rates (excepted income); if from assets injected by grandparents post-death -> Div 6AA penalty rates (s 102AG(2AA)).
+Version 1.4, 3 November 2026: replaces guessed tax facts with evidence holds; corrects current estate scales, assessment/authority, K3, dwelling, minor and super conditions; adds the substantive workflow contract, filing steps and 8 executable cases. The inherited dwelling example uses a pre-CGT acquisition so its late-sale day ratio is explicit. The former unqualified marginal-tax result is held rather than invented. Future-law topics remain with explicit verification holds; no topic is silently treated as current law. Previous version 1.3 was a structural update awaiting substantive checks.
 
 ## Sources
 
+Read on 3 November 2026 unless a retained historical scope is stated. The legislative metadata confirms the identified current compilations; page reads below cover the cited provisions/sections, not every provision in each volume. Primary law governs where a summary is incomplete. No source or arithmetic check is qualified Australian sign-off.
+
 | Source | URL | Read on |
 |---|---|---|
-| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19530001/Sch1-260-145> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/251S> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf> | Not re-read for this format update; see retained provenance |
+| ATO final return: need to lodge, identity, authorised/limited pathway, Medicare, refunds and study loans | [Doing a final tax return](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-a-final-tax-return-for-the-deceased-person) | 2026-11-03 |
+| ATO authority and grants: authorised LPR versus limited handling | [Who can represent](https://www.ato.gov.au/individuals-and-families/deceased-estates/who-can-represent-a-deceased-estate) | 2026-11-03, relevant sections |
+| ATO notification: online interview/post and supporting documents | [Notifying ATO](https://www.ato.gov.au/individuals-and-families/deceased-estates/notifying-us-of-a-death-and-who-will-manage-the-estate) | 2026-11-03, relevant sections |
+| ATO access: former agent access, reappointment and data package | [Tax and super information](https://www.ato.gov.au/individuals-and-families/deceased-estates/accessing-a-deceased-person-s-tax-and-super-information) | 2026-11-03, relevant sections |
+| ATO estate registration, return requirements, TFN/ABN and paper/agent routes | [Registering and lodging](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/registering-a-deceased-estate-trust-and-lodging-trust-returns) | 2026-11-03, relevant sections |
+| ATO present entitlement and old published estate table; table still ends at 2025-26 | [Present entitlement](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/when-a-beneficiary-is-presently-entitled-to-income); [estate rates](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/tax-rates-deceased-estate) | 2026-11-03 |
+| IT 2622: stages, actual interim income, normal year-end assessment and requested evidence-based apportionment | [IT 2622 paras 7–23](https://www.ato.gov.au/law/view/document?docid=ITR/IT2622/NAT/ATO/00001) | 2026-11-03 |
+| ITAA 1936 compilation 193: ss 99/99A,101A and 102AG operative conditions; related assessment sections need the facts of each file | [Volume 2](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html) | 2026-11-03, selected provisions |
+| Income Tax Rates Act compilation 66: s12(6)/(9), s14 including formula image alt text, Sch 7/10 and Div 6AA scale | [Current Rates Act](https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) | 2026-11-03 |
+| ITAA 1936 s 251S: deceased estate s99/99A exclusion distinguished from s98 | [Volume 4](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_4/document_4.html) | 2026-11-03 |
+| ITAA 1997 compilation 268: K3, discount acquisition and inherited dwelling provisions | [ss 104-215,115-30,118-190–205](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html) | 2026-11-03, reused capture and current metadata |
+| ITAA 1997 Div 128: cost bases, eligible passing and surviving joint tenants | [ss 128-10–50](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_4/document_4.html) | 2026-11-03 |
+| ATO administration legal costs: ordinary deduction versus possible qualifying capital treatment | [LPR legal costs](https://www.ato.gov.au/individuals-and-families/deceased-estates/doing-trust-tax-returns-for-the-deceased-estate/deductibility-of-legal-personal-representative-legal-costs) | 2026-11-03 |
+| PCG 2019/5: conditional dwelling safe harbour, para 11 tests and discretion | [PCG 2019/5](https://www.ato.gov.au/law/view/document?docid=COG/PCG20195/NAT/ATO/00001) | 2026-11-03, relevant provisions |
+| TD 2026/D1: draft status and preliminary right-to-occupy view, not final law | [Draft determination](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001) | 2026-11-03, relevant provisions |
+| Div 302: lump sum component treatment, estate beneficiaries, dependency and interdependency | [ss 302-10/60/140/145/195/200](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_6/document_6.html) | 2026-11-03, reused capture and current metadata |
+| Current fund withholding: TFN/residency conditions, direct non-dependants and nil estate withholding | [Schedule 12](https://www.ato.gov.au/tax-rates-and-codes/schedule-12-tax-table-for-superannuation-lump-sums) | 2026-11-03, relevant sections |
+| LPR notice/liability, less complex estate conditions and reasonable handling; separate closure checklist | [PCG 2018/4](https://www.ato.gov.au/law/view/document?docid=COG/PCG20184/NAT/ATO/00001); [ATO finalisation](https://www.ato.gov.au/individuals-and-families/deceased-estates/confirming-tax-obligations-are-complete) | 2026-11-03, relevant sections |
+| 2026 form, trust typeD/death date and estate return items; this does not establish 2027 form/software approval | [2026 instructions](https://www.ato.gov.au/forms-and-instructions/trust-tax-return-2026-instructions); [Appendix 8](https://www.ato.gov.au/forms-and-instructions/trust-tax-return-2026-instructions/appendixes-for-the-trust-tax-return/appendixes-1-to-10/appendix-8-instructions-to-trustees-of-deceased-estates) | 2026-11-03, relevant sections |
+| Timely/late trustee payment dates, channels and paper address | [2026 lodging/payment](https://www.ato.gov.au/forms-and-instructions/trust-tax-return-2026-instructions/how-to-lodge-and-pay-the-trust-tax-return-2026) | 2026-11-03 |
 
-### Section 10 -- Reference material
+Not yet confirmed: complete historical/later-law coverage; full 2027 CGT application and transition; current No. 3 Bill status/carve-outs; approved 2027 forms, actual installed software and acceptance; file-specific professional sign-off; detailed foreign, life-interest, business, insolvency and complex mixed-source trust computations. Those dependent positions remain held. Earlier references to [TAA Sch 1 s 260-145](https://www.ato.gov.au/law/view/document?docid=PAC/19530001/Sch1-260-145), s 118-60 philanthropic conditions, Div 207/67 refund detail, TR 2006/14 life interests and the 2019 minor-income amendment commencement are retained topics, not fully reverified here; check their operative text and period before using those details. Rules 13/14 retain the historical reform references and the specific holds. A scoped independent source/case review has been completed, including 8 cases and 46 exact arithmetic matches. This is separate from whole-law coverage, final checks bound to their recorded revisions and qualified professional approval; Tier 2 and pending review remain.
 
-#### Primary sources (verified 20 August 2026 against ato.gov.au; estate rates and TD 2026/D1 rechecked 11 October 2026; minimum-tax status rechecked 31 October 2026)
-
-| Topic | Source |
-|---|---|
-| Final return, DECEASED annotation, refunds to LPR | ato.gov.au -- Doing a final tax return for the deceased person (QC 40481, updated 4 June 2026) |
-| Notification, authority, data package | ato.gov.au -- Accessing a deceased person's tax and super information (QC 56976); Checklist: what to do when someone dies; PCG 2018/4 (LPR liability); TAA 1953 Sch 1 s 260-145 (unadministered estate) |
-| Estate trust returns and stages | ato.gov.au -- Doing trust tax returns for the deceased estate (QC 67527); Who pays tax on deceased estate income (QC 49907) |
-| Present entitlement during administration | IT 2622 (6 December 1990); *FCT v Whiting* (1943) 68 CLR 199; ITAA 1936 ss 95-99A, 101A |
-| Estate tax rates | ato.gov.au -- Tax rates – deceased estate (QC 49909, updated 4 June 2026); Income Tax Rates Act 1986 |
-| Death CGT rollover and cost bases | ITAA 1997 Div 128 (ss 128-10, 128-15, 128-20, 128-50); s 115-30(1) item 4; ato.gov.au -- Cost base of inherited assets (QC 66053); Inherited property and CGT (QC 66054) |
-| Main residence on death | ITAA 1997 ss 118-195, 118-200; ato.gov.au -- Extensions to the 2-year ownership period (QC 66057); PCG 2019/5; [draft TD 2026/D1](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001) (right to occupy under the will) |
-| CGT event K3 | ITAA 1997 s 104-215; s 118-60 |
-| Super death benefits | ITAA 1997 Div 302 (ss 302-10, 302-60, 302-140/145, 302-195); ITAA 1936 ss 101A(3), 251S(1)(c); ato.gov.au -- Superannuation death benefits (QC 44997); Paying superannuation death benefits (QC 45254); Schedule 12 withholding table |
-| Testamentary trusts | ITAA 1936 Div 6AA, s 102AG(2)(a)(i), s 102AG(2AA) (Treasury Laws Amendment (2019 Measures No. 3) Act 2020, from 1 July 2019) |
-| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); Tax Reform No. 3 Bill (30% minimum tax, testamentary carve-out -- BILLS, NOT LAW: [APH](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf)) |
-
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+No current computation may substitute an assumed non-resident, non-dependant, non-exempt asset or punitive rate for an unknown fact. Carry each hold and its unquantified effect through the workpaper, reviewer brief, action list and checklist; use the structured question form to obtain the missing facts.
 
 <!-- openaccountants-cta-block -->
 
@@ -442,13 +663,15 @@ Not yet confirmed: A complete page-level source/read-date audit and independent 
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

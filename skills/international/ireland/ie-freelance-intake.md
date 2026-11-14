@@ -4,8 +4,8 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing an Irish 
 jurisdiction: IE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-31
-version: 1.1
+last_updated: 2026-11-10
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -454,7 +454,7 @@ Downstream skills (via ie-return-assembly):
 - `ireland-vat-return` — VAT3 + RTD; rates 23% / 13.5% / 9% / 4.8% / 0%; thresholds EUR 85,000 goods / EUR 42,500 services.
 - `ie-corporation-tax` — CT1 at 12.5% trading / 25% non-trading; close-company surcharge Section 440 / 441 TCA 1997.
 - `ie-paye` + `ie-payroll` — PAYE Modernisation real-time reporting; employer PRSI Class A1 lower sub-class 8.9% Jan-Sep 2025, 9.0% from 1 Oct 2025, **9.15% from 1 Oct 2026**; standard 11.15% Jan-Sep 2025, 11.25% from 1 Oct 2025, **11.40% from 1 Oct 2026**.
-- `ie-cgt` — Section 28 TCA 1997 et seq.; 33% on gains > EUR 1,270; 15 December / 31 January split.
+- `ie-cgt` — Section 28 TCA 1997 et seq.; 33% on gains > EUR 1,270 (31% proposed for disposals on or after 7 October 2026, not enacted); 15 December / 31 January split.
 - `ie-cat` — Capital Acquisitions Tax Consolidation Act 2003; Group A / B / C thresholds EUR 400,000 / EUR 40,000 / EUR 20,000.
 - `ie-formation` — sole trader vs partnership vs LTD; CRO + ROS TR1 / TR2 registration.
 - `ie-return-assembly` — final orchestrator (Form 11 / CT1, working paper, reviewer brief, action list).
@@ -533,13 +533,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

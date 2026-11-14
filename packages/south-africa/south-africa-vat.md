@@ -1,10 +1,10 @@
 ---
 name: south-africa-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a South Africa VAT return (VAT201), classify transactions for South African VAT purposes, or advise on VAT registration and filing in South Africa. Trigger on phrases like "South Africa VAT", "VAT201", "SARS VAT", "input tax South Africa", "output tax South Africa", "South African Revenue Service VAT", or any SA VAT request. ALWAYS read this skill before touching any South Africa VAT work.
-version: 2.1
+version: 2.2
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 reviewed_by: Werner Britz
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # South Africa VAT
 
-## South Africa VAT (VAT201) Skill v2.1
+## South Africa VAT (VAT201) Skill v2.2
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Werner Britz** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -44,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Werner Britz CA(SA), Spurwing CFO |
 | Validation date | May 2026 |
-| Skill version | 2.1 |
+| Skill version | 2.2 |
 
 ### Key VAT201 fields
 
@@ -366,7 +366,7 @@ Monthly rent. South Africa has no "option to tax": a landlord of commercial prem
 | --- | --- |
 | Late payment | Percentage-based penalty of 10% of the tax paid late (VAT Act s 39; TAA s 213) |
 | Late return, tax paid on time | No percentage penalty. SARS states that it does not currently impose the fixed-amount administrative non-compliance penalty (TAA ss 210 and 211, a monthly scale by taxable income from R250 to R16,000) for a late VAT return, although the Act allows it; a return filed late with its tax paid late attracts the 10% penalty and interest on the tax |
-| Interest | 10.25% a year from 2 March 2026 on late or underpaid VAT, compounding monthly (TAA s 187); SARS sets the rate by reference to the repo rate, so read the current SARS interest rate table |
+| Interest | 10.50% a year from 1 September 2026 (10.25% from 1 March to 31 August 2026) on late or underpaid VAT, compounding monthly (TAA s 187); the rate follows changes in the PFMA s 80(1)(b) rate, so read the current SARS Table 1 (https://www.sars.gov.za/wp-content/uploads/Legal/Rates/Legal-Pub-IRT-01-Interest-Rates-Table-1.pdf) |
 | Understatement | 10%–200% of the shortfall depending on behaviour (TAA ss 222 to 224) |
 | Fraud | Criminal prosecution |
 
@@ -565,6 +565,7 @@ SOUTH AFRICA VAT ONBOARDING — MINIMUM QUESTIONS
 | 1.0 | 2024 | Initial |
 | 2.0 | April 2026 | v2.0 rewrite: pattern library, worked examples, no inline tier tags |
 | 2.1 | May 2026 | Validated by Werner Britz CA(SA); corrected registration threshold to R2.3m; corrected bank fees and payment processors to standard-rated; corrected VAT201 field structure; corrected Uber/Bolt to exempt; added motor car and entertainment blocks; fixed tax invoice thresholds; removed prescription medicines from zero-rated; fixed filing categories |
+| 2.2 | November 2026 | Interest rate updated to SARS Table 1 (10.50% from 1 September 2026) |
 
 ## Prohibitions
 
@@ -591,13 +592,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

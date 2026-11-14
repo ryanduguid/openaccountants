@@ -1,10 +1,10 @@
 ---
 name: mx-estimated-tax
 description: Use this skill whenever asked about Mexican provisional income tax payments (pagos provisionales de ISR) for self-employed individuals and sole proprietors. Trigger on phrases like "pagos provisionales", "ISR provisional", "estimated tax Mexico", "coeficiente de utilidad", "SAT monthly payment", "declaracion provisional", "Mexican advance tax", "RESICO", or any question about monthly provisional income tax obligations under the Ley del ISR. Covers the monthly payment schedule, cumulative computation method, RESICO simplified rates, penalties for late payment, and SAT filing procedures. ALWAYS read this skill before touching any estimated tax work for Mexico.
-version: 2.0
+version: 2.1
 jurisdiction: MX
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -158,7 +158,7 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 5.2 Progressive rate table (Art. 96 LISR, cumulative)
 
-- **Progressive rate table range** — Ranges from 1.92% to 35%. Confirm against Annex 8 of the 2025 Resolucion Miscelanea Fiscal.  _(Art. 96 LISR; Annex 8 of the 2025 Resolucion Miscelanea Fiscal)_
+- **Progressive rate table range** — Ranges from 1.92% to 35%. Use Annex 8 of the Resolucion Miscelanea Fiscal for the year of the payment: rates are unchanged for 2026, but the limits and fixed fees were updated (the 2026 annual tariff starts at 0.01 to 10,135.11 and its 35% band starts at MXN 5,107,703.93; see `mx-income-tax`).  _(Art. 96 LISR; Annex 8 of the 2025 Resolucion Miscelanea Fiscal; Anexo 8 RMF 2026, DOF 28 December 2025)_
 
 ### 5.3 RESICO -- simplified
 
@@ -297,13 +297,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

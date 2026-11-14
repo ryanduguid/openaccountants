@@ -1,10 +1,10 @@
 ---
 name: japan-crypto-tax
 description: Use this skill whenever asked about Japan cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Japan", "Bitcoin Japan tax", "暗号資産 税金", "仮想通貨 税金", "cryptocurrency Japan", "crypto income Japan", "miscellaneous income crypto", "雑所得", "NTA crypto", "staking tax Japan", "mining tax Japan", "NFT tax Japan", "DeFi tax Japan", "確定申告 crypto", "kakutei shinkoku crypto", "bitFlyer tax", "Coincheck tax", "crypto-to-crypto Japan", "総平均法", "移動平均法", or any question about the income tax, reporting, or cost basis treatment of cryptocurrency, tokens, or digital assets for Japan tax residents. Covers NTA Crypto FAQ guidance, miscellaneous income classification, aggregate taxation, cost basis methods (total average / moving average), the ¥200,000 filing threshold, and Kakutei Shinkoku reporting. ALWAYS read this skill before touching any Japan crypto work.
-version: 1.0
+version: 1.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-11-10
 review_status: pending_review
 depends_on:
   - jp-income-tax
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Japan Crypto Tax
 
-## Japan Crypto / Digital Assets Tax Skill v1.0
+## Japan Crypto / Digital Assets Tax Skill v1.1
 
 ## Section 1 — Quick Reference
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 16 February – 15 March of the following year (for CY 2025: 16 Feb – 15 Mar 2026) |
 | Loss carry-forward | NOT PERMITTED for miscellaneous income |
 | Validated by | Pending — requires sign-off by a Japanese licensed tax accountant (税理士) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Key Principle
 
@@ -121,19 +121,19 @@ Source: the 10% inhabitant-tax income levy (4% prefectural, 6% municipal) — �
 
 **Basic Deduction (基礎控除)**
 
-| Taxpayer's Total Income | Basic Deduction |
-| --- | --- |
-| Up to ¥1,320,000 | ¥950,000 |
-| ¥1,320,001 – ¥3,360,000 | ¥880,000 |
-| ¥3,360,001 – ¥4,890,000 | ¥680,000 |
-| ¥4,890,001 – ¥6,550,000 | ¥630,000 |
-| ¥6,550,001 – ¥23,500,000 | ¥580,000 |
-| ¥23,500,001 – ¥24,000,000 | ¥480,000 |
-| ¥24,000,001 – ¥24,500,000 | ¥320,000 |
-| ¥24,500,001 – ¥25,000,000 | ¥160,000 |
-| Over ¥25,000,000 | ¥0 |
+| Taxpayer's Total Income | Basic Deduction (2025) | Basic Deduction (2026 and 2027) |
+| --- | --- | --- |
+| Up to ¥1,320,000 | ¥950,000 | ¥1,040,000 |
+| ¥1,320,001 – ¥3,360,000 | ¥880,000 | ¥1,040,000 |
+| ¥3,360,001 – ¥4,890,000 | ¥680,000 | ¥1,040,000 |
+| ¥4,890,001 – ¥6,550,000 | ¥630,000 | ¥670,000 |
+| ¥6,550,001 – ¥23,500,000 | ¥580,000 | ¥620,000 |
+| ¥23,500,001 – ¥24,000,000 | ¥480,000 | ¥480,000 |
+| ¥24,000,001 – ¥24,500,000 | ¥320,000 | ¥320,000 |
+| ¥24,500,001 – ¥25,000,000 | ¥160,000 | ¥160,000 |
+| Over ¥25,000,000 | ¥0 | ¥0 |
 
-Source: NTA Tax Answer No. 1199 基礎控除 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm. These are the 2025 (令和7年分) amounts; until 2024 the deduction was ¥480,000 up to ¥24,000,000, the table this guide carried until 2026-09-29. For 2026 and 2027 the same page gives ¥1,040,000 up to ¥4,890,000, ¥670,000 to ¥6,550,000 and ¥620,000 to ¥23,500,000 (then ¥480,000, ¥320,000, ¥160,000 and ¥0 as above), and from 2028 ¥990,000 up to ¥1,320,000 and ¥620,000 to ¥23,500,000.
+Source: NTA Tax Answer No. 1199 基礎控除 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm. These are the 2025 (令和7年分) amounts; until 2024 the deduction was ¥480,000 up to ¥24,000,000, the table this guide carried until 2026-09-29. For 2026 and 2027 the same page gives ¥1,040,000 up to ¥4,890,000, ¥670,000 to ¥6,550,000 and ¥620,000 to ¥23,500,000 (then ¥480,000, ¥320,000, ¥160,000 and ¥0 as above), and from 2028 ¥990,000 up to ¥1,320,000 and ¥620,000 to ¥23,500,000. The 2026 amounts take effect on 1 December 2026 (note 1 on the NTA page).
 
 ### Permitted Methods (NTA FAQ 2-4, 2-5)
 
@@ -463,13 +463,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

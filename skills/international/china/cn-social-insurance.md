@@ -4,7 +4,7 @@ description: 处理中国大陆员工社会保险与住房公积金（五险一�
 jurisdiction: CN
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-11-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -42,16 +42,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **保守默认：** 当无法立即查到参保地的最新比例时，按上海口径先行试算并在交付件中**显著标注"暂按沪口径，参保地实际比例待核"**，同时在 ToDo 中列出"取数源 = 参保地人社局 / 公积金中心当月公告"。
 
-**地区差异速览（仅示例）**
+**地区差异速览（仅示例；深圳、广州养老与深圳医保一档核至 2026 年 1 月，其余数字未逐项复核）**
 
 | 城市 | 养老（单/个） | 医疗（单/个） | 失业（单/个） | 公积金（单/个，常见区间） |
 | --- | --- | --- | --- | --- |
 | 上海 | 16% / 8% | 9.5% / 2% | 0.5% / 0.5% | 7% / 7%（5%-7%） |
 | 北京 | 16% / 8% | 9.8% / 2% | 0.5% / 0.5% | 12% / 12%（5%-12%） |
-| 深圳 | 14% / 8%（户籍） | 5.2%-6.7% / 2% | 0.7% / 0.3% | 5%-12% / 5%-12% |
-| 广州 | 14% / 8% | 5.5%-6.3% / 2% | 0.32% / 0.2% | 5%-12% / 5%-12% |
+| 深圳 | 16% / 8% | 一档 6% / 2%（2026.1.1 起；2025 年为 5%）；其他档次待核 | 0.7% / 0.3% | 5%-12% / 5%-12% |
+| 广州 | 16% / 8% | 5.5%-6.3% / 2%（未复核） | 0.32% / 0.2% | 5%-12% / 5%-12% |
 | 杭州 | 16% / 8% | 9.9% / 2% | 0.5% / 0.5% | 8%-12% / 8%-12% |
 | 成都 | 16% / 8% | 6.5% / 2% | 0.6% / 0.4% | 5%-12% / 5%-12% |
+
+来源：广东（含深圳）单位养老 16%：国家税务总局广东省税务局、国家税务总局深圳市税务局、广东省人力资源和社会保障厅通告 2024年第10号（自 2025 年 1 月起全省参保用人单位按 16% 缴纳，https://hrss.gd.gov.cn/gkmlpt/content/4/4640/post_4640610.html）。深圳医保一档单位费率：深圳市医疗保障局公告（降费政策至 2025.12.31，自 2026.1.1 起由 5% 恢复为 6%，https://hsa.sz.gov.cn/fzlm/znts/cnyc/content/post_12568243.html）。
 
 ## 二、必备输入与拒绝清单
 
@@ -133,7 +135,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | 缴费主体 | 比例（示例：上海 2024.7—2025.6） | 备注 |
 | --- | --- | --- |
-| **单位** | **9.5%** | 含原生育保险 0.5%-1%；北京 9.8%、深圳 5.2%-6.7% |
+| **单位** | **9.5%** | 含原生育保险 0.5%-1%；北京 9.8%、深圳一档 6%（2026.1.1 起） |
 | **个人** | **2%** | 全国普遍 2%；个人不缴生育保险 |
 | **大病医疗补充**（部分地区） | 单位 1% 或固定金额 | 上海无单独大病项；北京另缴大病 |
 
@@ -454,13 +456,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

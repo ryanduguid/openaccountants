@@ -4,35 +4,35 @@
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 303 jurisdictions · 38 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 303 jurisdictions · 45 reviewed guides edited since their review.**
 
 ## Reviewers
 
 | Reviewer (as recorded in the guides) | Jurisdictions | Guides | Edited since review | Latest guide update | Public record |
 |---|---|---|---|---|---|
-| James Power | GB | 15 | 3 | 2026-10-31 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
-| A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
-| Miguel Lantigua | DO | 14 | — | 2026-10-11 | — |
-| Mayur Deokar | IN | 13 | 4 | 2026-10-31 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
-| Edgar Lautsyus | CA | 11 | 3 | 2026-10-31 | — |
-| Christopher Aryee, CPA | US | 9 | 3 | 2026-10-31 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
-| Mehran Habib | SA (5), AE (3), BH (1) | 9 | 1 | 2026-10-31 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
-| Ariane Marrocos | BR | 8 | 4 | 2026-10-31 | [profile](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
-| Lal kumarasiri | LK | 8 | — | 2026-10-04 | — |
-| Mário Jorge da costa Vale | PT | 8 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
-| RILIA PUTRI | ID | 8 | 1 | 2026-10-31 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
-| Baraka Cassian | TZ | 6 | 3 | 2026-10-11 | — |
-| Ashish Bista | NP | 5 | 2 | 2026-10-18 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
-| Christos Thoma | CY | 5 | 3 | 2026-10-11 | — |
-| Jose Padilla | VE | 5 | 4 | 2026-10-11 | — |
-| Rob Hoffman | US-FL | 5 | — | 2026-09-28 | — |
-| Ibrar Ali | PK | 4 | 2 | 2026-10-18 | — |
-| Maria Clemencia Valverde Rios | PE | 4 | — | 2026-10-11 | — |
-| Werner Britz | ZA | 4 | 2 | 2026-10-31 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
-| Maria Valeria Benvenuti | AR | 3 | 2 | 2026-10-31 | — |
-| Yeong Min Lee | KR | 3 | 1 | 2026-10-31 | — |
-| Omolola Fasasi | NG | 2 | — | 2026-09-29 | — |
-| James Wallach | US | 1 | — | 2026-10-04 | — |
+| James Power | GB | 15 | 7 | 2026-11-10 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
+| A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-11-10 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
+| Miguel Lantigua | DO | 14 | — | 2026-11-10 | — |
+| Mayur Deokar | IN | 13 | 4 | 2026-11-10 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Edgar Lautsyus | CA | 11 | 3 | 2026-11-10 | — |
+| Christopher Aryee, CPA | US | 9 | 3 | 2026-11-10 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
+| Mehran Habib | SA (5), AE (3), BH (1) | 9 | 1 | 2026-11-10 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
+| Ariane Marrocos | BR | 8 | 4 | 2026-11-10 | [profile](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
+| Lal kumarasiri | LK | 8 | — | 2026-11-10 | — |
+| Mário Jorge da costa Vale | PT | 8 | 1 | 2026-11-10 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
+| RILIA PUTRI | ID | 8 | 1 | 2026-11-10 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
+| Baraka Cassian | TZ | 6 | 3 | 2026-11-10 | — |
+| Ashish Bista | NP | 5 | 2 | 2026-11-10 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
+| Christos Thoma | CY | 5 | 3 | 2026-11-10 | — |
+| Jose Padilla | VE | 5 | 4 | 2026-11-10 | — |
+| Rob Hoffman | US-FL | 5 | 2 | 2026-11-10 | — |
+| Ibrar Ali | PK | 4 | 2 | 2026-11-10 | — |
+| Maria Clemencia Valverde Rios | PE | 4 | — | 2026-11-10 | — |
+| Werner Britz | ZA | 4 | 2 | 2026-11-10 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
+| Maria Valeria Benvenuti | AR | 3 | 2 | 2026-11-10 | — |
+| Yeong Min Lee | KR | 3 | 1 | 2026-11-10 | — |
+| Omolola Fasasi | NG | 2 | — | 2026-11-10 | — |
+| James Wallach | US | 1 | — | 2026-11-10 | — |
 
 Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes, `US-XX` for a US state, `CA-XX` for a Canadian province or territory, `US` and `CA` for the federal guides. "Edited since review" counts the reviewer's guides whose frontmatter carries `review_status: pending_review`: a substantive edit after the sign-off sets that flag, so the reviewed text and the current text differ until the guide is reviewed again. "Latest guide update" is the newest `last_updated` among the reviewer's accountant-reviewed guides: it dates the content, not the review. A public record is a profile or a review diff recorded in `docs/partners.json`, which is hand-maintained; a reviewer without one is on record in the guides alone. Licence numbers are not published here: they are held by whoever verified the credential and appear only where the practitioner opts in.
 
@@ -73,4 +73,4 @@ A guide becomes accountant-reviewed in this fork only when a named, licensed acc
 
 ## Notes recorded in docs/partners.json
 
-- **A licensed accountant (name withheld at their request):** Identified on upstream's public roster as Amir Pelinkovic, CPA, whose profile the link opens. The guides withhold the name at the reviewer's own request, so the row stands on the profile: do not add the name to their frontmatter.
+- **A licensed accountant (name withheld at their request):** The guides withhold the name at the reviewer's own request, so the row stands on the profile: do not add the name to their frontmatter.
