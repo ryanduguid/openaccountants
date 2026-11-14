@@ -6,7 +6,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "Administration checked through 14 November 2026; use the group fiscal year and operative law. Retained detailed tax-base examples remain unverified."
 last_updated: 2026-11-14
-version: 1.6
+version: 1.7
 review_status: pending_review
 tier: 2
 depends_on:
@@ -26,7 +26,7 @@ Apply the [current system screening](bm-tax-overview.md#corporate-income-tax-scr
 - **CIT effective date** — Fiscal years beginning on or after 1 January 2025  _(Corporate Income Tax Act 2023 (https://www.gov.bm/CIT))_
 - **Group revenue threshold:** generally at least EUR 750 million in the UPE’s consolidated financial statements in at least 2 of the 4 immediately preceding fiscal years, subject to s 11 special rules, s 13 and relevant elections. Threshold satisfaction alone does not settle liability. [CIT Act, ss 2 and 8–15A](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf) · [Full screening](bm-tax-overview.md#corporate-income-tax-screening)
 - **Outside the charge:** determine in-scope group and Bermuda constituent-entity/group status before concluding that s 4 does not charge CIT. This is not proof of the absence of every other tax or foreign-country liability. [CIT Act, ss 4 and 8–15A](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf)
-- **CIT tax base:** ss 5–6 and 20–46 govern the detailed income, loss and adjustment computation. The retained summary of an 80% loss limitation is not an unconditional rule: current s 6(8) contains a separate shock-loss mechanism. The detailed computation and its evidence remain **Needs Input**; do not apply 15% directly to book income. [CIT Act](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf)
+- **CIT tax base:** ss 5–6 and 20–46 govern the detailed income, loss and adjustment computation. Use the [loss carryforward controls](#loss-carryforward-deduction-controls) only with separately verified balances, current-year base, elections and workflow permissions. Opening balances, other tax-base adjustments and the full tax computation remain **Needs Input**; do not apply 15% directly to book income. [CIT Act][act]
 - **Shared workflow boundary:** the corporate workflow base supplies controls, not Bermuda law. The EUR 750 million threshold does not itself authorise a Bermuda GloBE top-up calculation: General Guidance v2 states that GloBE rules are not incorporated by reference unless expressly stated. Establish each applicable domestic or foreign Pillar Two rule separately. The base’s sector refusals still apply; screening a non-corporate entity under the Act does not permit its computation through a corporation-only workflow. Detailed computation remains **Needs Input** under the boundary above. [General Guidance v2, p 5](https://www.cita.bm/assets/documents/2026-11-13-13-18-25-CIT%20Guidance%20Notes%20(General)%20V2.pdf)
 - **Economic Transition Adjustment (ETA):** apply the conditional eligibility, limits and zero-adjustment controls in the [ETA section](#economic-transition-adjustment-controls). Valuations and actual computations remain **Needs Input**. [CIT Act, s 33][act]
 - **Entity exclusions and elections:** apply s 10’s defined excluded-entity categories and subsidiary ownership/activity conditions; investment funds and real-estate vehicles are not all automatically excluded. Section 9(2)(b)’s under-80%-by-value exclusion is subject to election. Sections 9(4) and 10(4) identify five-year elections; current ss 49(6) and 49A contain revocation provisions. Check the facts and election history. [CIT Act, ss 2, 9–10, 49 and 49A](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf)
@@ -68,10 +68,59 @@ These are source/text controls, not executed model, taxpayer or workbook tests. 
 - With a positive pre-s 33/pre-s 29 amount of 100 and an otherwise permitted ETA reduction of 75 or exactly 80, the s 33(5) more-than-80% trigger is not met. If the otherwise permitted reduction is 90, the restriction permits 80 and places the excess 10 in the immediately succeeding year's net taxable loss. These abstract units do not validate currency conversion, the underlying ETA or a loss balance.
 - A taxable loss before these adjustments does not satisfy the positive-income condition in s 33(5). Do not mechanically apply the same 80%-of-positive-income calculation.
 - An asset carrying value exceeding its fair value requires the applicable s 33(9)(a) zero-adjustment check; do not adopt the guidance illustration's positive 200 without resolving the stated conflict. Check the distinct absolute-value direction for liabilities.
-- Goodwill has no ETA under s 33(4). An identifiable intangible held at fiscal-year end uses its separate annual rule; a partial disposal requires a new disposed-portion analysis.
+- Goodwill has no ETA under s 33(4). An identifiable intangible acquired after 30 September 2023 fails s 33(3)'s initial ownership condition even if held at fiscal-year end. An identifiable intangible held at fiscal-year end uses its separate annual rule; a partial disposal requires a new disposed-portion analysis.
 - A later in-scope year does not by itself begin a fresh 10-year intangible period or settle the s 13 endpoint. An unverified election cannot establish either ETA opt-out or simplified-return eligibility.
 
 Return a source/period table, eligibility and election findings, valuation/adjustment inputs, the applicable limit/zero controls and an explicit unresolved-items list. Keep detailed valuations, insurance-contract methods, disposal amounts, foreign-exchange effects, opening-loss interactions and taxpayer-specific computation **Needs Input** until separately verified.
+
+## Loss carryforward deduction controls
+
+Use this section to check proposed loss carryforward designations against separately verified inputs. It covers the stated current law controls under [CIT Act ss 5–6][act], checked through 14 November 2026. It does not establish an opening loss, an available balance, an insurance event qualification or a complete tax result. The shared workflow's sector refusals remain: the shock-loss provisions do not authorise an insurance computation through a workflow that excludes that sector.
+
+### Establish the inputs and order
+
+Require the fiscal period and governing source versions, verified BCE Group membership and Filing BCE, verified current-year income/loss amounts, and the positive amount determined under s 5(1)(a) after any permitted s 5(2) election. Require each BCE's separately verified ordinary and shock balances available before this year's deduction, with currency basis, allocation, adjustment and prior-use provenance. Do not create those balances from an unverified prior return or reverse-engineer an opening balance.
+
+Section 5(1) first aggregates current-year taxable income and losses, then applies the s 6 carryforward deduction to the resulting positive amount. The ordinary 80% carryforward limit does not generally cap that preceding current-year offset. For a group in a taxable-loss position, I-101 §4.4.3 states that Schedule 4 Section B does not populate; do not force that case through this procedure for positive income. [CIT Act, s 5][act]; [I-101, §§4.2.6 and 4.4.3][i101]
+
+### Check the proposed designations
+
+- Under s 6(1), the Filing BCE designates the portions to deduct from one or more BCEs. Ordinary designations must fit each BCE's verified available balance and, in aggregate, the 80% limit on the positive s 5(1)(a) amount, subject to prescribed exceptions. I-101 uses positive S4D6 entries against available S4D5 balances. Any claimed additional exception needs its own operative authority.
+- A shock deduction requires both a prescribed shock origin and the Filing BCE's actual s 6(8)(b)(ii) election. The shock component can reach 100% of the positive s 5(1)(a) amount. I-101 uses positive S4E5 designations against each BCE's available S4E4 balance and limits ordinary plus shock designations together to 100%. Obtain the actual designations; do not impose an ordinary-first or shock-first priority that these provisions do not prescribe.
+- I-101 S4B2 defaults to nil where ordinary designations exceed the 80% limit, pending correction of S4D6. S4B3 defaults to nil where combined designations exceed 100%, pending correction of S4D6 or S4E5. Treat these as validation failures requiring corrected designations. A nil form result does not validate the claim or erase the available pool.
+- Preserve separate pools. I-101 S4C6 sends the designated shock portion of an allocated loss to S4E2; S4C7 sends the remaining portion to ordinary S4D3. The same allocated loss cannot enter both pools in full. Current-year allocations and classification must already be verified before they become inputs here.
+
+[CIT Act, ss 6(1) and 6(8)][act]; [I-101, §§4.4.3–4.4.6][i101]
+
+### Keep the elections separate
+
+| Decision | Effect and evidence |
+|---|---|
+| Section 5(2), E17 | For its stated fiscal years after the opening period, reduce the current-year loss offset and add the corresponding amount to the carryforward calculation. Establish eligibility and the amount already reflected in the supplied base. |
+| Section 6(1)(b), E41 | Reduce this year's deduction. The undeducted amount remains carryforward. Ordinary and shock designations are reported net of the elective reduction; do not subtract it again. |
+| Section 6(6), E39 | Permanently disregard all or part of the amounts described in s 6(2)(a)(i)–(ii). This is separate from reducing a year's deduction. I-101 S4D4 must not repeat an opening reduction already reflected in S4D1. |
+| Section 6(8)(b)(ii), E40 | Elect shock treatment for a qualifying loss. The election alone does not establish the prescribed shock origin. |
+
+[CIT Act, ss 5(2), 6(1)(b), 6(6) and 6(8)][act]; [I-101, §4.2.6, §§4.4.5–4.4.6 and election index][i101]
+
+### Hold unverified shock qualification and balance reconstruction
+
+Administrative reg 2A describes a loss of an insurer licensed under the Insurance Act 1978 which 'exceeds at least 90%' of its Bermuda solvency capital requirement at the beginning of the fiscal year, prior to the loss-absorbing capacity of deferred taxes, determined under the applicable Prudential Standard Rules made under s 6A of that Act. Reg 2A was inserted with effect from 12 December 2025. Do not convert its wording into an assumed greater-than-or-equal test or determine qualification from an event description or percentage alone. Require a supported determination under the applicable rules and period, plus E40 evidence; until then the shock branch is **Needs Input**. The shared workflow's sector boundary still applies. [Administrative Regulations, reg 2A][admin]
+
+Opening-loss reconstruction under s 6(4)/(5)/(9), actual balance/history adjustments, restructuring and entry/exit effects, applicable accounting standards, ETA, FX and insurance event determinations remain separate work. Do not certify those inputs through a designation check. Preserve the s 13 endpoint hold.
+
+### Hypothetical manual controls
+
+These are source/text controls, not executed model, taxpayer or workbook tests. Abstract units assume verified inputs, operative law and all applicable workflow permissions.
+
+- Current-year income of 120 and loss of 20, with no E17 reduction, give a positive base of 100. An ordinary designation of 80 fits the mapped limit and leaves 20; applying 80% to gross income of 120 uses the wrong base.
+- A base of 100, ordinary availability of 100 and ordinary designation of 81 require correction. The S4B2 nil result is pending correction; do not silently substitute 80.
+- On a base of 100, ordinary/shock designations of 80/30 exceed the combined ceiling. With sufficient separately verified pools, 80/20 and 20/80 satisfy these mapped ceilings; neither establishes a mandatory utilisation order.
+- An E41 reduction of 10 leaves those undeducted units available. A valid E39 disregard of 10 from the specified statutory amounts is permanent. If that disregard is already reflected in the supplied balance, subtracting it again is wrong.
+- An asserted event or loss equal to 90% of a capital requirement, without the applicable rules determination and E40 evidence, remains **Needs Input**. No insurance-sector computation follows from the assertion.
+- A verified allocated loss of 10 split into shock 6 and ordinary 4 cannot enter both pools as 10. Hold an unverified allocation or classification.
+
+Return the source/period register, input provenance, per-BCE designations, ordinary and combined limit checks and unresolved items. Where all required inputs and workflow permissions are established, show the proposed aggregate deduction, resulting net taxable income and arithmetic balances remaining after the stated verified adjustments and deductions. Identify the adjustments included; these outputs do not certify opening balances or historical/restructuring treatment. Translate signs separately for the native form: S4D6/S4E5 deductions are positive, whilst the relevant loss/balance entries use the instructions' negative signs. Full tax computation remains **Needs Input**.
 
 ## CIT registration, filing and payment
 
