@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bermuda Payroll & Social Contributions
 
-**System reconciliation boundary, 14 November 2026.** The payment-date/public-link correction below is supported by the current official payroll page. The retained detailed rates, class boundaries, remuneration rules and contributions have not been fully reconciled in this system update, including differences from the general tax guide. Treat a calculation using them as **Needs Input** until its topic-specific review is complete. Use the [tax overview](bm-tax-overview.md) for authorities, periods and remaining source gaps.
+**System reconciliation boundary, 14 November 2026.** The payment-date/public-link correction below is supported by the current official payroll page. The retained detailed rates, class boundaries, remuneration rules and contributions have not been fully reconciled in this system update, including differences from the general tax guide. Treat a calculation or social-insurance remittance decision using these unreconciled details as **Needs Input** until its topic-specific review is complete. Use the [tax overview](bm-tax-overview.md) for authorities, periods and remaining source gaps.
 
 ## Payroll tax
 
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Social insurance (contributory pension) total contribution** — BMD 75.30 per week (combined employer + employee)  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
 - **Social insurance split** — Employer pays 50% (BMD 37.65/week) and employee pays 50% (BMD 37.65/week) for workers aged 16-64  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
 - **Social insurance — employees aged 65+** — Only the employer portion is due; no employee contribution  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
-- **Social insurance remittance deadline** — Employer billed monthly; payment due by the last Friday of that month  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
+- **Social insurance remittance deadline:** the inherited monthly/last-Friday claim is **Needs Input**. The cited [Social Insurance landing page](https://www.gov.bm/department/social-insurance) identifies the administrator but does not reconcile this procedure. Verify the applicable remittance rule and period before giving a deadline.
 - **Occupational (private) pension contribution** — Mandatory for Bermudians/spouses under the National Pension Scheme; typically 5% employer + 5% employee of pensionable earnings (approx — confirm current rate)  _(National Pension Scheme (Occupational Pensions) Act 1998 (https://www.gov.bm/bermuda-pension))_
 
 <!-- openaccountants-cta-block -->
