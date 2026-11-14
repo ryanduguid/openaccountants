@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
 description: Use this skill for Bermuda taxation, including personal income tax scope, corporate income tax screening, payroll tax and customs duties.
-version: 2.5
+version: 2.6
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-14
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
 
-**Verification boundary, 14 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The retained social insurance, customs, land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled. A calculation using their figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
+**Verification boundary, 14 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation, administrative facts and occupational pensions remain open. The retained customs, land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled. A calculation using their figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
 
 ### Tax Landscape Overview
 
@@ -125,13 +125,20 @@ See [Payroll Tax Act 1995](https://www.bermudalaws.bm/Laws/Consolidated%20Law/19
 
 ### 3.3 Social Insurance Contributions
 
-**Social Insurance Contributions**
+Social insurance is separate from payroll tax and private occupational pensions. The [Contributory Pensions Act 1970](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1970/Contributory%20Pensions%20Act%201970), ss 1-8 and First Schedule, and [BR 80/2026](https://www.bermudalaws.bm/Document/%7B70286ae8-6351-46f3-8947-16b0326c88af%7D) supply the following amounts for an established liable category in ordinary 2026/27 contribution weeks from 3 August 2026:
 
-| Component | Rate/Amount |
-| --- | --- |
-| Employer contribution | BMD 35.69 per week per employee |
-| Employee contribution | BMD 35.69 per week per employee |
-| Self-employed | BMD 63.10 per week |
+| Category | Insured person per week | Employer per week |
+| --- | --- | --- |
+| Employed, over statutory school-leaving age and under 65 | BMD 39.25 | BMD 39.25 |
+| Employed, 65 or over | BMD 0 | BMD 39.25 |
+| Self-employed, over statutory school-leaving age and under 65 | BMD 78.50 | BMD 0 |
+| Self-employed, 65 or over | BMD 39.25 | BMD 0 |
+
+The legal contribution change begins 1 August 2026, while the official calendar starts its first week on 3 August. The transition week remains **Needs Input**. Historical BMD 37.65 each/BMD 75.30 combined is not the current ordinary employed rate; former BMD 35.69 and BMD 63.10 defaults are not supported for this period.
+
+Establish the statutory school-leaving, work/hours, residence and weekly-role rules before using the table. Exactly 4 hours for one employer is within s 2(5)'s exclusion; non-ordinary residents have the 26-consecutive-week test. Multiple employers and mixed employed/self-employed work need s 4 allocation. A small-income exception at an annual rate not exceeding BMD 3,000 requires a granted certificate covering the whole week; it does not establish a blanket employer-share exemption. Employer contributions cannot be passed to the worker.
+
+Sections 4(7) and 8 require the relevant contributions by the last working day of the following month, subject to employer-specific Director arrangements. Confirm the account schedule for month-end weeks. See the [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) for primary periods, registration, recovery, certificate conditions and hypothetical cases. Birthday/transition-week allocation, administrative facts, occupational pensions and actual payment remain separate verification.
 
 ## Section 4 -- Worked Examples
 
@@ -158,7 +165,7 @@ This is a manual rule example, not an executed payroll, taxpayer, consuming-mode
 
 **Classification:**
 - Bermuda domestic personal income tax does not apply.
-- Check contributory pension liability and the rate for the applicable period. [Department of Social Insurance](https://www.gov.bm/department/social-insurance)
+- Establish contributory-pension eligibility, contribution week, age, role and any certificate before an amount. Same-week employed work takes precedence over self-employment. Missing facts are **Needs Input**; use the [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance), not an unconditional self-employed default.
 - Check self-employed payroll tax separately. Taxable remuneration can include amounts drawn for personal use. [Office of the Tax Commissioner, Payroll Tax](https://www.gov.bm/payroll-tax)
 
 ### Example 4 -- Real Estate Transfer

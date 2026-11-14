@@ -1,11 +1,11 @@
 ---
 name: bm-payroll-social
-description: "Partial Bermuda payroll reconciliation for 2026-27: period-specific employer rates, employee marginal bands, classification controls and qualified return/payment dates. Calculations, relief applications, social insurance and pensions retain the stated evidence gaps; pending practitioner review."
+description: "Partial Bermuda payroll and social-insurance reconciliation for 2026-27: payroll rate and filing controls plus period-specific weekly contributions, eligibility, recovery, certificates, registration and remittance. Full calculations, transition allocation, occupational pensions and practitioner review remain open."
 jurisdiction: BM
 category: payroll
 tax_year: 2026
 last_updated: 2026-11-14
-version: 1.4
+version: 1.5
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bermuda Payroll & Social Contributions
 
-**Partial payroll reconciliation, 14 November 2026.** The rules below address the 2026-27 reference year, 1 April 2026 to 31 March 2027, including the change for the October-December 2026 tax period. They establish rates and selected classification controls. A complete payroll calculation, relief application, social-insurance remittance or pension engagement remains **Needs Input** where the facts or procedure identified below are missing. Tier 2 and pending review remain.
+**Partial payroll and social-insurance reconciliation, 14 November 2026.** Payroll uses the 2026-27 reference year, 1 April 2026 to 31 March 2027, including the October-December tax-period change. Social insurance uses its own contribution weeks and August rate boundary below. The rules establish selected rates, liability and procedural controls. Missing facts or the stated unresolved methods remain **Needs Input** for a complete payroll calculation, relief application, contribution payment or pension engagement. Tier 2 and pending review remain.
 
 Use the current [Payroll Tax Act 1995][payroll-act], [Payroll Tax Rates Act 1995][rates-act] and [Taxes Management Act 1976][management-act], read with the enacted [2026 amendment and validation Act][amendment-five] and [2026 rates amendment][amendment-thirty-one]. The legal-site snapshot reports laws amended through 31 October 2026; capture on 14 November does not prove the absence of later law. Recheck amendments for the actual period, including future periods.
 
@@ -102,15 +102,87 @@ These are hypothetical rule checks, not executed payroll, taxpayer, consuming-mo
 
 Annual-payroll measurement for new/variable/monthly cases, competing classes, employee annualisation and cent rounding, multiple-employer cap allocation, relief/form discrepancies, the distinct deducted-employee-tax timing interaction and the online-filing conflict remain open. Social insurance, occupational pensions, a full payroll return and practitioner assurance are separate work.
 
-## Social insurance and occupational pensions: unreconciled
+## Social insurance: liability, rates and remittance
 
-The following inherited contribution statements have not been reconciled to current law in this payroll-rate update. Do not use them for a contribution or remittance decision without separate primary-source and period checks.
+Social insurance under the [Contributory Pensions Act 1970][contributory-act] is separate from payroll tax and an occupational pension scheme. The following controls use the retained Act, [BR 80/2026][contribution-order], official contribution calendars and the [1973 exception regulations][exception-regulations], captured on 14 November 2026. The Act's legal-site snapshot is through 31 October 2026. The exception PDF has no express consolidation date; its historical amendment list does not prove that no later instrument exists.
 
-- **Social insurance (contributory pension) total contribution** — BMD 75.30 per week (combined employer + employee)  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
-- **Social insurance split** — Employer pays 50% (BMD 37.65/week) and employee pays 50% (BMD 37.65/week) for workers aged 16-64  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
-- **Social insurance — employees aged 65+** — Only the employer portion is due; no employee contribution  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
-- **Social insurance remittance deadline:** the inherited monthly/last-Friday claim is **Needs Input**. The cited [Social Insurance landing page](https://www.gov.bm/department/social-insurance) identifies the administrator but does not reconcile this procedure. Verify the applicable remittance rule and period before giving a deadline.
+### Establish the person, role and contribution week
+
+Record the contribution week, work and hours for each employer, first employment in that week, self-employment, ordinary residence and any 26-week history, age, full-time study, certificates and Director arrangements. Missing facts needed for a category or payment are **Needs Input**.
+
+Under Act s 1, a contribution week runs from midnight between Sunday and Monday for 7 days. Do not substitute a payroll tax quarter, salary period or calendar month. Section 2(1) governs entry into insurance and continued insurance; assess contribution liability for the actual work under ss 1-4:
+
+- School-leaving age is 18, or, for someone still a full-time student after 18, the earlier of their age when studies terminate or finish and 26. The former 16-64 shortcut is unsupported.
+- Section 2(5) excludes work for any one employer for **4 hours or less** in a contribution week from making the person insured, employed or self-employed by reason of that work. The [official employer page][social-insurance-employers]'s '4 hours or more' wording differs at exactly 4 hours. Do not use that inclusive boundary or assume several small jobs can simply be aggregated.
+- A person not ordinarily resident in Bermuda does not become insured, employed or self-employed until gainfully occupied in Bermuda for **26 consecutive weeks**, under s 2(6). Preserve that statutory test; immigration status alone does not settle it.
+- Section 1(3) deems a full-time student in the specified Saturday, public-holiday or vacation employment not to be employed for that work and directs the Minister to exempt the student and employer from contributions for its duration. Verify the study and employment facts and the applicable administration. This does not establish an exemption for every student job.
+- Sections 2(2)-(4) and (7) have separate armed-forces, specified US-government employment, ordinarily resident ship-crew and outside-Bermuda rules. Check the particular provision for an affected case.
+
+Section 1(2) treats an age as reached at the start of the relevant birthday; the 65 category starts at 65, not 66. A birthday inside a contribution week needs a verified weekly category rule before an amount; do not invent proration.
+
+### Rates and the August boundary
+
+Act First Schedule, read with BR 80/2026 paras 3-4 and Schedule 2, supplies these weekly amounts. They apply to the stated liable category, subject to the exceptions below. The [2026/27 official calendar][contribution-calendar-current] begins contribution week 1 on **3 August 2026**.
+
+| Liable category in an ordinary 2026/27 week from 3 August 2026 | Insured person | Employer | Total |
+| --- | --- | --- | --- |
+| Employed, over statutory school-leaving age and under 65 | BMD 39.25 | BMD 39.25 | BMD 78.50 |
+| Employed, 65 or over | BMD 0 | BMD 39.25 | BMD 39.25 |
+| Self-employed, over statutory school-leaving age and under 65 | BMD 78.50 | BMD 0 | BMD 78.50 |
+| Self-employed, 65 or over | BMD 39.25 | BMD 0 | BMD 39.25 |
+
+The Order's contribution amendment legally commences **1 August 2026**; its benefit increase commences **16 August 2026**. These are different changes. The calendar labels its rates from 3 August. The correct treatment of 1-2 August and the week crossing the legal change remains **Needs Input**; do not silently replace the statutory date with Monday or prorate a weekly amount. Recheck later amendments for the actual period.
+
+The [2025/26 official calendar][contribution-calendar-prior] reports BMD 37.65 each for an ordinary employed person below 65, total BMD 75.30, from its 4 August 2025 calendar start. The Act's First Schedule amendment annotation records the preceding Order's legal contribution commencement as 1 August 2025. That earlier transition likewise needs its own check. BMD 75.30 is historical, not a current default; the former BMD 35.69 and self-employed BMD 63.10 defaults are not supported for the scoped current period. Do not use the calendar's employee/employer columns to split a self-employed person's statutory liability.
+
+Under s 4(1), the relevant weekly liability arises for a contribution week during any part of which the qualifying work occurs. A part salary week does not itself authorise daily proration. Voluntary insurance under s 6 has separate certificate and eligibility rules; this table does not establish a voluntary-insurance decision.
+
+### Allocation and recovery
+
+Act s 4(2)-(5) makes the employer initially responsible for both its own contribution and the employed person's contribution payable for that week. At most one insured-person contribution and one employer contribution are payable for a person in a week. With several employers, the employer employing the person first in time that week pays the employer contribution; s 4(2) then addresses the corresponding employee contribution. If employed and self-employed work both occur that week, the employed route takes precedence. Simultaneous first employment and uncertain qualifying-hours combinations remain **Needs Input**.
+
+Under s 7, an employer cannot recover its own contribution from the worker, even by agreement. Ordinary deductions recover only the employee contribution paid on the person's behalf, up to that amount, from remuneration wholly or partly for the same contribution week. The [employer page][social-insurance-employers]'s general half-share wording does not override age, category or certificate exceptions. Where the employee receives no salary, wages or other pecuniary remuneration from the employer but receives such remuneration from another person, s 7(3) separately permits recovery of the employee contribution paid on their behalf under s 4(2) as a civil debt, with proceedings within 6 months after the contribution became payable. It is not permission to shift employer contributions to the worker.
+
+### Small-income certificates
+
+Act s 5 and regulation 2 prescribe an annual income rate **not exceeding BMD 3,000**, replacing the Act's BMD 1,250 reference. Low income alone is not an automatic exception. Under regulation 1, the person applies to the Director, who issues a certificate if the application is granted. The Director may require income evidence on application and later.
+
+Check the certificate's specified dates and continuing conditions. Its ordinary start is no earlier than application; the Director may allow backdating by up to **13 weeks** at discretion. If a condition fails, the certificate ceases from that date and the holder must notify the Director forthwith. Inspection and cancellation have their own regulation 1(5) requirements.
+
+Regulation 1(6) excepts the insured person's employed or self-employed contribution only for a week throughout which the certificate is in force. A certificate covering only part of a week does not establish that exception. It does not establish a blanket exemption from the employer's separate s 4(1)(b) contribution. Do not recover an employee contribution that the employee is excepted from paying.
+
+### Registration and remittance
+
+Act s 8(3)-(5) requires registration on entry into insurable employment, the employed person's social-insurance number and the employer's immediate number checks when employment begins or becomes insurable. The employer page's 30-day wording for registering new employees does not displace the Act's entry-registration and immediate employer-number checks. A self-employed person must register within **7 days** of becoming self-employed. The employer must provide a written contribution record when the insured person requests confirmation and report employment ending in the prescribed manner.
+
+Sections 4(7), 8(4)(d) and 8(5)(d) require the relevant weekly contributions by the **last working day of the following month**. Section 8(6) permits special arrangements with an employer. Match the contribution weeks to the applicable account schedule and any Director arrangement. The treatment of a week crossing a month end remains **Needs Input** until that allocation is established. This is not a fixed last-Friday rule, and payroll quarterly dates do not establish the social-insurance deadline. A calendar's underlined pension payout dates are not contribution-remittance evidence. Start from the [Department of Social Insurance][social-insurance-page]; registration, payment and acceptance in an authenticated system are untested.
+
+### Hypothetical contribution controls
+
+These 8 groups are manual rule checks, not executed taxpayer, payroll, consuming-model, workbook or portal results. Assume the stated facts are verified and no other exception applies.
+
+1. An ordinarily resident, eligible employee below 65 works more than 4 hours for one employer in the ordinary week 5-11 October 2026: employee BMD 39.25, employer BMD 39.25, total BMD 78.50. If 65 throughout that week, the employee amount is zero and the employer still pays BMD 39.25.
+2. A qualifying self-employed person below 65 owes BMD 78.50 for that ordinary week; at 65 or over, BMD 39.25. These are insured-person amounts, not a split between the person and a second employer.
+3. Exactly 4 hours for the sole employer does not establish liability by reason of that work. A non-ordinarily-resident person's missing 26-consecutive-week history prevents an amount; do not turn a general '4 hours or more' page into the statutory test.
+4. Employer A employs the person before B in the same week: use the single-contribution and first-employer rules, not two pairs. Adding self-employed work in the same week does not create a second self-employed contribution.
+5. Verified annual income at BMD 3,000 plus a granted certificate in force for the whole week can except the insured-person contribution; BMD 2,900 without a granted certificate is not an automatic exception. A midweek certificate start is insufficient for the whole-week exception. Do not remove the separately liable employer share.
+6. The employer's own BMD 39.25 cannot be deducted from the worker. Any employee-share recovery must satisfy s 7's amount, payment and same-week remuneration conditions; a generic half deduction is not enough.
+7. A confirmed month's account schedule with no special employer arrangement uses the last working day of the following month. Establish the working-day calendar before giving a date; do not substitute the last Friday. A new self-employed person's registration is a separate 7-day check.
+8. A 65th birthday midweek, the 1-2 August rate transition, unknown month-end week allocation or missing student-employment facts receives **Needs Input** on the unresolved category or procedure, not an invented rate, proration or deadline.
+
+## Occupational pensions: unreconciled
+
+The inherited private occupational-pension statement has not been reconciled to current primary law in this contribution update. Do not use it for a pension decision without separate eligibility, earnings, rate and remittance checks:
+
 - **Occupational (private) pension contribution** — Mandatory for Bermudians/spouses under the National Pension Scheme; typically 5% employer + 5% employee of pensionable earnings (approx — confirm current rate)  _(National Pension Scheme (Occupational Pensions) Act 1998 (https://www.gov.bm/bermuda-pension))_
+
+[contributory-act]: https://www.bermudalaws.bm/Laws/Consolidated%20Law/1970/Contributory%20Pensions%20Act%201970
+[contribution-order]: https://www.bermudalaws.bm/Document/%7B70286ae8-6351-46f3-8947-16b0326c88af%7D
+[exception-regulations]: https://www.bermudalaws.bm/Laws/Consolidated%20Law/1973/Contributory%20Pensions%20(Exception%20from%20Liability%20for%20Contributions)%20Regulations%201973
+[contribution-calendar-current]: https://dosiforms.gov.bm/Portals/0/calendars/Contribution-Calendar-2027.pdf?ver=iq0ZdDckfzrAs5XXdVOj8w%3D%3D
+[contribution-calendar-prior]: https://socialinsurance.gov.bm/Portals/0/calendars/Contribution-Calendar-2026.pdf?ver=VBRCoKtwvK6Xj6FgytpQMA%3d%3d
+[social-insurance-employers]: https://socialinsurance.gov.bm/Contributions/Employers/
+[social-insurance-page]: https://www.gov.bm/department/social-insurance
 
 [payroll-act]: https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Act%201995
 [rates-act]: https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Rates%20Act%201995
