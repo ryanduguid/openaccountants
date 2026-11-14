@@ -1,7 +1,7 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 3.0
+version: 3.1
 jurisdiction: KY
 tax_year: 2026
 last_updated: 2026-11-14
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Property filings | Lands and Survey Department for land transfer stamp duty. The landholding corporation files its equity transfer return with the Minister responsible for Finance. See Section 5.2. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Cayman practitioner |
-| Skill version | 3.0 |
+| Skill version | 3.1 |
 
 ### Tax Landscape
 
@@ -81,7 +81,7 @@ product, value the entry and identify any exemptions and separate charges.
 
 - **R-KY-1 -- Income tax** — Cayman Islands has no income tax.
 - **R-KY-2 -- VAT/sales tax** — Cayman Islands has no VAT or sales tax.
-- **R-KY-3 -- ES work outside the selected Section 6.1 reference classifications and manual controls.** Trigger for a request to resolve the held partnership filing limb, unsupported historical application, other detailed ES branches, current portal procedures or a filing. Verbatim output: `R-KY-3: This ES request exceeds the selected verified classification scope. Obtain the applicable primary authority and a qualified Cayman specialist's review before proceeding.` Supported Section 6.1 reference classifications may proceed through the workflow; an unknown fact within that scope is Needs Input, with the affected conclusion held.
+- **R-KY-3 -- ES work outside the selected Section 6.1 classifications, published filing-plan procedures and manual controls.** Trigger for a request to resolve the held partnership filing limb, unsupported historical application, other detailed ES branches, an unproved current calendar or GP filing mechanism, or an actual filing. Verbatim output: `R-KY-3: This ES request exceeds the selected verified reference scope. Obtain the applicable primary authority and a qualified Cayman specialist's review before proceeding.` Supported Section 6.1 reference work may proceed through the workflow; an unknown fact or current-instruction gap within that scope is Needs Input, with the affected conclusion held.
 - **R-KY-4 -- CRS/FATCA reporting** — Escalate to specialist.
 - **R-KY-ES-REVIEW -- No qualified reviewer.** Trigger when the requester will not obtain qualified review and asks to rely on the result as final. Verbatim output: `R-KY-ES-REVIEW: A qualified Cayman reviewer must check this work before reliance or filing. I cannot provide final assurance without that review.`
 
@@ -379,32 +379,207 @@ exemption from that test treatment. [Act, s 7(1)–(4)][ky-es-act] ·
 Output the entity/exclusion decision, activity classification, gross
 relevant-income reconciliation, applicable test, evidence for each limb and
 the separate notification/return obligations. Mark each unresolved item
-**Needs Input**. Current ES notification and return screens, submission
-fields, general-partner return non-duplication procedures and historic
-commencement disputes are outside this section's verified scope. Confirm
-the Authority's current instructions before submission; the guidance's
-prospective portal wording does not establish a present filing procedure.
-[Guidance, partnership appendix, p 86][ky-es-guidance]
+**Needs Input**. The published filing-plan procedures below explain selected manual
+instructions. Current calendar/availability evidence, operative GP-return
+controls and historical commencement disputes remain held. Confirm the
+Authority's applicable instructions before submission; the appendix's
+prospective wording alone does not establish a present filing mechanism.
+[Guidance, partnership appendix, pp 86 and 90][ky-es-guidance]
 
 See the [formation and reporting guide](ky-company-formation.md#accounts-audits-and-tax-cooperation)
 for the wider filing context and the [cross-border guide](ky-corporate-income-tax.md#economic-substance-and-financial-account-information)
 for evidence of foreign tax residence.
 
+#### Published ES notification and return procedures
+
+Use this path to prepare a filing plan from the [ESN User Guide,
+6/2024][ky-es-notification], [Practice Points, updated November
+2024][ky-es-practice] and [Portal User Guide v9.7, 11/26][ky-es-portal],
+captured from the official site on 14 November 2026. The portal manual
+provides technical instructions. Apply the Act and the period-specific
+entity/activity analysis above to establish the obligations. This path
+does not establish an actual submission, current portal behaviour or a
+complete ES compliance engagement.
+
+**Separate the 3 filings.** The annual ES notification (ESN) classifies an
+entity under s 7(1). A relevant-entity exclusion does not itself remove
+notification duties. The Registry annual return is a separate filing
+where applicable; the ESN guide also requires foreign companies and
+foreign limited partnerships to notify despite having no Registry annual
+return. An ES return reports the relevant entity's activity and ES
+position. Retain the no-income reporting treatment above. For an entity
+subject to s 7(3), the statutory reporting deadline is no later than
+12 months after its financial year end. Establish the prescribed-date
+application separately; the portal manual's generic 1 January 2019
+statement does not settle every partnership's commencement.
+[Act, s 7(1)–(4)][ky-es-act] · [ESN Guide, p 2][ky-es-notification] ·
+[Guidance IV.A–B and partnership appendix][ky-es-guidance] ·
+[Portal Guide, p 77][ky-es-portal]
+
+**Identify the financial period and notification route.** Both the ESN
+and ES return use the year in which the financial year **starts** as
+'ESN Year'. Record the actual start and end dates; the portal manual limits
+the return period to 18 months. Practice Points I.1 and I.3 describe ESNs
+through CAP, whose access is limited to locally licensed service providers.
+CBP filers answer the relevant-activity question when filing their annual
+returns. The ESN guide directs general partnerships to notify DITC
+directly; obtain its applicable instructions because the reviewed sources
+do not establish that direct submission channel.
+[ESN Guide, pp 2–4][ky-es-notification] ·
+[Practice Points I.1, I.3 and I.21, pp 1 and 5–6][ky-es-practice] ·
+[Portal Guide, pp 77–78][ky-es-portal]
+
+The ESN guide describes the annual notification deadline by reference to
+the Registry annual-return deadline, no later than 31 March each year,
+and separately gives a March deadline for foreign companies and foreign
+limited partnerships. Section 7(2) leaves notification timing, form and
+manner to the Authority. Confirm the applicable year, notices and any
+extension before assigning a current due date. The captured manuals alone
+do not verify the current calendar or which ESN years remain open in CAP.
+[Act, s 7(2)][ky-es-act] · [ESN Guide, p 2][ky-es-notification] ·
+[Practice Points I.8, p 1][ky-es-practice]
+
+**Prepare the return under the correct reporting role.** Establish the
+authorised contact and reporting assignment, including the GP details
+requested for a partnership. The portal guide permits a Responsible
+Person (RP) or a Secondary User assigned for ES reporting to submit an
+ES return. Practice Points II.9–13 say users see their assigned entities
+and the RP designated in the latest ESN year already submitted is the
+current RP, responsible for outstanding reports. Naming a GP in an ESN
+does not itself establish a user's portal assignment.
+[ESN Guide, pp 6–7][ky-es-notification] ·
+[Practice Points II.9–13, p 11][ky-es-practice] ·
+[Portal Guide, pp 77 and 102][ky-es-portal]
+
+The published creation route is Reporting, Economic Substance, Economic
+Substance Return, then Create. Select the ESN Year and entity and use
+Validate Information to populate the form; a corresponding submitted ESN
+is required. Reconcile populated information to the evidence before
+preparing the return. The manual describes a separate return for each
+relevant activity and, for an SPC, each relevant activity conducted
+through a relevant segregated portfolio. It states that no bulk ES-return
+upload is available. Confirm the current instructions before use.
+[Portal Guide, pp 77–78 and 84–85][ky-es-portal]
+
+**Preserve the activity when relevant income is zero.** Practice Points
+I.14 and II.20 require correct ESN classification, zero relevant income
+reported in the ES return and financial statements or books of account.
+Do not change a conducted relevant activity to 'None' merely because it
+generated no relevant income. The Practice Points require completion of
+the Directed and Managed in the Islands form section except for Holding
+Company Business. That form instruction does not establish that the
+ordinary substantive ES test applies despite the guidance's no-income
+treatment. Keep the gross-income evidence and selected test analysis
+separate from form completion.
+[Practice Points I.14 and II.20, pp 3 and 13–14][ky-es-practice] ·
+[Portal Guide, p 83][ky-es-portal] ·
+[Guidance III.A.1, p 17][ky-es-guidance]
+
+**Apply GP non-duplication conditions only within their stated scope.**
+Guidance Appendix B.2 describes a GP making the ES return for its limited
+partnership, exempted limited partnership or foreign limited partnership.
+The GP need not make a separate ES return for itself if it declares both:
+
+1. It conducts no relevant activity for itself different from the relevant
+   activity it conducts for such a partnership.
+2. Its relevant income for that activity derives only from the relevant
+   income it receives for any such partnership.
+
+The ESN guide asks whether the GP's and partnership's activities match;
+Practice Points I.26 also describe the GP income question. The appendix
+uses prospective language about return modifications, and the captured
+portal manual does not reproduce both operative GP-return declarations.
+Attribute the non-duplication rule to the guidance and hold a proposed
+omission of the GP's separate return as **Needs Input** until the facts,
+declarations and applicable current filing mechanism are established.
+'General partner' is a role; this is not an express blanket exemption for
+the partnership form called a general partnership. It does not remove
+entity notification duties.
+[Guidance, partnership appendix B.1–2, pp 89–90][ky-es-guidance] ·
+[ESN Guide, pp 7 and 12][ky-es-notification] ·
+[Practice Points I.26, p 7][ky-es-practice]
+
+**Record submission evidence and distinguish it from ES compliance.**
+For bulk ESNs, Practice Points I.11 distinguish file-import success from
+the entity's Economic Substance Status. Check the entity-level result;
+the points describe no email status confirmation. A successful ESN
+permits the applicable Registry annual return without a separate DITC
+approval step. [Practice Points I.10–11, p 2][ky-es-practice] ·
+[ESN Guide, p 15][ky-es-notification]
+
+The June 2026 bulletin withdraws courtesy RP reminder emails from ESN Year
+2025 onward and moves ES reminders to the portal messaging banner. Record
+the applicable obligation and deadline independently of a reminder. This
+communication change does not supply a current ESN amendment calendar.
+[DITC Updates Bulletin, June 2026, IV, pp 4–5][ky-es-bulletin]
+
+For an ES return, the portal manual defines these statuses:
+
+| Status | Published meaning and required response |
+| --- | --- |
+| Pending | Submitted to the system and being processed; retain it as pending. |
+| Submitted | Successfully processed, with later rejection still possible; this is not approval of substantive ES compliance. |
+| Submission failed | Rejected; check Actions Required for the reason and resolve it. |
+| Incomplete | Saved or retrieved form that is not submitted; complete and submit when authorised. |
+| Action Required | DITC has reverted the form; follow its instructions and retain the response evidence. |
+
+[Portal Guide, p 100][ky-es-portal]
+
+**Select the correction route before changing a filing.**
+
+- For an ESN year still available in CAP, the ESN guide describes Return,
+  correction and resubmission. The corrected content replaces the earlier
+  submission. For a closed year, Practice Points I.13 describe specified
+  return/TRO routes for an activity wrongly declared when none occurred
+  or an incorrect period end. Other errors require DITC instructions.
+  An actual activity with zero income is not the wrong-activity case.
+  [ESN Guide, p 16][ky-es-notification] ·
+  [Practice Points I.13–14, p 3][ky-es-practice]
+- For an already submitted ES return, the portal guide describes
+  retrieval, Edit and confirmation of retraction. The status becomes
+  Incomplete; amend, re-upload documents and resubmit. It permits
+  retrieval only before the applicable submission deadline has passed.
+  The reviewed sources do not establish a general ES-return amendment
+  route after that deadline. Hold that case for applicable Authority
+  instructions. [Portal Guide, pp 97–99][ky-es-portal]
+- Do not derive current CAP availability from old examples. The ESN guide,
+  p 4, gives 31 December 2021 for ESN Year 2020, whilst the November 2024
+  Practice Points, p 6, give 31 December 2022. The latter table addresses
+  ESN Years 2023 and 2024 with closing dates in 2024 and 2025. Neither
+  establishes 2025/2026 availability or a present right to amend.
+  [ESN Guide, p 4][ky-es-notification] ·
+  [Practice Points I.22–24, p 6][ky-es-practice]
+
+#### Four manual filing-plan checks
+
+These are hypothetical reference controls, not executed portal tests.
+Apply the classification gates above and retain the published manual's
+version and the current-instruction evidence for each decision.
+
+| Facts | Expected filing-plan result | Evidence hold |
+| --- | --- | --- |
+| A qualifying entity's financial year runs from 1 July 2025 to 30 June 2026. | The manuals select ESN Year 2025, the start year. Record both period dates and the corresponding ESN before preparing the ES return. | Current due dates, CAP availability, any extension and actual submission remain unverified. [ESN Guide, p 4][ky-es-notification] · [Portal Guide, pp 77–78][ky-es-portal] |
+| A relevant entity conducted holding company business but its reconciled accounting records establish zero gross relevant income. | Retain the activity in the ESN/return, report zero relevant income and retain financial statements/books. Use the guidance-attributed no-income test treatment; preserve reporting. | Zero profit alone is insufficient. No final compliance conclusion follows from filling a form section. [Practice Points I.14 and II.20][ky-es-practice] · [Guidance III.A.1][ky-es-guidance] |
+| A submitted ES return needs correction after its applicable deadline. | Hold the amendment route as Needs Input and obtain applicable Authority instructions. The described pre-deadline retrieval route is insufficient. | A retrieved or saved form is Incomplete until resubmitted; no generic post-deadline right is established. [Portal Guide, pp 97–100][ky-es-portal] |
+| A GP conducts the same activity for an ELP but earns relevant income for its own account from a customer outside any such partnership. | The second Appendix B.2 declaration is not established on those facts; do not assume that the partnership's return removes the GP's separate return. | Resolve the income facts and applicable current declarations/mechanism before deciding the GP filing position. [Guidance, partnership appendix B.2, p 90][ky-es-guidance] |
+
 #### ES workflow controls
 
-For the selected classification task, retain the universal workflow's
+For the selected reference and filing-plan tasks, retain the universal workflow's
 profile confirmation, refusal checks, source conditions and all 4 outputs:
 working paper, reviewer brief, action list and review checklist. Check
 R-KY-3 and R-KY-ES-REVIEW before substantive work. If a refusal fires,
 follow the base's refusal trace and stop that engagement. Section 6.1
-supplies a selected classification path; the other country sections do not
+supplies selected classification and filing-plan paths; the other country sections do not
 establish a complete return or engagement workflow on their own. Load the
 relevant topical guides and verify their scope before operational use.
 
 Use the evidence groups above as the ES additions to the structured intake.
 Also confirm the requested output, the financial year and the reviewer's
-credentials and engagement scope. Combine overlapping questions with the
-base intake. Do not ask for real taxpayer data to demonstrate the manual
+credentials and engagement scope. For a filing plan, add the exact period
+dates, ESN Year, form/activity, assigned reporting role, current due-date
+and availability evidence, prior submission status and requested correction.
+Combine overlapping questions with the base intake. Do not ask for real taxpayer data to demonstrate the manual
 cases.
 
 | Unresolved input | Treatment within the selected scope |
@@ -413,6 +588,7 @@ cases.
 | Other assets, activities or income | Hold the test selection until the full asset/activity and gross-income reconciliation is available. |
 | Claimed absence of relevant income | Keep the no-income test treatment unresolved until the books support it; retain notification/reporting work. |
 | Filing-limb or resource adequacy evidence | Hold the compliance conclusion; a supported classification does not establish test satisfaction. |
+| Current deadline, CAP availability, GP declarations or correction route | Hold the affected filing decision as Needs Input; retain the dated manual and obtain applicable Authority instructions or current evidence. |
 
 **Reviewer attention policy:** flag every ES classification, exclusion,
 test-selection and compliance conclusion for review, including a case with
@@ -425,8 +601,11 @@ Add an ES decision row for each activity to the working paper. Record the
 financial year, legal form, exclusion evidence, ownership facts, gross
 relevant income, classification, selected test, each limb's evidence,
 primary provision and period, notification/return obligations, unresolved
-items and reviewer decision. Carry each held item and required document
-into the action list. Add the 5 manual case results, T2 judgements and
+items and reviewer decision. For the filing plan, add the ESN start-year
+selection, reporting assignment, current-calendar evidence, activity/form
+list, submission status/evidence and correction route. This retention list
+is a workflow control, not a statutory filing or retention rule. Carry each held item and required document
+into the action list. Add the 5 classification and 4 filing-plan manual check results, T2 judgements and
 Needs Input items to the reviewer brief, with a source and reason for each.
 Use the ES items in the Review Checklist Items section below for both
 self-check and reviewer delivery. Do not replace the base's checks or
@@ -435,6 +614,10 @@ sign-off with these additions.
 [ky-es-act]: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2018/2018-0045/2018-0045_2026%20Revision.pdf
 [ky-es-guidance]: https://www.ditc.ky/wp-content/uploads/Economic-Substance-Guidance.pdf
 [ky-es-resources]: https://www.ditc.ky/es/es-legislation-resources/
+[ky-es-notification]: https://www.ditc.ky/wp-content/uploads/Economic-Substance-Notification-User-Guide.pdf
+[ky-es-practice]: https://www.ditc.ky/wp-content/uploads/ESN-Practice-Points.pdf
+[ky-es-portal]: https://www.ditc.ky/wp-content/uploads/DITC_Portal_User_Guide.pdf
+[ky-es-bulletin]: https://www.ditc.ky/wp-content/uploads/news-updates.pdf
 
 ### 6.2 Duty Concessions
 
@@ -503,7 +686,7 @@ ONBOARDING QUESTIONS -- CAYMAN ISLANDS
 | Tax concessions | Tax Concessions Act (Revised) |
 | Customs duties | Customs Tariff Act (Revised) |
 | Companies | Companies Act (Revised) |
-| Economic substance | [Economic Substance Act (2026 Revision)][ky-es-act] and [DITC Guidance v3.2 (July 2022), including partnership appendix][ky-es-guidance]; selected holding-company scope in Section 6.1 |
+| Economic substance | [Economic Substance Act (2026 Revision)][ky-es-act] and [DITC Guidance v3.2 (July 2022), including partnership appendix][ky-es-guidance]; selected holding-company scope and dated filing manuals in Section 6.1 |
 | Pensions | National Pensions Act |
 | Health insurance | Health Insurance Act |
 | Stamp duty | Stamp Duty Act |
@@ -523,16 +706,29 @@ and reviewer checklist:
 - Check the selected test and each limb's evidence, including actual Cayman
   resources. Retain the partnership filing-limb hold and all other Needs
   Input items; no final compliance conclusion may bypass them.
-- Manually compare all 5 hypothetical cases with their expected results and
-  cited provisions. Record any departure and its cause. These controls do
+- Manually compare all 5 classification and 4 filing-plan checks with their
+  expected results and cited provisions. Record any departure and its cause. These controls do
   not establish an executed taxpayer workflow.
 - Confirm that all 4 universal outputs, refusal traces where applicable,
   review flags and action items are present and internally consistent.
-  Obtain qualified review before reliance; current submission procedures
-  remain outside this verified path.
+  Obtain qualified review before reliance; this reference path does not
+  perform an actual submission.
+- Verify the financial start-year selection, reporting assignment and
+  separate ESN/Registry annual return/ES-return duties. Keep zero-income
+  classification and form completion separate. Record current-calendar and
+  availability gaps, submission status and any correction hold.
+- Check both GP non-duplication declarations within their stated partnership
+  scope. Retain the current-controls gap and every unresolved filing limb;
+  the public manuals do not establish final compliance or filing assurance.
 
 ## Change log
 
+- **3.1, 14 November 2026:** add selected ES notification/return filing-plan
+  procedures from the dated public manuals, conditional GP reporting,
+  status and correction controls and 4 manual filing-plan checks. Preserve
+  current-calendar, GP-control, partnership and historical evidence holds.
+  Clarify the selected reference refusal and workflow outputs. Other
+  country figures were not re-verified by this filing-procedure pass.
 - **3.0, 14 November 2026:** expand selected ES holding-company
   classifications using the 2026 Act and DITC Guidance v3.2 with its
   partnership appendix; add 5 manual controls, source holds and universal
