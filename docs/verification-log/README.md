@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-15 | [Bermuda company records, statements and audit controls](2026-11-15-bermuda-company-reporting-controls.md) |
 | 2026-11-15 | [Bermuda company fee, capital and declaration controls](2026-11-15-bermuda-company-fee-controls.md) |
 | 2026-11-15 | [Bermuda company-formation and Registrar controls](2026-11-15-bermuda-company-formation-controls.md) |
 | 2026-11-14 | [Bermuda occupational-pension contribution controls](2026-11-14-bermuda-occupational-pension-controls.md) |
