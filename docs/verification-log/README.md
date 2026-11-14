@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-15 | [Bermuda land-tax assessment, calculation and payment controls](2026-11-15-bermuda-land-tax-controls.md) |
 | 2026-11-15 | [Bermuda customs classification, value and relief controls](2026-11-15-bermuda-customs-classification-controls.md) |
 | 2026-11-15 | [Bermuda economic substance classification and declaration controls](2026-11-15-bermuda-economic-substance-controls.md) |
 | 2026-11-15 | [Bermuda company records, statements and audit controls](2026-11-15-bermuda-company-reporting-controls.md) |

@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
-description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs controls. Establish the taxpayer, group, fiscal period, classification and source before choosing a calculation or filing route. Route payroll and pension questions to their detailed companion controls. For imports, obtain the tariff code, statutory value, transport route, allowance and approval facts rather than using a default rate. Customs illustrations have explicit source periods and relief conditions. VAT absence, property and stamp duty calculations, other named evidence gaps and practitioner verification remain unresolved.
-version: 2.8
+description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs and land tax controls. Establish the taxpayer, group, period, classification and source before choosing a calculation or filing route. Route payroll, pension and customs questions to their detailed controls. For land tax obtain the statutory owner, assessed ARV, period, relief decisions and demand/service facts. The selected residential and other-unit examples are conditional, with separate concession and payment clocks. VAT absence, stamp duty calculations, remaining land tax gaps and practitioner verification remain unresolved.
+version: 2.9
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-15
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
 
-**Verification boundary, 15 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation and administrative facts remain open. The [occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) cover selected membership, earnings and contribution rules; plan-specific funding and a full pension engagement remain open. The [selected customs controls](bm-vat-gst.md#classification-route-and-source-periods) reconcile dated classification, route, value, allowance, relief and declaration rules. Actual goods, importer facts, approvals, later law and filing procedure retain their stated holds; no unknown-category rate is supplied. Land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled, so a calculation using those figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
+**Verification boundary, 15 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation and administrative facts remain open. The [occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) cover selected membership, earnings and contribution rules; plan-specific funding and a full pension engagement remain open. The [selected customs controls](bm-vat-gst.md#classification-route-and-source-periods) reconcile dated classification, route, value, allowance, relief and declaration rules. Actual goods, importer facts, approvals, later law and filing procedure retain their stated holds; no unknown-category rate is supplied. The [selected land-tax controls](#land-tax-scope-and-source-periods) establish assessed-ARV, classification, ordinary-rate, qualified-concession and payment distinctions. Actual assessment/relief facts, the tourist-rate and interest conflicts, later-law currency and execution remain held. Stamp duty tables and numerical examples remain unreconciled and are **Needs Input** until separately checked. Tier 2 and pending review remain.
 
 ### Tax Landscape Overview
 
@@ -72,7 +72,7 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 | Unknown employer classification | **Needs Input**: establish the statutory class and period; no rate fallback. |
 | Unknown employee pay history or annualisation | **Needs Input**: establish the marginal slices, cap history and pay-period method. |
 | Unknown customs duty category | **Needs Input**: establish the exact tariff code, import date, statutory value, route, allowance and any approval; no rate fallback. |
-| Unknown land tax ARV band | Higher rate band |
+| Unknown land tax ARV, category or relief | **Needs Input**: establish the assessed ARV, statutory owner, period-start classification and actual relief/adjustment decisions; no higher-band or nil-tax fallback. |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -85,6 +85,8 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 - **CIT compliance planning:** obtain each BCE/TIN, group composition and Filing BCE authorisation, the statutory fiscal year, tax/payment and election facts, prior submissions and Agency notices/variations. Use the [CIT registration, filing and payment procedure](bm-corporate-income-tax.md#cit-registration-filing-and-payment); separate payment, instalment-information and return requirements. Missing facts and detailed computation remain **Needs Input**.
 
 - **Customs:** obtain the goods description and tariff code/unit, import date, ownership and intended use, accompanied/unaccompanied/postal/courier route, transaction and valuation evidence, currency, traveller status/age, available aggregate allowance and any relief approval or CPC. Apply the [dated customs controls](bm-vat-gst.md); identify declaration requirements and other charges separately. Missing classification or eligibility facts are **Needs Input**.
+
+- **Land tax:** obtain the assessment number/unit and applicable list, draft or proposal; assessed ARV; statutory owner and period-start class; relevant half-year; exemption/concession/adjustment evidence; and actual demand, service, extension and payment facts. Use the [land-tax controls](#land-tax-scope-and-source-periods). Missing inputs prevent an amount or deadline.
 
 ### Refusal Catalogue
 
@@ -180,6 +182,12 @@ The [conditional customs examples](bm-vat-gst.md#manual-boundary-cases) distingu
 - Above BMD 1,000,000: 8% = BMD 80,000
 - Total stamp duty: BMD 128,000
 
+### Example 5 -- Land Tax with Missing Assessment Facts
+
+**Input:** A home purchase price is known, but the assessed ARV, statutory classification and relevant relief decision are missing.
+
+**Result:** **Needs Input**. Purchase price does not supply ARV and no higher-band or nil-tax default applies. Establish the [assessment and period controls](#land-tax-scope-and-source-periods) before using any conditional calculation below.
+
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Personal and Corporate Income Tax Scope
@@ -192,7 +200,258 @@ The [conditional customs examples](bm-vat-gst.md#manual-boundary-cases) distingu
 
 ### 5.3 Land Tax
 
-- **Land tax assessment** — Assessed annually on the annual rental value (ARV) of land and buildings. Progressive rates by ARV band. Payable in instalments (quarterly or semi-annually).  _(Land Tax Act 1967)_
+#### Land tax scope and source periods
+
+These selected controls use the [Land Tax Act 1967, ss 1-6 and Schedule](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Tax%20Act%201967), read with [Land Tax Amendment Act 2025, ss 2-3](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2025/Land%20Tax%20Amendment%20Act%202025), which replaces the BMD 300 annual base with BMD 150 from **1 January 2026**. The posted principal text still shows BMD 300; do not use it without the amendment. The [Land Valuation and Tax Act 1967](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Valuation%20and%20Tax%20Act%201967) supplies valuation, liability, demand and objection rules. The 2025 service amendments operate from **5 January 2026**, appointed by [BR 125/2025, cl 2](https://www.bermudalaws.bm/Laws/Annual%20Law/Statutory%20Instruments/2025/Land%20Valuation%20and%20Tax%20Amendment%20Act%202025%20Commencement%20Day%20Notice%202025); the notice's own 31 December 2025 date is different.
+
+Establish the valuation unit, statutory owner, period-start classification, applicable assessment instrument and assessed annual rental value (ARV), relevant tax period, exemption/concession/adjustment decisions and actual demand/service facts. A private dwelling is a valuation unit used wholly or mainly as such; a tourist unit is excluded from that category. Normal design, construction or use at the period's commencement determines classification, despite later changes in that period. [Land Tax Act, ss 1 and 6](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Tax%20Act%201967)
+
+ARV is the assessed reasonable open-market yearly rent at the relevant valuation date, under the statutory tenant-repair and landlord-expense assumptions and excluding the tax element. It is not simply purchase price, actual rent or today's rental estimate. A valuation unit can be land, a building or a separately beneficially occupiable part. The owner definition includes statutory deeming rules for a lessee in or entitled to possession under a term certain of at least 3 years, Crown-property occupiers, mortgagees in possession and life tenants; beneficial occupation and joint/several liability also matter. [Valuation Act, s 1](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Valuation%20and%20Tax%20Act%201967#page=3)
+
+The [2025 list-postponement Act, ss 2-4](https://www.bermudalaws.bm/Document/%7B82ba68fb-4024-459a-80d2-0b7c9934476c%7D) continues the 2015 Valuation List, effective from 1 January 2016, through **31 December 2026**. This does not establish an individual unit's unchanged ARV. Under Valuation Act ss 28 and 40(2), confirm the applicable list, unconfirmed draft or Director's proposal; proposal ARV takes priority over draft ARV, then existing-list ARV for the demand. The Government [announces a new list for 31 December 2026 and effect from 1 January 2027](https://www.gov.bm/2026-revaluation); actual publication and individual entries remain unverified. Missing assessment or classification facts are **Needs Input**, not a higher band.
+
+#### Ordinary annual land tax
+
+For an established private dwelling with no applicable exemption, concession or adjustment:
+
+- ARV **not exceeding BMD 22,000**: the ordinary annual tax is the **BMD 150 flat base**.
+- ARV **above BMD 22,000**: add BMD 150 to the marginal tax on **every Schedule slice reached, including the first 2 bands**. The low bands are not zero merely because the flat rule applies to a different dwelling whose total ARV does not exceed BMD 22,000.
+
+The following marginal table applies only to that above-BMD-22,000 branch. Source: [Land Tax Act, s 2(b), s 1(4) and Schedule](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Tax%20Act%201967), with the base and column-reference corrections in [2025:8, s 2](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2025/Land%20Tax%20Amendment%20Act%202025).
+
+| ARV portion shown in the Schedule, BMD | Marginal rate |
+| --- | --- |
+| 0-11,000 | 0.8% |
+| 11,001-22,000 | 1.8% |
+| 22,001-33,000 | 3.5% |
+| 33,001-44,000 | 6.5% |
+| 44,001-90,000 | 17% |
+| 90,001-120,000 | 35% |
+| 120,001 and above | 55% |
+
+Thus an ordinary dwelling at ARV BMD 22,000 has annual tax BMD 150, whilst an ordinary dwelling at ARV BMD 22,100 has annual tax **150 + 88 + 198 + 3.50 = BMD 439.50**. This selected statutory reading produces a threshold step; do not apply only the excess over BMD 22,000. The examples use integer-dollar ARVs and exact arithmetic; actual fractional-ARV treatment, rounding and assessment adjustments require their own confirmation.
+
+Other classifications have separate rules. Section 2(c)(ii) states **9.5% of ARV** for an established other unit outside the private-dwelling and tourist categories, subject to s 2A. Section 2A states **7%** for a non-private-dwelling unit situated in a designated economic empowerment zone (EEZ). Establish the actual category, operative designation and any relief before using either. Section 2(c)(i) states 8% for tourist units, whilst the [agency land-tax page](https://www.gov.bm/land-tax) says 8.9%; that conflict remains **Research Gap / Needs Input** for a tourist calculation. Do not route a tourist unit through private-dwelling bands.
+
+#### Age-related concession and its period
+
+Under [Land Tax Act, s 3A](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Tax%20Act%201967#page=3), an application goes to the Tax Commissioner, who must be satisfied that the criteria are met during **any part of the relevant tax period**: a private dwelling actually occupied by an individual who is its statutory owner, is at least **65** and possesses **Bermudian status**. The provision includes a qualifying joint tenant or tenant in common. Age alone is insufficient; no automatic ownership-percentage reduction or daily-proration formula is stated in s 3A.
+
+Where the concession applies, ARV not exceeding **BMD 45,500** bears no tax. Above that ARV, calculate ordinary tax on the full ARV and subtract ordinary tax on a non-concessionary dwelling at ARV BMD 45,500. Under the selected 2026 rules the comparator is **BMD 1,791 annually**. For a qualifying dwelling at ARV BMD 50,000, the conditional annual amount is **BMD 2,556 - BMD 1,791 = BMD 765** if the concession applies in both half-year periods. Do not tax only the excess ARV at the first marginal band, infer eligibility for the other half-year or treat a death during the period as automatically ending eligibility for that same period. Establish the Commissioner's decision and the period facts.
+
+#### Half-year liability and adjustments
+
+Tax periods begin **1 January and 1 July**; each ordinarily bears **half the annual tax**. The period-start owner pays, subject to the Act. Section 33 addresses a unit with no owner at the period's start. Section 70 makes unpaid tax a charge on the unit and can make a subsequent owner liable, with qualified recovery rights against a predecessor. A purchase after the period begins does not itself clear the buyer of unpaid period tax. The Commissioner has specific s 32 adjustment powers for a unit first becoming capable of beneficial occupation during a period or an ARV-altering Director's proposal; this is not a universal daily-proration rule. [Valuation Act, ss 1, 32-33 and 70](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Valuation%20and%20Tax%20Act%201967)
+
+#### Demands, service and payment
+
+Under [Valuation Act, ss 34-37](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Valuation%20and%20Tax%20Act%201967#page=20), establish the actual demand, unit, taxpayer, ARV/basis, class, period, amount, adjustment and service evidence. Payment is due by the **later of the payment date stated in the demand and 7 days after actual or deemed service**. A mistaken stated date does not itself invalidate the demand. The [agency's March/September practice](https://www.gov.bm/paying-taxes-and-bills) does not replace this rule. Missing service or demand facts prevent a case-specific due date.
+
+Section 37 permits the Commissioner, for good cause in the particular case, to postpone payment **by written notice**. A request, objection or advertised payment plan is not an approved postponement. No general automatic quarterly-payment entitlement is established here.
+
+Apply the actual service route under ss 71-72. Ordinary s 72 routes include hand delivery, specified address/post routes and email to an address supplied in writing. Hand delivery and s 72(1)(ca) email take effect upon delivery; other methods generally have the qualified 3-day deeming rule, with contrary-proof and method conditions. The owner/occupier leaving or affixing fallback requires impracticability after reasonable enquiry. The 2025 mass-publication rule is specifically for **s 7 information notices**, not all demand notes. Do not generalise the recipient's s 72 email rule to every s 71 document sent to an authority. [Valuation Act, ss 71-72](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Valuation%20and%20Tax%20Act%201967#page=31) · [2025 service amendment, ss 5-7](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2025/Land%20Valuation%20and%20Tax%20Amendment%20Act%202025)
+
+#### Separate information and objection routes
+
+Do not merge these clocks:
+
+- A Director's **s 7 information notice** requires the return in the specified form and manner within **21 days after service**. The [2026 revaluation page](https://www.gov.bm/2026-revaluation) also gives a fixed 28 February 2026 date; establish the actual notice and service context. Under s 7(2A), failure without reasonable excuse to return, or the specified withholding/knowing false or misleading material particulars, can prevent those particulars later being adduced in the stated valuation objections. This is not an unconditional loss of all objection evidence.
+- Draft-list valuation objections use the Part II grounds, form, notice and service requirements. Section 12 prints a 6-month Gazette-notice clock, subject to extension. The amended s 9 has no subsection (2), whilst ss 12 and 22 still refer to s 9(2); the actual notice context and cross-reference issue remain held.
+- A Director's **s 25(5) proposal** has a different **28-day** objection clock from deposit with the Tribunal or service on the owner, whichever is later, or a later prescribed date.
+- A **demand-term objection** ordinarily goes to the Commissioner within **7 days of service**, extendable for good cause. ARV objections generally belong to the Part II/final-order route. A tax deposit may be required before considering the demand objection. An appeal from the Commissioner's decision ordinarily has a **7-day receipt clock**, with the separate deposit/court-relief conditions.
+- An objection or amended/substituted demand does not automatically postpone payment or restart its clock. Section 48(2) preserves the original payment date unless a later date is allowed under s 37.
+
+Sources: [Valuation Act, ss 7, 11-14, 25(5) and 40-48](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Valuation%20and%20Tax%20Act%201967) · [2025 notification/service amendments](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2025/Land%20Valuation%20and%20Tax%20Amendment%20Act%202025). Obtain the actual instrument, service, extension and deposit facts before fixing a deadline.
+
+#### Other relief, probate and death
+
+A zero ARV entry alone does not establish zero tax under the BMD 150 ordinary base rule. Establish the assessment and any actual exceptional-relief decision under Valuation Act s 68 or other applicable provision. Exemption orders and their period conditions require separate checking under Land Tax Act ss 3-4; this is not an exhaustive exemption audit.
+
+The [Land Tax (Relief) Act 1968, ss 2-7](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1968/Land%20Tax%20(Relief)%20Act%201968) separately permits individual hardship exemption or deferment, with proof, conditions, qualified variation/revocation and appeal rights. Its s 7 ends an authorised deferment on that taxpayer's death, making the deferred tax payable from the estate, subject to the heir/devisee hardship proviso. This is distinct from the s 3A age-related concession and a written s 37 postponement.
+
+The Government's [21 November 2025 surviving-spouse announcement](https://www.gov.bm/news/land-tax-relief-surviving-spouses) describes reviewed relief for a surviving spouse's primary residence during probate for **up to 24 months** and cites those different powers. It is not proof of an automatic 24-month exemption, immediate same-period loss of s 3A eligibility, or an actual applicant's approval. Preserve the relevant decision, conditions and period.
+
+#### Interest and remaining execution gaps
+
+[Valuation Act, s 39A](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1967/Land%20Valuation%20and%20Tax%20Act%201967#page=21) applies the statutory rate, calculated monthly, to arrears defined by non-payment within **30 days beginning on the demand's stated due date**. This arrears definition does not extend the payment deadline. The captured [Interest and Credit Charges (Regulation) Act 1975, s 1](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1975/Interest%20and%20Credit%20Charges%20(Regulation)%20Act%201975#page=2) defines 3.5% per annum or another prescribed rate; s 12 permits rate-setting orders. The agency page says 7%. Applicable orders, commencement and the relevant period remain unverified, so **no actual interest amount** is supplied. Section 11 of that Act is confined to Part IV and is not imported as a general land-tax calculation rule.
+
+The selected calculations below assume the stated classifications, assessment facts and absence or grant of relief. They do not establish complete later-law currency, historical rates, all exemptions, an individual valuation, rounding, accepted returns or a successful payment. Use the public [land-tax page](https://www.gov.bm/land-tax) and [payment guidance](https://www.gov.bm/paying-taxes-and-bills) to locate current public routes; authenticated registration, forms, decisions and receipts are untested. Practitioner review remains separate from these source and arithmetic checks.
+
+#### Conditional land-tax arithmetic
+
+Each block is a hypothetical calculation with established facts, not a classifier, assessment or actual taxpayer result. Ordinary half-year figures assume no adjustment. The concession block assumes qualification in both periods; actual relief for only one period does not become an annual exemption.
+
+```oa-check
+name: BM 2026 ordinary dwelling, ARV 22000, no relief or adjustment
+inputs:
+  annual_flat: 150
+steps:
+  annual_tax: annual_flat
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 150
+  half_year_tax: 75
+tolerance: 0
+```
+
+```oa-check
+name: BM 2026 ordinary dwelling, ARV 22100, all reached bands
+inputs:
+  base: 150
+  band_1: 11000
+  band_2: 11000
+  band_3: 100
+steps:
+  annual_tax: base + pct(band_1, 0.8) + pct(band_2, 1.8) + pct(band_3, 3.5)
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 439.5
+  half_year_tax: 219.75
+tolerance: 0
+```
+
+```oa-check
+name: BM 2026 ordinary dwelling, ARV 45500, concession comparator
+inputs:
+  base: 150
+  band_1: 11000
+  band_2: 11000
+  band_3: 11000
+  band_4: 11000
+  band_5: 1500
+steps:
+  annual_tax: base + pct(band_1, 0.8) + pct(band_2, 1.8) + pct(band_3, 3.5) + pct(band_4, 6.5) + pct(band_5, 17)
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 1791
+  half_year_tax: 895.5
+tolerance: 0
+```
+
+```oa-check
+name: BM 2026 ordinary dwelling, ARV 50000, no relief or adjustment
+inputs:
+  base: 150
+  band_1: 11000
+  band_2: 11000
+  band_3: 11000
+  band_4: 11000
+  band_5: 6000
+steps:
+  annual_tax: base + pct(band_1, 0.8) + pct(band_2, 1.8) + pct(band_3, 3.5) + pct(band_4, 6.5) + pct(band_5, 17)
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 2556
+  half_year_tax: 1278
+tolerance: 0
+```
+
+```oa-check
+name: BM 2026 ordinary dwelling, ARV 90000, no relief or adjustment
+inputs:
+  base: 150
+  band_1: 11000
+  band_2: 11000
+  band_3: 11000
+  band_4: 11000
+  band_5: 46000
+steps:
+  annual_tax: base + pct(band_1, 0.8) + pct(band_2, 1.8) + pct(band_3, 3.5) + pct(band_4, 6.5) + pct(band_5, 17)
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 9356
+  half_year_tax: 4678
+tolerance: 0
+```
+
+```oa-check
+name: BM 2026 ordinary dwelling, ARV 120100, highest marginal slice
+inputs:
+  base: 150
+  band_1: 11000
+  band_2: 11000
+  band_3: 11000
+  band_4: 11000
+  band_5: 46000
+  band_6: 30000
+  band_7: 100
+steps:
+  annual_tax: base + pct(band_1, 0.8) + pct(band_2, 1.8) + pct(band_3, 3.5) + pct(band_4, 6.5) + pct(band_5, 17) + pct(band_6, 35) + pct(band_7, 55)
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 19911
+  half_year_tax: 9955.5
+tolerance: 0
+```
+
+```oa-check
+name: BM 2026 approved section 3A concession, ARV 50000, both periods
+inputs:
+  ordinary_annual_tax: 2556
+  ordinary_45500_tax: 1791
+steps:
+  annual_concession_tax: ordinary_annual_tax - ordinary_45500_tax
+  half_year_concession_tax: annual_concession_tax / 2
+expected:
+  annual_concession_tax: 765
+  half_year_concession_tax: 382.5
+tolerance: 0
+```
+
+```oa-check
+name: BM selected ordinary other unit, ARV 10000, not private tourist or EEZ
+inputs:
+  arv: 10000
+  rate: 9.5
+steps:
+  annual_tax: pct(arv, rate)
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 950
+  half_year_tax: 475
+tolerance: 0
+```
+
+```oa-check
+name: BM selected non-private non-tourist unit, confirmed designated EEZ
+inputs:
+  arv: 10000
+  rate: 7
+steps:
+  annual_tax: pct(arv, rate)
+  half_year_tax: annual_tax / 2
+expected:
+  annual_tax: 700
+  half_year_tax: 350
+tolerance: 0
+```
+
+#### Manual land-tax boundary controls
+
+| Group | Hypothetical trigger | Required result or control |
+| --- | --- | --- |
+| 1 | Purchase price known; assessed ARV or category missing | **Needs Input**; no higher-band or price-based amount. |
+| 2 | Established ordinary private dwelling, ARV BMD 22,000 | Annual BMD 150 and ordinary half-year BMD 75; do not add marginal bands. |
+| 3 | Established ordinary private dwelling, ARV BMD 22,100 | Annual BMD 439.50 using all reached slices and the base, not only the excess over BMD 22,000. |
+| 4 | Established ordinary private dwelling, ARV BMD 45,500 | Ordinary annual BMD 1,791; nil only if the concession or another relief actually applies. |
+| 5 | Established ordinary private dwelling, ARV BMD 50,000 | Annual BMD 2,556 and ordinary half-year BMD 1,278. |
+| 6 | Established ordinary private dwelling, ARV BMD 90,000 | Annual BMD 9,356 and ordinary half-year BMD 4,678. |
+| 7 | Established ordinary private dwelling, ARV BMD 120,100 | Annual BMD 19,911 and ordinary half-year BMD 9,955.50, including the highest slice. |
+| 8 | ARV BMD 50,000 with s 3A concession established in both periods | Annual BMD 765 and half-year BMD 382.50; actual one-period eligibility must be considered separately. |
+| 9 | Individual turns 65 or dies during a period; joint ownership asserted | Check all s 3A conditions and Commissioner's satisfaction for that period; no automatic other-period relief, immediate loss, share reduction or daily proration. |
+| 10 | Agency lookup reports ARV zero | **Needs Input** on assessment/relief basis; zero ARV alone is not a nil-tax decision. |
+| 11 | Confirmed non-private, non-tourist unit at ARV BMD 10,000 | Ordinary other-unit annual BMD 950; a proved applicable EEZ branch instead gives BMD 700. No inferred zone or relief. |
+| 12 | Buyer acquires after period start with tax unpaid | Check s 70 charge/liability and qualified predecessor recovery; do not clear liability solely from purchase date. |
+| 13 | Existing-list ARV differs from a Director's proposal | Establish s 40(2) priority and any final determination; do not select the cheapest value. |
+| 14 | Demand states payment 3 days after proved service | Check the statutory 7-day floor and any actual written variation; no automatic invalidity or quarterly date. |
+| 15 | Objection filed or corrected demand issued | No automatic stay or fresh payment clock; establish s 37/48 decision and deposit requirements. |
+| 16 | Information request, proposal and demand arrive together | Keep s 7's 21 days, s 25(5)'s qualified 28 days and the demand/appeal clocks separate. |
+| 17 | Surviving spouse relies on the probate announcement | Establish the actual hardship/concession/postponement authority and decision; no automatic 24-month exemption. |
+| 18 | Calculation request uses 7% from the agency page immediately on non-payment | **Needs Input** on applicable rate/order and arrears period; do not compute an unsupported interest amount. |
+| 19 | Tourist unit or mixed use with uncertain classification | **Needs Input** on category, period and the 8%/8.9% conflict; do not use private-dwelling bands. |
+| 20 | Fractional ARV or half-year amount requires rounding | Obtain the assessment/rounding basis; examples are exact conditional arithmetic only. |
+| 21 | Question assumes the announced 2027 list was published | Verify the actual list and individual entry; the announcement is not that proof. |
+
 
 ### 5.4 Stamp Duty on Real Estate
 
@@ -309,7 +568,7 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 | Payroll tax rates | Payroll Tax Act 1995 and Payroll Tax Rates Act 1995, read with applicable enacted amendments and their period clauses. |
 | Payroll tax cap | Payroll Tax Act 1995 |
 | Customs duties | Customs Tariff Act 1970; Revenue Act 1898 s 24 and Second Schedule; separate retail capital-investment relief Act and amendments. Use the [selected customs sources and controls](bm-vat-gst.md). |
-| Land tax | Land Tax Act 1967 |
+| Land tax | Land Tax Act 1967 and 2025:8; Land Valuation and Tax Act 1967, the 2025 list/service amendments and BR 125/2025. Separate hardship and interest authorities retain their stated limits; use the [selected controls](#land-tax-scope-and-source-periods). |
 | Stamp duty | Stamp Duties Act 1976 |
 | Social insurance | Contributory Pensions Act 1970 |
 | Economic substance | Economic Substance Act 2018 |
@@ -325,6 +584,7 @@ Bermuda has double-taxation agreements: the [Government’s 22 April 2026 Bahrai
 - NEVER turn the unresolved VAT/GST/general-sales-tax evidence gap into a verified absence or a zero rate.
 - NEVER apply unsupported VAT calculations; identify customs and sector charges separately.
 - NEVER guess a customs rate from a broad goods label or treat an allowance, approved relief or ordinary heading as automatic; establish the dated statutory conditions first.
+- NEVER replace missing land-tax ARV, category, relief or demand/service facts with a higher band, automatic nil amount or generic quarterly date.
 - NEVER compute a corporate liability without verified scope, fiscal period, elections, current tax base and credit rules; a Bermuda entity is not categorically exempt.
 - NEVER ignore payroll tax obligations (primary compliance requirement)
 - NEVER assume payroll tax rates without checking the Rates Act, applicable enacted amendments, classification and tax period
