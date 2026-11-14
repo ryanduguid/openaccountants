@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2052,
+  "guides": 2053,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -16326,6 +16326,19 @@
    "name": "nz-company-financial-reporting-core",
    "jurisdiction": "NZ",
    "category": "financial-statements",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-14"
+  },
+  {
+   "slug": "nz-company-ica-ir4j",
+   "path": "skills/international/new-zealand/nz-company-ica-ir4j.md",
+   "name": "nz-company-ica-ir4j",
+   "jurisdiction": "NZ",
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
