@@ -32,7 +32,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Tax and period specific. The official payroll page states payment on 15 January, 15 April, 15 July and 15 October. The former 15 March annual reconciliation remains unverified. |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
-| Skill version | 2.3 |
 
 **Verification boundary, 14 November 2026.** The system orientation below is reconciled only to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The retained payroll, social insurance, customs, land and stamp-duty tables, defaults, deadlines and numerical examples are not reconciled to current law by this update. Any calculation using those figures is **Needs Input** until its topic-specific evidence is checked. Tier 2/pending review remains.
 
