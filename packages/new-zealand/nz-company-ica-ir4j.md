@@ -8,7 +8,7 @@ review_status: pending_review
 tax_year: 2026
 tax_year_notes: "2025-26 ICA and IR4J2026; selected later events require their own operative dates; no annual 2027 form mapping"
 last_updated: 2026-11-14
-version: 0.1
+version: 0.2
 depends_on:
   - workflow-base
   - corporate-income-tax-workflow-base
@@ -17,7 +17,7 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# New Zealand company ICA and IR4J v0.1
+# New Zealand company ICA and IR4J v0.2
 
 ## Scope and source periods
 
@@ -411,6 +411,28 @@ expected:
   closing_credit: 50
 ```
 
+### 10. Evidenced partial IPT remission
+
+The qualifying FIT base is **$300**, giving gross IPT of **$30** at the established 10% rate. A dated Commissioner decision establishes the TAA180(1)(b) refund ground and the Commissioner's satisfaction for **$10** of that IPT, and remits that amount. The decision's amount is an evidenced input; this example does not derive remission entitlement from a refund label. Net IPT is **$20** and FIT plus net IPT is **$320**. Remitting IPT does not itself reduce the $300 FIT. Late-payment penalties, interest and any separate relief require their own amounts and conditions; none is included here. [TAA].
+
+```oa-check
+name: nz-ica-ir4j-partial-ipt-remission
+tolerance: 0
+inputs:
+  fit: 300
+  evidenced_remission: 10
+steps:
+  gross_ipt: fit * 0.10
+  net_ipt: gross_ipt - evidenced_remission
+  fit_plus_net_ipt: fit + net_ipt
+expected:
+  gross_ipt: 30
+  net_ipt: 20
+  fit_plus_net_ipt: 320
+```
+
+**Unresolved-condition control.** If the refund ground, the Commissioner's satisfaction or the remitted amount is not established, retain the **$30 gross IPT** and mark net IPT and FIT-plus-net-IPT **Needs Input**. Do not assume the $10 remission or substitute zero for an unknown decision. This is a required manual control, not a claim that the arithmetic block tests a missing-evidence workflow. [TAA].
+
 ## Outputs and reviewer handoff
 
 Produce all 4 actual universal outputs when an authorised engagement is run:
@@ -443,7 +465,7 @@ Run both bases' complete checks, including all **18 corporate self-checks**, wit
 
 ## Provenance and limitations
 
-Version 0.1 was prepared on 14 November 2026 from selected primary sources below. Independent preparation checks covered source bindings/boundaries, operative-period distinctions, form/native/visual mapping and hypothetical arithmetic. They are not practitioner sign-off, complete historical/current-law assurance, an executed engagement or corporate-topic completion. This tier 2 guide remains pending licensed practitioner review; its examples establish no actual taxpayer result.
+Version 0.2 was prepared on 14 November 2026 from selected primary sources below. Independent preparation checks covered source bindings/boundaries, operative-period distinctions, form/native/visual mapping and hypothetical arithmetic. They are not practitioner sign-off, complete historical/current-law assurance, an executed engagement or corporate-topic completion. This tier 2 guide remains pending licensed practitioner review; its examples establish no actual taxpayer result.
 
 The 2026 form's 2 pages were read natively without OCR and visually checked. Font-rendering warnings, zero-sign, precision and interactive-field limits remain. IR2742024 has column-layout/example-year limitations and does not establish general intraday order or blanket interest relief. Use operative provisions and period-specific evidence for a relied-on result.
 
