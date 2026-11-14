@@ -48,6 +48,7 @@ skills/international/australia/australia-payroll.md
 skills/international/australia/australia-tax-optimization.md
 skills/international/bahamas/bs-income-tax.md
 skills/international/bahamas/bs-payroll-social.md
+skills/international/bermuda/bm-vat-gst.md
 skills/international/bolivia/bo-corporate-income-tax.md
 skills/international/cayman-islands/cayman-tax.md
 skills/international/costa-rica/costa-rica-corporate-income-tax.md

@@ -1,10 +1,10 @@
 ---
 name: bermuda-tax
-description: Use this skill for Bermuda taxation, including personal income tax scope, corporate income tax screening, payroll tax and customs duties.
-version: 2.7
+description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs controls. Establish the taxpayer, group, fiscal period, classification and source before choosing a calculation or filing route. Route payroll and pension questions to their detailed companion controls. For imports, obtain the tariff code, statutory value, transport route, allowance and approval facts rather than using a default rate. Customs illustrations have explicit source periods and relief conditions. VAT absence, property and stamp duty calculations, other named evidence gaps and practitioner verification remain unresolved.
+version: 2.8
 jurisdiction: BM
 tax_year: 2026
-last_updated: 2026-11-14
+last_updated: 2026-11-15
 review_status: pending_review
 category: international
 tier: 2
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
 
-**Verification boundary, 14 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation and administrative facts remain open. The [occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) cover selected membership, earnings and contribution rules; plan-specific funding and a full pension engagement remain open. The retained customs, land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled. A calculation using their figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
+**Verification boundary, 15 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation and administrative facts remain open. The [occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) cover selected membership, earnings and contribution rules; plan-specific funding and a full pension engagement remain open. The [selected customs controls](bm-vat-gst.md#classification-route-and-source-periods) reconcile dated classification, route, value, allowance, relief and declaration rules. Actual goods, importer facts, approvals, later law and filing procedure retain their stated holds; no unknown-category rate is supplied. Land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled, so a calculation using those figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
 
 ### Tax Landscape Overview
 
@@ -71,7 +71,7 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 | --- | --- |
 | Unknown employer classification | **Needs Input**: establish the statutory class and period; no rate fallback. |
 | Unknown employee pay history or annualisation | **Needs Input**: establish the marginal slices, cap history and pay-period method. |
-| Unknown customs duty category | General merchandise rate (22.25%) |
+| Unknown customs duty category | **Needs Input**: establish the exact tariff code, import date, statutory value, route, allowance and any approval; no rate fallback. |
 | Unknown land tax ARV band | Higher rate band |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
@@ -83,6 +83,8 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 - **Ideal inputs:** source/version and effective-period register, restructuring history, governing election/assurance documents and unresolved-topic list. Detailed CIT calculations and any s 13 endpoint affected by the source tension remain **Needs Input**; see [system screening](bm-tax-overview.md#corporate-income-tax-screening).
 
 - **CIT compliance planning:** obtain each BCE/TIN, group composition and Filing BCE authorisation, the statutory fiscal year, tax/payment and election facts, prior submissions and Agency notices/variations. Use the [CIT registration, filing and payment procedure](bm-corporate-income-tax.md#cit-registration-filing-and-payment); separate payment, instalment-information and return requirements. Missing facts and detailed computation remain **Needs Input**.
+
+- **Customs:** obtain the goods description and tariff code/unit, import date, ownership and intended use, accompanied/unaccompanied/postal/courier route, transaction and valuation evidence, currency, traveller status/age, available aggregate allowance and any relief approval or CPC. Apply the [dated customs controls](bm-vat-gst.md); identify declaration requirements and other charges separately. Missing classification or eligibility facts are **Needs Input**.
 
 ### Refusal Catalogue
 
@@ -110,18 +112,18 @@ See [Payroll Tax Act 1995](https://www.bermudalaws.bm/Laws/Consolidated%20Law/19
 
 ### 3.2 Customs Duty Categories
 
-**Customs Duty Categories**
+Select the exact code, import date and route before calculating duty. The [posted 2026 First Schedule](https://www.gov.bm/files/media-library/20260413/e1311751-2026_customs_tariff_act_1970_first_schedule_final_2026.03.31v1r0.pdf) has different ordinary headings and Chapter 98 routes; the [customs guide](bm-vat-gst.md#classification-route-and-source-periods) records the selected page locators, Special Rules and relief conditions. These examples use the posted 1 April 2026 schedule period, subject to the stated later-law limits.
 
-| Category | Duty Rate | Notes |
+| Established facts | Selected treatment | Required boundary |
 | --- | --- | --- |
-| General merchandise | 22.25% -- 25% | Most goods |
-| Food items | 0% -- 10% | Many essentials at lower rates |
-| Clothing and footwear | 6.5% |  |
-| Motor vehicles | 33.5% | Standard |
-| Prescription medications | 0% | Exempt |
-| Electronics/household goods | 25% |  |
-| Alcohol | High specific rates |  |
-| Tobacco | High specific rates |  |
+| Goods described only as electronics, food, clothing, a vehicle or building material | **Needs Input** | Broad labels do not establish a tariff code, rate, unit, route or relief. |
+| Camera correctly classified to 8525.890 on the ordinary-heading route | 10% of established statutory value | Establish the product and route; accompanied personal goods can follow a different rule. |
+| Portable computer correctly classified to 8471.300 on the ordinary-heading route | 25% of established statutory value | Check approved relief separately; the heading alone does not grant retail capital-investment relief. |
+| Approved retail capital-investment goods within Schedule heading 84.71 | Conditional 0% ad valorem | Apply the separate Act, written approval, eligible scheme/goods, import cutoff and claim conditions in the [retail relief control](bm-vat-gst.md#conditional-relief-and-later-notices). |
+
+Accompanied and unaccompanied personal routes depend on ownership and use. Special Rules 1-2 prefer their Chapter 98 headings unless the other heading is 0% or exceeds 25%; the Collector can require another heading. Postal and licensed-courier routes have separate s 2A rules. The BMD 300 islander and BMD 50 visitor allowances apply to the defined accompanied categories, once in aggregate, with part-value relief; they are not general invoice deductions. Check age and quantity restrictions for alcohol and tobacco. Use the [value and allowance controls](bm-vat-gst.md#statutory-customs-value) before an amount.
+
+The former blanket food, clothing, vehicle, medicine and electronics table is not a fallback. VAT/GST/general-sales-tax absence, other import charges, actual filing and the remaining legal/evidence holds are separate questions.
 
 ### 3.3 Social Insurance Contributions
 
@@ -154,10 +156,9 @@ This is a manual rule example, not an executed payroll, taxpayer, consuming-mode
 
 **Input:** Bermuda resident imports electronics valued at BMD 5,000.
 
-**Computation:**
-- Customs duty at applicable rate (general merchandise ~22.25%)
-- Duty: BMD 5,000 x 22.25% = BMD 1,112.50
-- VAT/general-sales-tax absence remains **Research Gap / Needs Input**; do not infer either conclusion from this customs illustration.
+**Result: Needs Input.** The description does not establish the tariff code, import date, statutory value, ownership/use, transport route, available allowance or approved relief. Residence alone does not resolve those facts. The former BMD 1,112.50 calculation at 22.25% is unsupported and must not be used.
+
+The [conditional customs examples](bm-vat-gst.md#manual-boundary-cases) distinguish an ordinary-heading camera, an accompanied islander's personal camera and an ordinary-heading computer using explicit assumptions. They do not classify these unspecified electronics. VAT/GST/general-sales-tax absence remains **Research Gap / Needs Input**.
 
 ### Example 3 -- Self-Employed Individual
 
@@ -229,10 +230,16 @@ B. SOCIAL INSURANCE
   B1. Employer pension contributions               ___________
   B2. Employee pension contributions               ___________
 
-C. CUSTOMS DUTIES (if applicable)
-  C1. Import value                                 ___________
-  C2. Duty rate                                    ___________
-  C3. Total duty                                   ___________
+C. CUSTOMS DUTIES (if applicable; missing facts = Needs Input)
+  C1. Goods, tariff code and statutory unit         ___________
+  C2. Import date, source version and period        ___________
+  C3. Ownership/use and statutory transport route   ___________
+  C4. Valuation method, adjustments and import FX   ___________
+  C5. Statutory value with supporting evidence      ___________
+  C6. Traveller status/age and available allowance  ___________
+  C7. Relief/CPC, written approval and conditions   ___________
+  C8. Applicable rate, duty and unresolved facts    ___________
+  C9. Declaration and separate other-charge checks  ___________
 
 D. CIT SCREENING (orientation only; no liability computation)
   D1. Taxpayer/entity and UPE/group                 ___________
@@ -301,7 +308,7 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 | --- | --- |
 | Payroll tax rates | Payroll Tax Act 1995 and Payroll Tax Rates Act 1995, read with applicable enacted amendments and their period clauses. |
 | Payroll tax cap | Payroll Tax Act 1995 |
-| Customs duties | Customs Tariff Act 1970 |
+| Customs duties | Customs Tariff Act 1970; Revenue Act 1898 s 24 and Second Schedule; separate retail capital-investment relief Act and amendments. Use the [selected customs sources and controls](bm-vat-gst.md). |
 | Land tax | Land Tax Act 1967 |
 | Stamp duty | Stamp Duties Act 1976 |
 | Social insurance | Contributory Pensions Act 1970 |
@@ -317,6 +324,7 @@ Bermuda has double-taxation agreements: the [Government’s 22 April 2026 Bahrai
 - NEVER use the absence of domestic personal income tax to deny conditional corporate income tax; apply the current group/entity/period screening.
 - NEVER turn the unresolved VAT/GST/general-sales-tax evidence gap into a verified absence or a zero rate.
 - NEVER apply unsupported VAT calculations; identify customs and sector charges separately.
+- NEVER guess a customs rate from a broad goods label or treat an allowance, approved relief or ordinary heading as automatic; establish the dated statutory conditions first.
 - NEVER compute a corporate liability without verified scope, fiscal period, elections, current tax base and credit rules; a Bermuda entity is not categorically exempt.
 - NEVER ignore payroll tax obligations (primary compliance requirement)
 - NEVER assume payroll tax rates without checking the Rates Act, applicable enacted amendments, classification and tax period
