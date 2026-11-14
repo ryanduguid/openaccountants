@@ -6,7 +6,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "System reference at 14 November 2026; CIT uses the statutory fiscal year, payroll 2026-27 runs April to March."
 last_updated: 2026-11-14
-version: 1.5
+version: 1.6
 review_status: pending_review
 tier: 2
 depends_on:
@@ -60,7 +60,9 @@ CITA's functions follow [Agency Act 2024, s 4](https://www.cita.bm/assets/docume
 
 The inherited text reported no VAT/GST/general sales tax, no separate capital gains tax and no withholding on dividends, interest or royalties. Current affirmative primary evidence for each statement has not been established in this reconciliation. Treat them as **Research Gap / Needs Input**, not zero rates or verified inapplicability. A departmental tax list, a missing charging provision in one Act or the absence of personal income tax does not prove these negatives. Capital gains can require analysis under the CIT financial-accounting-income and adjustment rules even if no separate CGT is established.
 
-The [official payroll page](https://www.gov.bm/articles/payroll-tax), checked on 14 November 2026, states payment dates of 15 January, 15 April, 15 July and 15 October and requires all exempted companies and companies with annual remuneration greater than BMD 200,000 to submit online. It links the Electronic Tax System as www.etax.gov.bm. Start from that official page; the destination’s secure sign-in, submission workflow and successful filing have not been tested. The prior annual-reconciliation date of 15 March remains unverified and must not supply a deadline.
+For payroll, [Payroll Tax Act ss 21-22](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Act%201995) establish ordinary 3-month periods beginning 1 April, 1 July, 1 October and 1 January, with conditional written monthly permissions. [Taxes Management Act ss 7 and 15](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Taxes%20Management%20Act%201976) require the return within 15 days after the period closes and payment when the return is furnished, unless the Taxes Acts require or permit another time. Normal quarterly return dates are 15 January, 15 April, 15 July and 15 October; check individual return notices, certificates, assessments and payment extensions first. Payroll Act s 19(5) has a separate deducted-employee-tax clock, using 'within fifteen days beginning on the last day' of the period. Do not assume the ordinary return dates resolve that wording; its precise counting interaction remains **Needs Input** pending clarification. No additional 15-day grace period is established.
+
+The [official payroll landing page](https://www.gov.bm/articles/payroll-tax), updated 3 November 2026, says all exempted companies and companies with annual remuneration greater than BMD 200,000 must submit online. The [June 2026 calculation page](https://www.gov.bm/articles/calculating-payroll-tax-2026) instead says all taxpayers with payroll BMD 200,000 or more. The exact boundary and taxpayer-description conflict remains unresolved; obtain current official clarification for an affected case and do not infer an exemption at exactly BMD 200,000. Start from the landing page, which links www.etax.gov.bm; secure sign-in, submission and successful filing are untested. The former 15 March annual-reconciliation claim remains unverified. Use the [payroll guide](bm-payroll-social.md) for the bounded rate and classification controls; annualisation, relief applications, social insurance and pensions retain their stated gaps.
 
 ## Treaties and international reporting
 
