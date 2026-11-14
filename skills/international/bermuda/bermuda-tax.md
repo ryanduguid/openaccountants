@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
 description: Use this skill for Bermuda taxation, including personal income tax scope, corporate income tax screening, payroll tax and customs duties.
-version: 2.6
+version: 2.7
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-14
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
 
-**Verification boundary, 14 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation, administrative facts and occupational pensions remain open. The retained customs, land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled. A calculation using their figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
+**Verification boundary, 14 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation and administrative facts remain open. The [occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) cover selected membership, earnings and contribution rules; plan-specific funding and a full pension engagement remain open. The retained customs, land and stamp-duty tables, defaults, deadlines and numerical examples remain unreconciled. A calculation using their figures is **Needs Input** until topic-specific evidence is checked. Tier 2 and pending review remain.
 
 ### Tax Landscape Overview
 
@@ -138,7 +138,7 @@ The legal contribution change begins 1 August 2026, while the official calendar 
 
 Establish the statutory school-leaving, work/hours, residence and weekly-role rules before using the table. Exactly 4 hours for one employer is within s 2(5)'s exclusion; non-ordinary residents have the 26-consecutive-week test. Multiple employers and mixed employed/self-employed work need s 4 allocation. A small-income exception at an annual rate not exceeding BMD 3,000 requires a granted certificate covering the whole week; it does not establish a blanket employer-share exemption. Employer contributions cannot be passed to the worker.
 
-Sections 4(7) and 8 require the relevant contributions by the last working day of the following month, subject to employer-specific Director arrangements. Confirm the account schedule for month-end weeks. See the [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) for primary periods, registration, recovery, certificate conditions and hypothetical cases. Birthday/transition-week allocation, administrative facts, occupational pensions and actual payment remain separate verification.
+Sections 4(7) and 8 require the relevant contributions by the last working day of the following month, subject to employer-specific Director arrangements. Confirm the account schedule for month-end weeks. See the [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) for primary periods, registration, recovery, certificate conditions and hypothetical cases. Birthday/transition-week allocation, administrative facts and actual payment remain separate verification. Use the [separate occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) for selected plan membership, earnings and contribution checks; they do not establish full pension funding or execution.
 
 ## Section 4 -- Worked Examples
 

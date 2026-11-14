@@ -1,11 +1,11 @@
 ---
 name: bm-payroll-social
-description: "Partial Bermuda payroll and social-insurance reconciliation for 2026-27: payroll rate and filing controls plus period-specific weekly contributions, eligibility, recovery, certificates, registration and remittance. Full calculations, transition allocation, occupational pensions and practitioner review remain open."
+description: "Partial Bermuda payroll and social-insurance reconciliation for 2026-27: payroll rate and filing controls plus period-specific weekly contributions, eligibility, recovery, certificates, registration and remittance. Selected occupational-pension membership, earnings and contribution controls are included. Full calculations, transition allocation, plan-specific pension funding and practitioner review remain open."
 jurisdiction: BM
 category: payroll
 tax_year: 2026
 last_updated: 2026-11-14
-version: 1.5
+version: 1.6
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bermuda Payroll & Social Contributions
 
-**Partial payroll and social-insurance reconciliation, 14 November 2026.** Payroll uses the 2026-27 reference year, 1 April 2026 to 31 March 2027, including the October-December tax-period change. Social insurance uses its own contribution weeks and August rate boundary below. The rules establish selected rates, liability and procedural controls. Missing facts or the stated unresolved methods remain **Needs Input** for a complete payroll calculation, relief application, contribution payment or pension engagement. Tier 2 and pending review remain.
+**Partial payroll, social-insurance and occupational-pension reconciliation, 14 November 2026.** Payroll uses the 2026-27 reference year, 1 April 2026 to 31 March 2027, including the October-December tax-period change. Social insurance uses its own contribution weeks and August rate boundary below. The rules establish selected rates, liability and procedural controls. Missing facts or the stated unresolved methods remain **Needs Input** for a complete payroll calculation, relief application, contribution payment or pension engagement. Tier 2 and pending review remain.
 
 Use the current [Payroll Tax Act 1995][payroll-act], [Payroll Tax Rates Act 1995][rates-act] and [Taxes Management Act 1976][management-act], read with the enacted [2026 amendment and validation Act][amendment-five] and [2026 rates amendment][amendment-thirty-one]. The legal-site snapshot reports laws amended through 31 October 2026; capture on 14 November does not prove the absence of later law. Recheck amendments for the actual period, including future periods.
 
@@ -100,7 +100,7 @@ These are hypothetical rule checks, not executed payroll, taxpayer, consuming-mo
 6. Employee remuneration above BMD 48,000 enters a second marginal slice; it does not move the first BMD 48,000 to 7.75%. Missing annualisation, cap history or pay-period method prevents a complete payroll amount.
 7. At exactly BMD 200,000, retain the official e-filing conflict and seek clarification. A written monthly permission, return notice and the separate s 19(5) deducted-employee-tax clock must be checked before a deadline is given; an unresolved timing interaction is **Needs Input**.
 
-Annual-payroll measurement for new/variable/monthly cases, competing classes, employee annualisation and cent rounding, multiple-employer cap allocation, relief/form discrepancies, the distinct deducted-employee-tax timing interaction and the online-filing conflict remain open. Social insurance, occupational pensions, a full payroll return and practitioner assurance are separate work.
+Annual-payroll measurement for new/variable/monthly cases, competing classes, employee annualisation and cent rounding, multiple-employer cap allocation, relief/form discrepancies, the distinct deducted-employee-tax timing interaction and the online-filing conflict remain open. Social insurance and occupational pensions have separate selected controls below; a full payroll return and practitioner assurance remain open.
 
 ## Social insurance: liability, rates and remittance
 
@@ -170,11 +170,67 @@ These 8 groups are manual rule checks, not executed taxpayer, payroll, consuming
 7. A confirmed month's account schedule with no special employer arrangement uses the last working day of the following month. Establish the working-day calendar before giving a date; do not substitute the last Friday. A new self-employed person's registration is a separate 7-day check.
 8. A 65th birthday midweek, the 1-2 August rate transition, unknown month-end week allocation or missing student-employment facts receives **Needs Input** on the unresolved category or procedure, not an invented rate, proration or deadline.
 
-## Occupational pensions: unreconciled
+## Occupational pensions: selected contribution controls
 
-The inherited private occupational-pension statement has not been reconciled to current primary law in this contribution update. Do not use it for a pension decision without separate eligibility, earnings, rate and remittance checks:
+Occupational pensions under the [National Pension Scheme (Occupational Pensions) Act 1998][pension-act] are separate from the social-insurance contribution weeks above. These controls use the retained Act and [General Regulations 1999][pension-regulations], captured on 14 November 2026. The legal-site snapshot is through 31 October 2026; this does not establish the absence of later law. Establish the actual period, plan, member and applicable relief before calculating a contribution. Historical contributions, benefits and withdrawals require their own checks.
 
-- **Occupational (private) pension contribution** — Mandatory for Bermudians/spouses under the National Pension Scheme; typically 5% employer + 5% employee of pensionable earnings (approx — confirm current rate)  _(National Pension Scheme (Occupational Pensions) Act 1998 (https://www.gov.bm/bermuda-pension))_
+### Establish the statutory category and membership
+
+Act s 2 defines an employee as a Bermudian or the husband or wife of a Bermudian employed in Bermuda. Do not apply the uncommenced broader employee definition. The separate self-employed definition concerns a person over school leaving age whose earnings, otherwise than as an employee, derive from producing goods or services in Bermuda or trading in goods or services in or from Bermuda. It contains no Bermudian/spouse condition. [BR 139/2019][pension-start], as amended by [BR 10/2020][pension-start-amendment], places the employee age/earnings amendments on 2 January 2020 and the self-employed definition replacement on 2 March 2020; do not backdate those changes.
+
+Section 3 excludes the specified government/public-service arrangements and the Contributory Pensions Act fund. Its US-citizen exception requires both permission to engage in gainful occupation in Bermuda and participation in a qualifying US section 401(k) plan. Citizenship alone is insufficient. Optional registration and provision of more advantageous benefits are separate from compulsory membership.
+
+Under s 17, check the eligible category of employees for the plan, attained age **23**, age below the plan's normal retirement age and **720 or more hours** with that employer in a given calendar year before membership. Check each employer separately; do not pool hours across employers. An existing member does not cease membership merely because later annual hours fall below 720. A casual or part-time label is not itself an exception. Establish the actual membership date and period records before an amount is calculated.
+
+Normal retirement is a plan condition, not a universal age-65 cutoff. Section 20 requires a normal retirement date no later than 1 year after the member attains 65 unless the plan specifies an earlier date. A member continuing in employment after that date may elect to continue accruing benefits; the election must be written, signed and delivered to the administrator. Do not stop pension accrual solely on a 65th birthday or assume continued accrual without the required election.
+
+### Earnings and contribution route
+
+The employee pensionable-earnings definition in s 2 includes monetary wages, salary, leave pay, fees, commissions and bonuses, including profit sharing, paid directly or indirectly by the employer, up to **BMD 200,000 per year**. It excludes overtime payments for hours above 35 in a week, severance, retirement or long-service recognition payments and health-insurance premiums. Check the statutory description rather than classifying a payment solely by its label. The payroll-tax remuneration base is different. Coordination of the annual cap across employers or mixed roles remains **Needs Input**.
+
+For an established ordinary defined-contribution case, s 19(1)(a) requires equal member and employer contributions. The First Schedule's contribution rate from 1 January 2004 is **5% of pensionable earnings for each**. This is a conditional scheduled rate, not proof that no period-specific relief or variation applies. Section 19(8) permits rate variation by order. Do not use the current Schedule to reconstruct uninterrupted historical payments.
+
+Section 19(1)(b) separately addresses the specified collective-agreement multi-employer plan. Section 19(1)(c) requires defined-benefit funding under the plan and regulations; do not apply a universal 5% + 5% cash rule to it. The Schedule's annual defined-benefit accrual column is different from the contribution-rate column. Obtain the plan and required actuarial/funding evidence for a defined-benefit amount.
+
+An employer may fund part or all of the member's required share under s 19(2). Extra voluntary contributions by one side do not automatically require the other side to match those extras: ss 19(3)-(4). Establish the plan rules and actual payer before assigning deductions or arrears.
+
+### Withholding, remittance and plan registration
+
+Section 19(5) requires the employer to withhold the relevant member contribution at least monthly and pay it, together with the employer contribution, directly into the pension fund within **30 days following the month of withholding**. This is separate from social insurance's last-working-day rule. Under s 19(6), the administrator and any person authorised under s 18(3) to receive contributions must give written notice of a contribution unpaid when due to the employer and Commission within **15 days**. Preserve the responsible party and trigger; this is not an extra payment grace period.
+
+Sections 19(6A)-(6B) require interest on specified unpaid contributions at the rate prescribed by Gazette notice, with a statutory ceiling of 7% per annum. The actual prescribed rate has not been established here; do not use 7% as the operative rate or calculate late interest without the notice and period.
+
+Sections 4-5 distinguish establishing/maintaining a plan or participating in a financial-institution plan from registering a newly established plan. The employer's application for registration of a plan established on or after commencement is due within **90 days after establishment**, with the required documents and fee. Other commencement-linked deadlines are not a general 90-day allowance after hiring. Filing, contribution posting and acceptance in an authenticated system are untested.
+
+### Self-employment
+
+General Regulations 20-24 use pensionable earnings from self-employment, not employee gross pay. Net earnings are business revenue less expenses, excluding the listed wages, salary, leave pay, fees, commissions, bonuses and profit-sharing payments paid to the self-employed person from those deductible expenses. Calculate consistently from year to year using either cash or accrual accounting.
+
+Regulation 21 requires registration for a self-employed person who has attained 23, remains below normal retirement age and has annual self-employment pensionable earnings **exceeding BMD 20,000**. Exactly BMD 20,000 does not satisfy that threshold. Regulation 24 applies the Act with necessary changes except s 17; do not import the employee's 720-hour test into this route.
+
+Regulation 22 requires twice the scheduled rate, conditionally **10%** at the 5% Schedule rate, within **60 days after the calendar year ends**, subject to a **BMD 10,000 mandatory annual maximum**. The normal-retirement wording and BMD 10,000 cap amendments commenced on 30 December 2019. A monthly election permits contributions based on a reasonable monthly earnings estimate. An excess from those monthly estimated contributions over the annual amount under reg 22(1) may be carried forward or treated as an additional voluntary contribution at the person's election. Regulations 23-24 remove separate registration for specified existing-plan participation, while retaining contributions of at least the reg 22 rate. Existing-plan participation is not a blanket contribution exemption.
+
+### Hypothetical pension controls
+
+These 8 groups are manual source checks, not executed taxpayer, pension, consuming-model, workbook or portal results. Establish every stated prerequisite before using an amount.
+
+1. A person aged 22 with 800 hours does not meet s 17(2)(a); a qualifying person who has attained 23, remains below normal retirement age and has 720 prior-membership hours with that employer meets the stated age/hours tests. At 719 hours, the hours condition fails. The actual membership date still needs records.
+2. Two employers with 400 hours each do not establish 720 hours with either employer. An existing member falling to 600 hours does not lose membership solely for that reason.
+3. A member turning 65 does not establish the plan's normal retirement date. After that actual date, continued employment and a signed written election delivered to the administrator support continued accrual under s 20; missing plan/election evidence prevents an assumption.
+4. For a qualifying single-employer ordinary defined-contribution case with BMD 100,000 of wholly pensionable earnings for the applicable membership period, the scheduled 5% amounts are BMD 5,000 each. Establish relief, membership period, earnings classification and payer first. Do not use this example for defined-benefit funding or cap coordination.
+5. Overtime payments for hours above 35 and a health-insurance premium are excluded under the stated earnings definition. A bonus is included, subject to the annual cap. A payment label alone does not settle classification.
+6. An employer funding both required shares does not require an additional employee deduction. A voluntary extra from one side does not itself compel matching by the other. Monthly remittance and overdue-notice clocks remain separate; an unknown prescribed-interest notice prevents a late-interest amount.
+7. Exactly BMD 20,000 of annual self-employment pensionable earnings fails reg 21's strict threshold; BMD 20,001 satisfies only that earnings condition. For an otherwise established case at the conditional 10% rate, BMD 150,000 produces a BMD 10,000 mandatory amount after the cap, not BMD 15,000. The 60-day year-end clock remains separate from optional monthly estimates.
+8. A self-employed participant in a qualifying existing plan must still check reg 23's contribution requirement. A foreign employee, historical relief period, unknown plan type, mixed role or disputed commencement receives **Needs Input** on its unresolved category or period, not a guessed contribution.
+
+The retained notices establish selected commencement dates, not a complete contribution history. The conditional [temporary suspension legislation for 2020-21][pension-relief-2020] does not prove relief for another period. The 2019 temporary-relief instruments, uninterrupted historical rates, actual late-interest rate, cross-employer cap coordination, mixed roles, full defined-benefit funding, benefits/withdrawals, later amendments and practitioner assurance remain open. A full pension engagement remains **Needs Input**.
+
+[pension-act]: https://www.bermudalaws.bm/Laws/Consolidated%20Law/1998/National%20Pension%20Scheme%20(Occupational%20Pensions)%20Act%201998
+[pension-regulations]: https://www.bermudalaws.bm/Laws/Consolidated%20Law/1999/National%20Pension%20Scheme%20(General)%20Regulations%201999
+
+[pension-start]: https://www.bermudalaws.bm/Laws/Annual%20Law/Statutory%20Instruments/2019/National%20Pension%20Scheme%20(Occupational%20Pensions)%20%20Amendment%20Act%202019%20(No.%202)%20Commencement%20Notice%202019
+[pension-start-amendment]: https://www.bermudalaws.bm/Laws/Annual%20Law/Statutory%20Instruments/2020/National%20Pension%20Scheme%20(Occupational%20Pensions)%20Amendment%20Act%202019%20Commencement%20Amendment%20Notice%202020
+[pension-relief-2020]: https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2020/National%20Pension%20Scheme%20(Occupational%20Pensions)%20Temporary%20Amendment%20Act%202020
 
 [contributory-act]: https://www.bermudalaws.bm/Laws/Consolidated%20Law/1970/Contributory%20Pensions%20Act%201970
 [contribution-order]: https://www.bermudalaws.bm/Document/%7B70286ae8-6351-46f3-8947-16b0326c88af%7D
