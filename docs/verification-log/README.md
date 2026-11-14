@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-14 | [Bermuda loss carryforward designation controls](2026-11-14-bermuda-loss-controls.md) |
 | 2026-11-14 | [Bermuda ETA eligibility, limits and unresolved illustration](2026-11-14-bermuda-eta-controls.md) |
 | 2026-11-14 | [Bermuda CIT registration, filing and payment controls](2026-11-14-bermuda-cit-filing-payment.md) |
 | 2026-11-14 | [Bermuda tax-system screening and evidence boundaries](2026-11-14-bermuda-tax-system-screening.md) |
