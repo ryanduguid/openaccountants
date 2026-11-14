@@ -6,7 +6,7 @@ category: international
 tax_year: 2026
 tax_year_notes: "System reference at 14 November 2026; CIT uses the statutory fiscal year, payroll 2026-27 runs April to March."
 last_updated: 2026-11-14
-version: 1.4
+version: 1.5
 review_status: pending_review
 tier: 2
 depends_on:
@@ -54,7 +54,7 @@ Use the [CIT Act 2023 consolidated copy](https://www.cita.bm/assets/documents/20
 5. **Record grouping and charge.** Section 8 governs Bermuda Constituent Entity Groups and grouping elections. Section 4 charges 15% of group net taxable income less applicable foreign tax credits under Part 4. Section 4(3) extends joint and several liability across Bermuda constituent entities within the same in-scope group. Taxable income, losses, other credit regimes and return/payment computations require separate detailed verification; 15% is not a tax on gross receipts.
 6. **Apply the correct commencement and assurance treatment.** Section 53 commenced specified provisions on 1 January 2024 and the remaining provisions, including the charge, on 1 January 2025. Section 11 addresses fiscal years beginning on or after commencement. Section 4(4) applies despite an Exempted Undertakings Tax Protection Act assurance; s 51 makes pre-1 January 2024 assurances subject to CIT and excludes CIT from later assurances. An assurance is not a CIT exemption.
 
-CITA's functions follow [Agency Act 2024, s 4](https://www.cita.bm/assets/documents/2026-10-13-09-32-03-Corporate%20Income%20Tax%20Agency%20Act%202024%20NEW.pdf). The public [CITA Online overview](https://www.cita.bm/overview-cita-online) links to [CITA Online](https://online.cita.bm/) for TIN, returns, payments and authorised representatives. The [return page](https://www.cita.bm/corporate-income-tax-return1) concerns each fiscal year beginning on or after 1 January 2025. These public routes do not establish a taxpayer's registration, successful submission, applicable deadline or authenticated workflow. Use the current filing/payment guidance for the actual fiscal year.
+CITA's functions follow [Agency Act 2024, s 4](https://www.cita.bm/assets/documents/2026-10-13-09-32-03-Corporate%20Income%20Tax%20Agency%20Act%202024%20NEW.pdf). The public [CITA Online overview](https://www.cita.bm/overview-cita-online) links to [CITA Online](https://online.cita.bm/) for TIN, returns, payments and authorised representatives. The [return page](https://www.cita.bm/corporate-income-tax-return1) concerns each fiscal year beginning on or after 1 January 2025. These public routes do not establish a taxpayer's registration, successful submission, applicable deadline or authenticated workflow. Use the [CIT registration, filing and payment procedure](bm-corporate-income-tax.md#cit-registration-filing-and-payment) for supported planning, with its fiscal-year/form, election, notice and evidence boundaries. Detailed computations and authenticated execution remain separate verification.
 
 ## Claims still requiring evidence
 

@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
 description: Use this skill for Bermuda taxation, including personal income tax scope, corporate income tax screening, payroll tax and customs duties.
-version: 2.3
+version: 2.4
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-14
@@ -97,6 +97,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Minimum viable inputs:** identify the tax/question, entity or individual and relevant period before choosing a path. For CIT screening obtain the UPE/group and Bermuda entity identity, fiscal dates, consolidated revenue history and any scope/election claims; missing facts are **Needs Input**. For payroll obtain remuneration records, employee information and employer classification.
 - **Recommended inputs:** for CIT, all 4 preceding UPE consolidated statements, ownership/consolidation, entity-location and election evidence and s 13 footprint facts/anchor. For payroll, remuneration breakdown, class/concession evidence and prior-quarter returns.
 - **Ideal inputs:** source/version and effective-period register, restructuring history, governing election/assurance documents and unresolved-topic list. Detailed CIT calculations and any s 13 endpoint affected by the source tension remain **Needs Input**; see [system screening](bm-tax-overview.md#corporate-income-tax-screening).
+
+- **CIT compliance planning:** obtain each BCE/TIN, group composition and Filing BCE authorisation, the statutory fiscal year, tax/payment and election facts, prior submissions and Agency notices/variations. Use the [CIT registration, filing and payment procedure](bm-corporate-income-tax.md#cit-registration-filing-and-payment); separate payment, instalment-information and return requirements. Missing facts and detailed computation remain **Needs Input**.
 
 ### Refusal Catalogue
 
