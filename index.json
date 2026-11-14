@@ -1,7 +1,7 @@
 {
  "counts": {
-  "guides": 2053,
-  "jurisdictions": 302,
+  "guides": 2054,
+  "jurisdictions": 303,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -2240,6 +2240,19 @@
    "review_status": "pending_review",
    "tax_year": "2022",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "aq-us-antarctic-employment-reference",
+   "path": "skills/international/antarctica/aq-us-antarctic-employment-reference.md",
+   "name": "aq-us-antarctic-employment-reference",
+   "jurisdiction": "AQ",
+   "category": "cross-border",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-14"
   },
   {
    "slug": "ag-education-levy",
