@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-14 | [Bermuda CIT registration, filing and payment controls](2026-11-14-bermuda-cit-filing-payment.md) |
 | 2026-11-14 | [Bermuda tax-system screening and evidence boundaries](2026-11-14-bermuda-tax-system-screening.md) |
 | 2026-11-14 | [Cayman economic substance notification and return procedures](2026-11-14-cayman-es-filing-procedures.md) |
 | 2026-11-14 | [Cayman holding-company economic substance classifications](2026-11-14-cayman-holding-company-es.md) |
