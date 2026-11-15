@@ -7,7 +7,8 @@
 
 1. `intake.md`
 2. `kn-social-security-reconciliation.md`
-3. `references.md`
+3. `kn-tax-system-reference.md`
+4. `references.md`
 
 ## Shared files this package needs
 
