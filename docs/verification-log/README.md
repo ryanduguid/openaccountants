@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-15 | [Bermuda foreign-currency purchase tax and residence controls](2026-11-15-bermuda-foreign-currency-controls.md) |
 | 2026-11-15 | [Bermuda conveyance stamp-duty, relief and stamping controls](2026-11-15-bermuda-stamp-duty-controls.md) |
 | 2026-11-15 | [Bermuda land-tax assessment, calculation and payment controls](2026-11-15-bermuda-land-tax-controls.md) |
 | 2026-11-15 | [Bermuda customs classification, value and relief controls](2026-11-15-bermuda-customs-classification-controls.md) |
