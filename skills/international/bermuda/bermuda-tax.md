@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
-description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs and land tax controls. Establish the taxpayer, group, period, classification and source before choosing a calculation or filing route. Route payroll, pension and customs questions to their detailed controls. For land tax obtain the statutory owner, assessed ARV, period, relief decisions and demand/service facts. The selected residential and other-unit examples are conditional, with separate concession and payment clocks. VAT absence, stamp duty calculations, remaining land tax gaps and practitioner verification remain unresolved.
-version: 2.9
+description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs, land-tax and stamp-duty controls. Establish the taxpayer, group, instrument, period, classification and source before calculating or filing. Land tax requires actual assessment, ARV, owner, relief and demand facts. Stamp duty separates ordinary conveyance bands, complete first-home eligibility and the granted-notice schedule, execution exceptions, adjudication and conditional late penalties. Actual relief, consideration, dates, forms, stamping/payment, later law and practitioner execution remain subject to the stated holds.
+version: 3.0
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-15
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
 
-**Verification boundary, 15 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation and administrative facts remain open. The [occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) cover selected membership, earnings and contribution rules; plan-specific funding and a full pension engagement remain open. The [selected customs controls](bm-vat-gst.md#classification-route-and-source-periods) reconcile dated classification, route, value, allowance, relief and declaration rules. Actual goods, importer facts, approvals, later law and filing procedure retain their stated holds; no unknown-category rate is supplied. The [selected land-tax controls](#land-tax-scope-and-source-periods) establish assessed-ARV, classification, ordinary-rate, qualified-concession and payment distinctions. Actual assessment/relief facts, the tourist-rate and interest conflicts, later-law currency and execution remain held. Stamp duty tables and numerical examples remain unreconciled and are **Needs Input** until separately checked. Tier 2 and pending review remain.
+**Verification boundary, 15 November 2026.** The system orientation is limited to the stated sources and periods in [Bermuda Tax Overview](bm-tax-overview.md). The [payroll guide](bm-payroll-social.md) now supplies bounded rate, classification and return-date controls; annualisation, relief applications and other named gaps still prevent a complete payroll calculation. The [social-insurance controls](bm-payroll-social.md#social-insurance-liability-rates-and-remittance) reconcile selected liability, weekly rates, certificates and remittance rules; transition allocation and administrative facts remain open. The [occupational-pension controls](bm-payroll-social.md#occupational-pensions-selected-contribution-controls) cover selected membership, earnings and contribution rules; plan-specific funding and a full pension engagement remain open. The [selected customs controls](bm-vat-gst.md#classification-route-and-source-periods) reconcile dated classification, route, value, allowance, relief and declaration rules. Actual goods, importer facts, approvals, later law and filing procedure retain their stated holds; no unknown-category rate is supplied. The [selected land-tax controls](#land-tax-scope-and-source-periods) establish assessed-ARV, classification, ordinary-rate, qualified-concession and payment distinctions. Actual assessment/relief facts, the tourist-rate and interest conflicts, later-law currency and execution remain held. The [selected stamp-duty controls](#stamp-duty-scope-and-source-periods) reconcile ordinary Head 14 bands, first-home and granted-notice distinctions, separate stamping/adjudication/appeal events and conditional late penalties. Actual instrument, consideration, applicable eligibility/notice/permission, timing, forms, accepted stamping/payment and later-law facts remain **Needs Input** where unestablished; s 76 supplies the percentage-duty rounding rule. Tier 2 and pending review remain.
 
 ### Tax Landscape Overview
 
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Payroll Tax | Yes; current revenue descriptions must also include CIT. See [tax overview](bm-tax-overview.md). |
 | Customs Duties | Yes -- on imports |
 | Land Tax | Yes -- on property |
-| Stamp Duty | Yes -- on real estate transfers |
+| Stamp Duty | Certain instruments, including chargeable land conveyances; establish the [instrument, consideration and relief route](#stamp-duty-scope-and-source-periods). |
 | Social Insurance | Yes -- contributory pension scheme |
 
 - **Corporate income tax and assurances.** The Corporate Income Tax Act 2023 applies to in-scope groups for fiscal years beginning on or after 1 January 2025. Section 51 subjects assurances issued before 1 January 2024 under the Exempted Undertakings Tax Protection Act 1966 to the corporate tax. Assurances issued from that date exclude the corporate tax. [Corporate Income Tax Act 2023, ss 4 and 51–53](https://www.cita.bm/assets/documents/2026-10-13-09-31-29-Corporate%20Income%20Tax%20Act%202023%20NEW.pdf) · [Government of Bermuda, CIT](https://www.gov.bm/CIT)
@@ -73,6 +73,7 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 | Unknown employee pay history or annualisation | **Needs Input**: establish the marginal slices, cap history and pay-period method. |
 | Unknown customs duty category | **Needs Input**: establish the exact tariff code, import date, statutory value, route, allowance and any approval; no rate fallback. |
 | Unknown land tax ARV, category or relief | **Needs Input**: establish the assessed ARV, statutory owner, period-start classification and actual relief/adjustment decisions; no higher-band or nil-tax fallback. |
+| Unknown stamp-duty instrument, consideration or relief | **Needs Input**: establish instrument/date/location, statutory consideration and applicable exemption facts. Obtain opinion/declarations/notice for the first-home route and special permission only where required; record inapplicable items as N/A. An ordinary conveyance does not itself require s 22 adjudication. |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -87,6 +88,8 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 - **Customs:** obtain the goods description and tariff code/unit, import date, ownership and intended use, accompanied/unaccompanied/postal/courier route, transaction and valuation evidence, currency, traveller status/age, available aggregate allowance and any relief approval or CPC. Apply the [dated customs controls](bm-vat-gst.md); identify declaration requirements and other charges separately. Missing classification or eligibility facts are **Needs Input**.
 
 - **Land tax:** obtain the assessment number/unit and applicable list, draft or proposal; assessed ARV; statutory owner and period-start class; relevant half-year; exemption/concession/adjustment evidence; and actual demand, service, extension and payment facts. Use the [land-tax controls](#land-tax-scope-and-source-periods). Missing inputs prevent an amount or deadline.
+
+- **Stamp duty:** obtain each instrument/head, date/place and execution/escrow/performance evidence; statutory BMD consideration, valuation, noncash/debt/FX and related-transaction facts; and applicable exemption, stamping and payment evidence. For a first-home claim, also establish the acquired whole interest/property category, each purchaser's status/history, Commissioner opinion and signed declarations, with an actual granted notice for Head 14(c). For late stamping, separately establish any required special permission, timing, remission and endorsement. Record route-inapplicable documents as N/A; ordinary conveyance alone does not mandate adjudication or first-home papers. Use the [selected controls](#stamp-duty-scope-and-source-periods).
 
 ### Refusal Catalogue
 
@@ -175,12 +178,9 @@ The [conditional customs examples](bm-vat-gst.md#manual-boundary-cases) distingu
 
 **Input:** Property sold for BMD 2,000,000.
 
-**Computation:**
-- First BMD 100,000: 2% = BMD 2,000
-- BMD 100,001 -- 500,000: 4% = BMD 16,000
-- BMD 500,001 -- 1,000,000: 6% = BMD 30,000
-- Above BMD 1,000,000: 8% = BMD 80,000
-- Total stamp duty: BMD 128,000
+**Decision:** Price alone is **Needs Input** for an actual liability. Establish the instrument, date, statutory consideration, exemptions and any first-home notice under the [stamp-duty controls](#stamp-duty-scope-and-source-periods).
+
+**Conditional ordinary illustration from 1 April 2023:** Assume an ordinary chargeable Head 14 conveyance of Bermuda land, statutory BMD consideration of 2,000,000 on the instrument date and no exemption or special rule. Apply the reached slices: 100,000 at 2.10% = 2,100; 400,000 at 3.15% = 12,600; 500,000 at 4.20% = 21,000; 500,000 at 6.30% = 31,500; and the final 500,000 at 7.35% = 36,750. Selected duty is **BMD 103,950**, excluding other charges. A genuinely granted and fully qualifying first-home notice has a separate schedule; the same established consideration would conditionally give BMD 68,250. [Head 14 and enacted amendments](#stamp-duty-scope-and-source-periods).
 
 ### Example 5 -- Land Tax with Missing Assessment Facts
 
@@ -455,7 +455,368 @@ tolerance: 0
 
 ### 5.4 Stamp Duty on Real Estate
 
-- **Stamp duty progressive rates** — Progressive rates: 2% on first BMD 100,000; 4% on 100,001--500,000; 6% on 500,001--1,000,000; 8% above 1,000,000.  _(Stamp Duties Act 1976)_
+#### Stamp-duty scope and source periods
+
+Establish the instrument, statutory consideration, date and applicable exemption before calculating. These selected controls concern an ordinary Head 14 conveyance or transfer on sale of Bermuda land. They do not establish duty on every property transaction or the total cost of a purchase. The examples assume the Head 14 route, the stated BMD consideration and no unmentioned exemption or special rule.
+
+Sources were captured on 14 November UTC and checked on 15 November 2026. Read the [Stamp Duties Act 1976, ss 3-5, 15, 20, 22-23, Part VII, ss 64/76 and Head 14](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976) with [2022:29 ss 2-3](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2022/Stamp%20Duties%20Amendment%20Act%202022), operative 20 October 2022, and [2023:11 ss 2-3](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Stamp%20Duties%20Amendment%20Act%202023) and [2023:13 ss 2-3](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Stamp%20Duties%20Amendment%20(No.%202)%20Act%202023), both operative 1 April 2023. The latter Act supplies the selected first-home notice schedule and declaration text. These are selected current-posting controls, not a reconstruction of every historical period or proof that every later instrument has been examined.
+
+Head 14 charges the amount or value of consideration on the date of the instrument. Section 15 permits Commissioner valuation and has instrument-date exchange/security valuation rules; Part VII includes noncash, debt, periodic-payment, parcel, sub-sale and contract rules. Price alone does not settle those rules. Check the actual instruments and related transaction before choosing the base. Section 20 prohibits unnecessary splitting to evade a threshold or higher rate. Foreign land has the separate s 4(c) exemption question; other conveyance heads, gifts, settlements, estates, leases and mortgage refinancing require their own checks.
+
+#### Ordinary Head 14 marginal bands
+
+From 1 April 2023, with an ordinary chargeable Head 14 conveyance and the statutory BMD consideration established, apply each reached slice. Do not apply the highest reached percentage to the whole amount. [Head 14 and 2023:11 s 2](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Stamp%20Duties%20Amendment%20Act%202023) supply these rates; the [official stamp-duty page](https://www.gov.bm/stamp-duty-tax-legal-transactions), updated 6 July 2026, corroborates the ordinary Bermuda-land table.
+
+| Slice of statutory consideration, BMD | Rate | Full-slice duty, BMD |
+| --- | ---: | ---: |
+| First 100,000 | 2.10% | 2,100 |
+| Next 400,000, up to 500,000 | 3.15% | 12,600 |
+| Next 500,000, up to 1,000,000 | 4.20% | 21,000 |
+| Next 500,000, up to 1,500,000 | 6.30% | 31,500 |
+| Above 1,500,000 | 7.35% | Apply only to the excess |
+
+The ordinary cumulative amounts at BMD 100,000, 500,000, 1,000,000, 1,200,000, 1,500,000 and 2,000,000 are respectively BMD 2,100, 14,700, 35,700, 48,300, 67,200 and 103,950. They are conditional duty amounts, excluding adjudication fees, other instruments and transaction costs. Under [s 76](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976), if the percentage calculation produces a fraction of a cent, round the calculated duty upwards to the nearest whole cent. Apply that rule to the resulting percentage-calculated duty; do not round consideration to whole dollars or use ordinary nearest-cent rounding.
+
+#### First-home eligibility and the granted-notice schedule
+
+A first-home label or price below BMD 1 million does not establish relief. Apply every Head 14(b) condition, including these separate limbs. [Head 14(b), with 2022:29 s 3 and 2023:13 s 2(a)](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Stamp%20Duties%20Amendment%20(No.%202)%20Act%202023) controls the selected route.
+
+| Limb | Required evidence |
+| --- | --- |
+| Property and acquired interest | The entire freehold or leasehold interest in the specified residential property, or the specified building parcel. Apply the precise Head 14(b)(i) exclusions for fractional/hotel categories and its separate land valuation assessment-number wording. The s 1 residential-property definition requires a Bermuda house, condominium or other unit used wholly or mainly as a private dwelling. |
+| Date | The conveyance falls on or after 1 April 2009; use the actual source period for the amount and procedure. |
+| Purchaser status | Either all purchasers are individuals with Bermudian status, or the specified Bermudian individual and non-Bermudian spouse pairing. Do not extend the spouse limb to an arbitrary mixed-status group. |
+| Each purchaser's history | Each individually has never held a legal or beneficial interest in any Bermuda residential property or land, other than the acquired interest, greater than 25% of its market value. Exactly 25% does not alone trigger the greater-than exclusion or establish all other conditions. A joint acquisition of the entire interest does not require each purchaser individually to acquire the entire interest. |
+| Consideration | Equal to fair market value and wholly money, money advanced by mortgage on the property, or both. Obtain valuation and funding evidence. |
+| Commissioner and declarations | The s 22 opinion on chargeability/amount, all duty-affecting facts in the conveyance and the statutory signed purchaser/vendor declarations. These include the paid total consideration and that the conveyance is not part of a larger transaction exceeding that stated total. |
+
+The former Head 14(b)(C) 3-year residence/construction condition was repealed by [2022:29 s 3(a)](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2022/Stamp%20Duties%20Amendment%20Act%202022), with the declaration correspondingly changed. Do not restore it from an old form. Section 77(1)(f) provides for a prescribed pre-qualification procedure; current forms and an actual accepted application or granted notice still need evidence.
+
+Where the Commissioner has actually granted the pre-qualification first-time-homeowner notice, [Head 14(c), replaced by 2023:13 s 2(b)](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Stamp%20Duties%20Amendment%20(No.%202)%20Act%202023), provides:
+
+| Notice-qualified slice of consideration, BMD | Duty |
+| --- | ---: |
+| First 1,000,000 or less | Nil |
+| Next 500,000, over 1,000,000 through 1,500,000 | 6.30% of that slice |
+| Above 1,500,000 | 7.35% of the excess |
+
+Do not restart the ordinary low bands on the excess above BMD 1 million or exempt the whole price merely because a notice exists. Conditional notice-qualified duty is BMD 0 at 1,000,000, BMD 12,600 at 1,200,000, BMD 31,500 at 1,500,000 and BMD 68,250 at 2,000,000. Actual eligibility, the granted notice, opinion and declarations remain required. Head 14(b)'s first-million exemption does not itself prove that the granted-notice procedure has occurred.
+
+The concluding Head 14(c) rule means the parties cannot be required to pay an advance to a barrister, attorney or financial institution of the stamp duty relieved by paragraph (b) or (c)(i). It does not eliminate the remaining chargeable duty, purchase price or other transaction costs. The posted consolidation repeats '(ii)' for the final relief band and omits 2023:13 from its Head 14 amendment history despite incorporating its text. Cite the enacted 2023:13 paragraph (iii) and operative date for that band.
+
+#### Stamping, liability and clock exceptions
+
+Head 14 specifies stamping within 30 days after execution and all persons executing as liable. Under [s 5(1), (3)-(5)](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976), the ordinary after-execution period begins on the day after the last person's execution, with joint and several liability where more than one person is liable. Do not substitute a buyer-only liability rule.
+
+Check exceptions before assigning a due date. For an instrument executed outside Bermuda, s 3 expressly disapplies s 5(1) and addresses validity and registration, with its stated settlement proviso. A person relying on or presenting the overseas instrument can have additional s 5(4) liability. Section 64 makes an escrow-delivered instrument chargeable when its condition is performed and treats Schedule execution references accordingly. A last-signature date alone does not resolve either case. Obtain place, every execution date, delivery/escrow conditions and performance evidence. No universal 30-day deadline is supplied for an overseas instrument.
+
+#### Adjudication and the separate appeal route
+
+Under [s 22](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976), a person may require the Commissioner's chargeability/amount opinion on an executed or proposed instrument, on payment of the prescribed fee. The Commissioner may require the instrument and evidence of every duty-affecting fact. Record the written inscription and, where chargeable, payment of the assessed amount. A fee, assessment or submission is not an accepted completed stamping. Section 22(6)(a) requires stamping in accordance with the assessment; s 22(6)(b) does not authorise late stamping. A relief or adjudication request does not automatically stop a clock.
+
+For a person dissatisfied with a s 22 amount assessment, [s 23](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976) permits appeal within 14 days after receiving the instrument duly inscribed under s 22(4), on payment of duty in conformity with it. The person may require a signed case by notice served on the Commissioner. The Commissioner then has 14 days from service to state/sign the case and deliver the copies; the appellant may set it down for hearing within 7 days thereafter. These are distinct events and actors. The Supreme Court determines the question and duty; an erroneous assessment can require repayment of the resulting excess duty and consequential fine/penalty under s 23(4). Actual receipt/service, payment, current court procedure, costs and outcome remain case-specific.
+
+#### Late stamping, permission and distinct penalties
+
+Late stamping is not an automatic payment option. [Section 10(1)](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976) requires the Commissioner's special permission, including satisfaction that there was no intention to evade duty or otherwise defraud, plus urgent necessity/unavoidable accident with prompt presentation or otherwise justifying circumstances. An application does not establish permission.
+
+Only after permission, for deficient duty D, [s 10(2)](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976) gives these unremitted penalties in addition to the duty:
+
+| Actual stamping period, measured from the original required stamping point/period | Unremitted s 10 penalty, BMD |
+| --- | --- |
+| Within 3 months | Minimum of 500 and the greater of 2 times D and 10 |
+| After 3 months | Minimum of 500 and the greater of 4 times D and 25 |
+
+The Commissioner may remit all or part. Section 10(4)'s endorsement of penalty payment/remission remains necessary for duly-stamped treatment. Establish the actual statutory timing branch; do not replace 3 months with a generic 90-day count or assume remission.
+
+The BMD 500 maximum applies to the s 10 penalty, not unpaid duty or every consequence. [Section 67](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976) separately provides, on summary conviction, a **maximum fine equal to the greater of BMD 200 and 4 times unpaid duty**. Under [Interpretation Act 1951, ss 1 and 40](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1951/Interpretation%20Act%201951#page=23), specified offence punishments are maxima unless a contrary intention appears. Section 71 requires Commissioner sanction for prosecution and preserves unpaid duty and the s 10 penalty despite a conviction fine. Do not combine these into an automatic invoice or cap the conviction rule at BMD 500.
+
+#### Instrument use, actual stamping and payment
+
+[Section 9(1)](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Stamp%20Duties%20Act%201976) generally excludes an unstamped instrument from evidence even before the stamping deadline, except in criminal proceedings or Government civil proceedings to recover stamp duty, and subject to ss 9(3) and 10. Section 9(2) separately restricts action, filing and registration by public officers or companies before due stamping. Section 9(6) allows the limited Land Title Registration Act route for an instrument being assessed/adjudicated, including a properly certified copy; registration must not be completed before it is duly stamped. Do not turn that exception into general permission to use an unstamped instrument.
+
+The [stamp-duty page](https://www.gov.bm/stamp-duty-tax-legal-transactions) says payment to the Accountant General by cheque or cash. The [general payment page](https://www.gov.bm/paying-taxes-and-bills), updated 6 July 2026, describes broader payment methods with a card limit below BMD 99,000 per person per tax deadline. That does not establish an accepted stamping method for this instrument. Obtain current official fee/form/payment instructions, any applicable assessment, the duly-stamped instrument, any required endorsement and receipts. The eTax link does not prove electronic instrument stamping or a successful submission.
+
+The [relief page](https://www.gov.bm/stamp-duty-relief), updated 13 April 2026, illustrates BMD 12,600 for a qualifying BMD 1.2 million purchase, but its 'previously' BMD 34,000/46,000 comparators are historical. Current selected ordinary amounts at BMD 1 million/1.2 million are BMD 35,700/48,300. The stamp page's non-Bermuda-property 1% conflicts with the posted Head 15 1.05% and does not resolve the separate foreign-land exemption. That topic, other instrument charges, actual facts, current operational procedure and exhaustive later-law currency remain held.
+
+#### Conditional stamp-duty arithmetic
+
+The following executable examples check only exact arithmetic under the stated ordinary or actually granted-notice premises, with established BMD statutory consideration and no unmentioned exemption or special rule. The late-penalty cases separately assume granted s 10 permission, established timing and no remission. They do not determine eligibility, count dates, exercise discretion, add other charges or execute a taxpayer workflow. Section 76 supplies the upward whole-cent rule for a fractional-cent percentage-duty result.
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 100000 from 1 April 2023
+inputs:
+  consideration: 100000
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 2100
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 500000 from 1 April 2023
+inputs:
+  consideration: 500000
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 14700
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 1000000 from 1 April 2023
+inputs:
+  consideration: 1000000
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 35700
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 1200000 from 1 April 2023
+inputs:
+  consideration: 1200000
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 48300
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 1500000 from 1 April 2023
+inputs:
+  consideration: 1500000
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 67200
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 2000000 from 1 April 2023
+inputs:
+  consideration: 2000000
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 103950
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 c granted notice consideration 1000000 from 1 April 2023
+inputs:
+  consideration: 1000000
+steps:
+  middle_slice: min(max(consideration - 1000000, 0), 500000)
+  top_slice: max(consideration - 1500000, 0)
+  unrounded_duty: pct(middle_slice, 6.3) + pct(top_slice, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 0
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 c granted notice consideration 1200000 from 1 April 2023
+inputs:
+  consideration: 1200000
+steps:
+  middle_slice: min(max(consideration - 1000000, 0), 500000)
+  top_slice: max(consideration - 1500000, 0)
+  unrounded_duty: pct(middle_slice, 6.3) + pct(top_slice, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 12600
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 c granted notice consideration 1500000 from 1 April 2023
+inputs:
+  consideration: 1500000
+steps:
+  middle_slice: min(max(consideration - 1000000, 0), 500000)
+  top_slice: max(consideration - 1500000, 0)
+  unrounded_duty: pct(middle_slice, 6.3) + pct(top_slice, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 31500
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 c granted notice consideration 2000000 from 1 April 2023
+inputs:
+  consideration: 2000000
+steps:
+  middle_slice: min(max(consideration - 1000000, 0), 500000)
+  top_slice: max(consideration - 1500000, 0)
+  unrounded_duty: pct(middle_slice, 6.3) + pct(top_slice, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  duty: 68250
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 100000.01 final upward cent rounding
+inputs:
+  consideration: 100000.01
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  unrounded_duty: 2100.000315
+  duty: 2100.01
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 ordinary consideration 1500000.01 upper marginal band and upward cent rounding
+inputs:
+  consideration: 1500000.01
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  unrounded_duty: 67200.000735
+  duty: 67200.01
+tolerance: 0
+```
+
+```oa-check
+name: BM selected Head 14 c granted notice consideration 1000000.01 upward cent rounding
+inputs:
+  consideration: 1000000.01
+steps:
+  middle_slice: min(max(consideration - 1000000, 0), 500000)
+  top_slice: max(consideration - 1500000, 0)
+  unrounded_duty: pct(middle_slice, 6.3) + pct(top_slice, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  unrounded_duty: 0.00063
+  duty: 0.01
+tolerance: 0
+```
+
+```oa-check
+name: BM section 10 granted permission no remission deficient duty 3
+inputs:
+  deficient_duty: 3
+steps:
+  within_3_month_penalty: min(500, max(2 * deficient_duty, 10))
+  after_3_month_penalty: min(500, max(4 * deficient_duty, 25))
+expected:
+  within_3_month_penalty: 10
+  after_3_month_penalty: 25
+tolerance: 0
+```
+
+```oa-check
+name: BM section 10 granted permission no remission deficient duty 200
+inputs:
+  deficient_duty: 200
+steps:
+  within_3_month_penalty: min(500, max(2 * deficient_duty, 10))
+  after_3_month_penalty: min(500, max(4 * deficient_duty, 25))
+expected:
+  within_3_month_penalty: 400
+  after_3_month_penalty: 500
+tolerance: 0
+```
+
+```oa-check
+name: BM section 10 granted permission no remission deficient duty 400
+inputs:
+  deficient_duty: 400
+steps:
+  within_3_month_penalty: min(500, max(2 * deficient_duty, 10))
+  after_3_month_penalty: min(500, max(4 * deficient_duty, 25))
+expected:
+  within_3_month_penalty: 500
+  after_3_month_penalty: 500
+tolerance: 0
+```
+
+#### Stamp-duty manual boundary and procedure controls
+
+These are grouped hypothetical desk checks, not executed taxpayer, portal, practitioner or consuming-model tests.
+
+- A sale price of BMD 2 million alone, an unknown instrument head or unverified noncash/debt/FX consideration: **Needs Input**, not an unconditional BMD 103,950 assessment. Confirm the actual instrument date, value and statutory route.
+- Established ordinary consideration of BMD 100,000, 500,000, 1 million, 1.2 million, 1.5 million or 2 million: use every reached ordinary slice and the conditional cumulative amounts above; the BMD 1-1.5 million slice cannot disappear.
+- A buyer says 'first home', the price is below BMD 1 million or the buyer has applied for relief: **Needs Input** until every property, interest, status/history, consideration, opinion, declaration and applicable notice condition is established.
+- A purchaser previously held exactly 25% of market value: that fact alone does not meet the greater-than exclusion or prove relief. More than 25% held by either purchaser is tested individually; another purchaser's smaller share cannot cure it.
+- Two otherwise qualifying purchasers jointly acquire the entire interest: do not require sole ownership by one purchaser. A partial-interest conveyance or unexplained fractional/hotel category requires the actual Head 14(b) property test.
+- A Bermudian purchaser and non-Bermudian spouse claim the specified pairing: check both histories and all other conditions. An unrelated non-Bermudian co-purchaser is not brought into that limb by the Bermudian buyer's status.
+- An old form demands 3 years' residence or construction: the selected 2022 repeal removes Head 14(b)(C); verify current form/procedure without reintroducing the repealed condition.
+- Consideration differs from fair market value, includes non-money consideration or forms part of a larger transaction: do not assume first-home relief or use the stated cash alone as the complete ordinary base.
+- A granted notice with established consideration BMD 1 million, 1.2 million, 1.5 million or 2 million: the separate conditional amounts are BMD 0, 12,600, 31,500 and 68,250. Do not restart ordinary low bands or infer full-price nil duty.
+- A relief claim invokes the no-advance rule: identify only the duty relieved under Head 14(b)/(c)(i). Other chargeable duty and transaction costs remain separate.
+- A domestic ordinary instrument has several execution dates: start the s 5(1) period the day after the last execution. Establish all signatures and exceptions before an actual deadline; all liable persons can be jointly and severally liable.
+- An instrument was executed overseas or delivered in escrow: check s 3 or the s 64 performed-condition trigger, respectively. Do not default to last signature plus 30 days.
+- A qualifying first-home conveyance has an actual granted Head 14(c) notice and its late stamping requires special permission: retain the applicable opinion/declarations, granted notice and required late permission together. None substitutes for another; mark N/A only for a genuinely inapplicable requirement.
+- Adjudication or relief has been requested near or after the deadline: no automatic suspension or late-stamping permission. Record the s 22 opinion/inscription, payment and any separate granted s 10 permission.
+- A s 22 assessment is disputed: identify receipt of the duly inscribed instrument, payment and actual notice service. Keep the appellant's 14-day appeal, Commissioner's 14-day case preparation and subsequent 7-day setting-down events separate.
+- A late instrument has D = BMD 3 and granted permission/no remission: conditional s 10 penalty is BMD 10 within 3 months or BMD 25 afterwards. With D = 200, the amounts are 400 or 500; with D = 400, both are 500. These are penalties in addition to duty.
+- A permission request lacks the s 10 findings, a timing branch or the required endorsement: **Needs Input** for the actual stamping result, even if conditional penalty arithmetic is known. Remission is not automatic.
+- Unpaid duty BMD 200 is used solely to illustrate s 67's conviction rule: the illustrative maximum fine is BMD 800, not the BMD 500 s 10 cap. This does not determine the actual sentence. Prosecution, conviction and actual consequences are separate decisions; unpaid duty/late penalty persist under s 71.
+- An unstamped instrument is tendered in criminal or Government duty-recovery proceedings, or for the limited s 9(6) land-registration route: preserve the specific exception and conditions. Registration is not completed before due stamping.
+- A payer proposes a card, eTax, cash or cheque: a public link or general method list does not prove accepted stamping/payment. Obtain current instructions, the stamped instrument and receipts.
+- With ordinary established consideration BMD 100,000.01, the percentage duty BMD 2,100.000315 rounds upwards under s 76 to BMD 2,100.01. With an actually granted qualifying notice and consideration BMD 1,000,000.01, BMD 0.00063 rounds upwards to BMD 0.01. Do not round either result down to zero fractional cents or replace s 76 with nearest-cent rounding.
+- A historical agency comparator, foreign-property rate, other instrument or later-law question is unresolved: retain **Needs Input**. These selected checks do not establish complete property/compliance coverage or practitioner assurance.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -507,12 +868,26 @@ D. CIT SCREENING (orientation only; no liability computation)
   D4. Limited-footprint facts, anchor and conflict  ___________
   D5. Result, sources, Needs Input and next topic   ___________
 
+E. SELECTED STAMP DUTY (actual missing facts = Needs Input)
+  E1. Instruments, heads, dates and source period  ___________
+  E2. Execution place/dates and escrow performance ___________
+  E3. Statutory value, BMD/FX and related dealings  ___________
+  E4. Property/interest; relief status/history if claimed ____
+  E5. First-home opinion/declarations, or N/A       ___________
+  E6. Head 14(c) granted notice, or N/A             ___________
+  E7. Conditional schedule/duty and separate fees  ___________
+  E8. Applicable assessment/appeal and stamping events _______
+  E9. Required late permission/remission/endorsement, or N/A __
+  E10. Stamped instrument, receipt and open facts  ___________
+
 REVIEWER FLAGS:
   [ ] CIT scope/elections/period and s 13 endpoint hold checked?
   [ ] Unknown tax absence kept distinct from zero/inapplicable?
   [ ] Employer classification confirmed?
   [ ] Payroll tax cap checked (BMD 1M/person)?
   [ ] Concession eligibility confirmed?
+  [ ] Stamp-duty instrument/consideration and actual relief established?
+  [ ] Execution/escrow, adjudication/appeal and stamping clocks separated?
   [ ] Economic substance filing required?
 ```
 
@@ -541,7 +916,7 @@ REVIEWER FLAGS:
 
 ## Section 9 -- Onboarding Fallback
 
-First identify the tax/question, taxpayer/entity and period. If CIT is relevant, obtain the group/UPE, 4-year consolidated revenue history, ownership/location, election/assurance and footprint evidence required by [system screening](bm-tax-overview.md#corporate-income-tax-screening). Do not use the payroll-only questions below as a CIT intake. Output an orientation memo, screening working paper, Needs Input list and reviewer checklist; detailed other-topic calculations remain held.
+First identify the tax/question, taxpayer/entity and period. If CIT is relevant, obtain the group/UPE, 4-year consolidated revenue history, ownership/location, election/assurance and footprint evidence required by [system screening](bm-tax-overview.md#corporate-income-tax-screening). Do not use the payroll-only questions below as a CIT intake. Output an orientation memo, screening working paper, Needs Input list and reviewer checklist. The selected stamp-duty controls supply conditional conveyance and late-penalty arithmetic only; actual instrument/consideration, relief, stamping and other-topic gaps retain their holds.
 
 ```
 ONBOARDING QUESTIONS -- BERMUDA TAX
@@ -555,6 +930,8 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 8. Have you applied for any payroll tax concessions?
 9. Do you conduct any "relevant activities" for economic substance purposes?
 10. Prior quarter payroll tax returns available?
+11. Is there an actual conveyance or other instrument, and what are its consideration, execution dates/place and escrow conditions?
+12. Check these stamp-duty requirements independently: first-home opinion/declarations; an actual granted Head 14(c) notice; and any required late-stamping permission. Retain every applicable requirement together, record N/A only where inapplicable and obtain the actual stamped instrument.
 ```
 
 ## Section 10 -- Reference Material
@@ -569,7 +946,7 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 | Payroll tax cap | Payroll Tax Act 1995 |
 | Customs duties | Customs Tariff Act 1970; Revenue Act 1898 s 24 and Second Schedule; separate retail capital-investment relief Act and amendments. Use the [selected customs sources and controls](bm-vat-gst.md). |
 | Land tax | Land Tax Act 1967 and 2025:8; Land Valuation and Tax Act 1967, the 2025 list/service amendments and BR 125/2025. Separate hardship and interest authorities retain their stated limits; use the [selected controls](#land-tax-scope-and-source-periods). |
-| Stamp duty | Stamp Duties Act 1976 |
+| Stamp duty | Stamp Duties Act 1976, selected ss 3-5, 9-10, 15, 20, 22-23, Part VII, ss 64, 67, 71, 76 and Head 14; enacted 2022:29, 2023:11 and 2023:13 with their operative dates. Use the [source and period limits](#stamp-duty-scope-and-source-periods). |
 | Social insurance | Contributory Pensions Act 1970 |
 | Economic substance | Economic Substance Act 2018 |
 | Tax assurance | Exempted Undertakings Tax Protection Act 1966, s 2, as amended by Corporate Income Tax Act 2023, s 51 |
@@ -585,6 +962,8 @@ Bermuda has double-taxation agreements: the [Government’s 22 April 2026 Bahrai
 - NEVER apply unsupported VAT calculations; identify customs and sector charges separately.
 - NEVER guess a customs rate from a broad goods label or treat an allowance, approved relief or ordinary heading as automatic; establish the dated statutory conditions first.
 - NEVER replace missing land-tax ARV, category, relief or demand/service facts with a higher band, automatic nil amount or generic quarterly date.
+- NEVER infer actual stamp duty or first-home relief from sale price, ownership, an application or a first-home label alone; establish the statutory consideration and complete applicable conditions.
+- NEVER replace overseas/escrow, adjudication/appeal or granted late-stamping controls with a universal last-signature deadline, automatic permission or the wrong penalty cap.
 - NEVER compute a corporate liability without verified scope, fiscal period, elections, current tax base and credit rules; a Bermuda entity is not categorically exempt.
 - NEVER ignore payroll tax obligations (primary compliance requirement)
 - NEVER assume payroll tax rates without checking the Rates Act, applicable enacted amendments, classification and tax period
