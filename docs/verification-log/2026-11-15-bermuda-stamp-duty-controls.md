@@ -48,7 +48,7 @@ The posted consolidation repeats '(ii)' for the final notice-qualified band and 
 
 ## Hypothetical arithmetic and boundary cases
 
-Fifteen executable oa-check blocks express exact conditional arithmetic: 7 ordinary consideration points, 5 granted-notice points and 3 late-penalty deficiency cases. Percentage duty applies s 76 upward whole-cent rounding. They do not classify an actual instrument, decide eligibility/discretion, count actual dates or execute a taxpayer/portal workflow.
+Sixteen executable oa-check blocks express exact conditional arithmetic: 8 ordinary consideration points, 5 granted-notice points and 3 late-penalty deficiency cases. Percentage duty applies s 76 upward whole-cent rounding. They do not classify an actual instrument, decide eligibility/discretion, count actual dates or execute a taxpayer/portal workflow.
 
 | Established ordinary consideration, BMD | Conditional Head 14 duty, BMD |
 | ---: | ---: |
@@ -58,6 +58,7 @@ Fifteen executable oa-check blocks express exact conditional arithmetic: 7 ordin
 | 1,000,000 | 35,700 |
 | 1,200,000 | 48,300 |
 | 1,500,000 | 67,200 |
+| 1,500,000.01 | 67,200.01 |
 | 2,000,000 | 103,950 |
 
 | Established notice-qualified consideration, BMD | Conditional duty, BMD |
@@ -70,9 +71,13 @@ Fifteen executable oa-check blocks express exact conditional arithmetic: 7 ordin
 
 With granted s 10 permission, the established timing branch and no remission, deficiency BMD 3 gives penalty BMD 10 within 3 months or 25 afterwards; deficiency BMD 200 gives 400 or 500; deficiency BMD 400 gives 500 in either branch. These penalties are additional to duty. The separate illustrative s 67 maximum fine for unpaid duty BMD 200 is BMD 800 on the stated conviction premise, under Interpretation Act ss 1 and 40. It is neither an automatic charge nor a minimum or determination of the actual sentence.
 
-Twenty-one new main-guide manual groups and 4 overview groups cover missing facts, exact/greater-than-25% history, joint entire-interest acquisitions, the specified spouse pairing, repealed conditions, fair value and larger transactions, notice boundaries, relieved advances, distinct clock events, permissions and endorsements, separate consequences, evidence exceptions and accepted stamping/payment. Example 4 remains in place as an actual-input refusal plus an explicitly conditional corrected calculation. All other worked examples and B145 land-tax controls remain.
+Twenty-two new main-guide manual groups and 4 overview groups cover missing facts, exact/greater-than-25% history, joint entire-interest acquisitions, the specified spouse pairing, repealed conditions, fair value and larger transactions, notice boundaries, relieved advances, distinct clock events, permissions and endorsements, separate consequences, evidence exceptions and accepted stamping/payment. Example 4 remains in place as an actual-input refusal plus an explicitly conditional corrected calculation. All other worked examples and B145 land-tax controls remain.
 
 ## Review repairs
+
+The desktop split review identified S1: the final onboarding question could present first-home opinion/declarations, a granted Head 14(c) notice and late-stamping permission as alternatives. It now checks each independently and retains every applicable requirement together. A new manual scenario combines first-home eligibility, an actual notice and required late permission. N/A remains limited to inapplicable requirements.
+
+I also accepted improvement I1: the ordinary BMD 1,500,000.01 case checks the upper marginal band and final upward-cent rule together. It asserts unrounded BMD 67,200.000735 and rounded BMD 67,200.01. These written repairs require independent exact-byte review and new documented gates; the earlier tested/signed R3 tree does not attest R4. Remaining split review parts and the required whole-change publication review must still be resolved.
 
 A later primary-source check identified B146-SUPP-01: Interpretation Act ss 1 and 40 make specified offence punishments maxima unless a contrary intention appears. Independent source review confirmed that qualification applies to the selected s 67 wording. The main paragraph, manual case and this record now identify BMD 800 as an illustrative **maximum fine**, while preserving prosecution, conviction, unpaid duty and s 10 qualifications. No arithmetic result or other control changed.
 

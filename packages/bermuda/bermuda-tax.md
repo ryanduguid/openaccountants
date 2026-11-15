@@ -720,6 +720,24 @@ tolerance: 0
 ```
 
 ```oa-check
+name: BM selected Head 14 ordinary consideration 1500000.01 upper marginal band and upward cent rounding
+inputs:
+  consideration: 1500000.01
+steps:
+  slice_1: min(consideration, 100000)
+  slice_2: min(max(consideration - 100000, 0), 400000)
+  slice_3: min(max(consideration - 500000, 0), 500000)
+  slice_4: min(max(consideration - 1000000, 0), 500000)
+  slice_5: max(consideration - 1500000, 0)
+  unrounded_duty: pct(slice_1, 2.1) + pct(slice_2, 3.15) + pct(slice_3, 4.2) + pct(slice_4, 6.3) + pct(slice_5, 7.35)
+  duty: ceil(unrounded_duty * 100) / 100
+expected:
+  unrounded_duty: 67200.000735
+  duty: 67200.01
+tolerance: 0
+```
+
+```oa-check
 name: BM selected Head 14 c granted notice consideration 1000000.01 upward cent rounding
 inputs:
   consideration: 1000000.01
@@ -789,6 +807,7 @@ These are grouped hypothetical desk checks, not executed taxpayer, portal, pract
 - A relief claim invokes the no-advance rule: identify only the duty relieved under Head 14(b)/(c)(i). Other chargeable duty and transaction costs remain separate.
 - A domestic ordinary instrument has several execution dates: start the s 5(1) period the day after the last execution. Establish all signatures and exceptions before an actual deadline; all liable persons can be jointly and severally liable.
 - An instrument was executed overseas or delivered in escrow: check s 3 or the s 64 performed-condition trigger, respectively. Do not default to last signature plus 30 days.
+- A qualifying first-home conveyance has an actual granted Head 14(c) notice and its late stamping requires special permission: retain the applicable opinion/declarations, granted notice and required late permission together. None substitutes for another; mark N/A only for a genuinely inapplicable requirement.
 - Adjudication or relief has been requested near or after the deadline: no automatic suspension or late-stamping permission. Record the s 22 opinion/inscription, payment and any separate granted s 10 permission.
 - A s 22 assessment is disputed: identify receipt of the duly inscribed instrument, payment and actual notice service. Keep the appellant's 14-day appeal, Commissioner's 14-day case preparation and subsequent 7-day setting-down events separate.
 - A late instrument has D = BMD 3 and granted permission/no remission: conditional s 10 penalty is BMD 10 within 3 months or BMD 25 afterwards. With D = 200, the amounts are 400 or 500; with D = 400, both are 500. These are penalties in addition to duty.
@@ -912,7 +931,7 @@ ONBOARDING QUESTIONS -- BERMUDA TAX
 9. Do you conduct any "relevant activities" for economic substance purposes?
 10. Prior quarter payroll tax returns available?
 11. Is there an actual conveyance or other instrument, and what are its consideration, execution dates/place and escrow conditions?
-12. Which stamp-duty route applies: first-home opinion/declarations, granted Head 14(c) notice or separate late-stamping permission? Record N/A where inapplicable, and obtain the actual stamped instrument.
+12. Check these stamp-duty requirements independently: first-home opinion/declarations; an actual granted Head 14(c) notice; and any required late-stamping permission. Retain every applicable requirement together, record N/A only where inapplicable and obtain the actual stamped instrument.
 ```
 
 ## Section 10 -- Reference Material
