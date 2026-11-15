@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-15 | [Dated Saint Kitts and Nevis tax-system classification controls](2026-11-15-saint-kitts-and-nevis-tax-system-controls.md) |
 | 2026-11-15 | [Dated Montserrat tax-system classification controls](2026-11-15-montserrat-tax-system-controls.md) |
 | 2026-11-15 | [Bermuda foreign-currency purchase tax and residence controls](2026-11-15-bermuda-foreign-currency-controls.md) |
 | 2026-11-15 | [Bermuda conveyance stamp-duty, relief and stamping controls](2026-11-15-bermuda-stamp-duty-controls.md) |

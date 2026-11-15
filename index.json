@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2054,
+  "guides": 2055,
   "jurisdictions": 302,
   "accountant_reviewed": 164
  },
@@ -18932,6 +18932,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-11"
+  },
+  {
+   "slug": "kn-tax-system-reference",
+   "path": "skills/international/saint-kitts-and-nevis/kn-tax-system-reference.md",
+   "name": "kn-tax-system-reference",
+   "jurisdiction": "KN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2021",
+   "last_updated": "2026-11-15"
   },
   {
    "slug": "lc-national-insurance-reference",
