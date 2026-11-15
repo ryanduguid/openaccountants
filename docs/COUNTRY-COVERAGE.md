@@ -167,7 +167,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MP | Northern Mariana Islands | 4 | 0 |
 | MQ | Martinique | 1 | 0 |
 | MR | Mauritania | 6 | 0 |
-| MS | Montserrat | 1 | 0 |
+| MS | Montserrat | 2 | 0 |
 | MT | Malta | 20 | 0 |
 | MU | Mauritius | 6 | 0 |
 | MV | Maldives | 6 | 0 |
