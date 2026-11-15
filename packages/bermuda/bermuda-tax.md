@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
-description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs, land-tax and stamp-duty controls. Establish the taxpayer, group, instrument, period, classification and source before calculating or filing. Land tax requires actual assessment, ARV, owner, relief and demand facts. Stamp duty separates ordinary conveyance bands, complete first-home eligibility and the granted-notice schedule, execution exceptions, adjudication and conditional late penalties. Actual relief, consideration, dates, forms, stamping/payment, later law and practitioner execution remain subject to the stated holds.
-version: 3.0
+description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs, land-tax and stamp-duty controls. Establish the taxpayer, group, instrument, period, classification and source before calculating or filing. Land tax requires actual assessment, ARV, owner, relief and demand facts. Stamp duty separates ordinary conveyance bands, complete first-home eligibility and the granted-notice schedule, execution exceptions, adjudication and conditional late penalties. Actual relief, consideration, dates, forms, stamping/payment, later law and practitioner execution remain subject to the stated holds. Selected foreign-currency purchase-tax controls distinguish the BMD purchase base, exchange-control residence, transaction exemptions and bank-return authorisation from withholding and treaty questions.
+version: 3.1
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-15
@@ -90,6 +90,8 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 - **Land tax:** obtain the assessment number/unit and applicable list, draft or proposal; assessed ARV; statutory owner and period-start class; relevant half-year; exemption/concession/adjustment evidence; and actual demand, service, extension and payment facts. Use the [land-tax controls](#land-tax-scope-and-source-periods). Missing inputs prevent an amount or deadline.
 
 - **Stamp duty:** obtain each instrument/head, date/place and execution/escrow/performance evidence; statutory BMD consideration, valuation, noncash/debt/FX and related-transaction facts; and applicable exemption, stamping and payment evidence. For a first-home claim, also establish the acquired whole interest/property category, each purchaser's status/history, Commissioner opinion and signed declarations, with an actual granted notice for Head 14(c). For late stamping, separately establish any required special permission, timing, remission and endorsement. Record route-inapplicable documents as N/A; ordinary conveyance alone does not mandate adjudication or first-home papers. Use the [selected controls](#stamp-duty-scope-and-source-periods).
+
+- **Foreign currency purchase tax:** establish the purchaser/capacity and exchange-control residence, applicable directions, licensed bank, currency/purchase event, statutory BMD base and transaction exemption/permission or project facts. For bank-return work also obtain the actual written s 4 authorisation and reporting/remittance instructions, preserving s 4(4). A purchaser does not inherit the bank's return duty. Keep permit-company classification and final fractional-cent rounding unresolved where relevant. Use the [selected FCPT controls](#foreign-currency-purchase-tax-scope-and-source-periods).
 
 ### Refusal Catalogue
 
@@ -817,6 +819,172 @@ These are grouped hypothetical desk checks, not executed taxpayer, portal, pract
 - A payer proposes a card, eTax, cash or cheque: a public link or general method list does not prove accepted stamping/payment. Obtain current instructions, the stamped instrument and receipts.
 - With ordinary established consideration BMD 100,000.01, the percentage duty BMD 2,100.000315 rounds upwards under s 76 to BMD 2,100.01. With an actually granted qualifying notice and consideration BMD 1,000,000.01, BMD 0.00063 rounds upwards to BMD 0.01. Do not round either result down to zero fractional cents or replace s 76 with nearest-cent rounding.
 - A historical agency comparator, foreign-property rate, other instrument or later-law question is unresolved: retain **Needs Input**. These selected checks do not establish complete property/compliance coverage or practitioner assurance.
+
+### 5.5 Foreign Currency Purchase Tax
+
+#### Foreign-currency purchase tax scope and source periods
+
+Use the [Foreign Currency Purchase Tax Act 1975](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1975/Foreign%20Currency%20Purchase%20Tax%20Act%201975), ss 1A–7 and both Schedules, with the [enacted 2019 amendment](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2019/Foreign%20Currency%20Purchase%20Tax%20Amendment%20Act%202019), ss 2–3: the non-exempt rate is **1.25% from 1 April 2019**. These are selected controls checked against the captured official sources on 15 November 2026. The consolidation, enacted amendments and bounded annual-law/Gazette screens do not prove exhaustive later-law currency. Historical transactions need their operative instruments; do not carry the current rate backwards.
+
+This charge concerns a **resident's purchase of foreign currency from a bank**, subject to exemptions. It is not a withholding rate on the underlying dividend, interest, royalty or other payment. The prior withholding-absence claims remain [separate evidence gaps](bm-tax-overview.md#claims-still-requiring-evidence). An FCPT exemption or transaction outside s 2 does not establish freedom from other taxes, exchange-control restrictions, bank charges or foreign-country tax.
+
+#### Establish the purchaser, currency and BMD base
+
+Under ss 1A–3, establish the purchaser's exchange-control residence, purchase event and currency, the bank's licence under the Banks and Deposit Companies Act 1999 and any exempted transaction before computing. Section 2 charges the relevant rate on every dollar of **Bermuda currency paid for the purchase**. Do not substitute the foreign-currency face amount, gross underlying payment or a bank's all-in quotation without establishing the statutory base and treatment of its separate charges.
+
+The purchaser pays, or someone pays on their behalf; the bank collects and remits in **Bermuda currency**, subject to s 4. Do not assign the bank's return duty or a quarterly customer remittance obligation to the purchaser. Obtain the purchase advice, established BMD base, tax line and relevant exemption/permission evidence; actual client documents are not supplied by this guide.
+
+[Exchange Control Act 1972, s 1](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1972/Exchange%20Control%20Act%201972), defines foreign currency to include currency other than Bermuda or prescribed currency, relevant notes and rights to receive foreign currency represented by bank credits/balances. A USD peg alone does not settle that definition or an exemption. Identify any applicable prescribed-currency rule rather than inferring it. Its Controller is the BMA officer designated by BMA with Ministerial approval; a general reference to BMA does not itself establish the required Controller permission.
+
+For an established non-exempt purchase with BMD base 1,000, the rate product is BMD 12.50. If the foreign face amount is 1,000 units but the separately established statutory BMD base is 1,020, use BMD 1,020 and obtain BMD 12.75. These examples assume the charge and base are established; neither establishes a retail exchange rate or how a fee enters the base. A fractional-cent product has **no verified final rounding rule in these captured provisions**. Retain the exact product and obtain the applicable authority/instructions before a final amount; do not import Stamp Duties Act s 76.
+
+#### Apply exchange-control residence conditionally
+
+[Exchange Control Regulations 1973, regs 2–3](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1973/Exchange%20Control%20Regulations%201973), provide the residence test, separately from CIT residence, nationality and incorporation:
+
+- Regulation 3(1) is subject to paragraphs (2)–(10). Ordinary residence, employment or a place of business in Bermuda can engage it; preserve the stated spouse/dependant treatment for natural persons and all relevant exceptions/directions.
+- An established exempted company has the conditional non-resident default in reg 3(2). Under reg 3(2C), **80% or more of total issued share capital beneficially owned by Bermudians**, as defined in Companies Act s 113, overrides that company default. Exactly 80% reaches the threshold. At 79.99%, that override fails; this alone does not prove non-residence because other provisions and directions may intervene. Establish the Companies Act s 2(1) entity classification, ownership denominator and applicable statutory definitions.
+- Regulation 3(2B)'s non-Bermudian exempted-company employee default is conditional. Paragraph (2D) separately treats every employee working in Bermuda for a company meeting its 80% condition. Do not carry the company's result across to every employee without applying the employee provisions.
+- Under reg 3(2E), a Companies Act s 129A licence enables a Controller direction for the licensed Bermuda business/activity and relevant employees. A licence alone is not a direction; preserve its activity-specific scope.
+- Under reg 3(10), Controller directions may deem a person or category resident or non-resident despite contrary provisions. Obtain actual applicable directions. That paragraph does not itself impose the separate written-notice form required for bank returns by FCPT s 4.
+- Other reg 3(4)–(9) rules cover partnerships, trustees, specified individuals, personal representatives and jointly held accounts/property. The partnership provision uses **one half or more of partners**, not the company's 80% capital threshold. Identify the applicable route before concluding.
+
+The [2025 consequential Order, paras 5–6](https://www.bermudalaws.bm/Laws/Annual%20Law/Statutory%20Instruments/2025/Beneficial%20Ownership%20%28Consequential%20Amendments%29%20Order%202025), operative **3 November 2025**, revokes specified definitions, reg 3(3A) and Part IV; it does not remove the 80% wording in (2C)–(2D). The captured official PDF visibly leaves reg 3(3) as 'A permit company shall not deemed not to be resident in Bermuda.' With the revoked definition/paragraph, this malformed sentence leaves the permit-company default **Needs Input** pending authoritative clarification, relevant operative text and actual Controller directions. Do not silently turn it into either resident or non-resident treatment. These controls do not provide a complete exchange-control permissions or securities procedure.
+
+#### Match the actual exempted transaction
+
+Section 3 and the **Second Schedule** govern exemptions. The agency's shortened list is not a replacement:
+
+| Route | Statutory condition |
+|---|---|
+| Paragraph 1 listed bodies | Government, BMA, Bermuda Housing Corporation, Bermuda Hospitals Board, Bermuda Tourism Authority, Bermuda Deposit Insurance Corporation, a bank, a licensed deposit company, a licensed credit union or a company holding an unlimited trust licence, under the specified current Acts. The transaction must be for that body's **own account**. Acting for another person/body, including an affiliate or subsidiary, is not own account. A bank exemption therefore does not exempt every customer's purchase. Verify the actual listed body/licence and capacity. |
+| Paragraph 2 remittances | Premium-income remittance by a local insurance company or non-resident insurance undertaking, or pension-contribution remittance by a local pension fund, **with the Controller's permission in each case**. Category alone or an ungranted request is insufficient. |
+| Paragraph 3 project | The specified Saturn Solar Bermuda 1 Ltd transaction concerning construction/management of the 6 MW airport-peninsula solar farm in St George, with the stated construction-to-be-completed-in-2020 wording. The [enacted BR 22/2020](https://www.bermudalaws.bm/Laws/Annual%20Law/Statutory%20Instruments/2020/Foreign%20Currency%20Purchase%20Tax%20%28Exemption%29%20Order%202020), made 23 March and operative **25 March 2020**, inserts that wording. It is neither a general renewable-energy exemption nor an express automatic expiry after 2020. Establish the actual entity, transaction, project and operative instruments. |
+
+If eligibility or permission is unresolved, output **Needs Input**, rather than exempt or automatically chargeable. A known listed body acting for someone else fails the own-account route; then test any other applicable route and the s 2 facts separately.
+
+#### Separate bank collection, authorised returns and evidence
+
+Under **s 4**, where satisfied that revenue is adequately safeguarded, the Commissioner **may authorise a bank by written notice** to render weekly, monthly or quarterly returns, in the required form and particulars, covering daily BMD amounts for chargeable purchases. The bank remits the corresponding tax **at the same time as the authorised return**. Obtain that bank's actual authorisation, period, required form/details, deadline and current payment instructions. Do not convert the [agency page's quarter-end statement](https://www.gov.bm/foreign-currency-tax) into a universal statutory deadline or assume every bank is authorised quarterly.
+
+Under s 4(3), the Commissioner may require evidence that no tax was due on omitted purchases; failure to satisfy him can make the bank liable for the corresponding equivalent tax. Under s 4(4), no statement or information concerning a customer's account may be required for the purposes of such a return. Preserve both provisions: the evidence power is not permission to demand account information contrary to that restriction. Current return forms, authority decisions, remittance acceptance and bank/customer evidence are not demonstrated here.
+
+#### Keep conviction consequences separate from tax
+
+The [FCPT Act, ss 5–6](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1975/Foreign%20Currency%20Purchase%20Tax%20Act%201975) specifies the offences below. Apply [Interpretation Act 1951, ss 1 and 40](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1951/Interpretation%20Act%201951#page=23): unless a contrary intention appears, specified offence punishments are **maxima**. The figures below illustrate those maximum punishments; they do not establish minimum or mandatory sentences. Keep them separate from tax or an automatic late-payment addition.
+
+- **Section 5(1):** a bank that **knowingly** fails to collect and remit commits an offence; the maximum fine on summary conviction is the greater of **BMD 5,000 or 3 times tax payable**. The illustrative maximum is BMD 5,000 for tax 1,000 and BMD 6,000 for tax 2,000. These fixtures assume the statutory offence/conviction context; they do not establish that an offence occurred, a fine was imposed or the tax was discharged.
+- **Section 5(2):** knowingly materially false s 4 return/evidence statements or information have separate summary-conviction punishments of **up to 6 months' imprisonment**, a fine **up to BMD 500** or both. Preserve the making/producing/causing/allowing and knowledge conditions.
+- **Section 6:** materially false exemption information which the person knows to be false **or does not believe to be true** has separate summary-conviction punishments of **up to 6 months' imprisonment**, a fine **up to the greater of BMD 1,000 or 3 times tax payable**, or both imprisonment and fine. The illustrative maximum fine is BMD 1,000 for tax 200 and BMD 1,200 for tax 400. Preserve the distinct mental element and formula. The fixed amount limb helps calculate a maximum; it is not a minimum sentence.
+
+#### FCPT working paper and remaining boundaries
+
+Record the source/version and operative period, purchaser/capacity and exchange-control residence route, applicable directions, bank licence, currency/purchase event, established BMD base, rate product and precision question. For exemptions record the Schedule paragraph, body/licence/own-account facts, actual per-case permission or exact project facts. For bank-return work additionally record the written s 4 authorisation, reporting period/form/details and remittance/evidence requirements, preserving s 4(4). For an offence question identify the specific section, actor, mental element and conviction context before any illustrative arithmetic for the maximum fine.
+
+Missing status, transaction, base or exemption facts prevent a final liability. Actual directions, permissions, bank notices/forms/accepted payment, permit-company clarification, prescribed-currency treatment, final cent rounding and exhaustive later-law currency remain open where relevant. No authenticated filing, payment, authority decision or practitioner/consuming-model execution is demonstrated. These selected controls do not complete withholding, treaty, foreign-source-country or all exchange-control coverage.
+
+#### Reproducible conditional arithmetic
+
+All purchase examples assume an established resident, licensed-bank purchase of established foreign currency, no exemption and the stated statutory BMD base during the supported rate period. The fractional-cent example reports the **unrounded product only**, not an amount due. Fine examples assume their own statutory offence/conviction context. They never infer eligibility, status or a conviction from numbers.
+
+```oa-check
+name: BM FCPT established non-exempt BMD base 1000
+inputs:
+  bmd_base: 1000
+  rate: 0.0125
+steps:
+  unrounded_tax: bmd_base * rate
+expected:
+  unrounded_tax: 12.50
+tolerance: 0
+```
+
+```oa-check
+name: BM FCPT uses established BMD base 1020 rather than foreign face 1000
+inputs:
+  bmd_base: 1020
+  foreign_face: 1000
+  rate: 0.0125
+steps:
+  unrounded_tax: bmd_base * rate
+expected:
+  unrounded_tax: 12.75
+tolerance: 0
+```
+
+```oa-check
+name: BM FCPT fractional-cent product is not a final rounded tax
+inputs:
+  bmd_base: 0.01
+  rate: 0.0125
+steps:
+  unrounded_tax: bmd_base * rate
+expected:
+  unrounded_tax: 0.000125
+tolerance: 0
+```
+
+```oa-check
+name: BM FCPT s5 conditional maximum fine, fixed amount limb
+inputs:
+  tax_payable: 1000
+steps:
+  illustrative_maximum_fine: max(5000, 3 * tax_payable)
+expected:
+  illustrative_maximum_fine: 5000
+tolerance: 0
+```
+
+```oa-check
+name: BM FCPT s5 conditional maximum fine, threefold limb
+inputs:
+  tax_payable: 2000
+steps:
+  illustrative_maximum_fine: max(5000, 3 * tax_payable)
+expected:
+  illustrative_maximum_fine: 6000
+tolerance: 0
+```
+
+```oa-check
+name: BM FCPT s6 conditional maximum fine, fixed amount limb
+inputs:
+  tax_payable: 200
+steps:
+  illustrative_maximum_fine: max(1000, 3 * tax_payable)
+expected:
+  illustrative_maximum_fine: 1000
+tolerance: 0
+```
+
+```oa-check
+name: BM FCPT s6 conditional maximum fine, threefold limb
+inputs:
+  tax_payable: 400
+steps:
+  illustrative_maximum_fine: max(1000, 3 * tax_payable)
+expected:
+  illustrative_maximum_fine: 1200
+tolerance: 0
+```
+
+#### Manual FCPT negative and boundary cases
+
+- Residence or purchase facts missing: Needs Input; no zero, invented residence or automatic 1.25% charge.
+- Ordinary company with a Bermuda place of business: apply reg 3(1)(c), remaining exceptions and actual directions; incorporation or CIT residence alone is insufficient.
+- An established exempted company at 79.99% or 80% Bermudian beneficial capital: only 80% meets paragraph (2C); do not treat 79.99% as conclusive non-residence or forget employee-specific rules.
+- A s 129A licence without a Controller direction: no invented paragraph (2E) direction. A real direction retains its person/activity scope.
+- A partnership with one half resident partners: apply its own route, not the company 80% capital test.
+- A permit company faces the malformed reg 3(3) text: hold classification pending authoritative clarification and actual directions; do not silently repair either negative.
+- USD peg, an unknown prescribed-currency rule or an unlicensed seller: do not infer the established-foreign-currency/licensed-bank predicates. Separate exchange-control and other-tax questions remain.
+- Foreign face 1,000 with established statutory BMD base 1,020: rate product BMD 12.75. An unexplained all-in bank quotation still needs base/fee evidence.
+- A listed body buys for an affiliate or customer: own-account exemption fails; test other routes and charge facts separately. The Hospitals Board or an unlimited trust licence holder requires its exact statutory category, rather than the agency historical list.
+- Insurance/pension remittance without actual per-case Controller permission: no category-only exemption; an application is not permission.
+- An unrelated solar project, or a Saturn transaction after 2020: neither a general solar exemption nor automatic expiry after 2020 follows; establish exact project/instrument facts.
+- No bank written s 4 authorisation, or only a general quarter-end web statement: no invented periodic-return permission/deadline or purchaser quarterly filing duty.
+- Actual weekly, monthly or quarterly authorisation: use its details and concurrent return/remittance; do not substitute another generic period. Omitted-purchase evidence work must preserve s 4(4).
+- Unknown knowledge/conviction or a simple late payment: do not impose the s 5/s 6 illustrative criminal fine. Keep each distinct formula for the maximum fine and mental element; the examples do not discharge tax or determine the actual sentence.
+- Fractional-cent product BMD 0.000125: preserve the exact product, obtain applicable final rounding authority and do not import stamp-duty upward rounding. An FCPT exemption/outside-charge outcome does not turn withholding, foreign tax or other currency controls into zero.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
