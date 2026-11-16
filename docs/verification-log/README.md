@@ -16,6 +16,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | 2026-11-15 | [Bermuda company records, statements and audit controls](2026-11-15-bermuda-company-reporting-controls.md) |
 | 2026-11-15 | [Bermuda company fee, capital and declaration controls](2026-11-15-bermuda-company-fee-controls.md) |
 | 2026-11-15 | [Bermuda company-formation and Registrar controls](2026-11-15-bermuda-company-formation-controls.md) |
+| 2026-11-14 | [Antarctica: US employee pay, sourcing and the foreign earned income exclusion](2026-11-14-antarctica-us-employment-reference.md) |
 | 2026-11-14 | [Bermuda occupational-pension contribution controls](2026-11-14-bermuda-occupational-pension-controls.md) |
 | 2026-11-14 | [Bermuda social-insurance contribution controls](2026-11-14-bermuda-social-insurance-controls.md) |
 | 2026-11-14 | [Bermuda payroll rate and filing controls](2026-11-14-bermuda-payroll-controls.md) |
