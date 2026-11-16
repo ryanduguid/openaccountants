@@ -6,7 +6,7 @@ The catalogue contains the country-or-area rows in the [UN M49 table](https://un
 
 7 catalogue areas excluded by Ryan's fixed scope decision (31 October 2026): KP, IR, SY, RU, BY, MM and YE. Published guides remain in the inventory below; excluded areas are not missing coverage targets.
 
-240 of 243 target areas have at least one indexed guide; 3 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+241 of 243 target areas have at least one indexed guide; 2 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -135,7 +135,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | KH | Cambodia | 6 | 0 |
 | KI | Kiribati | 1 | 0 |
 | KM | Comoros | 1 | 0 |
-| KN | Saint Kitts and Nevis | 1 | 0 |
+| KN | Saint Kitts and Nevis | 2 | 0 |
 | KP | Democratic People's Republic of Korea | 0 | 0 |
 | KR | Republic of Korea | 6 | 3 |
 | KW | Kuwait | 6 | 0 |
@@ -167,7 +167,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MP | Northern Mariana Islands | 4 | 0 |
 | MQ | Martinique | 1 | 0 |
 | MR | Mauritania | 6 | 0 |
-| MS | Montserrat | 1 | 0 |
+| MS | Montserrat | 2 | 0 |
 | MT | Malta | 20 | 0 |
 | MU | Mauritius | 6 | 0 |
 | MV | Maldives | 6 | 0 |
@@ -235,7 +235,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TG | Togo | 6 | 0 |
 | TH | Thailand | 7 | 0 |
 | TJ | Tajikistan | 6 | 0 |
-| TK | Tokelau | 0 | 0 |
+| TK | Tokelau | 1 | 0 |
 | TL | Timor-Leste | 6 | 0 |
 | TM | Turkmenistan | 6 | 0 |
 | TN | Tunisia | 7 | 0 |

@@ -3951,6 +3951,7 @@
    "files": [
     "intake.md",
     "ms-monthly-social-security-reference.md",
+    "ms-tax-system-reference.md",
     "references.md",
     "README.md"
    ],
@@ -4790,6 +4791,7 @@
    "files": [
     "intake.md",
     "kn-social-security-reconciliation.md",
+    "kn-tax-system-reference.md",
     "references.md",
     "README.md"
    ],
@@ -5545,6 +5547,19 @@
     "company-formation-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "tokelau": {
+   "jurisdiction": "TK",
+   "name": "Tokelau",
+   "files": [
+    "intake.md",
+    "tk-law-source-and-monetary-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
     "workflow-base.md"
    ]
   },

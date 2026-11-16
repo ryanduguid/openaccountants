@@ -1,17 +1,17 @@
 ---
 name: australia-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Australian GST return (Business Activity Statement / BAS) for any client. Trigger on phrases like "prepare BAS", "do the GST", "fill in BAS", "create the return", "GST return", "Activity Statement", or any request involving Australian GST filing. Also trigger when classifying transactions for GST purposes from bank statements, invoices, or other source data. This skill covers Australia only and covers both Simpler BAS and full BAS reporting. GST groups, margin scheme, partial exemption complex, and going concern are all in the refusal catalogue. ALWAYS read this skill before touching any GST-related work.
-version: 2.9
+version: 2.10
 jurisdiction: AU
 category: international
 tax_year: 2026
-last_updated: 2026-11-13
+last_updated: 2026-11-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST v2.9
+# Australia GST v2.10
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -106,7 +106,7 @@ Infer the client profile from the data first. Only ask questions the data could 
 | Supporting legislation | [Taxation Administration Act 1953 (Schedule 1)](https://www.legislation.gov.au/C1953A00001/latest/details); [GST Regulations 2019](https://www.legislation.gov.au/F2019L00417/2025-11-01/2025-11-01/text/original/epub/OEBPS/document_1/document_1.html); [LCT Act 1999](https://www.legislation.gov.au/C2004A00463/latest/details); [WET Act 1999](https://www.legislation.gov.au/C2004A00452/latest/details) |
 | Contributor | Open Accountants |
 | Validation status | Pending accountant review |
-| Skill version | 2.9 |
+| Skill version | 2.10 |
 
 Annual reporting requires an eligible annual tax period election in effect. The entity must not be required to register and must have no GST instalment election in effect. The offshore rights/options exception in section 151-5(2) also applies. Each member of a GST group must be eligible. Notify the Commissioner in the approved form and establish the effective period before using annual reporting. An entity using the deferred GST scheme must withdraw from that scheme. The ATO's [annual GST reporting guidance](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-and-how-to-report-and-pay-gst/annual-gst-reporting) explains how to make the annual election by phone or signed written application and the applicable deadlines. [GST Act ss 151-5, 151-10, 151-15 and 151-40](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_2/document_2.html).
 
@@ -544,7 +544,7 @@ escalate rather than estimate.
 
 - A mistake in the original reporting. That is an error.
 - A credit deferred because the required tax invoice was missing at lodgment. Under GST Act s 29-10(3), attribute it to the first period, if any, for which you give a GST return whilst holding that invoice. Check the low-value and other statutory exceptions.
-- An election to move an input tax credit you are entitled to. The election covers only the part omitted from the net amount assessment for the period to which the credit would otherwise be attributable. Under GST Act s 29-10(4)–(6), notify the Commissioner in the approved form and specify the later period. The election cannot be amended or revoked. Confirm the approved process for the lodgment channel. The 1 January 2026 amendments include transitional rules for earlier claims. [GST Act ss 29-10 and 29-80](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html) and [2025 amending Act, Schedule 4 items 36–37 and 43](https://www.legislation.gov.au/C2025A00072/asmade/2024-07-01/text/original/epub/OEBPS/document_1/document_1.html).
+- Election under ss 29-10(4)-(6): move only the entitled credit omitted from the otherwise attributable period's net amount assessment to a specified later period. On a current ordinary BAS, include it at 1B; no separate notification is needed. Record the choice; it cannot be revoked or amended. Keep acquisition and choice records for at least 5 years after lodging that BAS, longer if required. Earlier claims have transitional rules from 1 January 2026. [GST Act s 29-10](https://www.legislation.gov.au/C2026C00081); [ATO procedure](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-can-claim-a-gst-credit); [TAA Sch 1 s 382-5](https://www.legislation.gov.au/C2026C00468); [2025 amending Act, Sch 4 items 36-37 and 43](https://www.legislation.gov.au/C2025A00072).
 
 For either credit path, the ordinary 4-year limit runs from the GST return due date for the period under s 29-10(1) or (2). Check the exceptions in s 93-10. [GST Act Division 93](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html).
 - A change in the GST rate or law. Apply the rule in force for the relevant transaction and period.
@@ -1283,6 +1283,10 @@ Read dates below use UTC. These records cover the stated checks and do not estab
 |---|---|---|
 | GST Act, ss 29-5, 29-10, 29-80 and Division 93. Read for non-cash attribution, tax invoice evidence, elections and time limits. | https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html | 2026-11-11 |
 | 2025 amending Act, s 2 and Schedule 4 items 36–37 and 43. Read for commencement and transition. | https://www.legislation.gov.au/C2025A00072/asmade/2024-07-01/text/original/epub/OEBPS/document_1/document_1.html | 2026-11-11 |
+| GST Act s 29-10; rechecked for ordinary later-BAS elections | https://www.legislation.gov.au/C2026C00081 | 2026-11-14 |
+| ATO unclaimed credits; read for ordinary later-BAS choices and records | https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-can-claim-a-gst-credit | 2026-11-14 |
+| ATO approved BAS forms; read for s 29-10(5) references, updated 25 March 2026 | https://www.ato.gov.au/forms-and-instructions/approved-forms-consolidated-list-by-tax-topic/business-activity-statements-bas | 2026-11-14 |
+| TAA Sch 1 ss 382-5, 388-50; read for records, retention and combined forms | https://www.legislation.gov.au/C2026C00468 | 2026-11-14 |
 | GST Act, compilation 96, selected connection, entitlement and Division 84 provisions | <https://www.legislation.gov.au/C2004A00446/2026-01-01/text> | 2 November 2026; selected provisions only |
 | ATO, Reverse charge GST on offshore goods and services purchases, QC 17450 | <https://www.ato.gov.au/api/public/content/0-5cfa3e60-d95b-41aa-9be1-cea62009de33> | 2 November 2026; PDF pages 32-38; section updated 26 July 2022 |
 | Retained citation | <https://www.ato.gov.au/OSB> | Not re-read for this format update; see retained provenance |
@@ -1307,7 +1311,7 @@ Read dates below use UTC. These records cover the stated checks and do not estab
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/goods-and-services-tax-gst/gst-reporting-methods> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/gst-and-food/detailed-food-list> | Not re-read for this format update; see retained provenance |
 
-Not yet confirmed: the approved election process for each ATO lodgment channel. The dated source rows cover the attribution changes.
+Not yet confirmed: the s 29-10(5) approval date and revised-BAS elections. The dated source rows cover only their stated checks.
 
 ### Section 10 -- Reference material
 

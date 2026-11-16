@@ -7,7 +7,8 @@
 
 1. `intake.md`
 2. `ms-monthly-social-security-reference.md`
-3. `references.md`
+3. `ms-tax-system-reference.md`
+4. `references.md`
 
 ## Shared files this package needs
 
