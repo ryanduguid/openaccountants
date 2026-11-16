@@ -6,6 +6,21 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-15 | [Dated Saint Kitts and Nevis tax-system classification controls](2026-11-15-saint-kitts-and-nevis-tax-system-controls.md) |
+| 2026-11-15 | [Dated Montserrat tax-system classification controls](2026-11-15-montserrat-tax-system-controls.md) |
+| 2026-11-15 | [Bermuda foreign-currency purchase tax and residence controls](2026-11-15-bermuda-foreign-currency-controls.md) |
+| 2026-11-15 | [Bermuda conveyance stamp-duty, relief and stamping controls](2026-11-15-bermuda-stamp-duty-controls.md) |
+| 2026-11-15 | [Bermuda land-tax assessment, calculation and payment controls](2026-11-15-bermuda-land-tax-controls.md) |
+| 2026-11-15 | [Bermuda customs classification, value and relief controls](2026-11-15-bermuda-customs-classification-controls.md) |
+| 2026-11-15 | [Bermuda economic substance classification and declaration controls](2026-11-15-bermuda-economic-substance-controls.md) |
+| 2026-11-15 | [Bermuda company records, statements and audit controls](2026-11-15-bermuda-company-reporting-controls.md) |
+| 2026-11-15 | [Bermuda company fee, capital and declaration controls](2026-11-15-bermuda-company-fee-controls.md) |
+| 2026-11-15 | [Bermuda company-formation and Registrar controls](2026-11-15-bermuda-company-formation-controls.md) |
+| 2026-11-14 | [Bermuda occupational-pension contribution controls](2026-11-14-bermuda-occupational-pension-controls.md) |
+| 2026-11-14 | [Bermuda social-insurance contribution controls](2026-11-14-bermuda-social-insurance-controls.md) |
+| 2026-11-14 | [Bermuda payroll rate and filing controls](2026-11-14-bermuda-payroll-controls.md) |
+| 2026-11-14 | [Bermuda loss carryforward designation controls](2026-11-14-bermuda-loss-controls.md) |
+| 2026-11-14 | [Bermuda ETA eligibility, limits and unresolved illustration](2026-11-14-bermuda-eta-controls.md) |
 | 2026-11-14 | [Bermuda CIT registration, filing and payment controls](2026-11-14-bermuda-cit-filing-payment.md) |
 | 2026-11-14 | [Bermuda tax-system screening and evidence boundaries](2026-11-14-bermuda-tax-system-screening.md) |
 | 2026-11-14 | [Cayman economic substance notification and return procedures](2026-11-14-cayman-es-filing-procedures.md) |

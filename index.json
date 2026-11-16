@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2054,
+  "guides": 2056,
   "jurisdictions": 303,
   "accountant_reviewed": 164
  },
@@ -3188,7 +3188,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-13"
+   "last_updated": "2026-11-15"
   },
   {
    "slug": "australia-payroll",
@@ -4267,7 +4267,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-14"
+   "last_updated": "2026-11-15"
   },
   {
    "slug": "bm-company-formation",
@@ -4279,8 +4279,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-15"
   },
   {
    "slug": "bm-corporate-income-tax",
@@ -4332,7 +4332,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-14"
+   "last_updated": "2026-11-15"
   },
   {
    "slug": "bm-vat-gst",
@@ -4344,8 +4344,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-14"
+   "tax_year": "2026",
+   "last_updated": "2026-11-15"
   },
   {
    "slug": "bt-company-formation",
@@ -15515,6 +15515,19 @@
    "last_updated": "2026-11-11"
   },
   {
+   "slug": "ms-tax-system-reference",
+   "path": "skills/international/montserrat/ms-tax-system-reference.md",
+   "name": "ms-tax-system-reference",
+   "jurisdiction": "MS",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-11-15"
+  },
+  {
    "slug": "ma-auto-entrepreneur",
    "path": "skills/international/morocco/ma-auto-entrepreneur.md",
    "name": "ma-auto-entrepreneur",
@@ -18919,6 +18932,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-11"
+  },
+  {
+   "slug": "kn-tax-system-reference",
+   "path": "skills/international/saint-kitts-and-nevis/kn-tax-system-reference.md",
+   "name": "kn-tax-system-reference",
+   "jurisdiction": "KN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2021",
+   "last_updated": "2026-11-15"
   },
   {
    "slug": "lc-national-insurance-reference",

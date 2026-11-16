@@ -1,0 +1,25 @@
+# Bermuda payroll rate and filing controls
+
+## Scope and sources
+
+This entry supports selected 2026-27 payroll rates, classification controls and qualified return/payment rules, checked on 14 November 2026. It does not establish a complete payroll calculation, relief application, practitioner sign-off or whole-topic completion. Tier 2 and pending review remain.
+
+The retained [Payroll Tax Act 1995](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Act%201995), ss 2-7, 8, 9AA, 9CB, 10, 19 and 21-22, supplies role, remuneration, relief, deduction and period rules. The [Payroll Tax Rates Act 1995](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1995/Payroll%20Tax%20Rates%20Act%201995), ss 3-5A, supplies standard rates, employee marginal bands and prescribed classes. Read them with the enacted [Payroll Tax Amendment and Validation Act 2026, 2026:5](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2026/Payroll%20Tax%20Amendment%20and%20Validation%20Act%202026), operative 1 April 2026, and [Payroll Tax Rates Amendment Act 2026, 2026:31](https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2026/Payroll%20Tax%20Rates%20Amendment%20Act%202026). The latter s 2 applies the 0.5% to 1% Class B(f) substitution to October-December 2026 and subsequent periods. It does not prorate September at its operative date.
+
+The [Taxes Management Act 1976](https://www.bermudalaws.bm/Laws/Consolidated%20Law/1976/Taxes%20Management%20Act%201976), ss 2, 7-8, 15-16 and 21, supplies the general return/payment framework and individual qualifications. Its payroll application annotation expressly excludes s 36A from payroll. The official [calculation page](https://www.gov.bm/articles/calculating-payroll-tax-2026), updated 29 June 2026, and [landing page](https://www.gov.bm/articles/payroll-tax), updated 3 November 2026, supply public administrative context. Linked blank new-hire and senior forms do not prove accepted applications.
+
+The legal-site snapshot reports laws amended through 31 October 2026. Capture on 14 November does not prove the absence of later law. Instruction sheets dated 1 April 2018 are historical and establish no current rates, caps, filing threshold or annualisation.
+
+## Corrected controls
+
+The ordinary employer table preserves exact Class BB boundaries and the Class B(f) period switch. The standard rate is not a fallback for an unknown class. Payroll-specific exempt-undertaking classification differs from an exempted-company label. Sector conditions and Class C(k)'s express exclusion of C(j) remain visible. Employee rates apply to separate annual remuneration slices: first BMD 48,000, next BMD 48,000, next BMD 104,000, next BMD 300,000 and next BMD 500,000. The top reached band does not apply to all pay.
+
+The general guide removes stale payroll rates, standard-rate/highest-band defaults, the BMD 61,500 computed example, the blanket exempt-company rule and the transaction-label shortcut. Missing classification, remuneration or annualisation facts produce Needs Input with no amount. Conditional remuneration/dividend, new-hire, senior and deduction rules remain tied to the statutory facts. The new-hire text preserves the exact exempted-undertaking limb and March 2025 baseline wording, distinguishes the form's January-March label and retains the application hold.
+
+Management Act s 7 counts the ordinary return period as 15 days after period close; s 15 preserves other required or permitted payment times. Payroll Act s 19(5) separately counts 15 days beginning on the last day for the stated deducted-employee-tax condition. The precise counting interaction remains Needs Input. Check individual notices, certificates, assessments, extensions and written monthly permissions before a deadline. The greater-than versus at-least BMD 200,000 electronic-filing conflict and taxpayer-description difference remain unresolved. No additional 15-day grace period or assumed online-filing exemption is supplied.
+
+## Review and remaining work
+
+The payroll guide records 7 grouped hypothetical rule controls: period switching, exact employer boundaries, hotel threshold, retail determination, the missing-classification example, employee marginal slices and filing/notice/timing conflicts. They are manual expected controls, not executed payroll, taxpayer, consuming-model or workbook results. Independent source and preservation reviews identified the separate employee-tax clock, residual filing/Budget/bank-label shortcuts and the C(k) qualification. The revised guide drafts resolve those findings and clarify the new-hire wording.
+
+Publication requires canonical rebase, matching generated packages, repository gates, exact tested-tree binding, final material review and hosted/canonical checks. Annual-payroll measurement, class overlaps, employee annualisation, cent rounding, cap allocation, relief/form discrepancies, deducted-tax timing and electronic filing remain open. Social insurance, occupational pensions and other tax topics are separate. No authenticated filing, actual taxpayer or practitioner assurance follows.
