@@ -14,7 +14,7 @@ description: >
 version: 1.3
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-11-05
+last_updated: 2026-11-19
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -145,6 +145,9 @@ VIC requires at least 85% of Victorian taxable wages to regional employees: each
 - **Services in more than one place.** For services in multiple jurisdictions and/or partly overseas in a month, use the ordered test: (1) employee's Australian principal place of residence (last-day residence if more than one); (2) only if no Australian residence, employer's Australian ABN address or principal place of business if no single ABN address; (3) only if neither applies, Australian payment location, aggregating split Australian payments in the jurisdiction with the largest portion; (4) only if there is no Australian payment location, where more than half the actual services were performed. A deemed corporate employee uses ABN address/PPB and last-day fallback. Do not skip an earlier satisfied tier. [NSW Act ss 11-11C and nexus guide](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/nexus-provisions).
 - **Working overseas.** For services wholly overseas up to 6 continuous months, NSW taxes wages paid/payable there; if payments are split with overseas, declare the NSW part, and if paid in multiple Australian jurisdictions aggregate the Australian wages where the largest portion is paid. Once wholly overseas service exceeds 6 continuous months, the NSW-paid wages are exempt including the first 6 months, even across financial years. A holiday or return for less than one month exclusively for that assignment does not break continuity; other returns do. Services offshore outside any state/territory but not overseas do not receive that 6-month exemption: NSW-paid wages remain taxable regardless of duration, with the largest-Australian-payment rule for split payments. Verify another state's local implementation before allocating its wages. [NSW nexus situations 3 and offshore](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/taxable-wages/nexus-provisions).
 - **Harmonised ruling**; Revenue Ruling PTA 039 sets out the nexus rules and their deeming provisions, and each office publishes its own copy.  _(Payroll Tax Australia, Revenue rulings table; https://www.payrolltax.gov.au/revenue-rulings-table)_
+- **Queensland: the day wages are paid.** Wages are taken to be paid on the day the instrument was sent or given, the amount was transferred or the account was credited (s 9C(2)). The date on a pay run is not that day. A run whose payment file the bank rejected paid nothing; its rerun is paid on the day the rerun is transferred. Tie each month's wages to the bank's transfer records, not to the payroll calendar. Off-cycle runs count in the month they are paid or payable like any other run.  _([Payroll Tax Act 1971 (Qld) s 9C](https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1971-037), reprint current from 22 October 2026)_
+- **Queensland: paid in one month, payable in another.** When wages are paid in a different month from the month they are payable, liability is decided by the earlier month (s 9(7)). The QRO's Public Ruling PTA039.1 says 'liability arises in the earlier of the two months'. Its Example 4 puts wages payable in May but paid in August in May, and wages paid in August ahead of a September entitlement in August. Count the wages once, in the earlier month. The employment contract, award or agreement shows when they became payable. Without it, show both months' outcomes and leave the choice to the reviewer.  _([Payroll Tax Act 1971 (Qld) s 9(7)](https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1971-037); [QRO, Public Ruling PTA039.1](https://qro.qld.gov.au/resource/pta039/), issued 3 June 2011, current)_
+- **Queensland: June falls in the annual return.** The periodic liability in s 20(1) does not apply to the last periodic return period of a financial year (s 20(2A)), and the QRO takes no June periodic return. Those wages are taxed through the annual liability (s 30) on the year's annual wages, the taxable wages paid or payable during the financial year (s 29(1)). The 2026-27 annual return and payment are due by 21 July 2027. So wages payable in June 2027 but paid in July 2027 belong to the 2026-27 annual wages, not the July 2027 periodic return (Case 8).  _([Payroll Tax Act 1971 (Qld) ss 20, 29 and 30](https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1971-037); [QRO, Payroll tax due dates](https://qro.qld.gov.au/payroll-tax/returns/due-dates/), last updated 5 August 2026)_
 
 ### Section 7 - Grouping
 
@@ -179,6 +182,7 @@ VIC requires at least 85% of Victorian taxable wages to regional employees: each
 - Applying the Victorian phase-out or the Queensland or NT deduction taper to the jurisdiction's wages rather than Australian wages.
 - Missing the relevant group/period wage base for ACT/NT rates, QLD levy and VIC surcharges, or confusing the QLD regional cap with those tests.
 - Missing the monthly due date (generally the 7th; Section 9), or the 21 July and 28 July annual due dates.
+- In Queensland, dating wages by the pay run rather than the transfer, counting a rejected run and its rerun both, or putting wages paid late in the month they were paid rather than the earlier month they were payable (Section 6).
 - Applying one rule to WA and ACT portable long service leave/redundancy payments. WA taxes employer fund contributions; ACT PTA034 gives different treatment for the covered construction-industry funds, subject to the qualification below.
 
 
@@ -190,6 +194,7 @@ VIC requires at least 85% of Victorian taxable wages to regional employees: each
 | Exactly 180 service-kind days in NSW | The less-than-180 exclusion fails; test another supported exclusion or include the relevant wages |
 | NSW grouping exclusion or agency declaration | Obtain the written determination or valid contract-specific declaration; an application/client label is insufficient |
 | WA versus ACT portable funds | WA employer contributions to portable LSL and redundancy funds are taxable when paid/payable; direct LSL wages are exempt to the extent recoverable from the fund. For the construction-industry schemes covered by ACT PTA034, the statutory portable-scheme levy is not liable; covered LSL/approved redundancy contributions are not liable unless a taxable fringe benefit, and benefits from those covered funds are not wages |
+| QLD pay run rejected, rerun, or paid in a month other than when payable | Date wages by transfer (s 9C(2)) and count them once, in the earlier of the paid and payable months (s 9(7), PTA039.1); obtain the pay terms or show both months; June wages go to the annual return |
 | Mixed interstate/overseas work | Apply monthly nexus in order; do not apportion by workdays without first testing wholly-local/PPR/payment rules |
 | Missing allowance travel/km proof | Do not apply the cap automatically; obtain substantiation or treat/refer the unsupported exemption |
 | Filing/payment unresolved | Hold submission, preserve the due date and obtain authorised source/fact clarification; a saved draft is not a lodged return |
@@ -455,6 +460,37 @@ expected:
   vic_current_display: 233366
 ```
 
+**Case 8: a rejected Queensland pay run, its rerun and an off-cycle run.** A synthetic ungrouped employer, registered in Queensland only, lodges monthly and pays all its employees for work done entirely in Queensland. It transferred a scheduled run of $82,000 on 11 June 2027 and an off-cycle run of $8,000 on 18 June 2027: $6,500 of commission and $1,500 of overtime, stipulated to have become payable in June. The bank rejected the whole $84,000 file for the run dated 25 June 2027, so nothing was paid that day. The rerun was transferred on 1 July 2027, and a scheduled $83,000 run on 9 July 2027. The client's draft counts the 25 June run in June and the rerun in July and leaves out the off-cycle run: $166,000 and $167,000. It counts the $84,000 twice and omits $8,000, overstating the 2 months by $76,000.
+
+By transfer date, June has **$90,000** and July **$167,000** (s 9C(2)). The pay terms that show whether the 25 June run was payable in June are missing. If it was, the $84,000 belongs to June, the earlier month (s 9(7), PTA039.1): June **$174,000**, July **$83,000**. If not, June stays at $90,000 and July at $167,000. Either way the 2 months total $257,000. June's figure goes into the 2026-27 annual wages, through the annual return due 21 July 2027. July's goes into the July 2027 periodic return, in 2027-28. No rate, threshold, deduction or mental health levy is applied here; read them for the year from the QRO.
+
+```oa-check
+name: Queensland rejected run, rerun and off-cycle run by payment and payable month
+inputs:
+  run_11_june: 82000
+  offcycle_commission: 6500
+  offcycle_overtime: 1500
+  rejected_run_25_june: 84000
+  rerun_paid_1_july: 84000
+  run_9_july: 83000
+steps:
+  june_paid: run_11_june + offcycle_commission + offcycle_overtime
+  july_paid: rerun_paid_1_july + run_9_july
+  draft_june: run_11_june + rejected_run_25_june
+  draft_overstatement: draft_june + july_paid - june_paid - july_paid
+  june_if_payable_in_june: june_paid + rerun_paid_1_july
+  july_if_payable_in_june: july_paid - rerun_paid_1_july
+  two_month_total_either_way: june_if_payable_in_june + july_if_payable_in_june
+expected:
+  june_paid: 90000
+  july_paid: 167000
+  draft_june: 166000
+  draft_overstatement: 76000
+  june_if_payable_in_june: 174000
+  july_if_payable_in_june: 83000
+  two_month_total_either_way: 257000
+```
+
 The source URLs for these illustrations are on the corresponding rates/conditions rows and apportionment paragraphs above. All eligibility, full-year and grouping assumptions must be rechecked for a real employer.
 
 
@@ -573,6 +609,9 @@ For NT, cancellation may be requested on cessation or when wages fall below the 
 | WA returns | <https://www.wa.gov.au/government/multi-step-guides/payroll-tax-employer-guide/returns-payroll-tax-employer-guide> | 4 November 2026; Return cycle, June deadline and amendments |
 | QLD regional discount | <https://qro.qld.gov.au/payroll-tax/calculate/regional-discount/> | 4 November 2026; 85%, residence/geography and authority cap wording; conflict with Act recorded |
 | QLD Act | <https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1971-037> | 4 November 2026; ss 9-10A, annual-deduction and levy provisions; selected text only, not all formulas/Act |
+| QLD Act, payment timing | <https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1971-037> | 19 November 2026; reprint current from 22 October 2026; ss 9(7), 9C, 20(1) and (2A), 29(1) and 30(1) |
+| QLD Public Ruling PTA039.1 | <https://qro.qld.gov.au/resource/pta039/> | 19 November 2026; issued 3 June 2011, current; s 9(7) paragraph and Example 4 |
+| QLD due dates, payment timing | <https://qro.qld.gov.au/payroll-tax/returns/due-dates/> | 19 November 2026; last updated 5 August 2026; no June periodic return, 2026-27 annual return due 21 July 2027 |
 | QLD levy calculation | <https://qro.qld.gov.au/payroll-tax/mental-health-levy/calculating/> | 4 November 2026; Excess bases, zero floors and interstate/period/group adjustment |
 | QLD due dates | <https://qro.qld.gov.au/payroll-tax/returns/due-dates/> | 4 November 2026; Dated December 2026/annual 2027 calendar |
 | QLD registration | <https://qro.qld.gov.au/payroll-tax/register/> | 4 November 2026; Weekly trigger, registration fields, submit/activate sequence |
