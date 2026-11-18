@@ -68,8 +68,6 @@ This skill does NOT cover:
 
 **Where the specialist rules live**
 
-**Where the specialist rules live**
-
 | Topic | Guide |
 | --- | --- |
 | Individual return items and work-related expense patterns | `au-individual-return.md` |
@@ -317,6 +315,8 @@ A lump sum that accrued in earlier years is assessable in the year it is receive
 - a Commonwealth education or training payment;
 - a payment covered by Division 52, 53 or 55 of the ITAA 1997 that is not exempt, or a similar payment under a foreign law.
 
+Salary or wages has the s 159ZR meaning, which leaves out remuneration paid to a director who is an associate of the company. Eligible income excludes any part taken into account in a Commonwealth act of grace tax reimbursement under s 65 of the Public Governance, Performance and Accountability Act 2013. A BSWAT payment amount is treated as an eligible lump sum (s 159ZR(2)).
+
 The total arrears amount is the part of all eligible lump sums in the year that accrued in earlier years; add the amounts from every payer by income year. Each year in which part of it accrued is an accrual year.
 
 **Step 1, the 10% test (s 159ZRA(1)(b)).** The total arrears amount must be at least 10% of normal taxable income less the total arrears amount (if anything remains). Normal taxable income is taxable income without net capital gains (s 102-5), employment termination payments (Division 82 of the ITAA 1997 and of the Income Tax (Transitional Provisions) Act 1997), unused leave lump sums (ss 83-10 and 83-80), superannuation benefits (Divisions 301 and 302) and above-average special professional income (s 405-15).
@@ -325,7 +325,7 @@ The total arrears amount is the part of all eligible lump sums in the year that 
 total arrears >= 10% x max(0, normal taxable income - total arrears)
 ```
 
-**Step 2, tax on arrears (s 159ZRB).** Rebated tax on the current year's taxable income, less rebated tax on that taxable income reduced by the total arrears amount. Rebated tax is the tax after the offsets under Divisions 82, 83, 301 and 302 and s 392-35(2) of the ITAA 1997 and transitional Division 82, before any other offset or credit, so LITO and the rest are ignored here.
+**Step 2, tax on arrears (s 159ZRB).** Rebated tax on the current year's taxable income, less rebated tax on that taxable income reduced by the total arrears amount. Rebated tax is the tax after the offsets under Divisions 82, 83, 301 and 302 and s 392-35(2) of the ITAA 1997 and transitional Division 82, before any other offset or credit, so LITO and the rest are ignored here. Rebated tax and gross tax exclude the Medicare levy: the levy is payable in addition to any tax payable under the Act (ITAA 1936 s 251S(2)), the explanatory memorandum to the 2024 Medicare levy exemption records that this offset does not reduce the ordinary Medicare levy, and the ATO's worked example applies marginal rates without the levy.  _([ITAA 1936 s 251S](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/251S); [Bills Digest No. 83, 2023-24, Schedule 3](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2324a/24bd083))_
 
 **Step 3, notional tax for recent accrual years (s 159ZRC).** With 3 or more accrual years, the recent accrual years are the most recent 2; otherwise every accrual year is recent. For each recent year: rebated tax on that year's taxable income plus its annual arrears amount, less rebated tax on that year's taxable income. Both figures are adjusted where the accrual year was itself a rebate year, or where arrears of an earlier rebate year accrued in it (s 159ZRC(b) to (e)).
 
@@ -749,11 +749,11 @@ expected:
 
 ### Lump sum in arrears and travel cases (14 to 19)
 
-Cases 14 and 15 reproduce the ATO's examples on its [lump sum payment in arrears page](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/lump-sum-payment-in-arrears) (updated 8 June 2026), Case 18 the ruling's example in TR 2021/4 and Case 19 the determination's example in TD 2026/4. Cases 16 and 17 are synthetic. In every lump sum case the taxpayer is a full-year resident entitled to the full tax-free threshold in each year used, receives the arrears as salary or wages that accrued more than 12 months before payment, and has no offset that the rebated-tax definition deducts, so rebated tax and gross tax both equal tax at the [ATO resident rates](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents) for the year (read 18 November 2026; Medicare levy excluded). No accrual year is a rebate year. These are stipulated facts; the checker recomputes arithmetic only.
+Cases 14 and 15 reproduce the ATO's examples on its [lump sum payment in arrears page](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/lump-sum-payment-in-arrears) (updated 8 June 2026), Case 18 the ruling's example in TR 2021/4 and Case 19 the determination's example in TD 2026/4. Cases 16 and 17 are synthetic. In every lump sum case the taxpayer is a full-year resident entitled to the full tax-free threshold in each year used, receives the arrears as salary or wages that accrued more than 12 months before payment, has none of the amounts that normal taxable income leaves out in any accrual year (so normal taxable income equals taxable income there), and has no offset that the rebated-tax definition deducts, so rebated tax and gross tax both equal tax at the [ATO resident rates](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents) for the year (read 18 November 2026; Medicare levy excluded). No accrual year is a rebate year. These are stipulated facts; the checker recomputes arithmetic only.
 
 ### Case 14: Anthony passes the 10% test and gets an offset (ATO example)
 
-Anthony receives $43,979 of arrears for 2016-17 in September 2025. His 2025-26 taxable income is $314,166, including $111,231 of net capital gains, which normal taxable income leaves out. Threshold test income is $158,956 and 10% of it is $15,895.60 (ATO: $15,896), so he passes. With one accrual year, 2016-17 is a recent year. Both $314,166 and $314,166 less the arrears are above $190,000, so tax on arrears is the arrears at 45% under the 2025-26 rates. The ATO gives the 2016-17 notional tax at his 37% rate without stating his 2016-17 taxable income, so the case takes that rate as the ATO's figure. The offset is $3,518.32 (ATO: $3,518).
+Anthony receives $43,979 of arrears for 2016-17 in September 2025. His 2025-26 taxable income is $314,166, including $111,231 of net capital gains, which normal taxable income leaves out. Threshold test income is $158,956 and 10% of it is $15,895.60 (ATO: $15,896), so he passes. With one accrual year, 2016-17 is a recent year. Both $314,166 and $314,166 less the arrears are above $190,000, so tax on arrears is the arrears at 45% under the 2025-26 rates. The ATO gives the 2016-17 notional tax at his 37% rate without stating his 2016-17 taxable income, so the case takes that rate as the ATO's figure. Under the 2016-17 rates that requires his 2016-17 taxable income to have been between $87,000 and $136,021, so that all of the arrears fall in the 37% band, which ends at $180,000; with one recent year, s 159ZRD's rounding does not arise. Because 2016-17 is before 2022-23, the referral list above sends a real case like this to a reviewer; the case checks the ATO's arithmetic only. The offset is $3,518.32. The ATO shows $3,518 because its table drops the cents from each tax figure ($19,790 and $16,272); Subdivision AB does not round the offset to whole dollars.
 
 ```oa-check
 name: AU lump sum in arrears ATO Anthony example 2025-26
@@ -771,9 +771,11 @@ steps:
   - tax_with_arrears: 0.16 * clamp(taxable_income - 18200, 0, 26800) + 0.30 * clamp(taxable_income - 45000, 0, 90000) + 0.37 * clamp(taxable_income - 135000, 0, 55000) + 0.45 * max(0, taxable_income - 190000)
   - tax_without_arrears: 0.16 * clamp(reduced_taxable_income - 18200, 0, 26800) + 0.30 * clamp(reduced_taxable_income - 45000, 0, 90000) + 0.37 * clamp(reduced_taxable_income - 135000, 0, 55000) + 0.45 * max(0, reduced_taxable_income - 190000)
   - tax_on_arrears: tax_with_arrears - tax_without_arrears
+  - highest_2016_17_income_in_37_percent_band: 180000 - total_arrears
   - notional_tax_on_arrears: total_arrears * ato_stated_2016_17_rate
   - lspia_offset: max(0, tax_on_arrears - notional_tax_on_arrears)
 expected:
+  highest_2016_17_income_in_37_percent_band: 136021
   threshold_test_income: 158956
   ten_percent_threshold: 15895.60
   test_margin: 28083.40
@@ -1036,8 +1038,8 @@ liability for any errors, omissions or outcomes arising from the use of this ski
 must be reviewed and signed off by a qualified professional in the relevant jurisdiction before
 lodging or acting upon them.
 
-The most up-to-date version of this skill is maintained at
-[openaccountants.com](https://www.openaccountants.com).
+This reference is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
 
 > Contributed by Ryan Duguid.
 
@@ -1094,6 +1096,8 @@ The most up-to-date version of this skill is maintained at
 | Retained citation | <https://www.legislation.gov.au/C2026A00050/latest> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents> | Not re-read for this format update; see retained provenance |
 | ITAA 1936 ss 159ZR, 159ZRA, 159ZRB, 159ZRC and 159ZRD: definitions, eligibility and the 10% test, the offset formula, recent and distant accrual years, rate rounding | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/159ZR> (and `159ZRA` to `159ZRD`) | 2026-11-18; Section 8.3 and Cases 14 to 17 |
+| ITAA 1936 s 251S(2): Medicare levy payable in addition to tax | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/251S> | 2026-11-18; Section 8.3 Step 2 only |
+| Bills Digest No. 83, 2023-24, Schedule 3: the arrears offset limits tax excluding the Medicare levy, quoting the explanatory memorandum (p. 78) | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2324a/24bd083> | 2026-11-18; Section 8.3 Step 2 only |
 | ITAA 1997 s 63-10(1): table item 20 for an offset not covered by another item | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/63-10> | 2026-11-18; Section 8.3 only |
 | ATO lump sum payment in arrears: qualifying payments, 10% threshold test, Medicare levy exemption from 1 July 2024, MLS tax offset, reporting, Sudeep and Anthony examples | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/lump-sum-payment-in-arrears> | 2026-11-18; page updated 8 June 2026 |
 | ATO resident rates: 2022-23 to 2026-27 tables and the 2016-17 note on the Temporary Budget Repair Levy | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents> | 2026-11-18; page updated 13 August 2026; Cases 14, 16 and 17 |
@@ -1143,7 +1147,7 @@ for 2024-25 and 2025-26. On 31 October 2026 the same page was still updated 8 Ju
 
 Not yet confirmed: A complete page-level source/read-date audit and independent legal review of the whole guide have not been performed. The 2 November 2026 checks cover only the stated read scopes in the 21 named source rows above and arithmetic in the 13 executable cases. The newer general-deduction, denial, GST, prepayment, Division 35, personal-super notice and R&D classification checks do not establish taxpayer eligibility. Detailed gift eligibility, detailed PSI and concession gateways, other offset eligibility, contribution methods and caps and assessment components outside the stated Nadia assumptions still require reconciliation and qualified review. Cases 12 and 13 check only the stated synthetic assessment illustration; they do not establish real deductions, Medicare eligibility or an ATO refund. Other dates and qualifications retain their original scope, including statutory application dates not re-audited here. This remains a tier 2 draft pending qualified review.
 
-On 18 November 2026 the 9 source rows dated that day were read for Sections 6.1 and 8.3 and Cases 14 to 19. They do not establish the statutory basis of the Medicare levy exemption for lump sums in arrears, the MLS tax offset computation, TR 2004/6 or the reasonable amounts other than those in Case 19.
+On 18 November 2026 the 11 source rows dated that day were read for Sections 6.1 and 8.3 and Cases 14 to 19. They do not establish the statutory basis of the Medicare levy exemption for lump sums in arrears, the MLS tax offset computation, TR 2004/6 or the reasonable amounts other than those in Case 19.
 
 <!-- openaccountants-cta-block -->
 
