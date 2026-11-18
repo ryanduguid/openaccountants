@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2057,
+  "guides": 2058,
   "jurisdictions": 304,
   "accountant_reviewed": 164
  },
@@ -2626,6 +2626,19 @@
    "category": "international",
    "tier": 2,
    "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-18"
+  },
+  {
+   "slug": "au-depreciating-assets",
+   "path": "skills/international/australia/au-depreciating-assets.md",
+   "name": "au-depreciating-assets",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
