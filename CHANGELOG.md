@@ -4,6 +4,8 @@ All notable changes to this repository, newest first, in the [Keep a Changelog](
 
 ## [Unreleased]
 
+- Add the Tier 2 Australian guide `au-depreciating-assets`, with checked worked cases: Division 40 balancing adjustments reduced for private use, the car limit and switched car expense methods (ss 40-325, 40-370), CGT event K7, trade-ins with GST on both sides and the replacement's cost, s 40-880 business capital costs and Division 240 hire purchase interest by income year. Sources read on 18 November 2026. It is licensed under the OA Guide License v1.0, the fork's default for guides.
+
 - Add 10 Tier 2 Australian guides, each with checked worked cases: `au-coal-lsl-levy`, `au-director-penalties`, `au-employee-share-schemes`, `au-fuel-tax-credits`, `au-managed-funds-amit`, `au-objections`, `au-primary-production`, `au-private-rulings`, `au-property-development` and `au-restructure-rollovers`, plus the foundation note `au-tasa-code-disclosure`. These 11 files, and the package copies of the 10 guides, are licensed under FSL-1.1-ALv2 (see `LICENSING.md`).
 
 - Add upstream's Division 7A minimum yearly repayment calculator, `calculators/au-div7a-repayment/`, unchanged from upstream revision `aba2453b8`. Its benchmark rates for 2021-22 to 2026-27 and the s 109E(6) formula match the ATO's pages read on 11 November 2026. `LICENSING.md` lists its `.mjs` files under AGPL-3.0-only and `REUSE.toml` and `LICENSING.md` put its `rules.json` under the OA Guide License v1.0; its `README.md` stays in the default AGPL-3.0-only block. `make check` does not run its `node --test` suite.
