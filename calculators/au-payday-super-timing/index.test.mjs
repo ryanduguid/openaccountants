@@ -45,6 +45,7 @@ for (const [label, qeDay, due] of [
   ["Christmas, the Boxing Day additional day and New Year's Day", "2026-12-24", "2027-01-07"],
   ["Melbourne Cup Day is not a whole-state holiday", "2026-11-02", "2026-11-11"],
   ["Easter, without Tasmania's Easter Tuesday", "2027-03-25", "2027-04-07"],
+  ["the part-day holidays on 24 and 31 December are business days", "2026-12-22", "2027-01-05"],
   ["a weekend QE day counts from the next day", "2026-08-01", "2026-08-12"],
   ["the first Payday Super QE day", "2026-07-01", "2026-07-10"],
   ["the last QE day whose usual period fits the calendar", "2027-08-20", "2027-08-31"],
