@@ -13,6 +13,7 @@ const base = {
   excessConcessionalContributions: "0",
   definedBenefitInterest: false,
   constitutionallyProtectedFund: false,
+  stateHigherLevelOfficeHolder: false,
   commonwealthJustice: false,
   departingAustraliaSuperannuationPayment: false,
 };
@@ -110,6 +111,7 @@ test("each exclusion is refused when true and has no figure when not stated", ()
   for (const [key, code] of [
     ["definedBenefitInterest", "defined_benefit_interest"],
     ["constitutionallyProtectedFund", "constitutionally_protected_fund"],
+    ["stateHigherLevelOfficeHolder", "state_higher_level_office_holder"],
     ["commonwealthJustice", "commonwealth_justice"],
     ["departingAustraliaSuperannuationPayment", "departing_australia_payment"],
   ]) {
