@@ -23,7 +23,7 @@ WORKFLOWS = REPO_ROOT / ".github" / "workflows"
 #: The workflows that run this repository's own checks.
 GATES = ("validate.yml", "sync-integrity.yml")
 DISCOVER = 'unittest discover -s tests -p "test_*.py"'
-TARGETS = ("help", "install", "build", "merge-main", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "check")
+TARGETS = ("help", "install", "build", "merge-main", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "calculators", "check")
 #: The gate checkers (scripts/oa_tools/findings.py), as CI and the Makefile name them.
 GATE_CHECKERS = ("arithmetic", "bracket-tables", "expired-rules", "fact-conflicts", "coverage-claims", "sourcing-floor")
 
@@ -73,7 +73,10 @@ class MakefileTests(unittest.TestCase):
         self.assertEqual(set(phony.group(1).split()), set(TARGETS))
 
     def test_check_runs_every_gate(self) -> None:
-        self.assertRegex(self.text, r"(?m)^check:\s*validate sync-check checkers test\b")
+        self.assertRegex(self.text, r"(?m)^check:\s*validate sync-check checkers test calculators\b")
+
+    def test_calculators_target_runs_every_calculator_suite(self) -> None:
+        self.assertEqual(_dry_run("calculators").strip(), "node --test calculators/")
 
     def test_checkers_target_matches_the_gate_job_and_the_baselines(self) -> None:
         """One list of gate checkers, in three places that must agree: the

@@ -85,3 +85,19 @@ path = "calculators/au-div7a-repayment/rules.json"
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+[[annotations]]
+path = [
+  "calculators/au-payday-super-timing/index.mjs",
+  "calculators/au-payday-super-timing/index.test.mjs",
+  "calculators/au-payday-super-timing/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-payday-super-timing/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
