@@ -53,6 +53,8 @@ function decimal(value, scale = 1n) {
  *   LRBA amounts left out (s 296-260), AUD decimal string, caller-attested.
  * @param {string} input.totalSuperEarnings Total superannuation earnings for the year, AUD decimal
  *   string that may be negative, caller-attested.
+ * @param {boolean} input.constitutionallyProtectedFund An interest in, or a death benefit income stream
+ *   from, a constitutionally protected fund at any time in the year; true is refused. Caller-attested.
  * @param {boolean} input.childRecipient s 296-20, caller-attested.
  * @param {boolean} input.structuredSettlementContribution s 296-25, caller-attested.
  * @param {boolean} input.diedOnOrBeforeYearEnd ITTPA s 296-1(3), caller-attested.
@@ -88,8 +90,11 @@ export function estimateDivision296(input) {
   if (balance === null || earnings === null) {
     return stop("unknown", "invalid_money", "Supply the balance as a non-negative and the earnings as a signed AUD decimal string, at most 15 whole digits and 2 decimal places.");
   }
-  if (exceptions.some(([key]) => typeof input[key] !== "boolean")) {
-    return stop("unknown", "exception_unanswered", "Answer each exception with true or false: childRecipient, structuredSettlementContribution and diedOnOrBeforeYearEnd.");
+  if (typeof input.constitutionallyProtectedFund !== "boolean" || exceptions.some(([key]) => typeof input[key] !== "boolean")) {
+    return stop("unknown", "exception_unanswered", "Answer each question with true or false: constitutionallyProtectedFund, childRecipient, structuredSettlementContribution and diedOnOrBeforeYearEnd.");
+  }
+  if (input.constitutionallyProtectedFund) {
+    return stop("refused", "constitutionally_protected_fund", "Not covered: for a person with an interest in a constitutionally protected fund, ITAA 1997 s 296-55(3) items 1 and 5 and Imposition Act s 6 can reduce or remove the tax. Obtain professional advice.");
   }
 
   const reference = input.diedOnOrBeforeYearEnd ? 0n : balance;

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { estimateDivision296 } from "./index.mjs";
 import rules from "./rules.json" with { type: "json" };
 
-const member = { incomeYear: "2026-27", childRecipient: false, structuredSettlementContribution: false, diedOnOrBeforeYearEnd: false };
+const member = { incomeYear: "2026-27", constitutionallyProtectedFund: false, childRecipient: false, structuredSettlementContribution: false, diedOnOrBeforeYearEnd: false };
 const estimate = (balance, earnings, flags = {}) =>
   estimateDivision296({ ...member, totalSuperBalanceAtYearEnd: balance, totalSuperEarnings: earnings, ...flags });
 const figures = (result) => [
@@ -73,7 +73,7 @@ test("each amount rounds to the cent from exact values, half away from zero", ()
 test("the total is the sum of the 2 tax amounts shown", () => {
   const small = estimate("12000000", "0.04");
   assert.deepEqual([small.taxOnTaxableEarnings, small.taxOnVeryLargeComponent, small.division296TaxEstimate], ["0.00", "0.00", "0.00"]);
-  const toCents = (amount) => Math.round(Number(amount) * 100);
+  const toCents = (amount) => BigInt(amount.replace(".", ""));
   for (const balance of ["10000500.03", "12000000", "12345678.91", "32000000"]) {
     for (const earnings of ["0.01", "0.04", "0.07", "1.13", "99999.99", "123456.78"]) {
       const result = estimate(balance, earnings);
@@ -119,6 +119,8 @@ for (const [label, input, verdict, code] of [
   ["exponent notation", { ...member, totalSuperBalanceAtYearEnd: "4e6", totalSuperEarnings: "100000" }, "unknown", "invalid_money"],
   ["16 whole digits", { ...member, totalSuperBalanceAtYearEnd: "4000000", totalSuperEarnings: "1000000000000000" }, "unknown", "invalid_money"],
   ["a leading zero", { ...member, totalSuperBalanceAtYearEnd: "04000000", totalSuperEarnings: "100000" }, "unknown", "invalid_money"],
+  ["a constitutionally protected fund interest", { ...member, constitutionallyProtectedFund: true, totalSuperBalanceAtYearEnd: "4000000", totalSuperEarnings: "100000" }, "refused", "constitutionally_protected_fund"],
+  ["an unanswered constitutionally protected fund question", { ...member, constitutionallyProtectedFund: undefined, totalSuperBalanceAtYearEnd: "4000000", totalSuperEarnings: "100000" }, "unknown", "exception_unanswered"],
   ["an unanswered exception", { ...member, childRecipient: undefined, totalSuperBalanceAtYearEnd: "4000000", totalSuperEarnings: "100000" }, "unknown", "exception_unanswered"],
   ["an exception answered as text", { ...member, diedOnOrBeforeYearEnd: "no", totalSuperBalanceAtYearEnd: "4000000", totalSuperEarnings: "100000" }, "unknown", "exception_unanswered"],
 ]) {

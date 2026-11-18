@@ -14,6 +14,7 @@ const result = estimateDivision296({
   incomeYear: "2026-27",
   totalSuperBalanceAtYearEnd: "12000000",
   totalSuperEarnings: "500000",
+  constitutionallyProtectedFund: false,
   childRecipient: false,
   structuredSettlementContribution: false,
   diedOnOrBeforeYearEnd: false,
@@ -44,22 +45,25 @@ caller's attestation, which the calculator does not verify.
 | `incomeYear` | `"2026-27"`; other years are refused |
 | `totalSuperBalanceAtYearEnd` | Total superannuation balance at the end of 30 June 2027, leaving out any LRBA amount (s 296-260). Not negative |
 | `totalSuperEarnings` | Total superannuation earnings for 2026-27 (s 296-55): see below. It can be negative |
+| `constitutionallyProtectedFund` | `true` if, at any time in 2026-27, the person had an interest in a constitutionally protected fund or received a death benefit income stream from one. Refused: s 296-55(3) items 1 and 5 and Imposition Act s 6 can reduce or remove the tax |
 | `childRecipient` | `true` if the person was a child recipient of a superannuation income stream at any time in 2026-27 (s 296-20) |
 | `structuredSettlementContribution` | `true` if a structured settlement contribution was made for the person in 2026-27 or an earlier year (s 296-25) |
 | `diedOnOrBeforeYearEnd` | `true` if the person died on or before 30 June 2027 (ITTPA s 296-1(3)) |
 
-Each of the 3 exception answers must be `true` or `false`; a missing answer gives `unknown`, not an
+Each of the 4 yes-or-no answers must be `true` or `false`; a missing answer gives `unknown`, not an
 assumption.
 
 Total superannuation earnings is neither the change in the balance nor an account's investment
-return. It is the total of the person's relevant superannuation earnings for each interest
-(s 296-55): each fund's Division 296 fund earnings, worked out from its taxable income (s 296-60, so
-capital gains count when realised, with the ITTPA's transitional CGT adjustments) and attributed to
-the interest (s 296-65). A defined benefit interest not in the retirement phase uses the s 296-70
-formula instead, which can give a negative amount; the earnings of foreign funds and of Division 296
-excluded interests (s 296-55(3): judges' pension interests, declared constitutionally protected
-fund interests and non-complying plans, for example) count as nil. Supply the total after these
-rules; the calculator applies none of them.
+return. It is the total of the person's relevant superannuation earnings for each interest they
+have at any time in the year and each interest supporting a death benefit income stream they
+receive in the retirement phase (s 296-55(1)). For most interests that is a share of the fund's
+Division 296 fund earnings (s 296-65), worked out from the fund's taxable income (s 296-60, so
+capital gains count when realised, with the ITTPA's transitional CGT adjustments) and taken as nil
+if negative (s 296-60(7)). A defined benefit interest not in the retirement phase uses the s 296-70
+formula instead, which can give a negative amount, so the total can be negative. The earnings of
+foreign funds and of Division 296 excluded interests (s 296-55(3): judges' pension interests and
+non-complying plans, for example) count as nil. Supply the total after these rules; the calculator
+applies none of them.
 
 ## Calculation
 
@@ -85,13 +89,14 @@ rounding for these amounts.
 Results include the verdict, reason codes, reasons, sources, the rounding note and the limits. The
 second reason code says why: `liable`, `share_rounds_to_nil`, `balance_not_above_threshold`,
 `earnings_not_above_nil`, `child_recipient`, `structured_settlement_contribution` or
-`died_on_or_before_year_end`. `unknown` and `refused` results contain **no calculated figure**.
+`died_on_or_before_year_end`. `unknown` and `refused` results contain **no calculated figure**; a
+refusal's code is `unsupported_year` or `constitutionally_protected_fund`.
 
 The calculator does not work out the total superannuation balance or the total superannuation
 earnings (ss 296-55 to 296-75), and does not cover temporary residents who depart Australia
-(Subdivision 296-E), Division 296 debt accounts, release authorities, payment or Imposition Act
-s 6, which removes the tax where imposing it would exceed the Commonwealth's legislative power. From 2027-28 the thresholds are indexed and the balance just before the start of the
-year also counts; those years are refused until the indexed thresholds are published. It does not
+(Subdivision 296-E), Division 296 debt accounts, release authorities or payment. From 2027-28 the
+thresholds are indexed and the balance just before the start of the year also counts; those years
+are refused until the indexed thresholds are published. It does not
 project balances or compare holding assets inside and outside super.
 
 Primary sources are in [rules.json](rules.json): ITAA 1997 compilation 268 (1 October 2026), ITTPA
