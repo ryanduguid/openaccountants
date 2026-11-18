@@ -78,7 +78,8 @@ agent date for quarter 4).
 A large withholder pays withheld amounts earlier than the 21st (TAA 1953 Sch 1 s 16-75(1)), and a
 deferred BAS payer's later dates (ss 16-75(2A) and 45-61(2)) are not applied.
 
-Out of scope: annual GST returns, instalment notices (forms N, R, S and T), deferred GST,
+Out of scope: annual GST returns, instalment notices (forms N, R, S and T), deferred GST amounts
+on imports (a deferred GST registration is used only to withhold the December 21 February date),
 substituted accounting periods, tax periods that are not calendar months or standard quarters,
 income tax, FBT and other returns, and deferrals the Commissioner grants, including disaster
 extensions. Holidays the ATO changes after 18 November 2026 are not reflected.
