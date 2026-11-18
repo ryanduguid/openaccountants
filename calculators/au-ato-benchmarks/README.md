@@ -137,6 +137,11 @@ The ATO and the Commonwealth do not endorse this calculator.
 Both are arranged as JSON, with percentages as whole numbers; `index.mjs` joins them by industry
 and band.
 
+This README and `index.test.mjs` also quote the ATO's guidance, its worked examples (Elizabeth,
+Robert, Belinda and Steff) and the ranges those examples and the bakery page print, © Australian
+Taxation Office for the Commonwealth of Australia, from the pages cited, under the same copyright
+notice.
+
 The rules were adapted from Ryan Duguid's independently authored
 [ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare)
 at revision `2e41b018a5a1c5229df2b3fe29de1fe716311fe9`. Code and this README: AGPL-3.0-only;

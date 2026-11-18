@@ -167,13 +167,23 @@ SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
 
 [[annotations]]
+path = "calculators/au-ato-benchmarks/index.mjs"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+# These quote the ATO's worked examples and guidance from ato.gov.au pages, whose
+# copyright notice lets anyone copy, adapt and distribute them; see the README.
+[[annotations]]
 path = [
-  "calculators/au-ato-benchmarks/index.mjs",
   "calculators/au-ato-benchmarks/index.test.mjs",
   "calculators/au-ato-benchmarks/README.md",
 ]
 precedence = "override"
-SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-FileCopyrightText = [
+  "2026 Ryan Duguid",
+  "Australian Taxation Office for the Commonwealth of Australia",
+]
 SPDX-License-Identifier = "AGPL-3.0-only"
 
 [[annotations]]

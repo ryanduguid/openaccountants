@@ -217,11 +217,15 @@ test("every industry's bands adjoin from its lowest band and end open, with each
     assert.ok(["cost_of_sales", "total_expenses"].includes(industry.key), name);
     assert.ok([2, 3].includes(industry.bands.length), name);
     assert.equal(dataset.industries[name].bands.length, industry.bands.length, name);
-    // Each band's cost of sales comes from the dataset where it is the key range and from the page otherwise.
+    // Each field sits in the file of its source: cost of sales in the dataset only where it is the key range.
+    const keyCostOfSales = industry.key === "cost_of_sales" ? ["cost_of_sales"] : [];
+    const pageCostOfSales = industry.key === "cost_of_sales" ? [] : ["cost_of_sales"];
     dataset.industries[name].bands.forEach((band, i) => {
-      assert.equal(Object.hasOwn(band, "cost_of_sales"), industry.key === "cost_of_sales", name);
-      assert.equal(Object.hasOwn(industry.bands[i], "cost_of_sales"), industry.key !== "cost_of_sales", name);
+      assert.deepEqual(Object.keys(band), ["label", "from", "to", "total_expenses", ...keyCostOfSales], name);
+      assert.deepEqual(Object.keys(industry.bands[i]), [...pageCostOfSales, "labour", "rent", "motor_vehicle"], name);
     });
+    assert.deepEqual(Object.keys(dataset.industries[name]), ["bands"], name);
+    assert.deepEqual(Object.keys(industry), ["page", "key", "bands"], name);
     bands(name).forEach((band, i, all) => {
       if (i > 0) assert.equal(band.from, all[i - 1].to + 1, name);
       assert.equal(band.to === null, i === all.length - 1, name);
