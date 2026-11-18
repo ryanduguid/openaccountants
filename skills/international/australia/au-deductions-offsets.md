@@ -8,13 +8,13 @@ description: >
   "tax deductions Australia", "work-related expenses", "$1,000 standard deduction", "instant tax
   deduction", "tax offset", "rebate", "low income tax offset", "LITO", "refundable offset",
   "franking credits refund", "substantiation", "do I need a receipt", "capital or revenue",
-  "apportion private use", "small business concessions". It routes to the specialist guides
-  rather than restating their rules.
-version: 1.0
+  "apportion private use", "small business concessions", "lump sum in arrears", "travel
+  allowance". It routes to the specialist guides rather than restating their rules.
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
-tax_year_notes: "Primarily 2026-27; prepayment cases follow deductions into 2027-28 and 2028-29"
-last_updated: 2026-11-05
+tax_year_notes: "Primarily 2026-27; prepayment cases follow deductions into 2027-28 and 2028-29; lump sum in arrears cases use the 2022-23 to 2026-27 rates and one ATO 2025-26 example"
+last_updated: 2026-11-18
 review_status: pending_review
 depends_on:
   - au-individual-return
@@ -23,7 +23,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Deductions, Offsets and Concessions v1.0
+# Australia Deductions, Offsets and Concessions v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -53,17 +53,18 @@ This skill covers:
 - The standard deduction for work-related expenses that applies from the 2026-27 income year.
 - Substantiation requirements and record retention.
 - The main tax offsets and how refundability changes their value.
+- The lump sum payment in arrears tax offset (Section 8.3).
+- Overnight work travel: accommodation, food and drink, travel allowances and travel records
+  (Section 6.1).
 - Where each specialist rule set lives.
 
 This skill does NOT cover:
 
-- The detailed computation of any single item. Each has its own guide.
+- The detailed computation of any other single item. Each has its own guide.
 - GST credits. Those are not income tax deductions. See `australia-gst.md`.
 - Fringe benefits tax. See `au-fbt-year.md`.
 - State and territory concessions, including duty concessions and land tax exemptions. See
   `au-stamp-duty.md` and `au-land-tax.md`.
-
-**Where the specialist rules live**
 
 **Where the specialist rules live**
 
@@ -88,6 +89,8 @@ This skill does NOT cover:
 - Which covered actual deductions will be claimed, after confirming eligibility, timing, apportionment and substantiation for the whole claimed amount? Choosing not to claim covered expenses is different from guessing their amounts.
 - Which separately allowable deductions fall outside the standard-deduction reduction, and what provision and records support each?
 - Are there reimbursements, salary packaging or GST credits affecting a claim?
+- Did the taxpayer receive a lump sum that accrued in earlier income years, such as back pay or pension or compensation arrears? Obtain each payer's breakdown by income year and the taxable income for each of those years.
+- For overnight work travel: the dates, nights away, the purpose of each day, any allowance (amount, what it covers, whether it is on the income statement), who paid each cost and any travel diary.
 - Which facts or source conditions remain unresolved? Hold the affected calculation and return Needs Input.
 
 ## The method, step by step
@@ -236,11 +239,24 @@ rules for work expenses, car expenses, travel expenses and business travel expen
 | Car expenses, cents per kilometre method | Up to 5,000 business kilometres per car per year. No written evidence of the kilometres is required, but the basis of the estimate must be able to be shown, for example diary records |
 | Car expenses, logbook method | Keep a logbook for at least 12 continuous weeks, or the whole holding period if shorter. A new logbook is normally required after 4 intervening income years, and earlier where s 28-115 requires, including an ATO direction or additional cars. Keep annual odometer records, the business-kilometre estimate, business-use percentage and expense evidence |
 | Working from home, fixed rate method | A record of the actual hours worked from home for the entire income year, kept as the hours are worked (an estimate is not accepted), plus at least one record for each running expense the rate covers that the taxpayer incurred. The rate is 70 cents per work hour: [PCG 2023/1 para 26A](https://www.ato.gov.au/law/view/document?docid=COG/PCG20231/NAT/ATO/00001) reads 70c from 1 July 2024 with no end date, whilst the ATO page, updated 8 June 2026, names years only to 2025-26, so confirm the rate for 2026-27. In 2026-27 a claimed amount also reduces the standard deduction |
-| Travel with an allowance | Reasonable amounts determined annually by the Commissioner can remove the need to keep receipts, but not the requirement to have incurred the expense |
+| Travel with an allowance | A claim no greater than the Commissioner's reasonable amount for the year needs no written evidence (ss 900-50 and 900-55), but the expense must still have been incurred and be deductible, and the allowance received and declared. Overseas accommodation always needs written evidence. See Section 6.1 |
+| Travel records | Travel away from the ordinary residence for 6 or more nights in a row needs a travel record as well as written evidence, unless the domestic travel allowance exception applies (ss 900-50 and 900-55(3)). See Section 6.1 |
 | Record retention | For Division 900 work-expense records, retain for 5 years from the return due date, or actual lodgement if later (s 900-25). A related tax dispute can extend the period. Check the separate retention rules for depreciating assets, logbooks, CGT assets and carried-forward losses before discarding records |
 
 The cents per kilometre rate and the working from home fixed rate can change between income years.
 Look up the rate for the year being prepared rather than carrying last year's forward.
+
+#### 6.1 Overnight work travel: accommodation, food and drink, allowances and travel records
+
+This covers an employee's accommodation, food and drink and incidental costs on work travel. Car expenses follow Division 28 and the car rows above; ordinary home-to-work travel is private (Section 4, Step 2).
+
+- **Travelling on work** — Accommodation and food and drink are deductible under section 8-1 only while the employee is travelling on work: the duties require them to sleep away from their usual residence overnight for relatively short periods. Meals on same-day travel are not deductible. The costs are private living expenses where they arise from where the employee chooses to live, from living at a location or from relocating.  _([TR 2021/4 paras 5 and 19 to 24](https://www.ato.gov.au/law/view/document?docid=TXR/TR20214/NAT/ATO/00001))_
+- **Living at a location** — Weigh the factors together: a change in the regular place of work, a relatively long overall period away, accommodation that becomes the usual residence, and whether family accompanies or visits. No single factor decides the question. Refer a long or repeated stay at one location for review.  _([TR 2021/4 paras 42 and 44](https://www.ato.gov.au/law/view/document?docid=TXR/TR20214/NAT/ATO/00001))_
+- **Apportionment** — On a trip mixing work and private days, only the work portion of accommodation and food and drink is deductible, apportioned on a fair and reasonable basis; incidental costs of the same travel follow the same basis. An accompanying person's costs are not the employee's work costs, but a room whose cost is unchanged by the companion stays deductible for the work nights. See Case 18.  _([TR 2021/4 paras 87 to 93](https://www.ato.gov.au/law/view/document?docid=TXR/TR20214/NAT/ATO/00001))_
+- **Transport under review** — TR 2021/1, on employees' transport, notes that it is being reviewed after Commissioner of Taxation v Hall [2026] FCAFC 43. The ATO's decision impact statement says working from home does not, of itself, make home-to-work travel income-producing, and that the ATO is reviewing its related guidance. Read the current ruling and statement before relying on either; refer a home-to-work claim argued from working at home, and the main-purpose decision and any split for a mixed-purpose airfare.  _([TR 2021/1](https://www.ato.gov.au/law/view/document?docid=TXR/TR20211/NAT/ATO/00001); [ATO, Decision impact statement: Commissioner of Taxation v Hall, paras 29 and 30](https://www.ato.gov.au/law/view/document?docid=LIT/ICD/vid779of2025-final/00001))_
+- **Written evidence and travel records** — These are work expenses. They need written evidence, a travel record where the travel involves 6 or more nights in a row away from the ordinary residence, and retention for 5 years. A travel record is a diary or similar document giving each activity's nature, the day and approximate time it began, how long it lasted and where it took place, written in English before the activity ends or as soon as possible afterwards. Never create or backdate a diary for the taxpayer; where a required record is missing, return Needs Input for the dependent claim.  _([TR 2021/4 para 109](https://www.ato.gov.au/law/view/document?docid=TXR/TR20214/NAT/ATO/00001); [ITAA 1997 s 900-150](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/900-150))_
+- **Travel allowance exceptions** — The exceptions apply only where a travel allowance was received and declared, only to the expenses it was paid to cover, and only to expenses actually incurred and deductible outside Division 900: a reasonable amount is not an automatic deduction. For domestic travel, a claim no greater than the reasonable amount needs no written evidence or travel records (s 900-50). For overseas travel, accommodation still needs written evidence and 6 or more nights in a row still need travel records (s 900-55). A claim above the reasonable amount must be substantiated in full, not only the excess. The accommodation amount applies only to short stays in commercial establishments. Use the determination for the year: TD 2026/4 applies to 2026-27 only and is read with TR 2004/6. See Case 19.  _([TD 2026/4 paras 3, 5, 21, 39 and 52](https://www.ato.gov.au/law/view/document?docid=TXD/TD20264/NAT/ATO/00001); [ITAA 1997 s 900-55](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/900-55); [TR 2021/4 paras 110 to 112](https://www.ato.gov.au/law/view/document?docid=TXR/TR20214/NAT/ATO/00001))_
+- **Other interactions** — From 2026-27, travel costs deducted under section 8-1 in gaining assessable labour income are covered actual deductions that reduce the standard deduction (Section 5). An amount the employer paid or reimbursed is not the employee's deduction (Section 10) and can be a fringe benefit for the employer.  _([TR 2021/4 para 113](https://www.ato.gov.au/law/view/document?docid=TXR/TR20214/NAT/ATO/00001))_
 
 ### Section 7 - Capital allowances and write-offs
 
@@ -253,7 +269,7 @@ Look up the rate for the year being prepared rather than carrying last year's fo
 | Instant asset write-off | Small business entities using the simplified depreciation rules | Less than $20,000 per eligible asset for businesses with aggregated turnover under $10 million. Test the asset cost before applying its business-use proportion. For 2025-26 the threshold was a temporary increase; Schedule 2 to the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 makes it permanent for assets first used or installed ready for use from 1 July 2026 |
 | Small business general pool | Eligible assets allocated under Subdivision 328-D | Test s 328-210 before annual depreciation: opening pool plus taxable-purpose additions and cost additions, less taxable-purpose termination values. If the amount is above zero but below $20,000, deduct it and close the pool at zero. Otherwise apply 30% to the opening pool and 15% to relevant current-year additions, subject to the disposal and adjustment rules |
 | Division 43 capital works | Buildings and structural improvements | A fixed annual rate over a fixed period, claimed separately from Division 40 |
-| Division 40-880 | Certain business-related capital expenditure not deductible elsewhere | Spread over five years |
+| Section 40-880 | Certain business-related capital expenditure not deductible elsewhere | Spread over five years |
 | Car limit | Cars used for a business or income-producing purpose | Caps both the depreciation base and the GST credit. Look up the limit for the income year |
 
 **The 2026-27 limit is settled.** The Treasury Laws Amendment (Tax Reform No. 2) Act 2026 received
@@ -281,10 +297,63 @@ end date. The acquisition date alone does not decide the year: test first use or
 | Beneficiary tax offset | No | For recipients of certain Commonwealth benefits and allowances |
 | Working Australians tax offset | No | Up to $250 from 2027-28 for residents with net labour income above the tax-free threshold. See Section 5.1 |
 | Research and development tax offset | Depends on the statutory category | Eligible R&D entities and activities under Division 355; see `au-rd-incentive.md` for eligibility, calculation and refundability |
+| Lump sum payment in arrears tax offset | No | For an individual whose assessable income includes eligible income that accrued in earlier years. The ATO works it out from the reported breakdown. See Section 8.3 |
 
 #### 8.2 Unused offsets and other liabilities
 
 - **Unused offsets and other liabilities** — - An unused non-refundable offset is not paid out as an offset refund. Reducing income tax can still create or increase a refund of PAYG withholding or instalments already paid. - Most offsets do not reduce Medicare levy. However, section 63-10 table items 21 and 22 apply remaining veterans' superannuation (invalidity pension) tax offset and foreign income tax offset to Medicare levy, then Medicare levy (fringe benefits) surcharge. The remaining excess cannot be refunded, transferred or carried forward. See `au-foreign-income.md` for FITO limits. - SAPTO affects the Medicare levy indirectly through the low income threshold; it does not reduce the levy directly. - An offset does not reduce a HELP or other study and training support loan repayment, which is calculated on repayment income, not on tax payable.  _([ITAA 1997 (Cth) s 63-10(1), table items 21 and 22](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/63-10); [ATO, About tax offsets](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/about-tax-offsets))_
+
+#### 8.3 Lump sum payment in arrears tax offset
+
+A lump sum that accrued in earlier years is assessable in the year it is received; do not amend the earlier years. Subdivision AB of Division 17 of the ITAA 1936 gives an offset for the extra tax caused by taxing the arrears in one year. It is not refundable, transferable or carried forward (s 63-10 table item 20). The ATO works out the offset, the Medicare levy exemption and the Medicare levy surcharge (MLS) tax offset from the return, and the myTax estimate leaves them out. The preparer's job is to classify the payment and report it with its breakdown; the computation below lets the preparer estimate the offset and the reviewer check the notice of assessment.
+
+**Who qualifies (ss 159ZR and 159ZRA).** A natural person, not in the capacity of a trustee, whose assessable income for the current year includes an eligible lump sum: a lump sum of eligible income received on or after 1 July 1986 that accrued wholly or partly in an earlier income year. Eligible income is:
+
+- salary or wages, to the extent they accrued in a period ending more than 12 months before payment;
+- salary or wages paid after reinstatement following suspension, for the period of suspension;
+- a payment covered by section 12-80 or 12-120 in Schedule 1 to the Taxation Administration Act 1953;
+- a Commonwealth education or training payment;
+- a payment covered by Division 52, 53 or 55 of the ITAA 1997 that is not exempt, or a similar payment under a foreign law.
+
+Salary or wages has the s 159ZR meaning, which leaves out remuneration paid to a director who is an associate of the company. Eligible income excludes any part taken into account in a Commonwealth act of grace tax reimbursement under s 65 of the Public Governance, Performance and Accountability Act 2013. A BSWAT payment amount is treated as an eligible lump sum (s 159ZR(2)).
+
+The total arrears amount is the part of all eligible lump sums in the year that accrued in earlier years; add the amounts from every payer by income year. Each year in which part of it accrued is an accrual year.
+
+**Step 1, the 10% test (s 159ZRA(1)(b)).** The total arrears amount must be at least 10% of normal taxable income less the total arrears amount (if anything remains). Normal taxable income is taxable income without net capital gains (s 102-5), employment termination payments (Division 82 of the ITAA 1997 and of the Income Tax (Transitional Provisions) Act 1997), unused leave lump sums (ss 83-10 and 83-80), superannuation benefits (Divisions 301 and 302) and above-average special professional income (s 405-15).
+
+```
+total arrears >= 10% x max(0, normal taxable income - total arrears)
+```
+
+**Step 2, tax on arrears (s 159ZRB).** Rebated tax on the current year's taxable income, less rebated tax on that taxable income reduced by the total arrears amount. Rebated tax is the tax after the offsets under Divisions 82, 83, 301 and 302 and s 392-35(2) of the ITAA 1997 and transitional Division 82, before any other offset or credit, so LITO and the rest are ignored here. Rebated tax and gross tax exclude the Medicare levy: the levy is payable in addition to any tax payable under the Act (ITAA 1936 s 251S(2)), the explanatory memorandum to the 2024 Medicare levy exemption records that this offset does not reduce the ordinary Medicare levy, and the ATO's worked example applies marginal rates without the levy.  _([ITAA 1936 s 251S](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/251S); [Bills Digest No. 83, 2023-24, Schedule 3](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2324a/24bd083))_
+
+**Step 3, notional tax for recent accrual years (s 159ZRC).** With 3 or more accrual years, the recent accrual years are the most recent 2; otherwise every accrual year is recent. For each recent year: rebated tax on that year's taxable income plus its annual arrears amount, less rebated tax on that year's taxable income. Both figures are adjusted where the accrual year was itself a rebate year, or where arrears of an earlier rebate year accrued in it (s 159ZRC(b) to (e)).
+
+**Step 4, notional tax for distant accrual years (s 159ZRD).** For each recent year, work out a rate: gross tax on normal taxable income plus the annual arrears amount, less gross tax on normal taxable income, divided by the annual arrears amount, with the same rebate-year adjustments. Express each rate as a decimal to 3 places and increase it by 0.001 if the fourth decimal place would be greater than 4; for a positive rate this equals rounding half up to 3 places. Each distant year's notional tax is its annual arrears amount times the average of the recent years' rates. The section does not round the average.
+
+**Step 5, the offset (s 159ZRB).**
+
+```
+offset = max(0, tax on arrears - (recent years' notional tax + distant years' notional tax))
+```
+
+The ATO notes the offset is often nil because the arrears fall in the same tax bracket in the current and earlier years.  _([ITAA 1936 ss 159ZR](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/159ZR), [159ZRA](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/159ZRA), [159ZRB](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/159ZRB), [159ZRC](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/159ZRC) and [159ZRD](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/159ZRD); [ITAA 1997 s 63-10](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/63-10))_
+
+**Medicare levy and MLS.** From 1 July 2024 the ATO excludes a qualifying lump sum in arrears from the Medicare levy where the taxpayer would not have paid the full levy in the recent accrual years with the arrears included. The MLS tax offset has its own 10% test. This guide names both and does not compute them.
+
+**Reporting.** Report the whole lump sum in the year received at the label the return instructions give for the payment type (salary or wages: Lump sum E), with a breakdown of the arrears by income year.  _([ATO, Lump sum payment in arrears](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/lump-sum-payment-in-arrears), updated 8 June 2026)_
+
+**Preparation and reviewer boundaries.** Hold the estimate and return Needs Input, or refer it, where:
+
+- a payer's breakdown by income year is missing or does not agree to the lump sum;
+- the payment's eligible-income category is unclear, or for salary or wages, which part accrued more than 12 months before payment;
+- a year's taxable income, normal taxable income or rebated tax cannot be taken from that year's assessment;
+- the taxpayer was not a full-year resident entitled to the full tax-free threshold in a year used, which the ATO resident rate tables assume;
+- an accrual year was itself a rebate year or carried arrears of an earlier rebate year;
+- a recent accrual year is before 2022-23 or the current year is after 2026-27: the cases below were checked only against the 2022-23 to 2026-27 resident rates read on 18 November 2026 (a distant year needs only its arrears amount, not its rates). For 2014-15 to 2016-17 the ATO tables exclude the 2% Temporary Budget Repair Levy on income above $180,000, and whether it enters rebated tax was not checked;
+- the recipient is a trustee.
+
+Present a computed offset as an estimate for review. The ATO's assessment decides the amount.
 
 ### Section 9 - Concessions
 
@@ -334,6 +403,10 @@ the aggregated turnover threshold is not the same for every concession.
   instant asset write-off limit and eligibility for the year.
 - Ignoring the non-commercial loss rules for an individual's side business.
 - Claiming both Division 40 and Division 43 on the same expenditure.
+- Amending earlier years for back pay instead of reporting it in the year received with its
+  breakdown, or promising an arrears offset when the arrears fall in the same tax bracket.
+- Claiming the reasonable travel allowance amount without having incurred the expense, or relying
+  on it for overseas accommodation.
 
 ## Worked cases
 
@@ -606,7 +679,7 @@ expected:
   remaining_stated_tax: 1000
 ```
 
-Recompute all 13 cases with `python3 scripts/check-examples.py --require skills/international/australia/au-deductions-offsets.md`. The statutory decisions, eligibility and all excluded assessment components still require separate verification.
+Recompute all 19 cases with `python3 scripts/check-examples.py --require skills/international/australia/au-deductions-offsets.md`. The statutory decisions, eligibility and all excluded assessment components still require separate verification.
 
 ### Case 12: Nadia with the standard deduction
 
@@ -672,6 +745,209 @@ expected:
   ordinary_medicare_levy: 1771.20
   total_tax_and_levy: 18859.20
   illustrative_refund: 140.80
+```
+
+### Lump sum in arrears and travel cases (14 to 19)
+
+Cases 14 and 15 reproduce the ATO's examples on its [lump sum payment in arrears page](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/lump-sum-payment-in-arrears) (updated 8 June 2026), Case 18 the ruling's example in TR 2021/4 and Case 19 the determination's example in TD 2026/4. Cases 16 and 17 are synthetic. In every lump sum case the taxpayer is a full-year resident entitled to the full tax-free threshold in each year used, receives the arrears as salary or wages that accrued more than 12 months before payment, has none of the amounts that normal taxable income leaves out in any accrual year (so normal taxable income equals taxable income there), and has no offset that the rebated-tax definition deducts, so rebated tax and gross tax both equal tax at the [ATO resident rates](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents) for the year (read 18 November 2026; Medicare levy excluded). No accrual year is a rebate year. These are stipulated facts; the checker recomputes arithmetic only.
+
+### Case 14: Anthony passes the 10% test and gets an offset (ATO example)
+
+Anthony receives $43,979 of arrears for 2016-17 in September 2025. His 2025-26 taxable income is $314,166, including $111,231 of net capital gains, which normal taxable income leaves out. Threshold test income is $158,956 and 10% of it is $15,895.60 (ATO: $15,896), so he passes. With one accrual year, 2016-17 is a recent year. Both $314,166 and $314,166 less the arrears are above $190,000, so tax on arrears is the arrears at 45% under the 2025-26 rates. The ATO gives the 2016-17 notional tax at his 37% rate without stating his 2016-17 taxable income, so the case takes that rate as the ATO's figure. Under the 2016-17 rates that requires his 2016-17 taxable income to have been between $87,000 and $136,021, so that all of the arrears fall in the 37% band, which ends at $180,000; with one recent year, s 159ZRD's rounding does not arise. Because 2016-17 is before 2022-23, the referral list above sends a real case like this to a reviewer; the case checks the ATO's arithmetic only. The offset is $3,518.32. The ATO shows $3,518 because its table drops the cents from each tax figure ($19,790 and $16,272); Subdivision AB does not round the offset to whole dollars.
+
+```oa-check
+name: AU lump sum in arrears ATO Anthony example 2025-26
+inputs:
+  taxable_income: 314166
+  net_capital_gain: 111231
+  total_arrears: 43979
+  ato_stated_2016_17_rate: 0.37
+steps:
+  - normal_taxable_income: taxable_income - net_capital_gain
+  - threshold_test_income: max(0, normal_taxable_income - total_arrears)
+  - ten_percent_threshold: threshold_test_income * 0.10
+  - test_margin: total_arrears - ten_percent_threshold
+  - reduced_taxable_income: taxable_income - total_arrears
+  - tax_with_arrears: 0.16 * clamp(taxable_income - 18200, 0, 26800) + 0.30 * clamp(taxable_income - 45000, 0, 90000) + 0.37 * clamp(taxable_income - 135000, 0, 55000) + 0.45 * max(0, taxable_income - 190000)
+  - tax_without_arrears: 0.16 * clamp(reduced_taxable_income - 18200, 0, 26800) + 0.30 * clamp(reduced_taxable_income - 45000, 0, 90000) + 0.37 * clamp(reduced_taxable_income - 135000, 0, 55000) + 0.45 * max(0, reduced_taxable_income - 190000)
+  - tax_on_arrears: tax_with_arrears - tax_without_arrears
+  - highest_2016_17_income_in_37_percent_band: 180000 - total_arrears
+  - notional_tax_on_arrears: total_arrears * ato_stated_2016_17_rate
+  - lspia_offset: max(0, tax_on_arrears - notional_tax_on_arrears)
+expected:
+  highest_2016_17_income_in_37_percent_band: 136021
+  threshold_test_income: 158956
+  ten_percent_threshold: 15895.60
+  test_margin: 28083.40
+  tax_with_arrears: 107512.70
+  tax_without_arrears: 87722.15
+  tax_on_arrears: 19790.55
+  notional_tax_on_arrears: 16272.23
+  lspia_offset: 3518.32
+```
+
+### Case 15: Sudeep fails the 10% test (ATO example)
+
+Sudeep receives $3,500 of arrears in October 2025. His 2025-26 taxable income is $53,000, all salary and wages. Threshold test income is $49,500 and 10% of it is $4,950. The arrears fall $1,450 short, so there is no offset and Steps 2 to 5 are not reached.
+
+```oa-check
+name: AU lump sum in arrears ATO Sudeep example fails the 10 percent test
+inputs:
+  normal_taxable_income: 53000
+  total_arrears: 3500
+steps:
+  - threshold_test_income: max(0, normal_taxable_income - total_arrears)
+  - ten_percent_threshold: threshold_test_income * 0.10
+  - test_margin: total_arrears - ten_percent_threshold
+expected:
+  threshold_test_income: 49500
+  ten_percent_threshold: 4950
+  test_margin: -1450
+```
+
+### Case 16: 4 accrual years use recent and distant rules
+
+In 2026-27 a taxpayer receives $40,000 of arrears: $8,000 each for 2021-22 and 2022-23 and $12,000 each for 2023-24 and 2024-25. Taxable income is $230,000, all salary and wages. The 10% test passes. The arrears move $40,000 from below $190,000 to above it, so tax on arrears is $18,000. With 4 accrual years, 2023-24 and 2024-25 are recent. Taxable income was $60,000 in 2023-24, so its $12,000 sits in the 32.5% band: $3,900. Taxable income was $126,000 in 2024-25, so $9,000 is taxed at 30% and $3,000 at 37%: $3,810. The 2024-25 rate is 0.3175; its fourth decimal place is 5, so s 159ZRD(3) raises it to 0.318. Truncating it to 0.317 would be wrong. The average rate, 0.3215, applies to the $16,000 of distant arrears. The offset is $5,146.
+
+```oa-check
+name: AU lump sum in arrears 2026-27 with recent and distant accrual years
+inputs:
+  taxable_income_2026_27: 230000
+  arrears_2021_22: 8000
+  arrears_2022_23: 8000
+  arrears_2023_24: 12000
+  arrears_2024_25: 12000
+  taxable_income_2023_24: 60000
+  taxable_income_2024_25: 126000
+steps:
+  - total_arrears: arrears_2021_22 + arrears_2022_23 + arrears_2023_24 + arrears_2024_25
+  - threshold_test_income: max(0, taxable_income_2026_27 - total_arrears)
+  - ten_percent_threshold: threshold_test_income * 0.10
+  - test_margin: total_arrears - ten_percent_threshold
+  - reduced_2026_27: taxable_income_2026_27 - total_arrears
+  - tax_2026_27_with_arrears: 0.15 * clamp(taxable_income_2026_27 - 18200, 0, 26800) + 0.30 * clamp(taxable_income_2026_27 - 45000, 0, 90000) + 0.37 * clamp(taxable_income_2026_27 - 135000, 0, 55000) + 0.45 * max(0, taxable_income_2026_27 - 190000)
+  - tax_2026_27_without_arrears: 0.15 * clamp(reduced_2026_27 - 18200, 0, 26800) + 0.30 * clamp(reduced_2026_27 - 45000, 0, 90000) + 0.37 * clamp(reduced_2026_27 - 135000, 0, 55000) + 0.45 * max(0, reduced_2026_27 - 190000)
+  - tax_on_arrears: tax_2026_27_with_arrears - tax_2026_27_without_arrears
+  - increased_2023_24: taxable_income_2023_24 + arrears_2023_24
+  - tax_2023_24_increased: 0.19 * clamp(increased_2023_24 - 18200, 0, 26800) + 0.325 * clamp(increased_2023_24 - 45000, 0, 75000) + 0.37 * clamp(increased_2023_24 - 120000, 0, 60000) + 0.45 * max(0, increased_2023_24 - 180000)
+  - tax_2023_24_actual: 0.19 * clamp(taxable_income_2023_24 - 18200, 0, 26800) + 0.325 * clamp(taxable_income_2023_24 - 45000, 0, 75000) + 0.37 * clamp(taxable_income_2023_24 - 120000, 0, 60000) + 0.45 * max(0, taxable_income_2023_24 - 180000)
+  - notional_2023_24: tax_2023_24_increased - tax_2023_24_actual
+  - increased_2024_25: taxable_income_2024_25 + arrears_2024_25
+  - tax_2024_25_increased: 0.16 * clamp(increased_2024_25 - 18200, 0, 26800) + 0.30 * clamp(increased_2024_25 - 45000, 0, 90000) + 0.37 * clamp(increased_2024_25 - 135000, 0, 55000) + 0.45 * max(0, increased_2024_25 - 190000)
+  - tax_2024_25_actual: 0.16 * clamp(taxable_income_2024_25 - 18200, 0, 26800) + 0.30 * clamp(taxable_income_2024_25 - 45000, 0, 90000) + 0.37 * clamp(taxable_income_2024_25 - 135000, 0, 55000) + 0.45 * max(0, taxable_income_2024_25 - 190000)
+  - notional_2024_25: tax_2024_25_increased - tax_2024_25_actual
+  - unrounded_rate_2024_25: notional_2024_25 / arrears_2024_25
+  - rate_2023_24: round(notional_2023_24 / arrears_2023_24, 3)
+  - rate_2024_25: round(unrounded_rate_2024_25, 3)
+  - average_recent_rate: (rate_2023_24 + rate_2024_25) / 2
+  - notional_distant: (arrears_2021_22 + arrears_2022_23) * average_recent_rate
+  - notional_tax_on_arrears: notional_2023_24 + notional_2024_25 + notional_distant
+  - lspia_offset: max(0, tax_on_arrears - notional_tax_on_arrears)
+expected:
+  total_arrears: 40000
+  threshold_test_income: 190000
+  ten_percent_threshold: 19000
+  test_margin: 21000
+  tax_2026_27_with_arrears: 69370
+  tax_2026_27_without_arrears: 51370
+  tax_on_arrears: 18000
+  tax_2023_24_increased: 13867
+  tax_2023_24_actual: 9967
+  notional_2023_24: 3900
+  tax_2024_25_increased: 32398
+  tax_2024_25_actual: 28588
+  notional_2024_25: 3810
+  unrounded_rate_2024_25: 0.3175
+  rate_2023_24: 0.325
+  rate_2024_25: 0.318
+  average_recent_rate: 0.3215
+  notional_distant: 5144
+  notional_tax_on_arrears: 12854
+  lspia_offset: 5146
+tolerance: 0.0001
+```
+
+### Case 17: the 10% test passes but the offset is nil
+
+In 2026-27 a taxpayer receives $20,000 of arrears: $10,000 each for 2022-23 and 2023-24. Taxable income is $90,000, all salary and wages. The 10% test passes by $13,000. Tax on arrears is $6,000 at 30%. With 2 accrual years, both are recent, and each $10,000 sat in the 32.5% band: taxable income was $65,000 in 2022-23 and $68,000 in 2023-24. Notional tax of $6,500 exceeds the $6,000, so the offset is nil, as the ATO says is common. There are no distant years.
+
+```oa-check
+name: AU lump sum in arrears 2026-27 eligible but nil offset
+inputs:
+  taxable_income_2026_27: 90000
+  arrears_2022_23: 10000
+  arrears_2023_24: 10000
+  taxable_income_2022_23: 65000
+  taxable_income_2023_24: 68000
+steps:
+  - total_arrears: arrears_2022_23 + arrears_2023_24
+  - threshold_test_income: max(0, taxable_income_2026_27 - total_arrears)
+  - ten_percent_threshold: threshold_test_income * 0.10
+  - test_margin: total_arrears - ten_percent_threshold
+  - reduced_2026_27: taxable_income_2026_27 - total_arrears
+  - tax_2026_27_with_arrears: 0.15 * clamp(taxable_income_2026_27 - 18200, 0, 26800) + 0.30 * clamp(taxable_income_2026_27 - 45000, 0, 90000) + 0.37 * clamp(taxable_income_2026_27 - 135000, 0, 55000) + 0.45 * max(0, taxable_income_2026_27 - 190000)
+  - tax_2026_27_without_arrears: 0.15 * clamp(reduced_2026_27 - 18200, 0, 26800) + 0.30 * clamp(reduced_2026_27 - 45000, 0, 90000) + 0.37 * clamp(reduced_2026_27 - 135000, 0, 55000) + 0.45 * max(0, reduced_2026_27 - 190000)
+  - tax_on_arrears: tax_2026_27_with_arrears - tax_2026_27_without_arrears
+  - increased_2022_23: taxable_income_2022_23 + arrears_2022_23
+  - notional_2022_23: 0.19 * clamp(increased_2022_23 - 18200, 0, 26800) + 0.325 * clamp(increased_2022_23 - 45000, 0, 75000) + 0.37 * clamp(increased_2022_23 - 120000, 0, 60000) + 0.45 * max(0, increased_2022_23 - 180000) - (0.19 * clamp(taxable_income_2022_23 - 18200, 0, 26800) + 0.325 * clamp(taxable_income_2022_23 - 45000, 0, 75000) + 0.37 * clamp(taxable_income_2022_23 - 120000, 0, 60000) + 0.45 * max(0, taxable_income_2022_23 - 180000))
+  - increased_2023_24: taxable_income_2023_24 + arrears_2023_24
+  - notional_2023_24: 0.19 * clamp(increased_2023_24 - 18200, 0, 26800) + 0.325 * clamp(increased_2023_24 - 45000, 0, 75000) + 0.37 * clamp(increased_2023_24 - 120000, 0, 60000) + 0.45 * max(0, increased_2023_24 - 180000) - (0.19 * clamp(taxable_income_2023_24 - 18200, 0, 26800) + 0.325 * clamp(taxable_income_2023_24 - 45000, 0, 75000) + 0.37 * clamp(taxable_income_2023_24 - 120000, 0, 60000) + 0.45 * max(0, taxable_income_2023_24 - 180000))
+  - notional_tax_on_arrears: notional_2022_23 + notional_2023_24
+  - lspia_offset: max(0, tax_on_arrears - notional_tax_on_arrears)
+expected:
+  total_arrears: 20000
+  threshold_test_income: 70000
+  ten_percent_threshold: 7000
+  test_margin: 13000
+  tax_2026_27_with_arrears: 17520
+  tax_2026_27_without_arrears: 11520
+  tax_on_arrears: 6000
+  notional_2022_23: 3250
+  notional_2023_24: 3250
+  notional_tax_on_arrears: 6500
+  lspia_offset: 0
+```
+
+### Case 18: a mixed work and private trip (TR 2021/4 Example 11)
+
+Therese attends a 5-day work planning workshop and stays 2 more nights with her husband. The room costs $1,680 for 7 nights and its cost is the same for 1 or 2 people. The 5 workshop nights are deductible: $1,200. The other 2 nights, $480, are private. Food supplied at the workshop is not her expense.
+
+```oa-check
+name: AU travel accommodation apportioned to work nights TR 2021/4 Example 11
+inputs:
+  room_cost: 1680
+  total_nights: 7
+  work_nights: 5
+steps:
+  - deductible_accommodation: room_cost * work_nights / total_nights
+  - private_accommodation: room_cost - deductible_accommodation
+expected:
+  deductible_accommodation: 1200
+  private_accommodation: 480
+```
+
+### Case 19: a claim within the reasonable amount (TD 2026/4 Example)
+
+For 2026-27, Svetlana earns $170,000 and travels to Sale for 4 days and 3 nights each month; the case covers one month's trip. Her employer pays the accommodation directly and gives a meals and incidentals allowance of $140 a day, shown on her income statement. She spends $135 a day on meals and nothing on incidentals. Table 2 of TD 2026/4 applies to her salary, and Sale is a high-cost country centre: $172.20 for meals and $36.30 for incidentals, $208.50 a day. Her $540 meal claim is within the $834 reasonable amount, so she need not keep the meal receipts, but she declares the $560 allowance and must still show she incurred the meals while travelling on work. She claims no accommodation and no incidentals. A claim above $834 would need full substantiation.
+
+```oa-check
+name: AU 2026-27 travel allowance claim within the TD 2026/4 reasonable amount
+inputs:
+  travel_days: 4
+  allowance_per_day: 140
+  meals_spent_per_day: 135
+  reasonable_meals_per_day: 172.20
+  reasonable_incidentals_per_day: 36.30
+steps:
+  - allowance_declared: allowance_per_day * travel_days
+  - meals_claim: meals_spent_per_day * travel_days
+  - reasonable_amount: (reasonable_meals_per_day + reasonable_incidentals_per_day) * travel_days
+  - claim_above_reasonable_amount: max(0, meals_claim - reasonable_amount)
+expected:
+  allowance_declared: 560
+  meals_claim: 540
+  reasonable_amount: 834
+  claim_above_reasonable_amount: 0
 ```
 
 ### Section 11 - Worked example
@@ -762,8 +1038,8 @@ liability for any errors, omissions or outcomes arising from the use of this ski
 must be reviewed and signed off by a qualified professional in the relevant jurisdiction before
 lodging or acting upon them.
 
-The most up-to-date version of this skill is maintained at
-[openaccountants.com](https://www.openaccountants.com).
+This reference is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
 
 > Contributed by Ryan Duguid.
 
@@ -784,6 +1060,8 @@ The most up-to-date version of this skill is maintained at
 - [ ] Offsets follow section 63-10 priorities, including any application to Medicare levy or surcharge and the treatment of unused amounts.
 - [ ] Refunds of excess PAYG payments are distinguished from refunds of unused offsets.
 - [ ] Rates, thresholds and limits are confirmed against the ATO page for the income year.
+- [ ] A lump sum covering earlier years is reported in the year received with its breakdown by income year, and any offset estimate follows Section 8.3 and its referral list.
+- [ ] Overnight travel claims rest on a travelling-on-work finding and the required travel records, and an allowance exception is used only within the reasonable amount for the year.
 
 ## Sources
 
@@ -817,6 +1095,17 @@ The most up-to-date version of this skill is maintained at
 | Retained citation | <https://www.legislation.gov.au/C2026A00049/latest> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.legislation.gov.au/C2026A00050/latest> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents> | Not re-read for this format update; see retained provenance |
+| ITAA 1936 ss 159ZR, 159ZRA, 159ZRB, 159ZRC and 159ZRD: definitions, eligibility and the 10% test, the offset formula, recent and distant accrual years, rate rounding | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/159ZR> (and `159ZRA` to `159ZRD`) | 2026-11-18; Section 8.3 and Cases 14 to 17 |
+| ITAA 1936 s 251S(2): Medicare levy payable in addition to tax | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/251S> | 2026-11-18; Section 8.3 Step 2 only |
+| Bills Digest No. 83, 2023-24, Schedule 3: the arrears offset limits tax payable excluding the Medicare levy; quotes the explanatory memorandum (p. 78) that it does not reduce the ordinary Medicare levy | <https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/bd/bd2324a/24bd083> | 2026-11-18; Section 8.3 Step 2 only |
+| ITAA 1997 s 63-10(1): table item 20 for an offset not covered by another item | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/63-10> | 2026-11-18; Section 8.3 only |
+| ATO lump sum payment in arrears: qualifying payments, 10% threshold test, Medicare levy exemption from 1 July 2024, MLS tax offset, reporting, Sudeep and Anthony examples | <https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/lump-sum-payment-in-arrears> | 2026-11-18; page updated 8 June 2026 |
+| ATO resident rates: 2022-23 to 2026-27 tables and the 2016-17 note on the Temporary Budget Repair Levy | <https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents> | 2026-11-18; page updated 13 August 2026; Cases 14, 16 and 17 |
+| TR 2021/4: paras 5, 19 to 24, 42, 44, 87 to 93 (Example 11), 109 to 113 | <https://www.ato.gov.au/law/view/document?docid=TXR/TR20214/NAT/ATO/00001> | 2026-11-18; Section 6.1 and Case 18 |
+| TR 2021/1: review note only | <https://www.ato.gov.au/law/view/document?docid=TXR/TR20211/NAT/ATO/00001> | 2026-11-18; transport rules not re-audited |
+| ATO decision impact statement, Commissioner of Taxation v Hall [2026] FCAFC 43: paras 29 and 30 | <https://www.ato.gov.au/law/view/document?docid=LIT/ICD/vid779of2025-final/00001> | 2026-11-18; published 17 June 2026 |
+| TD 2026/4: paras 2 to 5, 21, 25 to 29 (Svetlana example), 39 and 52 | <https://www.ato.gov.au/law/view/document?docid=TXD/TD20264/NAT/ATO/00001> | 2026-11-18; 2026-27 only; other tables not re-read |
+| ITAA 1997 ss 900-50, 900-55, 900-145 and 900-150 | <https://www.ato.gov.au/law/view/document?docid=PAC/19970038/900-50> (and `900-55`, `900-145`, `900-150`) | 2026-11-18; Section 6.1 |
 
 ### Section 14 - Sources
 
@@ -857,6 +1146,8 @@ for 2024-25 and 2025-26. On 31 October 2026 the same page was still updated 8 Ju
 2023/1 para 26A read 70c from 1 July 2024 with no end date.
 
 Not yet confirmed: A complete page-level source/read-date audit and independent legal review of the whole guide have not been performed. The 2 November 2026 checks cover only the stated read scopes in the 21 named source rows above and arithmetic in the 13 executable cases. The newer general-deduction, denial, GST, prepayment, Division 35, personal-super notice and R&D classification checks do not establish taxpayer eligibility. Detailed gift eligibility, detailed PSI and concession gateways, other offset eligibility, contribution methods and caps and assessment components outside the stated Nadia assumptions still require reconciliation and qualified review. Cases 12 and 13 check only the stated synthetic assessment illustration; they do not establish real deductions, Medicare eligibility or an ATO refund. Other dates and qualifications retain their original scope, including statutory application dates not re-audited here. This remains a tier 2 draft pending qualified review.
+
+On 18 November 2026 the 11 source rows dated that day were read for Sections 6.1 and 8.3 and Cases 14 to 19. They do not establish the statutory basis of the Medicare levy exemption for lump sums in arrears, the MLS tax offset computation, TR 2004/6 or the reasonable amounts other than those in Case 19.
 
 <!-- openaccountants-cta-block -->
 
