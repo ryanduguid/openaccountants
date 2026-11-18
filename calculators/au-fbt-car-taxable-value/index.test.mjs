@@ -101,6 +101,11 @@ test("s 10(5): a higher operating cost value gives way to the statutory formula;
   const tie = check({ ...operatingCar, operatingCost: "40000" });
   assert.equal(tie.operatingCostValue, "8000.00");
   assert.equal(tie.method, "operating_cost");
+  // Exactly $100.004 against $100.002: both round to $100.00, but s 10(5) compares the values themselves.
+  const subCent = check({ ...operatingCar, carValue: "500.01", recipientsPayment: "0", operatingCost: "200", businessKilometres: 24999, totalKilometres: 50000 });
+  assert.equal(subCent.operatingCostValue, "100.00");
+  assert.equal(subCent.method, "statutory");
+  assert.equal(subCent.taxableValue, "100.00");
 });
 
 test("without the records ss 10A and 10B require, business use is nil", () => {

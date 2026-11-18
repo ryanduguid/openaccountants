@@ -25,11 +25,14 @@ function dayNumber(value) {
 const count = (value) => (Number.isSafeInteger(value) && value >= 0 ? value : null);
 const decimal2 = (hundredths) => `${hundredths / 100n}.${String(hundredths % 100n).padStart(2, "0")}`;
 
-// numerator / denominator cents less the payment, nil if not positive, rounded half up to the cent.
+// numerator / denominator cents less the payment, nil if not positive, as a numerator over the same denominator.
 function net(numerator, denominator, payment) {
   const excess = numerator - payment * denominator;
-  return excess <= 0n ? 0n : (2n * excess + denominator) / (2n * denominator);
+  return excess <= 0n ? 0n : excess;
 }
+
+// numerator / denominator cents rounded half up to the cent.
+const roundCents = (numerator, denominator) => (2n * numerator + denominator) / (2n * denominator);
 
 // ss 10A and 10B: true or false when every condition the reduction needs is stated, otherwise null.
 function businessUseEntitled(input) {
@@ -120,13 +123,11 @@ export function assessCarFringeBenefit(input) {
   const share = reduced ? BigInt(numerator) : BigInt(denominator);
   const baseValue = value * share + accessories * BigInt(denominator);
   if (reduced) add("base_value_reduced", "The year begins after the fourth anniversary of the earliest holding time, so the cost price or leased car value is reduced by one-third (s 9(2)(a)).");
-  const statutory = net(
-    baseValue * BigInt(rules.statutory_formula.percent) * BigInt(days),
-    BigInt(denominator) * 100n * BigInt(year.days),
-    payment,
-  );
+  const statutoryDenominator = BigInt(denominator) * 100n * BigInt(year.days);
+  const statutory = net(baseValue * BigInt(rules.statutory_formula.percent) * BigInt(days), statutoryDenominator, payment);
 
   let operating = null;
+  let operatingDenominator = 1n;
   let businessUse = null;
   if (input.method === "operating_cost") {
     const cost = cents(input.operatingCost);
@@ -144,9 +145,11 @@ export function assessCarFringeBenefit(input) {
     if (business > 0 && !entitled) add("no_business_use_reduction", "The records ss 10A and 10B require are not all held, so the business use percentage is nil.");
     const [privateKm, allKm] = entitled ? [total - business, total] : [1, 1];
     businessUse = entitled ? (BigInt(business) * 20000n + BigInt(total)) / (2n * BigInt(total)) : 0n;
-    operating = net(cost * BigInt(privateKm), BigInt(allKm), payment);
+    operatingDenominator = BigInt(allKm);
+    operating = net(cost * BigInt(privateKm), operatingDenominator, payment);
   }
-  const lowerStatutory = operating !== null && operating > statutory;
+  // s 10(5) compares the exact values, before rounding to the cent.
+  const lowerStatutory = operating !== null && operating * statutoryDenominator > statutory * operatingDenominator;
   const method = operating === null || lowerStatutory ? "statutory" : "operating_cost";
   if (lowerStatutory) add("statutory_lower", "The operating cost value exceeds the statutory formula value, so the election is treated as not made (s 10(5)).");
   add(method, method === "statutory" ? "Valued by the statutory formula (s 9)." : "Valued by the operating cost method (s 10).");
@@ -157,10 +160,10 @@ export function assessCarFringeBenefit(input) {
     reasons,
     fbtYear: input.fbtYear,
     method,
-    baseValue: decimal2(net(baseValue, BigInt(denominator), 0n)),
-    statutoryValue: decimal2(statutory),
-    operatingCostValue: operating === null ? null : decimal2(operating),
+    baseValue: decimal2(roundCents(baseValue, BigInt(denominator))),
+    statutoryValue: decimal2(roundCents(statutory, statutoryDenominator)),
+    operatingCostValue: operating === null ? null : decimal2(roundCents(operating, operatingDenominator)),
     businessUsePercentage: businessUse === null ? null : decimal2(businessUse),
-    taxableValue: decimal2(method === "statutory" ? statutory : operating),
+    taxableValue: decimal2(method === "statutory" ? roundCents(statutory, statutoryDenominator) : roundCents(operating, operatingDenominator)),
   };
 }

@@ -71,7 +71,7 @@ separate input stated as `true` or `false`; one left unstated gives no figure:
 | Operating cost method | `operatingCost` x (100% - business use percentage) - `recipientsPayment` (s 10(2)) |
 
 With `method: "operating_cost"`, a higher operating cost value gives way to the statutory formula
-(s 10(5) applies only where it 'exceeds'); a tie keeps the election.
+(s 10(5) applies only where it 'exceeds', compared before rounding); a tie keeps the election.
 
 A negative value is nil. The Act is silent: ss 9(1) and 10(2) are plain formulas with no floor.
 The nil floor follows the ATO's FBT return 2026 instructions for item 23: where contributions
