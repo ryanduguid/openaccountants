@@ -43,7 +43,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **R-AU-FBT-4 -- Airline transport, remote area housing.** *Trigger:* these benefit categories appear. *Message:* "Specialised valuation rules. Out of scope -- escalate."
 
-**R-AU-FBT-5 -- Notional and market values.** *Trigger:* a property, residual or housing value needs a notional value or market value (an arm's length price) that no document establishes: no provider's price to the public, no arm's length cost price or expenditure, no valuer's report and no comparable rents. *Message:* "An arm's length value without a market comparison is a valuation judgement. Escalate."
+**R-AU-FBT-5 -- Notional and market values.** *Trigger:* a property, residual or housing value needs a notional value or market value (an arm's length price) that no document establishes: no provider's price to the public, no arm's length cost price or expenditure, no valuer's report and no comparable rents; or the documented price or rent comes from a sale or letting whose terms, circumstances or arm's length basis are not comparable. *Message:* "An arm's length value without a market comparison is a valuation judgement. Escalate."
 
 ### Section 9 -- Onboarding fallback
 
@@ -188,7 +188,7 @@ Taxable value. Where s 31 (Australian home, first 12 months, declaration) or s 3
 1. Accommodation component and food component: the parts of the allowance the payment terms show to be for accommodation and for food or drink. If the terms do not identify them, escalate.
 2. Exempt accommodation component = the lesser of the accommodation component and the accommodation expenses the employee incurred and substantiated (s 31G; s 136(1) 'exempt accommodation component'). Unspent accommodation allowance stays taxable.
 3. Applicable statutory food total = $42 a week for each eligible family member aged 12 or more before the FBT year began and $21 a week for each younger one (s 136(1) 'statutory food amount'), reduced, never below nil, by any normal home food cost the employer already took out of the food component (s 31H(2)).
-4. Exempt food component = the lesser of (food component - applicable statutory food total) and the food expenses incurred, never below nil (s 31H). The test is what the employee spent, not the allowance: food spending at or below the reasonable amount needs no substantiation; above it, every food expense must be substantiated, not just the excess (s 31G(1)(b); employer guide 11.6). Where spending is at or below the reasonable amount and unsubstantiated, the ATO accepts that the employee spent the lesser of the food component and the reasonable amount. That is ATO administrative practice (employer guide 11.6, 'Expenditure equal to or less than the Commissioner's reasonable food amount'), not the Act, which counts only expenses incurred (s 31H(1)); record that the workpaper relies on it. No exempt food component for days the employee resumes living at home (s 31(3)), and neither reduction while the 12-month period is paused (s 31(4)).
+4. Exempt food component = the lesser of (food component - applicable statutory food total) and the food expenses incurred, never below nil (s 31H). The test is what the employee spent, not the allowance: food spending at or below the reasonable amount needs no substantiation; above it, every food expense must be substantiated, not just the excess (s 31G(1)(b); employer guide 11.6). Where spending is at or below the reasonable amount and unsubstantiated, the ATO accepts that the employee spent the lesser of the food component and the reasonable amount, on the footing that before paying the food component the employer could conclude the employee would spend on food or drink; if the evidence does not support that conclusion, escalate. That is ATO administrative practice (employer guide 11.6, 'Expenditure equal to or less than the Commissioner's reasonable food amount'), not the Act, which counts only expenses incurred (s 31H(1)); record that the workpaper relies on it. No exempt food component for days the employee resumes living at home (s 31(3)), and neither reduction while the 12-month period is paused (s 31(4)).
 5. Taxable value = allowance - exempt accommodation component - exempt food component.
 
 Sources: [FBTAA ss 30 to 31H](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1) and [s 136(1)](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2) (compilation 97, read 18 November 2026); [ATO employer guide chapter 11](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00012) (read 18 November 2026). Example 13.
@@ -223,7 +223,7 @@ Loan. A loan gives a benefit for each FBT year in which any of it is owed (s 16(
 2. Taxable value = notional interest - interest accrued on the loan for the year, never below nil (s 18).
 3. Otherwise deductible rule (s 19), only where the recipient is the employee and the employee gives a declaration in the approved form before the declaration date (not needed for an employee credit loan or employee share loan, s 19(1)(c); Rule 10 covers alternative records): GD = the once-only deduction the employee would have had for interest equal to the notional interest; RD = the deduction for the interest that accrued (nil if none); ND = GD - RD; taxable value = step 2 - ND, never below nil. Where the employer set the rate having regard to the employee's intended use of the loan, the employee's deduction for the accrued interest is limited and RD changes (employer guide 8.8, second example): escalate. A car loan, including the part of a loan used to buy a car or pay a car expense (s 19(1)(ca), (d), (2)), or a loan deemed provided to the employee alone under s 138(3) (s 19(1)(i), (5)) has its own ND: escalate.
 
-Exempt loans (s 17): a lender in the business of lending to the public at a rate no lower than its arm's length rate for a similar loan; an advance used only for employment expenses incurred and accounted for within 6 months; an advance for a rental bond or utility deposit repaid within 12 months where the accommodation benefit is exempt or relocation-reduced. A loan that Division 7A of the ITAA 1936 treats as a dividend, or that complies with it under s 109N, is not a fringe benefit (s 136(1) 'fringe benefit' paragraphs (r) and (s)): route shareholder loans through T2-6 first.
+Exempt loans (s 17), for a lender whose business includes lending to the public: a fixed rate, specified in a document when the loan was made and not variable, no lower than its rate for a similar arm's length loan to the public at or about that time (s 17(1)); or, year by year, a rate that throughout the FBT year was no lower than the rate applying at that time to a similar arm's length loan the lender made to the public at or about the time it made this loan (s 17(2)), so a variable-rate loan needs its rate history against the lender's public rates for each year claimed, and any period below them leaves that year's benefit taxable. Also exempt: an advance used only for employment expenses incurred and accounted for within 6 months; an advance for a rental bond or utility deposit repaid within 12 months where the accommodation benefit is exempt or relocation-reduced. A loan that Division 7A of the ITAA 1936 treats as a dividend, or that complies with it under s 109N, is not a fringe benefit (s 136(1) 'fringe benefit' paragraphs (r) and (s)): route shareholder loans through T2-6 first.
 
 Debt waiver. Waiving an employee's obligation to pay or repay an amount is a debt waiver benefit (s 14). Taxable value = the whole amount waived, principal and interest (s 15; employer guide 8.2). No contribution or otherwise deductible reduction applies. A genuine bad debt written off for reasons unrelated to employment is not a benefit (employer guide 8.1); that judgement goes to the reviewer. A waiver that Division 7A treats as a dividend is not a fringe benefit (paragraph (r)).
 
@@ -242,13 +242,13 @@ Classify first. A property benefit is in-house where the property is tangible an
 | In-house property the provider made, identical goods sold to the public but not to manufacturers, wholesalers or retailers | 75% of the lowest price to the public at or about the time, on identical terms other than price | s 42(1)(a)(ii) |
 | In-house property the provider bought for resale | The lesser of its arm's length cost price and its notional value | s 42(1)(b), (2) |
 | Other in-house property | 75% of the notional value | s 42(1)(a)(iii), (c) |
-| In-house residual, identical benefits sold to the public | 75% of the lowest price to the public; for a period benefit, the price for the current year's part | ss 48(a), 49(a) |
+| In-house residual, identical benefits sold to the public at arm's length at or about the time, in similar circumstances and on identical terms other than price | 75% of the lowest price to the public; for a period benefit, the price for the current year's part | ss 48(a), 49(a) |
 | In-house residual, no identical public benefit | 75% of the notional value | ss 48(b), 49(b) |
 | External, the employer or an associate bought it at arm's length (property: at or about the provision time) | The amount it paid; a period residual benefit takes the amount for the current year | ss 43(a), 50(a), 51(a) |
 | External, a third party provided it and the employer or an associate paid them at arm's length | That expenditure | ss 43(b), 50(b), 51(b) |
 | External, otherwise | The notional value | ss 43(c), 50(c), 51(c) |
 
-Airline transport benefits (ss 42(1)(ab), 48(ab), 49(ab)) go to R-AU-FBT-4. Notional value is what the recipient could reasonably be expected to pay the provider at arm's length (s 136(1)): take it from the provider's own price to the public at the time, or escalate under R-AU-FBT-5. Then:
+Airline transport benefits (ss 42(1)(ab), 48(ab), 49(ab)) go to R-AU-FBT-4. Notional value is what the recipient could reasonably be expected to pay the provider at arm's length (s 136(1)): take it from the provider's own price to the public at the time, or escalate under R-AU-FBT-5. A public price sets a value only for a sale at arm's length, at or about the time, in similar circumstances and on identical terms other than price (ss 42(1)(a)(ii), 48(a), 49(a)); where the terms, circumstances or arm's length basis differ or are unclear, escalate under R-AU-FBT-5. Then:
 
 1. Subtract the recipient's contribution (consideration the recipient or employee paid for it, less any reimbursement of it, s 136(1)), never below nil.
 2. Otherwise deductible rule (ss 44, 52), only where the recipient is the employee and a declaration in the approved form is held before the declaration date (none is needed for an exclusive employee property or residual benefit or one covered by a recurring fringe benefit declaration, ss 44(1)(c), 52(1)(c); Rule 10 covers alternative records): GD = the once-only deduction the employee would have had for spending the value before contribution; RD = the deduction for the contribution (nil if none); reduce the value by GD - RD, never below nil. Car property or car residual benefits and extended travel benefits need car substantiation or a travel diary: escalate.
@@ -280,7 +280,15 @@ Sources: [FBTAA Division 6](https://www.legislation.gov.au/C2004A03280/2026-07-0
 
 #### Rule 17 -- Board benefits (Division 9)
 
-A board meal is a meal the employer (or a related company) provides to the employee or an associate on a meal entitlement day (a day they are entitled to residential accommodation and to at least 2 meals under an industrial instrument or arrangement), cooked and served on the employer's eligible premises or in an eligible dining facility, and not at a party, reception or other social function (s 35; s 136(1) 'board meal', 'meal entitlement day').
+A board meal needs every one of these, each shown by the employment terms, the arrangement or the premises (s 35; s 136(1) 'board meal', 'meal entitlement day'):
+
+- **Meal entitlement day.** On that day the recipient (the employee or an associate) was entitled to residential accommodation and to at least 2 meals, either under an industrial instrument or under an arrangement that also entitled them to at least 2 meals on each working day of the arrangement period and under which they were ordinarily given at least 2 meals on those days.
+- **Provider.** The employer, or for a company employer a related company.
+- **Where it is made and served.** Either cooked or prepared on the employer's eligible premises and provided there, not in a dining facility that is at any time open to the public; or, for an employee whose duties are principally performed in or in connection with the employer's eligible dining facility (or the accommodation, recreation or travel facility it is part of), cooked in that facility's kitchen and provided in it.
+- **Not a private kitchen.** The facility where it is prepared is not used wholly or principally to prepare meals solely for the employee or the employee's associates.
+- **Not a function.** It is not provided at a party, reception or other social function.
+
+Where any condition is unclear on the evidence, escalate; a meal that fails one may be a property or tax-exempt body entertainment benefit instead (employer guide 13.4).
 
 1. Taxable value of each meal = $2.00 for a recipient who turned 12 before the FBT year began, otherwise $1.00 (s 36), less the recipient's contribution for that meal, never below nil.
 2. Otherwise deductible rule (s 37), employee recipients only: reduce by GD - RD, where GD is the s 8-1 ITAA 1997 deduction for spending the value before contribution and RD the deduction for the contribution.
@@ -815,6 +823,18 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 **Test 15:** Housing right in its first year, market rent $5,200 for a 121-day tenancy in the year ending 31 March 2027. -> Statutory annual value $15,685.95; taxable value $5,200.00 before rent ($15,685.95 x 121 / 365).
 
 **Test 16:** Board meal to a child who turned 12 on 15 April 2026. -> $1.00 for the year ending 31 March 2027 (12 not reached before 1 April 2026).
+
+**Test 17:** Meal served to a live-in employee in the employer's staff canteen, which is also open to the public. -> Not a board meal (s 136(1) 'board meal' (c)(i)); do not use $2 or $1; escalate.
+
+**Test 18:** In-house residual benefit valued from a public price list whose public sales carry a different term (for example a 24-month contract against the employee's month-to-month use). -> No s 48(a) or 49(a) value from that price; escalate (R-AU-FBT-5).
+
+**Test 19:** LAFHA food component paid with no basis for concluding the employee would spend on food, and no food receipts. -> The ATO's deemed-spending practice does not apply; escalate.
+
+**Test 20:** Staff loan from a bank employer at a variable rate that sat below the bank's public rate for 2 months of the FBT year. -> Not exempt under s 17(2) for that year; value under Rule 14.
+
+**Test 21:** Loan balance owed throughout the FBT year ending 31 March 2028 (366 days). -> Day count not settled by the Act; send to the reviewer (Rule 14).
+
+**Test 22:** Spaces election with daily rate amounts by the average cost method, where the lowest fee on the first benefit day was a one-day promotion well below the 4-week average. -> Fee not representative, election of no effect (ss 39AB, 39FA(5)); escalate (R-AU-FBT-3).
 
 ## Sources
 
