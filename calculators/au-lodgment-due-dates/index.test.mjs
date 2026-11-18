@@ -8,6 +8,8 @@ const check = (input) => assessActivityStatementDueDate(input);
 const dates = ["form", "period", "rule", "nominalDueDate", "dueDate", "holidaysPassed"];
 const weekday = (iso) => new Date(`${iso}T00:00:00Z`).getUTCDay();
 const next = (iso) => new Date(Date.parse(`${iso}T00:00:00Z`) + 86400000).toISOString().slice(0, 10);
+const decemberAgent = { form: "monthly", period: "2026-12", concession: "agent" };
+const eligibleDecember = { ...decemberAgent, turnoverUpTo10Million: true, reportsGstMonthly: true, deferredGst: false };
 
 test("au-lodgment-deadlines-penalties: 28 February 2027 passes Sunday and WA Labour Day to 2 March", () => {
   const result = check({ form: "quarterly", period: "2026-12" });
@@ -50,7 +52,7 @@ for (const [form, period, concession, rule, nominalDueDate, dueDate] of [
   ["head_company_payg_instalment", "2027-03", "none", "original", "2027-04-21", "2027-04-21"],
 ]) {
   test(`${form} ${period}, concession ${concession}: due ${dueDate}`, () => {
-    const result = check({ form, period, concession });
+    const result = check({ ...eligibleDecember, form, period, concession });
     assert.equal(result.verdict, "due_date_calculated");
     assert.equal(result.rule, rule);
     assert.equal(result.nominalDueDate, nominalDueDate);
@@ -62,6 +64,46 @@ for (const [form, period, concession, rule, nominalDueDate, dueDate] of [
     assert.doesNotThrow(() => JSON.stringify(result));
   });
 }
+
+test("the December agent date needs each of its conditions stated", () => {
+  for (const conditions of [{}, { turnoverUpTo10Million: true, reportsGstMonthly: true }, { turnoverUpTo10Million: "yes", reportsGstMonthly: true, deferredGst: false }]) {
+    const result = check({ ...decemberAgent, ...conditions });
+    assert.equal(result.verdict, "unknown");
+    assert.deepEqual(result.reason_codes, ["december_agent_conditions"]);
+    assert.equal(result.dueDate, null);
+  }
+});
+
+for (const [condition, value] of [["turnoverUpTo10Million", false], ["reportsGstMonthly", false], ["deferredGst", true]]) {
+  test(`no 21 February date for a December monthly statement when ${condition} is ${value}`, () => {
+    const result = check({ ...eligibleDecember, [condition]: value });
+    assert.equal(result.rule, "original");
+    assert.equal(result.dueDate, "2027-01-21");
+    assert.equal(result.reason_codes[0], "concession_not_applicable");
+  });
+}
+
+test("no covered statement is due on, or moves across, a day the law and the ATO's tables treat differently", () => {
+  const contested = new Set(["2026-09-28", "2026-11-03", "2026-12-24", "2026-12-31"]);
+  const periods = [];
+  for (let day = Date.UTC(2025, 11, 1); day <= Date.UTC(2027, 5, 1); day = Date.UTC(new Date(day).getUTCFullYear(), new Date(day).getUTCMonth() + 1, 1)) {
+    periods.push(new Date(day).toISOString().slice(0, 7));
+  }
+  let calculated = 0;
+  for (const form of ["monthly", "quarterly", "head_company_payg_instalment"]) {
+    for (const period of periods) {
+      for (const concession of ["none", "online", "agent"]) {
+        const result = check({ ...eligibleDecember, form, period, concession });
+        if (result.verdict !== "due_date_calculated") continue;
+        calculated += 1;
+        for (const day = new Date(`${result.nominalDueDate}T00:00:00Z`); day.toISOString().slice(0, 10) <= result.dueDate; day.setUTCDate(day.getUTCDate() + 1)) {
+          assert.ok(!contested.has(day.toISOString().slice(0, 10)), `${form} ${period} ${concession}`);
+        }
+      }
+    }
+  }
+  assert.equal(calculated, 60);
+});
 
 test("an omitted concession is none", () => {
   assert.deepEqual(check({ form: "quarterly", period: "2026-09" }), check({ form: "quarterly", period: "2026-09", concession: "none" }));
@@ -120,7 +162,7 @@ test("the ATO's list is the Payday Super whole-state calendar plus 3 days the AT
 const refusals = [
   ["a monthly period before the span", { form: "monthly", period: "2026-05" }, "outside_program_year"],
   ["the June 2027 monthly statement", { form: "monthly", period: "2027-06" }, "outside_program_year"],
-  ["a December 2025 agent date before the span", { form: "monthly", period: "2025-12", concession: "agent" }, "outside_program_year"],
+  ["a December 2025 agent date before the span", { ...eligibleDecember, period: "2025-12" }, "outside_program_year"],
   ["quarter 3 2025-26", { form: "quarterly", period: "2026-03" }, "outside_program_year"],
   ["quarter 3 2025-26 through an agent", { form: "quarterly", period: "2026-03", concession: "agent" }, "outside_program_year"],
   ["quarter 4 2026-27", { form: "quarterly", period: "2027-06" }, "outside_program_year"],

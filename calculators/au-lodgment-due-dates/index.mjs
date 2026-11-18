@@ -9,6 +9,7 @@ const msPerDay = 86400000;
 const periodPattern = /^(\d{4})-(0[1-9]|1[0-2])$/;
 const forms = new Set(["monthly", "quarterly", "head_company_payg_instalment"]);
 const concessions = new Set(["none", "online", "agent"]);
+const decemberConditions = ["turnoverUpTo10Million", "reportsGstMonthly", "deferredGst"];
 
 const dayNumber = (iso) => Date.parse(`${iso}T00:00:00Z`) / msPerDay;
 const ymd = (year, month, day) => Date.UTC(year, month - 1, day) / msPerDay;
@@ -25,16 +26,18 @@ function businessDayFrom(day) {
 }
 
 // The date the law or the 2026-27 program names, before any move, and the rule that names it.
-function nominal(form, year, month, concession) {
+function nominal(form, year, month, concession, decemberEligible) {
   if (form === "monthly") {
-    if (month === 12 && concession === "agent") {
+    if (month === 12 && concession === "agent" && decemberEligible) {
       const { month: dueMonth, day } = rules.monthly.december_agent;
       return { rule: "december_agent", day: ymd(year + 1, dueMonth, day) };
     }
     const notApplicable = {
       none: null,
       online: "The 2-week online concession does not apply to monthly activity statements.",
-      agent: "The agent program gives a monthly activity statement a later date only for December.",
+      agent: month === 12
+        ? "The 21 February date needs up to $10 million annual turnover, monthly GST reporting and no deferred GST registration."
+        : "The agent program gives a monthly activity statement a later date only for December.",
     }[concession];
     return { rule: "original", day: ymd(year, month + 1, rules.monthly.due_day), notApplicable };
   }
@@ -64,6 +67,10 @@ function nominal(form, year, month, concession) {
  * @param {string} input.period "YYYY-MM": the month, or the last month of a standard quarter.
  * @param {"none"|"online"|"agent"} [input.concession] Caller-attested eligibility for the 2-week
  *   online concession or the registered agent program date; omitted means none.
+ * @param {boolean} [input.turnoverUpTo10Million] Required for a December monthly statement with
+ *   concession "agent", as are the next 2: annual turnover is up to $10 million.
+ * @param {boolean} [input.reportsGstMonthly] GST is reported monthly.
+ * @param {boolean} [input.deferredGst] The business is registered for deferred GST.
  * @returns {object} JSON-safe result; dates are "YYYY-MM-DD" strings or null.
  */
 export function assessActivityStatementDueDate(input) {
@@ -97,7 +104,12 @@ export function assessActivityStatementDueDate(input) {
   if (input.form !== "monthly" && month % 3 !== 0) {
     return stop("refused", "non_standard_quarter", "A quarter must end in March, June, September or December; substituted accounting periods are outside scope.");
   }
-  const named = nominal(input.form, year, month, concession);
+  const decemberAgent = input.form === "monthly" && month === 12 && concession === "agent";
+  if (decemberAgent && !decemberConditions.every((key) => typeof input[key] === "boolean")) {
+    return stop("unknown", "december_agent_conditions", "For the December agent date, state turnoverUpTo10Million, reportsGstMonthly and deferredGst as true or false.");
+  }
+  const decemberEligible = decemberAgent && input.turnoverUpTo10Million && input.reportsGstMonthly && !input.deferredGst;
+  const named = nominal(input.form, year, month, concession, decemberEligible);
   const outside = () => stop("refused", "outside_program_year", `This calculator covers due dates from ${rules.coverage.due_from} to ${rules.coverage.due_until}, the span of the ATO's ${rules.program_year} public holiday tables.`);
   // An agent quarter is placed by its original date, so an unlisted quarter outside the span is refused as such.
   const anchor = named.originalDay ?? named.day;

@@ -25,6 +25,7 @@ const result = assessActivityStatementDueDate({ form: "quarterly", period: "2026
 | `form` | `monthly`, `quarterly`, or `head_company_payg_instalment` for a consolidated group head company's quarterly PAYG instalment activity statement |
 | `period` | `YYYY-MM`: the calendar month, or the last month of a standard quarter (March, June, September or December) |
 | `concession` | Optional: `none` (the default), `online` or `agent`. The caller's attestation that the statement qualifies; not verified |
+| `turnoverUpTo10Million`, `reportsGstMonthly`, `deferredGst` | Booleans, required for a December monthly statement with `agent` and ignored otherwise: annual turnover is up to $10 million, GST is reported monthly, the business is registered for deferred GST |
 
 `online` claims the 2-week concession for a quarterly activity statement received and lodged
 online. It excludes monthly statements, monthly GST payers with quarterly roles, head companies'
@@ -35,8 +36,10 @@ instalment notices.
 Online services for agents or the Practitioner lodgment service after the client's previous
 statement was lodged electronically. For a quarterly statement it excludes one with a monthly PAYG
 instalment obligation, a consolidated head entity's PAYG instalment statement, a monthly GST
-cycle and instalment notices. For a December monthly business activity statement it requires up
-to $10 million annual turnover, monthly GST reporting and no deferred GST registration.
+cycle and instalment notices. For a December monthly business activity statement the 21 February
+date also requires up to $10 million annual turnover, monthly GST reporting and no deferred GST
+registration: each must be stated, or the result is `unknown` with no date, and one that is not
+met returns 21 January.
 
 Where a claimed concession gives that form or period no later date, the original date is returned
 with the reason code `concession_not_applicable`. Omitting a concession can only make the result
@@ -57,7 +60,8 @@ list is the ATO's tables for the 2026-27 program, including the Melbourne Cup an
 and New Year's Eve evening holidays the ATO applies. One row is left out: the tables give 28
 September 2026 both as the first business day after 25 September and as WA's King's Birthday, and
 that day was not a holiday in Karratha or Port Hedland. [rules.json](rules.json) records each row,
-the ATO's first business day for it and the reason for the exclusion.
+the ATO's first business day for it and the reason for the exclusion. No covered statement is due
+on, or moves across, any of these 4 days; a test checks every covered result.
 
 `nominalDueDate` is the date the law or program names, `dueDate` the date after any move, `rule`
 which date applied (`original`, `online_concession`, `agent_program` or `december_agent`) and
@@ -67,8 +71,12 @@ which date applied (`original`, `online_concession`, `agent_program` or `decembe
 
 Results include the verdict, reason codes, reasons, the program year, the covered span, sources
 and limits. `unknown` and `refused` results contain **no date**. Refused: a quarter that does not
-end in March, June, September or December; any date outside 1 July 2026 to 30 June 2027, so the
-June 2027 monthly and quarter 4 2026-27 statements (whose agent date the ATO has not confirmed).
+end in March, June, September or December; any date outside 1 July 2026 to 30 June 2027, which
+includes the June 2027 monthly and quarter 4 2026-27 statements (the ATO has not confirmed the
+agent date for quarter 4).
+
+A large withholder pays withheld amounts earlier than the 21st (TAA 1953 Sch 1 s 16-75(1)), and a
+deferred BAS payer's later dates (ss 16-75(2A) and 45-61(2)) are not applied.
 
 Out of scope: annual GST returns, instalment notices (forms N, R, S and T), deferred GST,
 substituted accounting periods, tax periods that are not calendar months or standard quarters,
