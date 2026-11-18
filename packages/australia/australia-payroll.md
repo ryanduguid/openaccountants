@@ -107,8 +107,8 @@ For payments made from 1 July 2026 (2026-27), use Schedule 5 of the [Taxation Ad
 - **Method A:** (1) gross earnings for the current pay without additional payments, ignoring cents; (2) withholding on (1) from the regular table; (3) the pay's additional payments divided by 52, 26 or 12, ignoring cents (a commission or bonus for a defined period under 12 months may use that period's number of pays instead); (4) (1) plus (3); (5) withholding on (4); (6) (5) less (2); (7) (6) times the number of pays used at (3); (8) 47% of the additional payment; (9) the lesser of (7) and (8), ignoring cents; (10) total withholding is (2) plus (9). Case 3 and Case 4 work it.
 - **Method B(ii):** (1) average total earnings: this year's normal earnings to date, including the current pay and any back payments withheld under Method B(i), divided by the pays to date, ignoring cents; (2) withholding on (1); (3) this year's earlier Method B(ii) additional payments plus the current one, divided by 52, 26 or 12, ignoring cents; (4) (1) plus (3); (5) withholding on (4); (6) (5) less (2); (7) (6) times 52, 26 or 12; (8) (7) less the withholding already taken from this year's earlier Method B(ii) payments; (9) 47% of the current additional payment; (10) the lesser of (8) and (9), ignoring cents; (11) withholding on the current pay's gross earnings without additional payments; (12) total withholding is (10) plus (11). Case 5 works it.
 - **Withholding limit and study loans:** Under Methods A and B(ii), withholding on the additional payment, including any study and training support loan component, is limited to 47% of that payment; the limit does not reach normal earnings. Work out the STSL component by the same method with Schedule 8 and compare the combined amount with the limit. The limit can leave a payee under-withheld for the year; the payee can agree an upward variation with the payer.
-- **Pay counts and variations:** Use 52, 26 or 12 pays with no adjustment for a 53-week or 27-fortnight year, and ignore leave without pay at step (3). Where a withholding variation in force this year specifies the income, use the varied rate; otherwise use Schedule 5. A variation that has ended by the payment date does not apply.
-- **STP reporting of back pay:** Report each lump sum accrued more than 12 months before the payment date, gross and including allowances, as lump sum E, with the financial year it relates to. The former $1,200 lump sum E threshold no longer applies from 1 July 2025. Report other back pay as its own payment type, such as gross, allowances or overtime. For payment summaries, the ATO apportions a payment that accrued on both sides of the 12 months.  _([ATO, Back payment reporting](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/back-payment-reporting))_
+- **Pay counts and variations:** Use 52, 26 or 12 pays with no adjustment for a 53-week or 27-fortnight year. Leave without pay does not change any step: step (3) still divides by 52, 26 or 12. Where a withholding variation in force this year specifies the income, use the varied rate; otherwise use Schedule 5. A variation that has ended by the payment date does not apply.
+- **STP reporting of back pay:** Report each lump sum accrued more than 12 months before the payment date, gross and including allowances, as lump sum E, with the financial year it relates to. The former $1,200 lump sum E threshold no longer applies from 1 July 2025. Report other back pay as its own payment type, such as gross, allowances or overtime. On a payment summary, apportion a payment that accrued on both sides of the 12 months and report each part under its rule.  _([ATO, Back payment reporting](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/back-payment-reporting))_
 
 #### Seniors and Pensioners (Schedule 9)
 
@@ -187,7 +187,7 @@ The SG formulas, contribution base, SG shortfall percentage and worked SG amount
 | Payment deadline | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
 | Eligible employees | Assess SGAA eligibility. An under-18 employee must work more than 30 actual hours in the week; exactly 30 does not qualify |
 
-**Choose QE before applying the rate.** From 1 July 2026, include all commissions, including those for work entirely outside ordinary hours. Include salary sacrificed to super if it would otherwise have been QE and the payments expressly included for extended employees. Count overlapping categories once. Ordinary overtime outside QE is different from an outside-hours commission; do not exclude both merely because they arise outside ordinary hours. Salary sacrifice to super does not satisfy employer SG. Check statutory exclusions and the annual base before calculating; unknown classifications or YTD records mean Needs Input. See Rule 1 in [au-super-guarantee](au-super-guarantee.md), [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2026C00272/latest/text) and [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings).
+**Choose QE before applying the rate.** From 1 July 2026, include all commissions, including those for work entirely outside ordinary hours. Include salary sacrificed to super if it would otherwise have been QE and the payments expressly included for extended employees. Count overlapping categories once. Ordinary overtime outside QE is different from an outside-hours commission; do not exclude both merely because they arise outside ordinary hours. Salary sacrifice to super does not satisfy employer SG. Check statutory exclusions and the annual base before calculating; unknown classifications or YTD records mean Needs Input. See Rule 1 in [au-super-guarantee](au-super-guarantee.md), [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2004A04402/2026-07-01/text) and [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings).
 
 - **SG under-18 hours test** — An under-18 employee must work more than 30 actual hours in the week to qualify for SG; exactly 30 does not qualify. Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
 
@@ -439,7 +439,7 @@ The final compulsory repayment is a separate annual calculation. Repayment incom
 
 ### Case 1 -- Commissions outside ordinary hours remain in QE
 
-Eligible adult common-law employee, general schedule, 2026-27, below the annual base, with no exemption certificate or higher award/agreement obligation. The payroll record separately identifies ordinary earnings of $2,000 before a $500 sacrifice to super, $400 genuine overtime outside OTE and $300 commission for work entirely outside ordinary hours. The worker is not in an extended employee category that brings the overtime into QE, and no statutory exclusion affects the other amounts. Cash earnings before withholding are $2,200, but QE is $2,300: exclude the specified overtime, include the commission and retain the sacrificed ordinary earnings. Employer SG is $276 in addition to the $500 sacrifice. Excluding the commission would understate SG by $36. This case does not calculate PAYG withholding, net pay or payroll tax. [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2026C00272/latest/text).
+Eligible adult common-law employee, general schedule, 2026-27, below the annual base, with no exemption certificate or higher award/agreement obligation. The payroll record separately identifies ordinary earnings of $2,000 before a $500 sacrifice to super, $400 genuine overtime outside OTE and $300 commission for work entirely outside ordinary hours. The worker is not in an extended employee category that brings the overtime into QE, and no statutory exclusion affects the other amounts. Cash earnings before withholding are $2,200, but QE is $2,300: exclude the specified overtime, include the commission and retain the sacrificed ordinary earnings. Employer SG is $276 in addition to the $500 sacrifice. Excluding the commission would understate SG by $36. This case does not calculate PAYG withholding, net pay or payroll tax. [ATO qualifying earnings](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings); [SGAA ss 10A and 18A](https://www.legislation.gov.au/C2004A04402/2026-07-01/text).
 
 ```oa-check
 name: Payroll commission outside ordinary hours and salary sacrifice 2026-27
@@ -512,8 +512,12 @@ inputs:
   gross_earnings: 1400
   bonus: 900
   pays_in_year: 52
+  s1_from: 1282
+  s1_below: 2596
   s1_a: 0.3200
   s1_b: 181.7319
+  s8_from: 1337
+  s8_below: 2494
   s8_a: 0.15
   s8_b: 200.5615
   limit_percent: 47
@@ -523,6 +527,8 @@ steps:
   - help_normal: round(s8_a * x_normal - s8_b)
   - bonus_share: floor(bonus / pays_in_year)
   - x_with_share: floor(gross_earnings) + bonus_share + 0.99
+  - s1_band_miss: abs(x_normal - clamp(x_normal, s1_from, s1_below - 0.01)) + abs(x_with_share - clamp(x_with_share, s1_from, s1_below - 0.01))
+  - s8_band_miss: abs(x_normal - clamp(x_normal, s8_from, s8_below - 0.01)) + abs(x_with_share - clamp(x_with_share, s8_from, s8_below - 0.01))
   - paygw_with_share: round(s1_a * x_with_share - s1_b)
   - help_with_share: round(s8_a * x_with_share - s8_b)
   - paygw_on_bonus: (paygw_with_share - paygw_normal) * pays_in_year
@@ -531,6 +537,8 @@ steps:
   - withholding_on_bonus: floor(max(0, min(paygw_on_bonus + help_on_bonus, bonus_limit)))
   - total_withholding: paygw_normal + help_normal + withholding_on_bonus
 expected:
+  s1_band_miss: 0
+  s8_band_miss: 0
   paygw_normal: 267
   help_normal: 10
   bonus_share: 17
@@ -554,8 +562,10 @@ inputs:
   gross_earnings: 4000
   bonus: 5200
   pays_in_year: 52
+  s1_from: 3653
   s1_a: 0.4700
   s1_b: 655.7704
+  s8_from: 3577
   s8_a: 0.10
   s8_b: 0
   limit_percent: 47
@@ -565,6 +575,8 @@ steps:
   - help_normal: round(s8_a * x_normal - s8_b)
   - bonus_share: floor(bonus / pays_in_year)
   - x_with_share: floor(gross_earnings) + bonus_share + 0.99
+  - s1_band_miss: max(0, s1_from - x_normal) + max(0, s1_from - x_with_share)
+  - s8_band_miss: max(0, s8_from - x_normal) + max(0, s8_from - x_with_share)
   - paygw_with_share: round(s1_a * x_with_share - s1_b)
   - help_with_share: round(s8_a * x_with_share - s8_b)
   - combined_on_bonus: (paygw_with_share - paygw_normal + help_with_share - help_normal) * pays_in_year
@@ -572,6 +584,8 @@ steps:
   - withholding_on_bonus: floor(max(0, min(combined_on_bonus, bonus_limit)))
   - total_withholding: paygw_normal + help_normal + withholding_on_bonus
 expected:
+  s1_band_miss: 0
+  s8_band_miss: 0
   paygw_normal: 1225
   help_normal: 400
   paygw_with_share: 1272
@@ -584,7 +598,7 @@ expected:
 
 ### Case 5 -- Lump sum in arrears by Schedule 5 Method B(ii)
 
-This is the ATO's Schedule 5 Example 3 for payments from 1 July 2026 (2026-27). An employee claiming the tax-free threshold (scale 2) is paid $1,800 a fortnight. A remote area allowance of $2,480 for 6 months worked in 2024 was missed and is paid as a lump sum in arrears on 10 November 2026, with pay 10 of the year; normal earnings to date are $18,000 including that pay, and no earlier Method B(ii) payment was made this year. Method B(ii) applies because the back payment relates to a prior financial year. The fortnightly x values ($900.99 and $947.99) fall in the scale 2 band from $865 to under $1,282 (a = 0.3227, b = 185.1935). Withholding on the arrears is $780, under the 47% limit of $1,165, and the pay's total is $992. Because the allowance accrued more than 12 months before the payment date, STP reports it as lump sum E with the financial year it relates to; the example does not give the months, so take the year or years from the allowance records. Sources: Instrument 2026 Schs 1 and 5; [ATO Schedule 5 examples](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/withholding-amounts-examples); [ATO back payment reporting](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/back-payment-reporting).
+This is the ATO's Schedule 5 Example 3 for payments from 1 July 2026 (2026-27). An employee claiming the tax-free threshold (scale 2) is paid $1,800 a fortnight. A remote area allowance of $2,480 for 6 months worked in 2024 was missed and is paid as a lump sum in arrears on 10 November 2026, with pay 10 of the year; normal earnings to date are $18,000 including that pay, and no earlier Method B(ii) payment was made this year. Method B(ii) applies because the back payment relates to a prior financial year. The weekly-equivalent x values ($900.99 and $947.99) fall in the scale 2 band from $865 to under $1,282 (a = 0.3227, b = 185.1935). Withholding on the arrears is $780, under the 47% limit of $1,165, and the pay's total is $992. Because the allowance accrued more than 12 months before the payment date, STP reports it as lump sum E with the financial year it relates to; the example does not give the months, so take the year or years from the allowance records. Sources: Instrument 2026 Schs 1 and 5; [ATO Schedule 5 examples](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/withholding-amounts-examples); [ATO back payment reporting](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/back-payment-reporting).
 
 ```oa-check
 name: Schedule 5 Method B(ii) lump sum in arrears, ATO Example 3, 2026-27
@@ -597,6 +611,8 @@ inputs:
   earlier_bii_payments: 0
   earlier_bii_withholding: 0
   pays_in_year: 26
+  s1_from: 865
+  s1_below: 1282
   s1_a: 0.3227
   s1_b: 185.1935
   limit_percent: 47
@@ -613,8 +629,10 @@ steps:
   - withholding_on_arrears: floor(max(0, min(after_earlier_withholding, arrears_limit)))
   - x_current: floor(current_gross / 2) + 0.99
   - paygw_current: round(s1_a * x_current - s1_b) * 2
+  - s1_band_miss: abs(x_average - clamp(x_average, s1_from, s1_below - 0.01)) + abs(x_with_share - clamp(x_with_share, s1_from, s1_below - 0.01)) + abs(x_current - clamp(x_current, s1_from, s1_below - 0.01))
   - total_withholding: withholding_on_arrears + paygw_current
 expected:
+  s1_band_miss: 0
   average_total_earnings: 1800
   paygw_average: 212
   additional_share: 95
@@ -636,10 +654,16 @@ tolerance: 0.000001
 inputs:
   weekly_earnings: 662.95
   fortnightly_earnings: 1325.90
+  single_from: 648
+  single_below: 692
   single_a: 0.1500
   single_b: 97.2308
+  illness_separated_from: 623
+  illness_separated_below: 668
   illness_separated_a: 0.1500
   illness_separated_b: 93.5769
+  couple_from: 612
+  couple_below: 721
   couple_a: 0.2750
   couple_b: 161.7091
 steps:
@@ -649,7 +673,9 @@ steps:
   - couple: round(couple_a * x - couple_b)
   - x_fortnightly: floor(fortnightly_earnings / 2) + 0.99
   - single_fortnightly: round(single_a * x_fortnightly - single_b) * 2
+  - band_miss: abs(x - clamp(x, single_from, single_below - 0.01)) + abs(x_fortnightly - clamp(x_fortnightly, single_from, single_below - 0.01)) + abs(x - clamp(x, illness_separated_from, illness_separated_below - 0.01)) + abs(x - clamp(x, couple_from, couple_below - 0.01))
 expected:
+  band_miss: 0
   x: 662.99
   single: 2
   illness_separated: 6
@@ -677,7 +703,7 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 
 | Source | URL | Read on |
 |---|---|---|
-| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A, 18A and 18C | <https://www.legislation.gov.au/C2026C00272/latest/text> | 2026-11-02; QE categories, annual base, sacrificed contributions and selected deadline extensions |
+| SGAA 1992, compilation 78 (C2026C00272), selected ss 10A, 18A and 18C | <https://www.legislation.gov.au/C2004A04402/2026-07-01/text> | 2026-11-02; QE categories, annual base, sacrificed contributions and selected deadline extensions |
 | ATO qualifying earnings | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/what-payments-are-qualifying-earnings> | 2026-11-02; selected QE categories, double counting and salary sacrifice sections |
 | ATO payday deadlines | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super> | 2026-11-02; selected fund receipt, business-day and extension rules |
 | Medicare Levy Act 1986, compilation 53 (C2026C00295): selected s 3 and ss 6-8, including the s 8(2) formula | <https://www.legislation.gov.au/C2026C00295/latest/text> | 2026-11-02; only the ordinary family-threshold summary rechecked here |
@@ -730,7 +756,7 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 - [Fair Work Commission](https://fwc.gov.au/work-conditions/minimum-wages-and-conditions/national-minimum-wage): national minimum wage; determine any applicable award/agreement separately.
 - [Services Australia](https://www.servicesaustralia.gov.au/paid-parental-leave-scheme-changes): Parental Leave Pay days depend on the birth/adoption date. Check eligibility and the separate government-funded super payment.
 
-Six executable cases cover selected SG payroll calculations, fund receipt reconciliation, Schedule 5 Methods A and B(ii) and Schedule 9. The Schedule 5 and 9 cases take the coefficients of the bands they name as inputs, so they do not check band selection, other bands, Method B(i), scales 4 to 9, net pay, awards, leave, state payroll tax or the other obligations in this guide.
+Six executable cases cover selected SG payroll calculations, fund receipt reconciliation, Schedule 5 Methods A and B(ii) and Schedule 9. The Schedule 5 and 9 cases take each band's bounds and coefficients as inputs and fail if an x value falls outside its band; they do not check that the coefficients belong to those bounds (compare them with the instrument), other bands, Method B(i), scales 4 to 9, net pay, awards, leave, state payroll tax or the other obligations in this guide.
 
 Not yet confirmed: a complete page-level source/read-date audit and independent legal review of the whole guide. Existing dates and qualifications retain their original scope.
 
