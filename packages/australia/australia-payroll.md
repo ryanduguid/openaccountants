@@ -9,26 +9,28 @@ description: >
   "HECS-HELP", "STSL", "Fair Work", "NES", "national employment standards",
   "modern award", "payslip Australia", "ATO payroll", "BAS", "IAS",
   "activity statement", "annual leave", "long service leave",
-  "minimum wage Australia", or any question about running payroll in Australia.
+  "minimum wage Australia", "back pay", "bonus withholding", "Schedule 5",
+  "Schedule 9", "seniors and pensioners", "underpayment", or any question about
+  running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.10
+version: 2.11
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-11-11
+last_updated: 2026-11-18
 review_status: pending_review
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.10
+# Australia -- Payroll Skill v2.11
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-> Use this skill whenever asked about Australian payroll, PAYG withholding, superannuation guarantee, Single Touch Payroll, or employer obligations in Australia. Trigger on phrases like "PAYG", "pay as you go withholding", "superannuation", "super guarantee", "STP", "Single Touch Payroll", "STP Phase 2", "Medicare levy", "tax file number", "TFN declaration", "HECS-HELP", "STSL", "Fair Work", "NES", "national employment standards", "modern award", "payslip Australia", "ATO payroll", "BAS", "IAS", "activity statement", "annual leave", "long service leave", "minimum wage Australia", or any question about running payroll in Australia. ALWAYS read this skill before processing any Australian payroll work.
+> Use this skill whenever asked about Australian payroll, PAYG withholding, superannuation guarantee, Single Touch Payroll, or employer obligations in Australia. Trigger on phrases like "PAYG", "pay as you go withholding", "superannuation", "super guarantee", "STP", "Single Touch Payroll", "STP Phase 2", "Medicare levy", "tax file number", "TFN declaration", "HECS-HELP", "STSL", "Fair Work", "NES", "national employment standards", "modern award", "payslip Australia", "ATO payroll", "BAS", "IAS", "activity statement", "annual leave", "long service leave", "minimum wage Australia", "back pay", "bonus withholding", "Schedule 5", "Schedule 9", "seniors and pensioners", "underpayment", or any question about running payroll in Australia. ALWAYS read this skill before processing any Australian payroll work.
 
 ## Ask the client first
 
@@ -56,7 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 2.7 |
+| Skill version | 2.11 |
 
 ### Section 2 -- Income Tax Withholding (PAYG)
 
@@ -94,6 +96,66 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 #### Study and Training Support Loans (STSL)
 
 - **STSL description** — Formerly HECS-HELP. Compulsory repayments are withheld via PAYG using the Schedule 8 formulas in force on the payment date. The marginal repayment system took effect for withholding from 24 September 2025; for payments from 1 July 2026 use the 2026-27 Schedule 8 (weekly threshold $1,337).  _([ATO, Schedule 8](https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components))_
+
+#### Back Payments, Commissions, Bonuses and Similar Payments (Schedule 5)
+
+For payments made from 1 July 2026 (2026-27), use Schedule 5 of the [Taxation Administration (Withholding Schedules) Instrument 2026](https://www.legislation.gov.au/F2026L00716/latest/text) (F2026L00716). The instrument commenced on 1 July 2026 and repealed the (No. 2) 2025 instrument; the ATO publishes the same schedule as [Schedule 5 (NAT 3348)](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments). A payment made before 1 July 2026 uses the schedule in force on its payment date.
+
+- **What it covers:** Salary or wages paid as a back payment (including a lump sum payment in arrears), a commission, or a bonus or similar payment. A similar payment is one-off and not for work in a particular period, such as a once-only payment for a changed work location, a sign-on bonus or any lump sum allowance. Leave loading paid as a lump sum also qualifies. A back payment was due in an earlier period; a bonus is a back payment only if it was paid later than it should have been.  _([ATO, About this schedule](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/about-this-schedule))_
+- **What it does not cover:** A payment that payroll normally processes a period late, such as overtime paid with a one-period lag, is part of the pay it is paid in. A commission or bonus for work in a single pay period is added to that period's earnings and withheld under the regular tables. Working holiday makers use Schedule 15 for every payment, these included. Normal earnings exclude employment termination payments and unused leave paid on termination.
+- **Choose the method:** Method A suits any additional payment. Method B(i) recalculates each earlier pay of the current financial year that a back payment relates to and has no 47% limit. Method B(ii) covers back payments for a prior financial year and any additional payment that does not relate to a single pay period. Split a back payment that spans the current and earlier years and apply the matching method to each part, withholding first on the current-year back payments. Do not recalculate an additional payment made in an earlier pay this year. A negative result is nil.  _([ATO, Working out the withholding amount](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/working-out-the-withholding-amount))_
+- **Method A:** (1) gross earnings for the current pay without additional payments, ignoring cents; (2) withholding on (1) from the regular table; (3) the pay's additional payments divided by 52, 26 or 12, ignoring cents (a commission or bonus for a defined period under 12 months may use that period's number of pays instead); (4) (1) plus (3); (5) withholding on (4); (6) (5) less (2); (7) (6) times the number of pays used at (3); (8) 47% of the additional payment; (9) the lesser of (7) and (8), ignoring cents; (10) total withholding is (2) plus (9). Case 3 and Case 4 work it.
+- **Method B(ii):** (1) average total earnings: this year's normal earnings to date, including the current pay and any back payments withheld under Method B(i), divided by the pays to date, ignoring cents; (2) withholding on (1); (3) this year's earlier Method B(ii) additional payments plus the current one, divided by 52, 26 or 12, ignoring cents; (4) (1) plus (3); (5) withholding on (4); (6) (5) less (2); (7) (6) times 52, 26 or 12; (8) (7) less the withholding already taken from this year's earlier Method B(ii) payments; (9) 47% of the current additional payment; (10) the lesser of (8) and (9), ignoring cents; (11) withholding on the current pay's gross earnings without additional payments; (12) total withholding is (10) plus (11). Case 5 works it.
+- **Withholding limit and study loans:** Under Methods A and B(ii), withholding on the additional payment, including any study and training support loan component, is limited to 47% of that payment; the limit does not reach normal earnings. Work out the STSL component by the same method with Schedule 8 and compare the combined amount with the limit. The limit can leave a payee under-withheld for the year; the payee can agree an upward variation with the payer.
+- **Pay counts and variations:** Use 52, 26 or 12 pays with no adjustment for a 53-week or 27-fortnight year, and ignore leave without pay at step (3). Where a withholding variation in force this year specifies the income, use the varied rate; otherwise use Schedule 5. A variation that has ended by the payment date does not apply.
+- **STP reporting of back pay:** Report each lump sum accrued more than 12 months before the payment date, gross and including allowances, as lump sum E, with the financial year it relates to. The former $1,200 lump sum E threshold no longer applies from 1 July 2025. Report other back pay as its own payment type, such as gross, allowances or overtime. For payment summaries, the ATO apportions a payment that accrued on both sides of the 12 months.  _([ATO, Back payment reporting](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/back-payment-reporting))_
+
+#### Seniors and Pensioners (Schedule 9)
+
+For payments made from 1 July 2026 (2026-27), use Schedule 9 of the same instrument, published by the ATO as [Schedule 9 (NAT 4466)](https://www.ato.gov.au/tax-rates-and-codes/schedule-9-tax-table-for-seniors-and-pensioners).
+
+- **Who it applies to:** Payees aged 67 or older at the end of the relevant financial year, and, if at least 60, veterans receiving a service pension or war widows and widowers receiving an income support supplement from the Department of Veterans' Affairs. It applies only once the payee gives a Withholding declaration showing Australian residency for tax purposes at question 4 and 'yes' at questions 5 and 8, or the short version for seniors and pensioners showing residency at question 4 and 'yes' at questions 5 and 6. It covers salary, wages, allowances and leave loading, directors' fees, labour-hire payments, periodic incapacity payments and non-super and super income streams; a super income stream also uses Schedule 13.
+- **Scales:** Scale 1 is a single payee, scale 2 a member of an illness-separated couple and scale 3 a member of a couple. Scales 4 to 6 repeat them with a full Medicare levy exemption and scales 7 to 9 with a half exemption; take those coefficients from the instrument.
+- **Formula:** y = ax - b, where x is the weekly earnings, including allowances and irregular payments in this pay, in whole dollars plus 99 cents. Round y to the nearest dollar, 50 cents up. Fortnightly: halve the earnings, ignore cents, add 99 cents and double the rounded weekly amount. Monthly: add 1 cent to an amount ending in 33 cents, multiply by 3, divide by 13, ignore cents and add 99 cents; multiply the rounded weekly amount by 13, divide by 3 and round to the nearest dollar. The schedule gives conversions for fortnightly and monthly pays only.
+- **Offsets, levy and loans:** The seniors and pensioners tax offset is built into the coefficients. A payee claiming other offsets through withholding gives a Withholding declaration; subtract the offset's weekly value. For a payee with a study and training support loan debt, also withhold the component from the STSL weekly tax table (NAT 2173). Leave loading paid as a lump sum uses Schedule 5. Case 6 works the formula.
+
+**Schedule 9 coefficients, scales 1 to 3, payments from 1 July 2026**  _(Instrument 2026 Sch 9; ATO Schedule 9, both read 2026-11-18)_
+
+| Scale | Weekly earnings (x) less than | a | b |
+| --- | --- | --- | --- |
+| 1 Single | $648 | nil | nil |
+| 1 Single | $692 | 0.1500 | 97.2308 |
+| 1 Single | $721 | 0.2750 | 183.8510 |
+| 1 Single | $851 | 0.2840 | 190.3413 |
+| 1 Single | $865 | 0.3840 | 275.4721 |
+| 1 Single | $1,036 | 0.5277 | 399.8279 |
+| 1 Single | $1,064 | 0.4027 | 270.3231 |
+| 1 Single | $1,282 | 0.3227 | 185.1923 |
+| 1 Single | $2,596 | 0.3200 | 181.7319 |
+| 1 Single | $3,653 | 0.3900 | 363.4627 |
+| 1 Single | $3,653 and over | 0.4700 | 655.7704 |
+| 2 Illness-separated couple | $623 | nil | nil |
+| 2 Illness-separated couple | $668 | 0.1500 | 93.5769 |
+| 2 Illness-separated couple | $721 | 0.2750 | 177.1514 |
+| 2 Illness-separated couple | $851 | 0.2840 | 183.6418 |
+| 2 Illness-separated couple | $865 | 0.3840 | 268.7726 |
+| 2 Illness-separated couple | $982 | 0.5277 | 393.1284 |
+| 2 Illness-separated couple | $1,064 | 0.4027 | 270.3231 |
+| 2 Illness-separated couple | $1,282 | 0.3227 | 185.1923 |
+| 2 Illness-separated couple | $2,596 | 0.3200 | 181.7319 |
+| 2 Illness-separated couple | $3,653 | 0.3900 | 363.4627 |
+| 2 Illness-separated couple | $3,653 and over | 0.4700 | 655.7704 |
+| 3 Couple | $567 | nil | nil |
+| 3 Couple | $612 | 0.1500 | 85.1538 |
+| 3 Couple | $721 | 0.2750 | 161.7091 |
+| 3 Couple | $851 | 0.2840 | 168.1995 |
+| 3 Couple | $858 | 0.3840 | 253.3303 |
+| 3 Couple | $865 | 0.2590 | 145.9673 |
+| 3 Couple | $1,064 | 0.4027 | 270.3231 |
+| 3 Couple | $1,282 | 0.3227 | 185.1923 |
+| 3 Couple | $2,596 | 0.3200 | 181.7319 |
+| 3 Couple | $3,653 | 0.3900 | 363.4627 |
+| 3 Couple | $3,653 and over | 0.4700 | 655.7704 |
 
 ### Section 3 -- Social Security: Employee Deductions
 
@@ -244,6 +306,19 @@ The SG formulas, contribution base, SG shortfall percentage and worked SG amount
 | 10+ years | 12 weeks |
 
 - **Small business exemption** — Small business employers (< 15 employees) are exempt from NES redundancy pay.  _(NES)_
+
+#### Underpayment Review and Back Pay
+
+Use this when an employer's pay records are checked against a modern award or enterprise agreement. It prepares a back pay schedule for the employer and its advisers. It does not decide coverage, classification, the effect of a set-off clause or legal exposure.
+
+- **Coverage:** For each employee, record the candidate award or enterprise agreement, the coverage clause read (an award's is usually clause 4) and the facts relied on; find an enterprise agreement through the Fair Work Commission's agreement search. The employer, with its adviser or lawyer, decides coverage: log who decided and when. While coverage is unresolved, carry the alternatives side by side and keep every dependent amount conditional.  _([Fair Work Ombudsman, Award classifications](https://www.fairwork.gov.au/employment-conditions/awards/award-classifications))_
+- **Classification:** Compare the duties, supervision, experience and qualifications on file with the instrument's classification definitions (often in Schedule A) for each period, including changes from new duties, a qualification, progression or higher duties. A person decides the classification. Where the evidence supports more than one level, schedule each level as a labelled alternative.
+- **Rates by period:** For each instrument, classification and employment type, list the minimum rate with its effective date (annual wage review increases, junior and progression changes, variations), sourced from the Fair Work Ombudsman pay guide or the instrument version in force on that date. The Pay and Conditions Tool covers up to 7 years; older rates are in previous versions of the award. A period whose rate table is missing is Needs Input, with its amounts left blank; never extrapolate from a later table.  _([Fair Work Ombudsman, Pay guides](https://www.fairwork.gov.au/pay-and-wages/minimum-wages/pay-guides))_
+- **Recalculate each pay period:** From time records, work out ordinary hours, casual loading, penalty rates, overtime, allowances, leave payments, leave loading and accruals, citing the clause for each. A roster is not evidence of hours worked: flag periods without time records. Compare the result with the payroll register and pay slips, and tie the register to the ledger.
+- **Set-off and absorption:** Whether a set-off, absorption or annualised wage clause is effective, and for which entitlements and periods, is a legal question for the employer's lawyer. Show the schedule before any set-off, pay period by pay period, with the clause's effect in a separate conditional column. Do not net one pay period's overpayment against another's shortfall in the schedule; this is a presentation rule, not a view on what the clause reaches.
+- **Back pay schedule:** For each employee and pay period, show each component owed, the amount paid, the difference and a running total, with the rate and clause relied on; show overpayments separately. The Fair Work Ombudsman's steps are the employer's options and acts: explain the calculation to the employee, pay as soon as possible (in the next pay or separately, by agreed and recorded instalments if needed), record the back payment in the pay records, check tax, super and payroll tax, fix the payroll cause, and self-report early, especially a long-running or large underpayment. A self-reporting employer can ask for a cooperation agreement.  _([Fair Work Ombudsman, I think I've underpaid my employee](https://www.fairwork.gov.au/workplace-problems/common-workplace-problems/i-think-ive-underpaid-my-employee))_
+- **Downstream effects:** Withhold from the back pay under Schedule 5 in Section 2 (Method B(i) for earlier pays of the current financial year, Method A or B(ii) otherwise) and report it in STP, as lump sum E where it accrued more than 12 months before payment. Send the super guarantee position to [au-super-guarantee](au-super-guarantee.md) and payroll tax on back pay to `au-payroll-tax.md`, each with the pay period the amount relates to and its payment date.
+- **Legal exposure:** From 1 January 2025 an intentional underpayment can be a criminal offence (*Fair Work Act 2009* s 327A(1)); an honest mistake is not, and a person who aids the employer can also be prosecuted. The Fair Work Ombudsman cannot refer a small business employer for prosecution where it is satisfied the employer complied with the Voluntary Small Business Wage Compliance Code (declared under s 327B(1)). For an employer with 15 or more employees, the civil maximum for an underpayment contravention can, in certain circumstances, be the greater of 3 times the underpayment and the penalty unit amount. Record these as open items for the employer's lawyer before the employer pays, communicates or reports, and give no view on intent, contravention or liability.  _([Fair Work Ombudsman, Criminal prosecution](https://www.fairwork.gov.au/about-us/compliance-and-enforcement/criminal-prosecution); [Criminalising wage underpayments](https://www.fairwork.gov.au/about-us/workplace-laws/legislation-changes/closing-loopholes/criminalising-wage-underpayments-and-other-issues); [Fair Work Act 2009, compilation 73](https://www.legislation.gov.au/C2009A00028/latest/text) s 12)_
 
 ### Section 7 -- Payslip Requirements
 
@@ -426,6 +501,163 @@ expected:
   receipt_reconciliation_gap: 80
 ```
 
+### Case 3 -- Bonus by Schedule 5 Method A, with a HELP debt
+
+This is the ATO's Schedule 5 Example 1 for payments from 1 July 2026 (2026-27). A resident employee who claims the tax-free threshold (Schedule 1 scale 2) and has a HELP debt earns $1,400 a week and is paid an annual bonus of $900 with this week's pay. Both weekly x values ($1,400.99 and $1,417.99) fall in the Schedule 1 scale 2 band from $1,282 to under $2,596 (a = 0.3200, b = 181.7319) and the Schedule 8 band from $1,337 to under $2,494 (a = 0.15, b = 200.5615). Withholding on the bonus is $260 plus the HELP part of $104, together $364, under the 47% limit of $423. The pay's total withholding is $641. Sources: [Instrument 2026](https://www.legislation.gov.au/F2026L00716/latest/text) Schs 1, 5 and 8; [ATO Schedule 5 examples](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/withholding-amounts-examples).
+
+```oa-check
+name: Schedule 5 Method A bonus with HELP, ATO Example 1, 2026-27
+tolerance: 0.000001
+inputs:
+  gross_earnings: 1400
+  bonus: 900
+  pays_in_year: 52
+  s1_a: 0.3200
+  s1_b: 181.7319
+  s8_a: 0.15
+  s8_b: 200.5615
+  limit_percent: 47
+steps:
+  - x_normal: floor(gross_earnings) + 0.99
+  - paygw_normal: round(s1_a * x_normal - s1_b)
+  - help_normal: round(s8_a * x_normal - s8_b)
+  - bonus_share: floor(bonus / pays_in_year)
+  - x_with_share: floor(gross_earnings) + bonus_share + 0.99
+  - paygw_with_share: round(s1_a * x_with_share - s1_b)
+  - help_with_share: round(s8_a * x_with_share - s8_b)
+  - paygw_on_bonus: (paygw_with_share - paygw_normal) * pays_in_year
+  - help_on_bonus: (help_with_share - help_normal) * pays_in_year
+  - bonus_limit: pct(bonus, limit_percent)
+  - withholding_on_bonus: floor(max(0, min(paygw_on_bonus + help_on_bonus, bonus_limit)))
+  - total_withholding: paygw_normal + help_normal + withholding_on_bonus
+expected:
+  paygw_normal: 267
+  help_normal: 10
+  bonus_share: 17
+  paygw_with_share: 272
+  help_with_share: 12
+  paygw_on_bonus: 260
+  help_on_bonus: 104
+  bonus_limit: 423
+  withholding_on_bonus: 364
+  total_withholding: 641
+```
+
+### Case 4 -- Method A where the 47% limit binds
+
+A worked application of the same rules, not an ATO example. The employee in Case 3 instead earns $4,000 a week and is paid a $5,200 bonus. Both x values ($4,000.99 and $4,100.99) fall in the top bands: Schedule 1 scale 2 from $3,653 (a = 0.4700, b = 655.7704) and Schedule 8 from $3,577 (a = 0.10, b = 0). Method A gives $2,444 of PAYG and $520 of HELP on the bonus, $2,964 together, but the combined amount is limited to 47% of the bonus, $2,444. The limit binds only because the HELP part is combined with the PAYG part. A payee left short at year end can agree an upward variation. Sources as Case 3.
+
+```oa-check
+name: Schedule 5 Method A combined 47 percent limit binding, 2026-27
+tolerance: 0.000001
+inputs:
+  gross_earnings: 4000
+  bonus: 5200
+  pays_in_year: 52
+  s1_a: 0.4700
+  s1_b: 655.7704
+  s8_a: 0.10
+  s8_b: 0
+  limit_percent: 47
+steps:
+  - x_normal: floor(gross_earnings) + 0.99
+  - paygw_normal: round(s1_a * x_normal - s1_b)
+  - help_normal: round(s8_a * x_normal - s8_b)
+  - bonus_share: floor(bonus / pays_in_year)
+  - x_with_share: floor(gross_earnings) + bonus_share + 0.99
+  - paygw_with_share: round(s1_a * x_with_share - s1_b)
+  - help_with_share: round(s8_a * x_with_share - s8_b)
+  - combined_on_bonus: (paygw_with_share - paygw_normal + help_with_share - help_normal) * pays_in_year
+  - bonus_limit: pct(bonus, limit_percent)
+  - withholding_on_bonus: floor(max(0, min(combined_on_bonus, bonus_limit)))
+  - total_withholding: paygw_normal + help_normal + withholding_on_bonus
+expected:
+  paygw_normal: 1225
+  help_normal: 400
+  paygw_with_share: 1272
+  help_with_share: 410
+  combined_on_bonus: 2964
+  bonus_limit: 2444
+  withholding_on_bonus: 2444
+  total_withholding: 4069
+```
+
+### Case 5 -- Lump sum in arrears by Schedule 5 Method B(ii)
+
+This is the ATO's Schedule 5 Example 3 for payments from 1 July 2026 (2026-27). An employee claiming the tax-free threshold (scale 2) is paid $1,800 a fortnight. A remote area allowance of $2,480 for 6 months worked in 2024 was missed and is paid as a lump sum in arrears on 10 November 2026, with pay 10 of the year; normal earnings to date are $18,000 including that pay, and no earlier Method B(ii) payment was made this year. Method B(ii) applies because the back payment relates to a prior financial year. The fortnightly x values ($900.99 and $947.99) fall in the scale 2 band from $865 to under $1,282 (a = 0.3227, b = 185.1935). Withholding on the arrears is $780, under the 47% limit of $1,165, and the pay's total is $992. Because the allowance accrued more than 12 months before the payment date, STP reports it as lump sum E with the financial year it relates to; the example does not give the months, so take the year or years from the allowance records. Sources: Instrument 2026 Schs 1 and 5; [ATO Schedule 5 examples](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/withholding-amounts-examples); [ATO back payment reporting](https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/back-payment-reporting).
+
+```oa-check
+name: Schedule 5 Method B(ii) lump sum in arrears, ATO Example 3, 2026-27
+tolerance: 0.000001
+inputs:
+  ytd_normal_earnings: 18000
+  pays_to_date: 10
+  current_gross: 1800
+  arrears: 2480
+  earlier_bii_payments: 0
+  earlier_bii_withholding: 0
+  pays_in_year: 26
+  s1_a: 0.3227
+  s1_b: 185.1935
+  limit_percent: 47
+steps:
+  - average_total_earnings: floor(ytd_normal_earnings / pays_to_date)
+  - x_average: floor(average_total_earnings / 2) + 0.99
+  - paygw_average: round(s1_a * x_average - s1_b) * 2
+  - additional_share: floor((earlier_bii_payments + arrears) / pays_in_year)
+  - x_with_share: floor((average_total_earnings + additional_share) / 2) + 0.99
+  - paygw_with_share: round(s1_a * x_with_share - s1_b) * 2
+  - before_earlier_withholding: (paygw_with_share - paygw_average) * pays_in_year
+  - after_earlier_withholding: before_earlier_withholding - earlier_bii_withholding
+  - arrears_limit: floor(pct(arrears, limit_percent))
+  - withholding_on_arrears: floor(max(0, min(after_earlier_withholding, arrears_limit)))
+  - x_current: floor(current_gross / 2) + 0.99
+  - paygw_current: round(s1_a * x_current - s1_b) * 2
+  - total_withholding: withholding_on_arrears + paygw_current
+expected:
+  average_total_earnings: 1800
+  paygw_average: 212
+  additional_share: 95
+  paygw_with_share: 242
+  before_earlier_withholding: 780
+  arrears_limit: 1165
+  withholding_on_arrears: 780
+  paygw_current: 212
+  total_withholding: 992
+```
+
+### Case 6 -- Seniors and pensioners by Schedule 9
+
+This is the ATO's Schedule 9 example for payments from 1 July 2026 (2026-27). A payee eligible for Schedule 9, with no Medicare levy exemption, tax offset claim or study loan, earns $662.95 a week; x = $662.99. Withholding is $2 if single (scale 1, band $648 to under $692), $6 for a member of an illness-separated couple (scale 2, band $623 to under $668) and $21 for a member of a couple (scale 3, band $612 to under $721). The last line applies the fortnightly rule, not part of the ATO example: a single payee paid $1,325.90 a fortnight has the same x, so withholding is 2 times $2, or $4. Sources: Instrument 2026 Sch 9; [ATO Schedule 9](https://www.ato.gov.au/tax-rates-and-codes/schedule-9-tax-table-for-seniors-and-pensioners).
+
+```oa-check
+name: Schedule 9 seniors and pensioners scales 1 to 3, ATO example, 2026-27
+tolerance: 0.000001
+inputs:
+  weekly_earnings: 662.95
+  fortnightly_earnings: 1325.90
+  single_a: 0.1500
+  single_b: 97.2308
+  illness_separated_a: 0.1500
+  illness_separated_b: 93.5769
+  couple_a: 0.2750
+  couple_b: 161.7091
+steps:
+  - x: floor(weekly_earnings) + 0.99
+  - single: round(single_a * x - single_b)
+  - illness_separated: round(illness_separated_a * x - illness_separated_b)
+  - couple: round(couple_a * x - couple_b)
+  - x_fortnightly: floor(fortnightly_earnings / 2) + 0.99
+  - single_fortnightly: round(single_a * x_fortnightly - single_b) * 2
+expected:
+  x: 662.99
+  single: 2
+  illness_separated: 6
+  couple: 21
+  x_fortnightly: 662.99
+  single_fortnightly: 4
+```
+
 ## When to refuse or refer
 
 Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
@@ -476,6 +708,19 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 | Retained citation | <https://fwc.gov.au/work-conditions/minimum-wages-and-conditions/national-minimum-wage> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.servicesaustralia.gov.au/paid-parental-leave-scheme-changes> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds> | Not re-read for this format update; see retained provenance |
+| Taxation Administration (Withholding Schedules) Instrument 2026 (F2026L00716): ss 2, 3, 5 and 7; Schs 1 (scale 2 coefficients, rounding, conversions), 5, 8 (tax-free threshold coefficients) and 9 | <https://www.legislation.gov.au/F2026L00716/latest/text> | 2026-11-18; commencement 1 July 2026, schedule titles, Schedule 5 methods and examples, Schedule 9 coefficients and example |
+| ATO tax tables | <https://www.ato.gov.au/tax-rates-and-codes/tax-tables-overview> | 2026-11-18; schedule numbers, titles and NAT numbers from 1 July 2026 |
+| ATO Schedule 5: about this schedule | <https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/about-this-schedule> | 2026-11-18; scope, terms and pay counts |
+| ATO Schedule 5: working out the withholding amount | <https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/working-out-the-withholding-amount> | 2026-11-18; Methods A, B(i) and B(ii), 47% limit, study loans, variations |
+| ATO Schedule 5: withholding amounts examples | <https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/withholding-amounts-examples> | 2026-11-18; Examples 1 and 3 (Cases 3 and 5) |
+| ATO Schedule 5: back payment reporting | <https://www.ato.gov.au/tax-rates-and-codes/schedule-5-tax-table-for-back-payments-commissions-bonuses-and-similar-payments/back-payment-reporting> | 2026-11-18; lump sum E in STP |
+| ATO Schedule 9 | <https://www.ato.gov.au/tax-rates-and-codes/schedule-9-tax-table-for-seniors-and-pensioners> | 2026-11-18; eligibility, declarations, scales, coefficients, rounding and the example (Case 6) |
+| Fair Work Ombudsman, I think I've underpaid my employee | <https://www.fairwork.gov.au/workplace-problems/common-workplace-problems/i-think-ive-underpaid-my-employee> | 2026-11-18; steps to fix an underpayment, self-reporting and cooperation agreements |
+| Fair Work Ombudsman, Award classifications | <https://www.fairwork.gov.au/employment-conditions/awards/award-classifications> | 2026-11-18; coverage clause and classification definitions |
+| Fair Work Ombudsman, Pay guides | <https://www.fairwork.gov.au/pay-and-wages/minimum-wages/pay-guides> | 2026-11-18; 7-year reach of the Pay and Conditions Tool |
+| Fair Work Ombudsman, Criminal prosecution | <https://www.fairwork.gov.au/about-us/compliance-and-enforcement/criminal-prosecution> | 2026-11-18; intentional underpayment offence, aiders, the Code |
+| Fair Work Ombudsman, Criminalising wage underpayments and other issues | <https://www.fairwork.gov.au/about-us/workplace-laws/legislation-changes/closing-loopholes/criminalising-wage-underpayments-and-other-issues> | 2026-11-18; 1 January 2025 start and the civil maximum for employers with 15 or more employees |
+| Fair Work Act 2009, compilation 73 (C2026C00355, 7 July 2026), s 12 | <https://www.legislation.gov.au/C2009A00028/latest/text> | 2026-11-18; the offence in s 327A(1) and the Code declared under s 327B(1), as s 12 defines them |
 
 ### Sources for current rates and reporting
 
@@ -485,7 +730,7 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 - [Fair Work Commission](https://fwc.gov.au/work-conditions/minimum-wages-and-conditions/national-minimum-wage): national minimum wage; determine any applicable award/agreement separately.
 - [Services Australia](https://www.servicesaustralia.gov.au/paid-parental-leave-scheme-changes): Parental Leave Pay days depend on the birth/adoption date. Check eligibility and the separate government-funded super payment.
 
-Two executable cases cover selected SG payroll calculations and fund receipt reconciliation. They do not verify PAYG withholding, net pay, awards, leave, state payroll tax or the other obligations in this guide.
+Six executable cases cover selected SG payroll calculations, fund receipt reconciliation, Schedule 5 Methods A and B(ii) and Schedule 9. The Schedule 5 and 9 cases take the coefficients of the bands they name as inputs, so they do not check band selection, other bands, Method B(i), scales 4 to 9, net pay, awards, leave, state payroll tax or the other obligations in this guide.
 
 Not yet confirmed: a complete page-level source/read-date audit and independent legal review of the whole guide. Existing dates and qualifications retain their original scope.
 
