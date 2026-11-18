@@ -68,6 +68,11 @@ test("later non-business accessories are added in full, never reduced", () => {
   assert.equal(result.taxableValue, "5133.33");
 });
 
+test("an accessory fitted at purchase is part of the cost price, so it is reduced too", () => {
+  // ATO Example 26's $31,000 car including a $1,000 accessory: the guide gives $21,000; s 9(2)(a)(i) with s 136(1) 'cost price' gives 2/3 of $31,000.
+  assert.equal(check({ ...statutoryCar, carValue: "31000", earliestHoldingDate: "2016-07-01" }).baseValue, "20666.67");
+});
+
 test("ATO Example 28: $60,000 car for 182 days less $1,000 is $4,983.56 (the guide shows whole dollars)", () => {
   const result = check({ ...statutoryCar, carValue: "60000", earliestHoldingDate: "2026-08-01", privateUseDays: 182 });
   assert.equal(result.statutoryValue, "4983.56");

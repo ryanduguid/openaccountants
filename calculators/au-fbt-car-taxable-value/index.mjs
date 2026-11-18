@@ -44,8 +44,9 @@ function businessUseEntitled(input) {
  * @param {object} input
  * @param {number} input.fbtYear FBT year by its ending 31 March, e.g. 2027.
  * @param {"statutory"|"operating_cost"} input.method "operating_cost" when the employer elects s 10.
- * @param {boolean} input.commitmentBefore10May2011 A financially binding commitment to provide the car
- *   existed before 7.30 pm AEST on 10 May 2011; true is refused.
+ * @param {boolean} input.commitmentBefore10May2011 The last commitment by the employer, the employee or an
+ *   associate to the car's application or availability for the period was made before 7.30 pm AEST on
+ *   10 May 2011 (Tax Laws Amendment (2011 Measures No. 5) Act 2011, Sch 5 item 8(2)); true is refused.
  * @param {string} input.carValue AUD decimal: cost price if the provider or an associate owned the car at
  *   the earliest holding time, otherwise its leased car value at that time.
  * @param {string} input.earliestHoldingDate "YYYY-MM-DD": the provider or an associate first held the car.
