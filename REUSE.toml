@@ -222,3 +222,19 @@ path = "calculators/au-ato-benchmarks/ato-pages-2023-24.json"
 precedence = "override"
 SPDX-FileCopyrightText = "Australian Taxation Office for the Commonwealth of Australia"
 SPDX-License-Identifier = "LicenseRef-ATO-Copyright-Notice"
+
+[[annotations]]
+path = [
+  "calculators/au-contribution-caps/index.mjs",
+  "calculators/au-contribution-caps/index.test.mjs",
+  "calculators/au-contribution-caps/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-contribution-caps/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
