@@ -93,17 +93,26 @@ for (const [label, sales, turnover, basis] of [
   });
 }
 
-// Bakery low band: total expenses 69% to 81% of turnover 100,000.
-for (const [expenses, position] of [[68999, "below"], [69000, "within"], [81000, "within"], [81001, "above"]]) {
+// Bakery low band: total expenses 69% to 81% of turnover 100,000, compared at 2 places, half up.
+for (const [expenses, position] of [[68994, "below"], [68995, "within"], [81004, "within"], [81005, "above"]]) {
   test(`a ratio at ${expenses / 1000}% of turnover is ${position} a 69% to 81% range`, () => {
     const result = check({ industry: "Bakeries and hot bread shops", totalBusinessIncome: 100000, totalExpenses: expenses, paymentsToAssociatedPersons: 0 });
     assert.equal(ratio(result, "total_expenses").position, position);
   });
 }
 
+// Coffee shops low band: total expenses 73% to 86% of turnover 250,000; 215,010 is 86.004%.
+test("the position follows the percentage shown, to 2 places", () => {
+  const result = check({ industry: "Coffee shops", totalBusinessIncome: 250000, totalExpenses: 215010, paymentsToAssociatedPersons: 0 });
+  assert.equal(ratio(result, "total_expenses").percent, 86);
+  assert.equal(ratio(result, "total_expenses").position, "within");
+  const above = check({ industry: "Coffee shops", totalBusinessIncome: 250000, totalExpenses: 215013, paymentsToAssociatedPersons: 0 });
+  assert.deepEqual([ratio(above, "total_expenses").percent, ratio(above, "total_expenses").position], [86.01, "above"]);
+});
+
 test("a single published figure is both bounds", () => {
   const at = (motorVehicleExpenses) => ratio(check({ industry: "Bakeries and hot bread shops", totalBusinessIncome: 800000, motorVehicleExpenses }), "motor_vehicle").position;
-  assert.deepEqual([at(7999), at(8000), at(8001)], ["below", "within", "above"]);
+  assert.deepEqual([at(7959), at(7960), at(8039), at(8040)], ["below", "within", "within", "above"]);
 });
 
 test("payments to associated persons come out of total expenses and labour", () => {

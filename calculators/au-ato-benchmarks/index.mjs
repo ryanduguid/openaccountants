@@ -42,13 +42,13 @@ function numerator(ratio, a, wagesInCostOfSales) {
   }
 }
 
-// Percentage to 2 places, half up, as the ATO's examples print it (35.92).
-const percent = (amount, turnover) => Number((BigInt(amount) * 20000n + BigInt(turnover)) / (2n * BigInt(turnover))) / 100;
+// The ratio in hundredths of a percent, half up: the 2 places the ATO's examples work to (35.92%).
+const hundredths = (amount, turnover) => Number((BigInt(amount) * 20000n + BigInt(turnover)) / (2n * BigInt(turnover)));
 
-function position(amount, turnover, [min, max]) {
-  const scaled = BigInt(amount) * 100n;
-  if (scaled < BigInt(min) * BigInt(turnover)) return "below";
-  if (scaled > BigInt(max) * BigInt(turnover)) return "above";
+// That figure against the whole-percentage bounds, inclusive, as the ATO's examples compare it.
+function position(hundredthsOfPercent, [min, max]) {
+  if (hundredthsOfPercent < min * 100) return "below";
+  if (hundredthsOfPercent > max * 100) return "above";
   return "within";
 }
 
@@ -134,7 +134,7 @@ export function compareWithAtoBenchmarks(input) {
       reasons.push("No cost of sales is reported, so total expenses to turnover is the key range, as the ATO directs.");
     } else {
       reasonCodes.push("cost_of_sales_small_unquantified");
-      reasons.push("The ATO says to use total expenses as the key range where cost of sales is only a small amount and does not say how small; both are shown.");
+      reasons.push("The ATO says to use total expenses as the key range where cost of sales is only a small amount and does not say how small. Keeping cost of sales as the key range is this calculator's assumption; both are shown.");
     }
   }
   if (amounts.labour !== null && input.w1 === undefined) {
@@ -144,13 +144,14 @@ export function compareWithAtoBenchmarks(input) {
   const ratios = ratioOrder.map((ratio) => {
     const amount = amounts[ratio];
     const range = band[ratio];
+    const shown = amount === null ? null : hundredths(amount, turnover);
     return {
       ratio,
       key: ratio === keyRatio,
       amount,
-      percent: amount === null ? null : percent(amount, turnover),
+      percent: shown === null ? null : shown / 100,
       range: range === null ? null : { min: range[0], max: range[1] },
-      position: amount === null ? "not_supplied" : range === null ? "no_published_range" : position(amount, turnover, range),
+      position: shown === null ? "not_supplied" : range === null ? "no_published_range" : position(shown, range),
     };
   });
   return {
