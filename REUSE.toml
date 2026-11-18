@@ -120,6 +120,22 @@ SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
 
 [[annotations]]
 path = [
+  "calculators/au-division-296/index.mjs",
+  "calculators/au-division-296/index.test.mjs",
+  "calculators/au-division-296/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-division-296/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+[[annotations]]
+path = [
   "calculators/au-fbt-car-taxable-value/index.mjs",
   "calculators/au-fbt-car-taxable-value/index.test.mjs",
   "calculators/au-fbt-car-taxable-value/README.md",
