@@ -2,11 +2,13 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { compareWithAtoBenchmarks } from "./index.mjs";
 import rules from "./rules.json" with { type: "json" };
-import benchmarks from "./benchmarks-2023-24.json" with { type: "json" };
+import dataset from "./benchmarks-2023-24.json" with { type: "json" };
+import pages from "./ato-pages-2023-24.json" with { type: "json" };
 
 const year = "2023-24";
 const check = (input) => compareWithAtoBenchmarks({ benchmarkYear: year, ...input });
 const ratio = (result, name) => result.ratios.find((r) => r.ratio === name);
+const bands = (name) => dataset.industries[name].bands.map((band, i) => ({ ...band, ...pages.industries[name].bands[i] }));
 
 // ATO, 'How to compare your business performance manually' (QC47938, last updated 16 March 2026).
 test("ATO example: Elizabeth's coffee shop is within both key ranges", () => {
@@ -50,7 +52,7 @@ test("ATO example: Steff's cost of sales to turnover is 30.21%", () => {
 });
 
 test("bakeries match the ATO's industry page (QC43659) for every band and ratio", () => {
-  assert.deepEqual(benchmarks.industries["Bakeries and hot bread shops"].bands.map((b) => [b.from, b.to, b.cost_of_sales, b.total_expenses, b.labour, b.rent, b.motor_vehicle]), [
+  assert.deepEqual(bands("Bakeries and hot bread shops").map((b) => [b.from, b.to, b.cost_of_sales, b.total_expenses, b.labour, b.rent, b.motor_vehicle]), [
     [65000, 400000, [31, 38], [69, 81], [14, 25], [10, 17], [2, 4]],
     [400001, 750000, [34, 39], [75, 86], [15, 28], [8, 12], [1, 2]],
     [750001, null, [29, 36], [82, 90], [25, 34], [5, 8], [1, 1]],
@@ -172,7 +174,7 @@ test("a ratio the industry does not publish, or the caller does not supply, is n
 test("the result is a comparison, never a compliance finding", () => {
   const result = check({ industry: "Plumbing services", totalBusinessIncome: 704500, totalExpenses: 845650, paymentsToAssociatedPersons: 0 });
   assert.doesNotMatch(JSON.stringify(result), /complian|non-compliant|breach|evasion/i);
-  assert.equal(result.guidance.ato_use, benchmarks.ato_guidance.ato_use);
+  assert.equal(result.guidance.ato_use, pages.ato_guidance.ato_use);
   assert.match(result.attribution, /Creative Commons Attribution 2\.5 Australia/);
   assert.match(result.attribution, /do not endorse/);
 });
@@ -207,15 +209,22 @@ for (const input of [null, [], "Coffee shops"]) {
 }
 
 test("every industry's bands adjoin from its lowest band and end open, with each range in order", () => {
-  assert.equal(benchmarks.benchmark_year, rules.benchmark_year);
-  const industries = Object.entries(benchmarks.industries);
+  assert.deepEqual([dataset.benchmark_year, pages.benchmark_year], [rules.benchmark_year, rules.benchmark_year]);
+  assert.deepEqual(Object.keys(dataset.industries), Object.keys(pages.industries));
+  const industries = Object.entries(pages.industries);
   assert.equal(industries.length + Object.keys(rules.data.excluded).length, 100);
   for (const [name, industry] of industries) {
     assert.ok(["cost_of_sales", "total_expenses"].includes(industry.key), name);
     assert.ok([2, 3].includes(industry.bands.length), name);
-    industry.bands.forEach((band, i) => {
-      if (i > 0) assert.equal(band.from, industry.bands[i - 1].to + 1, name);
-      assert.equal(band.to === null, i === industry.bands.length - 1, name);
+    assert.equal(dataset.industries[name].bands.length, industry.bands.length, name);
+    // Each band's cost of sales comes from the dataset where it is the key range and from the page otherwise.
+    dataset.industries[name].bands.forEach((band, i) => {
+      assert.equal(Object.hasOwn(band, "cost_of_sales"), industry.key === "cost_of_sales", name);
+      assert.equal(Object.hasOwn(industry.bands[i], "cost_of_sales"), industry.key !== "cost_of_sales", name);
+    });
+    bands(name).forEach((band, i, all) => {
+      if (i > 0) assert.equal(band.from, all[i - 1].to + 1, name);
+      assert.equal(band.to === null, i === all.length - 1, name);
       assert.notEqual(band[industry.key], null, name);
       for (const r of ["total_expenses", "cost_of_sales", "labour", "rent", "motor_vehicle"]) {
         const range = band[r];

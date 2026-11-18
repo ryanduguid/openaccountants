@@ -98,16 +98,18 @@ these guides reproduced in them.
 
 ## Third-party data
 
-`calculators/au-ato-benchmarks/benchmarks-2023-24.json` holds the Australian
-Taxation Office's 2023-24 small business benchmark ranges and guidance text,
-© Australian Taxation Office for the Commonwealth of Australia, adapted from
-the ATO's data.gov.au dataset and industry pages. Notwithstanding the general
-mapping above, it stays on the ATO's terms: the dataset's figures under Creative
-Commons Attribution 2.5 Australia
-([`LICENSES/CC-BY-2.5-AU.txt`](LICENSES/CC-BY-2.5-AU.txt)), and the material
-taken only from the ATO's pages under the ATO's copyright notice
-([`LICENSES/LicenseRef-ATO-Copyright-Notice.txt`](LICENSES/LicenseRef-ATO-Copyright-Notice.txt)).
-The calculator's README says which is which and gives the credit.
+The Australian Taxation Office's 2023-24 small business benchmark ranges and
+guidance text, © Australian Taxation Office for the Commonwealth of Australia,
+stay on the ATO's terms, notwithstanding the general mapping above:
+
+- `calculators/au-ato-benchmarks/benchmarks-2023-24.json`, adapted from the
+  ATO's data.gov.au dataset, under Creative Commons Attribution 2.5 Australia
+  ([`LICENSES/CC-BY-2.5-AU.txt`](LICENSES/CC-BY-2.5-AU.txt));
+- `calculators/au-ato-benchmarks/ato-pages-2023-24.json`, taken from the ATO's
+  pages, under the ATO's copyright notice
+  ([`LICENSES/LicenseRef-ATO-Copyright-Notice.txt`](LICENSES/LicenseRef-ATO-Copyright-Notice.txt)).
+
+The calculator's README gives the credit.
 
 ## Effective date and prior releases
 

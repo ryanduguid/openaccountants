@@ -4,7 +4,10 @@
   "basis": "Where a business's tax return ratios sit against the ATO's small business benchmark ranges for its industry and turnover band. A comparison only: the ATO uses the benchmarks with other risk indicators and never in isolation.",
   "benchmark_year": "2023-24",
   "data": {
-    "file": "benchmarks-2023-24.json",
+    "files": [
+      "benchmarks-2023-24.json",
+      "ato-pages-2023-24.json"
+    ],
     "read": "2026-11-18",
     "derivation": "Total expenses and cost of sales ranges are the dataset's, which prints them as fractions (0.31 is 31%). Labour, rent and motor vehicle ranges, and cost of sales where it is not the key range, are copied as printed from each industry's page; a single figure, such as '1%', is stored as both bounds. Each page's key ranges and turnover bands were checked against the dataset. Bands are as printed: '$400,001 - $750,000' starts at $400,001 and 'More than $750,000' at $750,001.",
     "excluded": {

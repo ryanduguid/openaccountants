@@ -36,7 +36,7 @@ when every amount it needs is supplied.
 | Input | Meaning |
 | --- | --- |
 | `benchmarkYear` | `2023-24`, the only year held |
-| `industry` | The industry name exactly as a key of `industries` in [benchmarks-2023-24.json](benchmarks-2023-24.json) (99 industries) |
+| `industry` | The industry name exactly as a key of `industries` in [ato-pages-2023-24.json](ato-pages-2023-24.json) (99 industries) |
 | `totalBusinessIncome` | Required, more than 0 |
 | `salesOfGoodsAndServices` | Optional; omitted means blank |
 | `totalExpenses`, `paymentsToAssociatedPersons` | Total expenses ratio; payments to associated persons also feed labour |
@@ -114,32 +114,34 @@ every industry's data and refusals of malformed or out-of-scope inputs. No clien
 
 ## Data licence
 
-[benchmarks-2023-24.json](benchmarks-2023-24.json) holds the ATO's benchmark ranges and the ATO
-guidance this calculator quotes. Benchmark ranges and guidance text © Australian Taxation Office
-for the Commonwealth of Australia. The ATO and the Commonwealth do not endorse this calculator.
+The ATO's benchmark ranges and the ATO guidance this calculator quotes are © Australian Taxation
+Office for the Commonwealth of Australia. They sit in 2 files because the ATO released them on 2
+sets of terms, and each file stays on its own terms, not under this repository's other licences.
+The ATO and the Commonwealth do not endorse this calculator.
 
-- The turnover bands, the total expenses ranges and the key cost of sales ranges are adapted from
-  the ATO's
+- [benchmarks-2023-24.json](benchmarks-2023-24.json): the turnover bands, the total expenses
+  ranges and the key cost of sales ranges, adapted from the ATO's
   [Small Business Benchmarks](https://data.gov.au/data/dataset/small-business-benchmarks) dataset
   (2023-24 Benchmarks), licensed under
   [Creative Commons Attribution 2.5 Australia](https://creativecommons.org/licenses/by/2.5/au/)
   ([LICENSES/CC-BY-2.5-AU.txt](../../LICENSES/CC-BY-2.5-AU.txt)).
-- The labour, rent, motor vehicle and other cost of sales ranges, the page numbers, each
-  industry's key range and the guidance text are taken from the ATO's
+- [ato-pages-2023-24.json](ato-pages-2023-24.json): the labour, rent, motor vehicle and other cost
+  of sales ranges, the page numbers, each industry's key range and the guidance text, taken from
+  the ATO's
   [industry benchmark pages](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/small-business-benchmarks/benchmarks-a-z)
   and guidance pages under the ATO's
   [copyright notice](https://www.ato.gov.au/about-ato/using-our-website/copyright-notice)
   ([LICENSES/LicenseRef-ATO-Copyright-Notice.txt](../../LICENSES/LicenseRef-ATO-Copyright-Notice.txt)),
   which lets anyone copy, adapt, modify, transmit and distribute them.
 
-They are arranged as JSON, with percentages as whole numbers, and stay on those terms, not under
-this repository's other licences.
+Both are arranged as JSON, with percentages as whole numbers; `index.mjs` joins them by industry
+and band.
 
 The rules were adapted from Ryan Duguid's independently authored
 [ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare)
 at revision `2e41b018a5a1c5229df2b3fe29de1fe716311fe9`. Code and this README: AGPL-3.0-only;
 `rules.json`: OA Guide License v1.0, following this repository's licensing policy;
-`benchmarks-2023-24.json`: the ATO's terms, as above.
+`benchmarks-2023-24.json` and `ato-pages-2023-24.json`: the ATO's terms, as above.
 
 General reference and computational support only. Obtain qualified professional review before
 lodging, paying or relying on any result.
