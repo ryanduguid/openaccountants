@@ -2,18 +2,18 @@
 name: au-super-guarantee
 description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, payday super deadlines, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, Division 296 large-balance tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "payday super", "7 business days super", "SG shortfall", "concessional cap", "Division 293", "Division 296", "$3 million super tax", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or clearing house payments. ALWAYS read this skill before touching any SG-related work.
-version: 3.10
+version: 3.11
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-11-11
+last_updated: 2026-11-19
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.10
+# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.11
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -249,7 +249,7 @@ Sources: [ATO: Division 293](https://www.ato.gov.au/individuals-and-families/sup
 
 - **What it is** — An additional tax, assessed on the individual, on a proportion of superannuation earnings where the total superannuation balance (TSB) exceeds the large superannuation balance threshold: an extra 15% on the earnings proportion attributable to the TSB above $3 million, plus a further amount on the proportion above the very large balance threshold of $10 million, giving the extra 15% / 25% headline rates. Enacted by the Treasury Laws Amendment (Building a Stronger and Fairer Super System) Act 2026 (No. 8, assent 13 March 2026) and its Imposition Act; ITAA 1997 Division 296. The first year is 2026-27.
 - **Design points** — Both thresholds are indexed from 2027-28 (in $150,000 and $500,000 increments). Earnings follow realised concepts rather than the 2023 unrealised-gains proposal. The test uses the greater of the TSB just before the start of the year and at its end; for 2026-27 only the TSB at 30 June 2027 counts, and a member who dies on or before 30 June 2027 is not liable for 2026-27. Child recipients of super income streams and people with structured settlement contributions are excluded (ss 296-20, 296-25).
-- **Who to flag** — any client whose 30 June TSB approaches $3 million: contribution strategy, asset location and pension-phase decisions all interact with Division 296. **This skill does not compute Division 296**; escalate, because the ATO assesses the member from the relevant super earnings that each fund calculates, attributes to the member and reports. SMSF trustees carry that reporting duty from the 2026-27 return (see `au-smsf` Section 5.3).
+- **Who to flag** — any client whose 30 June TSB approaches $3 million: contribution strategy, asset location and pension-phase decisions all interact with Division 296. **This skill does not compute Division 296**; escalate, because the ATO assesses the member from the relevant super earnings that each fund calculates, attributes to the member and reports. SMSF trustees carry that reporting duty from the 2026-27 return (see `au-smsf` Section 5.3). For a 2026-27 estimate from a balance and earnings the member has already established from the funds' figures, this repository's offline calculator `calculators/au-division-296/` applies the enacted text; it is an estimate, not the ATO's assessment, and it refuses inputs it cannot handle.
 - **Do not confuse** Division 293 (contributions tax for incomes over $250,000, unchanged) with Division 296 (large-balance earnings tax from 2026-27).
 
 [Act No. 8 of 2026](https://www.legislation.gov.au/C2026A00008/asmade/text); [ATO, Key super rates: Division 296 tax thresholds](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds)
@@ -262,9 +262,21 @@ Sources: [ATO: Division 293](https://www.ato.gov.au/individuals-and-families/sup
 
 ### Section 6 -- Tier 2 catalogue
 
-#### T2-1 -- Contractor vs employee for SG
+#### T2-1 -- Contractor screen under SGAA s 12(3)
 
-- **T2-1** — Trigger: Client engages a contractor who may be principally for labour (SGAA s 12(3)). Issue: Multi-factor test required. SG may be triggered. Action: Flag for reviewer.  _(SGAA s 12(3))_
+**Trigger:** The client pays an individual contractor whose contract may be wholly or principally for that person's labour.
+**Issue:** SGAA s 12(3) makes 'a person [who] works under a contract that is wholly or principally for the labour of the person' an employee of the other party, whether or not they are an employee in the ordinary meaning under s 12(1). Status is a legal characterisation: this screen gathers the facts, records the position they point to and leaves the decision to the reviewer.
+**Screen** (TR 2023/4, Appendix 2, which replaced the withdrawn SGR 2005/1 from 26 June 2024, TR 2023/4 [5A]):
+
+1. **Both limbs.** Test the ordinary meaning (s 12(1)) and s 12(3) separately; failing one does not settle the other.
+2. **Who contracted.** Section 12(3) applies only where the worker is a natural person who was party to the contract in their individual capacity, not as trustee of a personal services trust or partner in a partnership ([100]). A contract with an interposed company, trust or partnership does not, by s 12(3), make the payer the individual's employer: test the entity relationship and s 12(1) instead. A contract can be bilateral even when more than 2 parties are named ([97]). In labour hire, a worker who meets s 12(3) is the labour hire firm's employee, not the host's ([112]); intermediary chains go to SGR 2005/2, with draft SGR 2026/D1 as the Commissioner's preliminary view only.
+3. **The 3 elements** ([94], from *Moffet*): a contract; the contract is wholly or principally for the person's labour; the person works under it. 'For' is judged from the engaging entity's perspective on the contract's terms ([101]), and on the rights it gives, not on how it was performed ([98]). 'Principally' means chiefly or mainly; labour includes mental and artistic effort ([101]).
+4. **What takes a contract outside s 12(3)** ([102] to [106]): a right to delegate, subcontract or assign the work, even if consent is needed and whether or not it was exercised, unless the right is a sham, limited or legally incapable of exercise; a contract for a result, paid for that result; or a contract principally for another benefit, such as equipment. Needing a substantial capital asset points away from labour ([109]). Where labour is one part of the bargain, a quantitative valuation or qualitative analysis decides whether it is the principal part ([108], [111]).
+5. **Domestic work.** A person paid for work wholly or principally of a domestic or private nature for not more than 30 hours a week is not an employee in relation to that work (s 12(11)). Record the hours and who the work was done for before applying it.
+6. **Qualifying earnings from 1 July 2026.** For a worker who is an employee only under s 12(3), QE is 'all payments under a contract referred to in subsection 12(3) that are in respect of the person's labour under the contract' (s 10A(1)(d)). Draft SGD 2026/D1 (2 September 2026; comments closed 2 October 2026; proposed to apply to QE paid on or after 1 July 2026, [37]) excludes plant or machinery hire, materials, exact reimbursements, on-charged third-party costs, expenses paid as the employer's agent and the GST part of the price ([16]). Where the labour part is not clearly identifiable, use a reasonable market value of the labour (such as an industry award rate) or of the non-labour parts, and keep s 79 records showing how it was worked out ([17] to [19]). Executable Case 5 applies its examples. It is a draft: check whether a final determination has issued.
+7. **Other regimes.** State payroll tax has its own contractor provisions (see `au-payroll-tax`); a result there decides nothing under the SGAA.
+
+**Action:** Flag for reviewer with the contract, the clause relied on for each element, any delegation clause and the valuation evidence for mixed contracts. Compute SG on the labour part only after the reviewer confirms s 12(3) status; until then return Needs Input for that worker's SG.  _(SGAA ss 10A(1)(d), 12(1), 12(3), 12(11); TR 2023/4 [94] to [112]; draft SGD 2026/D1)_
 
 #### T2-2 -- Multiple employers exceeding concessional cap
 
@@ -591,6 +603,39 @@ expected:
   boundary_tax: 0
 ```
 
+### Executable Case 5 -- Labour part of a s 12(3) contractor's payment
+
+The reviewer has confirmed that each worker is an employee only under SGAA s 12(3) (T2-1); both are GST-registered, below the annual base and without an exemption certificate. The figures are draft SGD 2026/D1's own examples. Bill (Example 2, [24] to [28]) is paid $4,700 including GST for a month's loading: an itemised $3,900 for labour (150 hours at $26) and $800 for hiring his forklift. The forklift hire and the one-eleventh GST in the labour amount are not in respect of his labour, so his QE is $3,545.45 and SG at 12% is $425.45 to the cent. Betty (Example 3, [29] to [32]) is paid $2,400 including GST a week for support work and a software licence, with no split in the contract; a documented reasonable market value of her labour is $2,000 including GST, so her weekly QE is $1,818.18 and the $400 for the licence is not QE. The determination is a draft. [SGAA s 10A(1)(d)](https://www.legislation.gov.au/C2004A04402/latest/text); [draft SGD 2026/D1](https://www.ato.gov.au/law/view/document?DocID=DSD/SGD2026D1/NAT/ATO/00001).
+
+```oa-check
+name: Labour part of s 12(3) contractor payments under draft SGD 2026/D1, 2026-27
+tolerance: 0.01
+inputs:
+  bill_payment_incl_gst: 4700
+  bill_forklift_hire_incl_gst: 800
+  bill_hours: 150
+  bill_hourly_rate_incl_gst: 26
+  betty_payment_incl_gst: 2400
+  betty_labour_market_value_incl_gst: 2000
+  sg_percent: 12
+steps:
+  - bill_labour_incl_gst: bill_hours * bill_hourly_rate_incl_gst
+  - bill_unexplained: bill_payment_incl_gst - bill_forklift_hire_incl_gst - bill_labour_incl_gst
+  - bill_gst_on_labour: bill_labour_incl_gst / 11
+  - bill_qe: bill_labour_incl_gst - bill_gst_on_labour
+  - bill_sg: pct(bill_qe, sg_percent)
+  - betty_qe: betty_labour_market_value_incl_gst * 10 / 11
+  - betty_licence_part: betty_payment_incl_gst - betty_labour_market_value_incl_gst
+expected:
+  bill_labour_incl_gst: 3900
+  bill_unexplained: 0
+  bill_gst_on_labour: 354.55
+  bill_qe: 3545.45
+  bill_sg: 425.45
+  betty_qe: 1818.18
+  betty_licence_part: 400
+```
+
 ## When to refuse or refer
 
 Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
@@ -679,6 +724,10 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/super-from-your-employer/super-guarantee-opt-out-for-high-income-earners-with-multiple-employers> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=COG/PCG20261/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
+| SGAA 1992, compilation 78 (C2026C00272), ss 10A(1)(d), 12(1), 12(3), 12(11) and 17A(2) | <https://www.legislation.gov.au/C2004A04402/latest/text> | 2026-11-19; s 12(3) and s 12(11) text, s 10A(1)(d) QE limb, charge percentage 12 |
+| TR 2023/4 (consolidated 11 December 2024), [5A] and Appendix 2 [94] to [112] | <https://www.ato.gov.au/law/view/document?docid=TXR/TR20234/NAT/ATO/00001> | 2026-11-19; s 12(3) elements, individual capacity, delegation, results, equipment and labour hire |
+| Draft SGD 2026/D1 (2 September 2026), [16] to [19], [24] to [32] and [37] | <https://www.ato.gov.au/law/view/document?DocID=DSD/SGD2026D1/NAT/ATO/00001> | 2026-11-19; still a draft, comments closed 2 October 2026; non-labour items, market value method, Examples 2 and 3 |
+| Draft SGR 2026/D1 | <https://www.ato.gov.au/law/view/document?DocID=DSG/SGR2026D1/NAT/ATO/00001> | 2026-11-19; status only: still a draft for comment |
 
 ### Section 10 -- Reference material
 
@@ -704,7 +753,7 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 | Shortfall exemption certificate | ato.gov.au -- [Super guarantee opt out](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/super-from-your-employer/super-guarantee-opt-out-for-high-income-earners-with-multiple-employers) (checked 31 October 2026) |
 | Schedule 6 Bill note | [APH, Bill r7554](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7554); [Explanatory memorandum](https://parlinfo.aph.gov.au/parlInfo/download/legislation/ems/r7554_ems_5ddf5ef5-1ba9-465d-8a20-6eedde8537f6/upload_pdf/JC019191.pdf;fileType=application%2Fpdf) (checked 31 October 2026) |
 
-Four executable cases cover the selected annual-base, salary-sacrifice, carry-forward and Division 293 calculations. Their eligibility facts are stipulated; arithmetic checks do not verify client records, fund receipt or legal entitlement.
+Five executable cases cover the selected annual-base, salary-sacrifice, carry-forward, Division 293 and s 12(3) labour-part calculations. Their eligibility facts are stipulated; arithmetic checks do not verify client records, fund receipt or legal entitlement.
 
 Not yet confirmed: a complete page-level source/read-date audit and independent legal review of the whole guide. Existing dates and qualifications retain their original scope.
 
