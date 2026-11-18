@@ -90,7 +90,9 @@ Amounts are exact in cents; no rounding is needed.
 
 ## Outputs and limits
 
-Results include the verdict, reason codes, reasons, sources and limits, with `concessional`,
+Results include the verdict, reason codes, reasons, sources and limits, with `concessional`
+(`balanceBelowCarryForwardThreshold` is the balance condition alone: the cap rises only by
+`capIncrease`),
 `carryForward` (each of the previous 5 years: unused cap, carried in, applied this year,
 remaining and when it lapses; `null` when no earlier years were given) and `nonConcessional`
 (general cap, transfer balance cap, contributions counted, the first year cap a bring forward

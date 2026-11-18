@@ -53,7 +53,21 @@ test("ATO contributions caps table 2: unused amounts accrued from 2018-19, and 2
   ]);
   assert.equal(result.concessional.unusedCapCarriedIn, "74500.00");
   assert.equal(result.concessional.capIncrease, "0.00");
+  assert.equal(result.concessional.balanceBelowCarryForwardThreshold, true);
+  assert.equal("carryForwardAllowed" in result.concessional, false);
+  assert.deepEqual(result.reason_codes, ["caller_attested_inputs"]);
   assert.equal(result.carryForward.expiringAtEndOfYear, "22000.00");
+});
+
+test("below $500,000 with no unused cap: only the balance condition is met and the cap is not increased", () => {
+  const full = years([["2019-20", "25000"], ["2020-21", "25000"], ["2021-22", "27500"], ["2022-23", "27500"], ["2023-24", "27500"]]);
+  const result = check({ incomeYear: "2024-25", totalSuperBalanceBeforeYear: "400000", concessionalContributions: "40000", earlierYears: full, excessConcessionalReleased: false });
+  assert.equal(result.concessional.balanceBelowCarryForwardThreshold, true);
+  assert.equal(result.concessional.unusedCapCarriedIn, "0.00");
+  assert.equal(result.concessional.capIncrease, "0.00");
+  assert.equal(result.concessional.cap, "30000.00");
+  assert.equal(result.concessional.excess, "10000.00");
+  assert.equal(result.reason_codes.includes("carry_forward_applied"), false);
 });
 
 // Hand-worked: 2021-22 to 2025-26 at $20,000 leave $7,500, $7,500, $7,500, $10,000 and
@@ -62,7 +76,7 @@ const fiveYears = years([["2021-22", "20000"], ["2022-23", "20000"], ["2023-24",
 
 test("$499,999.99 just before the year: the excess is covered earliest year first, partly from 2023-24", () => {
   const result = check({ totalSuperBalanceBeforeYear: "499999.99", concessionalContributions: "50000", earlierYears: fiveYears });
-  assert.equal(result.concessional.carryForwardAllowed, true);
+  assert.equal(result.concessional.balanceBelowCarryForwardThreshold, true);
   assert.equal(result.concessional.unusedCapCarriedIn, "42500.00");
   assert.equal(result.concessional.capIncrease, "17500.00");
   assert.equal(result.concessional.cap, "50000.00");
@@ -74,7 +88,7 @@ test("$499,999.99 just before the year: the excess is covered earliest year firs
 
 test("$500,000.00 just before the year: no increase, the amounts still age and 2021-22's lapses", () => {
   const result = check({ totalSuperBalanceBeforeYear: "500000.00", concessionalContributions: "50000", earlierYears: fiveYears, excessConcessionalReleased: false });
-  assert.equal(result.concessional.carryForwardAllowed, false);
+  assert.equal(result.concessional.balanceBelowCarryForwardThreshold, false);
   assert.equal(result.concessional.capIncrease, "0.00");
   assert.equal(result.concessional.cap, "32500.00");
   assert.equal(result.concessional.excess, "17500.00");

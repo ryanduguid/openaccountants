@@ -194,7 +194,7 @@ export function assessContributionCaps(input) {
     totalSuperBalanceBeforeYear: formatMoney(balance),
     concessional: {
       generalCap: formatMoney(generalCap),
-      carryForwardAllowed: belowLimit,
+      balanceBelowCarryForwardThreshold: belowLimit,
       unusedCapCarriedIn: pool ? formatMoney(carriedIn.reduce((sum, value) => sum + value, 0n)) : null,
       capIncrease: formatMoney(increase),
       cap: formatMoney(cap),
