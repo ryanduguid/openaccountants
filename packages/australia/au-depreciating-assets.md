@@ -76,7 +76,7 @@ Collect these before any figure is worked. Missing items become Needs Input, not
 
 - A balancing adjustment event occurs when the holder stops holding the asset, stops using it (or having it installed ready for use) and expects never to use it again, or has not used it and decides never to use it ([ITAA 1997 s 40-295(1)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-295)). A change in the holding of a partnership asset is also one (s 40-295(2)). Splitting or merging an asset is not (s 40-295(3)).
 - The termination value is worked out at the time of the event: the amount in the table in s 40-300(2) where an item applies (the last applicable item if several do), otherwise the amount s 40-305 treats as received ([s 40-300(1), (2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-300)). The common table items are market value when the asset is no longer used but still held (items 1 and 2), market value where a party did not deal at arm's length and the value would otherwise be lower (item 6), market value for a private or domestic arrangement such as a gift (item 7), and the insurance or other amount for loss or destruction (item 8).
-- Otherwise the termination value is the greater of the amounts in s 40-305(1): an amount received (item 1), the amount of a liability terminated (item 2), the market value of a non-cash benefit (item 4), and the like ([s 40-305(1)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-305)). Apportion a sale price that covers other property on market values ([ATO, Guide to depreciating assets 2026](https://www.ato.gov.au/law/view/document?docid=SAV/DEPRECIATING/00001), 'Selling a depreciating asset with other property').
+- Otherwise the termination value is what s 40-305(1) treats as received: the greater of (a) the amounts deducted or deductible because of the event and (b) the sum of the applicable table items, such as an amount received (item 1), the amount of a liability terminated (item 2) and the market value of a non-cash benefit received (item 4) ([s 40-305(1)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-305)). Apportion a sale price that covers other property on market values ([ATO, Guide to depreciating assets 2026](https://www.ato.gov.au/law/view/document?docid=SAV/DEPRECIATING/00001), 'Selling a depreciating asset with other property').
 - GST: reduce the termination value by the GST payable where the event is a taxable supply, and increase it by a decreasing adjustment (or decrease it by an increasing adjustment) relating to that supply in the event's income year ([s 27-95(1), (3), (4)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/27-95)). The GST reduction does not apply where Division 40 substitutes market value (s 27-95(2)). An adjustment in a later income year is assessable or deductible then, not added to the termination value (s 27-95(5), (6)).
 
 ### Step 2: Rebuild the adjustable value year by year
@@ -113,7 +113,7 @@ Collect these before any figure is worked. Missing items become Needs Input, not
 | 2021-22 | $60,733 | Same table |
 | 2020-21 | $59,136 | Same table |
 
-4. **Switched car expense methods.** Where a balancing adjustment event occurs for a car, a decline in value has been deducted for at least one income year, and the cents per kilometre method was chosen for one or more other years, work the amount under s 40-370 instead of s 40-285 ([s 40-370(1), (2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-370)):
+4. **Switched car expense methods.** Where a balancing adjustment event occurs for a car, a decline in value has been or can be deducted for an income year, and the cents per kilometre method was chosen for one or more other years, work the amount under s 40-370 instead of s 40-285 ([s 40-370(1), (2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-370)). The ATO's public ruling [TD 2006/49](https://www.ato.gov.au/law/view/document?docid=TXD/TD200649/NAT/ATO/00001) applies both the 20% assumption at step 2 and the days at steps 3 and 4 to the same cents per kilometre year (paras 10, 19 and 20; its example predates 2015-16, when 2 other methods also counted):
    1. Termination value less adjustable value just before the event. For the cents per kilometre years, the adjustable value assumes a decline worked on the same basis as the other years (s 40-370(3)).
    2. Reduce it by the s 40-290(2) formula. For each cents per kilometre year, treat taxable use as 20%, so 80% of that year's notional decline is a reduction (s 40-370(4)).
    3. Multiply by the total days for which the holder deducted the car's decline in value. A cents per kilometre year adds no days, and neither does a log book year whose deduction was nil, because no decline was deducted for it.
@@ -126,7 +126,7 @@ Collect these before any figure is worked. Missing items become Needs Input, not
 
 - CGT event K7 happens when a balancing adjustment event occurs for a depreciating asset that was at some time used, or installed ready for use, for a purpose other than a taxable purpose ([s 104-235(1)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/104-235)). It is not disregarded by the general rule for depreciating assets ([s 118-24(2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-24)).
 - Capital gain = (termination value - cost) x sum of reductions / total decline, where termination value exceeds cost; capital loss = (cost - termination value) x the same fraction, where cost exceeds termination value ([s 104-240(1), (2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/104-240); formula read from the [Federal Register, compilation 268, volume 3](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html)). Cost base and capital proceeds play no part (s 104-240(1) Note 2).
-- Disregard the gain or loss for a car, motor cycle or similar vehicle ([s 118-5](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-5)), a pre-CGT asset, and an asset for which a Division 328 deduction is available for the event's year (s 104-235(4)). A pooled asset uses s 104-245 (R-AU-DEP-5).
+- Disregard the gain or loss for a car, motor cycle or similar vehicle ([s 118-5](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-5)), a pre-CGT asset, and an asset for which a Division 328 deduction is available for the event's year (s 104-235(4)). An asset in a low-value pool uses s 104-245 (s 104-235(3); R-AU-DEP-5).
 - Pass the gain or loss to `au-capital-gains`, which applies any discount, loss and the changes from 1 July 2027.
 
 ### Step 7: Trade-ins and replacement assets
@@ -190,6 +190,7 @@ Andrew bought a computer for $1,000, used it 60% for a taxable purpose, and sold
 
 ```oa-check
 name: AU depreciating asset with 60% taxable use, balancing adjustment and K7 capital loss
+tolerance: 0.000001
 inputs:
   cost: 1000
   termination_value: 600
@@ -215,6 +216,7 @@ Louise bought a car on 1 July 2024, used the log book method at 40% business use
 
 ```oa-check
 name: AU 2025-26 log book car sold, balancing adjustment reduced for private use
+tolerance: 0.000001
 inputs:
   cost: 30000
   termination_value: 24500
@@ -240,6 +242,7 @@ A $30,000 car was bought on 1 July 2024. In 2024-25 the owner used the cents per
 
 ```oa-check
 name: AU 2026-27 car sold after switching from cents per kilometre to log book, s 40-370
+tolerance: 0.000001
 inputs:
   cost: 30000
   termination_value: 18000
@@ -268,6 +271,7 @@ If the 2026-27 log book deduction had been nil (the car was used only privately 
 
 ```oa-check
 name: AU 2026-27 s 40-370 car whose last log book year had a nil deduction
+tolerance: 0.000001
 inputs:
   cost: 30000
   termination_value: 18000
@@ -295,6 +299,7 @@ A business bought a car first held and first used in 2025-26. Its cost after the
 
 ```oa-check
 name: AU 2025-26 car limit car sold, termination value scaled under s 40-325
+tolerance: 0.000001
 inputs:
   car_limit_year_first_used: 69674
   second_element: 0
@@ -317,10 +322,11 @@ expected:
 
 ### Case E: trading in a part-private vehicle (ATO's Ian example)
 
-Ian, a GST-registered plumber, bought a car for $44,000 including $4,000 GST, used it 80% in his business and claimed a $3,200 credit. He trades it in for a $22,000 allowance, a taxable sale; the ATO gives his decreasing adjustment as $400 ([ATO, GST and the disposal of capital assets](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/rules-for-specific-transactions/business-asset-transactions/gst-and-the-disposal-of-capital-assets)). Added here: he held the car for one full income year on the log book method, with a decline of $10,200 and a deduction of $8,160, and the trade-in happens at the end of that year. The car's capital gain or loss is disregarded (s 118-5).
+Ian, a GST-registered plumber, bought a car for $44,000 including $4,000 GST, used it 80% in his business and claimed a $3,200 credit. In the ATO's example he sells it for $22,000 including GST, a taxable sale, with a $400 decreasing adjustment ([ATO, GST and the disposal of capital assets](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/rules-for-specific-transactions/business-asset-transactions/gst-and-the-disposal-of-capital-assets)). Added here: he trades it in for a $22,000 allowance instead, which is also a taxable sale; he held the car for one full income year on the log book method, with a decline of $10,200 and a deduction of $8,160, and the trade-in happens at the end of that year. The car's capital gain or loss is disregarded (s 118-5).
 
 ```oa-check
 name: AU trade-in of an 80% business car, GST on the sale and the balancing adjustment
+tolerance: 0.000001
 inputs:
   price_incl_gst: 44000
   full_input_tax_credit: 4000
@@ -353,6 +359,7 @@ Darren buys a new car on 12 July 2026 for $91,242.80, including $8,075.91 GST an
 
 ```oa-check
 name: AU 2026-27 replacement car cost after the capped credit and the car limit
+tolerance: 0.000001
 inputs:
   price: 91242.80
   luxury_car_tax: 2407.80
@@ -376,6 +383,7 @@ A company carries on a business that earns 20% non-assessable non-exempt income,
 
 ```oa-check
 name: AU 2026-27 s 40-880 cost at 80% taxable purpose over 5 years
+tolerance: 0.000001
 inputs:
   expenditure: 10000
   taxable_purpose_percent: 80
@@ -398,6 +406,7 @@ A business enters an arm's length hire purchase agreement on 1 March 2027 for a 
 
 ```oa-check
 name: AU hire purchase notional interest split by income year and reduced for private use
+tolerance: 0.000001
 inputs:
   stated_cost: 26000
   deposit: 2000
@@ -449,7 +458,7 @@ Stop the affected calculation where a fact, source condition or scope requiremen
 
 **Topical refusals**
 
-- **R-AU-DEP-1, incomplete asset history.** *Trigger:* the decline and deduction are not known for every income year from the start time to the event's year. *Message:* "The balancing adjustment cannot be reduced for private use without every year's decline in value and deduction, including a year with nil decline and the part year to the event. Provide the full schedule and resubmit."
+- **R-AU-DEP-1, incomplete asset history.** *Trigger:* the decline and deduction are not known for every income year from the start time to the event's year, or the declines total nil (the s 40-290(2) and s 104-240 fraction is then undefined) or more than cost. *Message:* "The balancing adjustment cannot be reduced for private use without every year's decline in value and deduction, including a year with nil decline and the part year to the event. Provide the full schedule and resubmit."
 - **R-AU-DEP-2, car limit facts inconsistent.** *Trigger:* a car's cost was reduced by s 40-230 but does not equal the car limit plus its second element, the car was first used in a later financial year than the one it was first held in, or it is held jointly (s 40-230(4)). *Message:* "The car limit used for the cost and the one s 40-325 uses at the event differ or cannot be confirmed from the records. The reviewer must settle the car's cost and its s 40-325 fraction before the balancing adjustment is worked."
 - **R-AU-DEP-3, market value substitution.** *Trigger:* a disposal or trade-in not at arm's length, to an associate, or under a private or domestic arrangement, or a dealer discount linked to an undervalued trade-in. *Message:* "Market value replaces the agreed amount (s 40-300(2) items 6 and 7), the GST reduction of s 27-95(1) may not apply, and a car's cost can increase under s 40-225. The workpaper records the facts and a market value estimate; the reviewer decides the values."
 - **R-AU-DEP-4, involuntary disposal choice.** *Trigger:* the asset was lost, destroyed or compulsorily acquired and a replacement is bought or planned. *Message:* "Section 40-365 lets the taxpayer exclude some or all of the assessable amount and reduce the replacement's cost instead, if its timing and use conditions are met. The workpaper shows both treatments; the choice is the taxpayer's, made with the reviewer."
@@ -495,6 +504,7 @@ Stop the affected calculation where a fact, source condition or scope requiremen
 | ITAA 1997 ss 240-10, 240-17, 240-20, 240-25, 240-35, 240-50, 240-55, 240-60 (ATO legal database) | https://www.ato.gov.au/law/view/document?docid=PAC/19970038/240-60 (and the matching docid for each section) | 2026-11-18 |
 | GST Act ss 69-10 and 132-5 (ATO legal database) | https://www.ato.gov.au/law/view/document?docid=PAC/19990055/132-5 | 2026-11-18 |
 | Treasury Laws Amendment (A Tax Plan for the COVID-19 Economic Recovery) Act 2020 (No. 92, 2020), as made, Sch 3 item 40(7) | https://www.legislation.gov.au/C2020A00092/asmade/text | 2026-11-18 |
+| TD 2006/49, paras 1, 9, 10 and 18 to 20: s 40-370 method statement | https://www.ato.gov.au/law/view/document?docid=TXD/TD200649/NAT/ATO/00001 | 2026-11-18 |
 | TR 2011/6, paras 10, 11, 157, 160, 163 and 164 (Example 16), 319 to 321 (Example 41) | https://www.ato.gov.au/law/view/document?docid=TXR/TR20116/NAT/ATO/00001 | 2026-11-18 |
 | ATO, Guide to depreciating assets 2026: balancing adjustments, non-taxable use, cars, car acquired at a discount, involuntary disposal, hire purchase, limited recourse debt | https://www.ato.gov.au/law/view/document?docid=SAV/DEPRECIATING/00001 | 2026-11-18 |
 | ATO, Assets and exclusions (QC64425, updated 27 May 2026): car limit, Table 2 | https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/assets-and-exclusions | 2026-11-18 |
