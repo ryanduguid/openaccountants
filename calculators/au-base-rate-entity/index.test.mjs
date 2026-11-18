@@ -153,8 +153,8 @@ test("previous-year inputs: a stated existence, then each figure, are required",
   for (const previousYear of [null, "yes", [], {}, { existed: "yes" }]) {
     assertNoRate(check(trading, previousYear), "unknown", "previous_year");
   }
-  assertNoRate(check(trading, { existed: false, aggregatedTurnover: "1" }), "unknown", "previous_year");
   for (const key of ["aggregatedTurnover", "assessableIncome", "baseRateEntityPassiveIncome"]) {
+    assertNoRate(check(trading, { existed: false, [key]: "1" }), "unknown", "previous_year");
     const { [key]: _, ...rest } = trading;
     assertNoRate(check(trading, { existed: true, ...rest }), "unknown", "previous_year_figures");
   }
