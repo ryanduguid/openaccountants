@@ -12,7 +12,7 @@ const base = {
   lowTaxContributedAmounts: "0",
   excessConcessionalContributions: "0",
   definedBenefitInterest: false,
-  constitutionallyProtectedFund: false,
+  declaredStateOfficeHolderWithCpfInterest: false,
   commonwealthJustice: false,
   departingAustraliaSuperannuationPayment: false,
 };
@@ -106,10 +106,18 @@ test("taxable income for surcharge purposes is required; its old parts give no f
   stopped(estimateDivision293({ ...rest, ...parts }), "unknown", "invalid_money");
 });
 
+// Subdivision 293-E needs both a constitutionally protected fund interest and a declaration (s 293-145(1));
+// fund membership alone leaves Subdivision 293-B, where contributions to the fund count (s 293-30(3)(a)).
+test("a constitutionally protected fund interest alone is not refused", () => {
+  const result = check({ taxableIncomeForSurchargePurposes: "240000", lowTaxContributedAmounts: "15000", constitutionallyProtectedFund: true });
+  assert.equal(result.verdict, "estimate_calculated");
+  assert.equal(result.division293TaxEstimate, "750.00");
+});
+
 test("each exclusion is refused when true and has no figure when not stated", () => {
   for (const [key, code] of [
     ["definedBenefitInterest", "defined_benefit_interest"],
-    ["constitutionallyProtectedFund", "constitutionally_protected_fund"],
+    ["declaredStateOfficeHolderWithCpfInterest", "state_higher_level_office_holder"],
     ["commonwealthJustice", "commonwealth_justice"],
     ["departingAustraliaSuperannuationPayment", "departing_australia_payment"],
   ]) {

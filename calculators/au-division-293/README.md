@@ -21,7 +21,7 @@ const result = estimateDivision293({
   lowTaxContributedAmounts: "15000",
   excessConcessionalContributions: "0",
   definedBenefitInterest: false,
-  constitutionallyProtectedFund: false,
+  declaredStateOfficeHolderWithCpfInterest: false,
   commonwealthJustice: false,
   departingAustraliaSuperannuationPayment: false,
 });
@@ -48,7 +48,7 @@ attestation, which the calculator does not verify.
 | `lowTaxContributedAmounts` | Contributions and amounts covered by s 293-30 for the year, under the law for that year |
 | `excessConcessionalContributions` | The year's excess concessional contributions (s 291-20(1)) |
 | `definedBenefitInterest` | `true` or `false`. `true` is refused: Subdivision 293-D changes the low tax contributions |
-| `constitutionallyProtectedFund` | `true` or `false`: an interest in a constitutionally protected fund. `true` is refused: Subdivision 293-E and Imposition Act 2013 s 6 can change or remove the tax |
+| `declaredStateOfficeHolderWithCpfInterest` | `true` or `false`: Subdivision 293-E applies, that is, an interest in a constitutionally protected fund in the year and, at any time in the income year, a declaration by regulation (s 293-145(1)). `true` is refused: s 293-150 changes the low tax contributions and Imposition Act 2013 s 6 can remove the tax. Other members of such a fund are worked out under Subdivision 293-B, where their contributions to it count (s 293-30(3)(a)) |
 | `commonwealthJustice` | `true` or `false`: a justice or judge in s 293-190. `true` is refused (Subdivision 293-F) |
 | `departingAustraliaSuperannuationPayment` | `true` or `false`. `true` is refused: a refund under Subdivision 293-G stops all Division 293 tax liabilities (s 293-240) |
 
