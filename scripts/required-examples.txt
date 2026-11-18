@@ -45,6 +45,8 @@ skills/international/australia/au-stamp-duty.md
 skills/international/australia/au-super-guarantee.md
 skills/international/australia/au-tpar.md
 skills/international/australia/au-trust-distributions.md
+skills/international/australia/australia-bookkeeping.md
+skills/international/australia/australia-formation.md
 skills/international/australia/australia-gst.md
 skills/international/australia/australia-payroll.md
 skills/international/australia/australia-tax-optimization.md
