@@ -50,7 +50,7 @@ not zero. Every input is the caller's attestation, which the calculator does not
 | `under75AtAnyTimeInYear` | `true` or `false`: under 75 at any time in the year (s 292-85(3)(c)) |
 | `definedBenefitInterest` | `true` or `false`: a defined benefit interest in the year or an earlier year given. `true` is refused (Subdivision 291-C) |
 | `constitutionallyProtectedFund` | `true` or `false`: an interest in a constitutionally protected fund. `true` is refused (ss 291-25(4)(a), 292-90(2)(c)(iv)) |
-| `earlierBringForwardCoversYear` | `true` or `false`: the year is the second or third year of a bring forward started earlier. `true` is refused: s 292-85(6) and (7) set that cap |
+| `earlierBringForwardCoversYear` | `true` or `false`: s 292-85(6) or (7) sets this year's cap, because a bring forward started in one of the 2 previous years makes it the second year, or the third year of a 3-year bring forward. `true` is refused. After a 2-year bring forward the third year's cap is the general cap (s 292-85(4)), so state `false` for it |
 | `earlierYears` | Required when the balance is below $500,000; optional otherwise. Each of the previous 5 years once, with `incomeYear` and `concessionalContributions`, and earlier years back to 2018-19 without a gap. A year whose contributions exceed its cap also needs its `totalSuperBalanceBeforeYear`, and then every year from 5 before it (or 2018-19) |
 | `excessConcessionalReleased` | Required only when the concessional contributions exceed the cap available. `false` counts the whole excess as non-concessional; `true` is refused, as s 292-90(1A) reduces the count by each amount released divided by 85% |
 
@@ -80,8 +80,9 @@ Non-concessional (s 292-85):
 - The first year cap space is that transfer balance cap less the balance. When it exceeds the
   general cap and the person is under 75 at any time in the year, contributions over the general
   cap start a bring forward: twice the general cap (2 years) when the cap space is at most twice
-  the general cap, otherwise 3 times (3 years). `bringForwardCap` shows the first year cap a
-  bring forward would give, even when it has not started.
+  the general cap, otherwise 3 times (3 years). Until contributions counted exceed the general
+  cap, `cap` is the general cap; `firstYearCapIfBringForwardStarts` is the first year cap that
+  contributions over it would start, given the stated age and earlier bring forward facts.
 - Contributions counted are `nonConcessionalContributions` plus the year's unreleased excess
   concessional contributions.
 
@@ -92,8 +93,8 @@ Amounts are exact in cents; no rounding is needed.
 Results include the verdict, reason codes, reasons, sources and limits, with `concessional`,
 `carryForward` (each of the previous 5 years: unused cap, carried in, applied this year,
 remaining and when it lapses; `null` when no earlier years were given) and `nonConcessional`
-(general cap, transfer balance cap, contributions counted, bring forward cap and years, cap,
-remaining and excess). `remaining` in a first bring forward year is the first year's shortfall,
+(general cap, transfer balance cap, contributions counted, the first year cap a bring forward
+would give, whether one started and for how many years, cap, remaining and excess). `remaining` in a first bring forward year is the first year's shortfall,
 which s 292-85(6) carries to the second year only while the balance stays below the transfer
 balance cap.
 
@@ -101,7 +102,11 @@ Out of scope: which contributions are concessional or non-concessional, when a f
 them, the CGT cap, downsizer and other excluded contributions, reallocation or disregard
 decisions, releases, the tax on an excess, Division 293 and Division 296. The caps and the
 ATO's tables were read on 18 November 2026; review later indexation and amendments before
-relying on the result. No runtime network or clock is consulted.
+relying on the result. The Act was read as compilation 268 (in force 1 October 2026). The
+compilation from 1 December 2026 adds only Schedule 1, items 41 to 45 of the Treasury Laws
+Amendment (Financial Reporting System Reform) Act 2026 (No. 61, 2026), which amend
+ss 25-110(3), 715-375(1)(b), 715-379(1)(b) and 995-1; none of ss 291-20, 291-25, 292-85 or
+292-90 changes. No runtime network or clock is consulted.
 
 ## Verification and provenance
 

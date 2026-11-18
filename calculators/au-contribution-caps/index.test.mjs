@@ -149,7 +149,7 @@ for (const [incomeYear, rows] of Object.entries(bands)) {
     for (const [balance, bringForwardCap] of rows) {
       const result = check({ incomeYear, totalSuperBalanceBeforeYear: balance, nonConcessionalContributions: "400000" });
       assert.equal(result.nonConcessional.generalCap, general[incomeYear]);
-      assert.equal(result.nonConcessional.bringForwardCap, bringForwardCap, `${incomeYear} at ${balance}`);
+      assert.equal(result.nonConcessional.firstYearCapIfBringForwardStarts, bringForwardCap, `${incomeYear} at ${balance}`);
       assert.equal(result.nonConcessional.cap, bringForwardCap ?? general[incomeYear]);
       assert.equal(result.nonConcessional.bringForwardYears, bringForwardCap === null ? null : Number(BigInt(bringForwardCap.slice(0, -3)) / BigInt(general[incomeYear].slice(0, -3))));
     }
@@ -157,7 +157,7 @@ for (const [incomeYear, rows] of Object.entries(bands)) {
     assert.equal(check({ incomeYear, totalSuperBalanceBeforeYear: nearCap("99"), nonConcessionalContributions: "1" }).nonConcessional.cap, general[incomeYear]);
     const atCap = check({ incomeYear, totalSuperBalanceBeforeYear: transfer[incomeYear], nonConcessionalContributions: "1" });
     assert.equal(atCap.nonConcessional.cap, "0.00");
-    assert.equal(atCap.nonConcessional.bringForwardCap, null);
+    assert.equal(atCap.nonConcessional.firstYearCapIfBringForwardStarts, null);
     assert.equal(atCap.nonConcessional.excess, "1.00");
   });
 }
@@ -166,7 +166,10 @@ test("bring forward starts only above the general cap, and only under 75", () =>
   const atCap = check({ nonConcessionalContributions: "130000" });
   assert.equal(atCap.nonConcessional.bringForwardTriggered, false);
   assert.equal(atCap.nonConcessional.cap, "130000.00");
-  assert.equal(atCap.nonConcessional.bringForwardCap, "390000.00");
+  // Not started: no output may read as a bring forward cap; the conditional figure says so.
+  assert.equal("bringForwardCap" in atCap.nonConcessional, false);
+  assert.equal(atCap.nonConcessional.firstYearCapIfBringForwardStarts, "390000.00");
+  assert.equal(atCap.nonConcessional.bringForwardYears, null);
   assert.equal(atCap.nonConcessional.remaining, "0.00");
   const over = check({ nonConcessionalContributions: "130000.01" });
   assert.equal(over.nonConcessional.bringForwardTriggered, true);
@@ -175,7 +178,7 @@ test("bring forward starts only above the general cap, and only under 75", () =>
   assert.equal(over.nonConcessional.remaining, "259999.99");
   assert.deepEqual(over.reason_codes, ["caller_attested_inputs", "bring_forward_triggered"]);
   const aged = check({ nonConcessionalContributions: "200000", under75AtAnyTimeInYear: false });
-  assert.equal(aged.nonConcessional.bringForwardCap, null);
+  assert.equal(aged.nonConcessional.firstYearCapIfBringForwardStarts, null);
   assert.equal(aged.nonConcessional.cap, "130000.00");
   assert.equal(aged.nonConcessional.excess, "70000.00");
   const excess = check({ nonConcessionalContributions: "400000" });

@@ -92,7 +92,7 @@ function history(list, current) {
 const exclusions = [
   ["definedBenefitInterest", "defined_benefit_interest", "A defined benefit interest changes what counts as concessional contributions (ITAA 1997 Subdivision 291-C); this calculator does not cover it."],
   ["constitutionallyProtectedFund", "constitutionally_protected_fund", "Contributions to a constitutionally protected fund count differently (ITAA 1997 ss 291-25(4)(a) and 292-90(2)(c)(iv)); this calculator does not cover them."],
-  ["earlierBringForwardCoversYear", "bring_forward_later_year", "In a second or third year of bring forward, s 292-85(6) and (7) set the cap from the first year's cap and contributions; this calculator works out only a year no earlier bring forward covers (s 292-85(3)(d))."],
+  ["earlierBringForwardCoversYear", "bring_forward_later_year", "When an earlier bring forward makes this year its second year, or the third year of a 3-year bring forward, s 292-85(6) or (7) sets the cap from the first year's cap and contributions; this calculator works out only a year whose cap neither subsection determines (s 292-85(3)(d))."],
 ];
 
 /**
@@ -104,7 +104,7 @@ const exclusions = [
  * @param {boolean} input.under75AtAnyTimeInYear s 292-85(3)(c).
  * @param {boolean} input.definedBenefitInterest true is refused.
  * @param {boolean} input.constitutionallyProtectedFund true is refused.
- * @param {boolean} input.earlierBringForwardCoversYear true is refused.
+ * @param {boolean} input.earlierBringForwardCoversYear s 292-85(6) or (7) sets this year's cap; true is refused.
  * @param {Array<{incomeYear: string, concessionalContributions: string, totalSuperBalanceBeforeYear?: string}>} [input.earlierYears]
  *   Each of the previous 5 years; required when the balance is below $500,000.
  * @param {boolean} [input.excessConcessionalReleased] Required when the result has excess concessional contributions.
@@ -219,7 +219,7 @@ export function assessContributionCaps(input) {
       contributions: formatMoney(nonConcessional),
       excessConcessionalCounted: formatMoney(excessConcessional),
       contributionsCounted: formatMoney(counted),
-      bringForwardCap: bringForwardCap === null ? null : formatMoney(bringForwardCap),
+      firstYearCapIfBringForwardStarts: bringForwardCap === null ? null : formatMoney(bringForwardCap),
       bringForwardTriggered: triggered,
       bringForwardYears: triggered ? Number(multiple) : null,
       cap: formatMoney(nonConcessionalCap),
