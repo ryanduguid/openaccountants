@@ -14,21 +14,15 @@ function cents(value) {
   return match ? BigInt(match[1]) * 100n + BigInt((match[2] ?? "").padEnd(2, "0")) : null;
 }
 
-const formatMoney = (value) => {
-  const magnitude = value < 0n ? -value : value;
-  return `${value < 0n ? "-" : ""}${magnitude / 100n}.${String(magnitude % 100n).padStart(2, "0")}`;
-};
+const formatMoney = (value) => `${value / 100n}.${String(value % 100n).padStart(2, "0")}`;
 const positive = (value) => (value > 0n ? value : 0n);
 
 // The amounts supplied, in cents; each is required and "0" when there is none.
 const amounts = [
-  "taxableIncome",
-  "assessableFhssReleasedAmount",
-  "familyTrustDistributionAmounts",
+  "taxableIncomeForSurchargePurposes",
   "reportableFringeBenefitsTotal",
   "netFinancialInvestmentLoss",
   "netRentalPropertyLoss",
-  "superLumpSumZeroRateAmount",
   "lowTaxContributedAmounts",
   "excessConcessionalContributions",
 ];
@@ -50,13 +44,11 @@ const outcomes = {
 /**
  * @param {object} input
  * @param {string} input.incomeYear A supported income year, e.g. "2026-27".
- * @param {string} input.taxableIncome Taxable income as assessed (ITAA 1997 s 4-15).
- * @param {string} input.assessableFhssReleasedAmount s 313-20 amount in assessable income.
- * @param {string} input.familyTrustDistributionAmounts Amounts ITAA 1936 Sch 2F s 271-105(1) kept out of assessable income.
+ * @param {string} input.taxableIncomeForSurchargePurposes s 995-1 'income for surcharge purposes' (a): taxable income
+ *   worked out disregarding the assessable FHSS released amount and ITAA 1936 Sch 2F s 271-105(1).
  * @param {string} input.reportableFringeBenefitsTotal FBTAA s 135N.
  * @param {string} input.netFinancialInvestmentLoss s 995-1 'total net investment loss' (a).
  * @param {string} input.netRentalPropertyLoss s 995-1 'total net investment loss' (b).
- * @param {string} input.superLumpSumZeroRateAmount The s 301-20(3) amount when entitled to the s 301-20(2) offset.
  * @param {string} input.lowTaxContributedAmounts s 293-30.
  * @param {string} input.excessConcessionalContributions s 291-20(1).
  * @param {boolean} input.definedBenefitInterest true is refused.
@@ -96,17 +88,14 @@ export function estimateDivision293(input) {
   if (Object.values(value).includes(null)) {
     return stop("unknown", "invalid_money", `Supply ${amounts.join(", ")} as non-negative AUD decimal strings with at most 2 decimal places; "0" when there is none, as missing is not zero.`);
   }
-  if (value.taxableIncome === 0n && value.familyTrustDistributionAmounts > 0n) {
-    return stop("unknown", "taxable_income_indeterminate", "With a nil taxable income, how much of the family trust amounts taxable income would include depends on the deductions: supply the taxable income worked out without ITAA 1936 Sch 2F s 271-105(1) as taxableIncome and \"0\" as familyTrustDistributionAmounts.");
-  }
   if (value.excessConcessionalContributions > value.lowTaxContributedAmounts) {
-    return stop("unknown", "components_inconsistent", "The excess concessional contributions exceed the low tax contributed amounts they are taken from (ITAA 1997 s 293-25); check both.");
+    return stop("unknown", "components_inconsistent", "The excess concessional contributions exceed the low tax contributed amounts, so ITAA 1997 s 293-25 gives a negative amount, which this calculator does not work with; check both.");
   }
 
-  // s 995-1 'income for surcharge purposes' (a), (b) and (d), less the s 301-20(3) amount.
-  const income = positive(value.taxableIncome - value.assessableFhssReleasedAmount + value.familyTrustDistributionAmounts)
-    + value.reportableFringeBenefitsTotal + value.netFinancialInvestmentLoss + value.netRentalPropertyLoss
-    - value.superLumpSumZeroRateAmount;
+  // s 995-1 'income for surcharge purposes' (a), (b) and (d). Its s 301-20(3) reduction is nil from 2024-25:
+  // nobody is then both under 60 and at preservation age (SISR reg 6.01(2)), as s 301-20(1) requires.
+  const income = value.taxableIncomeForSurchargePurposes + value.reportableFringeBenefitsTotal
+    + value.netFinancialInvestmentLoss + value.netRentalPropertyLoss;
   const contributions = value.lowTaxContributedAmounts - value.excessConcessionalContributions;
   const combined = income + contributions;
   const excess = positive(combined - BigInt(rules.threshold) * 100n);

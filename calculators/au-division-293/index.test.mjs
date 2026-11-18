@@ -5,13 +5,10 @@ import rules from "./rules.json" with { type: "json" };
 
 const base = {
   incomeYear: "2026-27",
-  taxableIncome: "0",
-  assessableFhssReleasedAmount: "0",
-  familyTrustDistributionAmounts: "0",
+  taxableIncomeForSurchargePurposes: "0",
   reportableFringeBenefitsTotal: "0",
   netFinancialInvestmentLoss: "0",
   netRentalPropertyLoss: "0",
-  superLumpSumZeroRateAmount: "0",
   lowTaxContributedAmounts: "0",
   excessConcessionalContributions: "0",
   definedBenefitInterest: false,
@@ -29,7 +26,7 @@ const stopped = (result, verdict, code) => {
 
 test("ATO example: Jan's $240,000 and $15,000 give $5,000 taxable and $750 tax", () => {
   for (const incomeYear of rules.supported_years) {
-    const result = check({ incomeYear, taxableIncome: "240000", lowTaxContributedAmounts: "15000" });
+    const result = check({ incomeYear, taxableIncomeForSurchargePurposes: "240000", lowTaxContributedAmounts: "15000" });
     assert.equal(result.verdict, "estimate_calculated");
     assert.equal(result.division293Income, "240000.00");
     assert.equal(result.combinedAmount, "255000.00");
@@ -43,42 +40,42 @@ test("ATO example: Jan's $240,000 and $15,000 give $5,000 taxable and $750 tax",
 });
 
 test("$250,000.00 exactly is not over the threshold; each cent above is, rounded half away from zero", () => {
-  const at = check({ taxableIncome: "230000", lowTaxContributedAmounts: "20000" });
+  const at = check({ taxableIncomeForSurchargePurposes: "230000", lowTaxContributedAmounts: "20000" });
   assert.equal(at.liable, false);
   assert.equal(at.taxableContributions, "0.00");
   assert.equal(at.division293TaxEstimate, "0.00");
   assert.deepEqual(at.reason_codes, ["caller_attested_inputs", "not_above_threshold"]);
-  for (const [taxableIncome, taxable, tax] of [
+  for (const [income, taxable, tax] of [
     ["230000.01", "0.01", "0.00"], ["230000.03", "0.03", "0.00"], ["230000.04", "0.04", "0.01"],
     ["230000.10", "0.10", "0.02"], ["230000.30", "0.30", "0.05"], ["230001", "1.00", "0.15"],
   ]) {
-    const result = check({ taxableIncome, lowTaxContributedAmounts: "20000" });
-    assert.equal(result.taxableContributions, taxable, taxableIncome);
-    assert.equal(result.division293TaxEstimate, tax, taxableIncome);
+    const result = check({ taxableIncomeForSurchargePurposes: income, lowTaxContributedAmounts: "20000" });
+    assert.equal(result.taxableContributions, taxable, income);
+    assert.equal(result.division293TaxEstimate, tax, income);
     assert.equal(result.liable, true);
   }
 });
 
 test("the taxable contributions are the lesser of the low tax contributions and the excess", () => {
-  const result = check({ taxableIncome: "300000", lowTaxContributedAmounts: "20000" });
+  const result = check({ taxableIncomeForSurchargePurposes: "300000", lowTaxContributedAmounts: "20000" });
   assert.equal(result.excessOverThreshold, "70000.00");
   assert.equal(result.taxableContributions, "20000.00");
   assert.equal(result.division293TaxEstimate, "3000.00");
 });
 
 test("nil low tax contributions give no taxable contributions, whatever the income", () => {
-  const result = check({ taxableIncome: "400000" });
+  const result = check({ taxableIncomeForSurchargePurposes: "400000" });
   assert.equal(result.excessOverThreshold, "150000.00");
   assert.equal(result.taxableContributions, "0.00");
   assert.equal(result.liable, false);
   assert.deepEqual(result.reason_codes, ["caller_attested_inputs", "no_low_tax_contributions"]);
-  const allExcess = check({ taxableIncome: "400000", lowTaxContributedAmounts: "40000", excessConcessionalContributions: "40000" });
+  const allExcess = check({ taxableIncomeForSurchargePurposes: "400000", lowTaxContributedAmounts: "40000", excessConcessionalContributions: "40000" });
   assert.equal(allExcess.lowTaxContributions, "0.00");
   assert.equal(allExcess.liable, false);
 });
 
 test("excess concessional contributions come off the low tax contributed amounts", () => {
-  const result = check({ taxableIncome: "260000", lowTaxContributedAmounts: "40000", excessConcessionalContributions: "7500" });
+  const result = check({ taxableIncomeForSurchargePurposes: "260000", lowTaxContributedAmounts: "40000", excessConcessionalContributions: "7500" });
   assert.equal(result.lowTaxContributions, "32500.00");
   assert.equal(result.combinedAmount, "292500.00");
   assert.equal(result.taxableContributions, "32500.00");
@@ -86,30 +83,27 @@ test("excess concessional contributions come off the low tax contributed amounts
   stopped(check({ lowTaxContributedAmounts: "7499.99", excessConcessionalContributions: "7500" }), "unknown", "components_inconsistent");
 });
 
-test("Division 293 income adds and subtracts each surcharge income component, without super contributions", () => {
+test("Division 293 income adds each surcharge income component, without super contributions", () => {
   const result = check({
-    taxableIncome: "200000",
-    assessableFhssReleasedAmount: "10000",
-    familyTrustDistributionAmounts: "5000",
+    taxableIncomeForSurchargePurposes: "200000",
     reportableFringeBenefitsTotal: "20000",
     netFinancialInvestmentLoss: "3000",
     netRentalPropertyLoss: "7000",
-    superLumpSumZeroRateAmount: "15000",
     lowTaxContributedAmounts: "50000",
     reportableSuperannuationContributions: "50000",
   });
-  assert.equal(result.division293Income, "210000.00");
-  assert.equal(result.combinedAmount, "260000.00");
-  assert.equal(result.taxableContributions, "10000.00");
-  assert.equal(result.division293TaxEstimate, "1500.00");
+  assert.equal(result.division293Income, "230000.00");
+  assert.equal(result.combinedAmount, "280000.00");
+  assert.equal(result.taxableContributions, "30000.00");
+  assert.equal(result.division293TaxEstimate, "4500.00");
 });
 
-test("taxable income without the FHSS amount and with the family trust amounts is floored at nil only once", () => {
-  assert.equal(check({ taxableIncome: "10000", assessableFhssReleasedAmount: "15000", familyTrustDistributionAmounts: "20000" }).division293Income, "15000.00");
-  assert.equal(check({ taxableIncome: "10000", assessableFhssReleasedAmount: "15000" }).division293Income, "0.00");
-  assert.equal(check({ assessableFhssReleasedAmount: "15000", reportableFringeBenefitsTotal: "1000" }).division293Income, "1000.00");
-  stopped(check({ familyTrustDistributionAmounts: "1" }), "unknown", "taxable_income_indeterminate");
-  assert.equal(check({ taxableIncome: "10000", superLumpSumZeroRateAmount: "20000" }).division293Income, "-10000.00");
+// Paragraph (a) of 'income for surcharge purposes' is one statutory amount: taxable income worked out
+// without the FHSS amount and Sch 2F s 271-105(1). Its parts are not accepted, so nothing approximates it.
+test("taxable income for surcharge purposes is required; its old parts give no figure", () => {
+  const rest = Object.fromEntries(Object.entries(base).filter(([key]) => key !== "taxableIncomeForSurchargePurposes"));
+  const parts = { taxableIncome: "240000", assessableFhssReleasedAmount: "0", familyTrustDistributionAmounts: "0", lowTaxContributedAmounts: "15000" };
+  stopped(estimateDivision293({ ...rest, ...parts }), "unknown", "invalid_money");
 });
 
 test("each exclusion is refused when true and has no figure when not stated", () => {
