@@ -42,7 +42,9 @@ malformed one gives `unknown` and no rate.
 
 Refused, by `entityType`: `company_as_trustee` (s 23(1)), `rsa_provider` (s 23(3)),
 `pooled_development_fund` (s 23(4) and (5)), `life_insurance_company` (s 23A), `non_profit_company`
-(s 23(6)), `recognised_medium_credit_union` (s 23(7)) and `public_trading_trust` (s 25). Income
+(s 23(6)), `recognised_medium_credit_union` (s 23(7)) and `public_trading_trust` (s 25). A
+non-profit company's or recognised medium credit union's rate is still 25% or 30% under s 23(2),
+but s 23(6) or (7) caps its tax, which this calculator does not apply. Income
 years before 2021-22, when the base rate entity rate was 27.5% or 26%, and after 2026-27 are
 refused.
 
@@ -50,8 +52,9 @@ refused.
 
 A company is a base rate entity when both limbs of Rates Act s 23AA are met: base rate entity
 passive income is no more than 80% of assessable income (paragraph (a)), and aggregated turnover is
-less than $50 million (paragraph (b)). Exactly 80% passes and exactly $50 million fails. The
-comparison is exact to the cent; no percentage is rounded. A base rate entity's rate is 25% and
+less than $50 million (paragraph (b)). Exactly 80% passes and exactly $50 million fails. Nil
+assessable income with nil passive income passes paragraph (a), as LCR 2019/5 Example 2.2 (Swan
+Co) concludes. The comparison is exact to the cent; no percentage is rounded. A base rate entity's rate is 25% and
 any other covered company's 30% (s 23(2)).
 
 The corporate tax rate for imputation purposes (ITAA 1997 s 995-1) runs the same test on the
@@ -70,17 +73,17 @@ results contain **no rate**. Tax payable, offsets, the franking account, the ben
 franking deficit tax are not computed.
 
 The Income Tax Rates Act 1986 (Compilation No. 66, in force 1 July 2026), ITAA 1997 ss 202-60,
-328-115 and 995-1 and the ATO's company tax rate (last updated 4 September 2026) and franking
-credit pages were read on 18 November 2026; the sources are in [rules.json](rules.json). Review
+328-115 and 995-1, LCR 2019/5 and the ATO's company tax rate (last updated 4 September 2026) and
+franking credit pages were read on 18 November 2026; the sources are in [rules.json](rules.json). Review
 later amendments before relying on a result. No runtime network or clock is consulted.
 
 ## Verification and provenance
 
 Run `node --test calculators/au-base-rate-entity/` from the repository root on Node 20+ with JSON
 import attributes; `make check` runs every calculator suite. Tests reproduce the ATO's 5 base rate
-entity examples and Dillmore Manufacture's imputation rate, the `au-company-tax` guide's
-Examples 1 and 4 and Test 6, both limbs' boundaries to the cent, and refusals of missing,
-malformed and out-of-scope inputs. Other figures are invented; no client data is used.
+entity examples, Dillmore Manufacture's imputation rate, LCR 2019/5's Swan Co, the
+`au-company-tax` guide's Examples 1 and 4 and Test 6, both limbs' boundaries to the cent, and
+refusals of missing, malformed and out-of-scope inputs. Other figures are invented; no client data is used.
 
 The rules were adapted from Ryan Duguid's independently authored company tax calculator in
 [ryanduguid.github.io](https://github.com/ryanduguid/ryanduguid.github.io/blob/4b7cfc9790b5914dfd77b40b7a704ff80f85f2c4/assets/company-tax.mjs)

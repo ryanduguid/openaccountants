@@ -31,8 +31,8 @@
       "rsa_provider": "s 23(3): an RSA provider's RSA component is taxed at 15%.",
       "pooled_development_fund": "s 23(4) and (5): a PDF's SME income and unregulated investment components have their own rates.",
       "life_insurance_company": "s 23A: ordinary and complying superannuation classes.",
-      "non_profit_company": "s 23(6): the shade-in cap on a non-profit company's tax.",
-      "recognised_medium_credit_union": "s 23(7): the cap on a recognised medium credit union's tax.",
+      "non_profit_company": "s 23(6): a non-profit company's rate is 25% or 30% under s 23(2), but its tax is capped at 55% of taxable income above $416 where taxable income is no more than $762 (base rate entity) or $915 (otherwise); this calculator does not apply the cap.",
+      "recognised_medium_credit_union": "s 23(7): a recognised medium credit union's rate is 25% or 30% under s 23(2), but its tax is capped at 37.5% (base rate entity) or 45% (otherwise) of taxable income above $49,999; this calculator does not apply the cap.",
       "public_trading_trust": "s 25: a public trading trust's trustee is outside this calculator."
     }
   },
@@ -41,6 +41,7 @@
     "https://www.ato.gov.au/law/view/document?docid=PAC/19970038/995-1",
     "https://www.ato.gov.au/law/view/document?docid=PAC/19970038/328-115",
     "https://www.ato.gov.au/law/view/document?docid=PAC/19970038/202-60",
+    "https://www.ato.gov.au/law/view/document?docid=COG/LCR20195/NAT/ATO/00001",
     "https://www.ato.gov.au/tax-rates-and-codes/company-tax-rate-changes",
     "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/imputation/paying-dividends-and-other-distributions/allocating-franking-credits"
   ],

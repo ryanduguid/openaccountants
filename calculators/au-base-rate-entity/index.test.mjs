@@ -74,9 +74,17 @@ test("failing both limbs gives both reasons and 30%", () => {
   assert.deepEqual(result.reason_codes.slice(1, 3), ["passive_income_over_80_percent", "turnover_not_under_threshold"]);
 });
 
+// LCR 2019/5 Example 2.2 (Swan Co, paragraph 64): nil assessable income and nil base rate entity
+// passive income is 'no more than 80%'.
 test("no assessable income and no passive income meets the passive income limb", () => {
   const result = check(figures("0", "0", "0"));
   assert.deepEqual([result.companyTaxRatePercent, result.limbs.passiveIncome], [25, true]);
+});
+
+test("LCR 2019/5 Swan Co: a dormant company with nil figures last year franks at 25%", () => {
+  const result = check(figures("60000000", "100", "100"), prior("0", "0", "0"));
+  assert.deepEqual(result.imputation.limbs, { passiveIncome: true, aggregatedTurnover: true });
+  assert.equal(result.imputation.corporateTaxRateForImputationPurposesPercent, 25);
 });
 
 test("au-company-tax Example 4: taxed at 25% but franks at 30% from last year's $55m turnover", () => {
@@ -171,6 +179,10 @@ test("special-rate entities, trustees and public trading trusts are refused by n
     const result = assessBaseRateEntity({ incomeYear: "2026-27", entityType, ...trading });
     assertNoRate(result, "refused", "entity_type_refused");
     assert.equal(result.reasons[0], rules.entity_types.refused[entityType]);
+  }
+  // s 23(6) and (7) cap the tax; the rate itself still comes from s 23(2).
+  for (const entityType of ["non_profit_company", "recognised_medium_credit_union"]) {
+    assert.match(rules.entity_types.refused[entityType], /rate is 25% or 30% under s 23\(2\)/);
   }
   for (const entityType of [undefined, "Company", "trust", "toString", "constructor"]) {
     assertNoRate(assessBaseRateEntity({ incomeYear: "2026-27", entityType, ...trading }), "unknown", "entity_type");
