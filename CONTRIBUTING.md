@@ -96,7 +96,7 @@ Every check CI runs has a `make` target, so a green `make check` means a green p
 
 ```
 python3 -m pip install -r requirements-dev.txt   # or: make install
-make check                                       # validate + sync-check + test: everything CI gates
+make check                                       # everything CI gates, plus the calculator tests (Node 20 or later)
 ```
 
 `requirements-dev.txt` installs PyYAML (the only dependency the generators and the validator have), pytest, openpyxl (the workbook tools) and the MCP server in editable mode. CI installs only `scripts/requirements-validation.txt` plus `./mcp`, per job.
@@ -110,7 +110,8 @@ make check                                       # validate + sync-check + test:
 | `make checkers` | the six gate checkers (`check-arithmetic.py`, `check-bracket-tables.py`, `check-expired-rules.py`, `check-fact-conflicts.py`, `check-coverage-claims.py`, `check-sourcing-floor.py`) against `scripts/baselines/`, plus `check-cited-hosts.py --selftest` | `validate.yml`, `gate-checkers` |
 | `make baselines` | rewrites the four baselines from the current tree, for use after reading the findings your change added or fixed | none: you commit the result |
 | `make test` | `unittest discover` over `tests/` and `mcp/tests/` | `sync-integrity.yml`, `unit-tests` |
-| `make check` | `validate`, `sync-check`, `checkers` and `test` | all of the above |
+| `make calculators` | `node --test calculators/`: each calculator's `index.test.mjs`, on Node 20 or later | none yet |
+| `make check` | `validate`, `sync-check`, `checkers`, `test` and `calculators` | all of the above |
 
 A gate checker fails on a finding its baseline does not list and on a baseline entry that no longer reproduces. If your change fixes an arithmetic error, a repeated bracket rate, an expired rule or a conflicting figure, its baseline entry goes stale: run `make baselines` and commit the smaller file. If your change adds a finding, fix the guide, or, when you have read the finding and it is a false positive, record it the same way and say so in the pull request. `CLAUDE.md` ("Checks") has the details and the flags each checker takes (`--json`, `--baseline`, `--no-baseline`, `--update-baseline`).
 
