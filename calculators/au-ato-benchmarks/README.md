@@ -66,7 +66,7 @@ inclusive, as those examples compare 88.70% with 86% to 93%. The ATO publishes w
 and says nothing more about rounding, so this convention is the calculator's own: 86.004% shows
 as 86% and is within a range ending at 86%; 86.01% is above it. A range printed as a single
 figure, such as 1%, is both bounds, so only 1.00% is within it. 35 ranges are single figures, all
-motor vehicle: 29 of 1%, 1 of 2% and 5 of 0%, where any expense of 0.01% or more is above.
+motor vehicle: 29 of 1%, 1 of 2% and 5 of 0%, where any expense of 0.005% of turnover or more is above.
 
 The band is the one whose printed limits contain turnover: '$400,001 - $750,000' starts at
 $400,001, and 'More than $750,000' at $750,001. Turnover below the lowest band is refused.

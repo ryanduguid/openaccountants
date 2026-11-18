@@ -116,6 +116,12 @@ test("a single published figure is both bounds", () => {
   assert.deepEqual([at(7959), at(7960), at(8039), at(8040)], ["below", "within", "within", "above"]);
 });
 
+test("a 0% range holds only expenses under 0.005% of turnover", () => {
+  const at = (motorVehicleExpenses) => ratio(check({ industry: "Pharmacy", totalBusinessIncome: 4000000, motorVehicleExpenses }), "motor_vehicle");
+  assert.deepEqual(at(199).range, { min: 0, max: 0 });
+  assert.deepEqual([at(0).position, at(199).position, at(200).position], ["within", "within", "above"]);
+});
+
 test("payments to associated persons come out of total expenses and labour", () => {
   const result = check({
     industry: "Bakeries and hot bread shops",
