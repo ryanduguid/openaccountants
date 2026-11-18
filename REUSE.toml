@@ -165,3 +165,19 @@ path = "calculators/au-base-rate-entity/rules.json"
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+[[annotations]]
+path = [
+  "calculators/au-division-293/index.mjs",
+  "calculators/au-division-293/index.test.mjs",
+  "calculators/au-division-293/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-division-293/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
