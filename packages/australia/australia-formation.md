@@ -1,10 +1,10 @@
 ---
 name: australia-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Australia. Trigger on phrases like "set up a company in Australia", "Pty Ltd", "ASIC registration", "Australian company formation", "register a business Australia", "ABN", "ACN", "proprietary limited", "sole trader Australia", "partnership Australia", or any question about starting a business entity in Australia. Covers entity types (Pty Ltd, Ltd, sole trader, partnership, trust), registration process, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Australian company formation.
-version: 1.6
+version: 1.7
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-11-05
+last_updated: 2026-11-18
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -13,13 +13,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Formation v1.6
+# Australia Formation v1.7
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia Company Formation Skill v1.6
+### Australia Company Formation Skill v1.7
 
 ## Ask the client first
 
@@ -28,6 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - What records support the amounts, dates and classifications?
 - Which residence, election, exception or eligibility conditions in this guide affect the answer?
 - What facts or source conditions remain unresolved?
+- For a company change: what is the event date, does a constitution or the replaceable rules govern, and who is the authorised officeholder?
 
 ## The method, step by step
 
@@ -43,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Corporations Act 2001 (Cth) |
 | Typical formation time | 1--3 business days (online via BRS) |
 | Corporate tax rate | 25% for base rate entities (aggregated turnover under $50m and base rate entity passive income no more than 80% of assessable income); 30% for all others |
-| Skill version | 1.4 |
+| Skill version | 1.7 |
 
 ### Section 2 -- Entity Types Comparison
 
@@ -195,7 +196,57 @@ Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier
 
 ## Worked cases
 
-No separate worked-case section is supplied in this revision. Any illustrations within the method retain their original conditions. The missing executable examples are recorded in Sources.
+Cases 1 and 2 are synthetic; they apply Section 6.5 and recompute with `python3 scripts/check-examples.py skills/international/australia/australia-formation.md`. Dates are day numbers in 2027, where day 1 is 1 January 2027. Each case assumes the replaceable rules govern notice, the constitution sets no longer period, and each last day is a business day where the act is done (s 105(3) otherwise moves it to the next business day). Days are counted under s 105 of the *Corporations Act 2001*: a period after an event excludes the event's day, and in counting days before or after another day the first is counted and the other is not. If a reviewer reads a notice period as clear days, each latest date in Case 1 moves 1 day earlier.
+
+### Case 1: Form 2560 and a posted notice for an equal reduction
+
+A proprietary company with 3 members proposes an equal reduction at a general meeting on Thursday 18 February 2027 (day 49) and will post the notice. The notice must be given at least 21 days before the meeting (s 249H(1)), so it must be taken to be given by day 28 (Thursday 28 January). A posted notice is given 3 days after posting (s 249J(4)(a)), so the latest posting day is day 25 (Monday 25 January). Form 2560 must be lodged before the notice is sent (s 256C(5)), so by day 25 and before posting; ASIC's 22 days give day 27 (Wednesday 27 January). Diary day 25, the earlier.
+
+```oa-check
+name: AU formation equal reduction Form 2560 and posted notice 2027
+inputs:
+  meeting_day: 49
+  notice_days: 21
+  postal_deeming_days: 3
+  asic_form_2560_days: 22
+steps:
+  - latest_notice_given_day: meeting_day - notice_days
+  - latest_posting_day: latest_notice_given_day - postal_deeming_days
+  - asic_latest_lodgement_day: meeting_day - asic_form_2560_days
+  - diary_lodgement_day: min(latest_posting_day, asic_latest_lodgement_day)
+expected:
+  latest_notice_given_day: 28
+  latest_posting_day: 25
+  asic_latest_lodgement_day: 27
+  diary_lodgement_day: 25
+tolerance: 0.000001
+```
+
+### Case 2: a selective reduction that cancels shares
+
+A proprietary company passes the special resolutions for a selective reduction that cancels one member's shares on Wednesday 3 February 2027 (day 34) and lodges Form 2205 on Friday 5 February (day 36). Form 2205 was due by day 48 (Wednesday 17 February). The reduction may be made from day 50 (Friday 19 February), 14 days after lodgement (s 256C(3)). The s 178D item 4 period for the member register notice ends on day 48, 2 days before the reduction may be made: record it for the authorised officeholder. The company makes the reduction and cancels the shares on Monday 22 February (day 53). ASIC's 28 days end on day 81 (Monday 22 March), the same day the s 254Y month ends. Diary 22 March 2027.
+
+```oa-check
+name: AU formation selective reduction Form 2205 and notices 2027
+inputs:
+  resolution_day: 34
+  form_2205_period_days: 14
+  lodgement_day: 36
+  wait_after_lodgement_days: 14
+  reduction_day: 53
+  asic_change_period_days: 28
+steps:
+  - form_2205_last_day: resolution_day + form_2205_period_days
+  - earliest_reduction_day: lodgement_day + wait_after_lodgement_days
+  - s178d_gap_days: earliest_reduction_day - form_2205_last_day
+  - asic_change_last_day: reduction_day + asic_change_period_days
+expected:
+  form_2205_last_day: 48
+  earliest_reduction_day: 50
+  s178d_gap_days: 2
+  asic_change_last_day: 81
+tolerance: 0.000001
+```
 
 ## When to refuse or refer
 
@@ -206,6 +257,8 @@ No separate worked-case section is supplied in this revision. Any illustrations 
 - **R-AU-F3 -- GST threshold ignorance** — If annual turnover reaches $75,000, GST registration is mandatory. Failing to register when required results in penalties and backdated GST assessments.  _(R-AU-F3)_
 - **R-AU-F4 -- Superannuation non-compliance** — The general SG rate is 12% (11.5% for 2024-25). From 1 July 2026, Payday Super applies it to each payment of qualifying earnings, and the contribution must reach the employee's fund within seven business days of payday; on $100,000 of qualifying earnings the minimum is $12,000. Late or short payment results in the Superannuation Guarantee Charge (SGC). SGC for periods from 1 July 2026 is tax-deductible; penalties and interest after the ATO assesses it, and SGC under the former quarterly regime, are not. See `au-super-guarantee.md`.  _(R-AU-F4; [ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super))_
 - **R-AU-F5 -- Shell company without substance** — This skill will not assist in forming a company with no genuine business activity in Australia. ASIC and the ATO actively pursue sham structures.  _(R-AU-F5)_
+- **R-AU-F6 -- Deciding a directors' judgement** — Do not decide, or draft a finding on, whether a share capital reduction is fair and reasonable to the shareholders or materially prejudices the company's ability to pay its creditors, or whether the company is solvent. Record what the directors considered and leave the opinion to them (Sections 6.4 and 6.5).  _(R-AU-F6)_
+- **R-AU-F7 -- Other capital reductions and the tax on a capital return** — Refer share buy-backs, redemptions of redeemable preference shares, reductions under ss 258A to 258F of the *Corporations Act 2001* and reductions by a listed company, and the income tax treatment of any payment to shareholders, to a reviewer (Section 6.5).  _(R-AU-F7)_
 
 
 ### Disclaimer
@@ -231,11 +284,66 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 | BAS (Business Activity Statement) | Quarterly or monthly (GST, PAYG, instalment) | ATO |
 | PAYG summaries / STP finalisation | 14 July following the financial year | ATO |
 | Superannuation guarantee | Received by the fund within 7 business days of each payday (Payday Super, from 1 July 2026) | Super fund / ATO |
-| Change notifications to ASIC | Within 28 days of change | ASIC |
+| Change notifications to ASIC | Mostly within 28 days of the change; some 7 or 14 days or 1 month (Section 6.1) | ASIC |
 | Financial records | Maintain for 7 years | Internal |
 | Directors' duties | Ongoing (s180--184 Corporations Act) | ASIC |
 
 - **Keep the company separate and diarised** — Keep company money and transactions apart from personal finances, agree who maintains the share register, accounting records, tax calendar and ASIC correspondence, and diary the annual review, solvency resolution and change notifications. Retain financial records for seven years after the transactions they cover. Tax return and activity statement dates depend on the company's circumstances and lodgement arrangements; they are not all due on one date.  _([ASIC, What books and records should my company keep](https://asic.gov.au/for-business/running-a-company/company-officeholder-duties/what-books-and-records-should-my-company-keep/))_
+
+#### 6.1 Change notices to ASIC
+
+Each change has its own section of the *Corporations Act 2001*, form and period. The table follows compilation 149 of the Act (in force from 19 September 2026) and ASIC's pages and INFO 30 as read on 18 November 2026; reread them at use. Form 484 is the change of company details transaction in the company officeholder portal. 'No fee' is INFO 30's entry from 1 July 2026; 'Not listed' means INFO 30 gives no fee for that form.
+
+| Change | Section | ASIC form | Lodge within | Fee (2026-27) |
+| --- | --- | --- | --- | --- |
+| Director or secretary appointed | s 205B(1) | 484 | 28 days after the appointment | Not listed |
+| Officeholder's personal details change | s 205B(4) | 484 | 28 days after the change | Not listed |
+| Director or secretary ceases | s 205B(5) | 484, or the officeholder's own Form 370 with a copy of the resignation letter, which replaces the company's notice (ss 205A and 205B(6)) | 28 days | Not listed |
+| Registered office | s 142(2) | 484 | 28 days after the change | No fee |
+| Principal place of business | s 146(1) | 484 | 28 days after the change | No fee |
+| Share issue | s 254X(1); for a proprietary company also ss 178A, 178C and 178D item 3 | 484; Form 207Z stamp duty certificate for non-cash consideration under a contract (s 254X(2)) | 28 days after the issue | No fee |
+| Share transfer or other member register change (proprietary company) | ss 178A to 178C and 178D item 5 | 484 | 28 days after the register is altered | Not listed |
+| Share cancellation | s 254Y(1) | 484 | 1 month after the cancellation; INFO 30 applies its late fee after 28 days | No fee |
+| Proposed share capital reduction | s 256C(5) | 2560 | Before the notice of meeting is sent; ASIC says at least 22 days before the meeting (29 for a public listed company) | Not listed |
+| Selective reduction resolution | s 256C(3) | 2205 | 14 days after it is passed | No fee |
+| Negative solvency resolution, or none passed | s 347B | 485 | 7 days (Section 6.4) | Not listed |
+| Correction to the annual statement | s 346C(3) | Change of company details, per ASIC's annual review page | 28 days after the statement's issue date | Not listed |
+
+- **Late fees** — A notice lodged after its period attracts a late fee on top of any lodgement fee. From 1 July 2026 it is $102 if ASIC receives the document within 1 month after the prescribed time and $428 if later (Corporations (Fees) Regulations 2001 Schedule 2 item 14). A late annual review fee and late annual statement corrections attract the same amounts, each separately.  _([ASIC, Fees for commonly lodged documents (INFO 30)](https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents), reissued July 2026; [ASIC, Late fees](https://www.asic.gov.au/for-business-and-companies/forms-and-fees/late-fees))_
+- **Counting days** — A period dating from a day or event excludes that day. In counting how many days one day is before or after another, the first is counted and the other is not. When a period for doing something ends on a day that is not a business day where it must be done, it may be done on the next business day; check that place's public holidays.  _([Corporations Act 2001 s 105](https://www.legislation.gov.au/C2004A00818/latest/text))_
+- **A late notice moves the resignation date** — A director's resignation takes effect on the day they stopped only if ASIC is notified within 28 days (s 205A or s 205B(5)). Otherwise it takes effect on the day the notice is lodged, unless ASIC, on an application made within 56 days, or the Court fixes the earlier day (s 203AA). ASIC then records the date the change was made as the end date. Flag any notice near its 28th day for the authorised officeholder.  _([Corporations Act 2001 ss 203AA, 205A and 205B](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Add or remove a company officeholder](https://www.asic.gov.au/for-business-and-companies/companies/company-officeholder-rules-and-changes/add-or-remove-a-company-officeholder))_
+- **Changes from 1 July 2027** — The Treasury Laws Amendment (Business Registries Stabilisation and Uplift) Act 2026 adds a director's director identification number to the personal details notified under s 205B, with 14 days after the Registrar issues the number where the director had none on appointment (new s 205B(3A)). It also adds electronic addresses: an officeholder's (s 205B(3)(d)) and the company's, whose change is notified within 28 days (new s 146B). Until then, record whether each director holds a director ID, not the number. The amending Acts that commence on 1 and 4 December 2026 and 8 April 2027 do not mention the sections cited in this Section 6.  _([Treasury Laws Amendment (Business Registries Stabilisation and Uplift) Act 2026, s 2 and Schedules 1 and 2](https://www.legislation.gov.au/C2026A00057/asmade/text))_
+
+#### 6.2 Officeholder changes
+
+- **Who may appoint or remove** — Identify the governing rules first. The constitution can displace or modify a replaceable rule (s 135(2)), and a replaceable rule does not apply while one person is both sole director and sole shareholder (s 135(1)); that person appoints another director by recording the appointment and signing the record (s 201F(1)). Under the replaceable rules, members appoint by resolution in general meeting (s 201G); directors appoint (s 201H(1)), and a proprietary company confirms that appointment by resolution within 2 months or the director ceases (s 201H(2)); members of a proprietary company remove a director by resolution (s 203C); and a director resigns by written notice to the company at its registered office (s 203A).  _([Corporations Act 2001](https://www.legislation.gov.au/C2004A00818/latest/text))_
+- **Before appointment** — Hold the person's signed consent to act, given before appointment and kept by the company (s 201D), and confirm that they applied for a director ID before appointment, as ASIC requires. Record whether each condition is evidenced and leave eligibility to the authorised officeholder; the director eligibility bullet in Section 3, Step 2 applies.  _([Corporations Act 2001 s 201D](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Add or remove a company officeholder](https://www.asic.gov.au/for-business-and-companies/companies/company-officeholder-rules-and-changes/add-or-remove-a-company-officeholder))_
+- **Minimum officeholders after every change** — A proprietary company needs at least 1 director who ordinarily resides in Australia (s 201A(1)), and at least 2 while it has CSF shareholders (s 201A(1A)). A resignation does not take effect if no director would remain (s 203AB), and a members' resolution removing the last director is void (s 203CA); ASIC says a sole director cannot resign without a replacement. Keep a sole director's resignation conditional on a valid appointment. Route a departing or incoming director's exposure to director penalties to `au-director-penalties.md`.  _([Corporations Act 2001](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Add or remove a company officeholder](https://www.asic.gov.au/for-business-and-companies/companies/company-officeholder-rules-and-changes/add-or-remove-a-company-officeholder))_
+- **Passing and recording resolutions** — Directors may pass a resolution without a meeting if all directors entitled to vote sign it (s 248A, a replaceable rule), and the sole director of a proprietary company by recording and signing it (s 248B). Members of a proprietary company may do so if all members entitled to vote sign (s 249A), and a one-member company by the member recording and signing it (s 249B). Record each resolution in the minute book within 1 month and have the minutes signed within a reasonable time (s 251A). Draft the documents with proposed dates for signing; never sign, lodge, pay or backdate, and record a request to date a document before it was signed as an exception.  _([Corporations Act 2001](https://www.legislation.gov.au/C2004A00818/latest/text))_
+- **Address changes** — For a registered office the company does not occupy, the notice states that the occupier consented. The change takes effect from the later of the 7th day after the notice is lodged and a later day stated in it (s 142(3)). Notify a principal place of business change separately (s 146).  _([Corporations Act 2001 ss 142 and 146](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Change a company address](https://www.asic.gov.au/for-business-and-companies/companies/changes-to-company-details/change-a-company-address))_
+
+#### 6.3 Share issues and transfers
+
+- **Share issue** — Confirm the power and approval under the constitution or replaceable rules, and record the number, class and amounts paid and unpaid. Lodge the s 254X notice within 28 days after the issue, with a certificate that stamp duty on the contract is paid for an issue for non-cash consideration under a contract (s 254X(2)). A proprietary company notifies member details and the share structure at the same time (ss 178A, 178C and 178D item 3). Route the duty question to `au-stamp-duty.md`.  _([Corporations Act 2001](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Company share issues](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/company-share-issues))_
+- **Transfers and other member register changes** — Record the signed transfer and the register entry, and lodge a proprietary company's notice within 28 days after the register is altered (s 178D item 5). A proprietary company with more than 20 members notifies only changes that affect a top 20 member of a class (s 178B). Route the tax consequences to `au-capital-gains.md` and loans or payments to shareholders to `au-div7a.md`.  _([Corporations Act 2001](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Transfer of shares or change to beneficial ownership status](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/transfer-of-shares-or-change-to-beneficial-ownership-status); [ASIC, Members register requirements and changes](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/members-register-requirements-and-changes))_
+
+#### 6.4 Annual review and solvency resolution
+
+- **Annual statement** — ASIC gives the extract of particulars within 2 weeks after each review date (s 346A). Correct any wrong particular within 28 days after its issue date (s 346C(3)); the correction does not remove late fees already incurred (s 346C(5)).  _([Corporations Act 2001](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Company annual review](https://www.asic.gov.au/for-business-and-companies/companies/company-annual-review))_
+- **Solvency resolution** — The directors pass a solvency resolution within 2 months after each review date, unless the company lodged a financial report under Chapter 2M in the 12 months before that date (s 347A). Notify ASIC on Form 485 within 7 days after a negative resolution, or within 7 days after the 2 months if none was passed (s 347B). A positive resolution is kept, not lodged. Paying the review fee without that notice is taken to be the directors' representation that the company is solvent (s 347C). Draft the resolution and assemble the information the directors ask for; the solvency opinion is theirs alone.  _([Corporations Act 2001 ss 347A to 347C](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Company annual review](https://www.asic.gov.au/for-business-and-companies/companies/company-annual-review))_
+
+#### 6.5 Share capital reductions
+
+This covers a reduction under Division 1 of Part 2J.1 of the *Corporations Act 2001*. A share buy-back (Division 2), a redemption of redeemable preference shares (s 254K) and the reductions ss 258A to 258F authorise follow other rules: record each as a question for the authorised officeholder (R-AU-F7). The directors and members decide; this guide prepares the record.
+
+- **Classify the reduction** — It is an equal reduction only if it relates only to ordinary shares, applies to each holder in proportion to the ordinary shares they hold and has the same terms for each; otherwise it is selective (s 256B(2)). Ignore differences due only to different accrued dividend entitlements, different amounts unpaid or rounding to whole shares (s 256B(3)). Record the evidence for each condition and keep the classification `UNVERIFIED` while any is missing. Record any restriction in the constitution, and whether the terms vary the rights of a class of shares, as questions for the authorised officeholder.  _([Corporations Act 2001 s 256B](https://www.legislation.gov.au/C2004A00818/latest/text))_
+- **The directors' judgements** — The reduction must be fair and reasonable to the shareholders as a whole and must not materially prejudice the company's ability to pay its creditors (s 256B(1)). The creditor condition does not apply to cancelling a share for no consideration, and cancelling a partly-paid share is for consideration (s 256B(1A)). Record which directors considered each condition, when and on what information; do not decide either or draft a finding (R-AU-F6). A reduction made in breach stays valid, but anyone involved contravenes a civil penalty provision (s 256D), and the directors may have to compensate the company if it is or becomes insolvent when it reduces its capital (s 256E, pointing to ss 588G and 1317H).  _([Corporations Act 2001 ss 256B, 256D and 256E](https://www.legislation.gov.au/C2004A00818/latest/text))_
+- **Approval** — An equal reduction needs a resolution passed at a general meeting (s 256C(1)); ASIC says an ordinary resolution, unless the constitution requires a special one. A selective reduction needs either a special resolution at a general meeting with no votes in favour cast by anyone who is to receive consideration or have their liability for unpaid amounts reduced, or by their associates, or a resolution agreed at a general meeting by all ordinary shareholders. If it cancels shares, it also needs a special resolution at a meeting of the holders whose shares are cancelled (s 256C(2)).  _([Corporations Act 2001 s 256C](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Reduction in share capital](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/reduction-in-share-capital))_
+- **Passing the resolution** — A one-member company passes it by the member recording and signing it, and lodging the resolution meets any requirement to lodge a document about it (s 249B); ASIC says such a company needs no notice, meeting or lodgement before the resolution is passed. A proprietary company may pass it without a meeting if every member entitled to vote signs, and lodging the document to be signed meets the requirement to lodge the notice of meeting (s 249A(5)). A meeting needs at least 21 days' notice, or longer if the constitution says so (s 249H(1)). Shorter notice needs the prior agreement of members with at least 95% of the votes (s 249H(2)(b)): record each agreement and its date. Under the replaceable rule, a posted notice is given 3 days after posting (s 249J(4)(a)).  _([Corporations Act 2001 ss 249A, 249B, 249H and 249J](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Reduction in share capital](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/reduction-in-share-capital))_
+- **Before the notice is sent** — The notice must include a statement of all information known to the company that is material to the vote (s 256C(4)). Before it is sent, lodge the notice and any document about the reduction that goes with it (s 256C(5)) on Form 2560; ASIC says at least 22 days before the meeting, or 29 for a public listed company. Diary the earlier date (Case 1). Where members agree to shorter notice, ASIC's page does not say how its 22 days apply: refer it.  _([Corporations Act 2001 s 256C](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Reduction in share capital](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/reduction-in-share-capital))_
+- **After the resolution** — For a selective reduction only, lodge the resolution on Form 2205 within 14 days after it is passed, and do not make the reduction until 14 days after lodgement (s 256C(3)). For a proprietary company, s 178D item 4 times the member register notice for a reduction by the s 256C(3) period. For a selective reduction that period can end before the reduction may be made (Case 2), and an equal reduction has no s 256C(3) period; record either as a question for the authorised officeholder.  _([Corporations Act 2001 ss 178D and 256C](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Reduction in share capital](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/reduction-in-share-capital))_
+- **After the reduction** — Notify any share cancellation within 1 month after it (s 254Y(1)); INFO 30 applies the late fee after 28 days. ASIC's reduction page says to report the share structure changes and, for a proprietary company, top 20 member changes through the change of company details transaction within 28 days after reducing the capital. Diary the earliest date that applies.  _([Corporations Act 2001 s 254Y](https://www.legislation.gov.au/C2004A00818/latest/text); [ASIC, Reduction in share capital](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/reduction-in-share-capital); [ASIC, Cancel company shares](https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/cancel-company-shares))_
+- **Tax is referred** — Route the shareholders' CGT records to `au-capital-gains.md`, which lists CGT event G1. Whether any part of the payment is a dividend for income tax, or frankable, is for a tax reviewer; this guide does not decide it. Do not make the reduction, pay any amount, sign, lodge or decide a condition.
 
 ## Sources
 
@@ -247,10 +355,23 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents> | Not re-read for this format update; see retained provenance |
+| ASIC, Fees for commonly lodged documents (INFO 30), reissued July 2026 | <https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents> | 2026-11-18; Section 6.1 forms, fees and late fees from 1 July 2026, and the $636, $65, $342 and $1,591 fees |
 | Retained citation | <https://asic.gov.au/for-business/running-a-company/company-officeholder-duties/what-books-and-records-should-my-company-keep/> | Not re-read for this format update; see retained provenance |
+| Corporations Act 2001, compilation 149 (C2026C00432, in force from 19 September 2026), volume 1: ss 105, 135, 142, 146, 178A to 178D, 201A to 201H, 203A to 203CA, 205A, 205B, 248A to 249B, 249H, 249J, 251A, 254X, 254Y and 256B to 256E | <https://www.legislation.gov.au/C2004A00818/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_1/document_1.html> | 2026-11-18; Section 6 and Cases 1 and 2 |
+| Corporations Act 2001, compilation 149, volume 2: ss 346A, 346C and 347A to 347C | <https://www.legislation.gov.au/C2004A00818/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_2/document_2.html> | 2026-11-18; Section 6.4 |
+| Federal Register, Corporations Act 2001 versions | <https://www.legislation.gov.au/C2004A00818/latest/versions> | 2026-11-18; compilation 149 current, next versions from 1 and 4 December 2026, 8 April 2027 and 1 July 2027 |
+| Treasury Laws Amendment (Business Registries Stabilisation and Uplift) Act 2026, s 2 and Schedule 1 items 3 to 5, Schedule 2 items 48 and 49 | <https://www.legislation.gov.au/C2026A00057/asmade/text> | 2026-11-18; Section 6.1, changes from 1 July 2027 |
+| ASIC, Reduction in share capital | <https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/reduction-in-share-capital> | 2026-11-18; Forms 2560 and 2205, 22 and 29 days, 28 days after reducing, single-member companies |
+| ASIC, Cancel company shares | <https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/cancel-company-shares> | 2026-11-18; notice within one month |
+| ASIC, Add or remove a company officeholder | <https://www.asic.gov.au/for-business-and-companies/companies/company-officeholder-rules-and-changes/add-or-remove-a-company-officeholder> | 2026-11-18; Form 484, 28 days, director ID before appointment, Form 370, sole director |
+| ASIC, Change a company address | <https://www.asic.gov.au/for-business-and-companies/companies/changes-to-company-details/change-a-company-address> | 2026-11-18; 28 days, occupier consent |
+| ASIC, Company share issues | <https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/company-share-issues> | 2026-11-18; 28 days after the issue |
+| ASIC, Transfer of shares or change to beneficial ownership status | <https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/transfer-of-shares-or-change-to-beneficial-ownership-status> | 2026-11-18; Form 484 within 28 days |
+| ASIC, Members register requirements and changes | <https://www.asic.gov.au/for-business-and-companies/companies/company-share-and-shareholder-rules-and-changes/members-register-requirements-and-changes> | 2026-11-18; top 20 members |
+| ASIC, Company annual review | <https://www.asic.gov.au/for-business-and-companies/companies/company-annual-review> | 2026-11-18; solvency resolution, Form 485, 7 days |
+| ASIC, Late fees | <https://www.asic.gov.au/for-business-and-companies/forms-and-fees/late-fees> | 2026-11-18; $102 and $428 |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Two reviewed, recomputing oa-check examples are not yet supplied.
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review have not been performed for this structural update. Existing dates and qualifications retain their original scope. Cases 1 and 2 recompute with `check-examples` but have had no human review, and Section 6 has had no legal review.
 
 <!-- openaccountants-cta-block -->
 
