@@ -14,7 +14,7 @@ const result = estimateDivision296({
   incomeYear: "2026-27",
   totalSuperBalanceAtYearEnd: "12000000",
   totalSuperEarnings: "500000",
-  constitutionallyProtectedFund: false,
+  protectedOfficeOrFund: false,
   childRecipient: false,
   structuredSettlementContribution: false,
   diedOnOrBeforeYearEnd: false,
@@ -45,7 +45,7 @@ caller's attestation, which the calculator does not verify.
 | `incomeYear` | `"2026-27"`; other years are refused |
 | `totalSuperBalanceAtYearEnd` | Total superannuation balance at the end of 30 June 2027, leaving out any LRBA amount (s 296-260). Not negative |
 | `totalSuperEarnings` | Total superannuation earnings for 2026-27 (s 296-55): see below. It can be negative |
-| `constitutionallyProtectedFund` | `true` if, at any time in 2026-27, the person had an interest in a constitutionally protected fund or received a death benefit income stream from one. Refused: s 296-55(3) items 1 and 5 and Imposition Act s 6 can reduce or remove the tax |
+| `protectedOfficeOrFund` | `true` if, at any time in 2026-27, the person had an interest in a constitutionally protected fund or a death benefit income stream from one; is or was a judge named in s 296-55(3) items 2 to 4 (High Court, a federal court, or the ACT or NT Supreme Court); is or was a State higher level office holder, such as a State parliamentarian or judge; or received a death benefit income stream because of such a person's death. Refused: s 296-55(3) and Imposition Act s 6, which removes the tax where imposing it would exceed the Commonwealth's legislative power, can reduce or remove the tax |
 | `childRecipient` | `true` if the person was a child recipient of a superannuation income stream at any time in 2026-27 (s 296-20) |
 | `structuredSettlementContribution` | `true` if a structured settlement contribution was made for the person in 2026-27 or an earlier year (s 296-25) |
 | `diedOnOrBeforeYearEnd` | `true` if the person died on or before 30 June 2027 (ITTPA s 296-1(3)) |
@@ -90,7 +90,7 @@ Results include the verdict, reason codes, reasons, sources, the rounding note a
 second reason code says why: `liable`, `share_rounds_to_nil`, `balance_not_above_threshold`,
 `earnings_not_above_nil`, `child_recipient`, `structured_settlement_contribution` or
 `died_on_or_before_year_end`. `unknown` and `refused` results contain **no calculated figure**; a
-refusal's code is `unsupported_year` or `constitutionally_protected_fund`.
+refusal's code is `unsupported_year` or `protected_office_or_fund`.
 
 The calculator does not work out the total superannuation balance or the total superannuation
 earnings (ss 296-55 to 296-75), and does not cover temporary residents who depart Australia
