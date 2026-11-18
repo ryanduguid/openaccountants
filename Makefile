@@ -11,7 +11,7 @@ PYTHON ?= python3
 # (fetch it first), or pass BASE=<rev>.
 BASE ?= $(shell git merge-base origin/main HEAD 2>/dev/null)
 
-.PHONY: help install build merge-main bundle validate sync-check checkers baselines test check
+.PHONY: help install build merge-main bundle validate sync-check checkers baselines test calculators check
 
 help:  ## List the targets
 	@awk -F ':.*## ' '/^[a-z-]+:.*## /{printf "  make %-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -62,4 +62,7 @@ test:  ## Unit tests for the scripts and the MCP server (sync-integrity.yml, uni
 	$(PYTHON) -m unittest discover -s tests -p "test_*.py"
 	cd mcp && $(PYTHON) -m unittest discover -s tests -p "test_*.py"
 
-check: validate sync-check checkers test  ## Everything CI gates
+calculators:  ## node:test suites of the offline calculators (Node 20 or later; no CI job yet)
+	node --test calculators/
+
+check: validate sync-check checkers test calculators  ## Everything CI gates, plus the calculator tests
