@@ -1,25 +1,25 @@
 ---
 name: au-fbt
 description: >
-  Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
-version: 1.6
+  Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, the taxable value of car parking, loan, debt waiver, property, residual, housing, LAFHA and board benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
+version: 1.7
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027 (1 April 2026 - 31 March 2027)"
-last_updated: 2026-11-05
+last_updated: 2026-11-18
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.6
+# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.7
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-> Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
+> Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, the taxable value of car parking, loan, debt waiver, property, residual, housing, LAFHA and board benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
 
 ## Ask the client first
 
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Recommended** -- logbooks and odometer records, employee contribution records, declarations (or alternative records under the 1 April 2024 measures), prior year FBT return and workpapers, lease agreements for novated/associate leases.
 
-**Ideal** -- per-employee benefit register, car parking market surveys, LAFH declarations and expense evidence, loan agreements with rates and balances.
+**Ideal** -- per-employee benefit register, car parking fee evidence, valuer's reports and 12-week registers, LAFH declarations and expense evidence, loan agreements with rates and daily balances, housing leases with prior-year statutory annual values.
 
 #### Refusal catalogue
 
@@ -39,9 +39,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **R-AU-FBT-2 -- Employee share schemes.** *Trigger:* benefit involves shares/options. *Message:* "ESS interests are generally excluded from FBT and taxed under ESS rules. Out of scope."
 
-**R-AU-FBT-3 -- Car parking commercial valuation.** *Trigger:* car parking benefits arise and a taxable value beyond the threshold test is needed. *Message:* "Commercial parking station rate selection, market valuation, and the statutory spaces method involve valuation judgment. Compute exposure flag only; escalate valuation."
+**R-AU-FBT-3 -- Car parking valuation judgements.** *Trigger:* a car parking value under Rule 13 rests on a fee that may not be representative (s 39AB) or may not be at arm's length or may have been set to cut FBT (s 39E(2)); on a market value without an arm's length valuer's report received before the declaration date (s 39D(3)); on employee or space counts that may not be representative (s 39FB(6)); or on a register that may not be representative or whose benefit count may have risen more than 10% (ss 39GE(2), 39GF(3)). *Message:* "These conditions turn on valuation judgement. Compute only from evidenced fees, reports, counts and registers; escalate the judgement."
 
-**R-AU-FBT-4 -- Airline transport, board, remote area housing.** *Trigger:* these benefit categories appear. *Message:* "Specialised valuation rules. Out of scope -- escalate."
+**R-AU-FBT-4 -- Airline transport, remote area housing.** *Trigger:* these benefit categories appear. *Message:* "Specialised valuation rules. Out of scope -- escalate."
+
+**R-AU-FBT-5 -- Notional and market values.** *Trigger:* a property, residual or housing value needs a notional value or market value (an arm's length price) that no document establishes: no provider's price to the public, no arm's length cost price or expenditure, no valuer's report and no comparable rents. *Message:* "An arm's length value without a market comparison is a valuation judgement. Escalate."
 
 ### Section 9 -- Onboarding fallback
 
@@ -159,7 +161,7 @@ Sources: [FBTAA ss 5B, 5C](https://www.legislation.gov.au/C2004A03280/2026-07-01
 
 #### Rule 6 -- Car parking
 
-- **Car parking** — A car parking benefit needs, on the same day: parking > 4 hours between 7am-7pm on employer premises at/near the primary place of employment; the employee's car parked and commuting use; AND at least one commercial parking station within 1 km that charged a lowest representative fee for all-day parking above $11.48 on the first business day of the FBT year (1 April 2026 for the 2027 year -- no on-the-day fee test exists). Small business exemption: parking is not at a commercial car park AND (gross total income < $10m OR aggregated turnover < $50m) AND not a government body or listed company. Valuation beyond the threshold check: escalate (R-AU-FBT-3).
+- **Car parking** — A car parking benefit needs, on the same day: parking > 4 hours between 7am-7pm on employer premises at/near the primary place of employment; the employee's car parked and commuting use; AND at least one commercial parking station within 1 km that charged a lowest representative fee for all-day parking above $11.48 on the first business day of the FBT year (1 April 2026 for the 2027 year -- no on-the-day fee test exists). Small business exemption: parking is not at a commercial car park AND (gross total income < $10m OR aggregated turnover < $50m) AND not a government body or listed company. Value the benefits under Rule 13.
 
 #### Rule 7 -- Minor benefits (s 58P)
 
@@ -179,13 +181,113 @@ Sources: [FBTAA ss 5B, 5C](https://www.legislation.gov.au/C2004A03280/2026-07-01
 
 #### Rule 11 -- LAFHA (standard cases only)
 
-Concessional LAFHA treatment: employee maintains an Australian home they're living away from, first 12 months at a location (FIFO/DIDO excepted from both), declaration held. Exempt food component limited to the reasonable amounts in TD 2026/2 (year ending 31 March 2027: $353/week one adult within Australia; $530 two adults; statutory food amount $42/week adult, $21/week child under 12 deducted first). Within reasonable amounts -> no substantiation of food; above -> full substantiation.
+Concessional LAFHA treatment: employee maintains an Australian home they're living away from, first 12 months at a location (FIFO/DIDO excepted from both), declaration held. Without substantiation, food spending is accepted only up to the reasonable amounts in TD 2026/2 (year ending 31 March 2027: $353/week one adult within Australia; $530 two adults; statutory food amount $42/week adult, $21/week child under 12 deducted first). Within reasonable amounts -> no substantiation of food; above -> full substantiation.
+
+Taxable value. Where s 31 (Australian home, first 12 months, declaration) or s 31A (fly-in fly-out or drive-in drive-out, declaration) applies, the taxable value is the allowance less the exempt accommodation component and the exempt food component; otherwise it is the whole allowance (s 31B). Work it per period:
+
+1. Accommodation component and food component: the parts of the allowance the payment terms show to be for accommodation and for food or drink. If the terms do not identify them, escalate.
+2. Exempt accommodation component = the lesser of the accommodation component and the accommodation expenses the employee incurred and substantiated (s 31G; s 136(1) 'exempt accommodation component'). Unspent accommodation allowance stays taxable.
+3. Applicable statutory food total = $42 a week for each eligible family member aged 12 or more before the FBT year began and $21 a week for each younger one (s 136(1) 'statutory food amount'), reduced, never below nil, by any normal home food cost the employer already took out of the food component (s 31H(2)).
+4. Exempt food component = the lesser of (food component - applicable statutory food total) and the food expenses incurred (s 31H). Food spending at or below the reasonable amount needs no substantiation, and the ATO accepts spending equal to the lesser of the food component and the reasonable amount; above it, every food expense must be substantiated (s 31G(1)(b); employer guide 11.6). No exempt food component for days the employee resumes living at home (s 31(3)), and neither reduction while the 12-month period is paused (s 31(4)).
+5. Taxable value = allowance - exempt accommodation component - exempt food component.
+
+Sources: [FBTAA ss 30 to 31H](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1) and [s 136(1)](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2) (compilation 97, read 18 November 2026); [ATO employer guide chapter 11](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00012) (read 18 November 2026). Example 13.
 
 Travelling-vs-LAFH boundary: MT 2030's 21-day rule is WITHDRAWN; TR 2021/4 governs. The PCG 2021/3 compliance approach permits no more than 21 continuous calendar days per stay and no more than 90 calendar days in total at the same work location in the FBT year. Count departure days as directed in paragraph 13. The employee must be away from their normal residence for work, outside FIFO/DIDO arrangements, and return when practicable. Paragraph 12 also requires the employer's qualifying allowance or expense payment, no salary packaging or additional-remuneration option, appropriate reporting and withholding, and substantiating records. Six qualifying 15-day stays meet the numerical limits. Failing the guideline alone does not establish LAFHA treatment; apply TR 2021/4 to the facts.
 
 #### Rule 12 -- Record-keeping exemption and loan benchmark
 
-- **Record-keeping exemption and loan benchmark** — Record-keeping exemption (Pt XIA): an employer with a base year (return lodged, full records kept) whose aggregate fringe benefits amount was <= $10,962 may stop keeping records and pay FBT on the base-year amount -- unless the current year's aggregate exceeds the base-year amount by more than 20%, in which case current-year liability applies and records are needed. In-house benefits (s 62): aggregate taxable value reduced by $1,000 per employee per year; not available for salary-packaged benefits. Loan benefits: taxable value = benchmark rate (8.27%) minus rate actually charged, on the outstanding balance. The benchmark and car-parking figures now publish ONLY on the ATO rates page -- TDs are issued only for cents-per-km and LAFHA food amounts.  _(Pt XIA FBTAA; s 62 FBTAA)_
+- **Record-keeping exemption and loan benchmark** — Record-keeping exemption (Pt XIA): an employer with a base year (return lodged, full records kept) whose aggregate fringe benefits amount was <= $10,962 may stop keeping records and pay FBT on the base-year amount -- unless the current year's aggregate exceeds the base-year amount by more than 20%, in which case current-year liability applies and records are needed. In-house benefits (s 62): aggregate taxable value reduced by $1,000 per employee per year; not available for salary-packaged benefits. Loan benefits: notional interest at the benchmark rate (8.27%) on the daily balances, less interest accrued (Rule 14). The benchmark and car-parking figures now publish ONLY on the ATO rates page -- TDs are issued only for cents-per-km and LAFHA food amounts.  _(Pt XIA FBTAA; s 62 FBTAA)_
+
+#### Rule 13 -- Car parking taxable value (Division 10A)
+
+Value car parking only after Rule 6 finds a benefit, which needs a commercial parking station within 1 km whose lowest representative all-day fee on the first business day of the FBT year exceeded the car parking threshold: $11.48 for the year ending 31 March 2027 and $11.03 for the year ending 31 March 2026 (ATO rates page, Table 9; s 39A(1)(a)(iii)). Count benefits per car per day: a space gives one benefit for each car parked in it for more than 4 hours that day (employer guide 16.2). The commercial parking station method applies unless the employer elects another; elections can cover some benefits or employees only, and cannot be changed after the return is lodged (employer guide 16.2.2).
+
+| Method | Taxable value | Inputs the employer must evidence |
+| --- | --- | --- |
+| Commercial parking station (s 39C), the default | For each benefit, the lowest fee any commercial parking station within 1 km charged the public for all-day parking that day, less the recipient's contribution | Benefits by day; fee evidence for each day |
+| Market value (s 39D), elected | For each benefit, the arm's length amount in the valuer's report, less the recipient's contribution | A report in the approved form from a suitably qualified valuer at arm's length, received before the declaration date, on which the return is based (s 39D(3)); benefit count |
+| Average cost (s 39DA), elected | For each benefit, (A + B) / 2, less the recipient's contribution; A and B are the lowest fees within 1 km on the first and last days of the FBT year on which a benefit is provided | The 2 days' fee evidence; benefit count |
+| Spaces (ss 39FA to 39FE), elected | For each space with a benefit in the year, daily rate amount x days in its availability period / 366 x 228; add the spaces (total statutory benefit); where the average number of employees covered is below the average number of eligible spaces, multiply by average employees / average eligible spaces (s 39FB); then subtract every relevant recipient's contribution | Each space's daily rate amount (by one of the first 3 methods, before contributions, s 39FC); its first and last benefit days in the year; employee and space numbers at the start and end of the parking period |
+| 12-week register (ss 39G to 39GH), elected | Total value of benefits in the register x 52 / 12 x days in the car parking availability period / 366 (s 39GB). The register total is the taxable value of the 12 weeks' benefits by one of the first 3 methods, so already net of the recipients' contributions (s 39GC) | A register kept for 12 continuous weeks of benefits, representative of the first year's usage, with the s 39GG details entered as soon as practicable; valid for the FBT year its 12 weeks end in and the 4 after it (s 39GF(1), (2)) |
+
+Fees: a fee charged weekly, monthly or for another period counts as the total fee / business days in the period (s 39E(1)); an early bird fee counts where a reasonable number of spaces are set aside for it; a nil fee, a long-term storage fee or a fee not available on the day does not count (employer guide 16.2.4). The availability periods run from the first to the last day in the FBT year with a benefit (ss 39FD, 39GD), and both formulas divide by 366 whether or not the year has 366 days. The ATO's register example (employer guide 16.2.7.5, Example 17): $2,500 x 52 / 12 x 183 / 366 = $5,416.67. Choose the method giving the lowest value only among methods whose conditions hold; an election is ineffective if its fees, counts or register are not representative (ss 39DA(4), 39FA(5), 39FB(6), 39GE). Those judgements go to R-AU-FBT-3, as does a register whose benefit count may have risen more than 10% on any day of the year (s 39GF(3)). Car parking benefits are excluded from the employee's RFBA (Rule 9); gross up by the GST class (Rule 1).
+
+Sources: [FBTAA Division 10A](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1) (compilation 97, read 18 November 2026); [ATO FBT rates and thresholds, Table 9](https://www.ato.gov.au/tax-rates-and-codes/fringe-benefits-tax-rates-and-thresholds) (last updated 20 May 2026, read 18 November 2026); [ATO employer guide chapter 16](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00017) (read 18 November 2026). Examples 8 and 9.
+
+#### Rule 14 -- Loan and debt waiver benefits (Divisions 3 and 4)
+
+Loan. A loan gives a benefit for each FBT year in which any of it is owed (s 16(1)). An amount left unpaid after its due date is a loan from the day after, at the interest rate (if any) accruing on it (s 16(2)); unpaid interest on a deferred interest loan (interest neither due within 6 months nor payable by instalments at most 6 months apart, the first within 6 months) becomes a separate nil-interest loan at the end of each 6 months (s 16(3), (4)).
+
+1. Notional interest = the sum of the loan's daily balances in the FBT year x the statutory interest rate / days in the FBT year. The statutory interest rate is the benchmark rate: 8.27% for the year ending 31 March 2027 and 8.62% for the year ending 31 March 2026 (ATO rates page, Table 10; s 136(1) 'notional amount of interest', 'statutory interest rate', 'benchmark interest rate'). Loans made before 1 July 1986 or housing loans made before 3 April 1986 may take a lower rate: escalate. The Act fixes no day count or rounding; this guide divides by the days in the FBT year (365 for the year ending 31 March 2027) and rounds the result to the cent. Flag a loan agreement that accrues interest on another basis.
+2. Taxable value = notional interest - interest accrued on the loan for the year, never below nil (s 18).
+3. Otherwise deductible rule (s 19), only where the recipient is the employee and the employee gives a declaration in the approved form before the declaration date (not needed for an employee credit loan or employee share loan, s 19(1)(c)): GD = the once-only deduction the employee would have had for interest equal to the notional interest; RD = the deduction for the interest that accrued (nil if none); ND = GD - RD; taxable value = step 2 - ND, never below nil. A car loan (s 19(1)(ca), (d)) or a loan deemed provided to the employee alone under s 138(3) (s 19(1)(i), (5)) has its own ND: escalate.
+
+Exempt loans (s 17): a lender in the business of lending to the public at a rate no lower than its arm's length rate for a similar loan; an advance used only for employment expenses incurred and accounted for within 6 months; an advance for a rental bond or utility deposit repaid within 12 months where the accommodation benefit is exempt or relocation-reduced. A loan that Division 7A of the ITAA 1936 treats as a dividend, or that complies with it under s 109N, is not a fringe benefit (s 136(1) 'fringe benefit' paragraphs (r) and (s)): route shareholder loans through T2-6 first.
+
+Debt waiver. Waiving an employee's obligation to pay or repay an amount is a debt waiver benefit (s 14). Taxable value = the whole amount waived, principal and interest (s 15; employer guide 8.2). No contribution or otherwise deductible reduction applies. A genuine bad debt written off for reasons unrelated to employment is not a benefit (employer guide 8.1); that judgement goes to the reviewer. A waiver that Division 7A treats as a dividend is not a fringe benefit (paragraph (r)).
+
+Loan and debt waiver benefits are always Type 2 (employer guide 8.2, 8.5). Loan benefits count in the employee's RFBA (Rule 9).
+
+Sources: [FBTAA Divisions 3 and 4](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1) and [s 136(1)](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2) (compilation 97, read 18 November 2026); [ATO FBT rates and thresholds, Table 10](https://www.ato.gov.au/tax-rates-and-codes/fringe-benefits-tax-rates-and-thresholds) (read 18 November 2026); [ATO employer guide chapter 8](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00009) (read 18 November 2026). Examples 6 and 10.
+
+#### Rule 15 -- Property and residual benefits (Divisions 11 and 12)
+
+Classify first. A property benefit is in-house where the property is tangible and the provider (the employer or an associate, or a third party that bought it from them) carried on a business providing identical or similar property principally to outsiders at or about the time; a residual benefit (any benefit no other Division covers, s 45) is in-house on the same test for identical or similar benefits (s 136(1)). Everything else is external. Use GST-inclusive values (employer guide 17.3, 18.3).
+
+| Benefit | Value before the recipient's contribution | FBTAA |
+| --- | --- | --- |
+| In-house, provided under a salary packaging arrangement | Notional value at the provision or comparison time | ss 42(1)(aa), 48(aa), 49(aa) |
+| In-house property the provider made, identical goods sold to manufacturers, wholesalers or retailers | The lowest arm's length price for the identical goods at or about the time, early-payment discount included | s 42(1)(a)(i) |
+| In-house property the provider made, identical goods sold to the public but not to manufacturers, wholesalers or retailers | 75% of the lowest price to the public at or about the time, on identical terms other than price | s 42(1)(a)(ii) |
+| In-house property the provider bought for resale | The lesser of its arm's length cost price and its notional value | s 42(1)(b), (2) |
+| Other in-house property | 75% of the notional value | s 42(1)(a)(iii), (c) |
+| In-house residual, identical benefits sold to the public | 75% of the lowest price to the public; for a period benefit, the price for the current year's part | ss 48(a), 49(a) |
+| In-house residual, no identical public benefit | 75% of the notional value | ss 48(b), 49(b) |
+| External, the employer or an associate bought it at arm's length | The amount it paid; a period residual benefit takes the amount for the current year | ss 43(a), 50(a), 51(a) |
+| External, a third party provided it and the employer or an associate paid them at arm's length | That expenditure | ss 43(b), 50(b), 51(b) |
+| External, otherwise | The notional value | ss 43(c), 50(c), 51(c) |
+
+Airline transport benefits (ss 42(1)(ab), 48(ab), 49(ab)) go to R-AU-FBT-4. Notional value is what the recipient could reasonably be expected to pay the provider at arm's length (s 136(1)): take it from the provider's own price to the public at the time, or escalate under R-AU-FBT-5. Then:
+
+1. Subtract the recipient's contribution (consideration the recipient or employee paid for it, less any reimbursement of it, s 136(1)), never below nil.
+2. Otherwise deductible rule (ss 44, 52), only where the recipient is the employee and a declaration in the approved form is held before the declaration date (Rule 10 covers the exceptions and alternative records): GD = the once-only deduction the employee would have had for spending the value before contribution; RD = the deduction for the contribution (nil if none); reduce the value by GD - RD, never below nil. Car property or car residual benefits and extended travel benefits need car substantiation or a travel diary: escalate.
+3. In-house reduction (s 62): reduce the sum of the employee's in-house expense payment, property and residual taxable values for the FBT year by $1,000, or by the sum where it is less. It does not apply to in-house benefits provided under a salary packaging arrangement (s 62(2)).
+
+A period residual benefit spanning 2 FBT years is apportioned between them (employer guide 18.4, 18.5). Gross up by the GST class (Rule 1).
+
+Sources: [FBTAA Divisions 11 and 12, s 62](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1) and [s 136(1)](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2) (compilation 97, read 18 November 2026); [ATO employer guide chapters 17](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00018) and [18](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00019) (read 18 November 2026). Example 11.
+
+#### Rule 16 -- Housing benefits (Division 6)
+
+A lease or licence to occupy a unit of accommodation as the employee's usual place of residence gives a housing benefit for each FBT year in which it subsists (s 25). Remote area housing goes to R-AU-FBT-4; accommodation while living away from home or travelling for work is not a housing benefit (employer guide 10.6).
+
+Accommodation in a State or internal Territory, other than a caravan, mobile home, hotel, motel, hostel or guesthouse whose provider lets similar units to outsiders (s 26(1)(c)):
+
+1. Statutory annual value (s 26(2)). In a base year: the market value of the housing right for the tenancy period x days in the FBT year / whole days in the tenancy period. In any other year: the previous FBT year's statutory annual value (an occupancy-weighted average where that year had several benefits for the same or an equivalent right) x the current year's indexation factor for the State or Territory. A base year is a year the employer elects by written notice lodged by the declaration date, a year after one with no housing benefit for the same or an equivalent right, or a year after 9 consecutive years of such benefits none of which was a base year (s 26(3), (7)). A material alteration changing the market value by 10% or more makes a new unit, so a new base year (s 26(5)).
+2. Taxable value = statutory annual value x whole days in the tenancy period / days in the FBT year - the recipient's rent (rent or other consideration the recipient or employee paid for the right in the year, less any reimbursement, s 136(1)), never below nil.
+
+Indexation factors (s 28; ATO rates page, Table 11):
+
+| FBT year ending | NSW | VIC | QLD | SA | WA | TAS | NT | ACT |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 31 March 2027 | 1.040 | 1.044 | 1.051 | 1.051 | 1.073 | 0.999 | 1.029 | 1.007 |
+| 31 March 2026 | 1.076 | 1.066 | 1.076 | 1.060 | 1.100 | 0.988 | 1.031 | 1.010 |
+
+The market value is a market rent for the property as it stands, ignoring any right to have expenses paid and any onerous employment conditions (s 27; employer guide 10.2): take it from a valuer or comparable rents, or escalate under R-AU-FBT-5. The ATO's annualising example for 121 days at $5,200 (employer guide 10.5) prints $15,687.70; the s 26(2)(a) formula gives $5,200 x 365 / 121 = $15,685.95. Carry the statutory annual value to the cent, as it becomes next year's base. Accommodation outside a State or internal Territory, or in a qualifying caravan, mobile home, hotel, motel, hostel or guesthouse, is valued at market value (75% where it would otherwise be an in-house residual benefit), less the recipient's rent (s 26(1)(a), (b)): escalate under R-AU-FBT-5 unless a market rent is documented. Gross up by the GST class (Rule 1).
+
+Sources: [FBTAA Division 6](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1) and [s 136(1)](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2) (compilation 97, read 18 November 2026); [ATO FBT rates and thresholds, Table 11](https://www.ato.gov.au/tax-rates-and-codes/fringe-benefits-tax-rates-and-thresholds) (read 18 November 2026); [ATO employer guide chapter 10](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00011) (read 18 November 2026). Example 12.
+
+#### Rule 17 -- Board benefits (Division 9)
+
+A board meal is a meal the employer (or a related company) provides to the employee or an associate on a meal entitlement day (a day they are entitled to residential accommodation and to at least 2 meals under an industrial instrument or arrangement), cooked and served on the employer's eligible premises or in an eligible dining facility, and not at a party, reception or other social function (s 35; s 136(1) 'board meal', 'meal entitlement day').
+
+1. Taxable value of each meal = $2.00 for a recipient who turned 12 before the FBT year began, otherwise $1.00 (s 36), less the recipient's contribution for that meal, never below nil.
+2. Otherwise deductible rule (s 37), employee recipients only: reduce by GD - RD, where GD is the s 8-1 ITAA 1997 deduction for spending the value before contribution and RD the deduction for the contribution.
+
+Incidental refreshments supplied with board are exempt, and board benefits are always Type 2 (employer guide 13.2).
+
+Sources: [FBTAA Division 9](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1) and [s 136(1)](https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2) (compilation 97, read 18 November 2026); [ATO employer guide chapter 13](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00014) (read 18 November 2026). Example 14.
 
 ### Section 6 -- Tier 2 catalogue
 
@@ -201,7 +303,7 @@ Travelling-vs-LAFH boundary: MT 2030's 21-day rule is WITHDRAWN; TR 2021/4 gover
 
 #### T2-3 -- Car parking valuation
 
-**Trigger:** threshold conditions met. **Issue:** lowest-fee selection, market valuation, statutory spaces vs actual usage methods. **Action:** flag exposure; escalate valuation choice.
+**Trigger:** a Rule 13 value rests on a fee, valuer's report, space or employee count, or register whose representativeness, arm's length basis or validity is in doubt. **Issue:** these conditions decide whether a method or election has effect (ss 39AB, 39D(3), 39DA(4), 39E(2), 39FA(5), 39FB(6), 39GE, 39GF(3)). **Action:** compute what the evidence supports; flag the doubtful condition and escalate it (R-AU-FBT-3).
 
 #### T2-4 -- Travelling vs living away from home
 
@@ -246,9 +348,13 @@ ENTERTAINMENT
 
 OTHER BENEFITS (PER TYPE)
   Expense payments (net of otherwise-deductible + declarations): AUD [____]
-  Loans (benchmark 8.27% - rate charged):  AUD [____]
-  Property/residual:              AUD [____]
-  LAFHA (excess over TD 2026/2 reasonable + statutory food): AUD [____]
+  Car parking (method: [____]; benefits [____]):  AUD [____]
+  Loans (notional interest at 8.27% on daily balances - interest accrued - ND): AUD [____]
+  Debt waivers (amount waived):   AUD [____]
+  Property/residual (after s 62 in-house $1,000): AUD [____]
+  Housing (statutory annual value x days / 365 - rent): AUD [____]
+  LAFHA (allowance - exempt accommodation - exempt food): AUD [____]
+  Board ($2 / $1 per meal - contributions): AUD [____]
 
 GROSS-UP AND LIABILITY
   Type 1 taxable values:          AUD [____] x 2.0802 -> nearest dollar [____]
@@ -406,6 +512,242 @@ expected:
 tolerance: 0
 ```
 
+#### Example 8 -- Car parking: commercial parking station against average cost
+
+Year ending 31 March 2027. On 1 April 2026, the first business day, the lowest representative all-day fee at the only commercial parking station within 1 km of the employer's car park is $14.00, above the $11.48 threshold, and the other Rule 6 conditions hold for one employee on 230 days. The station charges $14.00 on the first 120 of those days and $15.50 on the last 110. The employee pays $460 for parking in the year. The fee evidence is held for every day and is representative.
+
+```
+Commercial parking station method = 120 x $14.00 + 110 x $15.50 - $460 = $2,925.00
+Average cost = ($14.00 + $15.50) / 2 = $14.75 a benefit
+Average cost method = 230 x $14.75 - $460 = $2,932.50
+```
+
+Without an election the default method's $2,925.00 applies; electing average cost would raise the value. Car parking is excluded from the employee's RFBA.
+
+```oa-check
+name: Car parking default method against average cost
+inputs:
+  low_days: 120
+  low_fee: 14.00
+  high_days: 110
+  high_fee: 15.50
+  contribution: 460
+steps:
+  station_method: max(0, low_days * low_fee + high_days * high_fee - contribution)
+  average_cost: (low_fee + high_fee) / 2
+  average_cost_method: max(0, (low_days + high_days) * average_cost - contribution)
+expected:
+  station_method: 2925.00
+  average_cost: 14.75
+  average_cost_method: 2932.50
+tolerance: 0
+```
+
+#### Example 9 -- Car parking: spaces method
+
+This reproduces the [ATO employer guide's Example 18](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00017) for the year ended 31 March 2023, the inputs being the ATO's. The employer elects the spaces method for all employees. Its 4 spaces each give benefits from 1 October 2022 to 31 March 2023 (182 days); the daily rate amount of each space by the average cost method is $10; the 3 employees each pay $30 a week for 26 weeks; the employee and space numbers are representative.
+
+```
+Each space = $10 x 182 / 366 x 228 = $1,133.77
+Total statutory benefit = 4 x $1,133.77 = $4,535.08
+3 employees for 4 spaces = $4,535.08 x 3 / 4 = $3,401.31
+Taxable value = $3,401.31 - $2,340.00 = $1,061.31
+```
+
+```oa-check
+name: Spaces method with fewer employees than spaces
+inputs:
+  daily_rate: 10
+  availability_days: 182
+  statutory_days: 228
+  spaces: 4
+  average_employees: 3
+  average_spaces: 4
+  weekly_contribution: 30
+  weeks: 26
+steps:
+  each_space: daily_rate * availability_days / 366 * statutory_days
+  total_statutory_benefit: each_space * spaces
+  reduced_benefit: total_statutory_benefit * average_employees / average_spaces
+  contributions: weekly_contribution * weeks * average_employees
+  taxable_value: round(max(0, reduced_benefit - contributions), 2)
+expected:
+  each_space: 1133.77
+  total_statutory_benefit: 4535.08
+  reduced_benefit: 3401.31
+  contributions: 2340
+  taxable_value: 1061.31
+```
+
+#### Example 10 -- Loan under the otherwise deductible rule, and a debt waiver
+
+Year ending 31 March 2027. An employee owes $50,000 all year on a loan at 4%, so $2,000 of interest accrues. The employee used 60% of the loan to buy income-producing shares and 40% privately, and gives the approved declaration before the declaration date. The rate was not set by reference to that use. Separately, the employer waives $1,200 the employee owed for a staff purchase and $30 of interest charged on it. This follows the six steps in [employer guide 8.8](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00009) with the 2027 benchmark rate.
+
+```
+Notional interest = $50,000 x 8.27% = $4,135.00 (365 daily balances of $50,000 / 365)
+Before the rule = $4,135.00 - $2,000.00 = $2,135.00
+GD = $4,135.00 x 60% = $2,481.00; RD = $2,000.00 x 60% = $1,200.00; ND = $1,281.00
+Loan taxable value = $2,135.00 - $1,281.00 = $854.00 (Type 2)
+Debt waiver taxable value = $1,200 + $30 = $1,230 (Type 2)
+```
+
+```oa-check
+name: Loan otherwise deductible rule and debt waiver
+inputs:
+  balance: 50000
+  days: 365
+  benchmark_percent: 8.27
+  interest_accrued: 2000
+  income_use_percent: 60
+  principal_waived: 1200
+  interest_waived: 30
+steps:
+  notional_interest: round(pct(balance * days, benchmark_percent) / days, 2)
+  before_rule: max(0, notional_interest - interest_accrued)
+  gross_deduction: pct(notional_interest, income_use_percent)
+  accrued_deduction: pct(interest_accrued, income_use_percent)
+  notional_deduction: gross_deduction - accrued_deduction
+  loan_taxable_value: max(0, before_rule - notional_deduction)
+  debt_waiver_taxable_value: principal_waived + interest_waived
+expected:
+  notional_interest: 4135.00
+  before_rule: 2135.00
+  gross_deduction: 2481.00
+  accrued_deduction: 1200.00
+  notional_deduction: 1281.00
+  loan_taxable_value: 854.00
+  debt_waiver_taxable_value: 1230
+tolerance: 0
+```
+
+#### Example 11 -- In-house property and residual benefits with the $1,000 reduction
+
+Year ending 31 March 2027, no salary packaging. An electronics retailer sells an employee a laptop for $400. It bought the laptop at arm's length for $1,800 and was selling it to the public at the time for $2,400, so the notional value exceeds the cost price. It also gives the employee, free, the 12-month service plan it sells to the public for $300 on the same terms. Separately, it pays a gym $960 at arm's length for the employee's membership. No otherwise deductible reduction applies.
+
+```
+Laptop (s 42(1)(b)) = lesser of $1,800 and $2,400, less $400 = $1,400
+Service plan (s 48(a)) = 75% x $300 = $225
+In-house total = $1,400 + $225 = $1,625; s 62 reduction $1,000 -> $625
+Gym membership (s 50(b), external, no s 62 reduction) = $960
+Taxable value = $625 + $960 = $1,585
+```
+
+```oa-check
+name: In-house reduction applies only to in-house benefits
+inputs:
+  laptop_cost: 1800
+  laptop_public_price: 2400
+  laptop_contribution: 400
+  plan_public_price: 300
+  in_house_percent: 75
+  in_house_cap: 1000
+  gym_expenditure: 960
+steps:
+  laptop_value: max(0, min(laptop_cost, laptop_public_price) - laptop_contribution)
+  plan_value: pct(plan_public_price, in_house_percent)
+  in_house_total: laptop_value + plan_value
+  in_house_reduction: min(in_house_total, in_house_cap)
+  in_house_taxable: in_house_total - in_house_reduction
+  taxable_value: in_house_taxable + gym_expenditure
+expected:
+  laptop_value: 1400
+  plan_value: 225
+  in_house_total: 1625
+  in_house_reduction: 1000
+  in_house_taxable: 625
+  taxable_value: 1585
+tolerance: 0
+```
+
+#### Example 12 -- Housing benefit indexed from the prior year
+
+Year ending 31 March 2027. The employer leases a house in Victoria that is the employee's usual residence for the whole year. The year ended 31 March 2026 gave the right a statutory annual value of $26,000.00, and the employer makes no base-year election for 2027 and has no alteration to report. The employee pays the employer $7,800 rent in the year.
+
+```
+Statutory annual value = $26,000.00 x 1.044 (VIC, year ending 31 March 2027) = $27,144.00
+Taxable value = $27,144.00 x 365 / 365 - $7,800.00 = $19,344.00
+```
+
+```oa-check
+name: Housing statutory annual value indexed and rent deducted
+inputs:
+  prior_statutory_annual_value: 26000.00
+  vic_factor_2027: 1.044
+  tenancy_days: 365
+  year_days: 365
+  rent: 7800
+steps:
+  statutory_annual_value: round(prior_statutory_annual_value * vic_factor_2027, 2)
+  taxable_value: max(0, statutory_annual_value * tenancy_days / year_days - rent)
+expected:
+  statutory_annual_value: 27144.00
+  taxable_value: 19344.00
+tolerance: 0
+```
+
+#### Example 13 -- LAFHA with substantiated food above the reasonable amount
+
+Year ending 31 March 2027. An employee who keeps an Australian home available to them is in the first 12 months at a new location and has given the s 31F declaration. Living alone there, they receive a weekly allowance of $1,100: $600 for accommodation, $400 for total food costs (no normal home food cost deducted) and $100 for the disadvantage of living away. Rent is $560 a week, substantiated. As the $400 food component exceeds the $353 reasonable amount for one adult (TD 2026/2), food expenses must be substantiated; the employee substantiates $380 a week. The allowance is paid for 20 weeks.
+
+```
+Exempt accommodation component = lesser of $600 and $560 = $560
+Exempt food component = lesser of ($400 - $42) and $380 = $358
+Weekly taxable value = $1,100 - $560 - $358 = $182
+Taxable value = $182 x 20 = $3,640
+```
+
+```oa-check
+name: LAFHA exempt components cap at spending and the statutory food amount
+inputs:
+  allowance: 1100
+  accommodation_component: 600
+  accommodation_spent: 560
+  food_component: 400
+  statutory_food: 42
+  food_spent: 380
+  weeks: 20
+steps:
+  exempt_accommodation: min(accommodation_component, accommodation_spent)
+  exempt_food: max(0, min(food_component - statutory_food, food_spent))
+  weekly_taxable: allowance - exempt_accommodation - exempt_food
+  taxable_value: weekly_taxable * weeks
+expected:
+  exempt_accommodation: 560
+  exempt_food: 358
+  weekly_taxable: 182
+  taxable_value: 3640
+tolerance: 0
+```
+
+#### Example 14 -- Board meals
+
+Year ending 31 March 2027. On 200 meal entitlement days the employer provides board meals, 2 a day, to an employee, the employee's spouse (both adults) and their 8-year-old child. The employee pays $0.50 a meal for each person. No meal is otherwise deductible.
+
+```
+Adult meals = 2 x 2 x 200 = 800; each $2.00 - $0.50 = $1.50; 800 x $1.50 = $1,200.00
+Child meals = 2 x 200 = 400; each $1.00 - $0.50 = $0.50; 400 x $0.50 = $200.00
+Taxable value = $1,200.00 + $200.00 = $1,400.00 (Type 2)
+```
+
+```oa-check
+name: Board meals at the statutory amounts less contributions
+inputs:
+  adult_meals: 800
+  child_meals: 400
+  adult_value: 2.00
+  child_value: 1.00
+  contribution_per_meal: 0.50
+steps:
+  adult_taxable: adult_meals * max(0, adult_value - contribution_per_meal)
+  child_taxable: child_meals * max(0, child_value - contribution_per_meal)
+  taxable_value: adult_taxable + child_taxable
+expected:
+  adult_taxable: 1200
+  child_taxable: 200
+  taxable_value: 1400
+tolerance: 0
+```
+
 ## When to refuse or refer
 
 Stop the affected calculation or action where a fact, source condition or scope requirement in this guide is unresolved. Return Needs Input or refer the unresolved position for qualified review.
@@ -419,7 +761,9 @@ Stop the affected calculation or action where a fact, source condition or scope 
 - NEVER claim income tax deductions or GST credits on entertainment beyond the extent FBT applies (50% cap under a 50/50 election)
 - NEVER accept a logbook older than 5 years or a non-12-week period
 - NEVER net an employee contribution against a different benefit
-- NEVER compute NFP capping, ESS, or car parking valuations -- escalate
+- NEVER compute NFP capping or ESS -- escalate
+- NEVER value car parking from an unrepresentative or non-arm's-length fee, a market value without an arm's length valuer's report, or an invalid register -- escalate (R-AU-FBT-3)
+- NEVER estimate a notional value or market rent without a documented market comparison -- escalate (R-AU-FBT-5)
 - NEVER use the income year (July-June) for FBT -- the FBT year ends 31 March
 - NEVER present figures as definitive
 
@@ -460,6 +804,18 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 
 **Test 10:** LAFHA one adult, food component $353/week, declaration held, month 8 of 12. -> Food exempt up to $353 less statutory $42; no substantiation needed at or below reasonable amount.
 
+**Test 11:** Lowest all-day fee within 1 km on 1 April 2026 is $11.48 exactly. -> No car parking benefit for the year ending 31 March 2027 (the fee must exceed the threshold).
+
+**Test 12:** Market value method elected, valuer's report received after the declaration date. -> Election of no effect (s 39D(3)); value by the commercial parking station method unless another election holds.
+
+**Test 13:** Example 10's loan without the employee's declaration. -> No otherwise deductible reduction; taxable value $2,135.00.
+
+**Test 14:** Employee's only in-house benefit has a taxable value of $640, not salary packaged. -> s 62 reduces it to nil; salary packaged, it stays $640.
+
+**Test 15:** Housing right in its first year, market rent $5,200 for a 121-day tenancy in the year ending 31 March 2027. -> Statutory annual value $15,685.95; taxable value $5,200.00 before rent ($15,685.95 x 121 / 365).
+
+**Test 16:** Board meal to a child who turned 12 on 15 April 2026. -> $1.00 for the year ending 31 March 2027 (12 not reached before 1 April 2026).
+
 ## Sources
 
 | Source | URL | Read on |
@@ -471,6 +827,16 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 | 2026 return instructions, ordinary taxable employers items 14 to 22 | <https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-return-2026-calculation-details-for-taxable-employers> | 2 November 2026; annual assembly and credit sections |
 | ATO rates covering years ending 31 March 2026 and 2027 | <https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/fbt-rates-and-thresholds-for-2026> | 2 November 2026; Table 1 |
 | Approved 2026 FBT return NAT 1067-01.2026 | <https://iorder.com.au/publication/Download.aspx?ProdID=1067-01.2026> | 2 November 2026; page 3 field precision |
+| Benefit valuations, FBTAA Divisions 3, 4, 6, 7, 9, 10A, 11 and 12 and s 62 | <https://www.legislation.gov.au/C2004A03280/2026-07-01/text/1> | 18 November 2026; compilation 97, in force from 1 July 2026, with the formula images' text |
+| Definitions, FBTAA s 136(1) | <https://www.legislation.gov.au/C2004A03280/2026-07-01/text/2> | 18 November 2026; compilation 97 |
+| ATO rates: car parking threshold (Table 9), statutory interest rate (Table 10), housing indexation (Table 11), LAFHA food amounts (Table 12) | <https://www.ato.gov.au/tax-rates-and-codes/fringe-benefits-tax-rates-and-thresholds> | 18 November 2026; page last updated 20 May 2026 |
+| Employer guide chapter 8, loans and debt waivers | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00009> | 18 November 2026 |
+| Employer guide chapter 10, housing | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00011> | 18 November 2026 |
+| Employer guide chapter 11, LAFHA | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00012> | 18 November 2026 |
+| Employer guide chapter 13, board | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00014> | 18 November 2026 |
+| Employer guide chapter 16, car parking | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00017> | 18 November 2026 |
+| Employer guide chapter 17, property | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00018> | 18 November 2026 |
+| Employer guide chapter 18, residual | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00019> | 18 November 2026 |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=PAC/19860039/41> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=TXR/TR9717/NAT/ATO/00001> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00015> | Not re-read for this format update; see retained provenance |
@@ -499,7 +865,9 @@ This guide is maintained in the [ryanduguid/openaccountants fork](https://github
 | LAFHA | TD 2026/2 (25 March 2026); TR 2021/4; PCG 2021/3 |
 | Record-keeping exemption | ato.gov.au rates page Table 6 |
 
-Not yet confirmed: This source check covers ordinary-employer annual aggregation, GST-creditability classification, rounding and instalment credit only. The 2 oa-check cases recompute the stated numeric inputs; they do not establish benefit valuations, GST entitlements or legal eligibility from client evidence. A complete page-level source/read-date audit, the approved 2027 form/software and independent qualified legal review remain outstanding. Other retained dates, source claims and qualifications keep their original scope. If taxable values or contributions contain cents, confirm the approved return/software input precision and reconcile the workpaper before filling whole-dollar fields. These cases use whole-dollar inputs and do not settle that policy; return **Needs Input** if it is unconfirmed.
+The 18 November 2026 source check covers the benefit valuations in Rules 11 and 13 to 17, read in FBTAA compilation 97, the ATO rates page and the employer guide chapters listed in Sources. Examples 8 to 14 recompute stated inputs; they do not establish eligibility, elections, representativeness or market values from client evidence.
+
+Not yet confirmed: The 2 November 2026 source check covers ordinary-employer annual aggregation, GST-creditability classification, rounding and instalment credit only. The 2 oa-check cases of Examples 1 and 7 recompute the stated numeric inputs; they do not establish benefit valuations, GST entitlements or legal eligibility from client evidence. A complete page-level source/read-date audit, the approved 2027 form/software and independent qualified legal review remain outstanding. Other retained dates, source claims and qualifications keep their original scope. If taxable values or contributions contain cents, confirm the approved return/software input precision and reconcile the workpaper before filling whole-dollar fields. These cases use whole-dollar inputs and do not settle that policy; return **Needs Input** if it is unconfirmed.
 
 <!-- openaccountants-cta-block -->
 
