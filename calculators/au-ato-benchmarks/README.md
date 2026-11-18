@@ -36,7 +36,7 @@ when every amount it needs is supplied.
 | Input | Meaning |
 | --- | --- |
 | `benchmarkYear` | `2023-24`, the only year held |
-| `industry` | The industry name exactly as a key of `industries` in [rules.json](rules.json) (99 industries) |
+| `industry` | The industry name exactly as a key of `industries` in [benchmarks-2023-24.json](benchmarks-2023-24.json) (99 industries) |
 | `totalBusinessIncome` | Required, more than 0 |
 | `salesOfGoodsAndServices` | Optional; omitted means blank |
 | `totalExpenses`, `paymentsToAssociatedPersons` | Total expenses ratio; payments to associated persons also feed labour |
@@ -99,7 +99,7 @@ and the activity statement benchmarks, not produced since 1 July 2017, are not u
 The 2023-24 benchmarks are the ATO's most current set: 'Performance benchmarks use information
 reported on tax returns for the 2023–24 financial year'. The industry pages were last updated on
 16 March 2026. Total expenses and cost of sales key ranges come from the ATO's data.gov.au
-dataset (2023-24 resource, SHA-256 in [rules.json](rules.json)); labour, rent, motor vehicle and
+dataset (2023-24 resource, SHA-256 in [benchmarks-2023-24.json](benchmarks-2023-24.json)); labour, rent, motor vehicle and
 non-key cost of sales ranges are copied from each industry's page. Every page's key ranges and
 turnover bands were checked against the dataset. All were read on 18 November 2026. No runtime
 network or clock is consulted.
@@ -111,21 +111,27 @@ Belinda's footwear business and Steff's 30.21%), the bakery page's published ran
 the 50% turnover rule, each ratio's deductions, range bounds, the key range fallback, the shape of
 every industry's data and refusals of malformed or out-of-scope inputs. No client data is used.
 
-Benchmark ranges © Australian Taxation Office for the Commonwealth of Australia, adapted from the
-ATO's [Small Business Benchmarks](https://data.gov.au/data/dataset/small-business-benchmarks)
-dataset, licensed under [Creative Commons Attribution 2.5
-Australia](https://creativecommons.org/licenses/by/2.5/au/), and from the ATO's [industry
-benchmark
-pages](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/small-business-benchmarks/benchmarks-a-z),
+## Data licence
+
+[benchmarks-2023-24.json](benchmarks-2023-24.json) holds the ATO's benchmark ranges and the ATO
+guidance this calculator quotes. Benchmark ranges and guidance text © Australian Taxation Office
+for the Commonwealth of Australia. Adapted from the ATO's
+[Small Business Benchmarks](https://data.gov.au/data/dataset/small-business-benchmarks) dataset
+(2023-24 Benchmarks), licensed under
+[Creative Commons Attribution 2.5 Australia](https://creativecommons.org/licenses/by/2.5/au/),
+and from the ATO's
+[industry benchmark pages](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/small-business-benchmarks/benchmarks-a-z),
 which the ATO's [copyright notice](https://www.ato.gov.au/about-ato/using-our-website/copyright-notice)
-lets anyone copy, adapt and distribute. The ATO and the Commonwealth do not endorse this
-calculator. The ATO's figures stay available on those terms; the licence of
-[rules.json](rules.json) does not restrict them.
+lets anyone copy, adapt and distribute; arranged as JSON, with percentages as whole numbers. The
+file is licensed under Creative Commons Attribution 2.5 Australia
+([LICENSES/CC-BY-2.5-AU.txt](../../LICENSES/CC-BY-2.5-AU.txt)), not under this repository's other
+licences. The ATO and the Commonwealth do not endorse this calculator.
 
 The rules were adapted from Ryan Duguid's independently authored
 [ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare)
 at revision `2e41b018a5a1c5229df2b3fe29de1fe716311fe9`. Code and this README: AGPL-3.0-only;
-`rules.json`: OA Guide License v1.0, following this repository's licensing policy.
+`rules.json`: OA Guide License v1.0, following this repository's licensing policy;
+`benchmarks-2023-24.json`: Creative Commons Attribution 2.5 Australia, as above.
 
 General reference and computational support only. Obtain qualified professional review before
 lodging, paying or relying on any result.

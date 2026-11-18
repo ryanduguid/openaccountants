@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { compareWithAtoBenchmarks } from "./index.mjs";
 import rules from "./rules.json" with { type: "json" };
+import benchmarks from "./benchmarks-2023-24.json" with { type: "json" };
 
 const year = "2023-24";
 const check = (input) => compareWithAtoBenchmarks({ benchmarkYear: year, ...input });
@@ -49,7 +50,7 @@ test("ATO example: Steff's cost of sales to turnover is 30.21%", () => {
 });
 
 test("bakeries match the ATO's industry page (QC43659) for every band and ratio", () => {
-  assert.deepEqual(rules.industries["Bakeries and hot bread shops"].bands.map((b) => [b.from, b.to, b.cost_of_sales, b.total_expenses, b.labour, b.rent, b.motor_vehicle]), [
+  assert.deepEqual(benchmarks.industries["Bakeries and hot bread shops"].bands.map((b) => [b.from, b.to, b.cost_of_sales, b.total_expenses, b.labour, b.rent, b.motor_vehicle]), [
     [65000, 400000, [31, 38], [69, 81], [14, 25], [10, 17], [2, 4]],
     [400001, 750000, [34, 39], [75, 86], [15, 28], [8, 12], [1, 2]],
     [750001, null, [29, 36], [82, 90], [25, 34], [5, 8], [1, 1]],
@@ -165,8 +166,9 @@ test("a ratio the industry does not publish, or the caller does not supply, is n
 test("the result is a comparison, never a compliance finding", () => {
   const result = check({ industry: "Plumbing services", totalBusinessIncome: 704500, totalExpenses: 845650, paymentsToAssociatedPersons: 0 });
   assert.doesNotMatch(JSON.stringify(result), /complian|non-compliant|breach|evasion/i);
-  assert.equal(result.guidance.ato_use, rules.ato_guidance.ato_use);
+  assert.equal(result.guidance.ato_use, benchmarks.ato_guidance.ato_use);
   assert.match(result.attribution, /Creative Commons Attribution 2\.5 Australia/);
+  assert.match(result.attribution, /do not endorse/);
 });
 
 for (const [label, input, verdict, code] of [
@@ -199,7 +201,8 @@ for (const input of [null, [], "Coffee shops"]) {
 }
 
 test("every industry's bands adjoin from its lowest band and end open, with each range in order", () => {
-  const industries = Object.entries(rules.industries);
+  assert.equal(benchmarks.benchmark_year, rules.benchmark_year);
+  const industries = Object.entries(benchmarks.industries);
   assert.equal(industries.length + Object.keys(rules.data.excluded).length, 100);
   for (const [name, industry] of industries) {
     assert.ok(["cost_of_sales", "total_expenses"].includes(industry.key), name);

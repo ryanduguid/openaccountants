@@ -4,6 +4,7 @@
 // https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare
 // Pure, offline comparison. No clock or network.
 import rules from "./rules.json" with { type: "json" };
+import benchmarks from "./benchmarks-2023-24.json" with { type: "json" };
 
 const ratioOrder = ["total_expenses", "cost_of_sales", "labour", "rent", "motor_vehicle"];
 const amountKeys = [
@@ -55,7 +56,7 @@ function position(hundredthsOfPercent, [min, max]) {
 /**
  * @param {object} input
  * @param {string} input.benchmarkYear "2023-24", the only year held.
- * @param {string} input.industry An industry name exactly as in rules.json `industries`.
+ * @param {string} input.industry An industry name exactly as in benchmarks-2023-24.json `industries`.
  * @param {number} input.totalBusinessIncome Whole dollars, more than 0.
  * @param {number} [input.salesOfGoodsAndServices] Whole dollars; omitted means blank.
  * @param {boolean} [input.salaryAndWagesInCostOfSales] The total salary and wages code is C.
@@ -68,8 +69,8 @@ export function compareWithAtoBenchmarks(input) {
   const base = {
     as_of: rules.as_of,
     benchmarkYear: rules.benchmark_year,
-    attribution: rules.attribution,
-    guidance: { ...rules.ato_guidance },
+    attribution: benchmarks.attribution,
+    guidance: { ...benchmarks.ato_guidance },
     sources: [...rules.sources],
     limits: [...rules.limits],
     industry: null,
@@ -91,8 +92,8 @@ export function compareWithAtoBenchmarks(input) {
   if (typeof input.industry === "string" && Object.hasOwn(rules.data.excluded, input.industry)) {
     return stop("refused", "industry_excluded", rules.data.excluded[input.industry]);
   }
-  if (typeof input.industry !== "string" || !Object.hasOwn(rules.industries, input.industry)) {
-    return stop("refused", "industry", "Name an industry exactly as the ATO's benchmarks list it in rules.json.");
+  if (typeof input.industry !== "string" || !Object.hasOwn(benchmarks.industries, input.industry)) {
+    return stop("refused", "industry", "Name an industry exactly as the ATO's benchmarks list it in benchmarks-2023-24.json.");
   }
   const badAmount = amountKeys.find((key) => input[key] !== undefined && !(Number.isSafeInteger(input[key]) && input[key] >= 0));
   if (badAmount !== undefined) return stop("unknown", "invalid_amount", `${badAmount} must be whole dollars, 0 or more.`);
@@ -106,7 +107,7 @@ export function compareWithAtoBenchmarks(input) {
   const sales = input.salesOfGoodsAndServices ?? 0;
   const useSales = sales > 0 && sales * 2 >= income;
   const turnover = useSales ? sales : income;
-  const industry = rules.industries[input.industry];
+  const industry = benchmarks.industries[input.industry];
   const band = industry.bands.find((b) => turnover >= b.from && (b.to === null || turnover <= b.to));
   if (!band) {
     return stop("refused", "turnover_below_bands", `The ATO publishes no range for turnover under $${industry.bands[0].from.toLocaleString("en-AU")} in this industry.`);

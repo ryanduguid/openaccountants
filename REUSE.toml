@@ -131,8 +131,13 @@ SPDX-License-Identifier = "AGPL-3.0-only"
 [[annotations]]
 path = "calculators/au-ato-benchmarks/rules.json"
 precedence = "override"
-SPDX-FileCopyrightText = [
-  "2026 Ryan Duguid",
-  "Australian Taxation Office for the Commonwealth of Australia",
-]
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+# The ATO's figures and guidance text stay under the licence of the ATO's
+# data.gov.au dataset; the credit is in the calculator's README.
+[[annotations]]
+path = "calculators/au-ato-benchmarks/benchmarks-2023-24.json"
+precedence = "override"
+SPDX-FileCopyrightText = "Australian Taxation Office for the Commonwealth of Australia"
+SPDX-License-Identifier = "CC-BY-2.5-AU"
