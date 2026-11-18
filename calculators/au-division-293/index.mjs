@@ -30,7 +30,7 @@ const amounts = [
 // Each flag that puts the case outside Subdivision 293-B alone: its reason code and why.
 const exclusions = [
   ["definedBenefitInterest", "defined_benefit_interest", "A defined benefit interest changes the low tax contributions (ITAA 1997 Subdivision 293-D); this calculator does not cover it."],
-  ["declaredStateOfficeHolderWithCpfInterest", "state_higher_level_office_holder", "Subdivision 293-E applies (ITAA 1997 s 293-145(1)): s 293-150 changes the low tax contributions and Imposition Act 2013 s 6 can remove the tax; this calculator does not cover it."],
+  ["constitutionallyProtectedFund", "constitutionally_protected_fund", "An interest in a constitutionally protected fund can change or remove the tax (ITAA 1997 Subdivision 293-E and Imposition Act 2013 s 6); this calculator does not cover it."],
   ["commonwealthJustice", "commonwealth_justice", "A justice or judge in ITAA 1997 s 293-190 has modified defined benefit contributions and threshold (Subdivision 293-F); this calculator does not cover it."],
   ["departingAustraliaSuperannuationPayment", "departing_australia_payment", "A departing Australia superannuation payment can bring a refund that stops all Division 293 tax liabilities (ITAA 1997 ss 293-230 and 293-240); this calculator does not cover it."],
 ];
@@ -52,7 +52,7 @@ const outcomes = {
  * @param {string} input.lowTaxContributedAmounts s 293-30.
  * @param {string} input.excessConcessionalContributions s 291-20(1).
  * @param {boolean} input.definedBenefitInterest true is refused.
- * @param {boolean} input.declaredStateOfficeHolderWithCpfInterest s 293-145(1) applies; true is refused.
+ * @param {boolean} input.constitutionallyProtectedFund true is refused.
  * @param {boolean} input.commonwealthJustice true is refused.
  * @param {boolean} input.departingAustraliaSuperannuationPayment true is refused.
  * @returns {object} JSON-safe estimate; money is decimal strings or null.
