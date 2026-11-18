@@ -63,12 +63,23 @@ test("a balance must be greater than each threshold, not equal to it", () => {
   }
 });
 
-test("money rounds once to the cent, half away from zero, and the total is the exact sum rounded", () => {
+test("each amount rounds to the cent from exact values, half away from zero", () => {
   assert.deepEqual(figures(estimate("4000000", "0.38")), ["25.00", "0.00", "0.10", "0.00", "0.01", "0.00", "0.01"]);
-  const small = estimate("12000000", "0.04");
-  assert.deepEqual([small.taxOnTaxableEarnings, small.taxOnVeryLargeComponent, small.division296TaxEstimate], ["0.00", "0.00", "0.01"]);
   assert.equal(estimate("6000000", "0.20").division296TaxEstimate, "0.02");
   assert.equal(estimate("12000000", "-0.03").veryLargeBalanceEarningsComponent, "-0.01");
+});
+
+// $12 million and 4 cents: each part is 0.45 of a cent, rounded to nil, though their exact sum is 0.9 of a cent.
+test("the total is the sum of the 2 tax amounts shown", () => {
+  const small = estimate("12000000", "0.04");
+  assert.deepEqual([small.taxOnTaxableEarnings, small.taxOnVeryLargeComponent, small.division296TaxEstimate], ["0.00", "0.00", "0.00"]);
+  const toCents = (amount) => Math.round(Number(amount) * 100);
+  for (const balance of ["10000500.03", "12000000", "12345678.91", "32000000"]) {
+    for (const earnings of ["0.01", "0.04", "0.07", "1.13", "99999.99", "123456.78"]) {
+      const result = estimate(balance, earnings);
+      assert.equal(toCents(result.division296TaxEstimate), toCents(result.taxOnTaxableEarnings) + toCents(result.taxOnVeryLargeComponent), `${balance} ${earnings}`);
+    }
+  }
 });
 
 test("earnings of nil or less give no tax, and the very large component keeps their sign", () => {

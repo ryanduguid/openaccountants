@@ -32,12 +32,18 @@ function cents(value, allowNegative) {
 const shareAbove = (balance, threshold) =>
   balance > threshold ? (2n * (balance - threshold) * 10000n + balance) / (2n * balance) : 0n;
 
-// value / scale hundredths, rounded half away from zero, as a decimal string with 2 places.
-function decimal(value, scale = 1n) {
+// value / scale hundredths, rounded half away from zero.
+function round(value, scale = 1n) {
   const magnitude = value < 0n ? -value : value;
   const rounded = (2n * magnitude + scale) / (2n * scale);
-  const sign = value < 0n && rounded > 0n ? "-" : "";
-  return `${sign}${rounded / 100n}.${String(rounded % 100n).padStart(2, "0")}`;
+  return value < 0n ? -rounded : rounded;
+}
+
+// value / scale hundredths, rounded half away from zero, as a decimal string with 2 places.
+function decimal(value, scale = 1n) {
+  const rounded = round(value, scale);
+  const magnitude = rounded < 0n ? -rounded : rounded;
+  return `${rounded < 0n ? "-" : ""}${magnitude / 100n}.${String(magnitude % 100n).padStart(2, "0")}`;
 }
 
 /**
@@ -102,8 +108,9 @@ export function estimateDivision296(input) {
   else code = share === 0n ? "share_rounds_to_nil" : "liable";
   const liable = code === "liable" || code === "share_rounds_to_nil";
   // When liable the earnings are positive, so the very large component is not negative.
-  const tax = liable ? taxable * BigInt(rules.rates.taxable_superannuation_earnings_percent) : 0n;
-  const veryLargeTax = liable ? component * BigInt(rules.rates.very_large_component_percent) : 0n;
+  // Each tax amount is rounded to the cent and the total is their sum, so the parts shown add up.
+  const tax = liable ? round(taxable * BigInt(rules.rates.taxable_superannuation_earnings_percent), 1000000n) : 0n;
+  const veryLargeTax = liable ? round(component * BigInt(rules.rates.very_large_component_percent), 1000000n) : 0n;
   return {
     ...base,
     verdict: "estimate_calculated",
@@ -118,8 +125,8 @@ export function estimateDivision296(input) {
     veryLargeBalanceSharePercent: decimal(veryLargeShare),
     taxableSuperannuationEarnings: decimal(taxable, 10000n),
     veryLargeBalanceEarningsComponent: decimal(component, 10000n),
-    taxOnTaxableEarnings: decimal(tax, 1000000n),
-    taxOnVeryLargeComponent: decimal(veryLargeTax, 1000000n),
-    division296TaxEstimate: decimal(tax + veryLargeTax, 1000000n),
+    taxOnTaxableEarnings: decimal(tax),
+    taxOnVeryLargeComponent: decimal(veryLargeTax),
+    division296TaxEstimate: decimal(tax + veryLargeTax),
   };
 }

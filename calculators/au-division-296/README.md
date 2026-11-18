@@ -43,13 +43,23 @@ caller's attestation, which the calculator does not verify.
 | --- | --- |
 | `incomeYear` | `"2026-27"`; other years are refused |
 | `totalSuperBalanceAtYearEnd` | Total superannuation balance at the end of 30 June 2027, leaving out any LRBA amount (s 296-260). Not negative |
-| `totalSuperEarnings` | Total superannuation earnings for 2026-27 (s 296-55), which can be negative |
+| `totalSuperEarnings` | Total superannuation earnings for 2026-27 (s 296-55): see below. It can be negative |
 | `childRecipient` | `true` if the person was a child recipient of a superannuation income stream at any time in 2026-27 (s 296-20) |
 | `structuredSettlementContribution` | `true` if a structured settlement contribution was made for the person in 2026-27 or an earlier year (s 296-25) |
 | `diedOnOrBeforeYearEnd` | `true` if the person died on or before 30 June 2027 (ITTPA s 296-1(3)) |
 
 Each of the 3 exception answers must be `true` or `false`; a missing answer gives `unknown`, not an
 assumption.
+
+Total superannuation earnings is neither the change in the balance nor an account's investment
+return. It is the total of the person's relevant superannuation earnings for each interest
+(s 296-55): each fund's Division 296 fund earnings, worked out from its taxable income (s 296-60, so
+capital gains count when realised, with the ITTPA's transitional CGT adjustments) and attributed to
+the interest (s 296-65). A defined benefit interest not in the retirement phase uses the s 296-70
+formula instead, which can give a negative amount; the earnings of foreign funds and of Division 296
+excluded interests (s 296-55(3): judges' pension interests, declared constitutionally protected
+fund interests and non-complying plans, for example) count as nil. Supply the total after these
+rules; the calculator applies none of them.
 
 ## Calculation
 
@@ -65,9 +75,10 @@ s 296-1(2)); it is nil after death (s 296-50).
 | Liability | taxable superannuation earnings, unless s 296-20, s 296-25 or ITTPA s 296-1(3) applies (s 296-15) |
 | Tax | 15% of taxable superannuation earnings plus 10% of the very large component (Imposition Act s 5) |
 
-Amounts stay exact until each is shown, rounded half away from zero to the cent; the total is the
-exact sum, rounded once, so it can differ by a cent from the sum of the 2 parts shown. The Acts set
-no rounding for these amounts.
+Each amount shown is worked from exact values, not from another rounded amount, and rounded half
+away from zero to the cent; the total is the sum of the 2 tax amounts shown. A tax amount can
+therefore differ by a cent from the rate applied to the rounded earnings shown. The Acts set no
+rounding for these amounts.
 
 ## Outputs and limits
 
@@ -76,10 +87,10 @@ second reason code says why: `liable`, `share_rounds_to_nil`, `balance_not_above
 `earnings_not_above_nil`, `child_recipient`, `structured_settlement_contribution` or
 `died_on_or_before_year_end`. `unknown` and `refused` results contain **no calculated figure**.
 
-The calculator does not work out the total superannuation balance, a fund's Division 296 fund
-earnings or their attribution to each interest (ss 296-55 to 296-75), and does not cover temporary
-residents who depart Australia (Subdivision 296-E), Division 296 debt accounts, release authorities
-or payment. From 2027-28 the thresholds are indexed and the balance just before the start of the
+The calculator does not work out the total superannuation balance or the total superannuation
+earnings (ss 296-55 to 296-75), and does not cover temporary residents who depart Australia
+(Subdivision 296-E), Division 296 debt accounts, release authorities, payment or Imposition Act
+s 6, which removes the tax where imposing it would exceed the Commonwealth's legislative power. From 2027-28 the thresholds are indexed and the balance just before the start of the
 year also counts; those years are refused until the indexed thresholds are published. It does not
 project balances or compare holding assets inside and outside super.
 
