@@ -166,10 +166,11 @@ precedence = "override"
 SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
 
-# The ATO's figures and guidance text stay under the licence of the ATO's
-# data.gov.au dataset; the credit is in the calculator's README.
+# The ATO's figures and guidance text stay on the ATO's terms: CC BY 2.5 AU for
+# the data.gov.au dataset's figures, the ATO's copyright notice for what comes
+# only from its pages. The README says which is which and gives the credit.
 [[annotations]]
 path = "calculators/au-ato-benchmarks/benchmarks-2023-24.json"
 precedence = "override"
 SPDX-FileCopyrightText = "Australian Taxation Office for the Commonwealth of Australia"
-SPDX-License-Identifier = "CC-BY-2.5-AU"
+SPDX-License-Identifier = "CC-BY-2.5-AU AND LicenseRef-ATO-Copyright-Notice"

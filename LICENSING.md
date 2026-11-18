@@ -10,7 +10,7 @@ depending on whether a file is *software* or a *tax Guide*.
 | Software, tooling, docs, and project metadata — `mcp/`, `scripts/`, `tools/`, `plugins/`, `.claude-plugin/`, `docs/`, `.github/`, `Dockerfile`, `calculators/**/*.mjs`, and root config/meta files | **AGPL-3.0-only** | [`LICENSE`](LICENSE) / [`LICENSES/AGPL-3.0-only.txt`](LICENSES/AGPL-3.0-only.txt) |
 | Tax Guides and their machine-readable exports — `skills/`, `packages/`, `workflows/`, `calculators/**/rules.json`, `index.json`, `llms.txt`, `llms-full.txt` | **OA Guide License** (source-available) | [`LICENSES/LicenseRef-OA-Guide-License-1.0.txt`](LICENSES/LicenseRef-OA-Guide-License-1.0.txt) |
 | The guides listed under [Guides under FSL-1.1-ALv2](#guides-under-fsl-11-alv2), with their copies under `packages/` | **FSL-1.1-ALv2** (source-available) | [`LICENSES/FSL-1.1-ALv2.txt`](LICENSES/FSL-1.1-ALv2.txt) |
-| The Australian Taxation Office's data listed under [Third-party data](#third-party-data) | **CC BY 2.5 AU** | [`LICENSES/CC-BY-2.5-AU.txt`](LICENSES/CC-BY-2.5-AU.txt) |
+| The Australian Taxation Office's data listed under [Third-party data](#third-party-data) | **CC BY 2.5 AU** and the **ATO's copyright notice** | [`LICENSES/CC-BY-2.5-AU.txt`](LICENSES/CC-BY-2.5-AU.txt), [`LICENSES/LicenseRef-ATO-Copyright-Notice.txt`](LICENSES/LicenseRef-ATO-Copyright-Notice.txt) |
 
 The machine-readable exports (`index.json`, `llms.txt`, `llms-full.txt`)
 reproduce the Guides, so they carry the **Guide License** — otherwise the Guide
@@ -101,10 +101,13 @@ these guides reproduced in them.
 `calculators/au-ato-benchmarks/benchmarks-2023-24.json` holds the Australian
 Taxation Office's 2023-24 small business benchmark ranges and guidance text,
 © Australian Taxation Office for the Commonwealth of Australia, adapted from
-the ATO's data.gov.au dataset and industry pages. It stays under the dataset's
-licence, Creative Commons Attribution 2.5 Australia
-([`LICENSES/CC-BY-2.5-AU.txt`](LICENSES/CC-BY-2.5-AU.txt)), notwithstanding the
-general mapping above; the calculator's README gives the credit.
+the ATO's data.gov.au dataset and industry pages. Notwithstanding the general
+mapping above, it stays on the ATO's terms: the dataset's figures under Creative
+Commons Attribution 2.5 Australia
+([`LICENSES/CC-BY-2.5-AU.txt`](LICENSES/CC-BY-2.5-AU.txt)), and the material
+taken only from the ATO's pages under the ATO's copyright notice
+([`LICENSES/LicenseRef-ATO-Copyright-Notice.txt`](LICENSES/LicenseRef-ATO-Copyright-Notice.txt)).
+The calculator's README says which is which and gives the credit.
 
 ## Effective date and prior releases
 

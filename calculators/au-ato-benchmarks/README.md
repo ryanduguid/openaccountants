@@ -65,8 +65,9 @@ ATO's examples do (35.92%), and `position` compares that figure with the publish
 inclusive, as those examples compare 88.70% with 86% to 93%. The ATO publishes whole percentages
 and says nothing more about rounding, so this convention is the calculator's own: 86.004% shows
 as 86% and is within a range ending at 86%; 86.01% is above it. A range printed as a single
-figure, such as 1%, is both bounds, so only 1.00% is within it. 35 ranges are single figures, all
-motor vehicle: 29 of 1%, 1 of 2% and 5 of 0%, where any expense of 0.005% of turnover or more is above.
+figure, such as 1%, is both bounds, so only a ratio that rounds to 1.00% (0.995% up to but not
+including 1.005%) is within it. 35 ranges are single figures, all motor vehicle: 29 of 1%, 1 of 2%
+and 5 of 0%. A 0% range holds only ratios under 0.005% of turnover.
 
 The band is the one whose printed limits contain turnover: '$400,001 - $750,000' starts at
 $400,001, and 'More than $750,000' at $750,001. Turnover below the lowest band is refused.
@@ -115,23 +116,30 @@ every industry's data and refusals of malformed or out-of-scope inputs. No clien
 
 [benchmarks-2023-24.json](benchmarks-2023-24.json) holds the ATO's benchmark ranges and the ATO
 guidance this calculator quotes. Benchmark ranges and guidance text © Australian Taxation Office
-for the Commonwealth of Australia. Adapted from the ATO's
-[Small Business Benchmarks](https://data.gov.au/data/dataset/small-business-benchmarks) dataset
-(2023-24 Benchmarks), licensed under
-[Creative Commons Attribution 2.5 Australia](https://creativecommons.org/licenses/by/2.5/au/),
-and from the ATO's
-[industry benchmark pages](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/small-business-benchmarks/benchmarks-a-z),
-which the ATO's [copyright notice](https://www.ato.gov.au/about-ato/using-our-website/copyright-notice)
-lets anyone copy, adapt and distribute; arranged as JSON, with percentages as whole numbers. The
-file is licensed under Creative Commons Attribution 2.5 Australia
-([LICENSES/CC-BY-2.5-AU.txt](../../LICENSES/CC-BY-2.5-AU.txt)), not under this repository's other
-licences. The ATO and the Commonwealth do not endorse this calculator.
+for the Commonwealth of Australia. The ATO and the Commonwealth do not endorse this calculator.
+
+- The turnover bands, the total expenses ranges and the key cost of sales ranges are adapted from
+  the ATO's
+  [Small Business Benchmarks](https://data.gov.au/data/dataset/small-business-benchmarks) dataset
+  (2023-24 Benchmarks), licensed under
+  [Creative Commons Attribution 2.5 Australia](https://creativecommons.org/licenses/by/2.5/au/)
+  ([LICENSES/CC-BY-2.5-AU.txt](../../LICENSES/CC-BY-2.5-AU.txt)).
+- The labour, rent, motor vehicle and other cost of sales ranges, the page numbers, each
+  industry's key range and the guidance text are taken from the ATO's
+  [industry benchmark pages](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/small-business-benchmarks/benchmarks-a-z)
+  and guidance pages under the ATO's
+  [copyright notice](https://www.ato.gov.au/about-ato/using-our-website/copyright-notice)
+  ([LICENSES/LicenseRef-ATO-Copyright-Notice.txt](../../LICENSES/LicenseRef-ATO-Copyright-Notice.txt)),
+  which lets anyone copy, adapt, modify, transmit and distribute them.
+
+They are arranged as JSON, with percentages as whole numbers, and stay on those terms, not under
+this repository's other licences.
 
 The rules were adapted from Ryan Duguid's independently authored
 [ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare)
 at revision `2e41b018a5a1c5229df2b3fe29de1fe716311fe9`. Code and this README: AGPL-3.0-only;
 `rules.json`: OA Guide License v1.0, following this repository's licensing policy;
-`benchmarks-2023-24.json`: Creative Commons Attribution 2.5 Australia, as above.
+`benchmarks-2023-24.json`: the ATO's terms, as above.
 
 General reference and computational support only. Obtain qualified professional review before
 lodging, paying or relying on any result.
