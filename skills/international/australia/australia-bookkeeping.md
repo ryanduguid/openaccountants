@@ -1,11 +1,11 @@
 ---
 name: australia-bookkeeping
-description: Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
-version: 1.8
+description: Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", "month-end close", "close controls", "reconciliation break", "ABN check digit", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
+version: 1.9
 jurisdiction: AU
 tax_year: 2025
 tax_year_notes: "Mixed: 2025-26 and 2026-27 figures, each labelled by year where it differs"
-last_updated: 2026-11-05
+last_updated: 2026-11-18
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -14,7 +14,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Bookkeeping v1.8
+# Australia Bookkeeping v1.9
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -24,7 +24,7 @@ Load the workflow bases named in depends_on with this guide. Its output is worki
 
 ## Scope statement
 
-Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
+Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", "month-end close", "close controls", "reconciliation break", "ABN check digit", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
 
 ## Filing requirements
 
@@ -560,7 +560,7 @@ Every transaction needs four decisions, not one. Answer them in this order, beca
 | Adjustment to a sale or purchase | Adjustment note or credit note |
 | Bad debt written off | The board minute or file note recording the write-off and its date |
 
-Business records are generally kept for five years from when the record was prepared or obtained or the transaction was completed, whichever is later. Some records start differently (FBT records from lodging the FBT return; employee super contribution records from the contribution date), and some are kept longer, including where a CGT asset, a carried-forward loss or a review period depends on them. Companies also keep financial records for seven years under the Corporations Act, a separate rule from the tax one.  _([ATO, Overview of record-keeping rules for business](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business))_
+Business records are generally kept for 5 years from when the record was prepared or obtained or the transactions it relates to were completed, whichever is later (ITAA 1936 s 262A(4)). Some records start differently (FBT records from lodging the FBT return; employee super contribution records from the contribution date), and some are kept longer: records of a CGT asset or a depreciating asset for as long as the asset is held and 5 years after its disposal, and the records behind a carried-forward loss until the period of review of the return that deducts it has ended. A company, registered scheme, registrable superannuation entity or disclosing entity also keeps written financial records for 7 years after the transactions they cover are completed (Corporations Act s 286(2)), a separate rule from the tax one. Keep the month-end close pack (Section 12) with the records it explains (practice).  _([ATO, Overview of record-keeping rules for business](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business); [ATO, Records to keep longer than five years](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business/records-to-keep-longer-than-five-years); [ITAA 1936 s 262A](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/262A); [Corporations Act 2001 s 286, compilation 149](https://www.legislation.gov.au/C2004A00818/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_2/document_2.html), all read 2026-11-18)_
 
 #### 11.3 Reconciliation as a control, not a chore
 
@@ -573,6 +573,8 @@ A reconciliation is what makes the ledger evidence rather than assertion. At min
 - Inventory agreed to a count or a supported roll-forward.
 - Loan accounts agreed to the lender statement, with interest and principal split correctly.
 - Clearing and suspense accounts at nil or fully explained.
+
+Section 12 runs these reconciliations as a month-end close and adds the review controls around them.
 
 #### 11.4 Accounting treatment is not tax treatment
 
@@ -630,6 +632,201 @@ Where the error is found matters more than how large it is.
 - Treating an impairment allowance as a deductible bad debt.
 - Reconciling the bank but not the GST or PAYG withholding control accounts.
 
+### Section 12 -- Month-End Close and Review Controls
+
+A close turns a month of postings into balances a reviewer can sign. Each rule below says whether it rests on law or is practice; a practice control is a review step the firm can vary, not a legal requirement. Materiality, investigation thresholds and the close checklist are the firm's or the engagement's: ask for them rather than inventing one. The close proposes adjusting journals; an authorised person approves and posts them and locks the period. A close pack is preparation for review, not an audit or assurance conclusion.
+
+#### 12.1 Close sequence (practice)
+
+1. **Bank.** Reconcile every bank account to its statement, then bridge the statement's closing balance to the ledger balance through identified timing items, such as deposits in transit and unpresented payments. A reconciled status in the ledger software does not prove the bridge. Name, explain or clear each item older than the current month.
+2. **Control accounts.** Agree receivables and payables to the aged listings to the cent, the GST accounts to the month's activity (12.2) and the payroll and super accounts to the payroll reports (12.3). List stale credit balances in the aged listings as possible unapplied receipts, payments or duplicates, without clearing them.
+3. **Schedules.** Roll the accrual, prepayment, loan and intercompany schedules: release what expired, add what is new and agree each closing balance to the trial balance. Intercompany balances mirror each other across the entities. Compare each recurring journal with the prior 2 months and list any that is missing, new or changed in amount or account.
+4. **Fixed assets.** Post additions, disposals and depreciation to the register and agree its closing written down value to the trial balance.
+5. **Trial balance review.** Run the controls in 12.4. Explain each flagged variance in one line; an unexplained one stays open.
+6. **Contacts and payment details.** Run the checks in 12.6.
+7. **Prior review points.** Carry each earlier review point into this close; it stays open until evidence closes it, not because time passed. Log each correction made in this close with what changed, why, who approved it and the period affected, so the next close can test for repeats.
+8. **Close out.** Record each checklist item's status, preparer and date, and each exception with an owner and status. After the final journals are approved and posted, re-export the affected reports and confirm the pack reflects the post-journal position before the period is locked. Section 11.5 governs a change to a period already lodged.
+
+#### 12.2 GST control accounts: test each side
+
+The GST on a taxable supply is 10% of its value, and the value is the price without the GST in it, so GST is 1/10 of a GST-exclusive amount and 1/11 of a GST-inclusive price (s 9-75(1)'s example takes $2,000 of GST from a $22,000 sale). An input tax credit equals the GST payable on the supply acquired, reduced where the acquisition is only partly creditable.  _([GST Act ss 9-70, 9-75, 9-90 and 11-25, compilation C96 of 1 January 2026](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html), read 2026-11-18)_
+
+For accounts that hold GST-exclusive amounts:
+
+- **Net test (practice):** Compare the month's net movement in the GST accounts, with BAS payments, refunds and clearing journals posted to them added back, with 1/10 of taxable sales less 1/10 of creditable purchases. `au-bas-preparation.md` Section 4 agrees the control accounts to the transaction listing before the BAS is prepared.
+- **Per-side test (practice):** The net test cannot see equal shortfalls on both sides: GST collected $100 short and GST paid $100 short still net to the expected amount. Where the ledger keeps GST collected and GST paid in separate accounts, also compare GST collected with 1/10 of taxable sales and GST paid with 1/10 of creditable purchases. Where one account holds both sides, the trial balance holds only its net movement and the net test is all that can be run. Case 1 works it.
+- **Classes first:** Every account that moved needs a class: taxable sales, creditable purchases, non-creditable purchases (such as the private-use part of a purchase), GST-free, input taxed or outside GST. While an account that moved mixes taxable and other amounts, neither test can be run for that month; record it as not run, not as passed.
+- **Settlements:** List each BAS payment, refund and clearing journal posted to the GST accounts in the month, and the side it was posted to. The tests rely on that list; check each line against the BAS and the ATO account, because a settlement left off shows as a difference but one listed that did not happen can hide one.
+- **Tolerance (practice):** GST is rounded to the nearest cent per invoice, 0.5 cents up, with a separate rule where one invoice records several supplies (s 9-90), so each side can drift from an exact tenth by rounding alone. A tolerance of a fixed amount plus a percentage of each side's expected GST is a review heuristic the firm sets, not a legal bound; a difference beyond it asks for review and is not by itself an error. Case 1 uses $1.00 plus 1%.
+- **What neither test catches:** A sale or purchase in the wrong class, such as GST charged on a GST-free sale coded to taxable sales; whether GST on imports, adjustments or the taxable part of a mixed supply is right; and a difference within the tolerance.
+
+#### 12.3 Payroll and super control accounts
+
+- **Wages clearing (practice):** A wages clearing account nets to nil once each pay run's net pay, withholding and deductions are posted and paid.
+- **PAYG withholding payable:** Agree the balance to the withholding in the payroll register less amounts remitted (Section 11.3), and W1 and W2 to the payroll register and STP figures before lodging, as `au-bas-preparation.md` Section 6.1 sets out.
+- **Super payable:** For earnings paid from 1 July 2026, a super guarantee contribution is on time when the employee's fund receives it, with the information needed to allocate it, within 7 business days after the payday. The first contribution for a new employee, or to a new fund for an existing employee, has 20 business days, and an out-of-cycle payment is due 7 business days after the employee's next regular payday. A clearing house's processing time counts against the deadline. Clear the super payable only on evidence of the fund's receipt; a remittance or bank payment date is not receipt.  _([ATO, Payment deadlines for Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super), updated 29 September 2026, read 2026-11-18)_
+- **Lateness is not decided here:** Which longer period applies, whether a contribution was late and any super guarantee charge depend on facts the close does not establish. Carry an unexplained or aged super payable to the reviewer with `au-super-guarantee.md`; the close makes no charge determination.
+
+#### 12.4 Trial balance review controls (practice)
+
+Compare the month-end trial balance with the prior one. A control whose input was not supplied, such as a subledger listing, did not run: name it in the pack as not run, never as passed.
+
+**Trial balance review controls**
+
+| Control | Raise for review when | It cannot show |
+| --- | --- | --- |
+| Integrity | The debit and credit totals, for the month or the year to date, differ by any amount. Stop and re-export before relying on anything else | An amount posted to the wrong account, which leaves the totals equal |
+| Financial year reset | The 2 dates fall in different financial years (1 July to 30 June), so year-to-date revenue and expense balances are not comparable | Which rows reset |
+| Period comparison | An account appears in only one of the 2 periods | Whether a missing and a new account are one account renumbered |
+| Variance | An account's year-to-date balance moves by at least the firm's amount and its percentage | Offsetting entries that leave the balance where it was |
+| Account details | A code, name or section changes for an account in both periods | A changed account identifier, which reads as one account missing and one new |
+| Mapping | A current account has no reporting group | Whether the assigned group suits the account |
+| Balance side | A listed account sits on the side opposite to the one declared for it (an overdrawn bank account, a debit balance in creditors), an account declared nil (suspense, clearing, rounding) carries a balance, or an account expected to move (accruals, payroll liabilities, GST) has no movement | Any account the firm's list leaves out |
+| Reconciliation coverage | A balance sheet account has a closing balance that no subledger, schedule or reconciliation ties out and no recorded reason exempts | Whether the supplied tie is itself complete or right |
+
+#### 12.5 Tracing a reconciliation break (practice)
+
+When a bank, control account or subledger reconciliation does not agree, trace the difference before anyone proposes an adjustment.
+
+1. **Confirm the difference.** Recompute both balances from the exports and check that both cover the same period end, accounting basis, filters and tracking. A difference caused only by mismatched report settings is a report break: request matching exports and stop tracing it.
+2. **Split it into items.** Match ledger lines to source lines on amount, date and reference. Show that the unmatched items sum to the difference; whatever no item explains stays on the list as an unexplained remainder.
+3. **Pull both sides of each item.** Record the ledger entry (reference, dates, source type, account, tax code, who entered it) and the matching source record. Where the source evidence is missing, record 'match not established' and request it; missing evidence is not proof that no record exists.
+4. **Find the cause.** Compare dates and periods, amount and sign, GST treatment, account, contact and currency. The usual causes are timing (an unpresented payment or a deposit in transit), cut-off, a duplicate (a bank feed line and a manual entry for one payment), an omission, a mapping error, a sign or transposition error, gross against net of GST, a journal posted straight to a control account, and a currency rate or revaluation date that differs between the 2 sides.
+5. **Write the cause in one sentence.** Say which side did what and why, naming the evidence. Where the evidence does not establish the cause, write 'cause not established' and name what is missing. Never infer a cause from a matching amount alone.
+6. **Assign the next step.** Give each item an owner and one action: monitor, request evidence, propose an adjustment for the reviewer or escalate.
+
+Never plug, net off, write off or relabel a difference to make a reconciliation agree; an unexplained remainder stays open however small. Agreement after a trace is not clearance: a timing item stays open until a later statement shows it cleared. After an adjustment is posted, re-export and rerun the reconciliation. An item that suggests a changed payee bank account or possible fraud goes straight to the reviewer. Case 2 works a trace.
+
+#### 12.6 Contacts and supplier payment details
+
+- **ABN check digits:** An ABN is 11 digits. To check one, subtract 1 from the first digit, multiply the 11 digits by the weights 10, 1, 3, 5, 7, 9, 11, 13, 15, 17 and 19 in order, and add the products; the ABN is valid only if the total divided by 89 leaves no remainder. Passing shows only that the number is well formed, not that it is registered, current or the contact's own: confirm those on ABN Lookup. Cases 3 and 4 work the check.  _([Australian Business Register, Format of the ABN](https://abr.business.gov.au/Help/AbnFormat), read 2026-11-18)_
+- **Duplicate contacts (practice):** List each valid ABN held by more than one contact, and each name that repeats once case and spacing are ignored. Variants such as 'Pty Ltd' and 'Pty. Limited' need a person's eye. Merging contacts in the ledger is a reviewed change, not part of the close.
+- **New suppliers and changed payment details (practice):** List every supplier created and every bank or payment detail changed in the month, with who made each change and when, and the evidence that it was confirmed independently of the request. The Australian Signals Directorate recommends an approval process for requests to change payment details and verifying a request by calling the sender on a verified phone number, not one given in the email. A change without that evidence stays open, and the supplier's next payment waits for an authorised person to confirm the details; the close neither edits the supplier record nor releases the payment.  _([ASD, Learn about account compromise](https://www.cyber.gov.au/guidance/learn-about-account-compromise), guidance rather than law, read 2026-11-18)_
+
+#### 12.7 Worked cases
+
+Cases 1 and 2 are synthetic, in AUD, for an invented entity. Case 3 is the Australian Business Register's own example and Case 4 alters it. Recompute all 4 with `python3 scripts/check-examples.py skills/international/australia/australia-bookkeeping.md`; the checker recomputes arithmetic only, not the classification or evidence behind the inputs.
+
+##### Case 1: GST shortfalls on both sides that net to nil
+
+In March a GST-registered entity on accrual records $50,000.00 of taxable sales and $20,000.00 of fully creditable purchases, both GST-exclusive. Its ledger keeps GST collected and GST paid in separate accounts; GST collected moved by a $4,900.00 credit and GST paid by a $1,900.00 debit. No BAS payment, refund or clearing journal was posted to either account in March, every account that moved is classed, and none holds GST-free, input-taxed, non-creditable, import or adjustment amounts. The firm's tolerance is $1.00 plus 1% of the GST expected: on that side for a side test, and on sales and purchases together for the net test. The net test passes: $4,900.00 - $1,900.00 = $3,000.00, exactly 1/10 of the sales less 1/10 of the purchases. Each side is $100.00 short, beyond its tolerance ($51.00 for GST collected, $21.00 for GST paid) by $49.00 and $79.00, so both sides go to review; a positive excess is beyond the tolerance and a negative one within it.
+
+```oa-check
+name: AU bookkeeping GST per-side shortfalls that net to nil
+tolerance: 0.000001
+inputs:
+  taxable_sales: 50000.00
+  creditable_purchases: 20000.00
+  gst_collected_movement: 4900.00
+  gst_paid_movement: 1900.00
+  settlements_added_back: 0
+  absolute_tolerance: 1.00
+  percentage_tolerance: 0.01
+steps:
+  - expected_collected: taxable_sales / 10
+  - expected_paid: creditable_purchases / 10
+  - expected_net: expected_collected - expected_paid
+  - recorded_net: gst_collected_movement - gst_paid_movement + settlements_added_back
+  - net_difference: recorded_net - expected_net
+  - net_tolerance: absolute_tolerance + percentage_tolerance * (expected_collected + expected_paid)
+  - net_excess: abs(net_difference) - net_tolerance
+  - collected_difference: gst_collected_movement - expected_collected
+  - collected_tolerance: absolute_tolerance + percentage_tolerance * expected_collected
+  - collected_excess: abs(collected_difference) - collected_tolerance
+  - paid_difference: gst_paid_movement - expected_paid
+  - paid_tolerance: absolute_tolerance + percentage_tolerance * expected_paid
+  - paid_excess: abs(paid_difference) - paid_tolerance
+expected:
+  expected_net: 3000.00
+  recorded_net: 3000.00
+  net_difference: 0
+  net_tolerance: 71.00
+  net_excess: -71.00
+  collected_difference: -100.00
+  collected_tolerance: 51.00
+  collected_excess: 49.00
+  paid_difference: -100.00
+  paid_tolerance: 21.00
+  paid_excess: 79.00
+```
+
+##### Case 2: a bank break traced to 3 items and a remainder
+
+The statement closes at $31,000.00 and the ledger at $29,570.00, so the ledger is $1,430.00 lower. The trace finds a $1,200.00 payment the ledger records twice (a bank feed line and a manual payment; the statement shows one debit), a $450.00 cheque presented after month end, and a $240.00 bank fee on the statement but not in the ledger. The 3 items explain $1,410.00. The other $20.00 stays open with its cause not established; it is never forced to nil. The reversal and the fee go to the reviewer as unposted drafts, and the cheque stays open until a later statement shows it presented.
+
+```oa-check
+name: AU bookkeeping bank reconciliation break trace with an unexplained remainder
+tolerance: 0.000001
+inputs:
+  statement_balance: 31000.00
+  ledger_balance: 29570.00
+  duplicate_payment_in_ledger: 1200.00
+  unpresented_cheque: 450.00
+  bank_fee_not_in_ledger: 240.00
+steps:
+  - difference: statement_balance - ledger_balance
+  - explained: duplicate_payment_in_ledger + unpresented_cheque - bank_fee_not_in_ledger
+  - unexplained_remainder: difference - explained
+expected:
+  difference: 1430.00
+  explained: 1410.00
+  unexplained_remainder: 20.00
+```
+
+##### Case 3: a valid ABN (ABR example)
+
+The Register checks 51 824 753 556. Subtracting 1 from the first digit gives 41 824 753 556, whose weighted digits sum to 534, and 534 = 6 x 89 with no remainder, so the number is a valid ABN.
+
+```oa-check
+name: AU bookkeeping ABN check digits ABR example 51 824 753 556
+tolerance: 0.000001
+inputs:
+  d1: 5
+  d2: 1
+  d3: 8
+  d4: 2
+  d5: 4
+  d6: 7
+  d7: 5
+  d8: 3
+  d9: 5
+  d10: 5
+  d11: 6
+steps:
+  - weighted_sum: (d1 - 1) * 10 + d2 * 1 + d3 * 3 + d4 * 5 + d5 * 7 + d6 * 9 + d7 * 11 + d8 * 13 + d9 * 15 + d10 * 17 + d11 * 19
+  - remainder: weighted_sum - 89 * floor(weighted_sum / 89)
+expected:
+  weighted_sum: 534
+  remainder: 0
+```
+
+##### Case 4: the same ABN with its last 2 digits swapped
+
+A supplier record holds 51 824 753 565, the Case 3 number with its last 2 digits swapped. The weighted sum falls to 532, which leaves a remainder of 87, so the number fails the check and the contact goes to review.
+
+```oa-check
+name: AU bookkeeping ABN check digits fail on swapped last digits
+tolerance: 0.000001
+inputs:
+  d1: 5
+  d2: 1
+  d3: 8
+  d4: 2
+  d5: 4
+  d6: 7
+  d7: 5
+  d8: 3
+  d9: 5
+  d10: 6
+  d11: 5
+steps:
+  - weighted_sum: (d1 - 1) * 10 + d2 * 1 + d3 * 3 + d4 * 5 + d5 * 7 + d6 * 9 + d7 * 11 + d8 * 13 + d9 * 15 + d10 * 17 + d11 * 19
+  - remainder: weighted_sum - 89 * floor(weighted_sum / 89)
+expected:
+  weighted_sum: 532
+  remainder: 87
+```
+
 ## Edge cases and special rules
 
 ### Section 10 -- Interaction with Tax Skills
@@ -677,6 +874,15 @@ Where the error is found matters more than how large it is.
 
 Trace each input to its records, confirm the selected year and source conditions, recompute the working and retain unresolved items for review.
 
+For a month-end close (Section 12):
+
+- Each bank statement balance bridges to the ledger through identified timing items, and any residual is an open exception.
+- Each control account agrees to its source, or its difference is traced (12.5) with an owner; nothing is plugged.
+- Where GST collected and GST paid are separate accounts, each side was tested, not only the net; a test that could not run is recorded as not run.
+- The super payable is cleared only by evidence of fund receipt.
+- Every new supplier and changed payment detail has independent confirmation evidence or stays open with the next payment held.
+- Every control that did not run is named in the pack, and every open exception has an owner and status.
+
 ## Sources
 
 | Source | URL | Read on |
@@ -690,10 +896,19 @@ Trace each input to its records, confirm the selected year and source conditions
 | Retained citation | <https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee> | Not re-read for this format update; see retained provenance |
 | Retained citation | <https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00001> | Not re-read for this format update; see retained provenance |
-| Retained citation | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business> | Not re-read for this format update; see retained provenance |
+| ATO, Overview of record-keeping rules for business: 5-year retention, its different start dates and records of calculations | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business> | 2026-11-18; page updated 18 June 2026 |
+| ATO, Records to keep longer than five years: CGT assets, depreciating assets and carried-forward losses | <https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business/records-to-keep-longer-than-five-years> | 2026-11-18; page updated 1 August 2025 |
+| ITAA 1936 s 262A(4): 5-year retention period | <https://www.ato.gov.au/law/view/document?docid=PAC/19360027/262A> | 2026-11-18 |
+| Corporations Act 2001, compilation 149 (19 September 2026), s 286(1) and (2): financial records kept for 7 years | <https://www.legislation.gov.au/C2004A00818/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_2/document_2.html> | 2026-11-18; compilation 149 was the latest listed |
+| GST Act, compilation C96 (1 January 2026), ss 9-70, 9-75(1), 9-90 and 11-25: GST at 10% of value, value without GST, rounding, input tax credits | <https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html> | 2026-11-18; C96 was the latest listed |
+| ATO, Payment deadlines for Payday Super: fund receipt within 7 business days, 20 business days and out-of-cycle cases | <https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super> | 2026-11-18; page updated 29 September 2026 |
+| Australian Business Register, Format of the ABN: check-digit method and example | <https://abr.business.gov.au/Help/AbnFormat> | 2026-11-18 |
+| ASD, Learn about account compromise: verifying payment-detail change requests (guidance, not law) | <https://www.cyber.gov.au/guidance/learn-about-account-compromise> | 2026-11-18 |
 | Retained citation | <https://standards.aasb.gov.au/aasb-116-dec-2022#measurement_after_recognition> | Not re-read for this format update; see retained provenance |
 
-Not yet confirmed: A complete page-level source/read-date audit and independent legal review of this guide have not been performed. The 2 November 2026 check covers only the 3 named asset/pool source rows and the affected pool summary. Other bookkeeping, reporting, tax and retention rules retain their original dates and qualifications and require their own reconciliation. This remains a tier 2 draft pending qualified review.
+Section 12 ports the month-end close, reconciliation break trace and close-control rules from Ryan Duguid's australian-accounting-skills and accounting-review-pipeline repositories. The break-trace approach was suggested by anthropics/financial-services (Apache-2.0); no text was taken from it.
+
+Not yet confirmed: A complete page-level source/read-date audit and independent legal review of this guide have not been performed. The 2 November 2026 check covers only the 3 named asset/pool source rows and the affected pool summary. The 18 November 2026 check covers only the 8 rows dated that day, Section 11.2's retention paragraph and Section 12. Other bookkeeping, reporting, tax and retention rules retain their original dates and qualifications and require their own reconciliation. This remains a tier 2 draft pending qualified review.
 
 ## Disclaimer
 
