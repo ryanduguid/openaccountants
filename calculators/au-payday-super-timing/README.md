@@ -80,7 +80,8 @@ using the result. No runtime network or clock is consulted.
 Run `node --test calculators/au-payday-super-timing/` from the repository root on Node 20+ with
 JSON import attributes; `make check` runs every calculator suite. Tests reproduce all 6 ATO
 examples, holiday and horizon boundaries, an independent business-day recount for every QE day in
-the calendar, and refusals of malformed or out-of-scope inputs. All examples are fabricated.
+the calendar, and refusals of malformed or out-of-scope inputs. The other inputs are invented; no
+client data is used.
 
 The rules were adapted from Ryan Duguid's independently authored
 [payday-super-checker](https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker)

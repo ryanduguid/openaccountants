@@ -44,6 +44,7 @@ for (const [label, qeDay, due] of [
   ["Victoria's Friday before the AFL Grand Final and the 5 October holidays", "2026-09-24", "2026-10-07"],
   ["Christmas, the Boxing Day additional day and New Year's Day", "2026-12-24", "2027-01-07"],
   ["Melbourne Cup Day is not a whole-state holiday", "2026-11-02", "2026-11-11"],
+  ["Easter, without Tasmania's Easter Tuesday", "2027-03-25", "2027-04-07"],
   ["a weekend QE day counts from the next day", "2026-08-01", "2026-08-12"],
   ["the first Payday Super QE day", "2026-07-01", "2026-07-10"],
   ["the last QE day whose usual period fits the calendar", "2027-08-20", "2027-08-31"],
@@ -80,6 +81,13 @@ test("item 3 takes the later of the extended usual period and 20 business days a
   assert.deepEqual(check({ qeDay: "2026-08-04", exceptionalCircumstancesDeterminationDay: "2026-07-01" }).periods, {
     usual_period: "2026-08-13",
     item_3: "2026-09-01",
+  });
+});
+
+test("item 3's 20 business days include the day after the determination when it is a business day", () => {
+  assert.deepEqual(check({ qeDay: "2026-07-01", exceptionalCircumstancesDeterminationDay: "2026-07-20" }).periods, {
+    usual_period: "2026-07-10",
+    item_3: "2026-08-18",
   });
 });
 

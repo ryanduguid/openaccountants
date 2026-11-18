@@ -16,7 +16,7 @@
     "verified_until": "2027-08-31",
     "checked": "2026-11-18",
     "horizon_note": "Victoria's 2027 Friday before the AFL Grand Final is not yet published, so no count may pass 31 August 2027.",
-    "excluded": "Part-day holidays (Christmas Eve and New Year's Eve evenings), regional holidays (show days, Royal Queensland Show, Tasmanian regional days), Melbourne Cup Day (non-metropolitan councils may substitute a local day), WA King's Birthday 2026 (Karratha and Port Hedland observed 3 August 2026) and the NSW and ACT Bank Holiday (not a public holiday for everyone). Weekend holidays need no row.",
+    "excluded": "Part-day holidays (Christmas Eve and New Year's Eve evenings), regional holidays (show days, Royal Queensland Show, Tasmanian regional days), Melbourne Cup Day (in 2026 Greater Geelong, Warrnambool and other non-metropolitan councils substituted a local day), WA King's Birthday 2026 (Karratha and Port Hedland observed 3 August 2026 instead), Tasmania's Easter Tuesday (generally the Tasmanian Public Service only) and the NSW and ACT Bank Holiday (not a public holiday for everyone). Weekend holidays need no row.",
     "weekday_holidays": [
       { "date": "2026-08-03", "name": "Picnic Day", "jurisdictions": ["NT"] },
       { "date": "2026-09-25", "name": "Friday before the AFL Grand Final", "jurisdictions": ["VIC"] },
@@ -45,6 +45,7 @@
       "https://worksafe.tas.gov.au/topics/laws-and-compliance/public-holidays",
       "https://business.vic.gov.au/business-information/public-holidays/victorian-public-holidays-2026",
       "https://business.vic.gov.au/business-information/public-holidays/victorian-public-holidays-2027",
+      "https://business.vic.gov.au/business-information/public-holidays/victorian-non-metropolitan-public-holidays-2026",
       "https://www.wa.gov.au/service/employment/workplace-arrangements/public-holidays-western-australia"
     ]
   },
