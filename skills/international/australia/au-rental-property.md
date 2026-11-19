@@ -1,11 +1,11 @@
 ---
 name: au-rental-property
-description: Use this skill whenever asked about Australian rental property income and deductions. Trigger on phrases like "rental income Australia", "negative gearing", "rental deductions", "investment property tax", "Division 40", "Division 43", "capital works deduction", "depreciation schedule", "rental property CGT", "rental withholding", "body corporate fees", "strata levy deduction", "repairs vs improvements", "TR 97/23", "GST on property", "land tax on an investment property", "stamp duty on a rental", or any question about completing the rental property schedule in an Australian individual tax return. This skill covers rental income reporting, deductible expenses, depreciation (Div 40 plant and Div 43 building), negative gearing including the enacted 1 July 2027 limit, CGT on disposal, foreign resident withholding, the GST decision path, the state and territory taxes that attach to property, and common transaction classifications. ALWAYS read this skill before touching any Australian rental property work.
+description: Use this skill whenever asked about Australian rental property income and deductions. Trigger on phrases like "rental income Australia", "negative gearing", "rental deductions", "investment property tax", "Division 40", "Division 43", "capital works deduction", "depreciation schedule", "rental property CGT", "rental withholding", "body corporate fees", "strata levy deduction", "repairs vs improvements", "TR 97/23", "GST on property", "land tax on an investment property", "short stay levy", "stamp duty on a rental", or any question about completing the rental property schedule in an Australian individual tax return. This skill covers rental income reporting, deductible expenses, depreciation (Div 40 plant and Div 43 building), negative gearing including the enacted 1 July 2027 limit, CGT on disposal, foreign resident withholding, the GST decision path, the state and territory taxes that attach to property, and common transaction classifications. ALWAYS read this skill before touching any Australian rental property work.
 version: 1.9
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27; myTax 2026 instructions cover 2025-26; enacted 2027-28 provisions separately labelled"
-last_updated: 2026-11-05
+last_updated: 2026-11-19
 review_status: pending_review
 category: international
 tier: 2
@@ -347,7 +347,7 @@ calculating anything, because the answer to one changes the inputs to another.
 | Buying a residential investment property | Borrowing costs, and holding costs once available for rent | Generally input taxed on an existing residential premises, so no credit on the purchase. New residential premises may be taxable and may trigger GST at settlement | Establishes the cost base | Transfer duty, and possibly foreign purchaser surcharge duty |
 | Holding and renting it out | Rental income assessable, deductions under Section 2, Div 40 and Div 43 | Residential rent is input taxed, so no GST on rent and no credits on expenses | Div 43 amounts deducted or deductible generally reduce the cost base (Section 2.8) | Land tax, and possibly a foreign owner or vacancy surcharge |
 | Renovating | Repair deductible, improvement capital | Credits depend on whether the premises remain input taxed | Capital work enters the cost base or Div 43 | Nil, unless it changes the land tax position |
-| Short-stay or holiday letting | Apportionment for private use and periods not genuinely available | Commercial residential premises can be taxable rather than input taxed. Test this, do not assume | Main residence exemption can be lost or reduced | Some jurisdictions apply short-stay levies |
+| Short-stay or holiday letting | Apportionment for private use and periods not genuinely available | Commercial residential premises can be taxable rather than input taxed. Test this, do not assume | Main residence exemption can be lost or reduced | Victoria's short-stay levy; other jurisdictions unverified (Section 8.4) |
 | Buying or holding a commercial property | Rent assessable, deductions available | Generally taxable, so GST on rent and credits on expenses, subject to registration. A going concern or margin scheme may apply on sale | Cost base as normal | Transfer duty and land tax |
 | Selling | Balancing adjustments on Div 40 assets | See `au-gst-property.md`. GST at settlement can require the purchaser to withhold | The CGT calculation. See `au-capital-gains.md` | Duty is payable by the purchaser, not the vendor |
 | Selling as a foreign resident | Rental income to the date of sale | As above | No automatic CGT discount, and the main residence exemption is generally unavailable | As above |
@@ -392,7 +392,22 @@ Land tax paid on an income-producing property is generally deductible in the yea
 Transfer duty on the purchase is not deductible; it is a cost base element. See `au-land-tax.md`
 and `au-stamp-duty.md` for the jurisdiction-specific detail.
 
-#### 8.4 Related guides
+#### 8.4 Short-stay accommodation levies
+
+Victoria is the only jurisdiction whose short-stay levy this guide has verified. Tasmania's Short Stay Levy Bill 2026 was negatived in the Legislative Council on 9 September 2026 and is not law. For any other jurisdiction, read its revenue office and the local council before stating that no levy applies.
+
+**Victoria, Short Stay Levy Act 2024 (Vic), Authorised Version No. 002 (1 January 2026).** It applies from 1 January 2025 (s 2).
+
+- **What it taxes.** A short stay in short-stay accommodation located in Victoria for which a fee is payable (s 10). A short stay is occupation for a continuous period of less than 28 days (s 3). The SRO excludes the checkout day from the count. Short-stay accommodation is any premises that can accommodate a person. Section 5(2) excludes premises occupied as the principal place of residence of a natural person who owns or rents them, GST commercial residential premises, rooming houses, retirement villages, residential care facilities, supported residential services, crisis and student accommodation, and staff or client accommodation provided in connection with a facility. A stay for which nothing is payable is not taxed. A guest who reimburses the owner's cleaning cost has paid a fee.
+- **Rate and rounding.** 7.5% of the total booking fee, rounded down to a multiple of 5 cents (s 13).
+- **Total booking fee.** The total payable for the booking (s 7). It includes any amount charged for the levy itself, any GST and nights paid for but not used. It excludes amounts waived, credited or refunded on cancellation and charges for the payment method. SRO guidance also includes cleaning and late checkout fees and compulsory extras. It leaves out optional add-ons unrelated to the stay, damage charges and the non-accommodation part of a package.
+- **When and who.** Liability arises on the day the booking requires the guest to vacate, whether or not the guest stayed (s 11). The booking platform provider is liable for platform bookings. For a direct booking, the renter is liable if the booking is made with the renter or the renter's occupier; otherwise the owner is (s 12). An owner whose bookings all go through a platform does not register.
+- **Registration and returns.** An owner or renter taking direct bookings must apply for registration before the end of the first return period in which it is liable (s 17). The return period is a quarter for a person whose relevant booking fees for stays completed in the previous calendar year were $75,000 or more, and otherwise the calendar year (s 16). Lodge and pay within 30 days after the period ends (s 18), so a 2026 annual return is due by 30 January 2027. The SRO's registration and lodgment pages also say an annual payer who passes $75,000 during a year moves to quarterly returns for the rest of that year. Section 16 does not say this. Record both and ask the SRO before relying on either.
+- **Income tax and GST.** The Act does not say whether the levy, or a levy amount charged to the guest, is assessable income or deductible. The SRO does not advise whether GST applies to the levy. Record the booking fee, any levy line charged, the levy paid and who bore it, and refer both questions (R-AU-RP-5). Keep the platform payout statement: it shows whether the platform withheld anything from the host.
+
+Worked case 9 checks the rounding and the levy-on-levy base.
+
+#### 8.5 Related guides
 
 **Related guides**
 
@@ -630,6 +645,42 @@ expected:
   shared_interest_claim: 2500
 ```
 
+### 9. Victorian short-stay levy: a platform booking and a direct booking
+
+The first booking reproduces the SRO's itemised Example 1 (Calculate the short stay levy, updated 1 October 2026). A 2-night platform booking for a house in Torquay totals $1,354.50, including $94.50 the provider asked for towards the levy. The levy is 7.5% of the whole total, $101.5875, rounded down to **$101.55**. The platform is liable, not the owner (s 12(1)).
+
+In the second booking, an owner of a holiday house that is not anyone's principal place of residence takes a direct booking for 3 nights. The owner charges $1,000 for accommodation and an $80 cleaning fee, is not registered for GST and adds a levy line of $81.00 (7.5% of $1,080). The guest pays $1,161. Because the total booking fee includes the levy line (s 7(2)(a)), the owner owes **$87.05**: 7.5% of $1,161 is $87.075, rounded down. That is $6.05 more than the owner collected. The stays are stipulated to be under 28 days, and both are completed in 2026. If the owner's direct booking fees for stays completed in 2025 were under $75,000, the owner lodges an annual return and pays by 30 January 2027 (ss 16 and 18).
+
+```oa-check
+name: Victorian short-stay levy, SRO Example 1 and a direct booking with a levy line
+inputs:
+  rate: 0.075
+  sro_accommodation: 1000
+  sro_cleaning: 100
+  sro_service_fee: 150
+  sro_gst: 10
+  sro_levy_contribution: 94.50
+  direct_accommodation: 1000
+  direct_cleaning: 80
+steps:
+  sro_total_booking_fee: sro_accommodation + sro_cleaning + sro_service_fee + sro_gst + sro_levy_contribution
+  sro_unrounded: sro_total_booking_fee * rate
+  sro_levy: floor(sro_unrounded * 20) / 20
+  direct_levy_line: (direct_accommodation + direct_cleaning) * rate
+  direct_total_booking_fee: direct_accommodation + direct_cleaning + direct_levy_line
+  direct_levy: floor(direct_total_booking_fee * rate * 20) / 20
+  direct_shortfall: direct_levy - direct_levy_line
+expected:
+  sro_total_booking_fee: 1354.50
+  sro_unrounded: 101.5875
+  sro_levy: 101.55
+  direct_levy_line: 81
+  direct_total_booking_fee: 1161
+  direct_levy: 87.05
+  direct_shortfall: 6.05
+tolerance: 0.001
+```
+
 ## When to refuse or refer
 
 ### Section 7 -- Prohibitions
@@ -783,8 +834,13 @@ Read dates below concern the stated passages, including separately identified in
 | If you don't lodge  /  Australian Taxation Office | <https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters/if-you-don-t-lodge> | 2026-11-04; contact, lodgment and penalty warning; no taxpayer-specific remission outcome |
 | Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025, Table A | <https://www.legislation.gov.au/F2025L01097/asmade/2025-09-15/text/original/epub/OEBPS/document_1/document_1.html> | 2026-11-04; selected Table A class 67110 effective-life rows and instrument metadata; not the whole determination |
 | Foreign resident capital gains withholding overview | <https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-resident-capital-gains-withholding-overview> | 2026-11-04; historic/current rates, contract dates, valuation and excluded transactions |
+| Short Stay Levy Act 2024 (Vic), Authorised Version No. 002 | <https://www.legislation.vic.gov.au/in-force/acts/short-stay-levy-act-2024> | 2026-11-19; whole Act (ss 2-18 relied on) |
+| Calculate the short stay levy  /  State Revenue Office Victoria | <https://www.sro.vic.gov.au/owning-property/short-stay-levy/calculate-short-stay-levy> | 2026-11-19; updated 1 October 2026; rate, rounding, booking fee inclusions and exclusions, Example 1 |
+| Understanding the short stay levy  /  State Revenue Office Victoria | <https://www.sro.vic.gov.au/owning-property/short-stay-levy/understanding-short-stay-levy> | 2026-11-19; updated 29 September 2026; exclusions, who pays, registration, lodgment frequency |
+| Register for the short stay levy  /  State Revenue Office Victoria | <https://www.sro.vic.gov.au/owning-property/short-stay-levy/register-short-stay-levy> | 2026-11-19; updated 29 September 2026; who registers and when |
+| Short Stay Levy Bill 2026 (13 of 2026)  /  Parliament of Tasmania | <https://parliament.tas.gov.au/bills/bills2026/short-stay-levy-bill-2026-13-of-2026> | 2026-11-19; last updated 9 September 2026; negatived in the Legislative Council on 9 September 2026 |
 
-Not yet confirmed: The full law/amendment and Ministerial-determination history; complete House amendment history for Bill r7554 (only the introduced Schedule 5 and listed rejected divisions are verified); 2026-27 return/schedule/software labels and live portal behaviour; all state rates, surcharge/vacancy/short-stay regimes; case-specific key money/lease-premium treatment; taxpayer-specific business, repair, use, asset and construction classifications; all non-resident rent collection/garnishee exceptions; full K7 formula and foreign-discount histories; current penalty units, GIC, remission, objections and all filing/payment exceptions; complete source-page/PDF review and independent professional approval for a taxpayer. The retained explanatory-memorandum PDF was not opened in this correction. Captured but unread source passages are not certified.
+Not yet confirmed: The full law/amendment and Ministerial-determination history; complete House amendment history for Bill r7554 (only the introduced Schedule 5 and listed rejected divisions are verified); 2026-27 return/schedule/software labels and live portal behaviour; all state rates, surcharge and vacancy regimes, and short-stay levies other than Victoria's; the income tax and GST treatment of the Victorian levy; case-specific key money/lease-premium treatment; taxpayer-specific business, repair, use, asset and construction classifications; all non-resident rent collection/garnishee exceptions; full K7 formula and foreign-discount histories; current penalty units, GIC, remission, objections and all filing/payment exceptions; complete source-page/PDF review and independent professional approval for a taxpayer. The retained explanatory-memorandum PDF was not opened in this correction. Captured but unread source passages are not certified.
 
 The standard closing below links to the upstream service. It does not identify a professional reviewer for this fork or establish that the fork's content is current.
 
