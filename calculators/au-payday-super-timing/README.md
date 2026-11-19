@@ -6,7 +6,8 @@ contribution for it?
 This is an offline preparation aid for employers' qualifying earnings paid from 1 July 2026. It
 counts business days on a whole-state holiday calendar verified from 1 July 2026 to 31 August
 2027 and refuses any count that would pass that horizon. It does not decide whether a
-contribution was on time, compute a shortfall or assess the super guarantee charge.
+contribution was on time, compute a shortfall or assess the super guarantee charge;
+[au-super-guarantee-charge](../au-super-guarantee-charge/README.md) estimates the charge from its result.
 
 ```js
 import { assessPaydaySuperTiming } from "./index.mjs";
