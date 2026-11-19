@@ -8,7 +8,7 @@ description: >
   Xero, bank statement import, or Xero CSV.
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-11-19
+last_updated: 2026-11-20
 ---
 
 # Xero Integration Skill v1.1.0
@@ -186,7 +186,7 @@ Sections 3 to 10 cover import CSVs. Report exports are a different input: a tria
 
 **Export manifest.** For every export record the organisation (or an approved pseudonym), report name, generation time, as-at date or date range, cash or accrual basis, tracking and other filters, whether drafts are included, currency and any other report option. Two totals from exports with different settings can agree without measuring the same thing; record a total whose basis the headers do not show as unresolved.
 
-**Formula cells.** Xero Central says a report exported to Excel with formulas can show some amounts as 0.00 until editing is enabled in Excel. A script or library that reads the stored values sees those zeros. Recompute totals from the detail rows, or recalculate in Excel and save before another tool reads the file.
+**Formula cells.** Xero Central says a report exported to Excel with formulas can show some amounts as 0.00 until editing is enabled in Excel. A script or library that reads the cached values may see those zeros. Recompute totals from the detail rows, or recalculate in Excel and save before another tool reads the file.
 
 | Need | Report | What to check |
 |------|--------|---------------|
@@ -195,9 +195,9 @@ Sections 3 to 10 cover import CSVs. Report exports are a different input: a tria
 | Transaction lines behind a balance | General Ledger Detail, Account Transactions | A summary report carries movements only and cannot support a tie-out |
 | Debtor or creditor support | Aged Receivables Detail, Aged Payables Detail | Run as at the period end, not 'current'. The Summary variants total by contact only |
 | BAS support | Activity Statement, with its transaction tabs | The GST basis follows the GST settings, not the trial balance's cash or accrual choice; record both |
-| Payroll and super | Payroll Activity Summary, Superannuation Accruals, Superannuation Payments | Accruals and payments are different views; payday super timing needs both |
+| Payroll and super | Payroll Activity Summary, Superannuation Accrual, Superannuation Payments | Accruals and payments are different views; payday super timing needs both |
 
-The report names in the last 4 rows are as an earlier review observed them in Xero's AU demo company in September 2026; confirm each name and option in the organisation before relying on it.
+Xero Central describes each report in the last 4 rows (read 20 November 2026): [General Ledger Detail](https://central.xero.com/s/article/General-Ledger-Detail-report), [Account Transactions](https://central.xero.com/s/article/Account-Transactions-report-New), [Aged Receivables Detail](https://central.xero.com/s/article/Aged-Receivables-Detail-report-New), [Aged Payables Detail](https://central.xero.com/s/article/Aged-Payables-Detail-report-New), the activity statement's transactions and its GST accounting method ([Simpler BAS](https://central.xero.com/s/article/The-Simpler-Business-Activity-Statement), [BAS settings](https://central.xero.com/s/article/Select-your-BAS-settings)), [Payroll Activity Summary](https://central.xero.com/s/article/Payroll-Activity-Summary-report), [Superannuation Accrual](https://central.xero.com/s/article/Superannuation-Accrual-report) and [Superannuation Payments](https://central.xero.com/s/article/Superannuation-Payments-report). Report options differ by region and user role; confirm each option in the organisation before relying on it.
 
 **API reach.** The Accounting API's report endpoints are 1099 (US only), Aged Payables By Contact, Aged Receivables By Contact, Balance Sheet, Bank Summary, BAS Report (Australia only: lists published BAS reports, and a ReportID retrieves one), Budget Summary, Executive Summary, GST Report (New Zealand only), Profit And Loss and Trial Balance. `Reports/TrialBalance` takes only `date` (as at) and `paymentsOnly` (cash transactions only) and returns the month to that date with YTD values: columns Debit, Credit, YTD Debit and YTD Credit ([Xero Developer, Accounting API Reports](https://developer.xero.com/documentation/api/accounting/reports), read 19 November 2026). No endpoint returns Trial Balance by Date Range or General Ledger Detail; a figure assembled from transaction records is a reconstruction and the manifest says so.
 
@@ -211,7 +211,7 @@ Stop and re-export on a failure; never patch a figure to make a check pass.
 2. **Totals are recomputed, not read.** Drop section headings and `Total` rows before summing, recompute each total from the account rows and agree it to any total the report supplies.
 3. **Control accounts tie.** An aged listing run at the same date and basis agrees to its control account in the trial balance. Keep repeated contact rows until the underlying items explain them.
 4. **Errors are not zeros.** A report that shows an empty result together with an error is unavailable evidence, not proof of nil activity.
-5. **GST basis of a Profit and Loss export (AU).** Compare revenue with an independently reconciled GST-exclusive control for the same accounts, period and basis. Within 1% of the control is consistent with a GST-exclusive export; within 1% of 1.1 times the control is consistent with a GST-inclusive one, which needs a GST-exclusive re-export; anything else, or no control, is undetermined. The 1.1 factor holds only for wholly taxable supplies: GST is 10% of the value of a taxable supply (GST Act s 9-70), and the value is the price less the GST, as the Act's example of a $22,000 price with a $20,000 value shows (s 9-75). Mixed GST treatments need an account-level reconciliation. The test establishes the export's basis, not any supply's tax treatment.
+5. **GST basis of a Profit and Loss export (AU).** Compare revenue with an independently reconciled GST-exclusive control for the same accounts, period and basis. Within 1% of the control is consistent with a GST-exclusive export; within 1% of 1.1 times the control is consistent with a GST-inclusive one, which needs a GST-exclusive re-export; anything else, or no control, is undetermined. The 1.1 factor holds only for wholly taxable supplies: GST is 10% of the value of a taxable supply (GST Act s 9-70), and the value is the price less the GST, as the Act's example of a $22,000 price with a $20,000 value shows (s 9-75). Mixed GST treatments need an account-level reconciliation. The test indicates the export's likely basis; confirm it from the report settings or a re-export. It says nothing about any supply's tax treatment.
 
 ### Example 1 — Trial balance, complete and truncated
 
@@ -273,9 +273,10 @@ expected:
 | Xero Central, Export and print a report | <https://central.xero.com/s/article/Export-or-print-a-report> | 2026-11-19; PDF, Excel and Google Sheets formats; formula amounts showing 0.00 |
 | Xero Central, Trial Balance report | <https://central.xero.com/s/article/Trial-Balance-report-new-version> | 2026-11-19; year to date and month columns, nil balances, multicurrency, Trial Balance by Date Range |
 | Xero Developer, Accounting API Reports | <https://developer.xero.com/documentation/api/accounting/reports> | 2026-11-19; report endpoints, TrialBalance parameters and columns, BAS Report (Australia only) |
+| Xero Central, report articles (General Ledger Detail, Account Transactions, Aged Receivables and Payables Detail, Simpler BAS, BAS settings, Payroll Activity Summary, Superannuation Accrual, Superannuation Payments) | <https://central.xero.com/s/article/General-Ledger-Detail-report> and the others linked in Section 11 | 2026-11-20; what each report shows; GST accounting method sets the activity statement's basis |
 | A New Tax System (Goods and Services Tax) Act 1999, compilation 96 (C2026C00081), ss 9-70 and 9-75 | <https://www.legislation.gov.au/C2004A00446/latest/text> | 2026-11-19; GST is 10% of value; $22,000 price, $20,000 value example |
 
-Sections 1 to 10 were not re-read against these sources. The report names in Section 11's last 4 table rows come from an earlier demo-company observation, not from a source read on 19 November 2026.
+Sections 1 to 10 were not re-read against these sources.
 
 ---
 
