@@ -5,10 +5,10 @@ description: >
 jurisdiction: TC
 category: international
 tax_year: 2024
-tax_year_notes: "Selected 2014 currency, 2018 customs and financial services and 2021 tourism tax texts, the October 2024 customs authority transition and separately dated 2026 income tax and administrative evidence."
+tax_year_notes: "Selected currency, customs, financial services and tourism tax revisions, the October 2024 customs authority transition and separately dated 2026 income tax, customs audit and administrative evidence."
 tier: 2
-last_updated: 2026-11-20
-version: 0.1
+last_updated: 2026-11-21
+version: 0.2
 depends_on:
   - workflow-base
 ---
@@ -42,9 +42,15 @@ A guest completes a qualifying ordinary accommodation stay in March. Under the s
 
 Ordinary goods arrive by sea and a home-use entry is delivered later. In the selected customs text, section 3(2) uses the earlier of the vessel entering port limits and the goods being unloaded in the Islands. Use the separate delivery-of-entry event under section 69(2)(a) if that branch applies. Check the tariff and competent officer before using either date in a duty or enforcement decision. [Cap 19.04 ss 3 and 69](https://customs.gov.tc/webuploads/doclib/19.04%20Customs%20Ordinance.pdf)
 
+## Post-clearance customs audits from 5 August 2026
+
+Act 17 of 2026 records Gazette publication on 5 August 2026, the commencement event under section 1. The new section 93A(1) gives the Collector a 5-year window from importation or exportation to audit an importer, exporter, customs broker, carrier, warehouse operator or another person engaged in regulated activities. Section 93A(2) gives a customs officer specified powers to inspect records, enter business premises during normal business hours, require relevant information and check declarations. Clearance or release leaves those audit and reassessment powers available. [Customs (Amendment) Act 2026 ss 1 and 3](https://www.gov.tc/agc/component/edocman/17-of-2026-customs-amendment-act-2026/fdocument?Itemid=9999)
+
+Section 93A(3) uses the title Controller for reassessment and recovery. Under section 93A(4), the fine is the greater of $5,000 and 3 times the value of the goods where the audit finds an underpayment caused by false, incorrect, incomplete or misleading information supplied by the audited person. Check that causation and the statutory goods value before estimating a fine. Establish the competent actor for the particular action under the operative instruments, including the Border Force transition and any delegation. [Act 17 of 2026 s 3](https://www.gov.tc/agc/component/edocman/17-of-2026-customs-amendment-act-2026/fdocument?Itemid=9999) · [Border Force Ordinance 26 of 2024 ss 5, 7 and 11](https://www.gov.tc/agc/component/edocman/26-of-2024-border-force-ordinance-2024-2/fdocument?Itemid=9999)
+
 ## Remaining coverage
 
-Establish the full amendment and subsidiary legislation chain for the requested date, including any current currency, tariff, sector exemption and procedural rules. For the customs post-clearance audit amendment, obtain the Gazette publication required by section 1 and reconcile the offices named in the new section 93A with the Border Force transition. Separate guides cover selected sector taxes, business formation and licensing and social contributions. [Customs (Amendment) Act 2026, Act 17 ss 1 and 3](https://www.gov.tc/agc/component/edocman/17-of-2026-customs-amendment-act-2026/fdocument?Itemid=9999)
+Establish the full amendment and subsidiary legislation chain for the requested date, including any current currency, tariff, sector exemption and procedural rules. For post-clearance audits, verify the operative authority for each action, any delegation, the applicable date and treatment of earlier transactions, evidence, procedure and review rights. Separate guides cover selected sector taxes, business formation and licensing and social contributions. [Customs (Amendment) Act 2026, Act 17 ss 1 and 3](https://www.gov.tc/agc/component/edocman/17-of-2026-customs-amendment-act-2026/fdocument?Itemid=9999)
 
 <!-- openaccountants-cta-block -->
 
