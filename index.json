@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2095,
+  "guides": 2097,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -21300,6 +21300,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "se-tax-system-orientation",
+   "path": "skills/international/sweden/se-tax-system-orientation.md",
+   "name": "se-tax-system-orientation",
+   "jurisdiction": "SE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "sweden-bookkeeping",
    "path": "skills/international/sweden/sweden-bookkeeping.md",
    "name": "sweden-bookkeeping",
@@ -21454,6 +21467,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ch-tax-system-orientation",
+   "path": "skills/international/switzerland/ch-tax-system-orientation.md",
+   "name": "ch-tax-system-orientation",
+   "jurisdiction": "CH",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "switzerland-crypto-tax",

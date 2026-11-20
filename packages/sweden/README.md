@@ -11,11 +11,12 @@
 4. `se-corporate-income-tax.md`
 5. `se-income-tax.md`
 6. `se-social-contributions.md`
-7. `sweden-bookkeeping.md`
-8. `sweden-crypto-tax.md`
-9. `sweden-financial-statements.md`
-10. `sweden-payroll.md`
-11. `sweden-vat-return.md`
+7. `se-tax-system-orientation.md`
+8. `sweden-bookkeeping.md`
+9. `sweden-crypto-tax.md`
+10. `sweden-financial-statements.md`
+11. `sweden-payroll.md`
+12. `sweden-vat-return.md`
 
 ## Shared files this package needs
 

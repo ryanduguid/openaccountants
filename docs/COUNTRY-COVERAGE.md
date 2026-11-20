@@ -58,7 +58,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CD | Democratic Republic of the Congo | 6 | 0 |
 | CF | Central African Republic | 6 | 0 |
 | CG | Congo | 6 | 0 |
-| CH | Switzerland | 9 | 0 |
+| CH | Switzerland | 10 | 0 |
 | CI | Côte d’Ivoire | 4 | 0 |
 | CK | Cook Islands | 4 | 0 |
 | CL | Chile | 7 | 0 |
@@ -212,7 +212,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SB | Solomon Islands | 1 | 0 |
 | SC | Seychelles | 5 | 0 |
 | SD | Sudan | 6 | 0 |
-| SE | Sweden | 10 | 0 |
+| SE | Sweden | 11 | 0 |
 | SG | Singapore | 10 | 0 |
 | SH | Saint Helena | 1 | 0 |
 | SI | Slovenia | 8 | 0 |
