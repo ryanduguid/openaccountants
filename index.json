@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2066,
+  "guides": 2067,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -22262,6 +22262,19 @@
    "last_updated": "2026-11-20"
   },
   {
+   "slug": "tc-property-conveyance-stamp-duty-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-property-conveyance-stamp-duty-reference.md",
+   "name": "tc-property-conveyance-stamp-duty-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2021",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "tc-sector-taxes-reference",
    "path": "skills/international/turks-and-caicos-islands/tc-sector-taxes-reference.md",
    "name": "tc-sector-taxes-reference",
@@ -22298,7 +22311,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2024",
-   "last_updated": "2026-11-20"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "tc-vehicle-hire-stamp-duty-reference",

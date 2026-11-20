@@ -101,6 +101,7 @@ skills/international/tokelau/tk-law-source-and-monetary-reference.md
 skills/international/turks-and-caicos-islands/tc-destination-management-fee-reference.md
 skills/international/turks-and-caicos-islands/tc-formation-and-business-licensing-reference.md
 skills/international/turks-and-caicos-islands/tc-hotel-accommodation-tax-reference.md
+skills/international/turks-and-caicos-islands/tc-property-conveyance-stamp-duty-reference.md
 skills/international/turks-and-caicos-islands/tc-sector-taxes-reference.md
 skills/international/turks-and-caicos-islands/tc-social-contributions-reference.md
 skills/international/turks-and-caicos-islands/tc-vehicle-hire-stamp-duty-reference.md

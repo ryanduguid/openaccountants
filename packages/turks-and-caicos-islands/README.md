@@ -9,10 +9,11 @@
 2. `tc-destination-management-fee-reference.md`
 3. `tc-formation-and-business-licensing-reference.md`
 4. `tc-hotel-accommodation-tax-reference.md`
-5. `tc-sector-taxes-reference.md`
-6. `tc-social-contributions-reference.md`
-7. `tc-tax-system-source-reference.md`
-8. `tc-vehicle-hire-stamp-duty-reference.md`
+5. `tc-property-conveyance-stamp-duty-reference.md`
+6. `tc-sector-taxes-reference.md`
+7. `tc-social-contributions-reference.md`
+8. `tc-tax-system-source-reference.md`
+9. `tc-vehicle-hire-stamp-duty-reference.md`
 
 ## Shared files this package needs
 
