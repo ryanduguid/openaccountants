@@ -53,21 +53,22 @@
 46. `au-stamp-duty.md`
 47. `au-super-guarantee.md`
 48. `au-tax-residency.md`
-49. `au-tpar.md`
-50. `au-trust-distributions.md`
-51. `au-wine-equalisation-tax.md`
-52. `au-working-holiday-makers.md`
-53. `australia-bookkeeping.md`
-54. `australia-financial-statements.md`
-55. `australia-formation.md`
-56. `australia-gst.md`
-57. `australia-payroll.md`
-58. `australia-tax-optimization.md`
-59. `australia-transfer-pricing.md`
-60. `leaving-australia-tax-residency-cgt.md`
-61. `references.md`
-62. `australia-guided-intake.md`
-63. `australia-return-assembly.md`
+49. `au-tax-system-orientation.md`
+50. `au-tpar.md`
+51. `au-trust-distributions.md`
+52. `au-wine-equalisation-tax.md`
+53. `au-working-holiday-makers.md`
+54. `australia-bookkeeping.md`
+55. `australia-financial-statements.md`
+56. `australia-formation.md`
+57. `australia-gst.md`
+58. `australia-payroll.md`
+59. `australia-tax-optimization.md`
+60. `australia-transfer-pricing.md`
+61. `leaving-australia-tax-residency-cgt.md`
+62. `references.md`
+63. `australia-guided-intake.md`
+64. `australia-return-assembly.md`
 
 ## Shared files this package needs
 
