@@ -168,7 +168,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MQ | Martinique | 1 | 0 |
 | MR | Mauritania | 6 | 0 |
 | MS | Montserrat | 2 | 0 |
-| MT | Malta | 20 | 0 |
+| MT | Malta | 21 | 0 |
 | MU | Mauritius | 6 | 0 |
 | MV | Maldives | 6 | 0 |
 | MW | Malawi | 6 | 0 |
@@ -263,6 +263,6 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | XK | Kosovo | 5 | 0 |
 | YE | Yemen | 0 | 0 |
 | YT | Mayotte | 1 | 0 |
-| ZA | South Africa | 8 | 4 |
+| ZA | South Africa | 9 | 4 |
 | ZM | Zambia | 6 | 0 |
 | ZW | Zimbabwe | 6 | 0 |

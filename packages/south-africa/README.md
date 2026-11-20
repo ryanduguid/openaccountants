@@ -13,7 +13,8 @@
 6. `za-income-tax.md`
 7. `za-provisional-tax.md`
 8. `za-tax-residency.md`
-9. `za-vat-return.md`
+9. `za-tax-system-orientation.md`
+10. `za-vat-return.md`
 
 ## Shared files this package needs
 

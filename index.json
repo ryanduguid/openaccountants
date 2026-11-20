@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2089,
+  "guides": 2091,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -14943,6 +14943,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "mt-tax-system-orientation",
+   "path": "skills/international/malta/mt-tax-system-orientation.md",
+   "name": "mt-tax-system-orientation",
+   "jurisdiction": "MT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "selling-a-company-in-malta",
    "path": "skills/international/malta/selling-a-company-in-malta.md",
    "name": "selling-a-company-in-malta",
@@ -20388,6 +20401,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "za-tax-system-orientation",
+   "path": "skills/international/south-africa/za-tax-system-orientation.md",
+   "name": "za-tax-system-orientation",
+   "jurisdiction": "ZA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2027",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "za-vat-return",
