@@ -15,18 +15,19 @@
 8. `fr-rental-income.md`
 9. `fr-social-contributions.md`
 10. `fr-tax-audit.md`
-11. `france-bookkeeping.md`
-12. `france-einvoice.md`
-13. `france-financial-statements.md`
-14. `france-formation.md`
-15. `france-payroll.md`
-16. `france-tax-optimization.md`
-17. `france-transfer-pricing.md`
-18. `france-vat-return.md`
-19. `leaving-france-exit-tax.md`
-20. `references.md`
-21. `france-guided-intake.md`
-22. `france-return-assembly.md`
+11. `fr-tax-system-orientation.md`
+12. `france-bookkeeping.md`
+13. `france-einvoice.md`
+14. `france-financial-statements.md`
+15. `france-formation.md`
+16. `france-payroll.md`
+17. `france-tax-optimization.md`
+18. `france-transfer-pricing.md`
+19. `france-vat-return.md`
+20. `leaving-france-exit-tax.md`
+21. `references.md`
+22. `france-guided-intake.md`
+23. `france-return-assembly.md`
 
 ## Shared files this package needs
 

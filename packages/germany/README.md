@@ -15,20 +15,21 @@
 8. `de-payroll.md`
 9. `de-rental-income.md`
 10. `de-social-contributions.md`
-11. `de-trade-tax.md`
-12. `de-ustva-vat-return.md`
-13. `germany-bookkeeping.md`
-14. `germany-einvoice.md`
-15. `germany-financial-statements.md`
-16. `germany-formation.md`
-17. `germany-payroll.md`
-18. `germany-tax-optimization.md`
-19. `germany-to-switzerland-cross-border-tax.md`
-20. `germany-transfer-pricing.md`
-21. `germany-vat-return.md`
-22. `references.md`
-23. `germany-guided-intake.md`
-24. `germany-return-assembly.md`
+11. `de-tax-system-orientation.md`
+12. `de-trade-tax.md`
+13. `de-ustva-vat-return.md`
+14. `germany-bookkeeping.md`
+15. `germany-einvoice.md`
+16. `germany-financial-statements.md`
+17. `germany-formation.md`
+18. `germany-payroll.md`
+19. `germany-tax-optimization.md`
+20. `germany-to-switzerland-cross-border-tax.md`
+21. `germany-transfer-pricing.md`
+22. `germany-vat-return.md`
+23. `references.md`
+24. `germany-guided-intake.md`
+25. `germany-return-assembly.md`
 
 ## Shared files this package needs
 

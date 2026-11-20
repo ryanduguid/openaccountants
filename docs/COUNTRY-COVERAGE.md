@@ -72,7 +72,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CX | Christmas Island | 4 | 0 |
 | CY | Cyprus | 6 | 5 |
 | CZ | Czechia | 7 | 0 |
-| DE | Germany | 23 | 0 |
+| DE | Germany | 24 | 0 |
 | DJ | Djibouti | 6 | 0 |
 | DK | Denmark | 6 | 0 |
 | DM | Dominica | 2 | 0 |
@@ -90,7 +90,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | FK | Falkland Islands (Malvinas) | 2 | 0 |
 | FM | Micronesia (Federated States of) | 1 | 0 |
 | FO | Faroe Islands | 2 | 0 |
-| FR | France | 21 | 0 |
+| FR | France | 22 | 0 |
 | GA | Gabon | 5 | 0 |
 | GB | United Kingdom of Great Britain and Northern Ireland | 27 | 15 |
 | GD | Grenada | 2 | 0 |
