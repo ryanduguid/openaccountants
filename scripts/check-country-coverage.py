@@ -31,6 +31,7 @@ def coverage(catalogue, guides):
 def render(catalogue, rows):
     target = [row for row in rows if row["code"] not in EXCLUDED_CODES]
     present = sum(row["guide_count"] > 0 for row in target)
+    missing = len(target) - present
     out = [
         "# Country and territory coverage", "",
         "Generated from `country-catalogue.json` and `index.json`. Regenerate with "
@@ -43,7 +44,7 @@ def render(catalogue, rows):
         "decision (31 October 2026): KP, IR, SY, RU, BY, MM and YE. Published guides "
         "remain in the inventory below; excluded areas are not missing coverage targets.", "",
         f"{present} of {len(target)} target areas have at least one indexed guide; "
-        f"{len(target) - present} have none. US states, cross-border labels and global "
+        f"{missing} {'has' if missing == 1 else 'have'} none. US states, cross-border labels and global "
         "workflow guides do not increase this country-and-territory count.", "",
         "A present guide does not establish comprehensive topic coverage, current law, "
         "primary-source verification or professional sign-off. Accountant-reviewed "

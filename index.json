@@ -1,7 +1,7 @@
 {
  "counts": {
-  "guides": 2058,
-  "jurisdictions": 304,
+  "guides": 2059,
+  "jurisdictions": 305,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -23391,6 +23391,19 @@
    "review_status": "pending_review",
    "tax_year": "2019",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "eh-eu-import-origin-reference",
+   "path": "skills/international/western-sahara/eh-eu-import-origin-reference.md",
+   "name": "eh-eu-import-origin-reference",
+   "jurisdiction": "EH",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2025",
+   "last_updated": "2026-11-20"
   },
   {
    "slug": "zambia-vat",

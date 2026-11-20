@@ -54,6 +54,12 @@ class CountryCoverageTests(unittest.TestCase):
         self.assertIn("| XK | Kosovo | 0 | 0 |", report)
         self.assertTrue(report.endswith("\n"))
 
+    def test_report_uses_singular_verb_for_one_missing_area(self):
+        rows = country_coverage.coverage(self.catalogue, [
+            {"jurisdiction": "DE"}, {"jurisdiction": "US"}])
+        report = country_coverage.render(self.catalogue, rows)
+        self.assertIn("2 of 3 target areas have at least one indexed guide; 1 has none.", report)
+
     def test_excluded_areas_keep_published_guides_without_inflating_the_target(self):
         self.catalogue["countries"].extend([
             {"code": "IR", "name": "Iran"}, {"code": "KP", "name": "North Korea"},
