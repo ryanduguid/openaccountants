@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2093,
+  "guides": 2095,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -16386,6 +16386,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "nl-tax-system-orientation",
+   "path": "skills/international/netherlands/nl-tax-system-orientation.md",
+   "name": "nl-tax-system-orientation",
+   "jurisdiction": "NL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "nl-zzp-deductions",
    "path": "skills/international/netherlands/nl-zzp-deductions.md",
    "name": "nl-zzp-deductions",
@@ -20752,6 +20765,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-11"
+  },
+  {
+   "slug": "es-tax-system-orientation",
+   "path": "skills/international/spain/es-tax-system-orientation.md",
+   "name": "es-tax-system-orientation",
+   "jurisdiction": "ES",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "spain-references",
