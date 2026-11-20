@@ -1,11 +1,11 @@
 ---
 name: canada-gst-hst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Canadian GST/HST return (Form GST34) for a self-employed individual or small business in Canada. Trigger on phrases like "prepare GST return", "file HST", "Canadian sales tax", "GST/HST return", "Form GST34", "input tax credits", "ITC claim", or any request involving Canadian GST/HST filing. Also trigger when classifying transactions for GST/HST purposes from bank statements, invoices, or other source data. This skill covers federal GST and harmonized HST provinces only under the regular method. Quebec QST, Saskatchewan PST, Manitoba RST, British Columbia PST, Quick Method, and simplified method for charities are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any Canadian GST/HST work.
-version: 2.0
+version: 2.1
 jurisdiction: CA
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-21
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Canada GST HST
 
-## Canada GST/HST Return Skill (Form GST34) v2.0
+## Canada GST/HST Return Skill (Form GST34) v2.1
 
 ## Section 1 — Quick reference
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Small supplier threshold | $30,000 in any single calendar quarter or in the last four consecutive calendar quarters (ETA s.148) |
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Contributor | Open Accounting Skills Community |
-| Validation date | April 2026 |
+| Validation date | April 2026. Selected return-line and export consulting rules checked in November 2026. |
 
 **Key GST34 lines**
 
@@ -389,13 +389,13 @@ CAD 3,729 including HST. Net = 3,729 / 1.13 = 3,300.88. HST = 428.12. This is a 
 
 `2026-04-22 ; ACME CORP USA ; CREDIT ; Invoice CA-2026-018 IT consulting March ; +5,500.00 ; CAD`
 
-Incoming CAD 5,500 from a US company. The client provides IT consulting services to a non-resident. Under ETA Schedule VI, Part V, s.5, services performed for a non-resident who is not registered for GST/HST and not a consumer in Canada are zero-rated. Report as revenue on Line 101 but zero-rated (no GST/HST on Line 103). Full ITC recovery on related inputs is preserved.
+A Canadian registrant earns CAD 5,500 for advisory IT work. Its contract and work records establish that the advisory service was supplied to the US company as a non-resident, without any of the exclusions in paragraphs 23(a) to (d). Confirm the contracting recipient and service scope before applying the zero rate. The $5,500 is regular-method revenue on line 101, with $0 tax on line 103. If reporting separately online, include the zero-rated export on line 91. Apply the ordinary input tax credit eligibility and documentary rules. [Excise Tax Act, Schedule VI, Part V, s 23](https://laws-lois.justice.gc.ca/eng/acts/e-15/page-121.html) [CRA export services memorandum](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/4-5-3/exports-services-intangible-personal-property.html) [CRA return instructions](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4022/general-information-gst-hst-registrants.html)
 
 **Output table**
 
 | Date | Counterparty | Gross | Net | GST/HST | Rate | Line | Default? | Question? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-04-22 | ACME CORP USA | +5,500.00 | +5,500.00 | 0 | 0% | 101 (zero-rated) | Y | Q2 (HIGH) | "Verify non-resident status and zero-rating conditions" |
+| 2026-04-22 | ACME CORP USA | +5,500.00 | +5,500.00 | 0 | 0% | 101 (91 if separated online) | N | Q2 (HIGH) | Verify the recipient and section 23 exclusions |
 
 ### Example 6 — Vehicle costs, restricted ITC
 
@@ -424,7 +424,7 @@ Fuel purchase. In Canada, there is no blanket block on vehicle expenses (unlike 
 
 ### 5.4 Zero-rated supplies (ETA Schedule VI)
 
-- **Zero-rated supplies** — Basic groceries (Part III), prescription drugs (Part I), medical devices (Part II), exports of goods (Part V), services to non-residents (Part V, s.5 — conditions apply), international transport (Part VII), agricultural products (Part IV), financial services to non-residents (Part IX). Zero-rated means 0% tax but full ITC eligibility on related inputs.  _(ETA Schedule VI)_
+- **Zero-rated supplies** — Basic groceries (Part III), prescription drugs (Part I), medical devices (Part II), exports of goods and qualifying services (Part V), international transport (Part VII), agricultural products (Part IV), financial services to non-residents (Part IX). Zero-rated means 0% tax but full ITC eligibility on related inputs.  _(ETA Schedule VI)_
 
 ### 5.5 Exempt supplies (ETA Schedule V)
 
@@ -457,8 +457,8 @@ Fuel purchase. In Canada, there is no blanket block on vehicle expenses (unlike 
 
 ### 5.12 Small supplier threshold (ETA s.148)
 
-- **Small supplier threshold** — $30,000 in any single calendar quarter or in four consecutive calendar quarters  _(ETA s.148)_
-- **Small supplier registration rule** — Below threshold: no obligation to register or charge GST/HST (but may voluntarily register). Above threshold: must register within 29 days.  _(ETA s.148)_
+- **Standard small supplier test** — In the ordinary business case, test qualifying worldwide taxable supplies for a single calendar quarter and the preceding 4 calendar quarters, including applicable associate amounts and the statutory exclusions. The standard limit is $30,000. Voluntary registration and special registration rules are separate. [Excise Tax Act s 148](https://laws-lois.justice.gc.ca/eng/acts/E-15/section-148.html)
+- **Registration and collection** — For a single-quarter excess, the taxable domestic supply crossing the threshold triggers collection. If the threshold is exceeded over 4 or fewer consecutive quarters without a single-quarter excess, small supplier status normally ends at the end of the month following the quarter of excess. Start charging from the first taxable supply in Canada after that month. Apply to register within 29 days of the supply that triggers registration in these ordinary cases. [Excise Tax Act s 240](https://laws-lois.justice.gc.ca/eng/acts/E-15/section-240.html) [CRA registration timing](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html)
 
 ### 5.13 Bad debts (ETA s.231)
 
@@ -466,7 +466,45 @@ Fuel purchase. In Canada, there is no blanket block on vehicle expenses (unlike 
 
 ### 5.14 Reporting sales on Line 101
 
-- **Line 101 reporting rule** — Line 101 includes all revenue — taxable, zero-rated, and exempt. It also includes GST/HST collected. This is a gross-inclusive line. Line 103 is the GST/HST collected portion.
+- **Line 101, regular method** — Report the period's relevant revenue from taxable, zero-rated and exempt supplies and other reportable revenues. Exclude GST, HST, provincial sales tax and amounts previously reported. For the paper return, round to the nearest dollar. Line 103 separately shows GST/HST collected or collectible. [CRA regular-method return instructions](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4022/general-information-gst-hst-registrants.html)
+- **Optional electronic breakdown** — When the regular-method filing interface offers the breakdown and you choose it, line 90 is for taxable supplies in Canada including domestic zero-rated supplies, and line 91 is for exempt supplies, zero-rated exports and other sales and revenues. The return populates line 101 from lines 90 and 91. Follow the separate line 102 instructions for associates where applicable. [CRA electronic return instructions](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4022/general-information-gst-hst-registrants.html)
+- **Quick Method** — Use the separate CRA rules if this election applies. The regular-method worksheet here excludes taxes. [CRA Quick Method instructions](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4058/quick-method-accounting-gst-hst.html)
+
+**Regular-method return example.** A fictional Ontario registrant has a $1,000 standard-rated domestic sale with $130 HST, $300 of exempt supplies and the $5,500 zero-rated export in example 5. Its reportable revenue is $6,800, and it reports $130 separately as tax collected or collectible. In the optional electronic breakdown, line 90 is $1,000 and line 91 is $5,800. This example has no adjustments or associates. [CRA return instructions](https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4022/general-information-gst-hst-registrants.html)
+
+```oa-check
+name: Regular-method line 101 excludes HST
+inputs:
+  domestic_sale: 1000
+  exempt_supplies: 300
+  zero_rated_exports: 5500
+  provincial_hst_rate: 0.13
+steps:
+  - line_90: domestic_sale
+  - line_91: exempt_supplies + zero_rated_exports
+  - line_101: line_90 + line_91
+  - line_103: round(domestic_sale * provincial_hst_rate, 2)
+expected:
+  line_90: 1000
+  line_91: 5800
+  line_101: 6800
+  line_103: 130
+```
+
+**Export calculation.** When example 5 qualifies for zero-rating under section 23, the $5,500 is revenue at 0%. The calculation assumes the legal classification has already been confirmed.
+
+```oa-check
+name: Qualified consulting export is revenue at the zero rate
+inputs:
+  fee: 5500
+  export_rate: 0
+steps:
+  - reportable_revenue: fee
+  - tax_on_export: round(fee * export_rate, 2)
+expected:
+  reportable_revenue: 5500
+  tax_on_export: 0
+```
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
@@ -639,7 +677,7 @@ Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these C
 
 ### Validation status
 
-This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAccountants architecture. Canada-specific content (rates, line mappings, ITC rules, place of supply) is based on the Excise Tax Act as of April 2026 including the Nova Scotia HST rate change to 14% effective April 1, 2025.
+Version 2.0 was rewritten in April 2026 to align with the three-tier OpenAccountants architecture. Canada-specific content (rates, line mappings, ITC rules, place of supply) is based on the Excise Tax Act as of April 2026 including the Nova Scotia HST rate change to 14% effective April 1, 2025.
 
 ### Sources
 
@@ -663,7 +701,7 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 
 1. Quebec QST is entirely refused — a separate skill is needed.
 2. BC PST, SK PST, MB RST are refused — separate provincial skills needed.
-3. Quick Method is refused — could be added as a v2.1 feature.
+3. Quick Method remains outside this guide.
 4. First Nations exemptions are refused — specialized knowledge required.
 5. Real property self-supply rules (s.191) are refused — too fact-sensitive.
 6. The NS HST rate changed to 14% on April 1, 2025 — verify no further rate changes.
@@ -672,6 +710,7 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 
 ### Change log
 
+- **v2.1 (November 2026):** Correct selected GST/HST registration timing, return lines and the export consulting example against CRA guidance and the Excise Tax Act.
 - **v2.0 (April 2026):** Full rewrite to align with three-tier OpenAccountants architecture. 10-section Malta v2.0 structure adopted. Supplier pattern library added (Section 3). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue added (Section 6). Excel template added (Section 7). Bank statement guide with RBC/TD/BMO/CIBC formats added (Section 8). Onboarding moved to fallback (Section 9).
 - **v2.0 (prior, April 2026):** Previous version with inline tier tags. Superseded.
 
@@ -693,7 +732,7 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 14. HST rate table complete with NS 14%: yes (Section 1).
 15. Zero-rated vs exempt distinction explicit: yes (Section 5.4–5.5).
 
-## End of Canada GST/HST Return Skill v2.0
+## End of Canada GST/HST Return Skill v2.1
 
 This skill is incomplete without the companion workflow file loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a GST34 without it loaded.
 

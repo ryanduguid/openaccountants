@@ -5708,9 +5708,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Edgar Lautsyus",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "canada-gst-hst",
@@ -5723,7 +5723,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "canada-payroll",
