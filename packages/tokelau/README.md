@@ -14,7 +14,8 @@
 7. `tk-law-source-and-monetary-reference.md`
 8. `tk-national-accounts-and-audit-reference.md`
 9. `tk-public-pay-and-allowances-reference.md`
-10. `tk-village-financial-reporting-reference.md`
+10. `tk-selected-tax-agreements-reference.md`
+11. `tk-village-financial-reporting-reference.md`
 
 ## Shared files this package needs
 

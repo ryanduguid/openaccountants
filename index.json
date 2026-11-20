@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2082,
+  "guides": 2085,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -5698,6 +5698,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ca-tax-system-orientation",
+   "path": "skills/international/canada/ca-tax-system-orientation.md",
+   "name": "ca-tax-system-orientation",
+   "jurisdiction": "CA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "canada-bookkeeping",
@@ -16542,6 +16555,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "nz-tax-system-orientation",
+   "path": "skills/international/new-zealand/nz-tax-system-orientation.md",
+   "name": "nz-tax-system-orientation",
+   "jurisdiction": "NZ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "new-zealand-references",
    "path": "skills/international/new-zealand/references.md",
    "name": "new-zealand-references",
@@ -21921,6 +21947,19 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2022",
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tk-selected-tax-agreements-reference",
+   "path": "skills/international/tokelau/tk-selected-tax-agreements-reference.md",
+   "name": "tk-selected-tax-agreements-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
    "last_updated": "2026-11-21"
   },
   {

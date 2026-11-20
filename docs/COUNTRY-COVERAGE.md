@@ -53,7 +53,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BW | Botswana | 6 | 0 |
 | BY | Belarus | 8 | 0 |
 | BZ | Belize | 6 | 0 |
-| CA | Canada | 50 | 11 |
+| CA | Canada | 51 | 11 |
 | CC | Cocos (Keeling) Islands | 4 | 0 |
 | CD | Democratic Republic of the Congo | 6 | 0 |
 | CF | Central African Republic | 6 | 0 |
@@ -186,7 +186,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NP | Nepal | 5 | 5 |
 | NR | Naoero | 4 | 0 |
 | NU | Niue | 1 | 0 |
-| NZ | New Zealand | 16 | 0 |
+| NZ | New Zealand | 17 | 0 |
 | OM | Oman | 6 | 0 |
 | PA | Panama | 4 | 0 |
 | PE | Peru | 7 | 4 |
@@ -235,7 +235,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TG | Togo | 6 | 0 |
 | TH | Thailand | 7 | 0 |
 | TJ | Tajikistan | 6 | 0 |
-| TK | Tokelau | 9 | 0 |
+| TK | Tokelau | 10 | 0 |
 | TL | Timor-Leste | 6 | 0 |
 | TM | Turkmenistan | 6 | 0 |
 | TN | Tunisia | 7 | 0 |

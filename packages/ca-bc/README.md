@@ -31,6 +31,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`ca-nonresident-cgt.md`](../_shared/ca-nonresident-cgt.md)
 - [`ca-return-assembly.md`](../_shared/ca-return-assembly.md)
 - [`ca-tax-residency.md`](../_shared/ca-tax-residency.md)
+- [`ca-tax-system-orientation.md`](../_shared/ca-tax-system-orientation.md)
 - [`canada-bookkeeping.md`](../_shared/canada-bookkeeping.md)
 - [`canada-financial-statements.md`](../_shared/canada-financial-statements.md)
 - [`canada-formation.md`](../_shared/canada-formation.md)

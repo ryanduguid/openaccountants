@@ -21,7 +21,8 @@
 14. `nz-income-tax-ir3.md`
 15. `nz-provisional-tax.md`
 16. `nz-tax-residency.md`
-17. `references.md`
+17. `nz-tax-system-orientation.md`
+18. `references.md`
 
 ## Shared files this package needs
 
