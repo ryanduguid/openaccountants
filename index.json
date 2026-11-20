@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2064,
+  "guides": 2065,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -22221,6 +22221,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-11"
+  },
+  {
+   "slug": "tc-destination-management-fee-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-destination-management-fee-reference.md",
+   "name": "tc-destination-management-fee-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2026",
+   "last_updated": "2026-11-20"
   },
   {
    "slug": "tc-formation-and-business-licensing-reference",

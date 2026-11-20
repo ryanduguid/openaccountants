@@ -6,11 +6,12 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `tc-formation-and-business-licensing-reference.md`
-3. `tc-hotel-accommodation-tax-reference.md`
-4. `tc-sector-taxes-reference.md`
-5. `tc-social-contributions-reference.md`
-6. `tc-tax-system-source-reference.md`
+2. `tc-destination-management-fee-reference.md`
+3. `tc-formation-and-business-licensing-reference.md`
+4. `tc-hotel-accommodation-tax-reference.md`
+5. `tc-sector-taxes-reference.md`
+6. `tc-social-contributions-reference.md`
+7. `tc-tax-system-source-reference.md`
 
 ## Shared files this package needs
 
