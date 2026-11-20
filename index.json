@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2097,
+  "guides": 2099,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -7858,6 +7858,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "dk-tax-system-orientation",
+   "path": "skills/international/denmark/dk-tax-system-orientation.md",
+   "name": "dk-tax-system-orientation",
+   "jurisdiction": "DK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "denmark-references",
    "path": "skills/international/denmark/references.md",
    "name": "denmark-references",
@@ -9338,6 +9351,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "fi-tax-system-orientation",
+   "path": "skills/international/finland/fi-tax-system-orientation.md",
+   "name": "fi-tax-system-orientation",
+   "jurisdiction": "FI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "fi-yel-social",

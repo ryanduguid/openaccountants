@@ -11,7 +11,8 @@
 4. `dk-capital-gains.md`
 5. `dk-corporate-income-tax.md`
 6. `dk-income-tax.md`
-7. `references.md`
+7. `dk-tax-system-orientation.md`
+8. `references.md`
 
 ## Shared files this package needs
 
