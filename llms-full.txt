@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,062 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,063 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2062 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2063 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -1837,6 +1837,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - tc-formation-and-business-licensing-reference | TC | tier 2 | reviewed_by -
 - tc-sector-taxes-reference | TC | tier 2 | reviewed_by -
 - tc-social-contributions-reference | TC | tier 2 | reviewed_by -
+- tc-tax-system-source-reference | TC | tier 2 | reviewed_by -
 - tv-npf-contribution-reference | TV | tier 2 | reviewed_by -
 - ug-company-formation | UG | tier 2 | reviewed_by -
 - ug-corporate-income-tax | UG | tier 2 | reviewed_by -
@@ -2262,7 +2263,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,062 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,063 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2280,7 +2281,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,898 Tier 2 guides among the 2,062 indexed guides. These inventory
+There are 1,899 Tier 2 guides among the 2,063 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
