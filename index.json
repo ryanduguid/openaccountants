@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2063,
+  "guides": 2064,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -22234,6 +22234,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "tc-hotel-accommodation-tax-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-hotel-accommodation-tax-reference.md",
+   "name": "tc-hotel-accommodation-tax-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2021",
+   "last_updated": "2026-11-20"
   },
   {
    "slug": "tc-sector-taxes-reference",
