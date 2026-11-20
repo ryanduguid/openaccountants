@@ -245,11 +245,6 @@ skills/international/canada/ca-fed-t2125.md::rate table without a tax-authority 
 skills/international/canada/ca-fed-t2125.md::rate table without a tax-authority or statute citation: | Offence | Penalty | / | Late filing | 5% of balance owing + 1% per month late (max 12 months) |
 skills/international/canada/ca-fed-t2125.md::rate table without a tax-authority or statute citation: | Taxable Income (CAD) | Rate | / | 0 -- 57,375 | 14.5% |
 skills/international/canada/canada-gst-hst.md::rate table without a tax-authority or statute citation: | Province/Territory | Rate | Components | Effective | / | Alberta (AB) | 5% | GST only | — |
-skills/international/canada/canada-payroll.md::rate table without a tax-authority or statute citation: | Benefit | Duration | EI Rate | / | Maternity (birth parent only) | 15 weeks | 55% of insurable earnings (max ~$695/week for 2026) |
-skills/international/canada/canada-payroll.md::rate table without a tax-authority or statute citation: | Jurisdiction | After 1 Year | After 5+ Years | / | Federal | 4% (2 weeks) | 6% (3 weeks) |
-skills/international/canada/canada-payroll.md::rate table without a tax-authority or statute citation: | Province | Threshold | Rate | / | Ontario (EHT) | $1,000,000 | 0.98%--1.95% |
-skills/international/canada/canada-payroll.md::rate table without a tax-authority or statute citation: | Province | Top Combined Rate (approx.) | / | Ontario | ~53.5% |
-skills/international/canada/canada-payroll.md::rate table without a tax-authority or statute citation: | Taxable Income (CAD) | Rate | / | 0 -- 58,523 | 14% |
 skills/international/canada/canada-tax-optimization.md::rate table without a tax-authority or statute citation: | Class | Rate | Assets | / | 1 | 4% | Buildings acquired after 1987 |
 skills/international/canada/canada-tax-optimization.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Canada |
 skills/international/canada/canada-tax-optimization.md::rate table without a tax-authority or statute citation: | Taxable Income (CAD) | Rate | / | 0 – 58,523 | 14% |

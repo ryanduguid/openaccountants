@@ -56,6 +56,7 @@ skills/international/bahamas/bs-payroll-social.md
 skills/international/bermuda/bermuda-tax.md
 skills/international/bermuda/bm-vat-gst.md
 skills/international/bolivia/bo-corporate-income-tax.md
+skills/international/canada/canada-payroll.md
 skills/international/cayman-islands/cayman-tax.md
 skills/international/costa-rica/costa-rica-corporate-income-tax.md
 skills/international/denmark/dk-annual-reporting-reference.md
@@ -98,6 +99,7 @@ skills/international/sweden/sweden-bookkeeping.md
 skills/international/sweden/sweden-financial-statements.md
 skills/international/sweden/sweden-payroll.md
 skills/international/tokelau/tk-law-source-and-monetary-reference.md
+skills/international/turks-and-caicos-islands/tc-crs-reporting-and-penalties-reference.md
 skills/international/turks-and-caicos-islands/tc-customs-processing-fee-breadbasket-reference.md
 skills/international/turks-and-caicos-islands/tc-destination-management-fee-reference.md
 skills/international/turks-and-caicos-islands/tc-economic-substance-reporting-reference.md
