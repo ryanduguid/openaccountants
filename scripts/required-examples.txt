@@ -98,9 +98,12 @@ skills/international/sweden/sweden-bookkeeping.md
 skills/international/sweden/sweden-financial-statements.md
 skills/international/sweden/sweden-payroll.md
 skills/international/tokelau/tk-law-source-and-monetary-reference.md
+skills/international/turks-and-caicos-islands/tc-customs-processing-fee-breadbasket-reference.md
 skills/international/turks-and-caicos-islands/tc-destination-management-fee-reference.md
+skills/international/turks-and-caicos-islands/tc-economic-substance-reporting-reference.md
 skills/international/turks-and-caicos-islands/tc-formation-and-business-licensing-reference.md
 skills/international/turks-and-caicos-islands/tc-hotel-accommodation-tax-reference.md
+skills/international/turks-and-caicos-islands/tc-minimum-pay-and-overtime-reference.md
 skills/international/turks-and-caicos-islands/tc-property-conveyance-stamp-duty-reference.md
 skills/international/turks-and-caicos-islands/tc-sector-taxes-reference.md
 skills/international/turks-and-caicos-islands/tc-social-contributions-reference.md

@@ -6,14 +6,17 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `tc-destination-management-fee-reference.md`
-3. `tc-formation-and-business-licensing-reference.md`
-4. `tc-hotel-accommodation-tax-reference.md`
-5. `tc-property-conveyance-stamp-duty-reference.md`
-6. `tc-sector-taxes-reference.md`
-7. `tc-social-contributions-reference.md`
-8. `tc-tax-system-source-reference.md`
-9. `tc-vehicle-hire-stamp-duty-reference.md`
+2. `tc-customs-processing-fee-breadbasket-reference.md`
+3. `tc-destination-management-fee-reference.md`
+4. `tc-economic-substance-reporting-reference.md`
+5. `tc-formation-and-business-licensing-reference.md`
+6. `tc-hotel-accommodation-tax-reference.md`
+7. `tc-minimum-pay-and-overtime-reference.md`
+8. `tc-property-conveyance-stamp-duty-reference.md`
+9. `tc-sector-taxes-reference.md`
+10. `tc-social-contributions-reference.md`
+11. `tc-tax-system-source-reference.md`
+12. `tc-vehicle-hire-stamp-duty-reference.md`
 
 ## Shared files this package needs
 

@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2067,
+  "guides": 2070,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -22223,6 +22223,19 @@
    "last_updated": "2026-11-11"
   },
   {
+   "slug": "tc-customs-processing-fee-breadbasket-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-customs-processing-fee-breadbasket-reference.md",
+   "name": "tc-customs-processing-fee-breadbasket-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "tc-destination-management-fee-reference",
    "path": "skills/international/turks-and-caicos-islands/tc-destination-management-fee-reference.md",
    "name": "tc-destination-management-fee-reference",
@@ -22234,6 +22247,19 @@
    "review_status": null,
    "tax_year": "2026",
    "last_updated": "2026-11-20"
+  },
+  {
+   "slug": "tc-economic-substance-reporting-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-economic-substance-reporting-reference.md",
+   "name": "tc-economic-substance-reporting-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2025",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "tc-formation-and-business-licensing-reference",
@@ -22260,6 +22286,19 @@
    "review_status": null,
    "tax_year": "2021",
    "last_updated": "2026-11-20"
+  },
+  {
+   "slug": "tc-minimum-pay-and-overtime-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-minimum-pay-and-overtime-reference.md",
+   "name": "tc-minimum-pay-and-overtime-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2023",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "tc-property-conveyance-stamp-duty-reference",
