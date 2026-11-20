@@ -286,3 +286,19 @@ path = "calculators/au-fhss/rules.json"
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+[[annotations]]
+path = [
+  "calculators/au-franking-account/index.mjs",
+  "calculators/au-franking-account/index.test.mjs",
+  "calculators/au-franking-account/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-franking-account/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
