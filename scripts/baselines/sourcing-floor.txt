@@ -244,7 +244,6 @@ skills/international/canada/ca-fed-t1-return.md::rate table without a tax-author
 skills/international/canada/ca-fed-t2125.md::rate table without a tax-authority or statute citation: | Class | Rate | Assets | / | 1 | 4% | Buildings (non-residential after March 2007) |
 skills/international/canada/ca-fed-t2125.md::rate table without a tax-authority or statute citation: | Offence | Penalty | / | Late filing | 5% of balance owing + 1% per month late (max 12 months) |
 skills/international/canada/ca-fed-t2125.md::rate table without a tax-authority or statute citation: | Taxable Income (CAD) | Rate | / | 0 -- 57,375 | 14.5% |
-skills/international/canada/canada-gst-hst.md::rate table without a tax-authority or statute citation: | Province/Territory | Rate | Components | Effective | / | Alberta (AB) | 5% | GST only | — |
 skills/international/canada/canada-tax-optimization.md::rate table without a tax-authority or statute citation: | Class | Rate | Assets | / | 1 | 4% | Buildings acquired after 1987 |
 skills/international/canada/canada-tax-optimization.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Canada |
 skills/international/canada/canada-tax-optimization.md::rate table without a tax-authority or statute citation: | Taxable Income (CAD) | Rate | / | 0 – 58,523 | 14% |

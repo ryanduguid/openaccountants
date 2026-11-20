@@ -1,12 +1,12 @@
 ---
 name: canada-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Canada. Trigger on phrases like "set up a company in Canada", "Canadian incorporation", "Corporations Canada", "federal incorporation", "provincial incorporation", "CBCA", "Ontario corporation", "BC incorporation", "Inc. Canada", "Canadian company formation", "register a business Canada", or any question about starting a business entity in Canada. Covers federal vs provincial incorporation, entity types, registration process, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Canadian company formation.
-version: 1.0
+version: 1.1
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-21
 reviewed_by: Edgar Lautsyus
-review_status: current
+review_status: pending_review
 depends_on:
   - company-formation-workflow-base
 category: formation
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Canada Formation
 
-## Canada Company Formation Skill v1.0
+## Canada Company Formation Skill v1.1
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Previous practitioner review.** Nathan Wiebe reviewed the earlier rates and thresholds on 2026-06-21, and Edgar Lautsyus signed off on the prior version, as recorded in the frontmatter and `PARTNERS.md`. The November 2026 director residency and registration corrections await renewed practitioner review. Items flagged for clarification remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Canada Business Corporations Act (CBCA) -- federal; provincial equivalents (OBCA, BCBCA, etc.) |
 | Typical formation time | 1 day (federal online); 1--5 days (most provinces online) |
 | Corporate tax rate | 15% federal + provincial (combined ~26.5% general; ~12.2% small business on first $500K) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Entity Types Comparison
 
@@ -57,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Right to operate | All provinces (must extra-provincially register) | Province of incorporation (must extra-provincially register in others) |
 | Annual filing | With Corporations Canada + each province of registration | With provincial registry only |
 | Cost | $200 + extra-provincial fees | Province-specific (e.g., Ontario $300 online) |
-| Director residency | 25% Canadian-resident (or majority if <4 directors) | Varies: ON requires 25%; BC has no requirement; QC no requirement |
+| Director residency | Generally at least 25% resident Canadians, with at least 1 when there are fewer than 4 directors. Check the special rules in [CBCA s 105(3)–(4)](https://laws-lois.justice.gc.ca/eng/acts/C-44/section-105.html). | Ontario repealed its general residency requirement on 5 July 2021. Check the applicable law in other provinces. [Ontario Business Corporations Act s 118](https://www.ontario.ca/laws/statute/90b16#BK98) |
 
 **Recommended default:** Federal incorporation for businesses operating in multiple provinces. Provincial for single-province operations.
 
@@ -83,9 +83,9 @@ Provisions for financial year-end
 
 - **Extra-provincial registration process** — Federal corporation must register in each province where it carries on business. E.g., Ontario: file Form 2 with ServiceOntario; BC: extra-provincial registration with BC Registry. Fees vary: typically $0--$520 per province
 
-### Step 5: Obtain Business Number (BN) from CRA
+### Step 5: Confirm the business number and applicable accounts
 
-- **Business Number process** — Apply to Canada Revenue Agency for a Business Number. Simultaneously register for: GST/HST, payroll deductions, corporate income tax, import/export. Free; done online via CRA Business Registration Online
+Federal incorporation and incorporation in Ontario automatically assign a business number (BN) and a corporation income tax (RC) account. Confirm those identifiers before applying for additional accounts. Determine obligations for GST/HST, payroll and imports separately. [CRA corporation income tax account](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/business-registration/business-number-program-account/need-program-accounts/corporation-income-tax.html)
 
 ### Step 6: Municipal Business Licence (if required)
 
@@ -180,8 +180,7 @@ Wise Business, Airwallex (digital/international)
 
 | Question | Answer |
 | --- | --- |
-| Non-resident directors allowed? | Federal (CBCA): Yes, but 25% must be Canadian-resident (majority if <4). BC: No residency requirement. Ontario: 25% Canadian-resident |
-| Canadian-resident requirement workaround | Some provinces (BC, Nova Scotia, New Brunswick) have no director residency requirement |
+| Non-resident directors allowed? | Federal corporations can appoint non-residents subject to the residency and other director qualifications in [CBCA s 105](https://laws-lois.justice.gc.ca/eng/acts/C-44/section-105.html). Ontario removed its general residency requirement from 5 July 2021. [Ontario Business Corporations Act s 118](https://www.ontario.ca/laws/statute/90b16#BK98) |
 | Nominee directors | Permitted but must comply with CBCA fiduciary duties |
 | Physical presence required? | No -- online filing accepted |
 | Apostille requirements | Foreign documents may require authentication for banking |
@@ -191,11 +190,50 @@ Wise Business, Airwallex (digital/international)
 
 ## Section 9 -- Common Mistakes and Refusals
 
-- **R-CA-F1 -- Director residency non-compliance (federal)** — Under the CBCA, at least 25% of directors must be resident Canadians. If fewer than 4 directors, at least 1 must be Canadian-resident. Failure to comply can result in dissolution proceedings. If no Canadian resident is available, consider incorporating in BC or Nova Scotia (no residency requirement).
+- **R-CA-F1 -- Director residency (federal)** — Check the board against CBCA s 105 before filing. For an ordinary federal corporation with 3 directors, 1 resident Canadian satisfies the general rule. Check subsections 105(3.1)–(4) for a prescribed business sector or applicable Canadian ownership or control rules. [CBCA s 105](https://laws-lois.justice.gc.ca/eng/acts/C-44/section-105.html)
 - **R-CA-F2 -- Missing extra-provincial registration** — A federal corporation must register in each province where it carries on business. Operating without registration can result in the corporation being unable to maintain legal proceedings in that province.
-- **R-CA-F3 -- GST/HST threshold ignorance** — GST/HST registration is mandatory once worldwide taxable supplies exceed $30,000 in any four consecutive calendar quarters. Failure to register triggers penalties and interest.
+- **R-CA-F3 -- GST/HST registration timing** — For an ordinary business under the standard $30,000 small supplier test, include qualifying worldwide taxable supplies, including zero-rated supplies, and applicable associates. Exclude financial services, sales of capital property and consideration attributable to goodwill under the statutory rule. A single-quarter excess normally requires charging GST/HST on the taxable domestic supply that crossed the threshold. Where the threshold is exceeded over 4 or fewer consecutive calendar quarters without a single-quarter excess, small supplier status normally ends at the end of the month following the quarter of excess. Charge from the first later taxable supply in Canada and generally apply for registration within 29 days of the date that triggers registration. Public service bodies, taxi businesses and other special cases have separate rules. [Excise Tax Act ss 148](https://laws-lois.justice.gc.ca/eng/acts/E-15/section-148.html) [and 240](https://laws-lois.justice.gc.ca/eng/acts/E-15/section-240.html) [CRA registration timing](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html)
 - **R-CA-F4 -- Confusing incorporation with business registration** — Sole proprietors and partnerships register a business name; they do not incorporate. Incorporation creates a separate legal entity with limited liability. These are fundamentally different.
 - **R-CA-F5 -- Shell company for non-resident tax avoidance** — A Canadian corporation is taxed on worldwide income. Using a Canadian corporation solely to hold passive investments or as a conduit without Canadian substance may attract CRA scrutiny and GAAR (General Anti-Avoidance Rule) application.
+
+### Worked GST/HST registration examples
+
+Both examples assume an ordinary domestic business using the regular method. The listed amounts are qualifying supplies before tax, with no associate amounts or exclusions.
+
+**Single-quarter excess.** By 15 September 2026, an Ontario business has made $29,500 of qualifying supplies this quarter. Its next standard-rated Ontario sale that day is $1,000. That sale takes quarterly supplies to $30,500. Registration is effective no later than 15 September, and Ontario HST at 13% on the full $1,000 sale is $130. The application is due within 29 days, by 14 October. [CRA registration timing](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html) [CRA rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html)
+
+```oa-check
+name: Ontario single-quarter threshold crossing
+inputs:
+  prior_sales: 29500
+  next_sale: 1000
+  hst_rate: 0.13
+steps:
+  - quarter_sales: prior_sales + next_sale
+  - hst_on_crossing_supply: round(next_sale * hst_rate, 2)
+expected:
+  quarter_sales: 30500
+  hst_on_crossing_supply: 130
+```
+
+**Successive-quarter excess.** Another Ontario business with no prior qualifying supplies makes $7,000, $8,000, $9,000 and $7,500 in the 4 quarters of 2025. The total is $31,500. It remains a small supplier through 31 January 2026, assuming it has no single-quarter excess in that period. Its first later taxable domestic sale is $500 on 4 February, with $65 of Ontario HST at 13%. Registration is effective no later than 4 February and the application is due within 29 days, by 5 March. [CRA registration timing](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html) [CRA rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html)
+
+```oa-check
+name: Ontario successive-quarter threshold crossing
+inputs:
+  first_quarter: 7000
+  second_quarter: 8000
+  third_quarter: 9000
+  fourth_quarter: 7500
+  first_later_sale: 500
+  hst_rate: 0.13
+steps:
+  - qualifying_supplies: first_quarter + second_quarter + third_quarter + fourth_quarter
+  - hst_on_first_later_sale: round(first_later_sale * hst_rate, 2)
+expected:
+  qualifying_supplies: 31500
+  hst_on_first_later_sale: 65
+```
 
 ## Section 10 -- Timeline
 
