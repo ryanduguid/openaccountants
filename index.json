@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2099,
+  "guides": 2101,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -11238,6 +11238,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "is-tax-system-orientation",
+   "path": "skills/international/iceland/is-tax-system-orientation.md",
+   "name": "is-tax-system-orientation",
+   "jurisdiction": "IS",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "in-advance-tax",
    "path": "skills/international/india/in-advance-tax.md",
    "name": "in-advance-tax",
@@ -17554,6 +17567,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "no-tax-system-orientation",
+   "path": "skills/international/norway/no-tax-system-orientation.md",
+   "name": "no-tax-system-orientation",
+   "jurisdiction": "NO",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "norway-mva",

@@ -124,7 +124,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IO | British Indian Ocean Territory | 1 | 0 |
 | IQ | Iraq | 7 | 0 |
 | IR | Iran (Islamic Republic of) | 6 | 0 |
-| IS | Iceland | 8 | 0 |
+| IS | Iceland | 9 | 0 |
 | IT | Italy | 16 | 0 |
 | JE | Jersey | 14 | 0 |
 | JM | Jamaica | 6 | 0 |
@@ -182,7 +182,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NG | Nigeria | 13 | 2 |
 | NI | Nicaragua | 7 | 0 |
 | NL | Netherlands (Kingdom of the) | 20 | 0 |
-| NO | Norway | 8 | 0 |
+| NO | Norway | 9 | 0 |
 | NP | Nepal | 5 | 5 |
 | NR | Naoero | 4 | 0 |
 | NU | Niue | 1 | 0 |

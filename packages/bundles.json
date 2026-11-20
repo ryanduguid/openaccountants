@@ -2911,6 +2911,7 @@
     "is-company-formation.md",
     "is-corporate-income-tax.md",
     "is-tax-overview.md",
+    "is-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4400,6 +4401,7 @@
     "no-income-tax.md",
     "no-social-contributions.md",
     "no-tax-overview.md",
+    "no-tax-system-orientation.md",
     "norway-mva.md",
     "norway-to-switzerland-wealth-tax-exit.md",
     "README.md"

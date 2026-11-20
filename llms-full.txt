@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,099 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,101 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2099 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2101 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -989,6 +989,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - is-company-formation | IS | tier 2 | reviewed_by -
 - is-corporate-income-tax | IS | tier 2 | reviewed_by -
 - is-tax-overview | IS | tier 2 | reviewed_by -
+- is-tax-system-orientation | IS | tier 2 | reviewed_by -
 - in-advance-tax | IN | tier 1 | reviewed_by Mayur Deokar
 - in-income-tax | IN | tier 2 | reviewed_by -
 - in-pf-esi-employer | IN | tier 1 | reviewed_by Mayur Deokar
@@ -1475,6 +1476,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - no-income-tax | NO | tier 2 | reviewed_by -
 - no-social-contributions | NO | tier 2 | reviewed_by -
 - no-tax-overview | NO | tier 2 | reviewed_by -
+- no-tax-system-orientation | NO | tier 2 | reviewed_by -
 - norway-mva | NO | tier 2 | reviewed_by -
 - norway-to-switzerland-wealth-tax-exit | NO | tier 2 | reviewed_by -
 - om-company-formation | OM | tier 2 | reviewed_by -
@@ -2299,7 +2301,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,099 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,101 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2317,7 +2319,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,935 Tier 2 guides among the 2,099 indexed guides. These inventory
+There are 1,937 Tier 2 guides among the 2,101 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and

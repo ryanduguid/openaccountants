@@ -14,6 +14,7 @@
 7. `is-company-formation.md`
 8. `is-corporate-income-tax.md`
 9. `is-tax-overview.md`
+10. `is-tax-system-orientation.md`
 
 ## Shared files this package needs
 
