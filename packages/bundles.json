@@ -9322,6 +9322,19 @@
     "workflow-base.md"
    ]
   },
+  "western-sahara": {
+   "jurisdiction": "EH",
+   "name": "Western Sahara",
+   "files": [
+    "intake.md",
+    "eh-eu-import-origin-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "zambia": {
    "jurisdiction": "ZM",
    "name": "Zambia",

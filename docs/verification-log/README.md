@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-20 | [Western Sahara EU import origin and labelling](2026-11-20-western-sahara-eu-import-origin.md) |
 | 2026-11-15 | [Bermuda: selected original Bahrain tax-agreement controls](2026-11-15-bermuda-bahrain-original-treaty-controls.md) |
 | 2026-11-15 | [Dated Saint Kitts and Nevis tax-system classification controls](2026-11-15-saint-kitts-and-nevis-tax-system-controls.md) |
 | 2026-11-15 | [Dated Montserrat tax-system classification controls](2026-11-15-montserrat-tax-system-controls.md) |
