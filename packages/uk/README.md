@@ -24,14 +24,15 @@
 17. `uk-statutory-residence-test.md`
 18. `uk-student-loan-repayment.md`
 19. `uk-tax-optimization.md`
-20. `uk-to-italy-flat-tax-relocation.md`
-21. `uk-to-uae-relocation-tax.md`
-22. `uk-transfer-pricing.md`
-23. `uk-vat-return.md`
-24. `vat-returns-for-small-businesses-in-the-uk.md`
-25. `xero-uk-vat-close.md`
-26. `uk-guided-intake.md`
-27. `uk-return-assembly.md`
+20. `uk-tax-system-orientation.md`
+21. `uk-to-italy-flat-tax-relocation.md`
+22. `uk-to-uae-relocation-tax.md`
+23. `uk-transfer-pricing.md`
+24. `uk-vat-return.md`
+25. `vat-returns-for-small-businesses-in-the-uk.md`
+26. `xero-uk-vat-close.md`
+27. `uk-guided-intake.md`
+28. `uk-return-assembly.md`
 
 ## Shared files this package needs
 

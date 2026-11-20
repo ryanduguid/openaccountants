@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2085,
+  "guides": 2087,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -3137,6 +3137,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-05"
+  },
+  {
+   "slug": "au-tax-system-orientation",
+   "path": "skills/international/australia/au-tax-system-orientation.md",
+   "name": "au-tax-system-orientation",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-tpar",
@@ -22884,6 +22897,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "uk-tax-system-orientation",
+   "path": "skills/international/uk/uk-tax-system-orientation.md",
+   "name": "uk-tax-system-orientation",
+   "jurisdiction": "GB",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "uk-to-italy-flat-tax-relocation",
