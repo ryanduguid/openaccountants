@@ -14,8 +14,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "2026-27 (law and car limits read 18 November 2026; car limits from 2020-21 kept for cars first used in those years)"
 tier: 2
-last_updated: 2026-11-18
-version: 0.1
+last_updated: 2026-11-21
+version: 0.2
 review_status: pending_review
 verified_by: pending
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ depends_on:
   - workflow-base
 ---
 
-# Australian Depreciating Assets: Balancing Adjustments, Trade-ins, Business Capital Costs and Hire Purchase v0.1
+# Australian Depreciating Assets: Balancing Adjustments, Trade-ins, Business Capital Costs and Hire Purchase v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -33,7 +33,7 @@ This guide builds the workpaper for what happens at the end of a depreciating as
 
 It covers individuals, partnerships, companies and trusts that hold a depreciating asset whose decline in value they work out under Subdivision 40-B, for balancing adjustment events up to 30 June 2027. It does not cover:
 
-- Working out each year's decline in value (effective life, prime cost and diminishing value, the instant asset write-off, low-value and small business pools) and the s 40-291A fixed 50% reduction for work assets: `au-deductions-offsets`. This guide takes each year's decline and deduction as inputs.
+- For prime cost and diminishing value formulas, see `au-rental-property`. For write-offs, low-value and small business pools and the s 40-291A fixed 50% reduction for work assets, see `au-deductions-offsets`. This guide takes each year's decline in value and deduction as inputs.
 - The GST credit on buying a car, its car limit cap and the BAS labels for vehicle purchases: `australia-gst`.
 - The CGT discount and other CGT treatment of a K7 gain or loss, including the changes from 1 July 2027: `au-capital-gains`.
 - Second-hand depreciating assets in residential rental properties (s 40-27): `au-rental-property`.
@@ -168,6 +168,12 @@ Collect these before any figure is worked. Missing items become Needs Input, not
 - The hirer cannot deduct the instalments ([s 240-55](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/240-55)). It deducts the notional interest for the payment periods, and parts of periods, in the income year, to the extent it could have deducted the payments if none of them were capital ([s 240-50](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/240-50)). Private use therefore reduces the interest deduction.
 - Notional interest for each payment period is the outstanding notional loan principal (principal plus earlier interest, less payments made or due) times the implicit interest rate found from the payments and any termination amounts ([s 240-60(1)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/240-60)). The interest of a period that spans 30 June is related to each income year 'in accordance with generally accepted accounting principles' (s 240-60(2)); the Act names no method, so show that period's interest and its days on each side and leave the split to the reviewer.
 - The financier includes the notional interest in its assessable income ([s 240-35](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/240-35)). The notional loan is a limited recourse debt; if it ends unpaid, excess capital allowances can become assessable (Guide to depreciating assets 2026, 'Limited recourse debt arrangements'): refer (R-AU-DEP-7).
+
+### Step 10: Chattel mortgage interest
+
+Confirm who owns the goods at the start. In an ordinary chattel mortgage the buyer acquires the goods from the supplier and grants the lender security over them. Use the actual loan and the buyer's Division 40 asset records. If the agreement instead grants hire and a right or obligation to acquire the goods, test the hire purchase definition and Division 240. [*Income Tax Assessment Act 1997* (Cth) ss 240-10, 995-1](https://www.legislation.gov.au/C2004A05138/latest/text) [ATO, GST financial services issues register, issue 1.14](https://www.ato.gov.au/law/view/print?DocID=GIR%2FFinancial-services-ch1&PiT=99991231235958)
+
+Separate interest, principal and fees. Use the lender's interest amounts where known or reasonably ascertainable. For a fixed-term loan where they cannot reasonably be obtained, the actuarial method is one accepted way to estimate interest. Multiply the balance exposed to interest by the rate for that period, then reconcile interest, principal, instalments and any balloon to the loan balance. Use the terms to establish payment timing and the rate for that period. Apply s 8-1 only to interest incurred to the extent the borrowed funds serve an income-producing or business purpose. Confirm any period spanning year-end before assigning an amount to an income year. Refer loans with redraws, changing private use or an uncertain fee classification. [ITAA 1997 s 8-1](https://www.legislation.gov.au/C2004A05138/latest/text) [ATO, TR 93/16 [2]–[3], [28]–[31]](https://www.ato.gov.au/law/view/document?DocID=TXR/TR9316/NAT/ATO/00001)
 
 ### Conservative defaults
 
@@ -430,6 +436,29 @@ expected:
   balance_after_12_months: 0
   deduction_2026_27: 630
   deduction_2027_28: 540
+```
+
+### Case I: Chattel mortgage interest
+
+For example, a $30,000 loan with monthly instalments in arrears has a contractual monthly rate of 0.6%. The first $1,050 instalment includes $180 interest and $870 principal. The closing balance is $29,130. If the supported income-producing loan use is 75%, the first month's deductible interest is $135, subject to the period and usual deduction requirements.
+
+```oa-check
+name: AU fixed-term chattel mortgage first instalment in arrears
+inputs:
+  balance: 30000
+  monthly_rate: 0.6
+  instalment: 1050
+  qualifying_use: 75
+steps:
+  - interest: round(pct(balance, monthly_rate), 2)
+  - principal: instalment - interest
+  - closing_balance: balance - principal
+  - interest_for_business_use: round(pct(interest, qualifying_use), 2)
+expected:
+  interest: 180
+  principal: 870
+  closing_balance: 29130
+  interest_for_business_use: 135
 ```
 
 ### Further positions

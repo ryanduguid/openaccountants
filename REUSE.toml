@@ -254,3 +254,35 @@ path = "calculators/au-super-guarantee-charge/rules.json"
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Ryan Duguid"
 SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+[[annotations]]
+path = [
+  "calculators/au-payg-withholding/index.mjs",
+  "calculators/au-payg-withholding/index.test.mjs",
+  "calculators/au-payg-withholding/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-payg-withholding/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"
+
+[[annotations]]
+path = [
+  "calculators/au-fhss/index.mjs",
+  "calculators/au-fhss/index.test.mjs",
+  "calculators/au-fhss/README.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "calculators/au-fhss/rules.json"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ryan Duguid"
+SPDX-License-Identifier = "LicenseRef-OA-Guide-License-1.0"

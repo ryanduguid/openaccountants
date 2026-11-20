@@ -1,18 +1,18 @@
 ---
 name: au-return-assembly
 description: Final orchestrator skill that assembles the complete Australian filing package for Australian-resident sole traders. Consumes outputs from all Australian content skills (australia-gst for BAS, au-individual-return for ITR, au-super-guarantee for voluntary contributions, au-medicare-levy for levy and surcharge, au-payg-instalments for instalment schedule) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Australian content skills listed above. Australian full-year residents only. Sole traders only.
-version: 0.8
+version: 0.9
 jurisdiction: AU
 category: orchestrator
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-11-11
+last_updated: 2026-11-21
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Return Assembly v0.8
+# AU Return Assembly v0.9
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
-### Australia Return Assembly Skill v0.8
+### Australia Return Assembly Skill v0.9
 
 ### What this file is
 
@@ -135,6 +135,14 @@ Specifically:
 | Simplified depreciation, at or above threshold | Asset cost $20,000 or more on the same GST basis | Small business pool: 15% in the year allocated, then 30% |
 | Not using simplified depreciation, or an excluded asset | No write-off under this limit | Depreciate using effective life; ITR depreciation schedule |
 
+### Review flags before lodgement
+- Investigate material changes against the prior year and unusual claims for the work undertaken. Reconcile work-related expenses to amounts incurred, records, work use and any reimbursement. Check employer and pre-fill income against the taxpayer's records and follow up any missing income before sign-off. [ATO, Individual tax return instructions 2026](https://www.ato.gov.au/forms-and-instructions/individual-tax-return-2026), [ATO, Claiming deductions 2026](https://www.ato.gov.au/forms-and-instructions/tax-return-for-individuals-2026/supporting-information-individual-tax-return-2026/claiming-deductions-2026).
+- Reconcile gross rent and related receipts to statements and actual ownership shares. Check rental expense apportionment, acquisition repairs and depreciation continuity against the supporting schedules. Explain material variances in the review brief. [ATO, Rental income you must declare](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-income-you-must-declare), [ATO, myTax rent 2026](https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2026/income/australian-income-or-losses-from-investments-or-property/rent).
+- For a small business with an applicable ATO industry benchmark, document the business activity, turnover band, income year, ratio and evidence for any out-of-range result. A variance triggers review of records and the comparison basis. It does not change the reported amount by itself. [ATO, Small business benchmarks](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/small-business-benchmarks).
+- Record each unresolved issue with the label, amount, evidence still needed and a question for the client. State the draft refund or balance due with its status. Leave any affected position for reviewer sign-off before lodgement.
+
+Synthetic example: platform records show $3,600 of short-stay receipts outside the rental agent's annual statement. Ask which periods and property the receipts relate to and reconcile them to the bank and the owner's share. Record the draft income and refund or balance due as provisional until the overlap is resolved.
+
 ### Section 4 -- Final reviewer package contents
 
 #### Documents
@@ -149,6 +157,7 @@ Specifically:
 8. **Cross-skill reconciliation summary** -- all five cross-checks with pass/fail and notes
 9. **Reviewer brief** -- comprehensive narrative with positions, citations, flags, self-check results
 10. **Client action list** -- what the client needs to do, with dates and amounts
+11. **Reviewer attention register** -- flagged amounts, source records, explanations and outstanding questions
 
 #### Reviewer brief contents
 
@@ -248,6 +257,7 @@ Specifically:
 
 ## Reviewer Attention Flags
 [Aggregated from all upstream skills]
+- Record each unresolved review flag with the return label, amount, source and client question.
 - T2 items requiring registered tax agent confirmation
 - Mixed-use expense percentages (motor vehicle, phone, internet)
 - Home office deduction (method and hours/area)

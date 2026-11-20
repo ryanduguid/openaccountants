@@ -8,6 +8,7 @@ const money = ["sgAmount", "baseShortfall", "lateContributionsApplied", "lateCon
 const late = (receivedDay, amount) => ({ receivedDay, amount });
 const record = (overrides) => ({
   qeDay: "2026-07-30",
+  sgRateSchedule: "general",
   qualifyingEarnings: "1000",
   earlierQualifyingEarningsThisYear: "0",
   onTimeContributions: "0",
@@ -115,6 +116,26 @@ test("the maximum contributions base of $270,830 caps the SG amount (s 10A(6))",
   assert.equal(below.sgAmount, "0.00");
   assert.equal(below.verdict, "no_shortfall");
   assert.equal(check(record({ qeDay: "2026-09-03", earlierQualifyingEarningsThisYear: "270829.95" })).sgAmount, "0.01");
+});
+
+test("a missing or unrecognised rate schedule leaves the charge unknown", () => {
+  const { sgRateSchedule: _schedule, ...missing } = record();
+  for (const input of [missing, record({ sgRateSchedule: "" }), record({ sgRateSchedule: 12 }),
+    Object.assign(Object.create({ sgRateSchedule: "general" }), missing)]) {
+    const result = check(input);
+    assert.equal(result.verdict, "unknown");
+    assert.deepEqual(result.reason_codes, ["sg_rate_schedule"]);
+    for (const key of money) assert.equal(result[key], null, key);
+  }
+});
+
+test("transitional and mixed earnings carry no general-rate charge", () => {
+  for (const sgRateSchedule of ["norfolk_island_transitional", "mixed"]) {
+    const result = check(record({ sgRateSchedule }));
+    assert.equal(result.verdict, "refused");
+    assert.deepEqual(result.reason_codes, ["norfolk_island_transition"]);
+    for (const key of money) assert.equal(result[key], null, key);
+  }
 });
 
 test("the SG amount is 12% rounded half up to the cent", () => {

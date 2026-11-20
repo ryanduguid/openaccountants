@@ -1,23 +1,24 @@
 ---
 name: au-medicare-levy
 description: Use this skill whenever asked about the Australian Medicare Levy, Medicare Levy Surcharge (MLS), low-income reduction thresholds, family thresholds, surcharge tiers, private health insurance (PHI) rebate interaction, or Medicare levy exemptions. Trigger on phrases like "Medicare levy", "Medicare surcharge", "MLS", "do I pay Medicare levy", "low income Medicare", "Medicare levy reduction", "Medicare levy exemption", "private health insurance rebate", "PHI rebate", "M1", "M2", or any question about Medicare-related levies on an Australian tax return. ALWAYS read this skill before touching any Medicare levy work.
-version: 2.6
+version: 2.7
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-11-05
+tax_year: 2026
+tax_year_notes: "2025-26 and 2026-27 low-income thresholds; MLS and PHI tiers by year"
+last_updated: 2026-11-21
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Medicare Levy v2.6
+# AU Medicare Levy v2.7
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia Medicare Levy and Medicare Levy Surcharge Skill v2.6
+### Australia Medicare Levy and Medicare Levy Surcharge Skill v2.7
 
 ## Ask the client first
 
@@ -48,17 +49,17 @@ Read this whole section before computing anything.
 | Primary Legislation | Medicare Levy Act 1986 (MLA 1986); A New Tax System (Medicare Levy Surcharge -- Fringe Benefits) Act 1999 |
 | Supporting Legislation | Medicare Levy Act 1986 surcharge provisions (including ss 8B-8G); ITAA 1936 s 251U (prescribed persons); ITAA 1997 Subdiv 61-G (private health insurance tax offset); Health Insurance Act 1973; Private Health Insurance Act 2007 |
 | Tax Authority | Australian Taxation Office (ATO) |
-| Tax Year | 2025-26 (1 July 2025 -- 30 June 2026); MLS and PHI rebate tables are also given for 2026-27. Other figures and examples are 2025-26: confirm the 2026-27 low-income thresholds through `au-rates-2026-27` |
+| Tax Year | 2025-26 and 2026-27 for low-income reductions. Medicare levy surcharge and private health insurance rebate tiers are listed by year. Examples use 2025-26 unless stated otherwise. |
 | Standard Medicare Levy Rate | 2% of taxable income |
 | MLS Rates | 1.0% / 1.25% / 1.5% (income-dependent, for those without appropriate PHI) |
 | Return Items | Item M1 (Medicare levy reduction or exemption); Item M2 (Medicare levy surcharge) |
 | Currency | AUD only |
 | Contributor | Open Accountants |
-| Validation Date | October 2026 (2025-26 low-income thresholds confirmed against Treasury Laws Amendment (Delivering an Efficient and Trusted Tax System) Act 2026, Sch 5) |
-| Skill version | 2.6 |
+| Validation Date | 2026-11-21, low-income thresholds checked in [Medicare Levy Act 1986 ss 3 and 6–8](https://www.legislation.gov.au/C2004A03351/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) and [Act No 58 of 2026 sch 5 item 14](https://www.legislation.gov.au/C2026A00058/asmade/2026-06-30/text/original/pdf) |
+| Skill version | 2.7 |
 | Confidence Coverage | Tier 1: standard levy, low-income reduction, surcharge tiers, family thresholds. Tier 2: half-year exemptions, part-year residents, PHI rebate tier selection. Tier 3: Norfolk Island transitional, diplomatic exemptions, prescribed overseas forces. |
 
-**Low-income reduction thresholds (2025-26)**
+**Low-income reduction thresholds (2025-26 and 2026-27)**
 
 | Category | Lower Threshold (no levy) | Upper threshold (ATO guide figures for families) | Shade-in Rate |
 | --- | --- | --- | --- |
