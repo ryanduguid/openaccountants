@@ -813,6 +813,19 @@
     "workflow-base.md"
    ]
   },
+  "bouvet-island": {
+   "jurisdiction": "BV",
+   "name": "Bouvet Island",
+   "files": [
+    "intake.md",
+    "bv-vat-customs-excise-scope.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "brazil": {
    "jurisdiction": "BR",
    "name": "Brazil",

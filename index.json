@@ -1,7 +1,7 @@
 {
  "counts": {
-  "guides": 2060,
-  "jurisdictions": 305,
+  "guides": 2061,
+  "jurisdictions": 306,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -4710,6 +4710,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "bv-vat-customs-excise-scope",
+   "path": "skills/international/bouvet-island/bv-vat-customs-excise-scope.md",
+   "name": "bv-vat-customs-excise-scope",
+   "jurisdiction": "BV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2026",
+   "last_updated": "2026-11-20"
   },
   {
    "slug": "br-estimated-tax",
