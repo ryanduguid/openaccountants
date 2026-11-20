@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2065,
+  "guides": 2066,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -22299,6 +22299,19 @@
    "review_status": null,
    "tax_year": "2024",
    "last_updated": "2026-11-20"
+  },
+  {
+   "slug": "tc-vehicle-hire-stamp-duty-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-vehicle-hire-stamp-duty-reference.md",
+   "name": "tc-vehicle-hire-stamp-duty-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2021",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "tv-npf-contribution-reference",

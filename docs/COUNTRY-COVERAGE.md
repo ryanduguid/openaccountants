@@ -229,7 +229,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SX | Sint Maarten (Dutch part) | 1 | 0 |
 | SY | Syrian Arab Republic | 0 | 0 |
 | SZ | Eswatini | 6 | 0 |
-| TC | Turks and Caicos Islands | 6 | 0 |
+| TC | Turks and Caicos Islands | 7 | 0 |
 | TD | Chad | 6 | 0 |
 | TF | French Southern Territories | 1 | 0 |
 | TG | Togo | 6 | 0 |
