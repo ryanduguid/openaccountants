@@ -9,10 +9,11 @@
 2. `bermuda-tax.md`
 3. `bm-company-formation.md`
 4. `bm-corporate-income-tax.md`
-5. `bm-income-tax.md`
-6. `bm-payroll-social.md`
-7. `bm-tax-overview.md`
-8. `bm-vat-gst.md`
+5. `bm-corporate-services-tax.md`
+6. `bm-income-tax.md`
+7. `bm-payroll-social.md`
+8. `bm-tax-overview.md`
+9. `bm-vat-gst.md`
 
 ## Shared files this package needs
 

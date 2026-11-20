@@ -42,7 +42,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BI | Burundi | 6 | 0 |
 | BJ | Benin | 6 | 0 |
 | BL | Saint Barthélemy | 1 | 0 |
-| BM | Bermuda | 7 | 0 |
+| BM | Bermuda | 8 | 0 |
 | BN | Brunei Darussalam | 7 | 0 |
 | BO | Bolivia (Plurinational State of) | 6 | 0 |
 | BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |

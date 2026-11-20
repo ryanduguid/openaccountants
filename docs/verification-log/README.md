@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-11-20 | [Bermuda corporate services tax](2026-11-20-bermuda-corporate-services-tax.md) |
 | 2026-11-20 | [Bouvet Island VAT, customs and excise scope](2026-11-20-bouvet-vat-customs-excise-scope.md) |
 | 2026-11-20 | [Grenada tax-system source reference](2026-11-20-grenada-tax-system-source-reference.md) |
 | 2026-11-20 | [Western Sahara EU import origin and labelling](2026-11-20-western-sahara-eu-import-origin.md) |
