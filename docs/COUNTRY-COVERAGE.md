@@ -83,7 +83,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | EG | Egypt | 17 | 0 |
 | EH | Western Sahara | 1 | 0 |
 | ER | Eritrea | 6 | 0 |
-| ES | Spain | 22 | 0 |
+| ES | Spain | 23 | 0 |
 | ET | Ethiopia | 7 | 0 |
 | FI | Finland | 7 | 0 |
 | FJ | Fiji | 6 | 0 |
@@ -181,7 +181,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NF | Norfolk Island | 23 | 0 |
 | NG | Nigeria | 13 | 2 |
 | NI | Nicaragua | 7 | 0 |
-| NL | Netherlands (Kingdom of the) | 19 | 0 |
+| NL | Netherlands (Kingdom of the) | 20 | 0 |
 | NO | Norway | 8 | 0 |
 | NP | Nepal | 5 | 5 |
 | NR | Naoero | 4 | 0 |

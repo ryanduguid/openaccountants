@@ -21,10 +21,11 @@
 14. `nl-income-tax.md`
 15. `nl-payroll-tax.md`
 16. `nl-tax-objection.md`
-17. `nl-zzp-deductions.md`
-18. `references.md`
-19. `netherlands-guided-intake.md`
-20. `netherlands-return-assembly.md`
+17. `nl-tax-system-orientation.md`
+18. `nl-zzp-deductions.md`
+19. `references.md`
+20. `netherlands-guided-intake.md`
+21. `netherlands-return-assembly.md`
 
 ## Shared files this package needs
 
