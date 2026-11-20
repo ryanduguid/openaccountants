@@ -1,17 +1,17 @@
 ---
 name: australia-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Australian GST return (Business Activity Statement / BAS) for any client. Trigger on phrases like "prepare BAS", "do the GST", "fill in BAS", "create the return", "GST return", "Activity Statement", or any request involving Australian GST filing. Also trigger when classifying transactions for GST purposes from bank statements, invoices, or other source data. This skill covers Australia only and covers both Simpler BAS and full BAS reporting. GST groups, margin scheme, partial exemption complex, and going concern are all in the refusal catalogue. ALWAYS read this skill before touching any GST-related work.
-version: 2.10
+version: 2.11
 jurisdiction: AU
 category: international
 tax_year: 2026
-last_updated: 2026-11-15
+last_updated: 2026-11-21
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST v2.10
+# Australia GST v2.11
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -106,7 +106,7 @@ Infer the client profile from the data first. Only ask questions the data could 
 | Supporting legislation | [Taxation Administration Act 1953 (Schedule 1)](https://www.legislation.gov.au/C1953A00001/latest/details); [GST Regulations 2019](https://www.legislation.gov.au/F2019L00417/2025-11-01/2025-11-01/text/original/epub/OEBPS/document_1/document_1.html); [LCT Act 1999](https://www.legislation.gov.au/C2004A00463/latest/details); [WET Act 1999](https://www.legislation.gov.au/C2004A00452/latest/details) |
 | Contributor | Open Accountants |
 | Validation status | Pending accountant review |
-| Skill version | 2.10 |
+| Skill version | 2.11 |
 
 Annual reporting requires an eligible annual tax period election in effect. The entity must not be required to register and must have no GST instalment election in effect. The offshore rights/options exception in section 151-5(2) also applies. Each member of a GST group must be eligible. Notify the Commissioner in the approved form and establish the effective period before using annual reporting. An entity using the deferred GST scheme must withdraw from that scheme. The ATO's [annual GST reporting guidance](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-and-how-to-report-and-pay-gst/annual-gst-reporting) explains how to make the annual election by phone or signed written application and the applicable deadlines. [GST Act ss 151-5, 151-10, 151-15 and 151-40](https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_2/document_2.html).
 
@@ -660,7 +660,32 @@ For this bounded path, let P be the supported purchase cost after excluded stamp
 
 In 2026-27, an ordinary capped car uses C = $69,883. The GST-credit ceiling is $6,353 before creditable-use reductions, subject to GST Act s 69-10 and its exceptions; an invoice or full business use alone does not establish the credit. A verified complete reversal uses M = -1 and reverses the same supported reporting allocation and required credit once. A wholly private purchase contributes no G10 or verified business credit.
 
-This path does not decide the reporting treatment of statutory exceptions, trading stock, leases, hire purchase, imports, trade-ins, finance, part payments/refunds, changed use, special valuations or an unresolved price component. Return Needs Input until the applicable reporting amount, attribution and credit are supported. Do not force those bank movements into the formula. [ATO purchasing a motor vehicle, updated 3 June 2026](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/motor-vehicle-and-transport/gst-and-motor-vehicles/purchasing-a-motor-vehicle); GST Act ss 11-5, 11-15 and 69-10.
+The financed purchase credit rules below cover specified hire purchase and chattel mortgage arrangements. The G10 formula above covers a fully paid ordinary purchase. Statutory exceptions, trading stock, leases, imports, trade-ins, part payments or refunds, changed use, special valuations and unresolved price components require separate work. Return Needs Input until the applicable reporting amount, attribution and credit are supported. Do not force those bank movements into the formula. [ATO purchasing a motor vehicle, updated 3 June 2026](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/motor-vehicle-and-transport/gst-and-motor-vehicles/purchasing-a-motor-vehicle); GST Act ss 11-5, 11-15 and 69-10.
+
+### GST on financed purchases
+
+Identify the asset supply, the finance agreement and the invoice lines before working the credit. Check registration, taxable supply, tax invoice and creditable use. For both forms of finance, determine whether the car limit applies from the car's GST-inclusive market value, the limit for the year first used for any purpose and any statutory exception. Keep the purchase credit worksheet separate from the interest schedule. [*A New Tax System (Goods and Services Tax) Act 1999* (Cth) ss 11-5, 11-15, 11-30, 29-10, 69-10](https://www.legislation.gov.au/C2004A00446/latest/text)
+
+- **Hire purchase from 1 July 2012.** Identify any separately established taxable goods and taxable credit components. Section 158-5 applies the non-cash attribution rules to the acquisition even for a hirer on the cash basis. Attribute the allowable credit under s 29-10 to the first period with consideration or an invoice, subject to holding the required tax invoice or an applicable exception. The amendments apply to agreements entered into on or after 1 July 2012. Refer any older agreement or disputed classification. [GST Act ss 29-10, 158-5](https://www.legislation.gov.au/C2004A00446/latest/text) [*Tax Laws Amendment (2011 Measures No 9) Act 2012* (Cth) sch 3 pt 3](https://www.legislation.gov.au/C2012A00012/asmade) [ATO, GST and hire purchase](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/rules-for-specific-transactions/agent-consignment-and-progressive-transactions/gst-hire-purchase-and-leasing)
+- **Hire purchase where s 69-10 caps the car.** Establish and reconcile an invoice split into the taxable car consideration and separately established taxable credit consideration, with GST for each. Exclude LCT from the GST calculation. Limit the eligible GST on the car to 1/11 of the applicable car limit. Include the verified GST on the separate taxable credit component. Multiply each eligible amount by the supported creditable-use proportion. Where a combined amount, offsets or other charges prevent a verified split, return Needs Input and refer the treatment before carrying anything to 1B. [GST Act ss 11-25, 11-30, 69-10](https://www.legislation.gov.au/C2004A00446/latest/text) [ATO, GST financial services issues register, issues 1.1, 1.3 and 1.17](https://www.ato.gov.au/law/view/print?DocID=GIR%2FFinancial-services-ch1&PiT=99991231235958)
+- **Chattel mortgage.** The vendor supplies the goods and the lender ordinarily makes an input-taxed financial supply. Work out the goods credit from the vendor invoice under the ordinary attribution rules. For the cash basis check when the vendor was actually paid, including a lender's payment on behalf of the purchaser. Repayment of the loan does not set the purchase credit date. Apply the car cap where required and reduce the credit for creditable use. [GST Act ss 29-10, 40-5, 69-10](https://www.legislation.gov.au/C2004A00446/latest/text) [ATO, GST financial services issues register, issues 1.14 and 1.21](https://www.ato.gov.au/law/view/print?DocID=GIR%2FFinancial-services-ch1&PiT=99991231235958)
+
+For a 2026-27 hire purchase, assume an eligible registered hirer has a valid invoice, a supported 60% creditable use of both components and a passenger car first used in 2026-27. The $77,000 car supply includes $7,000 GST, there is no LCT and s 69-10 applies. A separate fully taxable credit component of $3,300 includes $300 of reconciled GST. The eligible GST at full creditable use is $6,353 plus $300. The workpaper credit is $3,991.80 before label-level whole-dollar treatment.
+
+```oa-check
+name: AU hire purchase with a car cap and matched taxable finance GST
+inputs:
+  car_gst: 7000
+  finance_gst: 300
+  car_limit: 69883
+  creditable_use: 60
+steps:
+  - car_credit_before_use: min(car_gst, car_limit / 11)
+  - credit: round(pct(car_credit_before_use + finance_gst, creditable_use), 2)
+expected:
+  car_credit_before_use: 6353
+  credit: 3991.80
+```
 
 ### Export reporting allocation
 

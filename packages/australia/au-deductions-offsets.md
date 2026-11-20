@@ -10,11 +10,11 @@ description: >
   "franking credits refund", "substantiation", "do I need a receipt", "capital or revenue",
   "apportion private use", "small business concessions", "lump sum in arrears", "travel
   allowance". It routes to the specialist guides rather than restating their rules.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "Primarily 2026-27; prepayment cases follow deductions into 2027-28 and 2028-29; lump sum in arrears cases use the 2022-23 to 2026-27 rates and one ATO 2025-26 example"
-last_updated: 2026-11-18
+last_updated: 2026-11-21
 review_status: pending_review
 depends_on:
   - au-individual-return
@@ -23,7 +23,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Deductions, Offsets and Concessions v1.1
+# Australia Deductions, Offsets and Concessions v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -288,7 +288,7 @@ end date. The acquisition date alone does not decide the year: test first use or
 | Offset | Refundable | Summary |
 | --- | --- | --- |
 | Low income tax offset (LITO) | No | Up to $700 where taxable income is $37,500 or less. Between $37,501 and $45,000 the offset is $700 less 5 cents per dollar above $37,500. Above $45,000 it is max(0, $325 less 1.5 cents per dollar above $45,000). The zero floor applies at the upper boundary, including $66,667. Applied automatically |
-| Seniors and pensioners tax offset (SAPTO) | No | Requires eligibility for a listed Australian Government pension or allowance, and income tests for the taxpayer and spouse. Unused amounts may be transferable between eligible spouses. Entitlement to at least $1 also raises the Medicare levy low income threshold |
+| Seniors and pensioners tax offset (SAPTO) | No | Requires eligibility for a listed Australian Government pension or allowance, and income tests for the taxpayer and spouse. Unused amounts may be transferable between eligible spouses. See the calculation below. Entitlement to at least $1 also raises the Medicare levy low income threshold |
 | Private health insurance rebate | Generally, for eligible individuals | Income tested, and can be taken as a premium reduction or an offset. Section 67-23 excludes the trustee offsets under s 61-205(2) from refundable treatment |
 | Franking credits on franked dividends | Depends on the recipient | Eligible recipients include the grossed-up dividend in assessable income, then claim the offset. Excess can be refundable for eligible resident individuals and complying super funds; apply the qualification rules and s 67-25 exclusions |
 | Foreign income tax offset | No | Limited to eligible foreign tax and the statutory offset limit. The ordinary limit under s 770-75 is the greater of $1,000 and the statutory Australian-tax difference; s 770-80 can increase it for specified amounts. An intended claim no greater than $1,000 does not require the full limit calculation. Apply non-refundable offset ordering separately. See `au-foreign-income.md` |
@@ -298,6 +298,51 @@ end date. The acquisition date alone does not decide the year: test first use or
 | Working Australians tax offset | No | Up to $250 from 2027-28 for residents with net labour income above the tax-free threshold. See Section 5.1 |
 | Research and development tax offset | Depends on the statutory category | Eligible R&D entities and activities under Division 355; see `au-rd-incentive.md` for eligibility, calculation and refundability |
 | Lump sum payment in arrears tax offset | No | For an individual whose assessable income includes eligible income that accrued in earlier years. The ATO works it out from the reported breakdown. See Section 8.3 |
+
+#### Seniors and pensioners tax offset calculation
+
+Confirm eligibility for a qualifying Australian Government pension or allowance and the income test for each person. For a taxpayer with a spouse, apply the income test using half of their combined rebate incomes. For a single taxpayer, use their own rebate income. The test uses the cut-out threshold before any spouse transfer. Calculate the amount independently from the eligible taxpayer's own rebate income. [*Income Tax Assessment Act 1936* (Cth) s 160AAAA](https://www.legislation.gov.au/C1936A00027/latest/text) [*Income Tax Assessment (1936 Act) Regulations 2025* (Cth) ss 9–11](https://www.legislation.gov.au/F2025L01060/asmade/2025-09-09/text/original/epub/OEBPS/document_1/document_1.html) [ATO, SAPTO eligibility and calculator](https://www.ato.gov.au/calculators-and-tools/tax-offsets-beneficiaries-and-seniors-and-pensioners-calculator)
+
+| Status in 2026-27 | Base rebate | Shading-out threshold | Cut-out threshold |
+| --- | ---: | ---: | ---: |
+| Single | $2,230 | $36,034 | $53,874 |
+| Each partner of a couple | $1,602 | $31,847 | $44,663 |
+| Each partner of an illness-separated couple | $2,040 | $34,767 | $51,087 |
+
+Use the applicable year when working another return. If eligible, reduce the applicable base rebate by 12.5 cents for each dollar of the taxpayer's rebate income above the shading-out threshold, with a floor of zero. The amounts above precede any transfer. Round the final offset up to the next whole dollar if it includes cents, as the ATO does on assessment. [ATO, 2026-27 SAPTO thresholds](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals/personal-income-tax-new-tax-cuts-for-every-australian-taxpayer) [Regulations ss 9–11](https://www.legislation.gov.au/F2025L01060/asmade/2025-09-09/text/original/epub/OEBPS/document_1/document_1.html) [ATO, SAPTO tax offset reduction](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/seniors-and-pensioners-tax-offset)
+
+For a possible transfer, verify both spouses' eligibility and the base rebate used by each. Section 12 compares the donor's base rebate with the donor's gross tax before credits or rebates and requires that the receiving spouse's rebate be below their own base. Use the unused base amount unless the special rule applies. Where the donor's taxable income exceeds $6,000 and the prescribed ordinary individual rates apply, the transferred amount is the donor's base less 15% of taxable income above $6,000, floored at zero. Apply s 12(5)'s treatment of the specified exempt pensions in this calculation. Adjust the receiver's base and recompute the applicable shading-out threshold under s 9. For part-year changes in status, multiple spouses, trustee entitlements or incomplete pension evidence, use the ATO process or refer for review. [Regulations ss 9, 12](https://www.legislation.gov.au/F2025L01060/asmade/2025-09-09/text/original/epub/OEBPS/document_1/document_1.html)
+
+#### Rebate income and adjusted taxable income
+
+Start from taxable income after removing any assessable first home super saver (FHSS) released amount, with a floor of zero. For rebate income add reportable superannuation contributions, total net investment loss and adjusted fringe benefits. Reportable superannuation contributions include reportable employer and deductible personal contributions, reduced by excess concessional contributions with a floor of zero. Total net investment loss is the sum of net financial investment losses and net rental property losses. For adjusted fringe benefits use reportable amounts from ordinary employers in full and 53% of reportable amounts from employers exempt under FBTAA s 57A. Follow the return worksheet's whole-dollar convention. [ITAA 1936 s 6(1), definition of 'rebate income'](https://www.legislation.gov.au/C1936A00027/latest/text) [ATO, Income tests](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-tests)
+
+For ordinary adjusted taxable income (ATI) for offsets, add target foreign income and applicable tax-free Government pensions or benefits to the same components, then deduct eligible child maintenance expenditure. Confirm the specific offset and adjusted taxable income definition. The source definition for offsets departs from the family assistance test by disregarding sch 3 cls 3 and 3A. Keep the withholding, Medicare levy surcharge and study loan measures separate because they use different components. [*Income Tax Assessment Act 1997* (Cth) s 995-1, definition of 'adjusted taxable income for offsets'](https://www.legislation.gov.au/C2004A05138/latest/text) [*A New Tax System (Family Assistance) Act 1999* (Cth) sch 3 cls 2, 4, 5, 8](https://www.legislation.gov.au/C2004A00490/latest/text) [ATO, Adjusted taxable income for you and your dependants](https://www.ato.gov.au/forms-and-instructions/tax-return-for-individuals-2026/supporting-information-individual-tax-return-2026/adjusted-taxable-income-for-you-and-your-dependants-2026)
+
+#### Single taxpayer example
+
+In 2026-27 an eligible single pensioner has $39,000 taxable income, which includes a $2,000 assessable FHSS released amount, and a $3,000 net rental property loss. The other rebate income components are nil. Rebate income is $40,000. The statutory reduction is $495.75, leaving $1,734.25 before rounding. The non-refundable offset applied on assessment is $1,735.
+
+```oa-check
+name: AU 2026-27 SAPTO for a single taxpayer
+inputs:
+  taxable_income: 39000
+  assessable_fhss: 2000
+  net_investment_loss: 3000
+  base: 2230
+  shading_threshold: 36034
+  taper: 12.5
+steps:
+  - rebate_income: max(0, taxable_income - assessable_fhss) + net_investment_loss
+  - reduction: pct(max(0, rebate_income - shading_threshold), taper)
+  - unrounded_offset: max(0, base - reduction)
+  - offset: ceil(unrounded_offset)
+expected:
+  rebate_income: 40000
+  reduction: 495.75
+  unrounded_offset: 1734.25
+  offset: 1735
+```
 
 #### 8.2 Unused offsets and other liabilities
 

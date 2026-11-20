@@ -15,6 +15,7 @@ import { assessSuperGuaranteeCharge } from "./index.mjs";
 
 const result = assessSuperGuaranteeCharge({
   qeDay: "2026-07-30",
+  sgRateSchedule: "general",
   qualifyingEarnings: "1000",
   earlierQualifyingEarningsThisYear: "0",
   onTimeContributions: "0",
@@ -38,6 +39,7 @@ calculator does not verify.
 | Input | Required meaning |
 | --- | --- |
 | `qeDay` and the optional extension inputs | As for [au-payday-super-timing](../au-payday-super-timing/README.md), which works out the last day for an on-time contribution |
+| `sgRateSchedule` | `general` when the QE day contains no Norfolk Island salary or wages under Sch 1 item 189. Use `norfolk_island_transitional` when all the earnings fall under item 189 and `mixed` when some do. Supply the classification after checking the underlying facts |
 | `qualifyingEarnings` | Qualifying earnings paid to or for the employee on the QE day, above nil (s 17A(2)) |
 | `earlierQualifyingEarningsThisYear` | Qualifying earnings this employer paid to or for the employee earlier in 2026-27 (s 10A(6)) |
 | `onTimeContributions` | Eligible contributions applied to this QE day under s 18C(1): received in the usual period, the 12 months before the QE day or an applicable s 18C(2) period |
@@ -46,6 +48,13 @@ calculator does not verify.
 | `noCommissionerInitiatedAssessmentOrEstimate` | `true` only if reg 13C applies: no Commissioner-initiated assessment made in the 24 months ending on the QE day is in force on it, and no SG charge estimate was made in that time. The 24 months start no earlier than 1 July 2026. Required when the base shortfall is above nil |
 | `voluntaryDisclosureLodgedDay` | Optional. Day a voluntary disclosure statement in the approved form was lodged, from the QE day to the day before the assessment (s 33(2), reg 13D) |
 | `assumedGicAnnualPercent` | Required only when the late period runs past 31 December 2026, the last published GIC quarter on the check date: the annual rate to assume, such as `"11.51"` |
+
+Confirm the employer and employee residency and where the work was done. The transition can
+apply to work on Norfolk Island or outside Australia by a Norfolk Island resident, or to work
+on Norfolk Island by an Australian resident employed by a Norfolk Island resident. It applies to the
+portion of earnings that qualifies. If the schedule is unresolved, the worksheet returns
+`unknown`. Transitional and mixed earnings return `refused` for manual review.
+[Payday Super Act Sch 1 item 189](https://www.legislation.gov.au/C2025A00057/asmade/text), [ATO LCR 2026/1](https://www.ato.gov.au/law/view/document?DocID=COG/LCR20261/NAT/ATO/00001).
 
 ## Calculation
 
@@ -74,8 +83,7 @@ should confirm both against an ATO assessment.
 
 Results include the verdict, reason codes, reasons, sources, the rounding note and the limits.
 `no_shortfall` results carry nil components. `unknown` and `refused` results carry no charge.
-The calculator does not cover Norfolk Island employees (11% for 2026-27 under the transition, ATO
-Table 21), defined benefit interests, employer shortfall exemption certificates, contributions made
+Other limits include defined benefit interests, employer shortfall exemption certificates, contributions made
 from 1 to 28 July 2026 that Payday Super Act Sch 1 item 186 first applies to a June 2026 quarter
 shortfall (supply only the remainder), a disclosed contribution with no receipt day (s 36(3)), or
 general interest charge and penalties once the charge is payable. The ATO says the charge for QE

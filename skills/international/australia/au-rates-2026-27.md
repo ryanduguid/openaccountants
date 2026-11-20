@@ -1,18 +1,18 @@
 ---
 name: au-rates-2026-27
 description: Use this skill whenever you need a current Australian tax rate, threshold, cap or due date for the 2026-27 or 2025-26 income year -- individual brackets, HELP repayment, Medicare levy and surcharge, super guarantee and contribution caps, Division 296, company rates, Div 7A benchmark, FBT, CGT caps and concessions, GST, PAYG instalment uplift, cents-per-km, car limits, penalty units, payroll tax, minimum wage or ASIC fees. Single-page rates card; every figure carries its source. Trigger on "what is the current rate", "2026-27 threshold", "how much is the cap", or any AU figure lookup. Load alongside the topic guide.
-version: "1.10"
+version: "1.11"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 primary; 2025-26 retained for lodgment-season work"
-last_updated: 2026-11-11
+last_updated: 2026-11-21
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Rates Card 2026-27 (with 2025-26) v1.10
+# Australia Rates Card 2026-27 (with 2025-26) v1.11
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -89,21 +89,19 @@ _(ATO QC16176, study and training loan repayment thresholds, checked 31 October 
 
 **Medicare figures**  _(MLA 1986; ATO QC 27031; ATO MLS thresholds; PHI Circular 12/26)_
 
-This table mixes years and says so per row: the MLS tiers are indexed and
-published for 2026-27, while the low-income thresholds and SAPTO amounts are
-still the 2025-26 figures because the ATO indexes them later in the year.
+Use the low-income reduction thresholds below for assessments for 2025-26 and 2026-27. Use the separate income-year tiers for the Medicare levy surcharge (MLS) and private health insurance rebate. [Medicare Levy Act 1986 ss 3 and 6–8](https://www.legislation.gov.au/C2004A03351/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html).
 
 | Item | Value | Year | Source |
 | --- | --- | --- | --- |
 | Levy | 2% of taxable income | unchanged | MLA 1986 |
-| Low-income threshold (single) | $28,011 / shade-in to $35,013 | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
-| Low-income threshold (family) | $47,238 + $4,338 per child | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
-| SAPTO single | $44,268 / $55,335 | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
+| Low-income threshold (single) | $28,011 / shade-in to $35,013 | 2025-26 and 2026-27 | MLA 1986 ss 3 and 7 |
+| Low-income threshold (family) | $47,238 + $4,338 per qualifying child | 2025-26 and 2026-27 | MLA 1986 s 8 |
+| Low-income threshold (single eligible for SAPTO) | $44,268 / shade-in to $55,335 | 2025-26 and 2026-27 | MLA 1986 ss 3 and 7 |
+| Low-income threshold (family eligible for SAPTO) | $61,623 + $4,338 per qualifying child | 2025-26 and 2026-27 | MLA 1986 s 8 |
 | MLS tiers (single) | Base $105,000 or less; tier 1 $105,001 to $123,000 (1%); tier 2 $123,001 to $164,000 (1.25%); tier 3 $164,001 or more (1.5%). $101,000 / $118,000 / $158,000 were the 2025-26 boundaries | **2026-27** | ATO MLS thresholds |
 | MLS tiers (family) | Base $210,000 or less; tier 1 $210,001 to $246,000; tier 2 $246,001 to $328,000; tier 3 $328,001 or more; the family threshold rises by $1,500 for each MLS dependent child after the first | **2026-27** | ATO MLS thresholds |
 | PHI rebate (base, under 65) | 24.288% to 31 Mar 2026; 24.118% from 1 Apr 2026, unchanged for 1 Jul 2026 to 31 Mar 2027 (tier 1 16.079%, tier 2 8.038%) with the 2026-27 income tiers above | spans both | PHI Circular 12/26; ATO PHI rebate thresholds |
 
-- **2026-27 indexation note** — 2026-27 Medicare low-income thresholds index with CPI; confirm at ATO QC 27031 when lodging 2026-27.  _(ATO QC 27031)_
 - **Proposed PHI rebate change (Bill, not law):** the Private Health Insurance Amendment (Modernising the Private Health Insurance Rebate) Bill 2026 [No. 2], introduced on 15 October 2026, remains 'Before Reps' (checked 1 November 2026). Its own clause 2 specifies commencement on 1 April 2027. Its explanatory memorandum says the higher rebate for people aged 65 and over would end for premium amounts paid on or after 1 April 2027 for cover on or after that date. The rates above remain applicable. _([APH, Bill r7564](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r7564); [first-reading text, clause 2](https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbills%2Fr7564_first-reps%2F0000%22;rec=0); [explanatory memorandum, item 7](https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fems%2Fr7564_ems_f6c3dfdd-63a3-4320-aad9-21455548f4b1%22))_
 
 ### Superannuation

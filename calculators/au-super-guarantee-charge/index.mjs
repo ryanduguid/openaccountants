@@ -66,6 +66,8 @@ const timingKeys = ["qeDay", "firstContributionToFund", "outOfCycleNextStandardQ
  * @param {string} [input.outOfCycleNextStandardQeDay] s 18C(2) item 2, as for au-payday-super-timing.
  * @param {string} [input.exceptionalCircumstancesDeterminationDay] s 18C(2) item 3, as for au-payday-super-timing.
  * @param {string} [input.earlierContributionLatestDueDay] s 18C(2) item 4, as for au-payday-super-timing.
+ * @param {"general"|"norfolk_island_transitional"|"mixed"} input.sgRateSchedule
+ *   Caller-confirmed classification of the QE day under Payday Super Act Sch 1 item 189.
  * @param {string} input.qualifyingEarnings Qualifying earnings paid to or for the employee on the QE day (s 17A(2)).
  * @param {string} input.earlierQualifyingEarningsThisYear Qualifying earnings from this employer earlier in 2026-27 (s 10A(6)).
  * @param {string} input.onTimeContributions Eligible contributions applied to this QE day under s 18C(1).
@@ -113,6 +115,14 @@ export function assessSuperGuaranteeCharge(input) {
   const due = dayNumber(timing.latestReceiptDay);
   const timed = { ...base, qeDay: input.qeDay, latestReceiptDay: timing.latestReceiptDay, governingRule: timing.governingRule };
   const fail = (verdict, code, reason) => ({ ...timed, verdict, reason_codes: [code], reasons: [reason] });
+
+  const schedule = Object.hasOwn(input, "sgRateSchedule") ? input.sgRateSchedule : undefined;
+  if (schedule === "norfolk_island_transitional" || schedule === "mixed") {
+    return fail("refused", "norfolk_island_transition", "Review the QE day under Payday Super Act Sch 1 item 189. This worksheet only covers general-rate earnings.");
+  }
+  if (schedule !== "general") {
+    return fail("unknown", "sg_rate_schedule", "Confirm sgRateSchedule as general, norfolk_island_transitional or mixed using Sch 1 item 189 and the QE day evidence.");
+  }
 
   const earnings = cents(input.qualifyingEarnings);
   const earlier = cents(input.earlierQualifyingEarningsThisYear);

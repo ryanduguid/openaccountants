@@ -2,18 +2,18 @@
 name: au-fbt
 description: >
   Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, the taxable value of car parking, loan, debt waiver, property, residual, housing, LAFHA and board benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
-version: 1.7
+version: 1.8
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027 (1 April 2026 - 31 March 2027)"
-last_updated: 2026-11-18
+last_updated: 2026-11-21
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.7
+# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.8
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -129,7 +129,7 @@ FBT work starts with a ledger sweep, not a form. These are the account patterns 
 | Christmas party, staff drinks: taxable employer, no Division 9A election, food and drink provided to and consumed by current employees on a working day on business premises | Exempt property benefit even if entertainment, unless salary packaged ([s 41 FBTAA](https://www.ato.gov.au/law/view/document?docid=PAC/19860039/41); [TR 97/17 para 44](https://www.ato.gov.au/law/view/document?docid=TXR/TR9717/NAT/ATO/00001); [FBT guide ch 14](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00015)). No minor benefit test needed for those items |
 | Same on-premises function: associates of employees | Not exempt under s 41. Apportion per head ([FBT guide ch 14](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00015); TR 97/17 para 45), then apply the minor benefit test to the associates' share |
 | Taxable employer, no Division 9A election: function off the premises | Entertainment -- minor benefit test per head if < $300 and infrequent |
-| Employer elected the 50/50 or 12-week register method (Rule 8) | Section 41 does not apply to meal entertainment: include all of it, on-premises functions and non-employees too, in total meal entertainment ([TR 97/17 paras 31-32, 44](https://www.ato.gov.au/law/view/document?docid=TXR/TR9717/NAT/ATO/00001)). No minor benefit exclusion |
+| Employer elected the 50/50 or 12-week register method (Rule 8) | Section 41 does not apply to meal entertainment: include all of it, on-premises functions and non-employees too, in total meal entertainment ([TR 97/17 paras 31-32, 44](https://www.ato.gov.au/law/view/document?docid=TXR/TR9717/NAT/ATO/00001)). Qualifying minor benefits can reduce the register numerator. The 50/50 method leaves them in the elected base. |
 | Income-tax-exempt employer | A Christmas party is tax-exempt body entertainment, on or off the premises ([s 38 FBTAA](https://www.ato.gov.au/law/view/document?docid=PAC/19860039/38); [FBT guide ch 15](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00016)). Section 41 does not apply to it (TR 97/17 para 34), and the minor benefit exemption is limited. Flag for reviewer; these employers may also elect Division 9A |
 | Meal while travelling overnight for work | Not entertainment for the traveller -- travel expense |
 
@@ -169,7 +169,15 @@ Sources: [FBTAA ss 5B, 5C](https://www.legislation.gov.au/C2004A03280/2026-07-01
 
 #### Rule 8 -- Meal entertainment methods
 
-- **Meal entertainment methods** — 1. **Actual** (default; MANDATORY for salary-packaged meal entertainment): taxable value = amounts for employees/associates; client share not subject to FBT (and not deductible). 2. **50/50 split** (Division 9A election): 50% of ALL meal entertainment is the taxable value, regardless of attendees; only 50% deductible/GST-creditable (s 51AEA). 3. **12-week register**: register percentage applied to the year's spend. The minor benefits exemption is NOT available for meal entertainment once a 50/50 or register election is made -- it applies only under the actual method. Entertainment is income-tax deductible and GST-creditable ONLY to the extent it is a fringe benefit subject to FBT.  _(Division 9A FBTAA; s 51AEA)_
+- **Meal entertainment methods** — 1. **Actual** (default; MANDATORY for salary-packaged meal entertainment): taxable value = amounts for employees/associates; client share not subject to FBT (and not deductible). 2. **50/50 split** (Division 9A election): 50% of ALL meal entertainment is the taxable value, regardless of attendees; only 50% deductible/GST-creditable (s 51AEA). 3. **12-week register**: register percentage applied to the year's spend. The minor benefits exemption is unavailable under the 50/50 method. Under the register method it can reduce the register numerator. Entertainment is income-tax deductible and GST-creditable ONLY to the extent it is a fringe benefit subject to FBT.  _(Division 9A FBTAA; s 51AEA)_
+
+##### Records for the 12-week meal entertainment method
+
+Elect the Division 9A register method only if the employer has a valid register for that FBT year. Use a continuous period of at least 12 weeks (84 days inclusive), with meal entertainment provided throughout the period. Confirm that the period represents the first FBT year for which the register is valid. On each entry record the date, each recipient's employee or associate status, the cost, the type of meal entertainment and where it was provided. For entertainment on the employer's premises, also record whether it was in an in-house dining facility. Enter the details as soon as practicable. A materially false or misleading entry invalidates the register. [*Fringe Benefits Tax Assessment Act 1986* (Cth) ss 37CA, 37CC, 37CE, 37CF](https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html)
+
+The register can cover the FBT year in which its period ends and the following 4 years. Check for a later valid register and compare each later year's meal entertainment spending with the first valid year's spending. An increase of more than 20% ends the register's validity at the end of the year of increase. At exactly 20%, the spending test alone leaves the register valid. [FBTAA s 37CD](https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html)
+
+Divide the value of the meal entertainment fringe benefits in the register by the total meal entertainment value for all recipients in the register. Compute the numerator from the employee and associate amounts after applicable exemptions, including minor benefits that meet s 58P. Apply the ratio to the year's full eligible meal entertainment expenditure, including client costs and costs of qualifying minor benefits. Keep salary-packaged meal entertainment under its own benefit category. Refer a zero or unsupported register total before using the method. [FBTAA ss 37AA, 37CB, 58P](https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) [ATO, TR 2007/12 [14]–[15]](https://www.ato.gov.au/law/view/document?DocID=TXR/TR200712/NAT/ATO/00001)
 
 #### Rule 9 -- Employee contributions and RFBA
 
@@ -178,6 +186,12 @@ Sources: [FBTAA ss 5B, 5C](https://www.legislation.gov.au/C2004A03280/2026-07-01
 #### Rule 10 -- Otherwise-deductible rule and declarations
 
 - **Otherwise-deductible rule and declarations** — Expense payment/property/residual/loan benefits: taxable value reduced by what the employee could have claimed as a once-only deduction. Requires a declaration in the approved form before the declaration date -- or, from 1 April 2024, adequate alternative records per the Commissioner's legislative instruments (available for 11 record types; logbooks and odometer records still need the approved form). Portable electronic devices (s 58X): exempt if primarily for work; one substantially-identical item per year unless a replacement, or the employer's aggregated turnover is under $50 million. **Transition warning:** from 1 April 2027, Act No 49 of 2026 (Sch 4 Pt 2) removes the one-per-year limit and the turnover carve-out, denies s 58X entirely for items provided under a salary packaging arrangement, and (new s 24(1A)) blocks the otherwise-deductible rule for salary-packaged expense payments of standard-deduction work expenses -- flag any packaging arrangement extending past 31 March 2027.  _(s 58X FBTAA; Act No 49 of 2026 (Sch 4 Pt 2); new s 24(1A))_
+
+##### Expense payment benefits
+
+Confirm that the employer paid an obligation the recipient incurred or reimbursed their expense. Classify an ordinary external expense payment under Division 5. Under s 23, start with the amount paid or reimbursed and subtract the recipient's contribution. Reduce the resulting amount under s 24 only for the supported otherwise-deductible amount. Establish any deduction already available for the recipient's own expenditure or contribution so the same deduction is not counted twice. Keep the declaration or approved alternative records described in Rule 10. Apply the restriction on salary-packaged standard-deduction work expenses from 1 April 2027. [FBTAA ss 20, 23, 24](https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) [*Treasury Laws Amendment (Tax Reform No 1) Act 2026* (Cth) sch 4 pt 2](https://www.legislation.gov.au/C2026A00049/asmade)
+
+For an in-house expense payment, s 22A first values the hypothetical property benefit under s 42 or residual benefit under s 48 or s 49. For a period residual benefit test the recipient's overall benefit and the period rules in s 22A(3). Establish the reimbursement amount to apply the statutory valuation proportion, and check the separate s 62 reduction with the annual employee balance. Refer any claim for a further reduction under s 24(1)(b)(i) for the in-house benefit's specific rules. [FBTAA ss 22A, 24, 42, 48, 49, 62](https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html)
 
 #### Rule 11 -- LAFHA (standard cases only)
 
@@ -409,6 +423,10 @@ REVIEWER FLAGS
 | EV home charging shortcut | 5.47 c/km (PCG 2024/2) |
 | LCT fuel-efficient threshold (2026-27 sale year) | $91,661 |
 | Instalment trigger | Prior-year FBT >= $3,000 |
+
+### Tax-exempt body entertainment at actual value
+
+For an income tax-exempt body within s 38, establish the expenditure that would have been non-deductible entertainment expenditure if the body had been taxable. Under s 39 take the part attributable to entertaining employees and their associates. Use actual expenditure where it can be established. If it cannot easily be worked out, the ATO accepts allocation by the proportion of attendees who are employees or associates. Check the limited minor benefits exemption at classification. For a taxable benefit that remains, carry the attributable amount without a recipient's contribution or other reduction to the tax-exempt body entertainment category in item 23. An applicable Division 9A meal entertainment election uses its own valuation. [FBTAA ss 38, 39, 58P](https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html) [ATO, FBT employer guide, 15.9](https://www.ato.gov.au/law/view/document?DocID=SAV/FBTGEMP/00016) [ATO, FBT return item 23](https://www.ato.gov.au/forms-and-instructions/fringe-benefits-tax-return-2026-instructions/item-23-fringe-benefit-categories-for-fbt-return-2026)
 
 ## Worked cases
 
@@ -755,6 +773,27 @@ expected:
   child_taxable: 200
   taxable_value: 1400
 tolerance: 0
+```
+
+### Register calculation with a minor benefit
+
+An employer's representative register records $10,000 of meal entertainment for all attendees. The evidence allocates $6,400 to employees and associates, including $400 of separate benefits the employer has established are exempt under s 58P. The register fringe benefits value is $6,000, giving a 60% register percentage. Total eligible annual meal entertainment expenditure is $90,000, giving a taxable value of $54,000.
+
+```oa-check
+name: AU FBT 12-week register percentage with evidenced minor benefits
+inputs:
+  register_all: 10000
+  register_staff: 6400
+  register_minor: 400
+  annual_total: 90000
+steps:
+  - numerator: register_staff - register_minor
+  - percentage: numerator / register_all * 100
+  - taxable: pct(annual_total, percentage)
+expected:
+  numerator: 6000
+  percentage: 60
+  taxable: 54000
 ```
 
 ## When to refuse or refer

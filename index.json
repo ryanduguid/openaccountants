@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2071,
+  "guides": 2073,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -2564,7 +2564,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-05"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-coal-lsl-levy",
@@ -2629,7 +2629,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-18"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-depreciating-assets",
@@ -2642,7 +2642,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-18"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-director-penalties",
@@ -2733,7 +2733,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-18"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-foreign-income",
@@ -2840,6 +2840,19 @@
    "last_updated": "2026-11-03"
   },
   {
+   "slug": "au-luxury-car-tax",
+   "path": "skills/international/australia/au-luxury-car-tax.md",
+   "name": "au-luxury-car-tax",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "au-managed-funds-amit",
    "path": "skills/international/australia/au-managed-funds-amit.md",
    "name": "au-managed-funds-amit",
@@ -2862,8 +2875,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-05"
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-nonresident-cgt",
@@ -3006,7 +3019,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-11"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-rd-incentive",
@@ -3032,7 +3045,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-19"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "au-restructure-rollovers",
@@ -3152,6 +3165,19 @@
    "last_updated": "2026-11-03"
   },
   {
+   "slug": "au-wine-equalisation-tax",
+   "path": "skills/international/australia/au-wine-equalisation-tax.md",
+   "name": "au-wine-equalisation-tax",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "au-working-holiday-makers",
    "path": "skills/international/australia/au-working-holiday-makers.md",
    "name": "au-working-holiday-makers",
@@ -3214,7 +3240,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-15"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "australia-payroll",
@@ -3227,7 +3253,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-18"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "australia-tax-optimization",
@@ -23741,7 +23767,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-11"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "bd-freelance-intake",

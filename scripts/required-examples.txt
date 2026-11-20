@@ -23,6 +23,7 @@ skills/international/australia/au-gst-property.md
 skills/international/australia/au-individual-return.md
 skills/international/australia/au-land-tax.md
 skills/international/australia/au-lodgment-deadlines-penalties.md
+skills/international/australia/au-luxury-car-tax.md
 skills/international/australia/au-managed-funds-amit.md
 skills/international/australia/au-medicare-levy.md
 skills/international/australia/au-nonresident-cgt.md
@@ -46,6 +47,7 @@ skills/international/australia/au-stamp-duty.md
 skills/international/australia/au-super-guarantee.md
 skills/international/australia/au-tpar.md
 skills/international/australia/au-trust-distributions.md
+skills/international/australia/au-wine-equalisation-tax.md
 skills/international/australia/australia-bookkeeping.md
 skills/international/australia/australia-formation.md
 skills/international/australia/australia-gst.md

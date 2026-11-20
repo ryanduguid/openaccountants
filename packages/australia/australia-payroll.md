@@ -13,18 +13,18 @@ description: >
   "Schedule 9", "seniors and pensioners", "underpayment", or any question about
   running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.11
+version: 2.12
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-11-18
+last_updated: 2026-11-21
 review_status: pending_review
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.11
+# Australia -- Payroll Skill v2.12
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -58,7 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 2.11 |
+| Skill version | 2.12 |
 
 ### Section 2 -- Income Tax Withholding (PAYG)
 
@@ -83,8 +83,10 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 | Item | Detail |
 | --- | --- |
 | Standard rate | 2% of taxable income |
-| Low-income threshold (single, 2025-26) | No levy up to $28,011; reduced levy $28,012--$35,013 (the ATO sets the 2026-27 thresholds later in the year) |
-| Low-income threshold (family, 2025-26) | Base threshold $47,238 plus $4,338 for each qualifying child. Above the threshold, calculate the family reduction under Medicare Levy Act s 8; it reaches zero at 1.25 times that threshold. Apply the spouse-sharing rules in `au-medicare-levy.md`. These are annual assessment rules, not PAYG withholding formulas |
+| Low-income threshold (single, 2025-26 and 2026-27) | No levy up to $28,011; phase-in limit $35,013. |
+| Low-income threshold (family, 2025-26 and 2026-27) | Base threshold $47,238 plus $4,338 for each qualifying child. Above the threshold, calculate the family reduction under s 8. Families eligible for the seniors and pensioners tax offset use a $61,623 base plus the same amount per child. |
+
+These are income tax assessment thresholds. For each pay, use the applicable PAYG withholding schedule and the payee's declarations. [Medicare Levy Act 1986 ss 3 and 6–8](https://www.legislation.gov.au/C2004A03351/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html).
 | Medicare Levy Surcharge | 1.0%--1.5% additional for high earners without private hospital cover |
 
 - **Medicare levy incorporation** — The Medicare levy is incorporated into PAYG withholding calculations via the tax tables.

@@ -1,11 +1,11 @@
 ---
 name: au-rental-property
 description: Use this skill whenever asked about Australian rental property income and deductions. Trigger on phrases like "rental income Australia", "negative gearing", "rental deductions", "investment property tax", "Division 40", "Division 43", "capital works deduction", "depreciation schedule", "rental property CGT", "rental withholding", "body corporate fees", "strata levy deduction", "repairs vs improvements", "TR 97/23", "GST on property", "land tax on an investment property", "short stay levy", "stamp duty on a rental", or any question about completing the rental property schedule in an Australian individual tax return. This skill covers rental income reporting, deductible expenses, depreciation (Div 40 plant and Div 43 building), negative gearing including the enacted 1 July 2027 limit, CGT on disposal, foreign resident withholding, the GST decision path, the state and territory taxes that attach to property, and common transaction classifications. ALWAYS read this skill before touching any Australian rental property work.
-version: 1.9
+version: 1.10
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27; myTax 2026 instructions cover 2025-26; enacted 2027-28 provisions separately labelled"
-last_updated: 2026-11-19
+last_updated: 2026-11-21
 review_status: pending_review
 category: international
 tier: 2
@@ -14,7 +14,7 @@ depends_on:
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# AU Rental Property v1.9
+# AU Rental Property v1.10
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -50,7 +50,7 @@ Use this guide with `workflow-base` and the relevant individual, company, trust 
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax / tax agent lodgement (Online Services for Agents) |
 | Filing deadline | 31 October (self-lodgement); agent-managed deadlines vary |
-| Skill version | 1.9 |
+| Skill version | 1.10 |
 
 #### Select the income year before calculating
 
@@ -402,6 +402,7 @@ Victoria is the only jurisdiction whose short-stay levy this guide has verified.
 - **Rate and rounding.** 7.5% of the total booking fee, rounded down to a multiple of 5 cents (s 13).
 - **Total booking fee.** The total payable for the booking (s 7). It includes any amount charged for the levy itself, any GST and nights paid for but not used. It excludes amounts waived, credited or refunded on cancellation and charges for the payment method. SRO guidance also includes cleaning and late checkout fees and compulsory extras. It leaves out optional add-ons unrelated to the stay, damage charges and the non-accommodation part of a package.
 - **When and who.** Liability arises on the day the booking requires the guest to vacate, whether or not the guest stayed (s 11). The booking platform provider is liable for platform bookings. For a direct booking, the renter is liable if the booking is made with the renter or the renter's occupier; otherwise the owner is (s 12). An owner whose bookings all go through a platform does not register.
+- **Bookings accepted by an occupier.** If someone other than the owner or renter has exclusive occupation under an occupancy agreement and accepts direct bookings, they must pay the owner or renter the levy on their completed bookings for each return period plus any GST payable on that amount. The payment is due by the time the owner or renter must pay the levy. Section 15 stops applying when the parties expressly opt out, either party can or does review the amount payable under the agreement, or either party can terminate the agreement, whichever occurs first. [Short Stay Levy Act 2024 (Vic) s 15](https://www.legislation.vic.gov.au/in-force/acts/short-stay-levy-act-2024/002).
 - **Registration and returns.** An owner or renter taking direct bookings must apply for registration before the end of the first return period in which it is liable (s 17). The return period is a quarter for a person whose relevant booking fees for stays completed in the previous calendar year were $75,000 or more, and otherwise the calendar year (s 16). Lodge and pay within 30 days after the period ends (s 18), so a 2026 annual return is due by 30 January 2027. The SRO's registration and lodgment pages also say an annual payer who passes $75,000 during a year moves to quarterly returns for the rest of that year. Section 16 does not say this. Record both and ask the SRO before relying on either.
 - **Income tax and GST.** The Act does not say whether the levy, or a levy amount charged to the guest, is assessable income or deductible. The SRO does not advise whether GST applies to the levy. Record the booking fee, any levy line charged, the levy paid and who bore it, and refer both questions (R-AU-RP-5). Keep the platform payout statement: it shows whether the platform withheld anything from the host.
 

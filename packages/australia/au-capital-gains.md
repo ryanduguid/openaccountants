@@ -1,11 +1,11 @@
 ---
 name: au-capital-gains
 description: "Use this skill for any Australian capital gains tax question, for any entity type. Trigger on: \"CGT Australia\", \"capital gains Australia\", \"sell shares Australia\", \"50% CGT discount\", \"cost base Australia\", \"capital loss\", \"carry forward capital losses\", \"small business CGT concessions\", \"SBCGT\", \"active asset test\", \"15-year exemption\", \"retirement exemption CGT\", \"CGT rollover\", \"CGT event A1\", \"main residence exemption\", \"Australian CGT\", \"sell my Australian company\", \"dispose of property Australia\", \"CGT indexation from 2027\". Covers the calculation workflow from CGT event and cost base through losses, discounts and concessions, entity and residency differences, and the enacted 1 July 2027 changes. Routes to au-small-business-cgt, au-nonresident-cgt, au-rental-property and au-crypto-tax for their specialist rules."
-version: 1.10
+version: 1.11
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 core computations; historical periods and enacted 2027-28 changes require their own operative sources and conditions"
-last_updated: 2026-11-05
+last_updated: 2026-11-21
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -15,13 +15,13 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Capital Gains Tax v1.10
+# Australia Capital Gains Tax v1.11
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Scope
 
-### Australia Capital Gains Tax v1.10
+### Australia Capital Gains Tax v1.11
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
@@ -142,6 +142,16 @@ Include the net capital gain in assessable income. A net capital loss cannot red
 - **Capital versus revenue** — Establish whether the profit is on capital or revenue account before applying CGT. A trading business or an isolated profit-making transaction produces ordinary income, and section 118-20 reduces a capital gain to the extent the amount is otherwise assessable, so the same profit is not taxed twice. Holding an asset for more than a year does not by itself make it a capital investment.  _(ITAA 1997 (Cth) s 118-20, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-20)_
 - **Main residence conditions** — The main residence exemption depends on the dwelling being the taxpayer's home, land of two hectares or less, the extent of any income-producing use, the absence rule and residency at the CGT event. A property bought as an investment is not exempt because the owner later moves in: the exemption is apportioned to the days it was the main residence. Check occupation, absences and use before applying it.  _(ITAA 1997 (Cth) s 118-110, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-110; s 118-185, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/118-185)_
 
+### Partial main residence exemption
+
+Establish the dates the ownership interest began and ended under Subdivision 118-B. For a typical contract of purchase or sale, check legal ownership at settlement and occupation, rather than copying the dates of CGT event A1 into the ownership schedule. Keep the CGT event date for the income year. Build a timeline of the taxpayer's main residence, absences, any other nominated home and the dates and extent of income-producing use. Check residency and ownership eligibility before applying this method. [*Income Tax Assessment Act 1997* (Cth) ss 104-10, 118-110, 118-125, 118-130](https://www.legislation.gov.au/C2004A05138/latest/text)
+
+- **Periods outside the exemption.** Calculate the gain or loss before the exemption. Multiply by non-main-residence days divided by the days in the ownership period under s 118-185. Keep the periods consistent and avoid counting an overlapping day twice. [ITAA 1997 s 118-185](https://www.legislation.gov.au/C2004A05138/latest/text)
+- **Income use whilst living there.** Test the interest the taxpayer could have deducted if they had borrowed to acquire the home. For a supported part-business use, a reasonable allocation can use the floor area and period to which that hypothetical deduction relates. Apply it to days the property otherwise qualifies as a main residence. Keep the basis and building-use records. Deducting running costs alone does not establish that home acquisition interest would be deductible. [ITAA 1997 s 118-190](https://www.legislation.gov.au/C2004A05138/latest/text) [ATO, TR 93/30](https://www.ato.gov.au/law/view/document?DocID=TXR/TR9330/NAT/ATO/00001)
+- **First income use.** If the dwelling was first used to produce assessable income after 7:30 pm ACT legal time on 20 August 1996, a full exemption would have applied immediately before that use and income use leaves only a partial exemption, s 118-192 treats it as acquired at the market value on the first income-use date. Obtain a supported valuation and rebuild the cost base and ownership period from that date. Retest discount eligibility using the deemed acquisition date. [ITAA 1997 s 118-192](https://www.legislation.gov.au/C2004A05138/latest/text) [ATO, Dwelling used to produce income](https://www.ato.gov.au/forms-and-instructions/capital-gains-tax-guide-2021/whats-new/real-estate-and-main-residence/dwelling-used-to-produce-income)
+- **Absences.** If the dwelling was already the main residence, the taxpayer may choose to keep treating it as such after leaving. Where it earns income, the choice covers up to 6 years of income-producing use during an absence. Without income use, the 6-year limit does not apply. Check a return to genuine occupation before restarting the limit and restrict any concurrent home treatment to the s 118-140 overlap. During the choice period, s 118-190(3) disregards income use to the extent it was new after the taxpayer left. Keep any taxable part that was already income-producing immediately before the absence. [ITAA 1997 ss 118-145, 118-190](https://www.legislation.gov.au/C2004A05138/latest/text) [ATO, Treating former home as main residence](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/property-and-capital-gains-tax/your-main-residence---home/treating-former-home-as-main-residence)
+- **Changing homes.** Both dwellings can qualify during the final 6 months of ownership of the old home, or the shorter period of overlap. Confirm the new home becomes the main residence, the old home was the main residence for a continuous period of at least 3 months in the 12 months before disposal and it was outside income-producing use during any part of that 12 months when it was outside main residence status. [ITAA 1997 s 118-140](https://www.legislation.gov.au/C2004A05138/latest/text)
+
 ### Section 4 - Cost base and reduced cost base
 
 **The five elements of the cost base**
@@ -157,6 +167,12 @@ Include the net capital gain in assessable income. A net capital loss cannot red
 - **The reduced cost base** — The reduced cost base is used to work out a capital loss and has five elements. Elements 1, 2, 4 and 5 match the cost base. Its third element replaces ownership costs with the assessable balancing-adjustment amounts specified in section 110-55(3), including its statutory relief cases. Apply the section's exclusions separately: subsection (4) excludes deductible amounts, including deductible balancing adjustments, and subsection (6) excludes recouped expenditure unless the recoupment is assessable. Do not subtract an assessable balancing adjustment merely because a deductible balancing adjustment is excluded.  _(ITAA 1997 (Cth) s 110-55, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-55)_
 - **Deductions reduce the cost base** — Amounts you have deducted or can deduct under Division 43 reduce the cost base of an asset acquired after 7:30 pm on 13 May 1997, and of older land or a building for fourth element expenditure incurred after 30 June 1999, and element 3 excludes anything that was deductible. The reduced cost base is separate: s 110-55(4) excludes an amount you have deducted or can deduct, with no such acquisition date limit. Under TD 2005/47 you can deduct an amount at a particular time if the deduction provision's terms are satisfied and the s 170 ITAA 1936 amendment periods have not expired for that deduction. There is no fixed time for the test, so an unclaimed amount still counts while it can be deducted by amendment, but not once it is out of time, provided you are within the amendment period for the CGT event. PS LA 2006/1 (GA) separately relieves you where you lack sufficient information to determine the construction expenditure and have not sought any deduction for it. This is the most common cost base error on a rental property disposal. See `au-rental-property.md`.  _(ITAA 1997 (Cth) s 110-45, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-45; s 110-55, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-55; [TD 2005/47](https://www.ato.gov.au/law/view/document?docid=TXD/TD200547/NAT/ATO/00001); [PS LA 2006/1 (GA)](https://www.ato.gov.au/law/view/document?docid=PSR/GA20061/NAT/ATO/00001))_
 - **Selling costs belong in the cost base, not the proceeds** — Capital proceeds are the money and the market value of property received for the event. Agent commission, legal fees and other disposal costs are second-element cost base amounts. Reconcile proceeds to the contract before adding selling costs to the cost base, otherwise they are counted twice.  _(ITAA 1997 (Cth) s 116-20, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/116-20; s 110-25, https://www.ato.gov.au/law/view/document?docid=PAC/19970038/110-25)_
+
+### Identifying share and unit parcels
+
+Use the actual identity of disposed shares or units if the evidence identifies them. For indistinguishable holdings, TD 33 accepts first in, first out for identical shares or the taxpayer's evidenced selection. Check the security and class, record the parcel and number of units sold, and reconcile each selection to acquisition records and the available holding. A selection that crosses a holding period or cost-base boundary can change the result. Apply the same documented identification to the remaining holdings and future disposals. Do not average the acquisition dates and costs of unrelated lots. [ATO, TD 33 addendum](https://www.ato.gov.au/law/view/pdf?DocId=CGD%2FTD33A%2FNAT%2FATO%2F00001&PiT=99991231235958&filename=law%2Fview%2Fpdf%2Fpbr%2Ftd000033c1a1.pdf) [ATO, Keeping records of shares and units](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/shares-and-similar-investments/keeping-records-of-shares-and-units)
+
+Apportion the cost base and reduced cost base, proceeds and incidental costs reasonably across disposed and retained units. Reconcile to the total quantity and cash. Calculate each identified part's gain or loss and check discount eligibility from its acquisition and disposal dates before bringing the results together with the year's other gains and losses. [ITAA 1997 ss 104-10(4), 109-5, 110-25, 110-55, 112-30, 115-25, 116-40](https://www.legislation.gov.au/C2004A05138/latest/text)
 
 ### Section 5 - Capital losses
 
@@ -480,6 +496,55 @@ expected:
 ```
 
 **Missing-record position.** An exchange export proves a crypto disposal but omits the acquired parcel's date and cost. Reconstruct exchange, wallet and bank records. Return Needs Input for the affected gain and any aggregate depending on it. Do not enter a zero cost base, infer a holding period or silently omit the disposal. A zero cost base established by a specific rule is a different fact pattern. [ATO, keeping crypto records](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records).
+
+### Main residence days and part-business use example
+
+An eligible Australian resident owns a dwelling for 1,200 days. The first 300 days are wholly income-producing before they move in. Of the next 900 days of main residence, for 200 days a separate workshop occupying 25% of the property meets the hypothetical interest deduction test and that percentage reasonably reflects the deductible use. No market-value reset applies because there was no full exemption immediately before first income use. The capital gain before the exemption is $120,000. The taxable equivalent is 300 plus 50 days. The capital gain before losses and any discount is $35,000.
+
+```oa-check
+name: AU partial main residence exemption with supported business use
+inputs:
+  gain: 120000
+  ownership_days: 1200
+  non_main_residence_days: 300
+  mixed_main_residence_days: 200
+  business_percent: 25
+steps:
+  - taxable_days: non_main_residence_days + pct(mixed_main_residence_days, business_percent)
+  - capital_gain_before_losses_and_discount: round(gain * taxable_days / ownership_days, 2)
+expected:
+  taxable_days: 350
+  capital_gain_before_losses_and_discount: 35000
+```
+
+### First in, first out example
+
+An investor holds 100 identical shares acquired for $600 including costs and another 100 acquired later for $1,100 including costs. The 120 indistinguishable shares sold produce $1,440 and incur $60 selling brokerage. The first in, first out allocation takes 100 from the first parcel and 20 from the second. Apportion proceeds and brokerage by quantity. The gains are $550 and $10 respectively. Keep 80 shares with $880 cost in the second parcel. Test each gain separately for any discount.
+
+```oa-check
+name: AU first in first out share disposal across two parcels
+inputs:
+  lot_size: 100
+  first_cost: 600
+  second_cost: 1100
+  sold: 120
+  proceeds: 1440
+  brokerage: 60
+steps:
+  - first_units: min(sold, lot_size)
+  - second_units: sold - first_units
+  - first_gain: (proceeds - brokerage) * first_units / sold - first_cost
+  - second_sold_cost: second_cost * second_units / lot_size
+  - second_gain: (proceeds - brokerage) * second_units / sold - second_sold_cost
+  - second_remaining_cost: second_cost - second_sold_cost
+expected:
+  first_units: 100
+  second_units: 20
+  first_gain: 550
+  second_gain: 10
+  second_sold_cost: 220
+  second_remaining_cost: 880
+```
 
 ## When to refuse or refer
 
