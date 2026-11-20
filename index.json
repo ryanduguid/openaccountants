@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2061,
+  "guides": 2062,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -4320,6 +4320,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-14"
+  },
+  {
+   "slug": "bm-corporate-services-tax",
+   "path": "skills/international/bermuda/bm-corporate-services-tax.md",
+   "name": "bm-corporate-services-tax",
+   "jurisdiction": "BM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2026",
+   "last_updated": "2026-11-20"
   },
   {
    "slug": "bm-income-tax",
