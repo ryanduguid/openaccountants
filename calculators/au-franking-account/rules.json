@@ -1,0 +1,26 @@
+{
+  "as_of": "2026-11-21",
+  "jurisdiction": "AU",
+  "income_years": [
+    "2025-26",
+    "2026-27"
+  ],
+  "imputation_rates": [
+    "25",
+    "30"
+  ],
+  "sources": [
+    {
+      "title": "Income Tax Assessment Act 1997, Part 3-6 and Division 214",
+      "url": "https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_5/document_5.html"
+    },
+    {
+      "title": "Franking account tax return and instructions 2026",
+      "url": "https://www.ato.gov.au/api/public/content/0-ab7c316d-43cc-44dd-aabf-36de862f6671"
+    },
+    {
+      "title": "ATO guidance on the franking account",
+      "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/imputation/paying-dividends-and-other-distributions/franking-account"
+    }
+  ]
+}
