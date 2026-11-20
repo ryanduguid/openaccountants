@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2062,
+  "guides": 2063,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -22260,6 +22260,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "tc-tax-system-source-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-tax-system-source-reference.md",
+   "name": "tc-tax-system-source-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2024",
+   "last_updated": "2026-11-20"
   },
   {
    "slug": "tv-npf-contribution-reference",

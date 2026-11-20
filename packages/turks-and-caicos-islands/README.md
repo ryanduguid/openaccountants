@@ -9,6 +9,7 @@
 2. `tc-formation-and-business-licensing-reference.md`
 3. `tc-sector-taxes-reference.md`
 4. `tc-social-contributions-reference.md`
+5. `tc-tax-system-source-reference.md`
 
 ## Shared files this package needs
 
