@@ -1,12 +1,12 @@
 ---
 name: canada-payroll
 description: Use this skill whenever asked about Canadian payroll, source deductions, CPP contributions, EI premiums, or employer obligations in Canada. Trigger on phrases like "source deductions", "CPP", "Canada Pension Plan", "CPP2", "EI", "employment insurance", "T4", "TD1", "payroll deductions", "CRA payroll", "remittance", "ROE", "record of employment", "statutory holiday pay", "vacation pay Canada", "minimum wage Canada", "provincial tax", "payroll Canada", "PD7A", "remitter type", or any question about running payroll in Canada. This skill covers federal rules; Quebec (QPP/QPIP) differences are noted but not fully detailed. ALWAYS read this skill before processing any Canadian payroll work.
-version: 1.0
+version: 1.1
 jurisdiction: CA
 tax_year: 2026
-last_updated: 2026-11-10
+last_updated: 2026-11-21
 reviewed_by: Edgar Lautsyus
-review_status: current
+review_status: pending_review
 depends_on:
   - payroll-workflow-base
 category: payroll
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Canada Payroll
 
-## Canada -- Payroll Skill v1.0
+## Canada -- Payroll Skill v1.1
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Review history.** Nathan Wiebe reviewed the earlier rates and thresholds on 21 June 2026. Edgar Lautsyus signed off the earlier guide, as recorded in the frontmatter and on the roster in `PARTNERS.md`. This version updates selected contributions, pay examples, minimum wage rates and EI benefits from the cited authorities. It awaits renewed practitioner review.
 
 ## Section 1 -- Quick Reference
 
@@ -35,8 +35,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Biweekly (most common), semi-monthly, monthly, weekly |
 | Employer registration | Business Number (BN) + payroll program account (RP) via CRA |
 | Provincial variation | Each province/territory has its own income tax brackets, ESA, and minimum wage |
-| Validated by | Verified by Nathan Wiebe on 2026-06-21 |
-| Skill version | 1.0 |
+| Practitioner review | Prior rates review on 21 June 2026. This version awaits renewed review. |
+| Skill version | 1.1 |
 
 ## Section 2 -- Income Tax Withholding (Source Deductions)
 
@@ -94,7 +94,7 @@ Each province has its own tax brackets applied on top of federal tax. The employ
 | CPP base + first additional | 5.95% | YMPE $74,600 (less $3,500 basic exemption) | $4,230.45 |
 | CPP2 (second additional) | 4.00% | Earnings between YMPE $74,600 and YAMPE $85,000 | $416.00 |
 
-- **Basic exemption** — $3,500/year (pro-rated per pay period)
+- **Basic exemption** — $3,500 a year, allocated by pay period. For 26 biweekly pays, use the CRA exemption of $134.61. [CRA contribution rates, maximums and exemptions](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums.html)
 - **CPP age eligibility** — CPP applies to employees aged 18--69 (mandatory 18--65; elective 65--70)
 - **CPP2** — CPP2 is a second tier introduced in 2024 on earnings between the first and second ceilings
 
@@ -105,11 +105,13 @@ Each province has its own tax brackets applied on top of federal tax. The employ
 | Item | Rate | Maximum Insurable Earnings | Maximum Annual Premium |
 | --- | --- | --- | --- |
 | Employee (Canada except Quebec) | 1.63% | $68,900 | $1,123.07 |
-| Employee (Quebec -- reduced for QPIP) | 1.30% | $68,900 | $902.59 |
+| Employee (Quebec -- reduced for QPIP) | 1.30% | $68,900 | $895.70 |
+
+Use the 2026 rows for insurable earnings paid in 2026. [CRA Employment Insurance premium rates and maximums](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rate-maximum.html)
 
 ### Quebec Differences
 
-Quebec employees pay QPP instead of CPP (rate 6.40% for 2026) and QPIP (Quebec Parental Insurance Plan) at 0.494%. These are deducted separately.
+For 2026, the employee and employer each pay Quebec Pension Plan (QPP) base and first additional contributions at 6.30%, subject to the $3,500 exemption, $74,600 earnings ceiling and $4,479.30 annual maximum. The second additional contribution is 4.00% each on pensionable earnings between $74,600 and $85,000, capped at $416.00 each. Quebec Parental Insurance Plan (QPIP) premiums are separate. Use 0.430% and a $442.90 maximum for employees, and 0.602% and a $620.06 maximum for employers, on up to $103,000 of insurable earnings. [Revenu Québec 2026 employer changes](https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-principal-changes-for-2026/)
 
 ## Section 4 -- Social Security: Employer Contributions
 
@@ -131,7 +133,9 @@ Quebec employees pay QPP instead of CPP (rate 6.40% for 2026) and QPIP (Quebec P
 | Item | Rate | Maximum |
 | --- | --- | --- |
 | Employer (Canada except Quebec) | 2.282% (1.4× employee rate) | $1,572.30 |
-| Employer (Quebec) | 1.834% (1.4× employee rate) | $1,264.03 |
+| Employer (Quebec) | 1.820% (1.4× employee rate) | $1,253.98 |
+
+[CRA Employment Insurance premium rates and maximums](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rate-maximum.html)
 
 - **Employer EI multiplier** — The employer pays 1.4 times the employee EI premium. Employers may apply for an EI premium reduction if they have a qualifying short-term disability plan.
 
@@ -154,22 +158,22 @@ Provincial/territorial requirement. Premiums vary by industry classification and
 
 ### Federal Minimum Wage
 
-- **Federal minimum wage** — $18.15/hour (as of April 2026, indexed annually to CPI). Applies to federally regulated industries only (banking, telecom, interprovincial transport).
+- **Federal minimum wage** — The general federal floor is $18.15 an hour from 1 April 2026. For federally regulated employment, use the higher of that floor and the applicable general provincial or territorial minimum under section 178(2). Check any separate category or exception. [Canada Labour Code, s 178](https://laws-lois.justice.gc.ca/eng/acts/L-2/section-178.html) · [Service Canada general minimum wages](https://minwage-salairemin.service.canada.ca/en/general.html?01cb4aff_page=1&1353fe24_page=3&50976b45_page=2&663d1f65_page=1&dbe437e9_page=2)
 
 ### Select Provincial Minimum Wages (2026)
 
 **Select Provincial Minimum Wages (2026)**
 
-| Province | Rate (CAD/hour) |
-| --- | --- |
-| Ontario | $17.60 |
-| British Columbia | $18.25 |
-| Alberta | $15.00 |
-| Quebec | $16.10 |
-| Manitoba | $15.80 |
-| Saskatchewan | $15.00 |
+| Province | General rate (CAD/hour) at 21 November 2026 | Effective from |
+| --- | --- | --- |
+| Ontario | $17.95 | 1 October 2026 |
+| British Columbia | $18.25 | 1 June 2026 |
+| Alberta | $15.00 | 26 June 2019 |
+| Quebec | $16.60 | 1 May 2026 |
+| Manitoba | $16.40 | 1 October 2026 |
+| Saskatchewan | $15.70 | 1 October 2026 |
 
-Rates are approximate and subject to annual adjustments.
+Check the pay date and any occupation or worker exceptions. [Service Canada general minimum wages](https://minwage-salairemin.service.canada.ca/en/general.html?01cb4aff_page=1&1353fe24_page=3&50976b45_page=2&663d1f65_page=1&dbe437e9_page=2)
 
 ### Overtime
 
@@ -218,13 +222,15 @@ Rates are approximate and subject to annual adjustments.
 
 **Maternity / Parental Leave (EI Benefits)**
 
-| Benefit | Duration | EI Rate |
+| Benefit | Maximum weeks | Rate and 2026 weekly maximum |
 | --- | --- | --- |
-| Maternity (birth parent only) | 15 weeks | 55% of insurable earnings (max ~$695/week for 2026) |
-| Standard parental | 35 weeks | 55% of insurable earnings |
-| Extended parental | 61 weeks | 33% of insurable earnings |
+| Maternity (birth parent only) | 15 | 55% of average insurable weekly earnings, capped at $729 |
+| Standard parental | 35 per parent, 40 shared | 55% of average insurable weekly earnings, capped at $729 |
+| Extended parental | 61 per parent, 69 shared | 33% of average insurable weekly earnings, capped at $437 |
 
-- **Top-up / waiting period** — Employers are not required to top up EI benefits, though many do contractually. The one-week EI waiting period is currently waived (suspended).
+Quebec residents use Quebec's separate maternity and parental benefits programme. [Service Canada maternity and parental benefits](https://www.canada.ca/en/services/benefits/ei/ei-maternity-parental.html)
+
+- **Top-up and waiting period** — Check the employment agreement for any employer top-up. Service Canada waives the usual one-week waiting period for new EI claims starting from 30 March 2025 to 9 October 2027. A claimant may serve it where a Supplemental Unemployment Benefit plan top-up makes that advantageous. [Service Canada temporary EI measures](https://www.canada.ca/en/services/benefits/ei/temporary-measures-for-major-economic-conditions.html)
 
 ### Group Benefits
 
@@ -295,17 +301,58 @@ Ontario requires the employer's name and address, the employee's name, and the p
 Annual salary $75,000. Paid biweekly (26 pay periods).
 
 1. Gross per period: $75,000 ÷ 26 = $2,884.62
-2. CPP: ($2,884.62 - $134.62 exemption) × 5.95% = $163.60
-3. CPP2: if annualised earnings exceed $74,600, additional 4% applies on the excess (calculated cumulatively)
-4. EI: $2,884.62 × 1.63% = $47.02
-5. Federal tax: per T4032 table for biweekly pay
-6. Ontario provincial tax: per T4032-ON table
-7. Employer CPP: $163.60 (matches employee)
-8. Employer EI: $47.02 × 1.4 = $65.83
+2. CPP: ($2,884.62 - $134.61 exemption) × 5.95% = $163.63, assuming enough remaining annual CPP contribution room.
+3. CPP2: apply 4.00% to the portion of the pay crossing the applicable year-to-date YMPE threshold, subject to remaining CPP2 room. The salary by itself does not establish the amount for this pay period.
+4. EI: $2,884.62 × 1.63% = $47.02, assuming enough remaining annual EI premium room.
+5. Federal tax: per T4032 table for biweekly pay.
+6. Ontario provincial tax: per T4032-ON table.
+7. Employer CPP: $163.63 (matches employee).
+8. Employer EI at the standard multiplier: $47.02 × 1.4 = $65.83.
+
+[CRA T4127, 122nd edition from 1 January 2026, chapter 6](https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-122nd-edition-effective-january-1-2026/t4127-jan-payroll-deductions-formulas-computer-programs.html). The [July 2026 edition](https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jul-123rd-edition-effective-july-1-2026/t4127-jul-payroll-deductions-formulas.html) refers readers to the January edition for sections it omits.
+
+```oa-check
+name: Ontario biweekly CPP and EI with remaining contribution room
+inputs:
+  gross: 2884.62
+  cpp_exemption: 134.61
+  cpp_rate: 0.0595
+  ei_rate: 0.0163
+  ei_employer_multiple: 1.4
+steps:
+  - employee_cpp: round((gross - cpp_exemption) * cpp_rate, 2)
+  - employee_ei: round(gross * ei_rate, 2)
+  - employer_ei: round(employee_ei * ei_employer_multiple, 2)
+expected:
+  employee_cpp: 163.63
+  employee_ei: 47.02
+  employer_ei: 65.83
+```
 
 ### Pattern 2 -- Employee Reaching CPP Maximum
 
-Employee paid $80,000 semi-monthly ($3,333.33/period). By period 11, cumulative pensionable earnings exceed YMPE $74,600. CPP deductions stop at $4,230.45. CPP2 continues until YAMPE $85,000 is reached (max $416.00). Payroll software tracks cumulative contributions and stops deducting when maximums are reached.
+An employee outside Quebec earns $80,000 of pensionable earnings from the same employer over 24 semi-monthly pays in 2026. Assume full-year CPP eligibility, with $3,333.33 in each of the first 23 pays and $3,333.41 in the last. Year-to-date pensionable earnings are $73,333.26 after pay 22 and $76,666.59 after pay 23. Pay 23 takes earnings above the $74,600 YMPE and reaches the $4,230.45 first-tier CPP maximum. CPP2 is $82.66 on pay 23 and $133.34 on pay 24, for $216.00 for the year. Earnings stay below the $85,000 YAMPE. [CRA T4127, 122nd edition from 1 January 2026, chapter 6 and appendix 1](https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-122nd-edition-effective-january-1-2026/t4127-jan-payroll-deductions-formulas-computer-programs.html)
+
+```oa-check
+name: Semi-monthly CPP2 crossing and year-end top-up
+inputs:
+  standard_pay: 3333.33
+  last_pay: 3333.41
+  ympe: 74600
+  cpp2_rate: 0.04
+steps:
+  - pay_22_earnings: standard_pay * 22
+  - pay_23_earnings: standard_pay * 23
+  - cpp2_pay_23: round((pay_23_earnings - ympe) * cpp2_rate, 2)
+  - cpp2_pay_24: round(last_pay * cpp2_rate, 2)
+  - cpp2_total: cpp2_pay_23 + cpp2_pay_24
+expected:
+  pay_22_earnings: 73333.26
+  pay_23_earnings: 76666.59
+  cpp2_pay_23: 82.66
+  cpp2_pay_24: 133.34
+  cpp2_total: 216
+```
 
 ### Pattern 3 -- Vacation Pay Payout
 

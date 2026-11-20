@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2070,
+  "guides": 2071,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -5734,9 +5734,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Edgar Lautsyus",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "canada-tax-optimization",
@@ -22221,6 +22221,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-11"
+  },
+  {
+   "slug": "tc-crs-reporting-and-penalties-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-crs-reporting-and-penalties-reference.md",
+   "name": "tc-crs-reporting-and-penalties-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": null,
+   "tax_year": "2025",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "tc-customs-processing-fee-breadbasket-reference",
