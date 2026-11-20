@@ -512,7 +512,9 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 | Partnership tax return | "Partnership return preparation is outside this intake's scope. A {practitioner_title} must verify the applicable partnership filing treatment." |
 | Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a {practitioner_title}." |
 
-If all checks pass, continue.
+Before classification or cash-impact comparisons, require a complete domain companion for the requested work and verify its applicable law, period and source conditions. A dated scope reference alone is insufficient. If either requirement is unresolved, return Needs Input or the guide's refusal without classification or calculated financial amounts.
+
+Complete this check before asking for or analysing records.
 
 ## Step 2: Document Upload
 
@@ -553,8 +555,6 @@ Ask ONLY about things the documents don't answer:
 - Director's remuneration / salary drawn? (if company structure)
 
 ## Step 5: Decisions
-
-Before classification or cash-impact comparisons, require a complete domain companion for the requested work and verify its applicable law, period and source conditions. A dated scope reference alone is insufficient. If either requirement is unresolved, return Needs Input or the guide's refusal without classification or calculated financial amounts.
 
 After classification, present any decisions the user or their {practitioner_title} needs to make:
 

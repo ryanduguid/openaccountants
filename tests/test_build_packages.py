@@ -178,6 +178,7 @@ class RebuildTests(SyntheticTreeCase):
             "only if these conditions are satisfied",
         ):
             self.assertIn(requirement, intake)
+        self.assertLess(intake.index("return Needs Input"), intake.index("## Step 2: Document Upload"))
         self.assertLess(intake.index("Before classification"), intake.index("After classification"))
         self.assertNotIn("Present the options with the cash impact of each.", intake)
 
