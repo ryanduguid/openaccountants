@@ -1,7 +1,7 @@
 ---
 name: canada-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Canada. Trigger on phrases like "set up a company in Canada", "Canadian incorporation", "Corporations Canada", "federal incorporation", "provincial incorporation", "CBCA", "Ontario corporation", "BC incorporation", "Inc. Canada", "Canadian company formation", "register a business Canada", or any question about starting a business entity in Canada. Covers federal vs provincial incorporation, entity types, registration process, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Canadian company formation.
-version: 1.1
+version: 1.2
 jurisdiction: CA
 tax_year: 2025
 last_updated: 2026-11-21
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Canada Formation
 
-## Canada Company Formation Skill v1.1
+## Canada Company Formation Skill v1.2
 
 > **Previous practitioner review.** Nathan Wiebe reviewed the earlier rates and thresholds on 2026-06-21, and Edgar Lautsyus signed off on the prior version, as recorded in the frontmatter and `PARTNERS.md`. The November 2026 director residency and registration corrections await renewed practitioner review. Items flagged for clarification remain marked in the text.
 
@@ -32,8 +32,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Company registrar (provincial) | Varies by province (e.g., Ontario: ServiceOntario; BC: BC Registry Services; QC: Registraire des entreprises) |
 | Key legislation | Canada Business Corporations Act (CBCA) -- federal; provincial equivalents (OBCA, BCBCA, etc.) |
 | Typical formation time | 1 day (federal online); 1--5 days (most provinces online) |
-| Corporate tax rate | 15% federal + provincial (combined ~26.5% general; ~12.2% small business on first $500K) |
-| Skill version | 1.1 |
+| Corporate income tax | General federal rate 15%, plus provincial or territorial tax. Eligible Canadian-controlled private corporations (CCPCs) can qualify for the 9% federal small business rate. Ontario’s own lower rate fell from 3.2% to 2.2% on 1 July 2026. Prorate a year spanning that date and test federal and provincial eligibility separately. [CRA corporation tax rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html) · [Ontario Taxation Act, 2007, s 31](https://www.ontario.ca/laws/statute/07t11) |
+| Skill version | 1.2 |
 
 ## Section 2 -- Entity Types Comparison
 

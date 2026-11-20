@@ -59,6 +59,7 @@ skills/international/bolivia/bo-corporate-income-tax.md
 skills/international/canada/canada-formation.md
 skills/international/canada/canada-gst-hst.md
 skills/international/canada/canada-payroll.md
+skills/international/canada/canada-tax-optimization.md
 skills/international/cayman-islands/cayman-tax.md
 skills/international/costa-rica/costa-rica-corporate-income-tax.md
 skills/international/denmark/dk-annual-reporting-reference.md

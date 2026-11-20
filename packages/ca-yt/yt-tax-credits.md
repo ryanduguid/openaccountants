@@ -4,8 +4,8 @@ description: Use this skill for Yukon provincial tax credits — Yukon First Nat
 jurisdiction: CA
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+last_updated: 2026-11-21
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # YT Tax Credits
 
-## Yukon — Provincial Tax Credits & Incentives — Skill v1.1
+## Yukon — Provincial Tax Credits & Incentives — Skill v1.2
 
 This skill covers the Yukon-specific personal and corporate tax credits administered alongside the federal T1/T2 return for the 2025 tax year. Yukon is the smallest sub-national jurisdiction in Canada by population but has one of the most distinctive tax credit regimes — notably the **Yukon First Nations Tax Credit (FNTC)**, which has no parallel in any other province or territory, and a **0% provincial small business CIT rate**, the most generous in Canada.
 
@@ -170,7 +170,7 @@ Yukon operates **the most generous CIT rate structure in Canada** for small CCPC
 
 ### Key implications
 
-- A Yukon CCPC with $500,000 of active business income pays only **$45,000 in combined CIT** ($500,000 × 9%), compared to e.g. $63,500 in Ontario (12.2% combined) or $50,000 in BC (10%).
+- In calendar 2025, a CCPC with CAD 500,000 of taxable income wholly eligible for both small business rates pays CAD 45,000 in combined corporate tax if all income is allocated to Yukon. The same comparison is CAD 61,000 in Ontario at 12.2% and CAD 55,000 in BC at 11%. Ontario’s 2.2% provincial lower rate applies from 1 July 2026 and is prorated for a year spanning that date. [Yukon historical rates](https://yukon.ca/sites/default/files/2026-02/fin-historical-tax-rates.pdf) · [Ontario corporate income tax](https://www.ontario.ca/document/corporations-tax/corporate-income-tax) · [BC Financial and Economic Review 2025, table 3.1](https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/government-finances/financial-economic-review/financial-economic-review-2025.pdf)
 - The 0% rate is conditioned on standard SBD requirements: CCPC status, active business income, associated-group $500k limit, passive-income grind under ITA s. 125(5.1) where applicable.
 
 ## 10. Form YT428 — personal credit form
@@ -199,7 +199,7 @@ Yukon harmonizes most personal non-refundable credit definitions with the federa
 
 **Step 1 — Federal tax.**
 - Federal general rate: 15%
-- Federal SBD: 19% rate reduction on first $500k → effective 9%
+- Federal tax after the abatement is 28% before the applicable 19% small business deduction, yielding 9% on fully eligible income. [Income Tax Act s 125](https://laws-lois.justice.gc.ca/eng/acts/i-3.3/section-125.html) · [CRA corporation tax rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html)
 - $400,000 × 9% = **$36,000 federal Part I tax**
 
 **Step 2 — Yukon tax.**

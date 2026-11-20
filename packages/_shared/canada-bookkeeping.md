@@ -1,10 +1,10 @@
 ---
 name: canada-bookkeeping
 description: Use this skill whenever asked about Canadian bookkeeping for sole proprietors, partnerships, or private corporations. Trigger on phrases like "chart of accounts", "GIFI codes", "bookkeeping", "profit and loss", "balance sheet", "ASPE", "ASNPO", "CRA categories", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "CCA", "capital cost allowance", "GST/HST", "input tax credits", "T2125", "T2", "general ledger", "HST return", or any question about day-to-day transaction recording, financial statement preparation, or account coding for a Canadian business.
-version: 1.0
+version: 1.1
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-21
 reviewed_by: Khushboo Talreja, CPA
 review_status: pending_review
 depends_on:
@@ -472,7 +472,7 @@ Most small Canadian businesses engage a CPA for a "compilation" (Notice to Reade
 
 ### Corporate Income Tax (T2 Return)
 
-- **T2 return mapping and considerations** — Financial statements mapped via GIFI codes to T2; Schedule 1: Net Income Reconciliation (add back: amortization, meals 50%, non-deductible items; deduct: CCA, eligible capital deductions); Schedule 8: CCA calculation (separate from book amortization); Schedule 125: Income Statement Information (GIFI); Schedule 100: Balance Sheet Information (GIFI); Active business income ≤ $500,000: small business deduction (combined federal/provincial ~12.2% varies by province); Investment income: taxed at ~50%, refundable upon dividend distribution (RDTOH)  _(unsure)_
+- **T2 return mapping and considerations** — Financial statements mapped via GIFI codes to T2; Schedule 1: Net Income Reconciliation (add back: amortization, meals 50%, non-deductible items; deduct: CCA, eligible capital deductions); Schedule 8: CCA calculation (separate from book amortization); Schedule 125: Income Statement Information (GIFI); Schedule 100: Balance Sheet Information (GIFI); Apply the federal small business deduction to eligible income only after checking the corporation’s available business limit. Determine provincial eligibility and rates separately for the tax year. [Income Tax Act s 125](https://laws-lois.justice.gc.ca/eng/acts/i-3.3/section-125.html) · [CRA corporation tax rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html). Investment income and any dividend refund require separate calculations.
 
 ### GST/HST Return
 
