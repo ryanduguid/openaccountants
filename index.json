@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2087,
+  "guides": 2089,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -11875,6 +11875,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "ie-tax-system-orientation",
+   "path": "skills/international/ireland/ie-tax-system-orientation.md",
+   "name": "ie-tax-system-orientation",
+   "jurisdiction": "IE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "ie-usc",
    "path": "skills/international/ireland/ie-usc.md",
    "name": "ie-usc",
@@ -19881,6 +19894,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "sg-tax-system-orientation",
+   "path": "skills/international/singapore/sg-tax-system-orientation.md",
+   "name": "sg-tax-system-orientation",
+   "jurisdiction": "SG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "sg-zero-cgt",

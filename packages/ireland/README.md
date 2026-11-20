@@ -17,8 +17,9 @@
 10. `ie-preliminary-tax.md`
 11. `ie-prsi-class-s.md`
 12. `ie-return-assembly.md`
-13. `ie-usc.md`
-14. `ireland-vat-return.md`
+13. `ie-tax-system-orientation.md`
+14. `ie-usc.md`
+15. `ireland-vat-return.md`
 
 ## Shared files this package needs
 

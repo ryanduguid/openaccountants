@@ -117,7 +117,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | HT | Haiti | 1 | 0 |
 | HU | Hungary | 4 | 0 |
 | ID | Indonesia | 13 | 8 |
-| IE | Ireland | 13 | 0 |
+| IE | Ireland | 14 | 0 |
 | IL | Israel | 10 | 0 |
 | IM | Isle of Man | 6 | 0 |
 | IN | India | 18 | 13 |
@@ -213,7 +213,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SC | Seychelles | 5 | 0 |
 | SD | Sudan | 6 | 0 |
 | SE | Sweden | 10 | 0 |
-| SG | Singapore | 9 | 0 |
+| SG | Singapore | 10 | 0 |
 | SH | Saint Helena | 1 | 0 |
 | SI | Slovenia | 8 | 0 |
 | SJ | Svalbard and Jan Mayen Islands | 1 | 0 |
