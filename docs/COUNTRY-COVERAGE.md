@@ -74,7 +74,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CZ | Czechia | 7 | 0 |
 | DE | Germany | 24 | 0 |
 | DJ | Djibouti | 6 | 0 |
-| DK | Denmark | 6 | 0 |
+| DK | Denmark | 7 | 0 |
 | DM | Dominica | 2 | 0 |
 | DO | Dominican Republic | 22 | 14 |
 | DZ | Algeria | 4 | 0 |
@@ -85,7 +85,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | ER | Eritrea | 6 | 0 |
 | ES | Spain | 23 | 0 |
 | ET | Ethiopia | 7 | 0 |
-| FI | Finland | 7 | 0 |
+| FI | Finland | 8 | 0 |
 | FJ | Fiji | 6 | 0 |
 | FK | Falkland Islands (Malvinas) | 2 | 0 |
 | FM | Micronesia (Federated States of) | 1 | 0 |

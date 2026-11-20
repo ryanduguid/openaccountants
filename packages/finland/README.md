@@ -11,8 +11,9 @@
 4. `fi-income-tax.md`
 5. `fi-prepayments.md`
 6. `fi-tax-overview.md`
-7. `fi-yel-social.md`
-8. `finland-vat-return.md`
+7. `fi-tax-system-orientation.md`
+8. `fi-yel-social.md`
+9. `finland-vat-return.md`
 
 ## Shared files this package needs
 
