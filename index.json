@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2091,
+  "guides": 2093,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -9483,6 +9483,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "fr-tax-system-orientation",
+   "path": "skills/international/france/fr-tax-system-orientation.md",
+   "name": "fr-tax-system-orientation",
+   "jurisdiction": "FR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "france-bookkeeping",
    "path": "skills/international/france/france-bookkeeping.md",
    "name": "france-bookkeeping",
@@ -10014,6 +10027,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "de-tax-system-orientation",
+   "path": "skills/international/germany/de-tax-system-orientation.md",
+   "name": "de-tax-system-orientation",
+   "jurisdiction": "DE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "de-trade-tax",
