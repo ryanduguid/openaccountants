@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2073,
+  "guides": 2079,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -21820,6 +21820,58 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "tk-customs-import-duty-reference",
+   "path": "skills/international/tokelau/tk-customs-import-duty-reference.md",
+   "name": "tk-customs-import-duty-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2016",
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tk-eez-fishing-licence-fees-reference",
+   "path": "skills/international/tokelau/tk-eez-fishing-licence-fees-reference.md",
+   "name": "tk-eez-fishing-licence-fees-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2023",
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tk-income-tax-and-withholding-reference",
+   "path": "skills/international/tokelau/tk-income-tax-and-withholding-reference.md",
+   "name": "tk-income-tax-and-withholding-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2016",
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tk-incorporated-association-formation-and-reporting-reference",
+   "path": "skills/international/tokelau/tk-incorporated-association-formation-and-reporting-reference.md",
+   "name": "tk-incorporated-association-formation-and-reporting-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2016",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "tk-law-source-and-monetary-reference",
    "path": "skills/international/tokelau/tk-law-source-and-monetary-reference.md",
    "name": "tk-law-source-and-monetary-reference",
@@ -21830,7 +21882,20 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2016",
-   "last_updated": "2026-11-04"
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tk-village-financial-reporting-reference",
+   "path": "skills/international/tokelau/tk-village-financial-reporting-reference.md",
+   "name": "tk-village-financial-reporting-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2016",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "to-company-formation",
@@ -22259,6 +22324,19 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2025",
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tc-customs-audit-and-import-licensing-reference",
+   "path": "skills/international/turks-and-caicos-islands/tc-customs-audit-and-import-licensing-reference.md",
+   "name": "tc-customs-audit-and-import-licensing-reference",
+   "jurisdiction": "TC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
    "last_updated": "2026-11-21"
   },
   {
