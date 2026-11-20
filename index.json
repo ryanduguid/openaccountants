@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2079,
+  "guides": 2082,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -21872,6 +21872,19 @@
    "last_updated": "2026-11-21"
   },
   {
+   "slug": "tk-land-and-succession-reference",
+   "path": "skills/international/tokelau/tk-land-and-succession-reference.md",
+   "name": "tk-land-and-succession-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2016",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "tk-law-source-and-monetary-reference",
    "path": "skills/international/tokelau/tk-law-source-and-monetary-reference.md",
    "name": "tk-law-source-and-monetary-reference",
@@ -21882,6 +21895,32 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2016",
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tk-national-accounts-and-audit-reference",
+   "path": "skills/international/tokelau/tk-national-accounts-and-audit-reference.md",
+   "name": "tk-national-accounts-and-audit-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2016",
+   "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "tk-public-pay-and-allowances-reference",
+   "path": "skills/international/tokelau/tk-public-pay-and-allowances-reference.md",
+   "name": "tk-public-pay-and-allowances-reference",
+   "jurisdiction": "TK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2022",
    "last_updated": "2026-11-21"
   },
   {

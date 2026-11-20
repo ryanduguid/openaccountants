@@ -10,8 +10,11 @@
 3. `tk-eez-fishing-licence-fees-reference.md`
 4. `tk-income-tax-and-withholding-reference.md`
 5. `tk-incorporated-association-formation-and-reporting-reference.md`
-6. `tk-law-source-and-monetary-reference.md`
-7. `tk-village-financial-reporting-reference.md`
+6. `tk-land-and-succession-reference.md`
+7. `tk-law-source-and-monetary-reference.md`
+8. `tk-national-accounts-and-audit-reference.md`
+9. `tk-public-pay-and-allowances-reference.md`
+10. `tk-village-financial-reporting-reference.md`
 
 ## Shared files this package needs
 
