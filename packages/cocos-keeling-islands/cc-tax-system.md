@@ -14,10 +14,10 @@ description: >
 jurisdiction: CC
 category: international
 tax_year: 2026
-tax_year_notes: "Selected scope checked on 21 October 2026; identify each income year, event date and operative source separately"
+tax_year_notes: "Territory scope checked on 21 October 2026 and ordinary income-tax setup on 21 November 2026; identify the income year and event date"
 tier: 2
-last_updated: 2026-10-23
-version: 0.4
+last_updated: 2026-11-21
+version: 0.5
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -41,16 +41,16 @@ No comprehensive-country acceptance or professional sign-off is claimed.
 
 ## Period, figures and source conditions
 
-This is a dated reference checked on **21 October 2026**, with v0.4 source
-metadata. Verify amendments, regulations, modifications and application
-provisions for the requested period before an engagement result. An unknown
-legal condition requires Needs Input and a hold on the affected work.
+The selected territory scope was checked on **21 October 2026**. The ordinary
+income-tax setup was updated on **21 November 2026**. Verify amendments,
+regulations, modifications and application provisions for the requested period.
+An unknown legal condition requires Needs Input and a hold on the affected work.
 
 | Parameter | Selected rule and source |
 |---|---|
 | Territory framework | Cocos (Keeling) Islands Act 1955, compilation 13 of 18 December 2020, shown as latest when checked; sections 8A and 8E. [TERRITORY] |
 | Income-tax residence and accounting period | Income Tax Assessment Act 1936, compilation 193 of 1 October 2026; sections 6(1) and 18. [IT36] |
-| Income-tax geography, core inclusion and financial year | Income Tax Assessment Act 1997, compilation 267, effective 27 August to 30 September 2026; selected sections 4-10, 6-5, 6-10, 6-15, 960-505 and 995-1, with the amendment caveat below. [IT97]; [DICTIONARY] |
+| Income-tax geography, core inclusion and financial year | Income Tax Assessment Act 1997, compilation 268 of 1 October 2026, selected sections 4-10, 6-5, 6-10, 6-15, 960-505 and 995-1. [IT97]; [DICTIONARY] |
 | Financial year | 12 months beginning 1 July; distinguish the income year, company assessment relationship and any permitted substituted accounting period. [IT97, section 4-10][IT97]; [DICTIONARY, section 995-1][DICTIONARY]; [IT36, section 18][IT36] |
 | Income-tax currency | Foreign-currency amounts generally require Australian-currency translation under section 960-50, subject to its rules, exclusions and the separate functional-currency regime; no exchange rate is supplied here. [DICTIONARY, Subdivisions 960-C and 960-D][DICTIONARY] |
 | GST territory | The indirect tax zone excludes external territories. The GST Act compilation 96 of 1 January 2026 was shown as latest when checked. [GST2, section 195-1][GST2] |
@@ -58,15 +58,9 @@ legal condition requires Needs Input and a hold on the affected work.
 | Excise geography | Excise Act 1901, compilation 69 of 27 August 2026; section 4 expressly excludes Christmas Island and Cocos from its Australia definition. [EXCISE] |
 | Cocos CGT cutoff | 30 June 1991, subject to all statutory conditions and a possible choice to disapply the transition. The current transitional Act compilation 104 is dated 1 October 2026. [TRANS, section 102-25][TRANS] |
 
-The Register's latest 1997 Act text still showed compilation 267 with a
-closed interval ending **30 September 2026**. It is not a complete current
-consolidation. The selected October-commencing amendment targets in Acts
-71 and 86 of 2026 were checked: they do not replace the core inclusion,
-financial-year, geography and residence definitions used here. Their other
-changes can affect an actual calculation, and this check does not establish
-all tax regimes or later periods. Reconcile operative law for any engagement;
-do not apply an old complete table or treat the editing date as currency
-certification. [IT97-RECORD]; [AMEND71]; [AMEND86]
+Compilation 268 supersedes the 27 August to 30 September 2026 compilation.
+Use the compilation and amendments in force for the actual transaction or
+assessment period. [IT97-RECORD]
 
 No tax rate, registration threshold, levy amount, general filing deadline
 or local fee amount is provided. A scope exclusion does not establish a
@@ -144,6 +138,14 @@ levy exemption. Establish tax residence, benefit entitlement and any required
 certificate, dependants, exempt periods and the current Levy Acts before
 calculating ordinary levy or surcharge. No levy or surcharge amount is
 computed here. [MEDICARE, sections 251S-251VA][MEDICARE]
+
+### Ordinary income-tax setup
+
+Section 960-505(1)(e) of the 1 October 2026 compilation of the Income Tax Assessment Act 1997 confirms the inclusion of the Cocos (Keeling) Islands in geographical Australia. Read the source and residence tests above with that definition. [ITAA 1997, s 960-505](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_10/document_10.html)
+
+A sole trader generally reports their business income personally. A company generally accounts for its own income. Identify the ordinary partnership's income and the partners' shares. Check the separate treatment of corporate limited partnerships. For a trust, determine the treatment of beneficiaries and the trustee under the applicable provisions from the trust facts. The Australian Taxation Office (ATO) administers ordinary Commonwealth income tax. Check the separate applied laws and the responsible office if a local or state-type charge is involved. [ITAA 1936, Divisions 5 and 6](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/pdf/2) · [ATO, business entities and residence](https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/working-out-your-residency)
+
+The Australian dollar (AUD) is the monetary unit. The Currency Act extends to the external territories. Translate foreign-currency amounts under the applicable income-tax rule and check whether a permitted functional-currency choice applies. The ordinary income year runs from 1 July to 30 June. Check a substituted accounting period approved by the Commissioner separately. [Currency Act 1965, ss 5 and 8](https://www.legislation.gov.au/C1965A00095/2016-10-21/2016-10-21/text/original/epub/OEBPS/document_1/document_1.html) · [ITAA 1997, ss 960-50, 960-60 and 995-1](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_10/document_10.html) · [ITAA 1936, ss 6 and 18](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html)
 
 ## GST: island activity and other connections
 
@@ -364,6 +366,9 @@ recordkeeping; and applicable industry and digital-asset rules. Shared
 Australian references require a verified territory and period bridge for
 each topic. An omitted topic or charge is not certified inapplicable.
 
+**Revision 0.5, 21 November 2026:** added ordinary income-tax setup and
+updated the references to the 1 October 2026 income-tax compilation.
+
 **Revision 0.4, 23 October 2026:** restored the previously reviewed GST
 delivery examples and SG companion routing after later integration removed
 them. The original GST clarification was v0.1.1 on 21 October 2026.
@@ -377,11 +382,9 @@ filing-ready work product.
 [TERRITORY]: https://www.legislation.gov.au/C1955A00034/2020-12-18/2020-12-18/text/original/epub/OEBPS/document_1/document_1.html
 [GOVERNANCE]: https://www.infrastructure.gov.au/territories-regions-cities/territories/indian-ocean-territories/cocos-keeling-islands/governance-administration
 [IT36]: https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html
-[IT97]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_1/document_1.html
-[DICTIONARY]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html
+[IT97]: https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html
+[DICTIONARY]: https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_10/document_10.html
 [IT97-RECORD]: https://www.legislation.gov.au/C2004A05138/latest/details
-[AMEND71]: https://www.legislation.gov.au/C2026A00071/asmade/2026-08-26/text/original/epub/OEBPS/document_1/document_1.html
-[AMEND86]: https://www.legislation.gov.au/C2026A00086/asmade/2026-09-15/text/original/epub/OEBPS/document_1/document_1.html
 [MEDICARE]: https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_4/document_4.html
 [GST1]: https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_1/document_1.html
 [GST2]: https://www.legislation.gov.au/C2004A00446/2026-01-01/2026-01-01/text/original/epub/OEBPS/document_2/document_2.html
