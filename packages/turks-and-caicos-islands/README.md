@@ -12,6 +12,7 @@
 5. `tc-sector-taxes-reference.md`
 6. `tc-social-contributions-reference.md`
 7. `tc-tax-system-source-reference.md`
+8. `tc-vehicle-hire-stamp-duty-reference.md`
 
 ## Shared files this package needs
 

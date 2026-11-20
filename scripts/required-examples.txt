@@ -103,4 +103,5 @@ skills/international/turks-and-caicos-islands/tc-formation-and-business-licensin
 skills/international/turks-and-caicos-islands/tc-hotel-accommodation-tax-reference.md
 skills/international/turks-and-caicos-islands/tc-sector-taxes-reference.md
 skills/international/turks-and-caicos-islands/tc-social-contributions-reference.md
+skills/international/turks-and-caicos-islands/tc-vehicle-hire-stamp-duty-reference.md
 skills/international/wallis-and-futuna/wf-patente-registration-reference.md
