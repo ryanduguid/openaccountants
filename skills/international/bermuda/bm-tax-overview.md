@@ -1,12 +1,12 @@
 ---
 name: bm-tax-overview
-description: "Bermuda tax system orientation with source checks recorded on 15 November 2026: distinguish domestic personal income tax, conditional corporate income tax and separate payroll, customs, property and sector charges. Screen the multinational group, fiscal year, consolidated revenue history, entity status and relevant elections before routing a corporate question. Identify the competent authority and public filing route for each tax. Use the currency, treaty, dated customs, land tax, stamp-duty and selected foreign-currency purchase-tax qualifications below. VAT, separate capital gains and withholding absence claims remain evidence gaps. This draft with primary sources does not establish a liability, complete other tax topics or provide practitioner assurance."
+description: "Bermuda tax system orientation with source checks recorded on 15 November 2026: distinguish domestic personal income tax, conditional corporate income tax and separate payroll, customs, property and sector charges. Screen the multinational group, fiscal year, consolidated revenue history, entity status and relevant elections before routing a corporate question. Identify the competent authority and public filing route for each tax. Use the currency, treaty, dated customs, land tax, stamp-duty and selected foreign-currency purchase-tax qualifications below. VAT, separate capital gains and withholding absence claims remain evidence gaps. This draft with primary sources does not establish a liability, complete other tax topics or provide practitioner assurance. Selected original Bahrain-agreement controls retain unresolved current operation and entitlement."
 jurisdiction: BM
 category: international
 tax_year: 2026
-tax_year_notes: "System reference recorded 15 November 2026, using the stated source periods; CIT uses the statutory fiscal year, payroll 2026-27 runs April to March; selected 2026 land tax uses January/July periods and its stated source dates; selected conveyance stamp-duty schedules apply from 1 April 2023; the selected FCPT rate applies from 1 April 2019 and residence sources include the 3 November 2025 changes, under the stated capture and later-law limits."
+tax_year_notes: "System reference recorded 15 November 2026, using the stated source periods; CIT uses the statutory fiscal year, payroll 2026-27 runs April to March; selected 2026 land tax uses January/July periods and its stated source dates; selected conveyance stamp-duty schedules apply from 1 April 2023; the selected FCPT rate applies from 1 April 2019 and residence sources include the 3 November 2025 changes, under the stated capture and later-law limits. Bahrain controls concern the original 2010 agreement; reported entry is 29 January 2012, with current instrument/application held."
 last_updated: 2026-11-15
-version: 2.2
+version: 2.3
 review_status: pending_review
 tier: 2
 depends_on:
@@ -88,6 +88,19 @@ The [U.S.A.–Bermuda Tax Convention Act 1986](https://www.cita.bm//assets/image
 
 The [Government CIT page, updated 10 November 2026](https://www.gov.bm/CIT), says CITA became competent authority for CRS and CbCR on 13 March 2026 and the prior content migrated on 22 June 2026. Information exchange, economic substance and treaty relief are different questions; use the current CITA material for the applicable reporting obligation.
 
+### Original Bahrain agreement controls
+
+The [official NBR English publication of the original 2010 agreement](https://www.nbr.gov.bh/treaties/bermuda_dtts_en) supports [selected original-text controls](bermuda-tax.md#56-original-bahrain-agreement-selected-conditional-controls), with the instrument, tax and application period still to be established for a current case. The NBR network capture cached 14 November 2026 records original signature on 22 April 2010 and entry on 29 January 2012, and a separate 17 April 2026 protocol signature with no entry date. The table's dash does not prove non-operation. Obtain the protocol, notifications/application, subsequent instruments, relevant MLI matching, termination and current implementation evidence.
+
+Original Art 2 covers income and capital taxes and names the Bahrain oil tax and Bermuda taxes except payroll tax, with later-tax and notification provisions. It does not by itself settle today's CIT coverage. Read the original Art 4 introductory national/ordinary-residence wording together with its country limbs, definitions and tie-breakers. Bahrain's 183-day limb also requires the stated nationality condition; it is not a general Bermuda residence test. Treaty, CIT and FCPT residence require separate analysis. PE screening includes fixed-place, more-than-12-month construction, hydrocarbon, agency and exclusion rules; exactly 12 months failing one limb does not settle the rest. The original's Art 5(6) paragraph-reference discrepancy remains recorded.
+
+Original Art 10 sets a conditional 0% gross-dividend source ceiling for both the direct-at-least-25% qualifying-company branch and other cases. Art 11 sets a conditional 0% gross-debt-claim-income ceiling. Beneficial ownership, treaty residence, payment character, source, PE connection, special relationships, application machinery and any separate specified-government/body exemption require their own facts. These ceilings do not exempt the payer's profits, establish domestic withholding absence or settle a current payment. Late-payment penalty charges are excluded from Art 11's income definition. **Art 12 gives no percentage ceiling and does not establish zero royalties.**
+
+Original Art 22 distinguishes qualified exemption, the actual-tax-paid credit capped at attributable resident tax, progression and paragraph 4's exemption switch-off. Do not infer residence exemption or a deemed credit from a zero source ceiling. The original MAP deadline is 3 years from first notification of the offending action, using the residence or Art 23(1) nationality route. Its 2-year arbitration clock runs from presentation to the **other** competent authority and retains request, unresolved-issue, court/tribunal, acceptance and mutual-implementation conditions. Neither clock establishes a domestic deadline or collection stay. Complete Arts 27–28 and actual diplomatic facts are needed for their awkward combined commencement/cessation period wording.
+
+The official publication's final clause identifies the authentic languages and English precedence on divergence; physical execution/handwritten signatures are not independently authenticated. The guidance DOCX has material scope, definition, numbering, debt-claim and MAP errors. The Arabic ratification law has no qualified substantive review in this reconciliation. See the [source comparison and review limits](https://github.com/ryanduguid/openaccountants/blob/main/docs/verification-log/2026-11-15-bermuda-bahrain-original-treaty-controls.md). These selected controls retain current-law, taxpayer-fact, domestic-withholding, other-payment/treaty, practitioner and consuming-model execution gaps.
+
+
 ## Manual screening controls
 
 These are hypothetical desk checks, not executed taxpayer or portal tests.
@@ -120,6 +133,12 @@ These are hypothetical desk checks, not executed taxpayer or portal tests.
 - **FCPT control:** An exempted-company label, 79.99% or exactly 80% ownership, or a permit-company question: apply the separate statutory residence routes/directions. Preserve the 80% boundary and hold the malformed permit-company default; do not infer zero FCPT or CIT residence.
 - **FCPT control:** A listed body acts for a customer/affiliate, an insurance/pension category lacks actual per-case permission or a general solar project claims the specific exemption: no category-only exemption; establish remaining charge/exemption facts.
 - **FCPT control:** A quarter-end webpage replaces an absent bank notice, a purchaser is asked to file the bank return or a fractional-cent product is rounded under the Stamp Duties Act: reject those substitutions. Keep actual return authority, current instructions and precision open, preserve s 4(4) and do not turn any FCPT outcome into zero withholding.
+
+- **Original Bahrain control:** The original entry date, a 2026 protocol signature or a cached blank date does not settle current application. Obtain the operative instruments, notification/application, relevant MLI and termination evidence.
+- **Original Bahrain control:** A 25%/24.99% holding, zero source ceiling or public-sector label does not establish residence, beneficial ownership, PE treatment or entitlement, and does not exempt the payer company's profits. Keep the original Art 10 branches and specified-recipient conditions.
+- **Original Bahrain control:** A royalty described as interest, or a late-payment penalty described as a debt return, requires characterisation. Art 12 supplies no zero royalty ceiling and Art 11 excludes late-payment penalty charges.
+- **Original Bahrain control:** A source ceiling of zero does not create resident exemption or a deemed foreign credit. Apply the relevant Art 22 route, actual tax paid, attributable-tax cap, progression and paragraph 4 switch-off, resolving disputed levies/refunds separately.
+- **Original Bahrain control:** First notification, presentation to each competent authority and a court decision are different facts. Preserve the Art 23(1) nationality route, 3-year MAP clock and qualified 2-year arbitration clock; complete diplomatic facts and Arts 27–28 are needed for an operative-period result.
 
 ## Required handoff and self-check
 
