@@ -14,10 +14,10 @@ description: >
 jurisdiction: NF
 category: international
 tax_year: 2026
-tax_year_notes: "Scope checked on 20 October 2026; Australian financial years and event-specific transition dates must be identified separately"
+tax_year_notes: "Territory scope checked on 20 October 2026 and ordinary income-tax setup on 21 November 2026; identify the income year and event date"
 tier: 2
-last_updated: 2026-10-20
-version: 0.21
+last_updated: 2026-11-21
+version: 0.22
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -67,6 +67,14 @@ screening. This scope guide
 supplies no income-tax, company-tax or Medicare rate table.
 An administering state's general table must be checked for the actual
 Norfolk facts and period before use.
+
+### Ordinary income-tax setup
+
+Section 960-505(1)(a) of the Income Tax Assessment Act 1997 includes Norfolk Island in geographical Australia for income tax. Determine Australian or foreign residence and the source of each amount under the Australian legislation. Apply the income tax and GST territory rules separately. [ITAA 1997, s 960-505](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_10/document_10.html)
+
+A sole trader generally reports their business income personally. A company generally accounts for its own income. Identify the ordinary partnership's income and the partners' shares. Check the separate treatment of corporate limited partnerships. For a trust, determine the treatment of beneficiaries and the trustee under the applicable provisions from the trust facts. The Australian Taxation Office (ATO) administers ordinary Commonwealth income tax. Check the separate applied laws and the responsible office if a local or state-type charge is involved. [ITAA 1936, Divisions 5 and 6](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/pdf/2) · [ATO, business entities and residence](https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/working-out-your-residency)
+
+The Australian dollar (AUD) is the monetary unit. The Currency Act extends to the external territories. Translate foreign-currency amounts under the applicable income-tax rule and check whether a permitted functional-currency choice applies. The ordinary income year runs from 1 July to 30 June. Check a substituted accounting period approved by the Commissioner separately. [Currency Act 1965, ss 5 and 8](https://www.legislation.gov.au/C1965A00095/2016-10-21/2016-10-21/text/original/epub/OEBPS/document_1/document_1.html) · [ITAA 1997, ss 960-50, 960-60 and 995-1](https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_10/document_10.html) · [ITAA 1936, ss 6 and 18](https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html)
 
 ## Business registration and employee withholding
 
