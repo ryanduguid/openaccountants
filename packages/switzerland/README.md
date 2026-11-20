@@ -13,8 +13,9 @@
 6. `ch-federal-income-tax.md`
 7. `ch-lump-sum.md`
 8. `ch-tax-overview.md`
-9. `switzerland-crypto-tax.md`
-10. `switzerland-vat.md`
+9. `ch-tax-system-orientation.md`
+10. `switzerland-crypto-tax.md`
+11. `switzerland-vat.md`
 
 ## Shared files this package needs
 
