@@ -4,7 +4,7 @@ description: >
   Dated Grenada tax-system reference for routing historical questions about source, residence, taxpayer types, currency, periods and administration. Covers selected provisions of Cap 149, named later amendments and the 1 May 2016 administration transition. Trigger on Grenada tax residence, source, taxable person, assessment year, XCD or the responsible authority.
 jurisdiction: GD
 category: international
-tax_year: 2010
+tax_year: 2016
 tax_year_notes: "Selected Cap 149 provisions in the 2010 revision and named changes through 2016, with separately dated currency context."
 tier: 2
 last_updated: 2026-11-20
