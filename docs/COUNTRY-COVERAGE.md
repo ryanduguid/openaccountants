@@ -235,7 +235,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TG | Togo | 6 | 0 |
 | TH | Thailand | 7 | 0 |
 | TJ | Tajikistan | 6 | 0 |
-| TK | Tokelau | 6 | 0 |
+| TK | Tokelau | 9 | 0 |
 | TL | Timor-Leste | 6 | 0 |
 | TM | Turkmenistan | 6 | 0 |
 | TN | Tunisia | 7 | 0 |

@@ -106,6 +106,7 @@ skills/international/sweden/sweden-payroll.md
 skills/international/tokelau/tk-customs-import-duty-reference.md
 skills/international/tokelau/tk-eez-fishing-licence-fees-reference.md
 skills/international/tokelau/tk-law-source-and-monetary-reference.md
+skills/international/tokelau/tk-public-pay-and-allowances-reference.md
 skills/international/turks-and-caicos-islands/tc-crs-reporting-and-penalties-reference.md
 skills/international/turks-and-caicos-islands/tc-customs-audit-and-import-licensing-reference.md
 skills/international/turks-and-caicos-islands/tc-customs-processing-fee-breadbasket-reference.md
