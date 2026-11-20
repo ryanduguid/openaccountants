@@ -1,14 +1,14 @@
 ---
 name: tc-crs-reporting-and-penalties-reference
 description: >
-  Dated Turks and Caicos Islands CRS compliance reference for reportable accounts, record retention and the administrative penalty notice, payment and appeal introduced in August 2025.
+  Turks and Caicos Islands CRS reference for reportable accounts, the public filing routes, record retention and the administrative penalty notice, payment and appeal introduced in August 2025.
 jurisdiction: TC
 category: international
 tax_year: 2025
-tax_year_notes: "Selected 2016 and 2017 reporting rules and the penalty provisions that took effect on 18 August 2025."
+tax_year_notes: "Selected reporting rules including the 22 July 2024 amendment, penalty provisions from 18 August 2025 and public filing routes checked in November 2026."
 tier: 2
 last_updated: 2026-11-21
-version: 0.1
+version: 0.2
 depends_on:
   - workflow-base
 ---
@@ -22,6 +22,14 @@ Load `workflow-base`. Identify the relevant reporting agreement and calendar yea
 - The original International Tax Compliance Regulations took effect on 1 April 2016. Regulation 10 requires an annual return, subject to its exceptions, covering reportable accounts maintained at any time in the relevant year. Regulation 11 requires the electronic form and validation specified by the Competent Authority. Regulation 10(1A), added in 2017, requires account holders and applicable controlling persons to provide accurate information to the institution for the return. [Legal Notice 21 of 2016, regs 1, 10–11](https://www.gov.tc/agc/component/edocman/21-of-2016-international-tax-compliance-regulations/fdocument?Itemid=9999) · [Legal Notice 25 of 2017, reg 5](https://publishing.gov.tc/agc/component/edocman/25-of-2017-international-tax-compliance-amendment-no-2-regulations-2017/fdocument?Itemid=9999)
 - For the selected CRS rule, the 5-year record period starts after the end of the reporting window. The records include steps taken and evidence relied upon for due diligence. Confirm the actual reporting deadline and retention end before disposing of records. [Legal Notice 21 of 2016, reg 16](https://www.gov.tc/agc/component/edocman/21-of-2016-international-tax-compliance-regulations/fdocument?Itemid=9999) · [Legal Notice 25 of 2017, reg 6](https://publishing.gov.tc/agc/component/edocman/25-of-2017-international-tax-compliance-amendment-no-2-regulations-2017/fdocument?Itemid=9999)
 - From 18 August 2025, Legal Notice 28 deleted paragraph 1 of the Schedule. The explanatory note identifies removal of the dormant-account exclusion. Establish whether other exclusions or a separate reporting agreement apply to the account. [Legal Notice 28 of 2025, reg 8 and explanatory note](https://publishing.gov.tc/agc/component/edocman/28-of-2025-international-tax-compliance-amendment-regulations-2025/fdocument?Itemid=9999)
+
+## Find the filing channels
+
+For an annual CRS return required under regulation 10, the ordinary deadline in regulation 10(4)(c) is 31 March of the following calendar year. The first reporting year had a specific extension to 31 May 2017. Confirm any alteration for the year and agreement in question with the FTIE. [Legal Notice 21 of 2016, reg 10(4)(c)](https://www.gov.tc/agc/component/edocman/21-of-2016-international-tax-compliance-regulations/fdocument?Itemid=9999) · [Legal Notice 14 of 2017, reg 2](https://gov.tc/agc/component/edocman/14-of-2017-international-tax-compliance-amendment-regulations-2017/fdocument?Itemid=9999) · [FTIE CRS guidance, sections 2.3–2.4](https://gov.tc/ftie/images/docs/guidance/Guidance%20Notes%20on%20the%20Common%20Reporting%20Standards%202025.pdf)
+
+The Government’s public Exchange of Information page links to the login for CRS and FATCA reporting and separately to the CRS Compliance Form. The FTIE’s public form notice directs registered financial institutions to complete the form at the end of each reporting period. Confirm the authorised user and electronic validation with the FTIE. Use the reporting portal for the annual return as directed and keep confirmation of acceptance. [Ministry of Finance portal directory](https://gov.tc/mof/portals/) · [Exchange of Information entry page](https://eoi.gov.tc/) · [CRS Compliance Form](https://tcicrsapplication.gov.tc/) · [CRS and FATCA reporting portal](https://eoi.gov.tc/crsfatca/)
+
+From 22 July 2024, the amended regulation 10(1) and (6) also require institutions in those branches to provide information reasonably required by the Competent Authority for the implementation of, and compliance with, CRS reporting and due diligence. Keep this evidence and any authority requests with the reporting records. [Legal Notice 26 of 2024, regs 1 and 3](https://gov.tc/agc/component/edocman/26-of-2024-international-tax-compliance-amendment-regulations-2024/fdocument?Itemid=9999)
 
 ## Identify the penalty branch
 
@@ -74,7 +82,7 @@ expected:
 
 ## Remaining coverage
 
-Confirm the governing agreement, current reportable jurisdictions, due diligence, filing route, deadline, exceptions and any later statutory changes. Check potential criminal liability and obtain the actual notice before giving advice on a dispute. Apply withholding and any foreign tax separately. Keep account data, certificates and filings in authorised systems.
+Confirm the governing agreement, current reportable jurisdictions, due diligence, accepted filing formats, reporting deadlines, exceptions and any later statutory changes. Check potential criminal liability and obtain the actual notice before giving advice on a dispute. Apply withholding and any foreign tax separately. Keep account data, certificates and filings in authorised systems.
 
 <!-- openaccountants-cta-block -->
 
