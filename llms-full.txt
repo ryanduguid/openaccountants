@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,087 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,089 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2087 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2089 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -1038,6 +1038,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ie-preliminary-tax | IE | tier 2 | reviewed_by -
 - ie-prsi-class-s | IE | tier 2 | reviewed_by -
 - ie-return-assembly | IE | tier 2 | reviewed_by -
+- ie-tax-system-orientation | IE | tier 2 | reviewed_by -
 - ie-usc | IE | tier 2 | reviewed_by -
 - ireland-vat-return | IE | tier 2 | reviewed_by -
 - im-company-formation | IM | tier 2 | reviewed_by -
@@ -1654,6 +1655,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - sg-cpf-medisave | SG | tier 2 | reviewed_by -
 - sg-income-tax | SG | tier 2 | reviewed_by -
 - sg-tax-residency | SG | tier 2 | reviewed_by -
+- sg-tax-system-orientation | SG | tier 2 | reviewed_by -
 - sg-zero-cgt | SG | tier 2 | reviewed_by -
 - singapore-crypto-tax | SG | tier 2 | reviewed_by -
 - singapore-formation | SG | tier 2 | reviewed_by -
@@ -2287,7 +2289,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,087 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,089 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2305,7 +2307,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,923 Tier 2 guides among the 2,087 indexed guides. These inventory
+There are 1,925 Tier 2 guides among the 2,089 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
