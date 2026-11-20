@@ -1,12 +1,12 @@
 ---
 name: canada-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Canadian taxpayers — individuals, sole proprietors, and small business owners (CCPCs). Trigger on phrases like "reduce my tax Canada", "tax planning", "RRSP vs TFSA", "salary vs dividends", "income splitting", "TOSI", "small business deduction", "LCGE", "capital gains inclusion", "CRA", or any question about structuring affairs to legally minimize Canadian tax. Covers entity selection, registered account optimization, deduction strategies, loss utilization, timing, GST/HST planning, CPP optimization, and red lines. ALWAYS read this skill before giving Canadian tax optimization advice.
-version: 1.1
+version: 1.2
 jurisdiction: CA
 tax_year: 2026
-last_updated: 2026-11-10
+last_updated: 2026-11-21
 reviewed_by: Edgar Lautsyus
-review_status: current
+review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
 category: tax-optimization
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Canada Tax Optimization
 
-## Canada — Tax Optimization Skill v1.1
+## Canada — Tax Optimization Skill v1.2
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Earlier practitioner review.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification remain marked in the text. The revised corporate tax and dividend example awaits practitioner review.
 
 ## Section 1 — Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 30 April (employees); 15 June (self-employed, but tax owing still due 30 April) |
 | Individual top federal rate | 33% (on income >$258,482) |
 | Combined top rate (varies by province) | ~50–54% |
-| CCPC small business rate (federal) | 9% on first $500,000 active business income |
+| CCPC small business rate (federal) | 9% on qualifying income within the available business limit, normally up to $500,000. [Income Tax Act s 125](https://laws-lois.justice.gc.ca/eng/acts/i-3.3/section-125.html) · [CRA corporation tax rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html) |
 | General corporate rate (federal) | 15% |
 | Capital gains inclusion rate | 50% (66.7% increase was cancelled) |
 | GST rate | 5% (HST varies by province: 13%–15%) |
@@ -59,7 +59,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 ### Sole Proprietor vs CCPC
 
 - **Sole proprietor** — All business income taxed at personal marginal rates. Simple, low compliance cost. Business losses offset personal income. No payroll remittances (except CPP).
-- **Canadian-Controlled Private Corporation (CCPC)** — First $500,000 of active business income taxed at 9% federal (+ provincial, typically 2–4% = ~11–13% combined). Profits retained at corporate rate; extracted via salary or dividends. Integration principle: in theory, combined corporate + personal tax approximates personal tax alone. In practice, small gaps create planning opportunities.
+- **Canadian-Controlled Private Corporation (CCPC)** — The 9% federal small business rate applies to qualifying income within the available limit. Provincial and territorial rates and limits depend on jurisdiction and period. [CRA corporation tax rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html) Profits retained at corporate rate; extracted via salary or dividends. Integration principle: in theory, combined corporate + personal tax approximates personal tax alone. In practice, small gaps create planning opportunities.
 - **When to incorporate** — Generally beneficial when annual business profit consistently exceeds ~$70,000–$80,000 and the owner can leave profits in the corporation. Below that, sole proprietorship is simpler and equally tax-efficient.
 
 ### Salary vs Dividends (CCPC Owner-Manager)
@@ -75,7 +75,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 | Personal tax treatment | Marginal rates | Gross-up + dividend tax credit |
 | Payroll admin | Required (T4, remittances) | Minimal (T5) |
 
-- **Optimal mix** — Pay enough salary to maximise RRSP room ($33,810 limit for 2026 → requires ~$187,833 salary). If RRSP room is not needed, eligible dividends may produce slightly lower combined tax. Model annually — provincial rates create different break-even points.
+- **Salary and dividends** — Model the corporate and personal results for the owner's facts and periods. Check employer payroll costs, the year in which salary creates RRSP earned income, provincial rates and the corporation's general rate income pool (GRIP) before assuming an eligible dividend. [CRA general rate income pool](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/eligible-dividends/general-rate-income-pool-grip.html)
 
 ### TOSI (Tax on Split Income) — s 120.4
 
@@ -265,15 +265,55 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 
 ## Section 12 — Cash Impact Examples
 
-### Example 1 — CCPC Salary vs Dividend Mix (Ontario, 2026)
+### Example 1 — Ontario CCPC across 1 July 2026
 
-**Scenario:** CCPC earns $200,000 active business income. Owner is sole shareholder.
+A fictional CCPC is a CCPC throughout the calendar 2026 taxation year. It has CAD 200,000 of taxable active business income allocated wholly to Ontario, the full federal and provincial business limits and no other income, credits or adjustments. Its federal Part I tax on this income is CAD 18,000 at 9%. Ontario’s lower rate is 3.2% for the first 181 days and 2.2% for the remaining 184 days. Apply the weighted rate to the eligible income for the entire year. The estimated Ontario tax is CAD 5,391.78 and combined tax is CAD 23,391.78 before form rounding. [CRA corporation tax rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html) · [Ontario Taxation Act, 2007, ss 29 and 31](https://www.ontario.ca/laws/statute/07t11) · [CRA Ontario small business deduction](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/provincial-territorial-corporation-tax/ontario-provincial-corporation-tax/ontario-small-business-deduction.html)
 
-**All salary ($200,000):** Corporate tax $0 (fully deductible). Personal tax ~$52,700 (Ontario combined). CPP: ~$8,300. RRSP room created: $33,810. **Net after tax: ~$138,000.**
+On these assumptions, after-tax business income is CAD 176,608.22 before any shareholder tax. Assume the company has no GRIP from earlier periods or other sources. Its small-business-rate income in this case does not support an eligible dividend. Check the company’s GRIP and any proposed designation before modelling shareholder tax. A salary comparison also needs payroll costs and the owner’s personal tax inputs. [CRA general rate income pool](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/eligible-dividends/general-rate-income-pool-grip.html)
 
-**All eligible dividends:** Corporate tax at ~12.2% = $24,400. Remaining $175,600 as dividends. Personal tax on grossed-up dividends ~$25,200. No CPP. No RRSP room. **Net after tax: ~$150,400. Saving: ~$12,400** but no CPP accrual or RRSP room.
+```oa-check
+name: Ontario CCPC small business rate changes during 2026
+inputs:
+  taxable_income: 200000
+  federal_rate: 0.09
+  first_days: 181
+  second_days: 184
+  first_ontario_rate: 0.032
+  second_ontario_rate: 0.022
+steps:
+  - days_in_year: first_days + second_days
+  - ontario_rate: (first_days * first_ontario_rate + second_days * second_ontario_rate) / days_in_year
+  - federal_tax: taxable_income * federal_rate
+  - ontario_tax: round(taxable_income * ontario_rate, 2)
+  - combined_tax: federal_tax + ontario_tax
+  - remaining: taxable_income - combined_tax
+expected:
+  days_in_year: 365
+  federal_tax: 18000
+  ontario_tax: 5391.78
+  combined_tax: 23391.78
+  remaining: 176608.22
+```
 
-**Optimal blend:** $100,000 salary + remainder as dividend. Balance of RRSP room, CPP accrual, and tax efficiency.
+#### Compare the same facts in calendar 2025
+
+Apply the same eligibility, allocation and income assumptions to a separate calendar 2025 taxation year. The lower Ontario rate for that year is 3.2% throughout. On CAD 200,000 of fully eligible income, federal tax is CAD 18,000 and Ontario tax is CAD 6,400. The combined amount is CAD 24,400 before form rounding. [CRA corporation tax rates](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/corporation-tax-rates.html) · [Ontario Taxation Act, 2007, ss 29 and 31](https://www.ontario.ca/laws/statute/07t11)
+
+```oa-check
+name: Ontario CCPC calendar 2025 fully eligible income
+inputs:
+  taxable_income: 200000
+  federal_rate: 0.09
+  ontario_rate: 0.032
+steps:
+  - federal_tax: taxable_income * federal_rate
+  - ontario_tax: taxable_income * ontario_rate
+  - combined_tax: federal_tax + ontario_tax
+expected:
+  federal_tax: 18000
+  ontario_tax: 6400
+  combined_tax: 24400
+```
 
 ### Example 2 — TFSA vs RRSP
 
