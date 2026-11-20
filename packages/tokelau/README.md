@@ -6,12 +6,18 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `tk-law-source-and-monetary-reference.md`
+2. `tk-customs-import-duty-reference.md`
+3. `tk-eez-fishing-licence-fees-reference.md`
+4. `tk-income-tax-and-withholding-reference.md`
+5. `tk-incorporated-association-formation-and-reporting-reference.md`
+6. `tk-law-source-and-monetary-reference.md`
+7. `tk-village-financial-reporting-reference.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 

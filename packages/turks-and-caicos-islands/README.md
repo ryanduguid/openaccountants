@@ -7,17 +7,18 @@
 
 1. `intake.md`
 2. `tc-crs-reporting-and-penalties-reference.md`
-3. `tc-customs-processing-fee-breadbasket-reference.md`
-4. `tc-destination-management-fee-reference.md`
-5. `tc-economic-substance-reporting-reference.md`
-6. `tc-formation-and-business-licensing-reference.md`
-7. `tc-hotel-accommodation-tax-reference.md`
-8. `tc-minimum-pay-and-overtime-reference.md`
-9. `tc-property-conveyance-stamp-duty-reference.md`
-10. `tc-sector-taxes-reference.md`
-11. `tc-social-contributions-reference.md`
-12. `tc-tax-system-source-reference.md`
-13. `tc-vehicle-hire-stamp-duty-reference.md`
+3. `tc-customs-audit-and-import-licensing-reference.md`
+4. `tc-customs-processing-fee-breadbasket-reference.md`
+5. `tc-destination-management-fee-reference.md`
+6. `tc-economic-substance-reporting-reference.md`
+7. `tc-formation-and-business-licensing-reference.md`
+8. `tc-hotel-accommodation-tax-reference.md`
+9. `tc-minimum-pay-and-overtime-reference.md`
+10. `tc-property-conveyance-stamp-duty-reference.md`
+11. `tc-sector-taxes-reference.md`
+12. `tc-social-contributions-reference.md`
+13. `tc-tax-system-source-reference.md`
+14. `tc-vehicle-hire-stamp-duty-reference.md`
 
 ## Shared files this package needs
 

@@ -5573,10 +5573,16 @@
    "name": "Tokelau",
    "files": [
     "intake.md",
+    "tk-customs-import-duty-reference.md",
+    "tk-eez-fishing-licence-fees-reference.md",
+    "tk-income-tax-and-withholding-reference.md",
+    "tk-incorporated-association-formation-and-reporting-reference.md",
     "tk-law-source-and-monetary-reference.md",
+    "tk-village-financial-reporting-reference.md",
     "README.md"
    ],
    "shared": [
+    "company-formation-workflow-base.md",
     "foundation.md",
     "workflow-base.md"
    ]
@@ -5691,6 +5697,7 @@
    "files": [
     "intake.md",
     "tc-crs-reporting-and-penalties-reference.md",
+    "tc-customs-audit-and-import-licensing-reference.md",
     "tc-customs-processing-fee-breadbasket-reference.md",
     "tc-destination-management-fee-reference.md",
     "tc-economic-substance-reporting-reference.md",

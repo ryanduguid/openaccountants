@@ -28,7 +28,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AR | Argentina | 9 | 3 |
 | AS | American Samoa | 2 | 0 |
 | AT | Austria | 6 | 0 |
-| AU | Australia | 61 | 0 |
+| AU | Australia | 63 | 0 |
 | AW | Aruba | 1 | 0 |
 | AX | Åland Islands | 2 | 0 |
 | AZ | Azerbaijan | 8 | 0 |
@@ -229,13 +229,13 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SX | Sint Maarten (Dutch part) | 1 | 0 |
 | SY | Syrian Arab Republic | 0 | 0 |
 | SZ | Eswatini | 6 | 0 |
-| TC | Turks and Caicos Islands | 12 | 0 |
+| TC | Turks and Caicos Islands | 13 | 0 |
 | TD | Chad | 6 | 0 |
 | TF | French Southern Territories | 1 | 0 |
 | TG | Togo | 6 | 0 |
 | TH | Thailand | 7 | 0 |
 | TJ | Tajikistan | 6 | 0 |
-| TK | Tokelau | 1 | 0 |
+| TK | Tokelau | 6 | 0 |
 | TL | Timor-Leste | 6 | 0 |
 | TM | Turkmenistan | 6 | 0 |
 | TN | Tunisia | 7 | 0 |

@@ -16,17 +16,17 @@ category: international
 tax_year: 2016
 tax_year_notes: "The monetary illustrations use the 1 May 2016 consolidation only. Selected New Zealand statutory provisions were read on 2 November 2026 at their separately stated versions; that reading does not update Tokelau's 2016 rules."
 tier: 2
-last_updated: 2026-11-04
-version: 0.3
+last_updated: 2026-11-21
+version: 0.4
 review_status: pending_review
 verified_by: pending
 depends_on:
   - workflow-base
 ---
 
-# Tokelau: law sources and monetary conventions reference v0.3
+# Tokelau: law sources and monetary conventions reference v0.4
 
-**Tier 2 source-cited draft. Actual financial delivery is held.** This reference records selected statutory provisions and historical monetary illustrations. It is not a complete country companion under the universal workflow base. It remains outside the production corpus pending source and content review. No current tax, penalty, filing or professional conclusion follows from its examples.
+**Tier 2 source-cited draft. Actual financial delivery is held.** This reference records selected statutory provisions and historical monetary illustrations. It appears in the published Tokelau package as a reference for source checks and historical monetary examples. Establish current tax, penalty and filing obligations from the applicable instruments and obtain practitioner review before acting.
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
