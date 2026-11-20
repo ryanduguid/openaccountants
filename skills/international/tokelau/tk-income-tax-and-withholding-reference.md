@@ -2,7 +2,7 @@
 name: tk-income-tax-and-withholding-reference
 description: >
   Historical Tokelau income tax reference for source withholding, the resident
-  net-income rule, family remittances and the payment date under the rules
+  net-income rule, covered persons, family remittances and payment timing under the rules
   listed in force at 1 May 2016.
 jurisdiction: TK
 category: international
@@ -10,7 +10,7 @@ tax_year: 2016
 tax_year_notes: "Uses the Income Tax Rules 1997 listed in force at 1 May 2016 in Tulafono a Tokelau. Confirm the applicable law and administrative method for the actual period."
 tier: 2
 last_updated: 2026-11-21
-version: 0.1
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -30,13 +30,19 @@ The 2016 Schedule lists 6 annual-income rates from 5% to 25%. The 2005 compilati
 
 For July 2024 to June 2025, the Tokelau National Statistics Office cash data label receipts from tax on individual income and profits as community services levy. Reconcile that reporting label with the operative local rules and any later instruments before identifying the legal basis for a payment in that period. [OECD Revenue Statistics in Asia and the Pacific 2026, Table 4.35](https://www.oecd.org/en/publications/revenue-statistics-in-asia-and-the-pacific-2026_065aa566-en/full-report/country-tables-tax-revenues-2000-2024_b895f288.html)
 
+## Companies and other bodies under the archived rule
+
+The 2016 compilation of rule 2(2) applies to each person resident in Tokelau. The Interpretation Rules apply unless the rule expressly provides otherwise or its context requires another reading. The definition of 'person' includes a corporation sole and corporate or unincorporated bodies. Check the body’s legal form, residency and the applicable rule before applying the resident-income provision. The archived texts leave corporate residence, company-specific rates and filing procedure unresolved. [Income Tax Rules 1997, r 2(2)](https://www.paclii.org/tk/legis/consol_act_2016/itr1997165/) · [Interpretation Rules 2003, rr 1–2](https://www.paclii.org/tk/legis/consol_act_2016/ir2003240/)
+
+For July 2024 to June 2025 the Tokelau National Statistics Office cash figures show zero in the OECD aggregate category for corporate income and profits. The detailed corporate profits and corporate capital gains figures are unavailable. Check liability from the governing law and the taxpayer’s circumstances. [OECD Revenue Statistics in Asia and the Pacific 2026, Table 4.35](https://www.oecd.org/en/publications/revenue-statistics-in-asia-and-the-pacific-2026_065aa566-en/full-report/country-tables-tax-revenues-2000-2024_b895f288.html)
+
 ## Fictional records
 
 In a period governed by the archived rules, a Tokelau resident receives a salary for work in Tokelau and a separately identifiable family remittance during the financial year ended 30 June 2016. Assume the default financial year applies. The resident payment date on those facts is 1 October 2016. Record the salary and any tax levied at source. Exclude the family remittance when evaluating the resident paragraph, supported by its payment records. Verify how source withholding is credited before completing the liability and payment schedule. [Income Tax Rules 1997, r 2(1)–(2)](https://www.paclii.org/tk/legis/consol_act_2016/itr1997165/)
 
 ## Remaining coverage
 
-Confirm the applicable amendments, residency test, taxable income and deductions, rate computation, source withholding and employer remittance procedure, current return and payment channel, interaction of the 2 charging paragraphs, any social contributions and practitioner review. Treat cross-border remuneration and actual late payments as separate cases requiring current authority.
+Confirm the applicable amendments, individual and entity residency tests, taxable income and deductions, rate computation, source withholding and employer remittance procedure, current return and payment channel, interaction of the 2 charging paragraphs, any social contributions and practitioner review. Treat cross-border remuneration and actual late payments as separate cases requiring current authority.
 
 <!-- openaccountants-cta-block -->
 
