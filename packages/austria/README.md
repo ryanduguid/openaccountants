@@ -11,7 +11,8 @@
 4. `at-income-tax.md`
 5. `at-svs-contributions.md`
 6. `at-tax-overview.md`
-7. `austria-vat-return.md`
+7. `at-tax-system-orientation.md`
+8. `austria-vat-return.md`
 
 ## Shared files this package needs
 

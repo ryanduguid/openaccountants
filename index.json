@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2101,
+  "guides": 2103,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -3386,6 +3386,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "at-tax-system-orientation",
+   "path": "skills/international/austria/at-tax-system-orientation.md",
+   "name": "at-tax-system-orientation",
+   "jurisdiction": "AT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "austria-vat-return",
    "path": "skills/international/austria/austria-vat-return.md",
    "name": "austria-vat-return",
@@ -4086,6 +4099,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "be-tax-system-orientation",
+   "path": "skills/international/belgium/be-tax-system-orientation.md",
+   "name": "be-tax-system-orientation",
+   "jurisdiction": "BE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "belgium-bookkeeping",
