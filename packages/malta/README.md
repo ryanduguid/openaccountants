@@ -23,9 +23,10 @@
 16. `mt-estimated-tax.md`
 17. `mt-non-dom.md`
 18. `mt-rental-income.md`
-19. `selling-a-company-in-malta.md`
-20. `malta-guided-intake.md`
-21. `malta-return-assembly.md`
+19. `mt-tax-system-orientation.md`
+20. `selling-a-company-in-malta.md`
+21. `malta-guided-intake.md`
+22. `malta-return-assembly.md`
 
 ## Shared files this package needs
 
