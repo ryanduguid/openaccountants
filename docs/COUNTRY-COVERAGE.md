@@ -93,7 +93,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | FR | France | 21 | 0 |
 | GA | Gabon | 5 | 0 |
 | GB | United Kingdom of Great Britain and Northern Ireland | 26 | 15 |
-| GD | Grenada | 1 | 0 |
+| GD | Grenada | 2 | 0 |
 | GE | Georgia | 8 | 0 |
 | GF | French Guiana | 1 | 0 |
 | GG | Guernsey | 1 | 0 |
