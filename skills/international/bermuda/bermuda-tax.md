@@ -1,7 +1,7 @@
 ---
 name: bermuda-tax
-description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs, land-tax and stamp-duty controls. Establish the taxpayer, group, instrument, period, classification and source before calculating or filing. Land tax requires actual assessment, ARV, owner, relief and demand facts. Stamp duty separates ordinary conveyance bands, complete first-home eligibility and the granted-notice schedule, execution exceptions, adjudication and conditional late penalties. Actual relief, consideration, dates, forms, stamping/payment, later law and practitioner execution remain subject to the stated holds. Selected foreign-currency purchase-tax controls distinguish the BMD purchase base, exchange-control residence, transaction exemptions and bank-return authorisation from withholding and treaty questions.
-version: 3.1
+description: Use this Bermuda tax guide for 2026 system orientation, corporate income tax screening, payroll, social contributions and selected customs, land-tax and stamp-duty controls. Establish the taxpayer, group, instrument, period, classification and source before calculating or filing. Land tax requires actual assessment, ARV, owner, relief and demand facts. Stamp duty separates ordinary conveyance bands, complete first-home eligibility and the granted-notice schedule, execution exceptions, adjudication and conditional late penalties. Actual relief, consideration, dates, forms, stamping/payment, later law and practitioner execution remain subject to the stated holds. Selected foreign-currency purchase-tax controls distinguish the BMD purchase base, exchange-control residence, transaction exemptions and bank-return authorisation from withholding and treaty questions. Selected original Bahrain-agreement controls separate conditional dividend/debt-claim ceilings, royalty and relief limitations and dispute/period rules; current instrument, implementation and entitlement remain unverified.
+version: 3.2
 jurisdiction: BM
 tax_year: 2026
 last_updated: 2026-11-15
@@ -92,6 +92,8 @@ Employee rates apply to separate annual remuneration slices: first BMD 48,000 at
 - **Stamp duty:** obtain each instrument/head, date/place and execution/escrow/performance evidence; statutory BMD consideration, valuation, noncash/debt/FX and related-transaction facts; and applicable exemption, stamping and payment evidence. For a first-home claim, also establish the acquired whole interest/property category, each purchaser's status/history, Commissioner opinion and signed declarations, with an actual granted notice for Head 14(c). For late stamping, separately establish any required special permission, timing, remission and endorsement. Record route-inapplicable documents as N/A; ordinary conveyance alone does not mandate adjudication or first-home papers. Use the [selected controls](#stamp-duty-scope-and-source-periods).
 
 - **Foreign currency purchase tax:** establish the purchaser/capacity and exchange-control residence, applicable directions, licensed bank, currency/purchase event, statutory BMD base and transaction exemption/permission or project facts. For bank-return work also obtain the actual written s 4 authorisation and reporting/remittance instructions, preserving s 4(4). A purchaser does not inherit the bank's return duty. Keep permit-company classification and final fractional-cent rounding unresolved where relevant. Use the [selected FCPT controls](#foreign-currency-purchase-tax-scope-and-source-periods).
+
+- **Original Bahrain agreement:** obtain the operative original/protocol/subsequent instruments and application period; tax/person/payment character; treaty residence and any tie-breaker, beneficial ownership, PE/source/related-party and specified-recipient facts; actual tax paid/attributable resident tax and implementation; and separate first-notification/presentation/court/acceptance/diplomatic dates where relevant. Use the [selected original controls](#56-original-bahrain-agreement-selected-conditional-controls). Unproved current operation, a zero royalty inference or missing entitlement facts remain **Needs Input**.
 
 ### Refusal Catalogue
 
@@ -985,6 +987,151 @@ tolerance: 0
 - Actual weekly, monthly or quarterly authorisation: use its details and concurrent return/remittance; do not substitute another generic period. Omitted-purchase evidence work must preserve s 4(4).
 - Unknown knowledge/conviction or a simple late payment: do not impose the s 5/s 6 illustrative criminal fine. Keep each distinct formula for the maximum fine and mental element; the examples do not discharge tax or determine the actual sentence.
 - Fractional-cent product BMD 0.000125: preserve the exact product, obtain applicable final rounding authority and do not import stamp-duty upward rounding. An FCPT exemption/outside-charge outcome does not turn withholding, foreign tax or other currency controls into zero.
+
+### 5.6 Original Bahrain Agreement: Selected Conditional Controls
+
+#### Establish the instrument and applicable period
+
+Use these controls to read selected provisions of the **original 2010 Bahrain–Bermuda agreement**, then establish the instrument and rules applicable to the payment and period. The [official National Bureau for Revenue English publication](https://www.nbr.gov.bh/treaties/bermuda_dtts_en) links the [20-page original text](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf). These controls do not establish present entitlement to relief.
+
+The NBR treaty-network capture, cached 14 November 2026, records original signature on **22 April 2010** and entry into force on **29 January 2012**. The [Bermuda Government's 22 April 2026 announcement](https://www.gov.bm/news/bermuda-signs-amendment-double-taxation-agreement-kingdom-bahrain) records a protocol signed on **17 April 2026**. The captured [NBR network table](https://www.nbr.gov.bh/FTR/bahrain_tax_treaties_network) supplies no entry date or text link for that protocol. Neither signature nor a blank entry-date cell proves its application or non-operation. Obtain the protocol, ratification/notification and application evidence, subsequent instruments, any relevant MLI matching and termination information before applying the original provisions to a current case.
+
+The original's final clause identifies Washington DC, 22 April 2010, designates Arabic and English texts as equally authentic and makes English operative on divergence. This is an official English publication; its language clause does not independently authenticate physical execution or handwritten signatures. The [LLOC English guidance translation](https://lloc.gov.bh/FullEn/K4611.docx) has an express guidance disclaimer and material omissions and cross-reference errors. Use the original English publication for the selected controls below. The Arabic ratification law has not received a qualified substantive review in this reconciliation. See the [source comparison and limits](https://github.com/ryanduguid/openaccountants/blob/main/docs/verification-log/2026-11-15-bermuda-bahrain-original-treaty-controls.md).
+
+#### Identify the person, tax, residence and establishment
+
+Under [Arts 1–3, pp 2–4](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=2), the ordinary personal scope is residents of one or both parties. Article 2 covers income and capital taxes and identifies Bahrain's Amiri Decree No. 22/1979 oil income tax and Bermuda taxes of every kind and description **except Bermuda payroll tax**. Its identical-or-substantially-similar later-tax and notification provisions do not themselves establish the treatment of today's CIT or a particular new tax. Preserve each tax's own scope and the agreement's express exceptions. For an undefined term, Art 3(2) gives the applying party's relevant tax-law meaning priority over its other-law meaning unless context requires otherwise.
+
+Read [Art 4(1)–(3), pp 4–5](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=4) in full. Its opening describes a national of either party ordinarily resident in either contracting state, followed by separate country limbs. The Bahrain limb specifies a Bahrain-national individual present for at least **183 days in the fiscal year**, or a company/other legal person incorporated or having its place of management there. The Bermuda limb specifies an ordinarily resident individual, or a company, partnership, trust or association created under Bermuda law. Read these limbs with the opening and Art 3's definitions; do not replace the wording with incorporation alone, a universal 183-day rule, CIT residence or FCPT exchange-control residence.
+
+For an individual resident in both parties under paragraph 1, apply the paragraph 2 sequence: permanent home; if a home exists in both, centre of vital interests; then habitual abode where the preceding test is unresolved or no permanent home exists; then nationality where habitual abode is in both or neither; then competent-authority mutual agreement for nationality in both or neither. For a non-individual resident in both under paragraph 1, paragraph 3 uses place of effective management. Missing facts or an unresolved reading of the introductory residence wording remain **Needs Input**.
+
+[Article 5(1)–(8), pp 5–6](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=5) requires separate PE screening. It includes fixed-place, listed-place, hydrocarbon and agency rules, with specific exclusions. A building site or construction/installation project satisfies paragraph 3 only if it lasts **more than 12 months**; exactly 12 months failing that limb does not settle the other PE routes. Distinguish storage for the enterprise's own goods from a warehouse providing storage for others, and preserve the sole-purpose and preparatory/auxiliary conditions. Habitual authority to conclude contracts, independent-agent status and ordinary-course activity need their own facts. Company control alone does not establish a PE. The printed paragraph 6 refers to an independent agent to whom 'paragraph 6' applies, whilst the independent-agent rule is paragraph 7. Preserve that source discrepancy and obtain clarification where material; do not silently amend the instrument.
+
+#### Classify dividends, debt claims and royalties separately
+
+For **dividends**, [Art 10(1)–(6), pp 9–10](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=9) allows residence-party taxation and describes source-party taxation under its law, subject to the original paragraph 2 ceiling where the beneficial owner is resident in the other party. That ceiling is **0% of gross dividends** both for a company other than a partnership directly holding at least **25%** of the payer's capital and for all other cases. Classify the branch even though both printed percentages are zero. The competent authorities settle the mode of application by mutual agreement, and the provision does not affect tax on the distributing company's profits.
+
+The dividend definition excludes debt claims. An effectively connected holding of the recipient's PE in the payer's party displaces paragraphs 1–2 in favour of Art 7. Preserve paragraph 5's separate source-profit/distribution rule and its recipient/PE exceptions. Paragraph 6 has a separate exemption for the specified other-party government, local authority, statutory body or agency, National Bank or wholly owned company. Establish the exact recipient and applicable wording before using that route; a public-sector label or partial state ownership is insufficient. Neither the zero ceiling nor that exemption proves absence of domestic withholding or tax on another person.
+
+For **income from debt claims**, [Art 11(1)–(7), pp 10–11](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=10) describes residence and source taxation and a conditional **0% of gross income** source ceiling where the beneficial owner is resident in the other party. The competent authorities settle its mode of application. Classify the debt claim, including the specified securities, premiums and prizes; **late-payment penalty charges are excluded** from this Article's income definition. Do not treat every bank credit as qualifying interest.
+
+An effectively connected debt claim of the recipient's source-party PE displaces paragraphs 1–2 in favour of Art 7. Under paragraph 5, payer residence is the ordinary source rule, but the debt-incurrence and PE-bearing conditions can locate the source in the PE's party. Paragraph 6 limits the Article to the amount that would have been agreed without the special relationship; the excess retains domestic-law taxation with due regard to the rest of the agreement. No rate for that excess is established here. Paragraph 7 concerns **debt-claim income**, despite the guidance DOCX's erroneous dividend wording, and has its own specified government/body/bank/wholly-owned-company exemption.
+
+For **royalties**, [Art 12(1)–(4), p 11](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=11) says royalties arising in one party and beneficially owned by a resident of the other **may be taxable** in that other party. It does not say 'only' and supplies no percentage ceiling. **Do not infer a 0% royalty rate or source exemption.** Match the copyright, patent, trade mark, design/model, plan, secret formula/process or experience-information definition and distinguish the PE-connection and special-relationship provisions. Characterisation, any domestic charge, subsequent treaty provisions and the actual period remain necessary.
+
+#### Preserve relief limitations and separate dispute routes
+
+[Article 22(1)–(4), pp 15–16](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=15) provides a qualified exemption for income/capital which the agreement permits the other party to tax, subject to paragraphs 2–3. For the paragraph 2 Art 10/11 items, the deduction from resident tax equals tax paid in the other party but is capped at the resident tax, computed before deduction, attributable to those items. Paragraph 3 permits progression using exempt income/capital. **Paragraph 4 switches off paragraph 1** where the other party uses the agreement to exempt the income/capital or applies Art 10(2) or 11(2). A zero source ceiling does not automatically create a residence-party exemption or a deemed foreign-tax credit.
+
+Establish the relevant relief paragraph, tax actually paid, resident attributable tax, limitation/refund issues and implementation before crediting an amount. The credit examples below test only the printed cap once their separate legal premises are established. They do not validate a foreign levy exceeding an applicable zero ceiling, settle refund-versus-credit treatment or establish today's CIT credit rules.
+
+Under [Art 24(1)–(5), pp 17–18](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=17), the original MAP route is to the residence-party competent authority, or the nationality-party authority for a case under **Art 23(1)**. It is available irrespective of domestic remedies and requires presentation within **3 years from first notification of the action** producing treaty-inconsistent taxation. This does not establish a domestic objection deadline or an automatic collection stay. The authority endeavours to resolve a justified case it cannot satisfactorily resolve itself; an agreement reached is implemented notwithstanding domestic time limits.
+
+For paragraph 5 arbitration, retain the prior qualifying MAP presentation, authorities' inability to reach agreement within **2 years from presentation to the other party's competent authority**, the person's request and the exclusion where a court or administrative tribunal of either party has already decided the issues. The resulting decision binds and is implemented notwithstanding domestic time limits unless a directly affected person does not accept the implementing mutual agreement. The authorities settle the mode of application. The 2-year clock does not run automatically from assessment, first notification or the taxpayer's initial presentation to their own authority. Current availability and the actual competent-authority procedure remain held.
+
+#### Do not invent a universal commencement or cessation date
+
+[Article 27, p 19](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=19) uses the later diplomatic notification for entry into force. Its effect sentence combines the first day of January of the year following entry into force with a taxable-period-beginning-on-or-after-entry limb. [Article 28, pp 19–20](https://nbrproduserdata-ir.s3.eu-west-1.amazonaws.com/media/x4VrXPUF4RuLOkZdo6J2N4IHIqH7VddyCgqxzCjH.pdf#page=19) permits diplomatic termination notice at least **6 months before the calendar year end** after its **5-year** threshold. The printed cessation sentence continues across the page break and combines the following 1 January with further beginning/ending-period wording. These awkward combined provisions require the complete text and relevant notification/interpretation evidence. Do not turn the reported 29 January 2012 entry date, a signature date or a hypothetical notice into a universal tax-application/termination formula. No finding of non-termination or present operation is made here.
+
+#### Conditional arithmetic
+
+Amounts below are hypothetical units in the same currency. The dividend/debt-claim ceiling examples assume the original provision applies to the established period, payment, resident beneficial owner and relevant branch, with no displacing PE rule and with required application machinery satisfied. They report a **source-tax ceiling**, not the recipient's total tax, distributing-company tax or present withholding liability. The special-relationship example only separates the established ordinary amount from the excess. Credit fixtures separately assume Art 22(2) legally applies and the tax-paid and attributable-tax inputs are established; they settle no disputed levy, refund or current CIT treatment.
+
+```oa-check
+name: BM Bahrain original Art10 qualifying direct company holding source ceiling
+inputs:
+  gross_dividend: 100000
+  original_source_ceiling_rate: 0
+steps:
+  conditional_source_ceiling: gross_dividend * original_source_ceiling_rate
+expected:
+  conditional_source_ceiling: 0
+tolerance: 0
+```
+
+```oa-check
+name: BM Bahrain original Art10 other-case source ceiling
+inputs:
+  gross_dividend: 25000
+  original_source_ceiling_rate: 0
+steps:
+  conditional_source_ceiling: gross_dividend * original_source_ceiling_rate
+expected:
+  conditional_source_ceiling: 0
+tolerance: 0
+```
+
+```oa-check
+name: BM Bahrain original Art11 qualified debt-claim source ceiling
+inputs:
+  gross_qualifying_income: 1000
+  original_source_ceiling_rate: 0
+steps:
+  conditional_source_ceiling: gross_qualifying_income * original_source_ceiling_rate
+expected:
+  conditional_source_ceiling: 0
+tolerance: 0
+```
+
+```oa-check
+name: BM Bahrain original Art11 separates special-relationship excess without pricing it
+inputs:
+  paid_debt_claim_income: 12000
+  established_ordinary_amount: 10000
+steps:
+  excess_for_separate_analysis: paid_debt_claim_income - established_ordinary_amount
+expected:
+  excess_for_separate_analysis: 2000
+tolerance: 0
+```
+
+```oa-check
+name: BM Bahrain original Art22 conditional credit is capped at attributable resident tax
+inputs:
+  established_other_party_tax_paid: 30
+  established_resident_attributable_tax_before_credit: 20
+steps:
+  conditional_credit: min(established_other_party_tax_paid, established_resident_attributable_tax_before_credit)
+  resident_attributable_tax_after_credit: established_resident_attributable_tax_before_credit - conditional_credit
+expected:
+  conditional_credit: 20
+  resident_attributable_tax_after_credit: 0
+tolerance: 0
+```
+
+```oa-check
+name: BM Bahrain original Art22 conditional credit does not deem unpaid foreign tax
+inputs:
+  established_other_party_tax_paid: 5
+  established_resident_attributable_tax_before_credit: 20
+steps:
+  conditional_credit: min(established_other_party_tax_paid, established_resident_attributable_tax_before_credit)
+  resident_attributable_tax_after_credit: established_resident_attributable_tax_before_credit - conditional_credit
+expected:
+  conditional_credit: 5
+  resident_attributable_tax_after_credit: 15
+tolerance: 0
+```
+
+#### Manual treaty boundary and procedure controls
+
+These written hypothetical desk checks require legal and factual review; arithmetic execution does not establish the premises.
+
+- A 17 April 2026 protocol signature, a dash in the cached NBR entry-date column or the original's 29 January 2012 entry date: **Needs Input** on the actual current instrument and tax period. None establishes present relief or protocol non-operation.
+- An English guidance paragraph omits capital or gives other-law meanings equal priority: use original Arts 2 and 3(2), preserve the recorded discrepancy and do not expand the selected controls into a current CIT determination.
+- An individual has 183 Bahrain days but nationality or the introductory Art 4 requirements are unresolved: **Needs Input**. Do not apply the Bahrain day limb to a Bermuda resident or replace treaty residence with FCPT residence.
+- An individual has permanent homes in both parties, or a non-individual is dual resident: apply the complete relevant tie-breaker and facts. Do not skip centre of vital interests, substitute a simple day count or ignore place of effective management.
+- A construction project lasts exactly 12 months: the more-than-12-month limb is not met; continue the other PE routes. A broker, storage activity or subsidiary relationship does not by its label settle PE status. Preserve the printed Art 5(6) cross-reference issue where relevant.
+- A company other than a partnership directly owns exactly 25%, 24.99% or an indirect holding: classify Art 10(2)(a) versus (b). Both printed source ceilings are 0%, conditional on the other premises; none determines the payer company's profits tax.
+- The payee's beneficial ownership/residence or a holding/debt claim's PE connection is missing: **Needs Input** before a source ceiling. A government label, National Bank claim or wholly owned-company route also requires the precise recipient and applicable exemption facts.
+- A late-payment penalty, royalty, debt-claim return or dividend has the same bank narrative: establish payment character. Art 11 excludes late-payment penalty charges and Art 12 supplies no zero-rate royalty conclusion.
+- The payer is resident in one party but the indebtedness was incurred for and its income borne by a PE in the other: apply the complete Art 11(5) source rule. A special relationship with 12,000 paid and an established ordinary amount 10,000 leaves 2,000 for separate analysis; no excess rate follows.
+- Foreign tax paid is 30 and attributable resident tax is 20: the conditional Art 22(2) cap calculation is 20 only if that relief route and both inputs are established. Resolve an applicable zero source ceiling, disputed levy, refund and implementation separately. Paragraph 1 exemption, paragraph 3 progression and paragraph 4's switch-off cannot be omitted.
+- A MAP query gives an assessment date but omits first notification, residence/nationality route or actual presentation: **Needs Input** for the 3-year original deadline. A domestic appeal, payment deadline or collection stay is a separate question.
+- Two years have elapsed since presentation to the taxpayer's own authority: that alone does not establish the Art 24(5) arbitration clock. Obtain presentation to the other authority, unresolved issues, request, court/tribunal and acceptance/implementation facts and current procedure.
+- A proposed commencement or termination date uses only the next 1 January: retain complete Arts 27–28, diplomatic notifications/notice, the 5-year and 6-month conditions and all printed period limbs. Obtain authoritative clarification before an operative-period result.
+
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
