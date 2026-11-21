@@ -37,7 +37,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BD | Bangladesh | 18 | 0 |
 | BE | Belgium | 10 | 0 |
 | BF | Burkina Faso | 8 | 0 |
-| BG | Bulgaria | 8 | 0 |
+| BG | Bulgaria | 9 | 0 |
 | BH | Bahrain | 6 | 1 |
 | BI | Burundi | 6 | 0 |
 | BJ | Benin | 6 | 0 |
@@ -204,7 +204,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PY | Paraguay | 4 | 0 |
 | QA | Qatar | 6 | 0 |
 | RE | Réunion | 1 | 0 |
-| RO | Romania | 9 | 0 |
+| RO | Romania | 10 | 0 |
 | RS | Serbia | 7 | 0 |
 | RU | Russian Federation | 14 | 0 |
 | RW | Rwanda | 7 | 0 |
