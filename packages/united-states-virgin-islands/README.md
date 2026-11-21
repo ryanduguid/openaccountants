@@ -10,6 +10,7 @@
 3. `vi-additional-medicare-employer-payment-reference.md`
 4. `vi-medicare-ordinary-share-reference.md`
 5. `vi-oasdi-annual-wage-base-reference.md`
+6. `vi-tax-system-orientation.md`
 
 ## Shared files this package needs
 
