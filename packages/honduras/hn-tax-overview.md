@@ -1,11 +1,11 @@
 ---
 name: hn-tax-overview
-description: "Source-cited draft: tax overview for Honduras (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Honduras's ordinary tax system in 2026: income source, individual and company ISR, sales tax and filing."
 jurisdiction: HN
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year: 2026
+last_updated: 2026-11-22
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,19 +13,32 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Honduras Tax Overview
 
-## Honduras tax system at a glance
+The Servicio de Administración de Rentas (SAR) administers national taxes in Honduran lempiras (HNL). The ordinary tax year runs from 1 January to 31 December. [SAR guide to taxes due on 30 April](https://www.sar.gob.hn/download/generalidades-impuestos-con-vencimiento-al-30-de-abril/) and [Income Tax Law, arts 27–28](https://www.sar.gob.hn/download/texto-consolidado-decreto-ley-numero-25-ley-del-impuesto-sobre-la-renta/?wpdmdl=22999).
 
-- **Tax system basis** — Honduras taxes income on a territorial basis: residents and non-residents are taxed only on Honduran-source income. The tax authority is the Servicio de Administracion de Rentas (SAR), the currency is the Honduran lempira (HNL/L), and the tax year is the calendar year.
-- **Tax year** — Calendar year (1 January to 31 December)  _(Ley del Impuesto sobre la Renta (Income Tax Law))_
-- **Currency** — Honduran lempira (HNL / L)  _(Banco Central de Honduras)_
-- **Tax authority** — Servicio de Administracion de Rentas (SAR)  _(Servicio de Administracion de Rentas (SAR) - https://www.sar.gob.hn)_
-- **Basis of taxation** — Territorial: the tax falls on income from Honduran sources, and non-residents pay it on their Honduran-source gross income at the art 5 withholding rates  _(Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), arts 1 to 3 and 5 — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/)_
-- **Top personal income tax rate** — 25% on annual net taxable income above L809,660.75 under the 2026 scale (exempt to L228,324.32, then 15% and 20%), adjusted by 4.98% for 2026 by Acuerdo SAR-01-2026  _(Acuerdo SAR-01-2026 of 5 January 2026 (Servicio de Administración de Rentas; La Gaceta No. 37,051 of 23 January 2026, copy hosted by the Tribunal Superior de Cuentas), Tabla Progresiva 2026 — https://www.tsc.gob.hn/web/leyes/Acuerdo-SAR-01-2026.pdf)_
-- **Standard corporate income tax rate** — 25% of net taxable income for legal persons  _(Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), art 22(a) — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/ ; SAR, Generalidades del Impuesto sobre la Renta — https://www.sar.gob.hn/download/generalidades-impuesto-sobre-la-renta/)_
-- **Solidarity contribution (aportacion solidaria)** — 5% surcharge (sobretasa) on net taxable income above HNL 1,000,000, paid by legal persons other than those in the export and tourism special regimes; it is not deductible from income tax and follows the pagos a cuenta regime, with settlement on Form 103 with the annual return due 30 April  _(SAR, Generalidades de los impuestos con vencimiento al 30 de abril (June 2026) — https://www.sar.gob.hn/download/generalidades-impuestos-con-vencimiento-al-30-de-abril/)_
-- **VAT/GST** — Yes; the Impuesto sobre Ventas (ISV) applies at a general rate of 15% on imports and sales of goods and services, and 18% on beer, spirits and other alcoholic drinks, cigarettes and air tickets  _(Ley del Impuesto sobre Ventas, texto consolidado al 27 de agosto de 2018 (SAR), art 6 — https://www.sar.gob.hn/download/consolidad-de-la-ley-de-impuesto-sobre-ventas-de-sefin-27-de-agosto-de-2018/ ; SAR, Generalidades del Impuesto sobre Ventas — https://www.sar.gob.hn/download/generalidades-impuesto-sobre-ventas/)_
-- **Annual income tax return deadline** — 30 April following the close of the calendar tax year (Form 103, filed through the Oficina Virtual with the Informe de Estado de Situación Financiera); the fourth instalment, the balance per the taxpayer's own computation, is paid with it  _(SAR, Generalidades de los impuestos con vencimiento al 30 de abril (June 2026) — https://www.sar.gob.hn/download/generalidades-impuestos-con-vencimiento-al-30-de-abril/ ; Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), arts 28 and 34 — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/)_
-- **Double tax treaties** — Honduras has not signed comprehensive bilateral double tax treaties (DTTs); it maintains tax information exchange agreements with the US and certain Central American states  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+## Income source and non-residents
+
+Honduras applies territorial taxation under article 1(2) of the Tax Code, in force from 1 January 2017. Article 8 puts the Code ahead of ordinary tax laws. The Income Tax Law consolidation still prints older worldwide wording in article 2. For non-residents, articles 4 and 5 of that law set source rules and rates on gross Honduran-source income. Article 4 can classify specified payments for services performed abroad as Honduran-source. Confirm domicile, source and the type of income before selecting a rate or withholding method. [Tax Code, Decree 170-2016, arts 1 and 8](https://www.tsc.gob.hn/web/leyes/Decreto_No_170_2016_Codigo_Tributario.pdf), [Tribunal Superior de Cuentas report on territorial taxation](https://www.tsc.gob.hn/wp-content/uploads/001-2018-FI.pdf) and [Income Tax Law, arts 2, 4 and 5](https://www.sar.gob.hn/download/texto-consolidado-decreto-ley-numero-25-ley-del-impuesto-sobre-la-renta/?wpdmdl=22999).
+
+## Income tax and filing
+
+The 2026 progressive ISR scale for individuals uses annual net taxable income in HNL. [Acuerdo SAR-01-2026, gazette 37,051 of 23 January 2026](https://www.tsc.gob.hn/web/leyes/Acuerdo-SAR-01-2026.pdf).
+
+| Annual taxable income (HNL) | Marginal rate |
+| --- | ---: |
+| Up to 228,324.32 | 0% |
+| 228,324.33 to 348,154.10 | 15% |
+| 348,154.11 to 809,660.75 | 20% |
+| From 809,660.76 | 25% |
+
+Legal persons ordinarily pay 25% on net taxable income. Covered legal persons also pay a separate 5% solidarity contribution on net taxable income above HNL 1 million. The SAR guidance excludes legal persons in the export and tourism special regimes from that surcharge. Check separately for any asset-based or minimum tax. [Income Tax Law, art 22(a)](https://www.sar.gob.hn/download/texto-consolidado-decreto-ley-numero-25-ley-del-impuesto-sobre-la-renta/?wpdmdl=22999) and [SAR annual tax and solidarity contribution guidance](https://www.sar.gob.hn/download/generalidades-impuestos-con-vencimiento-al-30-de-abril/).
+
+For the ordinary calendar-year cycle, annual ISR filing is generally due by 30 April of the following year. Verify any next-business-day adjustment and whether the taxpayer must file. The SAR uses Form 103 for legal persons and Form 102 for individuals filing the ordinary annual determination. Any balance under the ordinary payment-on-account regime is settled with the annual return. [Income Tax Law, arts 28 and 34](https://www.sar.gob.hn/download/texto-consolidado-decreto-ley-numero-25-ley-del-impuesto-sobre-la-renta/?wpdmdl=22999) and [SAR annual filing guidance](https://www.sar.gob.hn/download/generalidades-impuestos-con-vencimiento-al-30-de-abril/).
+
+## Sales tax
+
+The ordinary Impuesto sobre Ventas (ISV) rate is 15%. The 18% rate applies to listed alcoholic drinks, cigarettes and premium air tickets such as business or first class, with the statutory disability exception for premium seating. Ordinary returns and payment fall within the first 10 calendar days of the following month. Confirm separate treatment for zero-rated exports, exemptions and special regimes. [Sales Tax Law, arts 6 and 11](https://www.sar.gob.hn/download/texto-consolidado-ley-del-impuesto-sobre-ventas-decreto-ley-numero-24-actualizado-hasta-el-decreto-legislativo-no-59-2022/?wpdmdl=15324) and [SAR ISV deadline](https://www.sar.gob.hn/helpie_faq/cual-es-el-plazo-para-presentar-y-pagar-el-impuesto-sobre-ventas/).
+
+Use the separate country guides for payroll, social contributions, company formation and detailed computations.
 
 <!-- openaccountants-cta-block -->
 
