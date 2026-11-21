@@ -1579,6 +1579,7 @@
     "kh-income-tax.md",
     "kh-payroll-social.md",
     "kh-tax-overview.md",
+    "kh-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -3446,6 +3447,7 @@
     "la-corporate-income-tax.md",
     "la-payroll-social.md",
     "la-tax-overview.md",
+    "la-tax-system-orientation.md",
     "laos-vat.md",
     "README.md"
    ],
@@ -9412,6 +9414,7 @@
     "vn-corporate-income-tax.md",
     "vn-payroll-social.md",
     "vn-tax-overview.md",
+    "vn-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

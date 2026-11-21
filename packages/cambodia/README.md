@@ -12,6 +12,7 @@
 5. `kh-income-tax.md`
 6. `kh-payroll-social.md`
 7. `kh-tax-overview.md`
+8. `kh-tax-system-orientation.md`
 
 ## Shared files this package needs
 

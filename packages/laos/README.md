@@ -10,7 +10,8 @@
 3. `la-corporate-income-tax.md`
 4. `la-payroll-social.md`
 5. `la-tax-overview.md`
-6. `laos-vat.md`
+6. `la-tax-system-orientation.md`
+7. `laos-vat.md`
 
 ## Shared files this package needs
 
