@@ -11,7 +11,8 @@
 4. `mc-income-tax.md`
 5. `mc-payroll-social.md`
 6. `mc-tax-overview.md`
-7. `monaco-vat.md`
+7. `mc-tax-system-orientation.md`
+8. `monaco-vat.md`
 
 ## Shared files this package needs
 
