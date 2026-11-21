@@ -9,11 +9,12 @@
 2. `me-company-formation.md`
 3. `me-corporate-income-tax.md`
 4. `me-tax-overview.md`
-5. `montenegro-income-tax.md`
-6. `montenegro-payroll.md`
-7. `montenegro-social-contributions.md`
-8. `montenegro-tax-optimization.md`
-9. `montenegro-vat.md`
+5. `me-tax-system-orientation.md`
+6. `montenegro-income-tax.md`
+7. `montenegro-payroll.md`
+8. `montenegro-social-contributions.md`
+9. `montenegro-tax-optimization.md`
+10. `montenegro-vat.md`
 
 ## Shared files this package needs
 

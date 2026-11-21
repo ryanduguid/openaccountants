@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2124,
+  "guides": 2126,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -15866,6 +15866,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "me-tax-system-orientation",
+   "path": "skills/international/montenegro/me-tax-system-orientation.md",
+   "name": "me-tax-system-orientation",
+   "jurisdiction": "ME",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "montenegro-income-tax",
    "path": "skills/international/montenegro/montenegro-income-tax.md",
    "name": "montenegro-income-tax",
@@ -20024,6 +20037,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "rs-tax-system-orientation",
+   "path": "skills/international/serbia/rs-tax-system-orientation.md",
+   "name": "rs-tax-system-orientation",
+   "jurisdiction": "RS",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "serbia-income-tax",

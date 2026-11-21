@@ -155,7 +155,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MA | Morocco | 15 | 0 |
 | MC | Monaco | 7 | 0 |
 | MD | Republic of Moldova | 8 | 0 |
-| ME | Montenegro | 8 | 0 |
+| ME | Montenegro | 9 | 0 |
 | MF | Saint Martin (French Part) | 1 | 0 |
 | MG | Madagascar | 6 | 0 |
 | MH | Marshall Islands | 1 | 0 |
@@ -205,7 +205,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | QA | Qatar | 6 | 0 |
 | RE | Réunion | 1 | 0 |
 | RO | Romania | 10 | 0 |
-| RS | Serbia | 7 | 0 |
+| RS | Serbia | 8 | 0 |
 | RU | Russian Federation | 14 | 0 |
 | RW | Rwanda | 7 | 0 |
 | SA | Saudi Arabia | 12 | 5 |
