@@ -18,11 +18,12 @@
 11. `eg-social-insurance.md`
 12. `eg-stamp-duty.md`
 13. `eg-tax-optimization.md`
-14. `eg-transfer-pricing.md`
-15. `eg-withholding-tax.md`
-16. `egypt-vat.md`
-17. `egypt-guided-intake.md`
-18. `egypt-return-assembly.md`
+14. `eg-tax-system-orientation.md`
+15. `eg-transfer-pricing.md`
+16. `eg-withholding-tax.md`
+17. `egypt-vat.md`
+18. `egypt-guided-intake.md`
+19. `egypt-return-assembly.md`
 
 ## Shared files this package needs
 

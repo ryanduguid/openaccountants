@@ -21,9 +21,10 @@
 14. `jp-incorporation.md`
 15. `jp-nonpermanent-resident.md`
 16. `jp-social-insurance.md`
-17. `references.md`
-18. `japan-guided-intake.md`
-19. `japan-return-assembly.md`
+17. `jp-tax-system-orientation.md`
+18. `references.md`
+19. `japan-guided-intake.md`
+20. `japan-return-assembly.md`
 
 ## Shared files this package needs
 

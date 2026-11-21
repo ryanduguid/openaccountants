@@ -80,7 +80,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | DZ | Algeria | 4 | 0 |
 | EC | Ecuador | 8 | 0 |
 | EE | Estonia | 9 | 0 |
-| EG | Egypt | 17 | 0 |
+| EG | Egypt | 18 | 0 |
 | EH | Western Sahara | 1 | 0 |
 | ER | Eritrea | 6 | 0 |
 | ES | Spain | 23 | 0 |
@@ -129,7 +129,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | JE | Jersey | 15 | 0 |
 | JM | Jamaica | 6 | 0 |
 | JO | Jordan | 6 | 0 |
-| JP | Japan | 18 | 0 |
+| JP | Japan | 19 | 0 |
 | KE | Kenya | 13 | 0 |
 | KG | Kyrgyzstan | 7 | 0 |
 | KH | Cambodia | 7 | 0 |
