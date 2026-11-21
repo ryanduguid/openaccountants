@@ -579,9 +579,6 @@ skills/international/panama/panama-social-contributions.md::rate table without a
 skills/international/panama/panama-social-contributions.md::rate table without a tax-authority or statute citation: | Regime | Component | Rate | Source | / | Employee | CSS social security | 9.75% | secondary summary; Ley 462 |
 skills/international/panama/panama-social-contributions.md::rate table without a tax-authority or statute citation: | Taxable income (USD) | Cumulative tax at top of band | Rate on excess | / | 0 – 11,000 | 0 | 0% |
 skills/international/panama/panama-social-contributions.md::rate table without a tax-authority or statute citation: | Taxable income (USD) | Cumulative tax | Rate on excess | Source | / | 0 – 11,000 | 0 | 0% | secondary summary |
-skills/international/philippines/ph-sss-philhealth.md::rate table without a tax-authority or statute citation: | Item | Detail | / | Premium rate | 5% of monthly basic salary/income |
-skills/international/philippines/ph-sss-philhealth.md::rate table without a tax-authority or statute citation: | Monthly Compensation | Employee Share | Employer Share | Total | / | ≤₱1,500 | 1% | 2% | 3% |
-skills/international/philippines/ph-sss-philhealth.md::rate table without a tax-authority or statute citation: | Year | Total Rate | Min MSC | Max MSC | / | 2023 | 14% | ₱4,000 | ₱30,000 |
 skills/international/philippines/ph-withholding.md::rate table without a tax-authority or statute citation: | ATC | Description | Rate | / | WI100 | Professional fees -- individual (≤₱3M) | 5% |
 skills/international/philippines/ph-withholding.md::rate table without a tax-authority or statute citation: | Income Type | Rate | / | Interest on bank deposits (PHP) | 20% |
 skills/international/philippines/ph-withholding.md::rate table without a tax-authority or statute citation: | Offence | Penalty | / | Failure to withhold | Withholding agent liable for the amount not withheld + 25% surcharge + 12% interest per annum |
