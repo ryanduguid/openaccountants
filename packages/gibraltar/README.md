@@ -6,7 +6,8 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `gi-weekly-social-insurance-reference.md`
+2. `gi-tax-system-orientation.md`
+3. `gi-weekly-social-insurance-reference.md`
 
 ## Shared files this package needs
 

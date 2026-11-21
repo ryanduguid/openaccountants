@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2122,
+  "guides": 2124,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -10419,6 +10419,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "gi-tax-system-orientation",
+   "path": "skills/international/gibraltar/gi-tax-system-orientation.md",
+   "name": "gi-tax-system-orientation",
+   "jurisdiction": "GI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "gi-weekly-social-insurance-reference",
    "path": "skills/international/gibraltar/gi-weekly-social-insurance-reference.md",
    "name": "gi-weekly-social-insurance-reference",
@@ -15721,6 +15734,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "mc-tax-system-orientation",
+   "path": "skills/international/monaco/mc-tax-system-orientation.md",
+   "name": "mc-tax-system-orientation",
+   "jurisdiction": "MC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "monaco-vat",

@@ -2611,6 +2611,7 @@
    "name": "Gibraltar",
    "files": [
     "intake.md",
+    "gi-tax-system-orientation.md",
     "gi-weekly-social-insurance-reference.md",
     "README.md"
    ],
@@ -3946,6 +3947,7 @@
     "mc-income-tax.md",
     "mc-payroll-social.md",
     "mc-tax-overview.md",
+    "mc-tax-system-orientation.md",
     "monaco-vat.md",
     "README.md"
    ],
