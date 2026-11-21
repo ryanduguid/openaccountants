@@ -8,6 +8,7 @@
 1. `intake.md`
 2. `fk-annual-employment-income.md`
 3. `fk-retirement-pensions-weekly-reference.md`
+4. `fk-tax-system-orientation.md`
 
 ## Shared files this package needs
 

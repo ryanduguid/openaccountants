@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `sj-svalbard-wage-reference.md`
+3. `sj-tax-system-orientation.md`
 
 ## Shared files this package needs
 
