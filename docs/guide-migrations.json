@@ -1960,6 +1960,25 @@
      "note": "renamed to the slug the EU VAT guides name and packages/_shared/eu-vat-directive.md already carried; content unchanged"
     }
    ]
+  },
+  {
+   "id": "2026-11-22-haiti-removal",
+   "date": "2026-11-22",
+   "reason": "Ryan approved removing Haiti's guide and catalogue row.",
+   "entries": [
+    {
+     "from": "skills/international/haiti/ht-salary-withholding-reference.md",
+     "to": null,
+     "slug": "ht-salary-withholding-reference",
+     "replacement": null
+    },
+    {
+     "from": "skills/international/haiti/README.md",
+     "to": null,
+     "slug": null,
+     "replacement": null
+    }
+   ]
   }
  ]
 }

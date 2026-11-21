@@ -1,7 +1,7 @@
 {
   "source_url": "https://unstats.un.org/unsd/methodology/m49/overview/",
   "retrieved_on": "2026-10-11",
-  "scope": "All 248 country-or-area rows published in the UN M49 table on the retrieval date, plus the existing repository's Taiwan and Kosovo jurisdictions. Codes and names identify guide coverage and do not determine sovereignty or a tax regime.",
+  "scope": "Country-or-area rows selected from the UN M49 table on the retrieval date, plus the existing repository's Taiwan and Kosovo jurisdictions. Codes and names identify guide coverage and do not determine sovereignty or a tax regime.",
   "countries": [
     {
       "code": "AD",
@@ -590,12 +590,6 @@
       "name": "Croatia",
       "m49": "191",
       "iso_alpha3": "HRV"
-    },
-    {
-      "code": "HT",
-      "name": "Haiti",
-      "m49": "332",
-      "iso_alpha3": "HTI"
     },
     {
       "code": "HU",

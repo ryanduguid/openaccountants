@@ -1,7 +1,7 @@
 {
  "counts": {
-  "guides": 2205,
-  "jurisdictions": 306,
+  "guides": 2204,
+  "jurisdictions": 305,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -11352,19 +11352,6 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
-  },
-  {
-   "slug": "ht-salary-withholding-reference",
-   "path": "skills/international/haiti/ht-salary-withholding-reference.md",
-   "name": "ht-salary-withholding-reference",
-   "jurisdiction": "HT",
-   "category": "international",
-   "tier": 2,
-   "verified_by": "pending",
-   "reviewed_by": null,
-   "review_status": "pending_review",
-   "tax_year": "2026",
    "last_updated": "2026-11-10"
   },
   {

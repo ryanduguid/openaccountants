@@ -32,7 +32,7 @@ Deliver one coherent jurisdiction or related regime batch per pull request. Rege
 
 ## Keeping the inventory current
 
-The [catalogue](country-catalogue.json) captures the UN M49 table's country-or-area rows on its stated retrieval date. Taiwan and Kosovo retain their existing repository identifiers in a separate list. This geographical inventory makes no claim about sovereignty, recognition or uniform tax administration.
+The [catalogue](country-catalogue.json) draws on the UN M49 table's country-or-area rows from its stated retrieval date. Taiwan and Kosovo retain their existing repository identifiers in a separate list. This geographical inventory makes no claim about sovereignty, recognition or uniform tax administration.
 
 After regenerating `index.json`, run:
 
