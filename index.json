@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2194,
+  "guides": 2197,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -5011,6 +5011,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "br-tax-system-orientation",
+   "path": "skills/international/brazil/br-tax-system-orientation.md",
+   "name": "br-tax-system-orientation",
+   "jurisdiction": "BR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "brazil-crypto-tax",
    "path": "skills/international/brazil/brazil-crypto-tax.md",
    "name": "brazil-crypto-tax",
@@ -7193,6 +7206,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "cn-tax-system-orientation",
+   "path": "skills/international/china/cn-tax-system-orientation.md",
+   "name": "cn-tax-system-orientation",
+   "jurisdiction": "CN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "cn-withholding",
@@ -16605,6 +16631,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ma-tax-system-orientation",
+   "path": "skills/international/morocco/ma-tax-system-orientation.md",
+   "name": "ma-tax-system-orientation",
+   "jurisdiction": "MA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "morocco-income-tax",

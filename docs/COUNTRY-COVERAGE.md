@@ -46,7 +46,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BN | Brunei Darussalam | 7 | 0 |
 | BO | Bolivia (Plurinational State of) | 6 | 0 |
 | BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |
-| BR | Brazil | 13 | 8 |
+| BR | Brazil | 14 | 8 |
 | BS | Bahamas | 6 | 0 |
 | BT | Bhutan | 7 | 0 |
 | BV | Bouvet Island | 1 | 0 |
@@ -63,7 +63,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CK | Cook Islands | 5 | 0 |
 | CL | Chile | 7 | 0 |
 | CM | Cameroon | 4 | 0 |
-| CN | China | 13 | 0 |
+| CN | China | 14 | 0 |
 | CO | Colombia | 7 | 0 |
 | CR | Costa Rica | 6 | 0 |
 | CU | Cuba | 6 | 0 |
@@ -152,7 +152,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | LU | Luxembourg | 6 | 0 |
 | LV | Latvia | 9 | 0 |
 | LY | Libya | 6 | 0 |
-| MA | Morocco | 15 | 0 |
+| MA | Morocco | 16 | 0 |
 | MC | Monaco | 7 | 0 |
 | MD | Republic of Moldova | 9 | 0 |
 | ME | Montenegro | 9 | 0 |

@@ -11,14 +11,15 @@
 4. `br-indirect-tax.md`
 5. `br-inss.md`
 6. `br-simples-nacional.md`
-7. `brazil-crypto-tax.md`
-8. `brazil-einvoice.md`
-9. `brazil-payroll.md`
-10. `brazil-transfer-pricing.md`
-11. `brazil-vat.md`
-12. `references.md`
-13. `brazil-guided-intake.md`
-14. `brazil-return-assembly.md`
+7. `br-tax-system-orientation.md`
+8. `brazil-crypto-tax.md`
+9. `brazil-einvoice.md`
+10. `brazil-payroll.md`
+11. `brazil-transfer-pricing.md`
+12. `brazil-vat.md`
+13. `references.md`
+14. `brazil-guided-intake.md`
+15. `brazil-return-assembly.md`
 
 ## Shared files this package needs
 
