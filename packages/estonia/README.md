@@ -9,11 +9,12 @@
 2. `ee-company-formation.md`
 3. `ee-corporate-income-tax.md`
 4. `ee-tax-overview.md`
-5. `estonia-income-tax.md`
-6. `estonia-payroll.md`
-7. `estonia-social-contributions.md`
-8. `estonia-tax-optimization.md`
-9. `estonia-vat-return.md`
+5. `ee-tax-system-orientation.md`
+6. `estonia-income-tax.md`
+7. `estonia-payroll.md`
+8. `estonia-social-contributions.md`
+9. `estonia-tax-optimization.md`
+10. `estonia-vat-return.md`
 
 ## Shared files this package needs
 
