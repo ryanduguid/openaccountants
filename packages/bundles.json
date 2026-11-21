@@ -2831,20 +2831,6 @@
     "workflow-base.md"
    ]
   },
-  "haiti": {
-   "jurisdiction": "HT",
-   "name": "Haiti",
-   "files": [
-    "intake.md",
-    "ht-salary-withholding-reference.md",
-    "README.md"
-   ],
-   "shared": [
-    "foundation.md",
-    "income-tax-workflow-base.md",
-    "workflow-base.md"
-   ]
-  },
   "heard-island-and-mcdonald-islands": {
    "jurisdiction": "HM",
    "name": "Heard Island And Mcdonald Islands",

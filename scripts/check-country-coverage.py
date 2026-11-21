@@ -12,8 +12,8 @@ from oa_tools.roster import load_index, reviewer_of
 ROOT = Path(REPO_ROOT)
 CATALOGUE = ROOT / "docs" / "country-catalogue.json"
 REPORT = ROOT / "docs" / "COUNTRY-COVERAGE.md"
-# Ryan's fixed coverage scope, 31 October 2026; retain the published inventory.
-EXCLUDED_CODES = frozenset({"KP", "IR", "SY", "RU", "BY", "MM", "YE"})
+# Ryan's coverage decisions on 31 October and 22 November 2026.
+EXCLUDED_CODES = frozenset({"KP", "IR", "SY", "RU", "BY", "MM", "YE", "HT"})
 
 
 def coverage(catalogue, guides):
@@ -30,19 +30,23 @@ def coverage(catalogue, guides):
 
 def render(catalogue, rows):
     target = [row for row in rows if row["code"] not in EXCLUDED_CODES]
+    excluded_codes = sorted(row["code"] for row in rows if row["code"] in EXCLUDED_CODES)
+    area_label = "area" if len(excluded_codes) == 1 else "areas"
+    excluded_note = (
+        f"{len(excluded_codes)} catalogue {area_label} excluded by Ryan's scope decision: "
+        f"{', '.join(excluded_codes)}. Published guides remain in the inventory below."
+    )
     present = sum(row["guide_count"] > 0 for row in target)
     missing = len(target) - present
     out = [
         "# Country and territory coverage", "",
         "Generated from `country-catalogue.json` and `index.json`. Regenerate with "
         "`python3 scripts/check-country-coverage.py --markdown > docs/COUNTRY-COVERAGE.md`.", "",
-        "The catalogue contains the country-or-area rows in the "
+        "The catalogue draws on the country-or-area rows in the "
         f"[UN M49 table]({catalogue['source_url']}) captured on "
         f"{catalogue['retrieved_on']}, plus the repository's existing Taiwan and Kosovo "
         "jurisdictions. This is a guide inventory; it makes no determination about sovereignty.", "",
-        f"{len(rows) - len(target)} catalogue areas excluded by Ryan's fixed scope "
-        "decision (31 October 2026): KP, IR, SY, RU, BY, MM and YE. Published guides "
-        "remain in the inventory below; excluded areas are not missing coverage targets.", "",
+        *([excluded_note, ""] if excluded_codes else []),
         f"{present} of {len(target)} target areas have at least one indexed guide; "
         f"{missing} {'has' if missing == 1 else 'have'} none. US states, cross-border labels and global "
         "workflow guides do not increase this country-and-territory count.", "",

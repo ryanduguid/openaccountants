@@ -71,7 +71,6 @@ skills/international/germany/de-trade-tax.md
 skills/international/germany/germany-formation.md
 skills/international/germany/germany-tax-optimization.md
 skills/international/germany/germany-transfer-pricing.md
-skills/international/haiti/ht-salary-withholding-reference.md
 skills/international/holy-see/va-customs-fees-reference.md
 skills/international/italy/it-irap.md
 skills/international/italy/italy-tax-optimization.md

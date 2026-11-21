@@ -2,11 +2,11 @@
 
 Generated from `country-catalogue.json` and `index.json`. Regenerate with `python3 scripts/check-country-coverage.py --markdown > docs/COUNTRY-COVERAGE.md`.
 
-The catalogue contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
+The catalogue draws on the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-7 catalogue areas excluded by Ryan's fixed scope decision (31 October 2026): KP, IR, SY, RU, BY, MM and YE. Published guides remain in the inventory below; excluded areas are not missing coverage targets.
+7 catalogue areas excluded by Ryan's scope decision: BY, IR, KP, MM, RU, SY, YE. Published guides remain in the inventory below.
 
-243 of 243 target areas have at least one indexed guide; 0 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+242 of 242 target areas have at least one indexed guide; 0 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -114,7 +114,6 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | HM | Heard Island and McDonald Islands | 1 | 0 |
 | HN | Honduras | 7 | 0 |
 | HR | Croatia | 9 | 0 |
-| HT | Haiti | 1 | 0 |
 | HU | Hungary | 5 | 0 |
 | ID | Indonesia | 14 | 8 |
 | IE | Ireland | 14 | 0 |
