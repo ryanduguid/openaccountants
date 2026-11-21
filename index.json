@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2164,
+  "guides": 2167,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -9886,6 +9886,19 @@
    "last_updated": "2026-10-30"
   },
   {
+   "slug": "pf-tax-system-orientation",
+   "path": "skills/international/french-polynesia/pf-tax-system-orientation.md",
+   "name": "pf-tax-system-orientation",
+   "jurisdiction": "PF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "tf-kerguelen-crozet-fishing-duty-reference",
    "path": "skills/international/french-southern-territories/tf-kerguelen-crozet-fishing-duty-reference.md",
    "name": "tf-kerguelen-crozet-fishing-duty-reference",
@@ -16995,6 +17008,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-29"
+  },
+  {
+   "slug": "nc-tax-system-orientation",
+   "path": "skills/international/new-caledonia/nc-tax-system-orientation.md",
+   "name": "nc-tax-system-orientation",
+   "jurisdiction": "NC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "new-zealand-crypto-tax",
@@ -24756,6 +24782,19 @@
    "review_status": "pending_review",
    "tax_year": "2019",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "wf-tax-system-orientation",
+   "path": "skills/international/wallis-and-futuna/wf-tax-system-orientation.md",
+   "name": "wf-tax-system-orientation",
+   "jurisdiction": "WF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "eh-eu-import-origin-reference",

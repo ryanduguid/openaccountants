@@ -2460,6 +2460,7 @@
    "files": [
     "intake.md",
     "pf-salary-cst-reference.md",
+    "pf-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4215,6 +4216,7 @@
    "files": [
     "intake.md",
     "nc-ordinary-irpp-reference.md",
+    "nc-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -9445,6 +9447,7 @@
    "files": [
     "intake.md",
     "wf-patente-registration-reference.md",
+    "wf-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

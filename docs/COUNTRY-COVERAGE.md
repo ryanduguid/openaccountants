@@ -176,7 +176,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MY | Malaysia | 9 | 0 |
 | MZ | Mozambique | 4 | 0 |
 | NA | Namibia | 6 | 0 |
-| NC | New Caledonia | 1 | 0 |
+| NC | New Caledonia | 2 | 0 |
 | NE | Niger | 5 | 0 |
 | NF | Norfolk Island | 23 | 0 |
 | NG | Nigeria | 13 | 2 |
@@ -190,7 +190,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | OM | Oman | 6 | 0 |
 | PA | Panama | 4 | 0 |
 | PE | Peru | 7 | 4 |
-| PF | French Polynesia | 1 | 0 |
+| PF | French Polynesia | 2 | 0 |
 | PG | Papua New Guinea | 6 | 0 |
 | PH | Philippines | 7 | 0 |
 | PK | Pakistan | 20 | 4 |
@@ -258,7 +258,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | VI | United States Virgin Islands | 5 | 0 |
 | VN | Viet Nam | 8 | 0 |
 | VU | Vanuatu | 6 | 0 |
-| WF | Wallis and Futuna Islands | 1 | 0 |
+| WF | Wallis and Futuna Islands | 2 | 0 |
 | WS | Samoa | 6 | 0 |
 | XK | Kosovo | 6 | 0 |
 | YE | Yemen | 0 | 0 |
