@@ -120,7 +120,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IE | Ireland | 14 | 0 |
 | IL | Israel | 10 | 0 |
 | IM | Isle of Man | 6 | 0 |
-| IN | India | 18 | 13 |
+| IN | India | 19 | 13 |
 | IO | British Indian Ocean Territory | 1 | 0 |
 | IQ | Iraq | 7 | 0 |
 | IR | Iran (Islamic Republic of) | 6 | 0 |
@@ -248,7 +248,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | UA | Ukraine | 16 | 0 |
 | UG | Uganda | 6 | 0 |
 | UM | United States Minor Outlying Islands | 1 | 0 |
-| US | United States of America | 62 | 20 |
+| US | United States of America | 63 | 20 |
 | UY | Uruguay | 7 | 0 |
 | UZ | Uzbekistan | 9 | 0 |
 | VA | Holy See | 2 | 0 |

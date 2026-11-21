@@ -11,19 +11,20 @@
 4. `in-pf-esi-employer.md`
 5. `in-professional-tax.md`
 6. `in-tax-residency.md`
-7. `in-tds-freelance.md`
-8. `india-crypto-tax.md`
-9. `india-einvoice.md`
-10. `india-financial-statements.md`
-11. `india-formation.md`
-12. `india-gst.md`
-13. `india-payroll.md`
-14. `india-tax-optimization.md`
-15. `india-to-uae-singapore-nri-tax.md`
-16. `india-transfer-pricing.md`
-17. `references.md`
-18. `india-guided-intake.md`
-19. `india-return-assembly.md`
+7. `in-tax-system-orientation.md`
+8. `in-tds-freelance.md`
+9. `india-crypto-tax.md`
+10. `india-einvoice.md`
+11. `india-financial-statements.md`
+12. `india-formation.md`
+13. `india-gst.md`
+14. `india-payroll.md`
+15. `india-tax-optimization.md`
+16. `india-to-uae-singapore-nri-tax.md`
+17. `india-transfer-pricing.md`
+18. `references.md`
+19. `india-guided-intake.md`
+20. `india-return-assembly.md`
 
 ## Shared files this package needs
 
