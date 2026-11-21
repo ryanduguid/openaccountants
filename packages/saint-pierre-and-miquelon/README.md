@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `pm-social-contributions-reference.md`
+3. `pm-tax-system-orientation.md`
 
 ## Shared files this package needs
 

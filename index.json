@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2171,
+  "guides": 2174,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -9431,6 +9431,19 @@
    "last_updated": "2026-10-27"
   },
   {
+   "slug": "fo-tax-system-orientation",
+   "path": "skills/international/faroe-islands/fo-tax-system-orientation.md",
+   "name": "fo-tax-system-orientation",
+   "jurisdiction": "FO",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "fiji-vat",
    "path": "skills/international/fiji/fiji-vat.md",
    "name": "fiji-vat",
@@ -10703,6 +10716,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-27"
+  },
+  {
+   "slug": "gl-tax-system-orientation",
+   "path": "skills/international/greenland/gl-tax-system-orientation.md",
+   "name": "gl-tax-system-orientation",
+   "jurisdiction": "GL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "gd-annual-employment-income-reference",
@@ -19946,6 +19972,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-30"
+  },
+  {
+   "slug": "pm-tax-system-orientation",
+   "path": "skills/international/saint-pierre-and-miquelon/pm-tax-system-orientation.md",
+   "name": "pm-tax-system-orientation",
+   "jurisdiction": "PM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "vc-persons-abroad-contributions-reference",

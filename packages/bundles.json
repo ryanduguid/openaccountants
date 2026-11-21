@@ -2345,6 +2345,7 @@
     "intake.md",
     "fo-municipal-income-tax-reference.md",
     "fo-national-income-tax-table-reference.md",
+    "fo-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -2662,6 +2663,7 @@
    "files": [
     "intake.md",
     "gl-scale-income-reference.md",
+    "gl-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4932,6 +4934,7 @@
    "files": [
     "intake.md",
     "pm-social-contributions-reference.md",
+    "pm-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
