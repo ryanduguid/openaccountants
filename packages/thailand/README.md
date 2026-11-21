@@ -11,8 +11,9 @@
 4. `th-corporate-income-tax.md`
 5. `th-payroll-social.md`
 6. `th-tax-overview.md`
-7. `thailand-pit.md`
-8. `thailand-vat.md`
+7. `th-tax-system-orientation.md`
+8. `thailand-pit.md`
+9. `thailand-vat.md`
 
 ## Shared files this package needs
 
