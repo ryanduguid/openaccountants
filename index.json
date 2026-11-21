@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2169,
+  "guides": 2171,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -19857,6 +19857,19 @@
    "last_updated": "2026-11-02"
   },
   {
+   "slug": "bl-tax-system-orientation",
+   "path": "skills/international/saint-barthelemy/bl-tax-system-orientation.md",
+   "name": "bl-tax-system-orientation",
+   "jurisdiction": "BL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "kn-social-security-reconciliation",
    "path": "skills/international/saint-kitts-and-nevis/kn-social-security-reconciliation.md",
    "name": "kn-social-security-reconciliation",
@@ -19907,6 +19920,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-30"
+  },
+  {
+   "slug": "mf-tax-system-orientation",
+   "path": "skills/international/saint-martin/mf-tax-system-orientation.md",
+   "name": "mf-tax-system-orientation",
+   "jurisdiction": "MF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "pm-social-contributions-reference",
