@@ -9,11 +9,12 @@
 2. `si-company-formation.md`
 3. `si-corporate-income-tax.md`
 4. `si-tax-overview.md`
-5. `slovenia-income-tax.md`
-6. `slovenia-payroll.md`
-7. `slovenia-social-contributions.md`
-8. `slovenia-tax-optimization.md`
-9. `slovenia-vat-return.md`
+5. `si-tax-system-orientation.md`
+6. `slovenia-income-tax.md`
+7. `slovenia-payroll.md`
+8. `slovenia-social-contributions.md`
+9. `slovenia-tax-optimization.md`
+10. `slovenia-vat-return.md`
 
 ## Shared files this package needs
 

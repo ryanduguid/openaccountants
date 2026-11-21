@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2113,
+  "guides": 2115,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -7505,6 +7505,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "hr-tax-system-orientation",
+   "path": "skills/international/croatia/hr-tax-system-orientation.md",
+   "name": "hr-tax-system-orientation",
+   "jurisdiction": "HR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "cu-company-formation",
@@ -20401,6 +20414,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "si-tax-system-orientation",
+   "path": "skills/international/slovenia/si-tax-system-orientation.md",
+   "name": "si-tax-system-orientation",
+   "jurisdiction": "SI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "slovenia-income-tax",

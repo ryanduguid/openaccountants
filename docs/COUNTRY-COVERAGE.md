@@ -113,7 +113,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | HK | China, Hong Kong Special Administrative Region | 7 | 0 |
 | HM | Heard Island and McDonald Islands | 1 | 0 |
 | HN | Honduras | 7 | 0 |
-| HR | Croatia | 8 | 0 |
+| HR | Croatia | 9 | 0 |
 | HT | Haiti | 1 | 0 |
 | HU | Hungary | 5 | 0 |
 | ID | Indonesia | 13 | 8 |
@@ -215,7 +215,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SE | Sweden | 11 | 0 |
 | SG | Singapore | 10 | 0 |
 | SH | Saint Helena | 1 | 0 |
-| SI | Slovenia | 8 | 0 |
+| SI | Slovenia | 9 | 0 |
 | SJ | Svalbard and Jan Mayen Islands | 1 | 0 |
 | SK | Slovakia | 9 | 0 |
 | SL | Sierra Leone | 6 | 0 |

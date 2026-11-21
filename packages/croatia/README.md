@@ -14,6 +14,7 @@
 7. `hr-company-formation.md`
 8. `hr-corporate-income-tax.md`
 9. `hr-tax-overview.md`
+10. `hr-tax-system-orientation.md`
 
 ## Shared files this package needs
 
