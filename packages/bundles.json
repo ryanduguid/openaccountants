@@ -583,6 +583,7 @@
     "bd-social-contributions.md",
     "bd-tax-optimization.md",
     "bd-tax-overview.md",
+    "bd-tax-system-orientation.md",
     "references.md",
     "bangladesh-guided-intake.md",
     "bangladesh-return-assembly.md",
@@ -747,6 +748,7 @@
     "bt-income-tax.md",
     "bt-payroll-social.md",
     "bt-tax-overview.md",
+    "bt-tax-system-orientation.md",
     "bt-vat-gst.md",
     "README.md"
    ],
@@ -4148,6 +4150,7 @@
     "nepal-payroll.md",
     "nepal-tds.md",
     "nepal-vat.md",
+    "np-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2140,
+  "guides": 2143,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -3919,6 +3919,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "bd-tax-system-orientation",
+   "path": "skills/international/bangladesh/bd-tax-system-orientation.md",
+   "name": "bd-tax-system-orientation",
+   "jurisdiction": "BD",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "bangladesh-references",
    "path": "skills/international/bangladesh/references.md",
    "name": "bangladesh-references",
@@ -4567,6 +4580,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "bt-tax-system-orientation",
+   "path": "skills/international/bhutan/bt-tax-system-orientation.md",
+   "name": "bt-tax-system-orientation",
+   "jurisdiction": "BT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "bt-vat-gst",
@@ -16579,6 +16605,19 @@
    "review_status": "current",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "np-tax-system-orientation",
+   "path": "skills/international/nepal/np-tax-system-orientation.md",
+   "name": "np-tax-system-orientation",
+   "jurisdiction": "NP",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "netherlands-30-percent-ruling",
