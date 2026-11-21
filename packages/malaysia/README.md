@@ -14,6 +14,7 @@
 7. `my-income-tax.md`
 8. `my-pcb.md`
 9. `my-tax-overview.md`
+10. `my-tax-system-orientation.md`
 
 ## Shared files this package needs
 

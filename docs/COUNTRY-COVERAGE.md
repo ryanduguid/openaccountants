@@ -173,7 +173,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MV | Maldives | 7 | 0 |
 | MW | Malawi | 6 | 0 |
 | MX | Mexico | 11 | 0 |
-| MY | Malaysia | 8 | 0 |
+| MY | Malaysia | 9 | 0 |
 | MZ | Mozambique | 4 | 0 |
 | NA | Namibia | 6 | 0 |
 | NC | New Caledonia | 1 | 0 |
@@ -233,7 +233,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TD | Chad | 6 | 0 |
 | TF | French Southern Territories | 1 | 0 |
 | TG | Togo | 6 | 0 |
-| TH | Thailand | 7 | 0 |
+| TH | Thailand | 8 | 0 |
 | TJ | Tajikistan | 7 | 0 |
 | TK | Tokelau | 10 | 0 |
 | TL | Timor-Leste | 6 | 0 |

@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2146,
+  "guides": 2148,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -14956,6 +14956,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "my-tax-system-orientation",
+   "path": "skills/international/malaysia/my-tax-system-orientation.md",
+   "name": "my-tax-system-orientation",
+   "jurisdiction": "MY",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "maldives-gst",
    "path": "skills/international/maldives/maldives-gst.md",
    "name": "maldives-gst",
@@ -22403,6 +22416,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-11"
+  },
+  {
+   "slug": "th-tax-system-orientation",
+   "path": "skills/international/thailand/th-tax-system-orientation.md",
+   "name": "th-tax-system-orientation",
+   "jurisdiction": "TH",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "thailand-pit",
