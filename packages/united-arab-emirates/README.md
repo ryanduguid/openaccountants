@@ -12,7 +12,8 @@
 5. `ae-payroll-social.md`
 6. `ae-tax-overview.md`
 7. `ae-tax-residency.md`
-8. `uae-vat.md`
+8. `ae-tax-system-orientation.md`
+9. `uae-vat.md`
 
 ## Shared files this package needs
 

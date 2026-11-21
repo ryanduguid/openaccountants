@@ -17,7 +17,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | Code | Country or area | Indexed guides | Accountant-reviewed guides |
 |---|---|---:|---:|
 | AD | Andorra | 7 | 0 |
-| AE | United Arab Emirates | 7 | 3 |
+| AE | United Arab Emirates | 8 | 3 |
 | AF | Afghanistan | 6 | 0 |
 | AG | Antigua and Barbuda | 4 | 0 |
 | AI | Anguilla | 3 | 0 |
@@ -172,7 +172,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MU | Mauritius | 6 | 0 |
 | MV | Maldives | 7 | 0 |
 | MW | Malawi | 6 | 0 |
-| MX | Mexico | 11 | 0 |
+| MX | Mexico | 12 | 0 |
 | MY | Malaysia | 9 | 0 |
 | MZ | Mozambique | 4 | 0 |
 | NA | Namibia | 6 | 0 |
@@ -208,7 +208,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | RS | Serbia | 8 | 0 |
 | RU | Russian Federation | 14 | 0 |
 | RW | Rwanda | 7 | 0 |
-| SA | Saudi Arabia | 12 | 5 |
+| SA | Saudi Arabia | 13 | 5 |
 | SB | Solomon Islands | 2 | 0 |
 | SC | Seychelles | 5 | 0 |
 | SD | Sudan | 6 | 0 |

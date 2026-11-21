@@ -14,10 +14,11 @@
 7. `sa-gosi-saudization.md`
 8. `sa-rett.md`
 9. `sa-return-assembly.md`
-10. `sa-withholding-tax.md`
-11. `sa-zakat.md`
-12. `saudi-arabia-vat.md`
-13. `saudi-einvoice.md`
+10. `sa-tax-system-orientation.md`
+11. `sa-withholding-tax.md`
+12. `sa-zakat.md`
+13. `saudi-arabia-vat.md`
+14. `saudi-einvoice.md`
 
 ## Shared files this package needs
 

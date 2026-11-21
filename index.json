@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2200,
+  "guides": 2203,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -16061,6 +16061,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "mx-tax-system-orientation",
+   "path": "skills/international/mexico/mx-tax-system-orientation.md",
+   "name": "mx-tax-system-orientation",
+   "jurisdiction": "MX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "mexico-references",
    "path": "skills/international/mexico/references.md",
    "name": "mexico-references",
@@ -20663,6 +20676,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "sa-tax-system-orientation",
+   "path": "skills/international/saudi-arabia/sa-tax-system-orientation.md",
+   "name": "sa-tax-system-orientation",
+   "jurisdiction": "SA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "sa-withholding-tax",
    "path": "skills/international/saudi-arabia/sa-withholding-tax.md",
    "name": "sa-withholding-tax",
@@ -24652,6 +24678,19 @@
    "review_status": "current",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ae-tax-system-orientation",
+   "path": "skills/international/united-arab-emirates/ae-tax-system-orientation.md",
+   "name": "ae-tax-system-orientation",
+   "jurisdiction": "AE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "uae-vat",
