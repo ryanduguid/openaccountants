@@ -1,10 +1,10 @@
 ---
 name: el-salvador-income-tax
 description: Use this skill whenever asked about El Salvador personal income tax (Impuesto sobre la Renta) for self-employed individuals and individuals. Trigger on phrases like "how much income tax do I pay in El Salvador", "Impuesto sobre la Renta", "ISR", "declaración de renta", "F-11", "F-14", "retención de renta", "pago a cuenta", "honorarios", "10% withholding professional fees", "ISSS", "AFP", "self-employed tax El Salvador", "renta El Salvador", or any question about filing or computing income tax for a self-employed individual or salaried person in El Salvador. Also trigger when preparing or reviewing an F-11 annual return, computing deductible expenses or the 10% professional-fee withholding, or advising on the progressive renta table, social-security (ISSS) or pension (AFP) contributions. This skill covers the progressive ISR table (0/10/20/30%), the 2025 reform raising the exempt threshold to USD 6,600, monthly retención tables, ISSS and AFP contributions, the 10% honorarios withholding, deductions, filing forms and penalties, and interaction with IVA. ALWAYS read this skill before touching any El Salvador income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # El Salvador Income Tax (Impuesto sobre la Renta) -- Self-Employed & Individuals
 
-## El Salvador Income Tax (Impuesto sobre la Renta) -- Self-Employed & Individuals Skill v0.2
+## El Salvador Income Tax (Impuesto sobre la Renta) -- Self-Employed & Individuals Skill v0.3
 
-> **Tier 2 (research-verified) skill — confidence: medium.** The 2025 reform (Decreto Legislativo 293 / Decreto Ejecutivo 10) published official **monthly** retención tables; the exact **annual** Art. 37 breakpoints and middle-bracket fixed amounts are partly inferred by annualising the monthly table and should be re-verified by a Salvadoran CPA against Decreto Ejecutivo 10 before Q1 verification. Items marked **[RESEARCH GAP — reviewer to confirm]** are not fully sourced.
+> **Tier 2 (research-verified) skill.** Legislative Decree 293 sets the annual Article 37 table. Executive Decree 10 sets payroll withholding. Items marked **[RESEARCH GAP — reviewer to confirm]** require further evidence.
 
 ## Section 1 -- Quick Reference
 
@@ -37,26 +37,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual filing deadline | Within 4 months of fiscal year-end → **by 30 April** of the following year (Código Tributario; Art. 48 LISR) |
 | Validated by | Pending — requires sign-off by a Salvadoran CPA familiar with LISR |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Tax Rate Brackets -- Annual ISR Table (Art. 37 LISR, effective tax year 2025)
 
-**Annual ISR Table**  _(Art. 37 LISR table as reformed for tax year 2025; Diario El Mundo (citing Ministerio de Hacienda Decreto Ejecutivo 10, 2025); a secondary practitioner summary.)_
+**Annual ISR Table** ([Income Tax Law, art. 37](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf) and [Legislative Decree 293, art. 1](https://www.asamblea.gob.sv/sites/default/files/documents/decretos/E198E77D-2027-47AA-A8F6-1D70E2F46431.pdf))
 
 | Tramo | Annual Net Income (USD) | Marginal rate on excess | Cuota fija (fixed amount) |
 | --- | --- | --- | --- |
 | I | 0.00 -- 6,600.00 | Exempt (0%) | USD 0.00 |
-| II | 6,600.01 -- 10,742.86 | 10% over 6,600.00 | + USD 212.12 |
-| III | 10,742.87 -- 24,457.14 | 20% over 10,742.86 | + USD 720.00 |
-| IV | 24,457.15 and above | 30% over 24,457.14 | + USD 3,462.86 |
+| II | 6,600.01 -- 9,142.86 | 10% over 6,600.00 | + USD 212.12 |
+| III | 9,142.87 -- 22,857.14 | 20% over 9,142.86 | + USD 720.00 |
+| IV | 22,857.15 and above | 30% over 22,857.14 | + USD 3,462.86 |
 
 **Domiciled individuals — progressive scale (0% / 10% / 20% / 30%).** ISR = cuota fija (statutory fixed amount) + marginal rate × (net income − band floor).
 
-> **Note on the cuotas fijas.** The statutory fixed amounts are **USD 212.12 (Tramo II), USD 720.00 (Tramo III), USD 3,462.86 (Tramo IV)** — unchanged by the 2025 reform, which moved only the band thresholds (Tramo I exempt ceiling 4,064 → 6,600; Tramo III floor 9,142.86 → 10,742.86; Tramo IV floor 22,857.14 → 24,457.14). Confirmed across Diario El Mundo, Contaportable, Miranda Corporation and 2026 ISR calculators against Decreto Legislativo 293 / Decreto Ejecutivo 10. **[RESEARCH GAP — reviewer to confirm the exact Tramo II floor treatment and the small cuota-fija discontinuity at the exempt threshold against the consolidated Art. 37 LISR text.]**
+> Apply the fixed amount in the applicable bracket and the marginal rate on the excess over its threshold. At USD 6,600.01, apply USD 212.12 plus 10% of the USD 0.01 excess.
 
 ### Tax Rate Brackets -- Monthly Withholding Table (Retención, Decreto Ejecutivo 10, 2025)
 
-**Monthly Withholding Table**  _(Diario El Mundo / Ministerio de Hacienda Decreto Ejecutivo 10 (2025); DGII Tablas de Retención 700-DGII-DC-2025-01.)_
+**Monthly Withholding Table** ([Executive Decree 10, art. 1(a)](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf))
 
 | Tramo | Monthly Income (USD) | Withholding | Cumulative at Top |
 | --- | --- | --- | --- |
@@ -65,9 +65,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 | USD 288.57 |
 | IV | 2,038.11 and above | USD 288.57 + 30% on excess over 2,038.10 | -- |
 
-**This is the authoritative published 2025 source. Annualise (×12) for the annual computation.**
+Use the annual Article 37 table for annual settlement.
 
-> **Note on the USD 17.67 fixed amount (band II monthly):** the official decree publishes a small fixed amount in band II that is a rounding/transition artifact of the table (10% × (550.01 − 550.00) ≈ 0 at the lower bound). Apply the table figures **exactly as published** for monthly retención; for the annual settlement use the annual Art. 37 table above. **[RESEARCH GAP — reviewer to confirm]** the precise band-II fixed amount and lower-bound treatment.
+> Executive Decree 10 sets a USD 17.67 fixed amount for monthly band II. For band II pay, apply the separate USD 1,600 annual deduction where the employee’s only annual income is salary of USD 9,100 or less. For 12 equal monthly payments, reduce the withholding base by USD 1,600 ÷ 12 before applying the table. See the June and December recalculations in [Executive Decree 10, art. 1(d)–(f)](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf) and the deduction in [Income Tax Law, art. 29(7)](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf).
 
 ### Non-Domiciled Individuals
 
@@ -84,8 +84,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Threshold | Amount (USD) | Effective / Note | Source |
 | --- | --- | --- | --- |
 | Personal income-tax exempt threshold | 6,600.00 / year (550.00 / month) | Tax year 2025, raised from USD 4,064; Decreto Legislativo 293 / Decreto Ejecutivo 10 | Diario El Mundo; Ministerio de Hacienda |
-| Filing exemption for salaried individuals | ≤ 9,100.00 / year | Salaried individuals with income ≤ USD 9,100 whose tax was fully withheld are **not required to file**; receive an embedded single deduction of USD 1,600 | secondary summary, Deductions / Tax administration |
-| Embedded single deduction (no-file salaried) | 1,600.00 | Built into the ≤ USD 9,100 no-file regime | secondary summary, Deductions |
+| Filing exemption for salaried individuals | Up to USD 60,000 annually | Domiciled individuals with only salary income and correct withholding | [Income Tax Law, art. 38](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf) |
+| Fixed salary deduction | USD 1,600 | Salary-only income up to USD 9,100 a year | [Income Tax Law, art. 29(7)](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf) |
 | IVA mandatory registration threshold | annual taxable + exempt operations > 5,714.29 (or total assets > 2,285.71) | Must register as IVA contributor (F-210); below both = "sujeto excluido" | Ministerio de Hacienda / DGII / Consortium Legal |
 
 ### Conservative Defaults
@@ -101,7 +101,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown expense category | Not deductible |
 | Unknown whether deduction limit applies | Apply statutory cap (medical/education USD 800/item; donations 20% of net income; voluntary pension 10% of reported income) |
 | Unknown IVA registration status | Assume "sujeto excluido" (not registered) until threshold confirmed |
-| Annual band III/IV fixed amounts | Use annualised monthly table; flag for reviewer (see RESEARCH GAP) |
+| Annual settlement | Use the Article 37 schedule above for the relevant tax year |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -259,12 +259,12 @@ All amounts in **USD** (El Salvador is dollarized). Each example recomputed end-
 ### Example 1 -- Salaried Employee Monthly Retención (mid-band)
 
 **Input line:**
-`30/04/2025 ; ABONO PLANILLA ; EMPRESA TECNOSV S.A. DE C.V. ; SALARIO ABRIL ; +1,200.00 ; USD`
+`31/08/2025 ; ABONO PLANILLA ; EMPRESA TECNOSV S.A. DE C.V. ; SALARIO AGOSTO ; +1,200.00 ; USD`
 
 **Reasoning:**
-Salaried income of USD 1,200/month. Falls in monthly band III (895.25 – 2,038.10): withholding = USD 60.00 + 20% × (1,200.00 − 895.24) = 60.00 + 20% × 304.76 = 60.00 + 60.952 = **USD 120.95**. (ISSS/AFP are withheld separately — see Section 5.)
+The bank credit identifies a salary payment. Obtain the payslip or payroll record to confirm taxable pay after applicable deductions and actual ISR withheld. Leave withholding unverified if the bank credit is the only evidence.
 
-**Classification:** Retención de renta = USD 120.95 for the month (employment income).
+**Worked calculation with a separate payroll input:** If the payslip establishes monthly taxable pay of USD 1,200 after applicable deductions, band III withholding is USD 60.00 + 20% × (1,200.00 − 895.24) = **USD 120.95**. Compare that result with the actual payslip withholding. [Executive Decree 10, art. 1(a), (d)](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf)
 
 ### Example 2 -- Independent Professional Fee with 10% Withholding (honorarios)
 
@@ -302,19 +302,19 @@ Supermarket purchase — private living cost. Not wholly-and-exclusively for the
 
 **Computation:**
 - Net taxable income = 30,000 − 8,000 = **USD 22,000**.
-- Band III applies (10,742.87 – 24,457.14): ISR = cuota fija 720.00 + 20% × (22,000.00 − 10,742.86) = 720.00 + 20% × 11,257.14 = 720.00 + 2,251.43 = **USD 2,971.43**.
-- Less pago a cuenta credit USD 3,000 → **refund of USD 28.57** (3,000 − 2,971.43).
+- Band III applies (9,142.87 – 22,857.14): ISR = cuota fija 720.00 + 20% × (22,000.00 − 9,142.86) = 720.00 + 20% × 12,857.14 = 720.00 + 2,571.43 = **USD 3,291.43**.
+- After the USD 3,000 credit, the balance due is **USD 291.43**.
 
-**Classification:** Annual ISR liability USD 2,971.43; net position = USD 28.57 refund on F-11.
+**Classification:** Annual ISR liability USD 3,291.43. Balance due on F-11 USD 291.43.
 
 ### Example 6 -- High-Earner Annual ISR (top band)
 
 **Inputs:** Domiciled individual, annual net income USD 40,000.
 
 **Computation:**
-- Band IV applies (≥ 24,457.15): ISR = cuota fija 3,462.86 + 30% × (40,000.00 − 24,457.14) = 3,462.86 + 30% × 15,542.86 = 3,462.86 + 4,662.86 = **USD 8,125.72**.
+- Band IV applies (≥ 22,857.15): ISR = cuota fija 3,462.86 + 30% × (40,000.00 − 22,857.14) = 3,462.86 + 30% × 17,142.86 = 3,462.86 + 5,142.86 = **USD 8,605.72**.
 
-**Classification:** Annual ISR liability USD 8,125.72.
+**Classification:** Annual ISR liability USD 8,605.72.
 
 ### Example 7 -- Own-Account Transfer (Exclude)
 
@@ -338,11 +338,11 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.3 Exempt Threshold and Progressive Scale
 
-- **Exempt threshold and progressive scale** — Personal income-tax exempt threshold = USD 6,600/year (USD 550/month) for tax year 2025 (raised from USD 4,064). Domiciled individuals taxed on the 4-band progressive scale 0% / 10% / 20% / 30%. Top marginal rate 30% applies above ~USD 24,457.14 annual net income. Non-domiciled individuals: flat 30% on Salvadoran-source income.  _(Decreto Legislativo 293 / Decreto Ejecutivo 10; Art. 37 LISR)_
+- **Exempt threshold and progressive scale** — Personal income-tax exempt threshold = USD 6,600/year (USD 550/month) for tax year 2025 (raised from USD 4,064). Domiciled individuals taxed on the 4-band progressive scale 0% / 10% / 20% / 30%. Top marginal rate 30% applies above USD 22,857.14 annual net income. Non-domiciled individuals: flat 30% on Salvadoran-source income.  _(Decreto Legislativo 293 / Decreto Ejecutivo 10; Art. 37 LISR)_
 
 ### 5.4 Monthly Salary Withholding (Retención de Renta)
 
-**Monthly Salary Withholding**  _(Diario El Mundo / Ministerio de Hacienda Decreto Ejecutivo 10 (2025).)_
+**Monthly Salary Withholding** ([Executive Decree 10, art. 1(a)](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf))
 
 | Monthly Income (USD) | Withholding |
 | --- | --- |
@@ -351,7 +351,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 | 895.25 – 2,038.10 | USD 60.00 + 20% over 895.24 |
 | 2,038.11 and above | USD 288.57 + 30% over 2,038.10 |
 
-Employers withhold monthly per the official retención table (Decreto Ejecutivo 10/2025) and remit to DGII on **F-14**:
+Employers apply the band II deduction where eligible as described in Section 1 and remit the monthly withholding to DGII on **F-14**.
 
 ### 5.5 Self-Employed Professionals — 10% Withholding (Pago a Cuenta)
 
@@ -359,7 +359,7 @@ Employers withhold monthly per the official retención table (Decreto Ejecutivo 
 
 ### 5.6 Filing Exemption for Salaried Individuals
 
-- **Filing exemption for salaried individuals** — Salaried individuals earning ≤ USD 9,100/year whose tax was fully withheld are not required to file F-11. They receive an embedded single deduction of USD 1,600.  _(secondary summary, Deductions / Tax administration)_
+- **Filing exemption for salaried individuals.** Domiciled individuals with only employment income generally need no F-11 if annual income is USD 60,000 or less and withholding equals the tax under Article 37. A missing or incorrect withholding requires settlement. The USD 1,600 fixed salary deduction is subject to a separate USD 9,100 annual income ceiling. [Income Tax Law, arts. 29(7) and 38](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf)
 
 ### 5.7 Deductions for Filers (over USD 9,100)
 
@@ -509,7 +509,7 @@ REVIEWER FLAGS:
   [ ] Domicile status confirmed (domiciled/non-domiciled)?
   [ ] Income source confirmed (Salvadoran-source only)?
   [ ] Income type confirmed (salaried / honorarios / business)?
-  [ ] Annual band III/IV fixed amounts re-verified vs Decreto Ejecutivo 10?
+  [ ] Annual tax calculated using the Article 37 table for the filing year?
   [ ] Depreciation rates confirmed vs Art. 30 LISR?
   [ ] Home office / vehicle / phone business % confirmed?
   [ ] Personal deduction caps applied (USD 800 / 20% / 10%)?
@@ -633,12 +633,16 @@ ONBOARDING QUESTIONS -- EL SALVADOR INCOME TAX (ISR)
 ### Test Suite
 
 **Test 1 — Salaried monthly retención (band III).**
-Input: Monthly salary USD 1,200, domiciled employee.
+Input: Monthly taxable pay USD 1,200 after applicable payroll deductions, domiciled employee.
 Expected: Retención = 60.00 + 20% × (1,200.00 − 895.24) = 60.00 + 60.95 = **USD 120.95**.
 
+With only a USD 1,200 bank salary credit, classify it as a salary payment and request the payroll record. The withholding amount remains unverified.
+
 **Test 2 — Salaried monthly retención (band II).**
-Input: Monthly salary USD 700.
-Expected: Retención = 17.67 + 10% × (700.00 − 550.00) = 17.67 + 15.00 = **USD 32.67**.
+Input: A domiciled employee’s only income is gross salary of USD 700 a month for 12 months. Deduct USD 21.00 ISSS and USD 50.75 AFP.
+Expected: Annual salary of USD 8,400 qualifies. Band II pay of USD 628.25 less USD 1,600 ÷ 12 gives a withholding base of USD 494.92. ISR is **USD 0.00** and net pay is **USD 628.25**.
+
+For USD 800 monthly gross over 12 months, annual salary is USD 9,600. The salary deduction does not apply. Pay after ISSS and AFP is USD 718.00 and ISR is 17.67 + 10% × (718.00 − 550.00) = **USD 34.47**.
 
 **Test 3 — Exempt salary.**
 Input: Monthly salary USD 500.
@@ -646,11 +650,11 @@ Expected: Retención = **USD 0.00** (below USD 550 threshold).
 
 **Test 4 — Self-employed annual settlement (band III).**
 Input: Domiciled professional, net taxable income USD 22,000, pago a cuenta withheld USD 3,000.
-Expected: ISR = 720.00 + 20% × (22,000.00 − 10,742.86) = 720.00 + 2,251.43 = **USD 2,971.43**; net = **USD 28.57 refund**.
+Expected: ISR = 720.00 + 20% × (22,000.00 − 9,142.86) = 720.00 + 2,571.43 = **USD 3,291.43**; balance due = **USD 291.43**.
 
 **Test 5 — High-earner annual (band IV).**
 Input: Domiciled individual, annual net income USD 40,000.
-Expected: ISR = 3,462.86 + 30% × (40,000.00 − 24,457.14) = 3,462.86 + 4,662.86 = **USD 8,125.72**.
+Expected: ISR = 3,462.86 + 30% × (40,000.00 − 22,857.14) = 3,462.86 + 5,142.86 = **USD 8,605.72**.
 
 **Test 6 — Non-domiciled flat rate.**
 Input: Non-domiciled individual, Salvadoran-source income USD 20,000.
@@ -665,14 +669,14 @@ Input: Employee IBC USD 2,000/month.
 Expected: AFP employee = 7.25% × 2,000 = **USD 145.00**; AFP employer = 8.75% × 2,000 = **USD 175.00** (no statutory ceiling since Jan 2023).
 
 **Test 9 — No-file salaried exemption.**
-Input: Salaried individual, annual income USD 8,500, fully withheld.
-Expected: **Not required to file** F-11 (≤ USD 9,100); embedded single deduction USD 1,600 applies.
+Input: Domiciled individual, salary-only annual income USD 8,500, with withholding equal to the annual tax.
+Expected: **Filing exemption applies** if withholding matches the Article 37 tax. The USD 1,600 fixed deduction also applies to this salary-only income.
 
 ## PROHIBITIONS
 
 - NEVER apply a rate table without confirming domicile (domiciled vs non-domiciled)
 - NEVER include foreign-source income for an individual — El Salvador is territorial
-- NEVER present the annual band III/IV fixed amounts as definitive — they are annualised/inferred and flagged for reviewer
+- Use the statutory annual table for F-11 and the separate withholding tables for payroll.
 - NEVER auto-deduct ISSS/AFP for an independent professional — they are NOT compulsory (voluntary only)
 - NEVER apply a maximum insurable salary cap to AFP — the cap was eliminated in January 2023
 - NEVER deduct business expenses against pure salaried income — use the embedded/capped personal deductions

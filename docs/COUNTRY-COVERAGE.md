@@ -65,7 +65,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CM | Cameroon | 4 | 0 |
 | CN | China | 14 | 0 |
 | CO | Colombia | 7 | 0 |
-| CR | Costa Rica | 6 | 0 |
+| CR | Costa Rica | 7 | 0 |
 | CU | Cuba | 6 | 0 |
 | CV | Cabo Verde | 6 | 0 |
 | CW | Curaçao | 6 | 0 |
@@ -225,7 +225,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SR | Suriname | 6 | 0 |
 | SS | South Sudan | 6 | 0 |
 | ST | Sao Tome and Principe | 6 | 0 |
-| SV | El Salvador | 5 | 0 |
+| SV | El Salvador | 6 | 0 |
 | SX | Sint Maarten (Dutch part) | 2 | 0 |
 | SY | Syrian Arab Republic | 0 | 0 |
 | SZ | Eswatini | 6 | 0 |

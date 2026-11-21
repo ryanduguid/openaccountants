@@ -1,10 +1,10 @@
 ---
 name: el-salvador-payroll
 description: Use this skill whenever asked about El Salvador payroll processing for employed persons. Trigger on phrases like "El Salvador payroll", "planilla El Salvador", "ISSS", "AFP Crecer", "AFP Confía", "retención de renta", "ISR planilla", "descuentos de ley", "sueldo neto El Salvador", "net salary El Salvador", "aguinaldo", "INSAFORP", "salario mínimo El Salvador", "gross to net El Salvador", "employer cost El Salvador", "cotización ISSS AFP", or any question about computing employee pay, income-tax withholding (retención), or social-security/pension contributions for El Salvador-based employees. This skill covers ISR monthly withholding (Decreto Ejecutivo 10, in force 8 May 2025), ISSS health contributions (employee + employer, $1,000 base cap), AFP pension contributions, the INSAFORP training levy, minimum wage, the mandatory aguinaldo (Christmas bonus), vacation, payslip and monthly filing obligations. ALWAYS read this skill before processing any El Salvador payroll.
-version: 0.2
+version: 0.3
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # El Salvador Payroll
 
-## El Salvador Payroll Skill v0.2
+## El Salvador Payroll Skill v0.3
 
 **Tier 2 — research-verified. Figures sourced from the Ministerio de Hacienda (Decreto Ejecutivo 10, 2025), ISSS, the Superintendencia del Sistema Financiero (AFP), a secondary practitioner summary, and Salvadoran payroll references. NOT yet signed off by a licensed Salvadoran contador. Treat every computation as an estimate pending professional review.**
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Training levy | INSAFORP (Instituto Salvadoreño de Formación Profesional) — employer 1% |
 | Key legislation | Ley de Impuesto sobre la Renta; Decreto Ejecutivo 10 (2025) retención tables; Ley del Seguro Social; Ley del Sistema de Ahorro para Pensiones (SAP); Código de Trabajo |
 | Validated by | Pending -- requires sign-off by a licensed Salvadoran contador / abogado laboral |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### The single most important El Salvador payroll fact
 
@@ -44,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 2 -- Income Tax Withholding (Retención de ISR)
 
-- **ISR withholding base rule** — The employer withholds ISR monthly. Base = gross salary − employee ISSS − employee AFP. Apply the monthly table below to that base.
+- **ISR withholding base rule** — Start with taxable pay after employee ISSS and AFP contributions. If that amount falls in band II and the employee’s only annual income is salary of USD 9,100 or less, account for the USD 1,600 annual salary deduction before applying the table. Allocate USD 1,600 ÷ 12 for 12 equal monthly payments. Use the separate cumulative recalculations in June and December. [Executive Decree 10, art. 1(d)–(f)](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf) · [Income Tax Law, art. 29(7)](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf)
 
 ### Monthly retención table (Decreto Ejecutivo 10, in force 8 May 2025)
 
@@ -59,7 +59,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Source: Ministerio de Hacienda, Decreto Ejecutivo No. 10 (30 Apr 2025), in force 8 May 2025; the reform raised the monthly exempt amount from USD 472 (unchanged since 2011) to USD 550. (Diario El Mundo; Contaportable)
 
-> Note. The cuotas fijas (17.67 / 60.00 / 288.57) mirror the annual Art. 37 table ÷ 12 (annual 212.12 / 720.00 / 3,462.86). There is a small step at the $895.24 boundary (the 10% progression reaches 52.19 vs the $60.00 band-3 base). This is the official table, not an error.
+> Apply the fixed amounts in the [monthly withholding table in Executive Decree 10](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf). Reconcile annual liability using the [Article 37 table](https://www.asamblea.gob.sv/sites/default/files/documents/decretos/E198E77D-2027-47AA-A8F6-1D70E2F46431.pdf).
+
+**Band II deduction example.** A domiciled employee receives USD 700 gross in each of 12 months and has no other income. After USD 21.00 ISSS and USD 50.75 AFP, taxable pay before the salary deduction is USD 628.25. Annual salary of USD 8,400 qualifies. Subtract USD 1,600 ÷ 12 from the withholding base, which rounds to USD 494.92 and falls in the nil band. Withholding is USD 0.00 and net pay is USD 628.25.
 
 ## Section 3 -- Social Security — ISSS (Health & Maternity)
 

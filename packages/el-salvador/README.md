@@ -11,6 +11,7 @@
 4. `el-salvador-payroll.md`
 5. `el-salvador-social-contributions.md`
 6. `el-salvador-tax-optimization.md`
+7. `sv-tax-system-orientation.md`
 
 ## Shared files this package needs
 
