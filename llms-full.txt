@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,200 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,203 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2200 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2203 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -1360,6 +1360,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - mx-estimated-tax | MX | tier 2 | reviewed_by -
 - mx-imss | MX | tier 2 | reviewed_by -
 - mx-income-tax | MX | tier 2 | reviewed_by -
+- mx-tax-system-orientation | MX | tier 2 | reviewed_by -
 - mexico-references | MX | tier 2 | reviewed_by -
 - fm-national-tax-social-reference | FM | tier 2 | reviewed_by -
 - fm-tax-system-orientation | FM | tier 2 | reviewed_by -
@@ -1714,6 +1715,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - sa-gosi-saudization | SA | tier 1 | reviewed_by Mehran Habib
 - sa-rett | SA | tier 1 | reviewed_by Mehran Habib
 - sa-return-assembly | SA | tier 2 | reviewed_by -
+- sa-tax-system-orientation | SA | tier 2 | reviewed_by -
 - sa-withholding-tax | SA | tier 1 | reviewed_by Mehran Habib
 - sa-zakat | SA | tier 2 | reviewed_by Mehran Habib
 - saudi-arabia-vat | SA | tier 1 | reviewed_by Mehran Habib
@@ -2021,6 +2023,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ae-payroll-social | AE | tier 2 | reviewed_by -
 - ae-tax-overview | AE | tier 2 | reviewed_by -
 - ae-tax-residency | AE | tier 1 | reviewed_by Mehran Habib
+- ae-tax-system-orientation | AE | tier 2 | reviewed_by -
 - uae-vat | AE | tier 1 | reviewed_by Mehran Habib
 - um-tax-scope-reference | UM | tier 2 | reviewed_by -
 - vi-additional-medicare-annual-reference | VI | tier 2 | reviewed_by -
@@ -2400,7 +2403,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,200 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,203 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2418,7 +2421,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 2,036 Tier 2 guides among the 2,200 indexed guides. These inventory
+There are 2,039 Tier 2 guides among the 2,203 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
