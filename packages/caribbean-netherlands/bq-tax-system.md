@@ -13,10 +13,10 @@ description: >
 jurisdiction: BQ
 category: international
 tax_year: 2026
-tax_year_notes: "System-scope reference checked on 17 October 2026; establish the version applicable to each event"
+tax_year_notes: "Ordinary 2026 assessment and statutory system scope; establish the version applicable to each event"
 tier: 2
-last_updated: 2026-10-17
-version: 0.7
+last_updated: 2026-11-21
+version: 0.8
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -89,6 +89,14 @@ events. Establish the actual assessment year, accounting period and event
 before using a companion's deadline. [FIN, article 43][FIN];
 `bq-gambling-tax`; `bq-tax-compliance`
 
+## Ordinary assessment and authorities
+
+The Belastingdienst Caribisch Nederland administers the national taxes. Use the island's designated authority for an adopted island charge. Domestic individual taxpayers generally report worldwide income. Foreign individual taxpayers are chargeable on specified BES-source income. A sole trader's business income normally goes in the individual return. An entity within the BES distribution regime ordinarily accounts for distribution tax on proceeds such as dividends. A different residence classification can engage European Netherlands corporate tax. Check each entity's eligibility, any required decision and the separate minimum-tax rules. [BES income tax][IB] · [Domestic taxpayers][RES] · [Distribution tax guidance][DIST] · [National tax administration][BCN]
+
+For 2026, the ordinary individual tariff is 29.4% through USD 53,198 of the taxable amount and 38.4% above it, subject to the statutory table and any applicable adjustments. Apply the tax-free amount separately. The general distribution tax rate is 7.5% from 1 January 2025. For 2026, ordinary ABB on goods supplied by producers or imported is 8% on Bonaire and 6% on Sint Eustatius and Saba. Ordinary services are 6% and 4% respectively. Special categories and exemptions use their own rules. [2026 indexation, art XII][INDEX] · [2025 tax plan, art I(C)][DISTLAW] · [2026 ABB handbook, ch 9][ABB]
+
+Individual assessment is annual. The authority's 2025 return notice gave 18 May 2026 as the filing deadline. For another year, check the actual invitation and any extension. A qualifying distribution triggers the distribution tax procedure. The authority generally issues ABB returns quarterly, subject to the assigned period and any special case. Check which separate event determines a property, transfer or island charge. [2025 income tax return notice][DUE] · [Distribution tax guidance][DIST] · [ABB filing periods][ABBP]
+
 ## Island taxing powers and actual ordinances
 
 FinBES article 40 requires an island ordinance to introduce, amend or abolish
@@ -159,8 +167,8 @@ workflow. A blank tax cell is not affirmative evidence of an absent tax.
 
 Checked on 17 October 2026: Belastingwet BES articles 1.1–1.5; the currency
 law's articles 1–2 and 13a–13b; FinBES articles 40–65, 67 and 69; and the
-complete commencement decree and explanatory note. Other tax detail is routed
-to the separate references rather than newly revalidated here. The
+complete commencement decree and explanatory note. On 21 November 2026 the ordinary rates, filing and authority routes above were rechecked.
+Use the companion guides for case-specific tax detail. The
 Invoeringswet's current and original chapter II articles II–V read
 `[vervallen]`; they are not the source of the temporary continuation rules.
 
@@ -173,6 +181,15 @@ practitioner sign-off was used.
 [MONEY]: https://wetten.overheid.nl/BWBR0028551/2012-07-01
 [FIN]: https://wetten.overheid.nl/BWBR0028151/2023-01-01
 [START]: https://zoek.officielebekendmakingen.nl/stb-2010-848.html
+[IB]: https://english.belastingdienst-cn.nl/topics/tax-individuals/income-tax
+[RES]: https://english.belastingdienst-cn.nl/topics/tax-individuals/income-tax/domestic-taxpayers
+[DIST]: https://www.belastingdienst-cn.nl/onderwerpen/belastingzaken-bedrijven/opbrengstbelasting/veel-gestelde-vragen-en-antwoorden-qa
+[BCN]: https://english.belastingdienst-cn.nl/organisation/belastingdienst-caribisch-nederland
+[INDEX]: https://zoek.officielebekendmakingen.nl/stcrt-2025-40487.html
+[DISTLAW]: https://zoek.officielebekendmakingen.nl/stb-2024-436.html
+[ABB]: https://papiamentu.belastingdienst-cn.nl/site/binaries/site-content/collections/documents/belastingdienst/abb/manual-algemene-bestedingsbelasting/index/handboek-abb-versie-april-2026.pdf
+[DUE]: https://english.belastingdienst-cn.nl/latest/news/2026/march/04/income-tax-return-2025
+[ABBP]: https://english.belastingdienst-cn.nl/topics/tax-business/algemene-bestedingsbelasting---businesses/filing-algemene-bestedingsbelasting
 
 <!-- openaccountants-cta-block -->
 
