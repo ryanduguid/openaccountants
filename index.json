@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2203,
+  "guides": 2205,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -7598,6 +7598,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "cr-tax-system-orientation",
+   "path": "skills/international/costa-rica/cr-tax-system-orientation.md",
+   "name": "cr-tax-system-orientation",
+   "jurisdiction": "CR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-22"
+  },
+  {
    "slug": "croatia-income-tax",
    "path": "skills/international/croatia/croatia-income-tax.md",
    "name": "croatia-income-tax",
@@ -8960,7 +8973,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "el-salvador-iva",
@@ -8986,7 +8999,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "el-salvador-social-contributions",
@@ -8999,7 +9012,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "el-salvador-tax-optimization",
@@ -9013,6 +9026,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "sv-tax-system-orientation",
+   "path": "skills/international/el-salvador/sv-tax-system-orientation.md",
+   "name": "sv-tax-system-orientation",
+   "jurisdiction": "SV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "gq-company-formation",

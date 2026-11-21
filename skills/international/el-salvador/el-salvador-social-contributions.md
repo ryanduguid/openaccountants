@@ -1,10 +1,10 @@
 ---
 name: el-salvador-social-contributions
 description: Use this skill whenever asked about El Salvador statutory payroll contributions, social security, pensions, or payroll-related income tax withholding for employees and employers. Trigger on phrases like "ISSS contribution", "how much ISSS do I pay", "AFP pension contribution", "Salvadoran payroll deductions", "descuentos de ley", "cotización ISSS", "cotización AFP", "INSAFORP levy", "retención de renta", "sueldo neto El Salvador", "planilla ISSS", "OVISSS", "salario mínimo El Salvador", or any question about El Salvador employer/employee social cost. Also trigger when classifying bank-statement transactions that relate to ISSS debits, AFP (Crecer, Confía) pension debits, INSAFORP payments, or Ministerio de Hacienda income-tax withholding from Salvadoran banks (Banco Agrícola, Cuscatlán, Davivienda, BAC). Also trigger when preparing or reviewing a Form F-11 (Declaración del Impuesto sobre la Renta) where statutory deductions are relevant. This skill covers ISSS health rates and the USD 1,000 cap, AFP pension rates and the SSF maximum contributory base, the INSAFORP 1% training levy, minimum wages, progressive resident PIT and non-resident flat tax, monthly withholding tables, payment channels, penalties, and bank-statement classification patterns. ALWAYS read this skill before touching any El Salvador payroll, social-security, or payroll-withholding work.
-version: 0.2
+version: 0.3
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # El Salvador Statutory Payroll Contributions (ISSS / AFP / INSAFORP) and Payroll Income Tax
 
-## El Salvador Statutory Payroll Contributions (ISSS / AFP / INSAFORP) and Payroll Income Tax -- Skill v0.2
+## El Salvador Statutory Payroll Contributions (ISSS / AFP / INSAFORP) and Payroll Income Tax -- Skill v0.3
 
 Scope note. El Salvador does have a personal income tax (Impuesto sobre la Renta), so this skill covers BOTH the statutory social contributions (ISSS health, AFP pension, INSAFORP training levy) AND the payroll income-tax withholding/annual return that sit alongside them. Every rate, cap, and deadline below is sourced inline. Where the research confidence is low or a figure is administratively variable, the text carries an explicit [RESEARCH GAP — reviewer to confirm] marker rather than a guessed value.
 
@@ -42,7 +42,7 @@ Read this whole section before computing or classifying anything.
 - **INSAFORP training levy** — 1% of total payroll, employer-only, for private employers with 10+ employees (0.25% for permanent agricultural workers)  _([The Central American Group; Ley de Formación Profesional])_
 - **Resident PIT** — Progressive 0% / 10% / 20% / 30% on annual net income (see Section 5)  _([secondary summary])_
 - **Non-resident PIT** — 30% flat on Salvadoran-source income  _([secondary summary])_
-- **Annual income-tax return** — Form F-11, due 30 April following the tax year  _([Ministerio de Hacienda; secondary summary])_
+- **Annual income-tax return** — The ordinary deadline for a required calendar-year Form F-11 is 30 April. A domiciled individual whose annual income is solely salary of USD 60,000 or less is generally exempt where the employer correctly withheld the full tax. Check Article 38 where withholding was omitted or differs from the statutory liability. [Income Tax Law, arts. 38 and 48](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf).
 - **ISSS/AFP filing** — Monthly — ISSS via OVISSS, AFP via SSF/AFP electronic planilla, due early the following month  _([ISSS OVISSS; SSF])_
 - **Validated by** — Pending — requires sign-off by a Salvadoran licensed accountant / contador público
 - **Validation date** — Pending
@@ -169,9 +169,9 @@ Input line:
 Reasoning (employee deductions on USD 1,500 gross):
 - ISSS employee: capped — 3% × 1,000 = USD 30.00 (salary exceeds the USD 1,000 contributory base) [the secondary summary; ISSS Reglamento Art. 3]
 - AFP employee: 7.25% × 1,500 = USD 108.75 (no USD 1,000-style cap; under the SSF max base) [secondary summary; AFP Crecer]
-- Income-tax withholding: 1,500 in 895.25–2,038.10 → 60.00 + 20%×(1,500 − 895.24) = 60.00 + 120.95 = USD 180.95 [secondary summary]
-- Total deductions: 30.00 + 108.75 + 180.95 = USD 319.70
-- Net pay: 1,500.00 − 319.70 = USD 1,180.30
+- Income-tax withholding: taxable monthly pay is USD 1,500.00 − 30.00 − 108.75 = USD 1,361.25. Withholding is USD 60.00 + 20% × (1,361.25 − 895.24) = USD 153.20. [Executive Decree 10, art. 1](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf).
+- Total deductions: 30.00 + 108.75 + 153.20 = USD 291.95
+- Net pay: 1,500.00 − 291.95 = USD 1,208.05
 
 Classification: EXCLUDE from VAT. Note the ISSS cap bites at USD 30.00 while AFP keeps rising with salary.
 
@@ -201,10 +201,10 @@ Classification: EXCLUDE from VAT — ISSS contribution remittance (combined empl
 ### Example 5 -- Income-tax withholding remittance (NOT a social contribution)
 
 Input line:
-`10.08.2025 ; MINISTERIO DE HACIENDA RETENCION RENTA JUL ; DEBIT ; ISR ; -180.95 ; USD`
+`10.08.2025 ; MINISTERIO DE HACIENDA RETENCION RENTA JUL ; DEBIT ; ISR ; -153.20 ; USD`
 
 Reasoning:
-Matches "MINISTERIO DE HACIENDA" / "RETENCION RENTA" (pattern 3.4). This is the income-tax (ISR) withheld from the USD 1,500 employee (USD 180.95 from Example 2), remitted to Ministerio de Hacienda. It is NOT an ISSS or AFP social contribution — do not classify it as social security. [secondary summary]
+Matches "MINISTERIO DE HACIENDA" / "RETENCION RENTA" (pattern 3.4). This is the income-tax (ISR) withheld from the USD 1,500 employee (USD 153.20 from Example 2), remitted to Ministerio de Hacienda. It is NOT an ISSS or AFP social contribution — do not classify it as social security. [secondary summary]
 
 Classification: EXCLUDE from VAT — income-tax withholding. NOT a social contribution.
 
@@ -244,16 +244,16 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 5 -- Resident personal income tax (progressive, annual net income)
 
-**Resident PIT table**
+**Domiciled individual ISR table** ([Legislative Decree 293, art. 1](https://www.asamblea.gob.sv/sites/default/files/documents/decretos/E198E77D-2027-47AA-A8F6-1D70E2F46431.pdf))
 
 | Annual net income (USD) | Tax |
 | --- | --- |
-| 0 – 6,600.00 | 0% (exempt) [secondary summary] |
-| 6,600.01 – 10,742.86 | USD 212.12 + 10% on excess over 6,600.00 [Decreto Ejecutivo 10/2025] |
-| 10,742.87 – 24,457.14 | USD 720.00 + 20% on excess over 10,742.86 [Decreto Ejecutivo 10/2025] |
-| 24,457.15 and over | USD 3,462.86 + 30% on excess over 24,457.14 [Decreto Ejecutivo 10/2025] |
+| 0 – 6,600.00 | 0% (exempt) |
+| 6,600.01 – 9,142.86 | USD 212.12 + 10% on excess over 6,600.00 |
+| 9,142.87 – 22,857.14 | USD 720.00 + 20% on excess over 9,142.86 |
+| 22,857.15 and over | USD 3,462.86 + 30% on excess over 22,857.14 |
 
-Note (reformed table — Decreto Ejecutivo 10, in force 8 May 2025). Cuotas fijas (212.12 / 720.00 / 3,462.86) are statutory fixed amounts at the band floors 6,600 / 10,742.86 / 24,457.14. The table is intentionally NOT fully continuous: the $212.12 is a step at the exempt threshold, and band 2→3 steps up from 626.41 (= 212.12 + 10%×(10,742.86 − 6,600)) to the 720.00 band-3 base. Band 3→4 is continuous (720.00 + 20%×(24,457.14 − 10,742.86) = 3,462.86). [Diario El Mundo; Contaportable; Decreto Ejecutivo 10]
+Apply the fixed amounts of USD 212.12, USD 720.00 and USD 3,462.86 in bands II to IV, plus the applicable percentage on income above the threshold for that band.
 
 ### Rule 6 -- Non-resident / non-domiciled PIT
 
@@ -261,7 +261,7 @@ Note (reformed table — Decreto Ejecutivo 10, in force 8 May 2025). Cuotas fija
 
 ### Rule 7 -- Monthly income-tax withholding tables (retención)
 
-**Monthly withholding table**
+**Monthly withholding table** ([Executive Decree 10, art. 1(a)](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf))
 
 | Monthly taxable pay (USD) — = gross − AFP − ISSS employee contributions | Withholding |
 | --- | --- |
@@ -270,13 +270,13 @@ Note (reformed table — Decreto Ejecutivo 10, in force 8 May 2025). Cuotas fija
 | 895.25 – 2,038.10 | USD 60.00 + 20% on excess over 895.24 [secondary summary] |
 | 2,038.11 and over | USD 288.57 + 30% on excess over 2,038.10 [secondary summary] |
 
-Note. Monthly cuotas fijas (17.67 / 60.00 / 288.57) mirror the annual table ÷ 12. As with the annual table there is a small step at the $895.24 boundary (the 10% progression reaches 52.19 vs the $60.00 band-3 base). At 2,038.10: 60.00 + 20%×(2,038.10 − 895.24) = 288.57 ✓ (continuous from band 3). [Decreto Ejecutivo 10/2025]
+For band II pay, account for the USD 1,600 annual salary deduction if the employee’s only annual income is salary of USD 9,100 or less. With 12 equal monthly payments, reduce the withholding base by USD 1,600 ÷ 12 before applying the table. Use the separate June and December recalculations and the Article 37 table for annual liability. [Executive Decree 10, art. 1(d)–(f)](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf) · [Income Tax Law, arts. 29(7) and 37](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf)
 
-The employer withholds monthly per the Ministerio de Hacienda tables; the employee reconciles annually on Form F-11. [secondary summary]
+The employer withholds monthly. The annual filing requirement depends on the employee's circumstances and the Article 38 exemption.
 
 ### Rule 8 -- Annual income-tax return (Form F-11)
 
-- **Form F-11 filing** — The annual individual income-tax return is Form F-11, filed with Ministerio de Hacienda by 30 April following the tax year (e.g., 30 Apr 2026 for FY2025), 11:59pm.  _([Ministerio de Hacienda; secondary summary])_
+- **Form F-11 filing** — The ordinary deadline for a required calendar-year Form F-11 is 30 April. A domiciled individual whose annual income is solely salary of USD 60,000 or less is generally exempt where the employer correctly withheld the full tax. Check Article 38 where withholding was omitted or differs from the statutory liability. [Income Tax Law, arts. 38 and 48](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf).
 
 ### Rule 9 -- Monthly contribution filing channels
 
@@ -453,10 +453,10 @@ If the client provides only a bank statement and no other information:
 | --- | --- | --- | --- | --- |
 | 408.80 (min wage) | 12.26 | 29.64 | 0.00 | 366.90 |
 | 600.00 | 18.00 | 43.50 | 0.00 | 538.50 |
-| 1,000.00 | 30.00 | 72.50 | 80.95 | 816.55 |
-| 1,500.00 | 30.00 (cap) | 108.75 | 180.95 | 1,180.30 |
+| 1,000.00 | 30.00 | 72.50 | 60.45 | 837.05 |
+| 1,500.00 | 30.00 (cap) | 108.75 | 153.20 | 1,208.05 |
 
-> Source for all rates: [the secondary summary; AFP Crecer; ISSS Reglamento Art. 3]. Withholding per the monthly MH table [secondary summary]. USD 1,000 row check: ISSS ee 3%×1,000 = 30.00; AFP ee 7.25%×1,000 = 72.50; withholding (895.25–2,038.10): 60.00 + 20%×(1,000 − 895.24) = 60.00 + 20.95 = 80.95; net = 1,000 − 30 − 72.50 − 80.95 = **816.55** ✓.
+> For USD 1,000 gross, ISSS is USD 30.00 and AFP is USD 72.50. Monthly taxable pay is USD 897.50. Withholding is USD 60.00 + 20% × (897.50 − 895.24) = USD 60.45. Net pay is USD 837.05. [Executive Decree 10, art. 1](https://transparencia.mh.gob.sv/downloads/pdf/700-DGII-DC-2025-01.pdf).
 
 ### Employer-cost examples (2025 figures)
 
@@ -507,23 +507,25 @@ If the client provides only a bank statement and no other information:
 
 **Test 1:** Employee, gross USD 600. ISSS ee 3%×600 = 18.00; AFP ee 7.25%×600 = 43.50; ISR base = 600 − 18 − 43.50 = 538.50 ≤ 550 → retención 0.00; total 61.50. → **Net pay USD 538.50.**
 
-**Test 2:** Employee, gross USD 1,500. ISSS ee capped 30.00; AFP ee 7.25%×1,500 = 108.75; withholding (895.25–2,038.10) 60.00 + 20%×(1,500 − 895.24) = 180.95; total 319.70. → **Net pay USD 1,180.30.**
+**Test 2:** Gross salary USD 1,500. Deduct employee ISSS of USD 30.00 and AFP of USD 108.75. The USD 1,361.25 withholding base gives ISR of USD 153.20 and **net pay of USD 1,208.05**.
 
 **Test 3:** Employer cost, gross USD 1,500, 10+ staff. ISSS er capped 75.00 + AFP er 8.75%×1,500 = 131.25 + INSAFORP 1%×1,500 = 15.00. → **Employer total USD 221.25.**
 
 **Test 4:** Minimum-wage employee (Industry/Commerce/Services), gross USD 408.80. ISSS ee 12.26 + AFP ee 29.64 + withholding 0.00 (below USD 550). → **Net pay USD 366.90.**
 
-**Test 5:** Resident, annual net income USD 18,000 (F-11). Band 3 (10,742.87–24,457.14): 720.00 + 20%×(18,000 − 10,742.86) = 720.00 + 1,451.43 = **USD 2,171.43 tax due.**
+**Test 5:** Resident, annual net income USD 18,000 (F-11). Band 3 (9,142.87–22,857.14): 720.00 + 20%×(18,000 − 9,142.86) = 720.00 + 1,771.43 = **USD 2,491.43 tax due.**
 
 **Test 6:** Resident, annual net income USD 6,600. Band 1 exempt. → **USD 0.00 tax due.**
 
-**Test 7:** Resident, annual net income USD 30,000. Band 4 (24,457.15+): 3,462.86 + 30%×(30,000 − 24,457.14) = 3,462.86 + 1,662.86 = **USD 5,125.72 tax due.**
+**Test 7:** Resident, annual net income USD 30,000. Band 4 (22,857.15+): 3,462.86 + 30%×(30,000 − 22,857.14) = 3,462.86 + 2,142.86 = **USD 5,605.72 tax due.**
 
 **Test 8:** Non-resident, Salvadoran-source income USD 30,000. Flat 30% → **USD 9,000.00 tax due.**
 
 **Test 9:** Employer with 6 employees. INSAFORP threshold (10+) not met. → **INSAFORP USD 0.00.**
 
-**Test 10:** Employee, gross USD 1,000 (exactly at ISSS cap). ISSS ee 3%×1,000 = 30.00; AFP ee 7.25%×1,000 = 72.50; withholding (895.25–2,038.10) 60.00 + 20%×(1,000 − 895.24) = 80.95; total 183.45. → **Net pay USD 816.55.**
+**Test 10:** Gross salary USD 1,000. Deduct employee ISSS of USD 30.00 and AFP of USD 72.50. The USD 897.50 withholding base gives ISR of USD 60.45 and **net pay of USD 837.05**.
+
+**Test 11:** A domiciled employee earns only USD 40,000 in annual salary. If the employer correctly withheld the full statutory tax, no Form F-11 is compulsory under [Income Tax Law, art. 38](https://transparencia.mh.gob.sv/downloads/pdf/DC5811.pdf).
 
 ### Prohibitions
 

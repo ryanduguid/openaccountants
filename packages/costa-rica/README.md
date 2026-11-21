@@ -12,6 +12,7 @@
 5. `costa-rica-payroll.md`
 6. `costa-rica-social-contributions.md`
 7. `costa-rica-tax-optimization.md`
+8. `cr-tax-system-orientation.md`
 
 ## Shared files this package needs
 
