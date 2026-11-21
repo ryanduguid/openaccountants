@@ -1,12 +1,12 @@
 ---
 name: gh-tax-overview
-description: "Source-cited draft: Ghana tax-system and selected property-income rules, with primary sources, period distinctions and unresolved current-law gaps. Pending qualified review."
+description: "Source-cited Ghana tax-system orientation and selected property-income rules with dates and remaining statutory questions. Pending qualified local review."
 jurisdiction: GH
 category: international
 tax_year: 2026
-tax_year_notes: "Selected original Act 896 (2015), Act 1094 (2023) amendments and dated GRA guidance checked 11 November 2026. The complete amendment chain and current operative application remain unverified."
-last_updated: 2026-11-11
-version: 1.5
+tax_year_notes: "Selected Act 896 provisions, Acts 1094, 1151 and 1178 and GRA implementation guidance, checked through 21 November 2026. Each provision has its own period."
+last_updated: 2026-11-21
+version: 1.6
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,21 +16,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Scope and source periods
 
-Start with the taxpayer, residence, income category, source, activity, accounting basis period and transaction date. This overview reconciles selected original Income Tax Act, 2015 (Act 896) provisions, selected Income Tax (Amendment) Act, 2023 (Act 1094) provisions and GRA guidance captured on 11 November 2026. It remains Tier 2 and pending qualified review. It does not certify the complete amendment chain, exact commencement of every amendment or a complete current-year assessment.
+Start with the taxpayer, residence, income category, source, activity, accounting period and transaction date. The primary provisions below come from the original Acts and dated amendments. Each provision has its own period. The guide remains Tier 2 and pending qualified local review.
 
-The GRA announcement linked under Act 1178 is an implementation notice, not the original amending Act. Its September 2026 individual-tax position must not be taken as proof of every retained or replaced First Schedule provision. Original Act 1094 records assent and Gazette notification on 3 April 2023; those dates alone do not settle statutory commencement. [GRA 2026 announcement](https://gra.gov.gh/wp-content/uploads/2026/09/Amendments-To-The-Income-Tax-2015-Act-896_Updated-1.pdf); [original Act 1094](https://gra.gov.gh/wp-content/uploads/2023/04/INCOME-TAX-AMENDMENT-ACT-2023-ACT-1094.pdf).
+Act 1178 shows assent and Gazette notification on 26 August 2026 and has no express commencement section. The GRA states that it implemented the changes on 1 September 2026. Use the applicable rules for mixed-period annual assessments. Original Act 1094 shows assent and Gazette notification on 3 April 2023. Check its separate commencement and the subsequent amendment chain for provisions outside Act 1178. [Act 1178 PDF pp 2–4](https://494075.fs1.hubspotusercontent-na1.net/hubfs/494075/compliance-portal/income-tax-amendment-act-2026-revised.pdf) · [GRA implementation notice](https://gra.gov.gh/news/portfolio/amendments-income-tax-act-2026-act-1178/) · [Act 1094](https://gra.gov.gh/wp-content/uploads/2023/04/INCOME-TAX-AMENDMENT-ACT-2023-ACT-1094.pdf)
 
 ## Tax system and assessment periods
 
+The Ghana Revenue Authority (GRA) administers domestic tax. Ghana uses the Ghana cedi (GHS). [GRA](https://gra.gov.gh/) · [Bank of Ghana 2026 currency notice](https://www.bog.gov.gh/wp-content/uploads/2026/07/Notice-No.17-BOG-SEC-GOV-2026-MISUSE-OR-ABUSE-OF-CURRENCY-THE-GHANA-CEDI.pdf)
+
 The Ghana Revenue Authority publishes the tax guidance cited here. Original Act 896 sections 2, 3, 5 and 6 distinguish chargeable income, assessable income and employment, business and investment sources. Resident income is not subject to the non-resident Ghana-source limitation. For a non-resident, section 3(2)(b) also includes income connected with a Ghanaian permanent establishment irrespective of source. Do not assume that foreign-source receipts are always outside Ghana's tax base, or that every foreign receipt is PE-connected. Residence, attribution, exemptions and treaty relief need separate checks. [Act 896, ss 2, 3, 5 and 6](https://gra.gov.gh/wp-content/uploads/2020/09/INCOME-TAX-ACT-2015-ACT-896.pdf).
+
+Under original section 101, individual residence includes Ghanaian citizenship subject to the permanent overseas home and whole-year residence exception, presence totalling at least 183 days in a 12-month period beginning or ending in the assessment year and specified government postings and temporary absence cases. Section 102 generally treats a resident as such for the whole assessment year, with residence under the 183-day test starting on the first day of that period. For companies, section 101(4) has separate incorporation and management-and-control tests. Check the current incorporation legislation, applicable treaty and attribution rules. [Act 896 ss 101–102](https://gra.gov.gh/wp-content/uploads/2020/09/INCOME-TAX-ACT-2015-ACT-896.pdf)
 
 Original section 18 distinguishes the calendar year of assessment from a company's accounting-year basis period. An approved accounting-year change affects the period and payment calculations. The terms are not interchangeable. [Act 896, s 18, PDF p 21](https://gra.gov.gh/wp-content/uploads/2020/09/INCOME-TAX-ACT-2015-ACT-896.pdf); [corporate-income guide](gh-corporate-income-tax.md).
 
 | Component | Selected position and period | Limits and source |
 |---|---|---|
-| Resident individual bands | GRA gives a top marginal rate of 35% above GHS 50,000 monthly / GHS 600,000 annual chargeable income, effective 1 September 2026 | These are provider tables for the stated period, not a completed mixed-period annual assessment. [GRA PAYE](https://gra.gov.gh/domestic-tax/tax-types/paye/); [individual-income guide](ghana-pit.md) |
+| Resident individual bands | Act 1178 replaces First Schedule para 1(1), subject to para 1(3) and the Second Schedule. The annual bands start with GHS 7,056 at nil, then GHS 960 at 5%, GHS 1,200 at 10%, GHS 34,800 at 17.5%, GHS 192,000 at 25%, GHS 363,984 at 30% and the excess above GHS 600,000 at 35%. | The GRA publishes separate September monthly withholding bands. Check how the two periods apply to the annual assessment. [Act 1178 s 1](https://494075.fs1.hubspotusercontent-na1.net/hubfs/494075/compliance-portal/income-tax-amendment-act-2026-revised.pdf) · [GRA notice](https://gra.gov.gh/news/portfolio/amendments-income-tax-act-2026-act-1178/) · [Individual income guide](ghana-pit.md) |
+| Modified taxation | Act 1178 applies a 3% presumptive turnover rate for eligible persons with turnover over GHS 20,000 and up to GHS 750,000 under Second Schedule para 2(1)(c)(ii). Its revised GHS 750,000 ceiling for the modified cash basis is a separate test. | Confirm eligibility, including the underlying taxpayer and activity restrictions. [Act 1178 s 2](https://494075.fs1.hubspotusercontent-na1.net/hubfs/494075/compliance-portal/income-tax-amendment-act-2026-revised.pdf) · [GRA notice](https://gra.gov.gh/news/portfolio/amendments-income-tax-act-2026-act-1178/) |
 | General company rate | GRA gives 25%; selected Act 1094 First Schedule changes also retain a 25% ordinary-company provision | Sector, concession, minimum-income, deduction and levy rules remain separate. [Act 1094, s 13(b)](https://gra.gov.gh/wp-content/uploads/2023/04/INCOME-TAX-AMENDMENT-ACT-2023-ACT-1094.pdf); [GRA CIT](https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/) |
-| Consumption tax | GRA states 15% VAT plus 2.5% NHIL and 2.5% GETFund on the same supply value from 1 January 2026, with the COVID-19 levy removed | A standard-rate illustration does not prove a supply's classification, registration obligation or input entitlement. [GRA VAT](https://gra.gov.gh/domestic-tax/tax-types/vat/); [VAT guide](ghana-vat.md) |
+| Consumption tax | VAT is 15% under Act 1151 s 3. From 1 January 2026 GRA applies that rate plus 2.5% NHIL and 2.5% GETFund on the same taxable value. The COVID-19 levy was abolished. | The GHS 750,000 goods-registration threshold has its own conditions. Check supply classification, registration and input entitlement. [Act 1151](https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf) · [GRA VAT guidance](https://gra.gov.gh/domestic-tax/tax-types/vat/) · [VAT guide](ghana-vat.md) |
 | Payroll and social contributions | Identify employment status, taxable pay, pension basis, ceilings and the applicable period | Read the [payroll/social guide](gh-payroll-social.md) with its stated gaps; a PAYE band is not a complete employer-cost calculation |
 | Formation and reporting | Company incorporation, ORC annual returns and financial-statement requirements are distinct from income-tax returns | See the [formation/reporting guide](gh-company-formation.md); original audit-relief directive and operative eligibility remain unresolved |
 
@@ -80,7 +85,7 @@ These fictional checks illustrate identified source rules only. They do not esta
 
 ## Outstanding coverage
 
-Complete amendment and commencement chains, original Act 1178, mixed-period individual assessment, residence/PE/source/treaties and foreign credits, deductions/losses/asset costs and rollover conditions, realisation-withholding category/rate interaction, elections/current forms/payment deadlines, full rent/gift/inheritance rules, operative stamp-duty schedules, local property-rate resolutions/valuation/current collection arrangements, property VAT classification and input conditions, specialist regimes/levies, full payroll/pension and formation/reporting calendars and qualified local review remain open. No complete tax-system, capital/property or other topic is certified by this selected reconciliation.
+Open questions include mixed-period individual assessment, detailed residence, treaty and permanent-establishment cases, foreign credits, deducted costs and rollovers, realisation-withholding classifications, elections and filing forms, rent and gift finality, inheritance rules, stamp-duty schedules, local property valuations and collections, property VAT classification, specialist regimes and complete payroll and reporting calendars. The qualified local review remains pending.
 
 <!-- openaccountants-cta-block -->
 
