@@ -14,11 +14,12 @@
 7. `ng-payroll.md`
 8. `ng-personal-income-tax.md`
 9. `ng-return-assembly.md`
-10. `ng-vat-return.md`
-11. `ng-vat.md`
-12. `ng-wht.md`
-13. `nigeria-vat.md`
-14. `references.md`
+10. `ng-tax-system-orientation.md`
+11. `ng-vat-return.md`
+12. `ng-vat.md`
+13. `ng-wht.md`
+14. `nigeria-vat.md`
+15. `references.md`
 
 ## Shared files this package needs
 

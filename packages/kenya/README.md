@@ -14,11 +14,12 @@
 7. `ke-income-tax.md`
 8. `ke-nhif-nssf.md`
 9. `ke-tax-overview.md`
-10. `kenya-vat.md`
-11. `non-resident-rental-income-tax-on-kenyan-property.md`
-12. `set-up-your-company-in-kenya-we-handle-it-from-abroad.md`
-13. `tax-amnesty.md`
-14. `the-burden-of-proof-in-tax-cases.md`
+10. `ke-tax-system-orientation.md`
+11. `kenya-vat.md`
+12. `non-resident-rental-income-tax-on-kenyan-property.md`
+13. `set-up-your-company-in-kenya-we-handle-it-from-abroad.md`
+14. `tax-amnesty.md`
+15. `the-burden-of-proof-in-tax-cases.md`
 
 ## Shared files this package needs
 

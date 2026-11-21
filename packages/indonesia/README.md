@@ -16,9 +16,10 @@
 9. `id-pph-final-umkm.md`
 10. `id-return-assembly.md`
 11. `id-tax-optimization.md`
-12. `id-withholding.md`
-13. `indonesia-vat.md`
-14. `references.md`
+12. `id-tax-system-orientation.md`
+13. `id-withholding.md`
+14. `indonesia-vat.md`
+15. `references.md`
 
 ## Shared files this package needs
 

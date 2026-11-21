@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2197,
+  "guides": 2200,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -12096,6 +12096,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "id-tax-system-orientation",
+   "path": "skills/international/indonesia/id-tax-system-orientation.md",
+   "name": "id-tax-system-orientation",
+   "jurisdiction": "ID",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "id-withholding",
    "path": "skills/international/indonesia/id-withholding.md",
    "name": "id-withholding",
@@ -13849,6 +13862,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ke-tax-system-orientation",
+   "path": "skills/international/kenya/ke-tax-system-orientation.md",
+   "name": "ke-tax-system-orientation",
+   "jurisdiction": "KE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "kenya-vat",
@@ -17775,6 +17801,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ng-tax-system-orientation",
+   "path": "skills/international/nigeria/ng-tax-system-orientation.md",
+   "name": "ng-tax-system-orientation",
+   "jurisdiction": "NG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "ng-vat-return",
