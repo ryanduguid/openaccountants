@@ -162,7 +162,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MK | North Macedonia | 9 | 0 |
 | ML | Mali | 6 | 0 |
 | MM | Myanmar | 6 | 0 |
-| MN | Mongolia | 5 | 0 |
+| MN | Mongolia | 6 | 0 |
 | MO | China, Macao Special Administrative Region | 5 | 0 |
 | MP | Northern Mariana Islands | 4 | 0 |
 | MQ | Martinique | 1 | 0 |
@@ -234,10 +234,10 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TF | French Southern Territories | 1 | 0 |
 | TG | Togo | 6 | 0 |
 | TH | Thailand | 7 | 0 |
-| TJ | Tajikistan | 6 | 0 |
+| TJ | Tajikistan | 7 | 0 |
 | TK | Tokelau | 10 | 0 |
 | TL | Timor-Leste | 6 | 0 |
-| TM | Turkmenistan | 6 | 0 |
+| TM | Turkmenistan | 7 | 0 |
 | TN | Tunisia | 7 | 0 |
 | TO | Tonga | 6 | 0 |
 | TR | Türkiye | 7 | 0 |

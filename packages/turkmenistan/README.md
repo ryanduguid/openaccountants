@@ -11,7 +11,8 @@
 4. `tm-income-tax.md`
 5. `tm-payroll-social.md`
 6. `tm-tax-overview.md`
-7. `tm-vat-gst.md`
+7. `tm-tax-system-orientation.md`
+8. `tm-vat-gst.md`
 
 ## Shared files this package needs
 
