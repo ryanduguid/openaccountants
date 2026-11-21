@@ -41,7 +41,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BH | Bahrain | 6 | 1 |
 | BI | Burundi | 6 | 0 |
 | BJ | Benin | 6 | 0 |
-| BL | Saint Barthélemy | 1 | 0 |
+| BL | Saint Barthélemy | 2 | 0 |
 | BM | Bermuda | 8 | 0 |
 | BN | Brunei Darussalam | 7 | 0 |
 | BO | Bolivia (Plurinational State of) | 6 | 0 |
@@ -156,7 +156,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MC | Monaco | 7 | 0 |
 | MD | Republic of Moldova | 9 | 0 |
 | ME | Montenegro | 9 | 0 |
-| MF | Saint Martin (French Part) | 1 | 0 |
+| MF | Saint Martin (French Part) | 2 | 0 |
 | MG | Madagascar | 6 | 0 |
 | MH | Marshall Islands | 1 | 0 |
 | MK | North Macedonia | 9 | 0 |

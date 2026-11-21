@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `mf-individual-investment-reference.md`
+3. `mf-tax-system-orientation.md`
 
 ## Shared files this package needs
 

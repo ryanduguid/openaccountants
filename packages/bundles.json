@@ -4873,6 +4873,7 @@
    "files": [
     "intake.md",
     "bl-cfae-legislative-reference.md",
+    "bl-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4916,6 +4917,7 @@
    "files": [
     "intake.md",
     "mf-individual-investment-reference.md",
+    "mf-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
