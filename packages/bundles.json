@@ -193,6 +193,7 @@
    "name": "Albania",
    "files": [
     "intake.md",
+    "al-tax-system-orientation.md",
     "albania-income-tax.md",
     "albania-payroll.md",
     "albania-social-contributions.md",
@@ -3378,6 +3379,7 @@
     "kosovo-social-contributions.md",
     "kosovo-tax-optimization.md",
     "kosovo-vat.md",
+    "xk-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4373,6 +4375,7 @@
     "mk-company-formation.md",
     "mk-corporate-income-tax.md",
     "mk-tax-overview.md",
+    "mk-tax-system-orientation.md",
     "north-macedonia-income-tax.md",
     "north-macedonia-payroll.md",
     "north-macedonia-social-contributions.md",

@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,126 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,129 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2126 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2129 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -272,6 +272,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - af-vat-gst | AF | tier 2 | reviewed_by -
 - ax-income-tax | AX | tier 2 | reviewed_by -
 - ax-tax-scope | AX | tier 2 | reviewed_by -
+- al-tax-system-orientation | AL | tier 2 | reviewed_by -
 - albania-income-tax | AL | tier 2 | reviewed_by -
 - albania-payroll | AL | tier 2 | reviewed_by -
 - albania-social-contributions | AL | tier 2 | reviewed_by -
@@ -1170,6 +1171,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - kosovo-social-contributions | XK | tier 2 | reviewed_by -
 - kosovo-tax-optimization | XK | tier 2 | reviewed_by -
 - kosovo-vat | XK | tier 2 | reviewed_by -
+- xk-tax-system-orientation | XK | tier 2 | reviewed_by -
 - kuwait-tax | KW | tier 2 | reviewed_by -
 - kw-company-formation | KW | tier 2 | reviewed_by -
 - kw-corporate-income-tax | KW | tier 2 | reviewed_by -
@@ -1479,6 +1481,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - mk-company-formation | MK | tier 2 | reviewed_by -
 - mk-corporate-income-tax | MK | tier 2 | reviewed_by -
 - mk-tax-overview | MK | tier 2 | reviewed_by -
+- mk-tax-system-orientation | MK | tier 2 | reviewed_by -
 - north-macedonia-income-tax | MK | tier 2 | reviewed_by -
 - north-macedonia-payroll | MK | tier 2 | reviewed_by -
 - north-macedonia-social-contributions | MK | tier 2 | reviewed_by -
@@ -2326,7 +2329,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,126 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,129 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2344,7 +2347,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,962 Tier 2 guides among the 2,126 indexed guides. These inventory
+There are 1,965 Tier 2 guides among the 2,129 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and

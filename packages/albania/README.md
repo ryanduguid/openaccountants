@@ -6,11 +6,12 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `albania-income-tax.md`
-3. `albania-payroll.md`
-4. `albania-social-contributions.md`
-5. `albania-tax-optimization.md`
-6. `albania-vat.md`
+2. `al-tax-system-orientation.md`
+3. `albania-income-tax.md`
+4. `albania-payroll.md`
+5. `albania-social-contributions.md`
+6. `albania-tax-optimization.md`
+7. `albania-vat.md`
 
 ## Shared files this package needs
 

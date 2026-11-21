@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2126,
+  "guides": 2129,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -1915,6 +1915,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-16"
+  },
+  {
+   "slug": "al-tax-system-orientation",
+   "path": "skills/international/albania/al-tax-system-orientation.md",
+   "name": "al-tax-system-orientation",
+   "jurisdiction": "AL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "albania-income-tax",
@@ -13591,6 +13604,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "xk-tax-system-orientation",
+   "path": "skills/international/kosovo/xk-tax-system-orientation.md",
+   "name": "xk-tax-system-orientation",
+   "jurisdiction": "XK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "kuwait-tax",
    "path": "skills/international/kuwait/kuwait-tax.md",
    "name": "kuwait-tax",
@@ -17606,6 +17632,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "mk-tax-system-orientation",
+   "path": "skills/international/north-macedonia/mk-tax-system-orientation.md",
+   "name": "mk-tax-system-orientation",
+   "jurisdiction": "MK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "north-macedonia-income-tax",
