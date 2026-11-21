@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `wf-patente-registration-reference.md`
+3. `wf-tax-system-orientation.md`
 
 ## Shared files this package needs
 
