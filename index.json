@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2131,
+  "guides": 2134,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -2476,6 +2476,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "am-tax-system-orientation",
+   "path": "skills/international/armenia/am-tax-system-orientation.md",
+   "name": "am-tax-system-orientation",
+   "jurisdiction": "AM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "armenia-income-tax",
    "path": "skills/international/armenia/armenia-income-tax.md",
    "name": "armenia-income-tax",
@@ -3475,6 +3488,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "az-tax-system-orientation",
+   "path": "skills/international/azerbaijan/az-tax-system-orientation.md",
+   "name": "az-tax-system-orientation",
+   "jurisdiction": "AZ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "azerbaijan-income-tax",
@@ -9988,6 +10014,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ge-tax-system-orientation",
+   "path": "skills/international/georgia/ge-tax-system-orientation.md",
+   "name": "ge-tax-system-orientation",
+   "jurisdiction": "GE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "georgia-income-tax",

@@ -9,11 +9,12 @@
 2. `az-company-formation.md`
 3. `az-corporate-income-tax.md`
 4. `az-tax-overview.md`
-5. `azerbaijan-income-tax.md`
-6. `azerbaijan-payroll.md`
-7. `azerbaijan-social-contributions.md`
-8. `azerbaijan-tax-optimization.md`
-9. `azerbaijan-vat.md`
+5. `az-tax-system-orientation.md`
+6. `azerbaijan-income-tax.md`
+7. `azerbaijan-payroll.md`
+8. `azerbaijan-social-contributions.md`
+9. `azerbaijan-tax-optimization.md`
+10. `azerbaijan-vat.md`
 
 ## Shared files this package needs
 
