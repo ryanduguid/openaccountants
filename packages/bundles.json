@@ -3724,6 +3724,7 @@
     "mv-income-tax.md",
     "mv-payroll-social.md",
     "mv-tax-overview.md",
+    "mv-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4485,6 +4486,7 @@
     "pk-sales-tax-services.md",
     "pk-social-contributions.md",
     "pk-tax-optimization.md",
+    "pk-tax-system-orientation.md",
     "pk-withholding-tax.md",
     "pakistan-guided-intake.md",
     "pakistan-return-assembly.md",
@@ -5357,6 +5359,7 @@
    "name": "Sri Lanka",
    "files": [
     "intake.md",
+    "lk-tax-system-orientation.md",
     "sri-lanka-betting-gaming-excise.md",
     "sri-lanka-capital-gains-tax.md",
     "sri-lanka-corporate-tax.md",

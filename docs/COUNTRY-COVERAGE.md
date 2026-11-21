@@ -145,7 +145,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | LB | Lebanon | 6 | 0 |
 | LC | Saint Lucia | 1 | 0 |
 | LI | Liechtenstein | 7 | 0 |
-| LK | Sri Lanka | 10 | 8 |
+| LK | Sri Lanka | 11 | 8 |
 | LR | Liberia | 6 | 0 |
 | LS | Lesotho | 6 | 0 |
 | LT | Lithuania | 8 | 0 |
@@ -170,7 +170,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MS | Montserrat | 2 | 0 |
 | MT | Malta | 21 | 0 |
 | MU | Mauritius | 6 | 0 |
-| MV | Maldives | 6 | 0 |
+| MV | Maldives | 7 | 0 |
 | MW | Malawi | 6 | 0 |
 | MX | Mexico | 11 | 0 |
 | MY | Malaysia | 8 | 0 |
@@ -193,7 +193,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PF | French Polynesia | 1 | 0 |
 | PG | Papua New Guinea | 6 | 0 |
 | PH | Philippines | 7 | 0 |
-| PK | Pakistan | 19 | 4 |
+| PK | Pakistan | 20 | 4 |
 | PL | Poland | 9 | 0 |
 | PM | Saint Pierre and Miquelon | 1 | 0 |
 | PN | Pitcairn | 1 | 0 |

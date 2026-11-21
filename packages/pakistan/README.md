@@ -22,9 +22,10 @@
 15. `pk-sales-tax-services.md`
 16. `pk-social-contributions.md`
 17. `pk-tax-optimization.md`
-18. `pk-withholding-tax.md`
-19. `pakistan-guided-intake.md`
-20. `pakistan-return-assembly.md`
+18. `pk-tax-system-orientation.md`
+19. `pk-withholding-tax.md`
+20. `pakistan-guided-intake.md`
+21. `pakistan-return-assembly.md`
 
 ## Shared files this package needs
 
