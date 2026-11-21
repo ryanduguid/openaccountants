@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2107,
+  "guides": 2109,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -7791,6 +7791,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "cz-tax-system-orientation",
+   "path": "skills/international/czech-republic/cz-tax-system-orientation.md",
+   "name": "cz-tax-system-orientation",
+   "jurisdiction": "CZ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "czech-republic-vat-return",
@@ -18425,6 +18438,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "pl-tax-system-orientation",
+   "path": "skills/international/poland/pl-tax-system-orientation.md",
+   "name": "pl-tax-system-orientation",
+   "jurisdiction": "PL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "pl-zus-contributions",

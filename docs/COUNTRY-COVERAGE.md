@@ -71,7 +71,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CW | Curaçao | 6 | 0 |
 | CX | Christmas Island | 4 | 0 |
 | CY | Cyprus | 6 | 5 |
-| CZ | Czechia | 7 | 0 |
+| CZ | Czechia | 8 | 0 |
 | DE | Germany | 24 | 0 |
 | DJ | Djibouti | 6 | 0 |
 | DK | Denmark | 7 | 0 |
@@ -194,7 +194,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PG | Papua New Guinea | 6 | 0 |
 | PH | Philippines | 7 | 0 |
 | PK | Pakistan | 19 | 4 |
-| PL | Poland | 8 | 0 |
+| PL | Poland | 9 | 0 |
 | PM | Saint Pierre and Miquelon | 1 | 0 |
 | PN | Pitcairn | 1 | 0 |
 | PR | Puerto Rico | 2 | 0 |
