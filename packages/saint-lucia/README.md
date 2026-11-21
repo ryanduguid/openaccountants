@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `lc-national-insurance-reference.md`
+3. `lc-tax-system-orientation.md`
 
 ## Shared files this package needs
 
