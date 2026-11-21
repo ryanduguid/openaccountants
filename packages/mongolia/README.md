@@ -10,7 +10,8 @@
 3. `mn-corporate-income-tax.md`
 4. `mn-payroll-social.md`
 5. `mn-tax-overview.md`
-6. `mongolia-vat.md`
+6. `mn-tax-system-orientation.md`
+7. `mongolia-vat.md`
 
 ## Shared files this package needs
 

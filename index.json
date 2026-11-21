@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2137,
+  "guides": 2140,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -15918,6 +15918,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "mn-tax-system-orientation",
+   "path": "skills/international/mongolia/mn-tax-system-orientation.md",
+   "name": "mn-tax-system-orientation",
+   "jurisdiction": "MN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "mongolia-vat",
    "path": "skills/international/mongolia/mongolia-vat.md",
    "name": "mongolia-vat",
@@ -22145,6 +22158,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "tj-tax-system-orientation",
+   "path": "skills/international/tajikistan/tj-tax-system-orientation.md",
+   "name": "tj-tax-system-orientation",
+   "jurisdiction": "TJ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "tj-vat-gst",
    "path": "skills/international/tajikistan/tj-vat-gst.md",
    "name": "tj-vat-gst",
@@ -23014,6 +23040,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-11"
+  },
+  {
+   "slug": "tm-tax-system-orientation",
+   "path": "skills/international/turkmenistan/tm-tax-system-orientation.md",
+   "name": "tm-tax-system-orientation",
+   "jurisdiction": "TM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "tm-vat-gst",
