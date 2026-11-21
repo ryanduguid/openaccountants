@@ -1,11 +1,11 @@
 ---
 name: uy-tax-overview
-description: "Source-cited draft: tax overview for Uruguay (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited overview of Uruguay’s 2026 residence, income tax, VAT and filing rules. Pending local-accountant review."
 jurisdiction: UY
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+last_updated: 2026-11-22
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,23 +13,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Uruguay Tax Overview
 
-> **2026 retirement ceiling requires period verification.** The UYU 288,836 figure is reported for February 2026 onward. Its January application has not been established here. Confirm the BPS ceiling and pension regime for the pay month before using any retirement calculation or template below; do not assume that the BPC and retirement ceiling change on the same date.
+Uruguay uses the Uruguayan peso (UYU). The Dirección General Impositiva (DGI) administers national taxation. Personal income tax (IRPF) generally follows the calendar year. Company income tax (IRAE) follows the relevant fiscal close. [IRPF consolidated text, art. 7](https://www.impo.com.uy/bases/todgi2023/101-2024/7_T7) · [DGI company filing guidance](https://www.gub.uy/direccion-general-impositiva/comunicacion/publicaciones/sujetos-obligados-obligaciones-declarar-plazos-presentacion-del)
 
-## Uruguayan tax system at a glance
+## Income tax
 
-Uruguay operates a territorial-source tax system administered by the Direccion General Impositiva (DGI). Most income (personal and corporate) is taxed only where it arises in Uruguay, with limited exceptions for certain foreign passive income. Headline rates are 25% corporate (IRAE), up to 36% personal labour income (IRPF), and a 22% standard VAT (IVA).
+- **Residence and income scope.** An individual generally qualifies as resident by spending more than 183 days in Uruguay in a calendar year or by meeting the activities, economic interests or vital interests test. Check the rules for counting sporadic absences and evidence of another residence. Source rules primarily reach Uruguayan income. From 1 January 2026, IRPF also covers specified foreign capital income and gains involving assets covered by the amended source rule. Check the statutory categories, exclusions and any applicable credit or election. [IRPF consolidated text, art. 2](https://www.impo.com.uy/bases/todgi2023/101-2024/2_T7) · [Art. 6](https://www.impo.com.uy/bases/todgi2023/101-2024/6_T7) · [Law 20.446, art. 653](https://www.impo.com.uy/bases/leyes-originales/20446-2025/653) · [DGI Resolution 1517/026](https://www.impo.com.uy/bases/resoluciones-dgi/1517-2026/1?tipoServicio=11)
+- **Individuals.** Under the ordinary individual IRPF labour scale, the first 84 BPC of annual taxable labour income are exempt. Marginal rates run from 10% to 36%, with 36% on the portion above 1,380 BPC. The BPC is UYU 6,864 from 1 January 2026, making these limits UYU 576,576 and UYU 9,472,320. It was UYU 6,576 in 2025. Check separate treatment of mandatory annual bonus and holiday pay and any family election. [IRPF consolidated text, art. 48](https://www.impo.com.uy/bases/todgi2023/101-2024/48_T7) · [Decree 11/026](https://www.impo.com.uy/bases/decretos/11-2026)
+- **Companies.** The ordinary IRAE rate is 25% on net fiscal income. Check the source classification, including article 16’s rules for specified foreign income, and any applicable exemptions. [IRAE consolidated text, art. 16](https://www.impo.com.uy/bases/todgi2023/101-2024/16_T4) · [Art. 23](https://www.impo.com.uy/bases/todgi2023/101-2024/23_T4)
 
-- **Standard tax year** — Calendar year (1 January to 31 December) (approx — confirm; companies may apply for a different fiscal year-end)  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
-- **Currency** — Uruguayan peso (UYU)  _(Banco Central del Uruguay)_
-- **National tax authority** — Direccion General Impositiva (DGI)  _([Direccion General Impositiva](https://www.gub.uy/direccion-general-impositiva))_
-- **Social security authority** — Banco de Prevision Social (BPS)  _([Banco de Prevision Social](https://www.bps.gub.uy))_
-- **Basis of taxation** — Territorial / source-based — Uruguay-source income is taxed; most foreign-source income is exempt (with limited exceptions, e.g. certain foreign capital income of resident individuals)  _(Titulo 7 Texto Ordenado 1996 (IRPF))_
-- **Base de Prestaciones y Contribuciones (BPC) — indexing unit** — UYU 6,864 per month for 2026 (+4.38%, from 1 January); UYU 6,576 for 2025. Most Uruguayan thresholds are BPC multiples and move with it on 1 January. Two that matter are **not**: the BPS retirement contribution ceiling is set separately by BPS (UYU 288,836 for 2026, a 5.97% rise against the BPC's 4.38%), and the minimum wage changed twice in 2026. Do not index either from the BPC  _(Decreto N° 11/026 (BPC 2026); Decreto N° 5/025 (BPC 2025))_
-- **Headline personal income tax (IRPF) top rate** — 36% on the top labour-income band; capital income generally a flat 12%  _(Titulo 7 Texto Ordenado 1996 (IRPF))_
-- **Headline corporate income tax (IRAE) rate** — 25%  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
-- **Does Uruguay have a VAT/GST?** — Yes — Impuesto al Valor Agregado (IVA), standard rate 22%  _(Titulo 10 Texto Ordenado 1996 (IVA))_
-- **Net wealth tax (Impuesto al Patrimonio, IP)** — Annual net wealth tax applies — 1.5% for companies (3% for low/no-tax-jurisdiction entities); progressive scale for individuals  _(Titulo 14 Texto Ordenado 1996 (Impuesto al Patrimonio))_
-- **Main annual filing pattern** — Corporate IRAE filed annually after fiscal year-end (typically within ~4 months); IRPF labour-income annual return generally filed mid-year (around May-July) following the calendar year (approx — DGI publishes the exact due-date calendar each year by taxpayer group)  _(Resoluciones DGI - calendario de vencimientos)_
+## VAT, filing and other obligations
+
+- **VAT (IVA).** The standard rate is 22% and the minimum rate is 10% for statutory categories. Check exemptions and classification for each supply. [IVA consolidated text, arts. 34 to 36](https://impo.com.uy/bases/todgi2023/101-2024/34_T10)
+- **Filing.** The ordinary 2025 IRPF annual filing window ran from 29 June to 31 August 2026. Companies that file Form 1050 generally file in the fourth month after close, with dates and exceptions by taxpayer type. Check the DGI calendar for the return, payments on account and VAT obligations. [DGI personal filing dates](https://www.gub.uy/direccion-general-impositiva/comunicacion/publicaciones/vencimientos-campana-irpf-iass) · [DGI Form 1050 guidance](https://www.gub.uy/direccion-general-impositiva/comunicacion/publicaciones/sujetos-obligados-obligaciones-declarar-plazos-presentacion-del) · [DGI general 2026 calendar](https://www.gub.uy/direccion-general-impositiva/comunicacion/publicaciones/vencimientos-2026-calendario-general-actualizado)
+- **Wealth tax and social insurance.** The general company wealth tax rate is 1.5%, with separate categories and rates, including rules for individuals. The Banco de Previsión Social (BPS) administers social insurance. Confirm the retirement ceiling for the pay month and pension regime with BPS. The January 2026 application of the UYU 288,836 ceiling reported from February is still unverified. [Wealth tax consolidated text, art. 53](https://www.impo.com.uy/bases/todgi2023/101-2024/53_T14) · [BPS](https://www.bps.gub.uy/)
 
 <!-- openaccountants-cta-block -->
 
