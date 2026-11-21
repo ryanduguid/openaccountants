@@ -1,34 +1,36 @@
 ---
 name: mu-tax-overview
-description: "Source-cited draft: tax overview for Mauritius (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Mauritius ordinary tax-system orientation. Verify residence, income tax, VAT and standard return deadlines for 2025–26 and 2026–27."
 jurisdiction: MU
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+tax_year_notes: "Income years ended 30 June 2026 and ending 30 June 2027. Dates follow the income year unless stated otherwise."
+last_updated: 2026-11-21
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Mauritius Tax Overview
+# Mauritius tax overview
 
-## Mauritius Tax Overview
+## Residence, source and periods
 
-## Mauritius tax system at a glance
+The Mauritius Revenue Authority (MRA) administers national taxes. Work in Mauritian rupees (MUR). The ordinary individual income year runs from 1 July to 30 June. Companies use their applicable accounting period. [Income Tax Act 1995, ss 2, 5 and 116](https://www.mra.mu/download/ITAConsolidated.pdf) · [MRA corporate taxation](https://www.mra.mu/taxes-duties/corporate-taxation)
 
-Mauritius operates a single-rate-leaning system administered by the Mauritius Revenue Authority (MRA), with a fiscal year running 1 July to 30 June. The figures below reflect measures effective from the 2025/26 income year; they are a source-cited draft pending review by a licensed Mauritius accountant.
+For domestic income tax, an individual is resident if domiciled in Mauritius with no permanent place of abode outside Mauritius, present for at least 183 days in that income year, or present for at least 270 days across that year and the preceding 2 income years. For a company, consider incorporation and central management and control. A Mauritian-incorporated company centrally managed and controlled outside Mauritius is treated as non-resident and still has a section 116 return obligation. A resident can be taxable on Mauritian and foreign income. An individual's foreign-source income is deemed derived when received in Mauritius or dealt with in Mauritius in their interest or on their behalf. Check the statutory source rules, any visa rule and any treaty separately. [Income Tax Act, ss 5 and 73–74](https://www.mra.mu/download/ITAConsolidated.pdf)
 
-- **National tax authority** — Mauritius Revenue Authority (MRA)  _([Mauritius Revenue Authority Act](https://www.mra.mu/))_
-- **Currency** — Mauritian rupee (MUR / Rs)  _(Bank of Mauritius Act)_
-- **Income tax year** — 1 July to 30 June: 'year' means a period of 12 months commencing on 1 July, and the income year is the year in which the income is derived  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 2, definitions of 'year' and 'income year' — https://www.mra.mu/download/ITAConsolidated.pdf)_
-- **Basis of taxation for residents** — Residents are taxed on income derived from Mauritius or elsewhere (s 5(1)); an individual's foreign-source income is deemed derived only when it is received in Mauritius or dealt with in Mauritius on the individual's behalf (s 5(3))  _(Income Tax Act 1995 (MRA consolidation to May 2026), ss 5(1) and 5(3) — https://www.mra.mu/download/ITAConsolidated.pdf)_
-- **Top personal income tax rate** — 20% on chargeable income above Rs 1,000,000 for the income year to 30 June 2026, after 0% on the first Rs 500,000 and 10% on the next Rs 500,000; from the income year commencing 1 July 2026 the Finance Act 2026 keeps 20% on the next Rs 11 million and adds a 35% rate on chargeable income above Rs 12 million  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 4 and First Schedule Part I — https://www.mra.mu/download/ITAConsolidated.pdf ; Finance Act 2026 (Act No. 14 of 2026), s 7(v) and s 28(12) — https://www.mra.mu/download/FinanceAct2026.pdf)_
-- **Standard corporate income tax rate** — 15%  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 44 and First Schedule Part IV — https://www.mra.mu/download/ITAConsolidated.pdf)_
-- **Does VAT exist** — Yes — Value Added Tax at a standard rate of 15%  _(Value Added Tax Act 1998 (MRA consolidation to May 2026), s 10 and Fourth Schedule — https://www.mra.mu/download/VATAct.pdf)_
-- **Annual individual return deadline** — 15 October following the income year, with the return filed and any tax paid electronically (s 112(1)); the former 30 September paper deadline no longer appears in the Act  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 112(1) — https://www.mra.mu/download/ITAConsolidated.pdf)_
-- **Annual company return deadline** — Within six months from the end of the month in which the accounting period ends, with payment of the tax due; where the accounting period ends in June, two working days before the end of December  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 116(1) and (2) — https://www.mra.mu/download/ITAConsolidated.pdf)_
-- **Qualified Domestic Minimum Top-up Tax (Pillar Two)** — QDMT tax applies to Mauritius members of multinational groups with consolidated revenue of EUR 750 million or more in at least two of the four preceding fiscal years, from the year of assessment commencing 1 July 2025  _(Income Tax Act 1995 (MRA consolidation to May 2026), ss 50Q(1) and 50R(3) — https://www.mra.mu/download/ITAConsolidated.pdf)_
+## Ordinary rates
+
+- **Individual income.** For the income year ended 30 June 2026, ordinary marginal rates are 0% on the first MUR 500,000 of chargeable income, 10% on the next MUR 500,000 and 20% on the balance. Test the separate Fair Share Contribution for this year if the statutory threshold income exceeds MUR 12 million. For the income year from 1 July 2026, the 20% band is the next MUR 11 million and the remainder is taxed at 35%. The Finance Act 2026 limits the individual Fair Share Contribution to the income year starting 1 July 2025. [Income Tax Act, s 16C and First Schedule Part I](https://www.mra.mu/download/ITAConsolidated.pdf) · [Finance Act 2026, ss 7(b), 7(v) and 28(12)](https://www.mra.mu/download/FinanceAct2026.pdf)
+- **Company income.** The standard rate is 15%. A 3% rate applies to qualifying export of goods income. Check corporate Fair Share Contribution, partial exemptions and QDMT tax separately. The QDMT tax tests covered persons' combined effective rate against 15%, with a group revenue test of EUR 750 million in at least 2 of the 4 relevant preceding fiscal years. Sections 50Q and 50R apply in respect of the year of assessment from 1 July 2025 and subsequent years. [Income Tax Act, ss 44, 44B and 50Q–50R and First Schedule Part IV](https://www.mra.mu/download/ITAConsolidated.pdf) · [MRA corporate taxation](https://www.mra.mu/taxes-duties/corporate-taxation)
+- **VAT.** The standard rate is 15%. The ordinary compulsory registration threshold is turnover of taxable supplies exceeding or expected to exceed MUR 3 million, subject to separate registration categories. Ordinary returns are quarterly up to MUR 10 million and monthly above it, subject to election and special provisions. MRA's electronic return and payment deadline is ordinarily the end of the month following the relevant period. [VAT Act, ss 15 and 22 and Second, Fourth and Sixth Schedules](https://www.mra.mu/download/VATAct.pdf) · [MRA VAT registration](https://www.mra.mu/index.php/eservices1/vat-eservices/simplified-vat-registration) · [MRA VAT returns](https://www.mra.mu/index.php/eservices1/vat-eservices/vat-return)
+
+## Annual filing and payment
+
+An individual required to file under section 112 ordinarily files electronically and pays by 15 October following the income year. For the year ended 30 June 2026, MRA extended that date to 30 October 2026. A company ordinarily files and pays electronically within 6 months after the end of its accounting-period closing month. For June and December closing months, section 116 ordinarily sets the date 2 days, excluding Saturdays and public holidays, before the end of December and June respectively. Apply the special June rules for a qualifying nil or loss return or a fourth-quarter Advance Payment System statement where applicable. [Income Tax Act, ss 112 and 116](https://www.mra.mu/download/ITAConsolidated.pdf) · [MRA 2026 filing-season close](https://www.mra.mu/download/PressRelease311026.pdf)
+
+Confirm the facts behind residence and receipt of foreign income and the appropriate period’s corporate regimes, withholding, deductions and VAT exceptions before determining liability. Practitioner review remains pending.
 
 <!-- openaccountants-cta-block -->
 
