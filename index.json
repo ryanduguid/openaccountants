@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2105,
+  "guides": 2107,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -10419,6 +10419,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "gr-tax-system-orientation",
+   "path": "skills/international/greece/gr-tax-system-orientation.md",
+   "name": "gr-tax-system-orientation",
+   "jurisdiction": "GR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "greece-einvoice",
    "path": "skills/international/greece/greece-einvoice.md",
    "name": "greece-einvoice",
@@ -12289,6 +12302,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-03"
+  },
+  {
+   "slug": "it-tax-system-orientation",
+   "path": "skills/international/italy/it-tax-system-orientation.md",
+   "name": "it-tax-system-orientation",
+   "jurisdiction": "IT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "italy-bookkeeping",

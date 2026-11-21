@@ -12,16 +12,17 @@
 5. `it-income-tax.md`
 6. `it-inps-contributions.md`
 7. `it-irap.md`
-8. `italy-bookkeeping.md`
-9. `italy-crypto-tax.md`
-10. `italy-einvoice.md`
-11. `italy-financial-statements.md`
-12. `italy-formation.md`
-13. `italy-payroll.md`
-14. `italy-tax-optimization.md`
-15. `italy-transfer-pricing.md`
-16. `italy-vat-return.md`
-17. `references.md`
+8. `it-tax-system-orientation.md`
+9. `italy-bookkeeping.md`
+10. `italy-crypto-tax.md`
+11. `italy-einvoice.md`
+12. `italy-financial-statements.md`
+13. `italy-formation.md`
+14. `italy-payroll.md`
+15. `italy-tax-optimization.md`
+16. `italy-transfer-pricing.md`
+17. `italy-vat-return.md`
+18. `references.md`
 
 ## Shared files this package needs
 

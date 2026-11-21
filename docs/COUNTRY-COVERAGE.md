@@ -104,7 +104,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GN | Guinea | 6 | 0 |
 | GP | Guadeloupe | 1 | 0 |
 | GQ | Equatorial Guinea | 6 | 0 |
-| GR | Greece | 7 | 0 |
+| GR | Greece | 8 | 0 |
 | GS | South Georgia and the South Sandwich Islands | 1 | 0 |
 | GT | Guatemala | 7 | 0 |
 | GU | Guam | 4 | 0 |
@@ -125,7 +125,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IQ | Iraq | 7 | 0 |
 | IR | Iran (Islamic Republic of) | 6 | 0 |
 | IS | Iceland | 9 | 0 |
-| IT | Italy | 16 | 0 |
+| IT | Italy | 17 | 0 |
 | JE | Jersey | 14 | 0 |
 | JM | Jamaica | 6 | 0 |
 | JO | Jordan | 6 | 0 |
