@@ -10,6 +10,7 @@
 3. `ck-company-tax-vat.md`
 4. `ck-paye.md`
 5. `ck-social-contributions.md`
+6. `ck-tax-system-orientation.md`
 
 ## Shared files this package needs
 

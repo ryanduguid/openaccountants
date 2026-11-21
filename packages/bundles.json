@@ -1862,6 +1862,7 @@
     "ck-company-tax-vat.md",
     "ck-paye.md",
     "ck-social-contributions.md",
+    "ck-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4331,6 +4332,7 @@
    "files": [
     "intake.md",
     "nu-company-reporting.md",
+    "nu-tax-system-orientation.md",
     "references.md",
     "README.md"
    ],
@@ -4636,6 +4638,7 @@
    "files": [
     "intake.md",
     "pn-landing-fee-passenger-levy-reference.md",
+    "pn-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

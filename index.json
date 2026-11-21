@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2155,
+  "guides": 2158,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -7414,6 +7414,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "ck-tax-system-orientation",
+   "path": "skills/international/cook-islands/ck-tax-system-orientation.md",
+   "name": "ck-tax-system-orientation",
+   "jurisdiction": "CK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "costa-rica-corporate-income-tax",
@@ -17504,6 +17517,19 @@
    "last_updated": "2026-11-11"
   },
   {
+   "slug": "nu-tax-system-orientation",
+   "path": "skills/international/niue/nu-tax-system-orientation.md",
+   "name": "nu-tax-system-orientation",
+   "jurisdiction": "NU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "nf-annual-rates",
    "path": "skills/international/norfolk-island/nf-annual-rates.md",
    "name": "nf-annual-rates",
@@ -18815,6 +18841,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "pn-tax-system-orientation",
+   "path": "skills/international/pitcairn/pn-tax-system-orientation.md",
+   "name": "pn-tax-system-orientation",
+   "jurisdiction": "PN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "pl-capital-gains",
