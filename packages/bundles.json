@@ -3592,6 +3592,7 @@
    "name": "Luxembourg",
    "files": [
     "intake.md",
+    "lu-tax-system-orientation.md",
     "luxembourg-income-tax.md",
     "luxembourg-payroll.md",
     "luxembourg-social-contributions.md",
@@ -4649,6 +4650,7 @@
     "pt-nhr-ifici.md",
     "pt-return-assembly.md",
     "pt-social-contributions.md",
+    "pt-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

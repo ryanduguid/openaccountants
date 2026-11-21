@@ -6,11 +6,12 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `luxembourg-income-tax.md`
-3. `luxembourg-payroll.md`
-4. `luxembourg-social-contributions.md`
-5. `luxembourg-tax-optimization.md`
-6. `luxembourg-vat-return.md`
+2. `lu-tax-system-orientation.md`
+3. `luxembourg-income-tax.md`
+4. `luxembourg-payroll.md`
+5. `luxembourg-social-contributions.md`
+6. `luxembourg-tax-optimization.md`
+7. `luxembourg-vat-return.md`
 
 ## Shared files this package needs
 
