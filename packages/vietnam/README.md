@@ -13,6 +13,7 @@
 6. `vn-corporate-income-tax.md`
 7. `vn-payroll-social.md`
 8. `vn-tax-overview.md`
+9. `vn-tax-system-orientation.md`
 
 ## Shared files this package needs
 

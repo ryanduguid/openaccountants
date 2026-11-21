@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,148 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,151 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2148 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2151 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -554,6 +554,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - kh-income-tax | KH | tier 2 | reviewed_by -
 - kh-payroll-social | KH | tier 2 | reviewed_by -
 - kh-tax-overview | KH | tier 2 | reviewed_by -
+- kh-tax-system-orientation | KH | tier 2 | reviewed_by -
 - cameroon-income-tax | CM | tier 2 | reviewed_by -
 - cameroon-payroll | CM | tier 2 | reviewed_by Nkinyam Courage Ndasi
 - cameroon-social-contributions | CM | tier 2 | reviewed_by Nkinyam Courage Ndasi
@@ -1195,6 +1196,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - la-corporate-income-tax | LA | tier 2 | reviewed_by -
 - la-payroll-social | LA | tier 2 | reviewed_by -
 - la-tax-overview | LA | tier 2 | reviewed_by -
+- la-tax-system-orientation | LA | tier 2 | reviewed_by -
 - laos-vat | LA | tier 2 | reviewed_by -
 - latvia-income-tax | LV | tier 2 | reviewed_by -
 - latvia-payroll | LV | tier 2 | reviewed_by -
@@ -2012,6 +2014,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - vn-corporate-income-tax | VN | tier 2 | reviewed_by -
 - vn-payroll-social | VN | tier 2 | reviewed_by -
 - vn-tax-overview | VN | tier 2 | reviewed_by -
+- vn-tax-system-orientation | VN | tier 2 | reviewed_by -
 - wf-patente-registration-reference | WF | tier 2 | reviewed_by -
 - eh-eu-import-origin-reference | EH | tier 2 | reviewed_by -
 - zambia-vat | ZM | tier 2 | reviewed_by -
@@ -2348,7 +2351,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,148 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,151 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2366,7 +2369,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,984 Tier 2 guides among the 2,148 indexed guides. These inventory
+There are 1,987 Tier 2 guides among the 2,151 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and

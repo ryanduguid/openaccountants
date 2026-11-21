@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2148,
+  "guides": 2151,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -5581,6 +5581,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "kh-tax-system-orientation",
+   "path": "skills/international/cambodia/kh-tax-system-orientation.md",
+   "name": "kh-tax-system-orientation",
+   "jurisdiction": "KH",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "cameroon-income-tax",
@@ -13914,6 +13927,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "la-tax-system-orientation",
+   "path": "skills/international/laos/la-tax-system-orientation.md",
+   "name": "la-tax-system-orientation",
+   "jurisdiction": "LA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "laos-vat",
@@ -24535,6 +24561,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "vn-tax-system-orientation",
+   "path": "skills/international/vietnam/vn-tax-system-orientation.md",
+   "name": "vn-tax-system-orientation",
+   "jurisdiction": "VN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "wf-patente-registration-reference",
