@@ -22,7 +22,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AG | Antigua and Barbuda | 3 | 0 |
 | AI | Anguilla | 2 | 0 |
 | AL | Albania | 6 | 0 |
-| AM | Armenia | 8 | 0 |
+| AM | Armenia | 9 | 0 |
 | AO | Angola | 6 | 0 |
 | AQ | Antarctica | 1 | 0 |
 | AR | Argentina | 9 | 3 |
@@ -31,7 +31,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AU | Australia | 64 | 0 |
 | AW | Aruba | 1 | 0 |
 | AX | Åland Islands | 2 | 0 |
-| AZ | Azerbaijan | 8 | 0 |
+| AZ | Azerbaijan | 9 | 0 |
 | BA | Bosnia and Herzegovina | 8 | 0 |
 | BB | Barbados | 6 | 0 |
 | BD | Bangladesh | 18 | 0 |
@@ -94,7 +94,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GA | Gabon | 5 | 0 |
 | GB | United Kingdom of Great Britain and Northern Ireland | 27 | 15 |
 | GD | Grenada | 2 | 0 |
-| GE | Georgia | 8 | 0 |
+| GE | Georgia | 9 | 0 |
 | GF | French Guiana | 1 | 0 |
 | GG | Guernsey | 1 | 0 |
 | GH | Ghana | 7 | 0 |

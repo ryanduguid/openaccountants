@@ -9,11 +9,12 @@
 2. `am-company-formation.md`
 3. `am-corporate-income-tax.md`
 4. `am-tax-overview.md`
-5. `armenia-income-tax.md`
-6. `armenia-payroll.md`
-7. `armenia-social-contributions.md`
-8. `armenia-tax-optimization.md`
-9. `armenia-vat.md`
+5. `am-tax-system-orientation.md`
+6. `armenia-income-tax.md`
+7. `armenia-payroll.md`
+8. `armenia-social-contributions.md`
+9. `armenia-tax-optimization.md`
+10. `armenia-vat.md`
 
 ## Shared files this package needs
 

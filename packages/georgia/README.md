@@ -9,11 +9,12 @@
 2. `ge-company-formation.md`
 3. `ge-corporate-income-tax.md`
 4. `ge-tax-overview.md`
-5. `georgia-income-tax.md`
-6. `georgia-payroll.md`
-7. `georgia-social-contributions.md`
-8. `georgia-tax-optimization.md`
-9. `georgia-vat.md`
+5. `ge-tax-system-orientation.md`
+6. `georgia-income-tax.md`
+7. `georgia-payroll.md`
+8. `georgia-social-contributions.md`
+9. `georgia-tax-optimization.md`
+10. `georgia-vat.md`
 
 ## Shared files this package needs
 
