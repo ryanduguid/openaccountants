@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2120,
+  "guides": 2122,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -2123,6 +2123,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ad-tax-system-orientation",
+   "path": "skills/international/andorra/ad-tax-system-orientation.md",
+   "name": "ad-tax-system-orientation",
+   "jurisdiction": "AD",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "andorra-igi",
@@ -19608,6 +19621,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "sm-tax-system-orientation",
+   "path": "skills/international/san-marino/sm-tax-system-orientation.md",
+   "name": "sm-tax-system-orientation",
+   "jurisdiction": "SM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "sm-vat-gst",

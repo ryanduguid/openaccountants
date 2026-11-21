@@ -11,7 +11,8 @@
 4. `ad-income-tax.md`
 5. `ad-payroll-social.md`
 6. `ad-tax-overview.md`
-7. `andorra-igi.md`
+7. `ad-tax-system-orientation.md`
+8. `andorra-igi.md`
 
 ## Shared files this package needs
 

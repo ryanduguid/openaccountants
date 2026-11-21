@@ -16,7 +16,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 
 | Code | Country or area | Indexed guides | Accountant-reviewed guides |
 |---|---|---:|---:|
-| AD | Andorra | 6 | 0 |
+| AD | Andorra | 7 | 0 |
 | AE | United Arab Emirates | 7 | 3 |
 | AF | Afghanistan | 6 | 0 |
 | AG | Antigua and Barbuda | 3 | 0 |
@@ -219,7 +219,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SJ | Svalbard and Jan Mayen Islands | 1 | 0 |
 | SK | Slovakia | 9 | 0 |
 | SL | Sierra Leone | 6 | 0 |
-| SM | San Marino | 6 | 0 |
+| SM | San Marino | 7 | 0 |
 | SN | Senegal | 7 | 0 |
 | SO | Somalia | 6 | 0 |
 | SR | Suriname | 6 | 0 |

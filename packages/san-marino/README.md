@@ -11,7 +11,8 @@
 4. `sm-income-tax.md`
 5. `sm-payroll-social.md`
 6. `sm-tax-overview.md`
-7. `sm-vat-gst.md`
+7. `sm-tax-system-orientation.md`
+8. `sm-vat-gst.md`
 
 ## Shared files this package needs
 
