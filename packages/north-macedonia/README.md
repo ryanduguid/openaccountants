@@ -9,11 +9,12 @@
 2. `mk-company-formation.md`
 3. `mk-corporate-income-tax.md`
 4. `mk-tax-overview.md`
-5. `north-macedonia-income-tax.md`
-6. `north-macedonia-payroll.md`
-7. `north-macedonia-social-contributions.md`
-8. `north-macedonia-tax-optimization.md`
-9. `north-macedonia-vat.md`
+5. `mk-tax-system-orientation.md`
+6. `north-macedonia-income-tax.md`
+7. `north-macedonia-payroll.md`
+8. `north-macedonia-social-contributions.md`
+9. `north-macedonia-tax-optimization.md`
+10. `north-macedonia-vat.md`
 
 ## Shared files this package needs
 

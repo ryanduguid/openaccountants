@@ -11,6 +11,7 @@
 4. `kosovo-social-contributions.md`
 5. `kosovo-tax-optimization.md`
 6. `kosovo-vat.md`
+7. `xk-tax-system-orientation.md`
 
 ## Shared files this package needs
 

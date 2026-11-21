@@ -21,7 +21,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AF | Afghanistan | 6 | 0 |
 | AG | Antigua and Barbuda | 3 | 0 |
 | AI | Anguilla | 2 | 0 |
-| AL | Albania | 5 | 0 |
+| AL | Albania | 6 | 0 |
 | AM | Armenia | 8 | 0 |
 | AO | Angola | 6 | 0 |
 | AQ | Antarctica | 1 | 0 |
@@ -159,7 +159,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MF | Saint Martin (French Part) | 1 | 0 |
 | MG | Madagascar | 6 | 0 |
 | MH | Marshall Islands | 1 | 0 |
-| MK | North Macedonia | 8 | 0 |
+| MK | North Macedonia | 9 | 0 |
 | ML | Mali | 6 | 0 |
 | MM | Myanmar | 6 | 0 |
 | MN | Mongolia | 5 | 0 |
@@ -260,7 +260,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | VU | Vanuatu | 6 | 0 |
 | WF | Wallis and Futuna Islands | 1 | 0 |
 | WS | Samoa | 6 | 0 |
-| XK | Kosovo | 5 | 0 |
+| XK | Kosovo | 6 | 0 |
 | YE | Yemen | 0 | 0 |
 | YT | Mayotte | 1 | 0 |
 | ZA | South Africa | 9 | 4 |
