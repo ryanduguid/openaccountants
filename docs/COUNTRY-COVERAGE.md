@@ -209,7 +209,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | RU | Russian Federation | 14 | 0 |
 | RW | Rwanda | 7 | 0 |
 | SA | Saudi Arabia | 12 | 5 |
-| SB | Solomon Islands | 1 | 0 |
+| SB | Solomon Islands | 2 | 0 |
 | SC | Seychelles | 5 | 0 |
 | SD | Sudan | 6 | 0 |
 | SE | Sweden | 11 | 0 |

@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `sb-npf-contribution-reference.md`
+3. `sb-tax-system-orientation.md`
 
 ## Shared files this package needs
 
