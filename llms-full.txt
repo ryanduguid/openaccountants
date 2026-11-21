@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,113 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,115 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2113 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2115 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -702,6 +702,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - hr-company-formation | HR | tier 2 | reviewed_by -
 - hr-corporate-income-tax | HR | tier 2 | reviewed_by -
 - hr-tax-overview | HR | tier 2 | reviewed_by -
+- hr-tax-system-orientation | HR | tier 2 | reviewed_by -
 - cu-company-formation | CU | tier 2 | reviewed_by -
 - cu-corporate-income-tax | CU | tier 2 | reviewed_by -
 - cu-income-tax | CU | tier 2 | reviewed_by -
@@ -1694,6 +1695,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - si-company-formation | SI | tier 2 | reviewed_by -
 - si-corporate-income-tax | SI | tier 2 | reviewed_by -
 - si-tax-overview | SI | tier 2 | reviewed_by -
+- si-tax-system-orientation | SI | tier 2 | reviewed_by -
 - slovenia-income-tax | SI | tier 2 | reviewed_by -
 - slovenia-payroll | SI | tier 2 | reviewed_by -
 - slovenia-social-contributions | SI | tier 2 | reviewed_by -
@@ -2313,7 +2315,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,113 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,115 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2331,7 +2333,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,949 Tier 2 guides among the 2,113 indexed guides. These inventory
+There are 1,951 Tier 2 guides among the 2,115 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
