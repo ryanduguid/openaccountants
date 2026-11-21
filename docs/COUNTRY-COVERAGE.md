@@ -29,7 +29,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AS | American Samoa | 3 | 0 |
 | AT | Austria | 7 | 0 |
 | AU | Australia | 64 | 0 |
-| AW | Aruba | 1 | 0 |
+| AW | Aruba | 2 | 0 |
 | AX | Åland Islands | 2 | 0 |
 | AZ | Azerbaijan | 9 | 0 |
 | BA | Bosnia and Herzegovina | 8 | 0 |
@@ -226,7 +226,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SS | South Sudan | 6 | 0 |
 | ST | Sao Tome and Principe | 6 | 0 |
 | SV | El Salvador | 5 | 0 |
-| SX | Sint Maarten (Dutch part) | 1 | 0 |
+| SX | Sint Maarten (Dutch part) | 2 | 0 |
 | SY | Syrian Arab Republic | 0 | 0 |
 | SZ | Eswatini | 6 | 0 |
 | TC | Turks and Caicos Islands | 13 | 0 |

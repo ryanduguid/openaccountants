@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,167 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,169 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2167 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2169 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -323,6 +323,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - armenia-tax-optimization | AM | tier 2 | reviewed_by -
 - armenia-vat | AM | tier 2 | reviewed_by -
 - aw-annual-income-tax-table-reference | AW | tier 2 | reviewed_by -
+- aw-tax-system-orientation | AW | tier 2 | reviewed_by -
 - au-amending-individual-income-tax-return-period | AU | tier 2 | reviewed_by -
 - au-bas-preparation | AU | tier 2 | reviewed_by -
 - au-capital-gains | AU | tier 2 | reviewed_by -
@@ -1725,6 +1726,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - singapore-tax-optimization | SG | tier 2 | reviewed_by -
 - singapore-transfer-pricing | SG | tier 2 | reviewed_by -
 - sint-maarten-turnover-tax-reference | SX | tier 2 | reviewed_by -
+- sx-tax-system-orientation | SX | tier 2 | reviewed_by -
 - slovakia-references | SK | tier 2 | reviewed_by -
 - sk-company-formation | SK | tier 2 | reviewed_by -
 - sk-corporate-income-tax | SK | tier 2 | reviewed_by -
@@ -2367,7 +2369,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,167 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,169 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2385,7 +2387,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 2,003 Tier 2 guides among the 2,167 indexed guides. These inventory
+There are 2,005 Tier 2 guides among the 2,169 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
