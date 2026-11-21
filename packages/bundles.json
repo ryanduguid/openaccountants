@@ -324,6 +324,7 @@
     "ag-education-levy.md",
     "ag-medical-benefits.md",
     "ag-social-security.md",
+    "ag-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -2062,6 +2063,7 @@
    "files": [
     "intake.md",
     "dm-social-security-contributions-reference.md",
+    "dm-tax-system-orientation.md",
     "dm-vat-reference.md",
     "README.md"
    ],
@@ -4956,6 +4958,7 @@
    "files": [
     "intake.md",
     "vc-persons-abroad-contributions-reference.md",
+    "vc-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

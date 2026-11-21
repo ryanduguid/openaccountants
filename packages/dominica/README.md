@@ -7,7 +7,8 @@
 
 1. `intake.md`
 2. `dm-social-security-contributions-reference.md`
-3. `dm-vat-reference.md`
+3. `dm-tax-system-orientation.md`
+4. `dm-vat-reference.md`
 
 ## Shared files this package needs
 

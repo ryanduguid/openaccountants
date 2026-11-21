@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `vc-persons-abroad-contributions-reference.md`
+3. `vc-tax-system-orientation.md`
 
 ## Shared files this package needs
 
