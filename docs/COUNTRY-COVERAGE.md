@@ -95,14 +95,14 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GB | United Kingdom of Great Britain and Northern Ireland | 27 | 15 |
 | GD | Grenada | 2 | 0 |
 | GE | Georgia | 9 | 0 |
-| GF | French Guiana | 1 | 0 |
+| GF | French Guiana | 2 | 0 |
 | GG | Guernsey | 1 | 0 |
 | GH | Ghana | 7 | 0 |
 | GI | Gibraltar | 2 | 0 |
 | GL | Greenland | 2 | 0 |
 | GM | Gambia | 6 | 0 |
 | GN | Guinea | 6 | 0 |
-| GP | Guadeloupe | 1 | 0 |
+| GP | Guadeloupe | 2 | 0 |
 | GQ | Equatorial Guinea | 6 | 0 |
 | GR | Greece | 8 | 0 |
 | GS | South Georgia and the South Sandwich Islands | 1 | 0 |
@@ -165,7 +165,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MN | Mongolia | 6 | 0 |
 | MO | China, Macao Special Administrative Region | 5 | 0 |
 | MP | Northern Mariana Islands | 5 | 0 |
-| MQ | Martinique | 1 | 0 |
+| MQ | Martinique | 2 | 0 |
 | MR | Mauritania | 6 | 0 |
 | MS | Montserrat | 2 | 0 |
 | MT | Malta | 21 | 0 |
@@ -203,7 +203,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PW | Palau | 3 | 0 |
 | PY | Paraguay | 4 | 0 |
 | QA | Qatar | 6 | 0 |
-| RE | Réunion | 1 | 0 |
+| RE | Réunion | 2 | 0 |
 | RO | Romania | 10 | 0 |
 | RS | Serbia | 8 | 0 |
 | RU | Russian Federation | 14 | 0 |
@@ -262,7 +262,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | WS | Samoa | 6 | 0 |
 | XK | Kosovo | 6 | 0 |
 | YE | Yemen | 0 | 0 |
-| YT | Mayotte | 1 | 0 |
+| YT | Mayotte | 2 | 0 |
 | ZA | South Africa | 9 | 4 |
 | ZM | Zambia | 6 | 0 |
 | ZW | Zimbabwe | 6 | 0 |

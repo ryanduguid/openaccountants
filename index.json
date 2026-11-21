@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2174,
+  "guides": 2179,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -9899,6 +9899,19 @@
    "last_updated": "2026-10-29"
   },
   {
+   "slug": "gf-tax-system-orientation",
+   "path": "skills/international/french-guiana/gf-tax-system-orientation.md",
+   "name": "gf-tax-system-orientation",
+   "jurisdiction": "GF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "pf-salary-cst-reference",
    "path": "skills/international/french-polynesia/pf-salary-cst-reference.md",
    "name": "pf-salary-cst-reference",
@@ -10768,6 +10781,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-29"
+  },
+  {
+   "slug": "gp-tax-system-orientation",
+   "path": "skills/international/guadeloupe/gp-tax-system-orientation.md",
+   "name": "gp-tax-system-orientation",
+   "jurisdiction": "GP",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "gu-additional-medicare-annual-reference",
@@ -15541,6 +15567,19 @@
    "last_updated": "2026-10-29"
   },
   {
+   "slug": "mq-tax-system-orientation",
+   "path": "skills/international/martinique/mq-tax-system-orientation.md",
+   "name": "mq-tax-system-orientation",
+   "jurisdiction": "MQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "mr-company-formation",
    "path": "skills/international/mauritania/mr-company-formation.md",
    "name": "mr-company-formation",
@@ -15708,6 +15747,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-29"
+  },
+  {
+   "slug": "yt-tax-system-orientation",
+   "path": "skills/international/mayotte/yt-tax-system-orientation.md",
+   "name": "yt-tax-system-orientation",
+   "jurisdiction": "YT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "mexico-crypto-tax",
@@ -19491,6 +19543,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-29"
+  },
+  {
+   "slug": "re-tax-system-orientation",
+   "path": "skills/international/reunion/re-tax-system-orientation.md",
+   "name": "re-tax-system-orientation",
+   "jurisdiction": "RE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "romania-references",

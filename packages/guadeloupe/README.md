@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `gp-overseas-income-tax-reduction-reference.md`
+3. `gp-tax-system-orientation.md`
 
 ## Shared files this package needs
 

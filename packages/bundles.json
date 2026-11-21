@@ -2448,6 +2448,7 @@
    "files": [
     "intake.md",
     "gf-overseas-income-tax-reduction-reference.md",
+    "gf-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -2693,6 +2694,7 @@
    "files": [
     "intake.md",
     "gp-overseas-income-tax-reduction-reference.md",
+    "gp-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -3828,6 +3830,7 @@
    "files": [
     "intake.md",
     "mq-overseas-income-tax-reduction-reference.md",
+    "mq-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -3882,6 +3885,7 @@
    "files": [
     "intake.md",
     "yt-overseas-income-tax-reduction-reference.md",
+    "yt-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4777,6 +4781,7 @@
    "files": [
     "intake.md",
     "re-overseas-income-tax-reduction-reference.md",
+    "re-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
