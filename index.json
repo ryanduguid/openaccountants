@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2153,
+  "guides": 2155,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -16607,6 +16607,19 @@
    "last_updated": "2026-11-02"
   },
   {
+   "slug": "nr-tax-system-orientation",
+   "path": "skills/international/nauru/nr-tax-system-orientation.md",
+   "name": "nr-tax-system-orientation",
+   "jurisdiction": "NR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "nepal-corporate-tax",
    "path": "skills/international/nepal/nepal-corporate-tax.md",
    "name": "nepal-corporate-tax",
@@ -18412,6 +18425,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "pw-tax-system-orientation",
+   "path": "skills/international/palau/pw-tax-system-orientation.md",
+   "name": "pw-tax-system-orientation",
+   "jurisdiction": "PW",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "panama-income-tax",
