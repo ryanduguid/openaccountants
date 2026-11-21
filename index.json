@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2179,
+  "guides": 2181,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -10965,6 +10965,19 @@
    "last_updated": "2026-10-28"
   },
   {
+   "slug": "gg-tax-system-orientation",
+   "path": "skills/international/guernsey/gg-tax-system-orientation.md",
+   "name": "gg-tax-system-orientation",
+   "jurisdiction": "GG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "gw-company-formation",
    "path": "skills/international/guinea-bissau/gw-company-formation.md",
    "name": "gw-company-formation",
@@ -12405,7 +12418,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "isle-of-man-vat",
@@ -13290,6 +13303,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-15"
+  },
+  {
+   "slug": "je-tax-system-orientation",
+   "path": "skills/international/jersey/je-tax-system-orientation.md",
+   "name": "je-tax-system-orientation",
+   "jurisdiction": "JE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "jo-company-formation",

@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `gg-personal-allowance-reference.md`
+3. `gg-tax-system-orientation.md`
 
 ## Shared files this package needs
 
