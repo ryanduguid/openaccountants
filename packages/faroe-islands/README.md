@@ -8,6 +8,7 @@
 1. `intake.md`
 2. `fo-municipal-income-tax-reference.md`
 3. `fo-national-income-tax-table-reference.md`
+4. `fo-tax-system-orientation.md`
 
 ## Shared files this package needs
 

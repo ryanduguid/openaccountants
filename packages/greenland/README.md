@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `gl-scale-income-reference.md`
+3. `gl-tax-system-orientation.md`
 
 ## Shared files this package needs
 

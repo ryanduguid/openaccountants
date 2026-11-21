@@ -89,7 +89,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | FJ | Fiji | 6 | 0 |
 | FK | Falkland Islands (Malvinas) | 2 | 0 |
 | FM | Micronesia (Federated States of) | 2 | 0 |
-| FO | Faroe Islands | 2 | 0 |
+| FO | Faroe Islands | 3 | 0 |
 | FR | France | 22 | 0 |
 | GA | Gabon | 5 | 0 |
 | GB | United Kingdom of Great Britain and Northern Ireland | 27 | 15 |
@@ -99,7 +99,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GG | Guernsey | 1 | 0 |
 | GH | Ghana | 7 | 0 |
 | GI | Gibraltar | 2 | 0 |
-| GL | Greenland | 1 | 0 |
+| GL | Greenland | 2 | 0 |
 | GM | Gambia | 6 | 0 |
 | GN | Guinea | 6 | 0 |
 | GP | Guadeloupe | 1 | 0 |
@@ -195,7 +195,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PH | Philippines | 7 | 0 |
 | PK | Pakistan | 20 | 4 |
 | PL | Poland | 9 | 0 |
-| PM | Saint Pierre and Miquelon | 1 | 0 |
+| PM | Saint Pierre and Miquelon | 2 | 0 |
 | PN | Pitcairn | 2 | 0 |
 | PR | Puerto Rico | 3 | 0 |
 | PS | State of Palestine | 1 | 0 |
