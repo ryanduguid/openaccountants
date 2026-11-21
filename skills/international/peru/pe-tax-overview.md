@@ -1,11 +1,11 @@
 ---
 name: pe-tax-overview
-description: "Source-cited draft: tax overview for Peru (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited overview of Peru’s 2026 domicile, income tax, IGV and filing rules. Pending local-accountant review."
 jurisdiction: PE
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.5
+tax_year: 2026
+last_updated: 2026-11-22
+version: 1.6
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,21 +13,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Tax Overview
 
-## Peru tax system at a glance
+Peru uses the sol (PEN). The tax authority is SUNAT. The income tax year runs from 1 January to 31 December and the commercial year must coincide with it. The tax unit (UIT) is PEN 5,500 for 2026 and was PEN 5,350 in 2025. [Income Tax Law, art. 57](https://www.sunat.gob.pe/legislacion/renta/ley/capviii.pdf) · [SUNAT UIT table](https://www.sunat.gob.pe/indicestasas/uit.html)
 
-Peru taxes residents (domiciled persons) on worldwide income and non-residents on Peruvian-source income only. The tax authority is SUNAT and the tax year is the calendar year. These are headline figures for the 2025 tax year; a Peruvian accountant should confirm before reliance.
+## Income tax
 
-- **Tax year** — Calendar year (1 January to 31 December); the commercial year must coincide with it (art. 57)  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 57 — https://www.sunat.gob.pe/legislacion/renta/ley/capviii.pdf)_
-- **Currency** — Peruvian sol (PEN / S/)  _(Banco Central de Reserva del Peru)_
-- **Tax authority** — SUNAT (Superintendencia Nacional de Aduanas y de Administracion Tributaria)  _(SUNAT — https://www.sunat.gob.pe)_
-- **Tax unit (UIT) for 2025** — S/ 5,350 (Decreto Supremo 260-2024-EF); S/ 5,500 for 2026 (Decreto Supremo 301-2025-EF). The UIT is the reference unit used across thresholds, fines and deductions  _(SUNAT, Índices y tasas: Unidad Impositiva Tributaria — https://www.sunat.gob.pe/indicestasas/uit.html)_
-- **Residence / taxation basis** — Domiciled persons are taxed on worldwide income; non-domiciled persons on Peruvian-source income only (art. 6). A domiciled individual loses that status after more than 183 calendar days of absence in any 12-month period (art. 7)  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), arts. 6 and 7 — https://www.sunat.gob.pe/legislacion/renta/ley/capii.pdf)_
-- **Top personal income tax rate (employment/independent work income)** — 30% (Progressive 8% to 30% on net work income (rentas de trabajo) plus foreign-source income, in bands of 5, 20, 35 and 45 UIT after the 7-UIT deduction of art. 46)  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), arts. 46 and 53 — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf)_
-- **Standard corporate income tax rate** — 29.5%  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 55 — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf)_
-- **VAT / GST** — Yes — IGV (Impuesto General a las Ventas) at a combined 18%: the 16% IGV rate of art. 17 of the TUO plus the 2% Impuesto de Promoción Municipal collected with it  _(TUO de la Ley del IGV e ISC (Decreto Supremo 055-99-EF, SUNAT consolidated text), art. 17 — https://www.sunat.gob.pe/legislacion/igv/ley/capitul5.pdf)_
-- **Dividend withholding tax** — 5% (On distributions to non-residents and to resident individuals)  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), arts. 54(a) and 56(e) — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf ; art. 73-A — https://www.sunat.gob.pe/legislacion/renta/ley/capx.pdf)_
-- **Main annual corporate/individual income tax filing window for TY2025** — 26 March to 13 April 2026 for companies outside Ley 31940 and 27 May to 10 June 2026 for MYPEs and individuals covered by Ley 31940, each staggered by last RUC digit  _(Resolución de Superintendencia N.° 000386-2025/SUNAT, Arts 5 and 6 — https://www.sunat.gob.pe/legislacion/superin/2025/000386-2025.pdf)_
-- **Financial transactions tax (ITF)** — 0.005% of the value of each taxable transaction (doubled where a third-category taxpayer settles obligations without cash or means of payment, Art. 9(g))  _(TUO de la Ley 28194 (Decreto Supremo 150-2007-EF), SUNAT text, Art. 10 — https://www.sunat.gob.pe/legislacion/itf/ds150_07.pdf)_
+- **Domicile and income scope.** Domiciled taxpayers generally include taxable worldwide income. Non-domiciled taxpayers generally include only Peruvian-source income. A foreign individual qualifies under the presence test after more than 183 calendar days in Peru within any 12 months. A change generally takes effect in the following tax year. A departing individual who meets the conditions to show residence abroad can lose domicile at departure. Check the conditions for Peruvians returning to Peru, foreign establishments and treaty relief separately. [Income Tax Law, arts. 6 to 8](https://www.sunat.gob.pe/legislacion/renta/ley/capii.pdf)
+- **Work income.** The general deduction from qualifying fourth- and fifth-category work income is 7 UIT, or PEN 38,500 in 2026. The ordinary progressive rates are 8%, 14%, 17%, 20% and 30%, with bands ending at 5, 20, 35 and 45 UIT. Confirm any additional deductions and how foreign-source income enters the taxable base. [Income Tax Law, arts. 46, 51 and 53](https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf)
+- **Companies and dividends.** The general corporate rate is 29.5% on taxable net income. Ordinary dividends paid to resident individuals and non-residents generally attract 5%. Check transitional rules for distributions of earlier profits and any applicable treaty. [Income Tax Law, arts. 54 to 56](https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf) · [Income Tax Law, art. 73-A](https://www.sunat.gob.pe/legislacion/renta/ley/capx.pdf)
+
+## Indirect taxes and filing
+
+- **VAT (IGV).** The combined standard rate remains 18%. From 1 January 2026, the ordinary charge comprises 15.5% IGV and 2.5% municipal promotion tax (IPM), following the change made by Law 32387. The prior 16% and 2% split applied in 2025. Use the rates and rules in force at the supply date for special transactions and later years. [Law 32387](https://busquedas.elperuano.pe/dispositivo/EX/2410141-1) · [SUNAT IGV guidance](https://emprender.sunat.gob.pe/principales-impuestos/impuesto-general-las-ventas-igv/impuesto-general-las-ventas)
+- **Filing.** The 2025 annual filing window was 26 March to 13 April 2026 for taxpayers outside Law 31940 and 27 May to 10 June 2026 for eligible individuals and micro and small businesses covered by it. Check the final RUC digit, special taxpayer categories and SUNAT’s calendar for the relevant period. Monthly obligations have a separate calendar. [SUNAT Resolution 000386-2025, arts. 5 and 6](https://www.sunat.gob.pe/legislacion/superin/2025/000386-2025.pdf) · [SUNAT 2026 monthly calendar](https://www.sunat.gob.pe/orientacion/cronogramas/2026/cObligacionMensual2026.html)
+- **Financial transactions tax.** The ordinary ITF rate is 0.005% per taxable transaction. Article 9(g) has a separate rule for relevant payments outside the means of payment required by the law. [Law 28194 consolidated text, arts. 9 and 10](https://www.sunat.gob.pe/legislacion/itf/ds150_07.pdf)
 
 <!-- openaccountants-cta-block -->
 
