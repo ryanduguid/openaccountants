@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2129,
+  "guides": 2131,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -15632,6 +15632,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "md-tax-system-orientation",
+   "path": "skills/international/moldova/md-tax-system-orientation.md",
+   "name": "md-tax-system-orientation",
+   "jurisdiction": "MD",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "moldova-income-tax",
    "path": "skills/international/moldova/moldova-income-tax.md",
    "name": "moldova-income-tax",
@@ -23690,6 +23703,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ua-tax-system-orientation",
+   "path": "skills/international/ukraine/ua-tax-system-orientation.md",
+   "name": "ua-tax-system-orientation",
+   "jurisdiction": "UA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "ukraine-vat",

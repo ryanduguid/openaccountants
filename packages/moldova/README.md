@@ -9,11 +9,12 @@
 2. `md-company-formation.md`
 3. `md-corporate-income-tax.md`
 4. `md-tax-overview.md`
-5. `moldova-income-tax.md`
-6. `moldova-payroll.md`
-7. `moldova-social-contributions.md`
-8. `moldova-tax-optimization.md`
-9. `moldova-vat.md`
+5. `md-tax-system-orientation.md`
+6. `moldova-income-tax.md`
+7. `moldova-payroll.md`
+8. `moldova-social-contributions.md`
+9. `moldova-tax-optimization.md`
+10. `moldova-vat.md`
 
 ## Shared files this package needs
 

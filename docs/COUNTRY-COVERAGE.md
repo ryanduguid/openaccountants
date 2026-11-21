@@ -154,7 +154,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | LY | Libya | 6 | 0 |
 | MA | Morocco | 15 | 0 |
 | MC | Monaco | 7 | 0 |
-| MD | Republic of Moldova | 8 | 0 |
+| MD | Republic of Moldova | 9 | 0 |
 | ME | Montenegro | 9 | 0 |
 | MF | Saint Martin (French Part) | 1 | 0 |
 | MG | Madagascar | 6 | 0 |
@@ -245,7 +245,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TV | Tuvalu | 1 | 0 |
 | TW | Taiwan | 6 | 0 |
 | TZ | United Republic of Tanzania | 6 | 6 |
-| UA | Ukraine | 15 | 0 |
+| UA | Ukraine | 16 | 0 |
 | UG | Uganda | 6 | 0 |
 | UM | United States Minor Outlying Islands | 1 | 0 |
 | US | United States of America | 62 | 20 |

@@ -18,9 +18,10 @@
 11. `ua-social-contributions.md`
 12. `ua-tax-optimization.md`
 13. `ua-tax-overview.md`
-14. `ukraine-vat.md`
-15. `ukraine-guided-intake.md`
-16. `ukraine-return-assembly.md`
+14. `ua-tax-system-orientation.md`
+15. `ukraine-vat.md`
+16. `ukraine-guided-intake.md`
+17. `ukraine-return-assembly.md`
 
 ## Shared files this package needs
 
