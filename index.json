@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2151,
+  "guides": 2152,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -11119,6 +11119,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "va-tax-system-orientation",
+   "path": "skills/international/holy-see/va-tax-system-orientation.md",
+   "name": "va-tax-system-orientation",
+   "jurisdiction": "VA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "hn-company-formation",

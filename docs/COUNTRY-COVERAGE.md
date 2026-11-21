@@ -251,7 +251,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | US | United States of America | 62 | 20 |
 | UY | Uruguay | 7 | 0 |
 | UZ | Uzbekistan | 9 | 0 |
-| VA | Holy See | 1 | 0 |
+| VA | Holy See | 2 | 0 |
 | VC | Saint Vincent and the Grenadines | 1 | 0 |
 | VE | Venezuela (Bolivarian Republic of) | 5 | 5 |
 | VG | British Virgin Islands | 6 | 0 |
