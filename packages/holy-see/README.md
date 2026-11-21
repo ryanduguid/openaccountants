@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `va-customs-fees-reference.md`
+3. `va-tax-system-orientation.md`
 
 ## Shared files this package needs
 
