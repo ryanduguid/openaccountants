@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2189,
+  "guides": 2190,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -2279,6 +2279,19 @@
    "review_status": "pending_review",
    "tax_year": "2022",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "ai-tax-system-orientation",
+   "path": "skills/international/anguilla/ai-tax-system-orientation.md",
+   "name": "ai-tax-system-orientation",
+   "jurisdiction": "AI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "aq-us-antarctic-employment-reference",
@@ -5138,7 +5151,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-11"
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "vg-vat-gst",
