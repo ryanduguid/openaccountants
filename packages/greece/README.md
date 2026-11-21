@@ -11,8 +11,9 @@
 4. `gr-efka.md`
 5. `gr-income-tax.md`
 6. `gr-tax-overview.md`
-7. `greece-einvoice.md`
-8. `greece-vat-return.md`
+7. `gr-tax-system-orientation.md`
+8. `greece-einvoice.md`
+9. `greece-vat-return.md`
 
 ## Shared files this package needs
 
