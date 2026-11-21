@@ -116,7 +116,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | HR | Croatia | 9 | 0 |
 | HT | Haiti | 1 | 0 |
 | HU | Hungary | 5 | 0 |
-| ID | Indonesia | 13 | 8 |
+| ID | Indonesia | 14 | 8 |
 | IE | Ireland | 14 | 0 |
 | IL | Israel | 10 | 0 |
 | IM | Isle of Man | 6 | 0 |
@@ -130,7 +130,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | JM | Jamaica | 6 | 0 |
 | JO | Jordan | 6 | 0 |
 | JP | Japan | 19 | 0 |
-| KE | Kenya | 13 | 0 |
+| KE | Kenya | 14 | 0 |
 | KG | Kyrgyzstan | 7 | 0 |
 | KH | Cambodia | 7 | 0 |
 | KI | Kiribati | 1 | 0 |
@@ -179,7 +179,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NC | New Caledonia | 2 | 0 |
 | NE | Niger | 5 | 0 |
 | NF | Norfolk Island | 23 | 0 |
-| NG | Nigeria | 13 | 2 |
+| NG | Nigeria | 14 | 2 |
 | NI | Nicaragua | 7 | 0 |
 | NL | Netherlands (Kingdom of the) | 20 | 0 |
 | NO | Norway | 9 | 0 |
