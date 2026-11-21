@@ -1,11 +1,11 @@
 ---
 name: cl-tax-overview
-description: "Source-cited draft: tax overview for Chile (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Chile's ordinary income tax, VAT and filing rules, with primary sources and effective periods. Pending local-accountant review."
 jurisdiction: CL
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year: 2026
+last_updated: 2026-11-21
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,21 +13,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Chile Tax Overview
 
-## Chilean tax system at a glance
+The Servicio de Impuestos Internos (SII) administers income tax and VAT in Chile. Figures below are in Chilean pesos (CLP). The ordinary commercial year ends on 31 December. The law also allows 30 June and certain short periods. The tax year (año tributario or AT) is the year in which the tax is paid. For example, AT 2026 generally covers commercial year 2025. [Income Tax Law, DL 824, art. 2 nos. 7–9](https://www.sii.cl/normativa_legislacion/dl824.pdf).
 
-Chile's tax system is administered by the Servicio de Impuestos Internos (SII) and built around an integrated corporate/shareholder regime, a progressive personal income tax, and a single-rate VAT. Figures below are an unverified 2025 draft for an accountant to confirm.
+## Income tax
 
-- **Tax year** — Calendar year (1 January to 31 December) as the año comercial; the tax is declared and paid in the following año tributario  _(Ley sobre Impuesto a la Renta (DL 824), SII text, Art. 2 N° 7 to 9 — https://www.sii.cl/normativa_legislacion/dl824.pdf)_
-- **Currency** — Chilean peso (CLP)  _(Servicio de Impuestos Internos (SII))_
-- **Tax indexation units** — UTM (monthly tax unit) and UTA (annual tax unit = UTM x 12); UF (Unidad de Fomento) for social-security caps  _([SII valores y fechas (UTM/UTA)](https://www.sii.cl/valores_y_fechas/utm/utm2025.htm))_
-- **UTA (annual tax unit) value, 2025** — CLP 834,504 (December 2025 UTM x 12; UTA used for filing the prior tax year was CLP 807,528 per SII Circular No. 09/2025 — confirm which applies)  _([SII valores y fechas — UTM/UTA 2025](https://www.sii.cl/valores_y_fechas/utm/utm2025.htm))_
-- **Tax authority** — Servicio de Impuestos Internos (SII)  _([Servicio de Impuestos Internos (SII)](https://www.sii.cl))_
-- **Residence basis of taxation** — Residents/domiciliaries taxed on worldwide income; non-residents on Chilean-source income only. Foreigners are taxed only on Chilean-source income for their first 3 years of residence.  _(Ley sobre Impuesto a la Renta (DL 824), arts 3 and 8, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Top personal income tax rate (Global Complementary Tax)** — 40% (Progressive; top marginal rate on income over 150 UTA)  _(Ley sobre Impuesto a la Renta (DL 824), art. 52 (Impuesto Global Complementario), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Standard corporate income tax rate (semi-integrated regime)** — 27%  _(Ley sobre Impuesto a la Renta (DL 824), arts 14 A and 20 (régimen semi-integrado), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **VAT / GST** — Yes — IVA (Impuesto al Valor Agregado) at a standard 19% rate  _(Ley sobre Impuesto a las Ventas y Servicios (IVA), DL 825 (as described at [avalara.com](https://www.avalara.com/us/en/vatlive/country-guides/south-america/chile/chilean-vat-rates-and-vat-compliance.html)))_
-- **Annual income tax return deadline (Operación Renta)** — Filed in April of the year following the tax year (typically by 30 April; SII may extend to early May) (approx — confirm exact date each year)  _([SII Operación Renta](https://www.sii.cl))_
-- **Monthly VAT return (Formulario 29) deadline** — By the 12th of the following month (electronic filers with e-payment may file by the 20th)  _([Formulario 29 — SII](https://www.avalara.com/us/en/vatlive/country-guides/south-america/chile/chilean-vat-rates-and-vat-compliance.html))_
+- **Tax basis** — A person domiciled or resident in Chile is generally subject to tax on worldwide income. A person with neither connection is generally subject to tax on Chilean-source income. A foreign national who establishes domicile or residence in Chile is generally taxed only on Chilean-source income for the first 3 years from entry. The regional director can extend that period in qualifying circumstances. For domestic tax residence, more than 183 days of presence within any 12-month period can count across multiple stays. Determine domicile separately. [Income Tax Law, art. 3](https://www.sii.cl/normativa_legislacion/dl824.pdf). [SII Circular 31/2021](https://www.sii.cl/normativa_legislacion/circulares/2021/circu31.pdf). [Tax Code, DL 830, art. 8 no. 8](https://www.bcn.cl/leychile/navegar?idNorma=6374&idParte=8573327&idVersion=2025-07-11).
+- **Individuals** — The annual Impuesto Global Complementario generally has a 0% band through 13.5 annual tax units (UTA) and a top marginal rate of 40% above 310 UTA. The December 2025 UTA was CLP 834,504 for the ordinary AT 2026 table. Use the UTA and table for the year in question. [SII AT 2026 calculation table, Income Tax Law art. 52](https://www.sii.cl/valores_y_fechas/renta/2026/personas_naturales.html).
+- **Companies** — For the ordinary article 14(A) regime, the Impuesto de Primera Categoría (IDPC) was 27% for commercial year 2025 and remains 27% for commercial year 2026. Law 21.850 sets 25.5% for commercial year 2027, 24% for 2028 and 23% from 2029. Shareholder credit restitution and provisional payments have their own transition rules. [SII AT 2026 regimes](https://www.sii.cl/destacados/renta/2026/intermediarios/regimenes_tributarios/). [Law 21.850, art. 9 and fifth to seventh transitional articles](https://www.diariooficial.interior.gob.cl/publicaciones/2026/10/17/44576-B/01/2888352.pdf).
+- **Pro Pyme** — For eligible companies in the general Pro Pyme regime, the conditional rate is 12.5% for commercial years 2025–27 and 15% for 2028. Pro Pyme Transparente is a separate regime where qualifying owners generally pay the final tax on the business result and the company is exempt from IDPC. [SII Circular 53/2025](https://www.sii.cl/normativa_legislacion/circulares/2025/circu53.pdf). [SII AT 2026 regimes](https://www.sii.cl/destacados/renta/2026/intermediarios/regimenes_tributarios/).
+
+## VAT and filing
+
+- **IVA** — The standard rate is 19%. Check whether the supply is taxable or exempt under DL 825. The monthly Form 29 filing and payment is ordinarily due by the 12th of the following month. Qualifying electronic issuers paying online may have until the 20th. SII lists a 28th deadline for an online no-activity return when the taxpayer is up to date. [Sales and Services Tax Law, DL 825, arts. 14 and 64](https://www.sii.cl/normativa_legislacion/dl825.pdf). [SII Form 29 deadlines](https://www.sii.cl/destacados/iva/iva_vende.html).
+- **Income tax** — The annual Form 22 is generally due by 30 April, subject to the statutory exceptions and the year's SII calendar. For AT 2026, SII listed 8–30 April for returns with payment and a refund filing window through 8 May. Check the current schedule for the taxpayer and payment method. [Income Tax Law, art. 69](https://www.sii.cl/normativa_legislacion/dl824.pdf). [SII AT 2026 filing schedule](https://www.sii.cl/noticias/2026/310326noti01pcr.htm).
+
+Confirm treaty residence, payroll withholding, pension contributions, business regime eligibility, shareholder credit treatment and VAT exemptions separately.
 
 <!-- openaccountants-cta-block -->
 
