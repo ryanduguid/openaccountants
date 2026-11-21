@@ -1,11 +1,11 @@
 ---
 name: ar-tax-overview
-description: "Source-cited draft: tax overview for Argentina (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Argentina's ordinary income tax, VAT and filing rules, with primary sources and effective periods. Pending local-accountant review."
 jurisdiction: AR
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year: 2026
+last_updated: 2026-11-21
+version: 1.4
 reviewed_by: Maria Valeria Benvenuti
 review_status: pending_review
 tier: 2
@@ -14,21 +14,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Argentina Tax Overview
 
-## Argentine tax system at a glance
+The Agencia de Recaudación y Control Aduanero (ARCA) administers national income tax and VAT. The figures below are in Argentine pesos (ARS). This guide covers ordinary national rules current on 21 November 2026.
 
-- **Overview of Argentine tax system** — Argentina levies federal taxes (income tax, VAT, social security) administered by ARCA (formerly AFIP), plus provincial and municipal taxes such as turnover tax. Tax thresholds and brackets are heavily inflation-indexed and updated frequently.
-- **Standard tax year for individuals** — Calendar year (1 January to 31 December)  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 24 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm)_
-- **Tax year for companies** — Companies use their commercial financial year (12 months); often calendar year but may differ  _(Income Tax Law (Ley de Impuesto a las Ganancias, Ley 20.628))_
-- **Currency** — Argentine peso (ARS)  _(Banco Central de la República Argentina)_
-- **National tax authority** — ARCA — Agencia de Recaudación y Control Aduanero (the former AFIP)  _(Decreto 953/2024 (creation of ARCA, replacing AFIP))_
-- **Basis of taxation for residents** — Residents are taxed on worldwide income; non-residents are taxed only on Argentine-source income  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 1 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm)_
-- **Headline personal income tax rate range** — Progressive 5% to 35% over nine brackets (art. 94, scale set by Ley 27.743 for fiscal year 2024 and indexed every January and July from fiscal year 2025 by the INDEC consumer price index)  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 94 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm)_
-- **Headline corporate income tax rate range** — Progressive 25% / 30% / 35% by taxable-income band; top marginal rate 35%  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 73(a), scale introduced by Ley 27.630 and indexed annually by the IPC from 1 January 2022 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm)_
-- **Does a VAT/GST exist?** — Yes — VAT (IVA, Impuesto al Valor Agregado) at a general rate of 21%, 27% on metered gas, electricity and water supplied outside homes, and half the general rate (10.5%) on the goods and services listed in art. 28  _(Ley de Impuesto al Valor Agregado, texto ordenado 1997, updated text on InfoLEG, art. 28 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/40000-44999/42701/texact.htm)_
-- **Provincial turnover tax (Ingresos Brutos)** — Each province levies a gross-receipts/turnover tax, commonly in the range of roughly 1%–6% depending on activity and province (approx — confirm; varies by province and activity)  _(Provincial tax codes (Códigos Fiscales provinciales — Impuesto sobre los Ingresos Brutos))_
-- **Personal assets tax (Bienes Personales)** — Annual wealth tax on worldwide assets of resident individuals above an exempt minimum; progressive rates  _(Personal Assets Tax Law (Ley de Impuesto sobre los Bienes Personales, Ley 23.966))_
-- **Main annual corporate filing deadline** — Corporate income tax returns are due in the fifth month after the month of fiscal year-end, on dates ARCA sets by CUIT ending, with any balance paid on the next business day. A December 2025 year-end was due 13 to 15 May 2026. Check ARCA's table for the year and any later extension  _(ARCA, Impuesto a las ganancias – Personas jurídicas, Vencimientos 2026: https://www.afip.gob.ar/gananciasYBienes/ganancias/personas-juridicas/declaracion-jurada/documentos/Ganancias-vencimientos-PJ.pdf)_
-- **Employer payroll contributions (not covered)** — No Argentina guide covers employer contributions or employee contributions withheld on salaries; `ar-social-contributions` covers autónomos only. ARCA states employer contribution rates of 20.40% for private employers in 'servicios' or 'comercio' whose annual sales exceed the MiPyME limits, and 18% for other private employers, which must hold a current MiPyME certificate. Employee rates, contribution ceilings, the per-worker base deductions and the Fondo de Asistencia Laboral under Ley 27.802 are not verified here: refer employer payroll to a local adviser  _(ARCA, Aportes y contribuciones – Empleadores: https://www.afip.gob.ar/relaciones-laborales/empleadores/aportes-y-contribuciones.asp, opened 2026-11-01)_
+## Income tax
+
+- **Tax period** — Individuals generally report by calendar year. Companies with accounts report by their commercial year-end. [Income Tax Law, consolidated by Decree 824/2019, art. 24](https://www.argentina.gob.ar/normativa/nacional/decreto-824-2019-332890/actualizacion).
+- **Tax basis** — Residents are subject to tax on worldwide income. Non-residents are subject to tax on Argentine-source income. Domestic individual residence and its loss have separate rules, including rules for Argentine nationals and foreign nationals. [Income Tax Law, arts. 1 and 116–123](https://www.argentina.gob.ar/normativa/nacional/decreto-824-2019-332890/actualizacion).
+- **Individuals** — The ordinary progressive scale in article 94 has marginal rates of 5% to 35%. Applicable deductions and band limits are indexed. Use the scale for the relevant period and calculation. ARCA publishes separate tables for salary withholding periods and the annual or final withholding settlement. [Income Tax Law, arts. 30 and 94](https://www.argentina.gob.ar/normativa/nacional/decreto-824-2019-332890/actualizacion). [ARCA individual income tax scales](https://www.arca.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/declaracion-jurada/determinativa/determinacion.asp).
+- **Companies** — Article 73(a) sets marginal rates of 25%, 30% and 35% for covered companies. The bands are indexed annually. Select ARCA's table by the date the company's fiscal period starts. [Income Tax Law, art. 73](https://www.argentina.gob.ar/normativa/nacional/decreto-824-2019-332890/actualizacion). [ARCA company scale for periods starting in 2026](https://www.arca.gob.ar/gananciasYBienes/ganancias/personas-juridicas/determinacion/documentos/Ganancias-Escala-PJ-2026.pdf).
+
+## VAT
+
+The standard IVA rate is **21%**. Article 28 sets a 27% rate for specified supplies, such as certain non-household utilities, subject to the statutory conditions. Specified supplies qualify for 10.5%. Under the ordinary IVA Simple process, file and pay monthly using the following month's deadline for the taxpayer's CUIT ending. [VAT Law, art. 28](https://www.argentina.gob.ar/normativa/nacional/decreto-280-1997-42701/actualizacion). [ARCA RG 5705/2025, arts. 5 and 8](https://biblioteca.arca.gob.ar/search/query/norma.aspx?p=t%3ARAG%7Cn%3A5705%7Co%3A9%7Ca%3A2025%7Cf%3A30%2F05%2F2025). [ARCA IVA Simple filing instructions](https://serviciosweb.arca.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=518).
+
+## Annual income tax returns
+
+- **Companies** — Ordinary filing is due in the fifth month after the month of year-end, on the day set for the CUIT ending. The balance is due the next business day. For a December 2025 year-end, ordinary filing was 13–15 May 2026. [ARCA company filing dates](https://www.arca.gob.ar/gananciasYBienes/ganancias/personas-juridicas/declaracion-jurada/documentos/Ganancias-vencimientos-PJ.pdf).
+- **Individuals and undivided estates** — For the covered 2025 returns, RG 5918/2026 set an exceptional filing deadline of 16 November 2026 and retained the 27 July 2026 payment date. A qualifying difference under RG 5916/2026 could be paid by the extended filing date with applicable interest. Use the schedule and any extensions for the return period and filing regime. [RG 5918/2026, art. 1](https://www.boletinoficial.gob.ar/detalleAviso/primera/349882/20261030). [ARCA guidance on RG 5916/2026](https://servicioscf.arca.gob.ar/publico/sitio/contenido/novedad/ver.aspx?id=5982).
+
+## Scope
+
+Confirm simplified regime eligibility, withholding, employer and employee contributions, personal assets tax, provincial turnover tax, municipal charges, cross-border rules and VAT exceptions separately. The [self-employed contributions guide](ar-social-contributions.md) covers autónomos. For employment contributions, start with [ARCA's employer guidance](https://www.afip.gob.ar/relaciones-laborales/empleadores/aportes-y-contribuciones.asp).
 
 <!-- openaccountants-cta-block -->
 
