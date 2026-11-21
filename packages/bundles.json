@@ -2681,6 +2681,7 @@
    "files": [
     "intake.md",
     "gd-annual-employment-income-reference.md",
+    "gd-tax-system-orientation.md",
     "gd-tax-system-source-reference.md",
     "README.md"
    ],
@@ -4914,6 +4915,7 @@
    "files": [
     "intake.md",
     "lc-national-insurance-reference.md",
+    "lc-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

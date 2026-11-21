@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,184 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,186 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2184 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2186 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -954,6 +954,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - gl-scale-income-reference | GL | tier 2 | reviewed_by -
 - gl-tax-system-orientation | GL | tier 2 | reviewed_by -
 - gd-annual-employment-income-reference | GD | tier 2 | reviewed_by -
+- gd-tax-system-orientation | GD | tier 2 | reviewed_by -
 - gd-tax-system-source-reference | GD | tier 2 | reviewed_by -
 - gp-overseas-income-tax-reduction-reference | GP | tier 2 | reviewed_by -
 - gp-tax-system-orientation | GP | tier 2 | reviewed_by -
@@ -1667,6 +1668,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - kn-social-security-reconciliation | KN | tier 2 | reviewed_by -
 - kn-tax-system-reference | KN | tier 2 | reviewed_by -
 - lc-national-insurance-reference | LC | tier 2 | reviewed_by -
+- lc-tax-system-orientation | LC | tier 2 | reviewed_by -
 - mf-individual-investment-reference | MF | tier 2 | reviewed_by -
 - mf-tax-system-orientation | MF | tier 2 | reviewed_by -
 - pm-social-contributions-reference | PM | tier 2 | reviewed_by -
@@ -2384,7 +2386,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,184 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,186 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2402,7 +2404,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 2,020 Tier 2 guides among the 2,184 indexed guides. These inventory
+There are 2,022 Tier 2 guides among the 2,186 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
