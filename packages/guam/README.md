@@ -10,6 +10,7 @@
 3. `gu-additional-medicare-employer-payment-reference.md`
 4. `gu-medicare-ordinary-share-reference.md`
 5. `gu-oasdi-annual-wage-base-reference.md`
+6. `gu-tax-system-orientation.md`
 
 ## Shared files this package needs
 
