@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2190,
+  "guides": 2192,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -8859,6 +8859,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "eg-tax-system-orientation",
+   "path": "skills/international/egypt/eg-tax-system-orientation.md",
+   "name": "eg-tax-system-orientation",
+   "jurisdiction": "EG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "eg-transfer-pricing",
    "path": "skills/international/egypt/eg-transfer-pricing.md",
    "name": "eg-transfer-pricing",
@@ -13173,6 +13186,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "jp-tax-system-orientation",
+   "path": "skills/international/japan/jp-tax-system-orientation.md",
+   "name": "jp-tax-system-orientation",
+   "jurisdiction": "JP",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "japan-references",
