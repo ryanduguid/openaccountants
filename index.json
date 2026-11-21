@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2103,
+  "guides": 2105,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -14267,6 +14267,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "lu-tax-system-orientation",
+   "path": "skills/international/luxembourg/lu-tax-system-orientation.md",
+   "name": "lu-tax-system-orientation",
+   "jurisdiction": "LU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "luxembourg-income-tax",
    "path": "skills/international/luxembourg/luxembourg-income-tax.md",
    "name": "luxembourg-income-tax",
@@ -18620,6 +18633,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "pt-tax-system-orientation",
+   "path": "skills/international/portugal/pt-tax-system-orientation.md",
+   "name": "pt-tax-system-orientation",
+   "jurisdiction": "PT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "pr-medicare-ordinary-share-reference",

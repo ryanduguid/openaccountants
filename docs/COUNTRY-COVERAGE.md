@@ -149,7 +149,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | LR | Liberia | 6 | 0 |
 | LS | Lesotho | 6 | 0 |
 | LT | Lithuania | 7 | 0 |
-| LU | Luxembourg | 5 | 0 |
+| LU | Luxembourg | 6 | 0 |
 | LV | Latvia | 8 | 0 |
 | LY | Libya | 6 | 0 |
 | MA | Morocco | 15 | 0 |
@@ -199,7 +199,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PN | Pitcairn | 1 | 0 |
 | PR | Puerto Rico | 2 | 0 |
 | PS | State of Palestine | 1 | 0 |
-| PT | Portugal | 14 | 8 |
+| PT | Portugal | 15 | 8 |
 | PW | Palau | 2 | 0 |
 | PY | Paraguay | 4 | 0 |
 | QA | Qatar | 6 | 0 |
