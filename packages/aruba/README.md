@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `aw-annual-income-tax-table-reference.md`
+3. `aw-tax-system-orientation.md`
 
 ## Shared files this package needs
 

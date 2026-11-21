@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `sint-maarten-turnover-tax-reference.md`
+3. `sx-tax-system-orientation.md`
 
 ## Shared files this package needs
 
