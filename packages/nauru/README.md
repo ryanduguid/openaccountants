@@ -10,6 +10,7 @@
 3. `nr-corporate-annual-return-reference.md`
 4. `nr-employment-services-charge-reference.md`
 5. `nr-tax-administration-reference.md`
+6. `nr-tax-system-orientation.md`
 
 ## Shared files this package needs
 

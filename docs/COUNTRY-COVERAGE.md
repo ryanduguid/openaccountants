@@ -184,7 +184,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NL | Netherlands (Kingdom of the) | 20 | 0 |
 | NO | Norway | 9 | 0 |
 | NP | Nepal | 6 | 5 |
-| NR | Naoero | 4 | 0 |
+| NR | Naoero | 5 | 0 |
 | NU | Niue | 1 | 0 |
 | NZ | New Zealand | 17 | 0 |
 | OM | Oman | 6 | 0 |
@@ -200,7 +200,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PR | Puerto Rico | 2 | 0 |
 | PS | State of Palestine | 1 | 0 |
 | PT | Portugal | 15 | 8 |
-| PW | Palau | 2 | 0 |
+| PW | Palau | 3 | 0 |
 | PY | Paraguay | 4 | 0 |
 | QA | Qatar | 6 | 0 |
 | RE | Réunion | 1 | 0 |
