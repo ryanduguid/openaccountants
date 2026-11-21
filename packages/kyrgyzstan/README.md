@@ -11,7 +11,8 @@
 4. `kg-income-tax.md`
 5. `kg-payroll-social.md`
 6. `kg-tax-overview.md`
-7. `kg-vat-gst.md`
+7. `kg-tax-system-orientation.md`
+8. `kg-vat-gst.md`
 
 ## Shared files this package needs
 

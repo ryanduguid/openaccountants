@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,134 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,137 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2134 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2137 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -1155,6 +1155,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - kz-social-contributions | KZ | tier 2 | reviewed_by -
 - kz-tax-optimization | KZ | tier 2 | reviewed_by -
 - kz-tax-overview | KZ | tier 2 | reviewed_by -
+- kz-tax-system-orientation | KZ | tier 2 | reviewed_by -
 - audit-quality-assurance-aqa | KE | tier 2 | reviewed_by -
 - export-declaration-requirement-for-imported-goods | KE | tier 2 | reviewed_by -
 - ke-company-formation | KE | tier 2 | reviewed_by -
@@ -1186,6 +1187,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - kg-income-tax | KG | tier 2 | reviewed_by -
 - kg-payroll-social | KG | tier 2 | reviewed_by -
 - kg-tax-overview | KG | tier 2 | reviewed_by -
+- kg-tax-system-orientation | KG | tier 2 | reviewed_by -
 - kg-vat-gst | KG | tier 2 | reviewed_by -
 - la-company-formation | LA | tier 2 | reviewed_by -
 - la-corporate-income-tax | LA | tier 2 | reviewed_by -
@@ -1975,6 +1977,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - uz-company-formation | UZ | tier 2 | reviewed_by -
 - uz-corporate-income-tax | UZ | tier 2 | reviewed_by -
 - uz-tax-overview | UZ | tier 2 | reviewed_by -
+- uz-tax-system-orientation | UZ | tier 2 | reviewed_by -
 - uzbekistan-income-tax | UZ | tier 2 | reviewed_by -
 - uzbekistan-payroll | UZ | tier 2 | reviewed_by -
 - uzbekistan-social-contributions | UZ | tier 2 | reviewed_by -
@@ -2334,7 +2337,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,134 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,137 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2352,7 +2355,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,970 Tier 2 guides among the 2,134 indexed guides. These inventory
+There are 1,973 Tier 2 guides among the 2,137 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
