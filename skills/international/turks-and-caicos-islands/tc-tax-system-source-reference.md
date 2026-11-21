@@ -4,11 +4,11 @@ description: >
   Dated Turks and Caicos Islands tax-system reference for territorial reach, residence, taxpayer and remitter roles, legal tender, reporting periods and responsible authorities. Trigger on a Turks and Caicos tax overview, residence, USD, customs authority or the period for a sector tax.
 jurisdiction: TC
 category: international
-tax_year: 2024
-tax_year_notes: "Selected currency, customs, financial services and tourism tax revisions, the October 2024 customs authority transition and separately dated 2026 income tax, customs audit and administrative evidence."
+tax_year: 2026
+tax_year_notes: "System orientation through 21 November 2026. The individual sources specify their own periods, including historical currency, customs, financial services and tourism revisions, the October 2024 customs authority transition and separate 2026 tax and administrative evidence."
 tier: 2
 last_updated: 2026-11-21
-version: 0.2
+version: 0.3
 depends_on:
   - workflow-base
 ---
@@ -29,6 +29,14 @@ Load `workflow-base`. Use this reference to identify the governing regime and th
 ## Currency
 
 In the Currency Ordinance revised 31 December 2014, section 2 values one Crown at one United States dollar. Section 3 makes qualifying US notes legal tender for any amount and sets separate limits for qualifying US coins and Crowns. Section 4 treats monetary transactions as made in the Islands' legal tender unless expressly made in another country's currency. Record the transaction currency and check the applicable tax valuation and payment rules for the period. [Currency Ordinance, Cap 19.03 ss 2–4](https://www.gov.tc/agc/component/edocman/19-03-currency-ordinance-2/fdocument?Itemid=9999)
+
+## Other domestic obligations
+
+- **Sector taxes and services.** Screen the transaction against the applicable ordinance and date. Use the [sector-tax reference](tc-sector-taxes-reference.md) for the selected communications, insurance and financial services rules, the [accommodation guide](tc-hotel-accommodation-tax-reference.md) for lodgings and the [destination management fee guide](tc-destination-management-fee-reference.md) for separately dated passenger and excursion rules. The Minister responsible for the territories told the UK Foreign Affairs Committee in 2013 that the Islands chose not to implement the proposed VAT. Inland Revenue later described the 2012 proposal in its consultation on tourism taxation. Treat these as dated evidence. Check any applicable current charging instrument before making a general VAT, GST or tax registration determination. [UK Foreign Affairs Committee, Q44](https://committees.parliament.uk/oralevidence/3576/html/) · [Inland Revenue consultation, introduction](https://gov.tc/revenue/images/docs/HRTT%20Advisory%20Paper%20v3.pdf)
+- **Business licensing and contributions.** Start with the Inland Revenue Department for licence administration. Act 1 of 2026 was assented to on 14 January and published on 16 January. Section 1 requires a Gazette notice appointing commencement. The source review did not establish that appointment. Check the operative schedules, category, ownership and effective date before using the proposed or enacted changes. Screen National Insurance and National Health Insurance separately using the employer or self-employed facts and the relevant contribution period. [Inland Revenue Department](https://gov.tc/mof/ova_dep/inland-revenue-department/) · [Act 1 of 2026 s 1](https://www.gov.tc/agc/component/edocman/1-of-2026-business-licensing-amendment-act-2026-2/fdocument?Itemid=9999) · [Formation and licensing guide](tc-formation-and-business-licensing-reference.md) · [Contribution guide](tc-social-contributions-reference.md)
+- **Property and reporting.** For a land transaction, start with the applicable instrument, island, consideration or value and date. Verify the enacted duty schedule and any concession separately. For financial accounts or an entity with relevant activities, examine CRS and economic substance rules independently. [Conveyance duty](tc-property-conveyance-stamp-duty-reference.md) · [CRS](tc-crs-reporting-and-penalties-reference.md) · [Economic substance](tc-economic-substance-reporting-reference.md)
+
+The 21 April 2026 budget address forecasts 2026–27 revenue from accommodation tax, customs-related receipts and stamp duty, among other streams. These revenue forecasts do not establish a charge, rate, assessment or remittance period. [Approved estimates, Vol. I, budget address under Revenue](https://gov.tc/mof/wp-content/uploads/2026/05/Approved-Turks-and-Caicos-Islands-26-27-Estimates-1.pdf)
 
 ## Periods and authorities
 
