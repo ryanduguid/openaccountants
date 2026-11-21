@@ -11,9 +11,10 @@
 4. `sk-corporate-income-tax.md`
 5. `sk-payroll-social.md`
 6. `sk-tax-overview.md`
-7. `slovakia-pit.md`
-8. `slovakia-vat-registration-4-7-7a.md`
-9. `slovakia-vat-return.md`
+7. `sk-tax-system-orientation.md`
+8. `slovakia-pit.md`
+9. `slovakia-vat-registration-4-7-7a.md`
+10. `slovakia-vat-return.md`
 
 ## Shared files this package needs
 

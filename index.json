@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2109,
+  "guides": 2111,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -11160,6 +11160,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "hu-tax-system-orientation",
+   "path": "skills/international/hungary/hu-tax-system-orientation.md",
+   "name": "hu-tax-system-orientation",
+   "jurisdiction": "HU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "hungary-einvoice",
    "path": "skills/international/hungary/hungary-einvoice.md",
    "name": "hungary-einvoice",
@@ -20271,6 +20284,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "sk-tax-system-orientation",
+   "path": "skills/international/slovakia/sk-tax-system-orientation.md",
+   "name": "sk-tax-system-orientation",
+   "jurisdiction": "SK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "slovakia-pit",
