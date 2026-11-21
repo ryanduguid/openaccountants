@@ -1,34 +1,37 @@
 ---
 name: hk-tax-overview
-description: "Source-cited draft: tax overview for Hong Kong (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Ordinary tax-system orientation for Hong Kong in 2026, with dated primary-source citations. Pending local-accountant review."
 jurisdiction: HK
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year: 2026
+last_updated: 2026-11-21
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Hong Kong Tax Overview
+# Hong Kong tax system
 
-## Hong Kong tax system at a glance
+> General orientation for the 2025–26 and 2026–27 years of assessment. Confirm the taxpayer, period and transaction with a qualified local tax professional before applying the rules.
 
-Hong Kong operates a simple, low-rate, territorial (source-based) tax system administered by the Inland Revenue Department under the Inland Revenue Ordinance (Cap. 112). Only income/profits arising in or derived from Hong Kong are taxable; there is no VAT/GST, no capital gains tax, and no withholding tax on dividends or interest.
+The Inland Revenue Department (IRD) administers salaries tax, profits tax and property tax. Amounts are in Hong Kong dollars (HKD). The year of assessment runs from 1 April to 31 March. Check the accounting basis period separately for profits tax. [IRD, brief tax guide](https://www.ird.gov.hk/eng/pdf/2026/BriefGuide20252026.pdf)
 
-- **Tax authority** — Inland Revenue Department (IRD)  _([Inland Revenue Ordinance (Cap. 112)](https://www.ird.gov.hk/))_
-- **Currency** — Hong Kong Dollar (HKD)  _(Inland Revenue Ordinance (Cap. 112))_
-- **Year of assessment** — 1 April to 31 March (the 2024/25 year runs 1 April 2024 to 31 March 2025)  _([Inland Revenue Ordinance (Cap. 112)](https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/salariesrates.htm))_
-- **Basis of taxation** — Territorial (source-based) — only income/profits arising in or derived from Hong Kong are chargeable; foreign-source income is generally not taxed  _(Inland Revenue Department, A guide to Profits Tax (chargeable on profits arising in or derived from Hong Kong; non-residents chargeable on Hong Kong-source profits; Inland Revenue Ordinance (Cap. 112) s 14) — https://www.ird.gov.hk/eng/tax/bus_pft.htm)_
-- **Main direct taxes** — Profits tax (business profits), salaries tax (employment income), and property tax (rental income) — there is no comprehensive personal income tax  _(Inland Revenue Ordinance (Cap. 112))_
-- **Headline salaries tax (progressive)** — Progressive rates of 2%, 6%, 10%, 14%, 17% on net chargeable income (each band HKD 50,000)  _([Inland Revenue Ordinance (Cap. 112), Schedule 2](https://www.gov.hk/en/residents/taxes/taxfiling/taxrates/salariesrates.htm))_
-- **Headline salaries tax (standard rate cap)** — Two-tiered standard rate: 15% on first HKD 5,000,000 of net income, 16% above — whichever produces lower tax than progressive applies  _(Inland Revenue Ordinance (Cap. 112) (as described at [hongkongfp.com](https://hongkongfp.com/2024/02/28/hong-kong-budget-2024-higher-salaries-tax-rate-for-those-earning-over-hk5-million-annually/)))_
-- **Headline corporate profits tax** — Two-tiered: 8.25% on first HKD 2,000,000 of assessable profits, 16.5% above (corporations)  _([Inland Revenue Ordinance (Cap. 112), Schedule 8](https://www.ird.gov.hk/eng/faq/2tr.htm))_
-- **VAT / GST** — None — Hong Kong has no VAT, GST or sales tax  _(Inland Revenue Ordinance (Cap. 112), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Capital gains tax** — None — Hong Kong does not levy capital gains tax  _(Inland Revenue Department, A guide to Profits Tax (profits from the sale of capital assets are excluded from assessable profits) — https://www.ird.gov.hk/eng/tax/bus_pft.htm)_
+## Income, business and residence
+
+Salaries tax applies to income arising in or derived from Hong Kong from an office, employment or pension. For employment, determine its source and where the services are performed before considering an exemption, allocation or relief. Tax treaty residence and a certificate of resident status have separate tests. [IRD, salaries tax for new workers](https://www.ird.gov.hk/eng/pdf/pam42e.pdf) · [IRD, residence certificates](https://www.ird.gov.hk/eng/tax/dta_cor.htm)
+
+For 2026–27, the first 4 bands of HKD 50,000 of net chargeable income are taxed at 2%, 6%, 10% and 14%, and any excess at 17%. The comparison uses net income before allowances at standard rates of 15% on the first HKD 5 million and 16% above. The lower amount applies. Basic allowance rises to HKD 145,000 from 2026–27. The one-off reduction capped at HKD 3,000 applies to eligible 2025–26 final salaries tax, profits tax or personal assessment, under the respective rules. [IRD, budget measures enacted in May 2026](https://www.ird.gov.hk/eng/tax/budget.htm) · [IRD, calculations for 2025–26 and 2026–27](https://www.ird.gov.hk/eng/pdf/2026/example2627.pdf)
+
+Profits tax generally applies to assessable profits arising in or derived from Hong Kong from a trade, profession or business carried on there. Check deemed receipts and the separate foreign-sourced income exemption rules for multinational entities. Eligible corporations pay 8.25% on the first HKD 2 million and 16.5% above. Eligible unincorporated businesses pay 7.5% and 15%. The ordinary top rates apply outside the two-tiered regime. Where the entity has connected entities at the end of its basis period, only 1 connected entity can elect the two-tiered rates for the relevant year of assessment. [IRD, profits tax](https://www.ird.gov.hk/eng/tax/bus_pft.htm) · [IRD, two-tiered rates](https://www.ird.gov.hk/eng/faq/2tr.htm)
+
+## Consumption, property and filing
+
+Hong Kong has no general VAT, GST or customs tariff. Liquor, tobacco, hydrocarbon oil and methyl alcohol have separate excise rules. Property tax generally applies to net assessable value from letting at 15%, with separate rules for a company and for personal assessment. Check stamp duty separately. [Customs and Excise, cargo clearance](https://www.customs.gov.hk/en/service-enforcement-information/cargo-clearance/) · [IRD, brief tax guide](https://www.ird.gov.hk/eng/pdf/2026/BriefGuide20252026.pdf)
+
+The 2025–26 BIR60 individual return was issued in bulk on 4 May 2026, with 1 month to file in general and 3 months for sole proprietors. The IRD grants an extra month for electronic filing in that cycle. Use the date on the return and any applicable extension. Payment follows the dates on the assessment notice, including any provisional amounts. [IRD, 2025–26 individual filing](https://www.ird.gov.hk/eng/ppr/archives/26050404.htm) · [IRD, assessment notice example](https://www.ird.gov.hk/eng/pdf/irc6401e.pdf)
+
 - **Profits tax return filing** — Due dates follow the accounting-date code, not the entity type. Returns are generally due within 1 month of issue (2025/26 bulk issue: 1 April 2026). Where a tax representative has duly applied under the Block Extension Scheme, 2025/26 dates are: N code (accounting date 1 April to 30 November) no paper extension, 4 May 2026 on paper and 4 June 2026 electronically; D code (December) 31 August 2026 on paper and 2 October 2026 electronically; M code (January to March) 30 November 2026 on paper and 30 December 2026 electronically; M code current year loss cases 1 February 2027, on application, if the return shows an allowable loss. Electronic dates need an application and e-filing, except Part 4AA Entities under mandatory e-filing. Without a tax representative, the compliance date on the return applies. These dates are specific to 2025/26  _(Inland Revenue Ordinance (Cap. 112), section 51; [GovHK, Profits Tax Return](https://www.gov.hk/en/residents/taxes/taxfiling/filing/types/profitstax.htm); IRD Block Extension circulars of [19 March 2026](https://www.ird.gov.hk/eng/pdf/bel26e.pdf), [14 July 2026](https://www.ird.gov.hk/eng/pdf/bel26ea.pdf) and [20 October 2026](https://www.ird.gov.hk/eng/pdf/bel26eb.pdf))_
-- **Individual tax return filing** — Individual tax return (BIR60) issued early May; due within 1 month of issue (3 months if filed for sole-proprietorship business), with a 1-month extension for e-filing (approx — confirm)  _(Inland Revenue Ordinance (Cap. 112), section 51)_
 
 <!-- openaccountants-cta-block -->
 
