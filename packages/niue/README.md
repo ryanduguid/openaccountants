@@ -7,7 +7,8 @@
 
 1. `intake.md`
 2. `nu-company-reporting.md`
-3. `references.md`
+3. `nu-tax-system-orientation.md`
+4. `references.md`
 
 ## Shared files this package needs
 

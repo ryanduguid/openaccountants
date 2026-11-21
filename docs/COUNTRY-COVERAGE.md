@@ -60,7 +60,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CG | Congo | 6 | 0 |
 | CH | Switzerland | 10 | 0 |
 | CI | Côte d’Ivoire | 4 | 0 |
-| CK | Cook Islands | 4 | 0 |
+| CK | Cook Islands | 5 | 0 |
 | CL | Chile | 7 | 0 |
 | CM | Cameroon | 4 | 0 |
 | CN | China | 13 | 0 |
@@ -185,7 +185,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NO | Norway | 9 | 0 |
 | NP | Nepal | 6 | 5 |
 | NR | Naoero | 5 | 0 |
-| NU | Niue | 1 | 0 |
+| NU | Niue | 2 | 0 |
 | NZ | New Zealand | 17 | 0 |
 | OM | Oman | 6 | 0 |
 | PA | Panama | 4 | 0 |
@@ -196,7 +196,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PK | Pakistan | 20 | 4 |
 | PL | Poland | 9 | 0 |
 | PM | Saint Pierre and Miquelon | 1 | 0 |
-| PN | Pitcairn | 1 | 0 |
+| PN | Pitcairn | 2 | 0 |
 | PR | Puerto Rico | 2 | 0 |
 | PS | State of Palestine | 1 | 0 |
 | PT | Portugal | 15 | 8 |
