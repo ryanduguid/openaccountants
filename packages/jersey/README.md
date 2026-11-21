@@ -20,7 +20,8 @@
 13. `je-pillar-two.md`
 14. `je-property-transactions.md`
 15. `je-social-contributions.md`
-16. `references.md`
+16. `je-tax-system-orientation.md`
+17. `references.md`
 
 ## Shared files this package needs
 
