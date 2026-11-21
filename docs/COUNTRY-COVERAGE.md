@@ -131,7 +131,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | JO | Jordan | 6 | 0 |
 | JP | Japan | 18 | 0 |
 | KE | Kenya | 13 | 0 |
-| KG | Kyrgyzstan | 6 | 0 |
+| KG | Kyrgyzstan | 7 | 0 |
 | KH | Cambodia | 6 | 0 |
 | KI | Kiribati | 1 | 0 |
 | KM | Comoros | 1 | 0 |
@@ -140,7 +140,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | KR | Republic of Korea | 6 | 3 |
 | KW | Kuwait | 6 | 0 |
 | KY | Cayman Islands | 6 | 0 |
-| KZ | Kazakhstan | 17 | 0 |
+| KZ | Kazakhstan | 18 | 0 |
 | LA | Lao People's Democratic Republic | 5 | 0 |
 | LB | Lebanon | 6 | 0 |
 | LC | Saint Lucia | 1 | 0 |
@@ -250,7 +250,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | UM | United States Minor Outlying Islands | 1 | 0 |
 | US | United States of America | 62 | 20 |
 | UY | Uruguay | 7 | 0 |
-| UZ | Uzbekistan | 8 | 0 |
+| UZ | Uzbekistan | 9 | 0 |
 | VA | Holy See | 1 | 0 |
 | VC | Saint Vincent and the Grenadines | 1 | 0 |
 | VE | Venezuela (Bolivarian Republic of) | 5 | 5 |

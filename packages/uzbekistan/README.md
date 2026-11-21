@@ -9,11 +9,12 @@
 2. `uz-company-formation.md`
 3. `uz-corporate-income-tax.md`
 4. `uz-tax-overview.md`
-5. `uzbekistan-income-tax.md`
-6. `uzbekistan-payroll.md`
-7. `uzbekistan-social-contributions.md`
-8. `uzbekistan-tax-optimization.md`
-9. `uzbekistan-vat.md`
+5. `uz-tax-system-orientation.md`
+6. `uzbekistan-income-tax.md`
+7. `uzbekistan-payroll.md`
+8. `uzbekistan-social-contributions.md`
+9. `uzbekistan-tax-optimization.md`
+10. `uzbekistan-vat.md`
 
 ## Shared files this package needs
 

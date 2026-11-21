@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2134,
+  "guides": 2137,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -13396,6 +13396,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "kz-tax-system-orientation",
+   "path": "skills/international/kazakhstan/kz-tax-system-orientation.md",
+   "name": "kz-tax-system-orientation",
+   "jurisdiction": "KZ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "audit-quality-assurance-aqa",
    "path": "skills/international/kenya/audit-quality-assurance-aqa.md",
    "name": "audit-quality-assurance-aqa",
@@ -13797,6 +13810,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "kg-tax-system-orientation",
+   "path": "skills/international/kyrgyzstan/kg-tax-system-orientation.md",
+   "name": "kg-tax-system-orientation",
+   "jurisdiction": "KG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "kg-vat-gst",
@@ -24054,6 +24080,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "uz-tax-system-orientation",
+   "path": "skills/international/uzbekistan/uz-tax-system-orientation.md",
+   "name": "uz-tax-system-orientation",
+   "jurisdiction": "UZ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "uzbekistan-income-tax",
