@@ -1,11 +1,11 @@
 ---
 name: bb-tax-overview
-description: "Source-cited draft: tax overview for Barbados (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Ordinary Barbados income tax, consumption tax and filing rules for 2026, with primary sources. Pending practitioner review."
 jurisdiction: BB
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year: 2026
+last_updated: 2026-11-21
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,20 +13,28 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Barbados Tax Overview
 
-## The Barbados tax system at a glance
+The Barbados Revenue Authority (BRA) administers personal income tax, corporation tax and value added tax (VAT). The figures below are in Barbados dollars (BBD).
 
-Barbados taxes individuals and companies under the Income Tax Act, administered by the Barbados Revenue Authority (BRA). The tax year follows the calendar year, the currency is the Barbados dollar (BBD), pegged at BBD 2 = USD 1.
+## Income periods and residence
 
-- **Tax year (income year)** — Calendar year for individuals; a company's income year is its fiscal period, which may not exceed 53 weeks  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 2, definition of income year — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73 ; Barbados Revenue Authority, Income Tax: Corporations — https://bra.gov.bb/About/Tax-Types/Income-Tax/Corporations)_
-- **Currency** — Barbados dollar (BBD), pegged at BBD 2.00 = USD 1.00 (peg is administrative, not statutory in the Income Tax Act)  _(Central Bank of Barbados Act)_
-- **Tax authority** — Barbados Revenue Authority (BRA)  _([Barbados Revenue Authority Act, 2014-1](https://bra.gov.bb/))_
-- **Residence basis (individuals)** — An individual resident and domiciled in Barbados is taxed on worldwide income; resident but non-domiciled individuals are taxed on Barbados-source income and on foreign income to the extent remitted/benefited in Barbados  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 85(5) and (6) (deemed residence: more than 182 days in the year or ordinarily resident; the earlier citation to s 86 pointed at the commencement section) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
-- **Residence basis (companies)** — Companies resident in Barbados are taxed on worldwide income; non-resident companies are taxed only on Barbados-source income  _(Barbados Revenue Authority, Income Tax: Corporations — https://bra.gov.bb/About/Tax-Types/Income-Tax/Corporations)_
-- **Headline personal income tax rates** — 12.5% on taxable income up to BBD 50,000 and 28.5% above it, after the BBD 25,000 personal allowance (income years 2020 to 2025); from income year 2026 the rates fall to 11.5% on BBD 25,001 to 75,000 and 27.5% above BBD 75,000  _(Income Tax (Amendment) Act, 2020-10 (Barbados Revenue Authority copy), s 6, amending s 42(1) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10 ; Barbados Revenue Authority, Policy Note OGC 001/2026, reduction in personal income tax rates (April 2026) — https://bra.gov.bb/attachment?file=Attachments%2FPolicy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026.pdf&name=Policy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026)_
-- **Headline corporate income tax rate** — 9% general corporation tax rate from income year 2024  _(Income Tax (Amendment and Validation) Act, 2024-15 (Barbados Revenue Authority copy), s 6, inserting s 43(8) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+and+Validation%29+Act%2c+2024-15.pdf&name=Income+Tax+%28Amendment+and+Validation%29+Act%2c+2024-15)_
-- **Does VAT exist?** — Yes — Value Added Tax (VAT) at a standard rate of 17.5%  _([Value Added Tax Act, Cap. 87](https://bra.gov.bb/Popular-Topics/Value-Added-Tax/VAT-Rates))_
-- **Personal income tax return deadline** — 30 April following the income year  _([Income Tax Act, Cap. 73](https://bra.gov.bb/News/Press-Releases/Personal-Income-Tax-Filing-Deadlin_1))_
-- **Corporation tax return deadline** — Generally within 3-6 months after fiscal year end; BRA set a 31 July 2025 filing deadline for income year 2024 returns (deadlines are subject to BRA extension notices — confirm current year)  _([Income Tax Act, Cap. 73](https://bra.gov.bb/Popular-Topics/Companies/Filing-and-Payment))_
+Individuals generally use the calendar year. Companies use the fiscal period accepted for income tax, up to 53 weeks. An individual is deemed resident if present in Barbados for more than 182 days in the income year or ordinarily resident under section 85(6). Resident and domiciled individuals generally pay tax on worldwide income. Section 17 limits the income of resident non-domiciled individuals to Barbados income and qualifying benefits obtained in Barbados from foreign income, including remittances. [Income Tax Act, Cap. 73, ss 16, 17 and 85](https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73) · [BRA individual residence and income basis](https://www.bra.gov.bb/Individuals)
+
+## Personal income tax
+
+For income year 2025, the ordinary bands were 12.5% on the first BBD 50,000 of taxable income after applicable allowances and 28.5% above it. For income year 2026, BRA Policy Note OGC No. 001/2026 directs taxpayers to apply 11.5% to the portion of income above BBD 25,000 through BBD 75,000 and 27.5% above BBD 75,000. Check any separate allowance or credit for the taxpayer and year. [Income Tax (Amendment) Act, 2020-10, s 6](https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10) · [BRA Policy Note OGC No. 001/2026](https://bra.gov.bb/attachment?file=Attachments%2FPolicy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026.pdf&name=Policy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026)
+
+## Corporation tax
+
+The ordinary rate is 9% of taxable income from income year 2024. The legislation provides a 5.5% rate for an approved small business registered under Cap. 318C whose gross income is BBD 2 million or less. Confirm the separate rules for qualifying groups, shipping and other special cases before applying a rate. BRA describes resident companies as generally taxable on worldwide income and non-resident companies as taxable on Barbados-source income. [Income Tax (Amendment and Validation) Act, 2024-15, s 6](https://bra.gov.bb/attachment?file=Attachments%2FIncome+Tax+%28Amendment+and+Validation%29+Act%2C+2024-15.pdf&name=Income+Tax+%28Amendment+and+Validation%29+Act%2C+2024-15) · [BRA corporation income basis](https://www.bra.gov.bb/About/Tax-Types/Income-Tax/Corporations)
+
+## VAT
+
+The standard VAT rate is 17.5%. BRA lists the ordinary registration threshold at BBD 200,000 annually. BRA assigns the tax period, ordinarily 2 months. Registrants generally file and pay within 21 days after their period ends. [BRA VAT rates](https://bra.gov.bb/Popular-Topics/Value-Added-Tax/VAT-Rates) · [BRA VAT registration threshold](https://www.bra.gov.bb/FAQs/Value-Added-Tax/) · [VAT Act, Cap. 87, ss 44–46](https://bra.gov.bb/attachment?file=Attachments%2fValue+Added+Tax+Act%2c+Cap.+87.pdf&name=Value+Added+Tax+Act%2c+Cap.+87)
+
+## Filing
+
+- File the personal return in TAMIS by 30 April following the income year. [BRA personal income tax filing](https://www.bra.gov.bb/Popular-Topics/Employed-Retired-Persons/PIT/)
+- Companies closing from January through September normally file by 15 March of the following year. Those closing from October through December normally file by 15 June. For the early-closing group in income year 2025 only, BRA extended the final payment to 27 March 2026 and filing to 15 April 2026. Check prepayments and applicable notices separately. [BRA corporation tax filing](https://bra.gov.bb/Popular-Topics/Companies/Filing-and-Payment) · [BRA 2025 administrative extension](https://www.bra.gov.bb/News/Guidance-Notes/Filing-and-Payment-of-Corporation)
 
 <!-- openaccountants-cta-block -->
 
