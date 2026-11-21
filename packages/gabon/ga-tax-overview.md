@@ -1,11 +1,12 @@
 ---
 name: ga-tax-overview
-description: "Source-cited draft: tax overview for Gabon (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited orientation to Gabon’s tax system, with a dated 2025 code baseline and selected enacted 2026 amendments. Pending qualified local review."
 jurisdiction: GA
 category: international
-tax_year: 2025
-last_updated: 2026-11-11
-version: 1.3
+tax_year: 2026
+tax_year_notes: "DGI CGI 2025 baseline, 2026 Finance Law and July 2026 rectifying law, source checks through 21 November 2026."
+last_updated: 2026-11-21
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,11 +16,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Tax system recorded for 2025
 
-This section describes the DGI's **CGI 2025** compilation, whose header
-identifies amendments through Loi n°033/2024 of 30 December 2024. Later
-amendments and current administrative practice remain open. The corporate,
-VAT and formation guides separately record selected provisions enacted for
-**2026**. [DGI, CGI 2025](https://dgi.ga/document/code-general-des-impots-2025/)
+The DGI’s **CGI 2025** compilation identifies amendments through Loi n°033/2024
+of 30 December 2024. The rates, filing rules and residence tests in this
+section come from that version. Apply the 2026 overlay below and establish
+the applicable provisions for the taxpayer, activity and period.
+[DGI, CGI 2025](https://dgi.ga/document/code-general-des-impots-2025/)
 
 - **Tax authority.** Direction Générale des Impôts (DGI).
   [DGI's official website](https://dgi.ga/)
@@ -93,6 +94,15 @@ assessment. Article 174's top-band formula is **35% × income per part minus
 CFA 1,669,000**. Gross IRPP is therefore **CFA 2,531,000**, before crediting
 withholding or other credits. This is an annual assessment illustration.
 [Articles 168, 170 and 174](https://dgi.ga/document/code-general-des-impots-2025/)
+
+## Selected 2026 provisions
+
+Read the 2026 Finance Law, published on 30 December 2025, with the rectifying law published on 17 July 2026. The selected provisions below refer to the enacted text. Check the period, implementing regulations and any transition rules before applying them. [Loi n°041/2025](https://journal-officiel.ga/22265-041-2025-/) · [Loi n°002/2026](https://journal-officiel.ga/22595-002-2026/)
+
+- **Corporate deductions.** The December law amended CGI article 11 with a standardised electronic invoice requirement and a 6-month exception for documents proving payment of customs duties. The July law amended CGI article 11 bis to refer to standardised electronic invoices or equivalent documents admitted by regulation. Apply the relevant article, type of documentation and period to the expense. [Loi n°041/2025 art 4](https://journal-officiel.ga/22265-041-2025-/) · [Loi n°002/2026 arts 4 and 101](https://journal-officiel.ga/22595-002-2026/) · [Corporate income guide](ga-corporate-income-tax.md)
+- **VAT.** July’s amended CGI article 221 gives 18% as standard and separate 10%, 5%, 3% and zero rates for specified transactions. The 3% line covers production and sale of reinforcing steel made in Gabon. Article 208 ter applies to non-resident taxable persons regardless of turnover in Gabon. For intangibles covered by article 211 ter(2), at least 2 listed indicators must point to Gabon for the recipient to be deemed established there. Check local registration, exemptions, invoices and input deductions separately. [Loi n°002/2026 art 4](https://journal-officiel.ga/22595-002-2026/) · [VAT guide](ga-vat-gst.md)
+- **Rent and treaty screening.** The July text for CGI article 178 bis states a 5% IRPP prepayment on taxable rents where applicable, with no prepayment under that paragraph when the landlord is subject to Gabonese IS. Check the payer and period before using that rate. Article 7 of the rectifying law states that the OCAM convention has no effect in Gabon on relevant events from 1 January 2026 and preserves specified earlier situations. Check any other applicable treaty separately. [Loi n°002/2026 arts 4 and 7](https://journal-officiel.ga/22595-002-2026/)
+- **Administration.** Begin with the DGI for tax registration and filings. Use the [formation guide](ga-company-formation.md) for entity and filing steps, and the [payroll guide](ga-payroll-social.md) for employment, contributions and period checks. Customs and the CEMAC tariff apply separately to imports. [DGI](https://dgi.ga/) · [Loi n°041/2025 art 2](https://journal-officiel.ga/22265-041-2025-/)
 
 <!-- openaccountants-cta-block -->
 
