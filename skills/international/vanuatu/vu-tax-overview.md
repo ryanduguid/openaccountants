@@ -3,9 +3,9 @@ name: vu-tax-overview
 description: "Vanuatu tax overview with dated updates to ordinary income tax, rent tax, VNPF and VAT. Pending local-accountant review."
 jurisdiction: VU
 category: international
-tax_year: 2025
-last_updated: 2026-11-11
-version: 1.4
+tax_year: 2026
+last_updated: 2026-11-21
+version: 1.5
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## The Vanuatu tax system at a glance
 
 Vanuatu has no ordinary personal or corporate income tax. Its separate regimes include VAT, rent tax, business licensing and import duties. [Vanuatu Competent Authority guide, 20 August 2024](https://vanuatucustoms.gov.vu/images/Forms/VCA/VU_AEOI_Guide_v4.pdf), [Global Forum assessment, para 23, adopted 23 April 2026](https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-vanuatu-2026-second-round-supplementary-report_7a20b670/75b3bc85-en.pdf), [DCIR legislation index](https://vanuatucustoms.gov.vu/taxes-and-licensing/legislations)
-- **National currency** — Vanuatu vatu (VUV / VT)  _(Reserve Bank of Vanuatu Act)_
+- **National currency** — Vanuatu vatu (VUV / VT)  [Reserve Bank currency guidance](https://www.rbv.gov.vu/index.php/en/currency/our-responsibility-for-vatu-banknotes-and-coins)
 - **Principal tax authority** — Department of Customs and Inland Revenue (DCIR). [DCIR legislation index](https://vanuatucustoms.gov.vu/taxes-and-licensing/legislations)
 - **Ordinary personal income tax** — No domestic charge, rate schedule or annual return. See the [personal income tax guide](vu-income-tax.md).
 - **Ordinary corporate income tax** — No domestic profits charge, rate schedule or annual return. See the [corporate income tax guide](vu-corporate-income-tax.md).
@@ -26,6 +26,14 @@ Vanuatu has no ordinary personal or corporate income tax. Its separate regimes i
 - **Vanuatu National Provident Fund** — 4% each for employer and employee through December 2025. From January 2026 each pays 6% of covered remuneration. [VNPF commencement notice](https://www.vnpf.com.vu/news.html), [VNPF Act, s 25](https://www.vnpf.com.vu/uploads/9/5/0/5/95052148/vanuatu_national_provident_fund_consolidated_2026.pdf)
 - **Ordinary VAT filing and payment** — Due on 5 January for periods ending 30 November and on the 27th of the following month for other periods. Use the next working day if the statutory date is a non-working day. See the [VAT guide](vu-vat-gst.md) for exceptions. [Value Added Tax Act, ss 16 and 20](https://vanuatucustoms.gov.vu/images/Laws_Regulations/VAT/247_Value_Added_Tax_Consolidated_2020.pdf)
 - **Other regimes** — Source-based withholding, foreign tax and sector-specific obligations require separate checks.
+
+## Residence, scope and taxpayer types
+
+Ordinary income tax residence does not determine a domestic charge or annual return. Apply the separate tests for the activity or property. VAT applies to taxable supplies and imports under the VAT Act. Rent tax concerns rents from leases of land in Vanuatu, with rules for agents and trustees and different thresholds for natural persons and other taxpayers. Business licensing applies to the activity, with exemptions and issuer rules under the Business Licence Act. [VAT Act and DCIR guidance](https://customs.vanuatu.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html) · [Rent Taxation Act, ss 1–9 and Sch 1](https://vanuatucustoms.gov.vu/images/TAA/196_Rent_Taxation_Act_Consolidated_2020.pdf) · [DCIR business licence guidance](https://customs.vanuatu.gov.vu/taxes-and-licensing/licensing/business-licencing.html)
+
+## Separate assessment periods
+
+Identify the VAT period and business licence year independently. The rent tax periods end on 31 May and 30 November. Return and payment are ordinarily due within 28 days of period-end under ss 11 and 14. Check the VAT exclusion before counting rent under this regime. [Rent Taxation Act, ss 1, 4, 11 and 14](https://vanuatucustoms.gov.vu/images/TAA/196_Rent_Taxation_Act_Consolidated_2020.pdf)
 
 ## Financial account reporting
 

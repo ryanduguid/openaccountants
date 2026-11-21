@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2152,
+  "guides": 2153,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -18527,8 +18527,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "png-gst",
@@ -20895,6 +20895,19 @@
    "review_status": "pending_review",
    "tax_year": "2024",
    "last_updated": "2026-10-28"
+  },
+  {
+   "slug": "sb-tax-system-orientation",
+   "path": "skills/international/solomon-islands/sb-tax-system-orientation.md",
+   "name": "sb-tax-system-orientation",
+   "jurisdiction": "SB",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "so-company-formation",
@@ -24403,8 +24416,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-11"
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "vu-vat-gst",
