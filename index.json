@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2181,
+  "guides": 2184,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -2331,6 +2331,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "ag-tax-system-orientation",
+   "path": "skills/international/antigua-and-barbuda/ag-tax-system-orientation.md",
+   "name": "ag-tax-system-orientation",
+   "jurisdiction": "AG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "ar-company-formation",
@@ -8181,6 +8194,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "dm-tax-system-orientation",
+   "path": "skills/international/dominica/dm-tax-system-orientation.md",
+   "name": "dm-tax-system-orientation",
+   "jurisdiction": "DM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "dm-vat-reference",
@@ -20089,6 +20115,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-02"
+  },
+  {
+   "slug": "vc-tax-system-orientation",
+   "path": "skills/international/saint-vincent-and-the-grenadines/vc-tax-system-orientation.md",
+   "name": "vc-tax-system-orientation",
+   "jurisdiction": "VC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "ws-company-formation",

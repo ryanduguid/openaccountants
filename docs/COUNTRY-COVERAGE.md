@@ -19,7 +19,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AD | Andorra | 7 | 0 |
 | AE | United Arab Emirates | 7 | 3 |
 | AF | Afghanistan | 6 | 0 |
-| AG | Antigua and Barbuda | 3 | 0 |
+| AG | Antigua and Barbuda | 4 | 0 |
 | AI | Anguilla | 2 | 0 |
 | AL | Albania | 6 | 0 |
 | AM | Armenia | 9 | 0 |
@@ -75,7 +75,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | DE | Germany | 24 | 0 |
 | DJ | Djibouti | 6 | 0 |
 | DK | Denmark | 7 | 0 |
-| DM | Dominica | 2 | 0 |
+| DM | Dominica | 3 | 0 |
 | DO | Dominican Republic | 22 | 14 |
 | DZ | Algeria | 4 | 0 |
 | EC | Ecuador | 8 | 0 |
@@ -252,7 +252,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | UY | Uruguay | 7 | 0 |
 | UZ | Uzbekistan | 9 | 0 |
 | VA | Holy See | 2 | 0 |
-| VC | Saint Vincent and the Grenadines | 1 | 0 |
+| VC | Saint Vincent and the Grenadines | 2 | 0 |
 | VE | Venezuela (Bolivarian Republic of) | 5 | 5 |
 | VG | British Virgin Islands | 6 | 0 |
 | VI | United States Virgin Islands | 5 | 0 |
