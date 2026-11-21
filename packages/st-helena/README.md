@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `sh-employment-income-tax.md`
+3. `sh-tax-system-orientation.md`
 
 ## Shared files this package needs
 

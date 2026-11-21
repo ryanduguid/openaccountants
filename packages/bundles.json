@@ -2331,6 +2331,7 @@
     "intake.md",
     "fk-annual-employment-income.md",
     "fk-retirement-pensions-weekly-reference.md",
+    "fk-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -5420,6 +5421,7 @@
    "files": [
     "intake.md",
     "sh-employment-income-tax.md",
+    "sh-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -5489,6 +5491,7 @@
    "files": [
     "intake.md",
     "sj-svalbard-wage-reference.md",
+    "sj-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

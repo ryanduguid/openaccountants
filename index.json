@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2186,
+  "guides": 2189,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -9429,6 +9429,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "fk-tax-system-orientation",
+   "path": "skills/international/falkland-islands/fk-tax-system-orientation.md",
+   "name": "fk-tax-system-orientation",
+   "jurisdiction": "FK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "fo-municipal-income-tax-reference",
@@ -22106,6 +22119,19 @@
    "last_updated": "2026-10-24"
   },
   {
+   "slug": "sh-tax-system-orientation",
+   "path": "skills/international/st-helena/sh-tax-system-orientation.md",
+   "name": "sh-tax-system-orientation",
+   "jurisdiction": "SH",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "ps-vat-legislative-reference",
    "path": "skills/international/state-of-palestine/ps-vat-legislative-reference.md",
    "name": "ps-vat-legislative-reference",
@@ -22286,6 +22312,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-27"
+  },
+  {
+   "slug": "sj-tax-system-orientation",
+   "path": "skills/international/svalbard-and-jan-mayen/sj-tax-system-orientation.md",
+   "name": "sj-tax-system-orientation",
+   "jurisdiction": "SJ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "sweden-references",
