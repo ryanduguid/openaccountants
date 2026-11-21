@@ -10,10 +10,11 @@
 3. `pl-corporate-income-tax.md`
 4. `pl-income-tax.md`
 5. `pl-small-company-financial-statements.md`
-6. `pl-zus-contributions.md`
-7. `poland-einvoice.md`
-8. `poland-vat-return.md`
-9. `references.md`
+6. `pl-tax-system-orientation.md`
+7. `pl-zus-contributions.md`
+8. `poland-einvoice.md`
+9. `poland-vat-return.md`
+10. `references.md`
 
 ## Shared files this package needs
 
