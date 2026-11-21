@@ -100,7 +100,6 @@ skills/international/paraguay::employer
 skills/international/peru::habitat
 skills/international/peru::integra
 skills/international/peru::profuturo
-skills/international/philippines::late payment
 skills/international/portugal::acima de
 skills/international/portugal::seguran social
 skills/international/rwanda::maternity leave benefits
