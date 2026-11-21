@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2192,
+  "guides": 2194,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -1252,6 +1252,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "us-tax-system-orientation",
+   "path": "skills/federal/us-tax-system-orientation.md",
+   "name": "us-tax-system-orientation",
+   "jurisdiction": "US",
+   "category": "federal",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "ifrs3-business-combinations",
@@ -11769,6 +11782,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "in-tax-system-orientation",
+   "path": "skills/international/india/in-tax-system-orientation.md",
+   "name": "in-tax-system-orientation",
+   "jurisdiction": "IN",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "in-tds-freelance",

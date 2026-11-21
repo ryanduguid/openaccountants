@@ -73,6 +73,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`us-state-new-hire-reporting-matrix.md`](../_shared/us-state-new-hire-reporting-matrix.md)
 - [`us-state-payroll-matrix.md`](../_shared/us-state-payroll-matrix.md)
 - [`us-tax-residency.md`](../_shared/us-tax-residency.md)
+- [`us-tax-system-orientation.md`](../_shared/us-tax-system-orientation.md)
 - [`us-tax-workflow-base.md`](../_shared/us-tax-workflow-base.md)
 
 
