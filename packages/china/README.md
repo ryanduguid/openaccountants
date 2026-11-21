@@ -17,8 +17,9 @@
 10. `cn-return-assembly.md`
 11. `cn-social-insurance.md`
 12. `cn-stamp-tax.md`
-13. `cn-withholding.md`
-14. `references.md`
+13. `cn-tax-system-orientation.md`
+14. `cn-withholding.md`
+15. `references.md`
 
 ## Shared files this package needs
 

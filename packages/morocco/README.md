@@ -16,11 +16,12 @@
 9. `ma-income-tax.md`
 10. `ma-social-contributions.md`
 11. `ma-tax-optimization.md`
-12. `morocco-income-tax.md`
-13. `morocco-payroll.md`
-14. `morocco-vat.md`
-15. `morocco-guided-intake.md`
-16. `morocco-return-assembly.md`
+12. `ma-tax-system-orientation.md`
+13. `morocco-income-tax.md`
+14. `morocco-payroll.md`
+15. `morocco-vat.md`
+16. `morocco-guided-intake.md`
+17. `morocco-return-assembly.md`
 
 ## Shared files this package needs
 

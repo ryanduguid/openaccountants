@@ -852,6 +852,7 @@
     "br-indirect-tax.md",
     "br-inss.md",
     "br-simples-nacional.md",
+    "br-tax-system-orientation.md",
     "brazil-crypto-tax.md",
     "brazil-einvoice.md",
     "brazil-payroll.md",
@@ -1771,6 +1772,7 @@
     "cn-return-assembly.md",
     "cn-social-insurance.md",
     "cn-stamp-tax.md",
+    "cn-tax-system-orientation.md",
     "cn-withholding.md",
     "references.md",
     "README.md"
@@ -4071,6 +4073,7 @@
     "ma-income-tax.md",
     "ma-social-contributions.md",
     "ma-tax-optimization.md",
+    "ma-tax-system-orientation.md",
     "morocco-income-tax.md",
     "morocco-payroll.md",
     "morocco-vat.md",
