@@ -70,7 +70,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CV | Cabo Verde | 6 | 0 |
 | CW | Curaçao | 6 | 0 |
 | CX | Christmas Island | 4 | 0 |
-| CY | Cyprus | 6 | 5 |
+| CY | Cyprus | 7 | 5 |
 | CZ | Czechia | 8 | 0 |
 | DE | Germany | 24 | 0 |
 | DJ | Djibouti | 6 | 0 |
@@ -144,7 +144,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | LA | Lao People's Democratic Republic | 5 | 0 |
 | LB | Lebanon | 6 | 0 |
 | LC | Saint Lucia | 1 | 0 |
-| LI | Liechtenstein | 6 | 0 |
+| LI | Liechtenstein | 7 | 0 |
 | LK | Sri Lanka | 10 | 8 |
 | LR | Liberia | 6 | 0 |
 | LS | Lesotho | 6 | 0 |

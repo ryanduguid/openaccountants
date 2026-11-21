@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2118,
+  "guides": 2120,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -7689,6 +7689,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "cy-tax-system-orientation",
+   "path": "skills/international/cyprus/cy-tax-system-orientation.md",
+   "name": "cy-tax-system-orientation",
+   "jurisdiction": "CY",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "cyprus-income-tax",
    "path": "skills/international/cyprus/cyprus-income-tax.md",
    "name": "cyprus-income-tax",
@@ -14265,6 +14278,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "li-tax-system-orientation",
+   "path": "skills/international/liechtenstein/li-tax-system-orientation.md",
+   "name": "li-tax-system-orientation",
+   "jurisdiction": "LI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "liechtenstein-vat",

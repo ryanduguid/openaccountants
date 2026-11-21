@@ -7,11 +7,12 @@
 
 1. `intake.md`
 2. `cy-non-dom.md`
-3. `cyprus-income-tax.md`
-4. `cyprus-payroll.md`
-5. `cyprus-social-contributions.md`
-6. `cyprus-tax-optimization.md`
-7. `cyprus-vat-return.md`
+3. `cy-tax-system-orientation.md`
+4. `cyprus-income-tax.md`
+5. `cyprus-payroll.md`
+6. `cyprus-social-contributions.md`
+7. `cyprus-tax-optimization.md`
+8. `cyprus-vat-return.md`
 
 ## Shared files this package needs
 

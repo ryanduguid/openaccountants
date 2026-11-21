@@ -1962,6 +1962,7 @@
    "files": [
     "intake.md",
     "cy-non-dom.md",
+    "cy-tax-system-orientation.md",
     "cyprus-income-tax.md",
     "cyprus-payroll.md",
     "cyprus-social-contributions.md",
@@ -3561,6 +3562,7 @@
     "li-income-tax.md",
     "li-payroll-social.md",
     "li-tax-overview.md",
+    "li-tax-system-orientation.md",
     "liechtenstein-vat.md",
     "README.md"
    ],
