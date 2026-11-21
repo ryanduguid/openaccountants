@@ -4,19 +4,17 @@ description: >
   Establish the tax-law boundary for Åland before using Finnish tax guides.
   Use for Aland Islands tax, Åland municipal income tax, the Finnish VAT tax
   border, services supplied to or from Åland, regional business rights and
-  property acquisitions. This 2026 source-cited draft distinguishes national
-  legislation, regional exceptions and prospective amendments. It supplies
-  scope classifications and the evidence needed for a reviewing practitioner.
-  It does not compute a taxpayer's liability, establish registration or filing
-  deadlines, or supply a complete country pack. Income, VAT, payroll, social
-  insurance and property calculations require verified topical companions.
+  property acquisitions. This 2026 source-cited orientation distinguishes the
+  national and municipal rates, tax border, filing process, scope decisions
+  and prospective amendments. Use the topical companions and operative
+  authority for a taxpayer-specific calculation, deadline or filing.
 jurisdiction: AX
 category: international
 tax_year: 2026
-tax_year_notes: "2026 scope reference; prospective 2027 provisions identified separately"
+tax_year_notes: "2026 ordinary tax-system orientation and territorial scope, checked through 21 November 2026. Prospective 2027 provisions are identified separately."
 tier: 2
-last_updated: 2026-10-16
-version: 1.0
+last_updated: 2026-11-21
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -25,11 +23,19 @@ depends_on:
 # Åland: tax-law scope for 2026
 
 Establish the applicable national and Åland rules before classifying a receipt,
-expense, employment relationship or property transaction. This guide supports
-that scope decision for a credentialed reviewer. It supplies no tax amount,
-rate table, filing deadline or permission to file, pay, register or acquire land.
-Every calculation needs its applicable domain base and a verified topical
-companion. The existing Finland pack alone does not establish Åland's exceptions.
+expense, employment relationship or property transaction. Use this orientation
+with the applicable workflow and topical companion for an individual assessment,
+filing, payment or permission decision.
+
+## The 2026 system at a glance
+
+Åland uses the euro. The Finnish Tax Administration (Vero) assesses income taxes and handles domestic VAT reporting. Åland's government administers regional permissions and takes part in relief from double municipal taxation. Use Finnish Customs for goods crossing the tax border. [European Union, Finland and Åland](https://european-union.europa.eu/principles-countries-history/eu-countries/finland_en) · [Vero's Åland guidance](https://www.vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/48911/beskattningen-pa-aland8/) · [Vero's tax-border guidance](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48654/ahvenanmaan-veroraja--arvonlisaverotuksessa3/)
+
+- **Individual income and fiscal municipality.** Determine Finnish residence under Income Tax Act sections 9 and 11. Residents generally bring worldwide income within scope, and non-residents generally bring Finnish-source income within scope. Then establish the home municipality used for assessment. For a taxpayer whose fiscal municipality is in Åland, section 124 reduces the state earned-income scale by 12.64 percentage points for 2026. Vero's resulting scale starts at 0% through EUR 22,000 of taxable earned income and ends at 24.86% on the portion above EUR 52,100. Municipal tax uses a separate base and the relevant municipality's rate. Use the [individual income guide](ax-income-tax.md) for the bands, local deductions, residence changes and contribution conditions. [Income Tax Act 1535/1992 ss 9, 11 and 124](https://www.finlex.fi/sv/lagstiftning/1992/1535) · [Vero 2026 state and municipal guidance](https://www.vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/48911/beskattningen-pa-aland8/)
+- **Corporate income.** The ordinary Finnish corporate rate is 20% for 2026. Åland's enacted 2026 municipal rates under section 29f are 4.58% for corporate entities and 6.0685% for shared benefits. Check the applicable entity category, income allocation and relief from double municipal taxation before calculating the result. Vero describes an application procedure with the competent authority depending on domicile. [ÅFS 2025:30 s 29f](https://www.regeringen.ax/sites/default/files/attachments/law/afs2025_Nr30.pdf) · [Vero corporate rates](https://www.vero.fi/en/businesses-and-corporations/taxes-and-charges/tax-prepayment/additional-prepayment/calculator-for-additional-prepayments/ukk/yhteis%C3%B6jen-tuloveroprosentit-en/) · [Vero guidance s 2.3](https://www.vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/48911/beskattningen-pa-aland8/)
+- **VAT.** The standard Finnish VAT rate is 25.5% under section 84. Act 1358/2025 changes the principal reduced band under section 85 to 13.5% from 1 January 2026, with its own transition rule. Determine the category, tax point and applicable Åland exception. Check separately whether goods cross the tax border or a service requires its own place-of-supply analysis. [Act 462/2024](https://www.finlex.fi/en/legislation/collection/2024/462) · [Act 1358/2025](https://www.finlex.fi/api/media/statute/898584/mainPdf/main.pdf?timestamp=2025-12-29T07%3A54%3A55.090Z) · [Åland VAT and excise exceptions](https://www.finlex.fi/sv/lagstiftning/1996/1266)
+- **Assessment and filing.** Use the calendar year for ordinary individual taxation and the applicable accounting period for a company. Individuals check the personal due date on their pre-completed return or in MyTax. For limited companies and cooperatives, Vero gives 4 months after the end of the last calendar month of the accounting period, subject to its non-working-day rule. Payroll withholding, VAT reporting and insurance have separate reporting and payment cycles. [Vero individual returns](https://www.vero.fi/en/individuals/tax-cards-and-tax-returns/your_tax_return_and_tax_assessment_deci/) · [Vero company returns](https://vero.fi/en/businesses-and-corporations/taxes-and-charges/limited-companies-and-cooperatives/tax-return/)
+- **Media fee and property.** ÅFS 2025:54 fixes the indexed personal fee at EUR 128 for tax year 2026. The decision took effect on 1 October 2026 and applies to the 2026 assessment. The fee applies where the person meets the Finnish general tax liability and Åland home municipality conditions, is 18 or older by the end of the tax year and has an applicable income base exceeding EUR 14,000. Separate entity rules cover qualifying corporate activities and taxable income. Property tax is an annual municipal charge under regional and national rules. Land acquisition permission and transfer charges have their own tests. [Åland Media Fee Act ss 2–4](https://www.regeringen.ax/alandsk-lagstiftning/alex/2019103) · [ÅFS 2025:54 ss 1–2](https://www.regeringen.ax/node/219674) · [Vero media fee guidance](https://vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/89754/medieavgift-i-landskapet-%C3%A5land4/) · [Vero property tax guidance s 3](https://www.vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/48911/beskattningen-pa-aland8/)
 
 ## Legal and territorial boundaries
 
@@ -75,8 +81,9 @@ particular entitlement are required before either conclusion.
 
 ## Period and source controls
 
-This is a dated 2026 reference checked on 16 October 2026. The source register
-in [references.md](references.md) records capture hashes and exact read limits.
+The source register in [references.md](references.md) records capture hashes
+and exact read limits for the 16 October 2026 territorial review. The selected
+2026 orientation citations above were checked through 21 November 2026.
 No figure in another guide becomes a 2026 Åland figure through this guide.
 
 | Source condition | Consequence for the scope decision |
@@ -90,8 +97,8 @@ No figure in another guide becomes a 2026 Åland figure through this guide.
 
 ## Coverage and required companions
 
-All topics below remain partial. This file is the pack's scope reference; it
-does not make any topic complete or establish professional sign-off.
+This source-cited orientation establishes the ordinary tax-system scope.
+The topical work below and professional review remain open.
 
 | Topic | Required next verification before computation or reliance |
 |---|---|
