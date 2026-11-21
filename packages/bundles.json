@@ -235,6 +235,7 @@
     "intake.md",
     "as-medicare-ordinary-share-reference.md",
     "as-oasdi-annual-wage-base-reference.md",
+    "as-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -2705,6 +2706,7 @@
     "gu-additional-medicare-employer-payment-reference.md",
     "gu-medicare-ordinary-share-reference.md",
     "gu-oasdi-annual-wage-base-reference.md",
+    "gu-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -4419,6 +4421,7 @@
     "mp-additional-medicare-employer-payment-reference.md",
     "mp-medicare-ordinary-share-reference.md",
     "mp-oasdi-annual-wage-base-reference.md",
+    "mp-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [

@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2158,
+  "guides": 2161,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -2071,6 +2071,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-25"
+  },
+  {
+   "slug": "as-tax-system-orientation",
+   "path": "skills/international/american-samoa/as-tax-system-orientation.md",
+   "name": "as-tax-system-orientation",
+   "jurisdiction": "AS",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "ad-company-formation",
@@ -10757,6 +10770,19 @@
    "last_updated": "2026-10-25"
   },
   {
+   "slug": "gu-tax-system-orientation",
+   "path": "skills/international/guam/gu-tax-system-orientation.md",
+   "name": "gu-tax-system-orientation",
+   "jurisdiction": "GU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "gt-company-formation",
    "path": "skills/international/guatemala/gt-company-formation.md",
    "name": "gt-company-formation",
@@ -17996,6 +18022,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-25"
+  },
+  {
+   "slug": "mp-tax-system-orientation",
+   "path": "skills/international/northern-mariana-islands/mp-tax-system-orientation.md",
+   "name": "mp-tax-system-orientation",
+   "jurisdiction": "MP",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "no-capital-gains",

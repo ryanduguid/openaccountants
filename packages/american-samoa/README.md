@@ -8,6 +8,7 @@
 1. `intake.md`
 2. `as-medicare-ordinary-share-reference.md`
 3. `as-oasdi-annual-wage-base-reference.md`
+4. `as-tax-system-orientation.md`
 
 ## Shared files this package needs
 

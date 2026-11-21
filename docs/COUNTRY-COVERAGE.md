@@ -26,7 +26,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AO | Angola | 6 | 0 |
 | AQ | Antarctica | 1 | 0 |
 | AR | Argentina | 9 | 3 |
-| AS | American Samoa | 2 | 0 |
+| AS | American Samoa | 3 | 0 |
 | AT | Austria | 7 | 0 |
 | AU | Australia | 64 | 0 |
 | AW | Aruba | 1 | 0 |
@@ -107,7 +107,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GR | Greece | 8 | 0 |
 | GS | South Georgia and the South Sandwich Islands | 1 | 0 |
 | GT | Guatemala | 7 | 0 |
-| GU | Guam | 4 | 0 |
+| GU | Guam | 5 | 0 |
 | GW | Guinea-Bissau | 6 | 0 |
 | GY | Guyana | 6 | 0 |
 | HK | China, Hong Kong Special Administrative Region | 7 | 0 |
@@ -164,7 +164,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MM | Myanmar | 6 | 0 |
 | MN | Mongolia | 6 | 0 |
 | MO | China, Macao Special Administrative Region | 5 | 0 |
-| MP | Northern Mariana Islands | 4 | 0 |
+| MP | Northern Mariana Islands | 5 | 0 |
 | MQ | Martinique | 1 | 0 |
 | MR | Mauritania | 6 | 0 |
 | MS | Montserrat | 2 | 0 |
