@@ -8,11 +8,12 @@
 1. `intake.md`
 2. `can-a-foreigner-start-a-business-in-serbia.md`
 3. `how-to-open-a-company-in-serbia-as-a-foreigner-doo-entrepreneur-registration-guide.md`
-4. `serbia-income-tax.md`
-5. `serbia-payroll.md`
-6. `serbia-social-contributions.md`
-7. `serbia-tax-optimization.md`
-8. `serbia-vat.md`
+4. `rs-tax-system-orientation.md`
+5. `serbia-income-tax.md`
+6. `serbia-payroll.md`
+7. `serbia-social-contributions.md`
+8. `serbia-tax-optimization.md`
+9. `serbia-vat.md`
 
 ## Shared files this package needs
 
