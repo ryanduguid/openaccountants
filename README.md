@@ -4,7 +4,7 @@
 
 **Fork status**
 
-[![Fork code quality](https://app.codacy.com/project/badge/Grade/aae907e043db42b1ad1791f8a4d64028?branch=main)](https://app.codacy.com/gh/ryanduguid/openaccountants/dashboard)
+[![Fork code quality](https://app.codacy.com/project/badge/Grade/aae907e043db42b1ad1791f8a4d64028?branch=main)](https://app.codacy.com/gh/ryanduguid/openaccountants/dashboard) [![Fork quality gate](https://sonarcloud.io/api/project_badges/measure?project=ryanduguid_openaccountants&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ryanduguid_openaccountants)
 
 </div>
 
