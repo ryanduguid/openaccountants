@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2143,
+  "guides": 2146,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -15034,6 +15034,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "mv-tax-system-orientation",
+   "path": "skills/international/maldives/mv-tax-system-orientation.md",
+   "name": "mv-tax-system-orientation",
+   "jurisdiction": "MV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "ml-company-formation",
    "path": "skills/international/mali/ml-company-formation.md",
    "name": "ml-company-formation",
@@ -18297,6 +18310,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "pk-tax-system-orientation",
+   "path": "skills/international/pakistan/pk-tax-system-orientation.md",
+   "name": "pk-tax-system-orientation",
+   "jurisdiction": "PK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "pk-withholding-tax",
    "path": "skills/international/pakistan/pk-withholding-tax.md",
    "name": "pk-withholding-tax",
@@ -21454,6 +21480,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "lk-tax-system-orientation",
+   "path": "skills/international/sri-lanka/lk-tax-system-orientation.md",
+   "name": "lk-tax-system-orientation",
+   "jurisdiction": "LK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "sri-lanka-betting-gaming-excise",

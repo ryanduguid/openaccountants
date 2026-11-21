@@ -6,16 +6,17 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `sri-lanka-betting-gaming-excise.md`
-3. `sri-lanka-capital-gains-tax.md`
-4. `sri-lanka-corporate-tax.md`
-5. `sri-lanka-income-tax.md`
-6. `sri-lanka-payroll.md`
-7. `sri-lanka-provisional-tax-ait.md`
-8. `sri-lanka-sscl.md`
-9. `sri-lanka-stamp-duty.md`
-10. `sri-lanka-vat.md`
-11. `sri-lanka-withholding-tax.md`
+2. `lk-tax-system-orientation.md`
+3. `sri-lanka-betting-gaming-excise.md`
+4. `sri-lanka-capital-gains-tax.md`
+5. `sri-lanka-corporate-tax.md`
+6. `sri-lanka-income-tax.md`
+7. `sri-lanka-payroll.md`
+8. `sri-lanka-provisional-tax-ait.md`
+9. `sri-lanka-sscl.md`
+10. `sri-lanka-stamp-duty.md`
+11. `sri-lanka-vat.md`
+12. `sri-lanka-withholding-tax.md`
 
 ## Shared files this package needs
 
