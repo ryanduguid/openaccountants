@@ -8,7 +8,8 @@
 1. `intake.md`
 2. `ai-gst.md`
 3. `ai-payroll.md`
-4. `references.md`
+4. `ai-tax-system-orientation.md`
+5. `references.md`
 
 ## Shared files this package needs
 
