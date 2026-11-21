@@ -79,7 +79,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | DO | Dominican Republic | 22 | 14 |
 | DZ | Algeria | 4 | 0 |
 | EC | Ecuador | 8 | 0 |
-| EE | Estonia | 8 | 0 |
+| EE | Estonia | 9 | 0 |
 | EG | Egypt | 17 | 0 |
 | EH | Western Sahara | 1 | 0 |
 | ER | Eritrea | 6 | 0 |
@@ -148,9 +148,9 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | LK | Sri Lanka | 10 | 8 |
 | LR | Liberia | 6 | 0 |
 | LS | Lesotho | 6 | 0 |
-| LT | Lithuania | 7 | 0 |
+| LT | Lithuania | 8 | 0 |
 | LU | Luxembourg | 6 | 0 |
-| LV | Latvia | 8 | 0 |
+| LV | Latvia | 9 | 0 |
 | LY | Libya | 6 | 0 |
 | MA | Morocco | 15 | 0 |
 | MC | Monaco | 6 | 0 |

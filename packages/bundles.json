@@ -2250,6 +2250,7 @@
     "ee-company-formation.md",
     "ee-corporate-income-tax.md",
     "ee-tax-overview.md",
+    "ee-tax-system-orientation.md",
     "estonia-income-tax.md",
     "estonia-payroll.md",
     "estonia-social-contributions.md",
@@ -3456,6 +3457,7 @@
     "lv-company-formation.md",
     "lv-corporate-income-tax.md",
     "lv-tax-overview.md",
+    "lv-tax-system-orientation.md",
     "README.md"
    ],
    "shared": [
@@ -3580,6 +3582,7 @@
     "lt-corporate-income-tax.md",
     "lt-payroll-social.md",
     "lt-tax-overview.md",
+    "lt-tax-system-orientation.md",
     "references.md",
     "README.md"
    ],

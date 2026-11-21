@@ -12,7 +12,8 @@
 5. `lt-corporate-income-tax.md`
 6. `lt-payroll-social.md`
 7. `lt-tax-overview.md`
-8. `references.md`
+8. `lt-tax-system-orientation.md`
+9. `references.md`
 
 ## Shared files this package needs
 

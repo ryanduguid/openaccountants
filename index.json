@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2115,
+  "guides": 2118,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -8976,6 +8976,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "ee-tax-system-orientation",
+   "path": "skills/international/estonia/ee-tax-system-orientation.md",
+   "name": "ee-tax-system-orientation",
+   "jurisdiction": "EE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "estonia-income-tax",
    "path": "skills/international/estonia/estonia-income-tax.md",
    "name": "estonia-income-tax",
@@ -13864,6 +13877,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "lv-tax-system-orientation",
+   "path": "skills/international/latvia/lv-tax-system-orientation.md",
+   "name": "lv-tax-system-orientation",
+   "jurisdiction": "LV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "lb-company-formation",
    "path": "skills/international/lebanon/lb-company-formation.md",
    "name": "lb-company-formation",
@@ -14330,6 +14356,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "lt-tax-system-orientation",
+   "path": "skills/international/lithuania/lt-tax-system-orientation.md",
+   "name": "lt-tax-system-orientation",
+   "jurisdiction": "LT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "lithuania-references",

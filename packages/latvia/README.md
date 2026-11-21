@@ -14,6 +14,7 @@
 7. `lv-company-formation.md`
 8. `lv-corporate-income-tax.md`
 9. `lv-tax-overview.md`
+10. `lv-tax-system-orientation.md`
 
 ## Shared files this package needs
 
