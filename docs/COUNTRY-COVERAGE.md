@@ -34,7 +34,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AZ | Azerbaijan | 9 | 0 |
 | BA | Bosnia and Herzegovina | 8 | 0 |
 | BB | Barbados | 6 | 0 |
-| BD | Bangladesh | 18 | 0 |
+| BD | Bangladesh | 19 | 0 |
 | BE | Belgium | 10 | 0 |
 | BF | Burkina Faso | 8 | 0 |
 | BG | Bulgaria | 9 | 0 |
@@ -48,7 +48,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |
 | BR | Brazil | 13 | 8 |
 | BS | Bahamas | 6 | 0 |
-| BT | Bhutan | 6 | 0 |
+| BT | Bhutan | 7 | 0 |
 | BV | Bouvet Island | 1 | 0 |
 | BW | Botswana | 6 | 0 |
 | BY | Belarus | 8 | 0 |
@@ -183,7 +183,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NI | Nicaragua | 7 | 0 |
 | NL | Netherlands (Kingdom of the) | 20 | 0 |
 | NO | Norway | 9 | 0 |
-| NP | Nepal | 5 | 5 |
+| NP | Nepal | 6 | 5 |
 | NR | Naoero | 4 | 0 |
 | NU | Niue | 1 | 0 |
 | NZ | New Zealand | 17 | 0 |

@@ -11,7 +11,8 @@
 4. `bt-income-tax.md`
 5. `bt-payroll-social.md`
 6. `bt-tax-overview.md`
-7. `bt-vat-gst.md`
+7. `bt-tax-system-orientation.md`
+8. `bt-vat-gst.md`
 
 ## Shared files this package needs
 

@@ -21,9 +21,10 @@
 14. `bd-social-contributions.md`
 15. `bd-tax-optimization.md`
 16. `bd-tax-overview.md`
-17. `references.md`
-18. `bangladesh-guided-intake.md`
-19. `bangladesh-return-assembly.md`
+17. `bd-tax-system-orientation.md`
+18. `references.md`
+19. `bangladesh-guided-intake.md`
+20. `bangladesh-return-assembly.md`
 
 ## Shared files this package needs
 

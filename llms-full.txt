@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**2,140 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,143 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (2140 guides, 306 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (2143 guides, 306 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -426,6 +426,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - bd-social-contributions | BD | tier 2 | reviewed_by -
 - bd-tax-optimization | BD | tier 2 | reviewed_by -
 - bd-tax-overview | BD | tier 2 | reviewed_by -
+- bd-tax-system-orientation | BD | tier 2 | reviewed_by -
 - bangladesh-references | BD | tier 2 | reviewed_by -
 - barbados-vat | BB | tier 2 | reviewed_by -
 - bb-company-formation | BB | tier 2 | reviewed_by -
@@ -476,6 +477,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - bt-income-tax | BT | tier 2 | reviewed_by -
 - bt-payroll-social | BT | tier 2 | reviewed_by -
 - bt-tax-overview | BT | tier 2 | reviewed_by -
+- bt-tax-system-orientation | BT | tier 2 | reviewed_by -
 - bt-vat-gst | BT | tier 2 | reviewed_by -
 - bo-corporate-income-tax | BO | tier 2 | reviewed_by -
 - bolivia-income-tax | BO | tier 2 | reviewed_by -
@@ -1400,6 +1402,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - nepal-payroll | NP | tier 1 | reviewed_by Ashish Bista
 - nepal-tds | NP | tier 1 | reviewed_by Ashish Bista
 - nepal-vat | NP | tier 1 | reviewed_by Ashish Bista
+- np-tax-system-orientation | NP | tier 2 | reviewed_by -
 - netherlands-30-percent-ruling | NL | tier 2 | reviewed_by -
 - netherlands-bookkeeping | NL | tier 2 | reviewed_by -
 - netherlands-crypto-tax | NL | tier 2 | reviewed_by -
@@ -2340,7 +2343,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**2,140 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**2,143 Guides** across **306 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2358,7 +2361,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,976 Tier 2 guides among the 2,140 indexed guides. These inventory
+There are 1,979 Tier 2 guides among the 2,143 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and

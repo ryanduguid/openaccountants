@@ -11,6 +11,7 @@
 4. `nepal-payroll.md`
 5. `nepal-tds.md`
 6. `nepal-vat.md`
+7. `np-tax-system-orientation.md`
 
 ## Shared files this package needs
 
