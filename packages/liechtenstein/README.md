@@ -11,7 +11,8 @@
 4. `li-income-tax.md`
 5. `li-payroll-social.md`
 6. `li-tax-overview.md`
-7. `liechtenstein-vat.md`
+7. `li-tax-system-orientation.md`
+8. `liechtenstein-vat.md`
 
 ## Shared files this package needs
 
