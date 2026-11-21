@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2161,
+  "guides": 2164,
   "jurisdictions": 306,
   "accountant_reviewed": 164
  },
@@ -15788,6 +15788,19 @@
    "last_updated": "2026-11-02"
   },
   {
+   "slug": "fm-tax-system-orientation",
+   "path": "skills/international/micronesia/fm-tax-system-orientation.md",
+   "name": "fm-tax-system-orientation",
+   "jurisdiction": "FM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
+  },
+  {
    "slug": "md-company-formation",
    "path": "skills/international/moldova/md-company-formation.md",
    "name": "md-company-formation",
@@ -19231,6 +19244,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-25"
+  },
+  {
+   "slug": "pr-tax-system-orientation",
+   "path": "skills/international/puerto-rico/pr-tax-system-orientation.md",
+   "name": "pr-tax-system-orientation",
+   "jurisdiction": "PR",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "qa-company-formation",
@@ -24249,6 +24275,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-25"
+  },
+  {
+   "slug": "vi-tax-system-orientation",
+   "path": "skills/international/united-states-virgin-islands/vi-tax-system-orientation.md",
+   "name": "vi-tax-system-orientation",
+   "jurisdiction": "VI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-21"
   },
   {
    "slug": "uruguay-income-tax",

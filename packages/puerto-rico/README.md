@@ -8,6 +8,7 @@
 1. `intake.md`
 2. `pr-medicare-ordinary-share-reference.md`
 3. `pr-oasdi-annual-wage-base-reference.md`
+4. `pr-tax-system-orientation.md`
 
 ## Shared files this package needs
 
