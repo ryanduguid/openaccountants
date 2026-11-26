@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2204,
+  "guides": 2205,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -17592,7 +17592,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "ni-tax-overview",
@@ -17604,8 +17604,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "nicaragua-income-tax",
@@ -17618,7 +17618,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "nicaragua-iva",
@@ -17631,7 +17631,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "nicaragua-payroll",
@@ -17644,7 +17644,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "nicaragua-social-contributions",
@@ -17657,7 +17657,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "ne-company-formation",
@@ -18880,6 +18880,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-21"
+  },
+  {
+   "slug": "pa-tax-system-orientation",
+   "path": "skills/international/panama/pa-tax-system-orientation.md",
+   "name": "pa-tax-system-orientation",
+   "jurisdiction": "PA",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "panama-income-tax",

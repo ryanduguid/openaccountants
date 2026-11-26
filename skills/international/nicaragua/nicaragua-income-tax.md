@@ -1,10 +1,10 @@
 ---
 name: nicaragua-income-tax
 description: Use this skill whenever asked about Nicaragua income tax (Impuesto sobre la Renta, IR) on employment income — rentas del trabajo. Trigger on phrases like "how much tax do I pay in Nicaragua", "Impuesto sobre la Renta", "IR rentas del trabajo", "retención IR", "IR-122", "IR-106", "annual income tax return Nicaragua", "INSS laboral", "córdoba tax", "DGI", "payroll income tax Nicaragua", "exempt threshold C$100,000", or any question about computing or filing income tax on salary for a Nicaraguan resident employee. Also trigger when preparing or reviewing monthly IR withholding, annualizing a salary to the progressive scale, computing the deductible 7% INSS laboral before IR, or advising on the annual IR-106 filing obligation. This skill covers the progressive employment-income scale (exempt up to C$100,000/yr, then 15/20/25/30%), the deductibility of INSS laboral, monthly withholding via IR-122, the annual IR-106 return, non-resident definitive withholding, and the interaction with INSS. ALWAYS read this skill before touching any Nicaragua income-tax work.
-version: 0.2
+version: 0.3
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nicaraguan Income Tax -- Rentas del Trabajo
 
-## Nicaraguan Income Tax -- Rentas del Trabajo Skill v0.2
+## Nicaraguan Income Tax -- Rentas del Trabajo Skill v0.3
 
 > **DISAMBIGUATION:** "NI" in this skill means **NICARAGUA**, the Central American republic. It does **NOT** mean Northern Ireland or UK National Insurance. There is no HMRC, no pound sterling, and no UK content anywhere in this skill. Currency is the **córdoba (C$ / NIO)**. The tax authority is the **DGI (Dirección General de Ingresos)**. Social security is administered by **INSS (Instituto Nicaragüense de Seguridad Social)**.
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social security | INSS — Instituto Nicaragüense de Seguridad Social |
 | Training levy | INATEC (2%, employer-paid only) |
 | Monthly withholding form | IR-122 (employer withholds and remits monthly) |
-| Annual individual return | IR-106 (due within 90 days after year-end, ~31 March) |
+| Annual employment IR return | Confirm the filing window and form with the DGI when a return is required (see section 5.5). |
 | Validated by | Pending — requires sign-off by a Nicaraguan licensed accountant (Contador Público Autorizado, CCPN) |
 | Validation date | Pending |
 | Skill version | 0.2 |
@@ -271,7 +271,7 @@ All amounts in córdobas (C$). Every total reconciles to the cent.
 | Single employer, standard withholding, no extra deductions | **Not required** — withholding is final |
 | Income from **more than one employer** totaling **over C$100,000/year** | **Required** — file IR-106 |
 
-- **IR-106 form details** — Form IR-106 is the annual individual income-tax return. It is due within 90 days after year-end (≈ 31 March). Any final payment is due with the return.
+- **Annual employment IR filing.** Confirm the filing window and form with the DGI when a return is required. Article 29 governs employment returns. The business IR deadline is set separately by Article 69. [Law 822, art. 29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) · [Decree 01-2013, art. 22](https://www.mem.gob.ni/wp-content/uploads/2023/08/2013.01.22-Reglamento-Ley-822-G-12.pdf) · [Law 987, amended art. 69(1)](https://www.mem.gob.ni/wp-content/uploads/2023/08/2019.02.28-Ley-987-Reforma-a-Ley-822-G-41.pdf)
 
 ### 5.6 Non-Resident Definitive Withholding
 
@@ -400,7 +400,7 @@ REVIEWER FLAGS:
 | Form | Purpose | Frequency / Deadline |
 | --- | --- | --- |
 | IR-122 | Monthly withholding income-tax return (employer withholds and remits) | Monthly |
-| IR-106 | Annual individual income-tax return | Within 90 days of year-end (~31 March) |
+| Annual employment IR return | Reconcile qualifying employment income and withholding | Confirm the filing window and form with the DGI when a return is required. |
 
 ## Section 9 -- Onboarding Fallback
 

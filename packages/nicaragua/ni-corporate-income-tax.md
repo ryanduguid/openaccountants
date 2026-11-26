@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Nicaragua (tax year 2
 jurisdiction: NI
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.2
+last_updated: 2026-11-22
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,10 +15,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate income tax — rates and base
 
-Companies pay IR on Nicaraguan-source business income (rentas de actividades económicas) at the higher of 30% of net taxable income or a 1%–3% definitive minimum tax on gross income. The framework is the Ley de Concertación Tributaria (Law 822).
+Companies pay IR on Nicaraguan-source business income (rentas de actividades económicas). Where the definitive minimum applies, pay the higher of the ordinary annual IR and the minimum. [Law 822, arts. 52 and 55](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf)
 
-- **Standard corporate income tax rate** — 30% of net taxable income  _(Ley de Concertación Tributaria (Law 822))_
-- **Definitive minimum tax (pago mínimo definitivo)** — 1%–3% of gross income; CIT due is the higher of this or 30% of net income  _(Ley de Concertación Tributaria (Law 822))_
+- **Standard corporate income tax rate.** 30% of net taxable income. A separate schedule applies to net income where annual gross income is C$12 million or less. [Law 822, art. 52](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf)
+- **Definitive minimum tax (pago mínimo definitivo).** Generally 1%–3% of gross taxable income, depending on taxpayer category. Compare with the ordinary annual IR where the minimum applies. [Law 822, art. 55](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) · [Law 987, amended arts. 59 and 61](https://www.mem.gob.ni/wp-content/uploads/2023/08/2019.02.28-Ley-987-Reforma-a-Ley-822-G-41.pdf)
 - **Tax base** — Net taxable income from Nicaraguan-source economic activity (gross taxable income less allowed deductions)  _(Ley de Concertación Tributaria (Law 822))_
 - **Territorial basis** — Only income generated in, or causing effects in, Nicaragua is taxed  _(Ley de Concertación Tributaria (Law 822))_
 - **Minimum tax exemption — new companies** — The 1%–3% minimum tax does not apply during the first three fiscal periods of a newly incorporated company  _(Ley de Concertación Tributaria (Law 822))_
@@ -30,7 +30,7 @@ Companies pay IR on Nicaraguan-source business income (rentas de actividades eco
 - **Withholding on local goods/services (resident)** — 2%  _(Ley de Concertación Tributaria (Law 822))_
 - **Withholding on payments to tax-haven jurisdictions** — 30% WHT  _(Ley de Concertación Tributaria (Law 822))_
 - **Monthly advance payments (anticipos / PMD)** — Monthly advance of 1%–3% of gross income, creditable against annual CIT  _(Ley de Concertación Tributaria (Law 822))_
-- **Annual CIT return filing/payment deadline** — Within 3 months after fiscal year-end (by 31 March for a 31 December year-end) (approx — confirm; some guides cite 2 months / 28 February)  _(Ley de Concertación Tributaria (Law 822))_
+- **Annual business IR return and payment.** File and pay by the last calendar day of the second month after the end of the fiscal period, subject to any applicable deadline adjustment. Simplified regimes have separate obligations. [Law 987, amended art. 69(1)](https://www.mem.gob.ni/wp-content/uploads/2023/08/2019.02.28-Ley-987-Reforma-a-Ley-822-G-41.pdf)
 
 <!-- openaccountants-cta-block -->
 

@@ -1,10 +1,10 @@
 ---
 name: nicaragua-payroll
 description: Use this skill whenever asked about Nicaragua payroll processing for employed persons. Trigger on phrases like "Nicaragua payroll", "nomina Nicaragua", "INSS deduction", "INSS laboral", "INSS patronal", "IR rentas del trabajo", "retencion IR Nicaragua", "INATEC 2%", "Form IR-122", "Form IR-106", "planilla INSS", "salario neto Nicaragua", "net salary Nicaragua", "cordoba payroll", "employer social security Nicaragua", "salario minimo Nicaragua", "minimum wage Nicaragua", "gross to net Nicaragua", or any question about computing employee pay, income-tax withholding, or social-security contributions for Nicaragua-based employees. This skill covers IR (rentas del trabajo) progressive withholding, INSS employee/employer contributions (Regimen Integral), the INATEC training levy, sector minimum wages, payroll filing obligations (IR-122, IR-106, INSS planilla), and penalties. The reporting currency is the Nicaraguan cordoba (NIO / C$). ALWAYS read this skill before processing any Nicaragua payroll.
-version: 0.3
+version: 0.4
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Nicaragua Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+# Nicaragua Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Nicaragua Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+## Nicaragua Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
 ## Section 1 -- Quick Reference
 
@@ -457,7 +457,7 @@ A precise statutory registration deadline window could not be isolated from an o
 | Form | Purpose | Deadline |
 | --- | --- | --- |
 | IR-122 | Monthly IR withholding remittance | Within the first days of the following month — commonly stated as the **first 5 working days**, but the exact day was **not** confirmed from an official DGI source. **[RESEARCH GAP — reviewer to confirm]** [secondary summary, tax administration] |
-| IR-106 | Annual IR return | Within **90 days after year-end** (~31 March). For TY2025, DGI announced Form 106 with deadline **28 February 2026**. [EY Nicaragua DGI annual-declaration alert] |
+| Annual employment IR return | Reconcile qualifying employment income and withholding | Confirm the filing window and form with the DGI when a return is required. [Law 822, arts. 28–29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) · [Decree 01-2013, art. 22](https://www.mem.gob.ni/wp-content/uploads/2023/08/2013.01.22-Reglamento-Ley-822-G-12.pdf) |
 
 - **Filing exemption / aggregate income rule** — Employees with a single employer and no education/health/professional-service deductions are exempt from filing. Employees with two or more employers whose aggregate income exceeds C$100,000/year must file annually.  _([secondary summary, tax administration])_
 
@@ -513,7 +513,7 @@ A precise statutory registration deadline window could not be isolated from an o
 | INATEC | 2.0% | INATEC decree |
 | INSS ceiling | None (disputed) | 2019 reform — **[RESEARCH GAP]** |
 | INSS payment deadline | First 10 business days of following month | INSS Reglamento General |
-| IR-106 annual deadline | 90 days after year-end (~31 Mar); TY2025 = 28 Feb 2026 | EY |
+| Annual employment IR filing | Confirm the filing window and form with the DGI when a return is required. | [Law 822, arts. 28–29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) |
 | INSS mora | 2% monthly | INSS Reglamento General |
 
 ### Numbered Test Suite (recompute to confirm before relying on this skill)

@@ -6,10 +6,11 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `panama-income-tax.md`
-3. `panama-itbms.md`
-4. `panama-payroll.md`
-5. `panama-social-contributions.md`
+2. `pa-tax-system-orientation.md`
+3. `panama-income-tax.md`
+4. `panama-itbms.md`
+5. `panama-payroll.md`
+6. `panama-social-contributions.md`
 
 ## Shared files this package needs
 
