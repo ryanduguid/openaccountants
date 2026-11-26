@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Jamaica (tax year 202
 jurisdiction: JM
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.2
+last_updated: 2026-11-27
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -28,8 +28,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **WHT on royalties to non-residents** — 33 1/3% to non-resident companies and 25% to non-resident individuals (non-treaty), as reported; Tax Administration Jamaica states 25% where no double taxation agreement applies and treaty rates of 10% to 12.5% `[RESEARCH GAP — reviewer to confirm the company rate in the Income Tax Act]`  _(Tax Administration Jamaica, Non-residents and Income Tax — https://www.jamaicatax.gov.jm/documents/10181/123967/non-residents-and-income-tax-final-document.pdf/7bfdd5c6-eb64-926e-e5c3-ea296e5f4831)_
 - **WHT on management fees to non-residents** — 33 1/3% to non-resident companies and 25% to non-resident individuals (non-treaty), as reported; Tax Administration Jamaica states 25% where no double taxation agreement applies and treaty rates of 10% to 12.5% `[RESEARCH GAP — reviewer to confirm the company rate in the Income Tax Act]`  _(Tax Administration Jamaica, Non-residents and Income Tax — https://www.jamaicatax.gov.jm/documents/10181/123967/non-residents-and-income-tax-final-document.pdf/7bfdd5c6-eb64-926e-e5c3-ea296e5f4831)_
 - **WHT remittance deadline** — Within 14 days after the end of the calendar month in which the payment is made (Income Tax Act s 41(1)); unremitted deductions are increased at up to 50% per annum under s 41(2)  _(Tax Administration Jamaica, Employer's Guide (December 2019), PAYE Audits, Interest and Penalties — https://www.jamaicatax.gov.jm/documents/10194/14559577/Employers_guide_13122019.pdf/9d09b82e-e215-6aaa-72c8-7b8a3dd7f061)_
-- **Corporate income tax return deadline** — Annual return (Form IT02) due 15 March of the following year, filed online  _(Tax Administration Jamaica, Income Tax forms page (IT02 and IT07 filing dates) — https://www.jamaicatax.gov.jm/web/guest/income-tax1)_
-- **Corporate estimated tax** — Declaration of estimated income (Form IT07) due 15 March, with instalments due 15 March, 15 June, 15 September and 15 December  _(Tax Administration Jamaica, Income Tax forms page (IT02 and IT07 filing dates) — https://www.jamaicatax.gov.jm/web/guest/income-tax1 ; Tax Administration Jamaica, Income Tax for Individuals and Businesses (April 2019) — https://www.jamaicatax.gov.jm/documents/10181/106853/Income+Tax+for+Individuals++Businesses+042019.pdf/f3d77ed8-eba4-0698-180f-8dd0293a640f)_
+- **Corporate income tax return deadline** — From the 2025 year of assessment, a body corporate files its final income tax return and pays any balance by 15 April of the following year. Ordinary companies file form IT02 online.  _(Income Tax (Amendment) Act 2026, section 4 — https://lipj.gov.jm/cms/uploads/No_4_The_Income_Tax_Amendment_Act_2026_b91cadadc0.pdf ; TAJ April 2026 filing reminder — https://taj-astro.vercel.app/news/just-two-days-remaining-to-file-corporate-income-tax-and-assets-tax-returns-deadline-april-15)_
+- **Corporate estimated tax** — Where estimated tax applies, the declaration (Form IT07) is ordinarily due 15 March of the assessment year. Instalments are ordinarily due 15 March, 15 June, 15 September and 15 December. Check the commencement rule in section 65 for a new source.  _(Income Tax Act, sections 65 and 66 — https://laws.moj.gov.jm/legislation/statutes/I/The%20Income%20Tax%20Act_0.pdf ; TAJ filing dates — https://www.jamaicatax.gov.jm/web/guest/home/-/blogs/government-introduces-separate-filing-dates-for-corporate-and-individual-incometaxreturns-effective-year-of-assessment-2025)_
 - **Asset tax (financial institutions)** — 0.25% on taxable assets of deposit-taking institutions, securities dealers and insurers `[RESEARCH GAP — reviewer to confirm the current rate: a cut to 0.125% announced for 2021 was reported as not implemented]`  _(Assets Tax (Specified Bodies) Act, Ministry of Justice statute library — https://laws.moj.gov.jm/library/statute/the-assets-tax-specified-bodies-act)_
 
 <!-- openaccountants-cta-block -->
