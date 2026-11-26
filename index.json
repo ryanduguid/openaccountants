@@ -13042,7 +13042,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "jm-income-tax",
@@ -13080,8 +13080,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "japan-bookkeeping",
@@ -23610,8 +23610,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "irpp-calculation",
