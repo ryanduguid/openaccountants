@@ -44,7 +44,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BL | Saint Barthélemy | 2 | 0 |
 | BM | Bermuda | 8 | 0 |
 | BN | Brunei Darussalam | 7 | 0 |
-| BO | Bolivia (Plurinational State of) | 6 | 0 |
+| BO | Bolivia (Plurinational State of) | 7 | 0 |
 | BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |
 | BR | Brazil | 14 | 8 |
 | BS | Bahamas | 6 | 0 |
@@ -200,7 +200,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PS | State of Palestine | 1 | 0 |
 | PT | Portugal | 15 | 8 |
 | PW | Palau | 3 | 0 |
-| PY | Paraguay | 4 | 0 |
+| PY | Paraguay | 5 | 0 |
 | QA | Qatar | 6 | 0 |
 | RE | Réunion | 2 | 0 |
 | RO | Romania | 10 | 0 |

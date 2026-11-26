@@ -10,6 +10,7 @@
 3. `paraguay-iva.md`
 4. `paraguay-payroll.md`
 5. `paraguay-social-contributions.md`
+6. `py-tax-overview.md`
 
 ## Shared files this package needs
 

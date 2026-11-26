@@ -7,11 +7,12 @@
 
 1. `intake.md`
 2. `bo-corporate-income-tax.md`
-3. `bolivia-income-tax.md`
-4. `bolivia-iva.md`
-5. `bolivia-payroll.md`
-6. `bolivia-social-contributions.md`
-7. `bolivia-tax-optimization.md`
+3. `bo-tax-overview.md`
+4. `bolivia-income-tax.md`
+5. `bolivia-iva.md`
+6. `bolivia-payroll.md`
+7. `bolivia-social-contributions.md`
+8. `bolivia-tax-optimization.md`
 
 ## Shared files this package needs
 
