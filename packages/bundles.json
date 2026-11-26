@@ -769,6 +769,7 @@
    "files": [
     "intake.md",
     "bo-corporate-income-tax.md",
+    "bo-tax-overview.md",
     "bolivia-income-tax.md",
     "bolivia-iva.md",
     "bolivia-payroll.md",
@@ -4595,6 +4596,7 @@
     "paraguay-iva.md",
     "paraguay-payroll.md",
     "paraguay-social-contributions.md",
+    "py-tax-overview.md",
     "README.md"
    ],
    "shared": [

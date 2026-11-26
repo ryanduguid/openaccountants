@@ -1,11 +1,11 @@
 ---
 name: bolivia-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bolivia IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like "Bolivia IVA", "Bolivia VAT", "SIN filing", "factura", or any request involving Bolivia IVA. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Bolivia IVA work.
-version: 2.1
+version: 2.2
 jurisdiction: BO
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,12 +20,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Bolivia (Estado Plurinacional de Bolivia) |
-| Standard rate | 13% (IVA — embedded in price, not added on top) |
+| Standard rate | 13% of the invoiced taxable amount under the inclusive method |
 | IT rate | 3% (Impuesto a las Transacciones — applies alongside IVA) |
 | Zero rate | 0% (exports) |
 | Exempt | Basic food basket, education, financial services (limited) |
-| Return form | Monthly IVA return (Form 200) via Newton portal |
-| Filing portal | https://newton.impuestos.gob.bo (SIAT/Newton) |
+| Return form | Monthly IVA return (Form 200) via SIAT en Línea |
+| Filing portal | [SIAT en Línea](https://siat.impuestos.gob.bo/) |
 | Authority | Servicio de Impuestos Nacionales (SIN) |
 | Currency | BOB (Boliviano) |
 | Filing frequency | Monthly |
@@ -33,13 +33,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Companion skill | vat-workflow-base v0.1 or later — MUST be loaded |
 | Validated by | Pending — requires licensed Bolivian tax practitioner |
 
-- **IVA embedded in price** — CRITICAL: Bolivia IVA is embedded in the price (not added on top). The 13% is already included in the selling price. Credito fiscal (input tax credit) requires a factura (official invoice) from SIN-authorized billing system.
+- **Inclusive method.** For taxable domestic invoices before the change under Law 1733 takes effect, IVA is 13% of the invoiced taxable amount. An eligible input credit requires a valid fiscal invoice. [Law 843, arts 5 and 7–8](https://www.impuestos.gob.bo/wp-content/uploads/2026/11/1.-LEY-N%C2%B0-843-10-26.pdf)
+- **Change under Law 1733.** The new method applies 13% to the pre-tax value and shows IVA separately. It takes effect on the first day of the month following publication of the regulating supreme decree. SIN Resolution 102600000045 extended the invoicing pilot until that publication. Verify the decree and the applicable method for the invoice date before calculating. [Law 1733, second additional and sole final provisions](https://www.impuestos.gob.bo/wp-content/uploads/2026/05/L17332051NCPP.pdf) · [SIN Resolution 102600000045](https://www.impuestos.gob.bo/wp-content/uploads/2026/11/RND-45.pdf)
 
 **Conservative defaults**
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown rate on a sale | 13% IVA (embedded) |
+| Unknown rate or method on a sale | Verify the taxable classification and invoice date before calculating IVA |
 | Unknown input credit status | Not creditable (no factura assumed) |
 | Unknown counterparty location | Domestic Bolivia |
 
@@ -115,25 +116,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Input line: `05.04.2026 ; EMPRESA ABC SRL ; CREDIT ; Factura 1041 servicios ; BOB 11,300`
 
-Reasoning: IVA is embedded. Gross = BOB 11,300 = net. IVA component = 11,300 * 13/113 = BOB 1,300. Debito fiscal.
+Reasoning: Under the inclusive method, output IVA is BOB 11,300 × 13% = BOB 1,469. The amount after IVA is BOB 9,831.
 
 **Example 1 result table**  _(—)_
 
 | Date | Counterparty | Gross | Net | IVA | Rate | Field | Default? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 05.04.2026 | EMPRESA ABC SRL | +11,300 | +10,000 | 1,300 | 13% | Debito fiscal | N | — |
+| 05.04.2026 | EMPRESA ABC SRL | +11,300 | +9,831 | 1,469 | 13% | Debito fiscal | N | — |
 
 ### Example 2 — Purchase with factura (credito fiscal)
 
 Input line: `10.04.2026 ; PROVEEDOR XYZ ; DEBIT ; Factura 5678 insumos ; BOB -5,650`
 
-Reasoning: Purchase with SIN-authorized factura. Credito fiscal = 5,650 * 13/113 = BOB 650.
+Reasoning: Assuming the fiscal invoice qualifies in full, the inclusive-method input credit is BOB 5,650 × 13% = BOB 734.50. The amount after IVA is BOB 4,915.50.
 
 **Example 2 result table**  _(—)_
 
 | Date | Counterparty | Gross | Net | IVA | Rate | Field | Default? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 10.04.2026 | PROVEEDOR XYZ | -5,650 | -5,000 | 650 | 13% | Credito fiscal | N | — |
+| 10.04.2026 | PROVEEDOR XYZ | -5,650 | -4,915.50 | 734.50 | 13% | Credito fiscal | N | — |
 
 ### Example 3 — Export, zero-rated
 
@@ -157,9 +158,9 @@ Input line: `30.04.2026 ; BNB ; DEBIT ; Comision mensual ; BOB -30`
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
-### 5.1 Standard rate 13% (embedded) — IVA is included in the total price. Extract: total * 13/113.
+### 5.1 Standard rate 13% under the inclusive method
 
-- **Standard rate 13% (embedded)** — IVA is included in the total price. Extract: total * 13/113.
+Calculate IVA as the invoiced taxable amount × 13%. See the change under Law 1733 above for invoices from the future commencement date.
 
 ### 5.2 Zero rate — Exports with customs documentation.
 
@@ -241,10 +242,13 @@ BNB and Banco Mercantil exports CSV/PDF. BOB primary. Spanish descriptions. Inte
 
 ### Sources
 
-1. Ley 843 (Tax Reform Law, IVA provisions). 2. SIN regulations. 3. Newton/SIAT portal.
+- [Law 843, arts 5, 7–8 and 15, and Supreme Decree 21530, art 10](https://www.impuestos.gob.bo/wp-content/uploads/2026/11/1.-LEY-N%C2%B0-843-10-26.pdf)
+- [Law 1733, second additional and sole final provisions](https://www.impuestos.gob.bo/wp-content/uploads/2026/05/L17332051NCPP.pdf) and [SIN Resolution 102600000045](https://www.impuestos.gob.bo/wp-content/uploads/2026/11/RND-45.pdf)
+- [SIN monthly IVA filing instructions](https://siatanexo.impuestos.gob.bo/index.php/declaraciones-juradas-en-formato-electronico/impuesto-al-valor-agregado/200-impuesto-al-valor-agregado)
 
 ### Change log
 
+- v2.2 (November 2026): Correct the inclusive IVA formula and April examples. Add the statutory commencement condition for separately shown IVA.
 - v2.1 (April 2026): Full rewrite to Malta v2.1 ten-section structure.
 
 ## Disclaimer

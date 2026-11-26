@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2205,
+  "guides": 2207,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -4686,6 +4686,19 @@
    "last_updated": "2026-11-03"
   },
   {
+   "slug": "bo-tax-overview",
+   "path": "skills/international/bolivia/bo-tax-overview.md",
+   "name": "bo-tax-overview",
+   "jurisdiction": "BO",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
+  },
+  {
    "slug": "bolivia-income-tax",
    "path": "skills/international/bolivia/bolivia-income-tax.md",
    "name": "bolivia-income-tax",
@@ -4709,7 +4722,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "bolivia-payroll",
@@ -19075,6 +19088,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "py-tax-overview",
+   "path": "skills/international/paraguay/py-tax-overview.md",
+   "name": "py-tax-overview",
+   "jurisdiction": "PY",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "pe-company-formation",
