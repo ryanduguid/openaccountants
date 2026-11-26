@@ -1,10 +1,10 @@
 ---
 name: nicaragua-social-contributions
 description: Use this skill whenever asked about Nicaragua (ISO NI) social security and payroll taxes for employees and employers. Trigger on phrases like "how much INSS do I pay", "Nicaragua social security", "INSS employer contribution", "INSS laboral patronal", "INATEC 2%", "Nicaragua payroll tax", "Régimen Integral", "IVM IVM-RP", "córdoba payroll", "IR rentas del trabajo", "Nicaragua income tax withholding", "Form IR-122", "Form IR-106", "retención salarial Nicaragua", or any question about Nicaraguan INSS/INATEC/payroll IR obligations. Also trigger when classifying Nicaraguan bank statement transactions that relate to INSS debits, INATEC payments, DGI retention remittances, or payroll runs from BANPRO, BAC, LAFISE, FICOHSA or other Nicaraguan banks. This skill covers INSS employee/employer rates by regime, the INATEC training levy, the IR progressive employment-income schedule, monthly and annual filing deadlines, registration, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Nicaraguan social-contribution or payroll work.
-version: 0.3
+version: 0.4
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Income-tax top marginal rate | 30% on income above C$500,000/year (LCT Art. 23) |
 | Non-resident WHT (Nicaraguan-source) | 20% definitive WHT — the secondary summary |
 | Monthly remittance form | IR-122 (retenciones), due 5th of following month — DGI FAQ |
-| Annual individual return | IR-106, due within 90 days of year-end (~31 March) — the secondary summary |
+| Annual employment IR return | Confirm the filing window and form with the DGI when a return is required. |
 | Validated by | Pending — requires sign-off by a Nicaraguan licensed accountant (contador público autorizado) |
 | Validation date | Pending |
 
@@ -67,7 +67,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Minimum viable inputs** — gross monthly salary (in córdobas) and contribution regime (Integral vs IVM-RP). Without gross salary, STOP. Do not compute INSS or IR.
 - **Recommended inputs** — employer headcount (≤50 vs >50, determines employer INSS rate), residence/domicile of the employee, and whether the individual has more than one employer.
-- **Ideal inputs** — INSS planilla (payroll schedule), DGI IR-122 monthly remittances, prior-year IR-106 (if filed), and bank statements showing INSS/INATEC/DGI debits.
+- **Ideal inputs** — INSS planilla (payroll schedule), DGI IR-122 monthly remittances, prior annual employment return (if filed), and bank statements showing INSS/INATEC/DGI debits.
 
 ### Refusal catalogue
 
@@ -112,7 +112,7 @@ This is the deterministic pre-classifier for Nicaraguan bank statement transacti
 | --- | --- | --- |
 | DGI, DIRECCION GENERAL DE INGRESOS | EXCLUDE -- income tax remittance | IR, not social security |
 | IR-122, RETENCION IR, RETENCIONES | EXCLUDE -- IR withholding remittance | Monthly employer withholding (Form IR-122) |
-| IR-106, RENTA ANUAL | EXCLUDE -- annual income-tax return payment | Form IR-106 |
+| RENTA ANUAL | EXCLUDE -- annual income-tax return payment | Confirm against the tax receipt |
 | RENTAS DEL TRABAJO | EXCLUDE -- employment-income IR | Not INSS |
 
 ### 3.4 Salary and payroll (exclude from contribution classification)
@@ -275,9 +275,9 @@ Cumulative-tax check: 100,000×15% = 15,000 → base for next band. 15,000 + 150
 
 - **Monthly remittance deadline** — Employers withhold and remit employment-income IR monthly via Form IR-122, due no later than the 5th day of the following month.  _(DGI FAQ)_
 
-### Rule 10 -- Annual individual return (Form IR-106)
+### Rule 10 -- Annual employment income return
 
-- **Annual individual return deadline** — Annual individual return is Form IR-106, due within 90 days after year-end (~31 March). Final tax payment also due within 90 days after year-end.  _(secondary summary)_
+- **Annual employment IR filing.** Confirm the filing window and form with the DGI when a return is required. [Law 822, arts. 28–29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) · [Decree 01-2013, art. 22](https://www.mem.gob.ni/wp-content/uploads/2023/08/2013.01.22-Reglamento-Ley-822-G-12.pdf)
 
 ### Rule 11 -- Single-employer filing exemption
 
@@ -297,7 +297,7 @@ When bank statement data is ambiguous or client circumstances are unclear, flag 
 
 ### T2-3 -- Multiple employers and annual return obligation
 
-- **T2-3** — Trigger: Individual has income from more than one employer in the year. Issue: Aggregate income from multiple employers exceeding C$100,000 triggers an annual IR-106 filing obligation; withholding by each employer may not equal the correct annual tax. Action: Flag for reviewer. Recommend an annual reconciliation on Form IR-106.
+- **T2-3** — Trigger: Individual has income from more than one employer in the year. Issue: Aggregate income from multiple employers exceeding C$100,000 triggers an annual employment income return obligation; withholding by each employer may not equal the correct annual tax. Action: Flag for reviewer. Reconcile income and withholding and confirm the applicable form and deadline with the DGI.
 
 ### T2-4 -- Source of income (territorial system)
 
@@ -351,7 +351,7 @@ NON-RESIDENT (if applicable)
 
 FILING / REMITTANCE
   Monthly IR-122 due:            5th of following month
-  Annual IR-106 due:             within 90 days of year-end (~31 Mar)
+  Annual employment IR filing:  [deadline confirmed with DGI, if required]
 
 REVIEWER FLAGS
   [List any Tier 2 flags here]
@@ -452,7 +452,7 @@ Note: each 2026 figure is 4% above its 2025 figure and applies retroactively fro
 | Obligation | Form | Deadline | Source |
 | --- | --- | --- | --- |
 | Monthly IR withholding | IR-122 | 5th of following month | DGI FAQ |
-| Annual individual return | IR-106 | Within 90 days of year-end (~31 Mar) | secondary summary |
+| Annual employment IR return | Confirm form with the DGI | Confirm deadline with the DGI when a return is required. | [Law 822, arts. 28–29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) |
 | INSS / INATEC monthly remittance | INSS planilla | Monthly (via INSS) | INSS / Ley Orgánica del INATEC |
 
 ### Registration

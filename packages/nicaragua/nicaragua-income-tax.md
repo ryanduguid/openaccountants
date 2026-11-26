@@ -1,10 +1,10 @@
 ---
 name: nicaragua-income-tax
-description: Use this skill whenever asked about Nicaragua income tax (Impuesto sobre la Renta, IR) on employment income — rentas del trabajo. Trigger on phrases like "how much tax do I pay in Nicaragua", "Impuesto sobre la Renta", "IR rentas del trabajo", "retención IR", "IR-122", "IR-106", "annual income tax return Nicaragua", "INSS laboral", "córdoba tax", "DGI", "payroll income tax Nicaragua", "exempt threshold C$100,000", or any question about computing or filing income tax on salary for a Nicaraguan resident employee. Also trigger when preparing or reviewing monthly IR withholding, annualizing a salary to the progressive scale, computing the deductible 7% INSS laboral before IR, or advising on the annual IR-106 filing obligation. This skill covers the progressive employment-income scale (exempt up to C$100,000/yr, then 15/20/25/30%), the deductibility of INSS laboral, monthly withholding via IR-122, the annual IR-106 return, non-resident definitive withholding, and the interaction with INSS. ALWAYS read this skill before touching any Nicaragua income-tax work.
-version: 0.2
+description: Use this skill whenever asked about Nicaragua income tax (Impuesto sobre la Renta, IR) on employment income — rentas del trabajo. Trigger on phrases like "how much tax do I pay in Nicaragua", "Impuesto sobre la Renta", "IR rentas del trabajo", "retención IR", "IR-122", "IR-106", "annual income tax return Nicaragua", "INSS laboral", "córdoba tax", "DGI", "payroll income tax Nicaragua", "exempt threshold C$100,000", or any question about computing or filing income tax on salary for a Nicaraguan resident employee. Also trigger when preparing or reviewing monthly IR withholding, annualizing a salary to the progressive scale, computing the deductible 7% INSS laboral before IR, or advising on the annual employment income return obligation. This skill covers the progressive employment-income scale (exempt up to C$100,000/yr, then 15/20/25/30%), the deductibility of INSS laboral, monthly withholding via IR-122, the annual employment income return, non-resident definitive withholding, and the interaction with INSS. ALWAYS read this skill before touching any Nicaragua income-tax work.
+version: 0.3
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nicaraguan Income Tax -- Rentas del Trabajo
 
-## Nicaraguan Income Tax -- Rentas del Trabajo Skill v0.2
+## Nicaraguan Income Tax -- Rentas del Trabajo Skill v0.3
 
 > **DISAMBIGUATION:** "NI" in this skill means **NICARAGUA**, the Central American republic. It does **NOT** mean Northern Ireland or UK National Insurance. There is no HMRC, no pound sterling, and no UK content anywhere in this skill. Currency is the **córdoba (C$ / NIO)**. The tax authority is the **DGI (Dirección General de Ingresos)**. Social security is administered by **INSS (Instituto Nicaragüense de Seguridad Social)**.
 
@@ -35,10 +35,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social security | INSS — Instituto Nicaragüense de Seguridad Social |
 | Training levy | INATEC (2%, employer-paid only) |
 | Monthly withholding form | IR-122 (employer withholds and remits monthly) |
-| Annual individual return | IR-106 (due within 90 days after year-end, ~31 March) |
+| Annual employment IR return | Confirm the filing window and form with the DGI when a return is required (see section 5.5). |
 | Validated by | Pending — requires sign-off by a Nicaraguan licensed accountant (Contador Público Autorizado, CCPN) |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Progressive Annual Scale — Rentas del Trabajo (2025)
 
@@ -90,7 +90,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency not stated | Assume córdoba (C$ / NIO); do not assume USD |
 | Income source (employment vs business) | Treat as rentas del trabajo only; refuse other income classes |
 | Whether INSS already deducted | Assume gross (INSS not yet deducted); deduct 7% before the scale |
-| Multiple employers in the year | Flag IR-106 annual-return obligation (see Section 5) |
+| Multiple employers in the year | Check whether an employment income return is required (see Section 5) |
 | Monthly vs annual figures | Confirm; annualize (×12) before applying the annual scale |
 | Any deduction beyond INSS laboral | Not allowed without explicit DGI basis |
 
@@ -99,9 +99,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Required Inputs
 
 - **Minimum viable inputs** — Minimum viable — annual (or monthly, clearly labelled) gross salary in córdobas, confirmation of residence status (resident vs non-resident), and confirmation that the income is employment income (rentas del trabajo).
-- **Recommended inputs** — Recommended — payslips or a payroll summary (colilla de pago) for the full year, the employer's INSS laboral deduction records, number of employers during the year, and any prior-year IR-106 or DGI assessment.
+- **Recommended inputs** — Recommended — payslips or a payroll summary (colilla de pago) for the full year, the employer's INSS laboral deduction records, number of employers during the year, and any prior employment income return or DGI assessment.
 - **Ideal inputs** — Ideal — full payroll ledger (nómina), INSS contribution receipts, employer remittance records (IR-122 filings), and confirmation of whether the employee has more than one employer.
-- **Refusal if minimum missing** — Refusal if minimum is missing — SOFT WARN. No salary figure at all = hard stop. Salary without payslips = proceed with reviewer warning: "This IR computation was produced from a stated salary figure alone. The reviewer must verify gross salary, the 7% INSS laboral deduction, residence status, and whether an annual IR-106 return is required (more than one employer)."
+- **Refusal if minimum missing** — Refusal if minimum is missing — SOFT WARN. No salary figure at all = hard stop. Salary without payslips = proceed with reviewer warning: "This IR computation was produced from a stated salary figure alone. The reviewer must verify gross salary, the 7% INSS laboral deduction, residence status, and whether an annual employment income return is required."
 
 ### Refusal Catalogue
 
@@ -262,16 +262,16 @@ All amounts in córdobas (C$). Every total reconciles to the cent.
 
 - **Monthly withholding via IR-122** — The employer withholds the employee's IR monthly through payroll and remits it on Form IR-122 (monthly withholding income-tax return). Monthly withholding approximates annual IR ÷ 12, reconciled across the year as salary varies.
 
-### 5.5 Annual Return (IR-106) — When Required
+### 5.5 Annual Employment Income Return — When Required
 
-**5.5 Annual Return (IR-106) — When Required**
+**5.5 Annual Employment Income Return — When Required**
 
-| Situation | Annual IR-106 return |
+| Situation | Annual employment income return |
 | --- | --- |
 | Single employer, standard withholding, no extra deductions | **Not required** — withholding is final |
-| Income from **more than one employer** totaling **over C$100,000/year** | **Required** — file IR-106 |
+| Income from **more than one employer** totaling **over C$100,000/year** | **Required** — confirm the applicable form and deadline with the DGI |
 
-- **IR-106 form details** — Form IR-106 is the annual individual income-tax return. It is due within 90 days after year-end (≈ 31 March). Any final payment is due with the return.
+- **Annual employment IR filing.** Confirm the filing window and form with the DGI when a return is required. Article 29 governs employment returns. The business IR deadline is set separately by Article 69. [Law 822, art. 29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) · [Decree 01-2013, art. 22](https://www.mem.gob.ni/wp-content/uploads/2023/08/2013.01.22-Reglamento-Ley-822-G-12.pdf) · [Law 987, amended art. 69(1)](https://www.mem.gob.ni/wp-content/uploads/2023/08/2019.02.28-Ley-987-Reforma-a-Ley-822-G-41.pdf)
 
 ### 5.6 Non-Resident Definitive Withholding
 
@@ -307,9 +307,9 @@ All amounts in córdobas (C$). Every total reconciles to the cent.
 
 - **Viáticos treatment** — Genuine, documented business reimbursements (viáticos) are excluded from income. Flag for reviewer: confirm the reimbursement is genuine and documented, not disguised remuneration.
 
-### 6.4 Multiple Employers — IR-106 Obligation
+### 6.4 Multiple Employers — Annual Return
 
-- **Multiple employers IR-106 obligation** — If the employee had more than one employer and total income exceeds C$100,000/year, an IR-106 annual return is required to aggregate income and reconcile withholding. Flag for reviewer: confirm number of employers and total income; prepare IR-106 if triggered.
+- **Multiple employers and annual filing** — If the employee had more than one employer and total income exceeds C$100,000/year, an annual employment income return is required to aggregate income and reconcile withholding. Flag for reviewer: confirm number of employers and total income; confirm the form and filing deadline with the DGI if a return is required.
 
 ### 6.5 Residence Determination
 
@@ -356,7 +356,7 @@ E. NON-RESIDENT (alternative to D)
 F. RECONCILIATION
   F1. Annual IR (D5 or E2)                       ___________
   F2. IR already withheld (IR-122, sum)          ___________
-  F3. IR due / (refund) with IR-106 (F1 - F2)    ___________
+  F3. IR due / (refund) on annual reconciliation (F1 - F2)    ___________
 
 REVIEWER FLAGS:
   [ ] Residence status confirmed?
@@ -364,7 +364,7 @@ REVIEWER FLAGS:
   [ ] INSS laboral (7%) deducted before the scale?
   [ ] Aguinaldo / severance exemption confirmed? [T2]
   [ ] Viáticos genuinely reimbursements? [T2]
-  [ ] More than one employer → IR-106 required?
+  [ ] Annual employment income return required?
   [ ] Annual figures (not monthly) used in the scale?
   [ ] IR withholding treated as a credit, not a deduction?
 ```
@@ -400,7 +400,7 @@ REVIEWER FLAGS:
 | Form | Purpose | Frequency / Deadline |
 | --- | --- | --- |
 | IR-122 | Monthly withholding income-tax return (employer withholds and remits) | Monthly |
-| IR-106 | Annual individual income-tax return | Within 90 days of year-end (~31 March) |
+| Annual employment IR return | Reconcile qualifying employment income and withholding | Confirm the filing window and form with the DGI when a return is required. |
 
 ## Section 9 -- Onboarding Fallback
 
@@ -436,7 +436,7 @@ ONBOARDING QUESTIONS -- NICARAGUA INCOME TAX (IR)
 | Reform | Ley No. 891 |
 | Rentas del trabajo / deductions | LCT Art. 19–22 |
 | Progressive scale | LCT Art. 23 |
-| Tax administration / filing | DGI guidance; forms IR-122, IR-106 |
+| Tax administration / filing | DGI guidance on employment returns and withholding |
 | INSS laboral rate (7%) | INSS reform 2019; Resolution RI-112-2018 (ceiling eliminated) |
 
 ### Sources (cross-verified June 2026)
@@ -447,7 +447,7 @@ ONBOARDING QUESTIONS -- NICARAGUA INCOME TAX (IR)
 | --- | --- | --- |
 | secondary summary, Taxes on personal income | Progressive scale, non-resident WHT | |
 | secondary summary, Other taxes | INSS rates | |
-| secondary summary, Tax administration | IR-122, IR-106, deadlines | |
+| secondary summary, Tax administration | Employment returns, monthly withholding and deadlines | |
 | Lorente Consultores | Ley 822 reforms, employee tax burden | https://www.lorenteconsultores.com/post/el-trabajador-y-su-carga-impositiva-lo-que-establece-la-ley-822-y-sus-reformas |
 | DGI — "Aprendamos a Tributar" | Official DGI guidance | https://www.dgi.gob.ni/pdfArchivo/22 |
 | Mercer | 2019 INSS reform detail | https://www.mercer.com/en-us/insights/law-and-policy/nicaragua-revises-social-security-arrangements/ |

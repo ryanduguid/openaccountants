@@ -187,7 +187,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NU | Niue | 2 | 0 |
 | NZ | New Zealand | 17 | 0 |
 | OM | Oman | 6 | 0 |
-| PA | Panama | 4 | 0 |
+| PA | Panama | 5 | 0 |
 | PE | Peru | 7 | 4 |
 | PF | French Polynesia | 2 | 0 |
 | PG | Papua New Guinea | 6 | 0 |

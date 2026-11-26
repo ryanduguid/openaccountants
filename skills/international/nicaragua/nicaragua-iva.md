@@ -1,11 +1,11 @@
 ---
 name: nicaragua-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Nicaragua IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like "prepare IVA return", "Nicaragua VAT", "DGI return", "VET filing", or any request involving Nicaragua value added tax filing. This skill covers Regimen General IVA filers only. Cuota Fija (fixed-fee small taxpayer) and free-zone entities are in the refusal catalogue. ALWAYS read this skill before touching any Nicaragua IVA work.
-version: 2.0
+version: 2.1
 jurisdiction: NI
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-27
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -28,7 +28,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Authority | DGI (Direccion General de Ingresos) |
 | Currency | NIO (Cordoba) / USD (some transactions) |
 | Filing frequency | Monthly |
-| Deadline | 15th of month following period |
+| Ordinary monthly declaration | Fifth calendar day of the following month. [Decree 08-2019, amended art. 97](https://www.mem.gob.ni/wp-content/uploads/2023/08/2019.03.15-Decreto-08-2019-Reforma-y-Adiciones-al-Reglamento-de-la-Ley-822.pdf) |
+| Ordinary payment | Amended Article 139(1) sets the fifth calendar day. The regulation uses that date for large and principal taxpayers and lists the 15th for other taxpayers. Confirm the applicable date with the DGI before relying on the 15th. Separate advances and special dates can apply. [Law 987, amended art. 139(1)](https://www.mem.gob.ni/wp-content/uploads/2023/08/2019.02.28-Ley-987-Reforma-a-Ley-822-G-41.pdf) · [Decree 08-2019, regulation art. 98(3)–(4)](https://www.mem.gob.ni/wp-content/uploads/2023/08/2019.03.15-Decreto-08-2019-Reforma-y-Adiciones-al-Reglamento-de-la-Ley-822.pdf) · [DGI fiscal calendar](https://www.dgi.gob.ni/) |
 | Contributor | Open Accountants Skills Registry |
 | Validated by | Pending |
 

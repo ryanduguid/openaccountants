@@ -1,10 +1,10 @@
 ---
 name: nicaragua-payroll
-description: Use this skill whenever asked about Nicaragua payroll processing for employed persons. Trigger on phrases like "Nicaragua payroll", "nomina Nicaragua", "INSS deduction", "INSS laboral", "INSS patronal", "IR rentas del trabajo", "retencion IR Nicaragua", "INATEC 2%", "Form IR-122", "Form IR-106", "planilla INSS", "salario neto Nicaragua", "net salary Nicaragua", "cordoba payroll", "employer social security Nicaragua", "salario minimo Nicaragua", "minimum wage Nicaragua", "gross to net Nicaragua", or any question about computing employee pay, income-tax withholding, or social-security contributions for Nicaragua-based employees. This skill covers IR (rentas del trabajo) progressive withholding, INSS employee/employer contributions (Regimen Integral), the INATEC training levy, sector minimum wages, payroll filing obligations (IR-122, IR-106, INSS planilla), and penalties. The reporting currency is the Nicaraguan cordoba (NIO / C$). ALWAYS read this skill before processing any Nicaragua payroll.
-version: 0.3
+description: Use this skill whenever asked about Nicaragua payroll processing for employed persons. Trigger on phrases like "Nicaragua payroll", "nomina Nicaragua", "INSS deduction", "INSS laboral", "INSS patronal", "IR rentas del trabajo", "retencion IR Nicaragua", "INATEC 2%", "Form IR-122", "Form IR-106", "planilla INSS", "salario neto Nicaragua", "net salary Nicaragua", "cordoba payroll", "employer social security Nicaragua", "salario minimo Nicaragua", "minimum wage Nicaragua", "gross to net Nicaragua", or any question about computing employee pay, income-tax withholding, or social-security contributions for Nicaragua-based employees. This skill covers IR (rentas del trabajo) progressive withholding, INSS employee/employer contributions (Regimen Integral), the INATEC training levy, sector minimum wages, payroll filing obligations for withholding, employment returns and INSS planillas, and penalties. The reporting currency is the Nicaraguan cordoba (NIO / C$). ALWAYS read this skill before processing any Nicaragua payroll.
+version: 0.4
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-22
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Nicaragua Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+# Nicaragua Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Nicaragua Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+## Nicaragua Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
 ## Section 1 -- Quick Reference
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley de Concertacion Tributaria (Ley 822, rentas del trabajo Art. 23); Ley de Seguridad Social + 2019 reform (Decreto Presidencial); Codigo del Trabajo (Ley 185); INATEC levy decree |
 | Filing portal | DGI Ventanilla Electronica Tributaria (VET); INSS SIE (Sistema Integrado de aplicaciones Especificas) |
 | Validated by | Pending -- requires sign-off by a licensed Nicaraguan accountant (Contador Publico Autorizado) |
-| Skill version | 0.2 (Tier 2 -- research-verified) |
+| Skill version | 0.4 (Tier 2 -- research-verified) |
 
 This is a **Tier-2 research-verified** skill. Several figures are flagged **[RESEARCH GAP — reviewer to confirm]** where a fully authoritative source could not be isolated. Do not treat any computation as final until a licensed Nicaraguan accountant signs off.
 
@@ -72,7 +72,7 @@ This is a **Tier-2 research-verified** skill. Several figures are flagged **[RES
 
 - **Monthly withholding method** — 1. monthly_inss_employee   = gross_monthly x 0.07 2. monthly_taxable         = gross_monthly − monthly_inss_employee 3. annual_taxable          = monthly_taxable x 12          (annualize) 4. annual_IR               = base_tax(band) + rate(band) x (annual_taxable − band_floor) 5. monthly_IR_withholding  = annual_IR / 12 6. net_pay                 = gross_monthly − monthly_inss_employee − monthly_IR_withholding
 
-If pay is irregular (bonuses, 13th-month aguinaldo), reconcile via the annual IR-106 return rather than the simple /12 method — flag to reviewer.
+If pay is irregular (bonuses, 13th-month aguinaldo), reconcile annual income and withholding. Confirm the filing requirements with the DGI.
 
 ## Section 3 -- Social Security -- INSS Employee Deductions (Regimen Integral)
 
@@ -363,7 +363,7 @@ These require a licensed Nicaraguan accountant's judgement — surface them, do 
 | --- | --- |
 | INSS contribution ceiling | Conflicting sources (no cap vs C$130,362.60/month). **[RESEARCH GAP]** |
 | Aguinaldo (13th month) taxation | Interaction of the statutory 13th-month payment with the annual IR reconciliation. |
-| Bonuses / variable pay | Irregular pay distorts the simple /12 annualization; reconcile on IR-106. |
+| Bonuses / variable pay | Reconcile annual income and withholding and confirm the filing requirements with the DGI. |
 | Non-resident INSS applicability | Depends on contract type and local-employment status. **[RESEARCH GAP]** |
 | Zona franca / maquila minimum wage | Set separately by sector agreement: C$9,986.54/month from 1 January 2026 (+6.7% on C$9,359.46; Bloomberg Linea, Revista E&N). Confirm the agreement text with MITRAB / CNZF. |
 | Expat / dual-coverage cases | Totalization, foreign social security, treaty positions. |
@@ -457,7 +457,7 @@ A precise statutory registration deadline window could not be isolated from an o
 | Form | Purpose | Deadline |
 | --- | --- | --- |
 | IR-122 | Monthly IR withholding remittance | Within the first days of the following month — commonly stated as the **first 5 working days**, but the exact day was **not** confirmed from an official DGI source. **[RESEARCH GAP — reviewer to confirm]** [secondary summary, tax administration] |
-| IR-106 | Annual IR return | Within **90 days after year-end** (~31 March). For TY2025, DGI announced Form 106 with deadline **28 February 2026**. [EY Nicaragua DGI annual-declaration alert] |
+| Annual employment IR return | Reconcile qualifying employment income and withholding | Confirm the filing window and form with the DGI when a return is required. [Law 822, arts. 28–29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) · [Decree 01-2013, art. 22](https://www.mem.gob.ni/wp-content/uploads/2023/08/2013.01.22-Reglamento-Ley-822-G-12.pdf) |
 
 - **Filing exemption / aggregate income rule** — Employees with a single employer and no education/health/professional-service deductions are exempt from filing. Employees with two or more employers whose aggregate income exceeds C$100,000/year must file annually.  _([secondary summary, tax administration])_
 
@@ -495,7 +495,7 @@ A precise statutory registration deadline window could not be isolated from an o
 ### Key handoff points
 
 - **Payroll -> Bookkeeping:** Gross wages, employer INSS, and INATEC are expenses; employee INSS and IR withholding are liabilities until remitted.
-- **Payroll -> Income Tax:** Annual employment income feeds the employee's IR-106 where a return is required.
+- **Payroll -> Income Tax:** Use annual employment income and withholding to prepare the return when required. Confirm the form with the DGI.
 - **Payroll -> Social Security:** INSS Regimen Integral contributions count toward pension (IVM) entitlement.
 
 ### Reference figures (with provenance)
@@ -513,7 +513,7 @@ A precise statutory registration deadline window could not be isolated from an o
 | INATEC | 2.0% | INATEC decree |
 | INSS ceiling | None (disputed) | 2019 reform — **[RESEARCH GAP]** |
 | INSS payment deadline | First 10 business days of following month | INSS Reglamento General |
-| IR-106 annual deadline | 90 days after year-end (~31 Mar); TY2025 = 28 Feb 2026 | EY |
+| Annual employment IR filing | Confirm the filing window and form with the DGI when a return is required. | [Law 822, arts. 28–29](https://www.ine.gob.ni/DGE/digesto/leyes/Ley822.pdf) |
 | INSS mora | 2% monthly | INSS Reglamento General |
 
 ### Numbered Test Suite (recompute to confirm before relying on this skill)
