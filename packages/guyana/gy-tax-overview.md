@@ -1,32 +1,30 @@
 ---
 name: gy-tax-overview
-description: "Source-cited draft: tax overview for Guyana (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited orientation to Guyanese residence, income tax, VAT and filing for income year 2026. Pending qualified local review."
 jurisdiction: GY
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year: 2026
+last_updated: 2026-11-22
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Guyana Tax Overview
+# Guyana tax system
 
-## The system at a glance
+The Guyana Revenue Authority (GRA) administers income tax, corporation tax and value added tax (VAT). Amounts are in Guyanese dollars (GYD, shown as G$). The 2026 income year is assessed in 2027. [GRA filing guidance](https://gra.gov.gy/file-a-return/)
 
-Guyana operates a source-based income tax system administered by the Guyana Revenue Authority (GRA). Personal and corporate income taxes, VAT, and National Insurance (NIS) contributions are the main charges. Figures below reflect the 2025 tax year and Budget 2025 changes.
+## Income tax
 
-- **Tax (income) year** — Calendar year, 1 January to 31 December  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), s 2 (definition of year of assessment) — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf)_
-- **Currency** — Guyanese dollar (GYD / G$)  _(Bank of Guyana / Income Tax Act (Cap 81:01))_
-- **Tax authority** — Guyana Revenue Authority (GRA), headed by the Commissioner-General  _([Revenue Authority Act](https://www.gra.gov.gy/))_
-- **Basis of taxation** — Income tax is charged on income accruing in or derived from Guyana or elsewhere, whether or not received in Guyana, so residents are taxed on worldwide income; non-residents not carrying on business in Guyana are taxed on Guyana-source payments through the 20% withholding tax, and income arising outside Guyana paid to them is not taxed  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), ss 5 and 39(1)(b) — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf)_
-- **Headline personal income tax rates** — 25% on first G$3,120,000 of chargeable income annually; 35% on the excess  _([Income Tax Act (Cap 81:01) / Budget 2025](https://www.gra.gov.gy/income-tax-rates-threshold/))_
-- **Headline corporate income tax rates** — Commercial companies 40%; non-commercial companies 25%; telecommunications companies 45%. A commercial company derives at least 75% of its gross income from trading in goods it did not manufacture, or is a commission agency, telecommunications company, bank or general insurer  _(Corporation Tax Act (Cap 81:03) with return guidance, Guyana Revenue Authority text (revised 1 April 2026), rates of tax table and s 2 (definition of commercial company) — https://www.gra.gov.gy/wp-content/uploads/2026/04/Corporation-Tax-Revised-April-1.-2026.pdf)_
-- **Does VAT exist?** — Yes — Value-Added Tax at a standard rate of 14% (and 0% zero-rating)  _([Value-Added Tax Act 2005](https://gra.gov.gy/vat-registration/))_
-- **Main annual income/corporation tax filing deadline** — 30 April following the income year (both individuals and companies)  _([Income Tax Act (Cap 81:01) / Corporation Tax Act (Cap 81:03)](https://gra.gov.gy/tax-services/submission-of-returns/))_
-- **Capital gains tax** — 20% capital gains tax on the net chargeable capital gain of the year; gains realised within twelve months of the change of ownership are treated as income chargeable to income tax, and no tax is charged where the year's net chargeable gain does not exceed G$500,000  _(Capital Gains Tax Act (Cap 81:20), Guyana Revenue Authority consolidated text (revised 15 September 2022), s 12 (rate), charging proviso (G$500,000 exemption and twelve-month rule) — https://www.gra.gov.gy/storage/2022/09/Capital-Gains-Tax-Act-revised-Sept.-15-2022.pdf)_
-- **Social security** — National Insurance Scheme (NIS) — total 14% of insurable earnings (8.4% employer, 5.6% employee)  _([National Insurance and Social Security Act (Cap 36:01)](https://www.nis.org.gy/information_on_contributions))_
+- **Residence and source.** Individuals can be resident if they reside permanently or are in Guyana and intend to reside permanently, subject to the treatment of temporary absences. Residence also applies if they reside in Guyana for more than 183 days in the year. A body of persons is resident when its business is controlled and managed in Guyana. The ordinary income-tax charge covers residents' taxable income from sources in Guyana and abroad. Non-residents should check the distinct rules for operations in Guyana and withholding on payments and distributions. [Income Tax Act, ss 2, 5 and 39](https://gra.gov.gy/storage/2026/11/Income-Tax-Act-Revised-September-25-2026.pdf)
+- **Individuals.** For income year 2026, the ordinary annual personal deduction is the greater of G$1,680,000 and one-third of income excluding amounts subject to withholding under s 39(1). Once deductions are applied, the ordinary rate is 25% on the first G$3,360,000 of annual chargeable income and 35% on the excess. Check separate deductions and special rates before calculating liability. [Income Tax Act, ss 20 and 36–36B](https://gra.gov.gy/storage/2026/11/Income-Tax-Act-Revised-September-25-2026.pdf) · [GRA 2026 allowance and deductions](https://gra.gov.gy/notice-to-employers-employees-self-employed-persons-revised-personal-allowance-and-deductions-for-income-tax-2026/)
+- **Companies.** The ordinary rates on chargeable profits are 40% for commercial companies other than telephone companies, 45% for telephone companies and 25% for other companies. The statute defines commercial companies and applies different rates to commercial and non-commercial activities within a mixed company. A minimum based on 2% of turnover can apply to commercial companies, subject to statutory limitations and exceptions. [Corporation Tax Act, ss 2, 10 and 10A](https://www.gra.gov.gy/wp-content/uploads/2026/04/Corporation-Tax-Revised-April-1.-2026.pdf)
+
+## VAT and filing
+
+- **VAT.** The standard rate is 14%. Registration is generally required when the value of taxable supplies reaches G$15 million over any period of 12 months or fewer, or is reasonably expected to reach that amount over the next 12 months. Check the time limit to register and any mandatory registration rules for specified activities. Registered taxpayers generally file and pay by the 21st of the following month, subject to deadline adjustments. [VAT Act, ss 11, 31 and 42, and VAT Regulations, regs 2–3](https://www.gra.gov.gy/wp-content/uploads/2026/03/VAT-Act-Regul.-Trans.-Reg.-revised-March-27-2026.pdf) · [GRA VAT registration](https://gra.gov.gy/tax-services/vat-services/register-for-vat/)
+- **Annual filing.** Individual and corporation returns are ordinarily due by 30 April of the year of assessment for the preceding income year. Determine whether the individual filing threshold or a withholding exception applies. The ordinary tax balance is due by 30 April. Check instalments and any separate approved accounting period. [Income Tax Act, ss 60, 68–69](https://gra.gov.gy/storage/2026/11/Income-Tax-Act-Revised-September-25-2026.pdf) · [GRA individual return](https://gra.gov.gy/optimal/individual-income-tax-return/) · [GRA corporation return](https://gra.gov.gy/optimal/corporation-tax-return/)
 
 <!-- openaccountants-cta-block -->
 

@@ -1,33 +1,32 @@
 ---
 name: sr-tax-overview
-description: "Source-cited draft: tax overview for Suriname (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited orientation to Surinamese residence, income tax, BTW and filing for 2026. Pending qualified local review."
 jurisdiction: SR
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+last_updated: 2026-11-27
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Suriname Tax Overview
+# Suriname tax system
 
-## Suriname tax system at a glance
+The Belastingdienst administers income tax (inkomstenbelasting), wage withholding (loonbelasting) and value added tax (BTW). Amounts are in Surinamese dollars (SRD). [Income Tax Act 1922](https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Inkomstenbelasting.pdf) · [Belastingdienst](https://belastingdienst.sr/belastingen/)
 
-Suriname operates a Dutch-derived direct-tax system administered by the Belastingdienst Suriname, with a progressive personal income tax, a flat corporate income tax, and a VAT (BTW) introduced in 2023. Figures below are a 2025 source-cited draft pending review by a licensed Suriname accountant.
+## Income tax
 
-- **Tax year** — Calendar year (1 January – 31 December)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Currency** — Surinamese dollar (SRD)  _(Bank of the Republic of Suriname (Centrale Bank van Suriname))_
-- **Tax authority** — Belastingdienst Suriname (Tax Administration of Suriname), publishing BTW, Loonbelasting and Inkomstenbelasting guidance together with the Wetten and its Beschikkingen at `belastingdienst.sr`  _(Belastingdienst Suriname — https://belastingdienst.sr/belastingen/)_
-- **Wage tax is an advance levy, not a separate charge** — Loonbelasting is a direct tax on employment income withheld by the employer from gross pay, and is a *voorheffing* (advance levy) **on the income tax**, filed together with the Premie A.O.V. An employer paying wages is an *inhoudingsplichtige* under **article 6 of the Wet Loonbelasting**  _(Belastingdienst Suriname — Loonbelasting — https://belastingdienst.sr/belastingen/loonbelasting/)_
-- **Residence basis of taxation** — Residents taxed on worldwide income; non-residents taxed on Suriname-source income only. Residence is based on domicile in Suriname.  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Headline personal income tax top rate** — 38% (top marginal band; progressive 8%–38%)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Headline corporate income tax rate** — 36%  _(Income Tax Act 1922 (Inkomstenbelasting 1922), corporate provisions)_
-- **Does Suriname have VAT/GST?** — Yes — Value Added Tax (BTW) applies, standard rate 10%, in force since 1 January 2023 percent  _(Value Added Tax Act 2022 (Wet Belasting over de Toegevoegde Waarde 2022))_
-- **Annual personal income tax return deadline** — 30 June following the tax year (approx — confirm)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Mandatory online income tax filing** — From 1 January 2025, income tax returns must be filed through the Tax Administration's online portal  _(Belastingdienst Suriname administrative notice)_
-- **Personal/wage tax-free amount** — SRD 108,000 per year (SRD 9,000 per month)  _(Wage Tax Act (Loonbelasting) / Income Tax Act 1922)_
+- **Residence and source.** Tax residence and an entity's place of establishment generally depend on the facts. An entity formed under Surinamese law is deemed established there. Resident individuals generally declare taxable income from all sources. Non-residents are taxed on the domestic income defined in the Act, including relevant business and property income. Check the statutory deeming rules for temporary absence and certain public employment. [Income Tax Act 1922, arts. 1–4 and ch. IV](https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Inkomstenbelasting.pdf)
+- **Individuals.** The annual scale has an untaxed band through SRD 108,000 of net income. The marginal rates are 8% through SRD 150,000, 18% through SRD 192,000, 28% through SRD 234,000 and 38% above SRD 234,000. The separate employer withholding schedule applies its annual SRD 108,000 tax-free amount to resident wage earners before applying the wage bands. [Income Tax Act 1922, art. 34](https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Inkomstenbelasting.pdf) · [Wage Tax Act, arts. 13–14](https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Loonbelasting.pdf)
+- **Companies.** The ordinary rate is 36% of taxable income, or of the domestic taxable amount where that is the relevant base. [Income Tax Act 1922, art. 36](https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Inkomstenbelasting.pdf)
+
+## BTW and filing
+
+- **BTW.** The standard rate is 10%. Other schedules apply to specified supplies. The ordinary small-business threshold for resident or established businesses is SRD 1 million of annual taxable turnover excluding BTW across all activities. A business exceeding that threshold must register promptly. Check the transition rules for the year of crossing and subsequent years. Ordinary monthly returns and payments are due by the 15th of the following month. [VAT Act 2022, arts. 4, 13 and 21](https://www.dna.sr/media/cqnbyeei/sb_2022___121.pdf) · [2023 amendment](https://belastingdienst.sr/wp-content/uploads/2025/02/BTW-Wet.pdf) · [Tax Administration filing guidance](https://gov.sr/online-portaal-belastingdienst-suriname-uitgebreid/)
+- **Annual filing.** The ordinary final return is due within 4 months of year end for individuals required to file and within 6 months for entities, ordinarily 30 April and 30 June for calendar-year filers. The final balance is due with the return. A separate provisional return generally applies, with 15 April as the ordinary calendar-year deadline. Returns use the tax authority's online portal, subject to permission for a paper return in eligible cases. [Income Tax Act 1922, arts. 42–44](https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Inkomstenbelasting.pdf) · [Tax Administration 2026 assistance and filing notice](https://gov.sr/belastingdienst-introduceert-online-sas-huba-met-gratis-ondersteuning/)
+
+**Tax procedure changes.** The National Assembly adopted the General Tax Act and Tax Collection Act on 24 November 2026. On 27 November 2026 the Assembly still listed the bill governing commencement and transition as in progress. Check which procedures apply to the filing period. [National Assembly adoption notice](https://www.dna.sr/nieuws/parlement-keurt-twee-wetten-voor-hervorming-belastingstelsel-goed/) · [Commencement and transition bill](https://www.dna.sr/wetgeving/ontwerpwetten-bij-dna/in-behandeling/ontwerpwet-tot-vaststelling-invoeringswet-algemene-wet-belastingen-invorderingswet-wet-rechtspraak-belastingzaken/)
 
 <!-- openaccountants-cta-block -->
 
