@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Suriname (tax year 202
 jurisdiction: SR
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+last_updated: 2026-11-27
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ Personal income tax is progressive with a 0% tax-free band and rates from 8% to 
 - **Special (lump-sum benefit) rate schedule** — 5% / 15% / 25% / 35% across the same SRD 42,000 / 84,000 / 126,000 thresholds  _(Wage Tax Act (Loonbelasting))_
 - **Residence test** — Individuals domiciled in Suriname are residents taxed on worldwide income; otherwise taxed only on Suriname-source income  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 - **Non-resident taxation** — Non-residents taxed on Suriname-source income only; the same progressive rate schedule applies (approx — confirm non-resident threshold treatment)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Annual return filing deadline** — 30 June following the tax year (approx — confirm)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
+- **Annual personal return filing deadline.** Individuals required to file must lodge the final return within 4 months after the end of the tax or accounting year or earlier cessation of tax liability. The ordinary calendar-year deadline is 30 April. [Income Tax Act 1922, art. 43(1)](https://belastingdienst.sr/wp-content/uploads/2024/10/Wet-Inkomstenbelasting.pdf) · [Tax Administration 2026 filing notice](https://gov.sr/belastingdienst-introduceert-online-sas-huba-met-gratis-ondersteuning/)
 - **Provisional/advance payments** — Self-employed taxpayers make provisional payments during the year; final assessment settles the balance (approx — confirm schedule)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 
 <!-- openaccountants-cta-block -->

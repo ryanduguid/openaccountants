@@ -11338,8 +11338,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "gy-vat-gst",
@@ -22454,7 +22454,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "sr-payroll-social",
@@ -22479,8 +22479,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "sr-vat-gst",
@@ -22493,7 +22493,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-22"
   },
   {
    "slug": "sj-svalbard-wage-reference",

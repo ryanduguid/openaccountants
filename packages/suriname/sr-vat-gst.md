@@ -4,8 +4,8 @@ description: "Source-cited draft: vat / gst for Suriname (tax year 2025) — rat
 jurisdiction: SR
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+last_updated: 2026-11-22
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -34,7 +34,7 @@ Suriname introduced VAT (Belasting over de Toegevoegde Waarde, BTW) on 1 January
 - **VAT registration threshold** — SRD 1,000,000 of taxable turnover per calendar year  _(Value Added Tax Act 2022 (Wet BTW 2022))_
 - **Non-resident digital-services registration threshold** — SRD 500,000 for non-resident providers of digital/electronic services  _(Value Added Tax Act 2022 (Wet BTW 2022))_
 - **Filing/declaration period** — Monthly (calendar month)  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **Return and payment deadline** — Return filed between the 1st and 15th and payment due by the 16th of the month following the period (approx — confirm exact day)  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Return and payment deadline.** File and pay ordinary monthly BTW by the 15th of the following month. [VAT Act 2022, art. 13(2) and (4)](https://www.dna.sr/media/cqnbyeei/sb_2022___121.pdf) · [Tax Administration filing guidance](https://gov.sr/online-portaal-belastingdienst-suriname-uitgebreid/)
 - **Reverse charge** — Recipient self-accounts for VAT on certain imported services / supplies by non-residents (approx — confirm scope)  _(Value Added Tax Act 2022 (Wet BTW 2022))_
 
 <!-- openaccountants-cta-block -->
