@@ -32,7 +32,7 @@ In the 2010 revised edition, sections 3–4 of the CAIPO Act establish the offic
 
 ## Forms gazetted on 29 August 2014
 
-The 2014 amendment made Form 1 serve as the articles and notice of registered office address. With Form 9 and a Form 9A for each director, it also served as the notice of the directors' names. Form 9A is the director's consent. The amendment specified a classification consistent with ISIC for proposed or actual business activities. [SRO 36 of 2014, regs 3–4 and Third Schedule forms][FORMS]
+The 2014 amendment made Form 1 serve as the articles and notice of registered office address. With Form 9 and a Form 9A for each director, it also served as the notice of the directors' names. Form 9A is the director's consent. The amendment specified a classification consistent with ISIC for proposed or actual business activities. For a statement of proposed activities to restrict the business, the incorporators must make it a restriction when applying, or the company must later amend its articles by special resolution under section 213. [SRO 36 of 2014, regs 3–4 and Third Schedule forms][FORMS]
 
 Under the 2014 amendment, the Registrar may share application information with Inland Revenue to register the company as a taxpayer. The Registrar may share it with National Insurance to register the company as an employer if the application states that the company will have employees. Confirm any required registrations separately. [SRO 36 of 2014, reg 3 inserting reg 27C][FORMS]
 
@@ -42,7 +42,7 @@ An eligible sole incorporator proposes a private company with a Grenadian regist
 
 ## Confirm before filing
 
-- Obtain SRO 23 of 2022 and check Extraordinary Gazette No. 12 of 28 February 2023 for a reported change to the incorporation fee. The public indexes identify the 2022 regulations and the 2023 issue. Confirm the operative provisions and later changes before relying on the 2014 forms or quoting a fee. [2022 statutory rules and orders index][INDEX2022] · [Extraordinary Gazette No. 12 of 2023][ISSUE2023]
+- Obtain SRO 23 of 2022 and SRO 15 of 2023. Check Extraordinary Gazette No. 12 of 28 February 2023 for the reported change to the incorporation fee. Confirm the operative provisions and later changes before relying on the 2014 forms or quoting a fee. [2022 statutory rules and orders index][INDEX2022] · [2023 statutory rules and orders index][INDEX2023] · [Extraordinary Gazette No. 12 of 2023][ISSUE2023]
 - Ask CAIPO for the current articles and notice forms, fee schedule, filing channel, processing time and any required attorney involvement. The public eService portal lists business registration. Confirm with CAIPO which service accepts company incorporation. [CAIPO][OFFICE] · [Grenada eService portal][PORTAL]
 - Check the current beneficial ownership forms, declarations and deadlines separately. The 2022 amendment published on 14 April 2022 inserted a beneficial ownership part. Routine annual returns, financial statements, tax and employer registration also require separate checks. [Companies Amendment Act 5 of 2022, s 4][ACT2022] · [Cap 58A, ss 149, 194][ACT]
 
@@ -51,6 +51,7 @@ An eligible sole incorporator proposes a private company with a Grenadian regist
 [FORMS]: https://grenadaparliament.gd/wp-content/uploads/2021/08/S.R.O.-36-of-2014-Companies-Amendment-Regulations1.pdf
 [ACT2022]: https://grenadaparliament.gd/wp-content/uploads/2022/04/Act-No.-5-of-2022-Companies-Amendment-Act-2022.pdf
 [INDEX2022]: https://laws.gov.gd/index.php/s-r-o/1371-2022?start=20
+[INDEX2023]: https://laws.gov.gd/index.php/s-r-o/1372-2023
 [ISSUE2023]: https://gazettes.gov.gd/index.php/publications/2023/no-12-of-2023-tuesday-february-28th-2023-extraordinary
 [OFFICE]: https://llca.gov.gd/caipo/
 [PORTAL]: https://eservice.gov.gd/
