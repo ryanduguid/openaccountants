@@ -1,12 +1,12 @@
 ---
 name: gd-tax-compliance
-description: "Grenada ordinary domestic tax administration. Use for Inland Revenue Division registration, records, notices, filing and payment extensions, assessments, written administrative review, appeal gateways, refunds and late charges. Check the taxpayer, tax period, tax law, method of service and any special order before applying a deadline. Sources include the 2016 Act, 2020 amendment and dated waiver, disaster relief and GTAX notices. Verify current amendments, prescribed procedures and disputed-tax rules before use."
+description: "Grenada ordinary domestic tax administration. Use for Inland Revenue Division registration, records, notices, filing and payment extensions, assessments, written administrative review, appeal gateways, refunds and late charges. Check the taxpayer, tax period, tax law, method of service and any special order before applying a deadline. Sources include the 2016 Act, the 2020 and 2023 amendments and dated waiver, disaster relief and GTAX notices. Verify current amendments, prescribed procedures and disputed-tax rules before use."
 jurisdiction: GD
 category: international
 tax_year: 2026
-tax_year_notes: "Sources checked on 28 November 2026. The original Tax Administration Act commenced on 1 May 2016. The 2020 amendment commenced on 31 December 2020. Historical relief and the 2026 filing notices have their own periods."
+tax_year_notes: "Sources checked on 28 November 2026. The original Tax Administration Act commenced on 1 May 2016. The 2020 amendment commenced on 31 December 2020. Section 58A was deemed in force on 31 December 2022. Historical relief and the 2026 filing notices have their own periods."
 last_updated: 2026-11-28
-version: 1.0
+version: 1.1
 review_status: pending_review
 tier: 2
 depends_on:
@@ -40,7 +40,8 @@ The Comptroller can make a best-judgement assessment when a required return is m
 - **Apply for the right extension.** Apply for a filing extension by the filing due date under s 26. Payment stays due unless expressly extended. For an ordinary payment extension, s 50 requires an application in the prescribed form before the tax due date. Section 50(1) refers to s 47, which concerns winding-up. Confirm how that cross-reference applies in the case. Section 50(3) permits extensions pending appeal and arrangements including instalments. A valid application is deemed granted if no written decision is given within 30 days. Confirm validity and the effective terms before relying on that provision. Interest continues under Part VII. Default on an approved instalment can bring the full balance due immediately. [2016 Act, ss 26, 44, 47 and 50][ADMIN]
 - **Reconcile payments and overpayments.** Section 52 applies payment of a specific tax to interest, late fees, penalties and then principal. Identify the tax and period and check how IRD posted the payment. Under the non-VAT route in s 49, the Comptroller first offsets assessed liabilities. Remaining amounts may be applied to advance tax due within 6 months with consent, or refunded. A taxpayer must apply within 6 years of payment. The same period applies where the Comptroller initiates the refund or credit. Verify the current form, payment date and offsets. [2016 Act, ss 49 and 52][ADMIN]
 - **Separate interest, civil late fees and offence notices.** Sections 53–55 address interest, including the ordinary due date before a payment extension and the original due date for revised assessments. The Minister can vary the interest rate by Gazette order. Sections 56–57 distinguish late filing, late payment and missed income tax instalments, including extension effects. Calculate only after checking the operative rules and any waiver for the period. The fixed penalty process in Part IX Division II was replaced from 31 December 2020 and serves a separate offence procedure. [2016 Act, ss 53–58][ADMIN] · [Act 10 of 2020, ss 3–4][AMEND2020] · [SRO 75 of 2020][START2020]
-- **Date any special relief.** The 2023 waiver order under s 58A waived 100% of qualifying Part VII interest, late fees and penalties from 1 January to 31 December 2023 on outstanding tax due for the assessment year ending 31 December 2021 or an earlier year. Act 6 of 2025 was deemed in force on 1 July 2024 and defines a separate relevant period of 1 June 2024 to 31 January 2025. Its VAT, corporate advances, annual stamp tax and PAYE measures have distinct conditions and savings. Check the provision for the tax, location and period and preserve the pre-period debts it leaves payable. [SRO 20 of 2023, regs 1 and 3][WAIVER] · [Act 6 of 2025, ss 1–8][BERYL]
+- **Check the terms of any waiver.** Act 4 of 2023 was published on 19 May 2023 and deemed in force on 31 December 2022. It inserted s 58A. If satisfied there is good cause, the Minister may waive some or all Part VII interest, late fees and other penalties on outstanding tax due and payable by order published in the Gazette. Check the Gazette order for the period, assessment year and persons it covers. The order is subject to negative resolution. If the underlying tax remains outstanding after the prescribed period, the charges become payable as if the waiver had never applied. [Tax Administration Amendment Act 4 of 2023, ss 1–2, official Acts listing][AMEND2023] · [Government Gazette No. 25 of 2023, Notice 20][GAZETTE2023]
+- **Date any special relief.** The 2023 waiver order under s 58A waived 100% of qualifying Part VII interest, late fees and penalties from 1 January to 31 December 2023 on outstanding tax due for the assessment year ending 31 December 2021 or an earlier year. For example, if qualifying 2021 tax remained outstanding after 31 December 2023, the charges that would have been payable on that outstanding tax became due under s 58A(2). Act 6 of 2025 was deemed in force on 1 July 2024 and defines a separate relevant period of 1 June 2024 to 31 January 2025. Its VAT, corporate advances, annual stamp tax and PAYE measures have distinct conditions and savings. Check the provision for the tax, location and period and preserve the pre-period debts it leaves payable. [SRO 20 of 2023, regs 1 and 3][WAIVER] · [Act 4 of 2023, s 2 inserting s 58A(2)][AMEND2023] · [Act 6 of 2025, ss 1–8][BERYL]
 
 ## Worked example
 
@@ -48,7 +49,9 @@ A domestic company receives an ordinary income tax assessment in person on 7 Jul
 
 ## Evidence to confirm before case use
 
-Obtain the enacted 2023 and 2024 amendment texts and later instruments before relying on the full waiver or audit powers. Confirm the current forms, accepted dates, proof of receipt, GTAX objection, refund and extension procedure and the applicable court rules. Check the s 11 change-notification timing, disputed-tax collection, current interest and fees, electronic record storage and tax-specific rules. Use the [income tax](gd-corporate-income-tax.md), [PAYE](gd-paye-employer-reference.md), [VAT](gd-value-added-tax.md) and [property tax](gd-property-and-transfer-tax.md) guides for their separate branches. Practitioner review is pending.
+Obtain the enacted text of Act 16 of 2024 and later instruments before relying on the audit and information powers. The 20 December 2024 Gazette identifies the separate Act supplement. [Government Gazette No. 63 of 2024, Notice 56][GAZETTE2024]
+
+Confirm the current forms, accepted dates, proof of receipt, GTAX objection, refund and extension procedure and the applicable court rules. Check the s 11 change-notification timing, disputed-tax collection, current interest and fees, electronic record storage and tax-specific rules. Use the [income tax](gd-corporate-income-tax.md), [PAYE](gd-paye-employer-reference.md), [VAT](gd-value-added-tax.md) and [property tax](gd-property-and-transfer-tax.md) guides for their separate branches. Practitioner review is pending.
 
 [ADMIN]: https://grenadaparliament.gd/wp-content/uploads/2021/08/Act-No.-14-of-2016-Tax-Administration-Act.pdf
 [START]: https://grenadaparliament.gd/wp-content/uploads/2021/08/S.R.O.-34-of-2016-Tax-Administration-Act-Commencement-Order-2016.pdf
@@ -56,6 +59,9 @@ Obtain the enacted 2023 and 2024 amendment texts and later instruments before re
 [START2020]: https://grenadaparliament.gd/wp-content/uploads/2021/07/S.R.O.-75-of-2020-Tax-Administration-Amendment-Act-2020-Commencement-Order.pdf
 [GTAX2026]: https://nowgrenada.com/2025/11/ird-to-expand-digital-service-for-tax-compliance/
 [EXTENSION2026]: https://www.finance.gd/docs/2026/PRESS_RELEASE-IRD_Extension.pdf
+[AMEND2023]: https://www.laws.gov.gd/index.php/acts/search-result?filter_category_id=1344&id=1344&searchphrase=all&show_category=1&show_searchform=0&start=20
+[GAZETTE2023]: https://gazettes.gov.gd/index.php/publications/no-25-of-2023-friday-may-19th-2023/download
+[GAZETTE2024]: https://gazettes.gov.gd/index.php/publications/no-63-of-2024-friday-december-20th-2024/download
 [WAIVER]: https://grenadaparliament.gd/wp-content/uploads/2024/11/S.R.O.-20-of-2023-Tax-Administration-Waiver-of-Interest-and-Penalties-Order-2023.pdf
 [BERYL]: https://grenadaparliament.gd/wp-content/uploads/2025/06/Act-No.-6-of-2025-Tax-Administration-Post-Hurricane-Beryl-Fiscal-Support-Special-Measures-Act-2025.pdf
 [TIME]: https://grenadaparliament.gd/wp-content/uploads/2021/08/Cap153-INTERPRETATION-AND-GENERAL-PROVISIONS-ACT.pdf
