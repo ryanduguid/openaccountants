@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2208,
+  "guides": 2209,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -10898,6 +10898,19 @@
    "review_status": "pending_review",
    "tax_year": "2019",
    "last_updated": "2026-10-27"
+  },
+  {
+   "slug": "gd-company-formation",
+   "path": "skills/international/grenada/gd-company-formation.md",
+   "name": "gd-company-formation",
+   "jurisdiction": "GD",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "gd-social-contributions",

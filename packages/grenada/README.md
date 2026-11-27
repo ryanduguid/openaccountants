@@ -7,14 +7,16 @@
 
 1. `intake.md`
 2. `gd-annual-employment-income-reference.md`
-3. `gd-social-contributions.md`
-4. `gd-tax-system-orientation.md`
-5. `gd-tax-system-source-reference.md`
+3. `gd-company-formation.md`
+4. `gd-social-contributions.md`
+5. `gd-tax-system-orientation.md`
+6. `gd-tax-system-source-reference.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)

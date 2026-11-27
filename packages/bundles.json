@@ -2689,12 +2689,14 @@
    "files": [
     "intake.md",
     "gd-annual-employment-income-reference.md",
+    "gd-company-formation.md",
     "gd-social-contributions.md",
     "gd-tax-system-orientation.md",
     "gd-tax-system-source-reference.md",
     "README.md"
    ],
    "shared": [
+    "company-formation-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
     "workflow-base.md"
