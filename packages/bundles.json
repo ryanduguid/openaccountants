@@ -2691,6 +2691,7 @@
     "gd-annual-employment-income-reference.md",
     "gd-company-formation.md",
     "gd-corporate-income-tax.md",
+    "gd-non-resident-withholding-and-treaties.md",
     "gd-paye-employer-reference.md",
     "gd-property-and-transfer-tax.md",
     "gd-social-contributions.md",
@@ -2701,6 +2702,7 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
+    "cross-border-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
     "workflow-base.md"
