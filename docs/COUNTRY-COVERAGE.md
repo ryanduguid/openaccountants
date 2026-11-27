@@ -47,7 +47,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BO | Bolivia (Plurinational State of) | 7 | 0 |
 | BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |
 | BR | Brazil | 14 | 8 |
-| BS | Bahamas | 6 | 0 |
+| BS | Bahamas | 7 | 0 |
 | BT | Bhutan | 7 | 0 |
 | BV | Bouvet Island | 1 | 0 |
 | BW | Botswana | 6 | 0 |
