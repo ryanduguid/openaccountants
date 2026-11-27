@@ -2,7 +2,7 @@
 name: gd-corporate-income-tax
 description: "Grenada corporate income tax reference for ordinary resident trading companies. Determine the chargeable income, rate, instalments and annual return from the applicable law and Inland Revenue instructions."
 jurisdiction: GD
-category: tax
+category: international
 tax_year: 2026
 tax_year_notes: "Source position checked on 27 November 2026. The general company rate took effect on 1 January 2019. The 2026 deadline notice and 2024 Beryl relief apply to their stated periods."
 last_updated: 2026-11-27
