@@ -1,12 +1,12 @@
 ---
 name: bs-income-tax
-description: "Bahamas domestic personal income tax scope through 10 November 2026, with National Insurance references and 2025 examples for individuals and sole traders."
+description: "Bahamas domestic personal income tax scope through 10 November 2026, with National Insurance, 2025 payroll examples and property rules from July 2026."
 jurisdiction: BS
 category: international
 tax_year: 2025
-tax_year_notes: "Personal income tax scope and the July 2026 National Insurance ceiling checked through 10 November 2026. Worked examples use the 2025 schedule."
-last_updated: 2026-11-10
-version: 0.3
+tax_year_notes: "Personal income tax scope and the July 2026 National Insurance ceiling checked through 10 November 2026. Payroll examples use the 2025 schedule. Property examples apply rules effective from 1 July 2026."
+last_updated: 2026-11-28
+version: 0.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -132,13 +132,13 @@ expected:
 | Unknown property ownership | Skip RPT section; note it for reviewer |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction for Business Licence cost purposes |
 | Unknown expense category (Business Licence deductibility) | Not deductible until confirmed |
-| Client asks about capital gains on property | No CGT in Bahamas; stamp duty applies on conveyance |
+| Client asks about a property sale | Check property transfer VAT, the relevant instrument and the date of supply under Section 5.7 |
 
 ### Required Inputs
 
 **Minimum viable** -- client's employment status (employed / self-employed / both), approximate annual earnings or turnover, and confirmation they are resident in or operating from the Bahamas.
 
-**Recommended** -- NIB registration number (nine-digit), whether a Business Licence has been obtained, VAT registration status and number if applicable, property ownership details for RPT, any recent real estate transactions for stamp duty.
+**Recommended** -- NIB registration number (nine-digit), whether a Business Licence has been obtained, VAT registration status and number if applicable, property ownership details for RPT, any recent real estate transfers, including the parties, instrument, consideration, fair market value and relevant dates.
 
 **Ideal** -- NIB Smart Card, Business Licence certificate, VAT registration certificate, DIR taxpayer file number, complete annual turnover figure, payroll records (for employers), bank statements for the full year.
 
@@ -147,7 +147,7 @@ expected:
 ### Refusal Catalogue
 
 - **R-BS-1** — For a domestic personal income tax computation, record the tax and its return as inapplicable for the checked period. Assess separate obligations for the person's circumstances.
-- **R-BS-2** — "The Bahamas has no capital gains tax. If you are selling real estate, stamp duty applies on the conveyance -- see Section 6. If you are selling securities, no transfer taxes apply." (Capital gains computation requested.)
+- **R-BS-2** — "The Bahamas has no general personal capital gains tax. For a property transfer, check VAT and stamp duty under Section 5.7. For securities, check the entity and its assets before concluding whether a transfer tax applies." (Capital gains computation requested.) [Bahamas Government investment guide][bs-investment-guide]
 - **R-BS-3** — "There is no inheritance, estate, or gift tax in the Bahamas. Estate planning and probate costs are legal/probate fees, not taxes. Escalate to a Bahamian attorney for estate planning." (Inheritance or estate planning.)
 - **R-BS-4** — For company tax, check whether the Domestic Minimum Top-Up Tax applies under ss 1, 4 and 5 of the Act. Check Business Licence, VAT and NIB separately. [Domestic Minimum Top-Up Tax Act, 2024](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2024/2024-0058/2024-0058_1.pdf)
 - **R-BS-5** — For a non-resident or expatriate, apply the domestic personal income tax position for the checked period and verify any foreign tax, separate reporting, social insurance and work permit obligations.
@@ -245,7 +245,8 @@ This is the deterministic pre-classifier for bank statement lines. When a transa
 | LOAN REPAYMENT, MORTGAGE PRINCIPAL | EXCLUDE | Loan principal is not an expense |
 | VAT PAYMENT, DIR VAT | EXCLUDE | VAT liability settlement |
 | PROVISIONAL TAX, ADVANCE TAX | Verify | Confirm the tax, taxpayer and jurisdiction |
-| STAMP DUTY PAYMENT | EXCLUDE from operating expenses | One-time property transaction cost, not recurring |
+| VAT STAMP, PROPERTY VAT PAYMENT | Review with the conveyance, assessment and payment receipt | Identify the property transaction and confirm the accounting treatment and any VAT recovery separately |
+| STAMP DUTY PAYMENT | Review the instrument and payment receipt | Identify the chargeable instrument, including the non-land portion of a business sale under section 23. See Section 5.7. |
 
 ### 3.8 Bahamian Banks -- Statement Format Reference
 
@@ -368,28 +369,13 @@ Business Licence fee:     BSD (818)
 Income tax:               BSD 0
 ```
 
-### Example 5 -- Property Purchase, Stamp Duty Calculation
+### Example 5 -- VAT on a Property Purchase
 
-**Scenario:** Nicole purchases a residential property in Nassau for BSD 250,000.
+Nicole, a Bahamian citizen, buys her second home in Nassau in August 2026. The consideration and fair market value are both BSD 250,000. Assume a direct sale with no special relief.
 
-**Step 1 -- Personal income tax on transaction:** BSD 0.
+The ordinary Bahamian individual rate is 4% on the full BSD 250,000. Estimated transfer VAT is **BSD 10,000**. The conveyance deed qualifies for the stamp duty exemption. The parties are jointly and severally liable for VAT. Use the agreement to establish who bears the cost between them. [VAT Act, Third Schedule item 2][bs-vat-act] · [Property VAT Rules, rules 4 and 10][bs-property-vat-rules] · [Stamp Act, Second Schedule item 21][bs-stamp-act]
 
-**Step 2 -- Stamp duty (graduated, shared 50/50 buyer/seller by default):**
-- First BSD 20,000 at 4%: BSD 20,000 × 4% = BSD 800
-- Next BSD 30,000 (BSD 20,001 -- BSD 50,000) at 6%: BSD 30,000 × 6% = BSD 1,800
-- Next BSD 50,000 (BSD 50,001 -- BSD 100,000) at 8%: BSD 50,000 × 8% = BSD 4,000
-- Remaining BSD 150,000 (above BSD 100,000) at 10%: BSD 150,000 × 10% = BSD 15,000
-- **Total stamp duty: BSD 21,600**
-- Nicole's share (buyer, 50%): **BSD 10,800**
-- Seller's share (50%): **BSD 10,800**
-
-*Arithmetic check: 800 + 1,800 + 4,000 + 15,000 = BSD 21,600 ✓*
-
-**Step 3 -- First-time buyer exemption:** If Nicole is a first-time buyer purchasing a dwelling up to BSD 500,000, she is **exempt** from stamp duty. (Source: Churchill & Jones Realty stamp duty guide)
-
-**Step 4 -- VAT provisional invoice (from July 2025):** Before executing conveyance, parties must obtain a provisional VAT invoice from DIR. (Source: Higgs & Johnson 2025 Tax Legislative Updates)
-
-**Step 5 -- Payment deadline:** Stamp duty due **within 6 months** of transaction closing.
+Obtain the provisional VAT invoice before execution. If execution is the first event establishing supply, the ordinary payment window runs for 180 calendar days from execution. Check payment exceptions and the separate deed registration clock under Section 5.7. [Conveyancing Acts 54 of 2025][bs-conveyance-2025] and [29 of 2026][bs-conveyance-2026] · [Property VAT Rules, rules 3–4][bs-property-vat-rules]
 
 ### Example 6 -- Employer Payroll NIB (3 Employees)
 
@@ -465,56 +451,65 @@ Ten cash benefits are funded: Sickness, Maternity, Funeral, Retirement (Pensions
 - **Key deadlines** — New business: obtain licence before commencing operations. Annual renewal application: 31 January (for the current year). Licence tax payment: 31 March. Business cessation notification to DIR: within 14 days, no later than 31 December.
 - **Financial statement requirements by turnover threshold** — > BSD 100,000: certified turnover statement by qualified accountant. BSD 250,000 -- BSD 5,000,000: review engagement report. > BSD 5,000,000: audited financial statements.  _(Inland Revenue Business Licence rates)_
 
-### 5.6 Real Property Tax (RPT): Rules
+### 5.6 Real Property Tax (RPT)
 
-- **RPT applicability** — RPT applies to owners of real property. Rates depend on classification.  _(inlandrevenue.finance.gov.bs/real-property-tax/faqs-rpt/)_
+Use the Department of Inland Revenue assessment, the applicable year, the ownership and the use of each unit. The following classifications and rates reflect the law from 1 July 2026. Confirm how the July amendments affect an assessment issued under earlier rules. [Real Property Tax Act, ss 2–3 and 7][bs-rpt-act] · [Act 22 of 2022, ss 3 and 10][bs-rpt-2022] · [Act 21 of 2026, ss 1–4][bs-rpt-2026]
 
-**Owner-Occupied Residential**  _(inlandrevenue.finance.gov.bs/real-property-tax/faqs-rpt/)_
-
-| Assessed value | Rate |
+| Class | Annual tax |
 | --- | --- |
-| First BSD 300,000 | Exempt |
-| BSD 300,001 -- BSD 500,000 | 0.625% |
-| Above BSD 500,000 | 1.0% |
-| Annual cap | BSD 150,000 |
+| Owner-occupied | First BSD 300,000 exempt, 0.625% on the part above BSD 300,000 up to BSD 500,000 and 1% on the excess. Annual cap BSD 150,000. |
+| Foreign owner-occupied | 0.625% on the first BSD 1 million and 1% on the excess. Annual cap BSD 200,000. |
+| Residential | BSD 300 if value is at most BSD 75,000. Above BSD 75,000, 0.625% on the whole value. [Act 16 of 2020, s 2][bs-rpt-2020] |
+| Commercial | 0.75% on the first BSD 500,000, 1% on the part above BSD 500,000 up to BSD 2 million and 1.5% on the excess. |
+| Taxable unimproved property | BSD 100 on the first BSD 7,000 and 2% on the excess. [Real Property Tax Act, s 3(2)(b)][bs-rpt-act] · [Act 13 of 2018, s 3][bs-rpt-2018] |
 
-**Residential (4 units or fewer, not owner-occupied)**  _(inlandrevenue.finance.gov.bs/real-property-tax/faqs-rpt/)_
+For owner-occupied treatment, verify the qualifying Bahamian or permanent residence status with the right to work and the ownership and exclusive permanent or seasonal dwelling use conditions. The separate foreign owner-occupied class applies to a qualifying non-Bahamian with a residence permit, annual work permit or Home Owner Resident Permit who owns in fee simple or is a mortgagor in possession and occupies the property exclusively as a permanent or seasonal dwelling. For property held through a company, check section 3(8), including exclusive dwelling use and the declaration by the beneficial owner of more than 50% of the shares. Apply the single-residence restriction in section 3(8A) when a person or spouses have separate residences. [Act 22 of 2022, s 3][bs-rpt-2022] · [Act 21 of 2026, s 2][bs-rpt-2026]
 
-| Assessed value | Rate |
+The residential class covers up to 4 units, excluding outbuildings, used solely as dwellings outside either owner-occupied class. The beneficial owner must be a Bahamian citizen or registered for VAT to operate the property as a commercial rental establishment. Check the rule that treats each dwelling as commercial where a person owns more than 4 non-owner-occupied dwellings. [Act 22 of 2022, s 2][bs-rpt-2022] · [Act 21 of 2026, s 2][bs-rpt-2026]
+
+For a Crown-Leased Cay, verify the separate assessment and rate under section 3(2)(d). [Real Property Tax Act, ss 2–3][bs-rpt-act]
+
+The new proviso in section 3(2)(bb) applies owner-occupied rates to a unit classified under section 3(8B) and caps the aggregate annual tax for the other units at BSD 300,000. The proviso refers to duplexes, triplexes and fourplexes. Confirm whether a fourplex qualifies because section 3(8B) refers to qualifying duplexes and triplexes. Where co-owners fall into different statutory categories, rates or exemptions, section 3A allocates the assessed value in equal shares and applies the appropriate treatment separately to each share. [Act 14 of 2023, s 2][bs-rpt-2023] · [Act 21 of 2026, ss 3–4][bs-rpt-2026]
+
+- **Unimproved land.** Check the exemption for unimproved property owned by Bahamians and the conditions in section 42. Property under construction can fall in the unimproved class before occupancy or issue of the occupancy certificate. Property used for business activity falls outside the unimproved class. [Real Property Tax Act, s 42][bs-rpt-act] · [Act 22 of 2022, ss 2 and 10][bs-rpt-2022]
+- **Annual payment.** The section 18 due date is 31 March for the tax year starting 1 January, subject to the statutory qualifications. Section 20B deducts 10% of the tax due when the tax and any related surcharge are paid in full by 31 March. Section 18(2) protects amounts paid by 31 December of the same tax year from surcharge. Confirm the due date and any written extension against the assessment. [Real Property Tax Act, s 20B][bs-rpt-act] · [Act 22 of 2022, s 7][bs-rpt-2022]
+- **Change of use.** An owner must file a return within 14 days if property classified as owner-occupied changes from sole use as the owner's dwelling. Give the date and details of the change. [Act 17 of 2021, s 3][bs-rpt-2021]
+- **Evidence to confirm before applying special treatment.** Check relevant exemptions, nonstandard assessments, property declarations and current filing procedures. For pensioner relief, section 20A provides a 50% reduction of eligible tax after the owner-occupied exemption, limited to tax on the first BSD 1 million of assessed value. Check citizenship, retirement benefit or age 65, beneficial ownership, occupation, proof and the prescribed declaration. Confirm the interaction with other relief before calculating. [Real Property Tax Act, ss 5, 10, 20A and 42][bs-rpt-act] · [DIR forms][bs-rpt-forms]
+
+### 5.7 VAT and Stamp Duty on Property Transfers
+
+A deed conveying or otherwise transferring realty within item 21 of the Stamp Act Second Schedule is exempt from stamp duty from 1 July 2024. Check any presentation requirements under section 3. A taxable real property transfer generally attracts VAT. For an ordinary purchase, use the higher of consideration and fair market value under rule 10(1). Select the applicable Third Schedule item using the transaction and transferee details. [Stamp Act, ss 1 and 3 and Second Schedule item 21][bs-stamp-act] · [VAT Act, Third Schedule][bs-vat-act] · [Property VAT Rules, rule 10][bs-property-vat-rules]
+
+**Ordinary purchase by a Bahamian individual under Third Schedule item 2.** Apply the rate to the whole taxable value.
+
+| Taxable value (BSD) | VAT rate |
 | --- | --- |
-| Up to BSD 75,000 | BSD 300 flat |
-| Above BSD 75,000 | 0.625% |
+| Up to 100,000 | 2.5% |
+| Over 100,000 to 300,000 | 4% |
+| Over 300,000 to 500,000 | 6% |
+| Over 500,000 to 700,000 | 8% |
+| Over 700,000 to 1 million | 9% |
+| Over 1 million | 10% |
 
-**Commercial / 5+ units / Foreign-Owned Rentals**  _(inlandrevenue.finance.gov.bs/real-property-tax/faqs-rpt/)_
+Item 2 extends to specified holding companies. Check its conditions before using those rates for a company. Item 1 generally provides 2.5% up to BSD 100,000 and 10% above that for a Bahamian company or other qualifying Bahamian entity within that item. Item 3A specifies 10% for a foreign person. [VAT Act, s 2 and Third Schedule items 1, 2 and 3A][bs-vat-act]
 
-| Assessed value | Rate |
-| --- | --- |
-| First BSD 500,000 | 0.75% |
-| BSD 500,001 -- BSD 2,000,000 | 1.0% |
-| Above BSD 2,000,000 | 1.5% |
-| Annual cap (from 2025 amendment) | BSD 150,000 |
+**First home.** An eligible Bahamian citizen can obtain zero-rating on the acquisition of a first dwelling valued at up to BSD 300,000, subject to the Rules and Comptroller approval. The separate zero-rating for qualifying financing uses a BSD 500,000 ceiling. From 1 July 2026, a qualifying first-home acquisition over BSD 300,000 and up to BSD 600,000 attracts 4% on the whole taxable value under Third Schedule item 3. Check the transaction type and approval before applying any relief. [VAT Act, First Schedule item 9(d) and Third Schedule item 3][bs-vat-act] · [Act 19 of 2026, ss 1 and 5][bs-vat-2026] · [Property VAT Rules, rule 9][bs-property-vat-rules]
 
-**Vacant Land -- Foreign-Owned Only**  _(inlandrevenue.finance.gov.bs/real-property-tax/faqs-rpt/)_
+**Invoice, payment and registration.** From 1 July 2026, section 40 requires a provisional invoice from the VAT Comptroller before executing a conveyance. Under rules 3 and 4, VAT is due on the earliest of execution, completion and substantial performance. Ordinarily pay in full within 180 calendar days of supply, subject to VAT Act section 32(16) and the rule 4(3) reporting treatment for a registrant making a supply in its taxable activity. Parties are jointly and severally liable under rule 4(8). Section 40(4) separately requires submission of the deed for registration within 180 calendar days of execution. Confirm the current invoice and registration procedures with DIR and the conveyancer. [Conveyancing Acts 54 of 2025][bs-conveyance-2025] and [29 of 2026][bs-conveyance-2026] · [Property VAT Rules, rules 3–4][bs-property-vat-rules] · [DIR provisional invoice guidance][bs-dir-invoice] · [DIR VAT Stamp portal][bs-dir-property]
 
-| Assessed value | Rate |
-| --- | --- |
-| First BSD 7,000 | BSD 100 flat |
-| Above BSD 7,000 | 2.0% |
+Under section 40(3), the parties and their attorneys, real estate agents and brokers are jointly and severally responsible for ensuring payment and must report any known non-compliance immediately in writing to the VAT Comptroller. Sections 40(5)–(6) require verification that the Comptroller issued the provisional invoice before disbursing or completing a loan, mortgage or refinancing to facilitate the purchase or development. Contravention is an offence and carries a penalty equal to the unpaid VAT on the conveyance. [Conveyancing Act 54 of 2025, s 3][bs-conveyance-2025] · [Act 29 of 2026, ss 1 and 3][bs-conveyance-2026]
 
-- **RPT deadlines and discounts** — Annual payment deadline: 31 March. Early payment discount: 10% if paid by 31 March. Pensioner discount (Bahamian citizen, 65+): 50% off balance. Annual surcharge if unpaid by 31 December: 5% surcharge, plus 5% interest on outstanding amounts. Property declaration to DIR: by 31 December each year.
+**Payment priority.** From 1 July 2025, conveyance VAT ranks equally with RPT levied on the same property and ahead of security interests, proprietary rights and other claims affecting it. The Comptroller may assess VAT on a supply of real property at any time. Assessed VAT takes priority over fees, commissions and other amounts payable in respect of the supply. If those amounts are paid first, each recipient is jointly and severally liable up to the lesser of the payment received and the unpaid VAT assessed on that supply. Check both priority rules before releasing funds. [Conveyancing Act 54 of 2025, ss 1 and 3][bs-conveyance-2025] · [VAT Act 45 of 2025, ss 1 and 17][bs-vat-2025]
 
-### 5.7 Stamp Duty on Real Estate Conveyances
+**Property declarations.** From 1 July 2025, section 47C requires the transferor of a direct or indirect beneficial interest in real property to file a prescribed declaration with the Comptroller within 30 days after execution of the instrument or arrangement. If the transferor engages a real estate agent for the conveyance, that agent must file on the transferor's behalf. If the agent fails to file on time, the agent and transferor are jointly and severally liable for a penalty of 3% of the consideration paid or payable. Indirect transfers can include a change of control or enjoyment through a trust, nominee or company. [VAT Act 45 of 2025, ss 1 and 11][bs-vat-2025]
 
-**Stamp Duty on Real Estate Conveyances**  _(Churchill & Jones Realty stamp duty guide; Higgs & Johnson 2025 Tax Legislative Updates)_
+Under section 47B a company covered by that section must notify its registered agent, or the Registrar General if it has no registered agent, within 15 days of acquiring or disposing of an interest in real property. For companies registered under the Companies Act or International Business Companies Act, the registered agent or Registrar General, as applicable, files the annual declaration with the Comptroller by 31 January for the prior year under the amendment effective 1 July 2025. Check the required property interests and share ownership changes under section 47B(3). Confirm the prescribed forms and filing routes with DIR. [VAT Act, s 47B][bs-vat-act] · [VAT Act 45 of 2025, ss 1 and 10][bs-vat-2025]
 
-| Consideration | Stamp duty rate |
-| --- | --- |
-| Up to BSD 20,000 | 4% |
-| BSD 20,001 -- BSD 50,000 | 6% |
-| BSD 50,001 -- BSD 100,000 | 8% |
-| Above BSD 100,000 | 10% |
+**Other instruments and transfers.** Check the VAT and Stamp Act treatment separately for share sales involving entities with Bahamian property or business interests, business sales, mortgages, leases and transactions involving gifts or trusts. Section 23 of the Stamp Act addresses sales of businesses. The July 2026 amendment changes the stamp duty treatment of the portion involving property other than land. Confirm the relevant rates, exemptions and filing procedures before estimating these cases. [VAT Act, Third Schedule][bs-vat-act] · [Stamp Act, ss 23–27 and Second Schedule item 26][bs-stamp-act] · [Act 18 of 2026, s 3][bs-stamp-2026]
 
-- **Split, exemption, and deadlines** — Normally split equally (50/50) between buyer and seller unless otherwise agreed. First-time buyer exemption: Exempt on a dwelling house or vacant land for a dwelling up to BSD 500,000. Stamp duty on mortgage instruments: approximately 1% of mortgage amount [RESEARCH GAP -- reviewer to confirm exact current rate]. Leases < 5 years: 2.5% of annual rent. Payment deadline: within 6 months of transaction closing. From 1 July 2025: Parties must obtain a provisional VAT invoice from DIR before executing conveyance instruments. Failure: 3% of consideration penalty (joint and several: transferor + agent).  _(Higgs & Johnson 2025 Tax Legislative Updates)_
+**Acquisitions by non-Bahamians.** Check whether sections 2–4 require registration with the Investments Board or a permit before acquisition. Record the required certificate or permit with the acquisition documents. Section 10A can cause a permit to expire 180 days from grant if the holder fails to submit the acquisition instrument for VAT, pay that VAT, make the requisite property return and pay RPT as assessed. Section 10B provides an extension subject to notice, fee and timing conditions. Check the permit clock separately from the VAT clock. Confirm the procedure for any exception, registration, expiry or extension with the conveyancer. [International Persons Landholding Act, ss 2–4][bs-landholding-act] · [Acts 24 of 2024, ss 2–3][bs-landholding-2024] and [50 of 2025, ss 2–3][bs-landholding-2025]
+
+From 1 July 2026, a qualifying certificate holder can apply to the Director of Immigration for the annual Home Owner Resident Permit. The permit is distinct from the acquisition permit and the RPT classification. [Act 27 of 2026, ss 1–3][bs-landholding-2026]
 
 ### 5.8 Non-Deductible Items
 
@@ -569,9 +564,9 @@ If a VAT-registered business makes both taxable and exempt supplies, input VAT m
 
 ### 6.5 Real Property Tax Assessment Disputes
 
-The assessed value (used for RPT rate bands) is set by DIR and may differ from market value. A property owner may dispute the assessment.
+From 1 July 2026, lodge an objection with the Chief Valuation Officer within 30 calendar days after service of the assessment notice. Use the prescribed written form and state the grounds in detail. For an objection to the assessment of tax, pay the full assessed tax or provide acceptable security when lodging. The Chief Valuation Officer can relieve that requirement for good cause, subject to conditions. The statute allows late objections in specified circumstances. [Act 21 of 2026, s 7][bs-rpt-2026]
 
-**Flag for reviewer:** If client believes assessed value is overstated, escalate to a Bahamian real property attorney or appraiser before filing.
+An appeal against a served objection decision ordinarily has a 30-calendar-day deadline after service. For an objection on which the officer has yet to serve a decision after 180 days from lodging, section 12(3) provides a separate route to the Tax Appeal Commission. Confirm the applicable filing deadline for that case. The Commission Act prescribes a notice of appeal and conditions for the Commission to hear and determine assessment appeals. Check the current filing process, certification, payment or security arrangements and the waiver route for an eligible individual. [Act 21 of 2026, s 8][bs-rpt-2026] · [Tax Appeal Commission Act, ss 5–8 and 11][bs-commission-act] · [Act 24 of 2026, s 2][bs-commission-2026]
 
 ### 6.6 Business Licence Turnover Definition
 
@@ -624,21 +619,24 @@ D. VAT (VAT-Registered Clients Only)
    D7. Return and payment due (21 days / 14 days after period end):    ___________
 
 E. REAL PROPERTY TAX (Property Owners Only)
-   E1. Property classification:    Owner-Occupied / Non-Owner-Occupied / Commercial / Vacant
+   E1. Property class and assessment year:    ___________
    E2. Assessed value:    BSD ___________
-   E3. RPT computed per rate table:    BSD ___________
-   E4. Early payment discount (10% if paid by 31 March):    BSD ___________
+   E3. RPT computed per applicable rate:    BSD ___________
+   E4. Verified relief or s 20B reduction:    BSD ___________
    E5. Net RPT payable:    BSD ___________
-   E6. Payment due: 31 March    [ ]
-   E7. Property declaration to DIR by 31 December:    [ ]
+   E6. Payment and declaration dates checked:    [ ]
 
-F. STAMP DUTY (Real Estate Transactions Only)
-   F1. Consideration (property value):    BSD ___________
-   F2. Stamp duty (graduated per rate table):    BSD ___________
-   F3. Client's share (typically 50%):    BSD ___________
-   F4. First-time buyer exemption applies?    Yes / No
-   F5. Provisional VAT invoice obtained from DIR?    [ ] (required from Jul 2025)
-   F6. Payment due within 6 months of closing:    [ ]
+F. PROPERTY TRANSFER VAT (Real Estate Transactions Only)
+   F1. Consideration and fair market value:    BSD ___________ / BSD ___________
+   F2. Applicable transferee class, rate and relief:    ___________
+   F3. Estimated VAT and contractual allocation:    BSD ___________ / ___________
+   F4. Provisional VAT invoice obtained before execution?    [ ]
+       Invoice verified before any loan, mortgage or refinancing disbursement or completion?    [ ]
+   F5. Date of supply and VAT payment deadline:    ___________ / ___________
+   F6. Deed execution and registration deadline:    ___________ / ___________
+   F7. VAT and RPT priority checked before paying claims, fees or commissions?    [ ]
+   F8. 30-day beneficial interest declaration due date and filer:    ___________ / ___________
+   F9. Company 15-day notice and annual declaration dates and filers:    ___________
 
 REVIEWER FLAGS:
    [ ] NIB registration confirmed and contributions current?
@@ -646,7 +644,7 @@ REVIEWER FLAGS:
    [ ] Business Licence obtained before operations commenced?
    [ ] VAT registration status confirmed (above/below BSD 100k threshold)?
    [ ] RPT assessed value verified?
-   [ ] Any stamp duty transaction in period -- provisional VAT invoice obtained?
+   [ ] Property transfer VAT assessed, provisional invoice checked and deadlines documented?
    [ ] No PIT return required -- confirmed with client?
    [ ] All T2 items flagged for reviewer?
 ```
@@ -676,7 +674,8 @@ REVIEWER FLAGS:
 | NIB | National Insurance Board | Social contributions authority |
 | BL | Business Licence | Annual licence fee |
 | RPT | Real Property Tax | Annual property tax |
-| STAMP DUTY | Conveyance tax | Property transaction tax |
+| VAT STAMP | DIR property transaction VAT assessment or payment reference | Match to the relevant instrument and receipt |
+| STAMP DUTY PAYMENT | Instrument-specific stamp duty payment | Check the instrument, statutory charge and receipt |
 | BSD / B$ | Bahamian Dollar | Pegged 1:1 to USD; treat as USD equivalent |
 | WIRE / TT | Telegraphic Transfer / Wire | International payment -- check invoices |
 | CONCH, WALK-IN PAYMENT | In-person DIR/NIB payment | Often for BL or RPT |
@@ -710,9 +709,9 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
    If yes, what is your annual turnover?
 6. Do you own any real property in the Bahamas?
    If yes, what classification (owner-occupied / rental / commercial)?
-   Have you paid your 2025 Real Property Tax?
-7. Did you buy or sell any real estate in 2025?
-   If yes, has stamp duty been paid within 6 months of closing?
+   What year does the assessment cover, and has it been paid?
+7. Did you buy or sell real estate in the period?
+   If yes, collect the invoice, payment evidence and the execution and supply dates.
 8. Do you employ any staff?
    If yes, are you filing C10 forms and paying NIB by the 15th monthly?
 ```
@@ -734,10 +733,9 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 | VAT penalties | inlandrevenue.finance.gov.bs/value-added-tax/fees-fines-and-penalties/ |
 | Business Licence rates | inlandrevenue.finance.gov.bs/tax-incentives/business-licence-new-rates-1/ |
 | Business Licence penalties | inlandrevenue.finance.gov.bs/business-licence/fees-fines-and-penalties-bl/ |
-| Real Property Tax rates | inlandrevenue.finance.gov.bs/real-property-tax/faqs-rpt/ |
-| RPT 2025 amendments (BSD 150k cap) | Real Property Tax Amendment Bill 2025 -- laws.bahamas.gov.bs |
-| Stamp duty rates | Churchill & Jones Realty -- churchilljonesrealty.com/stamp-duties-taxes/ |
-| Stamp duty + VAT invoice rule (Jul 2025) | Higgs & Johnson 2025 Tax Legislative Updates |
+| Annual property tax | [Real Property Tax Act][bs-rpt-act] · [Acts 13 of 2018][bs-rpt-2018], [15 of 2019][bs-rpt-2019], [16 of 2020][bs-rpt-2020], [17 of 2021][bs-rpt-2021], [22 of 2022][bs-rpt-2022], [14 of 2023][bs-rpt-2023], [16 of 2024][bs-rpt-2024] and [21 of 2026][bs-rpt-2026] |
+| Property transfer VAT and conveyancing | [VAT Act][bs-vat-act] · [Act 19 of 2026][bs-vat-2026] · [Property VAT Rules][bs-property-vat-rules] · [Conveyancing Acts 54 of 2025][bs-conveyance-2025] and [29 of 2026][bs-conveyance-2026] |
+| Stamp duty on instruments | [Stamp Act 22 of 2024][bs-stamp-act] · [Act 18 of 2026][bs-stamp-2026] |
 | Customs duties (general) | Bahamas Customs -- bahamascustoms.gov.bs |
 | Minimum wage (BSD 6.50/hr from Jan 2023) | WageIndicator; Playroll Bahamas minimum wage guide |
 | Procedural obligations overview | Higgs & Johnson -- higgsjohnson.com/principal-procedural-obligations-of-a-taxpayer-in-the-bahamas/ |
@@ -750,13 +748,15 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 | --- | --- |
 | NIB arrears | Annual compound interest at the prime rate, subject to regulations and any other prescribed rate and date. Verify any waiver and the Board's calculation. [National Insurance Act, s 55](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/1972/1972-0021/1972-0021.pdf) · [Act 27 of 2024, s 6](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2024/2024-0027A/2024-0027A.pdf) |
 | VAT late filing | BSD 100 fixed + 10% of unpaid tax (Source: Inland Revenue VAT Fines) |
-| VAT monthly interest | 1.5% per month on outstanding balance |
+| VAT late interest | From 1 July 2025, section 47A(4) applies prime plus 1% to outstanding tax after its due date. For real property, section 47A(4A) starts interest liability 21 days after the tax becomes due and payable. Verify the applicable prime rate and calculation. [Act 45 of 2025, ss 1 and 9][bs-vat-2025] · [S.I. 37 of 2025, rule 2][bs-property-vat-2025] |
 | VAT late registration | Retroactive back-tax + penalties imposed by DIR |
 | Business Licence late application | BSD 100 (Source: inlandrevenue.finance.gov.bs/business-licence/fees-fines-and-penalties-bl/) |
 | Business Licence late tax payment | 10% of tax liability |
 | Business Licence interest (30+ days) | 5% per annum |
-| RPT annual surcharge (unpaid by 31 Dec) | 5% surcharge + 5% interest |
-| Stamp duty -- no provisional VAT invoice | 3% of consideration (joint/several: transferor + agent) (Source: Higgs & Johnson 2025) |
+| RPT surcharge, from 1 July 2024 | Subject to section 18, 5% per year for most property. For unimproved property owned by a non-Bahamian, 5% in the first year outstanding, 7.5% in the second and 12% in the third and later years. [Act 16 of 2024, s 3][bs-rpt-2024] · [Act 22 of 2022, s 7][bs-rpt-2022] |
+| Property transfer VAT, late submission or payment | Under section 38D as amended from 1 December 2024, the recipient is liable to a fine. For property valued at BSD 300,000 or less, the fine is 10% of tax owed. Above BSD 300,000 the fine is 10% if the instrument is submitted and VAT is paid within 6 months after their respective prescribed deadlines, and 15% if either exceeds that window. Verify late interest separately. [VAT Act, s 38D][bs-vat-act] · [Act 18 of 2024, ss 1 and 7][bs-vat-2024] |
+
+Refer potential false statements on property transfers to the reviewer for separate consideration under section 38K. [VAT Act 45 of 2025, ss 1 and 8][bs-vat-2025]
 | Operating without Business Licence | Prosecution |
 
 ### Test Suite
@@ -781,14 +781,17 @@ Expected: Annual NIB = 10.30% × BSD 810 × 52 = BSD 4,338.36.
 Input: Self-employed, annual taxable supplies BSD 95,000.
 Expected: Below BSD 100,000 threshold. VAT registration NOT required (but voluntary registration available). No VAT return to file.
 
-**Test 6 -- Stamp duty, first-time buyer.**
-Input: First-time buyer, purchasing a dwelling for BSD 400,000.
-Expected: Normally stamp duty would be: BSD 800 (first BSD 20k) + BSD 1,800 (next BSD 30k) + BSD 4,000 (next BSD 50k) + BSD 30,000 (remaining BSD 300k at 10%) = BSD 36,600 total. BUT first-time buyer exemption applies (dwelling ≤ BSD 500k). Stamp duty = BSD 0.
+**Test 6 -- Transfer VAT, qualifying first-home buyer.**
+Input: Bahamian citizen buys a first dwelling in August 2026, with consideration and fair market value both BSD 400,000. The purchase qualifies for the first-home rate.
+Expected: BSD 400,000 × 4% = BSD 16,000 estimated acquisition VAT. Assess any financing relief separately.
 
-**Test 7 -- Stamp duty, non-exempt buyer.**
-Input: Second-property buyer, purchasing for BSD 75,000.
-Expected: BSD 800 (4% × 20k) + BSD 1,800 (6% × 30k) + BSD 2,000 (8% × 25k) = BSD 4,600 total. Split equally: each party pays BSD 2,300.
-*Arithmetic check: 20,000 × 4% = 800; 30,000 × 6% = 1,800; 25,000 × 8% = 2,000. Sum = BSD 4,600. Each party BSD 2,300 ✓*
+Boundary checks under Section 5.7. An approved first-home acquisition at BSD 300,000 is zero-rated. A qualifying acquisition at BSD 600,000 attracts BSD 600,000 × 4% = BSD 24,000. Each amount is the higher of consideration and fair market value.
+
+**Test 7 -- Transfer VAT, second home.**
+Input: Bahamian citizen purchases a second dwelling in August 2026, with consideration and fair market value both BSD 75,000. No special relief applies.
+Expected: BSD 75,000 × 2.5% = BSD 1,875 estimated transfer VAT. The parties are jointly and severally liable.
+
+Late fine boundaries under section 38D. For property valued at BSD 300,000, the fine is 10% of tax owed even if a deadline is missed by more than 6 months. At BSD 300,001, the fine is 10% if both submission and payment take place within 6 months of their respective deadlines, and 15% if either occurs after its 6-month window. Check interest separately.
 
 **Test 8 -- No income tax return.**
 Input: Any individual (employed or self-employed) asks if they need to file an income tax return in the Bahamas.
@@ -799,8 +802,10 @@ Input: Employer with 2 ordinary weekly paid employees in 2025, each on BSD 700 i
 Expected: Per employee per week, the employee share is BSD 32.55 and the employer share is BSD 46.55. Combined C10 total is BSD 632.80 for a 4-Monday month and BSD 791.00 for a 5-Monday month.
 
 **Test 10 -- RPT, owner-occupied property.**
-Input: Owner-occupied residential property, assessed value BSD 450,000.
-Expected: First BSD 300,000 exempt. Next BSD 150,000 at 0.625%: BSD 150,000 × 0.625% = BSD 937.50. Total RPT = BSD 937.50. If paid by 31 March: 10% early-payment discount = BSD 93.75 saving; net BSD 843.75.
+Input: Qualifying owner-occupied property under the rules from 1 July 2026, assessed value BSD 450,000. Assume no additional relief or surcharge.
+Expected: First BSD 300,000 exempt. BSD 150,000 × 0.625% = BSD 937.50 estimated RPT. If the conditions in section 20B are met, the BSD 93.75 reduction gives BSD 843.75 payable.
+
+Residential boundary under Section 5.6. A separate qualifying residential property assessed at BSD 75,000 incurs BSD 300 before any relief. At BSD 75,200 the tax is BSD 75,200 × 0.625% = BSD 470 before any relief.
 
 ## PROHIBITIONS
 
@@ -810,16 +815,46 @@ Expected: First BSD 300,000 exempt. Next BSD 150,000 at 0.625%: BSD 150,000 × 0
 - NEVER skip NIB compliance guidance -- it is the primary individual tax obligation and penalties accumulate rapidly
 - NEVER advise a self-employed client to start business without first addressing Business Licence and NIB registration
 - NEVER allow entertainment expenses as deductible without reviewer confirmation
-- NEVER omit the provisional VAT invoice warning for real estate transactions (required from July 2025)
+- NEVER use the deed registration clock to determine the VAT payment deadline
 - NEVER present these computations as definitive without reviewer sign-off -- always label as estimated
 - NEVER confuse BSD (Bahamian Dollar) with a different currency -- it is pegged 1:1 to USD
-- NEVER apply a stamp duty first-time buyer exemption without confirming it is a dwelling (not commercial) and consideration ≤ BSD 500,000
+- NEVER use the first-home financing ceiling to determine the acquisition rate
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+[bs-rpt-act]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/1969/1969-0023/1969-0023_2.pdf
+[bs-rpt-2018]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2018/2018-0013/2018-0013.pdf
+[bs-rpt-2019]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2019/2019-0015/2019-0015.pdf
+[bs-rpt-2020]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2020/2020-0016/2020-0016.pdf
+[bs-rpt-2021]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2021/2021-0017/2021-0017.pdf
+[bs-rpt-2022]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2022/2022-0022/2022-0022.pdf
+[bs-rpt-2023]: https://inlandrevenue.finance.gov.bs/wp-content/uploads/2023/07/Real-Property-Tax-Amendment-Act-2023.pdf
+[bs-rpt-2024]: https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/08/Real-Property-Tax-Amendment-Act-2024.pdf
+[bs-rpt-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0021A/2026-0021A.pdf
+[bs-rpt-forms]: https://inlandrevenue.finance.gov.bs/real-property-tax/forms-rpt/
+[bs-vat-act]: https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf
+[bs-vat-2024]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2024/2024-0018A/2024-0018A.pdf
+[bs-vat-2025]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0045A/2025-0045A.pdf
+[bs-vat-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0019A/2026-0019A.pdf
+[bs-property-vat-rules]: https://inlandrevenue.finance.gov.bs/wp-content/uploads/2023/06/Extraordinary_Gazette_17th_March_2023.pdf#page=5
+[bs-property-vat-2025]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0037S/2025-0037S.pdf
+[bs-conveyance-2025]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0054A/2025-0054A.pdf
+[bs-conveyance-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0029A/2026-0029A.pdf
+[bs-dir-invoice]: https://inlandrevenue.finance.gov.bs/guidance-note-20-requirement-for-provisional-vat-invoice-now-available/
+[bs-dir-property]: https://inlandrevenue.finance.gov.bs/other/vat-stamp/
+[bs-stamp-act]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2024/2024-0022/2024-0022_1.pdf
+[bs-landholding-act]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/1993/1993-0041/1993-0041.pdf
+[bs-landholding-2024]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2024/2024-0024A/2024-0024A.pdf
+[bs-landholding-2025]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0050A/2025-0050A.pdf
+[bs-landholding-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0027A/2026-0027A.pdf
+[bs-commission-act]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2020/2020-0003/2020-0003.pdf
+[bs-commission-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0024A/2026-0024A.pdf
+[bs-stamp-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0018A/2026-0018A.pdf
+[bs-investment-guide]: https://cdn.bahamas.gov.bs/tenant/tenanttgotb/documents/All%20Documents/1302BahamasbookletFINAL11zon-20240209160028.pdf
 
 <!-- openaccountants-cta-block -->
 
