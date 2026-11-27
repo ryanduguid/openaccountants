@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2210,
+  "guides": 2211,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -10905,6 +10905,19 @@
    "name": "gd-company-formation",
    "jurisdiction": "GD",
    "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
+  },
+  {
+   "slug": "gd-corporate-income-tax",
+   "path": "skills/international/grenada/gd-corporate-income-tax.md",
+   "name": "gd-corporate-income-tax",
+   "jurisdiction": "GD",
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
