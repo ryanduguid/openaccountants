@@ -8,10 +8,11 @@
 1. `intake.md`
 2. `gd-annual-employment-income-reference.md`
 3. `gd-company-formation.md`
-4. `gd-paye-employer-reference.md`
-5. `gd-social-contributions.md`
-6. `gd-tax-system-orientation.md`
-7. `gd-tax-system-source-reference.md`
+4. `gd-corporate-income-tax.md`
+5. `gd-paye-employer-reference.md`
+6. `gd-social-contributions.md`
+7. `gd-tax-system-orientation.md`
+8. `gd-tax-system-source-reference.md`
 
 ## Shared files this package needs
 
