@@ -62,3 +62,23 @@ The NIS identifies CARICOM and Canadian reciprocal arrangements. Obtain the appl
 [SELF]: https://nisgrenada.org/download/s-r-o-21-of-2023-national-insurance-self-employed-persons-regulations/
 [NISSELF]: https://nisgrenada.org/contributors/self-employed/
 [VOLUNTARY]: https://nisgrenada.org/contributors/voluntary/
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
+
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
