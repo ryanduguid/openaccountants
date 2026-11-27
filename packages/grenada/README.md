@@ -10,14 +10,15 @@
 3. `gd-company-formation.md`
 4. `gd-corporate-income-tax.md`
 5. `gd-financial-statements.md`
-6. `gd-non-resident-withholding-and-treaties.md`
-7. `gd-paye-employer-reference.md`
-8. `gd-property-and-transfer-tax.md`
-9. `gd-social-contributions.md`
-10. `gd-tax-compliance.md`
-11. `gd-tax-system-orientation.md`
-12. `gd-tax-system-source-reference.md`
-13. `gd-value-added-tax.md`
+6. `gd-investment-incentives.md`
+7. `gd-non-resident-withholding-and-treaties.md`
+8. `gd-paye-employer-reference.md`
+9. `gd-property-and-transfer-tax.md`
+10. `gd-social-contributions.md`
+11. `gd-tax-compliance.md`
+12. `gd-tax-system-orientation.md`
+13. `gd-tax-system-source-reference.md`
+14. `gd-value-added-tax.md`
 
 ## Shared files this package needs
 
