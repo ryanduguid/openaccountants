@@ -1,11 +1,11 @@
 ---
 name: bs-corporate-income-tax
-description: "Bahamas domestic minimum top-up tax for 2026, including group scope, filing, instalments and the Business Licence credit. Pending local-accountant review."
+description: "Bahamas domestic minimum top-up tax for 2026, including group scope, filing, instalments, assessments, appeals and the Business Licence credit. Pending local-accountant review."
 jurisdiction: BS
 category: international
 tax_year: 2026
 last_updated: 2026-11-28
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -39,10 +39,24 @@ From 1 July 2026, section 7A sets the immediately preceding fiscal year's DMTT l
 
 Section 61A of the Business Licence Act, inserted by Act 20 of 2025 and deemed in operation from 1 January 2024, allows an eligible person to credit DMTT paid against Business Licence tax. The DMTT fiscal year must start in the Business Licence assessment year. The credit is capped at the Business Licence tax assessed for that year. An allowed credit above tax owing carries forward to succeeding years. The DIR also states that Business Licence tax is outside the GloBE Covered Taxes entries in its DMTT return guide. [Business Licence (Amendment) Act 20 of 2025, ss 1–3][LICENCE-2025] · [DIR return guide, section 8.2.2][RETURN-GUIDE]
 
+## Assessments, objections and appeals
+
+The Financial Secretary may assess DMTT for a late or missing return, a return the Secretary considers inaccurate or unreasonable, or reason to believe the taxpayer determined the liability incorrectly. The written assessment must state the amount payable and how and when to object. The time limit in section 15(2) applies only to assessments under section 15(1)(a) or (b) where the default arose without neglect, carelessness, fraud or wilful default by the person filing or submitting the return or declaration. An assessment under that limit must be made before the latest applicable endpoint of 5 years after the relevant taxation year, 5 years after completion of an audit begun within that first period, or 2 years after the liability dispute is finally resolved. From 1 July 2026, amended section 15(3) disapplies that limit for misrepresentations attributable to neglect, carelessness, fraud, wilful default or wilful misstatement. [Act 58 of 2024, s 15][ACT-2024] · [Act 25 of 2026, ss 1 and 6][ACT-2026]
+
+File a written objection to a section 15 assessment with the Financial Secretary within 30 calendar days after the date of the assessment notice. Use the prescribed form and manner, set out the grounds in detail and provide full payment of the assessed tax or security acceptable to the Secretary at filing. The obligation to pay the assessed amount continues if the objection relies solely on a calculation error in a return filed with the Secretary. The Secretary may accept a later objection if satisfied there was no unreasonable delay. Respond to any required return or information request within the allowed period to keep the objection in effect. The Secretary has 90 calendar days from filing to consider the objection and send written notice of the decision. [Act 58 of 2024, s 18][ACT-2024]
+
+Section 19 permits appeals to the Tax Appeal Commission against an advance ruling under section 13, a decision on a section 18 objection, or where 90 calendar days have passed since filing the objection without notice of a decision. File a written notice with detailed grounds, following the applicable form and manner. If an advance ruling includes a tax assessment, section 19(2)(c) requires payment in full or acceptable security when appealing. The Commission Act generally allows 30 calendar days from service of a decision and specifies the Fourth Schedule notice. Its express deadline for an appeal without a decision notice refers to an objection under section 81 of the Value Added Tax Act. Confirm the DMTT deadline and how to file the Fourth Schedule notice without a decision. A decision under appeal remains operative unless the Commission orders a stay. [Act 58 of 2024, ss 19 and 24 and Second Schedule][ACT-2024] · [Tax Appeal Commission Act 3 of 2020, ss 6 and 8 and Fourth Schedule][APPEALS-2020]
+
+For an appeal against a decision on an assessment objection, the Commission Act requires the decision-maker to certify payment, sufficient acceptable security or an instalment arrangement before the Commission can hear and decide the appeal. For security, section 11(1)(b) covers the tax amount plus interest and penalties that are or may become payable. From 1 July 2026, Act 24 of 2026 specifies tax payable as computed by the decision-maker at the time of filing the appeal. The amendment prints 'upaid' as the word replaced, whilst the 2020 Act uses 'unpaid'. Confirm the required amount, acceptable security and certification process for the case. [Tax Appeal Commission Act 3 of 2020, s 11][APPEALS-2020] · [Act 24 of 2026, ss 1–2][APPEALS-2026]
+
+Keep records relevant to computing DMTT within The Bahamas until the later of 5 years after the end of the latest relevant taxation year or, for a disputed liability, 2 years after final resolution. Earlier disposal requires written permission from the Financial Secretary. [Act 58 of 2024, s 20][ACT-2024]
+
 ## Evidence still needed
 
-Confirm the prescribed return choice and deadline, the section 7A instalment calendar and payment procedures, the Business Licence credit claim process and current assessment, objection and appeal procedures before filing or paying. The guide covers DMTT and its Business Licence credit. Verify withholding and other cross-border tax obligations separately for the payment and period in question.
+Confirm the prescribed return choice and deadline, the section 7A instalment calendar and payment procedures, the Business Licence credit claim process and prescribed objection and appeal forms, live filing channels and the amount and forms of security acceptable in each process. The guide covers DMTT and its Business Licence credit. Verify withholding and other cross-border tax obligations separately for the payment and period in question.
 
+[APPEALS-2020]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2020/2020-0003/2020-0003_1.pdf
+[APPEALS-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0024A/2026-0024A.pdf
 [ACT-2024]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2024/2024-0058/2024-0058_1.pdf
 [ACT-2026]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0025A/2026-0025A.pdf
 [LICENCE-2025]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0020A/2025-0020A.pdf
