@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2214,
+  "guides": 2215,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -10924,6 +10924,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-27"
+  },
+  {
+   "slug": "gd-financial-statements",
+   "path": "skills/international/grenada/gd-financial-statements.md",
+   "name": "gd-financial-statements",
+   "jurisdiction": "GD",
+   "category": "financial-statements",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "gd-non-resident-withholding-and-treaties",

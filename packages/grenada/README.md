@@ -9,13 +9,14 @@
 2. `gd-annual-employment-income-reference.md`
 3. `gd-company-formation.md`
 4. `gd-corporate-income-tax.md`
-5. `gd-non-resident-withholding-and-treaties.md`
-6. `gd-paye-employer-reference.md`
-7. `gd-property-and-transfer-tax.md`
-8. `gd-social-contributions.md`
-9. `gd-tax-system-orientation.md`
-10. `gd-tax-system-source-reference.md`
-11. `gd-value-added-tax.md`
+5. `gd-financial-statements.md`
+6. `gd-non-resident-withholding-and-treaties.md`
+7. `gd-paye-employer-reference.md`
+8. `gd-property-and-transfer-tax.md`
+9. `gd-social-contributions.md`
+10. `gd-tax-system-orientation.md`
+11. `gd-tax-system-source-reference.md`
+12. `gd-value-added-tax.md`
 
 ## Shared files this package needs
 
@@ -23,6 +24,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`cross-border-workflow-base.md`](../_shared/cross-border-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
