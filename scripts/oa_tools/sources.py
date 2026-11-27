@@ -213,6 +213,7 @@ NON_GOV_AUTHORITY = frozenset((
     # charge the guide quotes, publishing its own contribution page.
     'vissb.vg',           # Virgin Islands Social Security Board
     'nibtt.net',          # National Insurance Board of Trinidad and Tobago
+    'nisgrenada.org',     # Grenada National Insurance Board and its regulations
     'nib-bahamas.com',    # National Insurance Board of The Bahamas
     'svbcur.org',         # Sociale Verzekeringsbank Curacao (AOV/AWW/BVZ)
     'nationalsif.netlify.app',   # South Sudan National Social Insurance Fund;
