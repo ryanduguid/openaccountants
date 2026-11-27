@@ -1,43 +1,78 @@
 ---
 name: bs-company-formation
-description: "Source-cited draft: company formation & entity choice for Bahamas (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Bahamas Companies Act and IBC incorporation, registry filing, the published IBC fee schedule and nominee rules. Confirm current fees and filing requirements before relying on them."
 jurisdiction: BS
 category: formation
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+tax_year_notes: "Checked in 2026. The guide dates the published fee schedule, the registry changes and the nominee and bearer share legislation."
+last_updated: 2026-11-28
+version: 1.2
 review_status: pending_review
 tier: 2
+depends_on:
+  - workflow-base
+  - company-formation-workflow-base
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Bahamas Company Formation & Entity Choice
+# Bahamas company formation
 
-## Common entity types
+This guide covers companies incorporated under the Companies Act (Chapter 308) and international business companies (IBCs) under the International Business Companies Act (Chapter 309). Check the proposed activities, ownership and required approvals before selecting a form. Partnerships, foundations, foreign company registration and regulated structures require separate checks.
 
-- **Common entity types overview** — The most common vehicles are companies incorporated under the Companies Act, 1992 (domestic companies) and International Business Companies under the International Business Companies Act, 2000. Partnerships, exempted limited partnerships, and foundations are also available.
-- **International Business Company (IBC)** — Most common vehicle for non-resident/offshore business; governed by the International Business Companies Act, 2000  _(International Business Companies Act, 2000 (https://www.rgd.gov.bs/service/incorporation-of-an-international-business-company))_
-- **Domestic company** — Company incorporated under the Companies Act, 1992 for business conducted within The Bahamas  _(Companies Act, 1992)_
-- **Partnership / Exempted Limited Partnership** — Available under the Partnership Act and the Exempted Limited Partnership Act (approx — confirm)  _(Exempted Limited Partnership Act)_
-- **Minimum share capital (IBC)** — No minimum share capital; standard authorised capital of US 50,000 (or 50,000 shares) keeps the company within the minimum government fee band USD  _(International Business Companies Act, 2000 (https://multilaw.com/Multilaw/Multilaw/Global_Business_Entities_Guide/The_Bahamas_-_International_Business_Company.aspx))_
-- **Government incorporation fee — standard capital** — USD 350 for authorised share capital of US 50,000 or less (approx — confirm)  _(International Business Companies Act, 2000 (https://www.bycpa.com/Html/news/20252/3041.html))_
-- **Government incorporation fee — high capital** — USD 1,000 where authorised share capital exceeds US 50,000 (approx — confirm)  _(International Business Companies Act, 2000 (https://www.bycpa.com/Html/news/20252/3041.html))_
-- **Incorporation timeline** — Typically 3 to 5 business days to issue the Certificate of Incorporation  _(Registrar General's Department (https://www.bycpa.com/Html/news/20252/3041.html))_
-- **Incorporation steps** — Reserve a name, prepare and file the Memorandum and Articles of Association with the Registrar General, appoint a registered agent and registered office in The Bahamas, and pay government fees  _(International Business Companies Act, 2000 (https://www.rgd.gov.bs/service/incorporation-of-an-international-business-company))_
-- **Registered agent / office** — Every IBC must maintain a Bahamian-licensed registered agent and a registered office in The Bahamas  _(International Business Companies Act, 2000)_
-- **Annual government / renewal fee** — Annual registration fee payable to the Government each January after incorporation  _(International Business Companies Act, 2000 (https://www.bycpa.com/Html/news/20252/3041.html))_
-- **Annual business licence** — Companies carrying on business in The Bahamas must hold and annually renew a business licence and file an annual business tax return  _(Business Licence Act, 2023 (https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
-- **Economic substance compliance** — Relevant entities must meet economic substance requirements and file an annual economic substance report (approx — confirm)  _(Commercial Entities (Substance Requirements) Act, 2018)_
+## Incorporation and registry filing
 
-## Business licence tax (turnover tax)
+**Companies Act company.** Subject to the eligibility rules in section 3, 2 or more persons may form a company by signing and submitting its memorandum to the Registrar. For a company limited by shares, the memorandum states the proposed name, Bahamian registered office, that members' liability is limited, the number of shareholders and the proposed share capital. It states the number of shares and their fixed amount where applicable. Section 35(3) permits shares with or without par value. Each subscriber takes at least 1 share, records the number next to their name and signs before at least one witness. The Registrar issues the certificate of incorporation on receipt of a compliant memorandum. [Companies Act, ss 3, 5, 9, 16 and 35(3)][COMPANIES]
 
-- **Business licence tax overview** — In place of corporate income tax, businesses operating in The Bahamas pay an annual business licence tax assessed on the prior year's turnover under the Business Licence Act, 2023.
-- **Business licence tax — turnover up to BSD 50,000** — BSD 100 flat  _(Business Licence Act, 2023 (https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
-- **Business licence tax exemption** — Businesses with turnover of BSD 250,000 or less are exempt from business licence fees but must still file an annual return  _(Business Licence Act, 2023 (https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
-- **Business licence tax — turnover BSD 50,001 to 500,000** — 0.50% of turnover  _(Business Licence Act, 2023 (https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
-- **Business licence tax — turnover BSD 500,001 to 5,000,000** — 0.75% of turnover  _(Business Licence Act, 2023 (https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
-- **Business licence tax — turnover above BSD 5,000,000** — 1.25% of turnover  _(Business Licence Act, 2023 (https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
-- **Business licence renewal and payment deadlines** — Licence expires 31 December; renew by 31 January; tax payable by 31 March  _(Business Licence Act, 2023 (https://www.mof.gov.bs/about-business-licence-and-real-property-tax))_
+Section 10 generally requires signed articles within 6 months after the certificate is issued. A company limited by shares may give written notice when it submits its memorandum that it adopts the First Schedule, with or without modifications. File any modifications with the Registrar. Section 10(4) also deems a company limited by shares to have adopted the First Schedule if it leaves the articles unfiled for 6 months after filing its memorandum. Check the current First Schedule and the filing dates for the company. [Companies Act, s 10][COMPANIES] · [Act 39 of 2026, s 5][COMPANIES-SHARES]
+
+**IBC.** File the memorandum and articles on the same date. The memorandum includes the company name, Bahamian registered office and registered agent, objects or purposes, share currency and the applicable capital and share particulars. The Registrar registers both documents once the statutory requirements are met, including compliance certification by the formation attorney or named registered agent. The Registrar issues the certificate of incorporation upon registering the memorandum. An IBC must maintain a registered office and registered agent in The Bahamas. Confirm that the agent qualifies under section 38. [IBC Act, ss 13–16 and 37–38][IBC]
+
+**Registrar of Companies.** Act 53 of 2024 took effect on 1 February 2025. Corporate Administrative Registry Services (CARS) supports online name reservation, incorporation, amendments, annual statements and fee payments. The CARS overview says registration is mandatory for agents and financial corporate service providers. Confirm who must submit the application and which forms, supporting documents and charges apply. [Registrar of Companies Act, s 3][REGISTRAR] · [S.I. 5 of 2025][REGISTRAR-DATE] · [CARS overview][CARS]
+
+## IBC fees in the published statutory schedule
+
+The First Schedule in the 2017 revised edition lists these amounts. Confirm the current fee, how the Registrar applies the threshold and the payment currency. [IBC Act, s 176 and First Schedule, items 1–2 and 25–26][IBC]
+
+| Item | Schedule entry | Amount |
+| --- | --- | ---: |
+| 1 | Incorporation (up to $50,000) | $400 |
+| 2 | Incorporation (over $50,000) | $1,200 |
+| 25 | Government Annual Tax | $350 |
+| 26 | Government Annual Tax (over $50,000) | $1,000 |
+
+Section 176 allows the Minister to vary fees by order. Its late payment provision still refers to the third and fourth items, whilst the revised schedule places government annual tax at items 25 and 26. Confirm the operative annual payment deadlines, applicable items and any surcharge with the Registrar. [IBC Act, s 176 and First Schedule][IBC]
+
+## Nominee and share records
+
+From 19 January 2026, Act 30 of 2025 requires an IBC nominee shareholding to be identified in its memorandum and register. The nominee must complete a declaration of trust naming the beneficiaries. A record of that declaration must be kept at the registered office. The nominee shareholder must disclose the identity and relevant particulars of the person for whom the shares are held under IBC Act section 29 and Register of Beneficial Ownership Act sections 8 and 9. The nominee shareholder must also provide the required particulars for the legal entity and its registered agent under those beneficial ownership provisions. The Act restricts appointment or service as a director under arrangements to act on another person's instructions. A nominee director covered by the transitional provision had 6 months from commencement to cease acting and 7 days from cessation to give the declaration to the company and Registrar. [Act 30 of 2025, ss 2–4][IBC-NOMINEE] · [S.I. 7 of 2026][IBC-NOMINEE-DATE]
+
+The Attorney-General's briefing announced 19 January 2026 for the Companies Act nominee changes. Confirm the operative date in S.I. 2 of 2026 and the applicable transition under Act 29 of 2025. [Industry briefing, s 3][NOMINEE-BRIEFING] · [Act 29 of 2025, ss 1–4][COMPANIES-NOMINEE] · [S.I. 2 of 2026][COMPANIES-NOMINEE-DATE]
+
+Act 39 of 2026 received assent on 30 October 2026. It limits allotment under section 38(1)(a) to registered shares and repeals section 48. Companies that issued bearer shares must recall, cancel and replace them with registered shares within 6 months from commencement. Verify any special commencement provision before counting that period. [Act 39 of 2026, ss 2–5][COMPANIES-SHARES]
+
+## Operating obligations and evidence still needed
+
+Carry on business in or from The Bahamas only with the required Business Licence, subject to the statutory exceptions. Confirm sector approvals and the applicable licence class. Use the [Bahamas tax overview](bs-tax-overview.md) for licence tax and annual filing and payment dates. [Business Licence Act 2023, ss 9 and 11–14][LICENCE]
+
+The Commercial Entities (Substance Requirements) Act 45 of 2023 took effect on 1 September 2023 and repealed the 2018 Act, with transitional rules in section 31. Check the activity, entity classification, current reporting period and Ministry of Finance filing instructions under the amended Act. [Act 45 of 2023, ss 2 and 31–32][SUBSTANCE-ACT] · [S.I. 60 of 2023][SUBSTANCE-DATE] · [Ministry of Finance substance reporting notice][SUBSTANCE]
+
+Confirm live CARS forms, government charges, currency and processing times, later fee orders and annual payment treatment. Verify the Companies Act nominee commencement and beneficial ownership forms and deadlines for the entity, along with foreign ownership, sector approvals and obligations for other legal forms.
+
+[COMPANIES]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/1992/1992-0018/1992-0018.pdf
+[IBC]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2000/2000-0045/2000-0045.pdf
+[REGISTRAR]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/PRINCIPAL/2024/2024-0053/2024-0053_1.pdf
+[REGISTRAR-DATE]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2025/2025-0005/2025-0005_1.pdf
+[CARS]: https://carsbiz.rgd.gov.bs/cars-overview/
+[IBC-NOMINEE]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0030A/2025-0030A.pdf
+[IBC-NOMINEE-DATE]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2026/2026-0007/2026-0007_1.pdf
+[COMPANIES-NOMINEE]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0029A/2025-0029A.pdf
+[COMPANIES-NOMINEE-DATE]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2026/2026-0002/2026-0002_1.pdf
+[NOMINEE-BRIEFING]: https://scb.gov.bs/wp-content/uploads/2025/12/NOTE-TO-INDUSTRY-STAKEHOLDERS-NOMINEE-TRANSPARENCY-BRIEFING-1.pdf
+[COMPANIES-SHARES]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0039A/2026-0039A.pdf
+[LICENCE]: https://inlandrevenue.finance.gov.bs/wp-content/uploads/2023/07/Business-Licence-Act-2023.pdf
+[SUBSTANCE-ACT]: https://taxreporting.finance.gov.bs/wp-content/uploads/2023/08/CESRA-2023-Extraordinary-Gazette-11th-August-2023-B.pdf
+[SUBSTANCE-DATE]: https://laws.bahamas.gov.bs/cms/images/LEGISLATION/SUBORDINATE/2023/2023-0060/2023-0060.pdf
+[SUBSTANCE]: https://taxreporting.finance.gov.bs/wp-content/uploads/2023/10/Notice-of-New-Portal-and-Act-MOF-31-08-23-1.pdf
 
 <!-- openaccountants-cta-block -->
 
