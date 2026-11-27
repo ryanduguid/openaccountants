@@ -10,10 +10,11 @@
 3. `gd-company-formation.md`
 4. `gd-corporate-income-tax.md`
 5. `gd-paye-employer-reference.md`
-6. `gd-social-contributions.md`
-7. `gd-tax-system-orientation.md`
-8. `gd-tax-system-source-reference.md`
-9. `gd-value-added-tax.md`
+6. `gd-property-and-transfer-tax.md`
+7. `gd-social-contributions.md`
+8. `gd-tax-system-orientation.md`
+9. `gd-tax-system-source-reference.md`
+10. `gd-value-added-tax.md`
 
 ## Shared files this package needs
 
