@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2216,
+  "guides": 2217,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -10931,6 +10931,19 @@
    "name": "gd-financial-statements",
    "jurisdiction": "GD",
    "category": "financial-statements",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
+  },
+  {
+   "slug": "gd-investment-incentives",
+   "path": "skills/international/grenada/gd-investment-incentives.md",
+   "name": "gd-investment-incentives",
+   "jurisdiction": "GD",
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
