@@ -7,11 +7,12 @@
 
 1. `intake.md`
 2. `bahamas-vat.md`
-3. `bs-company-formation.md`
-4. `bs-corporate-income-tax.md`
-5. `bs-income-tax.md`
-6. `bs-payroll-social.md`
-7. `bs-tax-overview.md`
+3. `bs-beneficial-ownership.md`
+4. `bs-company-formation.md`
+5. `bs-corporate-income-tax.md`
+6. `bs-income-tax.md`
+7. `bs-payroll-social.md`
+8. `bs-tax-overview.md`
 
 ## Shared files this package needs
 

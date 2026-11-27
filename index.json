@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2217,
+  "guides": 2218,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -3644,6 +3644,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-11-10"
+  },
+  {
+   "slug": "bs-beneficial-ownership",
+   "path": "skills/international/bahamas/bs-beneficial-ownership.md",
+   "name": "bs-beneficial-ownership",
+   "jurisdiction": "BS",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "bs-company-formation",
