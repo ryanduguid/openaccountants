@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2211,
+  "guides": 2212,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -10976,6 +10976,19 @@
    "review_status": null,
    "tax_year": "2016",
    "last_updated": "2026-11-20"
+  },
+  {
+   "slug": "gd-value-added-tax",
+   "path": "skills/international/grenada/gd-value-added-tax.md",
+   "name": "gd-value-added-tax",
+   "jurisdiction": "GD",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-27"
   },
   {
    "slug": "gp-overseas-income-tax-reduction-reference",

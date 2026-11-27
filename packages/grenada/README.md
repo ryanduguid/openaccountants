@@ -13,6 +13,7 @@
 6. `gd-social-contributions.md`
 7. `gd-tax-system-orientation.md`
 8. `gd-tax-system-source-reference.md`
+9. `gd-value-added-tax.md`
 
 ## Shared files this package needs
 
