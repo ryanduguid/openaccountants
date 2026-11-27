@@ -7,8 +7,9 @@
 
 1. `intake.md`
 2. `gd-annual-employment-income-reference.md`
-3. `gd-tax-system-orientation.md`
-4. `gd-tax-system-source-reference.md`
+3. `gd-social-contributions.md`
+4. `gd-tax-system-orientation.md`
+5. `gd-tax-system-source-reference.md`
 
 ## Shared files this package needs
 
