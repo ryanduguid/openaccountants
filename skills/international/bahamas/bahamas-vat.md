@@ -1,11 +1,12 @@
 ---
 name: bahamas-vat
 description: Use this skill to prepare, review or classify transactions for a Bahamas VAT return. Trigger on "Bahamas VAT", "DIR Bahamas" or "Department of Inland Revenue Bahamas". Load alongside vat-workflow-base v0.1 or later.
-version: 2.1
+version: 2.2
 jurisdiction: BS
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
+tax_year: 2026
+tax_year_notes: "VAT return deadlines, selected food supply rules, imported and exported services and withholding checked through 28 November 2026."
+last_updated: 2026-11-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,27 +22,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | The Bahamas (Commonwealth of The Bahamas) |
 | Standard rate | 10% |
-| Reduced rate | 5% (food in food stores from April 2025; medications, diapers, hygiene from September 2025) |
-| Zero rate | 0% (exports, international transport) |
-| Exempt | Financial services, residential rent, education, medical, public transport |
-| Return form | VAT return (frequency based on turnover) |
-| Filing portal | https://inlandrevenue.finance.gov.bs |
+| Reduced rate | 5% on qualifying supplies and imports under the current Fourth Schedule |
+| Zero rate | 0% on qualifying exports and international transport |
+| Exempt | Qualifying financial services, residential rent, education, medical care, public transport and specified food supplies |
+| Return form | VAT return in the prescribed form |
+| Filing portal | [DIR VAT portal](https://vat.revenue.gov.bs), listed in the [DIR VAT FAQ](https://inlandrevenue.finance.gov.bs/value-added-tax/faqs/) |
 | Authority | Department of Inland Revenue (DIR) |
 | Currency | BSD (Bahamian Dollar, pegged 1:1 to USD) |
-| Filing frequencies | Monthly (>BSD 5M), Bimonthly (BSD 400K–5M), Quarterly (BSD 100K–400K), Annual (voluntary) |
-| Deadline | 21st of the month following the period |
-| Registration threshold | BSD 100,000 mandatory; BSD 50,000 voluntary |
+| Tax period | Calendar month or a different period set by the Comptroller |
+| Return and payment | Within 21 days after the period ends. Large taxpayer registrants have 14 days. |
+| Registration threshold | BSD 100,000 for ordinary cases. Check the applicable test, special cases and the Comptroller's conditions for voluntary registration. |
 | Companion skill | vat-workflow-base v0.1 or later — MUST be loaded |
 | Validated by | Pending local practitioner validation |
+
+From 1 July 2023, a registrant classified as a large taxpayer files and pays within 14 days after each tax period. The definition includes turnover of BSD 5 million or more and any other applicable classification. File a return even when no VAT is payable for the period. Confirm the assigned tax period and any special rule. Check the separate requirement to file invoice and adjustment details electronically when annual turnover from taxable activity exceeds BSD 5 million. [VAT Act, ss 2, 19–21 and 47](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf), [Act 20 of 2023, ss 1–2 and 11](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2023/2023-0020A/2023-0020A.pdf)
 
 **Conservative defaults**
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown rate on a sale | 10% |
+| Unknown rate on a sale | Confirm the applicable rate or exemption before classifying |
 | Unknown VAT status of a purchase | Not deductible |
-| Unknown counterparty location | Domestic Bahamas |
-| Unknown food classification (store vs restaurant) | 10% (restaurant/prepared) |
+| Unknown counterparty location | Confirm the supplier, recipient and service location before applying VAT |
+| Unknown food classification | Confirm the tariff item, preparation, seller or importer status and transaction date |
 
 **Red flag thresholds**
 
@@ -75,7 +78,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | FIDELITY BANK | EXCLUDE for bank charges | Same |
 | INTEREST, LOAN, REPAYMENT | EXCLUDE | Out of scope |
 
-### 3.2 Government (exclude)
+### 3.2 Taxes and statutory charges
 
 **Government pattern table**
 
@@ -85,6 +88,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | CUSTOMS, BAHAMAS CUSTOMS | EXCLUDE | Duty (import VAT separate) |
 | BUSINESS LICENCE, BL FEE | EXCLUDE | Government fee |
 | NIB, NATIONAL INSURANCE | EXCLUDE | National insurance |
+
+Classify a Government supply payment using its contract, invoice and VAT withholding evidence under Section 3.8. Use the customs declaration to identify import VAT separately from customs duties.
 
 ### 3.3 Utilities
 
@@ -106,14 +111,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | BAHAMAS FIRST, COLINA, J.S. JOHNSON | EXCLUDE | Exempt |
 | SUMMIT INSURANCE | EXCLUDE | Same |
 
-### 3.5 SaaS and international services
+### 3.5 Imported and exported services
 
-**SaaS pattern table**
+Record the contracting supplier, invoice entity, recipient, service, place of performance and use, VAT registration and dates of the invoice, payment and work. For an overseas service, check the place-of-supply rules and whether VAT is due on a taxable importation. Where the importer and recipient are different, they are jointly and severally liable for the tax. A local branch or affiliate is a separate person from its nonresident branch or home office for these rules. [VAT Act, ss 2, 33–34, 39 and 45](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf)
 
-| Pattern | Treatment | Notes |
-| --- | --- | --- |
-| GOOGLE, MICROSOFT, META, AWS | Self-assess 10% (reverse charge) | Non-resident |
-| ZOOM, SLACK, CANVA | Self-assess 10% | Same |
+Section 45(2) calls for a return on completion of the service or entry of the people contracted to perform it. The payment period depends on the recipient. For a recipient outside the definition of a taxable person, payment is due within 7 calendar days of import. For an unregistered taxable person, use the date in the assessment notice. For a registrant, payment is due within 21 calendar days after the tax period in which the services were imported. Confirm any deferment and the applicable filing form. [VAT Act, ss 39 and 45](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf)
+
+When evaluating an input deduction, check use in a taxable activity, the approved import evidence, payment of the VAT and relevant restrictions. For mixed-use, exempt or specified property work, review attribution and the relevant restrictions separately. [VAT Act, ss 48–50](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf), [Act 45 of 2025, s 12](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0045A/2025-0045A.pdf)
+
+**Exported services**
+
+Check the First Schedule category and its conditions. For the professional services in Part II item 9, verify the listed service and supplier qualifications and that the recipient uses the service or obtains its benefit or advantage outside The Bahamas under the place-of-supply rules. Keep evidence of the contract, recipient, service and use or benefit. [VAT Act, ss 33–34 and First Schedule Part II](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf), [Act 45 of 2025, s 20](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0045A/2025-0045A.pdf)
+
+For an audit supplied from The Bahamas to a Bahamian international business company, record where and why the company uses the audit. The Comptroller's ruling treats an audit for a Bahamian regulator as standard-rated and an audit for a foreign regulator as zero-rated in the stated circumstances. Keep records from the recipient supporting foreign use and confirm the ruling applies to the facts. The ruling applies from 3 March 2023 until withdrawn. [DIR ruling VAT 2023-01, paras 1–4 and 8–9](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2023/12/VAT-Ruling-Zero-Rating-of-Professional-Services.pdf)
 
 ### 3.6 Tourism
 
@@ -122,7 +132,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
 | HOTEL, RESORT, ATLANTIS | Domestic 10% (output) | Tourism supply |
-| BOOKING.COM, EXPEDIA, AIRBNB | Platform fee — verify entity | May require reverse charge |
+| Online booking platform | Verify the contracting entity, service and place of supply | See Section 3.5 for imported services |
 
 ### 3.7 Payroll and exclusions
 
@@ -134,6 +144,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | OWN TRANSFER, INTERNAL | EXCLUDE | Internal |
 | DIVIDEND | REVIEW | Verify the underlying payment and its VAT treatment before classifying |
 | CASH WITHDRAWAL | TIER 2 — ask | Default exclude |
+
+### 3.8 VAT withholding
+
+Identify the applicable withholding authority for the payment. The 2022 rules for appointed agents commenced on 1 August 2022. They define prescribed payments for specified supplies to Ministries and Departments, including construction, certain materials or equipment, certain maintenance and commercial leases. The prescribed payment threshold is BSD 10,000. Rules 6–7 prescribe withholding of 40% of the VAT due irrespective of the supplier's registration status, subject to the payment hold in rule 7(2). If a prescribed payment reaches or exceeds the section 21(a) threshold of BSD 100,000, the agent must wait until the supplier is a VAT registrant and deduct 40% of the VAT due at payment. Confirm the current appointment and the practical interaction with the 2026 Government rule. [VAT Act, ss 21(a) and 23A](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf), [S.I. 74 of 2022, rr 1–2 and 6–7 and Schedule Part I](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2022/08/Extraordinary-Gazette-29th-July-2022.pdf)
+
+For deductions under rule 6, rule 14 requires remittance within 12 calendar days after the end of the month of deduction. An agent withholding under section 23A(3) must give the supplier a certificate at payment. A supplier with a duty to account for VAT retains that duty under section 23A(5). Under rule 8, an unregistered supplier who is outside the definition of a taxable person and had VAT withheld may apply in writing to the Comptroller for a refund within 3 years of the agent's remittance. The claim is subject to assessment and any statutory offset. [VAT Act, ss 23A and 56](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf), [S.I. 74 of 2022, rr 8 and 14–15](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2022/08/Extraordinary-Gazette-29th-July-2022.pdf)
+
+From 1 July 2026 a Government entity making a supply contract payment is a deemed withholding agent under section 23A(11)–(12) and withholds the full VAT payable for that contract. Apply that rate to payments covered by those subsections, which state no minimum payment amount. Confirm the administrative treatment where the 2022 rules also apply. Match the contract, invoice and withholding evidence. DIR publishes V26 versions of Form 73, the withholding certificate, and Form 74, the return. Confirm the current version and filing instructions for the agent and payment. [Act 19 of 2026, ss 1–2](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0019A/2026-0019A.pdf), [DIR VAT forms](https://inlandrevenue.finance.gov.bs/value-added-tax/forms/)
 
 ## Section 4 — Worked examples
 
@@ -149,17 +167,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 05.04.2026 | NASSAU TRADING CO | +1,100 | +1,000 | 100 | 10% | Output | N | — |
 
-### Example 2 — Food in food store at 5% (from April 2025)
+### Example 2 — Exempt food purchase in April 2026
 
-**Input line:** `10.04.2026 ; SUPER VALUE FOOD STORE ; DEBIT ; Groceries ; BSD -105`
+**Input line:** `10.04.2026 ; QUALIFYING FOOD STORE ; DEBIT ; Unprepared fresh beef ; BSD -100`
 
-**Reasoning:** Food in food store, reduced 5% rate from April 2025. Net = BSD 100, VAT = BSD 5.
+**Reasoning:** The food store imported fresh beef classified under Second Schedule Part III heading 02.01 and sold it unprepared. The purchase has no VAT charge or input VAT claim. [Act 4 of 2026, ss 1 and 3](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0004A/2026-0004A.pdf)
 
 **Example 2 result table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Field | Default? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 10.04.2026 | SUPER VALUE FOOD STORE | -105 | -100 | 5 | 5% | Input | N | — |
+| 10.04.2026 | QUALIFYING FOOD STORE | -100 | -100 | 0 | Exempt | No input VAT | N | — |
 
 ### Example 3 — Export, zero-rated
 
@@ -171,17 +189,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 15.04.2026 | US BUYER INC | +5,000 | +5,000 | 0 | 0% | Zero-rated | N | — |
 
-### Example 4 — Non-resident service (reverse charge)
+### Example 4 — Imported advisory service
 
-**Input line:** `18.04.2026 ; US CONSULTING FIRM ; DEBIT ; Advisory ; BSD -3,000`
-
-**Reasoning:** Reverse charge. Self-assess 10% output = BSD 300. Claim input BSD 300 if fully taxable.
-
-**Example 4 result table**
-
-| Date | Counterparty | Gross | Net | VAT | Rate | Field | Default? | Excluded? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 18.04.2026 | US CONSULTING FIRM | -3,000 | -3,000 | 300 | 10% | Output + Input | N | — |
+A Bahamian individual outside the definition of a taxable person imports a standard-rated advisory service for personal use. The import and completion occur on the same date. The invoice value is BSD 1,000 before VAT. The tax is BSD 100 at the 10% standard rate, payable within 7 calendar days of the import. Check the prescribed return and retain the invoice and payment evidence. The individual has no input deduction for the private use. [VAT Act, ss 39, 42, 45 and 50](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf), [Act 3 of 2025, s 3](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0003A/2025-0003A.pdf), [Act 4 of 2026, s 2](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0004A/2026-0004A.pdf)
 
 ### Example 5 — Bank charges, excluded
 
@@ -193,15 +203,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 30.04.2026 | CIBC FIRSTCARIBBEAN | -25 | — | — | — | — | N | "Exempt" |
 
+### Example 6 — Government supply contract VAT withholding
+
+A Government entity pays under a standard-rated supply contract after 1 July 2026. On a BSD 10,000 invoice before VAT, the VAT is BSD 1,000 at 10%. The entity withholds BSD 1,000 of the BSD 11,000 invoice total, paying the supplier BSD 10,000. Reconcile the BSD 1,000 withholding to the applicable remittance evidence. [Act 19 of 2026, s 2](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0019A/2026-0019A.pdf), [Act 3 of 2025, s 3](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0003A/2025-0003A.pdf), [Act 4 of 2026, s 2](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0004A/2026-0004A.pdf)
+
 ## Section 5 — Tier 1 classification rules (compressed)
 
 ### 5.1 Standard rate 10% — Default for most taxable supplies.
 
 - **Standard rate** — 10%  _(5.1 Standard rate 10% — Default for most taxable supplies.)_
 
-### 5.2 Reduced rate 5% — Food in food stores (from Apr 2025), medications, diapers, hygiene products (from Sep 2025). Moving to 0% for unprepared food from April 2026 — verify.
+### 5.2 Reduced rate and exempt food
 
-- **Reduced rate** — 5% (food in food stores from Apr 2025, medications, diapers, hygiene products from Sep 2025); moving to 0% for unprepared food from April 2026 — verify.  _(5.2 Reduced rate 5%)_
+From 1 April 2026, the Second Schedule exempts the wholesale or retail supply of listed items sold unprepared by a qualifying food store and specified imports by a qualifying food store. Check the Second Schedule Part III tariff item, food-store definition and relevant conditions for the transaction. For transactions outside those provisions, select any applicable exemption or the rate under section 6, including the 5% rate for qualifying Fourth Schedule supplies and imports. Apply the law for the transaction date. [Act 3 of 2025, ss 1 and 3](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0003A/2025-0003A.pdf), [Act 45 of 2025, ss 1–2](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2025/2025-0045A/2025-0045A.pdf), [Act 4 of 2026, ss 1–4](https://laws.bahamas.gov.bs/cms/images/LEGISLATION/AMENDING/2026/2026-0004A/2026-0004A.pdf)
 
 ### 5.3 Zero rate — Exports, international transport.
 
@@ -219,13 +233,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Blocked input** — Entertainment, personal vehicles, personal consumption.  _(5.6 Blocked input)_
 
-### 5.7 Imports — VAT at 10% on CIF plus duties. Paid at customs.
+### 5.7 Imported goods
 
-- **Imports** — VAT at 10% on CIF plus duties. Paid at customs.  _(5.7 Imports)_
+Check the exemption and rate for the declared goods and import date under Section 5.2. For a taxable import, use the statutory import value, including relevant duties, levies and taxes other than VAT. File the customs declaration and pay any VAT due on entry under section 44. Retain the declaration and payment evidence. [VAT Act, ss 41–42 and 44](https://inlandrevenue.finance.gov.bs/wp-content/uploads/2024/11/Value-Added-Tax-Act.pdf)
 
-### 5.8 Reverse charge — Non-resident services: self-assess 10%. Claim input if for taxable supplies.
+### 5.8 Imported services
 
-- **Reverse charge** — Non-resident services: self-assess 10%. Claim input if for taxable supplies.  _(5.8 Reverse charge)_
+- **Imported services** — Verify the service, place of supply, recipient and VAT registration. Apply the import VAT payment window under Section 3.5. Check input VAT deductibility separately.
 
 ### 5.9 Income tax scope
 
@@ -233,9 +247,9 @@ Through 10 November 2026, Bahamian domestic personal income tax is inapplicable.
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
-### 6.1 Food classification — Default: 10% unless in food store. Question: "Is this food in a food store (5%) or prepared food/restaurant (10%)?"
+### 6.1 Food classification
 
-- **Food classification default** — Default: 10% unless in food store. Question: "Is this food in a food store (5%) or prepared food/restaurant (10%)?"  _(6.1 Food classification)_
+- **Food classification** — Ask for the tariff item, preparation, transaction date and qualifying food-store status. Apply the exemption or rate under Section 5.2.
 
 ### 6.2 Freeport operations — Default: refuse (R-BS-1).
 
@@ -245,9 +259,9 @@ Through 10 November 2026, Bahamian domestic personal income tax is inapplicable.
 
 - **Tourism sector default** — Default: 10%. Question: "Hotel occupancy tax separate from VAT?"  _(6.3 Tourism sector)_
 
-### 6.4 SaaS entities — Default: self-assess 10%.
+### 6.4 Software subscriptions
 
-- **SaaS entities default** — Default: self-assess 10%.  _(6.4 SaaS entities)_
+- **Software subscriptions** — Use the contract and invoice to identify the supply and supplier and determine the applicable VAT treatment under Section 3.5.
 
 ### 6.5 Cash withdrawals — Default: exclude.
 
@@ -267,9 +281,9 @@ CIBC FirstCaribbean and RBC exports CSV/PDF. BSD primary (= USD). Internal trans
 
 - **TIN question** — "What is your DIR TIN?"  _(9.1 TIN)_
 
-### 9.2 Filing frequency — Based on turnover. "Annual turnover bracket?"
+### 9.2 Filing frequency and due date
 
-- **Filing frequency question** — Based on turnover. "Annual turnover bracket?"  _(9.2 Filing frequency)_
+- **Filing frequency and due date** — Ask for the assigned tax period, turnover and large-taxpayer classification. Apply the statutory deadline in Section 1.
 
 ### 9.3 Industry — "What does the business do?"
 
@@ -295,10 +309,11 @@ CIBC FirstCaribbean and RBC exports CSV/PDF. BSD primary (= USD). Internal trans
 
 ### Known gaps
 
-1. Freeport refused. 2. Food 0% transition (April 2026) — verify current status.
+Confirm the actual tax period, any applicable special registration or reporting procedure and the precise tariff treatment of mixed or prepared food items. Freeport requires specialist review. For imported services and VAT withholding, confirm digital-service registration, the current agent directions, the interaction of the 2022 and 2026 rules and the live return and payment channels. Nonresident income tax and royalty obligations, treaties and group arrangements require separate evidence.
 
 ### Change log
 
+- v2.2 (November 2026): Update imported and exported services, VAT withholding, return deadlines and the April 2026 food rules.
 - v2.0 (April 2026): Full rewrite to Malta v2.0 ten-section structure.
 
 ## Disclaimer
