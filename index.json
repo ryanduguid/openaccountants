@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2215,
+  "guides": 2216,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -10989,6 +10989,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-11-27"
+  },
+  {
+   "slug": "gd-tax-compliance",
+   "path": "skills/international/grenada/gd-tax-compliance.md",
+   "name": "gd-tax-compliance",
+   "jurisdiction": "GD",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "gd-tax-system-orientation",

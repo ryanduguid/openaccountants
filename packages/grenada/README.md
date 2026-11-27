@@ -14,9 +14,10 @@
 7. `gd-paye-employer-reference.md`
 8. `gd-property-and-transfer-tax.md`
 9. `gd-social-contributions.md`
-10. `gd-tax-system-orientation.md`
-11. `gd-tax-system-source-reference.md`
-12. `gd-value-added-tax.md`
+10. `gd-tax-compliance.md`
+11. `gd-tax-system-orientation.md`
+12. `gd-tax-system-source-reference.md`
+13. `gd-value-added-tax.md`
 
 ## Shared files this package needs
 
