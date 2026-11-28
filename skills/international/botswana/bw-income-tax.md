@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Botswana (tax year 202
 jurisdiction: BW
 category: international
 tax_year: 2026
-last_updated: 2026-11-10
-version: 1.2
+last_updated: 2026-11-28
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Band 3: 84,001 – 120,000** — BWP 1,800 + 12.5% on the excess over BWP 84,000 (resident individuals)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
 - **Band 4: 120,001 – 156,000** — BWP 6,300 + 18.75% on the excess over BWP 120,000 (resident individuals)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
 - **Band 5: 156,001 – 400,000** — BWP 13,050 + 25% on the excess over BWP 156,000 (resident individuals)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
-- **Band 6: over 400,000** — BWP 74,050 + 27.5% on the excess over BWP 400,000 (resident individuals; new top band from 1 July 2026, when 25% above BWP 156,000 applied for 2025/26)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
+- **Band 6: over 400,000** — BWP 74,050 + 27.5% on the excess over BWP 400,000 (resident individuals from 1 July 2026)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
 
 Resident individuals are taxed on a progressive scale from 0% to 27.5% under the Income Tax Act, 2026, in force from 1 July 2026 (0% to 25% for 2025/26). The first BWP 48,000 of taxable income is tax-free. Bands below are the cumulative-tax format BURS publishes.
 
@@ -39,16 +39,16 @@ Non-residents have no tax-free threshold — the first band starts at 5% from th
 - **Residence — place of abode** — Resident if the individual's permanent home is in Botswana  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 7(2)(a) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
 - **Residence — physical presence** — Resident if physically present in Botswana for 183 days in aggregate in any 12-month period commencing or ending during the tax year; temporary absences for business or recreation count as presence, and part of a day counts as a whole day. Government employees posted abroad are also resident (s 7(2)(c))  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 7(2)(b) and (3) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
 
-Individual residence turns on a permanent place of abode in Botswana or a 183-day physical-presence test in the tax year.
+From 1 July 2026, residents other than temporary residents generally include Botswana and foreign income in gross income. Non-residents and temporary residents generally include Botswana-source income. Check the effective dates of residence, the separate temporary residence conditions and any treaty for the taxpayer. [Income Tax Act, ss 7, 8 and 14](https://lmisbotswana.org.bw/index.php/tax/2026-tax-laws?download=841%3Avol75-extraordinary-gazette)
 
 ## Filing, payment and key features
 
 - **Individual return deadline** — Within three months after the 30 June tax year-end, so on or before 30 September  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 123(1)(b) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
-- **Return filing requirement** — Required where annual income exceeds the BWP 48,000 resident threshold  _(Income Tax Act (Cap. 52:01))_
+- **Return filing requirement.** Section 123 applies to individuals liable to tax, subject to the exceptions in section 124. These include an individual with only employment income from one employer paid under section 129, unless the Commissioner General asks for a return. [Income Tax Act, ss 123–124](https://lmisbotswana.org.bw/index.php/tax/2026-tax-laws?download=841%3Avol75-extraordinary-gazette)
 - **Employment income collection** — Pay As You Earn (PAYE): employers withhold tax from employment income using the BURS tax deduction tables  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 129(1) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part I tax deduction tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
 - **Social-security contributions** — None — Botswana has no general mandatory state social-security/pension contribution for employees or employers  _(Income Tax Act (Cap. 52:01); secondary practitioner summary, Botswana)_
 
-Employees are taxed primarily through PAYE; individuals with income above the threshold file an annual return by 30 September.
+Check whether a return is required before applying the ordinary filing date. [Income Tax Act, ss 123–124](https://lmisbotswana.org.bw/index.php/tax/2026-tax-laws?download=841%3Avol75-extraordinary-gazette)
 
 <!-- openaccountants-cta-block -->
 

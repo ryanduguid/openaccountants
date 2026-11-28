@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Botswana (tax year 20
 jurisdiction: BW
 category: international
 tax_year: 2026
-last_updated: 2026-11-10
-version: 1.2
+last_updated: 2026-11-28
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,9 +24,7 @@ The standard company tax rate is 24.5% under the Income Tax Act, 2026 (22% for 2
 
 ## Tax base
 
-Companies are taxed on Botswana-source income net of allowable expenses; the regime is source-based.
-
-- **Tax base** — Income from a source within or deemed within Botswana, less allowable deductions  _(Income Tax Act (Cap. 52:01))_
+For tax years under Act 13 of 2026 from 1 July 2026, a resident company generally includes Botswana and foreign income in gross income. A non-resident company includes Botswana-source income. Check the source, exclusions, deductions, permanent establishment and treaty provisions for the case. Cap. 52:01 applies to earlier tax years. [Income Tax Act, ss 7–8, 14 and 143–144](https://lmisbotswana.org.bw/index.php/tax/2026-tax-laws?download=841%3Avol75-extraordinary-gazette)
 - **Additional Company Tax (ACT)** — Not part of the current law: the Income Tax Act, 2026 charges a single 24.5% company rate with 10% withholding on dividends; the historic two-tier basic 15% plus additional 7% structure and its dividend credits belong to the repealed Act  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I paras 3(d), 6(a) and 7(a) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; repealed Income Tax Act (Cap. 52:01) position for 2025/26 (as reported))_
 
 ## Withholding tax rates
