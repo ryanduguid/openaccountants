@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2223,
+  "guides": 2224,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -12889,6 +12889,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "il-tax-system-orientation",
+   "path": "skills/international/israel/il-tax-system-orientation.md",
+   "name": "il-tax-system-orientation",
+   "jurisdiction": "IL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-11-28"
+  },
+  {
    "slug": "il-tax-withholding",
    "path": "skills/international/israel/il-tax-withholding.md",
    "name": "il-tax-withholding",
@@ -23104,7 +23117,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "tj-company-formation",
