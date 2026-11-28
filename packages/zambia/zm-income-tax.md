@@ -4,8 +4,8 @@ description: Use this skill whenever asked about Zambia personal income tax (PAY
 jurisdiction: ZM
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.2
+last_updated: 2026-11-28
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pension authority | National Pension Scheme Authority (NAPSA) |
 | Health authority | National Health Insurance Management Authority (NHIMA) |
 | Filing portal | ZRA TaxOnline (e-portal) |
-| Annual return deadline | 21 June following the charge year (secondary summary, ZM individual tax administration) |
+| Annual return deadline | 5 June for manual returns and 21 June for electronic returns, following the charge year. See [Zambia tax system orientation](zm-tax-overview.md#charge-year-and-filing). |
 | Validated by | Pending -- requires sign-off by a Zambian-qualified accountant (ZICA member) |
 | Validation date | Pending |
 | Skill version | 0.1 |
@@ -363,7 +363,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.6 Provisional (Advance) Income Tax — non-employment income
 
-- **Provisional tax filing rule** — Businesses and individuals with non-employment income file quarterly provisional returns for the quarters ending 31 March, 30 June, 30 September and 31 December, each instalment payable by the 10th of the following month; the annual return and any balance are due by 21 June (Income Tax Act s 46). New registrants after 31 March file within 90 days of registration  _(Zambia Revenue Authority, Payment Due Dates, Income Tax — https://www.zra.org.zm/payment-due-dates/)_
+- **Provisional tax.** Check whether a provisional return is required under section 46A and apply its filing rules. Section 77 governs provisional tax instalments. [Income Tax Act, ss 46A and 77](https://a-tla.org/zambia/income-tax-act-no-32-chapter-323) · [Annual return and balance deadlines](zm-tax-overview.md#charge-year-and-filing)
 
 ### 5.7 VAT Interaction (self-employed crossing the threshold)
 
@@ -535,7 +535,7 @@ ONBOARDING QUESTIONS -- ZAMBIA INCOME TAX
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Annual individual return deadline | 21 June following the charge year | secondary summary, ZM individual — tax administration |
+| Annual individual return deadline | 5 June manual or 21 June electronic, following the charge year | Income Tax Act s 46(3). See [Zambia tax system orientation](zm-tax-overview.md#charge-year-and-filing). |
 | Statute of limitations | 6 years from end of charge year (except fraud/wilful default) | secondary summary, ZM individual — tax administration |
 | Monthly PAYE remittance | by the 10th of the following month | ZRA payment due dates |
 | Monthly PAYE return form | ITF P16 (annual reconciliation: P18) | ZRA PAYE leaflet — [RESEARCH GAP: P16 vs P11 inconsistent across sources; confirm on ZRA portal] |
