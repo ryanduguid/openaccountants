@@ -1,11 +1,11 @@
 ---
 name: jo-tax-overview
-description: "Source-cited draft: tax overview for Jordan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Jordan tax overview for the 2025 calendar year with primary-source rates, income scope and filing dates. Pending local-accountant review."
 jurisdiction: JO
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+last_updated: 2026-11-28
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,20 +13,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Jordan Tax Overview
 
-## Jordan tax system at a glance
+This guide covers Jordan’s ordinary tax system for the 2025 calendar year. The Ministry of Finance’s Income and Sales Tax Department (ISTD) administers income tax and general sales tax. Figures are in Jordanian dinars (JOD). By default, taxpayers compute income tax for the calendar year. A taxpayer who closes accounts on a different date may use that financial year after notifying the ISTD in advance. [ISTD](https://www.istd.gov.jo/EN), [Central Bank of Jordan](https://www.cbj.gov.jo/EN/Pages/Overview_of_the_Central_Bank_of_Jordan) and [Income Tax Law, art 13](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf).
 
-Jordan operates a largely territorial tax system administered by the Income and Sales Tax Department. Personal and corporate income tax is governed by the Income Tax Law; consumption is taxed via a General Sales Tax (a VAT-type tax). The figures below are an unverified draft for tax year 2025.
+## Income and residence
 
-- **Tax year** — Calendar year (1 January to 31 December); a taxpayer who closes accounts on another date may compute tax on that fiscal year after notifying the Department  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 13/A and 13/B — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf)_
-- **Currency** — Jordanian dinar (JOD), held at a fixed rate to the US dollar: the Central Bank's published rates quote the dollar at JOD 0.708 buy / 0.710 sell, and the Bank's statutory objectives include the stability of the dinar's exchange rate  _([Central Bank of Jordan, foreign exchange rates](https://www.cbj.gov.jo/en/Pages/foreignexchangerates); [Central Bank of Jordan, Monetary Policy Objectives](https://www.cbj.gov.jo/En/Pages/Monetary_Policy_Objectives))_
-- **Tax authority** — Income and Sales Tax Department (ISTD), Ministry of Finance  _([Income and Sales Tax Department](https://www.istd.gov.jo/EN))_
-- **Tax basis** — Income generated in or from Jordan is taxable regardless of where it is paid (art. 3/A); a resident's foreign income is taxed only where it originates from Jordanian money or deposits, or is a Jordanian company's foreign branch income, at a flat 10% (art. 3/B)  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 3/A and 3/B — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf)_
-- **Top personal income tax rate** — 30 percent on taxable income above JOD 1,000,000  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 11/A/6 — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf)_
-- **Standard corporate income tax rate** — 20 percent (Higher sector rates apply: banks 35%; telecommunication, electricity, mining, insurance, financial intermediation and leasing companies 24%)  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 11/B — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf)_
-- **VAT / GST** — Yes — General Sales Tax (GST), a VAT-type tax, at a general rate of 16% on the supply or importation of goods and services (art. 6); Schedule 1 goods and services also bear a special tax at rates set by regulation  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 6 — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf)_
-- **National contribution tax** — National Solidarity Account contribution on top of income tax: 1% for individuals on taxable income over JOD 200,000; 1% to 7% for companies by sector  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 11/F — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf)_
-- **Income tax return deadline** — Return and payment within the four months after the end of the tax period (30 April for calendar-year taxpayers)  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 17/A and 18/A — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf)_
-- **Social security** — Mandatory contributions to the Social Security Corporation (SSC): employer 14.25%, employee 7.5%  _([Social Security Law No. 1 of 2014](https://www.ssc.gov.jo))_
+Jordan generally taxes income earned in or derived from Jordan regardless of where it is paid. Article 3(C) sets a 10% rate on net foreign income that a resident derives from funds or deposits from Jordan. The same rate applies to a Jordanian company’s overseas branch net income declared in its final financial statements and certified by an external accountant. [Income Tax Law, art 3](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf).
+
+- An individual is resident if physically present in Jordan for at least 183 days in the tax period, continuously or intermittently. A Jordanian employee is also resident if they work for the government or a public institution in Jordan or abroad for any part of the tax period. [Income Tax Law, art 2](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf).
+- A legal person is resident if it is established or registered under Jordanian law and has a Jordanian office or branch that manages and controls its operations in Jordan. It also qualifies if its main or effective management is in Jordan or if the Jordanian government or a public institution owns more than 50% of its capital. [Income Tax Law, art 2](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf).
+
+## Ordinary tax rates for 2025
+
+| Tax or contribution | Rate |
+| --- | --- |
+| Personal income tax | 5%, 10%, 15% and 20% on the first 4 successive JOD 5,000 bands of taxable income, 25% on the portion above JOD 20,000 to JOD 1 million and 30% on the portion over JOD 1 million. [Income Tax Law, art 11(A)](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf). |
+| Corporate income tax | 20% for ordinary legal persons. The law applies 24% to listed sectors, including insurers and financial leasing entities, and 35% to banks. [Income Tax Law, art 11(B)](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf). |
+| National contribution | Article 11(F) sets a separate 1% on the portion of an individual’s taxable income over JOD 200,000 and 1% of taxable income for ordinary legal persons. Listed sectors have separate rates. Article 11(G) sets a public debt condition for stopping collection. [Income Tax Law, art 11(F)–(G)](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf) and [ISTD tax forms](https://istd.gov.jo/Ar/List/%D8%A7%D9%84%D9%86%D9%85%D8%A7%D8%B0%D8%AC_%D8%A7%D9%84%D8%B6%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9). |
+| General sales tax | 16% generally applies to the sale or importation of goods and services. Reduced rates, zero rating, exemptions and special sales tax depend on the supply. [General Sales Tax Law, art 6](https://www.istd.gov.jo/AR/List/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%B6%D8%B1%D9%8A%D8%A8%D8%A9_%D8%A7%D9%84%D9%85%D8%A8%D9%8A%D8%B9%D8%A7%D8%AA) and [ISTD rate schedules](https://www.istd.gov.jo/AR/List/%D8%A7%D9%84%D9%86%D8%B3%D8%A8_%D8%A7%D9%84%D8%B6%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9). |
+
+## Annual income tax filing and payment
+
+Taxpayers required to file ordinarily submit their return and pay the balance by the end of the fourth month following the tax period. Article 17 provides for filing exceptions, and art 18 is subject to other statutory due dates. Article 75 moves a deadline that falls on an official holiday to the next working day. [Income Tax Law, arts 17, 18 and 75](https://istd.gov.jo/EBV4.0/Root_Storage/AR/QRCODE/income2.pdf).
+
+For the 2025 calendar year, the ordinary 30 April 2026 date fell on the Labour Day public holiday. The ISTD announced Sunday 3 May 2026 as the deadline both to file and to pay the tax reported on the return. [Prime Minister’s holiday circular as reported by the Jordan News Agency](https://petra.gov.jo/en/news/april-30-announced-public-holiday-for-labour-day) and [ISTD announcement as reported by the Jordan News Agency, 29 April 2026](https://petra.gov.jo/gweb/index.php/en/news/istd-extends-tax-deadline-to-sunday-as-saturday-office-hours-announced).
 
 <!-- openaccountants-cta-block -->
 

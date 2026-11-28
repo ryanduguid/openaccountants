@@ -4813,7 +4813,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "bosnia-income-tax",
@@ -13731,7 +13731,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "jo-income-tax",
@@ -13744,7 +13744,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "jo-payroll-social",
@@ -13770,7 +13770,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "jordan-gst",
@@ -15368,8 +15368,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "mw-corporate-income-tax",
@@ -15381,8 +15381,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "mw-income-tax",
@@ -15420,8 +15420,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "mw-vat-gst",
@@ -15433,8 +15433,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "malaysia-einvoice",
