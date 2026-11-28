@@ -4,8 +4,8 @@ description: "Tax-system orientation for Svalbard and Jan Mayen covering residen
 jurisdiction: SJ
 category: international
 tax_year: 2026
-last_updated: 2026-11-21
-version: 1.0
+last_updated: 2026-11-28
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,7 @@ Employers report and withhold through the payroll system. Income and wealth subj
 
 ## Jan Mayen and VAT geography
 
-The Jan Mayen Tax Act applies the Svalbard payroll rates to remuneration for work there. Section 1 incorporates the Svalbard Act's section 2-2, which says at least 30 consecutive days. Employer reporting guidance says more than 30 days and excludes travel days. Confirm reporting with Skatteetaten for exactly 30 qualifying days. Section 3 allocates tax to the municipality where the taxpayer is treated as resident under the general tax law. The Jan Mayen Act provides a work-income regime. Use the applicable general rules for other taxpayer and income types. [Jan Mayen Tax Act, ss 1–3][JAN] · [Svalbard Tax Act, s 2-2][SVALBARD] · [Jan Mayen employer reporting][JREPORT]
+The Jan Mayen Tax Act applies the Svalbard payroll rates to remuneration for work there. Section 1 incorporates the Svalbard Act's section 2-2, which says at least 30 consecutive days. Employer reporting guidance says more than 30 days and excludes travel days. Confirm reporting with Skatteetaten for exactly 30 qualifying days. Section 3 allocates tax to the municipality where the taxpayer is treated as resident under the general tax law. The Jan Mayen Act provides a work-income regime. Use the applicable general rules for other taxpayer and income types. See the [Jan Mayen wage and payroll reference](sj-jan-mayen-payroll-scope-reference.md) for the 2026 ordinary wage and remittance rules. [Jan Mayen Tax Act, ss 1–3][JAN] · [Svalbard Tax Act, s 2-2][SVALBARD] · [Jan Mayen employer reporting][JREPORT]
 
 Norway's VAT Act excludes Svalbard and Jan Mayen from the VAT area. Check imports, supplies and services that cross into mainland Norway under the applicable rules. [VAT Act, s 1-2, and Skatteetaten handbook][VAT]
 

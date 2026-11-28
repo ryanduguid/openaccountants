@@ -5512,6 +5512,7 @@
    "name": "Svalbard And Jan Mayen",
    "files": [
     "intake.md",
+    "sj-jan-mayen-payroll-scope-reference.md",
     "sj-svalbard-wage-reference.md",
     "sj-tax-system-orientation.md",
     "README.md"
@@ -5519,6 +5520,7 @@
    "shared": [
     "foundation.md",
     "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
     "workflow-base.md"
    ]
   },

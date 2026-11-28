@@ -215,7 +215,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | SG | Singapore | 10 | 0 |
 | SH | Saint Helena | 2 | 0 |
 | SI | Slovenia | 9 | 0 |
-| SJ | Svalbard and Jan Mayen Islands | 2 | 0 |
+| SJ | Svalbard and Jan Mayen Islands | 3 | 0 |
 | SK | Slovakia | 9 | 0 |
 | SL | Sierra Leone | 6 | 0 |
 | SM | San Marino | 7 | 0 |
