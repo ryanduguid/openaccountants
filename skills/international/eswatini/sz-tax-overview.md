@@ -1,31 +1,43 @@
 ---
 name: sz-tax-overview
-description: "Source-cited draft: tax overview for Eswatini (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Eswatini's tax system for the year ended 30 June 2026, including income source, taxpayer type, emalangeni and Revenue Service filing. Trigger on Eswatini income source, assessment period or tax administration."
 jurisdiction: SZ
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.2
+tax_year: 2026
+last_updated: 2026-11-28
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Eswatini Tax Overview
+# Eswatini tax system orientation
 
-## Eswatini tax system at a glance
+Load `workflow-base`. Identify the taxpayer, year of assessment, source of income and filing obligation. The Eswatini Revenue Service (ERS) administers ordinary income tax. Use lilangeni (SZL, plural emalangeni), which the central bank maintains at parity with the South African rand. Check the applicable conversion rules for amounts recorded in another currency. [ERS income tax guidance][ers-tax] · [Central Bank currency guidance][currency]
 
-- **Eswatini tax overview summary** — Eswatini (formerly Swaziland) taxes income on a source basis administered by the Eswatini Revenue Service. Income tax, VAT and customs are the principal taxes; figures below reflect the 2025 position and should be confirmed against the Income Tax Order and current ERS notices.
-- **National tax authority** — Eswatini Revenue Service (ERS) (formerly Swaziland Revenue Authority)  _([Revenue Authority Act, 2008](https://www.ers.org.sz/))_
-- **Currency** — Swazi Lilangeni (SZL), plural Emalangeni; pegged 1:1 to the South African Rand  _(Central Bank of Eswatini Order)_
-- **Tax year for individuals** — 1 July to 30 June (the year of assessment commencing 1 July)  _(Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 6(1) — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf ; Eswatini Revenue Service, Income Tax Returns — https://www.ers.org.sz/IncomeTax/IncomeTaxReturn)_
-- **Tax year for companies** — 1 July to 30 June, or the company's own financial year commencing in that calendar year where approved  _(Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 2 (definition of year of assessment) — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf ; Eswatini Revenue Service, Income Tax Returns — https://www.ers.org.sz/IncomeTax/IncomeTaxReturn)_
-- **Basis of taxation** — Source basis: gross income is the total amount received by or accrued to a person from a source within or deemed to be within Eswatini, whatever the recipient's residence  _(Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 7 (definition of gross income) — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf)_
-- **Top personal income tax rate** — 33% on annual taxable income above SZL 200,000 (SZL 47,500 plus 33% of the excess)  _(Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, Third Schedule Part II — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf ; Eswatini Revenue Service, Rates and Thresholds — https://www.ers.org.sz/IncomeTax/RatesandThres)_
-- **Corporate income tax rate** — 25% of taxable income for 2025 declarations (years of assessment ending from 30 June 2025), down from the 27.5% applied since 1 July 2013; s 6(3) lets the Minister fix the Third Schedule rates annually  _(Eswatini Revenue Service, Income Tax Return Submission and Payment Notice for tax year end 2025, para 5 — https://www.ers.org.sz:8000/whatsnew-file/1753959572719-FULL_PAGE___Income_Tax_Returns_Notice_2025.pdf ; Eswatini Revenue Service, Rates and Thresholds — https://www.ers.org.sz/IncomeTax/RatesandThres ; Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 6(3) and Third Schedule Part I — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf)_
-- **Does Eswatini have VAT?** — Yes; VAT replaced sales tax on 1 April 2012 and applies at a standard rate of 15%, with the rate set by the VAT Regulations under s 24(3)  _(Value Added Tax Act, 2011, s 24(3) (rate set by the VAT Regulations) — https://www.ers.org.sz:8000/documents/ValueAddedTaxAct2011.pdf ; Eswatini Revenue Service, VAT in Eswatini — https://www.ers.org.sz/VAT/Eswatini)_
-- **Individual income tax return deadline** — For the 2025 year of assessment, individuals required to file do so by 30 November 2025 under the Commissioner General's annual notice  _(Eswatini Revenue Service, Income Tax Return Submission and Payment Notice for tax year end 2025, paras 1, 2 and 4 — https://www.ers.org.sz:8000/whatsnew-file/1753959572719-FULL_PAGE___Income_Tax_Returns_Notice_2025.pdf ; Eswatini Revenue Service, Income Tax Returns — https://www.ers.org.sz/IncomeTax/IncomeTaxReturn)_
-- **Company income tax return deadline** — Set by the Commissioner General's annual notice under s 33: for the 2025 year of assessment all non-individual entities file and pay by 31 October 2025, and clients with other approved tax years within four months after their financial year end  _(Eswatini Revenue Service, Income Tax Return Submission and Payment Notice for tax year end 2025, para 4 — https://www.ers.org.sz:8000/whatsnew-file/1753959572719-FULL_PAGE___Income_Tax_Returns_Notice_2025.pdf ; Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 33(1) — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf)_
+## Source and taxpayer status
+
+The ordinary income tax base uses income sourced or deemed sourced in Eswatini. Apply the source rules to the income type and transaction. The Order's company definition includes Eswatini-incorporated entities and specified foreign entities with local business or premises. Ordinary residence matters for particular source, withholding and filing provisions. For example, the Order uses effective management for a company in its shareholder tax rule and principal place of business for its construction withholding rule. Establish the applicable domestic and treaty residence tests for the actual person and period before relying on a residence conclusion. [Income Tax Order, ss 2, 7, 11, 22 and 59][income-order] · [2026 ERS annual notice, sec 1][annual-notice]
+
+## Taxpayer types and rates
+
+Separate employment, business income earned by an individual, company or trust income and the presumptive regime. The ordinary personal schedule has a 33% top marginal rate above SZL 200,000. The 2026 ERS annual notice gives 25% for ordinary company declarations and 1.75% of turnover for the applicable presumptive taxpayer group. Check eligibility, exemptions, rebates and other rates for the actual case. The standard VAT rate is 15% on most taxable supplies and imports. [Income Tax Amendment Act 20 of 2023, ss 5 and 39][amendment] · [2026 ERS annual notice, sec 5][annual-notice] · [ERS rate table for individuals][individual-rates] · [ERS VAT guidance][vat]
+
+Use the guides for [individual income tax](sz-income-tax.md), [corporate income tax](sz-corporate-income-tax.md) and [VAT](sz-vat-gst.md) for the relevant computation.
+
+## Assessment period and filing
+
+The ordinary assessment year ends on 30 June. The period covered here started on 1 July 2025. Check any approved alternative year and the resulting deadlines. [Income Tax Order, ss 2 and 33][income-order] · [ERS income tax guidance][ers-tax] · [2026 ERS annual notice][annual-notice]
+
+For the year ended 30 June 2026, the ERS notice specifies TaxEase for annual returns. It gives 31 October 2026 for the listed non-individual, business and presumptive taxpayers and 30 November 2026 for the listed individual classes. An approved alternative year uses four months after its end. Eligibility and exemptions in sections 1 and 2 of the notice control who must file. Those sections include gross employment income at SZL 1 million and above, whilst the relevant deadline row in section 4 says above SZL 1 million. Confirm the applicable deadline with the ERS at exactly SZL 1 million when no other listed class applies. Check any extension, actual filing and payment separately. [2026 ERS annual notice, secs 1–4 and 7][annual-notice]
+
+[income-order]: https://www.ers.org.sz/documents/IncomeTaxOrder1975.pdf
+[amendment]: https://www.ers.org.sz/documents/IncomeTaxAmendmentAct2023.pdf
+[ers-tax]: https://www.ers.org.sz/IncomeTax/EstwaniIncomeTax
+[currency]: https://www.centralbank.org.sz/currency1/
+[annual-notice]: https://ers.org.sz/whatsnew-file/1791462650754-1784270658474_Notice_for_Filing_Income_tax_Returns_Public_Notice_Final_Aligned.pdf
+[individual-rates]: https://www.ers.org.sz/IncomeTax/RatesandThres
+[vat]: https://www.ers.org.sz/VAT/Eswatini
 
 <!-- openaccountants-cta-block -->
 
