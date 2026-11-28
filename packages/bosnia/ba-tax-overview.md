@@ -1,32 +1,62 @@
 ---
 name: ba-tax-overview
-description: "Source-cited draft: tax overview for Bosnia and Herzegovina (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Ordinary 2025 tax orientation for the Federation of Bosnia and Herzegovina, Republika Srpska and Brčko District, and state VAT. Covers residence, the principal rates and 2026 return routing."
 jurisdiction: BA
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.2
+tax_year_notes: "Ordinary 2025 direct tax and related 2026 returns for the two entities and Brčko District. State VAT is described for its ordinary 2025 period."
+last_updated: 2026-11-28
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Bosnia and Herzegovina Tax Overview
+# Bosnia and Herzegovina tax overview
 
-## The Bosnian tax system at a glance
+For the ordinary 2025 tax year, identify the taxpayer's connections to the Federation of Bosnia and Herzegovina, Republika Srpska and Brčko District before applying direct tax. Each has its own income and profit tax law and return process. The state Indirect Taxation Authority administers VAT. Amounts use the convertible mark (BAM, locally KM). The Central Bank's exchange rate is BAM 1.95583 to EUR 1. [State VAT guidance][vat] · [Central Bank, note 1][currency]
 
-Bosnia and Herzegovina is a decentralised state: most direct taxes are set and collected separately by the Federation of Bosnia and Herzegovina (FBiH), Republika Srpska (RS), and the Brcko District (BD), while VAT and customs are administered nationally. Headline rates are low and broadly flat across the entities.
+## Federation of Bosnia and Herzegovina
 
-- **Standard tax year** — Calendar year (1 January to 31 December)  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 47(1) — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf)_
-- **Currency** — Convertible Mark (BAM / KM), pegged to the euro at 1 EUR = 1.95583 BAM  _(Central Bank of Bosnia and Herzegovina (currency board))_
-- **Tax authorities** — Indirect Tax Authority (ITA/UIO) for VAT and customs nationally; Tax Administration of FBiH and Tax Administration of RS for direct taxes  _(Law on the Indirect Taxation System in BiH; entity Tax Administration Laws)_
-- **Residence basis of taxation** — Residents (domicile in the entity, or 183 or more days there in a tax period) are taxed on income earned at home and abroad; non-residents on entity-source income only  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 2 — https://www.fmf.gov.ba/Content/Open/102395)_
-- **Headline personal income tax rate (FBiH)** — 10% (flat)  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 9 — https://www.fmf.gov.ba/Content/Open/102395)_
-- **Headline personal income tax rate (RS)** — 8% (flat) on personal receipts from employment; 10% on self-employment income and 13% on capital-type income  _(Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1, amending art 4 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf)_
-- **Headline corporate income tax rate** — 10% (FBiH, RS and Brčko District)  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 31 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 36(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf)_
-- **Does VAT exist?** — Yes; a single national VAT applies at 17% with no reduced rate  _(Law on Value Added Tax (BiH), ITA English translation, art 23 — https://www.uino.gov.ba/portal/wp-content/uploads/95-ENGLESKI-PROPISI/1-VAT-PDV/1-Law_on_VAT_BiH.pdf)_
-- **Annual corporate income tax return deadline** — FBiH: within 30 days after the deadline for filing the annual financial statements (end of March for a calendar year); RS: within 90 days after the end of the tax year (31 March)  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 49(1) — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 38(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf)_
-- **VAT return frequency** — Monthly; the tax period is the calendar month and the return is filed with the ITA by the 10th of the following month  _(Law on Value Added Tax (BiH), ITA English translation, arts 38 and 39 — https://www.uino.gov.ba/portal/wp-content/uploads/95-ENGLESKI-PROPISI/1-VAT-PDV/1-Law_on_VAT_BiH.pdf)_
+The individual residence rules include domicile in the Federation and presence there for at least 183 days in the tax period. The Act includes other statutory cases. The ordinary charge is 10% on taxable income. Residents include taxable income from within and outside the Federation. Nonresidents include income within the specified Federation charge. [Federation Personal Income Tax Law, arts 2, 8 and 9][f-pit]
+
+The ordinary company profit tax rate is 10%. A company with its registered seat or actual management and business supervision in the Federation generally falls within the resident charge on domestic and foreign profits. Apply the separate branches, permanent establishments and specified nonresident-income rules when relevant. [Federation Corporate Income Tax Law, arts 3, 5 and 31][f-cit]
+
+The Tax Administration's January 2026 notice lists 31 March 2026 for required 2025 personal form GPD-1051 and ordinary company tax returns. Check whether a return is required, the applicable payment date and any alternative accounting period. [Federation Tax Administration's 2025 return notice][f-filing] · [Federation Corporate Income Tax Law, arts 47 and 49][f-cit]
+
+## Republika Srpska
+
+An individual can be resident through domicile, presence for at least 183 days during a 12-month period starting or ending in the tax year, or a permanent home and centre of vital interests. Residents generally include income from inside and outside Republika Srpska. Nonresidents fall within the charge for specified local income. Classify income before applying the rates. The ordinary rates are 8% for personal income from employment, 10% for self-employment and 13% for the specified royalties, capital, capital gains and other income. The 2025 amendment has separate rules for small entrepreneurs and for qualifying occasional independent services of nonresidents. [Personal Income Tax Law, arts 5 and 6][rs-pit] · [Gazette 119/21, art 1][rs-rates] · [Gazette 110/24][rs-2025]
+
+The ordinary company profit tax rate is 10%. Entities registered in Republika Srpska or with actual management and business supervision there generally enter the resident charge on domestic and foreign profit. Apply the separate rules for other entity business units, a foreign company's permanent establishment, property and withholding where relevant. [Corporate Income Tax Law, arts 36–38][rs-cit] · [Gazette 1/17, arts 1–2][rs-cit-amend]
+
+The Tax Administration lists 31 March 2026 for required calendar-year 2025 personal form 1004 and company form 1101. Determine the form, obligation and payment for the facts. [Republika Srpska Tax Administration's 2025 return notice][rs-filing]
+
+## Brčko District
+
+The individual residence tests include District domicile, presence for at least 183 days in the tax period and a rule for a taxpayer domiciled in an entity who earns employment income from an employer with headquarters in the District. Residents include taxable income from within and outside the District. Nonresidents fall within the specified District charge. The ordinary rate is 10%. Check overlapping residence or income claims before filing. [District Personal Income Tax Law, arts 2, 3, 9 and 10][bd-pit]
+
+The ordinary company profit tax rate is 10%. A legal entity registered under District law generally includes domestic and foreign profit. The law separately covers other entity branches, foreign companies and specified District income. The District Finance Directorate's 2025 return notice lists 28 February 2026 for the personal returns it covers and 31 March 2026 for company returns. Check any filing exception, calendar adjustment and payment date for the taxpayer. [District Corporate Income Tax Law, arts 1–3 and 20–22][bd-cit] · [District Finance Directorate's 2025 return notice][bd-filing]
+
+## State VAT
+
+The ordinary VAT rate is 17%. The tax period is a calendar month, with the ordinary return and payment due by the tenth of the next month. The VAT registration threshold is BAM 100,000 under the 2023 amendment. Check the transaction, registration, exemptions and filing procedure separately. [Indirect Taxation Authority, VAT][vat] · [Authority's Gazette 80/23 notice][vat-threshold]
+
+[currency]: https://www.cbbh.ba/Home/GetTableAttachment?contentId=264e288d-e76d-404c-8876-c4491a1c98e0&lang=en
+[f-pit]: https://www.fmf.gov.ba/Content/Open/102395
+[f-cit]: https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf
+[f-filing]: https://pufbih.ba/news/post/6970b6a0a270ee594ff59cc7
+[rs-pit]: https://poreskaupravars.org/Documents/Pdf/RS%20Law%20on%20Income%20Tax%2C%2060-15.pdf
+[rs-rates]: https://en.poreskaupravars.org/wp-content/uploads/2024/10/Amendments-to-the-PIT-Law-119.pdf
+[rs-2025]: https://poreskaupravars.org/wp-content/uploads/2025/01/Scan29012025.pdf
+[rs-cit]: https://vladars.rs/sr-SP-Cyrl/Vlada/Ministarstva/mf/Documents/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%20%D0%BE%20%D0%BF%D0%BE%D1%80%D0%B5%D0%B7%D1%83%20%D0%BD%D0%B0%20%D0%B4%D0%BE%D0%B1%D0%B8%D1%82%20%D0%A1%D0%93%2094-15.pdf
+[rs-cit-amend]: https://en.poreskaupravars.org/wp-content/uploads/2022/11/Law-on-Amendments-to-the-Corporate-Income-Tax-Law-1-17.pdf
+[rs-filing]: https://poreskaupravars.org/poreska-uprava-republike-srpske-podsjeca-poreske-obveznike-da-blagovremeno-izvrse-svoje-obaveze-istice-rok-za-podnosenje-godisnjih-poreskih-prijava/
+[bd-pit]: https://skupstinabd.ba/3-zakon/ba/Zakon%20o%20porezu%20na%20dohodak/Nesluz--bena%20prec--is--c-ena%20verzija%20Zakona%20o%20porezu%20na%20dohodak%20B.pdf
+[bd-cit]: https://skupstinabd.ba/3-zakon/ba/Zakon%20o%20porezu%20na%20dobit/05B17-22%20Zakon%20o%20porezu%20na%20dobit%20-%20prec--is--eni%20tekst.pdf
+[bd-filing]: https://df.bdcentral.net/Publication/Read/obavjestenje-povrat-poreza?lang=sr
+[vat]: https://www.uino.gov.ba/portal/en/vat/general-information-on-vat-system-in-bosnia-and-herzegovina/
+[vat-threshold]: https://www.uino.gov.ba/portal/bs/novosti/prag-za-ulazak-u-sistem-pdv-a-povecan-na-100-000-km/
 
 <!-- openaccountants-cta-block -->
 

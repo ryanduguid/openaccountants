@@ -1,11 +1,11 @@
 ---
 name: mw-vat-gst
-description: "Source-cited draft: vat / gst for Malawi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: vat / gst for Malawi (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MW
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+last_updated: 2026-11-28
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,16 +15,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Value Added Tax (VAT)
 
-Malawi operates a Value Added Tax under the Value Added Tax Act, administered by the MRA. The standard rate is 17.5%, raised from 16.5% by the Value Added Tax (Amendment) Act 2025 and announced in the Mid-Year Budget Review of 21 November 2025 (MRA, New Tax Measures). Apply 16.5% only to supplies made up to the end of 2025.
+The Malawi Revenue Authority administers value added tax under the Value Added Tax Act.
 
-- **Standard VAT rate** — 17.5 percent (raised from 16.5% by the Value Added Tax (Amendment) Act 2025; 16.5% applies only to supplies up to the end of 2025)  _([Value Added Tax Act (Cap 42:02)](https://www.mra.mw/individuals/value-added-tax-vat))_
-- **Standard VAT rate from 31 Dec 2025** — 17.5 percent  _(Value Added Tax (Amendment) Act 2025 (as described at [vatupdate.com](https://www.vatupdate.com/2026/01/07/malawi-raises-vat-to-17-5-following-presidential-assent-to-value-added-amendment-act-2025/)))_
+- **Standard VAT rate** — 17.5% under Act 37 of 2025, published on 30 December 2025. The MRA's December notices give different start dates. The MRA dates the separate customs measure for imports to 10 January 2026. Check the tax point and period for supplies or imports in the transition. [Act 37 of 2025, s 2](https://www.mra.mw/admin/storage/download_files/1767960417_Value%20Adde%20Tax%20%28Amendment%29%20%28NO.%202%29%20ACT.pdf), [MRA 30 December notice](https://www.mra.mw/admin/storage/download_files/1767182853_NEW%20TAX%20MEASURES.pdf), [MRA 31 December notice](https://www.mra.mw/admin/storage/download_files/1767952247_NEW%20TAX%20MEASURES...pdf) and [MRA customs measures](https://www.mra.mw/admin/storage/download_files/1768232611_NEW%20CUSTOMS%20AND%20EXCISE%20MEASURES.pdf).
 - **Zero-rated supplies** — 0 percent (exports and specified goods/services (e.g. certain basic foodstuffs and medicines) (approx — confirm current zero-rated schedule items))  _(Value Added Tax Act (Cap 42:02), Schedules)_
 - **Exempt supplies** — Specified supplies are exempt (no VAT, no input credit) — e.g. certain financial, health and education services (approx — confirm current exempt schedule)  _(Value Added Tax Act (Cap 42:02), Schedules)_
-- **Mandatory registration threshold** — 25,000,000 MWK/year (of taxable supplies per annum)  _([Value Added Tax Act (Cap 42:02), Section 11](https://www.mra.mw/individuals/value-added-tax-vat))_
-- **Voluntary registration** — Permitted where taxable supplies are below MK 25,000,000 per annum  _([Value Added Tax Act (Cap 42:02), Section 11](https://www.mra.mw/individuals/value-added-tax-vat))_
+- **VAT registration from 14 April 2026** — A person making taxable supplies or conducting a mining project is registrable at MWK 50 million or more in annual business turnover. Non-resident digital service suppliers, intermediaries and electronic marketplace operators fall under a separate rule regardless of that threshold. [Act 5 of 2026, s 4](https://elibrary.rat.gov.mw/server/api/core/bitstreams/21540b28-6bfd-45b5-a910-b80f13db59b4/content).
+- **Voluntary registration** — A business below the ordinary threshold may apply for voluntary registration. Check the separate registration rule for specified digital suppliers and intermediaries. [VAT Act, s 11(11)](https://elibrary.rat.gov.mw/server/api/core/bitstreams/90e7cd40-7761-46f6-9b5a-a0e072208879/content) and [Act 5 of 2026, s 4](https://elibrary.rat.gov.mw/server/api/core/bitstreams/21540b28-6bfd-45b5-a910-b80f13db59b4/content).
 - **Registration deadline once liable** — Apply at MRA Domestic Taxes within 30 days of becoming liable  _([Value Added Tax Act (Cap 42:02)](https://www.mra.mw/individuals/value-added-tax-vat))_
-- **VAT return filing frequency** — Monthly — return and payment due by the 25th of the month following the tax period (approx — confirm the exact due day)  _(Value Added Tax Act (Cap 42:02))_
+- **Ordinary monthly VAT return and payment** — A taxable person normally accounts by calendar month and files and pays by the 25th day of the following month. Check any applicable written direction or filing exception. [VAT Act, s 34](https://elibrary.rat.gov.mw/server/api/core/bitstreams/90e7cd40-7761-46f6-9b5a-a0e072208879/content), [Act 7 of 2022, s 5](https://archive.gazettes.africa/archive/mw/2022/mw-government-gazette-dated-2022-03-31-no-2C.pdf), [Act 15 of 2021, schedule](https://elibrary.rat.gov.mw/server/api/core/bitstreams/e43a8644-e1e1-46d8-82d7-7e80afd5fd50/content) and [MRA taxpayer charter](https://www.mra.mw/assets/upload/downloads/TAXPAYER_CHARTER1.pdf).
 - **Reverse charge on imported services** — Recipients of imported services account for VAT under the reverse-charge mechanism (approx — confirm scope, incl. digital/non-resident supplier rules)  _(Value Added Tax Act (Cap 42:02))_
 
 <!-- openaccountants-cta-block -->

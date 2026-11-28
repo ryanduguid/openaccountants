@@ -1,11 +1,11 @@
 ---
 name: mw-company-formation
-description: "Source-cited draft: company formation & entity choice for Malawi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: company formation & entity choice for Malawi (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MW
 category: formation
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.1
+tax_year: 2026
+last_updated: 2026-11-28
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,8 +25,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Incorporation steps** — Reserve company name, file the incorporation application (prescribed form) with director/secretary consents, obtain Certificate of Incorporation, then register for TPIN/tax and VAT and any business licences  _(Companies Act No. 15 of 2013)_
 - **Incorporation timeline** — Typically a few days to about two weeks once documents are complete (online via the registry portal) (approx — confirm current processing times)  _(Companies Act No. 15 of 2013)_
 - **Incorporation / registration fees** — Statutory registry fees apply (name reservation plus incorporation fee) (approx — confirm current MWK fee schedule with the Registrar General)  _(Companies Act No. 15 of 2013)_
-- **Tax registration after incorporation — VAT registration threshold** — Register for a Taxpayer Identification Number (TPIN) with the MRA; register for VAT if turnover exceeds MK 25,000,000/year MWK  _(Taxation Act (Chapter 41:01); Value Added Tax Act (Cap 42:02))_
-- **Core annual compliance** — File an annual return with the Registrar, maintain statutory registers, hold an AGM, prepare financial statements, and file the annual corporate tax return within 180 days of year end  _(Companies Act No. 15 of 2013; Taxation Act (Chapter 41:01))_
+- **Taxpayer registration** — Apply to the MRA for a taxpayer identification number through the MyTax registration service. [MRA taxpayer registration](https://eservices.mra.mw/mytax/Account/register).
+- **VAT registration from 14 April 2026** — A person making taxable supplies or conducting a mining project is registrable at MWK 50 million or more in annual business turnover. Non-resident digital service suppliers, intermediaries and electronic marketplace operators fall under a separate rule regardless of that threshold. [Act 5 of 2026, s 4](https://elibrary.rat.gov.mw/server/api/core/bitstreams/21540b28-6bfd-45b5-a910-b80f13db59b4/content).
+- **Core annual compliance** — File the company annual return with the Registrar, maintain statutory registers, hold an AGM and prepare financial statements as required. Check the applicable corporate tax return and payment dates with the MRA. The former 180-day income tax return provision was deleted from 1 April 2025. [Companies Act No. 15 of 2013](https://malawilii.org/akn/mw/act/2013/15/eng%402013-07-26), [Act 15 of 2021, schedule](https://elibrary.rat.gov.mw/server/api/core/bitstreams/e43a8644-e1e1-46d8-82d7-7e80afd5fd50/content) and [commencement notices](https://malawilii.org/akn/mw/act/gn/2025/21/eng@2025-03-21/publication).
 
 <!-- openaccountants-cta-block -->
 
