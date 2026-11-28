@@ -1,31 +1,52 @@
 ---
 name: bn-tax-overview
-description: "Source-cited draft: tax overview for Brunei (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Brunei Darussalam tax system for the 2026 year of assessment. Covers corporate income, residence, territorial charge, filing, currency and the scope of personal income tax and VAT. Use for Brunei tax orientation."
 jurisdiction: BN
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.4
+tax_year: 2026
+tax_year_notes: "Ordinary 2026 year of assessment, generally based on 2025 income."
+last_updated: 2026-11-28
+version: 1.5
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Brunei Tax Overview
+# Brunei Darussalam tax system orientation
 
-## Brunei tax system at a glance
+Load `workflow-base`. Record the taxpayer type, income source and basis period. The Revenue Division administers income tax through the Collector of Income Tax and the One Common Portal (OCP). Use Brunei dollars (BND or B$). The Brunei Darussalam Central Bank exchanges Brunei and Singapore dollars at par under the Currency Interchangeability Agreement. Check the conversion rules that apply to the taxpayer’s records. [Income Tax Act, s 3][act] · [Revenue Division and OCP][portal] · [Central bank currency framework][currency]
 
-- **Brunei tax system overview** — Brunei Darussalam has no personal income tax and no VAT/GST. The principal direct tax is corporate income tax administered by the Revenue Division (Income Tax Board) of the Ministry of Finance and Economy. Brunei taxes companies on a preceding-year basis.
-- **National currency** — Brunei dollar (BND), pegged 1:1 to the Singapore dollar  _(Currency Order / Currency Interchangeability Agreement)_
-- **Tax authority** — Revenue Division (Income Tax Board), Ministry of Finance and Economy (MoFE)  _(Income Tax Act (Cap. 35), https://www.mofe.gov.bn/Divisions/income-tax.aspx)_
-- **Basis of assessment** — Preceding-year basis: the year of assessment is the 12 months from 1 January and tax is charged on the income of the basis period ending in the preceding year, normally the calendar year to 31 December; the year of assessment 2026 is assessed on the accounting period ending in 2025  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 2 (definitions of 'basis period' and 'year of assessment') — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
-- **Personal income tax** — None — Brunei imposes no tax on the personal income (employment, investment or other) of individuals, regardless of nationality or residence  _(Income Tax Act (Cap. 35) — https://www.mofe.gov.bn/Divisions/income-tax.aspx (as reported; the figure was not re-read against this text for this change))_
-- **Headline corporate income tax rate** — 18.5% of chargeable income for the year of assessment 2015 and later years, after the threshold relief in s 35(4)  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 35(1)(f) — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
-- **Oil and gas exploration/production income tax rate** — 55% on the profits of companies engaged in the exploration and production of oil and gas, under the Income Tax (Petroleum) Act (Chapter 119)  _(Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
-- **VAT / GST / sales tax** — None — Brunei has no value-added tax, goods and services tax or general sales tax  _(No VAT/GST statute in force, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Capital gains tax** — No separate capital gains tax (gains of a capital nature are generally not taxed)  _(Income Tax Act (Cap. 35))_
-- **Corporate income tax return deadline** — 30 June of the year of assessment; every company must furnish its return of income by that date  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 52(1) — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
-- **Corporate residence / source basis** — A company is resident if its control and management are exercised in Brunei; tax applies broadly on a territorial/Brunei-source basis (approx — confirm)  _(Income Tax Act (Cap. 35))_
+## Income scope and residence
+
+The ordinary income tax charge applies to companies and covers relevant income accruing in, derived from or received in Brunei Darussalam. Determine where the income arises and where it is received. A company is resident if control and management of its business is exercised in Brunei Darussalam. Section 2 also defines individual residence for provisions where it matters, including the rule for presence or qualifying employment for at least 183 days in the year preceding assessment. Check the statutory conditions, the director exclusion from the employment limb and applicable treaty provisions. [Income Tax Act, ss 2 and 8 and Schedule 1][act]
+
+There is no general personal income tax on ordinary individual income. Specified payments to non-residents can still attract withholding. Section 35(2B) provides a 10% charge on remuneration paid by a company to a director who is non-resident. Verify the payment, residence, withholding and treaty treatment separately. [Revenue Division corporate tax FAQ][faq] · [Income Tax Act, ss 35 and 37 and Schedule 1][act]
+
+## Company rates and indirect taxes
+
+The ordinary company rate is 18.5% for the 2026 year of assessment. Under section 35(4), 25% of the first BND 100,000 and 50% of the next BND 150,000 of chargeable income are brought into the rate calculation, with the excess taxed at the full rate. Section 10(4)–(5) provides an exemption where gross sales or turnover in the basis period do not exceed BND 1 million, using the Act’s inclusive revenue definition. Check the qualifying-company relief in section 35(5) and the separate export and petroleum regimes before calculating. [Income Tax Act, ss 8A, 10 and 35][act] · [Revenue Division income tax guidance][revenue]
+
+Brunei has no general VAT or GST. Customs duties and excise can still apply to specified goods. Check the current tariff, origin, classification and exemption for the transaction. [BusinessBN tax guidance][business] · [Royal Customs and Excise Department import duties][customs] · [Excise Order, s 9][excise]
+
+## Assessment year, returns and payment
+
+The year of assessment starts on 1 January. For the 2026 year of assessment, ordinary statutory income is based on 2025. The Collector may direct a different accounting year-end under section 26(2). Ordinary 2026 corporate returns were due through OCP by 30 June 2026. Section 69A ties self-assessed tax payment to the applicable return or estimate deadline. Check estimated income, assessments and any taxpayer-specific extension separately. [Income Tax Act, ss 2, 26, 52 and 69A][act] · [2024 Amendment Order, ss 3 and 9][amendment] · [Revenue Division's 2026 filing notice][notice] · [Revenue Division tax compliance form][form]
+
+The November 2024 amendment provides a separate route for a qualifying increase in tax payable or correction of an excessive repayment. Section 52B allows one amended return within 6 months after the ordinary return time allowed expires, in the form and manner set by the Collector. Section 69B requires payment by the date the amended return is required. Refer an actual amendment to a Brunei tax specialist to confirm the prescribed route, deadline and increased amount under section 52B(4). [Income Tax Act (Amendment) Order 2024, ss 4, 6 and 10][amendment]
+
+Use the [company income tax guide](bn-corporate-income-tax.md), [individual income tax guide](bn-income-tax.md), [VAT and import duties guide](bn-vat-gst.md) and [payroll and social contributions guide](bn-payroll-social.md) for the relevant specialist checks.
+
+[act]: https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf
+[portal]: https://www.ocp.mofe.gov.bn/about
+[currency]: https://www.bdcb.gov.bn/monetary-policy/monetary-policy-framework
+[faq]: https://www.mof.gov.bn/div_revenue_faq_corporatetax/
+[revenue]: https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/
+[business]: https://www.business.gov.bn/run-a-business-2/?lang=en
+[customs]: https://tradingacrossborders.mofe.gov.bn/Downloadable/NewCustomsImportDutyTaxes.pdf
+[excise]: https://www.agc.gov.bn/wp-content/uploads/2026/08/S-40-2006-E.pdf
+[amendment]: https://www.agc.gov.bn/wp-content/uploads/2026/07/S-46_2024_E-INCOME-TAX-ACT-AMENDMENT-ORDER-2024.pdf
+[notice]: https://www.ocp.mofe.gov.bn/news/
+[form]: https://www.mofe.gov.bn/SiteAssets/Divisions/revenue-forms/Certificate%20of%20Tax%20Compliance%20form%20-%202025.pdf
 
 <!-- openaccountants-cta-block -->
 

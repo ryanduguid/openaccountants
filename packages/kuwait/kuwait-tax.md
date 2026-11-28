@@ -1,10 +1,10 @@
 ---
 name: kuwait-tax
 description: Source-cited draft covering Kuwait taxation from tax year 2025. Use for corporate income tax, Zakat, National Labour Support Tax, KFAS contributions, VAT status, filing obligations and ownership questions. Distinguishes the non-GCC foreign share subject to ordinary corporate income tax from the legal-form tests for company contributions. Zakat covers public and closed Kuwaiti shareholding companies; absence of a stock-exchange listing does not establish exemption. Check the Domestic Minimum Top-up Tax separately for qualifying multinational groups and obtain professional review of exemptions, calculation bases and current filing requirements before relying on the guide.
-version: 2.2
+version: 2.3
 jurisdiction: KW
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-28
 review_status: pending_review
 category: international
 tier: 2
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | ZAKAT | Ordinary 1% charge on public and closed Kuwaiti shareholding companies; confirm the applicable base and exemptions (section 5.3) |
 | NLST | 2.5% of net profits (listed companies) |
 | KFAS | 1% of net profits (shareholding companies) |
-| DMTT | 15% on MNEs with global revenue >= EUR 750M (from 1 Jan 2025) |
+| DMTT | Effective 15% top-up for in-scope groups from periods starting on or after 1 January 2025. EUR 750 million or more in at least 2 of the 4 immediately preceding periods. |
 | Personal income tax | None |
 | Authority | Ministry of Finance, Department of Income Tax |
 | Portal | https://www.mof.gov.kw |
@@ -80,13 +80,13 @@ Company 70% Kuwaiti, 30% US-owned. Profits KWD 200,000. CIT on 30% foreign share
 
 ### 5.2 CIT (foreign entities only)
 
-- **CIT foreign entities only** — 15% flat on the **non-GCC** foreign-owned share. Kuwaiti-owned exempt from CIT. **"GCC nationals treated as foreign" was wrong and is corrected here.** Both sibling guides state the opposite and cite it: `kw-corporate-income-tax` has *"a flat 15% applies only to foreign (non-GCC) corporate bodies"* and *"companies wholly owned by Kuwaiti or GCC nationals are exempt from CIT"*, and `kw-tax-overview` has *"locally owned and GCC-owned companies instead bear a set of profit-based contributions"*. This file's contrary claim carried no citation at all.
+- **Ordinary corporate income tax.** Use 15% on the taxable foreign corporate profit share from business in Kuwait. Check the entity, Kuwait-source activities and precise ownership. [Ordinary scope and source references](kw-tax-overview.md)
 
 ### 5.3 Zakat (public and closed Kuwaiti shareholding companies)
 
-Law No. 46 of 2006 covers public and closed Kuwaiti shareholding companies. Its ordinary charge is 1% of annual net profit. An unlisted closed shareholding company is therefore not exempt merely because it is unlisted. Confirm the company's legal form, the applicable calculation base and any exemption before assessing the charge. Check the DMTT regime separately before combining it with ordinary company taxes or contributions.
+Law No. 46 of 2006 ordinarily charges 1% of annual net profit of public and closed Kuwaiti shareholding companies. Article 4 excludes companies subject to Decree No. 3 of 1955 and specified government companies. Check calculation, GCC filing and DMTT coverage.
 
-Source: [Ministry of Finance, Law No. 46 of 2006, Article One](https://mof.gov.kw/Desicions/Decree/PDF/Law46_2006e.pdf), corroborated by the law's title in the [Ministry's legislation catalogue](https://www.mof.gov.kw/MOFDesicions/MOFDesicionsDetails.aspx). The Ministry's indexed text supports the rate and public/closed-company scope. Direct PDF retrieval failed on 13 September 2026, so the full law, implementing rules and subsequent amendments were not verified in this correction. Keep the guide pending professional review.
+[Law No. 46 of 2006, arts 1 and 4](https://www.mof.gov.kw/Desicions/Decree/PDF/Q46-2006.pdf) · [KDIPA investor guide, Zakat](https://kdipa.gov.kw/wp-content/uploads/2024/10/Invest-in-Kuwait-English.pdf) · [Decree-Law No. 157 of 2024, issuing art 1](https://mof.gov.kw/MOFServices/PDF/TaxMultinationalLegislation.pdf)
 
 ### 5.4 Customs
 
@@ -111,7 +111,7 @@ No VAT input recovery. Foreign VAT is irrecoverable cost.
 | Obligation | Deadline |
 | --- | --- |
 | CIT return | 15th of 4th month after year-end |
-| Advance CIT | 25% quarterly instalments |
+| Ordinary CIT payment | Pay in full or in 4 equal instalments due on the 15th day of months 4, 6, 9 and 12 after period end. Confirm any approved extension. [Income Tax Decree, art 8 and Executive Bylaw, art 28](https://mof.gov.kw/Desicions/Decree/PDF/Q3_1955e.pdf) |
 | Tax retention (govt contracts) | 5% of contract value withheld |
 
 **Penalties**
@@ -127,7 +127,7 @@ No VAT input recovery. Foreign VAT is irrecoverable cost.
 
 ### Edge cases
 
-**EC1 -- GCC national.** Saudi-owned business in Kuwait: **not** treated as foreign for CIT. A company wholly owned by GCC nationals is outside the 15% charge; where ownership is mixed, CIT reaches only the **non-GCC** foreign share. (This example previously said the opposite.) **Being outside CIT does not put it inside Zakat, NLST or KFAS** — each has its own scope, keyed to legal form and listing, not to ownership: Zakat and KFAS reach Kuwaiti *shareholding* companies, NLST only *listed* ones. A Saudi-owned WLL is within none of the four. **Check the DMTT separately**: a Pillar Two top-up is keyed to the group's consolidated revenue — EUR 750m or more in at least two of the four preceding financial years — not to anyone's nationality, so a large GCC-owned group can be inside it while outside CIT.
+**EC1. GCC ownership.** A GCC-incorporated company wholly owned by GCC nationals generally falls outside ordinary corporate income tax. Check taxable profit allocated to foreign corporate owners in mixed structures. Confirm legal form, listing and administrative filing separately for company contributions. Confirm DMTT group scope and the older charges disapplied for the relevant period. [Ordinary scope and primary sources](kw-tax-overview.md)
 
 **EC2 -- Mixed ownership.** Assess ordinary CIT on the non-GCC foreign share. Determine Zakat separately from the company's legal form under section 5.3, then confirm the relevant base and exemptions. Ownership percentages and listing status alone do not decide the Zakat result.
 
