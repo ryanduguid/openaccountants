@@ -1,33 +1,48 @@
 ---
 name: tr-tax-overview
-description: "Source-cited draft: tax overview for Turkey (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Türkiye's 2026 tax system, including individual domicile, full and limited corporate liability, tax periods, Turkish lira and Revenue Administration filing. Trigger on Turkish tax residence, income source, tax year or tax administration."
 jurisdiction: TR
 category: international
 tax_year: 2026
-last_updated: 2026-11-10
-version: 1.1
+last_updated: 2026-11-28
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Turkey Tax Overview
+# Türkiye tax system orientation
 
-## Turkish tax system at a glance (2026)
+Load `workflow-base`. Identify the person or entity, source of income, calendar or accounting period and any filing obligation. The Revenue Administration (Gelir İdaresi Başkanlığı, GİB) administers national taxes. The currency is the Turkish lira (TRY, shown as TL in tax guidance). Check the applicable conversion and accounting rules for foreign currency amounts. [GİB tax calendar][calendar] · [Central Bank banknotes][central-bank] · [Tax Procedure Law, art 215][procedure]
 
-Turkey (Türkiye) operates a national tax system administered centrally, with progressive personal income tax, a flat corporate income tax, and a broad-based VAT. The figures below reflect the 2026 calendar tax year. This is an unverified source-cited draft pending review by a licensed Turkish accountant (Yeminli Mali Müşavir / Serbest Muhasebeci Mali Müşavir).
+## Tax territory and residence
 
-- **Standard tax year** — Calendar year (1 January – 31 December) for individuals (GVK art. 108); companies use the calendar year unless assigned a special accounting period (KVK art. 16(1))  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), art. 108 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf ; Corporate Tax Law No. 5520 (Kurumlar Vergisi Kanunu, consolidated text, mevzuat.gov.tr), art. 16(1) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf)_
-- **Currency** — Turkish lira (TRY)  _(Central Bank of the Republic of Türkiye)_
-- **Tax authority** — Turkish Revenue Administration (Gelir İdaresi Başkanlığı, GİB)  _(Gelir İdaresi Başkanlığı (Revenue Administration) — https://www.gib.gov.tr)_
-- **Residence basis (individuals)** — Residents (domiciled in Türkiye, or present for more than six months in a calendar year, art. 4) are taxed on worldwide income (art. 3); non-residents on Turkish-source income only (art. 6)  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), arts. 3, 4 and 6 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf)_
-- **Residence basis (companies)** — Companies with their legal seat or place of management in Türkiye are taxed on worldwide income (full liability, art. 3(1)); companies with neither in Türkiye only on Turkish-source income (limited liability, art. 3(2))  _(Corporate Tax Law No. 5520 (Kurumlar Vergisi Kanunu, consolidated text, mevzuat.gov.tr), art. 3(1) and (2) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf)_
-- **Headline personal income tax rate range** — 15% to 40% (progressive). 2026 brackets: 15% to 190,000 TRY, 20% to 400,000, 27% to 1,000,000 (1,500,000 for wages), 35% to 5,300,000, 40% above  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), art. 103 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf ; Income Tax General Communiqué Seri No. 332, Resmî Gazete 31 December 2025, No. 33124 (5th repeated edition), art. 3(3) — https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-30.pdf)_
-- **Headline corporate income tax rate** — 25% (standard); 30% for banks, companies under Law No. 6361 (financial leasing, factoring, financing and savings finance), electronic payment and money institutions, authorised foreign exchange institutions, asset management companies, capital market institutions, insurance, reinsurance and pension companies, and companies party to build-operate-transfer and public-private partnership project contracts  _(Corporate Tax Law No. 5520 (Kurumlar Vergisi Kanunu, consolidated text, mevzuat.gov.tr), art. 32(1) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf)_
-- **Does VAT exist?** — Yes — VAT (KDV) standard rate 20%, reduced rates 10% and 1%. Art. 28 sets a statutory 10% rate and lets the President raise it up to fourfold or lower it to 1%; Decree 2007/13033 as amended by Presidential Decree 7346 (in force 10 July 2023) raised the standard rate from 18% to 20% and the middle rate from 8% to 10%  _(Value Added Tax Law No. 3065 (Katma Değer Vergisi Kanunu, consolidated text, mevzuat.gov.tr), art. 28 — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.3065.pdf ; Presidential Decree No. 7346 amending Council of Ministers Decree 2007/13033 on VAT rates, Resmî Gazete 7 July 2023, No. 32241, arts. 1 and 3 — https://www.resmigazete.gov.tr/eskiler/2023/07/20230707-11.pdf)_
-- **Corporate income tax return deadline** — Return filed from the 1st to the 25th of the fourth month after the accounting period ends (1 to 25 April for calendar-year companies, art. 14(3)); tax paid by the end of that month (art. 21(1)). GİB has extended the filing date to month end by circular in past years; confirm the current circular before relying on 30 April  _(Corporate Tax Law No. 5520 (Kurumlar Vergisi Kanunu, consolidated text, mevzuat.gov.tr), arts. 14(3) and 21(1) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf)_
-- **Annual individual income tax return deadline** — 1 to 25 March of the following year (art. 92); tax paid in two equal instalments in March and July (art. 117)  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), arts. 92 and 117 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf)_
-- **VAT return frequency and deadline** — Monthly. The statute sets filing by the 24th and payment by the 26th of the following month (withholding agents: 21st and 23rd); the KDV guide uses the 28th set by GİB circular, so confirm the current circular  _(Value Added Tax Law No. 3065 (Katma Değer Vergisi Kanunu, consolidated text, mevzuat.gov.tr), arts. 41(1) and 46(1) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.3065.pdf)_
+For 2026, individuals domiciled in Türkiye or continuously present there for more than 6 months within a calendar year generally have full income tax liability. Temporary departures do not break the period. Article 5 excludes specified temporary foreign visitors and certain involuntary stays. Article 3 separately covers certain Turkish nationals abroad for Turkish organisations and qualifies the result where the host country taxes the income. Under full liability, consider domestic and foreign income. Under limited liability, apply the Turkish source tests to each income category. [Income Tax Law, arts 3–7][income-law]
+
+Companies and other corporate taxpayers with a legal centre or business centre in Türkiye have full liability on domestic and foreign profits. The business centre is where business transactions are organised and managed in fact. If both centres are outside Türkiye, apply the limited liability rules to Turkish-source profits. Check the applicable permanent establishment, source, treaty and relief provisions before assigning an outcome for the case. [Corporate Tax Law, arts 1–3][corporate-law]
+
+## Taxpayer types and ordinary rates
+
+Separate personal income, corporate profits and transactions subject to VAT (KDV). For 2026, the individual tariff runs from 15% to 40%. The ordinary band limits are TRY 190,000, TRY 400,000, TRY 1,000,000 and TRY 5,300,000. The third limit is TRY 1,500,000 for wage income. Apply the schedule for the actual income and check any withholding or exemptions. [Income Tax Law, arts 2 and 103][income-law] · [GİB 2026 tariff][tariff] · [Personal income tax guide](turkey-pit.md)
+
+The ordinary corporate rate is 25%. Verify the 30% rate for the specified financial and project businesses and any relevant reductions or minimum tax. Since 10 July 2023 the standard VAT rate has been 20%, with the specified 10% and 1% reduced rates. Check the dated classification of the supply before using a reduced rate. [Corporate Tax Law, arts 32 and 32/C][corporate-law] · [GİB corporate filing guidance][gib-corporate] · [VAT guide](turkey-vat.md) · [GİB VAT rate schedule][vat-rates]
+
+## Periods and filing authorities
+
+The ordinary individual income year is the calendar year. The ordinary corporate accounting period is also the calendar year. The tax procedure legislation provides for special accounting periods. Use the period-specific GİB calendar and the appropriate return service. [Income Tax Law, art 108][income-law] · [Corporate Tax Law, arts 14 and 16][corporate-law] · [Tax Procedure Law, art 174][procedure]
+
+For the completed 2025 calendar year, GİB instructed individuals required to file an annual return to lodge it by 31 March 2026, with instalments due by 31 March and 31 July 2026. GİB listed 30 April 2026 for the ordinary corporate return and payment for calendar-year companies. Confirm the actual declaration and payment dates for the taxpayer's period, including 2026 returns due in 2027. Check the applicable VAT declaration type and period separately. [GİB 2025 individual return notice][individual-deadline] · [GİB 2025 company return notice][company-deadline] · [GİB tax calendar][calendar] · [Corporate income tax guide](tr-corporate-income-tax.md)
+
+[income-law]: https://istanbul.gib.gov.tr/mevzuat/kanun/433
+[corporate-law]: https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf
+[procedure]: https://istanbul.gib.gov.tr/mevzuat/kanun/434
+[central-bank]: https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB%20EN/Main%20Menu/Banknotes
+[calendar]: https://gib.gov.tr/vergi-takvimi
+[tariff]: https://cdn.gib.gov.tr/api/gibportal-file/file/getFileResources?objectKey=arsiv%2Fyardim-kaynaklar%2Fyararli-bilgiler%2Fgelir-vergisi-tarifeleri%2Fgelir-vergisi-tarifesi-2026.pdf
+[gib-corporate]: https://gib.gov.tr/vergi-konulari/2/19_kurumlar-vergisinin-beyani/19/129/675
+[vat-rates]: https://cdn.gib.gov.tr/api/gibportal-file/file/getFileResources?objectKey=arsiv%2Fyardim-kaynaklar%2Fyararli-bilgiler%2Fkdv-oranlari.pdf
+[individual-deadline]: https://gib.gov.tr/duyuru-arsivi/mevzuat/17408_2025_takvim_yili_gelir_vergisi_beyan_donemi_icin_son_gun_bugun
+[company-deadline]: https://www.gib.gov.tr/duyuru-arsivi/mevzuat/17490_kurumlar_vergisi_beyan_donemi_icin_son_gun_30_nisan_2026
 
 <!-- openaccountants-cta-block -->
 
