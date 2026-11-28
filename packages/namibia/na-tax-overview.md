@@ -1,33 +1,47 @@
 ---
 name: na-tax-overview
-description: "Source-cited draft: tax overview for Namibia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Namibia's ordinary income tax system, including source, taxpayer types, currency, assessment periods and NamRA filing. Trigger on Namibian income source, tax residence, assessment year or tax administration."
 jurisdiction: NA
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.4
+last_updated: 2026-11-28
+version: 1.5
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Namibia Tax Overview
+# Namibia tax system orientation
 
-## Namibian tax system at a glance
+Load `workflow-base`. Identify the taxpayer, assessment year and source of each amount. The Namibia Revenue Agency (NamRA) administers national income tax through the Integrated Tax Administration System (ITAS). The domestic currency is the Namibia Dollar (NAD or N$). The South African rand is also legal tender in Namibia. Check the applicable conversion and reporting rules for amounts recorded in another currency. [NamRA income tax guidance][namra] · [NamRA ITAS tax pages][itas] · [Bank of Namibia Act, ss 37–39 and 45][bank-act]
 
-Namibia operates a source-based tax system administered by the Namibia Revenue Agency (NamRA). Personal income tax is progressive and corporate tax is a flat rate, and a 15% VAT applies to most goods and services.
+## Tax territory and residence
 
-- **National tax authority** — Namibia Revenue Agency (NamRA)  _([Namibia Revenue Agency Act](https://www.namra.org.na/))_
-- **Currency** — Namibian Dollar (NAD / N$)  _(Income Tax Act)_
-- **Tax year for individuals** — 1 March to 28/29 February: years of assessment for persons other than companies end on the last day of February  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 5(1)(a)(i) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
-- **Tax year for companies** — The company's own financial year  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 5(1)(a)(ii) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
-- **Basis of taxation** — Source-based — gross income is what is received or accrued from a source within or deemed to be within Namibia, taxed regardless of residence; foreign-source income is generally not taxed  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 1, definition of 'gross income', and s 5(1) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
-- **Top marginal personal income tax rate** — 37% on taxable income exceeding N$1,550,000 (N$429,000 plus 37% of the excess)  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), Schedule 4 para 1(g) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf ; Namibia Revenue Agency, Income Tax page (individual rates table) — https://www.namra.org.na/tax-types/page/income-tax)_
-- **Personal income tax-free threshold** — N$100,000 per annum  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), Schedule 4 para 1(a) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf ; Namibia Revenue Agency, Income Tax page (individual rates table) — https://www.namra.org.na/tax-types/page/income-tax)_
-- **Standard (non-mining) corporate income tax rate** — 30% for years of assessment commencing on or after 1 January 2025 (31% for years commencing on or after 1 January 2024; 32% before)  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), Schedule 4 para 3(1)(a), as substituted by Act 4 of 2024 — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
-- **Value-added tax (VAT)** — Yes — VAT at a standard rate of 15% on supplies and imports  _(Value-Added Tax Act 10 of 2000 (NamRA copy of the annotated consolidation including Act 5 of 2024), s 6(1) — https://www.namra.org.na/documents/cms/uploaded/valueadded-tax-act-10-of-2000-0d8c7ed7fc.pdf ; Namibia Revenue Agency, VAT page — https://www.namra.org.na/tax-types/page/value-added-tax-vat-30120)_
-- **Annual company income tax return deadline** — Within 7 months of the company's financial year-end  _(Income Tax Act — https://www.namra.org.na/tax-types/page/income-tax/ (as reported; the figure was not re-read against this text for this change))_
-- **Annual individual income tax return deadline (salaried)** — 30 June following the end of the tax year (28/29 February) (approx — confirm)  _(Income Tax Act — https://www.namra.org.na/tax-types/page/income-tax/ (as reported; the figure was not re-read against this text for this change))_
+The ordinary income tax base uses amounts from sources in Namibia or deemed by legislation to be in Namibia. Start with the income type and statutory source tests for persons and companies. Check the separate deemed-source rules for services and other payments with facts outside Namibia. Establish residence separately where it affects a deemed-source rule, non-resident withholding or treaty treatment. [Income Tax Act, ss 1, 5 and 15][income-law] · [NamRA general tax information][namra-guide]
+
+## Taxpayer types and rates
+
+Distinguish individuals, companies and any applicable special regime. For an ordinary individual year of assessment commencing on or after 1 March 2024, the first N$100,000 of taxable income is taxed at 0% and the top marginal rate is 37% above N$1,550,000. The general non-mining company rate is 30% for years of assessment commencing on or after 1 January 2025 under the 2024 amendment. Apply the relevant period and check sector-specific rates before calculating tax. [Income Tax Act, sch 4][income-law] · [Income Tax Amendment Act 4 of 2024][amendment]
+
+The standard VAT rate is 15% on taxable supplies and imports. Determine the actual treatment and applicable period for the transaction separately. [VAT Act, s 6][vat-law] · [NamRA VAT guidance][namra-vat]
+
+Use the guides for [individual income tax](na-income-tax.md), [corporate income tax](na-corporate-income-tax.md) and [VAT](na-vat-gst.md) for the relevant calculation or filing.
+
+## Periods and filing
+
+The ordinary assessment year for a person other than a company ends on the last day of February. For the 2025-26 individual period this is 28 February 2026. A company's assessment year generally follows its financial year. Record both the opening and closing dates before applying a rate or due date. [Income Tax Act, s 5][income-law]
+
+For taxpayers filing under section 56(1), the ordinary return and related tax are due by 30 June following the assessment year, or by the last day of the seventh month after year-end for companies and taxpayers with business, professional or farming income. For those individuals with the usual February year-end this is 30 September. Check the return exceptions for eligible individuals, the applicable ITAS notice, filing and payment extensions and other payment obligations for the case. [Income Tax Act, s 56(1)–(5)][income-law] · [NamRA general tax information][namra-guide] · [NamRA individual ITAS guidance][itas-individual]
+
+[income-law]: https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf
+[amendment]: https://mfpe.gov.na/documents/76368/3405432/%238442%2B-%2BGov%2BN264%2BIncome%2BTax%2BAmendment%2BAct%2B4%2Bof%2B2024%2B16%2BSeptember.pdf/de116770-f305-5ef4-c71b-ab842fd55de9?t=1728304423431
+[namra]: https://www.namra.org.na/tax-types/page/income-tax
+[namra-guide]: https://www.namra.org.na/documents/cms/uploaded/information-brochure--general-tax-information--66d64f0d7f.pdf
+[itas]: https://itas.namra.org.na/taxes
+[itas-individual]: https://itas.namra.org.na/individual
+[bank-act]: https://www.bon.com.na/CMSTemplates/Bon/Files/bon.com.na/81/8145f41a-768a-4690-9c9c-cf3c9cc24ec8.pdf
+[vat-law]: https://www.namra.org.na/documents/cms/uploaded/valueadded-tax-act-10-of-2000-0d8c7ed7fc.pdf
+[namra-vat]: https://www.namra.org.na/tax-types/page/value-added-tax-vat-30120
 
 <!-- openaccountants-cta-block -->
 

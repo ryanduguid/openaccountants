@@ -17150,7 +17150,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "na-vat-gst",
@@ -25574,7 +25574,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "zm-corporate-income-tax",
@@ -25587,7 +25587,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "zm-income-tax",
@@ -25600,7 +25600,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "zm-payroll-social",
@@ -25626,7 +25626,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "zimbabwe-vat",
