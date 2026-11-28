@@ -1,11 +1,11 @@
 ---
 name: uganda-vat
-description: Use this skill whenever asked to prepare, review, or classify transactions for a Uganda VAT return. Standard rate 18%. Withholding VAT 6% of taxable value. EAC customs union but no common VAT. ALWAYS read before handling Uganda VAT work.
-version: 2.1
+description: "Uganda VAT guide for the 2025 baseline, with changes to the registration threshold and withholding from 1 July 2026. Standard rate 18%. Pending local-accountant review."
+version: 2.2
 jurisdiction: UG
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
+last_updated: 2026-11-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,12 +27,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | UGX |
 | Filing frequency | Monthly |
 | Deadline | 15th of following month |
-| Registration | UGX 150,000,000 quarterly turnover |
-| Withholding VAT | 6% of taxable value (not 6% of VAT) |
-| Primary legislation | VAT Act Cap. 349 |
+| Registration | In 2025-26, UGX 150 million annual threshold and UGX 37.5 million for the ordinary 3-calendar-month tests. From 1 July 2026, UGX 300 million and UGX 75 million respectively. See registration rules below. |
+| Withholding VAT | Generally 6% of taxable value where withholding applies. From 1 July 2026, check the e-invoice or e-receipt exception. |
+| Primary legislation | VAT Act, Cap. 344, as amended |
 | Contributor | Open Accounting Skills Registry |
 | Validated by | Pending |
-| Last research update | April 2026 |
+| Last research update | Registration and withholding transition checked in November 2026. Other classifications remain pending review. |
+
+For an unregistered person under the ordinary 3-calendar-month tests, apply within 20 days after a period in which VAT-exclusive taxable supplies exceeded the applicable amount, or at the start of a period if there are reasonable grounds to expect to exceed it. Check the separate s 7 provisions for other cases. URA says businesses below the updated threshold can apply to deregister, or remain voluntarily registered and meet their VAT obligations. [VAT Act, s 7](https://ulii.org/en/akn/ug/act/statute/1996/8/eng%402024-12-23#part_III__sec_7) · [VAT (Amendment) Act 2026, ss 1 and 3](https://ulii.org/en/akn/ug/act/2026/14/eng@2026-06-05) · [URA threshold notice](https://ura.go.ug/en/revised-value-added-tax-registration-threshold/)
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -60,7 +62,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Example 1 -- Withholding VAT
 
-Government pays supplier. Invoice UGX 50M + UGX 9M VAT = UGX 59M. Withholding = 6% of UGX 50M = UGX 3M. Supplier receives UGX 56M. Claims UGX 3M credit (Box 14).
+A designated person pays a supplier on a transaction subject to withholding. Invoice UGX 50 million plus UGX 9 million VAT totals UGX 59 million. The designated person withholds UGX 3 million, or 6% of the taxable value, and pays UGX 56 million to the supplier. The supplier accounts for UGX 3 million as a payment in the subsequent VAT return. For payments from 1 July 2026, check the electronic document exception below.
 
 ### Example 2 -- Agricultural inputs zero-rated
 
@@ -80,7 +82,7 @@ Net: 12-15 (net, credit b/f, withholding VAT credits, net payable).
 
 ## Section 7 -- Withholding VAT and reverse charge
 
-- **Withholding VAT designated agents** — Designated agents deduct 6% of TAXABLE VALUE (not 6% of VAT). Supplier claims Box 14.
+- **Designated withholding agents.** Where required, the designated person withholds 6% of the taxable value. The supplier accounts for that amount as a payment in the subsequent VAT return. From 1 July 2026, s 5(3) does not apply when a designated person paying for taxable supplies receives an e-invoice or e-receipt under s 92 of the Tax Procedures Code Act. Confirm designation, registration status and other s 5 exceptions. [VAT Act, s 5](https://ulii.org/en/akn/ug/act/statute/1996/8/eng%402024-12-23) · [VAT (Amendment) Act 2026, ss 1–2](https://ulii.org/en/akn/ug/act/2026/14/eng@2026-06-05)
 - **Reverse charge for non-resident services** — Non-resident services. Self-assess 18%. Net zero.  _(VAT Act s.14)_
 - **EAC intra-community mechanism** — EAC: no intra-community mechanism.
 
@@ -99,7 +101,7 @@ Net: 12-15 (net, credit b/f, withholding VAT credits, net payable).
 ## Section 10 -- Edge cases, test suite, and escalation
 
 **EC1 -- SaaS.** Reverse charge 18%. Net zero.
-**EC2 -- Withholding VAT.** 6% of taxable value. Supplier claims credit.
+**EC2. Withholding VAT.** Apply 6% of the taxable value when withholding is required. For payments from 1 July 2026, check whether a qualifying e-invoice or e-receipt removes the requirement.
 **EC3 -- Coffee export.** Zero-rated. Input recoverable.
 **EC4 -- Furnished rental.** May be 18%. Reviewer flag.
 **EC5 -- EAC import (Kenya).** VAT at customs. Recoverable.
@@ -111,7 +113,7 @@ Net: 12-15 (net, credit b/f, withholding VAT credits, net payable).
 **Test 2** -- UGX 5M equipment + 900K VAT. Recoverable.
 **Test 3** -- SA services UGX 10M. Output 1.8M, input 1.8M.
 **Test 4** -- Fish export UGX 100M. Zero-rated.
-**Test 5** -- Govt pays UGX 30M + 5.4M VAT. Withholding 6% of 30M = 1.8M.
+**Test 5.** A designated person pays UGX 30 million plus UGX 5.4 million VAT on a supply subject to withholding. Withholding is UGX 1.8 million. For the same payment from 1 July 2026 with a qualifying e-invoice or e-receipt, expected withholding under s 5(3) is zero.
 **Test 6** -- Entertainment. Blocked.
 **Test 7** -- Exempt financial UGX 500M. No output. Input not recoverable.
 **Test 8** -- Gift UGX 500K. Deemed supply. Output 90K.

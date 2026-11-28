@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Uganda (
 jurisdiction: UG
 category: formation
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+last_updated: 2026-11-28
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Typical all-in incorporation cost (small company)** — Approximately UGX 300,000 – 700,000 including stamp duty, declarations and basic drafting (approx — confirm)  _(Companies Act, 2012 (https://globallawexperts.com/ursb-company-registration-fees/))_
 - **Typical incorporation timeline** — A few days once name reservation and documents are filed via OBRS (subject to URSB processing) (approx — confirm)  _(Companies Act, 2012 (https://ursb.go.ug/services/business-registration/))_
 - **Core annual compliance — annual return** — File an annual return with URSB and keep statutory registers; companies above thresholds must file audited financial statements  _(Companies Act, 2012 (https://ursb.go.ug/services/business-registration/))_
-- **Core annual compliance — tax** — Maintain the TIN, pay provisional tax in two instalments (sixth and twelfth months), file the annual income tax return within six months after the end of the year of income, and register for VAT once taxable turnover exceeds UGX 150,000,000  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), ss 92A and 111 — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf ; Uganda Revenue Authority, Taxation Handbook FY2023/24, VAT registration — https://ura.go.ug/wp-content/uploads/2024/06/Taxation-handbook-FY2023-24.pdf)_
+- **Core annual tax compliance.** Maintain the TIN. A company liable for provisional tax pays by the last day of months 6 and 12 of its income year. The ordinary annual income tax return and self-assessed balance are due within 6 months after the income year ends, subject to filing and payment rules. [Income Tax Act, Cap. 338, ss 118–121](https://ulii.org/en/akn/ug/act/1997/11/eng%402024-12-23)
+- **VAT registration.** For 2025-26 the annual threshold was UGX 150 million, with UGX 37.5 million for the ordinary 3-calendar-month tests. From 1 July 2026 these are UGX 300 million and UGX 75 million respectively. Apply based on the tests and deadlines in s 7. Check the exceptions and existing registration rules. [VAT Act, s 7](https://ulii.org/en/akn/ug/act/statute/1996/8/eng%402024-12-23#part_III__sec_7) · [VAT (Amendment) Act 2026, ss 1 and 3](https://ulii.org/en/akn/ug/act/2026/14/eng@2026-06-05) · [Uganda tax overview](ug-tax-overview.md)
 
 <!-- openaccountants-cta-block -->
 

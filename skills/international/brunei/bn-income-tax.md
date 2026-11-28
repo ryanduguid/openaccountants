@@ -1,28 +1,30 @@
 ---
 name: bn-income-tax
-description: "Source-cited draft: personal income tax for Brunei (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Brunei Darussalam individual income tax scope for the 2026 year of assessment. Covers ordinary individual income, non-resident director remuneration and the routing to pension contributions. Use for Brunei individual taxes and filing."
 jurisdiction: BN
 category: international
-tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year: 2026
+tax_year_notes: "Ordinary 2026 year of assessment, generally based on 2025 income."
+last_updated: 2026-11-28
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Brunei Personal Income Tax
+# Brunei Darussalam individual income tax
 
-## Personal income tax (none)
+Schedule 1 limits the ordinary income tax charge to company income. The Revenue Division confirms that no general personal income tax is levied on individual earnings from employment or self-employment, dividends or interest. There is no general personal income tax return for those earnings. Check how the business is constituted and whether the payment falls under a specific non-resident charge. [Income Tax Act, ss 8 and 35 and Schedule 1][act] · [Revenue Division corporate tax FAQ][faq]
 
-- **Brunei personal income tax status** — Brunei does not levy any personal income tax. Individuals pay no tax on salary, business income, dividends, interest or capital gains. The only payroll-related deductions for citizens and permanent residents are TAP and SCP social-fund contributions (see payroll-social).
-- **Personal income tax on individuals** — 0% (no personal income tax exists in Brunei)  _(Income Tax Act (Cap. 35) — https://www.mofe.gov.bn/Divisions/income-tax.aspx (as reported; the figure was not re-read against this text for this change))_
-- **Resident individual income tax bands** — Not applicable (no income tax bands exist for residents)  _(Income Tax Act (Cap. 35))_
-- **Non-resident individual income tax** — Not applicable (no income tax on non-resident individuals' personal income (note: payments to non-resident companies/contractors may be subject to corporate withholding tax))  _(Income Tax Act (Cap. 35))_
-- **Tax-free threshold** — Not applicable (all personal income is untaxed)  _(Income Tax Act (Cap. 35))_
-- **Personal deductions / credits** — Not applicable (no personal income tax return is filed, so there are no personal deductions or credits)  _(Income Tax Act (Cap. 35))_
-- **Individual filing / payment deadline** — None (individuals do not file a personal income tax return in Brunei)  _(Income Tax Act (Cap. 35))_
-- **Mandatory deductions for individuals** — Only citizens and permanent residents make TAP/SCP contributions; foreign workers are generally not enrolled in TAP/SCP (approx — confirm)  _([Tabung Amanah Pekerja Act (Cap. 167)](https://www.agc.gov.bn/AGC%20Images/LOB/pdf/Chp.167.pdf))_
+Section 35(2B) sets a 10% charge when a company pays remuneration to a non-resident director. Sections 35 and 37 also cover specified cross-border payments. Check the individual’s residence, payment category, applicable treaty and payer’s filing and remittance requirements. The 2024 amendment substitutes 'person' for 'company' in the general return provision. Determine whether the statutory provision applies to the return in question. [Income Tax Act, ss 2, 35, 37 and 52][act] · [Income Tax Amendment Order 2024, s 3][amendment]
+
+Check pension contributions separately. The national SPK scheme began on 15 July 2023. TAP and SCP rules may still apply for qualifying deferred members. Use the [payroll and social contributions guide](bn-payroll-social.md) and confirm the applicable scheme and period with the administrator. [SPK contribution structure][spk] · [TAP and SCP deferred member guidance][deferred]
+
+[act]: https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf
+[amendment]: https://www.agc.gov.bn/wp-content/uploads/2026/07/S-46_2024_E-INCOME-TAX-ACT-AMENDMENT-ORDER-2024.pdf
+[faq]: https://www.mof.gov.bn/div_revenue_faq_corporatetax/
+[spk]: https://www.tap.com.bn/spk-contribution-structure
+[deferred]: https://www.tap.com.bn/spk-defer-tap-scp-contribution-rate
 
 <!-- openaccountants-cta-block -->
 

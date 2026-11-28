@@ -5293,8 +5293,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "bn-income-tax",
@@ -5306,8 +5306,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "bn-payroll-social",
@@ -5332,8 +5332,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "bn-vat-gst",
@@ -5358,8 +5358,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "bg-company-formation",
@@ -14277,7 +14277,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "kw-company-formation",
@@ -14303,7 +14303,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "kw-payroll-social",
@@ -14329,7 +14329,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "kw-vat-gst",
@@ -24313,7 +24313,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "ug-corporate-income-tax",
@@ -24365,7 +24365,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "uganda-vat",
@@ -24378,7 +24378,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-11-10"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "close-the-uk-vat-quarter-from-xero",

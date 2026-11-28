@@ -1,32 +1,47 @@
 ---
 name: kw-tax-overview
-description: "Source-cited draft: tax overview for Kuwait (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Kuwait tax overview for 2025 covering ordinary income tax, company filing, the domestic minimum top-up tax and the VAT and customs boundary. Pending local-accountant review."
 jurisdiction: KW
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.2
+last_updated: 2026-11-28
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Kuwait Tax Overview
+# Kuwait tax overview
 
-## Kuwait tax system at a glance
+For 2025, the Ministry of Finance administers corporate income tax under Decree No. 3 of 1955 as amended by Law No. 2 of 2008. Kuwait uses the Kuwaiti dinar (KWD). [Income Tax Decree, arts 1 and 8, and Executive Bylaw, art 1][income] · [Central Bank of Kuwait, Law No. 32 of 1968, art 1][currency]
 
-Kuwait has no personal income tax and no VAT/GST in force. Direct corporate income tax applies only to foreign (non-GCC) corporate bodies; locally owned and GCC-owned companies fall outside it. **That is not the same as being inside the profit-based contributions.** Zakat and KFAS reach Kuwaiti *shareholding* companies and NLST only *listed* Kuwaiti shareholding companies, so they are keyed to legal form and listing rather than to ownership nationality — a GCC-owned or Kuwaiti-owned WLL can be outside CIT and outside all three. Check each separately. The **Domestic Minimum Top-up Tax** is separate again and turns on group revenue, not ownership.
+## Ordinary income tax
 
-- **Standard tax year** — Calendar year (12 months); aligns with the company's accounting period  _(Kuwait Income Tax Decree No. 3 of 1955 (as amended by Law No. 2 of 2008), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Currency** — Kuwaiti dinar (KWD)  _(Central Bank of Kuwait Law No. 32 of 1968)_
-- **Tax authority** — Department of Income Tax (DIT), Ministry of Finance  _(Ministry of Finance — Department of Income Tax, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Personal income tax** — None — Kuwait imposes no tax on individuals' income, salaries or wages  _(Kuwait Income Tax Decree No. 3 of 1955, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Residence / taxing basis** — No residence concept for individuals (no PIT). Corporate tax is sourced — it applies to income arising from activity carried on in Kuwait, not worldwide income  _(Kuwait Income Tax Decree No. 3 of 1955 (as amended by Law No. 2 of 2008), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Headline corporate income tax rate** — 15% flat (on foreign corporate bodies' Kuwait-source profits)  _(Law No. 2 of 2008 (Amendment to Income Tax Decree No. 3 of 1955), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **VAT / GST** — None in force. The GCC VAT Framework Agreement (2017) is signed but not yet enacted by Kuwait; draft law remains under preparation  _(GCC VAT Framework Agreement (2017), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Domestic Minimum Top-up Tax (DMTT)** — 15% effective minimum tax on in-scope multinational groups, effective for financial years beginning on or after 1 January 2025. The revenue test is **EUR 750m or more in at least two of the four financial years immediately preceding** the year in question — not a single-year test — and it turns on group revenue, not on Kuwaiti or GCC ownership  _(Kuwait DMTT Law (Decree-Law No. 157 of 2024); Executive Regulations Ministerial Resolution No. 55 of 2025, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Main annual corporate filing deadline** — Within 3 months and 15 days after the end of the taxable period  _(Executive Regulations to Income Tax Decree (Law No. 2 of 2008), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Social security (PIFSS) remittance** — Monthly — by the 15th day of the following month  _(Social Security Law No. 61 of 1976, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+Kuwait has no general personal income tax on salaries or individual income for 2025. An individual does not file a general personal income tax return. The company regime can apply where the individual represents an incorporated body's share. Check the legal form and the capacity in which a person earns income. [Kuwait Direct Investment Promotion Authority, tax overview][investment] · [Executive Bylaw, art 8(2)][income]
+
+Ordinary corporate income tax is 15% of net taxable income from business in Kuwait under the amended decree. The source rules reach specified activity wholly or partly performed in Kuwait, as well as other categories listed in the decree and bylaw. Check which income and expenses belong in the taxable base. [Income Tax Decree, art 1, and Executive Bylaw, arts 2 and 9][income]
+
+In ordinary practice, GCC-incorporated companies wholly owned by GCC nationals fall outside this charge. For mixed ownership, the foreign corporate share of profit may be taxable. Check direct and indirect ownership and entity classification. Zakat and the other company contributions have their own rules. Law No. 46 of 2006 ordinarily applies a 1% annual charge to net profit of public and closed Kuwaiti shareholding companies and excludes companies subject to Decree No. 3 of 1955. Confirm entity-specific exclusions and any wider administrative filing requirements. [Kuwait Direct Investment Promotion Authority, tax overview][investment] · [Kuwait Competition Protection Agency report, para 48 and n 70][ownership] · [Law No. 46 of 2006, arts 1 and 4][zakat]
+
+## Domestic minimum top-up tax
+
+Decree-Law No. 157 of 2024 applies from periods beginning on or after 1 January 2025. Its multinational group revenue threshold is at least EUR 750 million on the ultimate parent's consolidated accounts in at least 2 of the 4 immediately preceding periods. Confirm the Kuwait connection and the entity scope in the law. The rules calculate a top-up to a 15% effective rate, subject to statutory adjustments. For an in-scope group and period, the issuing decree disapplies the specified older taxes and provisions, including the ordinary Income Tax Decree and Law No. 46 of 2006. Check group membership, exclusions, elections, registration and the filing rules separately. [Decree-Law No. 157 of 2024, issuing arts 1 and 5 and annexed arts 1, 3–4, 6–7 and 12][dmtt] · [Ministerial Decision No. 55 of 2025][dmtt-rules]
+
+## Ordinary filing and imports
+
+The ordinary company period is a calendar year. Confirm any approved alternative accounting period. The usual declaration date is the 15th day of the 4th month after period end. For a liable company with a 31 December 2025 period end, that gives 15 April 2026 before any extension or special arrangement. Under art 8, a taxpayer with income of at most KWD 5,250 is excused from filing unless directed to file. Check separate filing rules for exempt bodies. Pay the declaration amount in one payment or in equal instalments on the 15th day of the 4th, 6th, 9th and 12th months after the period. Check approval and payment terms for any extension. [Income Tax Decree, art 8, and Executive Bylaw, arts 10, 13–14 and 28][income]
+
+Kuwait had no general VAT in force for 2025. Domestic VAT registration and returns therefore do not apply for that year. Customs duties and other applicable charges remain relevant to imports. Confirm the tariff classification, origin, valuation, relief and import date. The [VAT and customs guide](kw-vat-gst.md) and [payroll and social insurance guide](kw-payroll-social.md) give specialist routes. [IMF 2025 Article IV consultation, Annex I][vat] · [Unified Customs Law, arts 9–13][customs]
+
+[income]: https://mof.gov.kw/Desicions/Decree/PDF/Q3_1955e.pdf
+[currency]: https://www.cbk.gov.kw/en/legislation-and-regulation/cbk-law/chapter-one
+[investment]: https://kdipa.gov.kw/wp-content/uploads/2024/09/Final-Arabic-Invest-in-Kuwait.pdf
+[ownership]: https://cpa.gov.kw/ar/mc/PublishingImages/%D8%A3%D9%86%D8%B8%D9%85%D8%A9%20%D8%A3%D8%B3%D9%88%D8%A7%D9%82%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA.pdf
+[zakat]: https://www.mof.gov.kw/Desicions/Decree/PDF/Q46-2006.pdf
+[dmtt]: https://mof.gov.kw/MOFServices/PDF/TaxMultinationalLegislation.pdf
+[dmtt-rules]: https://mof.gov.kw/MOFServices/PDF/TaxMultinationalExecutive.pdf
+[vat]: https://www.imf.org/-/media/files/publications/cr/2026/english/1kwtea2026001-source-pdf.pdf
+[customs]: https://customs.gov.kw/Content/Files/En_Desc.pdf
 
 <!-- openaccountants-cta-block -->
 
