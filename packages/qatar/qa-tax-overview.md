@@ -1,32 +1,48 @@
 ---
 name: qa-tax-overview
-description: "Source-cited draft: tax overview for Qatar (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Qatar's ordinary 2025 tax system, covering source, residence, taxpayer types, currency, accounting periods and General Tax Authority filing. Trigger on Qatar tax residence, income source or annual return routing."
 jurisdiction: QA
 category: international
 tax_year: 2025
-last_updated: 2026-11-10
-version: 1.3
+tax_year_notes: "Ordinary 2025 income and excise tax orientation. The separate minimum tax and July 2026 excise change have their own commencement dates. Authorities checked on 28 November 2026."
+last_updated: 2026-11-28
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Qatar Tax Overview
+# Qatar tax overview
 
-## The Qatar tax system at a glance
+Identify the person or entity, activity, ownership, location of management, income source and accounting period. Qatar's ordinary annual income tax covers taxable Qatar-source income. Separate provisions can bring specified foreign income of a project managed by a Qatar resident into charge. Check the income category, conditions and foreign permanent establishment treatment. Check the relevant treaty and any special regime before applying the ordinary law to a case. [Income Tax Law, arts 1–3 and 2 bis–2 bis/5][income-law]
 
-Qatar levies no personal income tax on employment income and no VAT, but applies a flat corporate income tax on foreign-owned business profits. Tax is administered by the General Tax Authority (GTA) and the system is territorial — Qatar-source income is what matters.
+## Residence and taxpayer type
 
-- **Standard tax (accounting) year** — Calendar year, or twelve consecutive months ending on the last day of another month with the authorisation of the Authority's President  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 1, definition of 'financial year' — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
-- **Currency** — Qatari riyal (QAR)  _(General Tax Authority — https://www.gta.gov.qa/en/global-minimum (as reported; the figure was not re-read against this text for this change))_
-- **Tax authority** — General Tax Authority (GTA) — Al-Hayʼa al-ʻAamma lil-Daraaʼib  _([Income Tax Law No. 24 of 2018](https://gta.gov.qa/en/taxes-info))_
-- **Tax basis** — Territorial — an annual tax on total taxable income arising from sources in the State, regardless of residence; since Law No. 11 of 2022 a Qatari project's foreign real estate income, dividends, interest, royalties and technical fees are also taxed where no foreign permanent establishment is involved  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, arts 2 and 2 bis — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
-- **Headline personal income tax rate** — 0%: the Law taxes income from activities carried on in Qatar, salaries and wages of individuals are outside the charge, and the gross income of Qatari natural persons resident in the State is exempt  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 4(13) — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
-- **Headline corporate income tax rate** — 10% of taxable income, with a minimum of 35% for petroleum operations and petrochemical industries  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 9 — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
-- **Does VAT/GST exist?** — No — Qatar has not yet implemented VAT (a 5% GCC-framework VAT is anticipated but not in force)  _(GCC Unified VAT Agreement (not yet enacted in Qatar), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Corporate tax return filing & payment deadline** — Within four months from the end of the tax year or the taxpayer's accounting period, with payment of the tax due  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 11 and the Executive Regulations' return provision (within four months from the end of the tax year or accounting period) — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
-- **Pillar Two / Domestic Minimum Top-Up Tax** — A Domestic Minimum Top-Up Tax and Income Inclusion Rule apply to multinational groups with consolidated revenue of EUR 750 million or more in two of the four preceding fiscal years, at a 15% minimum effective rate, for fiscal years beginning on or after 1 January 2025  _(General Tax Authority, Global Minimum Tax page — https://www.gta.gov.qa/en/global-minimum ; Council of Ministers Resolution No. 2 of 2026 issuing the Pillar Two rules under Law No. 22 of 2024, art 2 and art 1.1 — https://www.gta.gov.qa/assets/pdf/EN%20Qatar%20Pillar%20Two%20Regulations%20Decision%20No%202%20of%202026.pdf ; Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 34, as amended, and Chapter VII bis added by Law No. 22 of 2024 — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
-- **Excise tax exists** — Yes — excise tax applies to tobacco and its derivatives (100%), carbonated drinks (50%), energy drinks (100%) and goods of a special nature (100%)  _(Excise Tax Law No. 25 of 2018 and its Executive Regulations, General Tax Authority 2024 English edition, art 2 and the attached schedule of rates — https://www.gta.gov.qa/assets/pdf/Excise%20Tax%20Law%20EN%202024.pdf)_
+Under domestic law, an individual is resident if they have a permanent home available in Qatar, are present continuously or intermittently for more than 183 days in the year, or hold Qatari nationality. An entity is resident if it was established in Qatar and has its main and actual management and control there. Check any treaty residence separately. [Income Tax Law, art 1][income-law] · [Qatar legal portal, article 1 in Arabic][arabic-residence]
+
+Natural persons, legal persons and other entities can have duties under the Income Tax Law. Its promulgating law excludes salaries, wages, allowances and equivalent receipts. Check business income separately. Article 4 exempts specified income of resident Qatari individuals and eligible business ownership. Verify shareholding, residence and exemption conditions, including the regulations for eligible Gulf Cooperation Council nationals. The ordinary rate is 10% of taxable income. Applicable petroleum or petrochemical agreements have separate terms and a statutory minimum rate of 35%. The relevant taxpayer can have a filing duty even if exempt from the charge. [Promulgating law, art 2 and Income Tax Law, arts 1, 4, 9 and 11][income-law]
+
+## Currency, periods and filing authority
+
+Use Qatari riyals (QAR) and confirm the conversion method for a foreign amount. The ordinary 2025 tax year runs from 1 January to 31 December 2025. Check any approved alternative accounting period or applicable first or final period. The General Tax Authority administers the ordinary national tax and accepts returns through Dhareeba. The standard return period is four months after the relevant year or accounting period ends. [Qatar Central Bank, current banknotes][currency] · [Income Tax Law, arts 1, 5, 11 and 14 and Executive Regulations, art 29][income-law] · [GTA tax information and Dhareeba filing][gta-taxes]
+
+For 2025 returns the General Tax Authority extended filing to 30 June 2026 for covered taxpayers, including eligible exempt entities. The notice kept 30 April 2026 for petroleum operations and petrochemical companies. Check the taxpayer's payment, assessment and any separate filing obligations before using that date for a particular case. See the [Qatar corporate income tax guide](qa-corporate-income-tax.md). [Initial GTA filing notice][filing-initial] · [GTA extension notice for tax year 2025][filing-extension]
+
+## Consumption and minimum tax
+
+- The General Tax Authority confirms Qatar has not applied VAT. In 2025 excise applied to tobacco products and derivatives at 100%, carbonated drinks at 50%, energy drinks at 100% and designated special goods at 100%. Qatar began a separate tiered volumetric regime for sweetened drinks on 6 July 2026. Check the product, date and applicable tax base. [GTA investor guide][investor-guide] · [Excise Tax Law and Executive Regulations, 2024 edition][excise-law] · [GTA sweetened drinks regime][gta-taxes]
+- The separate domestic minimum top-up tax and income inclusion rule use a 15% minimum rate for relevant fiscal years beginning on or after 1 January 2025. The threshold generally starts at EUR750 million of consolidated group revenue in at least 2 of the 4 immediately preceding fiscal years, with specific adjustments. Establish the entity, exclusions, effective rate and compliance dates under the operative resolution. [Council of Ministers Decision No. 2 of 2026, promulgating art 2 and arts 1.1 and 1.5][minimum-decision] · [GTA global minimum tax][minimum-guide]
+
+[income-law]: https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf
+[arabic-residence]: https://www.almeezan.qa/LawArticles.aspx?LawArticleID=85142&language=ar&lawId=7862
+[currency]: https://www.qcb.gov.qa/en/pages/currentbanknotes.aspx
+[gta-taxes]: https://www.gta.gov.qa/en/taxes-info
+[filing-initial]: https://gta.gov.qa/en/media-center/notifications/general-tax-authority-announces-tax-return-filing-period-for-the-financial
+[filing-extension]: https://www.gta.gov.qa/en/media-center/news/general-tax-authority-announces-extension-of-tax-return-submission-deadline
+[investor-guide]: https://gta.gov.qa/en/investors-guide
+[excise-law]: https://www.gta.gov.qa/assets/pdf/Excise%20Tax%20Law%20EN%202024.pdf
+[minimum-decision]: https://www.gta.gov.qa/assets/pdf/EN%20Qatar%20Pillar%20Two%20Regulations%20Decision%20No%202%20of%202026.pdf
+[minimum-guide]: https://www.gta.gov.qa/en/global-minimum
 
 <!-- openaccountants-cta-block -->
 
