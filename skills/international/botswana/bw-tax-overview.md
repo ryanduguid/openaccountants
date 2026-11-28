@@ -1,44 +1,50 @@
 ---
 name: bw-tax-overview
-description: "Source-cited draft: tax overview for Botswana (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Botswana’s ordinary income tax system for 2026-27, including residence, income scope, taxpayer types, currency, tax periods and filing authorities. Trigger on Botswana tax residence, annual filing or income source."
 jurisdiction: BW
 category: international
 tax_year: 2026
-last_updated: 2026-11-10
-version: 1.3
+tax_year_notes: "Ordinary tax year 1 July 2026 to 30 June 2027 under legislation commencing 1 July 2026. Primary sources checked 28 November 2026."
+last_updated: 2026-11-28
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Botswana Tax Overview
+# Botswana tax overview
 
-## System basics
+The Botswana Unified Revenue Service (BURS) administers tax through the Commissioner General. Amounts are in Botswana pula (BWP or P). The ordinary 2026-27 income tax year runs from 1 July 2026 to 30 June 2027. A company’s accounting period follows the annual balance of its accounts. Check any substituted year the Commissioner General has recognised. [Income Tax Act, ss 2 and 144(c)][income] · [Tax Administration Act, s 81][administration] · [Bank of Botswana][currency]
 
-- **Tax authority** — Botswana Unified Revenue Service (BURS)  _(Botswana Unified Revenue Service Act — https://www.burs.org.bw/)_
-- **Currency** — Botswana Pula (BWP / P)  _(Bank of Botswana, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Standard tax / fiscal year** — 1 July to 30 June; a company's return follows its own accounting period and falls due four months after that period ends  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 2, definition of 'tax year', and s 123(1)(a) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
-- **Basis of taxation** — Source-based — income arising in or deemed to arise from Botswana is taxable; residents are taxed on Botswana-source income (with limited deemed-source/foreign-investment rules)  _(Income Tax Act (Cap. 52:01))_
+## Income tax from 1 July 2026
 
-Botswana taxes are administered by the Botswana Unified Revenue Service (BURS) under the Income Tax Act and the Value Added Tax Act. The currency is the Botswana Pula (BWP/P) and the standard fiscal/tax year runs to 30 June.
+The Income Tax Act, 2026 (Act 13 of 2026) applies from 1 July 2026. Cap. 52:01 still applies to earlier tax years. Check the effective year before applying a linked specialist guide. [Commencement order, para 2][start] · [Income Tax Act, ss 143–144][income]
 
-## Headline rates
+Residents other than temporary residents generally include income from Botswana and abroad in gross income. Non-residents and temporary residents include Botswana-source income. Section 8 defines source by income category, and section 14 excludes specified income, including exempt income and amounts subject to final withholding. Check the income category and any treaty before deciding the tax treatment. [Income Tax Act, ss 8 and 14][income]
 
-Personal income tax is progressive to a 27.5% top rate and the standard company tax rate is 24.5% under the Income Tax Act, 2026, which the Gazette dates as commencing on 1 July 2026 (25% and 22% applied for 2025/26 under the repealed Cap. 52:01). VAT stays at 14% under the Value Added Tax Act, 2026.
+- An individual may qualify as resident through a permanent home in Botswana, at least 183 days in a 12-month period that begins or ends during the tax year, or an overseas posting as a Botswana government employee or official. Part days count. Check the temporary-absence rule and the limits on residence in the first and last years. Temporary residence can apply to qualifying employment of up to 3 years and excludes Botswana citizens and permanent residents. [Income Tax Act, s 7(2)–(6)][income]
+- A company may qualify through its registered office, place of incorporation or other formation, or management and control in Botswana. There is a separate route for qualifying collective investment undertakings. Partnerships and trusts have their own statutory residence tests. [Income Tax Act, s 7(7)–(9)][income]
 
-- **Personal income tax top marginal rate (residents)** — 27.5% on taxable income above BWP 400,000 from 1 July 2026 (25% above BWP 156,000 for 2025/26)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026 ; repealed Income Tax Act (Cap. 52:01) position for 2025/26 (as reported))_
-- **Personal tax-free threshold (residents)** — BWP 48,000 per year  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
-- **Standard company tax rate** — 24.5% for any company other than a mining, IFSC or mutual association company from 1 July 2026 (22% for 2025/26; the 23.5% proposed in the 2025/26 budget was not enacted)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 3(d) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; repealed Income Tax Act (Cap. 52:01) position for 2025/26 (as reported))_
-- **VAT** — Yes — VAT applies, standard rate **14%** (confirmed by BURS's 9 July 2026 notice under the Value Added Tax Act, 2026, in force from 1 July 2026; the rise to 15% proposed for 1 April 2025 never took effect). The 2025 amendment commenced on 1 June 2026: non-resident remote-service suppliers register from 1 June and charge VAT from 1 October 2026, and reverse-charge accounting by registered persons, government entities and large unregistered persons starts 1 August 2026  _(BURS public notices, 29 May and 9 July 2026 — https://www.burs.org.bw/images/Value%20Added%20Tax%20Amendment%20Act%202026.pdf ; https://www.burs.org.bw/images/Zero-Rated%20FoodStuff-%20Under%20Vat%20Act%20of%202026.pdf)_
+## Ordinary rates and filing routes
 
-## Main annual filing deadlines
+| Item | Ordinary 2026-27 position |
+| --- | --- |
+| Resident individual | The zero-rate band extends through P48,000. The top marginal rate is 27.5% on taxable income above P400,000. |
+| Standard company income tax | 24.5%. Apply the relevant regime for mining, international financial services centre companies and mutual associations. |
+| VAT | Standard rate 14% on ordinary taxable supplies, taxable imports and reverse charged supplies. Check zero-rating, exemptions and the separate commencement of the deferred tourism and platform provisions. |
 
-Returns are due a fixed period after the relevant year-end; individuals file by 30 September and companies within four months of their financial year-end.
+[Income Tax Act, Schedule 1 Part I paras 1 and 3][income] · [VAT Act, s 7][vat] · [VAT part commencement order, paras 2–3][orders]
 
-- **Individual income tax return due** — Within three months after the end of the tax year, so on or before 30 September  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 123(1)(b) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
-- **Company income tax return due** — Within four months after the end of the company's accounting period (self-assessment)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 123(1)(a) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
-- **VAT return frequency** — Generally every 2 months (bi-monthly) for most registrants (Category determines monthly vs bi-monthly; foreign remote-service suppliers file quarterly)  _(Value Added Tax Act (Cap. 50:03))_
-- **Employer PAYE remittance** — Within 14 days after the end of the month in which the employment income was paid, with a withholding tax remittance return (the repealed Act's 15th-of-month deadline no longer applies)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, ss 129(1) and 138(1) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
+A liable company ordinarily files within 4 months after its accounting period. Other liable taxpayers ordinarily file within 3 months after the tax year. The standard period for the year ending 30 June 2027 gives 30 September 2027 where the three-month rule applies. Section 124 exempts specified cases from filing unless the Commissioner General requests a return, including an individual with only employment income from one employer paid under section 129. Check actual extensions and your filing status. [Income Tax Act, ss 123–124][income]
+
+Withholding agents ordinarily remit within 14 days after the month of payment and lodge the related remittance return. Use the [individual income tax guide](bw-income-tax.md), [company income tax guide](bw-corporate-income-tax.md), [payroll guide](bw-payroll-social.md) and [VAT guide](bw-vat-gst.md) for specialist routing. Confirm the effective period, taxpayer status, substituted accounting year, source, foreign tax relief, permanent establishment, VAT classification and applicable filing or payment details before acting. [Income Tax Act, ss 8, 129 and 138][income]
+
+[income]: https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026
+[administration]: https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=955:tax-administration-act-2026
+[start]: https://elaws.gov.bw/PDF/Bulletin/2026subsidiarypdf/093.pdf
+[currency]: https://www.bankofbotswana.bw/content/currency
+[vat]: https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=958:value-added-tax-act-2026
+[orders]: https://burs.org.bw/index.php/tax/tax-laws-2026?download=958%3Avalue-added-tax-act-2026#page=82
 
 <!-- openaccountants-cta-block -->
 
