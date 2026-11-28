@@ -7,8 +7,10 @@
 
 1. `intake.md`
 2. `bv-land-and-permits.md`
-3. `bv-vat-customs-excise-scope.md`
-4. `bv-wage-tax-payroll.md`
+3. `bv-operator-entity-and-reporting.md`
+4. `bv-tax-system-orientation.md`
+5. `bv-vat-customs-excise-scope.md`
+6. `bv-wage-tax-payroll.md`
 
 ## Shared files this package needs
 

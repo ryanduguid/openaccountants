@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2220,
+  "guides": 2222,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -4962,6 +4962,32 @@
    "slug": "bv-land-and-permits",
    "path": "skills/international/bouvet-island/bv-land-and-permits.md",
    "name": "bv-land-and-permits",
+   "jurisdiction": "BV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
+  },
+  {
+   "slug": "bv-operator-entity-and-reporting",
+   "path": "skills/international/bouvet-island/bv-operator-entity-and-reporting.md",
+   "name": "bv-operator-entity-and-reporting",
+   "jurisdiction": "BV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
+  },
+  {
+   "slug": "bv-tax-system-orientation",
+   "path": "skills/international/bouvet-island/bv-tax-system-orientation.md",
+   "name": "bv-tax-system-orientation",
    "jurisdiction": "BV",
    "category": "international",
    "tier": 2,

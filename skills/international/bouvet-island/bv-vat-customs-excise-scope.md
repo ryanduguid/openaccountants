@@ -8,7 +8,7 @@ tax_year: 2026
 tax_year_notes: "Territorial law checked on 20 November 2026, with a separately dated excise transition from 1 January 2027."
 tier: 2
 last_updated: 2026-11-28
-version: 0.2
+version: 0.3
 depends_on:
   - workflow-base
 ---
@@ -48,7 +48,7 @@ Record the goods, parties, places, dates, border crossings, declarations, sales 
 
 ## Remaining coverage
 
-Resolve goods classification, amount, licences, other controls and transaction-specific return treatment for the actual movement. See [Bouvet Island wage tax and payroll](bv-wage-tax-payroll.md) for 2026 ordinary wages, contributions and a-melding fields. See [Bouvet Island land and activity permits](bv-land-and-permits.md) for State land and nature reserve permissions. The youth allowance and refund, other income, formation, reporting outside wages, cross-border withholding and other property and capital transactions require separate evidence.
+Resolve goods classification, amount, licences, other controls and transaction-specific return treatment for the actual movement. See [Bouvet Island wage tax and payroll](bv-wage-tax-payroll.md) for 2026 ordinary wages, contributions and a-melding fields. See [Bouvet Island land and activity permits](bv-land-and-permits.md) for State land and nature reserve permissions. See the [Bouvet Island tax system orientation](bv-tax-system-orientation.md) for ordinary 2026 tax routing and [operator registration and reporting](bv-operator-entity-and-reporting.md) for Norwegian company obligations. The youth allowance and refund, other income, cross-border withholding and other property and capital transactions require separate evidence.
 
 <!-- openaccountants-cta-block -->
 

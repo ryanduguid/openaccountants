@@ -49,7 +49,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BR | Brazil | 14 | 8 |
 | BS | Bahamas | 7 | 0 |
 | BT | Bhutan | 7 | 0 |
-| BV | Bouvet Island | 3 | 0 |
+| BV | Bouvet Island | 5 | 0 |
 | BW | Botswana | 6 | 0 |
 | BY | Belarus | 8 | 0 |
 | BZ | Belize | 6 | 0 |
