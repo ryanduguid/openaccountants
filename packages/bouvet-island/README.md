@@ -6,13 +6,16 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `bv-vat-customs-excise-scope.md`
+2. `bv-land-and-permits.md`
+3. `bv-vat-customs-excise-scope.md`
+4. `bv-wage-tax-payroll.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`foundation.md`](../_shared/foundation.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 

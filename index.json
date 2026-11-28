@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2218,
+  "guides": 2220,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -4959,6 +4959,19 @@
    "last_updated": "2026-11-10"
   },
   {
+   "slug": "bv-land-and-permits",
+   "path": "skills/international/bouvet-island/bv-land-and-permits.md",
+   "name": "bv-land-and-permits",
+   "jurisdiction": "BV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
+  },
+  {
    "slug": "bv-vat-customs-excise-scope",
    "path": "skills/international/bouvet-island/bv-vat-customs-excise-scope.md",
    "name": "bv-vat-customs-excise-scope",
@@ -4969,7 +4982,20 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-11-20"
+   "last_updated": "2026-11-28"
+  },
+  {
+   "slug": "bv-wage-tax-payroll",
+   "path": "skills/international/bouvet-island/bv-wage-tax-payroll.md",
+   "name": "bv-wage-tax-payroll",
+   "jurisdiction": "BV",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "br-estimated-tax",
