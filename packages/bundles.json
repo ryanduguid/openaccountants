@@ -836,11 +836,14 @@
    "name": "Bouvet Island",
    "files": [
     "intake.md",
+    "bv-land-and-permits.md",
     "bv-vat-customs-excise-scope.md",
+    "bv-wage-tax-payroll.md",
     "README.md"
    ],
    "shared": [
     "foundation.md",
+    "payroll-workflow-base.md",
     "workflow-base.md"
    ]
   },
