@@ -136,7 +136,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | KM | Comoros | 1 | 0 |
 | KN | Saint Kitts and Nevis | 2 | 0 |
 | KP | Democratic People's Republic of Korea | 0 | 0 |
-| KR | Republic of Korea | 6 | 3 |
+| KR | Republic of Korea | 7 | 3 |
 | KW | Kuwait | 6 | 0 |
 | KY | Cayman Islands | 6 | 0 |
 | KZ | Kazakhstan | 18 | 0 |

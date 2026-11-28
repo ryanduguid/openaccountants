@@ -8,10 +8,11 @@
 1. `intake.md`
 2. `kr-income-tax.md`
 3. `kr-social-insurance.md`
-4. `references.md`
-5. `simplified-business-operator-registration-under-vat-act.md`
-6. `south-korea-crypto-tax.md`
-7. `south-korea-vat.md`
+4. `kr-tax-system-orientation.md`
+5. `references.md`
+6. `simplified-business-operator-registration-under-vat-act.md`
+7. `south-korea-crypto-tax.md`
+8. `south-korea-vat.md`
 
 ## Shared files this package needs
 
