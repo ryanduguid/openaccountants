@@ -1,6 +1,6 @@
 {
  "counts": {
-  "guides": 2222,
+  "guides": 2223,
   "jurisdictions": 305,
   "accountant_reviewed": 164
  },
@@ -22717,6 +22717,19 @@
    "last_updated": "2026-11-22"
   },
   {
+   "slug": "sj-jan-mayen-payroll-scope-reference",
+   "path": "skills/international/svalbard-and-jan-mayen/sj-jan-mayen-payroll-scope-reference.md",
+   "name": "sj-jan-mayen-payroll-scope-reference",
+   "jurisdiction": "SJ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-11-28"
+  },
+  {
    "slug": "sj-svalbard-wage-reference",
    "path": "skills/international/svalbard-and-jan-mayen/sj-svalbard-wage-reference.md",
    "name": "sj-svalbard-wage-reference",
@@ -22740,7 +22753,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-11-21"
+   "last_updated": "2026-11-28"
   },
   {
    "slug": "sweden-references",
