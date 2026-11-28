@@ -13,9 +13,10 @@
 6. `il-freelancer-ops.md`
 7. `il-income-tax-returns.md`
 8. `il-new-immigrant.md`
-9. `il-tax-withholding.md`
-10. `israel-vat.md`
-11. `references.md`
+9. `il-tax-system-orientation.md`
+10. `il-tax-withholding.md`
+11. `israel-vat.md`
+12. `references.md`
 
 ## Shared files this package needs
 

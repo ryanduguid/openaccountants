@@ -117,7 +117,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | HU | Hungary | 5 | 0 |
 | ID | Indonesia | 14 | 8 |
 | IE | Ireland | 14 | 0 |
-| IL | Israel | 10 | 0 |
+| IL | Israel | 11 | 0 |
 | IM | Isle of Man | 6 | 0 |
 | IN | India | 19 | 13 |
 | IO | British Indian Ocean Territory | 1 | 0 |
