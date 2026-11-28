@@ -1,12 +1,12 @@
 ---
 name: ls-corporate-income-tax
-description: "Source-cited draft covering Lesotho corporate income tax for 2025/26. Explains ordinary company and manufacturing rates, branch treatment, advance corporation tax, withholding categories, resident-contractor payments, provisional instalments and filing deadlines. Separates the historical export-manufacturing concession from verified current guidance because post-2012 amendments remain unreconciled. Use for questions about Lesotho corporate tax, RSL company returns, dividend withholding, advance corporation tax, non-resident service fees or provisional tax. Sources include the Income Tax Act consolidated to April 2012 and later RSL guidance. Current export and penalty rates need confirmation. Pending local-accountant review."
+description: "Lesotho corporate income tax for 2025-26. Covers ordinary company and manufacturing rates, branches, advance corporation tax, withholding, provisional instalments and filing. Use for Lesotho company returns and income tax questions."
 jurisdiction: LS
 category: international
 tax_year: 2025
-tax_year_notes: "Lesotho's year of assessment runs 1 April to 31 March; the RSL's current employment-income guide is labelled 2025-26. The statutory text read here is the Income Tax Act 1993 as consolidated by RSL to 1 April 2012: the most recent consolidation RSL publishes. Amendments after that date could not be read: see the currency note in §1."
-version: 0.1
-last_updated: 2026-11-10
+tax_year_notes: "Ordinary 2025-26 assessment year from 1 April 2025 to 31 March 2026. Act 2 of 2014 supplies the operative manufacturing rate amendment."
+version: 0.2
+last_updated: 2026-11-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,67 +14,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Lesotho Corporate Income Tax
 
-## 1. The company rates: Third Schedule
+## 1. Ordinary company rates for 2025-26
 
-The following table reproduces the Third Schedule in the consolidation to
-1 April 2012. It is historical evidence, not a verified current rate schedule.
-RSL guidance supports 25% for ordinary company income and 10% for manufacturing
-and commercial farming, but post-2012 amendments have not been reconciled.
-Do not apply the historical 0% export rate without that review:
+The ordinary company rate is 25%. Manufacturing income is taxed at 10%. Section 3 of Act 2 of 2014 substituted a single 10% manufacturing rate for the earlier categories, including the 0% category for qualifying exports outside the Southern African Customs Union (SACU). Section 1 applies the amendment from 1 April 2014. Government Notice 39 confirms why the export rate was removed. Verify whether income qualifies as manufacturing under the Act. [Income Tax (Amendment) Act 2014, ss 1 and 3, and Government Notice 39](https://www.rsl.org.ls/sites/default/files/2024-08/INCOME%20TAX%20AMENDMENT%20ACT%20NO%202%20OF%202014.pdf#page=2) · [Revenue Services Lesotho rates](https://www.rsl.org.ls/tax-rates)
 
-| # | Nature of income | Rate |
-| --- | --- | ---: |
-| 1 | Manufacturing income from a manufacturing activity of an industrial, scientific or educational nature which promotes industrial, scientific, educational or other development within Lesotho | **10%** |
-| 2 | Manufacturing income from manufacturing activities relating **exclusively to exports to any country other than a country within the Southern African Customs Union** | **0%** |
-| 3 | Other manufacturing income | **10%** |
-| 4 | Other income | **25%** |
+- **Standard rate of tax.** Section 3 of the principal Act defines the standard rate at 25%. This term also appears in the non-resident tax, withholding and advance corporation tax provisions. Check the operative provision for each calculation. [Income Tax Act, s 3](https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)
+- **Commercial farming.** The Fourth Schedule sets a 10% rate in a separate provision from manufacturing income. Section 29 exempts qualifying subsistence farming by a resident individual. [Income Tax Act, s 29 and Fourth Schedule item 2](https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)
 
-_(Income Tax Act 1993, Third Schedule (section 10): https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
+## 2. Rate sources
 
-- **"Standard rate of tax" is a defined term** — the Act's interpretation section
-  says *"'standard rate of tax' means a rate of 25%"*. It is the figure that drives
-  the non-resident rate in s.12(1), the s.107 withholding rate and the advance
-  corporation tax formula, so it is worth knowing that all four move together if it
-  ever changes  _(Income Tax Act 1993, s.3, definition of "standard rate of tax": https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
-- **Commercial farming is 10%, and it sits in a different schedule**: the Fourth
-  Schedule, item 2: *"Tax rate on persons undertaking commercial farming — the
-  applicable rate is 10%"*, as amended by s.3 of Act No. 17 of 2008. **Subsistence**
-  farming by a resident individual is exempt outright under s.29. The previous
-  version bundled "manufacturing & commercial farming" into one 10% line, which
-  gets the number right and hides that they come from different provisions  _(Income Tax Act 1993, Fourth Schedule item 2 and s.29: https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
-
-> **[CURRENCY NOTE: read before relying on the 0% band.]** The most recent
-> consolidation RSL publishes is the Income Tax Act 1993 **updated to 1 April
-> 2012**. RSL's own site does list an *Income Tax (Amendment) Regulations No. 24 of
-> 2026*, but it is published as a **scanned image with no extractable text** and
-> could not be read here. The 25% and 10% figures are separately confirmed by RSL's
-> current website; **the 0% export band is not**, and no post-2012 instrument was
-> checked against it. A reviewer must confirm the Third Schedule as amended.
-
-## 2. RSL's own corporate-tax guide contradicts itself on these rates
-
-RSL's *Guide on Corporate Tax* (PDF, June 2025) prints a rate table and, on the next page, explanatory notes that say the opposite.
-
-| Source | Manufacturing for export outside SACU | Non-manufacturing / other |
-| --- | ---: | ---: |
-| **Income Tax Act, Third Schedule** | **0%** | **25%** |
-| RSL *Guide on Corporate Tax*, the table, PDF page 2 | 25% | 10% ("Other Income") |
-| RSL *Guide on Corporate Tax*, notes (a) and (b), PDF page 3 | 10% | 25% |
-| RSL website, *Corporate Income Tax* page |: (not addressed) | 25%, with manufacturing and commercial farming at 10% |
-
-The table's rate column is inverted relative to the notes on the following page:
-note (a) reads *"Corporate tax rate of 10% is levied on income from exporting
-manufactured goods outside the Customs Union"* while the table row for that same
-income says 25%; note (b) reads *"A corporate tax rate of 25% is imposed on
-profits of a resident non-manufacturing company"* while the table's "Other Income"
-row says 10%. **This is not a text-extraction artefact**: each rate is
-positionally aligned with its own row in the PDF.
-
-The Act governs as amended. The 2012 consolidation cannot settle a conflict
-with later guidance without checking intervening amendments. Treat the export
-rate as unresolved. The 25% ordinary company rate has support in the Act, the
-explanatory notes and the RSL website.
-_(Income Tax Act 1993, Third Schedule; RSL, Guide on Corporate Tax: https://www.rsl.org.ls/sites/default/files/2025-06/Guide%20on%20Corporate%20Tax.pdf; RSL, Corporate Income Tax: https://www.rsl.org.ls/corporate-income-tax)_
+Revenue Services Lesotho's June 2025 corporate guide gives conflicting figures in its rate table and explanatory notes. The operative Third Schedule amendment and the current RSL rate list support the 10% manufacturing and 25% ordinary rates. Check any other concession and its effective period separately. [RSL corporate tax guide, pp 2–3](https://www.rsl.org.ls/sites/default/files/2025-06/Guide%20on%20Corporate%20Tax_1.pdf) · [Revenue Services Lesotho rates](https://www.rsl.org.ls/tax-rates)
 
 ## 3. Branches of non-resident companies
 
@@ -213,15 +162,7 @@ _(Income Tax Act 1993, ss.107, 108, 157, 158 and 160: https://www.rsl.org.ls/sit
 
 ## Sources and review limits
 
-The rates, withholding sections, advance corporation tax, instalment formula and
-penalty sections were read from the Income Tax Act 1993 as consolidated and
-published by Revenue Services Lesotho. Two things are deliberately left open. The
-consolidation runs only to **1 April 2012**, and the *Income Tax (Amendment)
-Regulations No. 24 of 2026* that RSL publishes is a **scanned image with no
-extractable text**, so no post-2012 amendment to the Third Schedule was verified ;
-the 0% export band in particular is unconfirmed against current law. And RSL's own
-*Guide on Corporate Tax* contradicts both the Act and its own explanatory notes on
-the rate table, a conflict recorded in §2 rather than resolved.
+The rate discussion uses Act 2 of 2014 and the RSL rate list. The branch, advance corporation tax, withholding, instalment and penalty references are drawn from the principal Act consolidated to 1 April 2012 and the cited RSL guidance. Check the operative text, actual eligibility, filing and payment before applying those sections. This guide is pending accountant review.
 
 <!-- openaccountants-cta-block -->
 
